@@ -23,7 +23,7 @@ LFM3はモデルファミリーであり、音声や画像などの用途と並�
 ## 必須の記録
 
 asset_id、asset_kind、source、selection、review、facts、evidence、representations_requested、dependencies、manifest_pathを持つ。
-不明はnullまたはunknown、未確認リストは空にしない。モデルはfacts.total_parametersに総数を整数で記録し、量子化前の規模を確認する。
+不明はnullまたはunknown、未確認リストは空にしない。モデルはfacts.total_parametersに総数を整数で記録してもよいが、総数だけで除外しない。選定審査には3〜4ビット時の推定ピークRAM（重み・KVキャッシュ・実装オーバーヘッド・OSを含む）、前提のバックエンド・コンテキスト長・バッチ・量子化方式、根拠を追加する。見積未確定の場合は取得承認しない。
 sourceは取得元の指定であり、存在確認が済んだという証明ではない。
 
 evidenceには、確認日時、URL、対象リビジョン、確認内容、fact / publisher_claim / inferenceを記録する。秘密情報は書かない。
