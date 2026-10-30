@@ -59,4 +59,24 @@
 
 [facebook/dinov3-vit7b16-pretrain-lvd1689m](https://huggingface.co/facebook/dinov3-vit7b16-pretrain-lvd1689m)、[bigcode/the-stack-v2](https://huggingface.co/datasets/bigcode/the-stack-v2)、[bigcode/starcoderdata](https://huggingface.co/datasets/bigcode/starcoderdata)、[amphion/Emilia-Dataset](https://huggingface.co/datasets/amphion/Emilia-Dataset)、[lmsys/lmsys-chat-1m](https://huggingface.co/datasets/lmsys/lmsys-chat-1m)、[nvidia/GR00T-N1.6-3B](https://huggingface.co/nvidia/GR00T-N1.6-3B)、[lerobot/pi0_base](https://huggingface.co/lerobot/pi0_base)、[CohereLabs/aya_dataset](https://huggingface.co/datasets/CohereLabs/aya_dataset)、[allenai/pixmo-cap](https://huggingface.co/datasets/allenai/pixmo-cap)、[allenai/WildChat-1M](https://huggingface.co/datasets/allenai/WildChat-1M)、[lerobot/aloha_sim_insertion_human](https://huggingface.co/datasets/lerobot/aloha_sim_insertion_human)
 
-**合計 22件、既存119件にない候補 11件。** 一部は法的確認待ち。
+**初回調査は22件（既存119件にない候補11件）**。下記追補後は29件（新規18件）。一部は法的確認待ち。
+
+## 2026-10-30追補：追加で7件を個別資産台帳に登録
+
+[機械可読のリスク監視29件](../catalog/risk-watch-2026-10-30.json)には今回7件を追記。**既存119件にない候補は合計18件**（当初の11件に7件追加）。この7件については個別JSONも作成している。優先は *調査の緊急性* であって、ダウンロード承認ではない。
+
+| 調査優先 | 対象 | 現在の根拠 | 容量表示（確定ファイル容量ではない） | 次の確認 |
+| --- | --- | --- | --- | --- |
+| A・条件 | [FLUX 3 Image Klein Base](../catalog/models/flux-3-image-klein-base.json) | [公式](https://huggingface.co/black-forest-labs/flux-3-image-klein-base)：Gated、FLUX Kommunity License。5.6B主変換器の蒸留前原本で別エンコーダ・prompt upsamplerを要する | 主変換器BF16の理論下限約11.1GB。依存と選択ファイルは未計測 | Gated利用条件・依存コード・追加約18.8GBのprompt upsamplerなどの権利 |
+| A・条件 | [AfroRadVoice-FR](../catalog/datasets/afroradvoice-fr.json) | [公式](https://huggingface.co/datasets/StephaneBah/AfroRadVoice-FR)：Gated、CC-BY-4.0、医療音声562件（約4.54h） | Hub全量表示1.04GB | 実声の同意、合成声の権利、ファイル単位サイズ |
+| A・法務保留 | [Re-LAION-2B research](../catalog/datasets/relaion2b-en-research.json) | [公式](https://huggingface.co/datasets/laion/relaion2B-en-research)：Gated・CC-BY-4.0メタデータだがREADME空欄 | Hub全量表示481GB | 元画像・収録物の権利、実体形式、サブセット化、容量 |
+| B | [Carbon-X](../catalog/models/carbon-x.json) | [公式](https://huggingface.co/HuggingFaceBio/Carbon-X)：公開・Apache-2.0。14.8B級、DNA語彙拡張と中間学習の独自成果 | BF16重み理論下限約29.6GB。ファイル容量未計測 | tokenizer、コード、学習資材・運用依存 |
+| B | [IFM/SFT-Reasoning](../catalog/datasets/ifm-sft-reasoning.json) | [公式](https://huggingface.co/datasets/IFM/SFT-Reasoning)：公開・Apache-2.0。約4,080万行、K2 Horizon関連の専門SFTデータ | Hub全量表示159GB | サブセットごとのバイト数、元データの権利、他候補との重複 |
+| B | [LAION Emotional Roleplay](../catalog/datasets/laion-emotional-roleplay-finetuning.json) | [公式](https://huggingface.co/datasets/laion/emotional-roleplay-finetuning-dataset)：公開・CC-BY-4.0。67,491件の合成音声と注釈 | Hub全量表示6.67GB（重複するParquetとWebDatasetに注意） | 元の合成元の条件、キャラクター関連知財、データ分割 |
+| B・緊急性低 | [IFM/K2-Horizon-7B](../catalog/models/ifm-k2-horizon-7b.json) | [公式](https://huggingface.co/IFM/K2-Horizon-7B)：公開・Apache-2.0。公開学習資材との対応価値 | Hubのパラメータ表示約9.0Bに対しBF16重み理論下限約18GB。確定ファイルサイズ未調査 | モデル名称7Bとメタデータ9Bの差、段階別checkpointsの実在と容量 |
+
+**確認できた事実と仮説を区別**：現時点でGatedの3件はアクセス条件が具体的な事実。一方、これらが将来削除される日付や確率は未確認。公開の4件について、将来の規制・削除は仮説であり、主に再現困難性を保存理由としている。すべての項目で完全revision、対象ファイル一覧、バイト数、SHA、権利条件、容量見積もりが未固定。ダウンロードや取得承認キューは変更しない。
+
+**参照先の食い違い**：IFMの7Bモデルカードが指す `IFM/K2-Horizon-Pretrain-Data` と `IFM/K2-Horizon-Midtrain-Data` は匿名の確認で401または not foundとなった。これを削除の証拠とはしない。[IFM/SFT-Reasoning](https://huggingface.co/datasets/IFM/SFT-Reasoning)等は別の実在する公開データセットである。
+
+**推論RAM未確定**：モデルのBF16換算サイズはディスク上の全ファイルサイズでも3〜4bit時のピークRAM見積もりでもない。512GB未満の判断にはバックエンド・トークン長・KV cache・OS・作業領域を含む具体的条件が必要。既存の3.8TB/空き200GBの制約を変更しない。
