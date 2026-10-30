@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "asset_id": "flux-3-image-klein-base",
+  "asset_kind": "model",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "model",
+    "repo_id": "black-forest-labs/flux-3-image-klein-base"
+  },
+  "selection": {
+    "state": "candidate",
+    "reason": "現在Gatedかつ独自のFLUX Kommunity License適用。蒸留前のベース重みで後から再現しにくく、画像生成・編集の系統保存価値が高い。",
+    "disappearance_risk_priority": "R0-条件付き"
+  },
+  "review": {
+    "state": "reviewed",
+    "checked_at": "2026-10-30",
+    "unresolved": [
+      "配布元の完全コミットSHAと選択ファイル単位のバイト数・SHA-256",
+      "データ利用権限・利用条件本文と第三者の権利",
+      "重複・代替配布元と再現可能性",
+      "モデルの場合は3〜4bit推論ピークRAM、backend、OS、KV cache、batch、context、必要依存",
+      "Gated利用条件の本人同意",
+      "FLUX Kommunity License本文の条項確認",
+      "prompt upsampler約18.8GBの依存とそのライセンス、選択対象"
+    ]
+  },
+  "facts": {
+    "total_parameters": null,
+    "primary_image_transformer_parameters_approx": 5538500000,
+    "training_stage": "undistilled-base",
+    "tasks": [
+      "image-generation",
+      "image-editing"
+    ],
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "image"
+      ]
+    },
+    "family": "FLUX 3 Image",
+    "architecture": "rectified-flow",
+    "parameter_layout": "unknown",
+    "source_relation": "official",
+    "license_metadata": "other",
+    "license_card": "FLUX Kommunity License v1.0",
+    "access_status": "gated"
+  },
+  "disappearance_risk": {
+    "verified_facts": [
+      "2026-10-30時点の公開メタデータ: access_status=gated, license=other"
+    ],
+    "confirmed_removal_notice": false,
+    "future_scenario_hypothesis": "モデルの人物編集などに関する配布制限は将来シナリオ。削除予告は未確認。",
+    "removal_probability_estimate": null,
+    "alternative_sources_reviewed": false,
+    "restoration_loss_reason": "現在Gatedかつ独自のFLUX Kommunity License適用。蒸留前のベース重みで後から再現しにくく、画像生成・編集の系統保存価値が高い。"
+  },
+  "size": {
+    "reported_total_gb": null,
+    "selected_bytes": null,
+    "precision_based_transformer_lower_bound_gb": 11.1,
+    "notes": "5.5385B主変換器×BF16 2 byteの単純下限。テキストエンコーダ、AE、prompt upsamplerなどの別依存と複数精度のvariantを含まない。配布形式はBF16・FP8・NVFP4。"
+  },
+  "evidence": [
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-base",
+      "category": "publisher_metadata_or_model_card",
+      "kind": "fact_or_publisher_claim",
+      "note": "元サイトの公開表記を確認。将来の規制は推論扱い。"
+    }
+  ],
+  "representations_requested": [],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": []
+  },
+  "manifest_path": null
+}
