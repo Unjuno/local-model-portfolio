@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "asset_id": "ifm-k2-horizon-7b",
+  "asset_kind": "model",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "model",
+    "repo_id": "IFM/K2-Horizon-7B"
+  },
+  "selection": {
+    "state": "candidate",
+    "reason": "同開発元の学習データ・中間チェックポイント・学習コードとの追跡が可能とされる透明性の高い独立系列。",
+    "disappearance_risk_priority": "R2-系統保存"
+  },
+  "review": {
+    "state": "reviewed",
+    "checked_at": "2026-10-30",
+    "unresolved": [
+      "配布元の完全コミットSHAと選択ファイル単位のバイト数・SHA-256",
+      "データ利用権限・利用条件本文と第三者の権利",
+      "重複・代替配布元と再現可能性",
+      "モデルの場合は3〜4bit推論ピークRAM、backend、OS、KV cache、batch、context、必要依存",
+      "7B名称と実パラメータの差異",
+      "中間checkpointの利用可能revision/容量",
+      "参照される学習データIDの一部が匿名アクセスでnot found/401であったため、実在・公開条件を再検証"
+    ]
+  },
+  "facts": {
+    "total_parameters": 8999200000,
+    "training_stage": "pretrained-base-and-staged-revisions-claimed",
+    "tasks": [
+      "text-generation"
+    ],
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "family": "K2 Horizon",
+    "architecture": "k2_horizon",
+    "parameter_layout": "dense",
+    "source_relation": "official",
+    "license_metadata": "apache-2.0",
+    "access_status": "public"
+  },
+  "disappearance_risk": {
+    "verified_facts": [
+      "2026-10-30時点の公開メタデータ: access_status=public, license=apache-2.0"
+    ],
+    "confirmed_removal_notice": false,
+    "future_scenario_hypothesis": "現在公開・Apache-2.0で具体的な規制・削除兆候は未確認。独自学習経路が消えるリスクは一般的な将来シナリオ。",
+    "removal_probability_estimate": null,
+    "alternative_sources_reviewed": false,
+    "restoration_loss_reason": "同開発元の学習データ・中間チェックポイント・学習コードとの追跡が可能とされる透明性の高い独立系列。"
+  },
+  "size": {
+    "reported_total_gb": null,
+    "selected_bytes": null,
+    "precision_based_weight_lower_bound_gb": 18,
+    "notes": "Hub metadata 8.999B paramsで、名称7Bと異なる。BF16換算算術下限のみ。専用実装が必要な場合の本体やRAM上限は未検証。"
+  },
+  "evidence": [
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://huggingface.co/IFM/K2-Horizon-7B",
+      "category": "publisher_metadata_or_model_card",
+      "kind": "fact_or_publisher_claim",
+      "note": "元サイトの公開表記を確認。将来の規制は推論扱い。"
+    },
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://huggingface.co/datasets/IFM/SFT-Reasoning",
+      "category": "publisher_metadata_or_model_card",
+      "kind": "fact_or_publisher_claim",
+      "note": "元サイトの公開表記を確認。将来の規制は推論扱い。"
+    }
+  ],
+  "representations_requested": [],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": []
+  },
+  "manifest_path": null
+}
