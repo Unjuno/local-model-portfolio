@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "asset_id": "nanbeige4.3-33b-base",
+  "asset_kind": "model",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "model",
+    "repo_id": "Nanbeige/Nanbeige4.3-33B-Base",
+    "url": "https://huggingface.co/Nanbeige/Nanbeige4.3-33B-Base",
+    "revision_sha_observed": "e061adde974ffea8cd3586ae43d08ac640afe56e"
+  },
+  "selection": {
+    "state": "selected",
+    "reason": "2026-10-25公開の約33.1B Base重み。Nanbeige独自事前学習と後日のエージェント特化SFT/蒸留研究の起点であり、後学習版だけでは事前学習状態を復元できない。",
+    "disappearance_risk": "現在公開・Apache2.0。高性能コードエージェント教師モデルとしての提供条件変更は仮説。既存Qwen/Gemma Baseとの重複は系列と重み差で比較。",
+    "review_priority": "2026-10-30 release/source audit"
+  },
+  "review": {
+    "state": "reviewed",
+    "checked_at": "2026-10-30",
+    "unresolved": [
+      "モデルカードのtrust_remote_codeに関わる隔離・コード監査",
+      "エージェント後学習版と相違する重みの解析",
+      "選択ファイルと依存・512GB RAM条件"
+    ]
+  },
+  "facts": {
+    "total_parameters": 33119000000,
+    "total_parameters_approx": null,
+    "license_metadata": "apache-2.0",
+    "access_status": "public",
+    "format": "BF16 safetensors"
+  },
+  "upstream_inventory": {
+    "all_repo_files_bytes_observed": 66240853554,
+    "selected_bytes": null,
+    "hashes_verified_from_source": false,
+    "reference": "catalog/snapshots/2026-10-30-new-releases.json"
+  },
+  "alternative_representations": [],
+  "evidence": [
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://huggingface.co/Nanbeige/Nanbeige4.3-33B-Base",
+      "kind": "publisher_repo_card_and_hub_api",
+      "note": "アクセス・ライセンス・全repo容量と改訂IDを確認。将来規制は仮説。"
+    }
+  ],
+  "representations_requested": [],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": []
+  },
+  "manifest_path": null,
+  "download_approved": false
+}
