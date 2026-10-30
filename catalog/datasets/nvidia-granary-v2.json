@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "asset_id": "nvidia-granary-v2",
+  "asset_kind": "dataset",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "dataset",
+    "repo_id": "nvidia/Granary-v2",
+    "url": "https://huggingface.co/datasets/nvidia/Granary-v2",
+    "revision_sha_observed": null
+  },
+  "selection": {
+    "state": "candidate",
+    "reason": "2026年10月に更新された48言語の音声認識・翻訳・QAなど複数形式の学習用ラベルと指示データ。総46万時間以上の元音声由来の専門的な再ラベリング成果で、同じ注釈をゼロから作るのは困難。",
+    "disappearance_risk": "現在公開。元の16コーパスごとに利用条件が異なり、一律のHubライセンス表示だけで再配布・保存可否を決められない。全リポジトリ111.56GBでもサブセットの許諾を確認する。",
+    "review_priority": "2026-10-30 release/source audit"
+  },
+  "review": {
+    "state": "reviewed",
+    "checked_at": "2026-10-30",
+    "unresolved": [
+      "各元コーパスの二次利用条件",
+      "日本語を含む対象splitの選択",
+      "下流モデルの学習レシピ",
+      "完全なrevisionと選択byte数・ハッシュ"
+    ]
+  },
+  "facts": {
+    "total_parameters": null,
+    "total_parameters_approx": null,
+    "license_metadata": "openmdw-1.1 / cc-by-sa-4.0 (source-specific)",
+    "access_status": "public",
+    "format": "annotated speech data"
+  },
+  "upstream_inventory": {
+    "all_repo_files_bytes_observed": null,
+    "selected_bytes": null,
+    "hashes_verified_from_source": false,
+    "reference": "catalog/snapshots/2026-10-30-new-datasets.json"
+  },
+  "alternative_representations": [],
+  "evidence": [
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://huggingface.co/datasets/nvidia/Granary-v2",
+      "kind": "publisher_repo_card_and_hub_api",
+      "note": "アクセス・ライセンス・全repo容量と改訂IDを確認。将来規制は仮説。"
+    }
+  ],
+  "representations_requested": [],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": []
+  },
+  "manifest_path": null,
+  "download_approved": false
+}
