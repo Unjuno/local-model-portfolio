@@ -1,7 +1,7 @@
 # 資産台帳
 
 1つの論理的な資産につき1 JSON。モデル、データ、ランタイム、知識資料を同じ原則で管理する。
-サブフォルダーは models、datasets、software、knowledge を必要になったときに作る。今は models に最初の1件だけ置く。
+サブフォルダーは models、datasets、software、knowledge を用途に応じて作る。初回一括レビューは[119件](review-2026-10-30.json)で固定し、その後のリスク監視候補は[別台帳](risk-watch-2026-10-30.json)で重複を管理する。追加候補の個別JSONは models と datasets に置く。
 
 ## 分類を混ぜない
 
