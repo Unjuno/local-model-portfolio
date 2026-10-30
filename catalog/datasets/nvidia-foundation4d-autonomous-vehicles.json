@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "asset_id": "nvidia-foundation4d-autonomous-vehicles",
+  "asset_kind": "dataset",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "dataset",
+    "repo_id": "nvidia/PhysicalAI-Autonomous-Vehicles-Foundation4D",
+    "url": "https://huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles-Foundation4D",
+    "revision_sha_observed": null
+  },
+  "selection": {
+    "state": "held",
+    "reason": "実運転・自律走行に関わる高価値のマルチモーダルデータ。センサー・時系列・注釈の再収集は一般のテキストSFTよりはるかに難しく、物理AI研究の保全候補として重要。",
+    "disappearance_risk": "現在GatedかつNVIDIA Autonomous Vehicle Dataset License。Hugging Face APIのリポジトリ全ファイル合計が約9.23TBでHDD上限を超過。条件はNVIDIA技術を用いた自律走行開発等の限定目的で、権利者から求められた旧版の削除義務がある。",
+    "review_priority": "2026-10-30 release/source audit"
+  },
+  "review": {
+    "state": "reviewed",
+    "checked_at": "2026-10-30",
+    "unresolved": [
+      "利用目的が契約の許諾範囲に該当するか",
+      "必要な削除義務と長期アーカイブの両立",
+      "許諾された最小サブセットの正確なファイルサイズ",
+      "完全なrevision IDとファイルハッシュ",
+      "全repoバイト数はsnapshotに正確な値があるが、ここでは丸め概数のみ記す。"
+    ]
+  },
+  "facts": {
+    "total_parameters": null,
+    "total_parameters_approx": null,
+    "license_metadata": "NVIDIA Autonomous Vehicle Dataset License (Hub tag other)",
+    "access_status": "gated",
+    "format": "dataset (subsets not selected)"
+  },
+  "upstream_inventory": {
+    "all_repo_files_bytes_observed": null,
+    "selected_bytes": null,
+    "hashes_verified_from_source": false,
+    "reference": "catalog/snapshots/2026-10-30-new-datasets.json"
+  },
+  "alternative_representations": [],
+  "evidence": [
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles-Foundation4D",
+      "kind": "publisher_repo_card_and_hub_api",
+      "note": "アクセス・ライセンス・全repo容量と改訂IDを確認。将来規制は仮説。"
+    }
+  ],
+  "representations_requested": [],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": []
+  },
+  "manifest_path": null,
+  "download_approved": false
+}
