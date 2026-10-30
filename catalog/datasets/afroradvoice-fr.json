@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "asset_id": "afroradvoice-fr",
+  "asset_kind": "dataset",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "dataset",
+    "repo_id": "StephaneBah/AfroRadVoice-FR"
+  },
+  "selection": {
+    "state": "candidate",
+    "reason": "現在Gatedで独自収集・合成した医療放射線レポート音声562件（約4.54時間）。低資源アクセントの音声・転写ペアは再収集が難しい。",
+    "disappearance_risk_priority": "R0-条件付き"
+  },
+  "review": {
+    "state": "reviewed",
+    "checked_at": "2026-10-30",
+    "unresolved": [
+      "配布元の完全コミットSHAと選択ファイル単位のバイト数・SHA-256",
+      "データ利用権限・利用条件本文と第三者の権利",
+      "重複・代替配布元と再現可能性",
+      "モデルの場合は3〜4bit推論ピークRAM、backend、OS、KV cache、batch、context、必要依存",
+      "Gated利用条件への本人同意",
+      "話者同意・合成音声元サービスの権利と出典確認",
+      "同じカードにある古い引用URLとの不一致の解消"
+    ]
+  },
+  "facts": {
+    "total_parameters": null,
+    "training_stage": null,
+    "tasks": [
+      "automatic-speech-recognition"
+    ],
+    "modalities": {
+      "input": [
+        "audio"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "family": null,
+    "architecture": null,
+    "parameter_layout": null,
+    "source_relation": "official",
+    "license_metadata": "cc-by-4.0",
+    "access_status": "gated",
+    "samples": 562,
+    "duration_hours_approx": 4.54
+  },
+  "disappearance_risk": {
+    "verified_facts": [
+      "2026-10-30時点の公開メタデータ: access_status=gated, license=cc-by-4.0"
+    ],
+    "confirmed_removal_notice": false,
+    "future_scenario_hypothesis": "音声・医療・権利・被験者の同意に関する条件変更の可能性は仮説。モデルカードは非識別化を主張するが独立検証は未実施。",
+    "removal_probability_estimate": null,
+    "alternative_sources_reviewed": false,
+    "restoration_loss_reason": "現在Gatedで独自収集・合成した医療放射線レポート音声562件（約4.54時間）。低資源アクセントの音声・転写ペアは再収集が難しい。"
+  },
+  "size": {
+    "reported_total_gb": 1.04,
+    "selected_bytes": null,
+    "notes": "Hub Total file size表示。対象シャード・実容量は未確定。"
+  },
+  "evidence": [
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://huggingface.co/datasets/StephaneBah/AfroRadVoice-FR",
+      "category": "publisher_metadata_or_model_card",
+      "kind": "fact_or_publisher_claim",
+      "note": "元サイトの公開表記を確認。将来の規制は推論扱い。"
+    }
+  ],
+  "representations_requested": [],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": []
+  },
+  "manifest_path": null
+}
