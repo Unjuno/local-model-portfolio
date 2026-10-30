@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "asset_id": "ifm-sft-reasoning",
+  "asset_kind": "dataset",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "dataset",
+    "repo_id": "IFM/SFT-Reasoning"
+  },
+  "selection": {
+    "state": "candidate",
+    "reason": "K2 Horizonシリーズに紐づく指示追従・推論SFTデータ（約4079.8万行）。学習成果とデータを対応させて研究できる。",
+    "disappearance_risk_priority": "R1-高"
+  },
+  "review": {
+    "state": "reviewed",
+    "checked_at": "2026-10-30",
+    "unresolved": [
+      "配布元の完全コミットSHAと選択ファイル単位のバイト数・SHA-256",
+      "データ利用権限・利用条件本文と第三者の権利",
+      "重複・代替配布元と再現可能性",
+      "モデルの場合は3〜4bit推論ピークRAM、backend、OS、KV cache、batch、context、必要依存",
+      "権利・混入個人情報や著作物をサンプリングで検証",
+      "モデル側の同世代チェックポイントとの対応関係",
+      "各サブセットの選択バイト数"
+    ]
+  },
+  "facts": {
+    "total_parameters": null,
+    "training_stage": "sft-dataset",
+    "tasks": [
+      "text-generation",
+      "instruction-tuning",
+      "reasoning"
+    ],
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "family": "K2 Horizon",
+    "architecture": null,
+    "parameter_layout": null,
+    "source_relation": "official",
+    "license_metadata": "apache-2.0",
+    "access_status": "public",
+    "rows_reported": 40797817,
+    "subsets": [
+      "instruction-following",
+      "3efforts-pretrain"
+    ]
+  },
+  "disappearance_risk": {
+    "verified_facts": [
+      "2026-10-30時点の公開メタデータ: access_status=public, license=apache-2.0"
+    ],
+    "confirmed_removal_notice": false,
+    "future_scenario_hypothesis": "直接の公開制限や削除予定は確認できない。大規模SFTの出典・素材許諾・継続公開可能性はリスクシナリオ。",
+    "removal_probability_estimate": null,
+    "alternative_sources_reviewed": false,
+    "restoration_loss_reason": "K2 Horizonシリーズに紐づく指示追従・推論SFTデータ（約4079.8万行）。学習成果とデータを対応させて研究できる。"
+  },
+  "size": {
+    "reported_total_gb": 159,
+    "selected_bytes": null,
+    "notes": "Hub Total file size表示（選択ファイルの確定バイト数ではない）。圧縮方法・サブセット割当は未検証。"
+  },
+  "evidence": [
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://huggingface.co/datasets/IFM/SFT-Reasoning",
+      "category": "publisher_metadata_or_model_card",
+      "kind": "fact_or_publisher_claim",
+      "note": "元サイトの公開表記を確認。将来の規制は推論扱い。"
+    },
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://huggingface.co/IFM/K2-Horizon-7B",
+      "category": "publisher_metadata_or_model_card",
+      "kind": "fact_or_publisher_claim",
+      "note": "元サイトの公開表記を確認。将来の規制は推論扱い。"
+    }
+  ],
+  "representations_requested": [],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": []
+  },
+  "manifest_path": null
+}
