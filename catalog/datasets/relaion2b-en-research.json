@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "asset_id": "relaion2b-en-research",
+  "asset_kind": "dataset",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "dataset",
+    "repo_id": "laion/relaion2B-en-research"
+  },
+  "selection": {
+    "state": "held",
+    "reason": "現在Gatedで大規模な画像・テキスト関連データ。配布条件変更で再取得困難になるリスクを観察できるが、現在のREADMEが空で、権利由来と容量の確認が重要。",
+    "disappearance_risk_priority": "R0-要法務・容量審査"
+  },
+  "review": {
+    "state": "blocked",
+    "checked_at": "2026-10-30",
+    "unresolved": [
+      "配布元の完全コミットSHAと選択ファイル単位のバイト数・SHA-256",
+      "データ利用権限・利用条件本文と第三者の権利",
+      "重複・代替配布元と再現可能性",
+      "モデルの場合は3〜4bit推論ピークRAM、backend、OS、KV cache、batch、context、必要依存",
+      "完全版権利・元データ利用許可",
+      "配布者の同意・README空欄の補完",
+      "追加コンテンツが実体画像かリンク・メタデータのみか",
+      "選択シャードのバイト数・優先下位サブセット"
+    ]
+  },
+  "facts": {
+    "total_parameters": null,
+    "training_stage": null,
+    "tasks": [
+      "multimodal-training"
+    ],
+    "modalities": {
+      "input": [
+        "image",
+        "text"
+      ],
+      "output": []
+    },
+    "family": null,
+    "architecture": null,
+    "parameter_layout": null,
+    "source_relation": "official",
+    "license_metadata": "cc-by-4.0",
+    "access_status": "gated",
+    "readme_status": "empty"
+  },
+  "disappearance_risk": {
+    "verified_facts": [
+      "2026-10-30時点の公開メタデータ: access_status=gated, license=cc-by-4.0"
+    ],
+    "confirmed_removal_notice": false,
+    "future_scenario_hypothesis": "著作権・プライバシー・出典削除などの将来懸念は仮説。CC-BY-4.0メタデータだけで収録元画像の利用権限を推定してはならない。",
+    "removal_probability_estimate": null,
+    "alternative_sources_reviewed": false,
+    "restoration_loss_reason": "現在Gatedで大規模な画像・テキスト関連データ。配布条件変更で再取得困難になるリスクを観察できるが、現在のREADMEが空で、権利由来と容量の確認が重要。"
+  },
+  "size": {
+    "reported_total_gb": 481,
+    "selected_bytes": null,
+    "notes": "Hub Total file size表示。現在の容量計画で全量保存は高負担、選択サブセット/権利精査が必要。"
+  },
+  "evidence": [
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://huggingface.co/datasets/laion/relaion2B-en-research",
+      "category": "publisher_metadata_or_model_card",
+      "kind": "fact_or_publisher_claim",
+      "note": "元サイトの公開表記を確認。将来の規制は推論扱い。"
+    }
+  ],
+  "representations_requested": [],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": []
+  },
+  "manifest_path": null
+}
