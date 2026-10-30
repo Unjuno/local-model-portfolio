@@ -9,7 +9,7 @@
     "B-LEGAL-REVIEW": "権利や付属物をさらに調査すべき高価値候補",
     "HOLD-PRIVACY": "高価値でも会話などに個人情報・同意の疑義が残るため保存承認保留"
   },
-  "risk_caveat": "Gatedは現在のアクセス制限を意味するが、将来の削除予告や法律による禁止を意味しない。推論上のリスクシナリオと観測事実を分離。",
+  "risk_caveat": "Gatedは現在のアクセス制限を意味するが、将来の削除予告や法律による禁止を意味しない。推論上のリスクシナリオと観測事実を分離。 2026-10-30追跡分は個別asset JSONにも事実/仮説を記録。",
   "license_caveat": "license_metadataはHub表示。配布ページの同意条件・元資産の権利が優先される場合がある。CC-BY-NCとCC-BYが資産ごとに異なる場合は個別審査。",
   "storage": "各候補の正確な取得バイト数・commit SHA・依存は未固定。後でマニフェスト作成。",
   "github_queue_unchanged": true,
@@ -448,6 +448,167 @@
       "full_revision_sha": null,
       "download_approved": false,
       "previously_in_119": false
+    },
+    {
+      "repo_id": "black-forest-labs/flux-3-image-klein-base",
+      "asset_kind": "model",
+      "investigation_tier": "A",
+      "access_observed": "gated",
+      "license_metadata": "other",
+      "why_preserve": "現在Gatedかつ独自のFLUX Kommunity License適用。蒸留前のベース重みで後から再現しにくく、画像生成・編集の系統保存価値が高い。",
+      "observed_or_hypothesized_risks": [
+        "観察: gated / metadata other",
+        "仮説: モデルの人物編集などに関する配布制限は将来シナリオ。削除予告は未確認。"
+      ],
+      "rights_or_safety_review": "Gated利用条件の本人同意; FLUX Kommunity License本文の条項確認; prompt upsampler約18.8GBの依存とそのライセンス、選択対象",
+      "next_action": "完全revision・選択ファイルのバイト数・配布条件・依存・権利を確認し取得可否を判断",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-base",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false,
+      "individual_catalog_path": "catalog/models/flux-3-image-klein-base.json",
+      "hub_display_total_gb": null,
+      "unverified_size_note": "5.5385B主変換器×BF16 2 byteの単純下限。テキストエンコーダ、AE、prompt upsamplerなどの別依存と複数精度のvariantを含まない。配布形式はBF16・FP8・NVFP4。"
+    },
+    {
+      "repo_id": "StephaneBah/AfroRadVoice-FR",
+      "asset_kind": "dataset",
+      "investigation_tier": "A",
+      "access_observed": "gated",
+      "license_metadata": "cc-by-4.0",
+      "why_preserve": "現在Gatedで独自収集・合成した医療放射線レポート音声562件（約4.54時間）。低資源アクセントの音声・転写ペアは再収集が難しい。",
+      "observed_or_hypothesized_risks": [
+        "観察: gated / metadata cc-by-4.0",
+        "仮説: 音声・医療・権利・被験者の同意に関する条件変更の可能性は仮説。モデルカードは非識別化を主張するが独立検証は未実施。"
+      ],
+      "rights_or_safety_review": "Gated利用条件への本人同意; 話者同意・合成音声元サービスの権利と出典確認; 同じカードにある古い引用URLとの不一致の解消",
+      "next_action": "完全revision・選択ファイルのバイト数・配布条件・依存・権利を確認し取得可否を判断",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/datasets/StephaneBah/AfroRadVoice-FR",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false,
+      "individual_catalog_path": "catalog/datasets/afroradvoice-fr.json",
+      "hub_display_total_gb": 1.04,
+      "unverified_size_note": "Hub Total file size表示。対象シャード・実容量は未確定。"
+    },
+    {
+      "repo_id": "laion/relaion2B-en-research",
+      "asset_kind": "dataset",
+      "investigation_tier": "A-LEGAL-HOLD",
+      "access_observed": "gated",
+      "license_metadata": "cc-by-4.0",
+      "why_preserve": "現在Gatedで大規模な画像・テキスト関連データ。配布条件変更で再取得困難になるリスクを観察できるが、現在のREADMEが空で、権利由来と容量の確認が重要。",
+      "observed_or_hypothesized_risks": [
+        "観察: gated / metadata cc-by-4.0",
+        "仮説: 著作権・プライバシー・出典削除などの将来懸念は仮説。CC-BY-4.0メタデータだけで収録元画像の利用権限を推定してはならない。"
+      ],
+      "rights_or_safety_review": "配布者の同意・README空欄の補完; 追加コンテンツが実体画像かリンク・メタデータのみか; 選択シャードのバイト数・優先下位サブセット",
+      "next_action": "完全revision・選択ファイルのバイト数・配布条件・依存・権利を確認し取得可否を判断",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/datasets/laion/relaion2B-en-research",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false,
+      "individual_catalog_path": "catalog/datasets/relaion2b-en-research.json",
+      "hub_display_total_gb": 481,
+      "unverified_size_note": "Hub Total file size表示。現在の容量計画で全量保存は高負担、選択サブセット/権利精査が必要。"
+    },
+    {
+      "repo_id": "HuggingFaceBio/Carbon-X",
+      "asset_kind": "model",
+      "investigation_tier": "B",
+      "access_observed": "public",
+      "license_metadata": "apache-2.0",
+      "why_preserve": "Qwen3-14BからDNAと自然言語の共同学習を行った14.8B級の特殊モデル。独自DNA語彙と学習工程が上流重みだけでは復元できない。",
+      "observed_or_hypothesized_risks": [
+        "観察: public / metadata apache-2.0",
+        "仮説: バイオ用途の将来配布条件変更は仮説。現在は公開・Apache-2.0であり実際のGated化/削除予定の証拠なし。"
+      ],
+      "rights_or_safety_review": "追加DNA語彙・カスタムtokenizer構成; 学習時使用データの配布可否; 15B級専用推論のRAM実測",
+      "next_action": "完全revision・選択ファイルのバイト数・配布条件・依存・権利を確認し取得可否を判断",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/HuggingFaceBio/Carbon-X",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false,
+      "individual_catalog_path": "catalog/models/carbon-x.json",
+      "hub_display_total_gb": null,
+      "unverified_size_note": "約14.822B×BF16 2 byteの算術下限。実ファイルサイズ・tokenizer・学習コードは別途検証。"
+    },
+    {
+      "repo_id": "IFM/SFT-Reasoning",
+      "asset_kind": "dataset",
+      "investigation_tier": "B",
+      "access_observed": "public",
+      "license_metadata": "apache-2.0",
+      "why_preserve": "K2 Horizonシリーズに紐づく指示追従・推論SFTデータ（約4079.8万行）。学習成果とデータを対応させて研究できる。",
+      "observed_or_hypothesized_risks": [
+        "観察: public / metadata apache-2.0",
+        "仮説: 直接の公開制限や削除予定は確認できない。大規模SFTの出典・素材許諾・継続公開可能性はリスクシナリオ。"
+      ],
+      "rights_or_safety_review": "権利・混入個人情報や著作物をサンプリングで検証; モデル側の同世代チェックポイントとの対応関係; 各サブセットの選択バイト数",
+      "next_action": "完全revision・選択ファイルのバイト数・配布条件・依存・権利を確認し取得可否を判断",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/datasets/IFM/SFT-Reasoning",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false,
+      "individual_catalog_path": "catalog/datasets/ifm-sft-reasoning.json",
+      "hub_display_total_gb": 159,
+      "unverified_size_note": "Hub Total file size表示（選択ファイルの確定バイト数ではない）。圧縮方法・サブセット割当は未検証。"
+    },
+    {
+      "repo_id": "laion/emotional-roleplay-finetuning-dataset",
+      "asset_kind": "dataset",
+      "investigation_tier": "B",
+      "access_observed": "public",
+      "license_metadata": "cc-by-4.0",
+      "why_preserve": "67,491合成音声（約184時間）に音声・キャプション・感情・演技・VoiceCLAP属性が付いた、再生成しにくい特化TTS学習データ。",
+      "observed_or_hypothesized_risks": [
+        "観察: public / metadata cc-by-4.0",
+        "仮説: 音声合成やキャラクター類似演技の権利・安全運用を巡る将来の公開方針変更は仮説。現在公開で削除予告なし。"
+      ],
+      "rights_or_safety_review": "版権を伴う架空キャラクター名や音声由来の知財評価; 同一データParquet/WebDatasetの重複除去; 合成データの元モデル依存とライセンス確認",
+      "next_action": "完全revision・選択ファイルのバイト数・配布条件・依存・権利を確認し取得可否を判断",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/datasets/laion/emotional-roleplay-finetuning-dataset",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false,
+      "individual_catalog_path": "catalog/datasets/laion-emotional-roleplay-finetuning.json",
+      "hub_display_total_gb": 6.67,
+      "unverified_size_note": "Hub Total file size表示。ParquetとWebDatasetが重複している可能性があるため必要表現を選ぶ。作者カードによればWebDataset一式は約3.13GB。"
+    },
+    {
+      "repo_id": "IFM/K2-Horizon-7B",
+      "asset_kind": "model",
+      "investigation_tier": "B",
+      "access_observed": "public",
+      "license_metadata": "apache-2.0",
+      "why_preserve": "同開発元の学習データ・中間チェックポイント・学習コードとの追跡が可能とされる透明性の高い独立系列。",
+      "observed_or_hypothesized_risks": [
+        "観察: public / metadata apache-2.0",
+        "仮説: 現在公開・Apache-2.0で具体的な規制・削除兆候は未確認。独自学習経路が消えるリスクは一般的な将来シナリオ。"
+      ],
+      "rights_or_safety_review": "7B名称と実パラメータの差異; 中間checkpointの利用可能revision/容量; 参照される学習データIDの一部が匿名アクセスでnot found/401であったため、実在・公開条件を再検証",
+      "next_action": "完全revision・選択ファイルのバイト数・配布条件・依存・権利を確認し取得可否を判断",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/IFM/K2-Horizon-7B",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false,
+      "individual_catalog_path": "catalog/models/ifm-k2-horizon-7b.json",
+      "hub_display_total_gb": null,
+      "unverified_size_note": "Hub metadata 8.999B paramsで、名称7Bと異なる。BF16換算算術下限のみ。専用実装が必要な場合の本体やRAM上限は未検証。"
     }
   ]
 }
