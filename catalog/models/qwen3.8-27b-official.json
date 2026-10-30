@@ -5,38 +5,55 @@
   "source": {
     "provider": "huggingface",
     "repo_type": "model",
-    "repo_id": "Qwen/Qwen3.8-27B"
+    "repo_id": "Qwen/Qwen3.8-27B",
+    "url": "https://huggingface.co/Qwen/Qwen3.8-27B"
   },
   "selection": {
     "state": "selected",
-    "reason": "会話で選定した公式版。派生モデルとの比較基準として保存したい。"
+    "reason": "Qwen系列の公式27.78Bマルチモーダル重みを、同系列の無検閲・重み編集派生と比較するための原本として保存したい。画像・文章を理解できるQwenの実用基準モデルであり、後日の差分解析・追加学習・性能比較の参照軸を維持する価値がある。",
+    "disappearance_risk": "2026-10-30時点で公式Hugging Face repoは公開されている。公開停止予告は未確認のため、消失リスクはGatedの派生版より緊急性が低い。将来の条件変更は可能性であり確認済み事実ではない。",
+    "alternative_comparison": "同系列の単純な量子化版は元重みから再作成できる可能性があるため高精度原本を優先。派生版だけを保存すると変更前後の比較ができない。"
   },
   "review": {
     "state": "unchecked",
     "checked_at": null,
     "unresolved": [
-      "現在の配布状態と完全なコミットSHA",
-      "総パラメータ数・学習段階・構造の一次資料",
-      "利用条件本文と取得権限",
-      "保存対象ファイル・バイト数・配布元ハッシュ",
+      "完全なコミットSHAと選択ファイル全件のバイト数・配布元照合値",
+      "事前学習Baseかpost-trainedかの一次資料での明確化と重みの量子化・処理系互換性",
+      "ライセンス本文と依存の利用条件（Hubのapache-2.0メタデータは確認）",
+      "512GB制約下での3〜4bit推論RAM見積もり（量子化実装・コンテキスト・KV等を含む）",
       "必要な実装・依存・オフライン互換性"
     ]
   },
   "facts": {
-    "total_parameters": null,
+    "total_parameters": 27781400000,
     "training_stage": null,
-    "tasks": [],
+    "tasks": [
+      "image-text-to-text"
+    ],
     "modalities": {
-      "input": [],
-      "output": []
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
     },
-    "family": null,
-    "architecture": null,
+    "family": "Qwen3.8",
+    "architecture": "qwen3_5",
     "parameter_layout": null,
-    "source_relation": null,
-    "license": null
+    "source_relation": "official",
+    "license": "apache-2.0"
   },
-  "evidence": [],
+  "evidence": [
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "type": "publisher_hub_metadata",
+      "verification": "Hub上で公式Qwenのrepo ID、27,781.4M parameters、qwen3_5、image-text-to-text、apache-2.0を確認。将来の規制についての証拠ではない。"
+    }
+  ],
   "representations_requested": [
     {
       "format": "safetensors",
