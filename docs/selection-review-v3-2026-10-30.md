@@ -2,6 +2,19 @@
 
 > **レビュー用・現行未適用。取得/実行/ライセンス同意の承認ではない。** 今回は「分野網羅」を目的から外し、公開停止・Gated化・ライセンス厳格化などに直面しうる固有重みの正規保全に重点を戻した。現行 `catalog/CURRENT.json` は v2（110件追跡・94件有効）。
 
+## 2026-10-31更新：一次資料に基づく追加審査
+
+**現在の選定案は条件付き6件です。下の10月30日作成の4件表は履歴です。** [機械可読の最新案](../catalog/revisions/v3-proposals-2026-10-30.json)が正本であり、正式な現行台帳には未適用です。
+
+- [Kyutai Pocket TTS](https://huggingface.co/kyutai/pocket-tts)：Gated配布版と[機能制限付き公開版](https://huggingface.co/kyutai/pocket-tts-without-voice-cloning)があり、[配布者の公開処理コード](https://huggingface.co/kyutai/pocket-tts-without-voice-cloning/blob/main/remove_voice_cloning_and_push.py)で重みの一部を無効化する事実が確認できる。規制が予定されていることの証拠ではない。
+- [Genpio Voices](https://huggingface.co/GuidenAI/genpio_voice)：手動審査、承認取消、商用契約別途と明記。重みの実在と利用許諾、性能の独立検証は未完了。
+- [Sesame CSM-1B](https://huggingface.co/sesame/csm-1b)と[Orpheus](https://huggingface.co/canopylabs/orpheus-3b-0.1-ft)は配布条件があるが、派生・代替配布の存在を踏まえ、現時点では監視のみに留める。
+- [Aligned-1](https://huggingface.co/alignedsi/Aligned-1)は提供者が重み未公開と明示しており、保存対象には加えない。
+
+既存R0のモデル13件は配布メタデータ上でGatedと再確認した。ただし、法令による将来の禁止、配布停止時期、再取得不能となる確率は確認していない。`catalog/CURRENT.json` と取得承認キューは変更しない。
+
+---
+
 ## 目的と判断の境界
 
 **対象:** 配布元が公開しているモデル・データセットのうち、(a)現にアクセスや利用が制限され、(b)将来さらに条件が変わり得る具体的な能力・制度との接点があり、(c)失うと同等の重みを再現しにくい資産。無制限の人気ランキング、モデルの性能コンテスト、ジャンルの穴埋めではない。
