@@ -7,7 +7,7 @@
     {
       "id": "CohereLabs/aya_dataset",
       "type": "dataset",
-      "sha": "476abc28e9c61b77c600bd5239a3d007c583887d",
+      "sha": "f9ea04583f02a8f86404ff6c58bf75fe637df8a2",
       "raw_tree_items": 8,
       "file_count": 6,
       "repo_bytes": 140160376,
@@ -47,7 +47,8 @@
         }
       ],
       "partial_tree": false,
-      "review": "Dataset rights/PII still unapproved; metadata only."
+      "review": "Dataset rights/PII still unapproved; metadata only.",
+      "revision_sha_observed": "f9ea04583f02a8f86404ff6c58bf75fe637df8a2"
     },
     {
       "id": "EPFLiGHT/fully-open-meditron",
@@ -132,16 +133,17 @@
         }
       ],
       "partial_tree": false,
-      "review": "Dataset rights/PII still unapproved; metadata only."
+      "review": "Dataset rights/PII still unapproved; metadata only.",
+      "revision_sha_observed": "6e2c39d3e3973a58b51134aa436eb3a2dcbf145d"
     },
     {
       "id": "nvidia/OpenCodeInstruct",
       "type": "dataset",
-      "sha": "8cd43b4c877d7b6608478bb0b8f667976328882e",
+      "sha": "8f3ba5bafe4d6e8db46082cf7ae6741bc370604d",
       "raw_tree_items": 50,
       "file_count": 49,
-      "repo_bytes": 6470183496,
-      "tree_items_are_all_files": true,
+      "repo_bytes": null,
+      "tree_items_are_all_files": false,
       "full_revision_sha_present": true,
       "lfs_count": 0,
       "files": [
@@ -392,16 +394,22 @@
         }
       ],
       "partial_tree": false,
-      "review": "Dataset rights/PII still unapproved; metadata only."
+      "review": "Dataset rights/PII still unapproved; metadata only.",
+      "revision_sha_observed": "8f3ba5bafe4d6e8db46082cf7ae6741bc370604d",
+      "possibly_paginated": true,
+      "file_count_partial": 49,
+      "repo_bytes_partial": 6470183496
     },
     {
       "id": "nvidia/OpenMathInstruct-2",
-      "error": "INVALID_ARGUMENT: Error code: INVALID_ARGUMENT; Error: RuntimeException: Error calling MCP tool: [TextContent(type='text', text='Tool \\'firecrawl_scrape\\' execution failed: The URL failed to load in t"
+      "error": "INVALID_ARGUMENT: Error code: INVALID_ARGUMENT; Error: RuntimeException: Error calling MCP tool: [TextContent(type='text', text='Tool \\'firecrawl_scrape\\' execution failed: The URL failed to load in t",
+      "sha": "469216e3f46f4dacf476b382e192485ea51a143e",
+      "revision_sha_observed": "469216e3f46f4dacf476b382e192485ea51a143e"
     },
     {
       "id": "laion/emotional-roleplay-finetuning-dataset",
       "type": "dataset",
-      "sha": "e72b78c0c6c056a54f8db9c541c47130c1f370b3",
+      "sha": "68acdac74d30c12140fe3ebb9a5db30c7247cf1c",
       "raw_tree_items": 14,
       "file_count": 11,
       "repo_bytes": 6667420582,
@@ -466,12 +474,13 @@
         }
       ],
       "partial_tree": false,
-      "review": "Dataset rights/PII still unapproved; metadata only."
+      "review": "Dataset rights/PII still unapproved; metadata only.",
+      "revision_sha_observed": "68acdac74d30c12140fe3ebb9a5db30c7247cf1c"
     },
     {
       "id": "allenai/pixmo-cap",
       "type": "dataset",
-      "sha": "fd3f09ba9ed0058f23b55109ad3d6d0f214a6f1e",
+      "sha": "edce6390d9d5be6c8db0d863fbe62718c88988a4",
       "raw_tree_items": 7,
       "file_count": 6,
       "repo_bytes": 1101532176,
@@ -511,7 +520,9 @@
         }
       ],
       "partial_tree": false,
-      "review": "Dataset rights/PII still unapproved; metadata only."
+      "review": "Dataset rights/PII still unapproved; metadata only.",
+      "revision_sha_observed": "edce6390d9d5be6c8db0d863fbe62718c88988a4"
     }
-  ]
+  ],
+  "provenance_note": "Full repo HEAD commit SHA taken from /api/datasets/{repo_id}?blobs=true. Per-file lastCommit was not used as repository revision. Expanded tree may paginate at 50 items, so exactly 50 rows are marked partial and cannot be used for total bytes."
 }
