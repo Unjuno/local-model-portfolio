@@ -2,8 +2,17 @@
   "schema_version": 1,
   "archive_target_bytes": 3800000000000,
   "minimum_free_bytes": 200000000000,
-  "excluded_total_parameters_at_or_above": 250000000000,
-  "unknown_model_parameters_block_download": true,
+  "inference_memory_policy": {
+    "maximum_estimated_peak_ram_bytes_exclusive": 512000000000,
+    "preferred_estimated_peak_ram_bytes_at_or_below": 400000000000,
+    "screening_quantization_bits": [
+      3,
+      4
+    ],
+    "require_estimate_before_approval": true,
+    "require_backend_context_batch_assumptions": true,
+    "include_os_kv_cache_runtime_overheads": true
+  },
   "unknown_file_sizes_block_download": true,
   "require_pinned_revision": true,
   "require_explicit_file_list": true,
