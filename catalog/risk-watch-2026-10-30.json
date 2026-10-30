@@ -1,0 +1,453 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-30",
+  "scope": "追加のリスク優先調査（ダウンロード承認ではない）",
+  "priority_definitions": {
+    "A": "現在のGatedなど具体的アクセス制約があるため合法な取得条件を優先調査",
+    "A-LEGAL-HOLD": "アクセス制約とデータ権利・更新義務があり、取得は法的条件確認まで停止",
+    "B": "現時点公開だが専門学習・人手注釈・独自能力で消失時損失が大きい",
+    "B-LEGAL-REVIEW": "権利や付属物をさらに調査すべき高価値候補",
+    "HOLD-PRIVACY": "高価値でも会話などに個人情報・同意の疑義が残るため保存承認保留"
+  },
+  "risk_caveat": "Gatedは現在のアクセス制限を意味するが、将来の削除予告や法律による禁止を意味しない。推論上のリスクシナリオと観測事実を分離。",
+  "license_caveat": "license_metadataはHub表示。配布ページの同意条件・元資産の権利が優先される場合がある。CC-BY-NCとCC-BYが資産ごとに異なる場合は個別審査。",
+  "storage": "各候補の正確な取得バイト数・commit SHA・依存は未固定。後でマニフェスト作成。",
+  "github_queue_unchanged": true,
+  "items": [
+    {
+      "repo_id": "orcarouter/Qwen3.8-27B-Uncensored",
+      "asset_kind": "model",
+      "investigation_tier": "A",
+      "access_observed": "gated",
+      "license_metadata": "apache-2.0",
+      "why_preserve": "公式Qwenと比較できるBF16の第三者拒否方向編集済み重み。公開元への依存がある。",
+      "observed_or_hypothesized_risks": [
+        "観察: Gated",
+        "仮説: 無検閲派生の利用条件が変わる可能性"
+      ],
+      "rights_or_safety_review": "モデルカードや配布者の用途条件、元モデルとの関係を再確認",
+      "next_action": "正規アクセス可否を確認してファイル構成と合計バイト数を照査",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": true
+    },
+    {
+      "repo_id": "black-forest-labs/FLUX.2-dev",
+      "asset_kind": "model",
+      "investigation_tier": "A",
+      "access_observed": "gated",
+      "license_metadata": "other",
+      "why_preserve": "32B級の独自画像生成・編集モデル。取得元・実行系の依存が大きい。",
+      "observed_or_hypothesized_risks": [
+        "観察: Gated・独自ライセンス",
+        "仮説: 高性能生成モデルの提供条件変更"
+      ],
+      "rights_or_safety_review": "非商用ライセンス本文、リモートEncoder不要な完全オフライン構成を確認",
+      "next_action": "権利と全付属Encoderを先に調査",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/black-forest-labs/FLUX.2-dev",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": true
+    },
+    {
+      "repo_id": "ideogram-ai/ideogram-4-nf4",
+      "asset_kind": "model",
+      "investigation_tier": "A",
+      "access_observed": "gated",
+      "license_metadata": "other",
+      "why_preserve": "独立した画像生成系列。現在Gatedで原本の形式・再利用条件が特別。",
+      "observed_or_hypothesized_risks": [
+        "観察: Gated・独自ライセンス"
+      ],
+      "rights_or_safety_review": "NF4版が原本全重みではない点、ライセンスと依存を確認",
+      "next_action": "正規承認後に選択対象ファイルを確定",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/ideogram-ai/ideogram-4-nf4",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": true
+    },
+    {
+      "repo_id": "meta-llama/Llama-4-Scout-17B-16E",
+      "asset_kind": "model",
+      "investigation_tier": "A",
+      "access_observed": "gated",
+      "license_metadata": "other",
+      "why_preserve": "Qwenと異なる約109B MoE。独立系列の比較・解析に価値。",
+      "observed_or_hypothesized_risks": [
+        "観察: Gated・独自ライセンス",
+        "仮説: 高性能モデルの配布条件変更"
+      ],
+      "rights_or_safety_review": "Llamaライセンス本文と取得アカウント承認、512GB RAM見積もり",
+      "next_action": "公式コミット、量子化対応、必要バイト数を照査",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": true
+    },
+    {
+      "repo_id": "nvidia/Cosmos-Predict2-2B-Video2World",
+      "asset_kind": "model",
+      "investigation_tier": "A",
+      "access_observed": "gated",
+      "license_metadata": "other",
+      "why_preserve": "動画から世界を予測する別能力。単なる動画生成では代替できない。",
+      "observed_or_hypothesized_risks": [
+        "観察: Gated・独自ライセンス"
+      ],
+      "rights_or_safety_review": "用途別条件とモデル本体・実行資材を確認",
+      "next_action": "完全オフライン保存対象を定義",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/nvidia/Cosmos-Predict2-2B-Video2World",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": true
+    },
+    {
+      "repo_id": "facebook/dinov3-vit7b16-pretrain-lvd1689m",
+      "asset_kind": "model",
+      "investigation_tier": "A",
+      "access_observed": "gated",
+      "license_metadata": "other",
+      "why_preserve": "大型視覚Encoder。画像生成モデルとは異なる汎用視覚表現を保全。",
+      "observed_or_hypothesized_risks": [
+        "観察: Gated・独自ライセンス",
+        "仮説: 元学習データの著作物・画像権利が論点"
+      ],
+      "rights_or_safety_review": "画像学習データの説明とモデル利用ライセンスを区別",
+      "next_action": "完全な重みのサイズ・版・ライセンス確認",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/facebook/dinov3-vit7b16-pretrain-lvd1689m",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false
+    },
+    {
+      "repo_id": "CohereLabs/aya-vision-32b",
+      "asset_kind": "model",
+      "investigation_tier": "A",
+      "access_observed": "gated",
+      "license_metadata": "cc-by-nc-4.0",
+      "why_preserve": "多言語VLMの別系列。商用・非商用境界に注意して保存を検討。",
+      "observed_or_hypothesized_risks": [
+        "観察: Gated・非商用ライセンス"
+      ],
+      "rights_or_safety_review": "用途が非商用条件に適合するか確認",
+      "next_action": "Gated正規アクセスと依存・容量調査",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/CohereLabs/aya-vision-32b",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": true
+    },
+    {
+      "repo_id": "facebook/sam3",
+      "asset_kind": "model",
+      "investigation_tier": "A",
+      "access_observed": "gated",
+      "license_metadata": "other",
+      "why_preserve": "画像・動画セグメンテーション。ほかの生成LLMでは代替しづらい。",
+      "observed_or_hypothesized_risks": [
+        "観察: Gated・独自ライセンス"
+      ],
+      "rights_or_safety_review": "用途・利用制限・依存コードを確認",
+      "next_action": "原本容量と付属ファイル調査",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/facebook/sam3",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": true
+    },
+    {
+      "repo_id": "google/medgemma-4b-it",
+      "asset_kind": "model",
+      "investigation_tier": "A",
+      "access_observed": "gated",
+      "license_metadata": "other",
+      "why_preserve": "医療領域の専門後学習済みモデル。独自の評価・利用条件。",
+      "observed_or_hypothesized_risks": [
+        "観察: Gated・独自利用条件",
+        "仮説: 専門安全性に伴う提供変更"
+      ],
+      "rights_or_safety_review": "研究用保管と臨床使用を厳密に区別",
+      "next_action": "ライセンスと容量確認",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/google/medgemma-4b-it",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": true
+    },
+    {
+      "repo_id": "bigcode/the-stack-v2",
+      "asset_kind": "dataset",
+      "investigation_tier": "A-LEGAL-HOLD",
+      "access_observed": "gated",
+      "license_metadata": "other",
+      "why_preserve": "大規模なコード学習データの出典・ライセンス・削除要求履歴が再現性に重要。",
+      "observed_or_hypothesized_risks": [
+        "観察: Gated",
+        "観察: 一括取得にSoftware Heritage・INRIAとの契約が必要",
+        "観察: 妥当な削除要求への追随義務"
+      ],
+      "rights_or_safety_review": "Gated同意だけでは一括保存を認められない。ソースごとの権利と更新・削除義務を守る",
+      "next_action": "契約可能性・許可範囲・合法なサブセットを確認するまでデータ取得禁止",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/datasets/bigcode/the-stack-v2",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false
+    },
+    {
+      "repo_id": "bigcode/starcoderdata",
+      "asset_kind": "dataset",
+      "investigation_tier": "A-LEGAL-HOLD",
+      "access_observed": "gated",
+      "license_metadata": "other",
+      "why_preserve": "コード学習用データ。権利関係と可用版の更新が重要。",
+      "observed_or_hypothesized_risks": [
+        "観察: Gated",
+        "観察: 利用条件に削除要求後の使用可能版への追随がある"
+      ],
+      "rights_or_safety_review": "使用可能版の通知・帰属表示・データ削除に従い、無条件で永久保存しない",
+      "next_action": "利用規約と許された版・サブセットを確認",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/datasets/bigcode/starcoderdata",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false
+    },
+    {
+      "repo_id": "amphion/Emilia-Dataset",
+      "asset_kind": "dataset",
+      "investigation_tier": "A-LEGAL-HOLD",
+      "access_observed": "gated",
+      "license_metadata": "cc-by-4.0 (hub metadata)",
+      "why_preserve": "音声・話者データの再収集が困難で、音声合成・TTS研究に有用。",
+      "observed_or_hypothesized_risks": [
+        "観察: Gated",
+        "観察: 同意画面でEmilia本体はCC-BY-NC、Emilia-YODASはCC-BYと説明"
+      ],
+      "rights_or_safety_review": "HubメタデータCC-BY-4.0と同意画面のCC-BY-NCの差異を解消。話者同意・著作物・非商用条件を精査",
+      "next_action": "本体の権利条件を確認するまで取得承認保留",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/datasets/amphion/Emilia-Dataset",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false
+    },
+    {
+      "repo_id": "lmsys/lmsys-chat-1m",
+      "asset_kind": "dataset",
+      "investigation_tier": "HOLD-PRIVACY",
+      "access_observed": "gated",
+      "license_metadata": "unknown",
+      "why_preserve": "大規模な人間とLLMの実会話研究データ。会話データは再収集が難しい。",
+      "observed_or_hypothesized_risks": [
+        "観察: Gated",
+        "仮説: 会話データのプライバシーと再配布制限"
+      ],
+      "rights_or_safety_review": "対話中の個人識別情報、同意、公開用途、アクセス条件を精査。無条件取得不可",
+      "next_action": "合法性と匿名化・再配布条件の明確化まで保留",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/datasets/lmsys/lmsys-chat-1m",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false
+    },
+    {
+      "repo_id": "EPFLiGHT/OLMo-2-32B-MeditronFO",
+      "asset_kind": "model",
+      "investigation_tier": "B",
+      "access_observed": "public",
+      "license_metadata": "apache-2.0",
+      "why_preserve": "専門家設計・医学系SFTの完成重み。Baseだけでは同一モデルに戻せない。",
+      "observed_or_hypothesized_risks": [
+        "観察: 独自専門SFT",
+        "仮説: 医療専門性に基づく将来の提供条件変更"
+      ],
+      "rights_or_safety_review": "医療用の正当な研究利用を前提。専門的正確性と臨床安全性は別検証",
+      "next_action": "関連学習コーパスEPFLiGHT/fully-open-meditronとの整合を調査",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/EPFLiGHT/OLMo-2-32B-MeditronFO",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": true
+    },
+    {
+      "repo_id": "OctoMed/OctoMed-32B",
+      "asset_kind": "model",
+      "investigation_tier": "B",
+      "access_observed": "public",
+      "license_metadata": "apache-2.0",
+      "why_preserve": "医療画像・推論SFTで大規模な独自学習トレースを使用。再現コストが高い。",
+      "observed_or_hypothesized_risks": [
+        "観察: 独自マルチモーダル専門SFT",
+        "仮説: 高性能医療生成モデルの制限要因"
+      ],
+      "rights_or_safety_review": "研究用保全。臨床利用の安全性は別問題",
+      "next_action": "重みファイル約66.7GBの実構成とデータ・レシピを照査",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/OctoMed/OctoMed-32B",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": true
+    },
+    {
+      "repo_id": "microsoft/Fara1.5-27B",
+      "asset_kind": "model",
+      "investigation_tier": "B",
+      "access_observed": "public",
+      "license_metadata": "mit",
+      "why_preserve": "GUI自律操作に特化した27B級の学習済み重み。汎用LLMだけでは同じ行動性能を復元しにくい。",
+      "observed_or_hypothesized_risks": [
+        "観察: 自律GUI操作専門モデル",
+        "仮説: 自律エージェントの配布方針変更"
+      ],
+      "rights_or_safety_review": "ネットワーク・端末操作を許可なく実行しない",
+      "next_action": "実行コードとモデルを別々に保存しオフライン評価準備",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/microsoft/Fara1.5-27B",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": true
+    },
+    {
+      "repo_id": "nvidia/GR00T-N1.6-3B",
+      "asset_kind": "model",
+      "investigation_tier": "B-LEGAL-REVIEW",
+      "access_observed": "public",
+      "license_metadata": "unknown",
+      "why_preserve": "2026年のロボットVLA制御専門モデル。現実・合成ロボットデータの再現コストが高い。",
+      "observed_or_hypothesized_risks": [
+        "観察: 専門VLAモデル",
+        "仮説: ロボットの身体制御能力が提供判断の対象となる可能性"
+      ],
+      "rights_or_safety_review": "NVIDIA Foundation Models系の本文ライセンスを確認",
+      "next_action": "各種依存と高精度重みを照査",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/nvidia/GR00T-N1.6-3B",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false
+    },
+    {
+      "repo_id": "lerobot/pi0_base",
+      "asset_kind": "model",
+      "investigation_tier": "B-LEGAL-REVIEW",
+      "access_observed": "public",
+      "license_metadata": "gemma",
+      "why_preserve": "視覚・言語・行動を結合するπ0系ロボット制御のBase。独自アーキテクチャー。",
+      "observed_or_hypothesized_risks": [
+        "観察: ロボット行動特化Base"
+      ],
+      "rights_or_safety_review": "Gemma由来の利用条件を確認。コードの利用規約も別途確認",
+      "next_action": "対応実行コードと版固定を調査",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/lerobot/pi0_base",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false
+    },
+    {
+      "repo_id": "CohereLabs/aya_dataset",
+      "asset_kind": "dataset",
+      "investigation_tier": "B",
+      "access_observed": "public",
+      "license_metadata": "apache-2.0",
+      "why_preserve": "多数言語の人手注釈・翻訳指示データ。消失時に人手の再収集が必要。",
+      "observed_or_hypothesized_risks": [
+        "観察: 多言語人手注釈の独自性",
+        "仮説: 権利条件変更"
+      ],
+      "rights_or_safety_review": "注釈データのライセンス・プライバシーを点検",
+      "next_action": "全splitとファイル容量・改変履歴を固定",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/datasets/CohereLabs/aya_dataset",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false
+    },
+    {
+      "repo_id": "allenai/pixmo-cap",
+      "asset_kind": "dataset",
+      "investigation_tier": "B-LEGAL-REVIEW",
+      "access_observed": "public",
+      "license_metadata": "odc-by",
+      "why_preserve": "人手の高密度画像説明データ。画像と注釈の対の収集コストが高い。",
+      "observed_or_hypothesized_risks": [
+        "観察: 外部画像URL依存",
+        "仮説: 原画像の提供条件やURLが将来変わる"
+      ],
+      "rights_or_safety_review": "注釈の権利と原画像の利用条件・アクセス権を別々に検査",
+      "next_action": "許された画像/注釈サブセットと依存URLの生存を確認",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/datasets/allenai/pixmo-cap",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false
+    },
+    {
+      "repo_id": "allenai/WildChat-1M",
+      "asset_kind": "dataset",
+      "investigation_tier": "HOLD-PRIVACY",
+      "access_observed": "public",
+      "license_metadata": "odc-by",
+      "why_preserve": "大規模な自然発話・対話データ。人の会話記録は再現しにくい。",
+      "observed_or_hypothesized_risks": [
+        "観察: ユーザー生成対話ログ",
+        "仮説: 個人情報・同意・公開条件変更"
+      ],
+      "rights_or_safety_review": "個人情報、権利、匿名化、データ最小化を評価するまで取り込まない",
+      "next_action": "個人情報監査とライセンス確認",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/datasets/allenai/WildChat-1M",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false
+    },
+    {
+      "repo_id": "lerobot/aloha_sim_insertion_human",
+      "asset_kind": "dataset",
+      "investigation_tier": "B",
+      "access_observed": "public",
+      "license_metadata": "mit",
+      "why_preserve": "ロボット操作デモの学習用データ。VLAモデルとの対応が必要。",
+      "observed_or_hypothesized_risks": [
+        "観察: ロボット操作データの独自性"
+      ],
+      "rights_or_safety_review": "シミュレータと再現レシピがあれば重複を控える",
+      "next_action": "VLAモデルとの対応・容量・権利確認",
+      "checked_date": "2026-10-30",
+      "evidence_url": "https://huggingface.co/datasets/lerobot/aloha_sim_insertion_human",
+      "selected_file_bytes": null,
+      "full_revision_sha": null,
+      "download_approved": false,
+      "previously_in_119": false
+    }
+  ]
+}
