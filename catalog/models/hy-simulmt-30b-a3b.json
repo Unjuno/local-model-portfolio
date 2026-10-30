@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "asset_id": "hy-simulmt-30b-a3b",
+  "asset_kind": "model",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "model",
+    "repo_id": "tencent/Hy-SimulMT-30B-A3B",
+    "url": "https://huggingface.co/tencent/Hy-SimulMT-30B-A3B",
+    "revision_sha_observed": "56c233df75bf09e386aa6282b01730b461afc83f"
+  },
+  "selection": {
+    "state": "selected",
+    "reason": "2026-10-26公開の英中同時音声翻訳専用MoE（総約30.4B）。ストリーミング通訳の専門的な後学習と低遅延設計は汎用音声認識+LLMで同じ遅延・翻訳品質を自動的には再現できない。",
+    "disappearance_risk": "現在公開・Apache2.0。リアルタイム音声変換や話者特徴の模倣を巡る将来の配布条件変更は仮説。音声出力・声の複製には外部TTSサービスが必要で、重み単独で完全オフライン通訳可能とは言えない。",
+    "review_priority": "2026-10-30 release/source audit"
+  },
+  "review": {
+    "state": "reviewed",
+    "checked_at": "2026-10-30",
+    "unresolved": [
+      "外部TTS・ASR・コーデックとライセンス",
+      "オフライン翻訳の依存実装",
+      "学習・推論バックエンドと完全ファイル選択"
+    ]
+  },
+  "facts": {
+    "total_parameters": 30394800000,
+    "total_parameters_approx": null,
+    "license_metadata": "apache-2.0 (第三者のQwen3-ASR等の依存は別審査)",
+    "access_status": "public",
+    "format": "BF16 safetensors"
+  },
+  "upstream_inventory": {
+    "all_repo_files_bytes_observed": 60858161407,
+    "selected_bytes": null,
+    "hashes_verified_from_source": false,
+    "reference": "catalog/snapshots/2026-10-30-new-releases.json"
+  },
+  "alternative_representations": [],
+  "evidence": [
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://huggingface.co/tencent/Hy-SimulMT-30B-A3B",
+      "kind": "publisher_repo_card_and_hub_api",
+      "note": "アクセス・ライセンス・全repo容量と改訂IDを確認。将来規制は仮説。"
+    }
+  ],
+  "representations_requested": [],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": []
+  },
+  "manifest_path": null,
+  "download_approved": false
+}
