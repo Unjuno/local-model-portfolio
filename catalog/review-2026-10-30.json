@@ -1,0 +1,2117 @@
+{
+  "schema_version": 1,
+  "prepared_at": "2026-10-30",
+  "purpose": "危機時に再取得困難になる公開重みと再学習可能性を保全する初回一括選定。取得マニフェストではない",
+  "source_method": "Hugging Face Hub repository metadata and first-party model cards; check license text and selected files before approval",
+  "priority_meaning": {
+    "P0": "保存優先。ただしファイルと許可未確定",
+    "P0条件": "優先度高。Gated/独自ライセンス/依存などを確認",
+    "P1": "次点候補",
+    "P1条件": "次点。条件確認後に採否確定",
+    "P2": "後回し",
+    "保留": "現時点で選択を固定しない"
+  },
+  "risk_tag_caveat": "capability_scenarioは高性能化による将来の配布変更を想定する仮説であり、削除予定や規制予測を断定しない",
+  "approx_display_size_gb_caveat": "取得ファイル合計ではなく、tree主表示・主要ファイル・前回調査の概算が混在。足し合わせて予約容量に使わない。選択対象の完全なバイト数はロックマニフェストで取得。",
+  "capacity_budget_gb": [
+    {
+      "category": "汎用LLM・Base・高性能",
+      "limit_gb": 1460
+    },
+    {
+      "category": "専門ファインチューニング・無検閲",
+      "limit_gb": 420
+    },
+    {
+      "category": "画像生成・編集",
+      "limit_gb": 440
+    },
+    {
+      "category": "動画・ワールドモデル",
+      "limit_gb": 430
+    },
+    {
+      "category": "音声・ASR・TTS",
+      "limit_gb": 160
+    },
+    {
+      "category": "OCR・分類・検索・科学",
+      "limit_gb": 160
+    },
+    {
+      "category": "データセット・知識資料",
+      "limit_gb": 510
+    },
+    {
+      "category": "実行環境・復旧資材",
+      "limit_gb": 180
+    },
+    {
+      "category": "部門間調整枠",
+      "limit_gb": 40
+    }
+  ],
+  "capacity_budget_total_gb": 3800,
+  "budget_is_allocation_not_selected_files": true,
+  "hard_disk_total_gb": 4000,
+  "minimum_free_gb": 200,
+  "memory_screening": "約3-4bit時のOS・weights・KV・runtime・working memory peak <512 decimal GB, review >400GB",
+  "permissions": "選定のみ。queue/approved.json は空のまま。Gated acceptance and downloading separate.",
+  "items": [
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "Qwen/Qwen3.8-27B",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 55.6,
+      "size_is_verified_selected_files": false,
+      "reason": "画像動画を理解するQwen系列の高精度基準重み。派生版の比較原本",
+      "risk_and_value_tags": [
+        "reference"
+      ],
+      "evidence_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "Qwen/Qwen3.5-9B-Base",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 19.3,
+      "size_is_verified_selected_files": false,
+      "reason": "小型の事前学習Base。後からSFTや量子化をやり直せる",
+      "risk_and_value_tags": [
+        "base"
+      ],
+      "evidence_url": "https://huggingface.co/Qwen/Qwen3.5-9B-Base",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "Qwen/Qwen3.5-35B-A3B-Base",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 71.9,
+      "size_is_verified_selected_files": false,
+      "reason": "MoEの事前学習Base。Denseと違う再学習資料",
+      "risk_and_value_tags": [
+        "base",
+        "moe"
+      ],
+      "evidence_url": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B-Base",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "Qwen/Qwen3-Coder-Next",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "80B級コード・エージェント専用モデル。機能の独自性が高い",
+      "risk_and_value_tags": [
+        "specialized",
+        "capability_scenario"
+      ],
+      "evidence_url": "https://huggingface.co/Qwen/Qwen3-Coder-Next",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "Qwen/Qwen3.8-Flash-Next",
+      "priority": "P0条件",
+      "license_metadata": "other",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "約180Bの新設計MoEと独自ライセンス。高性能化に伴う方針変更に備える",
+      "risk_and_value_tags": [
+        "custom_license",
+        "novel_architecture",
+        "capability_scenario"
+      ],
+      "evidence_url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "Qwen/Qwen3.5-122B-A10B",
+      "priority": "P1",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 250,
+      "size_is_verified_selected_files": false,
+      "reason": "約125Bの別サイズMoE。容量競合があれば量子化版を検討",
+      "risk_and_value_tags": [
+        "moe"
+      ],
+      "evidence_url": "https://huggingface.co/Qwen/Qwen3.5-122B-A10B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "google/gemma-4-31B",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "Gemma系列のBase重み。Qwenと異なる学習・構造を保全",
+      "risk_and_value_tags": [
+        "base"
+      ],
+      "evidence_url": "https://huggingface.co/google/gemma-4-31B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "google/gemma-4-31B-it",
+      "priority": "P1",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "対話後学習を比較するためのGemma版",
+      "risk_and_value_tags": [
+        "posttrained"
+      ],
+      "evidence_url": "https://huggingface.co/google/gemma-4-31B-it",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "google/gemma-4-26B-A4B",
+      "priority": "P1",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "Gemma系列のMoE。31B Denseと比較する独立構成",
+      "risk_and_value_tags": [
+        "moe"
+      ],
+      "evidence_url": "https://huggingface.co/google/gemma-4-26B-A4B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "meta-models/Muse-Glimmer-30B",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "Meta系公開重みの30B級別系列。性能比較と移植性",
+      "risk_and_value_tags": [
+        "reference"
+      ],
+      "evidence_url": "https://huggingface.co/meta-models/Muse-Glimmer-30B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "openai/gpt-oss-120b",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "MXFP4の約117B MoE。保存効率と別設計の推論研究",
+      "risk_and_value_tags": [
+        "moe",
+        "capability_scenario"
+      ],
+      "evidence_url": "https://huggingface.co/openai/gpt-oss-120b",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "openai/gpt-oss-20b",
+      "priority": "P1",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "約21Bの小型モデル。120Bとのスケール比較",
+      "risk_and_value_tags": [
+        "moe"
+      ],
+      "evidence_url": "https://huggingface.co/openai/gpt-oss-20b",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "mistralai/Mistral-Small-4-119B-2603",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 242,
+      "size_is_verified_selected_files": false,
+      "reason": "約119B MoE。複合能力を持つ独立ファミリー",
+      "risk_and_value_tags": [
+        "moe",
+        "capability_scenario"
+      ],
+      "evidence_url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "mistralai/Devstral-Small-2-24B-Instruct-2512",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 51.6,
+      "size_is_verified_selected_files": false,
+      "reason": "コード・ソフト開発特化の後学習済みモデル",
+      "risk_and_value_tags": [
+        "specialized",
+        "capability_scenario"
+      ],
+      "evidence_url": "https://huggingface.co/mistralai/Devstral-Small-2-24B-Instruct-2512",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "zai-org/GLM-4.7-Flash",
+      "priority": "P0",
+      "license_metadata": "mit",
+      "access_status": "public",
+      "approx_display_size_gb": 62.5,
+      "size_is_verified_selected_files": false,
+      "reason": "GLM系列の独立した実用モデル",
+      "risk_and_value_tags": [
+        "reference"
+      ],
+      "evidence_url": "https://huggingface.co/zai-org/GLM-4.7-Flash",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "meta-llama/Llama-4-Scout-17B-16E",
+      "priority": "P0条件",
+      "license_metadata": "other",
+      "access_status": "gated",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "約109Bの公式MoE原本。現在Gatedで再アクセスが保証されない",
+      "risk_and_value_tags": [
+        "gated",
+        "moe",
+        "custom_license"
+      ],
+      "evidence_url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "CohereLabs/aya-vision-32b",
+      "priority": "P0条件",
+      "license_metadata": "cc-by-nc-4.0",
+      "access_status": "gated",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "多言語VLM。Gatedかつ非商用条件で別系列の能力を保全",
+      "risk_and_value_tags": [
+        "gated",
+        "custom_license",
+        "specialized"
+      ],
+      "evidence_url": "https://huggingface.co/CohereLabs/aya-vision-32b",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "MiniMaxAI/MiniMax-M2.7",
+      "priority": "P1条件",
+      "license_metadata": "other",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "約229Bの高性能候補。原本容量が大きく権利と実行可能性を確認",
+      "risk_and_value_tags": [
+        "custom_license",
+        "capability_scenario"
+      ],
+      "evidence_url": "https://huggingface.co/MiniMaxAI/MiniMax-M2.7",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "allenai/Olmo-3-1125-32B",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 64.5,
+      "size_is_verified_selected_files": false,
+      "reason": "研究公開度の高いOLMo系列。解析・再学習に有用",
+      "risk_and_value_tags": [
+        "base"
+      ],
+      "evidence_url": "https://huggingface.co/allenai/Olmo-3-1125-32B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "ByteDance-Seed/Seed-OSS-36B-Base",
+      "priority": "P1",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "36Bの別系列Base。OLMo等との重複予算次第",
+      "risk_and_value_tags": [
+        "base"
+      ],
+      "evidence_url": "https://huggingface.co/ByteDance-Seed/Seed-OSS-36B-Base",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+      "priority": "P1",
+      "license_metadata": "mit",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "32B級推論蒸留の研究資料。元モデルと異なる推論後学習",
+      "risk_and_value_tags": [
+        "distilled",
+        "specialized"
+      ],
+      "evidence_url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "microsoft/phi-4",
+      "priority": "P1",
+      "license_metadata": "mit",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "小型Denseの別系列。個人向け比較基準",
+      "risk_and_value_tags": [
+        "reference"
+      ],
+      "evidence_url": "https://huggingface.co/microsoft/phi-4",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "言語・高性能・Base",
+      "repo_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "priority": "保留",
+      "license_metadata": "mit",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "総約763B。実機RAMと原本容量の見積りが未確定で3.8TB予算への負担大",
+      "risk_and_value_tags": [
+        "capability_scenario",
+        "large"
+      ],
+      "evidence_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "無検閲・派生",
+      "repo_id": "orcarouter/Qwen3.8-27B-Uncensored",
+      "priority": "P0条件",
+      "license_metadata": "apache-2.0",
+      "access_status": "gated",
+      "approx_display_size_gb": 55.6,
+      "size_is_verified_selected_files": false,
+      "reason": "現在GatedのBF16重み。独自拒否方向編集と元版を比較",
+      "risk_and_value_tags": [
+        "gated",
+        "weight_edit",
+        "third_party"
+      ],
+      "evidence_url": "https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "無検閲・派生",
+      "repo_id": "JonathanColetti/Qwen3.8-27B-Uncensored",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 55.6,
+      "size_is_verified_selected_files": false,
+      "reason": "Heretic最適化のBF16版。Orca版とは編集方法が異なる",
+      "risk_and_value_tags": [
+        "weight_edit",
+        "third_party"
+      ],
+      "evidence_url": "https://huggingface.co/JonathanColetti/Qwen3.8-27B-Uncensored",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "無検閲・派生",
+      "repo_id": "saidutta69/LFM3-1.7B-heretic",
+      "priority": "P0",
+      "license_metadata": "other",
+      "access_status": "public",
+      "approx_display_size_gb": 3.46,
+      "size_is_verified_selected_files": false,
+      "reason": "異種ハイブリッド構造への拒否方向編集。再現レシピも公開",
+      "risk_and_value_tags": [
+        "weight_edit",
+        "specialized"
+      ],
+      "evidence_url": "https://huggingface.co/saidutta69/LFM3-1.7B-heretic",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "無検閲・派生",
+      "repo_id": "AtomicChat/LFM3-1.7B-Uncensored-GGUF",
+      "priority": "P1",
+      "license_metadata": "other",
+      "access_status": "public",
+      "approx_display_size_gb": 2.72,
+      "size_is_verified_selected_files": false,
+      "reason": "新型LFM3の量子化派生。方法と元版の照合資料",
+      "risk_and_value_tags": [
+        "weight_edit",
+        "third_party"
+      ],
+      "evidence_url": "https://huggingface.co/AtomicChat/LFM3-1.7B-Uncensored-GGUF",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "無検閲・派生",
+      "repo_id": "dphn/Dolphin3.0-Mistral-24B",
+      "priority": "P0条件",
+      "license_metadata": "unknown",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "Mistral系に独自追加学習したDolphin。元版だけでは学習成果を復元できない",
+      "risk_and_value_tags": [
+        "specialized_finetune",
+        "license_review"
+      ],
+      "evidence_url": "https://huggingface.co/dphn/Dolphin3.0-Mistral-24B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "無検閲・派生",
+      "repo_id": "dphn/Dolphin3.0-Llama3.1-8B",
+      "priority": "P1条件",
+      "license_metadata": "llama3.1",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "Llama系Dolphin。小容量で独自SFTを記録",
+      "risk_and_value_tags": [
+        "specialized_finetune",
+        "custom_license"
+      ],
+      "evidence_url": "https://huggingface.co/dphn/Dolphin3.0-Llama3.1-8B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "無検閲・派生",
+      "repo_id": "HauhauCS/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF",
+      "priority": "P2",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "高攻撃性の別GGUF調整。最初はBF16派生2種を優先",
+      "risk_and_value_tags": [
+        "weight_edit",
+        "duplicate"
+      ],
+      "evidence_url": "https://huggingface.co/HauhauCS/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "無検閲・派生",
+      "repo_id": "orcarouter/Qwen3.8-Flash-Next-Uncensored",
+      "priority": "保留",
+      "license_metadata": "apache-2.0",
+      "access_status": "gated",
+      "approx_display_size_gb": 336,
+      "size_is_verified_selected_files": false,
+      "reason": "約180BのBF16派生。上流otherと派生Apache表示の適合性を先に検証",
+      "risk_and_value_tags": [
+        "gated",
+        "license_mismatch",
+        "weight_edit"
+      ],
+      "evidence_url": "https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "LFM・構造多様性",
+      "repo_id": "LiquidAI/LFM3-1.7B-Base",
+      "priority": "P0",
+      "license_metadata": "other",
+      "access_status": "public",
+      "approx_display_size_gb": 3.48,
+      "size_is_verified_selected_files": false,
+      "reason": "2026年公開のtri-hybrid事前学習Base。小型で解析しやすい",
+      "risk_and_value_tags": [
+        "base",
+        "novel_architecture",
+        "custom_license"
+      ],
+      "evidence_url": "https://huggingface.co/LiquidAI/LFM3-1.7B-Base",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "LFM・構造多様性",
+      "repo_id": "LiquidAI/LFM3-1.7B",
+      "priority": "P0",
+      "license_metadata": "other",
+      "access_status": "public",
+      "approx_display_size_gb": 3.48,
+      "size_is_verified_selected_files": false,
+      "reason": "同系列の後学習重み。Baseと挙動差を比較",
+      "risk_and_value_tags": [
+        "posttrained",
+        "novel_architecture"
+      ],
+      "evidence_url": "https://huggingface.co/LiquidAI/LFM3-1.7B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "LFM・構造多様性",
+      "repo_id": "LiquidAI/LFM3-VL-2B",
+      "priority": "P0",
+      "license_metadata": "other",
+      "access_status": "public",
+      "approx_display_size_gb": 3.84,
+      "size_is_verified_selected_files": false,
+      "reason": "LFMの画像理解専門モデル。構造の多様性",
+      "risk_and_value_tags": [
+        "specialized",
+        "novel_architecture"
+      ],
+      "evidence_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "LFM・構造多様性",
+      "repo_id": "LiquidAI/LFM3-Audio-2B",
+      "priority": "P0",
+      "license_metadata": "other",
+      "access_status": "public",
+      "approx_display_size_gb": 4,
+      "size_is_verified_selected_files": false,
+      "reason": "LFM音声エンコーダ／生成系の実装を保存",
+      "risk_and_value_tags": [
+        "specialized",
+        "novel_architecture"
+      ],
+      "evidence_url": "https://huggingface.co/LiquidAI/LFM3-Audio-2B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "LFM・構造多様性",
+      "repo_id": "LiquidAI/LFM3-Omni-2B",
+      "priority": "P0",
+      "license_metadata": "other",
+      "access_status": "public",
+      "approx_display_size_gb": 4.33,
+      "size_is_verified_selected_files": false,
+      "reason": "音声・画像・動画入力と音声出力を統合",
+      "risk_and_value_tags": [
+        "specialized",
+        "novel_architecture"
+      ],
+      "evidence_url": "https://huggingface.co/LiquidAI/LFM3-Omni-2B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "LFM・構造多様性",
+      "repo_id": "LiquidAI/d1-2B",
+      "priority": "P1",
+      "license_metadata": "other",
+      "access_status": "public",
+      "approx_display_size_gb": 3.84,
+      "size_is_verified_selected_files": false,
+      "reason": "LFM由来の判断・抽出特化後学習重み",
+      "risk_and_value_tags": [
+        "specialized_finetune"
+      ],
+      "evidence_url": "https://huggingface.co/LiquidAI/d1-2B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "LFM・構造多様性",
+      "repo_id": "LiquidAI/d1-Omni-2B",
+      "priority": "P1",
+      "license_metadata": "other",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "判断系のOmni版。利用目的が独特",
+      "risk_and_value_tags": [
+        "specialized_finetune"
+      ],
+      "evidence_url": "https://huggingface.co/LiquidAI/d1-Omni-2B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "LFM・構造多様性",
+      "repo_id": "answerdotai/ModernBERT-large",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 1.58,
+      "size_is_verified_selected_files": false,
+      "reason": "分類・検索・特徴抽出向けの小型Encoder",
+      "risk_and_value_tags": [
+        "encoder"
+      ],
+      "evidence_url": "https://huggingface.co/answerdotai/ModernBERT-large",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "LFM・構造多様性",
+      "repo_id": "tohoku-nlp/bert-base-japanese-v3",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "日本語BERT。独自データで追加学習しやすい",
+      "risk_and_value_tags": [
+        "encoder",
+        "specialized"
+      ],
+      "evidence_url": "https://huggingface.co/tohoku-nlp/bert-base-japanese-v3",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "LFM・構造多様性",
+      "repo_id": "microsoft/deberta-v3-base",
+      "priority": "P1",
+      "license_metadata": "mit",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "BERTと異なるEncoder。判別・分類性能比較",
+      "risk_and_value_tags": [
+        "encoder"
+      ],
+      "evidence_url": "https://huggingface.co/microsoft/deberta-v3-base",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "LFM・構造多様性",
+      "repo_id": "google-t5/t5-3b",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "Encoder-Decoderの事前学習構造を保全",
+      "risk_and_value_tags": [
+        "encoder_decoder"
+      ],
+      "evidence_url": "https://huggingface.co/google-t5/t5-3b",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "LFM・構造多様性",
+      "repo_id": "google/flan-t5-xxl",
+      "priority": "P1",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "Instruction tuning済みEncoder-Decoderの大型比較対象",
+      "risk_and_value_tags": [
+        "encoder_decoder",
+        "specialized_finetune"
+      ],
+      "evidence_url": "https://huggingface.co/google/flan-t5-xxl",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "LFM・構造多様性",
+      "repo_id": "state-spaces/mamba-2.8b",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "SSM系でAttention以外の系列を保全",
+      "risk_and_value_tags": [
+        "ssm",
+        "novel_architecture"
+      ],
+      "evidence_url": "https://huggingface.co/state-spaces/mamba-2.8b",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "LFM・構造多様性",
+      "repo_id": "RWKV/RWKV7-7.2B-20260805",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 14.4,
+      "size_is_verified_selected_files": false,
+      "reason": "RWKV7の再帰型構造。Transformerと異なる推論特性",
+      "risk_and_value_tags": [
+        "recurrent",
+        "novel_architecture"
+      ],
+      "evidence_url": "https://huggingface.co/RWKV/RWKV7-7.2B-20260805",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "LFM・構造多様性",
+      "repo_id": "GSAI-ML/iLLaDA-8B-Base",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "拡散言語モデルのBase。独自生成方式",
+      "risk_and_value_tags": [
+        "diffusion_language",
+        "novel_architecture"
+      ],
+      "evidence_url": "https://huggingface.co/GSAI-ML/iLLaDA-8B-Base",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "LFM・構造多様性",
+      "repo_id": "hazyresearch/ncm-checkpoints",
+      "priority": "P0",
+      "license_metadata": "mit",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "次概念モデルNCMの段階的生成研究資料",
+      "risk_and_value_tags": [
+        "novel_architecture",
+        "research"
+      ],
+      "evidence_url": "https://huggingface.co/hazyresearch/ncm-checkpoints",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "専門・追加学習",
+      "repo_id": "EPFLiGHT/OLMo-2-32B-MeditronFO",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "臨床領域の追加学習。監査可能なデータ・レシピ付き",
+      "risk_and_value_tags": [
+        "specialized_finetune",
+        "medical"
+      ],
+      "evidence_url": "https://huggingface.co/EPFLiGHT/OLMo-2-32B-MeditronFO",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "専門・追加学習",
+      "repo_id": "EPFLiGHT/Apertus-70B-MeditronFO",
+      "priority": "P1",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "約71Bの異なる医療特化基盤。大容量なので比較価値と予算を審査",
+      "risk_and_value_tags": [
+        "specialized_finetune",
+        "medical"
+      ],
+      "evidence_url": "https://huggingface.co/EPFLiGHT/Apertus-70B-MeditronFO",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "専門・追加学習",
+      "repo_id": "OctoMed/OctoMed-32B",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 66.7,
+      "size_is_verified_selected_files": false,
+      "reason": "画像と医療推論を結びつけた32B SFT。学習トレースの再現コストが大きい",
+      "risk_and_value_tags": [
+        "specialized_finetune",
+        "medical",
+        "vision"
+      ],
+      "evidence_url": "https://huggingface.co/OctoMed/OctoMed-32B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "専門・追加学習",
+      "repo_id": "Aikyam-Lab/CURE-MED-32B",
+      "priority": "P1条件",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 4.3,
+      "size_is_verified_selected_files": false,
+      "reason": "多言語医療推論の専門アダプター。元のQwen2.5-32Bが別途必要",
+      "risk_and_value_tags": [
+        "specialized_finetune",
+        "adapter",
+        "dependency"
+      ],
+      "evidence_url": "https://huggingface.co/Aikyam-Lab/CURE-MED-32B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "専門・追加学習",
+      "repo_id": "EPFLiGHT/Meditron3-70B",
+      "priority": "P1条件",
+      "license_metadata": "llama3.1",
+      "access_status": "gated",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "Llama系列の医療SFT。Gatedと専門学習成果の両面で保全候補",
+      "risk_and_value_tags": [
+        "gated",
+        "specialized_finetune",
+        "medical"
+      ],
+      "evidence_url": "https://huggingface.co/EPFLiGHT/Meditron3-70B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "専門・追加学習",
+      "repo_id": "microsoft/Fara1.5-27B",
+      "priority": "P0",
+      "license_metadata": "mit",
+      "access_status": "public",
+      "approx_display_size_gb": 54.7,
+      "size_is_verified_selected_files": false,
+      "reason": "PC操作・GUIエージェント特化。汎用会話モデルとは異なる行動能力",
+      "risk_and_value_tags": [
+        "specialized_finetune",
+        "capability_scenario"
+      ],
+      "evidence_url": "https://huggingface.co/microsoft/Fara1.5-27B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "専門・追加学習",
+      "repo_id": "microsoft/AesCode-32B",
+      "priority": "P1",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 66.7,
+      "size_is_verified_selected_files": false,
+      "reason": "コード開発特化。独自のコード学習成果を候補に",
+      "risk_and_value_tags": [
+        "specialized_finetune",
+        "capability_scenario"
+      ],
+      "evidence_url": "https://huggingface.co/microsoft/AesCode-32B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "専門・追加学習",
+      "repo_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "priority": "P1",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 61.1,
+      "size_is_verified_selected_files": false,
+      "reason": "高効率MoEコード特化。Coder-Nextと用途重複を比較",
+      "risk_and_value_tags": [
+        "specialized",
+        "moe"
+      ],
+      "evidence_url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "専門・追加学習",
+      "repo_id": "bigcode/starcoder2-15b",
+      "priority": "P1",
+      "license_metadata": "bigcode-openrail-m",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "コード学習に特化した別系列。独自利用条件を確認",
+      "risk_and_value_tags": [
+        "specialized",
+        "custom_license"
+      ],
+      "evidence_url": "https://huggingface.co/bigcode/starcoder2-15b",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "専門・追加学習",
+      "repo_id": "defog/llama-3-sqlcoder-8b",
+      "priority": "P1条件",
+      "license_metadata": "cc-by-sa-4.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "自然言語からSQLへの特化SFT。基盤ライセンスも別途確認",
+      "risk_and_value_tags": [
+        "specialized_finetune",
+        "custom_license"
+      ],
+      "evidence_url": "https://huggingface.co/defog/llama-3-sqlcoder-8b",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "専門・追加学習",
+      "repo_id": "microsoft/UserRepGen-4B",
+      "priority": "P2",
+      "license_metadata": "mit",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "ユーザー表現生成の特化モデル。研究範囲との関連を追加評価",
+      "risk_and_value_tags": [
+        "specialized"
+      ],
+      "evidence_url": "https://huggingface.co/microsoft/UserRepGen-4B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "画像生成・画像編集",
+      "repo_id": "black-forest-labs/FLUX.2-dev",
+      "priority": "P0条件",
+      "license_metadata": "other",
+      "access_status": "gated",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "高性能画像生成・編集基盤。現在Gated・独自の非商用条件",
+      "risk_and_value_tags": [
+        "gated",
+        "custom_license",
+        "capability_scenario"
+      ],
+      "evidence_url": "https://huggingface.co/black-forest-labs/FLUX.2-dev",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "画像生成・画像編集",
+      "repo_id": "black-forest-labs/FLUX.2-klein-9B",
+      "priority": "P0条件",
+      "license_metadata": "other",
+      "access_status": "gated",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "小型版とはライセンスも異なる9B。高品質生成能力",
+      "risk_and_value_tags": [
+        "gated",
+        "custom_license"
+      ],
+      "evidence_url": "https://huggingface.co/black-forest-labs/FLUX.2-klein-9B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "画像生成・画像編集",
+      "repo_id": "black-forest-labs/FLUX.2-klein-4B",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 23.7,
+      "size_is_verified_selected_files": false,
+      "reason": "公開利用条件が明確な別画像生成モデル",
+      "risk_and_value_tags": [
+        "novel_architecture"
+      ],
+      "evidence_url": "https://huggingface.co/black-forest-labs/FLUX.2-klein-4B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "画像生成・画像編集",
+      "repo_id": "ideogram-ai/ideogram-4-nf4",
+      "priority": "P0条件",
+      "license_metadata": "other",
+      "access_status": "gated",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "Ideogram系列の画像・文字表現。NF4形式で容量要確認",
+      "risk_and_value_tags": [
+        "gated",
+        "custom_license",
+        "specialized"
+      ],
+      "evidence_url": "https://huggingface.co/ideogram-ai/ideogram-4-nf4",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "画像生成・画像編集",
+      "repo_id": "Qwen/Qwen-Image-2.1",
+      "priority": "P0条件",
+      "license_metadata": "other",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "新しい画像生成・編集一体型。独自Researchライセンスを精査",
+      "risk_and_value_tags": [
+        "custom_license",
+        "specialized"
+      ],
+      "evidence_url": "https://huggingface.co/Qwen/Qwen-Image-2.1",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "画像生成・画像編集",
+      "repo_id": "Qwen/Qwen-Image-2512",
+      "priority": "P1",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "以前のApache系列画像生成。後から復元・調整しやすい",
+      "risk_and_value_tags": [
+        "reference"
+      ],
+      "evidence_url": "https://huggingface.co/Qwen/Qwen-Image-2512",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "画像生成・画像編集",
+      "repo_id": "Tongyi-MAI/Z-Image",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "別構造の小型画像生成。高い保存効率",
+      "risk_and_value_tags": [
+        "novel_architecture"
+      ],
+      "evidence_url": "https://huggingface.co/Tongyi-MAI/Z-Image",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "画像生成・画像編集",
+      "repo_id": "stabilityai/stable-diffusion-3.5-large",
+      "priority": "P1条件",
+      "license_metadata": "other",
+      "access_status": "gated",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "Stable Diffusion系の大型モデル。Gatedだが画像群の重複を確認",
+      "risk_and_value_tags": [
+        "gated",
+        "custom_license"
+      ],
+      "evidence_url": "https://huggingface.co/stabilityai/stable-diffusion-3.5-large",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "動画・ワールドモデル",
+      "repo_id": "Wan-AI/Wan2.2-TI2V-5B",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "動画生成の小型実用系。テキスト・画像から動画",
+      "risk_and_value_tags": [
+        "specialized"
+      ],
+      "evidence_url": "https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "動画・ワールドモデル",
+      "repo_id": "Wan-AI/Wan2.2-T2V-A14B",
+      "priority": "P1",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 126,
+      "size_is_verified_selected_files": false,
+      "reason": "高品質動画生成系。全リポジトリは126GBと大きい",
+      "risk_and_value_tags": [
+        "specialized",
+        "high_storage"
+      ],
+      "evidence_url": "https://huggingface.co/Wan-AI/Wan2.2-T2V-A14B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "動画・ワールドモデル",
+      "repo_id": "Lightricks/LTX-2.3",
+      "priority": "P0条件",
+      "license_metadata": "other",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "22B級映像と音声の同時生成。独自ライセンスと依存を要確認",
+      "risk_and_value_tags": [
+        "custom_license",
+        "specialized"
+      ],
+      "evidence_url": "https://huggingface.co/Lightricks/LTX-2.3",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "動画・ワールドモデル",
+      "repo_id": "nvidia/Cosmos-Predict2-2B-Video2World",
+      "priority": "P0条件",
+      "license_metadata": "other",
+      "access_status": "gated",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "Gatedのworld prediction資料。動画生成と物理世界モデリングを分けて保存",
+      "risk_and_value_tags": [
+        "gated",
+        "custom_license",
+        "world_model"
+      ],
+      "evidence_url": "https://huggingface.co/nvidia/Cosmos-Predict2-2B-Video2World",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "動画・ワールドモデル",
+      "repo_id": "nvidia/Cosmos-Predict2.5-14B",
+      "priority": "P1条件",
+      "license_metadata": "other",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "大きなworld foundation model。配布リポジトリと依存を審査",
+      "risk_and_value_tags": [
+        "custom_license",
+        "world_model"
+      ],
+      "evidence_url": "https://huggingface.co/nvidia/Cosmos-Predict2.5-14B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "動画・ワールドモデル",
+      "repo_id": "tencent/HunyuanVideo-1.5",
+      "priority": "P1条件",
+      "license_metadata": "other",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "Wan・LTXと異なる動画生成系列",
+      "risk_and_value_tags": [
+        "custom_license",
+        "specialized"
+      ],
+      "evidence_url": "https://huggingface.co/tencent/HunyuanVideo-1.5",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "動画・ワールドモデル",
+      "repo_id": "facebook/vjepa2-vitg-fpc64-384",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 4.14,
+      "size_is_verified_selected_files": false,
+      "reason": "動画から特徴を学ぶ非生成モデル。world modelの基礎研究",
+      "risk_and_value_tags": [
+        "world_model",
+        "encoder"
+      ],
+      "evidence_url": "https://huggingface.co/facebook/vjepa2-vitg-fpc64-384",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "視覚・OCR・分類・検索",
+      "repo_id": "deepseek-ai/DeepSeek-OCR-2",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 6.78,
+      "size_is_verified_selected_files": false,
+      "reason": "文書OCR用の特殊視覚言語モデル",
+      "risk_and_value_tags": [
+        "specialized",
+        "ocr"
+      ],
+      "evidence_url": "https://huggingface.co/deepseek-ai/DeepSeek-OCR-2",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "視覚・OCR・分類・検索",
+      "repo_id": "PaddlePaddle/PaddleOCR-VL-1.5",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 1.92,
+      "size_is_verified_selected_files": false,
+      "reason": "小容量の文書・表・式認識。別ランタイムを保全",
+      "risk_and_value_tags": [
+        "specialized",
+        "ocr"
+      ],
+      "evidence_url": "https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.5",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "視覚・OCR・分類・検索",
+      "repo_id": "zai-org/GLM-OCR",
+      "priority": "P1",
+      "license_metadata": "mit",
+      "access_status": "public",
+      "approx_display_size_gb": 2.65,
+      "size_is_verified_selected_files": false,
+      "reason": "別方式の軽量OCR。比較評価",
+      "risk_and_value_tags": [
+        "specialized",
+        "ocr"
+      ],
+      "evidence_url": "https://huggingface.co/zai-org/GLM-OCR",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "視覚・OCR・分類・検索",
+      "repo_id": "facebook/sam3",
+      "priority": "P0条件",
+      "license_metadata": "other",
+      "access_status": "gated",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "画像と動画の領域分割。Gatedで別種の重要能力",
+      "risk_and_value_tags": [
+        "gated",
+        "custom_license",
+        "segmentation"
+      ],
+      "evidence_url": "https://huggingface.co/facebook/sam3",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "視覚・OCR・分類・検索",
+      "repo_id": "tencent/WeVisDoc-4B",
+      "priority": "P1",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "視覚文書処理の専門モデル",
+      "risk_and_value_tags": [
+        "specialized",
+        "ocr"
+      ],
+      "evidence_url": "https://huggingface.co/tencent/WeVisDoc-4B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "視覚・OCR・分類・検索",
+      "repo_id": "google/siglip2-base-patch16-224",
+      "priority": "P1",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "視覚Encoderの比較基準",
+      "risk_and_value_tags": [
+        "encoder"
+      ],
+      "evidence_url": "https://huggingface.co/google/siglip2-base-patch16-224",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "視覚・OCR・分類・検索",
+      "repo_id": "BAAI/bge-m3",
+      "priority": "P0",
+      "license_metadata": "mit",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "多言語検索と埋め込み。RAG基盤",
+      "risk_and_value_tags": [
+        "encoder",
+        "retrieval"
+      ],
+      "evidence_url": "https://huggingface.co/BAAI/bge-m3",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "視覚・OCR・分類・検索",
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "小型Embedding。汎用LLMと異なる重要機能",
+      "risk_and_value_tags": [
+        "retrieval"
+      ],
+      "evidence_url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "視覚・OCR・分類・検索",
+      "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "検索結果の再評価専用。Embeddingだけでは代替できない",
+      "risk_and_value_tags": [
+        "retrieval",
+        "specialized"
+      ],
+      "evidence_url": "https://huggingface.co/Qwen/Qwen3-Reranker-0.6B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "視覚・OCR・分類・検索",
+      "repo_id": "intfloat/multilingual-e5-base",
+      "priority": "P1",
+      "license_metadata": "mit",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "多言語Encoder。比較用の検索モデル",
+      "risk_and_value_tags": [
+        "retrieval",
+        "encoder"
+      ],
+      "evidence_url": "https://huggingface.co/intfloat/multilingual-e5-base",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "音声・ASR・TTS",
+      "repo_id": "openai/whisper-large-v3-turbo",
+      "priority": "P0",
+      "license_metadata": "mit",
+      "access_status": "public",
+      "approx_display_size_gb": 1.62,
+      "size_is_verified_selected_files": false,
+      "reason": "ローカル音声認識・翻訳の実用基準",
+      "risk_and_value_tags": [
+        "asr"
+      ],
+      "evidence_url": "https://huggingface.co/openai/whisper-large-v3-turbo",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "音声・ASR・TTS",
+      "repo_id": "Qwen/Qwen3-ASR-1.7B",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 4.7,
+      "size_is_verified_selected_files": false,
+      "reason": "Whisperと異なる日本語対応ASR",
+      "risk_and_value_tags": [
+        "asr"
+      ],
+      "evidence_url": "https://huggingface.co/Qwen/Qwen3-ASR-1.7B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "音声・ASR・TTS",
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "声質・スタイル指定のTTS専門モデル",
+      "risk_and_value_tags": [
+        "tts",
+        "specialized"
+      ],
+      "evidence_url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "音声・ASR・TTS",
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "声の指定・多言語音声合成の別構成",
+      "risk_and_value_tags": [
+        "tts",
+        "specialized"
+      ],
+      "evidence_url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "音声・ASR・TTS",
+      "repo_id": "microsoft/VibeVoice-1.5B",
+      "priority": "P0",
+      "license_metadata": "mit",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "長尺・複数話者TTSの専門構造",
+      "risk_and_value_tags": [
+        "tts",
+        "specialized"
+      ],
+      "evidence_url": "https://huggingface.co/microsoft/VibeVoice-1.5B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "音声・ASR・TTS",
+      "repo_id": "microsoft/VibeVoice-ASR-Streaming-1.5B",
+      "priority": "P1",
+      "license_metadata": "mit",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "低遅延ストリーミングASR",
+      "risk_and_value_tags": [
+        "asr",
+        "specialized"
+      ],
+      "evidence_url": "https://huggingface.co/microsoft/VibeVoice-ASR-Streaming-1.5B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "音声・ASR・TTS",
+      "repo_id": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+      "priority": "P0条件",
+      "license_metadata": "other",
+      "access_status": "public",
+      "approx_display_size_gb": 67.5,
+      "size_is_verified_selected_files": false,
+      "reason": "高性能な多言語ASR・翻訳・話者分離。独自条件を精査",
+      "risk_and_value_tags": [
+        "custom_license",
+        "specialized",
+        "capability_scenario"
+      ],
+      "evidence_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "音声・ASR・TTS",
+      "repo_id": "SWivid/F5-TTS",
+      "priority": "P1条件",
+      "license_metadata": "cc-by-nc-4.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "音声生成の別方式。クローン可能性ゆえ利用条件に注意",
+      "risk_and_value_tags": [
+        "custom_license",
+        "tts"
+      ],
+      "evidence_url": "https://huggingface.co/SWivid/F5-TTS",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "音声・ASR・TTS",
+      "repo_id": "hexgrad/Kokoro-82M",
+      "priority": "P1",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "極小TTS。CPU実行比較に有用",
+      "risk_and_value_tags": [
+        "tts"
+      ],
+      "evidence_url": "https://huggingface.co/hexgrad/Kokoro-82M",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "音声・ASR・TTS",
+      "repo_id": "coqui/XTTS-v2",
+      "priority": "P1条件",
+      "license_metadata": "other",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "多言語音声クローン特化。独自のライセンスとコード継続性を確認",
+      "risk_and_value_tags": [
+        "custom_license",
+        "tts",
+        "capability_scenario"
+      ],
+      "evidence_url": "https://huggingface.co/coqui/XTTS-v2",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "科学・時系列",
+      "repo_id": "facebook/esm2_t33_650M_UR50D",
+      "priority": "P0",
+      "license_metadata": "mit",
+      "access_status": "public",
+      "approx_display_size_gb": 2.61,
+      "size_is_verified_selected_files": false,
+      "reason": "タンパク質配列表現。言語LLMとは独立した科学用途",
+      "risk_and_value_tags": [
+        "science",
+        "encoder"
+      ],
+      "evidence_url": "https://huggingface.co/facebook/esm2_t33_650M_UR50D",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "科学・時系列",
+      "repo_id": "autogluon/chronos-2",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": 0.478,
+      "size_is_verified_selected_files": false,
+      "reason": "時系列予測の専用モデル。小容量で高い補完価値",
+      "risk_and_value_tags": [
+        "timeseries"
+      ],
+      "evidence_url": "https://huggingface.co/autogluon/chronos-2",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "section": "科学・時系列",
+      "repo_id": "google/medgemma-4b-it",
+      "priority": "P0条件",
+      "license_metadata": "other",
+      "access_status": "gated",
+      "approx_display_size_gb": 8.6,
+      "size_is_verified_selected_files": false,
+      "reason": "医学特化でGated。臨床利用に適すると未検証の研究資料として保存",
+      "risk_and_value_tags": [
+        "gated",
+        "medical",
+        "custom_license"
+      ],
+      "evidence_url": "https://huggingface.co/google/medgemma-4b-it",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "dataset",
+      "section": "データセット・評価",
+      "repo_id": "HuggingFaceFW/fineweb-edu",
+      "priority": "P0",
+      "license_metadata": "odc-by",
+      "access_status": "public",
+      "approx_display_size_gb": 28.5,
+      "size_is_verified_selected_files": false,
+      "reason": "FineWeb-Edu 10BT標本を対象。事前学習資料の一部を保存",
+      "risk_and_value_tags": [
+        "pretraining"
+      ],
+      "evidence_url": "https://huggingface.co/HuggingFaceFW/fineweb-edu",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "dataset",
+      "section": "データセット・評価",
+      "repo_id": "allenai/tulu-3-sft-mixture",
+      "priority": "P0",
+      "license_metadata": "odc-by",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "SFTの大規模混合。各元データのライセンスを別に点検",
+      "risk_and_value_tags": [
+        "sft"
+      ],
+      "evidence_url": "https://huggingface.co/allenai/tulu-3-sft-mixture",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "dataset",
+      "section": "データセット・評価",
+      "repo_id": "HuggingFaceH4/ultrafeedback_binarized",
+      "priority": "P0",
+      "license_metadata": "mit",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "DPO/選好最適化用の比較データ",
+      "risk_and_value_tags": [
+        "preference"
+      ],
+      "evidence_url": "https://huggingface.co/HuggingFaceH4/ultrafeedback_binarized",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "dataset",
+      "section": "データセット・評価",
+      "repo_id": "llm-jp/magpie-sft-v1.0",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "日本語指示学習データ",
+      "risk_and_value_tags": [
+        "japanese",
+        "sft"
+      ],
+      "evidence_url": "https://huggingface.co/llm-jp/magpie-sft-v1.0",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "dataset",
+      "section": "データセット・評価",
+      "repo_id": "nvidia/OpenCodeInstruct",
+      "priority": "P0",
+      "license_metadata": "cc-by-4.0",
+      "access_status": "public",
+      "approx_display_size_gb": 6.86,
+      "size_is_verified_selected_files": false,
+      "reason": "コード指示学習の再現データ",
+      "risk_and_value_tags": [
+        "coding",
+        "sft"
+      ],
+      "evidence_url": "https://huggingface.co/nvidia/OpenCodeInstruct",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "dataset",
+      "section": "データセット・評価",
+      "repo_id": "nvidia/OpenMathInstruct-2",
+      "priority": "P0",
+      "license_metadata": "cc-by-4.0",
+      "access_status": "public",
+      "approx_display_size_gb": 12.6,
+      "size_is_verified_selected_files": false,
+      "reason": "数学推論向けの追加学習データ",
+      "risk_and_value_tags": [
+        "math",
+        "sft"
+      ],
+      "evidence_url": "https://huggingface.co/nvidia/OpenMathInstruct-2",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "dataset",
+      "section": "データセット・評価",
+      "repo_id": "project-numina/NuminaMath-1.5",
+      "priority": "P1",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "数学SFTの別データ系統",
+      "risk_and_value_tags": [
+        "math",
+        "sft"
+      ],
+      "evidence_url": "https://huggingface.co/project-numina/NuminaMath-1.5",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "dataset",
+      "section": "データセット・評価",
+      "repo_id": "EPFLiGHT/fully-open-meditron",
+      "priority": "P0",
+      "license_metadata": "apache-2.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "MeditronFO再現に関連する医療専門学習データ",
+      "risk_and_value_tags": [
+        "medical",
+        "sft"
+      ],
+      "evidence_url": "https://huggingface.co/EPFLiGHT/fully-open-meditron",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "dataset",
+      "section": "データセット・評価",
+      "repo_id": "nvidia/Granary-v2",
+      "priority": "P1条件",
+      "license_metadata": "openmdw-1.1, cc-by-sa-4.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "多言語音声データ。全量は巨大でサブセット指定必須",
+      "risk_and_value_tags": [
+        "audio",
+        "dataset_large"
+      ],
+      "evidence_url": "https://huggingface.co/nvidia/Granary-v2",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "dataset",
+      "section": "データセット・評価",
+      "repo_id": "elyza/ELYZA-tasks-100",
+      "priority": "P0",
+      "license_metadata": "cc-by-sa-4.0",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "日本語評価用。学習には使用しない",
+      "risk_and_value_tags": [
+        "evaluation",
+        "japanese"
+      ],
+      "evidence_url": "https://huggingface.co/elyza/ELYZA-tasks-100",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "dataset",
+      "section": "データセット・評価",
+      "repo_id": "openai/gsm8k",
+      "priority": "P0",
+      "license_metadata": "mit",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "推論能力の評価用。訓練から分離",
+      "risk_and_value_tags": [
+        "evaluation",
+        "math"
+      ],
+      "evidence_url": "https://huggingface.co/openai/gsm8k",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "dataset",
+      "section": "データセット・評価",
+      "repo_id": "livecodebench/code_generation_lite",
+      "priority": "P0",
+      "license_metadata": "cc",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "コード生成能力の独立評価。評価汚染を防ぐ",
+      "risk_and_value_tags": [
+        "evaluation",
+        "coding"
+      ],
+      "evidence_url": "https://huggingface.co/livecodebench/code_generation_lite",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "dataset",
+      "section": "データセット・評価",
+      "repo_id": "allenai/dolma3_mix-6T",
+      "priority": "P1条件",
+      "license_metadata": "odc-by",
+      "access_status": "public",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "事前学習の幅を確保。全量でなく法的に利用可能な標本",
+      "risk_and_value_tags": [
+        "pretraining",
+        "dataset_large"
+      ],
+      "evidence_url": "https://huggingface.co/allenai/dolma3_mix-6T",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "dataset",
+      "section": "データセット・評価",
+      "repo_id": "uonlp/CulturaX",
+      "priority": "P1条件",
+      "license_metadata": "unknown",
+      "access_status": "unknown",
+      "approx_display_size_gb": null,
+      "size_is_verified_selected_files": false,
+      "reason": "日本語多言語コーパスのサブセット。Gated等を先に確認",
+      "risk_and_value_tags": [
+        "pretraining",
+        "dataset_large"
+      ],
+      "evidence_url": "https://huggingface.co/uonlp/CulturaX",
+      "download_approved": false,
+      "manifest_ready": false
+    },
+    {
+      "asset_kind": "software",
+      "section": "推論・学習ソフト",
+      "repo_id": "llama.cpp",
+      "priority": "P0",
+      "reason": "GGUFの量子化・CPU/GPU推論。Windows CPU/Vulkan/CUDA互換ビルドとsource commitを別々に保存",
+      "download_approved": false,
+      "manifest_ready": false,
+      "evidence_url": null
+    },
+    {
+      "asset_kind": "software",
+      "section": "推論・学習ソフト",
+      "repo_id": "transformers+tokenizers+safetensors",
+      "priority": "P0",
+      "reason": "BF16モデル読込・画像/音声プロセッサ。対応Python wheelsをオフライン保全",
+      "download_approved": false,
+      "manifest_ready": false,
+      "evidence_url": null
+    },
+    {
+      "asset_kind": "software",
+      "section": "推論・学習ソフト",
+      "repo_id": "pytorch+CUDA/ROCm wheels",
+      "priority": "P0",
+      "reason": "再学習・各特殊モデルの共通基盤。Windows版とLinux版のABIを区別",
+      "download_approved": false,
+      "manifest_ready": false,
+      "evidence_url": null
+    },
+    {
+      "asset_kind": "software",
+      "section": "推論・学習ソフト",
+      "repo_id": "diffusers+ComfyUI",
+      "priority": "P0",
+      "reason": "FLUX/Qwen-Image/Wan/LTX画像動画実行。custom nodesは精査",
+      "download_approved": false,
+      "manifest_ready": false,
+      "evidence_url": null
+    },
+    {
+      "asset_kind": "software",
+      "section": "推論・学習ソフト",
+      "repo_id": "whisper.cpp+FFmpeg",
+      "priority": "P0",
+      "reason": "音声デコード・ASRと入出力処理の基盤",
+      "download_approved": false,
+      "manifest_ready": false,
+      "evidence_url": null
+    },
+    {
+      "asset_kind": "software",
+      "section": "推論・学習ソフト",
+      "repo_id": "vLLM+SGLang",
+      "priority": "P1",
+      "reason": "分散/高速推論。実機OS GPU互換性を確認した版を保管",
+      "download_approved": false,
+      "manifest_ready": false,
+      "evidence_url": null
+    },
+    {
+      "asset_kind": "software",
+      "section": "推論・学習ソフト",
+      "repo_id": "PEFT+TRL+LLaMA-Factory+Unsloth",
+      "priority": "P0",
+      "reason": "独自SFT・LoRA・選好学習の再現環境とバージョン固定",
+      "download_approved": false,
+      "manifest_ready": false,
+      "evidence_url": null
+    },
+    {
+      "asset_kind": "software",
+      "section": "推論・学習ソフト",
+      "repo_id": "Podman+QEMU+OS installer+GPU drivers",
+      "priority": "P0",
+      "reason": "隔離された実行環境とオフライン再構築",
+      "download_approved": false,
+      "manifest_ready": false,
+      "evidence_url": null
+    },
+    {
+      "asset_kind": "software",
+      "section": "推論・学習ソフト",
+      "repo_id": "HuggingFace Hub CLI + Python wheelhouse",
+      "priority": "P0",
+      "reason": "権利を持つ公開モデルの取得と再現可能な依存の保存",
+      "download_approved": false,
+      "manifest_ready": false,
+      "evidence_url": null
+    }
+  ]
+}
