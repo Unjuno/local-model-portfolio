@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "asset_id": "nanbeige4.3-33b-posttrained",
+  "asset_kind": "model",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "model",
+    "repo_id": "Nanbeige/Nanbeige4.3-33B",
+    "url": "https://huggingface.co/Nanbeige/Nanbeige4.3-33B",
+    "revision_sha_observed": "df919e1e2cf077a22204c78b6c826bf3db18bc08"
+  },
+  "selection": {
+    "state": "candidate",
+    "reason": "Nanbeige4.3-33B-Baseに独自のコード・長期エージェント後学習を行った完成重み。Baseだけでは学習トレースや同一の重みを再現できず、教師モデルのpost-trained段階を残せる。",
+    "disappearance_risk": "現在公開・Apache2.0、削除予告なし。Baseと併せると約132.5GBの重複容量になるため、消失リスクがより高い他系列と比較して採否判断。",
+    "review_priority": "2026-10-30 release/source audit"
+  },
+  "review": {
+    "state": "reviewed",
+    "checked_at": "2026-10-30",
+    "unresolved": [
+      "独自後学習のデータ・レシピの公開状況",
+      "Baseと両方高精度で保存する必要性と予算",
+      "保存するチェックポイントとライセンス"
+    ]
+  },
+  "facts": {
+    "total_parameters": 33119000000,
+    "total_parameters_approx": null,
+    "license_metadata": "apache-2.0",
+    "access_status": "public",
+    "format": "BF16 safetensors"
+  },
+  "upstream_inventory": {
+    "all_repo_files_bytes_observed": 66260069411,
+    "selected_bytes": null,
+    "hashes_verified_from_source": false,
+    "reference": "catalog/snapshots/2026-10-30-new-releases.json"
+  },
+  "alternative_representations": [],
+  "evidence": [
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://huggingface.co/Nanbeige/Nanbeige4.3-33B",
+      "kind": "publisher_repo_card_and_hub_api",
+      "note": "アクセス・ライセンス・全repo容量と改訂IDを確認。将来規制は仮説。"
+    }
+  ],
+  "representations_requested": [],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": []
+  },
+  "manifest_path": null,
+  "download_approved": false
+}
