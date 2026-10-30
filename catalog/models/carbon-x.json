@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "asset_id": "carbon-x",
+  "asset_kind": "model",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "model",
+    "repo_id": "HuggingFaceBio/Carbon-X"
+  },
+  "selection": {
+    "state": "candidate",
+    "reason": "Qwen3-14BからDNAと自然言語の共同学習を行った14.8B級の特殊モデル。独自DNA語彙と学習工程が上流重みだけでは復元できない。",
+    "disappearance_risk_priority": "R1-高"
+  },
+  "review": {
+    "state": "reviewed",
+    "checked_at": "2026-10-30",
+    "unresolved": [
+      "配布元の完全コミットSHAと選択ファイル単位のバイト数・SHA-256",
+      "データ利用権限・利用条件本文と第三者の権利",
+      "重複・代替配布元と再現可能性",
+      "モデルの場合は3〜4bit推論ピークRAM、backend、OS、KV cache、batch、context、必要依存",
+      "追加DNA語彙・カスタムtokenizer構成",
+      "学習時使用データの配布可否",
+      "15B級専用推論のRAM実測"
+    ]
+  },
+  "facts": {
+    "total_parameters": 14822000000,
+    "training_stage": "specialized-midtrain-and-posttrain",
+    "tasks": [
+      "text-generation",
+      "dna-understanding"
+    ],
+    "modalities": {
+      "input": [
+        "text",
+        "dna-sequence"
+      ],
+      "output": [
+        "text",
+        "dna-sequence"
+      ]
+    },
+    "family": "Carbon-X/Qwen3",
+    "architecture": "decoder-only",
+    "parameter_layout": "dense",
+    "source_relation": "official-derivative",
+    "base_model": "Qwen/Qwen3-14B",
+    "license_metadata": "apache-2.0",
+    "access_status": "public"
+  },
+  "disappearance_risk": {
+    "verified_facts": [
+      "2026-10-30時点の公開メタデータ: access_status=public, license=apache-2.0"
+    ],
+    "confirmed_removal_notice": false,
+    "future_scenario_hypothesis": "バイオ用途の将来配布条件変更は仮説。現在は公開・Apache-2.0であり実際のGated化/削除予定の証拠なし。",
+    "removal_probability_estimate": null,
+    "alternative_sources_reviewed": false,
+    "restoration_loss_reason": "Qwen3-14BからDNAと自然言語の共同学習を行った14.8B級の特殊モデル。独自DNA語彙と学習工程が上流重みだけでは復元できない。"
+  },
+  "size": {
+    "reported_total_gb": null,
+    "selected_bytes": null,
+    "precision_based_weight_lower_bound_gb": 29.6,
+    "notes": "約14.822B×BF16 2 byteの算術下限。実ファイルサイズ・tokenizer・学習コードは別途検証。"
+  },
+  "evidence": [
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://huggingface.co/HuggingFaceBio/Carbon-X",
+      "category": "publisher_metadata_or_model_card",
+      "kind": "fact_or_publisher_claim",
+      "note": "元サイトの公開表記を確認。将来の規制は推論扱い。"
+    },
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://huggingface.co/HuggingFaceBio/Carbon-X/blob/main/README.md",
+      "category": "publisher_metadata_or_model_card",
+      "kind": "fact_or_publisher_claim",
+      "note": "元サイトの公開表記を確認。将来の規制は推論扱い。"
+    }
+  ],
+  "representations_requested": [],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": []
+  },
+  "manifest_path": null
+}
