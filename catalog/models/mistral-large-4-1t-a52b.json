@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "asset_id": "mistral-large-4-1t-a52b",
+  "asset_kind": "model",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "model",
+    "repo_id": "mistralai/Mistral-Large-4-1T-A52B",
+    "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+    "revision_sha_observed": "f12dabdc0c1e99e7f7924461a6f308859b05af4d"
+  },
+  "selection": {
+    "state": "held",
+    "reason": "2026-10-29に公開された約1T総パラメータの高性能MoE。サイバー防御・コード・画像・長文エージェントに特化した独自の学習成果で、同系列の119Bモデルから復元できない。失われた場合の代替損失は大きい。",
+    "disappearance_risk": "高性能サイバー能力に伴う将来の配布条件変更は仮説。現在は公開中でGatedではない。元重みFP8は約1.06TB、公式NVFP4も約610GBあり、512GB RAMでの3〜4bit動作が未検証。",
+    "review_priority": "2026-10-30 release/source audit"
+  },
+  "review": {
+    "state": "reviewed",
+    "checked_at": "2026-10-30",
+    "unresolved": [
+      "各量子化版の実効bits/weightと512GB上限の実測",
+      "Mistral Ecosystem Open-Weight License本文と利用形態",
+      "1TB以上の原本と3.8TB容量の競合",
+      "選択対象ファイルと依存・完全オフライン互換性"
+    ]
+  },
+  "facts": {
+    "total_parameters": null,
+    "total_parameters_approx": 1000000000000,
+    "license_metadata": "Mistral Ecosystem Open-Weight License (Hub tag other; MaaSに別途条件あり)",
+    "access_status": "public",
+    "format": "fp8,nvfp4"
+  },
+  "upstream_inventory": {
+    "all_repo_files_bytes_observed": 1060613131585,
+    "selected_bytes": null,
+    "hashes_verified_from_source": false,
+    "reference": "catalog/snapshots/2026-10-30-new-releases.json"
+  },
+  "alternative_representations": [
+    {
+      "repo_id": "mistralai/Mistral-Large-4-1T-A52B",
+      "revision_sha": "f12dabdc0c1e99e7f7924461a6f308859b05af4d",
+      "repo_bytes": 1060613131585,
+      "format": "FP8"
+    },
+    {
+      "repo_id": "mistralai/Mistral-Large-4-1T-A52B-NVFP4",
+      "revision_sha": "bb6d00fe249b0e876f0cffc6b85014be02de3e68",
+      "repo_bytes": 610105677691,
+      "format": "NVFP4"
+    }
+  ],
+  "evidence": [
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+      "kind": "publisher_repo_card_and_hub_api",
+      "note": "アクセス・ライセンス・全repo容量と改訂IDを確認。将来規制は仮説。"
+    }
+  ],
+  "representations_requested": [],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": []
+  },
+  "manifest_path": null,
+  "download_approved": false
+}
