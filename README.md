@@ -4,7 +4,15 @@
 
 **目的は、リポジトリをHDDに配置し、エージェントが承認済みの取得指示に従って保存・検証できる状態を作ることです。** 人気ランキングでも、重みをGitHubへ再配布する場所でもありません。
 
-## 今回の採用候補・リスク順位（2026-10-30）
+## 現在の採用ポートフォリオ（2026-10-30）
+
+- **[現行版：97件の採用・条件付き・保留判断と、各モデル/データのリンク・選定理由](docs/selected-portfolio-current.md)**
+- **[機械可読の現行選定台帳（97件）](catalog/selected-portfolio-2026-10-30.json)**
+- **[小型・高効率モデル25件の上流ファイル容量・SHA監査](catalog/snapshots/2026-10-30-disruptive-compact-1.json)**（続きは [2](catalog/snapshots/2026-10-30-disruptive-compact-2.json)、[3](catalog/snapshots/2026-10-30-disruptive-compact-3.json)、[4](catalog/snapshots/2026-10-30-disruptive-compact-4.json)）
+
+**優先対象は、規制・配布条件変更による再取得困難性だけではありません。** 小型で既存のOCR・ASR・画像制作・3Dアセット・ロボット・時系列・検索サービスの一部を代替し得る独自モデル、専門ファインチューニング重み、貴重なデータも選定対象です。実際の産業への影響や規制の予測は仮説として区別します。
+
+## 過去の採用候補レビュー（72件の時点／履歴）
 
 - **[採用候補72件を優先順に整理した一覧（理由・リンク付き）](docs/selected-portfolio-2026-10-30.md)**
 - **[機械可読の採用判断・リスク区分・確認事項](catalog/selected-portfolio-2026-10-30.json)**
