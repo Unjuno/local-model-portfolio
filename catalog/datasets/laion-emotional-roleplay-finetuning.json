@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "asset_id": "laion-emotional-roleplay-finetuning",
+  "asset_kind": "dataset",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "dataset",
+    "repo_id": "laion/emotional-roleplay-finetuning-dataset"
+  },
+  "selection": {
+    "state": "candidate",
+    "reason": "67,491合成音声（約184時間）に音声・キャプション・感情・演技・VoiceCLAP属性が付いた、再生成しにくい特化TTS学習データ。",
+    "disappearance_risk_priority": "R1-高"
+  },
+  "review": {
+    "state": "reviewed",
+    "checked_at": "2026-10-30",
+    "unresolved": [
+      "配布元の完全コミットSHAと選択ファイル単位のバイト数・SHA-256",
+      "データ利用権限・利用条件本文と第三者の権利",
+      "重複・代替配布元と再現可能性",
+      "モデルの場合は3〜4bit推論ピークRAM、backend、OS、KV cache、batch、context、必要依存",
+      "版権を伴う架空キャラクター名や音声由来の知財評価",
+      "同一データParquet/WebDatasetの重複除去",
+      "合成データの元モデル依存とライセンス確認"
+    ]
+  },
+  "facts": {
+    "total_parameters": null,
+    "training_stage": "tts-finetuning-dataset",
+    "tasks": [
+      "text-to-speech",
+      "voice-acting"
+    ],
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "audio"
+      ]
+    },
+    "family": "MOSS-TTS/LAION",
+    "architecture": null,
+    "parameter_layout": null,
+    "source_relation": "official",
+    "license_metadata": "cc-by-4.0",
+    "access_status": "public",
+    "samples": 67491,
+    "duration_hours_approx": 184
+  },
+  "disappearance_risk": {
+    "verified_facts": [
+      "2026-10-30時点の公開メタデータ: access_status=public, license=cc-by-4.0"
+    ],
+    "confirmed_removal_notice": false,
+    "future_scenario_hypothesis": "音声合成やキャラクター類似演技の権利・安全運用を巡る将来の公開方針変更は仮説。現在公開で削除予告なし。",
+    "removal_probability_estimate": null,
+    "alternative_sources_reviewed": false,
+    "restoration_loss_reason": "67,491合成音声（約184時間）に音声・キャプション・感情・演技・VoiceCLAP属性が付いた、再生成しにくい特化TTS学習データ。"
+  },
+  "size": {
+    "reported_total_gb": 6.67,
+    "selected_bytes": null,
+    "notes": "Hub Total file size表示。ParquetとWebDatasetが重複している可能性があるため必要表現を選ぶ。作者カードによればWebDataset一式は約3.13GB。"
+  },
+  "evidence": [
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://huggingface.co/datasets/laion/emotional-roleplay-finetuning-dataset",
+      "category": "publisher_metadata_or_model_card",
+      "kind": "fact_or_publisher_claim",
+      "note": "元サイトの公開表記を確認。将来の規制は推論扱い。"
+    }
+  ],
+  "representations_requested": [],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": []
+  },
+  "manifest_path": null
+}
