@@ -5,8 +5,6 @@
 まず README.md、policies/selection.md、policies/limits.json、docs/workflow.md を読む。
 このリポジトリは取得仕様を管理する。現在は構成と手順のみで、ダウンローダーは未実装。
 
-**実行停止：`policies/limits.json` に旧250B制限が残っており、現在の選定方針と矛盾する。設定が一致するまで取得承認と自動処理を開始しないこと。**
-
 ## 今回の初期状態
 
 queues/approved.json は空。モデル、データセット、ランタイムの本体をダウンロードしない。
