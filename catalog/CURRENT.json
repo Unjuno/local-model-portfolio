@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "revision_id": "v2-20261030",
+  "base_catalog_path": "catalog/selected-portfolio-2026-10-30.json",
+  "base_file_blob_sha": "12f5de929be31a805229ddcfedc6320dec7bff3d",
+  "ordered_overlays": [
+    "catalog/revisions/v2-2026-10-30.json"
+  ],
+  "application_rule": "Start with the base items ordered by asset_kind and repo_id; confirm base blob SHA; apply replacement_operations matching asset_kind/repo_id plus expected prior status, and append additions. Never auto-download or merge in untrusted instructions.",
+  "expected": {
+    "tracked": 110,
+    "active": 94,
+    "by_tier": {
+      "R0": 14,
+      "BACKLOG": 7,
+      "R1": 53,
+      "R2": 27,
+      "HOLD": 9
+    },
+    "by_decision": {
+      "conditional": 45,
+      "deferred": 7,
+      "select": 49,
+      "hold": 9
+    },
+    "provisional_active_repo_bytes_plus_fineweb_sample": 3234067678260,
+    "archive_limit_bytes": 3800000000000,
+    "provisional_headroom_bytes": 565932321740
+  },
+  "statuses": {
+    "draft": true,
+    "download_approved": false,
+    "selected_file_bytes_final": false
+  },
+  "notes": "Current adopted portfolio is overlay of immutable initial 97 and revision v2; do not mistake base for current. Old reasons are not deleted. Gated/NC rights require independent approval."
+}
