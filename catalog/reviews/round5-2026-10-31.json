@@ -42,7 +42,9 @@
       "world_simulation": 3
     },
     "watch_or_hold": 14,
-    "not_an_addition_to_110": true
+    "not_an_addition_to_110": true,
+    "watch_only": 8,
+    "held_legal_dependency": 6
   },
   "proposals": [
     {
@@ -373,7 +375,7 @@
     {
       "repo_id": "nvidia/Cosmos-Predict2.5-2B",
       "asset_kind": "model",
-      "review_decision": "watch_or_hold",
+      "review_decision": "watch_only",
       "reason": "Gatedだが旧Cosmos2およびCosmos3-Edgeと重複するため代表版を比較するまで重複採用しない。",
       "source_url": "https://huggingface.co/nvidia/Cosmos-Predict2.5-2B",
       "capability_tags": [
@@ -383,7 +385,7 @@
     {
       "repo_id": "nvidia/Cosmos3-Super",
       "asset_kind": "model",
-      "review_decision": "watch_or_hold",
+      "review_decision": "watch_only",
       "reason": "多モーダル原本だが約65B級でEdgeと同系。実容量・差分を見て大型枠で比較。",
       "source_url": "https://huggingface.co/nvidia/Cosmos3-Super",
       "capability_tags": [
@@ -393,7 +395,7 @@
     {
       "repo_id": "google/medsiglip-448",
       "asset_kind": "model",
-      "review_decision": "watch_or_hold",
+      "review_decision": "watch_only",
       "reason": "医療画像向けencoderの既存MedGemma依存との差を要調査。",
       "source_url": "https://huggingface.co/google/medsiglip-448",
       "capability_tags": [
@@ -404,7 +406,7 @@
     {
       "repo_id": "nvidia/FourCastNet3",
       "asset_kind": "model",
-      "review_decision": "watch_or_hold",
+      "review_decision": "watch_only",
       "reason": "公開Apache-2.0の気象系比較候補。Auroraを優先し、重複と性能の独立検証後に判断。",
       "source_url": "https://huggingface.co/nvidia/FourCastNet3",
       "capability_tags": [
@@ -414,7 +416,7 @@
     {
       "repo_id": "Horizon-Labs/prompt-injection-guard-base",
       "asset_kind": "model",
-      "review_decision": "watch_or_hold",
+      "review_decision": "watch_only",
       "reason": "公開Apache-2.0の防御器。既存に専用防御モデルが少ない一方、配布制限・回復不能性の証拠が現状弱いため監視。",
       "source_url": "https://huggingface.co/Horizon-Labs/prompt-injection-guard-base",
       "capability_tags": [
@@ -424,8 +426,8 @@
     {
       "repo_id": "zai-org/GLM-5.3-Flash",
       "asset_kind": "model",
-      "review_decision": "watch_or_hold",
-      "reason": "公開MITの高能力LLM。サイバー能力の外部評価はモデル重みの配布制限予定を意味せず、321B級の完全構成が未審査。",
+      "review_decision": "watch_only",
+      "reason": "公開MITの高能力LLM。能力が高いという理由だけで政府による公開制限予定を断定しない。321B級の完全構成・容量/実行環境と既存候補との重複は未審査。",
       "source_url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
       "capability_tags": [
         "safety_security"
@@ -434,7 +436,7 @@
     {
       "repo_id": "facebook/sam-3d-objects",
       "asset_kind": "model",
-      "review_decision": "watch_or_hold",
+      "review_decision": "held_legal_dependency",
       "reason": "MetaのGated/独自SAM Licenseの内部解析適合性が未解決で、既存Round4と同様に保留優先。",
       "source_url": "https://huggingface.co/facebook/sam-3d-objects",
       "capability_tags": [
@@ -444,7 +446,7 @@
     {
       "repo_id": "apple/Sharp",
       "asset_kind": "model",
-      "review_decision": "watch_or_hold",
+      "review_decision": "held_legal_dependency",
       "reason": "Apple研究ライセンスは終了時コピー削除を定める。長期保全目的との権利適合性が未確認。",
       "source_url": "https://huggingface.co/apple/Sharp",
       "capability_tags": [
@@ -454,7 +456,7 @@
     {
       "repo_id": "nvidia/GR00T-N1.7-ApplePnP-V1",
       "asset_kind": "model",
-      "review_decision": "watch_or_hold",
+      "review_decision": "watch_only",
       "reason": "特定タスクのONNX派生重みで、N1.7原本を優先し、派生変換・学習増分の必要性を確認。",
       "source_url": "https://huggingface.co/nvidia/GR00T-N1.7-ApplePnP-V1",
       "capability_tags": [
@@ -464,7 +466,7 @@
     {
       "repo_id": "nvidia/PhysicalAI-Robotics-Open-H-Embodiment",
       "asset_kind": "dataset",
-      "review_decision": "watch_or_hold",
+      "review_decision": "watch_only",
       "reason": "公開・CC-BY-4.0のロボット動作群。採用中データと用途・容量の重複確認を優先。",
       "source_url": "https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-Open-H-Embodiment",
       "capability_tags": [
@@ -474,7 +476,7 @@
     {
       "repo_id": "nvidia/PhysicalAI-Robotics-Locomanipulation-GRAIL",
       "asset_kind": "dataset",
-      "review_decision": "watch_or_hold",
+      "review_decision": "held_legal_dependency",
       "reason": "公開・CC-BY-NC-4.0の4D人体-物体相互作用データ。生成元映像・人物由来等の権利確認を優先。",
       "source_url": "https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-Locomanipulation-GRAIL",
       "capability_tags": [
@@ -484,7 +486,7 @@
     {
       "repo_id": "nvidia/PhysicalAI-Robotics-NuRec",
       "asset_kind": "dataset",
-      "review_decision": "watch_or_hold",
+      "review_decision": "held_legal_dependency",
       "reason": "Gated・CC-BY表示の3D再構成場面。元映像・場所・人物等の権利と巨大容量の検証前は取得保留。",
       "source_url": "https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-NuRec",
       "capability_tags": [
@@ -494,7 +496,7 @@
     {
       "repo_id": "facebook/sam-3d-body-dataset",
       "asset_kind": "dataset",
-      "review_decision": "watch_or_hold",
+      "review_decision": "held_legal_dependency",
       "reason": "Gated・独自SAM Licenseに加え第三者データ源を含む。元データの権利と個人情報を照合するまで保留。",
       "source_url": "https://huggingface.co/datasets/facebook/sam-3d-body-dataset",
       "capability_tags": [
@@ -504,7 +506,7 @@
     {
       "repo_id": "genrobot2025/Gen-HumanWholeBody",
       "asset_kind": "dataset",
-      "review_decision": "watch_or_hold",
+      "review_decision": "held_legal_dependency",
       "reason": "Gated・独自条件の人間動作データ。個人情報と被写体同意が不明なまま取得しない。",
       "source_url": "https://huggingface.co/datasets/genrobot2025/Gen-HumanWholeBody",
       "capability_tags": [
@@ -528,6 +530,7 @@
   "audit": {
     "dedupe_strategy": "exact asset_kind+repo_id; one record may have multiple capability tags",
     "unverified_repo_id_removed": "microsoft/FourCastNet3 (not validated; do not invent model entry)",
-    "watch_note": "watch_or_hold rows are NOT approved downloads, and do not carry a claim of imminent regulation"
+    "watch_note": "watch_or_hold rows are NOT approved downloads, and do not carry a claim of imminent regulation",
+    "legal_holds": "HOLD differs from WATCH. Human-derived data, third-party rights, deletion obligations and model-specific analysis restrictions are blocking until lawful conditions are resolved."
   }
 }
