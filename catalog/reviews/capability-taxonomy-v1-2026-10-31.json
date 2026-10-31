@@ -9,10 +9,10 @@
   "categories": {
     "general_llm": "汎用LLM・基盤重み・代替アーキテクチャ",
     "agents_code": "コード生成・GUI操作・自律エージェント",
-    "safety_security": "モデルの安全性・安全制御・セキュリティ研究",
+    "safety_security": "AI安全性研究・拒否挙動の研究・セキュリティ（防御専用の収録とは限らない）",
     "image_generation": "画像生成・編集・蒸留・Base",
     "video_generation": "動画生成・映像編集・アニメーション",
-    "identity_biometrics": "音声・人物の同一性を保持する生成・照合",
+    "identity_biometrics": "話者・人物アイデンティティに関係する生成・制御",
     "speech": "音声認識・TTS・会話・翻訳",
     "music_audio": "音楽生成・音楽特徴・音響制作",
     "vision_spatial": "視覚認識・OCR・3D・深度",
@@ -35,10 +35,10 @@
       "safety_security": 2,
       "image_generation": 9,
       "video_generation": 3,
-      "identity_biometrics": 4,
+      "identity_biometrics": 3,
       "speech": 19,
       "music_audio": 5,
-      "vision_spatial": 21,
+      "vision_spatial": 20,
       "robotics_control": 5,
       "world_simulation": 4,
       "medical_biology": 8,
@@ -531,7 +531,6 @@
       "known_risk_tier": "R2",
       "known_portfolio_decision": "select",
       "capability_tags": [
-        "vision_spatial",
         "retrieval_representation"
       ]
     },
@@ -892,7 +891,6 @@
       "known_risk_tier": "R1",
       "known_portfolio_decision": "conditional",
       "capability_tags": [
-        "identity_biometrics",
         "vision_spatial"
       ]
     },
@@ -1080,5 +1078,11 @@
         "music_audio"
       ]
     }
+  ],
+  "audit_notes": [
+    "タグは能力別の暫定分類であり、実動作検証や規制リスクの確証ではない。",
+    "既存のsafety_securityタグ2件は拒否方向編集モデルであり、専用のサイバー防御器が2件保存済みという意味ではない。",
+    "earth_time_seriesの現行1件はChronos-2の一般時系列予測であり、地球物理専用モデルの収録を意味しない。",
+    "runtime_componentsは現行選定110件に独立資産0件。既存リポジトリのdocs/設定はモデルに紐付く実行資材の保存を証明しない。"
   ]
 }
