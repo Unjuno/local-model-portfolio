@@ -61,24 +61,24 @@
 6. **生体安全と権利**：[ESM3公開カード](https://huggingface.co/biohub/esm3-sm-open-v1)には安全フィルタ処理が明記され、これは現状の技術的事実であって将来の政府禁止予告ではない。研究に必要な機能・承認条件を確認する。
 7. **原本の容量と実用版は別**：公開モデルやPython/PyTorchの実行コードがすべて安全なわけではない。pickle重みを自動ロードせず、完全revision、同種のSHA-256照合、依存バージョンを別に確定する。
 
-## 5. 今回選ばず監視/保留とする14件
+## 5. 今回選ばず監視8件・権利/依存保留6件
 
-| 配布元 | 未採用とする理由 |
-| --- | --- |
-| [nvidia/Cosmos-Predict2.5-2B](https://huggingface.co/nvidia/Cosmos-Predict2.5-2B) | Gatedだが旧Cosmos2およびCosmos3-Edgeと重複するため代表版を比較するまで重複採用しない。 |
-| [nvidia/Cosmos3-Super](https://huggingface.co/nvidia/Cosmos3-Super) | 多モーダル原本だが約65B級でEdgeと同系。実容量・差分を見て大型枠で比較。 |
-| [google/medsiglip-448](https://huggingface.co/google/medsiglip-448) | 医療画像向けencoderの既存MedGemma依存との差を要調査。 |
-| [nvidia/FourCastNet3](https://huggingface.co/nvidia/FourCastNet3) | 公開Apache-2.0の気象系比較候補。Auroraを優先し、重複と性能の独立検証後に判断。 |
-| [Horizon-Labs/prompt-injection-guard-base](https://huggingface.co/Horizon-Labs/prompt-injection-guard-base) | 公開Apache-2.0の防御器。既存に専用防御モデルが少ない一方、配布制限・回復不能性の証拠が現状弱いため監視。 |
-| [zai-org/GLM-5.3-Flash](https://huggingface.co/zai-org/GLM-5.3-Flash) | 公開MITの高能力LLM。サイバー能力の外部評価はモデル重みの配布制限予定を意味せず、321B級の完全構成が未審査。 |
-| [facebook/sam-3d-objects](https://huggingface.co/facebook/sam-3d-objects) | MetaのGated/独自SAM Licenseの内部解析適合性が未解決で、既存Round4と同様に保留優先。 |
-| [apple/Sharp](https://huggingface.co/apple/Sharp) | Apple研究ライセンスは終了時コピー削除を定める。長期保全目的との権利適合性が未確認。 |
-| [nvidia/GR00T-N1.7-ApplePnP-V1](https://huggingface.co/nvidia/GR00T-N1.7-ApplePnP-V1) | 特定タスクのONNX派生重みで、N1.7原本を優先し、派生変換・学習増分の必要性を確認。 |
-| [nvidia/PhysicalAI-Robotics-Open-H-Embodiment](https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-Open-H-Embodiment) | 公開・CC-BY-4.0のロボット動作群。採用中データと用途・容量の重複確認を優先。 |
-| [nvidia/PhysicalAI-Robotics-Locomanipulation-GRAIL](https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-Locomanipulation-GRAIL) | 公開・CC-BY-NC-4.0の4D人体-物体相互作用データ。生成元映像・人物由来等の権利確認を優先。 |
-| [nvidia/PhysicalAI-Robotics-NuRec](https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-NuRec) | Gated・CC-BY表示の3D再構成場面。元映像・場所・人物等の権利と巨大容量の検証前は取得保留。 |
-| [facebook/sam-3d-body-dataset](https://huggingface.co/datasets/facebook/sam-3d-body-dataset) | Gated・独自SAM Licenseに加え第三者データ源を含む。元データの権利と個人情報を照合するまで保留。 |
-| [genrobot2025/Gen-HumanWholeBody](https://huggingface.co/datasets/genrobot2025/Gen-HumanWholeBody) | Gated・独自条件の人間動作データ。個人情報と被写体同意が不明なまま取得しない。 |
+| 配布元 | 判断 | 未採用とする理由 |
+| --- | --- | --- |
+| [nvidia/Cosmos-Predict2.5-2B](https://huggingface.co/nvidia/Cosmos-Predict2.5-2B) | 監視 | Gatedだが旧Cosmos2およびCosmos3-Edgeと重複するため代表版を比較するまで重複採用しない。 |
+| [nvidia/Cosmos3-Super](https://huggingface.co/nvidia/Cosmos3-Super) | 監視 | 多モーダル原本だが約65B級でEdgeと同系。実容量・差分を見て大型枠で比較。 |
+| [google/medsiglip-448](https://huggingface.co/google/medsiglip-448) | 監視 | 医療画像向けencoderの既存MedGemma依存との差を要調査。 |
+| [nvidia/FourCastNet3](https://huggingface.co/nvidia/FourCastNet3) | 監視 | 公開Apache-2.0の気象系比較候補。Auroraを優先し、重複と性能の独立検証後に判断。 |
+| [Horizon-Labs/prompt-injection-guard-base](https://huggingface.co/Horizon-Labs/prompt-injection-guard-base) | 監視 | 公開Apache-2.0の防御器。既存に専用防御モデルが少ない一方、配布制限・回復不能性の証拠が現状弱いため監視。 |
+| [zai-org/GLM-5.3-Flash](https://huggingface.co/zai-org/GLM-5.3-Flash) | 監視 | 公開MITの高能力LLM。能力が高いという理由だけで政府による公開制限予定を断定しない。321B級の完全構成・容量/実行環境と既存候補との重複は未審査。 |
+| [facebook/sam-3d-objects](https://huggingface.co/facebook/sam-3d-objects) | 権利・依存保留 | MetaのGated/独自SAM Licenseの内部解析適合性が未解決で、既存Round4と同様に保留優先。 |
+| [apple/Sharp](https://huggingface.co/apple/Sharp) | 権利・依存保留 | Apple研究ライセンスは終了時コピー削除を定める。長期保全目的との権利適合性が未確認。 |
+| [nvidia/GR00T-N1.7-ApplePnP-V1](https://huggingface.co/nvidia/GR00T-N1.7-ApplePnP-V1) | 監視 | 特定タスクのONNX派生重みで、N1.7原本を優先し、派生変換・学習増分の必要性を確認。 |
+| [nvidia/PhysicalAI-Robotics-Open-H-Embodiment](https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-Open-H-Embodiment) | 監視 | 公開・CC-BY-4.0のロボット動作群。採用中データと用途・容量の重複確認を優先。 |
+| [nvidia/PhysicalAI-Robotics-Locomanipulation-GRAIL](https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-Locomanipulation-GRAIL) | 権利・依存保留 | 公開・CC-BY-NC-4.0の4D人体-物体相互作用データ。生成元映像・人物由来等の権利確認を優先。 |
+| [nvidia/PhysicalAI-Robotics-NuRec](https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-NuRec) | 権利・依存保留 | Gated・CC-BY表示の3D再構成場面。元映像・場所・人物等の権利と巨大容量の検証前は取得保留。 |
+| [facebook/sam-3d-body-dataset](https://huggingface.co/datasets/facebook/sam-3d-body-dataset) | 権利・依存保留 | Gated・独自SAM Licenseに加え第三者データ源を含む。元データの権利と個人情報を照合するまで保留。 |
+| [genrobot2025/Gen-HumanWholeBody](https://huggingface.co/datasets/genrobot2025/Gen-HumanWholeBody) | 権利・依存保留 | Gated・独自条件の人間動作データ。個人情報と被写体同意が不明なまま取得しない。 |
 
 上記14件は一括して同じ理由で落としたわけではない。**公開MITの防御器**と、**権利・個人情報未解決のGatedデータ**は、同じ『監視』という言葉でもアクションが異なる。正式台帳へ昇格させるには独立ゲートを使う。
 
@@ -107,6 +107,10 @@
 現行の`catalog/CURRENT.json`はv2：110件追跡・94件有効で、暫定計算に使用する原本repo全ファイル容量は約3.234TB、暫定余裕約0.566TB。ただし選択ファイルと全依存を精算した容量ではなく、**今回11件を一斉に追加できる保証はない**。
 
 正式取得へのゲートは(1)利用目的・同意・元データ権利の確認、(2)固定完全commit、(3)採用対象の全ファイルとSHA、(4)正確な必要バイト、(5)3～4bitでの現実的な量子化と実行器版、(6)OS/KV/作業領域込みのピーク推論RAMが512GB未満、(7)HDD空き200GB以上、(8)ユーザーの明示承認。上記が一つでも未解決なら`queues/approved.json`へ入れない。
+
+## 9. 検証記録と変更管理
+
+[第5回JSON検証レポート](../catalog/reviews/round5-2026-10-31.validation.json)では、110件全数のタグ付け、16種類の分類、11新規候補、監視8件/保留6件のID重複と取得未承認フラグを確認した。既存Round4の45件を消さず、新規11件のIDは現行110件やv3追加候補6件と重複していない。モデル重みのSHAや動作は未検査。
 
 ## ERROR CHECK
 
