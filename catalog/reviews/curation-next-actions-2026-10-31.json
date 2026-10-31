@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "title": "Selection progress board to guide next 3.8TB archive review",
+  "date": "2026-10-31",
+  "status": "priority_review_plan_not_approval",
+  "base_catalog": "v2-20261030",
+  "capacity_provisional_bytes": 3234067678260,
+  "provisional_headroom_bytes": 565932321740,
+  "approved_queue_count": 0,
+  "phases": [
+    {
+      "id": "audit_first",
+      "description": "供給変更・Gatedアクセス優先の証拠確認",
+      "items": 6
+    },
+    {
+      "id": "model_bundle_next",
+      "description": "モデルと必要なソフトウェアを組にしたマニフェスト案",
+      "items": 6
+    },
+    {
+      "id": "subset_only",
+      "description": "大規模/多言語学習データは明示した合法な部分集合のみ",
+      "items": 2
+    },
+    {
+      "id": "licence_hold",
+      "description": "権利が決まらない間は取得禁止",
+      "items": 2
+    },
+    {
+      "id": "heavy_weight_review",
+      "description": "大容量上位5原本の形式重複と容量を先に再選定",
+      "items": 5
+    }
+  ],
+  "records": [
+    {
+      "phase": "audit_first",
+      "repo_id": "microsoft/VibeVoice-1.5B",
+      "asset_kind": "model",
+      "origin": "既存R1",
+      "reason": "Microsoftが2025-09-05にTTSコードを撤去した履歴を公式READMEに記載。失われたのはコードであり、重み削除は未確認。",
+      "next_gate": "現行公式コード・重み版の対応、再現に必要な権利/音声codecの依存",
+      "source_url": "https://github.com/microsoft/VibeVoice/blob/main/README.md",
+      "download_approved": false
+    },
+    {
+      "phase": "audit_first",
+      "repo_id": "protectai/deberta-v3-base-prompt-injection-v2",
+      "asset_kind": "model",
+      "origin": "第6回select_proposed",
+      "reason": "公開している専用入力防御モデルで、作者のLLM Guard実装がGitHub Archived。実際の保守終了。",
+      "next_gate": "旧LLM Guard版、英語入力限定、誤検知、torch/transformers pin",
+      "source_url": "https://huggingface.co/protectai/deberta-v3-base-prompt-injection-v2",
+      "download_approved": false
+    },
+    {
+      "phase": "audit_first",
+      "repo_id": "kyutai/pocket-tts",
+      "asset_kind": "model",
+      "origin": "旧v3 conditional",
+      "reason": "Gated原本と機能除去版の公開処理コードがある。モデル本体と制限版は同じ原本ではない。",
+      "next_gate": "Gated同意をユーザーが実施、Mimi encoder/cast・オフライン依存・正式利用条件",
+      "source_url": "https://huggingface.co/kyutai/pocket-tts",
+      "download_approved": false
+    },
+    {
+      "phase": "audit_first",
+      "repo_id": "nvidia/Cosmos-Reason2-2B",
+      "asset_kind": "model",
+      "origin": "第5回conditional",
+      "reason": "Gatedの空間推論バックボーンで、公開GR00T N1.7の読み込み依存がある。",
+      "next_gate": "NVIDIA正規許諾、GR00Tの推論版と対応するcommitを固定",
+      "source_url": "https://huggingface.co/nvidia/Cosmos-Reason2-2B",
+      "download_approved": false
+    },
+    {
+      "phase": "audit_first",
+      "repo_id": "meta-llama/Llama-Prompt-Guard-2-86M",
+      "asset_kind": "model",
+      "origin": "第6回conditional",
+      "reason": "Gatedの入力攻撃防御器。既存拒否編集モデルとは異なる安全能力。",
+      "next_gate": "Meta利用条件とパラメータ名/メタデータの不一致、閾値評価",
+      "source_url": "https://huggingface.co/meta-llama/Llama-Prompt-Guard-2-86M",
+      "download_approved": false
+    },
+    {
+      "phase": "audit_first",
+      "repo_id": "allenai/wildguardmix",
+      "asset_kind": "dataset",
+      "origin": "第6回conditional",
+      "reason": "GatedのAI安全性データ。モデル分類器の評価基準を保全する意味がある。",
+      "next_gate": "データの権利/プライバシー/研究範囲、学習・評価の分離",
+      "source_url": "https://huggingface.co/datasets/allenai/wildguardmix",
+      "download_approved": false
+    },
+    {
+      "phase": "model_bundle_next",
+      "repo_id": "Goedel-LM/Goedel-Prover-V2-8B",
+      "asset_kind": "model",
+      "origin": "第6回select_proposed",
+      "reason": "Lean4形式証明の学習済み重みは現行LLMでは代替不可。",
+      "next_gate": "Lean4/mathlib4、定理問題、compiler版、必要シャード",
+      "source_url": "https://huggingface.co/Goedel-LM/Goedel-Prover-V2-8B",
+      "download_approved": false
+    },
+    {
+      "phase": "model_bundle_next",
+      "repo_id": "boltz-community/boltz-2",
+      "asset_kind": "model",
+      "origin": "第6回conditional",
+      "reason": "分子構造・結合親和性という現行ESM2以外の専門能力。",
+      "next_gate": "Boltzソフトウェア、MSAオフライン処理とmols.tar",
+      "source_url": "https://huggingface.co/boltz-community/boltz-2",
+      "download_approved": false
+    },
+    {
+      "phase": "model_bundle_next",
+      "repo_id": "facebook/audioseal",
+      "asset_kind": "model",
+      "origin": "第6回select_proposed",
+      "reason": "音声生成の付随資産として真正性検証の固有技術を保存。",
+      "next_gate": "透かし検出器+生成器とaudiosealコード、用途限界",
+      "source_url": "https://huggingface.co/facebook/audioseal",
+      "download_approved": false
+    },
+    {
+      "phase": "model_bundle_next",
+      "repo_id": "mistralai/Shieldstral-1.0-3B",
+      "asset_kind": "model",
+      "origin": "第6回select_proposed",
+      "reason": "自然言語による多モーダル安全基準の専門後学習。",
+      "next_gate": "Ministral/encoder実装と偽陽性の比較評価",
+      "source_url": "https://huggingface.co/mistralai/Shieldstral-1.0-3B",
+      "download_approved": false
+    },
+    {
+      "phase": "model_bundle_next",
+      "repo_id": "nvidia/GR00T-N1.7-3B",
+      "asset_kind": "model",
+      "origin": "第5回conditional",
+      "reason": "N1.6とは異なるロボット方策。Cosmos Reason 2B依存が鍵。",
+      "next_gate": "N1.6の代表原本と比較、Gated依存、ロボットI/O後処理",
+      "source_url": "https://huggingface.co/nvidia/GR00T-N1.7-3B",
+      "download_approved": false
+    },
+    {
+      "phase": "model_bundle_next",
+      "repo_id": "facebook/seamless-m4t-v2-large",
+      "asset_kind": "model",
+      "origin": "第6回conditional",
+      "reason": "多言語音声と音声出力の変換の専門重み。",
+      "next_gate": "CC BY-NC、ASR/翻訳モデルの重複、codec",
+      "source_url": "https://huggingface.co/facebook/seamless-m4t-v2-large",
+      "download_approved": false
+    },
+    {
+      "phase": "subset_only",
+      "repo_id": "arcinstitute/opengenome2",
+      "asset_kind": "dataset",
+      "origin": "第6回conditional",
+      "reason": "Evo2の学習データ。約9兆塩基対と説明され全量取得は非現実的になり得る。",
+      "next_gate": "形式/種別を選び権利と完全バイト数を個別確定。無制限全量取得しない",
+      "source_url": "https://huggingface.co/datasets/arcinstitute/opengenome2",
+      "download_approved": false
+    },
+    {
+      "phase": "subset_only",
+      "repo_id": "google/fleurs",
+      "asset_kind": "dataset",
+      "origin": "第6回select_proposed",
+      "reason": "102言語の音声・文字原本。低資源言語比較の再現性を作る。",
+      "next_gate": "言語を選択、録音の権利と分割リーク、容量とSHAを確認",
+      "source_url": "https://huggingface.co/datasets/google/fleurs",
+      "download_approved": false
+    },
+    {
+      "phase": "licence_hold",
+      "repo_id": "mozilla-foundation/common_voice_17_0",
+      "asset_kind": "dataset",
+      "origin": "監視/保留",
+      "reason": "2025-10以降は公式配布がMozilla Data Collectiveへ移管。提供経路変更の事実。",
+      "next_gate": "正式な新配布元条件、声の本人同意・再配布条件が解決するまで収集しない",
+      "source_url": "https://huggingface.co/datasets/mozilla-foundation/common_voice_17_0",
+      "download_approved": false
+    },
+    {
+      "phase": "licence_hold",
+      "repo_id": "GuidenAI/genpio_voice",
+      "asset_kind": "model",
+      "origin": "第4回HOLD",
+      "reason": "手動Gatedアクセスと研究保存/改変/再配布の契約範囲が未確認。",
+      "next_gate": "read accessだけを研究保存の許可と同一視しない",
+      "source_url": "https://huggingface.co/GuidenAI/genpio_voice",
+      "download_approved": false
+    },
+    {
+      "phase": "heavy_weight_review",
+      "repo_id": "mistralai/Mistral-Small-4-119B-2603",
+      "asset_kind": "model",
+      "origin": "現行R1",
+      "reason": "上流全repo約241.9GB。選択ファイルと重複形式を精査する必要。",
+      "next_gate": "FP8/BF16/推論依存の必要性と完全サイズを先に固定",
+      "source_url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603",
+      "download_approved": false
+    },
+    {
+      "phase": "heavy_weight_review",
+      "repo_id": "meta-llama/Llama-4-Scout-17B-16E",
+      "asset_kind": "model",
+      "origin": "現行R0",
+      "reason": "上流全repo約217.3GB。Gated権利があり、大きさのみで自動除外しない。",
+      "next_gate": "フル原本と派生版・完全ライセンス/選択サイズ",
+      "source_url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E",
+      "download_approved": false
+    },
+    {
+      "phase": "heavy_weight_review",
+      "repo_id": "openai/gpt-oss-120b",
+      "asset_kind": "model",
+      "origin": "現行R1",
+      "reason": "上流全repo約195.8GB。原本とquantの選定を精査。",
+      "next_gate": "必要なファイル/形式/推論コードと重複ミラーの実在",
+      "source_url": "https://huggingface.co/openai/gpt-oss-120b",
+      "download_approved": false
+    },
+    {
+      "phase": "heavy_weight_review",
+      "repo_id": "black-forest-labs/FLUX.2-dev",
+      "asset_kind": "model",
+      "origin": "現行R0",
+      "reason": "上流全repo約177.6GB。Gatedで独自ライセンスの画像原本。",
+      "next_gate": "エンコーダー・VAEと複数シャード構成の区別",
+      "source_url": "https://huggingface.co/black-forest-labs/FLUX.2-dev",
+      "download_approved": false
+    },
+    {
+      "phase": "heavy_weight_review",
+      "repo_id": "Qwen/Qwen3-Coder-Next",
+      "asset_kind": "model",
+      "origin": "現行R1",
+      "reason": "上流全repo約159.4GB。コードモデルの重複と全重み形式を比較。",
+      "next_gate": "別コードエージェントモデルとの独自性、推論backend",
+      "source_url": "https://huggingface.co/Qwen/Qwen3-Coder-Next",
+      "download_approved": false
+    }
+  ],
+  "finality_note": "Ordering is a plan for rights/metadata checks, not a government regulation forecast, legal authorization or download order. No asset is removed automatically."
+}
