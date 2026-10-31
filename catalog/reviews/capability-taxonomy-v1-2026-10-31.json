@@ -1,0 +1,1084 @@
+{
+  "schema_version": 1,
+  "generated_on": "2026-10-31",
+  "status": "supplementary_review_only_no_change_to_CURRENT",
+  "base_revision": "v2-20261030",
+  "source_base_sha": "12f5de929be31a805229ddcfedc6320dec7bff3d",
+  "source_overlay_sha": "ad85002b9e52304b2bf4eaa91c8fa43821f8eb9d",
+  "meaning": "taxonomy mappings may have multiple tags; categories are capability axes, not separate downloads or disk quotas. Assignment by existing catalog repo IDs and names, not an independent technical evaluation for every model.",
+  "categories": {
+    "general_llm": "汎用LLM・基盤重み・代替アーキテクチャ",
+    "agents_code": "コード生成・GUI操作・自律エージェント",
+    "safety_security": "モデルの安全性・安全制御・セキュリティ研究",
+    "image_generation": "画像生成・編集・蒸留・Base",
+    "video_generation": "動画生成・映像編集・アニメーション",
+    "identity_biometrics": "音声・人物の同一性を保持する生成・照合",
+    "speech": "音声認識・TTS・会話・翻訳",
+    "music_audio": "音楽生成・音楽特徴・音響制作",
+    "vision_spatial": "視覚認識・OCR・3D・深度",
+    "robotics_control": "ロボットVLA・運動制御",
+    "world_simulation": "世界モデル・映像未来予測",
+    "medical_biology": "医療・生命科学・ゲノム・タンパク質",
+    "earth_time_series": "時系列・気象・地球観測",
+    "retrieval_representation": "検索・埋め込み・再順位付け・特徴表現",
+    "datasets": "専門学習・評価データ",
+    "runtime_components": "独立して復元可能なランタイム・依存物"
+  },
+  "counts": {
+    "tracked": 110,
+    "models": 87,
+    "datasets": 23,
+    "untagged": 0,
+    "by_tag": {
+      "general_llm": 25,
+      "agents_code": 15,
+      "safety_security": 2,
+      "image_generation": 9,
+      "video_generation": 3,
+      "identity_biometrics": 4,
+      "speech": 19,
+      "music_audio": 5,
+      "vision_spatial": 21,
+      "robotics_control": 5,
+      "world_simulation": 4,
+      "medical_biology": 8,
+      "earth_time_series": 1,
+      "retrieval_representation": 7,
+      "datasets": 23,
+      "runtime_components": 0
+    }
+  },
+  "mappings": [
+    {
+      "asset_kind": "model",
+      "repo_id": "orcarouter/Qwen3.8-27B-Uncensored",
+      "known_risk_tier": "R0",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "agents_code",
+        "safety_security",
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "black-forest-labs/flux-3-image-klein-base",
+      "known_risk_tier": "R0",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "image_generation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "black-forest-labs/FLUX.2-dev",
+      "known_risk_tier": "R0",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "image_generation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ideogram-ai/ideogram-4-nf4",
+      "known_risk_tier": "R0",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "image_generation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "meta-llama/Llama-4-Scout-17B-16E",
+      "known_risk_tier": "R0",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "facebook/dinov3-vit7b16-pretrain-lvd1689m",
+      "known_risk_tier": "R0",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "vision_spatial",
+        "retrieval_representation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "facebook/sam3",
+      "known_risk_tier": "R0",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "vision_spatial"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/Cosmos-Predict2-2B-Video2World",
+      "known_risk_tier": "R0",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "world_simulation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "CohereLabs/aya-vision-32b",
+      "known_risk_tier": "R0",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "vision_spatial",
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "google/medgemma-4b-it",
+      "known_risk_tier": "R0",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "general_llm",
+        "medical_biology",
+        "vision_spatial"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "black-forest-labs/FLUX.2-klein-9B",
+      "known_risk_tier": "BACKLOG",
+      "known_portfolio_decision": "deferred",
+      "capability_tags": [
+        "image_generation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "EPFLiGHT/Meditron3-70B",
+      "known_risk_tier": "R0",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "medical_biology"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "StephaneBah/AfroRadVoice-FR",
+      "known_risk_tier": "R0",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "datasets",
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "OctoMed/OctoMed-32B",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "medical_biology"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "EPFLiGHT/OLMo-2-32B-MeditronFO",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "medical_biology"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "EPFLiGHT/Apertus-70B-MeditronFO",
+      "known_risk_tier": "BACKLOG",
+      "known_portfolio_decision": "deferred",
+      "capability_tags": [
+        "medical_biology"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "HuggingFaceBio/Carbon-X",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "medical_biology"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "microsoft/Fara1.5-27B",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "agents_code"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/GR00T-N1.6-3B",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "robotics_control"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "lerobot/pi0_base",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "robotics_control"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-Coder-Next",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "agents_code"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "mistralai/Mistral-Small-4-119B-2603",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "openai/gpt-oss-120b",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Lightricks/LTX-2.3",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "video_generation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Wan-AI/Wan2.2-TI2V-5B",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "video_generation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen-Image-2.1",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "image_generation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+      "known_risk_tier": "BACKLOG",
+      "known_portfolio_decision": "deferred",
+      "capability_tags": [
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "identity_biometrics",
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "microsoft/VibeVoice-1.5B",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "identity_biometrics",
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "LiquidAI/LFM3-Omni-2B",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "deepseek-ai/DeepSeek-OCR-2",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "vision_spatial"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "IFM/SFT-Reasoning",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "datasets",
+        "agents_code"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "EPFLiGHT/fully-open-meditron",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "datasets",
+        "medical_biology"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "CohereLabs/aya_dataset",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "datasets",
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "laion/emotional-roleplay-finetuning-dataset",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "datasets",
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "allenai/pixmo-cap",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "datasets",
+        "vision_spatial"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "nvidia/OpenCodeInstruct",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "datasets",
+        "agents_code"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "nvidia/OpenMathInstruct-2",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "datasets"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3.8-27B",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "google/gemma-4-31B",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3.5-35B-A3B-Base",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "allenai/Olmo-3-1125-32B",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "LiquidAI/LFM3-1.7B-Base",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "RWKV/RWKV7-7.2B-20260805",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "GSAI-ML/iLLaDA-8B-Base",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "state-spaces/mamba-2.8b",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "facebook/vjepa2-vitg-fpc64-384",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "vision_spatial",
+        "world_simulation",
+        "retrieval_representation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "PaddlePaddle/PaddleOCR-VL-1.5",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "vision_spatial"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "openai/whisper-large-v3-turbo",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-ASR-1.7B",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "answerdotai/ModernBERT-large",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "retrieval_representation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "BAAI/bge-m3",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "vision_spatial",
+        "retrieval_representation"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "HuggingFaceFW/fineweb-edu",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "datasets",
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "allenai/tulu-3-sft-mixture",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "datasets",
+        "agents_code"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "HuggingFaceH4/ultrafeedback_binarized",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "datasets",
+        "agents_code"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "llm-jp/magpie-sft-v1.0",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "datasets",
+        "agents_code"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "elyza/ELYZA-tasks-100",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "datasets",
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "lerobot/aloha_sim_insertion_human",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "datasets",
+        "robotics_control"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "bigcode/the-stack-v2",
+      "known_risk_tier": "HOLD",
+      "known_portfolio_decision": "hold",
+      "capability_tags": [
+        "datasets",
+        "agents_code"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "bigcode/starcoderdata",
+      "known_risk_tier": "HOLD",
+      "known_portfolio_decision": "hold",
+      "capability_tags": [
+        "datasets",
+        "agents_code"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "amphion/Emilia-Dataset",
+      "known_risk_tier": "HOLD",
+      "known_portfolio_decision": "hold",
+      "capability_tags": [
+        "datasets",
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "lmsys/lmsys-chat-1m",
+      "known_risk_tier": "HOLD",
+      "known_portfolio_decision": "hold",
+      "capability_tags": [
+        "datasets"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "laion/relaion2B-en-research",
+      "known_risk_tier": "HOLD",
+      "known_portfolio_decision": "hold",
+      "capability_tags": [
+        "datasets",
+        "vision_spatial"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "allenai/WildChat-1M",
+      "known_risk_tier": "HOLD",
+      "known_portfolio_decision": "hold",
+      "capability_tags": [
+        "datasets"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "orcarouter/Qwen3.8-Flash-Next-Uncensored",
+      "known_risk_tier": "HOLD",
+      "known_portfolio_decision": "hold",
+      "capability_tags": [
+        "agents_code",
+        "safety_security"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "mistralai/Mistral-Large-4-1T-A52B",
+      "known_risk_tier": "HOLD",
+      "known_portfolio_decision": "hold",
+      "capability_tags": [
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "tencent/Hy-SimulMT-30B-A3B",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "general_llm",
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Nanbeige/Nanbeige4.3-33B-Base",
+      "known_risk_tier": "BACKLOG",
+      "known_portfolio_decision": "deferred",
+      "capability_tags": [
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Nanbeige/Nanbeige4.3-33B",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ibm-granite/granite-switch-4.1-30b",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "nvidia/PhysicalAI-Autonomous-Vehicles-Foundation4D",
+      "known_risk_tier": "HOLD",
+      "known_portfolio_decision": "hold",
+      "capability_tags": [
+        "datasets",
+        "robotics_control"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "nvidia/Granary-v2",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "datasets",
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "lightonai/LightOnOCR-3-0.8B",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "vision_spatial"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "lightonai/LightOnOCR-3-4B",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "vision_spatial"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ibm-granite/granite-speech-5.0-470m-turboctc",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ibm-granite/granite-speech-5.0-2b",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/nemotron-labs-unified-asr-0.6b",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "qvac/TranscribePsy-250M-EU",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "black-forest-labs/flux-3-image-klein",
+      "known_risk_tier": "R0",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "image_generation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "bytedance-research/Lance",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "video_generation",
+        "vision_spatial",
+        "world_simulation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "PerceptronAI/Isaac-0.2-2B-Preview",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "vision_spatial"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ACERobotics/Puffin-World",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "vision_spatial",
+        "world_simulation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "microsoft/TRELLIS.2-4B",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "vision_spatial"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "tencent/Hunyuan3D-2.1",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "vision_spatial"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Tongyi-MAI/Z-Image-Turbo",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "image_generation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "autogluon/chronos-2",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "earth_time_series"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "identity_biometrics",
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "lerobot/smolvla_base",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "robotics_control"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-VL-2B-Instruct",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "vision_spatial"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Wigtn/Qwen3-VL-2B-WigtnOCR",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "identity_biometrics",
+        "vision_spatial"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "tencent/Hy-Memory-30B-A3B",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "agents_code",
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "retrieval_representation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "retrieval_representation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "facebook/esm2_t33_650M_UR50D",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "medical_biology"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "google/siglip2-base-patch16-224",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "vision_spatial",
+        "retrieval_representation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3.5-0.8B",
+      "known_risk_tier": "R2",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "Wigtn/KoGovDoc-Bench",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "datasets",
+        "vision_spatial"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "briaai/Fibo-2.0-dev",
+      "known_risk_tier": "R0",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "image_generation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Edge0/Audio8-TTS-Realistic-0.6b",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "select",
+      "capability_tags": [
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "m-a-p/YuE2-3B",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "music_audio"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "m-a-p/SheetSage2",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "music_audio"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "m-a-p/MERT-v2-FullSong",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "music_audio"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "m-a-p/YuE2-Vae",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "music_audio"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "agents_code"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "LiquidAI/d1-omni-600M",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "agents_code"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "LiquidAI/LFM2.5-24B-A2B",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "general_llm"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+      "known_risk_tier": "R1",
+      "known_portfolio_decision": "conditional",
+      "capability_tags": [
+        "agents_code",
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "briaai/Fibo-2.0-edit-turbo",
+      "known_risk_tier": "BACKLOG",
+      "known_portfolio_decision": "deferred",
+      "capability_tags": [
+        "image_generation"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "inclusionAI/Ming-3.0-tts-0.5B",
+      "known_risk_tier": "BACKLOG",
+      "known_portfolio_decision": "deferred",
+      "capability_tags": [
+        "speech"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "m-a-p/MERT-v2-30s",
+      "known_risk_tier": "BACKLOG",
+      "known_portfolio_decision": "deferred",
+      "capability_tags": [
+        "music_audio"
+      ]
+    }
+  ]
+}
