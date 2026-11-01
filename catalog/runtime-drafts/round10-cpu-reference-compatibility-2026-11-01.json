@@ -1,0 +1,252 @@
+{
+  "schema_version": 1,
+  "revision_id": "runtime-review-round10-20261101",
+  "created_on": "2026-11-01",
+  "status": "REFERENCE_PROFILES_ONLY_NOT_INSTALL_OR_DOWNLOAD_APPROVAL",
+  "baseline_model_review": {
+    "path": "catalog/acquisition-drafts/round8-pinned-files-2026-11-01.json",
+    "blob_sha1": "bb445615c200f32862bcbe8c014f4ae3e08b0848",
+    "models": [
+      {
+        "repo_id": "depth-anything/Depth-Anything-V2-Small-hf",
+        "revision": "5426e4f0f36572d16453bbda7a8389317b1bef99",
+        "bytes": 99181304
+      },
+      {
+        "repo_id": "facebook/sam2-hiera-tiny",
+        "revision": "7c218beaf0bb87874785f32b582f640134fc1c09",
+        "bytes": 155874070
+      },
+      {
+        "repo_id": "Qwen/Qwen3Guard-Gen-0.6B",
+        "revision": "fada3b2f655b89601929198343c94cd2f64d93cc",
+        "bytes": 1519204911
+      },
+      {
+        "repo_id": "HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
+        "revision": "7b375e1b73b11138ff12fe22c8f2822d8fe03467",
+        "bytes": 2034857549
+      }
+    ],
+    "four_public_model_files_bytes": 3809117834,
+    "not_a_full_archive_footprint": true
+  },
+  "decision": {
+    "common_runtime": "Transformers 5.22.1 + PyTorch 2.14.1 CPU + Torchvision 0.29.2 CPU",
+    "video_extension": "TorchCodec 0.17 CPU and system FFmpeg shared libraries; explicit torchcodec backend required",
+    "why_not_torch_215": "PyTorch 2.15.0 is newly released Oct 28 2026; choose the earlier published 2.14.1 for a lower-change reference, not a claim of superior speed, security, or actual runtime compatibility.",
+    "no_user_hardware_assumptions": true,
+    "no_inference_test_yet": true
+  },
+  "components": [
+    {
+      "package": "transformers",
+      "version": "5.22.1",
+      "source_git_repository": "huggingface/transformers",
+      "source_git_commit": "446a570e62b04a89ea001604ada7366baac2ea67",
+      "license_expression": "Apache-2.0",
+      "py311_wheel": {
+        "filename": "transformers-5.22.1-py3-none-any.whl",
+        "size_bytes": 13051755,
+        "published_sha256": "c940b4bf98de4f568723895f330ba1460a398bd83061b93b70238c3fe32e4389",
+        "provider": "pypi"
+      },
+      "reason": "Native sam2_video, qwen3, depth_anything and smolvlm modules present; runtime compatibility still needs actual offline tests."
+    },
+    {
+      "package": "torch",
+      "version": "2.14.1+cpu",
+      "source_git_repository": "pytorch/pytorch",
+      "source_git_commit": "5c4886908584029761b579af026dcfb627c84070",
+      "license_expression": "multi-license; confirm per distribution",
+      "required_python": "3.11",
+      "reason": "Official CPU index; do not silently substitute Linux default CUDA-enabled PyPI wheel."
+    },
+    {
+      "package": "torchvision",
+      "version": "0.29.2+cpu",
+      "source_git_repository": "pytorch/vision",
+      "source_git_commit": "f12281517f1b2f6255904639b027c9436f3e5008",
+      "license_expression": "BSD; confirm applicable notices",
+      "compatibility": "Official release says compatible with torch 2.14 and later; includes path traversal and input validation fixes Oct 28 2026.",
+      "reason": "Vision preprocessing and utilities. CPU build explicitly selected, not assumed interchangeable with CUDA."
+    },
+    {
+      "package": "torchcodec",
+      "version": "0.17.0+cpu",
+      "source_git_repository": "meta-pytorch/torchcodec",
+      "source_git_commit": "d9dc54238e173000bc3969eb3959777026ff9ae8",
+      "license_expression": "BSD-3-Clause; FFmpeg libraries carry separate terms",
+      "compatibility": "Official TorchCodec matrix: torch>=2.11 and Python 3.10–3.14.",
+      "reason": "One explicit video decoding stack instead of optional PyAV/Decord/old Torchvision video decoder."
+    },
+    {
+      "package": "num2words",
+      "version": "0.5.14",
+      "license_expression": "LGPL",
+      "role": "Required by SmolVLM processor; verified prior round9",
+      "py311_wheel": {
+        "filename": "num2words-0.5.14-py3-none-any.whl",
+        "size_bytes": 163525,
+        "published_sha256": "1c8e5b00142fc2966fd8d685001e36c4a9911e070d1b120e1beb721fa1edb33d",
+        "provider": "pypi"
+      },
+      "source_package_sha256": "b066ec18e56b6616a3b38086b5747daafbaa8868b226a36127e0451c0cf379c6",
+      "extra_dependency": "docopt>=0.6.2"
+    },
+    {
+      "package": "docopt",
+      "version": "0.6.2",
+      "license_expression": "MIT",
+      "role": "One transitive dependency from num2words",
+      "source_distribution": {
+        "filename": "docopt-0.6.2.tar.gz",
+        "size_bytes": 25901,
+        "published_sha256": "49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491",
+        "provider": "pypi"
+      },
+      "note": "Only sdist is published at this version; rebuilding a wheel in an isolated approved environment would be a separate operation."
+    }
+  ],
+  "reference_profiles": [
+    {
+      "target": "reference_linux_x86_64_cpu",
+      "status": "METADATA_ONLY_NOT_THE_USER_MACHINE",
+      "system": "Linux x86_64",
+      "minimum_glibc": "2.28",
+      "python_abi": "CPython 3.11, CPython patch and distro unspecified",
+      "cpu_only": true,
+      "packages": [
+        {
+          "package": "torch",
+          "filename": "torch-2.14.1+cpu-cp311-cp311-manylinux_2_28_x86_64.whl",
+          "source_url": "https://download-r2.pytorch.org/whl/cpu/torch-2.14.1%2Bcpu-cp311-cp311-manylinux_2_28_x86_64.whl",
+          "sha256_from_official_index": "5e38154c8896d426a5df58bf2276b603e82184dfae4f54d77dbb212f36e34f37",
+          "bytes": null,
+          "locally_verified_sha256": false,
+          "package_downloaded": false
+        },
+        {
+          "package": "torchvision",
+          "filename": "torchvision-0.29.2+cpu-py3-none-manylinux_2_28_x86_64.whl",
+          "source_url": "https://download-r2.pytorch.org/whl/cpu/torchvision-0.29.2%2Bcpu-py3-none-manylinux_2_28_x86_64.whl",
+          "sha256_from_official_index": "87631236a47be98ab21301e8cb4fc1cbb9325fe0aa7a022e18d2f894087b68c3",
+          "bytes": null,
+          "locally_verified_sha256": false,
+          "package_downloaded": false
+        },
+        {
+          "package": "torchcodec",
+          "filename": "torchcodec-0.17.0+cpu-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "source_url": "https://download.pytorch.org/whl/cpu/torchcodec-0.17.0%2Bcpu-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "sha256_from_official_index": "d859426bd2fed833ed0826c6d3fefa7a261178cd550420bd536e9f073e7eea56",
+          "bytes": null,
+          "locally_verified_sha256": false,
+          "package_downloaded": false
+        }
+      ]
+    },
+    {
+      "target": "reference_windows_amd64_cpu",
+      "status": "METADATA_ONLY_NOT_THE_USER_MACHINE",
+      "system": "Windows 64-bit (version unspecified)",
+      "minimum_glibc": null,
+      "python_abi": "CPython 3.11, CPython patch unspecified",
+      "cpu_only": true,
+      "packages": [
+        {
+          "package": "torch",
+          "filename": "torch-2.14.1+cpu-cp311-cp311-win_amd64.whl",
+          "source_url": "https://download-r2.pytorch.org/whl/cpu/torch-2.14.1%2Bcpu-cp311-cp311-win_amd64.whl",
+          "sha256_from_official_index": "d14b0c8a66345b7ba43adfa86fc20d89087a0a92e440004755d49d2468ddc6e0",
+          "bytes": null,
+          "locally_verified_sha256": false,
+          "package_downloaded": false
+        },
+        {
+          "package": "torchvision",
+          "filename": "torchvision-0.29.2+cpu-py3-none-win_amd64.whl",
+          "source_url": "https://download-r2.pytorch.org/whl/cpu/torchvision-0.29.2%2Bcpu-py3-none-win_amd64.whl",
+          "sha256_from_official_index": "84cb034b4ad99ccfda755270f6a7fff8a1c6694450e29880b99e4a60274e800b",
+          "bytes": null,
+          "locally_verified_sha256": false,
+          "package_downloaded": false
+        },
+        {
+          "package": "torchcodec",
+          "filename": "torchcodec-0.17.0+cpu-cp311-cp311-win_amd64.whl",
+          "source_url": "https://download.pytorch.org/whl/cpu/torchcodec-0.17.0%2Bcpu-cp311-cp311-win_amd64.whl",
+          "sha256_from_official_index": "8c91aceeb3535d4f4ac714c508a470cb1e3b41ea0459f9e93af3f2bd308512c3",
+          "bytes": null,
+          "locally_verified_sha256": false,
+          "package_downloaded": false
+        }
+      ]
+    }
+  ],
+  "video_decoding": {
+    "transformers_fixed_code_url": "https://github.com/huggingface/transformers/blob/446a570e62b04a89ea001604ada7366baac2ea67/src/transformers/video_utils.py",
+    "fixed_code_blob_sha1": "58ea9e7122236d10044ed9fd521b177a443bd12a",
+    "default_video_backend": "pyav",
+    "selected_nondefault_backend": "torchcodec",
+    "must_configure_backend_explicitly": true,
+    "ffmpeg_supported_major_range": "4 through 9, per TorchCodec 0.17 pinned README",
+    "system_ffmpeg_version": null,
+    "ffmpeg_source_binary_hash": null,
+    "shared_libraries_required": true,
+    "ffmpeg_license_not_resolved": true,
+    "stream_video_metadata_frame_count_and_fps_required_for_reproducibility": true,
+    "storing_torchcodec_without_ffmpeg_does_not_claim_working_video": true,
+    "video_processor_source_git_blob": "1087e9184afe745e0392e71bae1cf078c0fa490e"
+  },
+  "required_constraints_not_yet_pinned": {
+    "python_patch_version": null,
+    "operating_system_image_digest": null,
+    "actual_hardware_cpu_gpu_and_driver": null,
+    "actual_glibc_or_msvc_runtime": null,
+    "package_resolver_lock_for_transformers_numpy_tokenizers_safetensors_hub_pillow_jinja2_typing_extensions": null,
+    "torch_cpu_wheel_sizes": null,
+    "torchvision_cpu_wheel_sizes": null,
+    "torchcodec_cpu_wheel_sizes": null,
+    "ffmpeg_libraries_source_digest_and_size": null,
+    "video_backend_integration_test": false,
+    "model_input_video_metadata_and_sampling_policy": null,
+    "model_storage_license_notice_archival_checked": false,
+    "security_advisory_review_for_all_dependencies": false,
+    "hardware_performance_latency_peak_ram": null,
+    "final_required_runtime_bytes": null,
+    "complete_offline_bundle_bytes": null
+  },
+  "known_security_and_rights": [
+    "Torchvision 0.29.2 official release fixes unsafe tar archive extraction and checks on CPU ops; no broad safety guarantee.",
+    "PyPI Linux torch 2.14.1 default wheel declares CUDA packages; do not reuse its SHA or size as the official +cpu wheel.",
+    "PyTorch CPU index hashes are publisher-provided SHA256 URL fragments, not locally verified wheel bytes.",
+    "TorchCodec uses system FFmpeg and its licenses; evaluate actual shared library variants, codecs and the right to redistribute.",
+    "Num2words 0.5.14 is LGPL while the four model checkpoints are published as Apache-2.0; their licenses must not be conflated.",
+    "torch, torchvision, torchcodec source Git commits are version provenance; they are not package SHA256."
+  ],
+  "verification_plan": {
+    "H": "One explicit CPU-only reference profile with a single video backend can support metadata-level compatibility of the four selected small models while avoiding duplicate GPU stacks and alternate decoders.",
+    "T": "Check official version compatibility and immutable source tag, wheel index sha256 for Linux x86_64 and Windows amd64; after separate approval, test at least 3 local inputs per task in network-denied sandbox, with validated decoder and stable output schema. Stop on missing license, hash, OS/ABI or any unauthorized fetch.",
+    "D": "METADATA_PASS only when all version tags, wheel source hashes and package relations are coherent. DEPLOYMENT_PASS requires full dependency closure, model file integrity, four smoke tests, no external network access and RAM below limit. Any missing hardware/FFmpeg yields UNCERTAIN, not PASS.",
+    "C": "Pytorch CPU backend may lack desired BF16 acceleration; incompatible native extensions or FFmpeg libraries may break the shared stack. Default pyav selection may silently defeat torchcodec-only packaging.",
+    "U": "Unknown runtime file sizes and hardware timings are not zero. Full statistical combined uncertainty and coverage coefficient are unavailable until an independent measurement protocol exists."
+  },
+  "approved_queue_entries": 0,
+  "download_approved": false,
+  "execution_approved": false,
+  "model_or_package_files_downloaded": false,
+  "actual_hdd_checked": false,
+  "sources": [
+    "https://github.com/pytorch/vision/releases/tag/v0.29.2",
+    "https://pytorch.org/get-started/previous-versions/",
+    "https://github.com/meta-pytorch/torchcodec/tree/d9dc54238e173000bc3969eb3959777026ff9ae8",
+    "https://download.pytorch.org/whl/cpu/torch/",
+    "https://download.pytorch.org/whl/cpu/torchvision/",
+    "https://download.pytorch.org/whl/cpu/torchcodec/",
+    "https://pypi.org/pypi/torch/2.14.1/json",
+    "https://pypi.org/pypi/torchvision/0.29.2/json",
+    "https://pypi.org/pypi/torchcodec/0.17.0/json",
+    "https://pypi.org/pypi/docopt/0.6.2/json"
+  ]
+}
