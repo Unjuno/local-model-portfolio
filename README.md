@@ -4,10 +4,15 @@
 
 **目的は、リポジトリをHDDに配置し、エージェントが承認済みの取得指示に従って保存・検証できる状態を作ることです。** 人気ランキングでも、重みをGitHubへ再配布する場所でもありません。
 
-## 現在の採用ポートフォリオ（2026-10-30）
+## 選定台帳の正本（2026-11-01時点）
 
-- **[現行版：97件の採用・条件付き・保留判断と、各モデル/データのリンク・選定理由](docs/selected-portfolio-current.md)**
-- **[機械可読の現行選定台帳（97件）](catalog/selected-portfolio-2026-10-30.json)**
+- **[現行正本：v2・110件（有効94件）を指すCURRENT.json](catalog/CURRENT.json)**（初期97件へv2差分を適用。暫定3.234TB、取得承認0件）
+- **[初期97件の履歴データ](catalog/selected-portfolio-2026-10-30.json)** ／ [現行に追加するv2差分](catalog/revisions/v2-2026-10-30.json) ／ [当時の選定理由の説明](docs/selected-portfolio-current.md)
+
+**注意**：現在の取得仕様を示す正本は`catalog/CURRENT.json`だけです。レビュー用PR #1で検討する追加モデル・データセットや保存形式は、未適用・未承認のドラフトであり、正本110件・暫定3.234TBへ自動加算していません。
+
+- **[第12回：大型上位5の形式整理と小型7件の次期台帳差分案](catalog/revisions/proposed-efficiency-reallocation-2026-11-01.json)**（**未適用の比較シナリオ**）
+- **[第12回の日本語詳細レビュー](docs/selection-round12-2026-11-01.md)** ／ [大型5件の完全rev・ファイル単位の選択案](catalog/acquisition-drafts/round12-top5-selective-files-2026-11-01.json)
 - **[小型・高効率モデル25件の上流ファイル容量・SHA監査](catalog/snapshots/2026-10-30-disruptive-compact-1.json)**（続きは [2](catalog/snapshots/2026-10-30-disruptive-compact-2.json)、[3](catalog/snapshots/2026-10-30-disruptive-compact-3.json)、[4](catalog/snapshots/2026-10-30-disruptive-compact-4.json)）
 
 **優先対象は、規制・配布条件変更による再取得困難性だけではありません。** 小型で既存のOCR・ASR・画像制作・3Dアセット・ロボット・時系列・検索サービスの一部を代替し得る独自モデル、専門ファインチューニング重み、貴重なデータも選定対象です。実際の産業への影響や規制の予測は仮説として区別します。
