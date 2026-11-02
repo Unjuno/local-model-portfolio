@@ -4,7 +4,13 @@
 
 **目的は、リポジトリをHDDに配置し、エージェントが承認済みの取得指示に従って保存・検証できる状態を作ることです。** 人気ランキングでも、重みをGitHubへ再配布する場所でもありません。
 
-## 現行選定 v6（2026-11-03、予測順位＋費用対効果の監査）
+## 現行選定 v7（2026-11-03、総250B以上のハード除外）
+
+- **[総パラメータ250B上限の復活と109モデル監査](docs/parameter-cutoff-v7-2026-11-03.md)**。83件は250B未満、25件は総数未確認で最終取得lock不可、Mistral Large 4（約1.05T）1件は厳格除外。**総パラメータは活性MoE数ではなく全expertを含む**。
+- **[CURRENT v7](catalog/CURRENT.json)**／[132件の最新ビュー](catalog/effective-portfolio-2026-11-03-v7.json)／[v7全モデルパラメータゲート](catalog/revisions/v7-2026-11-03.json)／[v7の承認前作業キュー](queues/proposed-v7-2026-11-03.json)。
+- 規制のS1→S2→S3シナリオ、実行コスパ、HDD3.8TB上限、推論RAM512GB未満の追加条件は維持。ただし**250Bの除外条件が先**。ダウンロード承認0件、実機モデル実行0件。
+
+## 旧版v6（2026-11-03、履歴）
 
 - **[132件の全件コスパ監査](docs/resource-cost-screen-v6-2026-11-03.md)**。5GB未満38件、5〜15GB 18件、15〜50GB 17件、50GB以上31件、容量未確定28件（全て上流repoの値）。有効105件のうち100GB以上が9件・計約1.559TB。
 - **[CURRENT v6](catalog/CURRENT.json)**／[全132件の予測順位とリソース判定](catalog/effective-portfolio-2026-11-03-v6.json)／[v6資源評価の差分](catalog/revisions/v6-2026-11-03.json)／[保存と実行を分けたv6作業キュー](queues/proposed-v6-2026-11-03.json)。
