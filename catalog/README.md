@@ -54,7 +54,14 @@ evidenceには、確認日時、URL、対象リビジョン、確認内容、fac
 この台帳にDownloadedやTestedを手入力して、実ファイルの検証記録の代わりにしない。
 
 
-## 現行v4の正本（2026-11-03）
+## 現行v5の正本（2026-11-03）
+
+- [CURRENT.json](CURRENT.json) が、immutable base97+v2〜v4の選定判断と、v5の**予測順位付け操作132件**を指定する。
+- [effective-portfolio-2026-11-03-v5.json](effective-portfolio-2026-11-03-v5.json) は全132件をS1→S2→S3で並べた閲覧専用ビュー。有効105、延期12、保留15。**予測順位はダウンロード承認ではない**。
+- [revisions/v5-2026-11-03.json](revisions/v5-2026-11-03.json) は採否・容量・権利条件を変えず、順位と予測の理由をすべての資産に付与した新しい正本の差分。
+- [予測優先度の説明](../docs/selected-portfolio-v5-2026-11-03.md)と[調査キュー](../queues/proposed-v5-2026-11-03.json)を参照。以前のR0/R1/R2は**履歴分類**、現行の調査順位はv5のS1/S2/S3。
+
+## 旧版v4の正本（2026-11-03、履歴）
 
 - [CURRENT.json](CURRENT.json) が最新版の差分順序を指定する。[effective-portfolio-2026-11-03.json](effective-portfolio-2026-11-03.json) は**132件・有効105件の閲覧専用実体化ビュー**。
 - [revisions/v4-2026-11-03.json](revisions/v4-2026-11-03.json) にIdolとgated DINOv3 ViT-H+の2件を、URL・固定版・容量根拠・権利ゲート付きで追加した。取得承認ではない。
