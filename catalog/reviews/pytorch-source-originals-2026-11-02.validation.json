@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "review_id": "pytorch-off-hf-originals-round13-20261102",
+  "checked_on": "2026-11-02",
+  "status": "PASS_METADATA_ONLY",
+  "checks": {
+    "five_candidates": true,
+    "four_rights_holds": true,
+    "four_watch": true,
+    "three_soft": true,
+    "all_ids_distinct": true,
+    "full_source_git_commits": true,
+    "silero_weight_2272526": true,
+    "silero_selected_2321515": true,
+    "silero_git_blob_proper_not_fake_sha256": true,
+    "demucs_checkpoint_path": true,
+    "denoiser_checkpoint_path": true,
+    "codeformer_checkpoint_bytes": true,
+    "codeformer_partial_three_sum": true,
+    "codeformer_no_published_sha": true,
+    "stylegan_nc_pickle_hold": true,
+    "insightface_named_release": true,
+    "insightface_publisher_sha256": true,
+    "rights_hold_not_selected": true,
+    "torchtext_archived_source": true,
+    "torchaudio_version_gate": true,
+    "torchcodec_prior_correct": true,
+    "pytorch_security_advisory_recorded": true,
+    "no_checkpoint_read": true,
+    "review_doc_integrity": true,
+    "formal_current_110_not_changed": true,
+    "approval_queue_0": true
+  },
+  "failed": [],
+  "summary": {
+    "candidate_model_families": 5,
+    "rights_holds": 4,
+    "watch_only": 4,
+    "software_entrypoints": 3,
+    "pinned_silero_snapshot_bytes": 2321515,
+    "codeformer_reference_three_weights_bytes": 539425122,
+    "other_model_full_archive_bytes": null,
+    "current_tracked": 110,
+    "current_active": 94,
+    "approved_queue": 0
+  },
+  "source_blob_sha": {
+    "review": "6b904e6d330eefe0999c21f498d669db0d408eb2",
+    "doc": "c372f3c1b2446e7d16b818a8dffea164d2d92e35",
+    "currentM": "91dc8c042cf46242e020c0261c01cd5856c5ec36",
+    "queueM": "df0e369abda4b765533e0af3921c54a5cb164787",
+    "round10": "0051b442ec9b9212f60db351c5ec65b2d416142b"
+  },
+  "scope_limits": [
+    "Original Git tree and GitHub release API metadata only; not downloaded checkpoint SHA256 verification or runtime inference.",
+    "Gated/third-party rights and model-weight distribution terms not final; older .pth/.pkl/TorchHub code not run.",
+    "Source repos Archived do not establish that external pretrained weight URLs are dead.",
+    "Any unknown model checkpoint byte amount is null, not zero; no projection onto 3.8TB is made."
+  ]
+}
