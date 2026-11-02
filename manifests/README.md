@@ -39,3 +39,11 @@ manifest_sha256は承認対象JSONそのもののバイト列のSHA-256。改行
 ハッシュ一致は、実行可能性、無害性、モデルの能力を保証する判定ではない。
 
 一次資料: [固定版・ファイル選択・local_dir](https://huggingface.co/docs/huggingface_hub/guides/download)。使用クライアントの版も取得記録に残す。
+
+
+## 承認前の取得案（2026-11-02）
+
+`manifests/drafts/` 内には、全ファイルの整数バイト数と完全commit IDを記録した**未承認候補**3件がある。確認済みバイト数は5,130,218,354バイト（十進GB 5.130218354）。`*.candidate.json` は`*.lock.json` と互換ではなく、承認キューに登録しない。依存関係・許諾条件・量子化可能なbackend・コンテキスト/バッチに基づく推定RAM・実機HDD確認を経て、明示承認対象の`*.lock.json` を別途作成する。
+
+- [承認前3件の一覧](drafts/README.md)
+- **禁止**：候補JSONをlockに改名してダウンロード実行する、`dependencies:null` を依存無しと読み替える、取得時に重みをimport/実行する。
