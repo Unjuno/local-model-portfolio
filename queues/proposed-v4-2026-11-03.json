@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "source_revision": "v4-20261103",
+  "generated_at": "2026-11-03",
+  "purpose": "Read-only selection-to-manifest worklist, not an authorized download queue",
+  "approved": false,
+  "download_enabled": false,
+  "steps": [
+    {
+      "stage": "A",
+      "name": "finish_safe_pinned_low_volume_first",
+      "assets": [
+        {
+          "rank": 1,
+          "repo_id": "Qwen/Qwen3.5-0.8B",
+          "manifest_draft": "manifests/drafts/qwen3.5-0.8b-2026-10-30.candidate.json",
+          "bytes": 1769980465,
+          "reason": "LLMの最小基準とバックエンド互換テスト",
+          "status": "preapproval_only",
+          "asset_id": "model/Qwen/Qwen3.5-0.8B"
+        },
+        {
+          "rank": 2,
+          "repo_id": "lightonai/LightOnOCR-3-0.8B",
+          "manifest_draft": "manifests/drafts/lightonocr-3-0.8b-2026-10-30.candidate.json",
+          "bytes": 1737771835,
+          "reason": "小型で独立OCR/レイアウト抽出を確保",
+          "status": "preapproval_only",
+          "asset_id": "model/lightonai/LightOnOCR-3-0.8B"
+        },
+        {
+          "rank": 3,
+          "repo_id": "openai/whisper-large-v3-turbo",
+          "manifest_draft": "manifests/drafts/whisper-large-v3-turbo-2026-10-30.candidate.json",
+          "bytes": 1622466054,
+          "reason": "多言語ASRとリファレンス評価原本",
+          "status": "preapproval_only",
+          "asset_id": "model/openai/whisper-large-v3-turbo"
+        }
+      ],
+      "blocking_checks": [
+        "licence/conditions",
+        "dependencies",
+        "inference RAM assumptions",
+        "HDD identity + free space",
+        "user sign-off of exact final lock manifest"
+      ]
+    },
+    {
+      "stage": "B",
+      "name": "permission_sensitive_R0_rights_preflight",
+      "assets": [
+        {
+          "repo_id": "StephaneBah/AfroRadVoice-FR",
+          "observed_access": "gated",
+          "portfolio_decision": "conditional"
+        },
+        {
+          "repo_id": "black-forest-labs/flux-3-image-klein-base",
+          "observed_access": "gated",
+          "portfolio_decision": "conditional"
+        },
+        {
+          "repo_id": "black-forest-labs/FLUX.2-dev",
+          "observed_access": "gated",
+          "portfolio_decision": "conditional"
+        },
+        {
+          "repo_id": "briaai/Fibo-2.0-dev",
+          "observed_access": "gated",
+          "portfolio_decision": "conditional"
+        },
+        {
+          "repo_id": "CohereLabs/aya-vision-32b",
+          "observed_access": "gated",
+          "portfolio_decision": "conditional"
+        },
+        {
+          "repo_id": "EPFLiGHT/Meditron3-70B",
+          "observed_access": "gated",
+          "portfolio_decision": "conditional"
+        },
+        {
+          "repo_id": "facebook/dinov3-vit7b16-pretrain-lvd1689m",
+          "observed_access": "gated",
+          "portfolio_decision": "conditional"
+        },
+        {
+          "repo_id": "facebook/sam3",
+          "observed_access": "gated",
+          "portfolio_decision": "conditional"
+        },
+        {
+          "repo_id": "google/medgemma-4b-it",
+          "observed_access": "gated",
+          "portfolio_decision": "conditional"
+        },
+        {
+          "repo_id": "ideogram-ai/ideogram-4-nf4",
+          "observed_access": "gated",
+          "portfolio_decision": "conditional"
+        },
+        {
+          "repo_id": "meta-llama/Llama-4-Scout-17B-16E",
+          "observed_access": "gated",
+          "portfolio_decision": "conditional"
+        },
+        {
+          "repo_id": "nvidia/Cosmos-Predict2-2B-Video2World",
+          "observed_access": "gated",
+          "portfolio_decision": "conditional"
+        },
+        {
+          "repo_id": "orcarouter/Qwen3.8-27B-Uncensored",
+          "observed_access": "gated",
+          "portfolio_decision": "conditional"
+        },
+        {
+          "repo_id": "facebook/dinov3-vith16plus-pretrain-lvd1689m",
+          "observed_access": "gated",
+          "gating_detail": "manual",
+          "portfolio_decision": "conditional",
+          "status": "blocked until personal agreement and pinned manifest"
+        }
+      ],
+      "blocking_checks": [
+        "Gated permissions and terms without bypass",
+        "fixed revision + files",
+        "rights/consent",
+        "selected bytes",
+        "dependent assets"
+      ]
+    },
+    {
+      "stage": "C",
+      "name": "specialist_coverage_additions",
+      "assets": [
+        {
+          "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+          "status": "unlocked_pending_source_rights_and_bytes",
+          "decision": "select"
+        },
+        {
+          "repo_id": "ResembleAI/chatterbox",
+          "status": "unlocked_pending_source_rights_and_bytes",
+          "decision": "select"
+        },
+        {
+          "repo_id": "OpenMOSS-Team/MOSS-TTS-v1.5",
+          "status": "unlocked_pending_source_rights_and_bytes",
+          "decision": "select"
+        },
+        {
+          "repo_id": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+          "status": "unlocked_pending_source_rights_and_bytes",
+          "decision": "select"
+        },
+        {
+          "repo_id": "KlingTeam/LivePortrait",
+          "status": "unlocked_pending_source_rights_and_bytes",
+          "decision": "select"
+        },
+        {
+          "repo_id": "dphn/Dolphin3.0-Llama3.1-8B",
+          "status": "unlocked_pending_source_rights_and_bytes",
+          "decision": "conditional"
+        },
+        {
+          "repo_id": "OnomaAIResearch/Illustrious-XL-v1.1",
+          "status": "unlocked_pending_source_rights_and_bytes",
+          "decision": "conditional"
+        },
+        {
+          "repo_id": "InstantX/InstantID",
+          "status": "unlocked_pending_source_rights_and_bytes",
+          "decision": "conditional"
+        },
+        {
+          "repo_id": "SWivid/F5-TTS",
+          "status": "unlocked_pending_source_rights_and_bytes",
+          "decision": "conditional"
+        },
+        {
+          "repo_id": "Plachta/Seed-VC",
+          "status": "unlocked_pending_source_rights_and_bytes",
+          "decision": "conditional"
+        },
+        {
+          "repo_id": "boltz-community/boltz-2",
+          "status": "unlocked_pending_source_rights_and_bytes",
+          "decision": "conditional"
+        },
+        {
+          "repo_id": "speridlabs/idol",
+          "status": "conditional; core fixed-file draft exists, not a lock and not approved",
+          "decision": "conditional",
+          "manifest_draft": "manifests/drafts/idol-core-2026-11-03.candidate.json"
+        }
+      ],
+      "blocking_checks": [
+        "license text and parents",
+        "distinct capability over existing 103",
+        "file inventory + repo revisions",
+        "risk and privacy safeguards"
+      ]
+    },
+    {
+      "stage": "D",
+      "name": "backlog_and_hold_not_eligible",
+      "count": 27,
+      "blocking_checks": [
+        "new user-approved re-review and explicit decision change"
+      ]
+    }
+  ],
+  "invariants": [
+    "Do not treat this file as queues/approved.json",
+    "Do not download when user_approved or download_enabled are false",
+    "Never run downloaded code or checkpoints as part of retrieval",
+    "Stop on HDD/size/hash/rights mismatches"
+  ]
+}
