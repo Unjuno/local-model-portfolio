@@ -4,9 +4,18 @@
 
 **目的は、リポジトリをHDDに配置し、エージェントが承認済みの取得指示に従って保存・検証できる状態を作ることです。** 人気ランキングでも、重みをGitHubへ再配布する場所でもありません。
 
-## 現行選定 v4（2026-11-03、レビュー用ドラフト）
+## 現行選定 v5（2026-11-03、規制予測順のドラフト）
 
-- **[v4選定：132件、うち有効105件](docs/selected-portfolio-v4-2026-11-03.md)**（select 54 / conditional 51、延期12、保留15）。旧v3の130件に、[Idol単一画像→3DGSモデル](https://huggingface.co/speridlabs/idol)と必要な[手動GatedのDINOv3 ViT-H+](https://huggingface.co/facebook/dinov3-vith16plus-pretrain-lvd1689m)を条件付きで追加。
+- **[v5の保存判断と規制連鎖シナリオ](docs/selected-portfolio-v5-2026-11-03.md)**：132件をS1（先行的な悪用/合成/権利リスクの制限）→S2（高性能AI一般）→S3（オープンウェイト全体）の仮説に従って優先順位付け。**S1に45件**（有効27・保留/延期18）。予測上の段階は法律の施行予定や確率ではない。
+- **[CURRENT v5](catalog/CURRENT.json)**／[全132件・順位付きビュー](catalog/effective-portfolio-2026-11-03-v5.json)／[v5差分](catalog/revisions/v5-2026-11-03.json)／[S1→S2→S3調査提案キュー](queues/proposed-v5-2026-11-03.json)。
+- **[規制予測と権利確認を区別する判定規約](policies/capability-access-risk.md)**：予測リスクが保存優先度の主軸。現在のGated・許諾・同意・法令は独立した必須取得ゲート。
+- **旧初回3件の小容量マニフェスト案はダウンローダー安全試験用**。規制予測上の優先保存対象とは別。すべて未承認。
+
+**モデル・データ本体のダウンロード承認は0件です。** 予測だけでアクセス制限を回避したり、権利不明の重みを取得しない。
+
+## 旧版v4（2026-11-03、履歴）
+
+- **[v4当時の選定：132件、うち有効105件](docs/selected-portfolio-v4-2026-11-03.md)**（select 54 / conditional 51、延期12、保留15）。旧v3の130件に、[Idol単一画像→3DGSモデル](https://huggingface.co/speridlabs/idol)と必要な[手動GatedのDINOv3 ViT-H+](https://huggingface.co/facebook/dinov3-vith16plus-pretrain-lvd1689m)を条件付きで追加。
 - **[現行ポインタ](catalog/CURRENT.json)**／[132件の機械可読ビュー](catalog/effective-portfolio-2026-11-03.json)／[v4の追加差分](catalog/revisions/v4-2026-11-03.json)。
 - **[高性能・悪用・将来の配布制限の検証規範](policies/capability-access-risk.md)**：確認済みのGated等と、将来の規制に関する仮説を明確に分ける。高性能だけでは規制予定としない。
 - **[Idolの固定コミット・コア7ファイル（約3.079GB）の承認前取得案](manifests/drafts/idol-core-2026-11-03.candidate.json)**。DINOv3とFLUX.2 VAEは別依存として権利/固定版を検証するまで取得しない。
