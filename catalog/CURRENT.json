@@ -72,11 +72,13 @@
     "download_approved": false,
     "selected_file_bytes_final": false
   },
-  "notes": "v5 reorders all existing 132 records for hypothetical cascade-of-restrictions preservation: S1 dual-use/identity/guardrail/rights, S2 high-capability general & science & embodied, S3 broad base/data/runtime. Old R0/R1/R2 retained as historical priority labels, NOT controlling download order. Forecast never overrides legal rights or approval. v6 adds independent resource-cost screening and Qwen3-Coder-Next FP8 8GB experimental offload report. Primary S1>S2>S3 order preserved; no legal gate or selection changes. Runtime evidence is experimental and hardware scenario is not inferred from the owner. v7 restores user-requested HARD exclude >=250B total params (including inactive MoE); Mistral Large4 1.05T changed HOLD to EXCLUDED, other 25 unverified pending metadata, all original selections and archive budget otherwise unchanged.",
+  "notes": "v5 reorders all existing 132 records for hypothetical cascade-of-restrictions preservation: S1 dual-use/identity/guardrail/rights, S2 high-capability general & science & embodied, S3 broad base/data/runtime. Old R0/R1/R2 retained as historical priority labels, NOT controlling download order. Forecast never overrides legal rights or approval. v6 adds independent resource-cost screening and Qwen3-Coder-Next FP8 8GB experimental offload report. Primary S1>S2>S3 order preserved; no legal gate or selection changes. Runtime evidence is experimental and hardware scenario is not inferred from the owner. v7 restores user-requested HARD exclude >=250B total params (including inactive MoE); Mistral Large4 1.05T changed HOLD to EXCLUDED, other 25 unverified pending metadata, all original selections and archive budget otherwise unchanged. Strict >=250B cutoff precedes forecast and RAM/VRAM exceptions. Unknown 25 count blocks final lock.",
   "materialized_catalog_path": "catalog/effective-portfolio-2026-11-03-v7.json",
   "priority_policy_path": "policies/capability-access-risk.md",
-  "priority_worklist_path": "queues/proposed-v6-2026-11-03.json",
+  "priority_worklist_path": "queues/proposed-v7-2026-11-03.json",
   "resource_screen_path": "catalog/revisions/v6-2026-11-03.json",
   "cost_performance_report_path": "docs/resource-cost-screen-v6-2026-11-03.md",
-  "parameter_hard_limit_path": "catalog/revisions/v7-2026-11-03.json"
+  "parameter_hard_limit_path": "catalog/revisions/v7-2026-11-03.json",
+  "parameter_review_report_path": "docs/parameter-cutoff-v7-2026-11-03.md",
+  "hard_exclusion_total_parameters_at_or_above": 250000000000
 }
