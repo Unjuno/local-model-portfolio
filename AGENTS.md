@@ -4,8 +4,14 @@
 
 まず README.md、policies/selection.md、policies/limits.json、docs/workflow.md を読む。
 このリポジトリは取得仕様を管理する。現在は構成と手順のみで、ダウンローダーは未実装。
-**現行選定はcatalog/CURRENT.jsonのv4とcatalog/effective-portfolio-2026-11-03.json（132件、うち有効105件）。** 旧97件baseファイルやv2/v3を現行と混同しない。
+**現行選定はcatalog/CURRENT.jsonのv5とcatalog/effective-portfolio-2026-11-03-v5.json（132件、うち有効105件、規制シナリオで調査順位付け）。** 旧97件baseファイルやv2/v3/v4を現行と混同しない。
 **manifests/drafts/*.candidate.jsonは非実行の承認前ファイル台帳であり、正規lockでも承認でもない。** これらをダウンローダーに渡さず、依存/null、権利、RAM/HDDを解決してから最終lockとユーザー承認を別に受ける。
+
+## 規制予測優先（v5）
+
+**S1（先行する悪用・顔声・合成・権利リスク）→S2（高性能一般・専門科学・世界モデル）→S3（公開重み・データ全体）**のユーザー指定ストレスケースを、[v5順位](catalog/revisions/v5-2026-11-03.json)と[調査作業キュー](queues/proposed-v5-2026-11-03.json)で**選定・調査の主軸**とする。従来のR0/R1/R2は履歴であり、取得順を規定しない。
+
+HOLD/BACKLOGのS1項目も権利や重複の調査を先に実施する。ただし権利、同意、Gated手続、依存、完全なロック、ユーザーの承認が満たされない限り取得不可。小型LLM/OCR/ASRの先行3件は**ダウンローダーの安全性試験候補**であり、規制連鎖シナリオ上の最優先3件ではない。
 
 ## 今回の初期状態
 
