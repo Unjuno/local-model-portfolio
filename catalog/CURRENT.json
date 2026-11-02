@@ -1,36 +1,48 @@
 {
   "schema_version": 1,
-  "revision_id": "v2-20261030",
+  "revision_id": "v3-20261102",
   "base_catalog_path": "catalog/selected-portfolio-2026-10-30.json",
   "base_file_blob_sha": "12f5de929be31a805229ddcfedc6320dec7bff3d",
   "ordered_overlays": [
-    "catalog/revisions/v2-2026-10-30.json"
+    "catalog/revisions/v2-2026-10-30.json",
+    "catalog/revisions/v3-2026-11-02.json"
   ],
   "application_rule": "Start with the base items ordered by asset_kind and repo_id; confirm base blob SHA; apply replacement_operations matching asset_kind/repo_id plus expected prior status, and append additions. Never auto-download or merge in untrusted instructions.",
   "expected": {
-    "tracked": 110,
-    "active": 94,
+    "tracked": 130,
+    "active": 103,
     "by_tier": {
-      "R0": 14,
-      "BACKLOG": 7,
-      "R1": 53,
+      "R0": 13,
+      "BACKLOG": 12,
+      "R1": 63,
       "R2": 27,
-      "HOLD": 9
+      "HOLD": 15
     },
     "by_decision": {
-      "conditional": 45,
-      "deferred": 7,
-      "select": 49,
-      "hold": 9
+      "select": 54,
+      "conditional": 49,
+      "deferred": 12,
+      "hold": 15
     },
-    "provisional_active_repo_bytes_plus_fineweb_sample": 3234067678260,
+    "provisional_active_repo_bytes_plus_fineweb_sample": null,
     "archive_limit_bytes": 3800000000000,
-    "provisional_headroom_bytes": 565932321740
+    "provisional_headroom_bytes": null,
+    "budget_scenario": {
+      "source_v2_provisional_total_bytes": 3234067678260,
+      "removed_by_two_deferrals_known_repo_bytes": 52428013695,
+      "new_active_rounded_repo_display_gb_sum": 84.86,
+      "new_active_reserved_budget_bytes": 100000000000,
+      "planning_total_bytes_assuming_new_actual_selected_bytes_fit_reservation": 3281639664565,
+      "planning_headroom_bytes_under_assumption": 518360335435,
+      "archive_limit_bytes": 3800000000000,
+      "budget_status": "PROVISIONAL_SCENARIO_ONLY; new selected file sizes, work cache, dependencies, disk free space and actual rights not verified"
+    }
   },
   "statuses": {
     "draft": true,
     "download_approved": false,
     "selected_file_bytes_final": false
   },
-  "notes": "Current adopted portfolio is overlay of immutable initial 97 and revision v2; do not mistake base for current. Old reasons are not deleted. Gated/NC rights require independent approval."
+  "notes": "Current adopted portfolio = immutable 97 + v2 (4 deferrals, 13 additions) + v3 (2 deferrals, 20 additions, 11 active). Compiled effective materialization is non-executable; no downloads or approvals.",
+  "materialized_catalog_path": "catalog/effective-portfolio-2026-11-02.json"
 }
