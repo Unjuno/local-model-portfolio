@@ -4,7 +4,7 @@
 
 まず README.md、policies/selection.md、policies/limits.json、docs/workflow.md を読む。
 このリポジトリは取得仕様を管理する。現在は構成と手順のみで、ダウンローダーは未実装。
-**現行選定はcatalog/CURRENT.jsonのv3とcatalog/effective-portfolio-2026-11-02.json（130件、うち有効103件）。** 旧97件baseファイルやv2を現行と混同しない。
+**現行選定はcatalog/CURRENT.jsonのv4とcatalog/effective-portfolio-2026-11-03.json（132件、うち有効105件）。** 旧97件baseファイルやv2/v3を現行と混同しない。
 **manifests/drafts/*.candidate.jsonは非実行の承認前ファイル台帳であり、正規lockでも承認でもない。** これらをダウンローダーに渡さず、依存/null、権利、RAM/HDDを解決してから最終lockとユーザー承認を別に受ける。
 
 ## 今回の初期状態
