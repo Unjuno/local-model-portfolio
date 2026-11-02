@@ -54,7 +54,13 @@ evidenceには、確認日時、URL、対象リビジョン、確認内容、fac
 この台帳にDownloadedやTestedを手入力して、実ファイルの検証記録の代わりにしない。
 
 
-## 現行v5の正本（2026-11-03）
+## 現行v6の正本（2026-11-03）
+
+- [CURRENT.json](CURRENT.json) にv6の「**全132件に対する容量/8GB実行可能性の証拠区分**」を追加。**規制シナリオS1→S2→S3の優先順位は変えない。**
+- [effective-portfolio-2026-11-03-v6.json](effective-portfolio-2026-11-03-v6.json) は現行の132件の予測順位・リソース判定付き閲覧ビュー。モデル性能の実測結果や取得承認を示さない。
+- [revisions/v6-2026-11-03.json](revisions/v6-2026-11-03.json) は増分容量/実行モード/オフロードの証拠区分であり、[コスパ監査](../docs/resource-cost-screen-v6-2026-11-03.md)と[二系統の作業案](../queues/proposed-v6-2026-11-03.json)を対応づける。
+
+## 旧版v5の正本（2026-11-03、履歴）
 
 - [CURRENT.json](CURRENT.json) が、immutable base97+v2〜v4の選定判断と、v5の**予測順位付け操作132件**を指定する。
 - [effective-portfolio-2026-11-03-v5.json](effective-portfolio-2026-11-03-v5.json) は全132件をS1→S2→S3で並べた閲覧専用ビュー。有効105、延期12、保留15。**予測順位はダウンロード承認ではない**。
