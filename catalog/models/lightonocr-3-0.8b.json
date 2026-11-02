@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "asset_id": "lightonocr-3-0.8b",
+  "asset_kind": "model",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "model",
+    "repo_id": "lightonai/LightOnOCR-3-0.8B",
+    "url": "https://huggingface.co/lightonai/LightOnOCR-3-0.8B",
+    "fixed_revision_observed": "36d8636925327c671bd8e479c517a004f7566bd9"
+  },
+  "selection": {
+    "state": "selected",
+    "reason": "文書構造/レイアウトとOCRを軽量な独立重みで保全。4B版は計測差が出るまで延期。",
+    "source_relation": "official or publisher-controlled"
+  },
+  "review": {
+    "state": "blocked",
+    "checked_at": "2026-11-02",
+    "unresolved": [
+      "licensing/redistribution rights complete review",
+      "model dependencies and implementation assumptions",
+      "peak-RAM inference screen under policy",
+      "target HDD identity/space validation",
+      "explicit user approval of final *.lock.json SHA-256"
+    ]
+  },
+  "facts": {
+    "license_metadata": "apache-2.0",
+    "upstream_repo_bytes_observed": 1737771835,
+    "file_count": 15,
+    "lfs_sha256_count": 3,
+    "downloaded": false,
+    "benchmarked": false
+  },
+  "evidence": [
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://github.com/Unjuno/local-model-portfolio/blob/main/catalog/snapshots/2026-10-30-disruptive-compact-1.json",
+      "type": "saved_upstream_file_inventory"
+    },
+    {
+      "checked_at": "2026-11-02",
+      "url": "https://huggingface.co/lightonai/LightOnOCR-3-0.8B",
+      "type": "publisher_license_or_model_card"
+    }
+  ],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": [],
+    "pending": [
+      "画像レンダリング/前処理/モデル版との互換",
+      "backend/量子化形式/解像度・コンテキスト長/バッチを固定したピークRAM見積",
+      "モデルカード条件と付随コードの独立監査、実機HDD容量検証"
+    ]
+  },
+  "manifest_path": null,
+  "manifest_draft_path": "manifests/drafts/lightonocr-3-0.8b-2026-10-30.candidate.json"
+}
