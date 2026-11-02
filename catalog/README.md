@@ -54,7 +54,13 @@ evidenceには、確認日時、URL、対象リビジョン、確認内容、fac
 この台帳にDownloadedやTestedを手入力して、実ファイルの検証記録の代わりにしない。
 
 
-## 現行v3の正本（2026-11-02）
+## 現行v4の正本（2026-11-03）
+
+- [CURRENT.json](CURRENT.json) が最新版の差分順序を指定する。[effective-portfolio-2026-11-03.json](effective-portfolio-2026-11-03.json) は**132件・有効105件の閲覧専用実体化ビュー**。
+- [revisions/v4-2026-11-03.json](revisions/v4-2026-11-03.json) にIdolとgated DINOv3 ViT-H+の2件を、URL・固定版・容量根拠・権利ゲート付きで追加した。取得承認ではない。
+- 前版[effective-portfolio-2026-11-02.json](effective-portfolio-2026-11-02.json)はv3履歴である。
+
+## 旧版v3の正本（2026-11-02、履歴）
 
 - [CURRENT.json](CURRENT.json)が正本のリビジョン・差分順序を指定する。
 - [effective-portfolio-2026-11-02.json](effective-portfolio-2026-11-02.json) は初稿97件・v2差分・v3差分を反映した**閲覧専用の実体化ビュー**。重複管理対象は130件、有効選定103件。取得承認ではない。
