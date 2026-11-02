@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "asset_id": "idol-single-image-3dgs",
+  "asset_kind": "model",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "model",
+    "repo_id": "speridlabs/idol",
+    "url": "https://huggingface.co/speridlabs/idol",
+    "fixed_revision_observed": "2731c2291fc65a797c5cb627a5e5526fc1490902",
+    "source_code_repo": "https://github.com/speridlabs/idol-sdk",
+    "source_code_revision_observed": "4702a7f00850e34b6e83a2170cc123c3e9570744"
+  },
+  "selection": {
+    "state": "selected",
+    "decision": "conditional",
+    "risk_tier": "R1",
+    "reason": "単一画像から3D Gaussian Splatting物体表現を生成する独立のDiT+octree+Gaussian decoderの研究原本。既存TRELLIS.2/3Dモデルと別の表現で、少量VRAM上でのローカル3D再構築に研究価値。",
+    "alternative_comparison": "2026-11-03確認時点で公式Hubはpublic、Apache-2.0表示。低VRAMで高性能という評価は配布者の公表値であり、将来の配布禁止・規制予定は根拠なし。一般の3D物体構築と人物・機微対象の不適切な利用は区別する。悪用仮説のみでR0格上げしない。"
+  },
+  "review": {
+    "state": "blocked",
+    "checked_at": "2026-11-03",
+    "unresolved": [
+      "facebook/dinov3-vith16plus-pretrain-lvd1689m（manual gated、別資産）とblack-forest-labs/FLUX.2-devのVAE（既存R0）が必須。BiRefNetは本repoに同梱。SDK speridlabs/idol-sdk commit 4702a7f00850e34b6e83a2170cc123c3e9570744、Python >=3.10、PyTorch >=2.5、CUDA runtime。これらの権利・依存/オフライン互換を確認。",
+      "complete license/access terms and user approval",
+      "all required dependencies fixed, HD safety and RAM estimate",
+      "final lock and explicit user approved hash"
+    ]
+  },
+  "facts": {
+    "observed_access": "public",
+    "observed_gating_detail": null,
+    "license_metadata": "apache-2.0",
+    "repo_all_files_bytes_observed": 3128391338,
+    "selected_file_bytes": null,
+    "risk_categories": [
+      "high_capability_low_resource",
+      "possible_sensitive_image_misuse"
+    ],
+    "high_capability_publisher_claim": "50 steps, 262144 Gaussians, 1 GPU per machine, median 8 images, 2026-10-29 publisher README; H100 80GB =6.7s, RTX 3080 10GB=46.2s. Not independently tested."
+  },
+  "evidence": [
+    {
+      "checked_at": "2026-11-03",
+      "url": "https://huggingface.co/speridlabs/idol",
+      "type": "publisher_hub_api",
+      "verification": "repo metadata, 40-digit revision, file count/size; not model body download"
+    },
+    {
+      "checked_at": "2026-11-03",
+      "url": "https://github.com/speridlabs/idol-sdk",
+      "type": "publisher_primary_source"
+    }
+  ],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": [
+      "dinov3-vit-hplus-16",
+      "black-forest-labs-flux2-dev-vae",
+      "speridlabs-idol-sdk-runtime"
+    ],
+    "notes": "facebook/dinov3-vith16plus-pretrain-lvd1689m（manual gated、別資産）とblack-forest-labs/FLUX.2-devのVAE（既存R0）が必須。BiRefNetは本repoに同梱。SDK speridlabs/idol-sdk commit 4702a7f00850e34b6e83a2170cc123c3e9570744、Python >=3.10、PyTorch >=2.5、CUDA runtime。これらの権利・依存/オフライン互換を確認。"
+  },
+  "manifest_path": null,
+  "manifest_draft_path": "manifests/drafts/idol-core-2026-11-03.candidate.json",
+  "download_approved": false,
+  "execute_allowed": false
+}
