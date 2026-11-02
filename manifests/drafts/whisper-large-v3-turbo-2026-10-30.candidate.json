@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "artifact_type": "download_manifest_candidate",
+  "status": "DRAFT_NOT_APPROVABLE",
+  "asset_id": "whisper-large-v3-turbo",
+  "asset_kind": "model",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "model",
+    "repo_id": "openai/whisper-large-v3-turbo",
+    "revision_sha": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+    "url": "https://huggingface.co/openai/whisper-large-v3-turbo/tree/41f01f3fe87f28c78e2fbf8b568835947dd65ed9"
+  },
+  "selected_representation": "all files at fixed upstream snapshot; includes source metadata and optional minor auxiliary files",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "size_bytes": 1519,
+      "source_sha256": null
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 21196,
+      "source_sha256": null
+    },
+    {
+      "path": "added_tokens.json",
+      "size_bytes": 34648,
+      "source_sha256": null
+    },
+    {
+      "path": "config.json",
+      "size_bytes": 1256,
+      "source_sha256": null
+    },
+    {
+      "path": "generation_config.json",
+      "size_bytes": 3772,
+      "source_sha256": null
+    },
+    {
+      "path": "merges.txt",
+      "size_bytes": 493869,
+      "source_sha256": null
+    },
+    {
+      "path": "model.safetensors",
+      "size_bytes": 1617824864,
+      "source_sha256": "542566a422ae4f3fd23f1ba11add198fca01bbf82e66e6a2857b3f608b1eb9d1"
+    },
+    {
+      "path": "normalizer.json",
+      "size_bytes": 52666,
+      "source_sha256": null
+    },
+    {
+      "path": "preprocessor_config.json",
+      "size_bytes": 340,
+      "source_sha256": null
+    },
+    {
+      "path": "special_tokens_map.json",
+      "size_bytes": 2186,
+      "source_sha256": null
+    },
+    {
+      "path": "tokenizer.json",
+      "size_bytes": 2710337,
+      "source_sha256": null
+    },
+    {
+      "path": "tokenizer_config.json",
+      "size_bytes": 282843,
+      "source_sha256": null
+    },
+    {
+      "path": "vocab.json",
+      "size_bytes": 1036558,
+      "source_sha256": null
+    }
+  ],
+  "total_bytes": 1622466054,
+  "files_with_upstream_sha256": 1,
+  "files_without_upstream_sha256": 12,
+  "dependencies": null,
+  "dependency_review": {
+    "reviewed": false,
+    "unresolved": [
+      "transformersまたはWhisper系runtimeの版と音声前処理",
+      "backend/量子化形式/30秒音声/バッチを固定したピークRAM見積",
+      "MIT許諾の配布条件・実機HDD・作業領域検証"
+    ]
+  },
+  "license_review": {
+    "status": "PENDING_FINAL_REVIEW",
+    "hub_metadata": "mit",
+    "source_url": "https://huggingface.co/openai/whisper-large-v3-turbo/tree/41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+    "complete_text_checked": false,
+    "conditions_for_archive_approved": false
+  },
+  "model_card_review": {
+    "source_url": "https://huggingface.co/openai/whisper-large-v3-turbo",
+    "research_only": true,
+    "downloader_must_not_execute": true
+  },
+  "inference_memory_screen": {
+    "status": "UNCERTAIN",
+    "estimated_peak_ram_bytes": null,
+    "required_backend": null,
+    "context_length": null,
+    "batch_size": null,
+    "quantization_bits": null
+  },
+  "security": {
+    "autoload_allowed": false,
+    "pickle_execution_allowed": false,
+    "only_data_download": true,
+    "source_sha256_null_requires_local_hash_record": true
+  },
+  "source_snapshot_path": "catalog/snapshots/2026-10-30-r2-models-2.json",
+  "source_snapshot_checked_on": "2026-10-30",
+  "generated_at": "2026-11-02",
+  "user_approved": false,
+  "execution_allowed": false,
+  "blockers": [
+    "licensing/redistribution rights complete review",
+    "model dependencies and implementation assumptions",
+    "peak-RAM inference screen under policy",
+    "target HDD identity/space validation",
+    "explicit user approval of final *.lock.json SHA-256"
+  ]
+}
