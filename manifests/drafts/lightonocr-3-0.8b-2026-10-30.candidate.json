@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "artifact_type": "download_manifest_candidate",
+  "status": "DRAFT_NOT_APPROVABLE",
+  "asset_id": "lightonocr-3-0.8b",
+  "asset_kind": "model",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "model",
+    "repo_id": "lightonai/LightOnOCR-3-0.8B",
+    "revision_sha": "36d8636925327c671bd8e479c517a004f7566bd9",
+    "url": "https://huggingface.co/lightonai/LightOnOCR-3-0.8B/tree/36d8636925327c671bd8e479c517a004f7566bd9"
+  },
+  "selected_representation": "all files at fixed upstream snapshot; includes source metadata and optional minor auxiliary files",
+  "files": [
+    {
+      "path": ".eval_results/olmocrbench.yaml",
+      "size_bytes": 1981,
+      "source_sha256": null
+    },
+    {
+      "path": ".eval_results/parsebench.yaml",
+      "size_bytes": 1307,
+      "source_sha256": null
+    },
+    {
+      "path": ".gitattributes",
+      "size_bytes": 1692,
+      "source_sha256": null
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 9271,
+      "source_sha256": null
+    },
+    {
+      "path": "chat_template.jinja",
+      "size_bytes": 7755,
+      "source_sha256": null
+    },
+    {
+      "path": "config.json",
+      "size_bytes": 2692,
+      "source_sha256": null
+    },
+    {
+      "path": "generation_config.json",
+      "size_bytes": 205,
+      "source_sha256": null
+    },
+    {
+      "path": "lightonocr3_logo.png",
+      "size_bytes": 1648312,
+      "source_sha256": "768eee79d378518cfea9ed8d81ba3a53a0cff17ccf4b12c22a9e5ebedde32bcf"
+    },
+    {
+      "path": "merges.txt",
+      "size_bytes": 3353259,
+      "source_sha256": null
+    },
+    {
+      "path": "model.safetensors",
+      "size_bytes": 1706030528,
+      "source_sha256": "ae46aa6fd7136d57297ac006ed9ec345b7a2083feb2e99501bedcb014ca3efdf"
+    },
+    {
+      "path": "preprocessor_config.json",
+      "size_bytes": 390,
+      "source_sha256": null
+    },
+    {
+      "path": "processor_config.json",
+      "size_bytes": 1191,
+      "source_sha256": null
+    },
+    {
+      "path": "tokenizer.json",
+      "size_bytes": 19989325,
+      "source_sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "size_bytes": 1168,
+      "source_sha256": null
+    },
+    {
+      "path": "vocab.json",
+      "size_bytes": 6722759,
+      "source_sha256": null
+    }
+  ],
+  "total_bytes": 1737771835,
+  "files_with_upstream_sha256": 3,
+  "files_without_upstream_sha256": 12,
+  "dependencies": null,
+  "dependency_review": {
+    "reviewed": false,
+    "unresolved": [
+      "画像レンダリング/前処理/モデル版との互換",
+      "backend/量子化形式/解像度・コンテキスト長/バッチを固定したピークRAM見積",
+      "モデルカード条件と付随コードの独立監査、実機HDD容量検証"
+    ]
+  },
+  "license_review": {
+    "status": "PENDING_FINAL_REVIEW",
+    "hub_metadata": "apache-2.0",
+    "source_url": "https://huggingface.co/lightonai/LightOnOCR-3-0.8B",
+    "complete_text_checked": false,
+    "conditions_for_archive_approved": false
+  },
+  "model_card_review": {
+    "source_url": "https://huggingface.co/lightonai/LightOnOCR-3-0.8B",
+    "research_only": true,
+    "downloader_must_not_execute": true
+  },
+  "inference_memory_screen": {
+    "status": "UNCERTAIN",
+    "estimated_peak_ram_bytes": null,
+    "required_backend": null,
+    "context_length": null,
+    "batch_size": null,
+    "quantization_bits": null
+  },
+  "security": {
+    "autoload_allowed": false,
+    "pickle_execution_allowed": false,
+    "only_data_download": true,
+    "source_sha256_null_requires_local_hash_record": true
+  },
+  "source_snapshot_path": "catalog/snapshots/2026-10-30-disruptive-compact-1.json",
+  "source_snapshot_checked_on": "2026-10-30",
+  "generated_at": "2026-11-02",
+  "user_approved": false,
+  "execution_allowed": false,
+  "blockers": [
+    "licensing/redistribution rights complete review",
+    "model dependencies and implementation assumptions",
+    "peak-RAM inference screen under policy",
+    "target HDD identity/space validation",
+    "explicit user approval of final *.lock.json SHA-256"
+  ]
+}
