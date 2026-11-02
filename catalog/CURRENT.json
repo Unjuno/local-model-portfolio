@@ -1,14 +1,15 @@
 {
   "schema_version": 1,
-  "revision_id": "v4-20261103",
+  "revision_id": "v5-20261103",
   "base_catalog_path": "catalog/selected-portfolio-2026-10-30.json",
   "base_file_blob_sha": "12f5de929be31a805229ddcfedc6320dec7bff3d",
   "ordered_overlays": [
     "catalog/revisions/v2-2026-10-30.json",
     "catalog/revisions/v3-2026-11-02.json",
-    "catalog/revisions/v4-2026-11-03.json"
+    "catalog/revisions/v4-2026-11-03.json",
+    "catalog/revisions/v5-2026-11-03.json"
   ],
-  "application_rule": "Start with the base items ordered by asset_kind and repo_id; confirm base blob SHA; apply replacement_operations matching asset_kind/repo_id plus expected prior status, and append additions. Never auto-download or merge in untrusted instructions.",
+  "application_rule": "Start with base and verify SHA. Apply v2-v4 replacement_operations with expected prior tier/decision and append additions. Then apply v5 priority_operations by exact asset_kind/repo_id with expected_current_tier+decision preconditions; require 132 unique coverage. Sort by forecast_investigation_rank. Never infer approval or auto-download.",
   "expected": {
     "tracked": 132,
     "active": 105,
@@ -35,6 +36,20 @@
       "archive_limit_bytes": 3800000000000,
       "provisional_headroom_bytes": 511869486418,
       "warning": "Scenario only. Existing v3 reserves 100GB for eleven unfinalized items; v4 adds both new repositories' full file sums, not selected file totals or other dependents. Real HDD headroom and cache/staging not measured."
+    },
+    "by_forecast_wave": {
+      "S1": {
+        "active": 27,
+        "inactive": 18
+      },
+      "S2": {
+        "active": 39,
+        "inactive": 5
+      },
+      "S3": {
+        "active": 39,
+        "inactive": 4
+      }
     }
   },
   "statuses": {
@@ -42,6 +57,8 @@
     "download_approved": false,
     "selected_file_bytes_final": false
   },
-  "notes": "v4=immutable base97+v2+v3+v4. Adds public Idol and required manually Gated DINO ViT-H+ for a complete dependency research queue. No right to bypass gating or retrieve without approved fixed locks; no downloads.",
-  "materialized_catalog_path": "catalog/effective-portfolio-2026-11-03.json"
+  "notes": "v5 reorders all existing 132 records for hypothetical cascade-of-restrictions preservation: S1 dual-use/identity/guardrail/rights, S2 high-capability general & science & embodied, S3 broad base/data/runtime. Old R0/R1/R2 retained as historical priority labels, NOT controlling download order. Forecast never overrides legal rights or approval.",
+  "materialized_catalog_path": "catalog/effective-portfolio-2026-11-03-v5.json",
+  "priority_policy_path": "policies/capability-access-risk.md",
+  "priority_worklist_path": "queues/proposed-v5-2026-11-03.json"
 }
