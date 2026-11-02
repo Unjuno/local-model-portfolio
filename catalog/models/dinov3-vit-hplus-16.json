@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "asset_id": "dinov3-vit-hplus-16",
+  "asset_kind": "model",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "model",
+    "repo_id": "facebook/dinov3-vith16plus-pretrain-lvd1689m",
+    "url": "https://huggingface.co/facebook/dinov3-vith16plus-pretrain-lvd1689m",
+    "fixed_revision_observed": "c807c9eeea853df70aec4069e6f56b28ddc82acc",
+    "source_code_repo": null,
+    "source_code_revision_observed": null
+  },
+  "selection": {
+    "state": "selected",
+    "decision": "conditional",
+    "risk_tier": "R0",
+    "reason": "Idolの画像条件付けに必要な公式DINOv3 ViT-H+/16 encoder。既存のDINOv3 ViT-7Bは別重み・別構造で、置換互換が示されていないため追加保存候補。",
+    "alternative_comparison": "2026-11-03時点で手動承認Gatedと独自利用条件が観測された事実。将来の公開停止は未確認。モデル本体取得にはHub上の正規利用承認が必要。"
+  },
+  "review": {
+    "state": "blocked",
+    "checked_at": "2026-11-03",
+    "unresolved": [
+      "利用条件（LICENSE.md）を本人が確認・必要な同意を実施。2025年8月19日の固定revisionと重みの完全性/下流Idolへのライセンス継承範囲を確認。",
+      "complete license/access terms and user approval",
+      "all required dependencies fixed, HD safety and RAM estimate",
+      "final lock and explicit user approved hash"
+    ]
+  },
+  "facts": {
+    "observed_access": "gated",
+    "observed_gating_detail": "manual",
+    "license_metadata": "other",
+    "repo_all_files_bytes_observed": 3362457679,
+    "selected_file_bytes": null,
+    "risk_categories": [
+      "current_gated_access"
+    ],
+    "high_capability_publisher_claim": null
+  },
+  "evidence": [
+    {
+      "checked_at": "2026-11-03",
+      "url": "https://huggingface.co/facebook/dinov3-vith16plus-pretrain-lvd1689m",
+      "type": "publisher_hub_api",
+      "verification": "repo metadata, 40-digit revision, file count/size; not model body download"
+    },
+    {
+      "checked_at": "2026-11-03",
+      "url": "https://huggingface.co/facebook/dinov3-vith16plus-pretrain-lvd1689m/blob/c807c9eeea853df70aec4069e6f56b28ddc82acc/LICENSE.md",
+      "type": "publisher_primary_source"
+    }
+  ],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": [],
+    "notes": "利用条件（LICENSE.md）を本人が確認・必要な同意を実施。2025年8月19日の固定revisionと重みの完全性/下流Idolへのライセンス継承範囲を確認。"
+  },
+  "manifest_path": null,
+  "manifest_draft_path": null,
+  "download_approved": false,
+  "execute_allowed": false
+}
