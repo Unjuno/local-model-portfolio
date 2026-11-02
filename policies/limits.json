@@ -19,5 +19,17 @@
   "require_user_approved_manifest": true,
   "execute_downloaded_content_by_default": false,
   "auto_delete_existing_files": false,
-  "default_parallel_assets": 1
+  "default_parallel_assets": 1,
+  "storage_allocation_policy": {
+    "confirmed_on": "2026-11-02",
+    "advertised_drive_capacity_bytes": 4000000000000,
+    "permitted_archive_budget_bytes": 3800000000000,
+    "policy_type": "maximize_valuable_and_lawfully_obtainable_unique_assets_up_to_cap_not_mandatory_fill",
+    "do_not_stop_at_provisional_3_28_tb_scenario": true,
+    "requires_actual_formatted_volume_capacity_and_free_space_measurement": true,
+    "free_space_floor_still_applies": true,
+    "check_existing_content_cache_and_staging_peak": true,
+    "source_model_selection_and_approval_remain_separate": true,
+    "notes": "User clarified that the 4TB-class HDD may be used for up to about 3.8 decimal TB of worthwhile archive. This does not waive the independently checked free-space floor. If formatted volume cannot satisfy both, actual allowed archive bytes will be smaller; do not invent capacity."
+  }
 }
