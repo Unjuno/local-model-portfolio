@@ -52,3 +52,10 @@ evidenceには、確認日時、URL、対象リビジョン、確認内容、fac
 - 実際の取得許可は queues/approved.json、取得・照合・実行の結果はHDDのstateに記録する。
 
 この台帳にDownloadedやTestedを手入力して、実ファイルの検証記録の代わりにしない。
+
+
+## 現行v3の正本（2026-11-02）
+
+- [CURRENT.json](CURRENT.json)が正本のリビジョン・差分順序を指定する。
+- [effective-portfolio-2026-11-02.json](effective-portfolio-2026-11-02.json) は初稿97件・v2差分・v3差分を反映した**閲覧専用の実体化ビュー**。重複管理対象は130件、有効選定103件。取得承認ではない。
+- [revisions/v3-2026-11-02.json](revisions/v3-2026-11-02.json) は新規20件を採用/延期/保留に判定した唯一の差分。旧台帳のURL、判断理由は削除しない。
