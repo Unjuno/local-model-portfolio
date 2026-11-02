@@ -4,10 +4,19 @@
 
 **目的は、リポジトリをHDDに配置し、エージェントが承認済みの取得指示に従って保存・検証できる状態を作ることです。** 人気ランキングでも、重みをGitHubへ再配布する場所でもありません。
 
-## 現在の採用ポートフォリオ（2026-10-30）
+## 現行選定 v3（2026-11-02、レビュー用ドラフト）
 
-- **[現行版：97件の採用・条件付き・保留判断と、各モデル/データのリンク・選定理由](docs/selected-portfolio-current.md)**
-- **[機械可読の現行選定台帳（97件）](catalog/selected-portfolio-2026-10-30.json)**
+- **[現行130件の選定・延期・保留の判断](docs/selected-portfolio-v3-2026-11-02.md)**：有効103件（select 54 / conditional 49）、延期12件、保留15件。11件の特化モデルを有効選定し、既存の重複懸念2件を延期。
+- **[CURRENT.json：現行版への参照](catalog/CURRENT.json)**／[確定した選定130件の機械可読ビュー](catalog/effective-portfolio-2026-11-02.json)／[v3差分](catalog/revisions/v3-2026-11-02.json)。この選定は**ダウンロード承認ではない**。
+- **[取得前固定案3件・5,130,218,354バイト](manifests/drafts/README.md)**：Qwen3.5-0.8B、LightOnOCR-3-0.8B、Whisper-large-v3-turbo。完全な40文字コミットとファイルごとの整数バイト/取得元SHA-256（存在する場合）を記録。権利・実機RAM・依存・HDD確認が終わるまで利用不可。
+- **[Pirate Face等の代替配布元の扱いと追加20候補の評価](docs/specialized-candidate-triage-2026-11-02.md)**。合法性、同意、元の完全ファイルSHA-256照合、seeding禁止を取得と独立して審査。
+
+**現段階ではダウンローダー未実装・取得承認キュー0件・本体取得0件です。** 未承認の保存やモデル実行を開始しない。
+
+## 旧版の採用ポートフォリオ（2026-10-30／履歴）
+
+- **[初稿：97件の採用・条件付き・保留判断と、各モデル/データのリンク・選定理由](docs/selected-portfolio-current.md)**
+- **[機械可読の初稿選定台帳（97件）](catalog/selected-portfolio-2026-10-30.json)**
 - **[小型・高効率モデル25件の上流ファイル容量・SHA監査](catalog/snapshots/2026-10-30-disruptive-compact-1.json)**（続きは [2](catalog/snapshots/2026-10-30-disruptive-compact-2.json)、[3](catalog/snapshots/2026-10-30-disruptive-compact-3.json)、[4](catalog/snapshots/2026-10-30-disruptive-compact-4.json)）
 
 **優先対象は、規制・配布条件変更による再取得困難性だけではありません。** 小型で既存のOCR・ASR・画像制作・3Dアセット・ロボット・時系列・検索サービスの一部を代替し得る独自モデル、専門ファインチューニング重み、貴重なデータも選定対象です。実際の産業への影響や規制の予測は仮説として区別します。
