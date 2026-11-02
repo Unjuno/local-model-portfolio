@@ -54,7 +54,14 @@ evidenceには、確認日時、URL、対象リビジョン、確認内容、fac
 この台帳にDownloadedやTestedを手入力して、実ファイルの検証記録の代わりにしない。
 
 
-## 現行v6の正本（2026-11-03）
+## 現行v7の正本（2026-11-03）
+
+- [CURRENT.json](CURRENT.json) は、baseからv6までの全履歴を保ったうえで、[v7 250Bハード上限](revisions/v7-2026-11-03.json)を適用する。
+- [effective-portfolio-2026-11-03-v7.json](effective-portfolio-2026-11-03-v7.json) は追跡132件・有効105件・BACKLOG12件・HOLD14件・EXCLUDED1件の最新ビュー。
+- [109モデルの一次データ照合](../docs/parameter-cutoff-v7-2026-11-03.md)では83件通過、Mistral Large 4を除外、25件未確認。250Bが不明なら取得用最終lock不可。
+- [承認前の作業キュー](../queues/proposed-v7-2026-11-03.json)は予測S1/S2/S3・実行コスパの二軸を保つが、250Bハード除外と権利・容量チェックを超えない。
+
+## 旧版v6の正本（2026-11-03、履歴）
 
 - [CURRENT.json](CURRENT.json) にv6の「**全132件に対する容量/8GB実行可能性の証拠区分**」を追加。**規制シナリオS1→S2→S3の優先順位は変えない。**
 - [effective-portfolio-2026-11-03-v6.json](effective-portfolio-2026-11-03-v6.json) は現行の132件の予測順位・リソース判定付き閲覧ビュー。モデル性能の実測結果や取得承認を示さない。
