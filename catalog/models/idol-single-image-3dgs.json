@@ -56,11 +56,16 @@
   "dependencies": {
     "reviewed": false,
     "asset_ids": [
-      "dinov3-vit-hplus-16",
-      "black-forest-labs-flux2-dev-vae",
-      "speridlabs-idol-sdk-runtime"
+      "dinov3-vit-hplus-16"
     ],
-    "notes": "facebook/dinov3-vith16plus-pretrain-lvd1689m（manual gated、別資産）とblack-forest-labs/FLUX.2-devのVAE（既存R0）が必須。BiRefNetは本repoに同梱。SDK speridlabs/idol-sdk commit 4702a7f00850e34b6e83a2170cc123c3e9570744、Python >=3.10、PyTorch >=2.5、CUDA runtime。これらの権利・依存/オフライン互換を確認。"
+    "notes": "facebook/dinov3-vith16plus-pretrain-lvd1689m（manual gated、別資産）とblack-forest-labs/FLUX.2-devのVAE（既存R0）が必須。BiRefNetは本repoに同梱。SDK speridlabs/idol-sdk commit 4702a7f00850e34b6e83a2170cc123c3e9570744、Python >=3.10、PyTorch >=2.5、CUDA runtime。これらの権利・依存/オフライン互換を確認。",
+    "required_external_repo_ids": [
+      "black-forest-labs/FLUX.2-dev"
+    ],
+    "required_software_repo_ids": [
+      "speridlabs/idol-sdk"
+    ],
+    "note": "asset_ids only contains registered per-asset JSON identifier. Other dependencies remain external repo IDs until separately cataloged and pinned."
   },
   "manifest_path": null,
   "manifest_draft_path": "manifests/drafts/idol-core-2026-11-03.candidate.json",
