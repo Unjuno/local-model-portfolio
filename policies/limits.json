@@ -44,5 +44,27 @@
       },
       "never_treat_reported_size_as_download_authorization": true
     }
+  },
+  "inference_operational_cost_policy": {
+    "revised_on": "2026-11-03",
+    "priority": "secondary to S1-S2-S3 regulatory forecast; mandatory before manifest approval",
+    "eight_gb_gpu_reference_only_bytes": 8000000000,
+    "reference_hardware_is_users_actual_machine": false,
+    "distinguish_archive_repo_bytes_from_selected_files": true,
+    "never_treat_missing_bytes_as_zero": true,
+    "inference_modes_to_review": [
+      "fully_gpu_resident",
+      "gpu_cpu_ram_offload",
+      "ssd_nvme_expert_streaming",
+      "cpu_only",
+      "archive_only"
+    ],
+    "do_not_exclude_on_total_parameters_or_vram_alone": true,
+    "require_actual_system_memory_cpu_gpu_vram_ssd_backend_version_quantization_zero_point_kv_context_batch": true,
+    "require_task_quality_and_speed_measurement_before_claiming_practical": true,
+    "unverified_community_runtime_code_cannot_be_automatically_installed_or_executed": true,
+    "publisher_metrics_and_user_device_metrics_must_not_be_conflated": true,
+    "archive_hdd_not_assumed_suitable_for_streaming_experts": true,
+    "evaluation_artifact": "docs/resource-cost-screen-v6-2026-11-03.md"
   }
 }
