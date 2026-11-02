@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "asset_id": "qwen3.5-0.8b-official",
+  "asset_kind": "model",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "model",
+    "repo_id": "Qwen/Qwen3.5-0.8B",
+    "url": "https://huggingface.co/Qwen/Qwen3.5-0.8B",
+    "fixed_revision_observed": "2fc06364715b967f1860aea9cf38778875588b17"
+  },
+  "selection": {
+    "state": "selected",
+    "reason": "コンパクトな画像入力対応モデルの比較原本。軽量LLMの推論/量子化/後学習を再現する基準。",
+    "source_relation": "official or publisher-controlled"
+  },
+  "review": {
+    "state": "blocked",
+    "checked_at": "2026-11-02",
+    "unresolved": [
+      "licensing/redistribution rights complete review",
+      "model dependencies and implementation assumptions",
+      "peak-RAM inference screen under policy",
+      "target HDD identity/space validation",
+      "explicit user approval of final *.lock.json SHA-256"
+    ]
+  },
+  "facts": {
+    "license_metadata": "apache-2.0",
+    "upstream_repo_bytes_observed": 1769980465,
+    "file_count": 13,
+    "lfs_sha256_count": 2,
+    "downloaded": false,
+    "benchmarked": false
+  },
+  "evidence": [
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://github.com/Unjuno/local-model-portfolio/blob/main/catalog/snapshots/2026-10-30-disruptive-compact-4.json",
+      "type": "saved_upstream_file_inventory"
+    },
+    {
+      "checked_at": "2026-11-02",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-0.8B/blob/2fc06364715b967f1860aea9cf38778875588b17/LICENSE",
+      "type": "publisher_license_or_model_card"
+    }
+  ],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": [],
+    "pending": [
+      "transformers版とvision processor互換性",
+      "backend/量子化形式/コンテキスト長/バッチを固定したRAM見積",
+      "実機HDDと空き容量、cache/stagingの確認"
+    ]
+  },
+  "manifest_path": null,
+  "manifest_draft_path": "manifests/drafts/qwen3.5-0.8b-2026-10-30.candidate.json"
+}
