@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision_id": "v6-20261103",
+  "revision_id": "v7-20261103",
   "base_catalog_path": "catalog/selected-portfolio-2026-10-30.json",
   "base_file_blob_sha": "12f5de929be31a805229ddcfedc6320dec7bff3d",
   "ordered_overlays": [
@@ -8,9 +8,10 @@
     "catalog/revisions/v3-2026-11-02.json",
     "catalog/revisions/v4-2026-11-03.json",
     "catalog/revisions/v5-2026-11-03.json",
-    "catalog/revisions/v6-2026-11-03.json"
+    "catalog/revisions/v6-2026-11-03.json",
+    "catalog/revisions/v7-2026-11-03.json"
   ],
-  "application_rule": "Start with base and verify SHA. Apply v2-v4 replacement_operations with expected prior tier/decision and append additions. Then apply v5 priority_operations by exact asset_kind/repo_id with expected_current_tier+decision preconditions; require 132 unique coverage. Sort by forecast_investigation_rank. Never infer approval or auto-download. Then apply v6 efficiency_operations by exact asset_kind/repo_id and assert matching v5 wave/rank/decision for all 132. Resource screening never implies runtime success or download approval.",
+  "application_rule": "Start with base and verify SHA. Apply v2-v4 replacement_operations with expected prior tier/decision and append additions. Then apply v5 priority_operations by exact asset_kind/repo_id with expected_current_tier+decision preconditions; require 132 unique coverage. Sort by forecast_investigation_rank. Never infer approval or auto-download. Then apply v6 efficiency_operations by exact asset_kind/repo_id and assert matching v5 wave/rank/decision for all 132. Resource screening never implies runtime success or download approval. Then apply v7 parameter_gate_operations to all 109 models; verify each expected prior status and total params from source. For >=250B apply explicit exclusion replacement_operations; for null total params block final lock. Keep datasets exempt. Assert 132 unique assets and 109 param checks. Do not download.",
   "expected": {
     "tracked": 132,
     "active": 105,
@@ -19,13 +20,15 @@
       "R1": 64,
       "R2": 27,
       "BACKLOG": 12,
-      "HOLD": 15
+      "HOLD": 14,
+      "EXCLUDED": 1
     },
     "by_decision": {
       "select": 54,
       "conditional": 51,
       "deferred": 12,
-      "hold": 15
+      "hold": 14,
+      "excluded": 1
     },
     "provisional_active_repo_bytes_plus_fineweb_sample": null,
     "archive_limit_bytes": 3800000000000,
@@ -57,6 +60,11 @@
       "source_repo_bytes_unknown": 28,
       "active_source_repo_bytes_unknown": 12,
       "active_ge_100GB_repo_assets": 9
+    },
+    "parameter_gate": {
+      "PASS_TOTAL_PARAMS_LT_250B": 83,
+      "EXCLUDED_TOTAL_PARAMS_GE_250B": 1,
+      "UNVERIFIED_BLOCK_FINAL_LOCK": 25
     }
   },
   "statuses": {
@@ -64,10 +72,11 @@
     "download_approved": false,
     "selected_file_bytes_final": false
   },
-  "notes": "v5 reorders all existing 132 records for hypothetical cascade-of-restrictions preservation: S1 dual-use/identity/guardrail/rights, S2 high-capability general & science & embodied, S3 broad base/data/runtime. Old R0/R1/R2 retained as historical priority labels, NOT controlling download order. Forecast never overrides legal rights or approval. v6 adds independent resource-cost screening and Qwen3-Coder-Next FP8 8GB experimental offload report. Primary S1>S2>S3 order preserved; no legal gate or selection changes. Runtime evidence is experimental and hardware scenario is not inferred from the owner.",
-  "materialized_catalog_path": "catalog/effective-portfolio-2026-11-03-v6.json",
+  "notes": "v5 reorders all existing 132 records for hypothetical cascade-of-restrictions preservation: S1 dual-use/identity/guardrail/rights, S2 high-capability general & science & embodied, S3 broad base/data/runtime. Old R0/R1/R2 retained as historical priority labels, NOT controlling download order. Forecast never overrides legal rights or approval. v6 adds independent resource-cost screening and Qwen3-Coder-Next FP8 8GB experimental offload report. Primary S1>S2>S3 order preserved; no legal gate or selection changes. Runtime evidence is experimental and hardware scenario is not inferred from the owner. v7 restores user-requested HARD exclude >=250B total params (including inactive MoE); Mistral Large4 1.05T changed HOLD to EXCLUDED, other 25 unverified pending metadata, all original selections and archive budget otherwise unchanged.",
+  "materialized_catalog_path": "catalog/effective-portfolio-2026-11-03-v7.json",
   "priority_policy_path": "policies/capability-access-risk.md",
   "priority_worklist_path": "queues/proposed-v6-2026-11-03.json",
   "resource_screen_path": "catalog/revisions/v6-2026-11-03.json",
-  "cost_performance_report_path": "docs/resource-cost-screen-v6-2026-11-03.md"
+  "cost_performance_report_path": "docs/resource-cost-screen-v6-2026-11-03.md",
+  "parameter_hard_limit_path": "catalog/revisions/v7-2026-11-03.json"
 }
