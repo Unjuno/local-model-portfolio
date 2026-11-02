@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "asset_id": "whisper-large-v3-turbo",
+  "asset_kind": "model",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "model",
+    "repo_id": "openai/whisper-large-v3-turbo",
+    "url": "https://huggingface.co/openai/whisper-large-v3-turbo",
+    "fixed_revision_observed": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9"
+  },
+  "selection": {
+    "state": "selected",
+    "reason": "多言語ASRの性能/モデルサイズ比較用の基準原本。取得対象は2026-10-30記録の固定版。",
+    "source_relation": "official or publisher-controlled"
+  },
+  "review": {
+    "state": "blocked",
+    "checked_at": "2026-11-02",
+    "unresolved": [
+      "licensing/redistribution rights complete review",
+      "model dependencies and implementation assumptions",
+      "peak-RAM inference screen under policy",
+      "target HDD identity/space validation",
+      "explicit user approval of final *.lock.json SHA-256"
+    ]
+  },
+  "facts": {
+    "license_metadata": "mit",
+    "upstream_repo_bytes_observed": 1622466054,
+    "file_count": 13,
+    "lfs_sha256_count": 1,
+    "downloaded": false,
+    "benchmarked": false
+  },
+  "evidence": [
+    {
+      "checked_at": "2026-10-30",
+      "url": "https://github.com/Unjuno/local-model-portfolio/blob/main/catalog/snapshots/2026-10-30-r2-models-2.json",
+      "type": "saved_upstream_file_inventory"
+    },
+    {
+      "checked_at": "2026-11-02",
+      "url": "https://huggingface.co/openai/whisper-large-v3-turbo/tree/41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+      "type": "publisher_license_or_model_card"
+    }
+  ],
+  "dependencies": {
+    "reviewed": false,
+    "asset_ids": [],
+    "pending": [
+      "transformersまたはWhisper系runtimeの版と音声前処理",
+      "backend/量子化形式/30秒音声/バッチを固定したピークRAM見積",
+      "MIT許諾の配布条件・実機HDD・作業領域検証"
+    ]
+  },
+  "manifest_path": null,
+  "manifest_draft_path": "manifests/drafts/whisper-large-v3-turbo-2026-10-30.candidate.json"
+}
