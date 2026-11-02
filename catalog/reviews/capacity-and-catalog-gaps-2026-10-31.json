@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-31",
+  "status": "provisional_cost_and_coverage_review_not_current_overlay",
+  "scope": "Official v2 canonical catalog (110) only. Rounds v3,4,5 proposed assets excluded from all capacity arithmetic.",
+  "canonical_revision": "v2-20261030",
+  "canonical_main_blob_sha": "91dc8c042cf46242e020c0261c01cd5856c5ec36",
+  "base_blob_sha": "12f5de929be31a805229ddcfedc6320dec7bff3d",
+  "overlay_blob_sha": "ad85002b9e52304b2bf4eaa91c8fa43821f8eb9d",
+  "approval_queue_blob_sha": "df0e369abda4b765533e0af3921c54a5cb164787",
+  "counts": {
+    "tracked": 110,
+    "active": 94,
+    "model_count": 87,
+    "dataset_count": 23,
+    "active_models": 78,
+    "active_datasets": 16,
+    "software_records": 0,
+    "knowledge_records": 0,
+    "approved_queue": 0,
+    "selected_file_bytes_finalized": 0,
+    "fully_pinned_revisions": 0
+  },
+  "byte_reconciliation": {
+    "unit": "decimal byte",
+    "model_active_full_repo_observed_bytes": 2903916964239,
+    "dataset_active_full_repo_observed_bytes": 301632520606,
+    "fineweb_edu_10bt_subset_observed_bytes": 28518193415,
+    "provisional_total_bytes": 3234067678260,
+    "archive_ceiling_bytes": 3800000000000,
+    "provisional_headroom_bytes": 565932321740,
+    "provisional_full_repo_budget_share": 0.8510704416473684,
+    "physical_hdd_used_bytes": null,
+    "actual_approved_download_bytes": 0,
+    "actual_file_selected_total_bytes": null,
+    "calculation_validated": true,
+    "limits_include_separate_minimum_free_bytes": 200000000000
+  },
+  "largest_models": [
+    {
+      "repo_id": "mistralai/Mistral-Small-4-119B-2603",
+      "upstream_all_repo_bytes": 241889510745,
+      "decision": "select",
+      "access": "public",
+      "policy_tier": "R1",
+      "selected_file_bytes": null
+    },
+    {
+      "repo_id": "meta-llama/Llama-4-Scout-17B-16E",
+      "upstream_all_repo_bytes": 217315708790,
+      "decision": "conditional",
+      "access": "gated",
+      "policy_tier": "R0",
+      "selected_file_bytes": null
+    },
+    {
+      "repo_id": "openai/gpt-oss-120b",
+      "upstream_all_repo_bytes": 195764040609,
+      "decision": "select",
+      "access": "public",
+      "policy_tier": "R1",
+      "selected_file_bytes": null
+    },
+    {
+      "repo_id": "black-forest-labs/FLUX.2-dev",
+      "upstream_all_repo_bytes": 177640374395,
+      "decision": "conditional",
+      "access": "gated",
+      "policy_tier": "R0",
+      "selected_file_bytes": null
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Coder-Next",
+      "upstream_all_repo_bytes": 159376351965,
+      "decision": "select",
+      "access": "public",
+      "policy_tier": "R1",
+      "selected_file_bytes": null
+    },
+    {
+      "repo_id": "Lightricks/LTX-2.3",
+      "upstream_all_repo_bytes": 156009130964,
+      "decision": "conditional",
+      "access": "public",
+      "policy_tier": "R1",
+      "selected_file_bytes": null
+    },
+    {
+      "repo_id": "EPFLiGHT/Meditron3-70B",
+      "upstream_all_repo_bytes": 141116879850,
+      "decision": "conditional",
+      "access": "gated",
+      "policy_tier": "R0",
+      "selected_file_bytes": null
+    },
+    {
+      "repo_id": "Qwen/Qwen3.5-35B-A3B-Base",
+      "upstream_all_repo_bytes": 71926986405,
+      "decision": "select",
+      "access": "public",
+      "policy_tier": "R2",
+      "selected_file_bytes": null
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+      "upstream_all_repo_bytes": 70530595574,
+      "decision": "conditional",
+      "access": "public",
+      "policy_tier": "R1",
+      "selected_file_bytes": null
+    },
+    {
+      "repo_id": "ACERobotics/Puffin-World",
+      "upstream_all_repo_bytes": 67016058732,
+      "decision": "conditional",
+      "access": "public",
+      "policy_tier": "R1",
+      "selected_file_bytes": null
+    }
+  ],
+  "top_five_upstream_bytes": 991985986504,
+  "known_gaps": [
+    {
+      "category": "model-independent-runtimes",
+      "state": "none_as_separate_selected_assets",
+      "priority": "critical",
+      "reason": "No canonically selected runtime/software resources, no complete ABI/OS/driver/backend dependency closure."
+    },
+    {
+      "category": "rights-and-provenance",
+      "state": "no_independent_knowledge_assets",
+      "priority": "critical",
+      "reason": "License versions, withdrawal history, source SHA provenance and approvals are required to make a durable archive lawful and interpretable."
+    },
+    {
+      "category": "prompt-injection-and-agent-defense",
+      "state": "two_safety_tags_are_refusal_edit_models",
+      "priority": "high",
+      "reason": "No confirmed dedicated security-defense model in canonical selection; security taxonomy is overly broad."
+    },
+    {
+      "category": "content-authenticity-and-forensics",
+      "state": "speech_generation_present_but_watermark_detection_sparse",
+      "priority": "high",
+      "reason": "Audio/video generation coverage does not imply ability to verify provenance or identify synthetic edits."
+    },
+    {
+      "category": "earth-system-and-remote-sensing",
+      "state": "only_general_forecasting_in_canonical_catalog",
+      "priority": "medium",
+      "reason": "Chronos-2 does not replace geophysical or multispectral spatiotemporal pretrained weights."
+    },
+    {
+      "category": "physical-world-and-robotics-data",
+      "state": "existing_robot_models_but limited targeted datasets",
+      "priority": "medium",
+      "reason": "Robotic policy runtime, world simulation and license-cleared behavior datasets are not interchangeable."
+    },
+    {
+      "category": "biomolecular-and-genomic",
+      "state": "medical_and_protein_encoder_present",
+      "priority": "medium",
+      "reason": "Protein generation and genome autoregressive pretraining differ from medical dialogue and static representation."
+    }
+  ],
+  "targeted_new_research_candidates": [
+    {
+      "repo_id": "meta-llama/Llama-Prompt-Guard-2-86M",
+      "model_category": "prompt-injection-defense",
+      "access": "gated",
+      "license_metadata": "other",
+      "proposal": "conditional_screening",
+      "reason": "攻撃的プロンプト分類専用の保護モデル。現行safety_securityタグは拒否方向編集であって独立したプロンプト防御器ではない。公開ゲートが現存し、攻撃のリスクに対応する防御側の研究資産。",
+      "blockers": "Meta利用条件、言語/攻撃種類、評価時誤検知、model cardの名前とパラメータ表示が一致するかを確認。政府による制限予定ではない。",
+      "url": "https://huggingface.co/meta-llama/Llama-Prompt-Guard-2-86M",
+      "source_kind": "Hugging Face first-party repository metadata observed 2026-10-31",
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null
+    },
+    {
+      "repo_id": "google/shieldgemma-2-4b-it",
+      "model_category": "multimodal-image-safety",
+      "access": "gated",
+      "license_metadata": "gemma",
+      "proposal": "conditional_screening",
+      "reason": "画像安全性評価に特化した別の後学習済み分類器。既存画像生成・汎用VLMの重みで同一の分類結果を再現できない。",
+      "blockers": "Gemma利用条件、適用ポリシーと誤判定、画像前処理、表示内容の透明性。自動的な監視/検閲用途にはしない。",
+      "url": "https://huggingface.co/google/shieldgemma-2-4b-it",
+      "source_kind": "Hugging Face first-party repository metadata observed 2026-10-31",
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null
+    },
+    {
+      "repo_id": "facebook/audioseal",
+      "model_category": "audio-watermark-provenance",
+      "access": "public",
+      "license_metadata": "mit",
+      "proposal": "watch_specialized",
+      "reason": "AudioSealで埋め込まれた音声ウォーターマークの局所検出。音声生成モデルは現行多数あるが、真正性検証を目的とした別機能。",
+      "blockers": "任意のAI音声を検出できる万能ディープフェイク検出器ではない。音声用途と実装依存の確認。",
+      "url": "https://huggingface.co/facebook/audioseal",
+      "source_kind": "Hugging Face first-party repository metadata observed 2026-10-31",
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null
+    },
+    {
+      "repo_id": "lab260/Spectra-AASIST3",
+      "model_category": "audio-deepfake-detection",
+      "access": "public",
+      "license_metadata": "apache-2.0",
+      "proposal": "watch_specialized",
+      "reason": "音声ディープフェイク検出に特化した判別器。音声合成の保存だけで検知能力を確保したことにはならない。",
+      "blockers": "モデルのベンチマークデータ汚染・未知の音声合成器への汎化・商用利用の依存物条件。現行制限の兆候が弱いので監視。",
+      "url": "https://huggingface.co/lab260/Spectra-AASIST3",
+      "source_kind": "Hugging Face first-party repository metadata observed 2026-10-31",
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null
+    }
+  ],
+  "recommended_actions": [
+    "Freeze new high-volume additions pending exact file lists, original checkpoints and dependency sizes.",
+    "Resolve license/access rights of existing R0 assets before capacity commitments.",
+    "Audit 10 largest active models (top five occupy about 0.992TB in all-repo source view) and evaluate whether all alternate variants need preservation.",
+    "Separate durable artifact kinds: model/dataset/runtime/license-provenance, without making model count growth the objective.",
+    "For future approvals require selected file byte counts, complete rev hashes, official file hashes, dependencies and offline backend assumptions. Rounds 4 and 5 remain proposals, not counted."
+  ],
+  "uncertainties": [
+    "All selected_file_bytes and fully_pinned_revision_sha are missing in current 110-item catalog; reported 3.234TB is not a final acquisition manifest.",
+    "Full repo includes alternate formats/checkpoints and thus may overestimate selected files, while uncounted runtime dependencies, staged temporary copies and legal-metadata storage can increase real footprint.",
+    "The empty approved queue does not prove that the user's HDD is empty; no physical HDD access or byte measurement took place.",
+    "No model-specific prediction of government regulation or removal has been established."
+  ]
+}

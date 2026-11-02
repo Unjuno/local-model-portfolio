@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "review_id": "round11-omniparser-nllb-selection-20261101",
+  "checked_on": "2026-11-01",
+  "status": "METADATA_PINNED_COMPONENT_SELECTION_NOT_APPROVED",
+  "policy": "Select original components and their legal terms by exact file within fixed repos; no downloads, execution, license acceptance, or changes to CURRENT.",
+  "corrections": [
+    "OmniParser-v2.0 at f55d0750e5b94db2125ef0b45b0fa4a85ddc59b4 includes MIT icon_detect_v3 in the repository main revision, so earlier need for refs/pr/37 is obsolete for this pinned version; old GitHub README still mentions PR.",
+    "Although HF repository metadata says MIT, icon_detect legacy subdirectory is AGPL-3.0 and is not included. Microsoft explicitly distinguishes licenses by folder.",
+    "NLLB-200 600M is a research-only noncommercial translation checkpoint; its model card explicitly says it is not released for production deployment, and sentences >512 tokens may degrade.",
+    "The WAM HF repo only publishes checkpoint.pth, whereas creator official MIT checkpoint is named wam_mit.pth and noncommercial paper checkpoint wam_coco.pth; SHA identity is unresolved, so no automatic MIT classification of checkpoint.pth."
+  ],
+  "decisions": [
+    {
+      "repo_id": "microsoft/OmniParser-v2.0",
+      "decision": "conditional_candidate_file_selection",
+      "license": "MIT for icon_detect_v3 and icon_caption as asserted by publisher and corroborated by both fixed LICENSE texts",
+      "reason": "Preserve GUI region detector and specialized Florence-2 icon captioning as a reasonably compact two-model functional bundle. No need to preserve the AGPL old detector if the target is a permissive implementation; comparing the two would be separate research.",
+      "important_runtime_warning": "icon_detect_v3/model.pt is publisher's TorchScript; do not call torch.jit.load or other Python deserialization without separate isolated execution approval. icon_caption requires compatible Florence-based custom code and processors, not fully pinned.",
+      "evidence_urls": [
+        "https://huggingface.co/microsoft/OmniParser-v2.0/raw/f55d0750e5b94db2125ef0b45b0fa4a85ddc59b4/README.md",
+        "https://huggingface.co/microsoft/OmniParser-v2.0/raw/f55d0750e5b94db2125ef0b45b0fa4a85ddc59b4/icon_detect_v3/LICENSE",
+        "https://huggingface.co/microsoft/OmniParser-v2.0/raw/f55d0750e5b94db2125ef0b45b0fa4a85ddc59b4/icon_caption/LICENSE"
+      ]
+    },
+    {
+      "repo_id": "facebook/nllb-200-distilled-600M",
+      "decision": "conditional_research_only_lower_urgency",
+      "license": "CC-BY-NC-4.0 according to model card; not for production per publisher",
+      "reason": "Preserve low-resource sentence-translation distilled knowledge as a research comparison; it is not a replacement for cloud/production translation service nor the existing simultaneous translation category.",
+      "important_runtime_warning": "Only a pytorch_model.bin checkpoint is published; it may require PyTorch pickle deserialization. Treat as inert data until isolated, authorized conversion or execution and strict license review.",
+      "evidence_urls": [
+        "https://huggingface.co/facebook/nllb-200-distilled-600M/raw/f8d333a098d19b4fd9a8b18f94170487ad3f821d/README.md",
+        "https://creativecommons.org/licenses/by-nc/4.0/"
+      ]
+    }
+  ],
+  "pinned_models": [
+    {
+      "repo_id": "microsoft/OmniParser-v2.0",
+      "url": "https://huggingface.co/microsoft/OmniParser-v2.0",
+      "revision_sha": "f55d0750e5b94db2125ef0b45b0fa4a85ddc59b4",
+      "full_repository_logical_bytes": 1405800191,
+      "selected_model_side_bytes": 1365117340,
+      "excluded_model_side_bytes": 40682851,
+      "selected_count": 9,
+      "excluded_count": 6,
+      "selected_files": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 1519,
+          "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "source_sha256": null,
+          "verification_level": "git_blob_sha1_not_payload_sha256",
+          "purpose": "required_or_provenance"
+        },
+        {
+          "path": "icon_caption/config.json",
+          "size_bytes": 5748,
+          "git_blob_sha1": "8a03d9e785a5c79819ecb08ae191324e992cb383",
+          "source_sha256": null,
+          "verification_level": "git_blob_sha1_not_payload_sha256",
+          "purpose": "required_or_provenance"
+        },
+        {
+          "path": "icon_caption/generation_config.json",
+          "size_bytes": 292,
+          "git_blob_sha1": "ef46845e59a19f8509e075395de5e6a7efbcd4b6",
+          "source_sha256": null,
+          "verification_level": "git_blob_sha1_not_payload_sha256",
+          "purpose": "required_or_provenance"
+        },
+        {
+          "path": "icon_caption/LICENSE",
+          "size_bytes": 1140,
+          "git_blob_sha1": "79656060de00aa4659ad2c276d5be8830664d544",
+          "source_sha256": null,
+          "verification_level": "git_blob_sha1_not_payload_sha256",
+          "purpose": "license_source"
+        },
+        {
+          "path": "icon_caption/model.safetensors",
+          "size_bytes": 1083916964,
+          "git_blob_sha1": "b583acce35ab0be5c6d12f60332b1790a88f5414",
+          "source_sha256": "01b934b0fe2d07b181e2d07752f16ae27c9d0ea88ddffe13a9a003aa9680f233",
+          "verification_level": "publisher_lfs_sha256_not_downloaded",
+          "purpose": "model_binary_safetensors"
+        },
+        {
+          "path": "icon_detect_v3/LICENSE",
+          "size_bytes": 1073,
+          "git_blob_sha1": "48ea6616b5b8581df3401872996cecf1f8b08a0d",
+          "source_sha256": null,
+          "verification_level": "git_blob_sha1_not_payload_sha256",
+          "purpose": "license_source"
+        },
+        {
+          "path": "icon_detect_v3/model.pt",
+          "size_bytes": 281182680,
+          "git_blob_sha1": "d73caa4e4b3b12d246cd87d37c64a9913193c4d8",
+          "source_sha256": "11c6cbb77f22569fab22d86c76407a83ec81ab89dbfe28279854822d6e3fb00c",
+          "verification_level": "publisher_lfs_sha256_not_downloaded",
+          "purpose": "torchscript_binary_hold_for_safe_loading"
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 7820,
+          "git_blob_sha1": "b1b430ba7fb07bb3027623cd33eec07257eec75e",
+          "source_sha256": null,
+          "verification_level": "git_blob_sha1_not_payload_sha256",
+          "purpose": "model_card"
+        },
+        {
+          "path": "requirements.txt",
+          "size_bytes": 104,
+          "git_blob_sha1": "fb4cf10ca5537b04044692758a12025c08e50730",
+          "source_sha256": null,
+          "verification_level": "git_blob_sha1_not_payload_sha256",
+          "purpose": "required_or_provenance"
+        }
+      ],
+      "excluded_files": [
+        {
+          "path": "config.json",
+          "size_bytes": 0,
+          "why": "empty_root_config_not_functional"
+        },
+        {
+          "path": "handler.py",
+          "size_bytes": 21672,
+          "why": "unreviewed_dynamic_python_handler_not_selected"
+        },
+        {
+          "path": "icon_detect/LICENSE",
+          "size_bytes": 34522,
+          "why": "AGPL_legacy_detector_not_selected"
+        },
+        {
+          "path": "icon_detect/model.pt",
+          "size_bytes": 40623819,
+          "why": "AGPL_legacy_detector_not_selected"
+        },
+        {
+          "path": "icon_detect/model.yaml",
+          "size_bytes": 1144,
+          "why": "AGPL_legacy_detector_not_selected"
+        },
+        {
+          "path": "icon_detect/train_args.yaml",
+          "size_bytes": 1694,
+          "why": "AGPL_legacy_detector_not_selected"
+        }
+      ],
+      "license_review_status": "two MIT component LICENSE texts reviewed; original icon_detect AGPL excluded",
+      "download_approved": false,
+      "execution_approved": false,
+      "full_runtime_size_bytes": null,
+      "full_archive_size_bytes": null
+    },
+    {
+      "repo_id": "facebook/nllb-200-distilled-600M",
+      "url": "https://huggingface.co/facebook/nllb-200-distilled-600M",
+      "revision_sha": "f8d333a098d19b4fd9a8b18f94170487ad3f821d",
+      "full_repository_logical_bytes": 2482655255,
+      "selected_model_side_bytes": 2482655255,
+      "excluded_model_side_bytes": 0,
+      "selected_count": 9,
+      "excluded_count": 0,
+      "selected_files": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 1284,
+          "git_blob_sha1": "3719d3a1698904bbe84e8b3250d812f2853d847a",
+          "source_sha256": null,
+          "verification_level": "git_blob_sha1_not_payload_sha256",
+          "purpose": "required_or_provenance"
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 846,
+          "git_blob_sha1": "91ba54326eccfdb17a06a7d110df3d71f39b84b8",
+          "source_sha256": null,
+          "verification_level": "git_blob_sha1_not_payload_sha256",
+          "purpose": "required_or_provenance"
+        },
+        {
+          "path": "generation_config.json",
+          "size_bytes": 189,
+          "git_blob_sha1": "4c6d168201607a22255bee55a6ed092b0e3ed7a1",
+          "source_sha256": null,
+          "verification_level": "git_blob_sha1_not_payload_sha256",
+          "purpose": "required_or_provenance"
+        },
+        {
+          "path": "pytorch_model.bin",
+          "size_bytes": 2460457927,
+          "git_blob_sha1": "15c5444708dfbbcf4666bf483e7c6e22bbb2852d",
+          "source_sha256": "c266c2cfd19758b6d09c1fc31ecdf1e485509035f6b51dfe84f1ada83eefcc42",
+          "verification_level": "publisher_lfs_sha256_not_downloaded",
+          "purpose": "required_or_provenance"
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 7667,
+          "git_blob_sha1": "489890f6973db2448e698120b132fc8e2fcfb304",
+          "source_sha256": null,
+          "verification_level": "git_blob_sha1_not_payload_sha256",
+          "purpose": "model_card"
+        },
+        {
+          "path": "sentencepiece.bpe.model",
+          "size_bytes": 4852054,
+          "git_blob_sha1": "dc2262d3e1d375b235eb71c24119c8e73f85d4ad",
+          "source_sha256": "14bb8dfb35c0ffdea7bc01e56cea38b9e3d5efcdcb9c251d6b40538e1aab555a",
+          "verification_level": "publisher_lfs_sha256_not_downloaded",
+          "purpose": "required_or_provenance"
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size_bytes": 3548,
+          "git_blob_sha1": "02fba84e401dd2017999a39cac2c1278591c3a03",
+          "source_sha256": null,
+          "verification_level": "git_blob_sha1_not_payload_sha256",
+          "purpose": "required_or_provenance"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 564,
+          "git_blob_sha1": "742aa330eae62f661fe28ff3fdd1d216d1481294",
+          "source_sha256": null,
+          "verification_level": "git_blob_sha1_not_payload_sha256",
+          "purpose": "required_or_provenance"
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 17331176,
+          "git_blob_sha1": "c91ed1bb9994f98ddde1204a58cc5f7c5bd386f9",
+          "source_sha256": "e316b82de11d0f951f370943b3c438311629547285129b0b81dadabd01bca665",
+          "verification_level": "publisher_lfs_sha256_not_downloaded",
+          "purpose": "required_or_provenance"
+        }
+      ],
+      "excluded_files": [],
+      "license_review_status": "CC-BY-NC-4.0 model card reviewed; independent original LICENSE file absent",
+      "download_approved": false,
+      "execution_approved": false,
+      "full_runtime_size_bytes": null,
+      "full_archive_size_bytes": null
+    }
+  ],
+  "watch_hold": [
+    {
+      "repo_id": "facebook/watermark-anything",
+      "status": "HOLD_ORIGINAL_CHECKPOINT_IDENTITY",
+      "revision_sha": "88ffb2cd1079a76b01d6beda8bf2a433c25fa881",
+      "HF_path": "checkpoint.pth",
+      "HF_bytes": 377825938,
+      "HF_sha256": "90ef232384e023bd63245eb0c131abd69d2afc7b8f17a71ccedceb542bf009e2",
+      "creator_MIT_filename": "wam_mit.pth",
+      "creator_CC_BY_NC_filename": "wam_coco.pth",
+      "confirmed_hash_equivalence": false,
+      "reason": "HF metadata MIT is not sufficient to prove checkpoint.pth equals creator's MIT SA-1B model, especially with a separate COCO research model and conflicting README instructions. Do not download or relicense as MIT without publisher hash or explicit mapping."
+    }
+  ],
+  "summary": {
+    "count_pinned_models": 2,
+    "selected_files": 18,
+    "selected_model_side_bytes": 3847772595,
+    "observed_full_repo_logical_bytes": 3888455446,
+    "excluded_logical_bytes": 40682851,
+    "source_large_sha256_files": 5,
+    "runtime_bytes": null,
+    "approved_downloads": 0
+  },
+  "blocked_conditions": [
+    "OmniParser old AGPL excluded but source/runtime compatibility, model.pt deserialization safety, and optional Florence custom code license still unresolved.",
+    "NLLB noncommercial research purpose and unsafe binary serialization need explicit rights and runtime review.",
+    "Model source card language declares Apache/MIT/NC, but individual use case, source code, and third-party data remain separately checked.",
+    "Exact model files are not full offline bundles. No user hardware, OS, dependencies, or HDD inspected.",
+    "No final manifest lock in manifests/ and no approved queue write."
+  ],
+  "source_method": "Live publisher Hugging Face repo info and immutable revision tree, model cards and exact folder license text; no model binary fetched.",
+  "canonical_state": {
+    "revision": "v2-20261030",
+    "tracked": 110,
+    "active": 94,
+    "provisional_bytes": 3234067678260,
+    "queue_entries": 0
+  }
+}
