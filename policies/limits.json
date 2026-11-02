@@ -66,5 +66,20 @@
     "publisher_metrics_and_user_device_metrics_must_not_be_conflated": true,
     "archive_hdd_not_assumed_suitable_for_streaming_experts": true,
     "evaluation_artifact": "docs/resource-cost-screen-v6-2026-11-03.md"
+  },
+  "total_parameter_policy": {
+    "date_restored": "2026-11-03",
+    "scope": "every model for portfolio acceptance, including quantized variants or MoE; datasets are exempt from model parameter limit",
+    "cutoff_model_total_parameters_inclusive": 250000000000,
+    "compare_field": "total model parameters (all experts, active+inactive; include independently loaded core components as stated by publisher)",
+    "rule_if_at_or_above": "HARD_EXCLUDE (no archive-weight selection, no download, no inference)",
+    "rule_if_below": "pass this single gate only; continue independent RAM/storage/license/restriction-forecast screening",
+    "rule_if_unknown": "BLOCK_FINAL_LOCK_AND_APPROVAL; preserve investigation record until primary documentation verifies total",
+    "magnitude_unit": "parameters as dimensionless count; B=10^9 parameters, not bytes",
+    "quantized_or_offloaded_weights_inherit_original_model_total_parameters": true,
+    "moe_active_parameters_do_not_override_threshold": true,
+    "exemptions": [],
+    "evidence": "docs/parameter-cutoff-v7-2026-11-03.md",
+    "require_explicit_user_policy_revision_to_change": true
   }
 }
