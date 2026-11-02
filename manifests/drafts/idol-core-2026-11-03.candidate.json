@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "artifact_type": "download_manifest_candidate",
+  "status": "DRAFT_NOT_APPROVABLE",
+  "asset_id": "speridlabs-idol",
+  "asset_kind": "model",
+  "source": {
+    "provider": "huggingface",
+    "repo_type": "model",
+    "repo_id": "speridlabs/idol",
+    "revision_sha": "2731c2291fc65a797c5cb627a5e5526fc1490902",
+    "url": "https://huggingface.co/speridlabs/idol"
+  },
+  "files": [
+    {
+      "path": ".gitattributes",
+      "size_bytes": 2080,
+      "source_sha256": null
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 7274,
+      "source_sha256": null
+    },
+    {
+      "path": "birefnet.safetensors",
+      "size_bytes": 444466856,
+      "source_sha256": "44bbc97b041f879975d0d6d538b8e66a25eb04d1f49aab40697544cdd97eaa8e"
+    },
+    {
+      "path": "config.json",
+      "size_bytes": 1335,
+      "source_sha256": null
+    },
+    {
+      "path": "decoder.safetensors",
+      "size_bytes": 203171696,
+      "source_sha256": "9da4d7676bfcadb1c3fdfbff796e6257dadf82d26ec05be7717c79b2b13a1c4e"
+    },
+    {
+      "path": "decoder_gs.safetensors",
+      "size_bytes": 949083036,
+      "source_sha256": "3087eb8ee5763206a53e4078acf2a1bf382dab5147d407ec13a2cf39c04cc544"
+    },
+    {
+      "path": "denoiser.safetensors",
+      "size_bytes": 1482258308,
+      "source_sha256": "ded2cacf671bf3978ebc62729087abdbd318ef4752e6805b4c9fc8ffa51fe716"
+    }
+  ],
+  "total_bytes": 3078990585,
+  "upstream_file_sum_all_repo_bytes": 3128391338,
+  "excluded_optional_files": "demonstration gallery and MP4 media, not necessary for model weights",
+  "files_with_upstream_sha256": 4,
+  "files_without_upstream_sha256": 3,
+  "dependencies": null,
+  "dependency_review": {
+    "reviewed": false,
+    "unresolved": [
+      "facebook/dinov3-vith16plus-pretrain-lvd1689m gated manual; no permission proven",
+      "black-forest-labs/FLUX.2-dev VAE gated; no specific subset lock",
+      "speridlabs/idol-sdk software commit 4702a7f00850e34b6e83a2170cc123c3e9570744; runtime/dependencies/ABI unknown",
+      "offline runtime/performance, actual disk and RAM untested"
+    ]
+  },
+  "license_review": {
+    "status": "PENDING_FINAL_REVIEW",
+    "hub_metadata": "apache-2.0",
+    "repo_sdk_license": "Apache-2.0 confirmed in GitHub/LICENSE",
+    "parent_encoder_terms_approved": false
+  },
+  "model_card_review": {
+    "source_url": "https://huggingface.co/speridlabs/idol",
+    "model_only_no_execution": true
+  },
+  "inference_memory_screen": {
+    "status": "UNCERTAIN",
+    "publisher_claim_peak_vram_bytes": 7200000000,
+    "independent_estimate_bytes": null,
+    "backend": "PyTorch>=2.5 CUDA optimized or SDPA untested",
+    "batch_size": 1,
+    "quantization_bits": null
+  },
+  "security": {
+    "autoload_allowed": false,
+    "pickle_execution_allowed": false,
+    "only_data_download": true
+  },
+  "generated_at": "2026-11-03",
+  "download_approved": false,
+  "user_approved": false,
+  "execution_allowed": false,
+  "blockers": [
+    "license/parent gating/rights",
+    "full pinned dependency manifests and their SHA256",
+    "runtime and local HDD peak space",
+    "separate user approval of final lock file SHA256"
+  ]
+}
