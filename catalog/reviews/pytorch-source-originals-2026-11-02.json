@@ -450,9 +450,10 @@
       "type": "software_current_dependency",
       "priority": "A",
       "status": "ALREADY_IN_PRIOR_RUNTIME_REVIEW_NO_DUPLICATE",
-      "reason": "Needed for current video/audio decoding, already selected as software review in earlier round. Do not create another download allocation.",
+      "reason": "Needed for current video/audio decoding, already selected as software review in earlier round. Do not create another download allocation. Previously specified in round10 CPU reference profile; it is not an entry in round6's 20-source-software review list.",
       "source": "https://github.com/meta-pytorch/torchcodec",
-      "dependencies_complete": false
+      "dependencies_complete": false,
+      "source_review_path": "catalog/runtime-drafts/round10-cpu-reference-compatibility-2026-11-01.json"
     }
   ],
   "security_gate": {
@@ -491,5 +492,6 @@
     "confirmed_InsightFace_InSwapper128_release_bytes": 554253681,
     "unknown_size_count": 5,
     "note": "Known sizes are upstream logical source/license or release assets, not total runnable offline bundles. Unknown must remain null, not zero."
-  }
+  },
+  "previous_round10_runtime_source_blob_sha": "0051b442ec9b9212f60db351c5ec65b2d416142b"
 }
