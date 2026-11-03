@@ -15,7 +15,7 @@
 
 - **[総パラメータ250B上限の復活と109モデル監査](docs/parameter-cutoff-v7-2026-11-03.md)**。83件は250B未満、25件は総数未確認で最終取得lock不可、Mistral Large 4（約1.05T）1件は厳格除外。**総パラメータは活性MoE数ではなく全expertを含む**。
 - **[旧版v7](catalog/revisions/v7-2026-11-03.json)**／[132件の旧ビュー](catalog/effective-portfolio-2026-11-03-v7.json)／[v7全モデルパラメータゲート](catalog/revisions/v7-2026-11-03.json)／[v7の承認前作業キュー](queues/proposed-v7-2026-11-03.json)。
-- [250Bゲート読み取り専用検査スクリプト](scripts/check_parameter_cutoff.py)と[単体テスト](tests/test_parameter_cutoff.py)を追加。ユーザー実機での実行は未確認。
+- 当時は250Bゲートを新設。現在の[検査スクリプト](scripts/check_parameter_cutoff.py)と[単体テスト](tests/test_parameter_cutoff.py)はv8の150B基準に更新済み（実機実行は未確認）。
 - 規制のS1→S2→S3シナリオ、実行コスパ、HDD3.8TB上限、推論RAM512GB未満の追加条件は維持。ただし**250Bの除外条件が先**。ダウンロード承認0件、実機モデル実行0件。
 
 ## 旧版v6（2026-11-03、履歴）
