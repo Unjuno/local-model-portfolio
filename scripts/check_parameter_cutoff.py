@@ -45,13 +45,13 @@ def validate_model(item: dict[str, Any], threshold: int) -> list[str]:
     if not isinstance(count, int) or isinstance(count, bool) or count < 0:
         return [f"{repo_id}: invalid total parameter value"]
     if count >= threshold:
-        if state != "EXCLUDED_TOTAL_PARAMS_GE_250B":
-            errors.append(f"{repo_id}: >=250B must have excluded parameter gate")
+        if state != "EXCLUDED_TOTAL_PARAMS_GE_150B":
+            errors.append(f"{repo_id}: >=150B must have excluded parameter gate")
         if item.get("risk_tier") != "EXCLUDED" or item.get("portfolio_decision") != "excluded":
-            errors.append(f"{repo_id}: >=250B must be EXCLUDED/excluded in portfolio")
+            errors.append(f"{repo_id}: >=150B must be EXCLUDED/excluded in portfolio")
     else:
-        if state != "PASS_TOTAL_PARAMS_LT_250B":
-            errors.append(f"{repo_id}: known <250B must have PASS parameter gate")
+        if state != "PASS_TOTAL_PARAMS_LT_150B":
+            errors.append(f"{repo_id}: known <150B must have PASS parameter gate")
     return errors
 
 
@@ -60,8 +60,8 @@ def audit(root: Path = ROOT) -> list[str]:
     policy = load_json(root, "policies/limits.json")
     rule = policy.get("total_parameter_policy") or {}
     threshold = rule.get("cutoff_model_total_parameters_inclusive")
-    if threshold != 250_000_000_000:
-        return ["policies/limits.json: hard inclusive threshold must be exactly 250B"]
+    if threshold != 150_000_000_000:
+        return ["policies/limits.json: hard inclusive threshold must be exactly 150B"]
     current = load_json(root, "catalog/CURRENT.json")
     portfolio = load_json(root, current["materialized_catalog_path"])
     items = portfolio.get("items")
@@ -125,16 +125,16 @@ def audit(root: Path = ROOT) -> list[str]:
         matched = model_index.get(repo_id.lower())
         if matched is None:
             errors.append(f"{path}: approved model not in screened portfolio: {repo_id}")
-        elif matched["parameter_gate"]["status"] != "PASS_TOTAL_PARAMS_LT_250B":
-            errors.append(f"{path}: blocked parameter total (unknown or >=250B): {repo_id}")
+        elif matched["parameter_gate"]["status"] != "PASS_TOTAL_PARAMS_LT_150B":
+            errors.append(f"{path}: blocked parameter total (unknown or >=150B): {repo_id}")
     return errors
 
 
 if __name__ == "__main__":
     problems = audit()
     if problems:
-        print("FAIL: hard 250B parameter-policy violations:")
+        print("FAIL: hard 150B parameter-policy violations:")
         for problem in problems:
             print(" - " + problem)
         raise SystemExit(1)
-    print("PASS: total-parameter gate enforced; all tracked >=250B models excluded; approved queue checked.")
+    print("PASS: total-parameter gate enforced; all tracked >=150B models excluded; approved queue checked.")
