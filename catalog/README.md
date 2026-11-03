@@ -54,7 +54,14 @@ evidenceには、確認日時、URL、対象リビジョン、確認内容、fac
 この台帳にDownloadedやTestedを手入力して、実ファイルの検証記録の代わりにしない。
 
 
-## 現行v7の正本（2026-11-03）
+## 現行v8の正本（2026-11-03）
+
+- [CURRENT.json](CURRENT.json) はv8で**総パラメータ150B以上のモデルのハード除外**を適用。すべてのMoE expertと独立した学習済みembedding/MTPを含める。主モデル125Bだけを使った過小判定は不可。
+- [effective-portfolio-2026-11-03-v8.json](effective-portfolio-2026-11-03-v8.json) は**132資産（有効105、BACKLOG12、HOLD13、EXCLUDED2）**の現在ビュー。
+- [revisions/v8-2026-11-03.json](revisions/v8-2026-11-03.json) が109モデルの全件ゲート。82件が150B未満、2件は除外、25件は総数未確認で最終lockを保留。
+- [深掘り調査・一次資料](../docs/parameter-cutoff-v8-2026-11-03.md)と[取得承認前の審査順](../queues/proposed-v8-2026-11-03.json)を参照。規制予測S1→S2→S3とリソース費用を維持しつつ**150B除外条件を先に適用**する。
+
+## 旧版v7の正本（2026-11-03、履歴）
 
 - [CURRENT.json](CURRENT.json) は、baseからv6までの全履歴を保ったうえで、[v7 250Bハード上限](revisions/v7-2026-11-03.json)を適用する。
 - [effective-portfolio-2026-11-03-v7.json](effective-portfolio-2026-11-03-v7.json) は追跡132件・有効105件・BACKLOG12件・HOLD14件・EXCLUDED1件の最新ビュー。
