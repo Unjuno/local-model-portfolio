@@ -55,6 +55,14 @@
 - [Audio8 TTS](https://huggingface.co/Edge0/Audio8-TTS-Preview-0.6b/discussions/2)：主モデル約601Mにcodec約337Mを加えた全体約939Mを開発者が議論で認めている。**ただしRealistic版とPreview版の正確なrevision別テンソル数比較はまだ必要**。
 - [Idol](https://github.com/speridlabs/idol-sdk)：公式のFull Requestは約1.8Bで、DINOv3・FLUX.2 VAEを含むが、後者には別途Gated/権利の審査が必要。
 
+## ダウンロードを止めている未完了ゲート（全132件の現行ビューで確認）
+
+2026-11-03の現行v9ビューでは、**選択ファイルの確定バイト数が記入された資産0/132、最終取得用の固定revision SHA記入0/132、ライセンス本文確認済み0/132、依存審査済み0/132、ダウンロード承認0件**。これは「ファイルが存在しない」のではなく、**選択して取得するバイト列を正式に承認できる状態がまだ一件もない**という意味。
+
+すでにQwen3.5-0.8B・LightOnOCR-3-0.8B・Whisper-large-v3-turbo・Idolの4件には**過去の保存スナップショットから作った未承認の固定ファイル候補JSON**がある。ただし`manifests/drafts/*.candidate.json`であり、権利/依存/RAM/HDDを解決した`*.lock.json`や承認キューではない。この4件を現行ビューの正式な`selected_file_bytes`や`fully_pinned_revision_sha`が確定したと誤って数えない。
+
+したがって、パラメータ監査の **95 PASS** を「95モデルをダウンロード可能」と読み替えてはいけない。ユーザーが実際のHDDへ取得できる状態にするには、上記ゲートを別々に満たす作業が必要。
+
 ## 取得前に必要な追加監査
 
 - 有効な未確認7件の公式version/configと全重みファイルを、モデルをロードせず**静的にテンソル形状から数える**。安全形式のsafetensorsならヘッダ等の検証を優先。pickle/ONNXは構造を検査してもロードや任意コード実行を避ける。
