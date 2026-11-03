@@ -1,9 +1,6 @@
 name: Model portfolio 150B parameter audit
 
 on:
-  push:
-    branches:
-      - 'audit/**'
   pull_request:
     paths:
       - 'catalog/**'
@@ -17,6 +14,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: parameter-gate-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   parameter-audit:
     name: Read-only 150B static policy audit
@@ -28,7 +29,7 @@ jobs:
       HF_DATASETS_OFFLINE: '1'
     steps:
       - uses: actions/checkout@v4
-      - name: Check the current parameter policy and approved queue
+      - name: Check current parameter policy and approved queue
         run: python3 scripts/check_parameter_cutoff.py
       - name: Run deterministic standard-library unit tests
         run: python3 -m unittest discover -s tests -p 'test_parameter_cutoff.py' -v
