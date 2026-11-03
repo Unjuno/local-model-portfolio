@@ -4,14 +4,16 @@
 
 まず README.md、policies/selection.md、policies/limits.json、docs/workflow.md を読む。
 このリポジトリは取得仕様を管理する。現在は構成と手順のみで、ダウンローダーは未実装。
-**現行選定はcatalog/CURRENT.jsonのv7とcatalog/effective-portfolio-2026-11-03-v7.json（132件、有効105件、EXCLUDED1件、総パラメータ250Bゲート付き）。** 旧97件baseファイルやv2/v3/v4/v5/v6を現行と混同しない。
+**現行選定はcatalog/CURRENT.jsonのv8とcatalog/effective-portfolio-2026-11-03-v8.json（132件、有効105件、EXCLUDED2件、総パラメータ150Bゲート付き）。** 旧97件baseファイルやv2/v3/v4/v5/v6/v7を現行と混同しない。
 **manifests/drafts/*.candidate.jsonは非実行の承認前ファイル台帳であり、正規lockでも承認でもない。** これらをダウンローダーに渡さず、依存/null、権利、RAM/HDDを解決してから最終lockとユーザー承認を別に受ける。
 
-## 総パラメータ250B以上を除外（v7、優先順位より前に適用）
+## 総パラメータ150B以上を除外（v8、優先順位より前に適用）
 
 モデルの最終lock審査を行う前に、可能な実行環境で`python scripts/check_parameter_cutoff.py`による台帳・承認キューの読み取り専用検査を行う。テストを実行していない場合はPASSとみなさない。
 
-**総パラメータ250,000,000,000以上のモデル重みは一律除外**。MoEは活性数でなく**総数**。量子化版、SSD/CPU offload、規制予測S1への適合は例外理由にならない。パラメータ総数を検証できないモデルは最終lockや取得承認へ進めない。データセットへのモデル数制限は非適用。パラメータ数を確認できても従来の実機ピークRAM・保存容量・権利・承認チェックは必須。正本：[v7パラメータ監査](docs/parameter-cutoff-v7-2026-11-03.md)と[109件ゲート](catalog/revisions/v7-2026-11-03.json)。
+**総パラメータ150,000,000,000以上のモデル重みは一律除外**。MoEは活性数でなく**総数**。量子化版、SSD/CPU offload、規制予測S1への適合は例外理由にならない。パラメータ総数を検証できないモデルは最終lockや取得承認へ進めない。データセットへのモデル数制限は非適用。パラメータ数を確認できても従来の実機ピークRAM・保存容量・権利・承認チェックは必須。正本：[v8パラメータ監査](docs/parameter-cutoff-v8-2026-11-03.md)と[109件ゲート](catalog/revisions/v8-2026-11-03.json)。
+
+**150Bは総パラメータ数**であり、例えばQwen3.8 Flash Next系では125B主モデルに51B n-gram埋め込みと4B MTPを含めた約180Bを評価する。元の主モデル125Bだけで基準を通過させない。現行OrcaRouter派生はEXCLUDED。
 
 ## 規制予測優先（v5）
 
