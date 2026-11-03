@@ -5,7 +5,7 @@ Run: python -m unittest discover -s tests -p "test_parameter_cutoff.py"
 """
 import unittest
 
-from scripts.check_parameter_cutoff import validate_model
+from scripts.check_parameter_cutoff import validate_model, audit
 
 CAP = 150_000_000_000
 
@@ -37,6 +37,15 @@ class ParameterCapTests(unittest.TestCase):
     def test_unknown_does_not_pass(self):
         self.assertEqual([], validate_model(record(None, "UNVERIFIED_BLOCK_FINAL_LOCK"), CAP))
         self.assertNotEqual([], validate_model(record(None, "PASS_TOTAL_PARAMS_LT_150B"), CAP))
+
+    def test_repository_policy_and_queues(self):
+        # This executes only JSON reads and pure checks; no model execution.
+        self.assertEqual([], audit())
+
+    def test_149b_is_included_and_150b_excluded(self):
+        self.assertEqual([], validate_model(record(149_999_999_999, "PASS_TOTAL_PARAMS_LT_150B"), CAP))
+        self.assertEqual([], validate_model(record(150_000_000_000, "EXCLUDED_TOTAL_PARAMS_GE_150B", "excluded", "EXCLUDED"), CAP))
+        self.assertNotEqual([], validate_model(record(150_000_000_000, "PASS_TOTAL_PARAMS_LT_150B"), CAP))
 
     def test_invalid_count_does_not_pass(self):
         self.assertNotEqual([], validate_model(record(-1, "PASS_TOTAL_PARAMS_LT_150B"), CAP))
