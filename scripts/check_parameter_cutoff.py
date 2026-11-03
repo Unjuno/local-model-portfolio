@@ -98,6 +98,40 @@ def audit(root: Path = ROOT) -> list[str]:
         errors.append("active item count differs from CURRENT")
     if sum(1 for i in items if i.get("portfolio_decision") == "excluded") != expected.get("by_decision", {}).get("excluded"):
         errors.append("excluded item count differs from CURRENT")
+    # Validate that the materialized current policy actually matches CURRENT.
+    if portfolio.get("revision_id") != current.get("revision_id"):
+        errors.append("materialized portfolio revision does not match CURRENT")
+    if current.get("hard_exclusion_total_parameters_at_or_above") != threshold:
+        errors.append("CURRENT hard cutoff differs from policy")
+    embedded = portfolio.get("parameter_gate_policy") or {}
+    if embedded.get("threshold_total_parameters") != threshold:
+        errors.append("portfolio parameter cutoff differs from policy")
+
+    from collections import Counter
+    statuses = Counter(
+        item.get("parameter_gate", {}).get("status")
+        for item in items
+        if isinstance(item, dict) and item.get("asset_kind") == "model"
+    )
+    for name, count in (expected.get("parameter_gate") or {}).items():
+        if statuses.get(name, 0) != count:
+            errors.append(f"gate count mismatch for {name}: {statuses.get(name, 0)} != {count}")
+    if sum(statuses.values()) != sum((expected.get("parameter_gate") or {}).values()):
+        errors.append("model gate count mismatch")
+    for item in items:
+        if isinstance(item, dict) and item.get("asset_kind") == "model":
+            if item.get("portfolio_decision") in ("select", "conditional"):
+                if item.get("parameter_gate", {}).get("status") == "EXCLUDED_TOTAL_PARAMS_GE_150B":
+                    errors.append(f"active selected model must not be excluded by parameter cap: {item.get('repo_id')}")
+    # Proposed worklists can list EXCLUDED records only as explicitly blocked,
+    # never as an executable queue, and must reflect the current model statuses.
+    proposed_path = current.get("priority_worklist_path")
+    if proposed_path:
+        proposed = load_json(root, proposed_path)
+        if proposed.get("approved") is not False or proposed.get("download_enabled") is not False:
+            errors.append("proposed queue must be non-executable and unapproved")
+        if proposed.get("source_revision") != current.get("revision_id"):
+            errors.append("proposed queue revision does not match CURRENT")
     # A proposed queue is read-only: it is never an execution authorization.
     approved = load_json(root, "queues/approved.json")
     entries = approved.get("entries")
