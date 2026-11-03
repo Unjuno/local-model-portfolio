@@ -1,0 +1,287 @@
+{
+  "schema_version": 1,
+  "type": "non_executable_exception_candidate_research",
+  "review_date": "2026-11-04",
+  "repository": "Unjuno/local-model-portfolio",
+  "branch": "strategy/2026-11-03-01-risk",
+  "baseline_commit": "6e9389c97d24528df97e4b14a6bc772780141fd3",
+  "source": "publisher_model_cards_and_HF_hub_metadata",
+  "current_approved_policy": "Strict >=150B hard excluded in policies/limits.json; this file is ONLY a future exception-policy proposal, NOT an authorization to use/modify approval or download.",
+  "new_user_preference": "Treat <150B full-total models as normal candidates; contemplate >150B only for quantized, uniquely modified/specialized, demonstrably useful/quality-checked versions.",
+  "notes": [
+    "Full original parameters and quantized artifact tensor metadata must be separately recorded. Quantization alone never reduces original parameter count.",
+    "A LoRA by itself is an adapter, not a runnable complete model.",
+    "Different source-model baselines must never be compared by top-1 agreement percentages as if they are cross-model quality scores.",
+    "Specialized metrics and noninferiority thresholds must be defined before model performance claims.",
+    "Gated, license and data consent may not be bypassed by future public-distribution hypotheses.",
+    "Real PC active downloads are user-reported, not verified by this GitHub research. GitHub queues/approved.json is empty and cannot attest to external download status.",
+    "No download, delete, overwrite, or change to existing queues, manifests, CURRENT.json, policy files, or model binaries was performed."
+  ],
+  "candidate_count": 9,
+  "candidates": [
+    {
+      "repo_id": "AtomicChat/Qwen3.8-Flash-Next-Uncensored-GGUF",
+      "original_model": "Qwen/Qwen3.8-Flash-Next",
+      "original_total_parameters_estimate": 180000000000,
+      "observed_quantized_model_total_parameters": null,
+      "repo_advertised_model_parameters": "79.5M (partial/adapter metadata; NOT full underlying model)",
+      "quantization": "AD-4.25bpw-Q4_K_M",
+      "full_checkpoint_size_decimal_gb": 93.9,
+      "supplemental_adapter_gb": 0.318,
+      "observed_distribution": "public_listed",
+      "format": "GGUF",
+      "backend_requirements": "llama.cpp build supporting qwen4exp; all 3 GGUF shards; n-gram table ~32GB may require sufficiently fast SSD; do not presume archive HDD streams experts efficiently",
+      "license": "Qwen Community License 1.0 inherited from official Qwen original; author tags other",
+      "unique_capability": "Refusal-direction edit of large hybrid MoE and quantization-specific layout; no demonstrated broad new reasoning capability beyond original model",
+      "general_quality": "Author measured MMLU 87.3% base vs 86.8% edited BF16 on 2000 questions (delta -0.5 pp); baked Q4 ~91.1% same top-1 vs ~89.2% of old similarly sized base quant plus adapter",
+      "quality_provenance": "model_author_self_evaluation; MMLU n=2000; logits on 87 samples×4096 context, 8×RTX PRO 6000, CUDA13, llama.cpp 980aef8c; speed on user HW not measured",
+      "special_effect": "Publisher reports changed refusal behavior and equivalent benign reasoning within sample noise; card flags high-effort reasoning loops; vision not independently tested",
+      "legal_or_resource_blockers": [
+        "Original Qwen Community License 1.0 must be correctly inherited and applicable",
+        "Quant's model-card partial parameter count cannot override 180B full total",
+        "Versioned 3 shards and backend/SSD requirements not pinned",
+        "Full license/selected-byte/sha/user-approved-manifest absent"
+      ],
+      "assessment": "A_PRIORITY_RESEARCH_NOT_APPROVAL",
+      "sources": [
+        "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-Uncensored-GGUF",
+        "https://huggingface.co/Qwen/Qwen3.8-Flash-Next/raw/main/LICENSE"
+      ],
+      "falsification": "Independent paired evaluation finds no genuine specialized benefit over an available legal original+adapter, or unsupportable general ability loss; demote. Rights incompatibility blocks acquisition."
+    },
+    {
+      "repo_id": "orcarouter/Qwen3.8-Flash-Next-Uncensored-GGUF",
+      "original_model": "Qwen/Qwen3.8-Flash-Next",
+      "original_total_parameters_estimate": 180000000000,
+      "observed_quantized_model_total_parameters": null,
+      "repo_advertised_model_parameters": "not established as full original total from GGUF metadata",
+      "quantization": "Q4_K_M",
+      "full_checkpoint_size_decimal_gb": 110,
+      "supplemental_adapter_gb": null,
+      "observed_distribution": "gated",
+      "format": "GGUF",
+      "backend_requirements": "llama.cpp Qwen Flash Next compatible build; sharded GGUF and multimodal mmproj as needed; model creator reports multiple options",
+      "license": "Hugging Face derived card metadata apache-2.0 conflicts with original Qwen Community License 1.0",
+      "unique_capability": "Publisher's separate abliteration technique applied to original full MoE; overlapping objective with AtomicChat edition",
+      "general_quality": "Publisher reports original BF16 ablation within ±2 points on selected general benchmarks; no rigorous independent per-Q4-head-to-head is established",
+      "quality_provenance": "publisher_self_report; hardware/test sets for precise Q4 quality not independently audited",
+      "special_effect": "Different custom weight modification; unique underlying version not demonstrated more valuable than AtomicChat rendition",
+      "legal_or_resource_blockers": [
+        "Mismatch between derived Apache 2.0 metadata and official base Qwen Community License 1.0",
+        "Hub gated: user's approval unknown",
+        "Same-model overlapping variants; verify quality with matched task/hardware and SHA",
+        "Final fixed complete checkpoint and selected bytes unknown"
+      ],
+      "assessment": "B_RIGHTS_HOLD_ALTERNATIVE_COMPARE",
+      "sources": [
+        "https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored-GGUF",
+        "https://huggingface.co/Qwen/Qwen3.8-Flash-Next/raw/main/LICENSE"
+      ],
+      "falsification": "Publisher corrects parent-license mismatch and matched tests demonstrate materially stronger performance or uniquely different editing effect vs AtomicChat; then re-rank."
+    },
+    {
+      "repo_id": "AtomicChat/Mistral-Large-4-1T-A52B-Uncensored-GGUF",
+      "original_model": "mistralai/Mistral-Large-4-1T-A52B",
+      "original_total_parameters_estimate": 1050000000000,
+      "observed_quantized_model_total_parameters": null,
+      "repo_advertised_model_parameters": "0.1B visible for adapter metadata; NOT the original 1T full model",
+      "quantization": "IQ2_XXS, 2.31bpw baked GGUF",
+      "full_checkpoint_size_decimal_gb": 302,
+      "supplemental_adapter_gb": 0.45,
+      "observed_distribution": "public_listed",
+      "format": "GGUF",
+      "backend_requirements": "llama.cpp master support >=2026-10-29; author suggests 384–512GB machine, but user OS+KV+runtime peak remains unknown; LoRA needs complete separate base quantized model",
+      "license": "Mistral Ecosystem Open-Weight License with commercial service condition; parent term review needed",
+      "unique_capability": "Distinct ~1T family specialized refusal-control edit; compare baked weights to smaller rank-1 adapter approach",
+      "general_quality": "Author MMLU 81.6% baseline vs 80.6% edited n=500, reported p=0.13; baked 2-bit top-1 match 82.5%, occasional degeneration; LoRA top-1 90.2% (not standalone checkpoint)",
+      "quality_provenance": "model_author_self_evaluation; limited sample of n=500 MMLU, no user hardware benchmark",
+      "special_effect": "Refusal-control modification demonstrable on author's prompts, not evidence that general reasoning improved",
+      "legal_or_resource_blockers": [
+        "302GB substantive HDD cost and likely extreme system RAM/VRAM",
+        "Very low-bit baked loss vs higher-quality adapter strategy",
+        "LoRA 0.45GB is useless as a stand-alone inference package",
+        "License, backend, version, SHA and real RAM peak unresolved"
+      ],
+      "assessment": "B_QUALITY_HOLD_HIGH_BUDGET",
+      "sources": [
+        "https://huggingface.co/AtomicChat/Mistral-Large-4-1T-A52B-Uncensored-GGUF",
+        "https://unsloth.ai/docs/models/mistral-large-4"
+      ],
+      "falsification": "Controlled quality tests show baked quant's task performance is inferior to a smaller legal option or LoRA+base path; deprioritize large baked artifact."
+    },
+    {
+      "repo_id": "dealignai/Qwen3.5-VL-397B-A17B-UNCENSORED-JANG_1L",
+      "original_model": "Qwen/Qwen3.5-VL-397B-A17B",
+      "original_total_parameters_estimate": 397000000000,
+      "observed_quantized_model_total_parameters": 428616400000,
+      "repo_advertised_model_parameters": "397B in card; HF Hub reports ~428.6B quantized model tensor metadata; scope reconciliation pending",
+      "quantization": "JANG_1L mixed 8-bit attention +2-bit experts",
+      "full_checkpoint_size_decimal_gb": 112,
+      "supplemental_adapter_gb": null,
+      "observed_distribution": "public_listed",
+      "format": "MLX/JANG",
+      "backend_requirements": "Apple Silicon MLX Studio/jang-tools only according to creator; speed claim 33 token/s on M3 Ultra 256GB, batch/clock not specified; cannot generalize to user hardware",
+      "license": "Hub metadata apache-2.0; verify original parent and special converter conditions",
+      "unique_capability": "VL-aware low-bit quantization plus claimed refusal-related modifications and specialized mixed-precision quant format",
+      "general_quality": "Author MMLU 88.9% (185/208) vs baseline 87.0%; ~4-answer difference in a 208 question test, insufficient standalone evidence of general quality improvement",
+      "quality_provenance": "model_author_self_evaluation; n=208; no paired statistical comparison or independent reproducibility stated",
+      "special_effect": "Multimodal and refusal change claimed; unknown whether JANG format actually works on user's intended runtime",
+      "legal_or_resource_blockers": [
+        "Proprietary/specialized runtime compatibility and Apple Silicon restriction",
+        "Small sample, weak evidence for quality gain",
+        "Complete total and license evidence need reconciliation"
+      ],
+      "assessment": "C_PLATFORM_AND_QUALITY_HOLD",
+      "sources": [
+        "https://huggingface.co/dealignai/Qwen3.5-VL-397B-A17B-UNCENSORED-JANG_1L"
+      ],
+      "falsification": "Independent tests on the target backend fail to reproduce both quality and special capability, or user hardware incompatible; demote."
+    },
+    {
+      "repo_id": "puwaer/DeepSeek-V4-Flash-0731-reap-150b-gguf",
+      "original_model": "deepseek-ai/DeepSeek-V4-Flash-0731",
+      "original_total_parameters_estimate": 284000000000,
+      "observed_quantized_model_total_parameters": 150128500000,
+      "repo_advertised_model_parameters": "150B name but actual Hub reported 150.1285B in upstream pruned checkpoint; on old strict boundary this is excluded",
+      "quantization": "Q3_K_M",
+      "full_checkpoint_size_decimal_gb": 70.94212231168,
+      "supplemental_adapter_gb": null,
+      "observed_distribution": "public_listed",
+      "format": "GGUF",
+      "backend_requirements": "llama.cpp DeepSeek V4 support; quantized rung not independently benchmarked; original checkpoint has MTP modules removed",
+      "license": "MIT indicated by publisher; verify original",
+      "unique_capability": "Expert pruning decreases total from 284B to 150.1285B, changes MoE structure and eliminates MTP; useful compression research but no distinct uncensored/NSFW capability",
+      "general_quality": "SGLang checkpoint (pre-further-quantization) 4-test mean 82.48% vs original 81.68%; difference +0.80 pp; Q3_K_M quality untested",
+      "quality_provenance": "publisher_self_evaluation greedy single-sample, 4096 context; benchmark dimensions GSM8K, MATH-500, HumanEval+, MBPP+; n per suite set by dataset, hardware unspecified",
+      "special_effect": "Unusual pruning to boundary and slight reported benchmark average gain; not evidence lower-bit GGUF preserves such gain",
+      "legal_or_resource_blockers": [
+        "Full model actual total 150.1285B > 150B despite model name",
+        "Loss of MTP means not a bit-identical original",
+        "Lowbit GGUF benchmark not measured",
+        "No stand-alone rights and runtime audit"
+      ],
+      "assessment": "C_BOUNDARY_REVIEW_ONLY",
+      "sources": [
+        "https://huggingface.co/puwaer/DeepSeek-V4-Flash-0731-reap-150b",
+        "https://huggingface.co/puwaer/DeepSeek-V4-Flash-0731-reap-150b-gguf"
+      ],
+      "falsification": "Model-wide tensor census and completed Q3 benchmark prove the special compression actually retains quality and obeys a formally revised exception policy; otherwise no accession."
+    },
+    {
+      "repo_id": "puwaer/DeepSeek-V4-Flash-0731-reap-200b-gguf",
+      "original_model": "deepseek-ai/DeepSeek-V4-Flash-0731",
+      "original_total_parameters_estimate": 284000000000,
+      "observed_quantized_model_total_parameters": 199914700000,
+      "repo_advertised_model_parameters": "~199.9B in source checkpoint",
+      "quantization": "Q3_K_M",
+      "full_checkpoint_size_decimal_gb": 92.93235486719999,
+      "supplemental_adapter_gb": null,
+      "observed_distribution": "public_listed",
+      "format": "GGUF",
+      "backend_requirements": "llama.cpp DeepSeek V4 support; GGUF quantized rungs unbenchmarked; partial CPU offload unverified",
+      "license": "MIT indicated by publisher",
+      "unique_capability": "Router-aware expert pruning from 284B to ~200B, no independently novel target task",
+      "general_quality": "SGLang upstream pruned checkpoint mean 81.02% vs original 81.68% across four reported tasks, -0.66 pp; quantized Q3 not separately evaluated",
+      "quality_provenance": "model_author_self_evaluation, greedy n=1, context 4096; no user hardware",
+      "special_effect": "Storage reduction without material novel user capability; retention reasonably close at source but re-quant quality unknown",
+      "legal_or_resource_blockers": [
+        "No demonstrated specialized user-facing gain",
+        "Q3 quantized performance unmeasured",
+        "Full source and licenses, other variants, backend unapproved"
+      ],
+      "assessment": "D_TECH_INTEREST_NOT_PRIORITY",
+      "sources": [
+        "https://huggingface.co/puwaer/DeepSeek-V4-Flash-0731-reap-200b",
+        "https://huggingface.co/puwaer/DeepSeek-V4-Flash-0731-reap-200b-gguf"
+      ],
+      "falsification": "Comparable tests on the actual GGUF show reproducible improved specialist ability and efficiency of value beyond lower-cost alternative; reconsider."
+    },
+    {
+      "repo_id": "puwaer/DeepSeek-V4-Flash-0731-ream-200b-gguf",
+      "original_model": "deepseek-ai/DeepSeek-V4-Flash-0731",
+      "original_total_parameters_estimate": 284000000000,
+      "observed_quantized_model_total_parameters": 199914700000,
+      "repo_advertised_model_parameters": "~199.9B source",
+      "quantization": "Q3_K_M",
+      "full_checkpoint_size_decimal_gb": 92.93235486719999,
+      "supplemental_adapter_gb": null,
+      "observed_distribution": "public_listed",
+      "format": "GGUF",
+      "backend_requirements": "llama.cpp; Q3 unbenchmarked",
+      "license": "MIT indicated by publisher",
+      "unique_capability": "Expert merging, but other REAP pruning alternative from same producer has markedly better reported performance",
+      "general_quality": "Mean 78.10% vs original 81.68%, -3.58 pp across four suite average; source checkpoint, quantized Q3 performance unknown",
+      "quality_provenance": "model_author_self_evaluation SGLang, greedy n=1, context 4096",
+      "special_effect": "Compresses experts, but loses more math quality than alternative REAP; no distinct target-specialized gain",
+      "legal_or_resource_blockers": [
+        "Quantized additional loss unmeasured",
+        "Insufficient benefit over REAP at similar size",
+        "No legal/manifest approval"
+      ],
+      "assessment": "D_REJECT_CURRENT_PRIORITY",
+      "sources": [
+        "https://huggingface.co/puwaer/DeepSeek-V4-Flash-0731-ream-200b",
+        "https://huggingface.co/puwaer/DeepSeek-V4-Flash-0731-ream-200b-gguf"
+      ],
+      "falsification": "Re-run independent paired benchmarks on exact GGUF shows unique domain gain large enough to compensate quality loss; otherwise omit."
+    },
+    {
+      "repo_id": "drowzeys/keys-GLM-5.3-EXL3-Abliterated",
+      "original_model": "zai-org/GLM-5.3",
+      "original_total_parameters_estimate": 753000000000,
+      "observed_quantized_model_total_parameters": 165028100000,
+      "repo_advertised_model_parameters": "Hub exposed 165B for quant tensor representation vs original model card ~753B; original total must control cap",
+      "quantization": "EXL3 routed-experts-only 3-bit, other modules bf16/fp16",
+      "full_checkpoint_size_decimal_gb": 308,
+      "supplemental_adapter_gb": null,
+      "observed_distribution": "gated",
+      "format": "safetensors EXL3 mixed",
+      "backend_requirements": "Author-specific vLLM patch/container on four DGX Spark GB10 units, TP4+DCP4, CUDA13; untrusted custom code not to be auto-loaded",
+      "license": "MIT tag, parent and derived edit conditions to review",
+      "unique_capability": "Says refusal-direction changes from separate DERISKED BF16 projection adapted to low-bit expert packing, requires custom serving environment",
+      "general_quality": "No adequate independently comparable held-out specialist/general benchmark established in this review",
+      "quality_provenance": "publisher card technical/inference narrative, not independent user hardware validation",
+      "special_effect": "Novel specialized implementation but large, gated, complex and poor reproducibility confidence",
+      "legal_or_resource_blockers": [
+        "Gated permission unknown",
+        "Complex patched backend, four-device requirement not assumed available",
+        "Hub parameter count must not misclassify 753B original",
+        "Quality retention unestablished"
+      ],
+      "assessment": "D_HIGH_COMPLEXITY_HOLD",
+      "sources": [
+        "https://huggingface.co/drowzeys/keys-GLM-5.3-EXL3-Abliterated"
+      ],
+      "falsification": "Verified user-compatible backend and repeatable benchmark with quality benefit plus rights/cost pass could reverse hold."
+    },
+    {
+      "repo_id": "OpenYourMind/Kimi-K2.7-Code-ablated",
+      "original_model": "moonshotai/Kimi-K2.7-Code",
+      "original_total_parameters_estimate": 1058589400000,
+      "observed_quantized_model_total_parameters": 1058589400000,
+      "repo_advertised_model_parameters": "HF ~1.0586T",
+      "quantization": "INT4",
+      "full_checkpoint_size_decimal_gb": null,
+      "supplemental_adapter_gb": null,
+      "observed_distribution": "gated_manual_reported",
+      "format": "safetensors",
+      "backend_requirements": "sglang TP4 specified in card; specialized runtime dependencies and full shard list unknown",
+      "license": "other tag; text and manual gate user authorization unverified",
+      "unique_capability": "An ablation research preview but benchmarked measurable quality improvement not established",
+      "general_quality": "No suitably controlled baseline/edited quality benchmark found in this research",
+      "quality_provenance": "publisher preview only",
+      "special_effect": "Potentially distinctive code-agent edit, but no efficacy and reproduction evidence",
+      "legal_or_resource_blockers": [
+        "Manual gated approval required",
+        "Exact selected file capacity unknown",
+        "No independent validation of quality",
+        "Model total greatly above 150B"
+      ],
+      "assessment": "D_NO_EVIDENCE_HOLD",
+      "sources": [
+        "https://huggingface.co/OpenYourMind/Kimi-K2.7-Code-ablated"
+      ],
+      "falsification": "Author or independent reviewer publishes reproducible substantial domain improvement, normal quality noninferiority, and legal full package; reconsider."
+    }
+  ]
+}
