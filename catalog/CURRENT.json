@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision_id": "v8-20261103",
+  "revision_id": "v9-20261103",
   "base_catalog_path": "catalog/selected-portfolio-2026-10-30.json",
   "base_file_blob_sha": "12f5de929be31a805229ddcfedc6320dec7bff3d",
   "ordered_overlays": [
@@ -10,9 +10,10 @@
     "catalog/revisions/v5-2026-11-03.json",
     "catalog/revisions/v6-2026-11-03.json",
     "catalog/revisions/v7-2026-11-03.json",
-    "catalog/revisions/v8-2026-11-03.json"
+    "catalog/revisions/v8-2026-11-03.json",
+    "catalog/revisions/v9-2026-11-03.json"
   ],
-  "application_rule": "Start with base and verify SHA. Apply v2-v4 replacement_operations with expected prior tier/decision and append additions. Then apply v5 priority_operations by exact asset_kind/repo_id with expected_current_tier+decision preconditions; require 132 unique coverage. Sort by forecast_investigation_rank. Never infer approval or auto-download. Then apply v6 efficiency_operations by exact asset_kind/repo_id and assert matching v5 wave/rank/decision for all 132. Resource screening never implies runtime success or download approval. Then apply v7 parameter_gate_operations to all 109 models; verify each expected prior status and total params from source. For >=250B apply explicit exclusion replacement_operations; for null total params block final lock. Keep datasets exempt. Assert 132 unique assets and 109 param checks. Do not download. Then apply v8 total-model-parameter gate on each of 109 models, validating expected v7 decision/tier/gate. Apply one explicit new HOLD-to-EXCLUDED transition; keep previous EXCLUDED. Block final lock if unknown. Reject >=150B. Datasets exempt.",
+  "application_rule": "Start with base and verify SHA. Apply v2-v4 replacement_operations with expected prior tier/decision and append additions. Then apply v5 priority_operations by exact asset_kind/repo_id with expected_current_tier+decision preconditions; require 132 unique coverage. Sort by forecast_investigation_rank. Never infer approval or auto-download. Then apply v6 efficiency_operations by exact asset_kind/repo_id and assert matching v5 wave/rank/decision for all 132. Resource screening never implies runtime success or download approval. Then apply v7 parameter_gate_operations to all 109 models; verify each expected prior status and total params from source. For >=250B apply explicit exclusion replacement_operations; for null total params block final lock. Keep datasets exempt. Assert 132 unique assets and 109 param checks. Do not download. Then apply v8 total-model-parameter gate on each of 109 models, validating expected v7 decision/tier/gate. Apply one explicit new HOLD-to-EXCLUDED transition; keep previous EXCLUDED. Block final lock if unknown. Reject >=150B. Datasets exempt. Then apply v9 parameter_evidence_operations to exactly 25 prior-UNVERIFIED models, asserting per-record expected tier/decision/status, promoting only first-party documented complete published model or major inference component counts; leave 12 unknown and enforce 150B cap, independent dependency/manifest rights.",
   "expected": {
     "tracked": 132,
     "active": 105,
@@ -63,9 +64,15 @@
       "active_ge_100GB_repo_assets": 9
     },
     "parameter_gate": {
-      "PASS_TOTAL_PARAMS_LT_150B": 82,
+      "PASS_TOTAL_PARAMS_LT_150B": 95,
       "EXCLUDED_TOTAL_PARAMS_GE_150B": 2,
-      "UNVERIFIED_BLOCK_FINAL_LOCK": 25
+      "UNVERIFIED_BLOCK_FINAL_LOCK": 12
+    },
+    "parameter_evidence_review": {
+      "previous_unknown": 25,
+      "verified_new": 13,
+      "remaining_unknown": 12,
+      "remaining_active_unknown": 7
     }
   },
   "statuses": {
@@ -73,13 +80,13 @@
     "download_approved": false,
     "selected_file_bytes_final": false
   },
-  "notes": "v5 reorders all existing 132 records for hypothetical cascade-of-restrictions preservation: S1 dual-use/identity/guardrail/rights, S2 high-capability general & science & embodied, S3 broad base/data/runtime. Old R0/R1/R2 retained as historical priority labels, NOT controlling download order. Forecast never overrides legal rights or approval. v6 adds independent resource-cost screening and Qwen3-Coder-Next FP8 8GB experimental offload report. Primary S1>S2>S3 order preserved; no legal gate or selection changes. Runtime evidence is experimental and hardware scenario is not inferred from the owner. v7 restores user-requested HARD exclude >=250B total params (including inactive MoE); Mistral Large4 1.05T changed HOLD to EXCLUDED, other 25 unverified pending metadata, all original selections and archive budget otherwise unchanged. Strict >=250B cutoff precedes forecast and RAM/VRAM exceptions. Unknown 25 count blocks final lock. v8 user lowered hard exclusion to >=150B total including full MoE embedding+MTP. OrcaRouter Qwen3.8 Flash Next Uncensored 180B HOLD -> EXCLUDED; Mistral Large4 1.05T remains excluded. 25 unverified parameter counts block final lock. v8 policy active after 2026-11-03: >=150B total (not 250B) is hard-excluded. Older v7 250B mentions in history are not current.",
-  "materialized_catalog_path": "catalog/effective-portfolio-2026-11-03-v8.json",
+  "notes": "v5 reorders all existing 132 records for hypothetical cascade-of-restrictions preservation: S1 dual-use/identity/guardrail/rights, S2 high-capability general & science & embodied, S3 broad base/data/runtime. Old R0/R1/R2 retained as historical priority labels, NOT controlling download order. Forecast never overrides legal rights or approval. v6 adds independent resource-cost screening and Qwen3-Coder-Next FP8 8GB experimental offload report. Primary S1>S2>S3 order preserved; no legal gate or selection changes. Runtime evidence is experimental and hardware scenario is not inferred from the owner. v7 restores user-requested HARD exclude >=250B total params (including inactive MoE); Mistral Large4 1.05T changed HOLD to EXCLUDED, other 25 unverified pending metadata, all original selections and archive budget otherwise unchanged. Strict >=250B cutoff precedes forecast and RAM/VRAM exceptions. Unknown 25 count blocks final lock. v8 user lowered hard exclusion to >=150B total including full MoE embedding+MTP. OrcaRouter Qwen3.8 Flash Next Uncensored 180B HOLD -> EXCLUDED; Mistral Large4 1.05T remains excluded. 25 unverified parameter counts block final lock. v8 policy active after 2026-11-03: >=150B total (not 250B) is hard-excluded. Older v7 250B mentions in history are not current. v9 audits previous 25 unknown totals and marks 13 publisher-documented named model or major component parameter counts below 150B; 12 still blocked, 7 active. No rights/download authorization. Threshold fixed 150B.",
+  "materialized_catalog_path": "catalog/effective-portfolio-2026-11-03-v9.json",
   "priority_policy_path": "policies/capability-access-risk.md",
   "priority_worklist_path": "queues/proposed-v8-2026-11-03.json",
   "resource_screen_path": "catalog/revisions/v6-2026-11-03.json",
   "cost_performance_report_path": "docs/resource-cost-screen-v6-2026-11-03.md",
-  "parameter_hard_limit_path": "catalog/revisions/v8-2026-11-03.json",
-  "parameter_review_report_path": "docs/parameter-cutoff-v8-2026-11-03.md",
+  "parameter_hard_limit_path": "catalog/revisions/v9-2026-11-03.json",
+  "parameter_review_report_path": "docs/parameter-audit-v9-2026-11-03.md",
   "hard_exclusion_total_parameters_at_or_above": 150000000000
 }
