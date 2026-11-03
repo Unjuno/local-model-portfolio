@@ -149,7 +149,8 @@
       "priority_bands_can_cross_forecast_stages": true,
       "no_external_mirror_presumed": true,
       "actions_not_download_approval": true
-    }
+    },
+    "publisher_repo_identity_note": "A requested model ID can resolve ambiguously in metadata search (Edge0 Realistic-0.6b vs Realistic-Air). Publisher naming alignment is not cryptographic equivalence; this remains 1 unresolved lookup, no guessed model removal."
   },
   "counts": {
     "tracked": 132,
@@ -176,7 +177,8 @@
     "rechecked_hf_public_listings_today": 107,
     "unresolved_exact_repo_id_lookup_today": 1,
     "public_repo_count_historical_v9": 108,
-    "option_value_band_changes": 29
+    "option_value_band_changes": 29,
+    "publisher_naming_alignment_evidence_found": 1
   },
   "assets": [
     {
@@ -5886,7 +5888,7 @@
         "license_metadata": "apache-2.0",
         "license_text_reviewed": false,
         "individual_user_gated_approval_verified": false,
-        "note": "The requested Edge0/Audio8-TTS-Realistic-0.6b returned Edge0/Audio8-TTS-Realistic-Air in Hub repo detail. Original URL still has an official model page; relation, redirect, revision, and all-weight SHA-256 have NOT been verified. No implication of removal."
+        "note": "HF app lookup for Edge0/Audio8-TTS-Realistic-0.6b returned Edge0/Audio8-TTS-Realistic-Air. Exa retrieved a first-party original 0.6b model card and a separate publisher naming-alignment commit for Air. The relationship may be a rename or re-release but exact revision/weight identity is unverified. Not evidence of model removal or a usable permission bypass."
       },
       "license_and_access_fact": "observed_access from current Hub if rechecked, otherwise inherited v9 catalog; license is metadata only until reviewed",
       "original_v9": {
@@ -5917,11 +5919,11 @@
         "restore_difficulty": "UNKNOWN_WITH_POSSIBLE_ALTERNATES"
       },
       "alternative_distribution": {
-        "status": "NO_FIRST_PARTY_EQUIVALENT_VERIFIED",
-        "platform": null,
-        "evidence_url": null,
+        "status": "PUBLISHER_NAMING_ALIGNMENT_RECORDED_BUT_CHECKPOINT_IDENTITY_NOT_VERIFIED",
+        "platform": "Hugging Face publisher Edge0 (separate Realistic-Air repository name)",
+        "evidence_url": "https://huggingface.co/Edge0/Audio8-TTS-Realistic-Air/commit/7c82ad18f1f22539a4e1393c8088ff3cc4b5938a",
         "identity_verified": false,
-        "notes": "May be alternate host, but no publisher-approved same-revision checksum match verified. Do not replace with an arbitrary mirror."
+        "notes": "Exa 2026-11-03 found first-party Edge0/Audio8-TTS-Realistic-Air repo and a publisher commit 'Align naming with Audio8-TTS-Realistic-Air' modifying README/asset name. Exact original 0.6b vs Air source revision, full model tensor hashes, and license equivalence NOT established. DO NOT substitute without per-file SHA256 checks."
       },
       "parameter_limit": {
         "threshold_inclusive": 150000000000,
@@ -5950,7 +5952,8 @@
         "Complete current license/usage-terms text not reviewed",
         "Dependencies and parent model terms not fully reviewed",
         "Selected-file bytes and cryptographic lock manifest not finalized",
-        "Resolve source repository identity: old requested ID vs Edge0/Audio8-TTS-Realistic-Air from 2026-11-03 Hub metadata; never substitute files without original-vs-new SHA-256 comparison"
+        "Resolve source repository identity: old requested ID vs Edge0/Audio8-TTS-Realistic-Air from 2026-11-03 Hub metadata; never substitute files without original-vs-new SHA-256 comparison",
+        "FIRST PARTY NAMING NOTE EXISTS, NOT WEIGHT IDENTITY: Edge0 Realistic-Air naming commit 7c82ad18f1f22539a4e1393c8088ff3cc4b5938a is not proof original 0.6b has same revision/tensors"
       ],
       "independent_observation_required": true,
       "disappearance_risk": {
@@ -5962,7 +5965,7 @@
       "reacquisition_verification": {
         "same_revision_same_sha256_legal_alternative_confirmed": false,
         "legal_alternative_url": null,
-        "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
+        "followup": "Check both canonical Hub API IDs and commit history via first-party API, compare original and Air manifests' exact SHA-256 hashes per selected file under publisher terms; keep user approval unset."
       },
       "confirmed_restrictions": [],
       "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
