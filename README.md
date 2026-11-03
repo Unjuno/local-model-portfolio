@@ -4,7 +4,14 @@
 
 **目的は、リポジトリをHDDに配置し、エージェントが承認済みの取得指示に従って保存・検証できる状態を作ることです。** 人気ランキングでも、重みをGitHubへ再配布する場所でもありません。
 
-## 現行選定 v8（2026-11-03、総150B以上のハード除外）
+## 現行選定 v9（2026-11-03、150B一次資料監査を追加）
+
+- **[未確認25モデルの一次資料監査](docs/parameter-audit-v9-2026-11-03.md)**：13件で配布者が示す名前付きモデル/主要構成部品の規模を確認、12件は総数の根拠不足として引き続き保留（うち有効選定7件）。現在の109モデルは **95件がパラメータゲート通過・2件が150B以上で除外・12件が未確認**。
+- **[CURRENT v9](catalog/CURRENT.json)**／[132件の現在ビュー](catalog/effective-portfolio-2026-11-03-v9.json)／[25件の新規証拠](catalog/revisions/v9-2026-11-03.json)／[非実行の提案キュー](queues/proposed-v9-2026-11-03.json)。
+- **[読み取り専用の150B検査](scripts/check_parameter_cutoff.py)**と[単体テスト](tests/test_parameter_cutoff.py)、[CIワークフロー](.github/workflows/audit-parameter-cap.yml)を追加・更新。予測S1→S2→S3、HDD3.8TB上限/空き200GB、推論RAM<512GBは変更なし。
+- **主モデルのパラメータ数が150B未満でも、補助Encoder・VAE・Codecの権利/容量・最終ファイルと実機実行条件は別ゲート**。未確認の主モデル総数は0扱いせず、最終lock停止。**ダウンロード承認は0件です**。
+
+## 旧版v8（2026-11-03、履歴）
 
 - **[Exa深掘り調査と109モデルの150B判定](docs/parameter-cutoff-v8-2026-11-03.md)**：総150B未満82件、150B以上2件、総数未確認25件。以前HOLDだったOrcaRouter Qwen3.8 Flash Next Uncensored（約180B）を新規EXCLUDEDに変更。Mistral Large 4（約1.05T）の除外を維持。
 - **[CURRENT v8](catalog/CURRENT.json)**／[現行132件の確定選定ビュー](catalog/effective-portfolio-2026-11-03-v8.json)／[v8総数監査](catalog/revisions/v8-2026-11-03.json)／[承認前v8キュー](queues/proposed-v8-2026-11-03.json)。
