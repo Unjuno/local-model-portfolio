@@ -1,0 +1,34 @@
+name: Model portfolio 150B parameter audit
+
+on:
+  push:
+    branches:
+      - 'audit/**'
+  pull_request:
+    paths:
+      - 'catalog/**'
+      - 'policies/limits.json'
+      - 'queues/**'
+      - 'scripts/check_parameter_cutoff.py'
+      - 'tests/test_parameter_cutoff.py'
+      - '.github/workflows/audit-parameter-cap.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  parameter-audit:
+    name: Read-only 150B static policy audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the current parameter policy and approved queue
+        run: python3 scripts/check_parameter_cutoff.py
+      - name: Run deterministic standard-library unit tests
+        run: python3 -m unittest discover -s tests -p 'test_parameter_cutoff.py' -v
