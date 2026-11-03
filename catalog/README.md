@@ -54,7 +54,13 @@ evidenceには、確認日時、URL、対象リビジョン、確認内容、fac
 この台帳にDownloadedやTestedを手入力して、実ファイルの検証記録の代わりにしない。
 
 
-## 現行v8の正本（2026-11-03）
+## 現行v9の正本（2026-11-03）
+
+- [CURRENT.json](CURRENT.json)の最新版は**v9**。[effective-portfolio-2026-11-03-v9.json](effective-portfolio-2026-11-03-v9.json)に132件の選定・規制予測順位・コスパ監査・150Bゲートを統合。
+- [revisions/v9-2026-11-03.json](revisions/v9-2026-11-03.json)は、旧v8で総数未確認だった25モデルを全件監査。13件に一次資料で確認した**モデル本体/主要コンポーネントの概数**を記録、12件は総数未確認としてロック停止。モデル109件の現在は **95通過・2除外・12未確認**。
+- [検証方法](../docs/parameter-audit-v9-2026-11-03.md)、[非実行提案キュー](../queues/proposed-v9-2026-11-03.json)、[静的検査のCI](../.github/workflows/audit-parameter-cap.yml)。この確認はモデル実行・Gated同意・ダウンロード許可ではない。
+
+## 旧版v8の正本（2026-11-03、履歴）
 
 - [CURRENT.json](CURRENT.json) はv8で**総パラメータ150B以上のモデルのハード除外**を適用。すべてのMoE expertと独立した学習済みembedding/MTPを含める。主モデル125Bだけを使った過小判定は不可。
 - [effective-portfolio-2026-11-03-v8.json](effective-portfolio-2026-11-03-v8.json) は**132資産（有効105、BACKLOG12、HOLD13、EXCLUDED2）**の現在ビュー。
