@@ -33,6 +33,12 @@ catalogに1件登録する。欲しい用途・原本/派生の比較目的・�
 
 [最大パラメータ規則](../policies/limits.json)に従い、すべてのモデルを**総パラメータ150B以上なら除外**。MoEは非活性expertも含む総数で比較し、8GB VRAMでのSSDオフロードなどの実行可能性は例外にならない。未検証は最終lock作成不可。Mistral Large 4（約1.05T）とOrcaRouter Qwen3.8 Flash Next Uncensored（約180B、主モデル125B +学習済みn-gram 51B +MTP 4B）は除外。150B未満でも実際のRAMとHDD、権利を別途確認する。
 
+## 1.7. 配布元の本体・付属モデルの数を分けて検証
+
+[一次資料監査v9](parameter-audit-v9-2026-11-03.md)の総数確認は**モデル名の推定ではない**。ただし13件のPASSにも公開主モデルの概数や主要コンポーネント合算があり、全テンソル厳密集計ではない。最終lockで固定するrevision、シャード、外部Encoder/Codec/VAEの重み、ライセンスと容量を別々に確認。未確認12件は150BハードゲートがPASSにならない限り最終lock不可。
+
+標準ライブラリの[静的150B監査](../scripts/check_parameter_cutoff.py)と[CI](../.github/workflows/audit-parameter-cap.yml)で、現在の台帳revision、全件分類、除外/未確認が承認キューに紛れないことを検査。CIは重量ファイルのダウンロードやモデル実行をしない。
+
 ## 2. 取得内容を固定する
 
 配布元を読み、完全なコミット、全シャードと付属物、明示したファイル名、バイト数、利用条件を確定する。
