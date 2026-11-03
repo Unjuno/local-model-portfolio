@@ -4,7 +4,7 @@
 
 まず README.md、policies/selection.md、policies/limits.json、docs/workflow.md を読む。
 このリポジトリは取得仕様を管理する。現在は構成と手順のみで、ダウンローダーは未実装。
-**現行選定はcatalog/CURRENT.jsonのv8とcatalog/effective-portfolio-2026-11-03-v8.json（132件、有効105件、EXCLUDED2件、総パラメータ150Bゲート付き）。** 旧97件baseファイルやv2/v3/v4/v5/v6/v7を現行と混同しない。
+**現行選定はcatalog/CURRENT.jsonのv9とcatalog/effective-portfolio-2026-11-03-v9.json（132件、有効105件、EXCLUDED2件、150B一次資料監査でモデル95通過・12未確認）。** 旧97件baseファイルやv2/v3/v4/v5/v6/v7/v8を現行と混同しない。
 **manifests/drafts/*.candidate.jsonは非実行の承認前ファイル台帳であり、正規lockでも承認でもない。** これらをダウンローダーに渡さず、依存/null、権利、RAM/HDDを解決してから最終lockとユーザー承認を別に受ける。
 
 ## 総パラメータ150B以上を除外（v8、優先順位より前に適用）
@@ -14,6 +14,10 @@
 **総パラメータ150,000,000,000以上のモデル重みは一律除外**。MoEは活性数でなく**総数**。量子化版、SSD/CPU offload、規制予測S1への適合は例外理由にならない。パラメータ総数を検証できないモデルは最終lockや取得承認へ進めない。データセットへのモデル数制限は非適用。パラメータ数を確認できても従来の実機ピークRAM・保存容量・権利・承認チェックは必須。正本：[v8パラメータ監査](docs/parameter-cutoff-v8-2026-11-03.md)と[109件ゲート](catalog/revisions/v8-2026-11-03.json)。
 
 **150Bは総パラメータ数**であり、例えばQwen3.8 Flash Next系では125B主モデルに51B n-gram埋め込みと4B MTPを含めた約180Bを評価する。元の主モデル125Bだけで基準を通過させない。現行OrcaRouter派生はEXCLUDED。
+
+## 150B上限の一次資料監査（v9）
+
+[最新の監査資料](docs/parameter-audit-v9-2026-11-03.md)を参照。25件の前回unknownを配布元資料で再調査し、13件は公開主モデル/主要構成部品の規模が150Bを大幅に下回ると確認、12件は数値不足や依存・MoE総数の未解決で保留。**150Bのハード除外・Gated・ライセンス・ファイル選択・実機RAM/容量/個別承認は従来どおり独立ゲート**。CIは[読み取り専用静的監査](.github/workflows/audit-parameter-cap.yml)のみで、モデル本体・未監査コードを実行しない。
 
 ## 規制予測優先（v5）
 
