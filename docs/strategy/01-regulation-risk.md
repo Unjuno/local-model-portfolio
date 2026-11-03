@@ -27,6 +27,14 @@
 
 一次研究・第三者的リスク検討：[Bommasani et al., *Science* (2024), DOI:10.1126/science.adp1848](https://doi.org/10.1126/science.adp1848)、[Klyman et al., arXiv:2403.07918](https://arxiv.org/abs/2403.07918)、[International AI Safety Report 2026](https://internationalaisafetyreport.org/publication/2026-report-extended-summary-policymakers)。便益・限界リスク・防御策の議論は有益だが、**本132件の個別削除確率を定量化していない**。
 
+### 補遺：2026年時点の政府一次資料（法令本文と執行状況）
+
+**米国：** [BIS公式発表（2025-05-13）](https://www.bis.gov/press-release/department-commerce-announces-rescission-biden-era-artificial-intelligence-diffusion-rule-strengthens)は、AI Diffusion Ruleの**非執行方針**と正式廃止の計画を説明する。一方、[米国GAO判断 B-337935（2026-05-12）](https://www.gao.gov/products/b-337935)は、規則の正式な廃止手続がまだ完了していないことと、非執行方針の法的性格を区別した。したがって「制定」「形式上の存続」「執行」「将来の撤回」は別の状態であり、いずれも現行132資産すべての重み禁止を意味しない。個別の輸出規制適用は法域・主体・資産ごとの追加審査事項。
+
+**EU：** [AI Act第53条](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-53)のGPAI提供者義務・一部オープンソース例外に加え、[第55条](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-55)はシステミックリスクGPAI提供者のモデル評価、リスク軽減、インシデント報告、セキュリティ等を規定する。条文から「全公開ウェイトの配布を一律禁止している」という結論は出ない。
+
+**研究上の一次資料：** [Mitchellほか *Model Cards for Model Reporting* (2019), DOI:10.1145/3287560.3287596](https://doi.org/10.1145/3287560.3287596)、[Gebruほか *Datasheets for Datasets* (2021), DOI:10.1145/3458723](https://doi.org/10.1145/3458723)を、資産の来歴、許諾、同意、用途制限、再現性を記録する設計原理として参照する。個々のモデルの能力や停止予定を証明する出典ではない。
+
 ## 3. 旧分類の批判的再評価と新優先順位
 
 旧S1は能力に由来するガードレール調整と、著作権・本人同意のような法的原因を混ぜる。旧S2は大規模汎用LLMと医療、動画、VLAを同列視し、配布元依存と必要な学習済みコンポーネントを評価できない。旧S3はテキストEmbedding・ASR・視覚Encoder・ベンチマークを過小評価しやすい。**S段階に律速される必然はない**。新JSONは23資産の仮説段階を再分類し、旧S1=45/S2=44/S3=43から、仮想T1=32/T2=60/T3=40になった。再分類は実際に規制が成立したという意味ではない。
