@@ -1,0 +1,2183 @@
+{
+  "schema_version": 1,
+  "revision_id": "v8-20261103",
+  "prepared_on": "2026-11-03",
+  "parent_revision_id": "v7-20261103",
+  "purpose": "User requested reduction of inclusive total-model-parameter hard-exclusion threshold from 250B to 150B; model parameter gate precedes S1/S2/S3 forecast, cost, and runtime.",
+  "hard_exclusion_threshold_total_parameters_inclusive": 150000000000,
+  "rule": "model total parameters >=150,000,000,000 are EXCLUDED. Unknown total blocks final lock and download. Applies to MoE total, regardless of activation, quantization or offload. Datasets exempt.",
+  "reason": "User revised original hard upper bound from >=250B to >=150B, overriding previous rule.",
+  "source_research": {
+    "method": "Exa targeted primary model-card search and fetch plus previously archived Hugging Face 109-repo metadata",
+    "date": "2026-11-03",
+    "primary_urls": [
+      "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored",
+      "https://huggingface.co/Qwen/Qwen3-Coder-Next",
+      "https://docs.mistral.ai/models/mistral-small-4-0-26-03",
+      "https://docs.mistral.ai/models/mistral-large-4"
+    ],
+    "source_previous": "catalog/revisions/v7-2026-11-03.json",
+    "caution": "Exa retrieves source text; this is a source-backed policy screen, not a fresh live weight-level hardware check."
+  },
+  "source_publisher_manual_override": {
+    "orcarouter/Qwen3.8-Flash-Next-Uncensored": {
+      "total_parameters": 180000000000,
+      "base_breakdown": {
+        "main_language_model_parameters_approx": 125000000000,
+        "ngram_embedding_parameters_approx": 51000000000,
+        "mtp_parameters_approx": 4000000000
+      },
+      "evidence_urls": [
+        "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+        "https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored"
+      ],
+      "source": "primary Qwen base model card plus derivative model card and Hub model size ~180B; independent search via Exa, 2026-11-03",
+      "semantic_caution": "Qwen base card also calls the core '125B parameters' and lists 51B ngram +4B MTP separately; full trained checkpoint ~180B is used to avoid artificial component splitting."
+    }
+  },
+  "replacement_operations": [
+    {
+      "asset_kind": "model",
+      "repo_id": "orcarouter/Qwen3.8-Flash-Next-Uncensored",
+      "from_risk_tier": "HOLD",
+      "from_decision": "hold",
+      "to_risk_tier": "EXCLUDED",
+      "to_decision": "excluded",
+      "rationale": "OrcaRouter Qwen3.8-Flash-Next-Uncensored is ~180B total. Official upstream Qwen card explicitly lists 125B core +51B n-gram learned embedding +4B MTP; Hub and derivative model page call full checkpoint ~180B. Therefore >=150B even if 125B core and 6B active are cited. Model already HOLD; now EXCLUDED.",
+      "evidence_urls": [
+        "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+        "https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored"
+      ],
+      "legacy_forecast_wave": "S1",
+      "retain_history": true,
+      "archive_weights_allowed": false,
+      "download_approved": false
+    }
+  ],
+  "additions": [],
+  "parameter_gate_operations": [
+    {
+      "asset_kind": "model",
+      "repo_id": "orcarouter/Qwen3.8-27B-Uncensored",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R0",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 27781400000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "orcarouter/Qwen3.8-Flash-Next-Uncensored",
+      "expected_previous_decision": "hold",
+      "expected_previous_tier": "HOLD",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 180000000000,
+      "status": "EXCLUDED_TOTAL_PARAMS_GE_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+        "https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "primary Qwen base model card plus derivative model card and Hub model size ~180B; independent search via Exa, 2026-11-03",
+      "evidence_precision": "Model card: approximate component breakdown, clear >=150B",
+      "policy_action": "newly_excluded_in_v8",
+      "notes": "Qwen base card also calls the core '125B parameters' and lists 51B ngram +4B MTP separately; full trained checkpoint ~180B is used to avoid artificial component splitting."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "dphn/Dolphin3.0-Llama3.1-8B",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 8030300000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/dphn/Dolphin3.0-Llama3.1-8B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "knoveleng/Qwen3.5-9B-Uncensored",
+      "expected_previous_decision": "hold",
+      "expected_previous_tier": "HOLD",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 8953800000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/knoveleng/Qwen3.5-9B-Uncensored"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "LiquidAI/LFM2.5-24B-A2B",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 23971600000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "microsoft/Fara1.5-27B",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 27356700000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/microsoft/Fara1.5-27B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-Coder-Next",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 79674400000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Qwen/Qwen3-Coder-Next"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "tencent/Hy-Memory-30B-A3B",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 30064700000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/tencent/Hy-Memory-30B-A3B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "InstantX/InstantID",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/InstantX/InstantID"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "KlingTeam/LivePortrait",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/KlingTeam/LivePortrait"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "microsoft/VibeVoice-1.5B",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 2704000000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/microsoft/VibeVoice-1.5B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "OpenMOSS-Team/MOSS-TTS-v1.5",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 8489800000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/OpenMOSS-Team/MOSS-TTS-v1.5"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Plachta/Seed-VC",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Plachta/Seed-VC"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 905800000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 1928700000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 1916700000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ResembleAI/chatterbox",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/ResembleAI/chatterbox"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "SWivid/F5-TTS",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/SWivid/F5-TTS"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ByteDance/InfiniteYou",
+      "expected_previous_decision": "deferred",
+      "expected_previous_tier": "BACKLOG",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/ByteDance/InfiniteYou"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "coqui/XTTS-v2",
+      "expected_previous_decision": "hold",
+      "expected_previous_tier": "HOLD",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/coqui/XTTS-v2"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "fishaudio/fish-speech-1.5",
+      "expected_previous_decision": "deferred",
+      "expected_previous_tier": "BACKLOG",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/fishaudio/fish-speech-1.5"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "fishaudio/s2-pro",
+      "expected_previous_decision": "hold",
+      "expected_previous_tier": "HOLD",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 4561900000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/fishaudio/s2-pro"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "onnx-community/higgs-audio-v3-tts-4b",
+      "expected_previous_decision": "hold",
+      "expected_previous_tier": "HOLD",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/onnx-community/higgs-audio-v3-tts-4b"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "TencentARC/PhotoMaker",
+      "expected_previous_decision": "deferred",
+      "expected_previous_tier": "BACKLOG",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/TencentARC/PhotoMaker"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "black-forest-labs/flux-3-image-klein-base",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R0",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 5538500000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/black-forest-labs/flux-3-image-klein-base"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "black-forest-labs/FLUX.2-dev",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R0",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 32223300000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/black-forest-labs/FLUX.2-dev"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "briaai/Fibo-2.0-dev",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R0",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 8127300000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/briaai/Fibo-2.0-dev"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ideogram-ai/ideogram-4-nf4",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R0",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 4785300000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/ideogram-ai/ideogram-4-nf4"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "black-forest-labs/flux-3-image-klein",
+      "expected_previous_decision": "deferred",
+      "expected_previous_tier": "BACKLOG",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 5548700000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/black-forest-labs/flux-3-image-klein"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "black-forest-labs/FLUX.2-klein-9B",
+      "expected_previous_decision": "deferred",
+      "expected_previous_tier": "BACKLOG",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 9078600000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/black-forest-labs/FLUX.2-klein-9B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "briaai/Fibo-2.0-edit-turbo",
+      "expected_previous_decision": "deferred",
+      "expected_previous_tier": "BACKLOG",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 8127300000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/briaai/Fibo-2.0-edit-turbo"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "bytedance-research/Lance",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/bytedance-research/Lance"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Lightricks/LTX-2.3",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Lightricks/LTX-2.3"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "OnomaAIResearch/Illustrious-XL-v1.1",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/OnomaAIResearch/Illustrious-XL-v1.1"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen-Image-2.1",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 7115100000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Qwen/Qwen-Image-2.1"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Tongyi-MAI/Z-Image-Turbo",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 6154900000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Wan-AI/Wan2.2-TI2V-5B",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Laxhar/noobai-XL-Vpred-1.0",
+      "expected_previous_decision": "hold",
+      "expected_previous_tier": "HOLD",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 2567500000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Laxhar/noobai-XL-Vpred-1.0"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "CohereLabs/aya-vision-32b",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R0",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 33137900000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/CohereLabs/aya-vision-32b"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "meta-llama/Llama-4-Scout-17B-16E",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R0",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 108641800000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "allenai/Olmo-3-1125-32B",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 32233500000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/allenai/Olmo-3-1125-32B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "google/gemma-4-31B",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 31273100000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/google/gemma-4-31B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ibm-granite/granite-switch-4.1-30b",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 29989800000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/ibm-granite/granite-switch-4.1-30b"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "LiquidAI/LFM3-Omni-2B",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 2166900000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/LiquidAI/LFM3-Omni-2B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "mistralai/Mistral-Small-4-119B-2603",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 119401300000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Nanbeige/Nanbeige4.3-33B",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 33119000000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Nanbeige/Nanbeige4.3-33B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "openai/gpt-oss-120b",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 116829200000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/openai/gpt-oss-120b"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 35259800000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3.5-35B-A3B-Base",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 35951800000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Qwen/Qwen3.5-35B-A3B-Base"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3.8-27B",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 27781400000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Qwen/Qwen3.8-27B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "mistralai/Mistral-Large-4-1T-A52B",
+      "expected_previous_decision": "hold",
+      "expected_previous_tier": "HOLD",
+      "expected_previous_gate_status": "EXCLUDED_TOTAL_PARAMS_GE_250B",
+      "total_parameters_observed": 1050000000000,
+      "status": "EXCLUDED_TOTAL_PARAMS_GE_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://docs.mistral.ai/models/mistral-large-4-0"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "model_publisher_official_docs_2026-10-06",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "already_excluded_in_v7",
+      "notes": "Explicitly excluded despite small MoE active param count. Preserve catalog citation only; no weight download or archive allocation."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Nanbeige/Nanbeige4.3-33B-Base",
+      "expected_previous_decision": "deferred",
+      "expected_previous_tier": "BACKLOG",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 33119000000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Nanbeige/Nanbeige4.3-33B-Base"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "EPFLiGHT/Meditron3-70B",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R0",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 70553700000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/EPFLiGHT/Meditron3-70B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "google/medgemma-4b-it",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R0",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 4300100000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/google/medgemma-4b-it"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "boltz-community/boltz-2",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/boltz-community/boltz-2"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "EPFLiGHT/OLMo-2-32B-MeditronFO",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 32234300000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/EPFLiGHT/OLMo-2-32B-MeditronFO"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "facebook/esm2_t33_650M_UR50D",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 652400000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/facebook/esm2_t33_650M_UR50D"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "HuggingFaceBio/Carbon-X",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 14822000000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/HuggingFaceBio/Carbon-X"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "OctoMed/OctoMed-32B",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 33357400000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/OctoMed/OctoMed-32B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "EPFLiGHT/Apertus-70B-MeditronFO",
+      "expected_previous_decision": "deferred",
+      "expected_previous_tier": "BACKLOG",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 70599900000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/EPFLiGHT/Apertus-70B-MeditronFO"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "StanfordAIMI/CheXagent-8b",
+      "expected_previous_decision": "hold",
+      "expected_previous_tier": "HOLD",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 8362400000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/StanfordAIMI/CheXagent-8b"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/Cosmos-Predict2-2B-Video2World",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R0",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/nvidia/Cosmos-Predict2-2B-Video2World"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ACERobotics/Puffin-World",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/ACERobotics/Puffin-World"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "lerobot/pi0_base",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 3501400000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/lerobot/pi0_base"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "lerobot/smolvla_base",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 450000000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/lerobot/smolvla_base"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "microsoft/TRELLIS.2-4B",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/microsoft/TRELLIS.2-4B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/GR00T-N1.6-3B",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 3286600000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/nvidia/GR00T-N1.6-3B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "speridlabs/idol",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/speridlabs/idol"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "tencent/Hunyuan3D-2.1",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/tencent/Hunyuan3D-2.1"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "m-a-p/MERT-v2-FullSong",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 632400000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/m-a-p/MERT-v2-FullSong"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "m-a-p/SheetSage2",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 57200000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/m-a-p/SheetSage2"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "m-a-p/YuE2-3B",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 3630700000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/m-a-p/YuE2-3B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "m-a-p/YuE2-Vae",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 132600000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/m-a-p/YuE2-Vae"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "facebook/dinov3-vit7b16-pretrain-lvd1689m",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R0",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 6716000000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/facebook/dinov3-vit7b16-pretrain-lvd1689m"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "facebook/dinov3-vith16plus-pretrain-lvd1689m",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R0",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 840600000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/facebook/dinov3-vith16plus-pretrain-lvd1689m"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "facebook/sam3",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R0",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 859900000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/facebook/sam3"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "answerdotai/ModernBERT-large",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 395900000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/answerdotai/ModernBERT-large"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "autogluon/chronos-2",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 119500000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/autogluon/chronos-2"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "BAAI/bge-m3",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/BAAI/bge-m3"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "deepseek-ai/DeepSeek-OCR-2",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 3389100000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-OCR-2"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Edge0/Audio8-TTS-Realistic-0.6b",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Edge0/Audio8-TTS-Realistic-0.6b"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "facebook/vjepa2-vitg-fpc64-384",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 1034600000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/facebook/vjepa2-vitg-fpc64-384"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "google/siglip2-base-patch16-224",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 375200000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/google/siglip2-base-patch16-224"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "GSAI-ML/iLLaDA-8B-Base",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 8250500000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/GSAI-ML/iLLaDA-8B-Base"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ibm-granite/granite-speech-5.0-2b",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 2313200000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/ibm-granite/granite-speech-5.0-2b"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ibm-granite/granite-speech-5.0-470m-turboctc",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 473000000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "lightonai/LightOnOCR-3-0.8B",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 853000000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/lightonai/LightOnOCR-3-0.8B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "LiquidAI/d1-omni-600M",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 587200000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/LiquidAI/d1-omni-600M"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "LiquidAI/LFM3-1.7B-Base",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 1728800000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/LiquidAI/LFM3-1.7B-Base"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/nemotron-labs-unified-asr-0.6b",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "total_parameters_observed": null,
+      "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/nvidia/nemotron-labs-unified-asr-0.6b"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "hub_metadata_missing_or_repo_unavailable",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "missing_parameter_evidence",
+      "notes": "Do not assume <250B from filename or source-repo bytes. Check official architecture/model card before final manifest approval."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "openai/whisper-large-v3-turbo",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 808900000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/openai/whisper-large-v3-turbo"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "PaddlePaddle/PaddleOCR-VL-1.5",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 958600000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.5"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "PerceptronAI/Isaac-0.2-2B-Preview",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 2567100000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/PerceptronAI/Isaac-0.2-2B-Preview"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "qvac/TranscribePsy-250M-EU",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 254000000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/qvac/TranscribePsy-250M-EU"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-ASR-1.7B",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 2349200000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Qwen/Qwen3-ASR-1.7B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 595800000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 595800000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Qwen/Qwen3-Reranker-0.6B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-VL-2B-Instruct",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 2127500000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3.5-0.8B",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 873400000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Qwen/Qwen3.5-0.8B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "RWKV/RWKV7-7.2B-20260805",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 7199900000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/RWKV/RWKV7-7.2B-20260805"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "state-spaces/mamba-2.8b",
+      "expected_previous_decision": "select",
+      "expected_previous_tier": "R2",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 2768300000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/state-spaces/mamba-2.8b"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "tencent/Hy-SimulMT-30B-A3B",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 30394800000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/tencent/Hy-SimulMT-30B-A3B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Wigtn/Qwen3-VL-2B-WigtnOCR",
+      "expected_previous_decision": "conditional",
+      "expected_previous_tier": "R1",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 2127500000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/Wigtn/Qwen3-VL-2B-WigtnOCR"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "inclusionAI/Ming-3.0-tts-0.5B",
+      "expected_previous_decision": "deferred",
+      "expected_previous_tier": "BACKLOG",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 1479500000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/inclusionAI/Ming-3.0-tts-0.5B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "lightonai/LightOnOCR-3-4B",
+      "expected_previous_decision": "deferred",
+      "expected_previous_tier": "BACKLOG",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 4539300000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/lightonai/LightOnOCR-3-4B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "m-a-p/MERT-v2-30s",
+      "expected_previous_decision": "deferred",
+      "expected_previous_tier": "BACKLOG",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 632400000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/m-a-p/MERT-v2-30s"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+      "expected_previous_decision": "deferred",
+      "expected_previous_tier": "BACKLOG",
+      "expected_previous_gate_status": "PASS_TOTAL_PARAMS_LT_250B",
+      "total_parameters_observed": 33697800000,
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "threshold_total_parameters": 150000000000,
+      "parameter_semantics": "All learned parameters including all MoE experts (inactive+active), embedding and attached MTP modules; not per-token activated count or bytes.",
+      "evidence_urls": [
+        "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B"
+      ],
+      "evidence_date": "2026-11-03",
+      "evidence_kind": "huggingface_hub_model_metadata",
+      "evidence_precision": "Hub rounded or existing source in v7",
+      "policy_action": "passes_total_parameter_screen_only",
+      "notes": "Passes size gate only; does NOT prove runnable in GPU or RAM and does not waive 3.8TB/512GB/rights criteria."
+    }
+  ],
+  "parameter_gate_counts": {
+    "PASS_TOTAL_PARAMS_LT_150B": 82,
+    "EXCLUDED_TOTAL_PARAMS_GE_150B": 2,
+    "UNVERIFIED_BLOCK_FINAL_LOCK": 25
+  },
+  "summary": {
+    "previous_under_250B_confirmed": 83,
+    "previous_excluded": 1,
+    "previous_unknown": 25,
+    "new_under_150B_confirmed": 82,
+    "new_excluded": 2,
+    "new_unknown": 25,
+    "newly_excluded_ids": [
+      "orcarouter/Qwen3.8-Flash-Next-Uncensored"
+    ],
+    "previously_excluded_ids": [
+      "mistralai/Mistral-Large-4-1T-A52B"
+    ],
+    "active_model_count_not_changed": true,
+    "budget_impact_on_active_assets_bytes": 0
+  },
+  "expected": {
+    "tracked": 132,
+    "active": 105,
+    "by_tier": {
+      "R0": 14,
+      "R1": 64,
+      "R2": 27,
+      "BACKLOG": 12,
+      "HOLD": 13,
+      "EXCLUDED": 2
+    },
+    "by_decision": {
+      "select": 54,
+      "conditional": 51,
+      "deferred": 12,
+      "hold": 13,
+      "excluded": 2
+    },
+    "parameter_gate_counts": {
+      "PASS_TOTAL_PARAMS_LT_150B": 82,
+      "EXCLUDED_TOTAL_PARAMS_GE_150B": 2,
+      "UNVERIFIED_BLOCK_FINAL_LOCK": 25
+    }
+  },
+  "status": {
+    "draft": true,
+    "download_approved": false,
+    "selected_file_bytes_final": false
+  }
+}
