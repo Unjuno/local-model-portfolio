@@ -29,9 +29,9 @@ catalogに1件登録する。欲しい用途・原本/派生の比較目的・�
 
 [全132件のリソース監査](../docs/resource-cost-screen-v6-2026-11-03.md)と[二系統の調査作業キュー](../queues/proposed-v6-2026-11-03.json)で、(A)将来の規制予測シナリオ上の原本保全と、(B)今のPCで使える小容量実行モデルを分ける。**小容量=8GB VRAMで実行可能という推論は禁止**。逆にQwen3-Coder-NextのようなMoEでSSDとRAMにexpertを置く実験があるため、大型=絶対実行不能とも断定しない。実機のOS/CPU/GPU/VRAM/RAM/SSD/NVMe、OS/ABI、量子化形式とzero-point、backend/版、context長、batch、KV精度、消費電力、token/s・task精度を固定し評価。各対象の権利を別に確認し、評価コードや依存をユーザー承認なしにインストール・実行しない。
 
-## 1.6. 総パラメータ250Bの取得禁止基準
+## 1.6. 総パラメータ150Bの取得禁止基準
 
-[最大パラメータ規則](../policies/limits.json)に従い、すべてのモデルを**総パラメータ250B以上なら除外**。MoEは非活性expertも含む総数で比較し、8GB VRAMでのSSDオフロードなどの実行可能性は例外にならない。未検証は最終lock作成不可。たとえば公式約1.05TのMistral Large 4はポートフォリオの取得対象外。250B未満でも実際のRAMとHDD、権利を別途確認する。
+[最大パラメータ規則](../policies/limits.json)に従い、すべてのモデルを**総パラメータ150B以上なら除外**。MoEは非活性expertも含む総数で比較し、8GB VRAMでのSSDオフロードなどの実行可能性は例外にならない。未検証は最終lock作成不可。Mistral Large 4（約1.05T）とOrcaRouter Qwen3.8 Flash Next Uncensored（約180B、主モデル125B +学習済みn-gram 51B +MTP 4B）は除外。150B未満でも実際のRAMとHDD、権利を別途確認する。
 
 ## 2. 取得内容を固定する
 
