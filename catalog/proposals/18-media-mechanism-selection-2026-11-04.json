@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-04",
+  "source_revision": "v17-20261104",
+  "source_commit": "287c2fdc243e01e470f3477b257ed7561e08852b",
+  "status": "RECOMMENDATIONS_ONLY_NOT_MATERIALIZED",
+  "effective_catalog_changed": false,
+  "download_authorized": false,
+  "scope": "Read-only research recommendations; no workflow, executable code, permission changes, downloads or seeding.",
+  "recommendations": [
+    {
+      "repo_id": "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1",
+      "primary_url": "https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1",
+      "alternative_original_publisher_url": "https://github.com/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA/releases/tag/v0.1",
+      "recommendation": "ADD_CONDITIONAL_RESEARCH",
+      "mechanism": "native image-generation and image-editing LoRA",
+      "reason": "Actual rank-128 additional training, 224 modules and 448 BF16 tensors; reuse existing Qwen-Image-2.1 rather than a second full base checkpoint.",
+      "negative_evidence": "Experimental v0.1; no independent paired quality or content-coverage benchmark. It is not a few-step distillation adapter.",
+      "artifact": {
+        "file": "chatrlabs-omni-lora-v0.1-bf16.safetensors",
+        "github_asset_id": 659921001,
+        "source_reported_bytes": 671151136,
+        "source_reported_sha256": "5991a9845bc5251240febf944f653505a00966515b77073f2c639c4dfcba672a",
+        "release_immutable": false,
+        "local_hash_verified": false,
+        "evidence_url": "https://api.github.com/repos/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA/releases/tags/v0.1"
+      },
+      "base_repo": "Qwen/Qwen-Image-2.1",
+      "author_base_revision": "790c92633540aa0cb11d9abf19eb46d861714758",
+      "license_scope": "Qwen Research License; author explicitly describes noncommercial research and evaluation. Full dependency and intended-act review remains separate.",
+      "performance_scope": "Author deployment: two RTX4090 24GB, BF16,25steps,CFG4; timings are individual checks, not quality benchmarks or a user-machine median.",
+      "complete_pipeline_parameters": null,
+      "complete_pipeline_bytes": null,
+      "next_validation": "Matched-seed base-only versus adapter; verify base/encoder/VAE identities and exact asset digest before any approved acquisition."
+    },
+    {
+      "repo_id": "laion/Humaneness-Voice-Converter",
+      "primary_url": "https://huggingface.co/laion/Humaneness-Voice-Converter",
+      "recommendation": "ADD_CONDITIONAL_RESEARCH",
+      "mechanism": "speech-to-speech emotion-preserving conversion with score-conditioned flow reinforcement learning",
+      "reason": "Different function from text-to-speech: retain source performance while changing target timbre. 99-axis conditioning and auditable training lineage.",
+      "main_component_parameters_publisher": 264100000,
+      "negative_evidence": "Author proxies reuse training reward judge; some curated evaluation sources overlap training. Target speaker cosine falls0.821 to0.773. No independent human MOS, WER or Japanese quality test.",
+      "artifact": {
+        "file": "model.safetensors",
+        "source_reported_bytes": 1056773004,
+        "source_reported_sha256": "45bbf058ea2a82f1840dc6161f01be929217d28843003f5354336c81b11ea3dd",
+        "local_hash_verified": false,
+        "evidence_url": "https://huggingface.co/laion/Humaneness-Voice-Converter/blob/main/EXPORT_PROOF.json"
+      },
+      "license_scope": "LAION additions CC BY4.0; Chatterbox-derived components retain MIT attribution. Use authorized voices/audio; no redistribution or seeding initiated.",
+      "performance_scope": "GH200120GB, PyTorch2.9.1cu128,10flow steps,BF16,N=1:6.53s input generation median of3=0.558s, excluding loading, preparation, ranking and I/O. Not total response latency.",
+      "performance_url": "https://huggingface.co/laion/Humaneness-Voice-Converter/blob/main/SPEED.md",
+      "complete_pipeline_parameters": null,
+      "complete_pipeline_bytes": null,
+      "dependencies": ["S3 tokenizer","CAMPPlus","HiFT","Ears conditioning model","score ordering"],
+      "next_validation": "Inventory the full package and compare identical consented voice pairs for intelligibility, emotion and identity."
+    },
+    {
+      "repo_id": "fishaudio/drama-3",
+      "primary_url": "https://huggingface.co/fishaudio/drama-3",
+      "recommendation": "ADD_CONDITIONAL_RESEARCH",
+      "mechanism": "multi-speaker speech infilling and multi-turn director revision",
+      "reason": "Local editing of generated audio and iterative performance revision are distinct from ordinary TTS and the existing S2-Pro.",
+      "main_component_parameters_publisher": 35899600000,
+      "moe_count_rule": "Use total model parameters, not3B active experts.",
+      "negative_evidence": "Complete codec/dependency count and local execution not tested. Publisher benchmarks on H200 with preencoded reference are not personal-GPU performance.",
+      "license_url": "https://huggingface.co/fishaudio/drama-3/blob/main/LICENSE",
+      "license_scope": "Current LICENSE is Fish Audio Community License v1 dated2026-10-13, SectionII permits research/noncommercial uses subject to terms. Frontmatter still names an older Research License; preserve mismatch instead of judging from other tag.",
+      "code_docs": "https://github.com/fishaudio/fish-speech/blob/main/docs/en/index.md",
+      "performance_scope": "Creator one-H200 streaming; Seed-TTS English,preencoded reference,concurrency1;TTFA p50=88.9ms,p95=90.8ms,meanRTF0.131; table aggregated over4runs. No user hardware measurement.",
+      "complete_pipeline_parameters": null,
+      "complete_pipeline_bytes": null,
+      "next_validation": "Pin full shard/index/codec/backend and compare editing accuracy, voice consistency and actual RAM/latency against S2-Pro and Qwen TTS."
+    }
+  ],
+  "not_recommended_as_new_independent_assets": [
+    {
+      "repo_id": "YueFong/Qwen-Image-2.1-Uncensored-GGUF",
+      "source_url": "https://huggingface.co/YueFong/Qwen-Image-2.1-Uncensored-GGUF/blob/main/README.md",
+      "reason": "README describes quantizations using original upstream weights. No separately demonstrated learned capability; may be an alternative execution format, not an additional capability slot. No claim that all binary files were compared."
+    },
+    {
+      "repo_id": "laion/Humaneness-Voice-Small",
+      "source_url": "https://huggingface.co/laion/Humaneness-Voice-Small",
+      "reason": "English/German TTS overlaps existing roles; default subjective listening preference is not controlled superiority. Prioritize distinct audio-to-audio converter this cycle."
+    }
+  ],
+  "preserve": ["Nanbeige/Nanbeige4.3-33B", "six user-directed exclusions", "v17 personal noncommercial research policy", "current catalog and acquisition queue"],
+  "current_state": {"tracked":142,"active_research_selections":97,"new_download_approvals":0}
+}
