@@ -1,4 +1,4 @@
-name: Model portfolio 150B parameter audit
+name: Model portfolio 150B baseline and quantized exception audit
 
 on:
   pull_request:
@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   parameter-audit:
-    name: Read-only 150B static policy audit
+    name: Read-only 150B baseline and runtime exception audit
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     env:
