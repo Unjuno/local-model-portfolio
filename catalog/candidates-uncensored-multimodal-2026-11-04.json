@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-11-04",
+  "source_revision": "v11-20261104",
+  "status": "EXTRACTED_PRIMARY_REPO_CANDIDATES_NOT_DOWNLOAD_AUTHORIZED",
+  "decision_policy": "At most one candidate per verified mechanism. No automatic promotion without exact full parameter total, legal rights, fixed file manifest, benchmark and explicit approval.",
+  "candidates": [
+    {
+      "repo_id": "coder3101/Qwen3.5-27B-heretic",
+      "modality": "text+vision",
+      "mechanism": "MPOA_WEIGHT_ABLATION",
+      "url": "https://huggingface.co/coder3101/Qwen3.5-27B-heretic",
+      "base_model": "Qwen/Qwen3.5-27B",
+      "model_total_parameters_publisher_claim": 27000000000,
+      "parameter_gate": "PRELIMINARY_LT_150B_VERIFY_FULL_COMPONENTS",
+      "license_text_reviewed": false,
+      "author_claimed_refusals": {
+        "modified": 14,
+        "original": 94,
+        "n": 100,
+        "methodology": "author-reported, no independent replication"
+      },
+      "selection": "candidate_not_approved",
+      "reason": "distinct weight-edit method and explicit 100-prompt author comparison; candidate for controlled baseline test",
+      "unknowns": [
+        "full checkpoint including vision encoder and MTP count",
+        "license and upstream terms",
+        "benchmark set and statistical uncertainty",
+        "revision and selected bytes"
+      ]
+    },
+    {
+      "repo_id": "IbarakiDouji/WAI-NSFW-illustrious-SDXL",
+      "modality": "image",
+      "mechanism": "ADULT_IMAGE_FINETUNE",
+      "url": "https://huggingface.co/IbarakiDouji/WAI-NSFW-illustrious-SDXL",
+      "base_model": "Illustrious SDXL family",
+      "model_total_parameters_publisher_claim": null,
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "license_text_reviewed": false,
+      "author_claimed_checkpoint_bytes": 6940000000,
+      "selection": "candidate_not_approved",
+      "reason": "verified exact creator repository and v12 checkpoint, correcting collection-only record; independent image quality not measured",
+      "unknowns": [
+        "full parameter count including embedded components",
+        "version and license rights",
+        "checkpoint SHA and all dependencies",
+        "image evaluation"
+      ]
+    },
+    {
+      "repo_id": "ChrisColeTech/LTX-2.3-uncensored-v1.4-FP8",
+      "modality": "video+audio",
+      "mechanism": "ADULT_AV_LORA_MERGE",
+      "url": "https://huggingface.co/ChrisColeTech/LTX-2.3-uncensored-v1.4-FP8",
+      "base_model": "Lightricks/LTX-2.3",
+      "model_total_parameters_publisher_claim": null,
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "license_text_reviewed": false,
+      "selection": "candidate_not_approved",
+      "author_claimed_component_bytes": {
+        "transformer_gguf": 17800000000,
+        "text_encoder": 7300000000,
+        "projection": 2310000000,
+        "audio_vae": 365000000,
+        "video_vae": 1450000000
+      },
+      "reason": "three distinct LoRA functions merged; video+audio and NSFW specialization compared against already selected LTX-2.3",
+      "unknowns": [
+        "all model and dependent learned parameters",
+        "unknown license and parent derivative permissions",
+        "selected file hashes and complete dependency graph",
+        "independent video temporal/audio benchmarks"
+      ]
+    },
+    {
+      "repo_id": "Phr00t/LTX2-Rapid-Merges",
+      "modality": "video",
+      "mechanism": "ADULT_VIDEO_MERGE",
+      "url": "https://huggingface.co/Phr00t/LTX2-Rapid-Merges",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "selection": "reject_current_cycle",
+      "reason": "publisher reports NSFW merges outdated and winding down maintenance; newer LTX2.3 derivative exists",
+      "unknowns": [
+        "rights and versions if reconsidered"
+      ]
+    }
+  ],
+  "summary": {
+    "identified": 4,
+    "comparative_candidates": 3,
+    "rejected_current_cycle": 1,
+    "approved_for_download": 0,
+    "selected_for_active_portfolio": 0
+  }
+}
