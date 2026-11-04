@@ -4,7 +4,14 @@
 
 **目的は、リポジトリをHDDに配置し、エージェントが承認済みの取得指示に従って保存・検証できる状態を作ることです。** 人気ランキングでも、重みをGitHubへ再配布する場所でもありません。
 
-## 現行選定 v15（2026-11-04：モデル5件追加・Pirate Face調査）
+## 現行選定 v16（2026-11-04：無検閲SFT・成人向け動画と採否判定規則）
+
+- **[現在の正本](catalog/CURRENT.json)**／[全142資産のv16ビュー](catalog/effective-portfolio-2026-11-04-v16.json)／[有効95件の非実行候補キュー](queues/proposed-v16-2026-11-04.json)。
+- **[採否判定規則](policies/selection-decision-v16.json)**／[判断手順と一次資料](docs/strategy/12-v16-model-judgment-research.md)／[5件の調査判定台帳](catalog/research/2026-11-04-v16-candidate-decisions.json)。厳格な権利・品質・独自性・総数・容量・実機RAMの独立ゲートで評価。低拒否だけでは採用しない。
+- **3モデル追加**：Gemma4 MoEベースのPantheon RP/SFTを**conditional**（RP第三者評価に強み、一般文章は弱い）。LTX2.5成人向け派生のChrisColeTech・Stuubsは**HOLD**（権利・全依存・比較品質不足）。Civitai CyberRealistic v10とJonathanColetti無検閲27Bは比較台帳のみ。
+- **承認済みダウンロード0**。HDD、旧キュー、Torrent、本人Gated認証を変更していない。
+
+## 旧版v15の履歴（2026-11-04：モデル5件追加・Pirate Face調査）
 
 - **正本**：[CURRENT](catalog/CURRENT.json)・[v15 全139資産](catalog/effective-portfolio-2026-11-04-v15.json)・[提案キュー94件](queues/proposed-v15-2026-11-04.json)。有効94、HOLD27、除外6。
 - **新規**：Galvanize-3（select）、Audio8 Air・LTX2.5・Kandinsky6 Lite（conditional）、Opus Moderation4 Neo（HOLD）。旧Audio8とLTX2.3を重複評価のためHOLDへ。

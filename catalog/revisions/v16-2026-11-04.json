@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "revision_id": "v16-20261104",
+  "parent_revision_id": "v15-20261104",
+  "prepared_on": "2026-11-04",
+  "purpose": "New 2026 NSFW video and roleplay SFT research, mixed independent quality evidence, mandatory evidence-based decision protocol with offline static audit.",
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2",
+      "url": "https://huggingface.co/Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2",
+      "group": "無検閲・後学習SFT・創作RP",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "現行Gemma 4 MoE上のreasoning-trace付き創作・RP SFT。拒否方向の重み編集とは異なる学習成果。外部Caliper Benchで50ターン継続RP72.4/100・RP総合64.0/100（総合95/777）、一方通常creative-writing58.4/100（555/777）と弱点も公表されているため用途限定で条件付き採用。",
+      "risk_and_alternative_assessment": "作者の口語文体改善主張だけで選定しない。独立CaliperでRP固有の差別化を観測、ただし同ハード同量子化のNanbeigeやOrcaRouter直接比較ではない。英語中心、長文推論負担、セーフティ/拒否測定は未検証。ライセンス本文およびベース派生条件を要確認。",
+      "observed_access": "public_metadata_files_unverified",
+      "license_metadata": "apache-2.0",
+      "evidence_date": "2026-11-04",
+      "evidence_kind": "HF publisher card and third-party benchmark result page, not user hardware",
+      "requested_artifact": "single original Gemma4 26B-A4B SFT checkpoint; quantize only after measured capability/compatibility review",
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "research_evidence": {
+        "publisher": "https://huggingface.co/Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2",
+        "third_party": "https://caliperbench.com/m/pantheon-reasoning-26b-a4b-1.1-v2/",
+        "third_party_scores": {
+          "roleplay_overall_0_100": 64,
+          "rank_overall_roleplay": 95,
+          "population": 777,
+          "creative_writing_0_100": 58.4,
+          "rank_creative_writing": 555,
+          "roleplay_50_turns_0_100": 72.4
+        },
+        "limitation": "External service's reported numbers have not been reproduced; ranking may mix hardware/contexts and is not causal evidence of superiority against portfolio baselines."
+      },
+      "forecast_priority": {
+        "rank": 4.45,
+        "wave": "S1",
+        "category": "posttrained_roleplay_reasoning_sft",
+        "rationale": "Preservation of distinct post-training method, not simple uncensor label or measured model-specific regulatory probability",
+        "scenario_status": "user_hypothesis_only_not_forecast",
+        "current_observed_access": "public_metadata",
+        "current_access_evidence_date": "2026-11-04",
+        "rights_gate": "license_text_not_reviewed",
+        "selection_eligibility": "CONDITIONAL_NEEDS_HEAD_TO_HEAD_RIGHTS_PIN"
+      },
+      "resource_screen": {
+        "storage_band": "UNKNOWN",
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "cost_status": "SELECTED_FILE_SIZE_UNKNOWN_NO_DOWNLOAD",
+        "baseline_gpu_8gb_feasibility": "NOT_ASSUMED_RUNNABLE",
+        "evidence": "THIRD_PARTY_PUBLIC_METRICS_NOT_LOCAL",
+        "hw_tested_on_user_machine": false,
+        "selected_file_bytes_final": null,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 26544100000,
+        "exclusive_max_total_parameters": 150000000000,
+        "evidence_urls": [
+          "https://huggingface.co/Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2"
+        ],
+        "evidence_kind": "Hugging Face Hub model parameter metadata; MoE total not A4B active",
+        "review_date": "2026-11-04",
+        "known_before_download": true,
+        "note": "Gemma 4 family MoE ~26.5441B total; full required learned dependencies still checked at final manifest."
+      }
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "url": "https://huggingface.co/ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "group": "NSFW動画・音声同期後学習",
+      "risk_tier": "HOLD",
+      "portfolio_decision": "hold",
+      "reason_selected": "現行LTX2.5の成人向けLoRA/蒸留/参照保持マージ。モデル固有の編集後学習成果を保全する研究候補であり、通常の2.5単純量子化と別。作者は動画・音声付属パーツを公表。",
+      "risk_and_alternative_assessment": "Hubのlicense:unknownでライセンス本文・LTX2.x派生義務の適合性未証明。作者宣伝は独立した品質試験でない。動画DiT22B以外の12B級text encoder・video/audio VAE等を含む学習済み全構成の総数・権利未確定。HOLDで非取得。",
+      "observed_access": "public_listed_sensitive_content_not_file_verified",
+      "license_metadata": "unknown",
+      "evidence_date": "2026-11-04",
+      "evidence_kind": "Hugging Face publisher model card and connected Hub metadata",
+      "requested_artifact": "research only, choose exact FP8 transformer and required int8 Gemma4 encoder after rights",
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "research_evidence": {
+        "publisher": "https://huggingface.co/ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+        "publisher_reported_components_gb": {
+          "transformer_fp8": 21.5,
+          "text_encoder_int8": 13.2,
+          "audio_vae": 0.365,
+          "video_vae": 1.47
+        },
+        "quality": "Unverified publisher claim of NSFW and I2V improvement; no same-seed third-party output comparison"
+      },
+      "forecast_priority": {
+        "rank": 33.05,
+        "wave": "S1",
+        "category": "adult_video_audio_lora_merged",
+        "rationale": "Distinct content-domain specialized merging; S1 is a hypothetical distribution-sensitivity scenario not probability",
+        "scenario_status": "user_hypothesis_only_not_forecast",
+        "current_observed_access": "public_metadata",
+        "current_access_evidence_date": "2026-11-04",
+        "rights_gate": "license_unknown_no_acquisition",
+        "selection_eligibility": "HOLD_UNKNOWN_TOTAL_AND_LICENSE"
+      },
+      "resource_screen": {
+        "storage_band": "UNKNOWN",
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "cost_status": "KNOWN_COMPONENT_APPROX_NOT_VERIFIED_TOTAL",
+        "baseline_gpu_8gb_feasibility": "UNVERIFIED",
+        "evidence": "CREATOR_FILE_TABLE_NO_LOCAL_RUNTIME",
+        "hw_tested_on_user_machine": false,
+        "selected_file_bytes_final": null,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "parameter_gate": {
+        "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+        "total_parameters": null,
+        "evidence_urls": [
+          "https://huggingface.co/ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+          "https://huggingface.co/Lightricks/LTX-2.5"
+        ],
+        "evidence_kind": "Publisher DiT≈22B main only; complete learned components and exact quant provenance not audited",
+        "review_date": "2026-11-04",
+        "known_before_download": false,
+        "note": "Do not substitute 22B for complete pipeline total. No final lock until all learned encoders/decoders are inventoried."
+      }
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "url": "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5",
+      "group": "NSFW動画・RLマージ・音声同期",
+      "risk_tier": "HOLD",
+      "portfolio_decision": "hold",
+      "reason_selected": "LTX2.5にOmniNFT RL改善マージ・蒸留LoRAを統合した独自の動画音声派生。作者によるblind AI-judge A/Bではv1がbeta2に29勝9敗10分、Q4 GGUFやint8等が公開。",
+      "risk_and_alternative_assessment": "作者の29:9:10は自分の旧beta版とのAI judge比較で、公式2.5やChrisColeTechとの直接同条件比較ではない。Q4 GGUFの映像品質は作者も未検証と明示。LTX2.x Community Licenseと各ドナーの利用条件を別途確認。HOLD。",
+      "observed_access": "public_metadata_files_unverified",
+      "license_metadata": "other: LTX-2.x Community license claimed",
+      "evidence_date": "2026-11-04",
+      "evidence_kind": "Hugging Face creator card and connected Hub metadata",
+      "requested_artifact": "research only; author int8 comfy 21.5GB or Q4 experimental 12.5GB (one, not all)",
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "research_evidence": {
+        "publisher": "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5",
+        "author_only_comparison": {
+          "wins": 29,
+          "losses": 9,
+          "ties": 10,
+          "judges": "AI, blind frames against beta2",
+          "independent": false
+        },
+        "author_reported_files_gb": {
+          "comfy_int8": 21.5,
+          "q4_gguf": 12.5,
+          "bf16": 42
+        },
+        "runtime_warning": "ComfyUI int8 not PyTorch; GGUF Q4 author reports experimental and not render-compared with int8"
+      },
+      "forecast_priority": {
+        "rank": 33.15,
+        "wave": "S1",
+        "category": "adult_video_audio_rl_merge",
+        "rationale": "Distinct RL style + NSFW content LoRA merge, future restriction only hypothesis",
+        "scenario_status": "user_hypothesis_only_not_forecast",
+        "current_observed_access": "public_metadata",
+        "current_access_evidence_date": "2026-11-04",
+        "rights_gate": "derivative_and_donor_licenses_not_reviewed",
+        "selection_eligibility": "HOLD_UNKNOWN_TOTAL_AND_RIGHTS"
+      },
+      "resource_screen": {
+        "storage_band": "UNKNOWN",
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "cost_status": "AUTHOR_QUANT_FILES_APPROX_NOT_COMPLETE_PIPELINE",
+        "baseline_gpu_8gb_feasibility": "UNVERIFIED",
+        "evidence": "CREATOR_Q4_EXPERIMENTAL",
+        "hw_tested_on_user_machine": false,
+        "selected_file_bytes_final": null,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "parameter_gate": {
+        "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+        "total_parameters": null,
+        "evidence_urls": [
+          "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5",
+          "https://huggingface.co/Lightricks/LTX-2.5"
+        ],
+        "evidence_kind": "Creator gives LTX 2.5 main DiT and external dependencies; exact total learned components unverified",
+        "review_date": "2026-11-04",
+        "known_before_download": false,
+        "note": "22B DiT only is not enough to establish total pipeline; no lock or acquisition"
+      }
+    }
+  ],
+  "replacement_operations": [],
+  "expected": {
+    "tracked": 142,
+    "active": 95,
+    "by_tier": {
+      "R0": 14,
+      "R1": 57,
+      "R2": 24,
+      "BACKLOG": 12,
+      "HOLD": 29,
+      "EXCLUDED": 6
+    },
+    "by_decision": {
+      "select": 53,
+      "conditional": 42,
+      "deferred": 12,
+      "hold": 29,
+      "excluded": 6
+    },
+    "parameter_gate": {
+      "PASS_TOTAL_PARAMS_LT_150B": 103,
+      "EXCLUDED_TOTAL_PARAMS_GE_150B": 0,
+      "UNVERIFIED_BLOCK_FINAL_LOCK": 14,
+      "OVER_150B_QUANT_REVIEW_REQUIRED": 2
+    }
+  },
+  "download_approved": false
+}

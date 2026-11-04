@@ -5,6 +5,10 @@
 将来の推論、比較、内部解析、追加学習、再構築の選択肢を保全する。現在の性能だけで並べない。
 **削除されると断定することと、不確実なうちに保存することは別の判断**である。
 
+## 現行v16の候補選定方法
+
+[機械判定規約](selection-decision-v16.json)・[証拠付き検証例](../docs/strategy/12-v16-model-judgment-research.md)を必ず用いる。技術機序ごとに原則1代表とし、**「無検閲だから強い」「人気があるから消える」「大きいから使える」**という推論を禁止する。先行規制のS1/S2/S3は調査仮説で確率ではない。必須の存在/権利/モデル全総数/リソース/品質/明示承認は非補償型ゲート、1つの高得点で未確認権利を相殺しない。最終download-readyとカタログのselect/conditionalを混同しない。
+
 ## 制約
 
 **v15配布元**：HFは `repo_id+immutable revision`、Civitaiは `modelId+modelVersionId+fileId`、Pirate Faceは `HF元repo+revision+SHA256+観測Peer` を記録し、後者を元モデルの許諾と混同しない。Torrentのseedは公開IP/帯域を伴うため明示承認なしに行わない。
