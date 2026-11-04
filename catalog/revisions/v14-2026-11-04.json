@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "revision_id": "v14-20261104",
+  "parent_revision_id": "v13-20261104",
+  "prepared_on": "2026-11-04",
+  "purpose": "Apply user direction: retain dense Nanbeige4.3-33B and remove six other previously shortlisted low-priority assets from active selection.",
+  "replacement_operations": [
+    {
+      "asset_kind": "model",
+      "repo_id": "Nanbeige/Nanbeige4.3-33B",
+      "from_decision": "conditional",
+      "from_tier": "R1",
+      "to_decision": "select",
+      "to_tier": "R1",
+      "reason": "User explicitly retains dense 33B model for distinct capability despite inference cost; rights and exact files remain separate approval gates",
+      "download_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/nemotron-labs-unified-asr-0.6b",
+      "from_decision": "conditional",
+      "from_tier": "R2",
+      "to_decision": "excluded",
+      "to_tier": "EXCLUDED",
+      "reason": "User explicitly removed from active selection on 2026-11-04; historical metadata retained, no local file deletion",
+      "download_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "PerceptronAI/Isaac-0.2-2B-Preview",
+      "from_decision": "conditional",
+      "from_tier": "R1",
+      "to_decision": "excluded",
+      "to_tier": "EXCLUDED",
+      "reason": "User explicitly removed from active selection on 2026-11-04; historical metadata retained, no local file deletion",
+      "download_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "qvac/TranscribePsy-250M-EU",
+      "from_decision": "conditional",
+      "from_tier": "R2",
+      "to_decision": "excluded",
+      "to_tier": "EXCLUDED",
+      "reason": "User explicitly removed from active selection on 2026-11-04; historical metadata retained, no local file deletion",
+      "download_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "state-spaces/mamba-2.8b",
+      "from_decision": "select",
+      "from_tier": "R2",
+      "to_decision": "excluded",
+      "to_tier": "EXCLUDED",
+      "reason": "User explicitly removed from active selection on 2026-11-04; historical metadata retained, no local file deletion",
+      "download_approved": false
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "Wigtn/KoGovDoc-Bench",
+      "from_decision": "conditional",
+      "from_tier": "R1",
+      "to_decision": "excluded",
+      "to_tier": "EXCLUDED",
+      "reason": "User explicitly removed from active selection on 2026-11-04; historical metadata retained, no local file deletion",
+      "download_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Wigtn/Qwen3-VL-2B-WigtnOCR",
+      "from_decision": "conditional",
+      "from_tier": "R1",
+      "to_decision": "excluded",
+      "to_tier": "EXCLUDED",
+      "reason": "User explicitly removed from active selection on 2026-11-04; historical metadata retained, no local file deletion",
+      "download_approved": false
+    }
+  ],
+  "additions": [],
+  "expected": {
+    "tracked": 134,
+    "active": 92,
+    "by_decision": {
+      "select": 53,
+      "conditional": 39,
+      "deferred": 12,
+      "hold": 24,
+      "excluded": 6
+    },
+    "by_tier": {
+      "R0": 14,
+      "R1": 54,
+      "R2": 24,
+      "BACKLOG": 12,
+      "HOLD": 24,
+      "EXCLUDED": 6
+    }
+  },
+  "status": {
+    "draft": true,
+    "download_approved": false
+  }
+}
