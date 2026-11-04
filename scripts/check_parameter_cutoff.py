@@ -84,8 +84,8 @@ def validate_model(item: dict[str, Any], threshold: int = BASELINE) -> list[str]
     if n is None:
         if status != UNKNOWN:
             errors.append(f"{rid}: unknown total must block acquisition")
-        if active:
-            errors.append(f"{rid}: unknown total cannot be active")
+        if active and not (item.get("portfolio_decision") == "conditional" and item.get("research_only_unknown_total_allow_conditional") is True and item.get("download_approved") is False and g.get("research_screening_exception") == "CONDITIONAL_RESEARCH_ONLY_NON_EXECUTABLE"):
+            errors.append(f"{rid}: unknown total requires explicit non-executable research marker")
         return errors
     if not is_int(n) or n < 0:
         return [f"{rid}: invalid total parameters"]

@@ -10,7 +10,8 @@ on:
       - 'queues/**'
       - 'scripts/check_parameter_cutoff.py'
       - 'scripts/audit_selection_decisions.py'
-      - 'policies/selection-decision-v16.json'
+      - 'policies/selection-decision-v17.json'
+      - 'policies/personal-research-rights-v17.json'
       - 'tests/test_parameter_cutoff.py'
       - 'tests/test_decision_protocol.py'
       - '.github/workflows/audit-parameter-cap.yml'
@@ -44,7 +45,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check current parameter policy and approved queue
         run: python3 scripts/check_parameter_cutoff.py
-      - name: Audit v16 decision protocol and source evidence
+      - name: Audit v17 research rights/decision protocol and source evidence
         run: python3 scripts/audit_selection_decisions.py
       - name: Run deterministic standard-library unit tests
         run: python3 -m unittest discover -s tests -p 'test_*.py' -v

@@ -4,7 +4,11 @@
 
 **目的は、リポジトリをHDDに配置し、エージェントが承認済みの取得指示に従って保存・検証できる状態を作ることです。** 人気ランキングでも、重みをGitHubへ再配布する場所でもありません。
 
-## 現行選定 v16（2026-11-04：無検閲SFT・成人向け動画と採否判定規則）
+## 現行選定 v17（2026-11-04：個人非商用研究のライセンス判断改訂）
+
+[CURRENT v17](catalog/CURRENT.json)／[142資産のv17ビュー](catalog/effective-portfolio-2026-11-04-v17.json)／[研究候補97件](queues/proposed-v17-2026-11-04.json)。`license:unknown`は研究候補の自動除外理由ではない。LTX2.5のChrisColeTechとStuubsを研究専用conditionalに変更。取得許可0、全学習済み総数不明のままfinal lock不可。[新しい行為別権利ルール](policies/personal-research-rights-v17.json)／[監査報告](docs/strategy/13-personal-research-license-screening.md)。
+
+## 旧版v16の履歴（2026-11-04：無検閲SFT・成人向け動画と採否判定規則）
 
 - **[現在の正本](catalog/CURRENT.json)**／[全142資産のv16ビュー](catalog/effective-portfolio-2026-11-04-v16.json)／[有効95件の非実行候補キュー](queues/proposed-v16-2026-11-04.json)。
 - **[採否判定規則](policies/selection-decision-v16.json)**／[判断手順と一次資料](docs/strategy/12-v16-model-judgment-research.md)／[5件の調査判定台帳](catalog/research/2026-11-04-v16-candidate-decisions.json)。厳格な権利・品質・独自性・総数・容量・実機RAMの独立ゲートで評価。低拒否だけでは採用しない。

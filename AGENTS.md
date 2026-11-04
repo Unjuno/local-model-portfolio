@@ -5,10 +5,12 @@
 まず README.md、policies/selection.md、policies/limits.json、docs/workflow.md を読む。
 このリポジトリは取得仕様を管理する。現在は構成と手順のみで、ダウンローダーは未実装。
 Pirate Faceは二次のハッシュ付きTorrent索引、Civitaiは別ID体系。原本のライセンス/権利/Gatedを迂回しない。P2P seedingやファイルDLを無断実行しない。
-**現行選定はcatalog/CURRENT.jsonのv16とcatalog/effective-portfolio-2026-11-04-v16.json（142件、有効95件、原則150B超量子化例外審査2件HOLD、総数不明12件）。** 旧97件baseファイルやv2/v3/v4/v5/v6/v7/v8を現行と混同しない。
+**現行選定はcatalog/CURRENT.jsonのv17とcatalog/effective-portfolio-2026-11-04-v17.json（142件、有効97件、総数不明14件、そのうち研究用conditional2件）。** 旧97件baseファイルやv2/v3/v4/v5/v6/v7/v8を現行と混同しない。
 **manifests/drafts/*.candidate.jsonは非実行の承認前ファイル台帳であり、正規lockでも承認でもない。** これらをダウンローダーに渡さず、依存/null、権利、RAM/HDDを解決してから最終lockとユーザー承認を別に受ける。
 
-## 現行v16：150B原則＋量子化例外・採否判定規則と性能の負の証拠
+## 現行v17：個人非商用研究の権利・取得・再配布を分離
+
+`license:unknown`だけで候補から排除しない。[権利ルール](policies/personal-research-rights-v17.json)を必ず参照。著作権法の特定例外を一般許諾と扱わず、元/派生の正常な利用条件と具体的行為を調査。総数不明conditional2件は研究専用で、取得lock/実行には利用できない。
 
 モデル選定・調査の前に **[選定プロトコル](policies/selection-decision-v16.json)** と [v16比較台帳](catalog/research/2026-11-04-v16-candidate-decisions.json) を読み、ライセンス・能力・一般性能・負の根拠・S1仮説と観測事実を混同しない。**低拒否だけの旧モデルは採用しない**。CIで`python scripts/audit_selection_decisions.py`も実行。モデルの最終lock審査を行う前に、可能な実行環境で`python scripts/check_parameter_cutoff.py`による台帳・承認キューの読み取り専用検査を行う。テストを実行していない場合はPASSとみなさない。
 

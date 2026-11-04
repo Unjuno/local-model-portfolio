@@ -42,6 +42,17 @@ class ParameterBaselineTests(unittest.TestCase):
     def test_unknown_total_hold_only(self):
         self.assertEqual([],validate_model(record(None,UNKNOWN,"hold","HOLD")))
         self.assertTrue(validate_model(record(None,UNKNOWN)))
+    def test_conditional_research_can_have_unknown_total_only_when_blocked(self):
+        r=record(None,UNKNOWN,"conditional","R1")
+        r["research_only_unknown_total_allow_conditional"]=True
+        r["download_approved"]=False
+        r["parameter_gate"]["research_screening_exception"]="CONDITIONAL_RESEARCH_ONLY_NON_EXECUTABLE"
+        self.assertEqual([],validate_model(r))
+        r["download_approved"]=True
+        self.assertTrue(validate_model(r))
+        r["download_approved"]=False
+        r["research_only_unknown_total_allow_conditional"]=False
+        self.assertTrue(validate_model(r))
     def test_quantized_verified_valid(self):
         self.assertTrue(verified_quant_exception(verified_example()))
         self.assertEqual([],validate_model(verified_example()))

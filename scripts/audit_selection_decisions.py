@@ -54,17 +54,17 @@ def check_record(row:dict, ids:set[str])->list[str]:
 def audit(root:Path=ROOT)->list[str]:
     errors=[]
     current=load(root,"catalog/CURRENT.json")
-    if current.get("revision_id")!="v16-20261104": return ["unexpected CURRENT revision"]
-    if current.get("decision_method_path")!="policies/selection-decision-v16.json": return ["decision policy not current"]
+    if current.get("revision_id")!="v17-20261104": return ["unexpected CURRENT revision"]
+    if current.get("decision_method_path")!="policies/selection-decision-v17.json": return ["decision policy not current"]
     model=load(root,current["materialized_catalog_path"])
     if model.get("revision_id")!=current["revision_id"]: errors.append("view revision differs from current")
     items=model.get("items")
     if not isinstance(items,list): return errors+["invalid items"]
     known={x.get("repo_id"):x for x in items if isinstance(x,dict) and x.get("asset_kind")=="model"}
     active=[x for x in items if x.get("portfolio_decision") in ("select","conditional")]
-    if len(items)!=142 or len(active)!=95: errors.append("v16 tracked/active count mismatch")
+    if len(items)!=142 or len(active)!=97: errors.append("v16 tracked/active count mismatch")
     dossier=load(root,current["decision_research_path"])
-    if dossier.get("source_revision")!="v16-20261104": errors.append("dossier revision mismatch")
+    if dossier.get("source_revision")!="v17-20261104": errors.append("dossier revision mismatch")
     rules=load(root,current["decision_method_path"])
     if rules.get("policy_id")!=dossier.get("policy_id"): errors.append("policy id mismatch")
     if rules.get("hard_boundaries",{}).get("never_auto_download_or_seed") is not True: errors.append("auto-download protection absent")
@@ -77,20 +77,28 @@ def audit(root:Path=ROOT)->list[str]:
         if row.get("in_portfolio"):
             model_record=known.get(row.get("model_id"))
             if model_record and model_record.get("portfolio_decision")!=row.get("portfolio_decision"): errors.append(f"{row.get('key')}: decision mismatch")
-            if row.get("portfolio_decision") in ("select","conditional") and model_record and model_record.get("parameter_gate",{}).get("status")!="PASS_TOTAL_PARAMS_LT_150B": errors.append(f"{row.get('key')}: active unknown total")
+            if row.get("portfolio_decision") in ("select","conditional") and model_record and model_record.get("parameter_gate",{}).get("status")!="PASS_TOTAL_PARAMS_LT_150B" and not model_record.get("research_only_unknown_total_allow_conditional"): errors.append(f"{row.get('key')}: active unknown total")
     for x in active:
-        if x.get("asset_kind")=="model" and x.get("parameter_gate",{}).get("status") not in ("PASS_TOTAL_PARAMS_LT_150B","OVER_150B_QUANT_RUNTIME_VERIFIED"): errors.append(f"{x.get('repo_id')}: unverified active gate")
+        if x.get("asset_kind")=="model" and x.get("parameter_gate",{}).get("status") not in ("PASS_TOTAL_PARAMS_LT_150B","OVER_150B_QUANT_RUNTIME_VERIFIED") and not (x.get("portfolio_decision")=="conditional" and x.get("research_only_unknown_total_allow_conditional") is True and x.get("parameter_gate",{}).get("status")=="UNVERIFIED_BLOCK_FINAL_LOCK" and x.get("download_approved") is False): errors.append(f"{x.get('repo_id')}: unverified active gate")
     q=load(root,current["priority_worklist_path"])
     a={(x["asset_kind"],x["repo_id"]) for x in active}
     b={(x["asset_kind"],x["repo_id"]) for x in q.get("candidates",[])}
     if a!=b or len(q.get("candidates",[]))!=len(active): errors.append("active queue ids differ")
     if q.get("approved") is not False or q.get("download_enabled") is not False: errors.append("queue executable")
+    for candidate in q.get("candidates",[]):
+        item=known.get(candidate.get("repo_id"))
+        if item and item.get("parameter_gate",{}).get("status")=="UNVERIFIED_BLOCK_FINAL_LOCK":
+            if candidate.get("research_only") is not True or candidate.get("can_enter_approved_queue") is not False or candidate.get("download_approved") is not False:
+                errors.append("unknown-total conditional candidate not blocked: "+candidate.get("repo_id","missing"))
+    rights=load(root,"policies/personal-research-rights-v17.json")
+    if rights.get("downloads_approved")!=0 or rights.get("seed_approved") is not False:
+        errors.append("rights policy accidentally authorizes payload")
     return errors
 
 if __name__=="__main__":
     errors=audit()
     if errors:
-        print("FAIL v16 research decision audit")
+        print("FAIL v17 research decision audit")
         for err in errors: print(" -",err)
         raise SystemExit(1)
-    print("PASS v16 research provenance, decision states, non-executable queue")
+    print("PASS v17 research provenance, decision states, non-executable queue")
