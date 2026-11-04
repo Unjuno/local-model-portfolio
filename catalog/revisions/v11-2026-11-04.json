@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "revision_id": "v11-20261104",
+  "parent_revision_id": "v10-20261104",
+  "prepared_on": "2026-11-04",
+  "purpose": "Remove seven unknown-total models from active selection and prevent mismatches between catalog and candidate queue",
+  "replacement_operations": [
+    {
+      "asset_kind": "model",
+      "repo_id": "InstantX/InstantID",
+      "from_decision": "conditional",
+      "from_risk_tier": "R1",
+      "to_decision": "hold",
+      "to_risk_tier": "HOLD",
+      "reason": "Total model parameters and complete component scope unverified. No active selection until first-party evidence and independent rights/manifest review.",
+      "download_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Plachta/Seed-VC",
+      "from_decision": "conditional",
+      "from_risk_tier": "R1",
+      "to_decision": "hold",
+      "to_risk_tier": "HOLD",
+      "reason": "Total model parameters and complete component scope unverified. No active selection until first-party evidence and independent rights/manifest review.",
+      "download_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "SWivid/F5-TTS",
+      "from_decision": "conditional",
+      "from_risk_tier": "R1",
+      "to_decision": "hold",
+      "to_risk_tier": "HOLD",
+      "reason": "Total model parameters and complete component scope unverified. No active selection until first-party evidence and independent rights/manifest review.",
+      "download_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "bytedance-research/Lance",
+      "from_decision": "conditional",
+      "from_risk_tier": "R1",
+      "to_decision": "hold",
+      "to_risk_tier": "HOLD",
+      "reason": "Total model parameters and complete component scope unverified. No active selection until first-party evidence and independent rights/manifest review.",
+      "download_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "OnomaAIResearch/Illustrious-XL-v1.1",
+      "from_decision": "conditional",
+      "from_risk_tier": "R1",
+      "to_decision": "hold",
+      "to_risk_tier": "HOLD",
+      "reason": "Total model parameters and complete component scope unverified. No active selection until first-party evidence and independent rights/manifest review.",
+      "download_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+      "from_decision": "select",
+      "from_risk_tier": "R1",
+      "to_decision": "hold",
+      "to_risk_tier": "HOLD",
+      "reason": "Total model parameters and complete component scope unverified. No active selection until first-party evidence and independent rights/manifest review.",
+      "download_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ACERobotics/Puffin-World",
+      "from_decision": "conditional",
+      "from_risk_tier": "R1",
+      "to_decision": "hold",
+      "to_risk_tier": "HOLD",
+      "reason": "Total model parameters and complete component scope unverified. No active selection until first-party evidence and independent rights/manifest review.",
+      "download_approved": false
+    }
+  ],
+  "additions": [],
+  "expected": {
+    "tracked": 132,
+    "active": 97,
+    "by_tier": {
+      "R0": 14,
+      "R1": 56,
+      "R2": 27,
+      "BACKLOG": 12,
+      "HOLD": 21,
+      "EXCLUDED": 2
+    },
+    "by_decision": {
+      "select": 53,
+      "conditional": 44,
+      "deferred": 12,
+      "hold": 21,
+      "excluded": 2
+    }
+  },
+  "status": {
+    "draft": true,
+    "download_approved": false
+  }
+}
