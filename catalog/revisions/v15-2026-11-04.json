@@ -1,0 +1,417 @@
+{
+  "schema_version": 1,
+  "revision_id": "v15-20261104",
+  "parent_revision_id": "v14-20261104",
+  "prepared_on": "2026-11-04",
+  "purpose": "Select distinct late-2026 safety, voice and synchronized AV models with current HF metadata, replace redundant old variants, research Pirate Face/Civitai as secondary sources.",
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "usezn/Galvanize-3",
+      "url": "https://huggingface.co/usezn/Galvanize-3",
+      "group": "guardrail_prompt_injection_detector",
+      "risk_tier": "R1",
+      "portfolio_decision": "select",
+      "reason_selected": "New 2026-10-31 multilingual 140.6M prompt-injection classifier with ONNX and safetensors; distinct dedicated safety component, not generic moderation.",
+      "risk_and_alternative_assessment": "Creator-reported public benchmark AUROC 0.965; private multilingual n=3309 recall89.6% FP0.6%; overlap, selection and 512-token limits. Not independently measured.",
+      "observed_access": "public",
+      "license_metadata": "apache-2.0",
+      "evidence_date": "2026-11-04",
+      "evidence_kind": "Hugging Face connected Hub metadata + creator model card, crosschecked by Exa; no user hardware test",
+      "requested_artifact": "one exact pinned model+required components, not full quant list",
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "requires_access_rights_and_sha_audit": true,
+      "required_dependencies_note": "onnx/model.onnx or model.safetensors; no duplicate formats; tokenizer.json; thresholds.json",
+      "performance_evidence": {
+        "kind": "creator benchmark",
+        "public_5set_auroc": 0.965,
+        "private_n": 3309,
+        "recall_percent": 89.6,
+        "false_positive_percent": 0.6,
+        "context": 512,
+        "independently_replicated": false
+      },
+      "source_provenance": {
+        "provider": "huggingface",
+        "repo_id": "usezn/Galvanize-3",
+        "original_url": "https://huggingface.co/usezn/Galvanize-3",
+        "mirror_is_not_primary": true,
+        "mirror_validated": false
+      },
+      "forecast_priority": {
+        "rank": 5.35,
+        "wave": "S1",
+        "category": "guardrail_prompt_injection_detector",
+        "scenario_status": "hypothesis_not_probability",
+        "rationale": "Distinct mechanism potentially subject to changing access conditions; no evidence of model-specific imminent restriction",
+        "current_observed_access": "public",
+        "current_access_evidence_date": "2026-11-04",
+        "rights_gate": "license full text and individual gate approval required",
+        "selection_eligibility": "CONDITIONAL_NEEDS_MANIFEST_AND_APPROVAL"
+      },
+      "resource_screen": {
+        "storage_band": "UNKNOWN",
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "cost_status": "UNKNOWN_SELECTED_BYTES_BLOCK_DOWNLOAD",
+        "hw_tested_on_user_machine": false,
+        "selected_file_bytes_final": null,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 140600000,
+        "evidence_urls": [
+          "https://huggingface.co/usezn/Galvanize-3"
+        ],
+        "evidence_kind": "Hugging Face Hub main model parameter count; external learned dependencies need separate census at manifest lock",
+        "review_date": "2026-11-04",
+        "known_before_download": false,
+        "note": "Main backbone count only; not an exact complete pipeline total. Do not approve until dependencies counted."
+      },
+      "preferred_file_family": "CPU ONNX with tokenizer and explicit threshold"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Edge0/Audio8-TTS-Realistic-Air",
+      "url": "https://huggingface.co/Edge0/Audio8-TTS-Realistic-Air",
+      "group": "voice_identity_multilingual_tts",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "2026-11-02 updated 23-language Japanese-capable expressive voice clone TTS. Bundled 44.1kHz codec and new multilingual fine-tuning; prioritize comparison over older Audio8 variant.",
+      "risk_and_alternative_assessment": "Creator reports CV3 shared-language error 4.80->4.56 and Seed-TTS speaker similarity 0.682->0.704 vs Preview, but Seed-TTS error slightly worsens 1.23->1.25. Not direct evidence against currently selected Realistic-0.6b.",
+      "observed_access": "public",
+      "license_metadata": "apache-2.0",
+      "evidence_date": "2026-11-04",
+      "evidence_kind": "Hugging Face connected Hub metadata + creator model card, crosschecked by Exa; no user hardware test",
+      "requested_artifact": "one exact pinned model+required components, not full quant list",
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "requires_access_rights_and_sha_audit": true,
+      "required_dependencies_note": "codec.pth; tokenizer and config; custom code security review; voice subject consent",
+      "performance_evidence": {
+        "kind": "publisher benchmark vs Preview",
+        "cv3_error_before_percent": 4.8,
+        "cv3_error_after_percent": 4.56,
+        "seed_error_before_percent": 1.23,
+        "seed_error_after_percent": 1.25,
+        "sim_before": 0.682,
+        "sim_after": 0.704,
+        "user_hardware_test": false
+      },
+      "source_provenance": {
+        "provider": "huggingface",
+        "repo_id": "Edge0/Audio8-TTS-Realistic-Air",
+        "original_url": "https://huggingface.co/Edge0/Audio8-TTS-Realistic-Air",
+        "mirror_is_not_primary": true,
+        "mirror_validated": false
+      },
+      "forecast_priority": {
+        "rank": 17.25,
+        "wave": "S1",
+        "category": "voice_identity_multilingual_tts",
+        "scenario_status": "hypothesis_not_probability",
+        "rationale": "Distinct mechanism potentially subject to changing access conditions; no evidence of model-specific imminent restriction",
+        "current_observed_access": "public",
+        "current_access_evidence_date": "2026-11-04",
+        "rights_gate": "license full text and individual gate approval required",
+        "selection_eligibility": "CONDITIONAL_NEEDS_MANIFEST_AND_APPROVAL"
+      },
+      "resource_screen": {
+        "storage_band": "UNKNOWN",
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "cost_status": "UNKNOWN_SELECTED_BYTES_BLOCK_DOWNLOAD",
+        "hw_tested_on_user_machine": false,
+        "selected_file_bytes_final": null,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 601200000,
+        "evidence_urls": [
+          "https://huggingface.co/Edge0/Audio8-TTS-Realistic-Air"
+        ],
+        "evidence_kind": "Hugging Face Hub main model parameter count; external learned dependencies need separate census at manifest lock",
+        "review_date": "2026-11-04",
+        "known_before_download": false,
+        "note": "Main backbone count only; not an exact complete pipeline total. Do not approve until dependencies counted."
+      },
+      "runtime_remote_custom_code_requires_audit": true,
+      "codec_parameters_not_in_main_601m_count": true,
+      "pirateface_revision_observed": "23c305cc013fde378edb459f538317043c993a74",
+      "pirateface_seeders_observed": 0
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Lightricks/LTX-2.5",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5",
+      "group": "audio_video_synchronized_multishot",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "2026 next-generation audio-video DiT: multi-shot continuity, diffusion-based video decoder and new distilled version, with custom Gemma4 12B encoder. Distinct improvements over LTX2.3; old version held.",
+      "risk_and_alternative_assessment": "Gated personal acceptance required; license has revenue and derivative restrictions; main DiT 22B but external encoder + codec/decoder separate. Publisher states improvements; independent user hardware quality unmeasured.",
+      "observed_access": "gated",
+      "license_metadata": "other:ltx-2.x-community",
+      "evidence_date": "2026-11-04",
+      "evidence_kind": "Hugging Face connected Hub metadata + creator model card, crosschecked by Exa; no user hardware test",
+      "requested_artifact": "one exact pinned model+required components, not full quant list",
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "requires_access_rights_and_sha_audit": true,
+      "required_dependencies_note": "distilled transformer select one engine-compatible precision; Gemma4 12B text encoder; audio/video decoder components; license/rights before access",
+      "performance_evidence": {
+        "kind": "publisher feature claims",
+        "base_dit_billion_params": 22,
+        "external_text_encoder_billion_params_approx": 12,
+        "complete_pipeline_params_unverified": true,
+        "independent_quality_test": false
+      },
+      "source_provenance": {
+        "provider": "huggingface",
+        "repo_id": "Lightricks/LTX-2.5",
+        "original_url": "https://huggingface.co/Lightricks/LTX-2.5",
+        "mirror_is_not_primary": true,
+        "mirror_validated": false
+      },
+      "forecast_priority": {
+        "rank": 32.75,
+        "wave": "S1",
+        "category": "audio_video_synchronized_multishot",
+        "scenario_status": "hypothesis_not_probability",
+        "rationale": "Distinct mechanism potentially subject to changing access conditions; no evidence of model-specific imminent restriction",
+        "current_observed_access": "gated",
+        "current_access_evidence_date": "2026-11-04",
+        "rights_gate": "license full text and individual gate approval required",
+        "selection_eligibility": "CONDITIONAL_NEEDS_MANIFEST_AND_APPROVAL"
+      },
+      "resource_screen": {
+        "storage_band": "UNKNOWN",
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "cost_status": "UNKNOWN_SELECTED_BYTES_BLOCK_DOWNLOAD",
+        "hw_tested_on_user_machine": false,
+        "selected_file_bytes_final": null,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 22000000000,
+        "evidence_urls": [
+          "https://huggingface.co/Lightricks/LTX-2.5"
+        ],
+        "evidence_kind": "Hugging Face Hub main model parameter count; external learned dependencies need separate census at manifest lock",
+        "review_date": "2026-11-04",
+        "known_before_download": false,
+        "note": "Main backbone count only; not an exact complete pipeline total. Do not approve until dependencies counted."
+      },
+      "main_parameter_count_excludes_12b_encoder": true,
+      "complete_component_count_unverified": true,
+      "license_requires_user_review": true
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "kandinskylab/Kandinsky-6.0-Lite-distill-5s-Diffusers",
+      "url": "https://huggingface.co/kandinskylab/Kandinsky-6.0-Lite-distill-5s-Diffusers",
+      "group": "independent_audio_video_lite",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Independent MIT-licensed 2026 synchronized 5-second video+44kHz audio generator, 3.178B Lite main DiT, distilled 10-step execution; distinct from Wan and LTX.",
+      "risk_and_alternative_assessment": "Creator measures 480x864 five-second clip+audio, RTX4090 24GB 68s single warm run, H100 80GB 31.2s median of 3 (FlashAttention3 with offload). No user hardware/quality head-to-head.",
+      "observed_access": "public",
+      "license_metadata": "mit",
+      "evidence_date": "2026-11-04",
+      "evidence_kind": "Hugging Face connected Hub metadata + creator model card, crosschecked by Exa; no user hardware test",
+      "requested_artifact": "one exact pinned model+required components, not full quant list",
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "requires_access_rights_and_sha_audit": true,
+      "required_dependencies_note": "transformer; Qwen2.5-VL text encoder; CLIP encoder; video VAE; audio VAE; vocoder; scheduler",
+      "performance_evidence": {
+        "kind": "publisher hardware timing",
+        "clip_seconds": 5,
+        "dimensions": [
+          480,
+          864
+        ],
+        "steps": 10,
+        "rtx4090_seconds_single": 68,
+        "rtx4090_vram_gb": 24,
+        "h100_seconds_median_of_3": 31.2,
+        "h100_vram_gb": 80,
+        "h100_backend": "FlashAttention3 Qwen BF16 module offload",
+        "independent_task_quality_test": false
+      },
+      "source_provenance": {
+        "provider": "huggingface",
+        "repo_id": "kandinskylab/Kandinsky-6.0-Lite-distill-5s-Diffusers",
+        "original_url": "https://huggingface.co/kandinskylab/Kandinsky-6.0-Lite-distill-5s-Diffusers",
+        "mirror_is_not_primary": true,
+        "mirror_validated": false
+      },
+      "forecast_priority": {
+        "rank": 34.65,
+        "wave": "S1",
+        "category": "independent_audio_video_lite",
+        "scenario_status": "hypothesis_not_probability",
+        "rationale": "Distinct mechanism potentially subject to changing access conditions; no evidence of model-specific imminent restriction",
+        "current_observed_access": "public",
+        "current_access_evidence_date": "2026-11-04",
+        "rights_gate": "license full text and individual gate approval required",
+        "selection_eligibility": "CONDITIONAL_NEEDS_MANIFEST_AND_APPROVAL"
+      },
+      "resource_screen": {
+        "storage_band": "UNKNOWN",
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "cost_status": "UNKNOWN_SELECTED_BYTES_BLOCK_DOWNLOAD",
+        "hw_tested_on_user_machine": false,
+        "selected_file_bytes_final": null,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 3178000000,
+        "evidence_urls": [
+          "https://huggingface.co/kandinskylab/Kandinsky-6.0-Lite-distill-5s-Diffusers"
+        ],
+        "evidence_kind": "Hugging Face Hub main model parameter count; external learned dependencies need separate census at manifest lock",
+        "review_date": "2026-11-04",
+        "known_before_download": false,
+        "note": "Main backbone count only; not an exact complete pipeline total. Do not approve until dependencies counted."
+      },
+      "pirateface_revision_observed": "efbaeb9961770cc82fece5b9cb2197049d8c983c",
+      "pirateface_seeders_observed": 0,
+      "external_encoder_params_not_counted_in_main": true
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "opus-research/opus-moderation-4-neo",
+      "url": "https://huggingface.co/opus-research/opus-moderation-4-neo",
+      "group": "jailbreak_technique_classifier",
+      "risk_tier": "HOLD",
+      "portfolio_decision": "hold",
+      "reason_selected": "Separate jailbreak technique detector, 395.8M ModernBERT; high research value for safety mechanism class distinct from prompt-injection content decisions.",
+      "risk_and_alternative_assessment": "Publisher claims F1=0.938, recall94%, benign FP3.2% on in-distribution 20k holdout. English only 512 tokens; training includes noncommercial text sources so permissions unresolved. Hold, not approved.",
+      "observed_access": "public",
+      "license_metadata": "apache-2.0 (dataset rights require audit)",
+      "evidence_date": "2026-11-04",
+      "evidence_kind": "Hugging Face connected Hub metadata + creator model card, crosschecked by Exa; no user hardware test",
+      "requested_artifact": "one exact pinned model+required components, not full quant list",
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "requires_access_rights_and_sha_audit": true,
+      "required_dependencies_note": "original training dataset rights incl. CC-BY-NC; tokenizer/config",
+      "performance_evidence": {
+        "kind": "publisher in-distribution holdout",
+        "n": 20000,
+        "jailbreak_f1": 0.938,
+        "recall_percent": 94,
+        "benign_fp_percent": 3.2,
+        "independently_replicated": false
+      },
+      "source_provenance": {
+        "provider": "huggingface",
+        "repo_id": "opus-research/opus-moderation-4-neo",
+        "original_url": "https://huggingface.co/opus-research/opus-moderation-4-neo",
+        "mirror_is_not_primary": true,
+        "mirror_validated": false
+      },
+      "forecast_priority": {
+        "rank": 5.45,
+        "wave": "S1",
+        "category": "jailbreak_technique_classifier",
+        "scenario_status": "hypothesis_not_probability",
+        "rationale": "Distinct mechanism potentially subject to changing access conditions; no evidence of model-specific imminent restriction",
+        "current_observed_access": "public",
+        "current_access_evidence_date": "2026-11-04",
+        "rights_gate": "license full text and individual gate approval required",
+        "selection_eligibility": "HOLD"
+      },
+      "resource_screen": {
+        "storage_band": "UNKNOWN",
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "cost_status": "UNKNOWN_SELECTED_BYTES_BLOCK_DOWNLOAD",
+        "hw_tested_on_user_machine": false,
+        "selected_file_bytes_final": null,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 395800000,
+        "evidence_urls": [
+          "https://huggingface.co/opus-research/opus-moderation-4-neo"
+        ],
+        "evidence_kind": "Hugging Face Hub main model parameter count; external learned dependencies need separate census at manifest lock",
+        "review_date": "2026-11-04",
+        "known_before_download": false,
+        "note": "Main backbone count only; not an exact complete pipeline total. Do not approve until dependencies counted."
+      }
+    }
+  ],
+  "replacement_operations": [
+    {
+      "asset_kind": "model",
+      "repo_id": "Edge0/Audio8-TTS-Realistic-0.6b",
+      "expected_prior_decision": "select",
+      "expected_prior_tier": "R1",
+      "new_decision": "hold",
+      "new_tier": "HOLD",
+      "reason": "Same Audio8 TTS purpose as newer Realistic-Air; move old to HOLD until direct comparison, no deletion.",
+      "download_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Lightricks/LTX-2.3",
+      "expected_prior_decision": "conditional",
+      "expected_prior_tier": "R1",
+      "new_decision": "hold",
+      "new_tier": "HOLD",
+      "reason": "Newer LTX2.5 multi-shot and decoder advances; move 2.3 to HOLD unless unique LoRA compatibility substantiates dual archive.",
+      "download_approved": false
+    }
+  ],
+  "expected": {
+    "tracked": 139,
+    "active": 94,
+    "by_tier": {
+      "R0": 14,
+      "R1": 56,
+      "R2": 24,
+      "BACKLOG": 12,
+      "HOLD": 27,
+      "EXCLUDED": 6
+    },
+    "by_decision": {
+      "select": 53,
+      "conditional": 41,
+      "deferred": 12,
+      "hold": 27,
+      "excluded": 6
+    },
+    "parameter_gate": {
+      "PASS_TOTAL_PARAMS_LT_150B": 102,
+      "EXCLUDED_TOTAL_PARAMS_GE_150B": 0,
+      "UNVERIFIED_BLOCK_FINAL_LOCK": 12,
+      "OVER_150B_QUANT_REVIEW_REQUIRED": 2
+    }
+  },
+  "download_approved": false
+}

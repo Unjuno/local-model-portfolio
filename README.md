@@ -4,7 +4,14 @@
 
 **目的は、リポジトリをHDDに配置し、エージェントが承認済みの取得指示に従って保存・検証できる状態を作ることです。** 人気ランキングでも、重みをGitHubへ再配布する場所でもありません。
 
-## 現行選定 v14（2026-11-04：Nanbeige維持・6件除外）
+## 現行選定 v15（2026-11-04：モデル5件追加・Pirate Face調査）
+
+- **正本**：[CURRENT](catalog/CURRENT.json)・[v15 全139資産](catalog/effective-portfolio-2026-11-04-v15.json)・[提案キュー94件](queues/proposed-v15-2026-11-04.json)。有効94、HOLD27、除外6。
+- **新規**：Galvanize-3（select）、Audio8 Air・LTX2.5・Kandinsky6 Lite（conditional）、Opus Moderation4 Neo（HOLD）。旧Audio8とLTX2.3を重複評価のためHOLDへ。
+- **代替配布**：[Pirate Face/Civitai一次調査](docs/strategy/11-additions-pirateface-civitai.md)。Pirate Faceに2原本revisionを確認したがSeeder0、Civitai画像v10は有料アクセスや配布権利未確認。torrentは自動利用しない。
+- **承認**：現時点0件。HDD・実機・量子化品質・ライセンス/本人Gated許可・版固定の独立ゲートは維持。
+
+## 旧版v14の履歴（2026-11-04：Nanbeige維持・6件除外）
 
 - **正本**：[CURRENT v12](catalog/CURRENT.json)／[全134資産のv12ビュー](catalog/effective-portfolio-2026-11-04-v14.json)／[量子化例外調査キュー](queues/proposed-v14-2026-11-04.json)。有効選定は92件、150B超の量子化候補2件は**HOLD**、総数不明12件は取得準備停止。
 - **150Bは絶対上限ではない**：総パラメータ数の原則目安。1.05T Mistral Large 4／180B OrcaRouter Flash Nextは公式/量子化配布元を確認したが、ユーザー環境のRAMと品質・速度・権利の実証がないため未採用。MoEは全expertの総数を使用。
