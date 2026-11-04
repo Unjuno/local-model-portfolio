@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "generated_on": "2026-11-04",
+  "type": "download_exclusion_and_reselection_decision",
+  "source_revision": "v9-20261103",
+  "source_commit": "6e9389c97d24528df97e4b14a6bc772780141fd3",
+  "status": "NON_EXECUTABLE_NOT_YET_INTEGRATED_WITH_DOWNLOADER",
+  "hard_exclude": [
+    {
+      "repo_id": "mistralai/Mistral-Large-4-1T-A52B",
+      "reason": "1.05T total >=150B, already excluded in v9"
+    },
+    {
+      "repo_id": "orcarouter/Qwen3.8-Flash-Next-Uncensored",
+      "reason": "180B total >=150B, already excluded in v9"
+    }
+  ],
+  "proposed_remove_from_active": [
+    {
+      "repo_id": "dphn/Dolphin3.0-Llama3.1-8B",
+      "previous": "conditional",
+      "proposed": "hold",
+      "reason": "Older Llama3.1 8B fine-tune; current catalog cites uniqueness but lacks comparative quality benchmark and exact bytes; cannot justify immediate selection ahead of newer models",
+      "reinstatement": "Measured unique post-training behavior under controlled comparison plus legally valid license and fixed bytes"
+    }
+  ],
+  "review_before_next_download": [
+    {
+      "repo_id": "mistralai/Mistral-Small-4-119B-2603",
+      "reason": "119.4B, 241.9GB upstream; under 150B but compute/storage efficiency unverified"
+    },
+    {
+      "repo_id": "state-spaces/mamba-2.8b",
+      "reason": "Research architecture may justify archival retention; compare actual unique value and 22.1GB upstream"
+    },
+    {
+      "repo_id": "BAAI/bge-m3",
+      "reason": "Benchmark against Qwen3-Embedding; preserve only if distinct retrieval coverage justified"
+    },
+    {
+      "repo_id": "openai/whisper-large-v3-turbo",
+      "reason": "ASR baseline useful; compare accuracy/latency to newer ASR before removing"
+    }
+  ],
+  "unknown_total_active_blocked": [
+    "InstantX/InstantID",
+    "Plachta/Seed-VC",
+    "SWivid/F5-TTS",
+    "bytedance-research/Lance",
+    "OnomaAIResearch/Illustrious-XL-v1.1",
+    "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+    "ACERobotics/Puffin-World"
+  ],
+  "rules": [
+    "Do not delete existing downloaded files based on this proposal",
+    "Do not assume current running downloader reads this file",
+    "Explicitly stop or reconcile running downloader before applying new selection",
+    "Preserve older independent architecture models unless replacement is evidenced",
+    "No automatic gate bypass or user license consent"
+  ]
+}
