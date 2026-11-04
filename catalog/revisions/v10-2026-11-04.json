@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "revision_id": "v10-20261104",
+  "parent_revision_id": "v9-20261103",
+  "prepared_on": "2026-11-04",
+  "replacement_operations": [
+    {
+      "asset_kind": "model",
+      "repo_id": "dphn/Dolphin3.0-Llama3.1-8B",
+      "from_risk_tier": "R1",
+      "from_decision": "conditional",
+      "to_risk_tier": "HOLD",
+      "to_decision": "hold",
+      "rationale": "No controlled evidence that this older Llama3.1 fine-tune merits an active storage slot",
+      "download_approved": false
+    }
+  ],
+  "additions": [],
+  "expected": {
+    "tracked": 132,
+    "active": 104,
+    "by_decision": {
+      "select": 54,
+      "conditional": 50,
+      "deferred": 12,
+      "hold": 14,
+      "excluded": 2
+    },
+    "by_tier": {
+      "R0": 14,
+      "R1": 63,
+      "R2": 27,
+      "BACKLOG": 12,
+      "HOLD": 14,
+      "EXCLUDED": 2
+    }
+  },
+  "status": {
+    "draft": true,
+    "download_approved": false
+  }
+}
