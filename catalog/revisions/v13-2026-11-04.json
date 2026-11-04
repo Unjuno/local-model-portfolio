@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "revision_id": "v13-20261104",
+  "parent_revision_id": "v12-20261104",
+  "prepared_on": "2026-11-04",
+  "purpose": "Replace stale 2025-26 generic uncensored research leads with evidenced Qwen3.8 ARA GGUF primary model and gated reproducible alternative; performance caveats checked with independent comparison.",
+  "additions": [
+    {
+      "position": 133,
+      "asset_kind": "model",
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "url": "https://huggingface.co/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "group": "無検閲・派生/Heretic ARA",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "2026年版Qwen3.8-27BからのARA反復型低拒否重みのGGUF。OrcaRouterの単一拒否方向編集と異なる後編集手順を持ち、配布者が異なる。同じ重みの単純な量子化複製ではない。Q4_K_M multilingual版を単一実用モデルとして候補化。",
+      "risk_and_alternative_assessment": "Hugging Faceの現行公開GGUFはApache-2.0表示。配布者カードにRVNが旧Hereticファイルの後継である旨あり。独立比較DreamFastはRVNの未終了思考104/400等を報告し、低拒否=高品質とは見なさない。OrcaRouter 27Bとの差を確認するまでconditional。",
+      "observed_access": "public_metadata_not_file_verified",
+      "license_metadata": "apache-2.0",
+      "evidence_date": "2026-11-04",
+      "evidence_kind": "Hugging Face creator repository card and independent publisher-run 13-arm assessment",
+      "requested_artifact": "exact-RVN-Q4_K_M-multilingual-GGUF-single-file-plus-template",
+      "proposed_file_names": [
+        "RVN-Q4_K_M-multilingual.gguf",
+        "chat_template.jinja"
+      ],
+      "proposed_quantized_file_bytes_author_approx": 16550000000,
+      "proposed_file_size_kind": "author stated decimal GB, not verified API exact bytes or total prerequisites",
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "source_relation": "Qwen/Qwen3.8-27B abliterated ARA via trohrbaugh upstream; new RVN variant; not OrcaRouter quantization",
+      "method": "multiple ARA passes (author reported); do not conflate with OrcaRouter refusal vector edit",
+      "method_independent_quality_report": "https://huggingface.co/DreamFast/Qwen-3.8-27b-abliterlitics",
+      "model_performance_evidence": {
+        "status": "AUTHOR_REPORT_PLUS_INDEPENDENT_THIRD_PARTY_RELATIVE_TEST",
+        "author_reported_ppl_q4_vision": 4.8751,
+        "author_reported_ppl_reference_f16": 4.5477,
+        "ppl_dataset": "tiny_shakespeare, ctx=2048; q4 vision variant, NOT same as multilingual proposed",
+        "benchmark_hardware": "RTX PRO 6000 Blackwell llama.cpp master for PPL; third-party RTX 5090 dynamic FP8 for independent comparison",
+        "third_party_test_prompts": 400,
+        "third_party_rvn_unterminated_reasoning_count": 104,
+        "third_party_rvn_truncated_count": 95,
+        "third_party_judge": "glm-5.3-flash-v2 (model judge); not user hardware",
+        "external_benchmark_note": "Independent comparison is primarily safety/capability of BF16/FP8 model; results not measured on proposed GGUF Q4; author's Q4 text PPL is separate. Do NOT transfer these results to live hardware."
+      },
+      "forecast_priority": {
+        "rank": 1.5,
+        "wave": "S1",
+        "category": "guardrail_edited_ara_multistep",
+        "rationale": "Research distinct iterative ARA editing mechanism and distribution fragility; public repo metadata alone does not predict future regulation.",
+        "scenario_status": "user_specified_stress_test_not_model_specific_prediction",
+        "current_observed_access": "public_metadata",
+        "current_access_evidence_date": "2026-11-04",
+        "rights_gate": "license_text_unverified",
+        "selection_eligibility": "ACTIVE_CONDITIONAL_NEEDS_VERSION_MANIFEST_QUALITY_RIGHTS_APPROVAL"
+      },
+      "resource_screen": {
+        "storage_band": "SMALL_5_to_25GB",
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "cost_status": "EXACT_FILE_BYTES_UNKNOWN_BLOCKS_APPROVAL",
+        "baseline_gpu_8gb_feasibility": "UNVERIFIED_CPU_OFFLOAD_DEPENDS_ON_RAM_AND_BACKEND",
+        "evidence": "PUBLISHER_SIZE_PLUS_SEPARATE_NOT_SAME_QUANT_BENCHMARK",
+        "hw_tested_on_user_machine": false,
+        "archive_for_analysis_if_running_unfeasible": true,
+        "selected_file_bytes_final": null,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 27781400000,
+        "evidence_urls": [
+          "https://huggingface.co/Qwen/Qwen3.8-27B",
+          "https://huggingface.co/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF"
+        ],
+        "evidence_kind": "first-party parent Hugging Face metadata 27,781.4M, derivative declares base Qwen3.8-27B; full GGUF per-file tensor census not conducted",
+        "review_date": "2026-11-04",
+        "known_before_download": false,
+        "note": "Source-family 27.7814B is under 150B; exact version's tensor/header/dependencies still require final manifest review; no download approval."
+      }
+    },
+    {
+      "position": 134,
+      "asset_kind": "model",
+      "repo_id": "afdudley/Qwen3.8-27B-abliterated-NVFP4",
+      "url": "https://huggingface.co/afdudley/Qwen3.8-27B-abliterated-NVFP4",
+      "group": "無検閲・派生/再現可能Abliteration",
+      "risk_tier": "HOLD",
+      "portfolio_decision": "hold",
+      "reason_selected": "Heretic重み編集のツールcommit、patch、config、seed、SHA256SUMSを公開する再現性研究上の独自価値。公開説明ではNVFP4 backboneにBF16 vision/MTPを再付属。",
+      "risk_and_alternative_assessment": "配布元はGatedで本人の条件承諾が必要。作者報告refusal 2/100対原本70/100、KL 0.069、~120tok/s、HW/バッチの一部不足で実機値と誤認しない。再現性は数値演算でbit-identicalとは主張していない。既存のOrcaRouter/0bserverxとの重複によりHOLD。",
+      "observed_access": "gated",
+      "license_metadata": "apache-2.0",
+      "evidence_date": "2026-11-04",
+      "evidence_kind": "Hugging Face author model card plus connector metadata; gates confirmed",
+      "requested_artifact": "reproducible-NVFP4-checkpoint-plus-sums-and-rebuild-recipe",
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "source_relation": "Qwen/Qwen3.8-27B; patched Heretic directional ablation and NVFP4 with visual and MTP components",
+      "forecast_priority": {
+        "rank": 1.7,
+        "wave": "S1",
+        "category": "guardrail_edit_reproducibility",
+        "rationale": "Independent reproducible weight editing recipe; no assertion of confirmed upcoming restrictions.",
+        "scenario_status": "user_specified_stress_test_not_model_specific_prediction",
+        "current_observed_access": "gated",
+        "current_access_evidence_date": "2026-11-04",
+        "rights_gate": "gated_self_approval_and_license_text_required",
+        "selection_eligibility": "HOLD_NOT_ELIGIBLE"
+      },
+      "resource_screen": {
+        "storage_band": "UNKNOWN",
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "cost_status": "UNKNOWN_FILE_LIST_AND_BYTES_BLOCKS_APPROVAL",
+        "baseline_gpu_8gb_feasibility": "UNVERIFIED",
+        "evidence": "AUTHOR_BENCHMARK_ONLY",
+        "hw_tested_on_user_machine": false,
+        "archive_for_analysis_if_running_unfeasible": true,
+        "selected_file_bytes_final": null,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 27781400000,
+        "evidence_urls": [
+          "https://huggingface.co/Qwen/Qwen3.8-27B",
+          "https://huggingface.co/afdudley/Qwen3.8-27B-abliterated-NVFP4"
+        ],
+        "evidence_kind": "full Qwen3.8-27B parent model metadata; derivative Hub card reports 26,896M; discrepancy needs census but both <150B",
+        "review_date": "2026-11-04",
+        "known_before_download": false,
+        "note": "Variation between connector's 26.896B variant and 27.7814B upstream indicates component count difference; hold until full manifest review."
+      }
+    }
+  ],
+  "replacement_operations": [],
+  "expected": {
+    "tracked": 134,
+    "active": 98,
+    "by_tier": {
+      "R0": 14,
+      "R1": 57,
+      "R2": 27,
+      "BACKLOG": 12,
+      "HOLD": 24,
+      "EXCLUDED": 0
+    },
+    "by_decision": {
+      "select": 53,
+      "conditional": 45,
+      "deferred": 12,
+      "hold": 24,
+      "excluded": 0
+    },
+    "parameter_gate": {
+      "PASS_TOTAL_PARAMS_LT_150B": 97,
+      "EXCLUDED_TOTAL_PARAMS_GE_150B": 0,
+      "UNVERIFIED_BLOCK_FINAL_LOCK": 12,
+      "OVER_150B_QUANT_REVIEW_REQUIRED": 2
+    }
+  },
+  "status": {
+    "draft": true,
+    "download_approved": false
+  }
+}

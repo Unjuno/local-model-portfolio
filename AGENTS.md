@@ -4,10 +4,10 @@
 
 まず README.md、policies/selection.md、policies/limits.json、docs/workflow.md を読む。
 このリポジトリは取得仕様を管理する。現在は構成と手順のみで、ダウンローダーは未実装。
-**現行選定はcatalog/CURRENT.jsonのv12とcatalog/effective-portfolio-2026-11-04-v12.json（132件、有効97件、原則150B超の量子化例外審査2件HOLD、総数不明12件）。** 旧97件baseファイルやv2/v3/v4/v5/v6/v7/v8を現行と混同しない。
+**現行選定はcatalog/CURRENT.jsonのv13とcatalog/effective-portfolio-2026-11-04-v13.json（134件、有効98件、原則150B超量子化例外審査2件HOLD、総数不明12件）。** 旧97件baseファイルやv2/v3/v4/v5/v6/v7/v8を現行と混同しない。
 **manifests/drafts/*.candidate.jsonは非実行の承認前ファイル台帳であり、正規lockでも承認でもない。** これらをダウンローダーに渡さず、依存/null、権利、RAM/HDDを解決してから最終lockとユーザー承認を別に受ける。
 
-## 現行v12：150B原則＋検証済み量子化例外（v8の絶対除外は履歴）
+## 現行v13：150B原則＋量子化例外・最新Hugging Faceモデル選定
 
 モデルの最終lock審査を行う前に、可能な実行環境で`python scripts/check_parameter_cutoff.py`による台帳・承認キューの読み取り専用検査を行う。テストを実行していない場合はPASSとみなさない。
 
