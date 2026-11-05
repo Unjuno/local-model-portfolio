@@ -4,6 +4,14 @@
 
 **目的は、リポジトリをHDDに配置し、エージェントが承認済みの取得指示に従って保存・検証できる状態を作ることです。** 人気ランキングでも、重みをGitHubへ再配布する場所でもありません。
 
+## 現行選定 v19（2026-11-06：規制シナリオ下の超高効率小型モデル）
+
+- **[CURRENT](catalog/CURRENT.json)**・[v19全150資産](catalog/effective-portfolio-2026-11-06-v19.json)・[取得未許可の105件キュー](queues/proposed-v19-2026-11-06.json)。
+- **新規6件CONDITIONAL**：IFM K2-Horizon 0.9B（公開総数約1.078B、名称と相違）、Liquid LFM3-1.7B（既存Baseとは別のagent後学習）、Liquid LFM2.5-VL-3B＋DSparkドラフター、Udgam Labs Lilavati＋Checker 95M×2（sandbox付きプログラム推論）。
+- **主重み6個の元LFSファイルSHAとbyteを確認**：合計12,799,213,698 byte（約12.799GB）。**全ファイルの固定コミット・tokenizer/LICENSE/補助コード・ハード・取得後のハッシュ・容量は未完了**。ダウンロード許可は0件。
+- **[R26調査と中国規制の一次資料](docs/strategy/23-small-frontier-regulation-2026-11-06.md)**、[代替案込み台帳](catalog/research/2026-11-06-small-model-r26.json)、[超小型高性能の判定基準](policies/small-model-advancement-evidence.md)。
+- 「人間を超えたら一律にモデル重みを禁止する」正式閾値は未確認。2026-04-30 CACは危険なオープンモデル/データの除去不備を取締り対象と明記。**規制の事実と将来予測を区別**。
+
 ## R25 保存準備の完成度と実機事前診断（2026-11-05）
 
 - **[完成度チェックリスト](catalog/preparation/2026-11-05-completion-readiness.json)**：重点2構成の16確認項目中8件に証拠あり（項目数50%。作業量・HDD保存完了率ではない）。実機の保存率は**不明**。

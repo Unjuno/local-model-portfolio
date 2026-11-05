@@ -15,15 +15,15 @@ class V18Promotions(unittest.TestCase):
         cls.r21=load("manifests/drafts/round21-pinned-preservation.candidate.json")
     def test_144_unique_and_99_active(self):
         items=self.view["items"]
-        self.assertEqual(self.current["revision_id"],"v18-20261105")
+        self.assertEqual(self.view["revision_id"],"v18-20261105")
         self.assertEqual(len(items),144)
         keys={(x["asset_kind"],x["repo_id"]) for x in items}
         self.assertEqual(len(keys),144)
         active={(x["asset_kind"],x["repo_id"]) for x in items if x["portfolio_decision"] in ("select","conditional")}
         self.assertEqual(len(active),99)
         self.assertEqual(active,{(x["asset_kind"],x["repo_id"]) for x in self.queue["candidates"]})
-        self.assertEqual(self.current["expected"]["tracked"],144)
-        self.assertEqual(self.current["expected"]["active"],99)
+        self.assertEqual(len(self.view["items"]),144)
+        self.assertEqual(len(active),99)
     def test_exact_two_new_identity_and_pinned_revisions(self):
         repos={x["repo_id"]:x for x in self.view["items"]}
         ids=["chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1","InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF"]

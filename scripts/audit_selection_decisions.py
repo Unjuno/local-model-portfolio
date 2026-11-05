@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit current v18 selection and historic v17 evidence without downloading weights.
+"""Audit current v19 selection and historic v17 evidence without downloading weights.
 
 Python >=3.10; standard library only. Read-only.
 """
@@ -54,7 +54,7 @@ def check_record(row:dict, ids:set[str])->list[str]:
 def audit(root:Path=ROOT)->list[str]:
     errors=[]
     current=load(root,"catalog/CURRENT.json")
-    if current.get("revision_id")!="v18-20261105": return ["unexpected CURRENT revision"]
+    if current.get("revision_id")!="v19-20261106": return ["unexpected CURRENT revision"]
     if current.get("decision_method_path")!="policies/selection-decision-v17.json": return ["decision policy not current"]
     model=load(root,current["materialized_catalog_path"])
     if model.get("revision_id")!=current["revision_id"]: errors.append("view revision differs from current")
@@ -101,4 +101,4 @@ if __name__=="__main__":
         print("FAIL current selection and v17 evidence audit")
         for err in errors: print(" -",err)
         raise SystemExit(1)
-    print("PASS v18 selection, historic v17 evidence, and non-executable queue")
+    print("PASS v19 selection, historic v17 evidence, and non-executable queue")

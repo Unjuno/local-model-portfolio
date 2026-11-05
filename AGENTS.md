@@ -5,8 +5,12 @@
 まず README.md、policies/selection.md、policies/limits.json、docs/workflow.md を読む。
 このリポジトリは取得仕様を管理する。現在は構成と手順のみで、ダウンローダーは未実装。
 Pirate Faceは二次のハッシュ付きTorrent索引、Civitaiは別ID体系。原本のライセンス/権利/Gatedを迂回しない。P2P seedingやファイルDLを無断実行しない。
-**現行選定はcatalog/CURRENT.jsonのv18とcatalog/effective-portfolio-2026-11-05-v18.json（144件、有効99件、総数不明14件、そのうち研究用conditional2件）。** 旧97件baseファイルやv2/v3/v4/v5/v6/v7/v8を現行と混同しない。
+**現行選定はcatalog/CURRENT.jsonのv19とcatalog/effective-portfolio-2026-11-06-v19.json（150件、有効105件、総数不明14件、そのうち研究用conditional2件）。** 旧97件baseファイルやv2/v3/v4/v5/v6/v7/v8を現行と混同しない。
 **manifests/drafts/*.candidate.jsonは非実行の承認前ファイル台帳であり、正規lockでも承認でもない。** これらをダウンローダーに渡さず、依存/null、権利、RAM/HDDを解決してから最終lockとユーザー承認を別に受ける。
+
+## v19：極小モデルの性能・規制・公開実体の分離
+
+[R26比較](docs/strategy/23-small-frontier-regulation-2026-11-06.md)と[選定基準](policies/small-model-advancement-evidence.md)を読む。IFM K2「0.9B」は名称が全総数を表さず、公開Appendixの1,078,285,824を優先。LLM/GUIの専門ベンチでより大きいモデルを超えても「人間全体超え」・即規制とは見なさない。VLM drafter 279.5Mは3.1235B target込みで判定、Lilavati checker94.7Mはgenerator94.7M+独立sandbox依存を確認。**元LFS SHA256の取得はimmutable revision・実機ハッシュ・ダウンロード承認の代わりにならない。** 生成されたPython/カスタムTransformersコードは未監査で実行しない。
 
 ## R25：実機保存の証拠と未承認の境界
 
@@ -20,7 +24,7 @@ Pirate Faceは二次のハッシュ付きTorrent索引、Civitaiは別ID体系�
 
 `license:unknown`だけで候補から排除しない。[権利ルール](policies/personal-research-rights-v17.json)を必ず参照。著作権法の特定例外を一般許諾と扱わず、元/派生の正常な利用条件と具体的行為を調査。総数不明conditional2件は研究専用で、取得lock/実行には利用できない。
 
-モデル選定・調査の前に **[選定プロトコル](policies/selection-decision-v16.json)** と [v16比較台帳](catalog/research/2026-11-04-v16-candidate-decisions.json) を読み、ライセンス・能力・一般性能・負の根拠・S1仮説と観測事実を混同しない。**低拒否だけの旧モデルは採用しない**。CIで`python scripts/audit_selection_decisions.py`も実行。モデルの最終lock審査を行う前に、可能な実行環境で`python scripts/check_parameter_cutoff.py`による台帳・承認キューの読み取り専用検査を行う。テストを実行していない場合はPASSとみなさない。
+モデル選定・調査の前に **[選定プロトコル](policies/selection-decision-v17.json)** と [v17比較台帳](catalog/research/2026-11-04-v17-candidate-decisions.json) を読み、ライセンス・能力・一般性能・負の根拠・S1仮説と観測事実を混同しない。**低拒否だけの旧モデルは採用しない**。CIで`python scripts/audit_selection_decisions.py`も実行。モデルの最終lock審査を行う前に、可能な実行環境で`python scripts/check_parameter_cutoff.py`による台帳・承認キューの読み取り専用検査を行う。テストを実行していない場合はPASSとみなさない。
 
 **150Bは原則目安であり絶対除外ではない**。MoEは活性数でなく**総数**。150B以上は量子化実体の固定repo/format、実機ピークRAM<512GB、品質・速度・ライセンス・依存・本人承認が全て検証できた場合だけ個別に選定できる。現時点の2件はHOLD（未承認）。パラメータ総数が不明なら取得準備禁止。データセットにはモデル数制限非適用。正本：[v12方針](docs/strategy/08-quantized-over150-exceptions.md)。
 

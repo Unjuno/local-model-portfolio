@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "round": "R26",
+  "checked_on": "2026-11-06",
+  "baseline_commit": "6ac158c578f08adfa205a523558279acefb92e12",
+  "formal_catalog_transition": "v18_to_v19_add_6_conditional",
+  "selection_scope": [
+    "tiny_reasoning_and_agent_posttrain",
+    "efficient_vision_acceleration",
+    "micro_tool_augmented_math"
+  ],
+  "source_weight_evidence": [
+    {
+      "repo_id": "LiquidAI/LFM3-1.7B",
+      "path": "model.safetensors",
+      "bytes": 3457635448,
+      "sha": "135922caef64e81e52af88ede8b7c3ddaa9d6da220a9737fb3065275dbfb4330",
+      "raw_pointer_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/model.safetensors",
+      "immutable_repo_commit_verified": false,
+      "full_weight_local_sha256_verified": false
+    },
+    {
+      "repo_id": "IFM/K2-Horizon-0.9B",
+      "path": "model-00000-of-00001.safetensors",
+      "bytes": 2156600968,
+      "sha": "6392cc67c8dcc7aef1575f94ecdf3c7113b7d0e8f4e7058c4c3c74d4d876c365",
+      "raw_pointer_url": "https://huggingface.co/IFM/K2-Horizon-0.9B/raw/main/model-00000-of-00001.safetensors",
+      "immutable_repo_commit_verified": false,
+      "full_weight_local_sha256_verified": false
+    },
+    {
+      "repo_id": "LiquidAI/LFM2.5-VL-3B",
+      "path": "model.safetensors",
+      "bytes": 6247065472,
+      "sha": "8413ba08bc7490552f3cf7611809927a825067e4375f7c39dfcb74df95301908",
+      "raw_pointer_url": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B/raw/main/model.safetensors",
+      "immutable_repo_commit_verified": false,
+      "full_weight_local_sha256_verified": false
+    },
+    {
+      "repo_id": "LiquidAI/LFM2.5-VL-3B-DSpark",
+      "path": "model.safetensors",
+      "bytes": 558942914,
+      "sha": "1ee593180b41b6789d7bf01879b41ee20244ecd0ad9f66c64ddc79175aeffdfd",
+      "raw_pointer_url": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B-DSpark/raw/main/model.safetensors",
+      "immutable_repo_commit_verified": false,
+      "full_weight_local_sha256_verified": false
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati",
+      "path": "model.safetensors",
+      "bytes": 189484448,
+      "sha": "24c02955743f5b918dff4e8709075ac7d9a05255739545ce1543ae10e72c8349",
+      "raw_pointer_url": "https://huggingface.co/udgamlabs/Lilavati/raw/main/model.safetensors",
+      "immutable_repo_commit_verified": false,
+      "full_weight_local_sha256_verified": false
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati-Checker",
+      "path": "model.safetensors",
+      "bytes": 189484448,
+      "sha": "b537563da101acc99fd800ae8798ce1f287d469da29f43ba824ab49d36ed164a",
+      "raw_pointer_url": "https://huggingface.co/udgamlabs/Lilavati-Checker/raw/main/model.safetensors",
+      "immutable_repo_commit_verified": false,
+      "full_weight_local_sha256_verified": false
+    }
+  ],
+  "selected": [
+    {
+      "repo_id": "LiquidAI/LFM3-1.7B",
+      "decision": "CONDITIONAL",
+      "evidence_kind": "B_publisher_configured_not_independent",
+      "positive": "Existing LFM3-1.7B-Base is a pretraining artifact, not this 2026-10 1.73B full post-trained agent model. SFT+mixed RL+multi-domain distillation+agentic RL yields browser and tool-task abilities unavailable in the Base. Publisher WebArena-Verified 38.42%, Qwen3.5-9B 28.94% in reported table, 1.7B agent specialization worth preserving.",
+      "negative": "Publisher benchmark not independent, evaluates specific agent scaffold, may not generalize to coding. Same card GPQA 63.37% versus Qwen3.5-9B 80.40%, RULER128K 65.56 vs 87.11. Not superhuman general intelligence; risk of losing agent-finetuned weights hypothetical.",
+      "observed_model_weight_bytes": 3457635448,
+      "source_sha256": "135922caef64e81e52af88ede8b7c3ddaa9d6da220a9737fb3065275dbfb4330",
+      "full_pinned_manifest": false,
+      "legal_human_surpassing_threshold_verified": false
+    },
+    {
+      "repo_id": "IFM/K2-Horizon-0.9B",
+      "decision": "CONDITIONAL",
+      "evidence_kind": "B_publisher_multi_bench_no_independent_replication",
+      "positive": "Actual checkpoint contains 1,078,285,824 serialized model parameters (not literal 900M despite '0.9B' product name). Multi-teacher mOPD math/STEM/code training. Publisher AIME 2026 48.5% versus Qwen3.5-2B 38.8%, HumanEval+ 79.9% vs 75.6%; exceptional focused capability under 1.1B.",
+      "negative": "Publisher-only table; GPQA Diamond 27.3% versus Qwen3.5-2B 54.9%, BFCLv4 28.0 vs 43.6, severe nontransferability to scientific QA/function calling. Custom modeling_k2_horizon.py needs security code review before execution. Name '0.9B' may mislead; use 1.078285824B exact from Appendix.",
+      "observed_model_weight_bytes": 2156600968,
+      "source_sha256": "6392cc67c8dcc7aef1575f94ecdf3c7113b7d0e8f4e7058c4c3c74d4d876c365",
+      "full_pinned_manifest": false,
+      "legal_human_surpassing_threshold_verified": false
+    },
+    {
+      "repo_id": "LiquidAI/LFM2.5-VL-3B",
+      "decision": "CONDITIONAL",
+      "evidence_kind": "C_functional_dependency_not_a_new_ability_gain",
+      "positive": "Base checkpoint is a required learned dependency to use official DSpark 279.5M VLM drafter, separate 3.1235B complete VLM. Preserve target once and refer to it from DSpark without double-download. Japanese among supported languages.",
+      "negative": "Parent VLM is less novel than DSpark itself; do not score the claimed 3.13x speedup on the target alone. Different from existing LFM3-Omni-2B: LFM2.5 VLM is the exact DSpark-optimized architecture.",
+      "observed_model_weight_bytes": 6247065472,
+      "source_sha256": "8413ba08bc7490552f3cf7611809927a825067e4375f7c39dfcb74df95301908",
+      "full_pinned_manifest": false,
+      "legal_human_surpassing_threshold_verified": false
+    },
+    {
+      "repo_id": "LiquidAI/LFM2.5-VL-3B-DSpark",
+      "decision": "CONDITIONAL",
+      "evidence_kind": "B_publisher_hardware_report_not_independent",
+      "positive": "279.5M separately trained draft model conditions on LFM2.5-VL-3B hidden states to enable exact speculative decoding. Official reports H100 decode 2.04–2.66x, end-to-end 1.64–2.27x; M5 Max decode 2.30–3.13x, end-to-end 1.56–2.62x. Preserves genuinely novel high-throughput VLM technique rather than an altered-quality language model.",
+      "negative": "Full deployed total must count target 3.1235B plus draft 0.2795B = ~3.403B, not 279.5M alone. Not independently reproduced and speedup tested with 16bit model; no demonstrated quantized performance or accuracy improvement. Must pin target-matched backend and versions.",
+      "observed_model_weight_bytes": 558942914,
+      "source_sha256": "1ee593180b41b6789d7bf01879b41ee20244ecd0ad9f66c64ddc79175aeffdfd",
+      "full_pinned_manifest": false,
+      "legal_human_surpassing_threshold_verified": false
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati",
+      "decision": "CONDITIONAL",
+      "evidence_kind": "B_publisher_fully_specified_not_independently_reproduced",
+      "positive": "A from-scratch 94.7M code-generating math word problem solver, strong for its extremely small size by symbolic execution: publisher greedy GSM8K test 1319 accuracy 54.7%. System can pair with 94.7M checker and use 48 attempts to reach 72.3%, but paired result is NOT single-model quality.",
+      "negative": "Not a chatbot; fails unanswerable tasks, irrelevant-number and unit-conversion cases. 48-attempt score is expensive program-execution ensemble and cannot be compared to a single inference. Model-generated Python must never be automatically executed during download or validation.",
+      "observed_model_weight_bytes": 189484448,
+      "source_sha256": "24c02955743f5b918dff4e8709075ac7d9a05255739545ce1543ae10e72c8349",
+      "full_pinned_manifest": false,
+      "legal_human_surpassing_threshold_verified": false
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati-Checker",
+      "decision": "CONDITIONAL",
+      "evidence_kind": "B_publisher_ensemble_not_single_model",
+      "positive": "Companion 94.7M learned verifier evaluates a program result and supports program-candidate weighted voting; this changes the capability of Lilavati beyond one-pass generation. Pair totals 189.4M, still tiny. Separate learned weights are not reproducible from generation model alone.",
+      "negative": "Verifier only makes sense with precise generator version and a constrained execution sandbox. 72.3% GSM8K at 48 tries from authors, not independent or superior across benchmarks. Never execute arbitrary generated Python from a downloaded model without an audited sandbox.",
+      "observed_model_weight_bytes": 189484448,
+      "source_sha256": "b537563da101acc99fd800ae8798ce1f287d469da29f43ba824ab49d36ed164a",
+      "full_pinned_manifest": false,
+      "legal_human_surpassing_threshold_verified": false
+    }
+  ],
+  "alternate_research_only": [
+    {
+      "repo_id": "XHToken/Spark-X2.6-1.7B",
+      "url": "https://huggingface.co/XHToken/Spark-X2.6-1.7B",
+      "decision": "HOLD_RESEARCH_ONLY_NOT_CATALOG",
+      "source_total_parameters": 1707700000,
+      "observed_weight_bytes": 3415340496,
+      "measurement": "CamThink non-author 138 bilingual task samples on Q4_K_M: think-on 63.8%, think-off 43.5%",
+      "negative": "Same 1.7B local agent lane as LFM3; small subset (69 cases bilingual copies), thinking settings differ vs some comparators, no user paired tests",
+      "rights": "apache-2.0 metadata, custom-code review pending"
+    },
+    {
+      "repo_id": "Goekdeniz-Guelmez/JOSIE-2-4B-OSS",
+      "url": "https://huggingface.co/Goekdeniz-Guelmez/JOSIE-2-4B-OSS",
+      "decision": "HOLD_RESEARCH_ONLY_NOT_CATALOG",
+      "hub_total_parameters": 4659900000,
+      "measurement": "Creator ARC-C 95.5 vs Qwen3.5-4B 83.4, TruthfulQA 69.2 vs48.9 in reasoning mode",
+      "negative": "Creator-only scores with no independent confirmation, training contamination unknown. 4B name does not equal HF total 4.6599B; no superiority claim until paired reproduction",
+      "license": "mit"
+    },
+    {
+      "repo_id": "microsoft/Orchard-GUI-4B",
+      "url": "https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/",
+      "decision": "HOLD_NO_VERIFIED_CHECKPOINT",
+      "model_checkpoint_public": false,
+      "measurement": "Creator web-agent 4B WebVoyager74.1 Online-Mind2Web67.0 DeepShop64.0",
+      "negative": "Exact Orchard-GUI-4B downloaded model identity not found in first-party HF; source paper performance does not equal published checkpoint availability"
+    },
+    {
+      "dataset_id": "microsoft/Orchard",
+      "url": "https://huggingface.co/datasets/microsoft/Orchard",
+      "decision": "RESEARCH_ONLY_DATASET_CANDIDATE",
+      "size_estimate_swe_gb": 9.72,
+      "size_estimate_gui_gb": 1.25,
+      "measurement": "107185 SWE trajectories and 3070 successful GUI decision points, useful to reconstruct agent training",
+      "negative": "Dataset MIT metadata is not blanket screenshot/repository rights; source preview and exact shards not audited"
+    }
+  ],
+  "china_regulation_source_register": [
+    {
+      "source": "https://www.cac.gov.cn/2026-04/30/c_1779289298718765.htm",
+      "published": "2026-04-30",
+      "type": "OFFICIAL_ENFORCEMENT_NOTICE",
+      "observed": "CAC campaign lists missing review and failure to remove severe-risk open-source models and datasets, plus service model filing, deepfake abuse, harmful content and model safety gaps",
+      "binding_specific_human_threshold": false,
+      "applicability_note": "Applies to enforcement focus on distribution/services and communities, not a documented blanket removal trigger based solely on a benchmark score"
+    },
+    {
+      "source": "https://www.cac.gov.cn/2026-09/14/c_1791137092283345.htm",
+      "published": "2026-09-14",
+      "type": "OFFICIAL_NON_STATUTORY_FRAMEWORK_ANNOUNCEMENT",
+      "observed": "AI Security Governance Framework 3.0 updates risk classification and responses including agentic capability concerns",
+      "binding_specific_human_threshold": false
+    },
+    {
+      "source": "https://www.cac.gov.cn/2026-05/08/c_1779979789472520.htm",
+      "published": "2026-05-08",
+      "type": "OFFICIAL_AGENT_POLICY_OPINION",
+      "observed": "Agency signals development and safe deployment of autonomous agents",
+      "binding_specific_human_threshold": false
+    }
+  ],
+  "risk_prediction": {
+    "statement": "Human-superiority-only triggers wholesale prohibition",
+    "verified_official_rule": false,
+    "likelihood_numeric": null,
+    "rationale": "Substantial capability-per-byte and distribution risks motivate preservation but do not prove imminence of removal."
+  },
+  "weight_bytes_total_selected_6": 12799213698,
+  "all_selected_files_bytes": null,
+  "download_authorized": false,
+  "payloads_downloaded": false,
+  "owner_archive_modified": false,
+  "next_verify": [
+    "Resolve full immutable repo commit SHA for 6 newly added artifacts",
+    "Inventory tokenizer/config/LICENSE/custom code/target-linked files and exact dependency bytes",
+    "Check independent full-size benchmarks, contamination and statistical intervals",
+    "Run user-device authorized hardware and security tests",
+    "Only after verified rights/files/free space and explicit lock permit acquiring model payloads"
+  ]
+}

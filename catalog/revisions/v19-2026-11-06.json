@@ -1,0 +1,694 @@
+{
+  "schema_version": 1,
+  "revision_id": "v19-20261106",
+  "parent_revision_id": "v18-20261105",
+  "prepared_on": "2026-11-06",
+  "additions": [
+    {
+      "position": 145,
+      "asset_kind": "model",
+      "repo_id": "LiquidAI/LFM3-1.7B",
+      "url": "https://huggingface.co/LiquidAI/LFM3-1.7B",
+      "group": "小型エージェント・後学習・三重ハイブリッド",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Existing LFM3-1.7B-Base is a pretraining artifact, not this 2026-10 1.73B full post-trained agent model. SFT+mixed RL+multi-domain distillation+agentic RL yields browser and tool-task abilities unavailable in the Base. Publisher WebArena-Verified 38.42%, Qwen3.5-9B 28.94% in reported table, 1.7B agent specialization worth preserving.",
+      "risk_and_alternative_assessment": "Publisher benchmark not independent, evaluates specific agent scaffold, may not generalize to coding. Same card GPQA 63.37% versus Qwen3.5-9B 80.40%, RULER128K 65.56 vs 87.11. Not superhuman general intelligence; risk of losing agent-finetuned weights hypothetical.",
+      "observed_access": "public_ungated_hub_metadata_not_payload_access_tested",
+      "license_metadata": "other:lfm1.0",
+      "evidence_date": "2026-11-06",
+      "release_date_reported": "2026-10-27",
+      "evidence_kind": "connected HF metadata+original creator card+Exa public Git-LFS pointer, no payload verification",
+      "requested_artifact": "one original published precision checkpoint plus license, tokenizer/config, exact immutable revision and backend; no duplicate easy-derived formats",
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "individual_noncommercial_research": true,
+      "source_weight": {
+        "repository_id": "LiquidAI/LFM3-1.7B",
+        "file_path": "model.safetensors",
+        "source_reported_bytes": 3457635448,
+        "source_reported_sha256": "135922caef64e81e52af88ede8b7c3ddaa9d6da220a9737fb3065275dbfb4330",
+        "observed_ref": "main",
+        "immutable_commit_sha": null,
+        "full_file_local_sha256_verified": false,
+        "non_weight_dependency_bytes_final": null,
+        "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/model.safetensors"
+      },
+      "additional_learned_dependencies": [],
+      "complete_deployed_weight_bytes_verified": false,
+      "technical_distinction": "agentic_sft_mixed_rl_distillation_1p7b",
+      "quality_evidence": {
+        "publisher_web_arena_verified_percent": 38.42,
+        "publisher_comparator_qwen35_9b_percent": 28.94,
+        "publisher_gpqa_diamond_percent": 63.37,
+        "publisher_comparator_gpqa_9b_percent": 80.4,
+        "benchmark_grade": "B_publisher_configured_not_independent",
+        "independent_external_reference": "https://www.camthink.ai/blog/small-language-model-benchmark/",
+        "external_test_note": "Different 138 bilingual automation prompts and Q4 quant; not numerical head-to-head with publisher WebArena"
+      },
+      "comparison_baseline": [
+        "LiquidAI/LFM3-1.7B-Base (already conditional; retain pretrain research)",
+        "Qwen/Qwen3.8-27B (stronger general)"
+      ],
+      "runtime_evidence": {
+        "publisher_reference_hw": "Publisher evaluation vLLM BF16, full context 262144 for this model; WebArena up to 40 steps, sampling temp 0.6 top_p 0.95; hardware/clock/batch not published.",
+        "user_machine_tested": false,
+        "measured_peak_ram_bytes": null,
+        "measured_speed": null,
+        "backend_commit_locked": false,
+        "benchmark_batch_and_clock_validated_on_owner": false
+      },
+      "regulation_evidence": {
+        "china_2026_official_model_take_down_prevention_and_platform_enforcement": true,
+        "source": "https://www.cac.gov.cn/2026-04/30/c_1779289298718765.htm",
+        "specific_model_regulated_or_deleted": false,
+        "creator_removal_warning_observed": false,
+        "human_performance_legal_threshold_verified": false,
+        "model_specific_future_prohibition_probability": null,
+        "status": "OBSERVED_GENERAL_ENFORCEMENT_NOT_MODEL_SPECIFIC_RESTRICTION"
+      },
+      "forecast_priority": {
+        "rank": 8.25,
+        "wave": "S1",
+        "category": "agentic_sft_mixed_rl_distillation_1p7b",
+        "rationale": "Unusually strong capability per parameter or unique small learned component, and hypothetical ability-specific distribution tightening. Never assert human-level legal trigger.",
+        "scenario_status": "unverified_future_model_specific_restriction_hypothesis",
+        "current_observed_access": "public",
+        "current_access_evidence_date": "2026-11-06",
+        "rights_gate": "license purpose, exact normal access and full dependency terms reviewed before approved immutable lock",
+        "selection_eligibility": "CONDITIONAL_RESEARCH_ONLY_SOURCE_WEIGHT_KNOWN_FULL_FILE_MANIFEST_PENDING"
+      },
+      "resource_screen": {
+        "storage_band": "COMPACT_lt_5GB",
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "observed_original_weight_bytes": 3457635448,
+        "cost_status": "SOURCE_MODEL_WEIGHT_BYTES_OBSERVED_COMPLETE_FILE_DEPENDENCIES_UNKNOWN_BLOCK_FINAL_LOCK",
+        "baseline_gpu_8gb_feasibility": "UNVERIFIED_CUSTOM_BACKEND_AND_CONTEXT",
+        "evidence": "PUBLISHER_HUB_SOURCE_WEIGHT_OBJECT_NOT_LOCAL_RUNTIME",
+        "hw_tested_on_user_machine": false,
+        "archive_for_analysis_if_running_unfeasible": true,
+        "selected_file_bytes_final": null,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 1728800000,
+        "exclusive_max_total_parameters": 150000000000,
+        "evidence_urls": [
+          "https://huggingface.co/LiquidAI/LFM3-1.7B",
+          "https://huggingface.co/blog/LiquidAI/lfm3"
+        ],
+        "evidence_kind": "Publisher Hub model parameter count, or explicitly labeled complete target+draft / generator+checker dependent pipeline count; conservative below 150B",
+        "review_date": "2026-11-06",
+        "known_before_download": true,
+        "note": "Total parameter count is for independent executable dependency closure where applicable; source model standalone count separately provided. Under 150B status is a size screening PASS, not performance/license/runtime approval."
+      },
+      "source_model_standalone_parameters": 1728800000
+    },
+    {
+      "position": 146,
+      "asset_kind": "model",
+      "repo_id": "IFM/K2-Horizon-0.9B",
+      "url": "https://huggingface.co/IFM/K2-Horizon-0.9B",
+      "group": "極小推論・数学・コード・蒸留研究",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Actual checkpoint contains 1,078,285,824 serialized model parameters (not literal 900M despite '0.9B' product name). Multi-teacher mOPD math/STEM/code training. Publisher AIME 2026 48.5% versus Qwen3.5-2B 38.8%, HumanEval+ 79.9% vs 75.6%; exceptional focused capability under 1.1B.",
+      "risk_and_alternative_assessment": "Publisher-only table; GPQA Diamond 27.3% versus Qwen3.5-2B 54.9%, BFCLv4 28.0 vs 43.6, severe nontransferability to scientific QA/function calling. Custom modeling_k2_horizon.py needs security code review before execution. Name '0.9B' may mislead; use 1.078285824B exact from Appendix.",
+      "observed_access": "public_ungated_hub_metadata_not_payload_access_tested",
+      "license_metadata": "apache-2.0",
+      "evidence_date": "2026-11-06",
+      "release_date_reported": "2026-09-03",
+      "evidence_kind": "connected HF metadata+original creator card+Exa public Git-LFS pointer, no payload verification",
+      "requested_artifact": "one original published precision checkpoint plus license, tokenizer/config, exact immutable revision and backend; no duplicate easy-derived formats",
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "individual_noncommercial_research": true,
+      "source_weight": {
+        "repository_id": "IFM/K2-Horizon-0.9B",
+        "file_path": "model-00000-of-00001.safetensors",
+        "source_reported_bytes": 2156600968,
+        "source_reported_sha256": "6392cc67c8dcc7aef1575f94ecdf3c7113b7d0e8f4e7058c4c3c74d4d876c365",
+        "observed_ref": "main",
+        "immutable_commit_sha": null,
+        "full_file_local_sha256_verified": false,
+        "non_weight_dependency_bytes_final": null,
+        "source_url": "https://huggingface.co/IFM/K2-Horizon-0.9B/raw/main/model-00000-of-00001.safetensors"
+      },
+      "additional_learned_dependencies": [],
+      "complete_deployed_weight_bytes_verified": false,
+      "technical_distinction": "sub_1p1b_multi_teacher_mopd_reasoning_dense",
+      "quality_evidence": {
+        "publisher_aime2026_percent": 48.5,
+        "qwen35_2b_aime2026_percent": 38.8,
+        "publisher_human_eval_plus_percent": 79.9,
+        "qwen35_2b_human_eval_plus_percent": 75.6,
+        "publisher_gpqa_diamond_percent": 27.3,
+        "qwen35_2b_gpqa_percent": 54.9,
+        "publisher_bfcl_v4_percent": 28,
+        "benchmark_grade": "B_publisher_multi_bench_no_independent_replication"
+      },
+      "comparison_baseline": [
+        "Qwen3.5-2B benchmark reference",
+        "LiquidAI/LFM3-1.7B differs: agentic not competitive-math specialist"
+      ],
+      "runtime_evidence": {
+        "publisher_reference_hw": "Creator table AIME2026, HumanEval+ and GPQA; no independent paired device clock/batch or exact chain-of-thought token budget verified. Custom Transformers/vLLM implementations needed.",
+        "user_machine_tested": false,
+        "measured_peak_ram_bytes": null,
+        "measured_speed": null,
+        "backend_commit_locked": false,
+        "benchmark_batch_and_clock_validated_on_owner": false
+      },
+      "regulation_evidence": {
+        "china_2026_official_model_take_down_prevention_and_platform_enforcement": true,
+        "source": "https://www.cac.gov.cn/2026-04/30/c_1779289298718765.htm",
+        "specific_model_regulated_or_deleted": false,
+        "creator_removal_warning_observed": false,
+        "human_performance_legal_threshold_verified": false,
+        "model_specific_future_prohibition_probability": null,
+        "status": "OBSERVED_GENERAL_ENFORCEMENT_NOT_MODEL_SPECIFIC_RESTRICTION"
+      },
+      "forecast_priority": {
+        "rank": 48.34,
+        "wave": "S2",
+        "category": "sub_1p1b_multi_teacher_mopd_reasoning_dense",
+        "rationale": "Unusually strong capability per parameter or unique small learned component, and hypothetical ability-specific distribution tightening. Never assert human-level legal trigger.",
+        "scenario_status": "unverified_future_model_specific_restriction_hypothesis",
+        "current_observed_access": "public",
+        "current_access_evidence_date": "2026-11-06",
+        "rights_gate": "license purpose, exact normal access and full dependency terms reviewed before approved immutable lock",
+        "selection_eligibility": "CONDITIONAL_RESEARCH_ONLY_SOURCE_WEIGHT_KNOWN_FULL_FILE_MANIFEST_PENDING"
+      },
+      "resource_screen": {
+        "storage_band": "COMPACT_lt_5GB",
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "observed_original_weight_bytes": 2156600968,
+        "cost_status": "SOURCE_MODEL_WEIGHT_BYTES_OBSERVED_COMPLETE_FILE_DEPENDENCIES_UNKNOWN_BLOCK_FINAL_LOCK",
+        "baseline_gpu_8gb_feasibility": "UNVERIFIED_CUSTOM_BACKEND_AND_CONTEXT",
+        "evidence": "PUBLISHER_HUB_SOURCE_WEIGHT_OBJECT_NOT_LOCAL_RUNTIME",
+        "hw_tested_on_user_machine": false,
+        "archive_for_analysis_if_running_unfeasible": true,
+        "selected_file_bytes_final": null,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 1078285824,
+        "exclusive_max_total_parameters": 150000000000,
+        "evidence_urls": [
+          "https://huggingface.co/IFM/K2-Horizon-0.9B",
+          "https://huggingface.co/IFM/K2-Horizon-0.9B/blob/main/APPENDIX.md"
+        ],
+        "evidence_kind": "Publisher Hub model parameter count, or explicitly labeled complete target+draft / generator+checker dependent pipeline count; conservative below 150B",
+        "review_date": "2026-11-06",
+        "known_before_download": true,
+        "note": "Total parameter count is for independent executable dependency closure where applicable; source model standalone count separately provided. Under 150B status is a size screening PASS, not performance/license/runtime approval."
+      },
+      "source_model_standalone_parameters": 1078285824
+    },
+    {
+      "position": 147,
+      "asset_kind": "model",
+      "repo_id": "LiquidAI/LFM2.5-VL-3B",
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B",
+      "group": "小型視覚言語・投機デコード基盤",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Base checkpoint is a required learned dependency to use official DSpark 279.5M VLM drafter, separate 3.1235B complete VLM. Preserve target once and refer to it from DSpark without double-download. Japanese among supported languages.",
+      "risk_and_alternative_assessment": "Parent VLM is less novel than DSpark itself; do not score the claimed 3.13x speedup on the target alone. Different from existing LFM3-Omni-2B: LFM2.5 VLM is the exact DSpark-optimized architecture.",
+      "observed_access": "public_ungated_hub_metadata_not_payload_access_tested",
+      "license_metadata": "other:lfm1.0",
+      "evidence_date": "2026-11-06",
+      "release_date_reported": "2026-08",
+      "evidence_kind": "connected HF metadata+original creator card+Exa public Git-LFS pointer, no payload verification",
+      "requested_artifact": "one original published precision checkpoint plus license, tokenizer/config, exact immutable revision and backend; no duplicate easy-derived formats",
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "individual_noncommercial_research": true,
+      "source_weight": {
+        "repository_id": "LiquidAI/LFM2.5-VL-3B",
+        "file_path": "model.safetensors",
+        "source_reported_bytes": 6247065472,
+        "source_reported_sha256": "8413ba08bc7490552f3cf7611809927a825067e4375f7c39dfcb74df95301908",
+        "observed_ref": "main",
+        "immutable_commit_sha": null,
+        "full_file_local_sha256_verified": false,
+        "non_weight_dependency_bytes_final": null,
+        "source_url": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B/raw/main/model.safetensors"
+      },
+      "additional_learned_dependencies": [],
+      "complete_deployed_weight_bytes_verified": false,
+      "technical_distinction": "vision_language_target_for_dspark_reuse",
+      "quality_evidence": {
+        "type": "enabling_target",
+        "source_model_hf_parameters": 3123500000,
+        "its_standalone_quality_independently_verified": false,
+        "source": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B",
+        "benchmark_grade": "C_functional_dependency_not_a_new_ability_gain"
+      },
+      "comparison_baseline": [
+        "LiquidAI/LFM3-Omni-2B (already active, different target architecture)"
+      ],
+      "runtime_evidence": {
+        "publisher_reference_hw": "Publisher H100 BF16 batch1 and M5 Max/M3 Ultra FP16 batch1, but only relative to corresponding DSpark target case; owner hardware untested.",
+        "user_machine_tested": false,
+        "measured_peak_ram_bytes": null,
+        "measured_speed": null,
+        "backend_commit_locked": false,
+        "benchmark_batch_and_clock_validated_on_owner": false
+      },
+      "regulation_evidence": {
+        "china_2026_official_model_take_down_prevention_and_platform_enforcement": true,
+        "source": "https://www.cac.gov.cn/2026-04/30/c_1779289298718765.htm",
+        "specific_model_regulated_or_deleted": false,
+        "creator_removal_warning_observed": false,
+        "human_performance_legal_threshold_verified": false,
+        "model_specific_future_prohibition_probability": null,
+        "status": "OBSERVED_GENERAL_ENFORCEMENT_NOT_MODEL_SPECIFIC_RESTRICTION"
+      },
+      "forecast_priority": {
+        "rank": 54.31,
+        "wave": "S2",
+        "category": "vision_language_target_for_dspark_reuse",
+        "rationale": "Unusually strong capability per parameter or unique small learned component, and hypothetical ability-specific distribution tightening. Never assert human-level legal trigger.",
+        "scenario_status": "unverified_future_model_specific_restriction_hypothesis",
+        "current_observed_access": "public",
+        "current_access_evidence_date": "2026-11-06",
+        "rights_gate": "license purpose, exact normal access and full dependency terms reviewed before approved immutable lock",
+        "selection_eligibility": "CONDITIONAL_RESEARCH_ONLY_SOURCE_WEIGHT_KNOWN_FULL_FILE_MANIFEST_PENDING"
+      },
+      "resource_screen": {
+        "storage_band": "MEDIUM_5_to_10GB",
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "observed_original_weight_bytes": 6247065472,
+        "cost_status": "SOURCE_MODEL_WEIGHT_BYTES_OBSERVED_COMPLETE_FILE_DEPENDENCIES_UNKNOWN_BLOCK_FINAL_LOCK",
+        "baseline_gpu_8gb_feasibility": "UNVERIFIED_CUSTOM_BACKEND_AND_CONTEXT",
+        "evidence": "PUBLISHER_HUB_SOURCE_WEIGHT_OBJECT_NOT_LOCAL_RUNTIME",
+        "hw_tested_on_user_machine": false,
+        "archive_for_analysis_if_running_unfeasible": true,
+        "selected_file_bytes_final": null,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 3123500000,
+        "exclusive_max_total_parameters": 150000000000,
+        "evidence_urls": [
+          "https://huggingface.co/LiquidAI/LFM2.5-VL-3B",
+          "https://www.liquid.ai/blog/lfm2-5-vl-dspark"
+        ],
+        "evidence_kind": "Publisher Hub model parameter count, or explicitly labeled complete target+draft / generator+checker dependent pipeline count; conservative below 150B",
+        "review_date": "2026-11-06",
+        "known_before_download": true,
+        "note": "Total parameter count is for independent executable dependency closure where applicable; source model standalone count separately provided. Under 150B status is a size screening PASS, not performance/license/runtime approval."
+      },
+      "source_model_standalone_parameters": 3123500000
+    },
+    {
+      "position": 148,
+      "asset_kind": "model",
+      "repo_id": "LiquidAI/LFM2.5-VL-3B-DSpark",
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B-DSpark",
+      "group": "超小型推論高速化・VLMドラフター",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "279.5M separately trained draft model conditions on LFM2.5-VL-3B hidden states to enable exact speculative decoding. Official reports H100 decode 2.04–2.66x, end-to-end 1.64–2.27x; M5 Max decode 2.30–3.13x, end-to-end 1.56–2.62x. Preserves genuinely novel high-throughput VLM technique rather than an altered-quality language model.",
+      "risk_and_alternative_assessment": "Full deployed total must count target 3.1235B plus draft 0.2795B = ~3.403B, not 279.5M alone. Not independently reproduced and speedup tested with 16bit model; no demonstrated quantized performance or accuracy improvement. Must pin target-matched backend and versions.",
+      "observed_access": "public_ungated_hub_metadata_not_payload_access_tested",
+      "license_metadata": "other:lfm1.0",
+      "evidence_date": "2026-11-06",
+      "release_date_reported": "2026-09-24",
+      "evidence_kind": "connected HF metadata+original creator card+Exa public Git-LFS pointer, no payload verification",
+      "requested_artifact": "one original published precision checkpoint plus license, tokenizer/config, exact immutable revision and backend; no duplicate easy-derived formats",
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "individual_noncommercial_research": true,
+      "source_weight": {
+        "repository_id": "LiquidAI/LFM2.5-VL-3B-DSpark",
+        "file_path": "model.safetensors",
+        "source_reported_bytes": 558942914,
+        "source_reported_sha256": "1ee593180b41b6789d7bf01879b41ee20244ecd0ad9f66c64ddc79175aeffdfd",
+        "observed_ref": "main",
+        "immutable_commit_sha": null,
+        "full_file_local_sha256_verified": false,
+        "non_weight_dependency_bytes_final": null,
+        "source_url": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B-DSpark/raw/main/model.safetensors"
+      },
+      "additional_learned_dependencies": [
+        {
+          "repo_id": "LiquidAI/LFM2.5-VL-3B",
+          "required": true,
+          "total_parameters": 3123500000,
+          "avoid_duplicate_archive": true,
+          "backend_exact_match_required": true
+        }
+      ],
+      "complete_deployed_weight_bytes_verified": false,
+      "technical_distinction": "multimodal_exact_speculative_decoding_learned_drafter",
+      "quality_evidence": {
+        "author_h100_decode_speedup_range": [
+          2.04,
+          2.66
+        ],
+        "author_h100_e2e_speedup_range": [
+          1.64,
+          2.27
+        ],
+        "author_m5_decode_speedup_range": [
+          2.3,
+          3.13
+        ],
+        "author_m5_e2e_speedup_range": [
+          1.56,
+          2.62
+        ],
+        "batch": 1,
+        "quantization": "FP16/BF16 only",
+        "quality_change_expected": "no change in exact greedy speculative verification, backend parity not tested here",
+        "benchmark_grade": "B_publisher_hardware_report_not_independent"
+      },
+      "comparison_baseline": [
+        "LiquidAI/LFM2.5-VL-3B required target",
+        "LiquidAI/LFM3-Omni-2B different generation, not compatible target"
+      ],
+      "runtime_evidence": {
+        "publisher_reference_hw": "Author SGLang H100 80GB BF16 batch1 temperature0 block9, Apple M5 Max FP16 MLX-VLM batch1 block8; context length and clock per-task not fully pinned.",
+        "user_machine_tested": false,
+        "measured_peak_ram_bytes": null,
+        "measured_speed": null,
+        "backend_commit_locked": false,
+        "benchmark_batch_and_clock_validated_on_owner": false
+      },
+      "regulation_evidence": {
+        "china_2026_official_model_take_down_prevention_and_platform_enforcement": true,
+        "source": "https://www.cac.gov.cn/2026-04/30/c_1779289298718765.htm",
+        "specific_model_regulated_or_deleted": false,
+        "creator_removal_warning_observed": false,
+        "human_performance_legal_threshold_verified": false,
+        "model_specific_future_prohibition_probability": null,
+        "status": "OBSERVED_GENERAL_ENFORCEMENT_NOT_MODEL_SPECIFIC_RESTRICTION"
+      },
+      "forecast_priority": {
+        "rank": 54.32,
+        "wave": "S2",
+        "category": "multimodal_exact_speculative_decoding_learned_drafter",
+        "rationale": "Unusually strong capability per parameter or unique small learned component, and hypothetical ability-specific distribution tightening. Never assert human-level legal trigger.",
+        "scenario_status": "unverified_future_model_specific_restriction_hypothesis",
+        "current_observed_access": "public",
+        "current_access_evidence_date": "2026-11-06",
+        "rights_gate": "license purpose, exact normal access and full dependency terms reviewed before approved immutable lock",
+        "selection_eligibility": "CONDITIONAL_RESEARCH_ONLY_SOURCE_WEIGHT_KNOWN_FULL_FILE_MANIFEST_PENDING"
+      },
+      "resource_screen": {
+        "storage_band": "SMALL_lt_1GB",
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "observed_original_weight_bytes": 558942914,
+        "cost_status": "SOURCE_MODEL_WEIGHT_BYTES_OBSERVED_COMPLETE_FILE_DEPENDENCIES_UNKNOWN_BLOCK_FINAL_LOCK",
+        "baseline_gpu_8gb_feasibility": "UNVERIFIED_CUSTOM_BACKEND_AND_CONTEXT",
+        "evidence": "PUBLISHER_HUB_SOURCE_WEIGHT_OBJECT_NOT_LOCAL_RUNTIME",
+        "hw_tested_on_user_machine": false,
+        "archive_for_analysis_if_running_unfeasible": true,
+        "selected_file_bytes_final": null,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 3403000000,
+        "exclusive_max_total_parameters": 150000000000,
+        "evidence_urls": [
+          "https://huggingface.co/LiquidAI/LFM2.5-VL-3B-DSpark",
+          "https://www.liquid.ai/blog/lfm2-5-vl-dspark"
+        ],
+        "evidence_kind": "Publisher Hub model parameter count, or explicitly labeled complete target+draft / generator+checker dependent pipeline count; conservative below 150B",
+        "review_date": "2026-11-06",
+        "known_before_download": true,
+        "note": "Total parameter count is for independent executable dependency closure where applicable; source model standalone count separately provided. Under 150B status is a size screening PASS, not performance/license/runtime approval."
+      },
+      "source_model_standalone_parameters": 279500000,
+      "draft_parameters": 279500000,
+      "required_target_parameters": 3123500000,
+      "complete_deployed_parameter_screen_total": 3403000000
+    },
+    {
+      "position": 149,
+      "asset_kind": "model",
+      "repo_id": "udgamlabs/Lilavati",
+      "url": "https://huggingface.co/udgamlabs/Lilavati",
+      "group": "極小計算・プログラム生成・検証可能推論",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "A from-scratch 94.7M code-generating math word problem solver, strong for its extremely small size by symbolic execution: publisher greedy GSM8K test 1319 accuracy 54.7%. System can pair with 94.7M checker and use 48 attempts to reach 72.3%, but paired result is NOT single-model quality.",
+      "risk_and_alternative_assessment": "Not a chatbot; fails unanswerable tasks, irrelevant-number and unit-conversion cases. 48-attempt score is expensive program-execution ensemble and cannot be compared to a single inference. Model-generated Python must never be automatically executed during download or validation.",
+      "observed_access": "public_ungated_hub_metadata_not_payload_access_tested",
+      "license_metadata": "apache-2.0",
+      "evidence_date": "2026-11-06",
+      "release_date_reported": "2026-10-16",
+      "evidence_kind": "connected HF metadata+original creator card+Exa public Git-LFS pointer, no payload verification",
+      "requested_artifact": "one original published precision checkpoint plus license, tokenizer/config, exact immutable revision and backend; no duplicate easy-derived formats",
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "individual_noncommercial_research": true,
+      "source_weight": {
+        "repository_id": "udgamlabs/Lilavati",
+        "file_path": "model.safetensors",
+        "source_reported_bytes": 189484448,
+        "source_reported_sha256": "24c02955743f5b918dff4e8709075ac7d9a05255739545ce1543ae10e72c8349",
+        "observed_ref": "main",
+        "immutable_commit_sha": null,
+        "full_file_local_sha256_verified": false,
+        "non_weight_dependency_bytes_final": null,
+        "source_url": "https://huggingface.co/udgamlabs/Lilavati/raw/main/model.safetensors"
+      },
+      "additional_learned_dependencies": [],
+      "complete_deployed_weight_bytes_verified": false,
+      "technical_distinction": "under100m_program_generator_executed_arithmetic",
+      "quality_evidence": {
+        "publisher_gsm8k_greedy_accuracy_percent": 54.7,
+        "publisher_gsm8k_n": 1319,
+        "publisher_gsm8k_48_try_checker_weighted_percent": 72.3,
+        "publisher_robustness_gsmplus_percent": 39.2,
+        "benchmark_grade": "B_publisher_fully_specified_not_independently_reproduced",
+        "code_execution_dependency": true
+      },
+      "comparison_baseline": [
+        "udgamlabs/Lilavati-Checker companion model",
+        "general 1B reasoning models have different task and security economics"
+      ],
+      "runtime_evidence": {
+        "publisher_reference_hw": "Publisher Python>=3.10, torch>=2.3, transformers>=5.18; Apple and CPU runs mentioned without user hardware test; requires strict isolated Python sandbox to evaluate programs.",
+        "user_machine_tested": false,
+        "measured_peak_ram_bytes": null,
+        "measured_speed": null,
+        "backend_commit_locked": false,
+        "benchmark_batch_and_clock_validated_on_owner": false
+      },
+      "regulation_evidence": {
+        "china_2026_official_model_take_down_prevention_and_platform_enforcement": true,
+        "source": "https://www.cac.gov.cn/2026-04/30/c_1779289298718765.htm",
+        "specific_model_regulated_or_deleted": false,
+        "creator_removal_warning_observed": false,
+        "human_performance_legal_threshold_verified": false,
+        "model_specific_future_prohibition_probability": null,
+        "status": "OBSERVED_GENERAL_ENFORCEMENT_NOT_MODEL_SPECIFIC_RESTRICTION"
+      },
+      "forecast_priority": {
+        "rank": 58.15,
+        "wave": "S2",
+        "category": "under100m_program_generator_executed_arithmetic",
+        "rationale": "Unusually strong capability per parameter or unique small learned component, and hypothetical ability-specific distribution tightening. Never assert human-level legal trigger.",
+        "scenario_status": "unverified_future_model_specific_restriction_hypothesis",
+        "current_observed_access": "public",
+        "current_access_evidence_date": "2026-11-06",
+        "rights_gate": "license purpose, exact normal access and full dependency terms reviewed before approved immutable lock",
+        "selection_eligibility": "CONDITIONAL_RESEARCH_ONLY_SOURCE_WEIGHT_KNOWN_FULL_FILE_MANIFEST_PENDING"
+      },
+      "resource_screen": {
+        "storage_band": "SMALL_lt_1GB",
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "observed_original_weight_bytes": 189484448,
+        "cost_status": "SOURCE_MODEL_WEIGHT_BYTES_OBSERVED_COMPLETE_FILE_DEPENDENCIES_UNKNOWN_BLOCK_FINAL_LOCK",
+        "baseline_gpu_8gb_feasibility": "UNVERIFIED_CUSTOM_BACKEND_AND_CONTEXT",
+        "evidence": "PUBLISHER_HUB_SOURCE_WEIGHT_OBJECT_NOT_LOCAL_RUNTIME",
+        "hw_tested_on_user_machine": false,
+        "archive_for_analysis_if_running_unfeasible": true,
+        "selected_file_bytes_final": null,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 94700000,
+        "exclusive_max_total_parameters": 150000000000,
+        "evidence_urls": [
+          "https://huggingface.co/udgamlabs/Lilavati",
+          "https://udgamlabs.com/research/lilavati"
+        ],
+        "evidence_kind": "Publisher Hub model parameter count, or explicitly labeled complete target+draft / generator+checker dependent pipeline count; conservative below 150B",
+        "review_date": "2026-11-06",
+        "known_before_download": true,
+        "note": "Total parameter count is for independent executable dependency closure where applicable; source model standalone count separately provided. Under 150B status is a size screening PASS, not performance/license/runtime approval."
+      },
+      "source_model_standalone_parameters": 94700000
+    },
+    {
+      "position": 150,
+      "asset_kind": "model",
+      "repo_id": "udgamlabs/Lilavati-Checker",
+      "url": "https://huggingface.co/udgamlabs/Lilavati-Checker",
+      "group": "極小検証器・プログラム推論再ランキング",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Companion 94.7M learned verifier evaluates a program result and supports program-candidate weighted voting; this changes the capability of Lilavati beyond one-pass generation. Pair totals 189.4M, still tiny. Separate learned weights are not reproducible from generation model alone.",
+      "risk_and_alternative_assessment": "Verifier only makes sense with precise generator version and a constrained execution sandbox. 72.3% GSM8K at 48 tries from authors, not independent or superior across benchmarks. Never execute arbitrary generated Python from a downloaded model without an audited sandbox.",
+      "observed_access": "public_ungated_hub_metadata_not_payload_access_tested",
+      "license_metadata": "apache-2.0",
+      "evidence_date": "2026-11-06",
+      "release_date_reported": "2026-10-16",
+      "evidence_kind": "connected HF metadata+original creator card+Exa public Git-LFS pointer, no payload verification",
+      "requested_artifact": "one original published precision checkpoint plus license, tokenizer/config, exact immutable revision and backend; no duplicate easy-derived formats",
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "individual_noncommercial_research": true,
+      "source_weight": {
+        "repository_id": "udgamlabs/Lilavati-Checker",
+        "file_path": "model.safetensors",
+        "source_reported_bytes": 189484448,
+        "source_reported_sha256": "b537563da101acc99fd800ae8798ce1f287d469da29f43ba824ab49d36ed164a",
+        "observed_ref": "main",
+        "immutable_commit_sha": null,
+        "full_file_local_sha256_verified": false,
+        "non_weight_dependency_bytes_final": null,
+        "source_url": "https://huggingface.co/udgamlabs/Lilavati-Checker/raw/main/model.safetensors"
+      },
+      "additional_learned_dependencies": [
+        {
+          "repo_id": "udgamlabs/Lilavati",
+          "required": true,
+          "total_parameters": 94700000,
+          "avoid_duplicate_archive": true,
+          "sandbox_run_required_for_results": true
+        }
+      ],
+      "complete_deployed_weight_bytes_verified": false,
+      "technical_distinction": "under100m_math_program_checker_weighted_verification",
+      "quality_evidence": {
+        "publisher_48_sample_gsm8k_accuracy_percent": 72.3,
+        "n": 1319,
+        "requires_program_exec_and_sampling": true,
+        "independent_check": false,
+        "benchmark_grade": "B_publisher_ensemble_not_single_model"
+      },
+      "comparison_baseline": [
+        "udgamlabs/Lilavati required generator"
+      ],
+      "runtime_evidence": {
+        "publisher_reference_hw": "Publisher CPU/Apple-Silicon, candidate generated Python executes in isolated restricted process; 48 candidates require substantial extra time, no measured local runtime.",
+        "user_machine_tested": false,
+        "measured_peak_ram_bytes": null,
+        "measured_speed": null,
+        "backend_commit_locked": false,
+        "benchmark_batch_and_clock_validated_on_owner": false
+      },
+      "regulation_evidence": {
+        "china_2026_official_model_take_down_prevention_and_platform_enforcement": true,
+        "source": "https://www.cac.gov.cn/2026-04/30/c_1779289298718765.htm",
+        "specific_model_regulated_or_deleted": false,
+        "creator_removal_warning_observed": false,
+        "human_performance_legal_threshold_verified": false,
+        "model_specific_future_prohibition_probability": null,
+        "status": "OBSERVED_GENERAL_ENFORCEMENT_NOT_MODEL_SPECIFIC_RESTRICTION"
+      },
+      "forecast_priority": {
+        "rank": 58.16,
+        "wave": "S2",
+        "category": "under100m_math_program_checker_weighted_verification",
+        "rationale": "Unusually strong capability per parameter or unique small learned component, and hypothetical ability-specific distribution tightening. Never assert human-level legal trigger.",
+        "scenario_status": "unverified_future_model_specific_restriction_hypothesis",
+        "current_observed_access": "public",
+        "current_access_evidence_date": "2026-11-06",
+        "rights_gate": "license purpose, exact normal access and full dependency terms reviewed before approved immutable lock",
+        "selection_eligibility": "CONDITIONAL_RESEARCH_ONLY_SOURCE_WEIGHT_KNOWN_FULL_FILE_MANIFEST_PENDING"
+      },
+      "resource_screen": {
+        "storage_band": "SMALL_lt_1GB",
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "observed_original_weight_bytes": 189484448,
+        "cost_status": "SOURCE_MODEL_WEIGHT_BYTES_OBSERVED_COMPLETE_FILE_DEPENDENCIES_UNKNOWN_BLOCK_FINAL_LOCK",
+        "baseline_gpu_8gb_feasibility": "UNVERIFIED_CUSTOM_BACKEND_AND_CONTEXT",
+        "evidence": "PUBLISHER_HUB_SOURCE_WEIGHT_OBJECT_NOT_LOCAL_RUNTIME",
+        "hw_tested_on_user_machine": false,
+        "archive_for_analysis_if_running_unfeasible": true,
+        "selected_file_bytes_final": null,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 189400000,
+        "exclusive_max_total_parameters": 150000000000,
+        "evidence_urls": [
+          "https://huggingface.co/udgamlabs/Lilavati-Checker",
+          "https://udgamlabs.com/research/lilavati"
+        ],
+        "evidence_kind": "Publisher Hub model parameter count, or explicitly labeled complete target+draft / generator+checker dependent pipeline count; conservative below 150B",
+        "review_date": "2026-11-06",
+        "known_before_download": true,
+        "note": "Total parameter count is for independent executable dependency closure where applicable; source model standalone count separately provided. Under 150B status is a size screening PASS, not performance/license/runtime approval."
+      },
+      "source_model_standalone_parameters": 94700000,
+      "checker_standalone_parameters": 94700000,
+      "paired_deployment_parameters": 189400000
+    }
+  ],
+  "replacement_operations": [],
+  "purpose": "Select exceptional sub-4B model abilities with primary publisher evidence, preserve dependent pairs, distinguish hypothetical Chinese superhuman regulation from real CAC open-source safety enforcement.",
+  "expected": {
+    "tracked": 150,
+    "active": 105,
+    "by_decision": {
+      "select": 53,
+      "conditional": 52,
+      "hold": 27,
+      "deferred": 12,
+      "excluded": 6
+    },
+    "by_tier": {
+      "R0": 14,
+      "R1": 64,
+      "R2": 27,
+      "BACKLOG": 12,
+      "HOLD": 27,
+      "EXCLUDED": 6
+    },
+    "parameter_gate": {
+      "PASS_TOTAL_PARAMS_LT_150B": 111,
+      "UNVERIFIED_BLOCK_FINAL_LOCK": 14,
+      "OVER_150B_QUANT_REVIEW_REQUIRED": 2,
+      "EXCLUDED_TOTAL_PARAMS_GE_150B": 0
+    }
+  },
+  "no_download_authorization": true
+}
