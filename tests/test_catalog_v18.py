@@ -33,6 +33,8 @@ class V18Promotions(unittest.TestCase):
             self.assertEqual(r["parameter_gate"]["status"],LOW)
             self.assertEqual([],validate_model(r))
             self.assertFalse(r["download_approved"])
+            self.assertTrue(r["license_text_reviewed"])
+            self.assertTrue(r["dependencies_reviewed"])
             self.assertRegex(r["fully_pinned_revision_sha"],r"^[0-9a-f]{40}$")
             self.assertFalse(r["reproducibility_package"]["local_weights_hash_verified"])
         self.assertEqual(repos[ids[0]]["fully_pinned_revision_sha"],"aa213272180d6ad0d03f5fb3d597f0f0322647c5")
