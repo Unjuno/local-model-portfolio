@@ -4,7 +4,14 @@
 
 **目的は、リポジトリをHDDに配置し、エージェントが承認済みの取得指示に従って保存・検証できる状態を作ることです。** 人気ランキングでも、重みをGitHubへ再配布する場所でもありません。
 
-## 現行選定 v19（2026-11-06：規制シナリオ下の超高効率小型モデル）
+## 現行選定 v20（2026-11-06：4TB枠・Cascade2を正式選定）
+
+- [CURRENT](catalog/CURRENT.json)・[154資産の全件ビュー](catalog/effective-portfolio-2026-11-06-v20.json)・[108件の非実行キュー](queues/proposed-v20-2026-11-06.json)。
+- Cascade2原本、RLデータ、SFTの数学証明＋agentic SWE部分を3件conditionalとして正式追加。Orca27B FP8は重複のためdeferred。
+- 保存予算は十進4TB。追加3件に計165GBの計画上限を割当。約134.5GBという表示容量の合算は概算であり最終lockではない。SFT全593GBは選ばない。
+- [採用理由・負の根拠・容量管理](docs/strategy/24-selected-cascade-4tb-v20.md)。実空き・全依存・権利・固定SHA未確定、ダウンロード承認0。過去節の3.8TBは旧方針で、現在の数値はpolicies/limits.jsonが正本。
+
+## 旧版選定 v19（2026-11-06：規制シナリオ下の超高効率小型モデル）
 
 - **[CURRENT](catalog/CURRENT.json)**・[v19全150資産](catalog/effective-portfolio-2026-11-06-v19.json)・[取得未許可の105件キュー](queues/proposed-v19-2026-11-06.json)。
 - **新規6件CONDITIONAL**：IFM K2-Horizon 0.9B（公開総数約1.078B、名称と相違）、Liquid LFM3-1.7B（既存Baseとは別のagent後学習）、Liquid LFM2.5-VL-3B＋DSparkドラフター、Udgam Labs Lilavati＋Checker 95M×2（sandbox付きプログラム推論）。

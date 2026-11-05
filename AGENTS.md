@@ -1,5 +1,10 @@
 # エージェント作業規約
 
+## v20：このブランチの現在値
+
+CURRENTはv20・154資産／有効108件。4,000,000,000,000 byteは選定上限、200GB空き条件は維持。追加はCascade2原本、RLデータ、SFTのmath/math_proof.jsonlとswe/swe_agentic.jsonlのみ。Orca FP8はdeferred。全150旧レコードと承認キューは維持し、今回150B以上を新規採用しない。以下のv19件数・3.8TB記述は履歴。本体取得・クラウド課金・任意モデル実行は禁止のまま。
+
+
 ## 目的と入口
 
 まず README.md、policies/selection.md、policies/limits.json、docs/workflow.md を読む。
