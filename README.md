@@ -1,5 +1,9 @@
 # Local Model Portfolio
 
+## 現行v21：配布制限の証拠と独自能力による追加選定
+
+[CURRENT](catalog/CURRENT.json)・[159資産](catalog/effective-portfolio-2026-11-06-v21.json)・[112件の非実行キュー](queues/proposed-v21-2026-11-06.json)。Holo4-27B、SteerTTS、Maya2 Native、Hcompany公開評価軌跡を4件conditionalに追加。StyleStreamは一部非公開・総数未確定のためHOLD。追加計画枠92GBは実測容量ではない。4TB上限、実空き200GB、150B超の量子化同等RAM規則、取得承認0は維持。[判断と一次出典](docs/strategy/26-risk-evidence-selection-v21.md)。以下のv20以前の件数は履歴。
+
 将来もAIをローカルで利用・比較・解析・追加学習できるよう、モデル、データ、実行環境を選び、保存するためのポートフォリオです。
 
 **目的は、リポジトリをHDDに配置し、エージェントが承認済みの取得指示に従って保存・検証できる状態を作ることです。** 人気ランキングでも、重みをGitHubへ再配布する場所でもありません。

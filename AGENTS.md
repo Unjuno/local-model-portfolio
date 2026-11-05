@@ -1,5 +1,9 @@
 # エージェント作業規約
 
+## 現行v21：配布制限の証拠と独自能力による追加選定
+
+[CURRENT](catalog/CURRENT.json)・[159資産](catalog/effective-portfolio-2026-11-06-v21.json)・[112件の非実行キュー](queues/proposed-v21-2026-11-06.json)。Holo4-27B、SteerTTS、Maya2 Native、Hcompany公開評価軌跡を4件conditionalに追加。StyleStreamは一部非公開・総数未確定のためHOLD。追加計画枠92GBは実測容量ではない。4TB上限、実空き200GB、150B超の量子化同等RAM規則、取得承認0は維持。[判断と一次出典](docs/strategy/26-risk-evidence-selection-v21.md)。以下のv20以前の件数は履歴。
+
 ## 2026-11-06 現行追補 — 150B超量子化は同等RAMなら選定審査対象
 
 最新のユーザー指示は、150B以上を絶対除外せず、**量子化後の実行ピークが150B未満の固定・測定済み比較モデルと同等以下なら採用可能**というもの。150Bは全パラメータ（全expert・埋込み・MTP等）のまま計上し、比較は同一HW/OS/driver/backend/context/batchの双方30回以上の測定。両者とも512GB未満、品質・速度・4TBと200GB空き・正規ライセンス/Gated本人承認・全SHA・別途ユーザー取得承認は非補償型。実機・クラウド・モデルの実行や重量DLを自動開始しない。
