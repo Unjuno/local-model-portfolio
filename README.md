@@ -4,7 +4,58 @@
 
 **目的は、リポジトリをHDDに配置し、エージェントが承認済みの取得指示に従って保存・検証できる状態を作ることです。** 人気ランキングでも、重みをGitHubへ再配布する場所でもありません。
 
-## 現行選定 v9（2026-11-03、150B一次資料監査を追加）
+## 現行選定 v19（2026-11-06：規制シナリオ下の超高効率小型モデル）
+
+- **[CURRENT](catalog/CURRENT.json)**・[v19全150資産](catalog/effective-portfolio-2026-11-06-v19.json)・[取得未許可の105件キュー](queues/proposed-v19-2026-11-06.json)。
+- **新規6件CONDITIONAL**：IFM K2-Horizon 0.9B（公開総数約1.078B、名称と相違）、Liquid LFM3-1.7B（既存Baseとは別のagent後学習）、Liquid LFM2.5-VL-3B＋DSparkドラフター、Udgam Labs Lilavati＋Checker 95M×2（sandbox付きプログラム推論）。
+- **主重み6個の元LFSファイルSHAとbyteを確認**：合計12,799,213,698 byte（約12.799GB）。**全ファイルの固定コミット・tokenizer/LICENSE/補助コード・ハード・取得後のハッシュ・容量は未完了**。ダウンロード許可は0件。
+- **[R26調査と中国規制の一次資料](docs/strategy/23-small-frontier-regulation-2026-11-06.md)**、[代替案込み台帳](catalog/research/2026-11-06-small-model-r26.json)、[超小型高性能の判定基準](policies/small-model-advancement-evidence.md)。
+- 「人間を超えたら一律にモデル重みを禁止する」正式閾値は未確認。2026-04-30 CACは危険な公開モデル/データの管理不備を取締り対象と明記。2026-10-16商務部・科技部は技術輸出管理の改訂案と暫定登録を公表、**既に公知・オープンソースの技術を管理対象から除く方針**も示した。**規制の事実と将来予測を区別**。
+
+## R25 保存準備の完成度と実機事前診断（2026-11-05）
+
+- **[完成度チェックリスト](catalog/preparation/2026-11-05-completion-readiness.json)**：重点2構成の16確認項目中8件に証拠あり（項目数50%。作業量・HDD保存完了率ではない）。実機の保存率は**不明**。
+- **[読み取り専用のHDD検査ツール](scripts/archive_preflight.py)**：R21固定版の47ファイルを対象に、HDD空き、既存ファイルのSHA256/Git blob、重複容量をチェック。ユーザーが実機パスを指定し、`--hash`で全ファイル同一性を確認するまで基盤を「保存済み」としない。
+- **[検証手順と限界](docs/strategy/21-archive-readiness-r25.md)**：stagingと既存容量を与えない場合は`UNCERTAIN`。PASSでもダウンロード承認とは別。Remote Desktop Commanderに接続PCがないため今回の実機状態は未測定。
+- 正式カタログv18の144資産／有効99件、Nanbeige維持、指定除外6件は**変更なし**。approvedキュー0。
+
+## 現行選定 v18（2026-11-05：R21/R22固定保存証拠から2件を条件付き採用）
+
+- 正本：[CURRENT](catalog/CURRENT.json)／[v18全144資産](catalog/effective-portfolio-2026-11-05-v18.json)／[非実行選定キュー99件](queues/proposed-v18-2026-11-05.json)。
+- **新規条件付き2資産**：ChatR LabsのQwen-Image-2.1専用rank128 LoRA（基盤重複取得禁止）、Interpretic Qwen3.8-27B Uncensored v2 Q4＋vision projector（元BF16重みの重複取得禁止）。どちらもR21/R22で完全保存構成のtensor数・固定byte・選択SHAを監査済み。独立の生成品質とユーザー実機ランタイムは未検証。
+- R21固定候補構成は2パッケージ計**51,541,147,139バイト**。ChatRの基盤を既存と同一と実機ハッシュ検証できた場合だけLoRA関連約0.671GBに増分削減できる。
+- [新規選定・誤差・中止条件](docs/strategy/20-promote-pinned-packages-v18.md)を参照。**最終取得承認0・実機操作0・Torrent0**。
+
+## 旧版v17の履歴（2026-11-04：個人非商用研究のライセンス判断改訂）
+
+[CURRENT v17](catalog/CURRENT.json)／[142資産のv17ビュー](catalog/effective-portfolio-2026-11-04-v17.json)／[研究候補97件](queues/proposed-v17-2026-11-04.json)。`license:unknown`は研究候補の自動除外理由ではない。LTX2.5のChrisColeTechとStuubsを研究専用conditionalに変更。取得許可0、全学習済み総数不明のままfinal lock不可。[新しい行為別権利ルール](policies/personal-research-rights-v17.json)／[監査報告](docs/strategy/13-personal-research-license-screening.md)。
+
+## 旧版v16の履歴（2026-11-04：無検閲SFT・成人向け動画と採否判定規則）
+
+- **[現在の正本](catalog/CURRENT.json)**／[全142資産のv16ビュー](catalog/effective-portfolio-2026-11-04-v16.json)／[有効95件の非実行候補キュー](queues/proposed-v16-2026-11-04.json)。
+- **[採否判定規則](policies/selection-decision-v16.json)**／[判断手順と一次資料](docs/strategy/12-v16-model-judgment-research.md)／[5件の調査判定台帳](catalog/research/2026-11-04-v16-candidate-decisions.json)。厳格な権利・品質・独自性・総数・容量・実機RAMの独立ゲートで評価。低拒否だけでは採用しない。
+- **3モデル追加**：Gemma4 MoEベースのPantheon RP/SFTを**conditional**（RP第三者評価に強み、一般文章は弱い）。LTX2.5成人向け派生のChrisColeTech・Stuubsは**HOLD**（権利・全依存・比較品質不足）。Civitai CyberRealistic v10とJonathanColetti無検閲27Bは比較台帳のみ。
+- **承認済みダウンロード0**。HDD、旧キュー、Torrent、本人Gated認証を変更していない。
+
+## 旧版v15の履歴（2026-11-04：モデル5件追加・Pirate Face調査）
+
+- **正本**：[CURRENT](catalog/CURRENT.json)・[v15 全139資産](catalog/effective-portfolio-2026-11-04-v15.json)・[提案キュー94件](queues/proposed-v15-2026-11-04.json)。有効94、HOLD27、除外6。
+- **新規**：Galvanize-3（select）、Audio8 Air・LTX2.5・Kandinsky6 Lite（conditional）、Opus Moderation4 Neo（HOLD）。旧Audio8とLTX2.3を重複評価のためHOLDへ。
+- **代替配布**：[Pirate Face/Civitai一次調査](docs/strategy/11-additions-pirateface-civitai.md)。Pirate Faceに2原本revisionを確認したがSeeder0、Civitai画像v10は有料アクセスや配布権利未確認。torrentは自動利用しない。
+- **承認**：現時点0件。HDD・実機・量子化品質・ライセンス/本人Gated許可・版固定の独立ゲートは維持。
+
+## 旧版v14の履歴（2026-11-04：Nanbeige維持・6件除外）
+
+- **正本**：[CURRENT v12](catalog/CURRENT.json)／[全134資産のv12ビュー](catalog/effective-portfolio-2026-11-04-v14.json)／[量子化例外調査キュー](queues/proposed-v14-2026-11-04.json)。有効選定は92件、150B超の量子化候補2件は**HOLD**、総数不明12件は取得準備停止。
+- **150Bは絶対上限ではない**：総パラメータ数の原則目安。1.05T Mistral Large 4／180B OrcaRouter Flash Nextは公式/量子化配布元を確認したが、ユーザー環境のRAMと品質・速度・権利の実証がないため未採用。MoEは全expertの総数を使用。
+- **上限**：OS・KV・依存込み実行ピーク<512GB（十進）、400GB超は個別審査。完全manifest・固定revision・ライセンス本文・本人Gated許可・選択byte・実機測定・明示承認がない限りダウンロードは不可。
+- **検証資料**：[v12レポート](docs/strategy/08-quantized-over150-exceptions.md)／[標準ライブラリの静的チェック](scripts/check_parameter_cutoff.py)。旧v8-v11の「150B以上を必ず除外」は**歴史的な方針であり失効**した。README以下の旧版見出しは履歴として残す。
+
+- **[v13最新性能調査](docs/strategy/09-current-hf-uncensored-performance.md)**：2026年Qwen3.8-27Bの別編集方式で、実在公開GGUFをconditional追加。別途Gated再現可能NVFP4をHOLD追加。性能の負の証拠も記載し、旧GGUFに自動回帰しない。
+
+- **[v14選定変更](docs/strategy/10-user-pruning-nanbeige.md)**：Nanbeige4.3-33Bをselectへ昇格、直前の低優先6件をexcludedに変更。実ファイルは削除せず、選定候補キューから除外。
+
+## 旧版v9の履歴（現行版はv14）
 
 - **[未確認25モデルの一次資料監査](docs/parameter-audit-v9-2026-11-03.md)**：13件で配布者が示す名前付きモデル/主要構成部品の規模を確認、12件は総数の根拠不足として引き続き保留（うち有効選定7件）。現在の109モデルは **95件がパラメータゲート通過・2件が150B以上で除外・12件が未確認**。
 - **[CURRENT v9](catalog/CURRENT.json)**／[132件の現在ビュー](catalog/effective-portfolio-2026-11-03-v9.json)／[25件の新規証拠](catalog/revisions/v9-2026-11-03.json)／[非実行の提案キュー](queues/proposed-v9-2026-11-03.json)。
@@ -112,7 +163,7 @@ R0は現在Gatedなどの制限が確認され、まず取得条件を調べる�
 ## 固定する条件
 
 - 4TB HDDの保存目標は **3,800,000,000,000バイト**。空きは原則 **200,000,000,000バイト以上**。既存ファイル・一時領域も考慮します。
-- **総パラメータ150B以上のモデルは一律除外**し、150B未満の候補についても3〜4ビット量子化を前提とした**推定ピークRAMが512GB以上のモデルを除外**。400GB以下を推奨、400GB超512GB未満は要個別審査とします。未知・未検証は取得承認しません。推定には重みだけでなくOS・推論エンジン・KVキャッシュ・作業領域を含め、バックエンド・コンテキスト長・バッチ等を固定します。
+- **現行v12では150Bを原則目安とし、超過モデルは高品質な量子化版のピークRAM<512GB実測・権利・速度を満たした場合だけ個別審査**し、150B未満の候補についても3〜4ビット量子化を前提とした**推定ピークRAMが512GB以上のモデルを除外**。400GB以下を推奨、400GB超512GB未満は要個別審査とします。未知・未検証は取得承認しません。推定には重みだけでなくOS・推論エンジン・KVキャッシュ・作業領域を含め、バックエンド・コンテキスト長・バッチ等を固定します。
 - 将来の規制を断定せず、再取得困難性・研究価値・用途の多様性を優先します。保存の判断に「将来削除される確証」は要求しません。
 - **保存の承認と実行の承認を分離**します。疑わしいモデルは研究資料として保管できても、自動ロードしません。
 - 1件ずつ確認し、元重み・派生版・量子化版を区別します。未知の容量やハッシュを埋め合わせません。

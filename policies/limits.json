@@ -6,12 +6,18 @@
     "maximum_estimated_peak_ram_bytes_exclusive": 512000000000,
     "preferred_estimated_peak_ram_bytes_at_or_below": 400000000000,
     "screening_quantization_bits": [
+      1,
+      2,
       3,
-      4
+      4,
+      5,
+      6,
+      8
     ],
     "require_estimate_before_approval": true,
     "require_backend_context_batch_assumptions": true,
-    "include_os_kv_cache_runtime_overheads": true
+    "include_os_kv_cache_runtime_overheads": true,
+    "require_measured_peak_for_over_baseline": true
   },
   "unknown_file_sizes_block_download": true,
   "require_pinned_revision": true,
@@ -47,7 +53,7 @@
   },
   "inference_operational_cost_policy": {
     "revised_on": "2026-11-03",
-    "priority": "secondary to S1-S2-S3 regulatory forecast; mandatory before manifest approval",
+    "priority": "Co-primary with archival distinctiveness and measured practicality; high-risk forecast does not override authorization",
     "eight_gb_gpu_reference_only_bytes": 8000000000,
     "reference_hardware_is_users_actual_machine": false,
     "distinguish_archive_repo_bytes_from_selected_files": true,
@@ -68,21 +74,36 @@
     "evaluation_artifact": "docs/resource-cost-screen-v6-2026-11-03.md"
   },
   "total_parameter_policy": {
-    "date_restored": "2026-11-03",
-    "scope": "every model for portfolio acceptance, including quantized variants or MoE; datasets are exempt from model parameter limit",
-    "cutoff_model_total_parameters_inclusive": 150000000000,
-    "compare_field": "total model parameters (all experts, active+inactive; include independently loaded core components as stated by publisher)",
-    "rule_if_at_or_above": "HARD_EXCLUDE >=150B total (including inactive MoE experts, learned embedding, MTP, and original model components), no weights/lock/download",
-    "rule_if_below": "Passes total-parameter gate only; continue 512GB infer RAM, 3.8TB archival budget, free-space, rights, manifest checks",
-    "rule_if_unknown": "BLOCK_FINAL_LOCK_AND_APPROVAL; source-backed total count required, do not guess from 125B core / model name alone",
-    "magnitude_unit": "total trained parameters as dimensionless count, B=10^9; exact threshold 150000000000",
-    "quantized_or_offloaded_weights_inherit_original_model_total_parameters": true,
-    "moe_active_parameters_do_not_override_threshold": true,
-    "exemptions": [],
-    "evidence": "docs/parameter-cutoff-v8-2026-11-03.md",
-    "require_explicit_user_policy_revision_to_change": true,
-    "last_changed_from": 250000000000,
-    "last_changed_on": "2026-11-03",
-    "change_reason": "User explicitly changed former 250B exclusion to 150B inclusive exclusion; stricter upper limit."
+    "revised_on": "2026-11-04",
+    "baseline_model_total_parameters": 150000000000,
+    "mode": "BASELINE_WITH_QUANTIZED_RUNTIME_EXCEPTION",
+    "compare_field": "actual total learned parameters including inactive MoE experts, embedding, MTP; quantization does NOT reduce count",
+    "under_baseline": "passes size screening only; all separate legal/storage/runtime/manifest gates still mandatory",
+    "at_or_over_baseline": "allow a named exact quantized model variant to be investigated, but keep HOLD/blocked until verified runtime, quality, rights, revision and approval; never allow unquantized source implicitly",
+    "unknown_total": "BLOCK_FINAL_LOCK_AND_APPROVAL",
+    "hard_peak_ram_bytes_exclusive": 512000000000,
+    "preferred_peak_ram_bytes_at_or_below": 400000000000,
+    "over_400_to_below_512": "REQUIRES_INDIVIDUAL_REVIEW",
+    "memory_measurement": "Complete observed peak including model weights, OS/runtime, KV, image/audio encoders, draft, staging needed for inference; document RAM/VRAM and whether sum double counts shared unified memory",
+    "performance_validation": "Report fixed hardware, backend version, quant implementation/zero-point, context, batch, ≥30 representative trials, median throughput/latency and task quality vs original and competitive alternatives. User-defined threshold required before VERIFICATION.",
+    "verified_exception_requirements": [
+      "source model total verified",
+      "exact quantized_repo_id and immutable commit",
+      "selected files and SHA256 and their total bytes",
+      "licensed access incl. gated user permission",
+      "all trained dependencies and their count/rights",
+      "measured complete peak inference memory <512GB decimal",
+      "actual quality pass and useful speed at fixed hardware/context/batch",
+      "explicit separately approved manifest"
+    ],
+    "evidence": [
+      "https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored-GGUF",
+      "https://huggingface.co/unsloth/Mistral-Large-4-1T-A52B-GGUF",
+      "https://unsloth.ai/docs/models/mistral-large-4",
+      "https://www.orcarouter.ai/blog/qwen3-8-flash-next-uncensored"
+    ],
+    "no_override_from_regulatory_forecast": true,
+    "dataset_exempt": true,
+    "previous_policy": "v8-v11 >=150B hard exclusion is HISTORICAL and superseded; no exception granted solely by this revision"
   }
 }

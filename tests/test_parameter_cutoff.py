@@ -1,69 +1,86 @@
-"""Offline deterministic unit tests for the hard 150B parameter gate.
-
-No model execution, network access, file downloads, or third-party dependencies.
-Run: python -m unittest discover -s tests -p "test_parameter_cutoff.py"
-"""
+"""Offline v12 tests; standard library only; no downloads or model execution."""
 import unittest
-
-from scripts.check_parameter_cutoff import validate_model, audit
+from scripts.check_parameter_cutoff import audit, validate_model, verified_quant_exception, LOW, UNKNOWN, REVIEW, VERIFIED
 
 CAP = 150_000_000_000
 
 
-def record(count, gate, decision="select", tier="R1"):
-    return {
-        "repo_id": "unit/fake",
-        "asset_kind": "model",
-        "risk_tier": tier,
-        "portfolio_decision": decision,
-        "parameter_gate": {"total_parameters": count, "status": gate},
+def record(n, status, decision="select", tier="R1"):
+    return {"repo_id":"unit/model","asset_kind":"model","risk_tier":tier,
+            "portfolio_decision":decision,"parameter_gate":{"total_parameters":n,"status":status}}
+
+
+def verified_example():
+    x=record(180_000_000_000,VERIFIED)
+    x["quantized_exception"]={
+        "status":"VERIFIED","quantized_repo_id":"unit/model-Q4-GGUF",
+        "source_url":"https://huggingface.co/unit/model-Q4-GGUF",
+        "source_revision_sha":"a"*40,"quantization_variant":"Q4",
+        "backend_and_version":"llama.cpp commit aaaa",
+        "hardware_record":"test 512GB RAM 24GB VRAM, actual available tracked",
+        "total_model_parameters":180_000_000_000,
+        "complete_selected_file_bytes":110_000_000_000,
+        "measured_peak_host_ram_plus_vram_bytes":160_000_000_000,
+        "context_tokens":8192,"batch_size":1,"throughput_trials":30,
+        "independent_quality_n":30,"throughput_median_tokens_per_second":8.0,
+        "minimum_acceptable_tokens_per_second":5.0,"measured_user_hardware":True,
+        "task_quality_pass":True,"license_text_reviewed":True,
+        "dependencies_reviewed":True,"personal_gated_access_verified":True,
     }
+    return x
 
 
-class ParameterCapTests(unittest.TestCase):
-    def test_under_150b_passes_parameter_gate(self):
-        self.assertEqual([], validate_model(record(80_000_000_000, "PASS_TOTAL_PARAMS_LT_150B"), CAP))
+class ParameterBaselineTests(unittest.TestCase):
+    def test_80b_normal(self):
+        self.assertEqual([],validate_model(record(80_000_000_000,LOW)))
+    def test_150b_and_180b_hold_allowed(self):
+        for n in (150_000_000_000,180_000_000_000,1_050_000_000_000):
+            self.assertEqual([],validate_model(record(n,REVIEW,"hold","HOLD")))
+    def test_oversized_no_auto_adoption(self):
+        self.assertTrue(validate_model(record(180_000_000_000,REVIEW)))
+        self.assertTrue(validate_model(record(180_000_000_000,LOW)))
+    def test_unknown_total_hold_only(self):
+        self.assertEqual([],validate_model(record(None,UNKNOWN,"hold","HOLD")))
+        self.assertTrue(validate_model(record(None,UNKNOWN)))
+    def test_conditional_research_can_have_unknown_total_only_when_blocked(self):
+        r=record(None,UNKNOWN,"conditional","R1")
+        r["research_only_unknown_total_allow_conditional"]=True
+        r["download_approved"]=False
+        r["parameter_gate"]["research_screening_exception"]="CONDITIONAL_RESEARCH_ONLY_NON_EXECUTABLE"
+        self.assertEqual([],validate_model(r))
+        r["download_approved"]=True
+        self.assertTrue(validate_model(r))
+        r["download_approved"]=False
+        r["research_only_unknown_total_allow_conditional"]=False
+        self.assertTrue(validate_model(r))
+    def test_quantized_verified_valid(self):
+        self.assertTrue(verified_quant_exception(verified_example()))
+        self.assertEqual([],validate_model(verified_example()))
+    def test_quantized_forged_shortcuts_fail(self):
+        x=verified_example()
+        x["quantized_exception"]["measured_peak_host_ram_plus_vram_bytes"]=512_000_000_000
+        self.assertTrue(validate_model(x))
+        x=verified_example()
+        x["quantized_exception"]["throughput_trials"]=3
+        self.assertTrue(validate_model(x))
+        x=verified_example()
+        x["quantized_exception"]["license_text_reviewed"]=False
+        self.assertTrue(validate_model(x))
+        x=verified_example()
+        x["quantized_exception"]["total_model_parameters"]=6_000_000_000
+        self.assertTrue(validate_model(x))
+        x=verified_example()
+        x["quantized_exception"]["task_quality_pass"]=False
+        self.assertTrue(validate_model(x))
+        x=verified_example()
+        x["quantized_exception"]["source_revision_sha"]="main"
+        self.assertTrue(validate_model(x))
+        x=verified_example()
+        x["quantized_exception"]["throughput_median_tokens_per_second"]=1.0
+        self.assertTrue(validate_model(x))
+    def test_current_repository(self):
+        self.assertEqual([],audit())
 
-    def test_exactly_150b_requires_exclusion(self):
-        r = record(150_000_000_000, "EXCLUDED_TOTAL_PARAMS_GE_150B", "excluded", "EXCLUDED")
-        self.assertEqual([], validate_model(r, CAP))
-        self.assertNotEqual([], validate_model(record(150_000_000_000, "PASS_TOTAL_PARAMS_LT_150B"), CAP))
 
-    def test_1t_moe_active_52b_cannot_bypass_total(self):
-        r = record(1_050_000_000_000, "PASS_TOTAL_PARAMS_LT_150B")
-        r["active_parameters"] = 52_000_000_000
-        self.assertNotEqual([], validate_model(r, CAP))
-
-    def test_unknown_does_not_pass(self):
-        self.assertEqual([], validate_model(record(None, "UNVERIFIED_BLOCK_FINAL_LOCK"), CAP))
-        self.assertNotEqual([], validate_model(record(None, "PASS_TOTAL_PARAMS_LT_150B"), CAP))
-
-    def test_repository_policy_and_queues(self):
-        # This executes only JSON reads and pure checks; no model execution.
-        self.assertEqual([], audit())
-
-    def test_149b_is_included_and_150b_excluded(self):
-        self.assertEqual([], validate_model(record(149_999_999_999, "PASS_TOTAL_PARAMS_LT_150B"), CAP))
-        self.assertEqual([], validate_model(record(150_000_000_000, "EXCLUDED_TOTAL_PARAMS_GE_150B", "excluded", "EXCLUDED"), CAP))
-        self.assertNotEqual([], validate_model(record(150_000_000_000, "PASS_TOTAL_PARAMS_LT_150B"), CAP))
-
-    def test_invalid_count_does_not_pass(self):
-        self.assertNotEqual([], validate_model(record(-1, "PASS_TOTAL_PARAMS_LT_150B"), CAP))
-        self.assertNotEqual([], validate_model(record(150.0, "EXCLUDED_TOTAL_PARAMS_GE_150B"), CAP))
-
-
-
-    def test_just_below_150b_passes(self):
-        self.assertEqual([], validate_model(record(149_999_999_999, "PASS_TOTAL_PARAMS_LT_150B"), CAP))
-
-    def test_qwen_flash_180b_includes_ngrams_mtp(self):
-        total = 125_000_000_000 + 51_000_000_000 + 4_000_000_000
-        self.assertEqual(total, 180_000_000_000)
-        self.assertNotEqual([], validate_model(record(total, "PASS_TOTAL_PARAMS_LT_150B"), CAP))
-        self.assertEqual([], validate_model(record(total, "EXCLUDED_TOTAL_PARAMS_GE_150B", "excluded", "EXCLUDED"), CAP))
-
-    def test_excluded_but_missing_decision_is_fail(self):
-        self.assertNotEqual([], validate_model(record(180_000_000_000, "EXCLUDED_TOTAL_PARAMS_GE_150B"), CAP))
-
-if __name__ == "__main__":
+if __name__=="__main__":
     unittest.main()

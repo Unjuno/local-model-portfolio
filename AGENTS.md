@@ -4,20 +4,35 @@
 
 まず README.md、policies/selection.md、policies/limits.json、docs/workflow.md を読む。
 このリポジトリは取得仕様を管理する。現在は構成と手順のみで、ダウンローダーは未実装。
-**現行選定はcatalog/CURRENT.jsonのv9とcatalog/effective-portfolio-2026-11-03-v9.json（132件、有効105件、EXCLUDED2件、150B一次資料監査でモデル95通過・12未確認）。** 旧97件baseファイルやv2/v3/v4/v5/v6/v7/v8を現行と混同しない。
+Pirate Faceは二次のハッシュ付きTorrent索引、Civitaiは別ID体系。原本のライセンス/権利/Gatedを迂回しない。P2P seedingやファイルDLを無断実行しない。
+**現行選定はcatalog/CURRENT.jsonのv19とcatalog/effective-portfolio-2026-11-06-v19.json（150件、有効105件、総数不明14件、そのうち研究用conditional2件）。** 旧97件baseファイルやv2/v3/v4/v5/v6/v7/v8を現行と混同しない。
 **manifests/drafts/*.candidate.jsonは非実行の承認前ファイル台帳であり、正規lockでも承認でもない。** これらをダウンローダーに渡さず、依存/null、権利、RAM/HDDを解決してから最終lockとユーザー承認を別に受ける。
 
-## 総パラメータ150B以上を除外（v8、優先順位より前に適用）
+## v19：極小モデルの性能・規制・公開実体の分離
 
-モデルの最終lock審査を行う前に、可能な実行環境で`python scripts/check_parameter_cutoff.py`による台帳・承認キューの読み取り専用検査を行う。テストを実行していない場合はPASSとみなさない。
+[R26比較](docs/strategy/23-small-frontier-regulation-2026-11-06.md)と[選定基準](policies/small-model-advancement-evidence.md)を読む。IFM K2「0.9B」は名称が全総数を表さず、公開Appendixの1,078,285,824を優先。LLM/GUIの専門ベンチでより大きいモデルを超えても「人間全体超え」・即規制とは見なさない。VLM drafter 279.5Mは3.1235B target込みで判定、Lilavati checker94.7Mはgenerator94.7M+独立sandbox依存を確認。**元LFS SHA256の取得はimmutable revision・実機ハッシュ・ダウンロード承認の代わりにならない。** 生成されたPython/カスタムTransformersコードは未監査で実行しない。
 
-**総パラメータ150,000,000,000以上のモデル重みは一律除外**。MoEは活性数でなく**総数**。量子化版、SSD/CPU offload、規制予測S1への適合は例外理由にならない。パラメータ総数を検証できないモデルは最終lockや取得承認へ進めない。データセットへのモデル数制限は非適用。パラメータ数を確認できても従来の実機ピークRAM・保存容量・権利・承認チェックは必須。正本：[v8パラメータ監査](docs/parameter-cutoff-v8-2026-11-03.md)と[109件ゲート](catalog/revisions/v8-2026-11-03.json)。
+## R25：実機保存の証拠と未承認の境界
 
-**150Bは総パラメータ数**であり、例えばQwen3.8 Flash Next系では125B主モデルに51B n-gram埋め込みと4B MTPを含めた約180Bを評価する。元の主モデル125Bだけで基準を通過させない。現行OrcaRouter派生はEXCLUDED。
+[完成度台帳](catalog/preparation/2026-11-05-completion-readiness.json)は重点2構成のチェックリストのスナップショット。16項目中8件PASSは**作業量の50%やユーザー実機保存率ではない**。ユーザーPC未接続ならHDD総量・既存重み・空き・ダウンロード状態はUNKNOWNとする。[オフライン検査](scripts/archive_preflight.py)は読み取り専用で、`--hash`による全ファイル確認がない場合「同サイズだから再利用できる」としない。実機のパス・stage見積・容量はユーザーの確認が要る。検査がPASSでも`queues/approved.json`へ自動登録・重み取得・実行しない。
+
+## 現行v18：R21/R22の固定保存構成を正式選定に反映
+
+[固定保存構成](manifests/drafts/round21-pinned-preservation.candidate.json)および[R22全構成ヘッダー検査](catalog/preparation/2026-11-05-component-census.json)を参照。ChatRのLoRAは既存Qwen-Image基盤との完全同一性を実機で検証するまで増分節約と扱わない。Interpretic Q4の一般能力はBF16実験と混同しない。R22の作者SHA256SUMSとREADME/inference.pyの不一致記録を消してはならない。新規選定は2件ともconditional、**approved/dlは0**。
+
+## 旧版v17：個人非商用研究の権利・取得・再配布を分離
+
+`license:unknown`だけで候補から排除しない。[権利ルール](policies/personal-research-rights-v17.json)を必ず参照。著作権法の特定例外を一般許諾と扱わず、元/派生の正常な利用条件と具体的行為を調査。総数不明conditional2件は研究専用で、取得lock/実行には利用できない。
+
+モデル選定・調査の前に **[選定プロトコル](policies/selection-decision-v17.json)** と [v17比較台帳](catalog/research/2026-11-04-v17-candidate-decisions.json) を読み、ライセンス・能力・一般性能・負の根拠・S1仮説と観測事実を混同しない。**低拒否だけの旧モデルは採用しない**。CIで`python scripts/audit_selection_decisions.py`も実行。モデルの最終lock審査を行う前に、可能な実行環境で`python scripts/check_parameter_cutoff.py`による台帳・承認キューの読み取り専用検査を行う。テストを実行していない場合はPASSとみなさない。
+
+**150Bは原則目安であり絶対除外ではない**。MoEは活性数でなく**総数**。150B以上は量子化実体の固定repo/format、実機ピークRAM<512GB、品質・速度・ライセンス・依存・本人承認が全て検証できた場合だけ個別に選定できる。現時点の2件はHOLD（未承認）。パラメータ総数が不明なら取得準備禁止。データセットにはモデル数制限非適用。正本：[v12方針](docs/strategy/08-quantized-over150-exceptions.md)。
+
+**150Bは総パラメータ数**であり、例えばQwen3.8 Flash Next系では125B主モデルに51B n-gram埋め込みと4B MTPを含めた約180Bを評価する。元の主モデル125Bだけで基準を通過させない。現行OrcaRouter派生は量子化例外の調査対象としてHOLD、取得不可。
 
 ## 150B上限の一次資料監査（v9）
 
-[最新の監査資料](docs/parameter-audit-v9-2026-11-03.md)を参照。25件の前回unknownを配布元資料で再調査し、13件は公開主モデル/主要構成部品の規模が150Bを大幅に下回ると確認、12件は数値不足や依存・MoE総数の未解決で保留。**150Bのハード除外・Gated・ライセンス・ファイル選択・実機RAM/容量/個別承認は従来どおり独立ゲート**。CIは[読み取り専用静的監査](.github/workflows/audit-parameter-cap.yml)のみで、モデル本体・未監査コードを実行しない。
+[最新の監査資料](docs/parameter-audit-v9-2026-11-03.md)を参照。25件の前回unknownを配布元資料で再調査し、13件は公開主モデル/主要構成部品の規模が150Bを大幅に下回ると確認、12件は数値不足や依存・MoE総数の未解決で保留。**150Bの原則目安・例外実測・Gated・ライセンス・ファイル選択・実機RAM/容量/個別承認は独立ゲート**。CIは[読み取り専用静的監査](.github/workflows/audit-parameter-cap.yml)のみで、モデル本体・未監査コードを実行しない。
 
 ## 規制予測優先（v5）
 
@@ -64,7 +79,7 @@ URLか固有理由のない項目は採用に格上げせず、`candidate`また
 - store、state、cache、stagingは管理リポジトリの外側。同じ取得元・repo種別・repo ID・コミット・パスを二重取得しない。
 - パスの絶対指定、親ディレクトリ参照、Windows予約名、大小文字の衝突、symlink/junctionによる保存先逸脱を検査する。
 - 予算と実空き容量を別々に検査する。未確定の容量、依存、作業領域を0として扱わない。
-- モデルの選定審査では3〜4ビット量子化時の推定ピークRAMを確認する。512GB（十進）以上は除外、400GB超〜512GB未満は個別審査、推定不能は取得承認を保留。加えて総パラメータ150B以上は一律除外し、未確認なら取得承認を保留する。量子化の実装可否、OS・ランタイム・重み・KV・作業領域、バックエンド・コンテキスト長・バッチを記録する。
+- モデルの選定審査では3〜4ビット量子化時の推定ピークRAMを確認する。512GB（十進）以上は除外、400GB超〜512GB未満は個別審査、推定不能は取得承認を保留。加えて総パラメータ150B以上は実証された量子化例外がない限りHOLDで取得禁止、総数未確認も取得準備を保留する。量子化の実装可否、OS・ランタイム・重み・KV・作業領域、バックエンド・コンテキスト長・バッチを記録する。
 
 ## ファイルと検証
 

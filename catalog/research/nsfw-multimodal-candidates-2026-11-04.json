@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-11-04",
+  "source_portfolio_revision": "v10-20261104",
+  "status": "RESEARCH_ONLY_NOT_SELECTED_NOT_DOWNLOAD_AUTHORIZED",
+  "purpose": "Correct prior omission of NSFW image and audio-video finetunes in candidate discovery; no speculative approval",
+  "criteria": [
+    "Total learned model parameters <150B including all MoE experts; unknown blocks acquisition",
+    "Original and derivative license text verified",
+    "Exact checkpoint, revision and all dependencies fixed",
+    "Measured differentiation from existing portfolio models",
+    "No rights or consent bypass"
+  ],
+  "candidates": [
+    {
+      "repo_id": "ChrisColeTech/LTX-2.3-uncensored-v1.4-FP8",
+      "modality": "video+audio",
+      "url": "https://huggingface.co/ChrisColeTech/LTX-2.3-uncensored-v1.4-FP8",
+      "parent": "Lightricks/LTX-2.3",
+      "claimed_unique": "Eros10 NSFW, DMD distillation and reference detail LoRA merged into LTX2.3; unlike base weights",
+      "publisher_claim": "video transformer GGUF 17.8GB plus encoder 7.3GB, projection 2.31GB, audio VAE 0.365GB, video VAE 1.45GB",
+      "rights": "license unknown per card",
+      "total_parameters": "UNVERIFIED",
+      "decision": "BLOCKED_RESEARCH_ONLY",
+      "reason": "Direct publisher card, but no confirmed total, full license, hashes, and quality comparison"
+    },
+    {
+      "repo_id": "IbarakiDouji/wai-nsfw-illustrious-sdxl",
+      "modality": "image",
+      "url": "https://huggingface.co/collections/IbarakiDouji/wai-illustrious",
+      "claimed_unique": "Adult-content-oriented Illustrious family image finetunes, distinct from general-purpose Qwen Image and FLUX",
+      "rights": "Individual version license and original upstream permission not checked",
+      "total_parameters": "UNVERIFIED",
+      "decision": "BLOCKED_RESEARCH_ONLY",
+      "reason": "Official publisher collection confirms family, exact repository/version and benchmark must be locked"
+    },
+    {
+      "repo_id": "Phr00t/LTX2-Rapid-Merges",
+      "modality": "video+audio",
+      "url": "https://huggingface.co/Phr00t/LTX2-Rapid-Merges",
+      "claimed_unique": "NSFW LoRA merge series",
+      "rights": "Individual merged upstream licenses unverified",
+      "total_parameters": "UNVERIFIED",
+      "decision": "REJECT_FOR_NOW",
+      "reason": "Author explicitly says NSFW merge outdated and maintenance winding down; newer LTX2.3 candidate merits comparison first"
+    }
+  ],
+  "summary": {
+    "new_research_candidates": 3,
+    "newly_approved": 0,
+    "removed_from_active": 0
+  },
+  "next_checks": [
+    "Check actual repo IDs and version-specific source cards for WAI image",
+    "Verify full LTX2.3 merge learned parameter count and licenses",
+    "Compare output quality, refusal/NSFW coverage, resource use and dependency sizes against current LTX2.3 and image models"
+  ]
+}

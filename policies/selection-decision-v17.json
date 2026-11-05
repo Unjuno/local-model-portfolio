@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "policy_id": "noncompensatory-portfolio-selection-v17",
+  "effective_on": "2026-11-04",
+  "objective": "Select strong independent technical mechanisms likely to face earlier distribution scrutiny as an unproven scenario; never equate censorship label with quality or probability.",
+  "hard_boundaries": {
+    "archive_target_bytes": 3800000000000,
+    "free_space_floor_bytes": 200000000000,
+    "inference_peak_ram_limit_exclusive_bytes": 512000000000,
+    "preferred_max_model_total_parameters": 150000000000,
+    "allow_over150b_if_verified_quantized_runtime": true,
+    "unknown_total_blocks_final_lock": true,
+    "all_moe_experts_count": true,
+    "never_auto_download_or_seed": true,
+    "never_auto_delete": true,
+    "conditional_research_may_have_unknown_total_with_non_executable_marker": true,
+    "no_auto_reject_from_license_metadata_unknown": true
+  },
+  "decision_stages": [
+    {
+      "status": "DISCOVER",
+      "requirements": [
+        "real primary model identity (HF id or Civitai version id)",
+        "modality, technical training/weight modification mechanism",
+        "current source date and origin"
+      ],
+      "allowed_result": "research_only"
+    },
+    {
+      "status": "SCREEN",
+      "requirements": [
+        "no duplicate active representative without stated distinct mechanism",
+        "source and author technical evidence",
+        "at least one plausible competitive task quality dimension",
+        "research-only conditional can have incomplete full total with explicit NON_EXECUTABLE marker; final lock requires verified total"
+      ],
+      "allowed_result": "conditional_or_hold"
+    },
+    {
+      "status": "PROMOTE_CONDITIONAL",
+      "requirements": [
+        "verified original identity and metadata",
+        "relevant technical mechanism not replicated by incumbent",
+        "no contradictory serious performance failure unaddressed; negative evidence documented",
+        "full total under 150B or validated exception before approved lock; research stage may still be conditional nonexecutably"
+      ],
+      "allowed_result": "conditional (NOT download permission)"
+    },
+    {
+      "status": "PROMOTE_SELECT",
+      "requirements": [
+        "same-purpose baseline task quality independent or reproducible with confidence limits",
+        "distinct functionality or weight reconstruction difficulty",
+        "meaningful on fixed hardware",
+        "source licensing text studied; gaps explicitly documented"
+      ],
+      "allowed_result": "select (still NOT download permission)"
+    },
+    {
+      "status": "APPROVE_MANIFEST",
+      "requirements": [
+        "documented lawful basis for the intended act (express license, valid exception, or rights-holder permission), plus actual parent/derivative use restrictions",
+        "individual gated/paid access authorized in normal provider flow",
+        "immutable repo/revision and all selected files SHA256",
+        "exact bytes and actual free disk minus staging >=200GB",
+        "peak RAM and speed quality measured when oversized",
+        "explicit separately user-approved lock"
+      ],
+      "allowed_result": "download permission only after all"
+    }
+  ],
+  "risk_evidence": {
+    "categories": [
+      "S1_guardrail_changed_adult_media_identity_voice_agent",
+      "S2_frontier_science_robotics",
+      "S3_base_data_general"
+    ],
+    "probability_not_measured": true,
+    "observed_changes_field": "dated author restriction/gating/license/deletion evidence",
+    "future_access_cascade_field": "scenario only",
+    "do_not_score_unverified_restriction_chance": true
+  },
+  "mechanisms": [
+    "refusal_direction_weight_edit",
+    "uncensored_sft",
+    "preference_optimization",
+    "prompt_only_jailbreak_as_evaluation_artifact_not_weight",
+    "safety_guard_classifier",
+    "adult_image_finetune",
+    "adult_video_av_finetune_merge",
+    "voice_identity",
+    "face_identity",
+    "autonomous_agents",
+    "dual_use_science_cyber",
+    "general_baselines"
+  ],
+  "evidence_grades": {
+    "A": "independent matched, reproducible task experiment with code, N, hardware, dataset split, confidence interval",
+    "B": "third-party measurements with partial protocol or creator measured with full settings",
+    "C": "model card claims, user feedback, downloads, size or qualitative samples",
+    "U": "no verifiable test"
+  },
+  "non_compensatory_rule": "No weighted ranking, downloads, likes, claimed uncensor level, model size or forecast tier can override missing legal/identity/total/runtime rights. For optional research priority first compare S1/S2/S3, unique mechanism, observed changes and quality within an evidence grade.",
+  "conditional_minimum_quality": "Show a plausible task-specific advantage supported at least by third-party or reproducible creator test, and explicitly publish negative evidence. Without that, HOLD.",
+  "benchmark_plan": {
+    "llm": {
+      "min_benign": 200,
+      "min_safety_refusal": 200,
+      "min_instruction_following": 200,
+      "min_general_quality": 200,
+      "tests": [
+        "MMLU-Pro",
+        "GSM8K",
+        "IFEval or WildIFEval",
+        "JailbreakBench 100 benign + 100 held-out harmful",
+        "XSTest"
+      ],
+      "metrics": [
+        "refusal on inappropriate prompts separately",
+        "overrefusal on harmless tasks",
+        "accuracy and instruction adherence",
+        "finished response fraction",
+        "creative roleplay paired preference if specialized"
+      ],
+      "caution": "Test only under authorized controlled safety evaluation. No malicious payload dissemination."
+    },
+    "image": {
+      "min_prompts": 40,
+      "seeds_per_prompt": 3,
+      "metrics": [
+        "blind prompt adherence",
+        "composition",
+        "anatomical consistency",
+        "style diversity",
+        "artifact severity"
+      ],
+      "caution": "Only consenting-adult source imagery for identity-related tests"
+    },
+    "video": {
+      "min_prompts": 20,
+      "seeds_per_prompt": 3,
+      "metrics": [
+        "temporal consistency",
+        "motion quality",
+        "identity stability",
+        "audio/video synchronization",
+        "prompt adherence",
+        "generation seconds"
+      ]
+    },
+    "speech": {
+      "min_sentences_per_language": 30,
+      "min_consenting_reference_speakers": 5,
+      "metrics": [
+        "WER/CER",
+        "speaker cosine similarity",
+        "human MOS (with inter-rater uncertainty)",
+        "prosody and emotion",
+        "streaming latency"
+      ]
+    },
+    "safety_classifier": {
+      "min_positive": 200,
+      "min_negative": 200,
+      "metrics": [
+        "recall",
+        "false-positive rate",
+        "AUROC",
+        "calibration"
+      ],
+      "limits": [
+        "prompt injection and harmful content are distinct tasks",
+        "avoid contaminated suites"
+      ]
+    },
+    "runtime": {
+      "min_repeated_runs": 30,
+      "hardware": [
+        "CPU",
+        "GPU",
+        "VRAM",
+        "RAM",
+        "clock",
+        "OS",
+        "driver",
+        "backend commit",
+        "quantization and zero point",
+        "ABI",
+        "context length",
+        "batch",
+        "KV dtype"
+      ],
+      "metrics": [
+        "median decode tokens/s",
+        "p95 TTFT",
+        "peak host RAM and VRAM without double-counting unified memory",
+        "selected bytes + dependencies",
+        "quality change between quant and original"
+      ]
+    }
+  },
+  "statistics": {
+    "binary": "Wilson 95% confidence intervals; report numerator and denominator; compare paired items when possible",
+    "continuous": "bootstrap 95% CI for paired differences and median across >=30 independent runs",
+    "multiple_comparisons": "Holm control or disclose exploratory results; freeze thresholds before seeing holdout",
+    "stop_rule": "do not stop early for apparent success; stop for legal/safety restriction, unrecoverable failures, or protocol-specified futility",
+    "result_states": [
+      "PASS",
+      "FAIL",
+      "UNCERTAIN"
+    ],
+    "u_c": "unknown unless measurement error budget documented",
+    "k_for_expanded_uncertainty": 2,
+    "avoid_false_precision": true
+  },
+  "verdict_conditions": {
+    "PASS": "quality noninferiority or domain-specific improvement on pre-registered test and complete required rights/manifest/runtime evidence",
+    "FAIL": "verified legal prohibition, infeasible runtime, harmful unsupported quality degradation, or duplicate with no distinct value",
+    "UNCERTAIN": "missing, contaminated, weak or contradictory evidence => HOLD/conditional depending selection stage; never approve downloads"
+  },
+  "sources": [
+    "https://jailbreakbench.github.io/",
+    "https://arxiv.org/abs/2406.04770",
+    "https://huggingface.co/blog/allenai/benchmirt",
+    "https://huggingface.co/datasets/spicysharkco/uncensored-leaderboard/blob/main/README.md",
+    "https://caliperbench.com/m/pantheon-reasoning-26b-a4b-1.1-v2/"
+  ],
+  "manual_user_override": "User may explicitly preserve unique heavy models like Nanbeige dense 33B; maintain rights/runtime and manifest rules.",
+  "rights_policy_path": "policies/personal-research-rights-v17.json"
+}

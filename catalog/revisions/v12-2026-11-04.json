@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "revision_id": "v12-20261104",
+  "parent_revision_id": "v11-20261104",
+  "prepared_on": "2026-11-04",
+  "purpose": "User revised 150B hard model cap into default baseline with individual quantized runtime exceptions. Move two over-baseline legacy excluded sources to HOLD for evidence-based quantized evaluation.",
+  "previous_150B_hard_exclusion_superseded": true,
+  "baseline_total_parameters": 150000000000,
+  "hard_peak_ram_exclusive_bytes": 512000000000,
+  "replacement_operations": [
+    {
+      "asset_kind": "model",
+      "repo_id": "orcarouter/Qwen3.8-Flash-Next-Uncensored",
+      "expected_prior_tier": "EXCLUDED",
+      "expected_prior_decision": "excluded",
+      "expected_prior_gate": "EXCLUDED_TOTAL_PARAMS_GE_150B",
+      "new_tier": "HOLD",
+      "new_decision": "hold",
+      "new_gate": "OVER_150B_QUANT_REVIEW_REQUIRED",
+      "rationale": "150B now baseline, not hard cap; only verified quantized deployment under actual RAM/performance/legal constraints may be selected. Original unquantized source remains unapproved.",
+      "variant": "orcarouter/Qwen3.8-Flash-Next-Uncensored-GGUF",
+      "download_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "mistralai/Mistral-Large-4-1T-A52B",
+      "expected_prior_tier": "EXCLUDED",
+      "expected_prior_decision": "excluded",
+      "expected_prior_gate": "EXCLUDED_TOTAL_PARAMS_GE_150B",
+      "new_tier": "HOLD",
+      "new_decision": "hold",
+      "new_gate": "OVER_150B_QUANT_REVIEW_REQUIRED",
+      "rationale": "150B now baseline, not hard cap; only verified quantized deployment under actual RAM/performance/legal constraints may be selected. Original unquantized source remains unapproved.",
+      "variant": "unsloth/Mistral-Large-4-1T-A52B-GGUF",
+      "download_approved": false
+    }
+  ],
+  "model_total_parameters_unchanged": true,
+  "added_active_models": 0,
+  "download_enabled": false,
+  "quantization_research": [
+    {
+      "repo_id": "orcarouter/Qwen3.8-Flash-Next-Uncensored",
+      "quantized_repo_id": "orcarouter/Qwen3.8-Flash-Next-Uncensored-GGUF",
+      "quantization": "GGUF Q4_K_M (one candidate tier; user-specific selection not finalized)",
+      "primary_url": "https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored-GGUF",
+      "source_model_url": "https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored",
+      "observed_access": "gated",
+      "format_notes": "Publisher GGUF, 180B total. Publisher runbook reports Q2 through Q5 tier sizes; actual chosen shard bytes, peak RAM, measured speed and quality not verified.",
+      "estimated_source_file_gb": null,
+      "estimated_memory_range_gb": null,
+      "quality_source_url": "https://www.orcarouter.ai/blog/qwen3-8-flash-next-uncensored",
+      "performance_level": "NOT_MEASURED",
+      "origin": "publisher official GGUF, gated; user must personally accept terms"
+    },
+    {
+      "repo_id": "mistralai/Mistral-Large-4-1T-A52B",
+      "quantized_repo_id": "unsloth/Mistral-Large-4-1T-A52B-GGUF",
+      "quantization": "UD-Q2_K_XL (candidate, not prescribed)",
+      "primary_url": "https://huggingface.co/unsloth/Mistral-Large-4-1T-A52B-GGUF",
+      "source_model_url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+      "observed_access": "public_metadata",
+      "format_notes": "Unsloth reports ~378GB quantized file payload and 310–390GB combined memory guidance; hardware-dependent and not user-device measured; UD-IQ3_XXS ~424GB with 435–500GB memory guide close to 512GB limit.",
+      "estimated_source_file_gb": 378,
+      "estimated_memory_range_gb": [
+        310,
+        390
+      ],
+      "quality_source_url": "https://unsloth.ai/docs/models/mistral-large-4",
+      "publisher_top1_agreement_percent": 95.6,
+      "performance_level": "QUANTIZER_TOP1_AGREEMENT_NOT_REAL_WORLD_TASK_SUCCESS",
+      "origin": "third-party quantizer, original provider license other; text-only runtime quality not verified"
+    }
+  ],
+  "expected": {
+    "tracked": 132,
+    "active": 97,
+    "by_tier": {
+      "R0": 14,
+      "R1": 56,
+      "R2": 27,
+      "BACKLOG": 12,
+      "HOLD": 23,
+      "EXCLUDED": 0
+    },
+    "by_decision": {
+      "select": 53,
+      "conditional": 44,
+      "deferred": 12,
+      "hold": 23,
+      "excluded": 0
+    },
+    "parameter_gate": {
+      "PASS_TOTAL_PARAMS_LT_150B": 95,
+      "EXCLUDED_TOTAL_PARAMS_GE_150B": 0,
+      "UNVERIFIED_BLOCK_FINAL_LOCK": 12,
+      "OVER_150B_QUANT_REVIEW_REQUIRED": 2
+    }
+  },
+  "status": {
+    "approved": false,
+    "download_enabled": false
+  }
+}

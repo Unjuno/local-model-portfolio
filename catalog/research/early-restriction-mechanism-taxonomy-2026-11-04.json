@@ -1,0 +1,365 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-04",
+  "source_revision": "v11-20261104",
+  "status": "RESEARCH_TAXONOMY_ONLY",
+  "goal": "One evidence-backed representative per distinct early-restriction mechanism, not one per marketing label; avoid arbitrary regulation probabilities",
+  "classification_families": [
+    {
+      "code": "WEIGHT_REFUSAL_EDIT",
+      "name": "重みレベルの拒否方向編集・abliteration",
+      "mechanism": "推論前のモデル重みを改変して拒否挙動を変更する。単なるプロンプト注入とは別。",
+      "examples": [
+        "orcarouter/Qwen3.8-27B-Uncensored",
+        "orcarouter/Qwen3.8-Flash-Next-Uncensored",
+        "knoveleng/Qwen3.5-9B-Uncensored"
+      ],
+      "require": "作者の手法・元モデルとの重み差・同条件拒否率/一般能力比較"
+    },
+    {
+      "code": "POST_TRAIN_LOW_REFUSAL",
+      "name": "低拒否・指示追従の後学習",
+      "mechanism": "SFT/DPO/RLなどの追加学習で指示追従や拒否挙動が変化。重み直交化とは区別。",
+      "examples": [
+        "dphn/Dolphin3.0-Llama3.1-8B"
+      ],
+      "require": "学習工程の一次資料、ベースとの制御比較"
+    },
+    {
+      "code": "PROMPT_JAILBREAK",
+      "name": "プロンプト／文脈によるジェイルブレイク",
+      "mechanism": "重みを変えず入力・会話・ツール応答によって安全動作を迂回する試み。原則モデル資産ではなく評価データ・手法として管理。",
+      "examples": [],
+      "require": "安全な評価用データセット、脆弱性再現の測定と許可されたテスト環境"
+    },
+    {
+      "code": "SYSTEM_GUARDRAIL_BYPASS",
+      "name": "外部フィルター／システム層の回避",
+      "mechanism": "API・UI・後処理フィルターの差を調査。モデル重みの低拒否性とは別。",
+      "examples": [],
+      "require": "サービス規約、システム構成、許可された評価条件"
+    },
+    {
+      "code": "ADULT_IMAGE_FINETUNE",
+      "name": "成人向け画像生成・編集の特化重み",
+      "mechanism": "画像モデルの成人向け微調整・LoRA・マージ。品質と許諾を別に測る。",
+      "examples": [
+        "OnomaAIResearch/Illustrious-XL-v1.1"
+      ],
+      "require": "正確なチェックポイントと版、元モデルライセンス、総数、画像品質と権利"
+    },
+    {
+      "code": "ADULT_VIDEO_AV_FINETUNE",
+      "name": "成人向け動画・音声同期の特化重み",
+      "mechanism": "動画拡散モデルへのNSFW LoRA・蒸留・マージなど。ベース重みと区別。",
+      "examples": [
+        "Lightricks/LTX-2.3",
+        "Wan-AI/Wan2.2-TI2V-5B"
+      ],
+      "require": "特化派生の正確なrepo、ライセンス、総数、動き/同期/VRAMの比較"
+    },
+    {
+      "code": "VOICE_IDENTITY",
+      "name": "話者再現・音声変換",
+      "mechanism": "TTS/VCで特定話者や感情を再現。無検閲という宣伝と声の同意を分ける。",
+      "examples": [
+        "Plachta/Seed-VC",
+        "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+        "ResembleAI/chatterbox"
+      ],
+      "require": "話者同意、話者類似性・自然性・透かし、総数と依存"
+    },
+    {
+      "code": "FACE_IDENTITY",
+      "name": "顔・人物同一性維持と編集",
+      "mechanism": "顔ID/表情/動画の転写。画像生成一般のNSFWとは別の能力。",
+      "examples": [
+        "InstantX/InstantID",
+        "KlingTeam/LivePortrait"
+      ],
+      "require": "被写体同意・本人確認、依存、顔保持品質"
+    },
+    {
+      "code": "AUTONOMOUS_AGENT",
+      "name": "GUI操作・自律エージェント",
+      "mechanism": "外部ツールやOSを操作できるモデル。テキスト拒否率では測れない。",
+      "examples": [
+        "microsoft/Fara1.5-27B"
+      ],
+      "require": "権限境界、タスク成功率、失敗時の影響、隔離評価"
+    },
+    {
+      "code": "SPECIALIZED_DUAL_USE",
+      "name": "医療・サイバー・生物科学など用途別能力",
+      "mechanism": "特定用途での危険性や提供条件の変化を調査。汎用モデルの能力だけで推定しない。",
+      "examples": [
+        "google/medgemma-4b-it"
+      ],
+      "require": "用途・権利・評価環境の明示、実証された提供制限"
+    }
+  ],
+  "assets": [
+    {
+      "repo_id": "orcarouter/Qwen3.8-27B-Uncensored",
+      "category": "WEIGHT_REFUSAL_EDIT",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "source_url": "https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored",
+      "classification_basis": "portfolio metadata and stated model purpose; implementation mechanism not independently reproduced",
+      "first_restriction_hypothesis": "SCENARIO_ONLY_NOT_PREDICTION",
+      "confirmed_model_specific_regulation": false,
+      "license_reviewed": false,
+      "verified_access_permission": false,
+      "selected_file_bytes_verified": false,
+      "download_authorized": false,
+      "verification_needed": "作者の手法・元モデルとの重み差・同条件拒否率/一般能力比較"
+    },
+    {
+      "repo_id": "orcarouter/Qwen3.8-Flash-Next-Uncensored",
+      "category": "WEIGHT_REFUSAL_EDIT",
+      "selection": "excluded",
+      "parameter_gate": "EXCLUDED_TOTAL_PARAMS_GE_150B",
+      "source_url": "https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored",
+      "classification_basis": "portfolio metadata and stated model purpose; implementation mechanism not independently reproduced",
+      "first_restriction_hypothesis": "SCENARIO_ONLY_NOT_PREDICTION",
+      "confirmed_model_specific_regulation": false,
+      "license_reviewed": false,
+      "verified_access_permission": false,
+      "selected_file_bytes_verified": false,
+      "download_authorized": false,
+      "verification_needed": "作者の手法・元モデルとの重み差・同条件拒否率/一般能力比較"
+    },
+    {
+      "repo_id": "knoveleng/Qwen3.5-9B-Uncensored",
+      "category": "WEIGHT_REFUSAL_EDIT",
+      "selection": "hold",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "source_url": "https://huggingface.co/knoveleng/Qwen3.5-9B-Uncensored",
+      "classification_basis": "portfolio metadata and stated model purpose; implementation mechanism not independently reproduced",
+      "first_restriction_hypothesis": "SCENARIO_ONLY_NOT_PREDICTION",
+      "confirmed_model_specific_regulation": false,
+      "license_reviewed": false,
+      "verified_access_permission": false,
+      "selected_file_bytes_verified": false,
+      "download_authorized": false,
+      "verification_needed": "作者の手法・元モデルとの重み差・同条件拒否率/一般能力比較"
+    },
+    {
+      "repo_id": "dphn/Dolphin3.0-Llama3.1-8B",
+      "category": "POST_TRAIN_LOW_REFUSAL",
+      "selection": "hold",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "source_url": "https://huggingface.co/dphn/Dolphin3.0-Llama3.1-8B",
+      "classification_basis": "portfolio metadata and stated model purpose; implementation mechanism not independently reproduced",
+      "first_restriction_hypothesis": "SCENARIO_ONLY_NOT_PREDICTION",
+      "confirmed_model_specific_regulation": false,
+      "license_reviewed": false,
+      "verified_access_permission": false,
+      "selected_file_bytes_verified": false,
+      "download_authorized": false,
+      "verification_needed": "学習工程の一次資料、ベースとの制御比較"
+    },
+    {
+      "repo_id": "OnomaAIResearch/Illustrious-XL-v1.1",
+      "category": "ADULT_IMAGE_FINETUNE",
+      "selection": "hold",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "source_url": "https://huggingface.co/OnomaAIResearch/Illustrious-XL-v1.1",
+      "classification_basis": "portfolio metadata and stated model purpose; implementation mechanism not independently reproduced",
+      "first_restriction_hypothesis": "SCENARIO_ONLY_NOT_PREDICTION",
+      "confirmed_model_specific_regulation": false,
+      "license_reviewed": false,
+      "verified_access_permission": false,
+      "selected_file_bytes_verified": false,
+      "download_authorized": false,
+      "verification_needed": "正確なチェックポイントと版、元モデルライセンス、総数、画像品質と権利"
+    },
+    {
+      "repo_id": "Lightricks/LTX-2.3",
+      "category": "ADULT_VIDEO_AV_FINETUNE",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "source_url": "https://huggingface.co/Lightricks/LTX-2.3",
+      "classification_basis": "portfolio metadata and stated model purpose; implementation mechanism not independently reproduced",
+      "first_restriction_hypothesis": "SCENARIO_ONLY_NOT_PREDICTION",
+      "confirmed_model_specific_regulation": false,
+      "license_reviewed": false,
+      "verified_access_permission": false,
+      "selected_file_bytes_verified": false,
+      "download_authorized": false,
+      "verification_needed": "特化派生の正確なrepo、ライセンス、総数、動き/同期/VRAMの比較"
+    },
+    {
+      "repo_id": "Wan-AI/Wan2.2-TI2V-5B",
+      "category": "ADULT_VIDEO_AV_FINETUNE",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "source_url": "https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B",
+      "classification_basis": "portfolio metadata and stated model purpose; implementation mechanism not independently reproduced",
+      "first_restriction_hypothesis": "SCENARIO_ONLY_NOT_PREDICTION",
+      "confirmed_model_specific_regulation": false,
+      "license_reviewed": false,
+      "verified_access_permission": false,
+      "selected_file_bytes_verified": false,
+      "download_authorized": false,
+      "verification_needed": "特化派生の正確なrepo、ライセンス、総数、動き/同期/VRAMの比較"
+    },
+    {
+      "repo_id": "Plachta/Seed-VC",
+      "category": "VOICE_IDENTITY",
+      "selection": "hold",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "source_url": "https://huggingface.co/Plachta/Seed-VC",
+      "classification_basis": "portfolio metadata and stated model purpose; implementation mechanism not independently reproduced",
+      "first_restriction_hypothesis": "SCENARIO_ONLY_NOT_PREDICTION",
+      "confirmed_model_specific_regulation": false,
+      "license_reviewed": false,
+      "verified_access_permission": false,
+      "selected_file_bytes_verified": false,
+      "download_authorized": false,
+      "verification_needed": "話者同意、話者類似性・自然性・透かし、総数と依存"
+    },
+    {
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "category": "VOICE_IDENTITY",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "source_url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "classification_basis": "portfolio metadata and stated model purpose; implementation mechanism not independently reproduced",
+      "first_restriction_hypothesis": "SCENARIO_ONLY_NOT_PREDICTION",
+      "confirmed_model_specific_regulation": false,
+      "license_reviewed": false,
+      "verified_access_permission": false,
+      "selected_file_bytes_verified": false,
+      "download_authorized": false,
+      "verification_needed": "話者同意、話者類似性・自然性・透かし、総数と依存"
+    },
+    {
+      "repo_id": "ResembleAI/chatterbox",
+      "category": "VOICE_IDENTITY",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "source_url": "https://huggingface.co/ResembleAI/chatterbox",
+      "classification_basis": "portfolio metadata and stated model purpose; implementation mechanism not independently reproduced",
+      "first_restriction_hypothesis": "SCENARIO_ONLY_NOT_PREDICTION",
+      "confirmed_model_specific_regulation": false,
+      "license_reviewed": false,
+      "verified_access_permission": false,
+      "selected_file_bytes_verified": false,
+      "download_authorized": false,
+      "verification_needed": "話者同意、話者類似性・自然性・透かし、総数と依存"
+    },
+    {
+      "repo_id": "InstantX/InstantID",
+      "category": "FACE_IDENTITY",
+      "selection": "hold",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "source_url": "https://huggingface.co/InstantX/InstantID",
+      "classification_basis": "portfolio metadata and stated model purpose; implementation mechanism not independently reproduced",
+      "first_restriction_hypothesis": "SCENARIO_ONLY_NOT_PREDICTION",
+      "confirmed_model_specific_regulation": false,
+      "license_reviewed": false,
+      "verified_access_permission": false,
+      "selected_file_bytes_verified": false,
+      "download_authorized": false,
+      "verification_needed": "被写体同意・本人確認、依存、顔保持品質"
+    },
+    {
+      "repo_id": "KlingTeam/LivePortrait",
+      "category": "FACE_IDENTITY",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "source_url": "https://huggingface.co/KlingTeam/LivePortrait",
+      "classification_basis": "portfolio metadata and stated model purpose; implementation mechanism not independently reproduced",
+      "first_restriction_hypothesis": "SCENARIO_ONLY_NOT_PREDICTION",
+      "confirmed_model_specific_regulation": false,
+      "license_reviewed": false,
+      "verified_access_permission": false,
+      "selected_file_bytes_verified": false,
+      "download_authorized": false,
+      "verification_needed": "被写体同意・本人確認、依存、顔保持品質"
+    },
+    {
+      "repo_id": "microsoft/Fara1.5-27B",
+      "category": "AUTONOMOUS_AGENT",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "source_url": "https://huggingface.co/microsoft/Fara1.5-27B",
+      "classification_basis": "portfolio metadata and stated model purpose; implementation mechanism not independently reproduced",
+      "first_restriction_hypothesis": "SCENARIO_ONLY_NOT_PREDICTION",
+      "confirmed_model_specific_regulation": false,
+      "license_reviewed": false,
+      "verified_access_permission": false,
+      "selected_file_bytes_verified": false,
+      "download_authorized": false,
+      "verification_needed": "権限境界、タスク成功率、失敗時の影響、隔離評価"
+    },
+    {
+      "repo_id": "google/medgemma-4b-it",
+      "category": "SPECIALIZED_DUAL_USE",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "source_url": "https://huggingface.co/google/medgemma-4b-it",
+      "classification_basis": "portfolio metadata and stated model purpose; implementation mechanism not independently reproduced",
+      "first_restriction_hypothesis": "SCENARIO_ONLY_NOT_PREDICTION",
+      "confirmed_model_specific_regulation": false,
+      "license_reviewed": false,
+      "verified_access_permission": false,
+      "selected_file_bytes_verified": false,
+      "download_authorized": false,
+      "verification_needed": "用途・権利・評価環境の明示、実証された提供制限"
+    },
+    {
+      "repo_id": "ChrisColeTech/LTX-2.3-uncensored-v1.4-FP8",
+      "category": "ADULT_VIDEO_AV_FINETUNE",
+      "source_url": "https://huggingface.co/ChrisColeTech/LTX-2.3-uncensored-v1.4-FP8",
+      "selection": "research_only",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "classification_basis": "publisher card claims NSFW Eros10/DMD/ICLoRA merge",
+      "first_restriction_hypothesis": "SCENARIO_ONLY_NOT_PREDICTION",
+      "confirmed_model_specific_regulation": false,
+      "license_reviewed": false,
+      "verified_access_permission": false,
+      "selected_file_bytes_verified": false,
+      "download_authorized": false,
+      "verification_needed": "full total including dependent learned modules; derivative license unknown; hash, benchmarking"
+    },
+    {
+      "repo_id": "Phr00t/LTX2-Rapid-Merges",
+      "category": "ADULT_VIDEO_AV_FINETUNE",
+      "source_url": "https://huggingface.co/Phr00t/LTX2-Rapid-Merges",
+      "selection": "research_only_not_recommended",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "classification_basis": "author notes older NSFW merges and winding down maintenance",
+      "first_restriction_hypothesis": "SCENARIO_ONLY_NOT_PREDICTION",
+      "confirmed_model_specific_regulation": false,
+      "license_reviewed": false,
+      "verified_access_permission": false,
+      "selected_file_bytes_verified": false,
+      "download_authorized": false,
+      "verification_needed": "avoid obsolete merges; compare to current models"
+    }
+  ],
+  "selection_rules": {
+    "one_per_mechanism": "At most one lead candidate per verified distinct mechanism; secondary controls and historical baselines remain separate and not auto-selected",
+    "do_not_conflate": [
+      "weight edits",
+      "post-training",
+      "prompt jailbreaks",
+      "external filters",
+      "modality-specific adult fine-tunes",
+      "identity/voice manipulation"
+    ],
+    "no_model_justification_from_risk": "Potential restriction is a research signal, never acquisition permission",
+    "hard_total_parameter_limit": 150000000000,
+    "unknown_total_blocks": true,
+    "moe_count": "all learned parameters including inactive experts and learned auxiliaries",
+    "rights_required": true,
+    "download_approved": false
+  },
+  "counts": {
+    "categories": 10,
+    "portfolio_assets_classified": 14,
+    "external_research_only": 2
+  }
+}

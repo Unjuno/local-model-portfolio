@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "assessment_id": "R25-2026-11-05",
+  "source_main_commit": "686a168bf7971de93f3254e243dabee95f41d84e",
+  "reviewed_on": "2026-11-05",
+  "scope": "Two formally conditional v18 assets only; not the other 97 active selection records",
+  "catalog": {
+    "revision_id": "v18-20261105",
+    "tracked": 144,
+    "active": 99,
+    "select": 53,
+    "conditional": 46,
+    "hold": 27,
+    "deferred": 12,
+    "excluded": 6
+  },
+  "package_ids": [
+    "chatr-image",
+    "interpretic-q4"
+  ],
+  "package_selected_bytes": {
+    "chatr-image": 33802789787,
+    "interpretic-q4": 17738357352
+  },
+  "package_new_storage_bytes_if_no_verified_reuse": 51541147139,
+  "potential_reused_base_bytes_only_after_all_hashes_verified": 33131616412,
+  "actual_reused_base_bytes_verified": null,
+  "source_manifest": "manifests/drafts/round21-pinned-preservation.candidate.json",
+  "component_audit": "catalog/preparation/2026-11-05-component-census.json",
+  "readiness_checklist": [
+    {
+      "id": "G01",
+      "name": "primary_source_and_actual_model_identity",
+      "status": "PASS",
+      "evidence": "Original HF publishers and repos crosschecked against R18"
+    },
+    {
+      "id": "G02",
+      "name": "public_access_metadata",
+      "status": "PASS",
+      "evidence": "Both source repo cards currently public; actual user-side payload transfer not verified"
+    },
+    {
+      "id": "G03",
+      "name": "immutable_full_source_commit",
+      "status": "PASS",
+      "evidence": "R21 pins all four full repository revisions"
+    },
+    {
+      "id": "G04",
+      "name": "file_manifest_complete_by_pipeline",
+      "status": "PASS",
+      "evidence": "R21 enumerates 47 files across four repos, per-package dependency closure"
+    },
+    {
+      "id": "G05",
+      "name": "exact_selected_file_bytes",
+      "status": "PASS",
+      "evidence": "R21 byte sums reconcile to 51,541,147,139 selected file bytes"
+    },
+    {
+      "id": "G06",
+      "name": "publisher_sha_and_git_blob_provenance",
+      "status": "PASS",
+      "evidence": "10 weight source SHA256 and 37 nonweight identities recorded; not local full-weight verification"
+    },
+    {
+      "id": "G07",
+      "name": "complete_component_scalar_upper_bound",
+      "status": "PASS",
+      "evidence": "R22: ChatR 16,555,533,156 and Interpretic 27,781,427,952 <150B; serialized scalar census not FLOPs/runtime"
+    },
+    {
+      "id": "G08",
+      "name": "noncommercial_research_license_text_screen",
+      "status": "PASS",
+      "evidence": "Qwen Research License and Apache-2.0 body examined for specified noncommercial research; no user acceptance implied"
+    },
+    {
+      "id": "G09",
+      "name": "complete_offline_backend_binary_lock",
+      "status": "UNCERTAIN",
+      "evidence": "Diffusers commit pinned but torch/CUDA ABI wheel and all build dependencies not frozen; llama.cpp engine commit unspecified"
+    },
+    {
+      "id": "G10",
+      "name": "runtime_code_security_and_compatibility",
+      "status": "UNCERTAIN",
+      "evidence": "Static LoRA shapes pass, but full trusted runtime import and model load untested; third-party code execution not authorized"
+    },
+    {
+      "id": "G11",
+      "name": "independent_exact_quant_task_quality",
+      "status": "UNCERTAIN",
+      "evidence": "Neither exact image LoRA quality nor Interpretic Q4 general reasoning retention independently tested"
+    },
+    {
+      "id": "G12",
+      "name": "target_hardware_peak_ram_latency",
+      "status": "UNCERTAIN",
+      "evidence": "No user device available; publisher timing not measured on owner clock/batch/context"
+    },
+    {
+      "id": "G13",
+      "name": "local_archive_file_hash_reuse",
+      "status": "UNCERTAIN",
+      "evidence": "Actual pinned base files on owner disk not inspected; cannot subtract claimed 33.1316GB"
+    },
+    {
+      "id": "G14",
+      "name": "real_disk_free_and_staging",
+      "status": "UNCERTAIN",
+      "evidence": "Device identity, actual free, concurrent downloads and temporary peak unmeasured"
+    },
+    {
+      "id": "G15",
+      "name": "owner_approved_immutable_final_lock",
+      "status": "UNCERTAIN",
+      "evidence": "queues/approved.json entries empty; no explicit acquired-file approval"
+    },
+    {
+      "id": "G16",
+      "name": "payload_saved_and_full_local_sha_verified",
+      "status": "UNCERTAIN",
+      "evidence": "Full model-body bytes not transferred in this workflow; actual user disk state unknown"
+    }
+  ],
+  "administrative_evidence_progress": {
+    "total_gates": 16,
+    "passed_gates": 8,
+    "unresolved_gates": 8,
+    "equal_weight_checklist_coverage_percent": 50,
+    "NOT_a_measure_of_actual_archive_completion": true,
+    "NOT_a_time_or_success_probability": true,
+    "does_not_override_required_gates": true
+  },
+  "checked_now": {
+    "full_weight_source_sha256_count": 10,
+    "all_support_file_identity_count": 37,
+    "adapter_lora_pairs_static_matched": 224,
+    "stale_author_checksum_paths": [
+      "README.md",
+      "inference.py"
+    ],
+    "github_approved_queue_entries": 0
+  },
+  "target_machine": {
+    "connected_remote_device_count": 0,
+    "source": "Remote Desktop Commander device inquiry",
+    "user_hdd_size_and_free_verified": false,
+    "user_hdd_existing_weights_verified": false,
+    "active_user_downloads_visible": false
+  },
+  "probe_tool": {
+    "path": "scripts/archive_preflight.py",
+    "tests": "tests/test_archive_preflight.py",
+    "status": "READ_ONLY_NO_NETWORK_NO_PAYLOAD_DOWNLOAD",
+    "requires_archive_root": true,
+    "requires_explicit_staging_reserve_for_storage_pass": true,
+    "requires_existing_archive_used_bytes_for_budget_pass": true,
+    "requires_full_hash_match_before_reuse": true
+  },
+  "completion_by_scope": {
+    "catalog_research_selection": "v18 source-backed active 99, but candidate selection != archive",
+    "two_packages_source_plan": "R21/R22 inspected",
+    "physical_archival_complete_verified": false,
+    "actual_user_machine_completion_percentage": null,
+    "approval_and_runtime_gate_status": "BLOCKED_NOT_APPROVED"
+  },
+  "next_steps_ordered": [
+    "Connect an authorized user device or run the preflight script locally against explicitly chosen HDD (read only)",
+    "Verify existing Qwen-Image-2.1 exact files and SHA256 and measure current free/archive/staging",
+    "Pin testable backend builds/ABI and run controlled quality/throughput on authorized owner machine",
+    "When all gating evidence is complete, separately request explicit final immutable lock approval; only then retrieve any selected weight payload"
+  ]
+}

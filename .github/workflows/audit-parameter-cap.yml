@@ -1,9 +1,27 @@
-name: Model portfolio 150B parameter audit
+name: Model portfolio 150B baseline and quantized exception audit
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'catalog/**'
+      - 'policies/limits.json'
+      - 'queues/**'
+      - 'scripts/check_parameter_cutoff.py'
+      - 'scripts/audit_selection_decisions.py'
+      - 'scripts/archive_preflight.py'
+      - 'tests/test_archive_preflight.py'
+      - 'policies/selection-decision-v17.json'
+      - 'policies/personal-research-rights-v17.json'
+      - 'tests/test_parameter_cutoff.py'
+      - 'tests/test_decision_protocol.py'
+      - '.github/workflows/audit-parameter-cap.yml'
   pull_request:
     paths:
       - 'catalog/**'
+      - 'scripts/archive_preflight.py'
+      - 'tests/test_archive_preflight.py'
       - 'policies/limits.json'
       - 'queues/**'
       - 'scripts/check_parameter_cutoff.py'
@@ -20,7 +38,7 @@ concurrency:
 
 jobs:
   parameter-audit:
-    name: Read-only 150B static policy audit
+    name: Read-only 150B baseline and runtime exception audit
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     env:
@@ -31,5 +49,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check current parameter policy and approved queue
         run: python3 scripts/check_parameter_cutoff.py
+      - name: Audit v17 research rights/decision protocol and source evidence
+        run: python3 scripts/audit_selection_decisions.py
       - name: Run deterministic standard-library unit tests
-        run: python3 -m unittest discover -s tests -p 'test_parameter_cutoff.py' -v
+        run: python3 -m unittest discover -s tests -p 'test_*.py' -v
