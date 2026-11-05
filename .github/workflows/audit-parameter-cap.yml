@@ -10,6 +10,8 @@ on:
       - 'queues/**'
       - 'scripts/check_parameter_cutoff.py'
       - 'scripts/audit_selection_decisions.py'
+      - 'scripts/archive_preflight.py'
+      - 'tests/test_archive_preflight.py'
       - 'policies/selection-decision-v17.json'
       - 'policies/personal-research-rights-v17.json'
       - 'tests/test_parameter_cutoff.py'
@@ -18,6 +20,8 @@ on:
   pull_request:
     paths:
       - 'catalog/**'
+      - 'scripts/archive_preflight.py'
+      - 'tests/test_archive_preflight.py'
       - 'policies/limits.json'
       - 'queues/**'
       - 'scripts/check_parameter_cutoff.py'

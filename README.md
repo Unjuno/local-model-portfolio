@@ -4,6 +4,13 @@
 
 **目的は、リポジトリをHDDに配置し、エージェントが承認済みの取得指示に従って保存・検証できる状態を作ることです。** 人気ランキングでも、重みをGitHubへ再配布する場所でもありません。
 
+## R25 保存準備の完成度と実機事前診断（2026-11-05）
+
+- **[完成度チェックリスト](catalog/preparation/2026-11-05-completion-readiness.json)**：重点2構成の16確認項目中8件に証拠あり（項目数50%。作業量・HDD保存完了率ではない）。実機の保存率は**不明**。
+- **[読み取り専用のHDD検査ツール](scripts/archive_preflight.py)**：R21固定版の47ファイルを対象に、HDD空き、既存ファイルのSHA256/Git blob、重複容量をチェック。ユーザーが実機パスを指定し、`--hash`で全ファイル同一性を確認するまで基盤を「保存済み」としない。
+- **[検証手順と限界](docs/strategy/21-archive-readiness-r25.md)**：stagingと既存容量を与えない場合は`UNCERTAIN`。PASSでもダウンロード承認とは別。Remote Desktop Commanderに接続PCがないため今回の実機状態は未測定。
+- 正式カタログv18の144資産／有効99件、Nanbeige維持、指定除外6件は**変更なし**。approvedキュー0。
+
 ## 現行選定 v18（2026-11-05：R21/R22固定保存証拠から2件を条件付き採用）
 
 - 正本：[CURRENT](catalog/CURRENT.json)／[v18全144資産](catalog/effective-portfolio-2026-11-05-v18.json)／[非実行選定キュー99件](queues/proposed-v18-2026-11-05.json)。

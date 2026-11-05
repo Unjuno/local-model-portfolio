@@ -8,6 +8,10 @@ Pirate Faceは二次のハッシュ付きTorrent索引、Civitaiは別ID体系�
 **現行選定はcatalog/CURRENT.jsonのv18とcatalog/effective-portfolio-2026-11-05-v18.json（144件、有効99件、総数不明14件、そのうち研究用conditional2件）。** 旧97件baseファイルやv2/v3/v4/v5/v6/v7/v8を現行と混同しない。
 **manifests/drafts/*.candidate.jsonは非実行の承認前ファイル台帳であり、正規lockでも承認でもない。** これらをダウンローダーに渡さず、依存/null、権利、RAM/HDDを解決してから最終lockとユーザー承認を別に受ける。
 
+## R25：実機保存の証拠と未承認の境界
+
+[完成度台帳](catalog/preparation/2026-11-05-completion-readiness.json)は重点2構成のチェックリストのスナップショット。16項目中8件PASSは**作業量の50%やユーザー実機保存率ではない**。ユーザーPC未接続ならHDD総量・既存重み・空き・ダウンロード状態はUNKNOWNとする。[オフライン検査](scripts/archive_preflight.py)は読み取り専用で、`--hash`による全ファイル確認がない場合「同サイズだから再利用できる」としない。実機のパス・stage見積・容量はユーザーの確認が要る。検査がPASSでも`queues/approved.json`へ自動登録・重み取得・実行しない。
+
 ## 現行v18：R21/R22の固定保存構成を正式選定に反映
 
 [固定保存構成](manifests/drafts/round21-pinned-preservation.candidate.json)および[R22全構成ヘッダー検査](catalog/preparation/2026-11-05-component-census.json)を参照。ChatRのLoRAは既存Qwen-Image基盤との完全同一性を実機で検証するまで増分節約と扱わない。Interpretic Q4の一般能力はBF16実験と混同しない。R22の作者SHA256SUMSとREADME/inference.pyの不一致記録を消してはならない。新規選定は2件ともconditional、**approved/dlは0**。
