@@ -64,6 +64,15 @@ class V19SmallSpecializationTests(unittest.TestCase):
         self.assertFalse(self.r["risk_prediction"]["verified_official_rule"])
         self.assertIsNone(self.r["risk_prediction"]["likelihood_numeric"])
         self.assertTrue(all(s["binding_specific_human_threshold"] is False for s in sources))
+    def test_official_mofcom_proposal_and_open_source_exception(self):
+        records=self.r["china_regulation_source_register"]
+        primary=next(x for x in records if x.get("type")=="MOFCOM_MOST_ANNOUNCEMENT_48_2026_INTERIM_EXPORT_REGISTRATION_AND_PROPOSED_CATALOGUE")
+        self.assertEqual(primary["published"],"2026-10-16")
+        self.assertEqual(primary["legal_stage"],"CATALOGUE_PUBLIC_COMMENT_WITH_INTERIM_EXPORT_REGISTRATION")
+        self.assertIs(primary["previously_public_opensource_technology_excluded"],True)
+        self.assertIs(primary["superhuman_performance_automatic_ban_enacted"],False)
+        self.assertIs(primary["blanket_weight_takedown_announced"],False)
+        self.assertIs(primary["binding_specific_human_threshold"],False)
     def test_existing_user_protections_and_approvals(self):
         m={x["repo_id"]:x for x in self.view["items"]}
         self.assertEqual(m["Nanbeige/Nanbeige4.3-33B"]["portfolio_decision"],"select")
