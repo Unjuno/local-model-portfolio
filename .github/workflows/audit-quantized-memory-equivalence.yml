@@ -1,0 +1,31 @@
+name: Quantized >150B matched-memory policy audit
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - 'policies/limits.json'
+      - 'scripts/check_parameter_cutoff.py'
+      - 'tests/test_parameter_cutoff.py'
+      - 'tests/test_quantized_memory_research.py'
+      - 'catalog/research/2026-11-06-over150b-memory-equivalence.json'
+      - '.github/workflows/audit-quantized-memory-equivalence.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 7
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Offline regression suite
+        run: python3 -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Parameter and memory gate
+        run: python3 scripts/check_parameter_cutoff.py
+      - name: Selection rights and queue invariant
+        run: python3 scripts/audit_selection_decisions.py

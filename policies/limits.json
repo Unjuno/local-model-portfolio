@@ -17,7 +17,9 @@
     "require_estimate_before_approval": true,
     "require_backend_context_batch_assumptions": true,
     "include_os_kv_cache_runtime_overheads": true,
-    "require_measured_peak_for_over_baseline": true
+    "require_measured_peak_for_over_baseline": true,
+    "require_matched_under150b_reference_for_over150b": true,
+    "quantized_disk_file_bytes_do_not_prove_peak_ram": true
   },
   "unknown_file_sizes_block_download": true,
   "require_pinned_revision": true,
@@ -75,7 +77,7 @@
     "evaluation_artifact": "docs/resource-cost-screen-v6-2026-11-03.md"
   },
   "total_parameter_policy": {
-    "revised_on": "2026-11-04",
+    "revised_on": "2026-11-06",
     "baseline_model_total_parameters": 150000000000,
     "mode": "BASELINE_WITH_QUANTIZED_RUNTIME_EXCEPTION",
     "compare_field": "actual total learned parameters including inactive MoE experts, embedding, MTP; quantization does NOT reduce count",
@@ -95,7 +97,11 @@
       "all trained dependencies and their count/rights",
       "measured complete peak inference memory <512GB decimal",
       "actual quality pass and useful speed at fixed hardware/context/batch",
-      "explicit separately approved manifest"
+      "explicit separately approved manifest",
+      "matched pinned selected reference <150B, identical hardware/driver/backend ABI/context/batch and workload, >=30 trials of both",
+      "candidate peak runtime memory <= reference peak runtime memory, both <512e9 bytes, no unified RAM double-count",
+      "measure task quality, latency and throughput; SSD streaming can pass capacity but fail utility",
+      "source and derivative license text, individual gated permission and complete immutable quantized file set must be checked"
     ],
     "evidence": [
       "https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored-GGUF",
@@ -105,6 +111,24 @@
     ],
     "no_override_from_regulatory_forecast": true,
     "dataset_exempt": true,
-    "previous_policy": "v8-v11 >=150B hard exclusion is HISTORICAL and superseded; no exception granted solely by this revision"
+    "previous_policy": "v8-v11 >=150B hard exclusion is HISTORICAL and superseded; no exception granted solely by this revision",
+    "user_2026_11_06_clarification": "150B total model parameters are NOT an absolute exclusion. Quantized >=150B models may be selected after measured complete runtime memory no greater than a pinned comparable <150B selected model under identical hardware/backend/context/batch, and independently pass <512GB, quality, throughput, rights, manifest, 4TB/archive and user approval. Quantized file bytes are not peak RAM.",
+    "hard_exclusion_by_parameter_count_alone": false,
+    "memory_equivalence": {
+      "comparison_type": "MATCHED_UNDER_150B_REFERENCE_PEAK_NOT_FILE_SIZE",
+      "reference_model_total_parameters_must_be_strictly_below": 150000000000,
+      "reference_must_be_pre_registered_pinned_active_catalog_model": true,
+      "same_hardware_backend_context_batch_and_workload": true,
+      "required_trials_per_candidate_and_reference": 30,
+      "candidate_measured_complete_peak_must_be_at_or_below_reference": true,
+      "candidate_and_reference_both_must_be_below_global_peak_ram_bytes": 512000000000,
+      "combined_memory_no_unified_ram_gpu_double_count": true,
+      "include_os_runtime_kv_cache_learned_dependencies_ssd_mmap_residency": true,
+      "allow_different_quant_schemes_only_if_recorded": true,
+      "no_peer_data_means_hold": true,
+      "no_percent_tolerance_invented": true,
+      "no_claim_from_gguf_size_virtual_rss_or_active_expert_parameters": true,
+      "cloud_rental_and_model_execution_require_separate_user_permission": true
+    }
   }
 }

@@ -14,7 +14,10 @@
     "never_auto_download_or_seed": true,
     "never_auto_delete": true,
     "conditional_research_may_have_unknown_total_with_non_executable_marker": true,
-    "no_auto_reject_from_license_metadata_unknown": true
+    "no_auto_reject_from_license_metadata_unknown": true,
+    "over150b_is_not_absolute_exclusion": true,
+    "require_comparable_matched_reference_peak_for_over150b": true,
+    "comparison_policy": "policies/limits.json#total_parameter_policy.memory_equivalence"
   },
   "decision_stages": [
     {
@@ -42,7 +45,8 @@
         "verified original identity and metadata",
         "relevant technical mechanism not replicated by incumbent",
         "no contradictory serious performance failure unaddressed; negative evidence documented",
-        "full total under 150B or validated exception before approved lock; research stage may still be conditional nonexecutably"
+        "full total under 150B or validated exception before approved lock; research stage may still be conditional nonexecutably",
+        "Over150B quantized assets remain HOLD/research only until matched reference RAM and all runtime and rights gates verified; parameter count alone not a ban"
       ],
       "allowed_result": "conditional (NOT download permission)"
     },
@@ -64,7 +68,8 @@
         "immutable repo/revision and all selected files SHA256",
         "exact bytes and actual free disk minus staging >=200GB",
         "peak RAM and speed quality measured when oversized",
-        "explicit separately user-approved lock"
+        "explicit separately user-approved lock",
+        "Over150B: measured candidate peak RAM <= pinned active under150B reference peak RAM under same hardware/backend/context/batch with >=30 trials each, in addition to absolute <512GB and quality/speed/rights"
       ],
       "allowed_result": "download permission only after all"
     }
@@ -227,5 +232,6 @@
   ],
   "manual_user_override": "User may explicitly preserve unique heavy models like Nanbeige dense 33B; maintain rights/runtime and manifest rules.",
   "rights_policy_path": "policies/personal-research-rights-v17.json",
-  "archive_budget_last_user_authorization": "2026-11-06"
+  "archive_budget_last_user_authorization": "2026-11-06",
+  "memory_equivalence_clarified_on": "2026-11-06"
 }

@@ -66,6 +66,38 @@ def verified_quant_exception(item: dict[str, Any], peak_limit: int = PEAK_LIMIT)
         return False
     if q["minimum_acceptable_tokens_per_second"] <= 0 or q["throughput_median_tokens_per_second"] < q["minimum_acceptable_tokens_per_second"]:
         return False
+    # Verified quantization exception requires a pre-registered <150B reference,
+    # measured on the same hardware/backend/context/batch; file size != peak RAM.
+    ref_text = ("reference_model_repo_id", "reference_revision_sha",
+                "reference_hardware_record", "reference_backend_and_version")
+    if any(not isinstance(q.get(k), str) or not q[k].strip() for k in ref_text):
+        return False
+    if not re.fullmatch(r"[0-9a-f]{40}", q["reference_revision_sha"]):
+        return False
+    ref_int = ("reference_model_total_parameters",
+               "reference_measured_peak_host_ram_plus_vram_bytes",
+               "reference_context_tokens", "reference_batch_size",
+               "reference_throughput_trials")
+    if any(not is_int(q.get(k)) or q[k] <= 0 for k in ref_int):
+        return False
+    if q["reference_model_total_parameters"] >= BASELINE:
+        return False
+    if q["reference_throughput_trials"] < 30:
+        return False
+    if q["reference_measured_peak_host_ram_plus_vram_bytes"] >= peak_limit:
+        return False
+    if q["measured_peak_host_ram_plus_vram_bytes"] > q["reference_measured_peak_host_ram_plus_vram_bytes"]:
+        return False
+    if q["reference_context_tokens"] != q["context_tokens"] or q["reference_batch_size"] != q["batch_size"]:
+        return False
+    if q["reference_hardware_record"] != q["hardware_record"]:
+        return False
+    if q["reference_backend_and_version"] != q["backend_and_version"]:
+        return False
+    if q.get("reference_memory_comparison_verified") is not True:
+        return False
+    if q.get("measured_memory_no_unified_double_count") is not True:
+        return False
     checks = ("measured_user_hardware", "task_quality_pass", "license_text_reviewed",
               "dependencies_reviewed", "personal_gated_access_verified")
     if any(q.get(k) is not True for k in checks):
@@ -114,6 +146,9 @@ def audit(root: Path = ROOT) -> list[str]:
         return ["quantized exception mode absent"]
     if rule.get("hard_peak_ram_bytes_exclusive") != PEAK_LIMIT:
         return ["peak RAM limit must be <512e9 byte"]
+    comp = rule.get("memory_equivalence") or {}
+    if comp.get("comparison_type") != "MATCHED_UNDER_150B_REFERENCE_PEAK_NOT_FILE_SIZE" or comp.get("candidate_measured_complete_peak_must_be_at_or_below_reference") is not True:
+        return ["matched under150B memory-equivalence policy absent"]
     current = load_json(root, "catalog/CURRENT.json")
     portfolio = load_json(root, current["materialized_catalog_path"])
     items = portfolio.get("items")
@@ -141,6 +176,21 @@ def audit(root: Path = ROOT) -> list[str]:
                 errors.append(f"dataset gate invalid: {rid}")
         else:
             errors.append(f"unexpected type: {rid}")
+    # A claimed memory reference must be an actual selected <150B catalog
+    # item at the exact pinned revision, not a user-provided free-text alias.
+    for item in models.values():
+        if item.get("portfolio_decision") not in ("select", "conditional") or item.get("parameter_gate", {}).get("status") != VERIFIED:
+            continue
+        q = item.get("quantized_exception") or {}
+        ref = models.get(str(q.get("reference_model_repo_id", "")).lower())
+        if ref is None or ref.get("portfolio_decision") not in ("select", "conditional"):
+            errors.append(f"{item.get('repo_id')}: reference not an active catalog model")
+            continue
+        ref_gate = ref.get("parameter_gate") or {}
+        if ref_gate.get("status") != LOW or ref_gate.get("total_parameters") != q.get("reference_model_total_parameters"):
+            errors.append(f"{item.get('repo_id')}: reference total parameter mismatch")
+        if ref.get("fully_pinned_revision_sha") != q.get("reference_revision_sha"):
+            errors.append(f"{item.get('repo_id')}: reference revision unpinned or mismatched")
     expected = current.get("expected") or {}
     if len(items) != expected.get("tracked"):
         errors.append("asset count mismatch")
