@@ -5,10 +5,14 @@
 まず README.md、policies/selection.md、policies/limits.json、docs/workflow.md を読む。
 このリポジトリは取得仕様を管理する。現在は構成と手順のみで、ダウンローダーは未実装。
 Pirate Faceは二次のハッシュ付きTorrent索引、Civitaiは別ID体系。原本のライセンス/権利/Gatedを迂回しない。P2P seedingやファイルDLを無断実行しない。
-**現行選定はcatalog/CURRENT.jsonのv17とcatalog/effective-portfolio-2026-11-04-v17.json（142件、有効97件、総数不明14件、そのうち研究用conditional2件）。** 旧97件baseファイルやv2/v3/v4/v5/v6/v7/v8を現行と混同しない。
+**現行選定はcatalog/CURRENT.jsonのv18とcatalog/effective-portfolio-2026-11-05-v18.json（144件、有効99件、総数不明14件、そのうち研究用conditional2件）。** 旧97件baseファイルやv2/v3/v4/v5/v6/v7/v8を現行と混同しない。
 **manifests/drafts/*.candidate.jsonは非実行の承認前ファイル台帳であり、正規lockでも承認でもない。** これらをダウンローダーに渡さず、依存/null、権利、RAM/HDDを解決してから最終lockとユーザー承認を別に受ける。
 
-## 現行v17：個人非商用研究の権利・取得・再配布を分離
+## 現行v18：R21/R22の固定保存構成を正式選定に反映
+
+[固定保存構成](manifests/drafts/round21-pinned-preservation.candidate.json)および[R22全構成ヘッダー検査](catalog/preparation/2026-11-05-component-census.json)を参照。ChatRのLoRAは既存Qwen-Image基盤との完全同一性を実機で検証するまで増分節約と扱わない。Interpretic Q4の一般能力はBF16実験と混同しない。R22の作者SHA256SUMSとREADME/inference.pyの不一致記録を消してはならない。新規選定は2件ともconditional、**approved/dlは0**。
+
+## 旧版v17：個人非商用研究の権利・取得・再配布を分離
 
 `license:unknown`だけで候補から排除しない。[権利ルール](policies/personal-research-rights-v17.json)を必ず参照。著作権法の特定例外を一般許諾と扱わず、元/派生の正常な利用条件と具体的行為を調査。総数不明conditional2件は研究専用で、取得lock/実行には利用できない。
 

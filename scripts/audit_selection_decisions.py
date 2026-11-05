@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit v16 evidence and candidate decision states without downloading weights.
+"""Audit current v18 selection and historic v17 evidence without downloading weights.
 
 Python >=3.10; standard library only. Read-only.
 """
@@ -54,7 +54,7 @@ def check_record(row:dict, ids:set[str])->list[str]:
 def audit(root:Path=ROOT)->list[str]:
     errors=[]
     current=load(root,"catalog/CURRENT.json")
-    if current.get("revision_id")!="v17-20261104": return ["unexpected CURRENT revision"]
+    if current.get("revision_id")!="v18-20261105": return ["unexpected CURRENT revision"]
     if current.get("decision_method_path")!="policies/selection-decision-v17.json": return ["decision policy not current"]
     model=load(root,current["materialized_catalog_path"])
     if model.get("revision_id")!=current["revision_id"]: errors.append("view revision differs from current")
@@ -62,7 +62,7 @@ def audit(root:Path=ROOT)->list[str]:
     if not isinstance(items,list): return errors+["invalid items"]
     known={x.get("repo_id"):x for x in items if isinstance(x,dict) and x.get("asset_kind")=="model"}
     active=[x for x in items if x.get("portfolio_decision") in ("select","conditional")]
-    if len(items)!=142 or len(active)!=97: errors.append("v16 tracked/active count mismatch")
+    if len(items)!=current.get("expected",{}).get("tracked") or len(active)!=current.get("expected",{}).get("active"): errors.append("current tracked/active count mismatch")
     dossier=load(root,current["decision_research_path"])
     if dossier.get("source_revision")!="v17-20261104": errors.append("dossier revision mismatch")
     rules=load(root,current["decision_method_path"])
@@ -98,7 +98,7 @@ def audit(root:Path=ROOT)->list[str]:
 if __name__=="__main__":
     errors=audit()
     if errors:
-        print("FAIL v17 research decision audit")
+        print("FAIL current selection and v17 evidence audit")
         for err in errors: print(" -",err)
         raise SystemExit(1)
-    print("PASS v17 research provenance, decision states, non-executable queue")
+    print("PASS v18 selection, historic v17 evidence, and non-executable queue")

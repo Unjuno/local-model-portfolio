@@ -4,7 +4,14 @@
 
 **目的は、リポジトリをHDDに配置し、エージェントが承認済みの取得指示に従って保存・検証できる状態を作ることです。** 人気ランキングでも、重みをGitHubへ再配布する場所でもありません。
 
-## 現行選定 v17（2026-11-04：個人非商用研究のライセンス判断改訂）
+## 現行選定 v18（2026-11-05：R21/R22固定保存証拠から2件を条件付き採用）
+
+- 正本：[CURRENT](catalog/CURRENT.json)／[v18全144資産](catalog/effective-portfolio-2026-11-05-v18.json)／[非実行選定キュー99件](queues/proposed-v18-2026-11-05.json)。
+- **新規条件付き2資産**：ChatR LabsのQwen-Image-2.1専用rank128 LoRA（基盤重複取得禁止）、Interpretic Qwen3.8-27B Uncensored v2 Q4＋vision projector（元BF16重みの重複取得禁止）。どちらもR21/R22で完全保存構成のtensor数・固定byte・選択SHAを監査済み。独立の生成品質とユーザー実機ランタイムは未検証。
+- R21固定候補構成は2パッケージ計**51,541,147,139バイト**。ChatRの基盤を既存と同一と実機ハッシュ検証できた場合だけLoRA関連約0.671GBに増分削減できる。
+- [新規選定・誤差・中止条件](docs/strategy/20-promote-pinned-packages-v18.md)を参照。**最終取得承認0・実機操作0・Torrent0**。
+
+## 旧版v17の履歴（2026-11-04：個人非商用研究のライセンス判断改訂）
 
 [CURRENT v17](catalog/CURRENT.json)／[142資産のv17ビュー](catalog/effective-portfolio-2026-11-04-v17.json)／[研究候補97件](queues/proposed-v17-2026-11-04.json)。`license:unknown`は研究候補の自動除外理由ではない。LTX2.5のChrisColeTechとStuubsを研究専用conditionalに変更。取得許可0、全学習済み総数不明のままfinal lock不可。[新しい行為別権利ルール](policies/personal-research-rights-v17.json)／[監査報告](docs/strategy/13-personal-research-license-screening.md)。
 

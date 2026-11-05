@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision_id": "v17-20261104",
+  "revision_id": "v18-20261105",
   "base_catalog_path": "catalog/selected-portfolio-2026-10-30.json",
   "base_file_blob_sha": "12f5de929be31a805229ddcfedc6320dec7bff3d",
   "ordered_overlays": [
@@ -19,15 +19,16 @@
     "catalog/revisions/v14-2026-11-04.json",
     "catalog/revisions/v15-2026-11-04.json",
     "catalog/revisions/v16-2026-11-04.json",
-    "catalog/revisions/v17-2026-11-04.json"
+    "catalog/revisions/v17-2026-11-04.json",
+    "catalog/revisions/v18-2026-11-05.json"
   ],
-  "application_rule": "Start with base and verify SHA. Apply v2-v4 replacement_operations with expected prior tier/decision and append additions. Then apply v5 priority_operations by exact asset_kind/repo_id with expected_current_tier+decision preconditions; require 132 unique coverage. Sort by forecast_investigation_rank. Never infer approval or auto-download. Then apply v6 efficiency_operations by exact asset_kind/repo_id and assert matching v5 wave/rank/decision for all 132. Resource screening never implies runtime success or download approval. Then apply v7 parameter_gate_operations to all 109 models; verify each expected prior status and total params from source. For >=250B apply explicit exclusion replacement_operations; for null total params block final lock. Keep datasets exempt. Assert 132 unique assets and 109 param checks. Do not download. Then apply v8 total-model-parameter gate on each of 109 models, validating expected v7 decision/tier/gate. Apply one explicit new HOLD-to-EXCLUDED transition; keep previous EXCLUDED. Block final lock if unknown. Reject >=150B. Datasets exempt. Then apply v9 parameter_evidence_operations to exactly 25 prior-UNVERIFIED models, asserting per-record expected tier/decision/status, promoting only first-party documented complete published model or major inference component counts; leave 12 unknown and enforce 150B cap, independent dependency/manifest rights. Then apply v10 conditional/R1 -> hold/HOLD transition for dphn/Dolphin3.0-Llama3.1-8B with exact expected prior state. Reject blocked and excluded models from v10 candidate list. Then apply v11 seven exact preconditioned unknown-total active -> HOLD transitions; reject all active models without a verified total; candidate list must equal active IDs. Then v12 supersedes v8-v11 hard total >=150B with a 150B baseline and requires complete quantized runtime + rights + performance evidence for any larger model; two legacy excluded models move to HOLD, no auto-promotion. Data 23 unchanged. Preserve provenance and explicit approval. Then v13 append exactly two Hugging Face verified repo identities: 0bserverx ARA GGUF as conditional and afdudley reproducible NVFP4 as HOLD; require no duplicate IDs; preserve strict non-executable proposal candidate invariants and all rights checks. Then v14 apply six exact user-directed active->excluded transitions and Nanbeige conditional->select; no files deleted; candidate list must equal 92 active entries. Then v15 apply two explicit active->HOLD replacements and append five HF model records with verified metadata (four active, one HOLD); sort by forecast rank, assert 139 unique and 94 active. Alternate Pirate Face index never implies legal/peer download. Then v16 append three unique research-backed records: one SFT roleplay conditional, two LTX2.5 NSFW video variants HOLD. Use mandatory non-compensatory policy decision method, never infer download from select/conditional. Assert 142 unique assets and 95 active. Then v17 promotes ChrisColeTech and Stuubs HOLD->conditional for research only; unknown complete totals remain BLOCK_FINAL_LOCK; proposal queue nonexecutable, approved queue barred.",
+  "application_rule": "Start with base and verify SHA. Apply v2-v4 replacement_operations with expected prior tier/decision and append additions. Then apply v5 priority_operations by exact asset_kind/repo_id with expected_current_tier+decision preconditions; require 132 unique coverage. Sort by forecast_investigation_rank. Never infer approval or auto-download. Then apply v6 efficiency_operations by exact asset_kind/repo_id and assert matching v5 wave/rank/decision for all 132. Resource screening never implies runtime success or download approval. Then apply v7 parameter_gate_operations to all 109 models; verify each expected prior status and total params from source. For >=250B apply explicit exclusion replacement_operations; for null total params block final lock. Keep datasets exempt. Assert 132 unique assets and 109 param checks. Do not download. Then apply v8 total-model-parameter gate on each of 109 models, validating expected v7 decision/tier/gate. Apply one explicit new HOLD-to-EXCLUDED transition; keep previous EXCLUDED. Block final lock if unknown. Reject >=150B. Datasets exempt. Then apply v9 parameter_evidence_operations to exactly 25 prior-UNVERIFIED models, asserting per-record expected tier/decision/status, promoting only first-party documented complete published model or major inference component counts; leave 12 unknown and enforce 150B cap, independent dependency/manifest rights. Then apply v10 conditional/R1 -> hold/HOLD transition for dphn/Dolphin3.0-Llama3.1-8B with exact expected prior state. Reject blocked and excluded models from v10 candidate list. Then apply v11 seven exact preconditioned unknown-total active -> HOLD transitions; reject all active models without a verified total; candidate list must equal active IDs. Then v12 supersedes v8-v11 hard total >=150B with a 150B baseline and requires complete quantized runtime + rights + performance evidence for any larger model; two legacy excluded models move to HOLD, no auto-promotion. Data 23 unchanged. Preserve provenance and explicit approval. Then v13 append exactly two Hugging Face verified repo identities: 0bserverx ARA GGUF as conditional and afdudley reproducible NVFP4 as HOLD; require no duplicate IDs; preserve strict non-executable proposal candidate invariants and all rights checks. Then v14 apply six exact user-directed active->excluded transitions and Nanbeige conditional->select; no files deleted; candidate list must equal 92 active entries. Then v15 apply two explicit active->HOLD replacements and append five HF model records with verified metadata (four active, one HOLD); sort by forecast rank, assert 139 unique and 94 active. Alternate Pirate Face index never implies legal/peer download. Then v16 append three unique research-backed records: one SFT roleplay conditional, two LTX2.5 NSFW video variants HOLD. Use mandatory non-compensatory policy decision method, never infer download from select/conditional. Assert 142 unique assets and 95 active. Then v17 promotes ChrisColeTech and Stuubs HOLD->conditional for research only; unknown complete totals remain BLOCK_FINAL_LOCK; proposal queue nonexecutable, approved queue barred. Then v18 use R21 pinned file plans and R22 complete headers/census to promote ChatR Omni LoRA and Interpretic Q4 GGUF (not BF16 duplicate) as TWO conditional non-executable assets. Reuse existing Qwen-Image-2.1 base by immutable identity only; assert 144 unique and 99 active; archive hashes/byte and performance/reuse gates remain separate.",
   "expected": {
-    "tracked": 142,
-    "active": 97,
+    "tracked": 144,
+    "active": 99,
     "by_tier": {
       "R0": 14,
-      "R1": 59,
+      "R1": 61,
       "R2": 24,
       "BACKLOG": 12,
       "HOLD": 27,
@@ -35,7 +36,7 @@
     },
     "by_decision": {
       "select": 53,
-      "conditional": 44,
+      "conditional": 46,
       "deferred": 12,
       "hold": 27,
       "excluded": 6
@@ -49,11 +50,11 @@
       "provisional_total_bytes": 3288130513582,
       "archive_limit_bytes": 3800000000000,
       "provisional_headroom_bytes": 511869486418,
-      "warning": "Historical v3/v4 scenario only, not v16 actual selected file bytes; no capacity approval from this field."
+      "warning": "Historical only. v18 adds 51.541GB pinned logical packages but known selected bytes of shared base can be reused only after verified disk match. Do not treat historical headroom as actual free disk."
     },
     "by_forecast_wave": {
       "S1": {
-        "active": 28,
+        "active": 30,
         "inactive": 27
       },
       "S2": {
@@ -66,23 +67,24 @@
       }
     },
     "resource_screen": {
-      "tracked": 142,
-      "source_repo_bytes_unknown": 38,
-      "active_source_repo_bytes_unknown": 14,
+      "tracked": 144,
+      "source_repo_bytes_unknown": 40,
+      "active_source_repo_bytes_unknown": 16,
       "active_ge_100GB_repo_assets": 8
     },
     "parameter_gate": {
-      "PASS_TOTAL_PARAMS_LT_150B": 103,
-      "EXCLUDED_TOTAL_PARAMS_GE_150B": 0,
+      "PASS_TOTAL_PARAMS_LT_150B": 105,
       "UNVERIFIED_BLOCK_FINAL_LOCK": 14,
-      "OVER_150B_QUANT_REVIEW_REQUIRED": 2
+      "OVER_150B_QUANT_REVIEW_REQUIRED": 2,
+      "EXCLUDED_TOTAL_PARAMS_GE_150B": 0
     },
     "parameter_evidence_review": {
       "previous_unknown": 25,
       "verified_new": 15,
       "remaining_unknown": 14,
       "remaining_active_unknown": 2,
-      "revision_note": "Two conditional research-only models have unknown full component count and are barred from final lock."
+      "revision_note": "R22 verifies two additional <150B full serialized scalar ceilings; 14 other unknown totals remain, including 2 conditional research-only.",
+      "r22_full_pipeline_ceiling_new": 2
     },
     "quantized_exception_review": {
       "over_baseline_held": 2,
@@ -95,10 +97,10 @@
     "download_approved": false,
     "selected_file_bytes_final": false
   },
-  "notes": "v5 reorders all existing 132 records for hypothetical cascade-of-restrictions preservation: S1 dual-use/identity/guardrail/rights, S2 high-capability general & science & embodied, S3 broad base/data/runtime. Old R0/R1/R2 retained as historical priority labels, NOT controlling download order. Forecast never overrides legal rights or approval. v6 adds independent resource-cost screening and Qwen3-Coder-Next FP8 8GB experimental offload report. Primary S1>S2>S3 order preserved; no legal gate or selection changes. Runtime evidence is experimental and hardware scenario is not inferred from the owner. v7 restores user-requested HARD exclude >=250B total params (including inactive MoE); Mistral Large4 1.05T changed HOLD to EXCLUDED, other 25 unverified pending metadata, all original selections and archive budget otherwise unchanged. Strict >=250B cutoff precedes forecast and RAM/VRAM exceptions. Unknown 25 count blocks final lock. v8 user lowered hard exclusion to >=150B total including full MoE embedding+MTP. OrcaRouter Qwen3.8 Flash Next Uncensored 180B HOLD -> EXCLUDED; Mistral Large4 1.05T remains excluded. 25 unverified parameter counts block final lock. v8 policy active after 2026-11-03: >=150B total (not 250B) is hard-excluded. Older v7 250B mentions in history are not current. v9 audits previous 25 unknown totals and marks 13 publisher-documented named model or major component parameter counts below 150B; 12 still blocked, 7 active. No rights/download authorization. Threshold fixed 150B. v9 first-party parameter audit updated; 95 published-sized under150, 2 excluded, 12 unresolved with 7 active. CI checks are read-only. v10 2026-11-04 corrects obsolete fine-tune active selection and separates blocked candidates. v11 enforces no active unknown-total models; all seven moved to HOLD, pending verified full total and rights. v12 2026-11-04: 150B baseline is not absolute; over 150B quantized variants may be assessed if complete peak RAM <512e9 bytes, task quality and throughput measured and legal/files/approval gates passed. Two prior excluded models moved to HOLD for review, not downloadable. v13 adds 2026-11-04 independently assessed ARA method candidate with documented ~16.55GB Q4 quant (unverified exact bytes) and a Gated fully reproducible alternative for later consideration. Quality and live speed not validated; no model files downloaded. v14 2026-11-04: six user-identified low-priority assets removed from active selection, Nanbeige dense 33B retained as select despite heavy runtime. No download authorization. v15 2026-11-04: adds Galvanize3, Audio8 Air, LTX2.5, Kandinsky6 Lite, Opus Neo. Moves old Audio8 and LTX2.3 to HOLD. Pirate Face secondary observed seeders zero; Civitai rights require review. v16 formalizes non-compensatory method: capability quality, unique weight/posttrain, factual access risk separated from speculative future restriction; 3 HF assets added (SFT conditional, two NSFW AV HOLD); no auto-download. v17 personal noncommercial research screening no longer equates license metadata unknown with prohibition; downstream use rights, parent license, Civitai/Pirate Face seeding are separate. User has not approved payload download.",
-  "materialized_catalog_path": "catalog/effective-portfolio-2026-11-04-v17.json",
+  "notes": "v5 reorders all existing 132 records for hypothetical cascade-of-restrictions preservation: S1 dual-use/identity/guardrail/rights, S2 high-capability general & science & embodied, S3 broad base/data/runtime. Old R0/R1/R2 retained as historical priority labels, NOT controlling download order. Forecast never overrides legal rights or approval. v6 adds independent resource-cost screening and Qwen3-Coder-Next FP8 8GB experimental offload report. Primary S1>S2>S3 order preserved; no legal gate or selection changes. Runtime evidence is experimental and hardware scenario is not inferred from the owner. v7 restores user-requested HARD exclude >=250B total params (including inactive MoE); Mistral Large4 1.05T changed HOLD to EXCLUDED, other 25 unverified pending metadata, all original selections and archive budget otherwise unchanged. Strict >=250B cutoff precedes forecast and RAM/VRAM exceptions. Unknown 25 count blocks final lock. v8 user lowered hard exclusion to >=150B total including full MoE embedding+MTP. OrcaRouter Qwen3.8 Flash Next Uncensored 180B HOLD -> EXCLUDED; Mistral Large4 1.05T remains excluded. 25 unverified parameter counts block final lock. v8 policy active after 2026-11-03: >=150B total (not 250B) is hard-excluded. Older v7 250B mentions in history are not current. v9 audits previous 25 unknown totals and marks 13 publisher-documented named model or major component parameter counts below 150B; 12 still blocked, 7 active. No rights/download authorization. Threshold fixed 150B. v9 first-party parameter audit updated; 95 published-sized under150, 2 excluded, 12 unresolved with 7 active. CI checks are read-only. v10 2026-11-04 corrects obsolete fine-tune active selection and separates blocked candidates. v11 enforces no active unknown-total models; all seven moved to HOLD, pending verified full total and rights. v12 2026-11-04: 150B baseline is not absolute; over 150B quantized variants may be assessed if complete peak RAM <512e9 bytes, task quality and throughput measured and legal/files/approval gates passed. Two prior excluded models moved to HOLD for review, not downloadable. v13 adds 2026-11-04 independently assessed ARA method candidate with documented ~16.55GB Q4 quant (unverified exact bytes) and a Gated fully reproducible alternative for later consideration. Quality and live speed not validated; no model files downloaded. v14 2026-11-04: six user-identified low-priority assets removed from active selection, Nanbeige dense 33B retained as select despite heavy runtime. No download authorization. v15 2026-11-04: adds Galvanize3, Audio8 Air, LTX2.5, Kandinsky6 Lite, Opus Neo. Moves old Audio8 and LTX2.3 to HOLD. Pirate Face secondary observed seeders zero; Civitai rights require review. v16 formalizes non-compensatory method: capability quality, unique weight/posttrain, factual access risk separated from speculative future restriction; 3 HF assets added (SFT conditional, two NSFW AV HOLD); no auto-download. v17 personal noncommercial research screening no longer equates license metadata unknown with prohibition; downstream use rights, parent license, Civitai/Pirate Face seeding are separate. User has not approved payload download. v18 2026-11-05: from R21+R22 source-pinned and full component header census, add ChatR Omni 16.5555B scalar ceiling and Interpretic Q4 27.7814B with independent functions into conditional active selection. Historical manifests unchanged, downloadable approval stays zero. Do not count source file identities as local bytes or model quality.",
+  "materialized_catalog_path": "catalog/effective-portfolio-2026-11-05-v18.json",
   "priority_policy_path": "policies/capability-access-risk.md",
-  "priority_worklist_path": "queues/proposed-v17-2026-11-04.json",
+  "priority_worklist_path": "queues/proposed-v18-2026-11-05.json",
   "resource_screen_path": "catalog/revisions/v6-2026-11-03.json",
   "cost_performance_report_path": "docs/resource-cost-screen-v6-2026-11-03.md",
   "parameter_hard_limit_path": "catalog/revisions/v12-2026-11-04.json",
@@ -108,5 +110,8 @@
   "quantized_exception_policy_path": "policies/limits.json",
   "decision_method_path": "policies/selection-decision-v17.json",
   "decision_research_path": "catalog/research/2026-11-04-v17-candidate-decisions.json",
-  "research_rights_policy_path": "policies/personal-research-rights-v17.json"
+  "research_rights_policy_path": "policies/personal-research-rights-v17.json",
+  "generated_date": "2026-11-05",
+  "latest_manifest_draft": "manifests/drafts/round21-pinned-preservation.candidate.json",
+  "latest_component_census": "catalog/preparation/2026-11-05-component-census.json"
 }
