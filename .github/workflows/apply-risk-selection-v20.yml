@@ -5,6 +5,8 @@ on:
     paths:
       - 'catalog/revisions/v20-2026-11-06.json'
       - 'scripts/apply_selection_v20.py'
+      - 'tests/test_catalog_v19.py'
+      - 'tests/test_selection_v20.py'
       - '.github/workflows/apply-risk-selection-v20.yml'
 permissions:
   contents: read
@@ -21,7 +23,7 @@ jobs:
     env:
       PYTHONDONTWRITEBYTECODE: '1'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ github.sha }}
           fetch-depth: 1
