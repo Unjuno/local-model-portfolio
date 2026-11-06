@@ -54,7 +54,7 @@ def check_record(row:dict, ids:set[str])->list[str]:
 def audit(root:Path=ROOT)->list[str]:
     errors=[]
     current=load(root,"catalog/CURRENT.json")
-    if current.get("revision_id") not in ("v19-20261106", "v20-20261106", "v21-20261106", "v22-20261106", "v23-20261106", "v24-20261106"): return ["unexpected CURRENT revision"]
+    if current.get("revision_id") not in ("v19-20261106", "v20-20261106", "v21-20261106", "v22-20261106", "v23-20261106", "v24-20261106", "v25-20261106"): return ["unexpected CURRENT revision"]
     if current.get("decision_method_path")!="policies/selection-decision-v17.json": return ["decision policy not current"]
     model=load(root,current["materialized_catalog_path"])
     if model.get("revision_id")!=current["revision_id"]: errors.append("view revision differs from current")

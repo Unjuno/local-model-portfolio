@@ -1,5 +1,9 @@
 # Local Model Portfolio
 
+## 現行v25：地域制限付き画像モデルの学習成果を条件付き研究選定
+
+[CURRENT](catalog/CURRENT.json)は169資産・有効122件。PrunaAI/P-H3-Imageの8-step DMD蒸留・テキスト蒸留・専用VAE・学習済みプロンプト補完を別学習成果として1件conditional研究選定。MiniMax H3 Community License地域制限と総パラメータ未確定のため**最終取得ロック不可**。同一能力のComfy 4bitは二重採用せず。Maya2用Mimi/ECAPAの固定容量は別依存調査記録に記載。旧168資産を保持、v24の121件一次ファイル範囲は確定済み。4TB上限・実空き200GB・量子化後の同等RAM条件・取得承認0は維持。[根拠](docs/strategy/32-restricted-image-and-maya-dependencies-v25.md)・[容量](catalog/capacity/2026-11-06/v25/capacity-summary.json)。下のv24以前の数値は履歴。
+
 ## 現行v24：2026年11月5日公開の独立学習成果3件
 
 [CURRENT](catalog/CURRENT.json)は168資産・有効121件。PFN PLaMo3 Translate 31B教師と0.8B蒸留生徒、NVIDIA Cosmos3 Nano Sim-Bimanual行動条件付き世界モデルを3件追加。旧165資産不変。v23の118一次ファイル容量は監査済み、v24の新3件は別途容量再検証。4TB上限、実空き200GB、150B超量子化同等RAM審査、ダウンロード承認0は不変。[今回の選定根拠](docs/strategy/31-new-translation-and-robotics-selection-v24.md)・[容量台帳](catalog/capacity/2026-11-06/v24/capacity-summary.json)。下の記録は履歴。
