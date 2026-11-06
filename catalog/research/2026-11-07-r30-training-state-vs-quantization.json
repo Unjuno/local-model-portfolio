@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "round": "R30",
+  "review_date": "2026-11-07",
+  "trigger": "User clarified: save valuable special weight variants, remove truly excess ordinary quantization duplicates; do not impose one-special-variant-per-family ceiling.",
+  "baseline_main_prior_commit": "5bdc0644a83055fafd7980ce9e1f4e6dcf2825cd",
+  "supersedes_r29_overbroad_rule": true,
+  "catalog_changes": false,
+  "all_existing_150_decisions_retained": true,
+  "prior_unresolved_research_retained": true,
+  "new_downloads": 0,
+  "selection_unit": "distinct learned weight state, not filename, packaging, GGUF tag, numerical quantization, or shared parent by itself",
+  "rules": [
+    {
+      "id": "TRAINING_OR_WEIGHT_EDIT",
+      "condition": "fine-tune, full-weight edit, RL/DPO/GRPO merge, specialized NSFW, uncensored control, independent training data leads to demonstrably different weights",
+      "action": "preserve as distinct archive candidate, including multiple special descendants of one base if they differ materially and have evidence; no arbitrary cap of one derivative",
+      "exclusion": "labels alone, refusal score alone, popularity do not suffice"
+    },
+    {
+      "id": "ORDINARY_REPACK_QUANT",
+      "condition": "exact same trained checkpoint encoded to Q4/Q5/FP8/NF4/GGUF or minor serving re-shard without new learned transformation",
+      "action": "not a new model; normally no redundant quant if high precision original archived. One runtime representation if provenance+hardware/quality justify; extra quant only with separate proven practical or archival role",
+      "exclusion": "quantization does not reduce total learned parameter count"
+    },
+    {
+      "id": "QUANTIZED_SPECIAL",
+      "condition": "special modified learned checkpoint distributed only or conveniently as quantized format",
+      "action": "preserve special training identity and choose one appropriate format. Do not reject merely due GGUF/FP8 name; inspect parent graph and donor merging",
+      "exclusion": "do not treat quantized special as an ordinary quant of the official untuned base"
+    },
+    {
+      "id": "ADAPTER",
+      "condition": "LoRA/delta depends on exact immutable base",
+      "action": "save delta and exact base once where verified SHA; if base mismatch unknown, dedup savings cannot be assumed",
+      "exclusion": "not an independent full base"
+    },
+    {
+      "id": "SEPARATE_PRETRAIN_OR_BASE",
+      "condition": "different separately trained architecture, dataset, model family, or Base versus SFT stage",
+      "action": "evaluate independent preservation/retraining value even when output task overlaps",
+      "exclusion": "same application is insufficient to declare weight redundancy"
+    },
+    {
+      "id": "OVER150B",
+      "condition": "actual total learned count >=150B including MoE inactive experts, n-gram/Engram and MTP",
+      "action": "quant may be sole practical archive representation; only if source model is worth it, fixed legally available variant, complete runtime peak<512GB, quality and cost evaluated and explicit permission",
+      "exclusion": "do not create two model entries for Q2 and IQ2"
+    }
+  ],
+  "case_reviews": [
+    {
+      "repo_id": "Qwen/Qwen3.8-27B",
+      "learned_weight_identity": "QWEN38_BASE",
+      "artifact_class": "ORIGINAL_FULL_TRAINED_WEIGHTS",
+      "representation_policy": "BF16_or_source",
+      "preservation_verdict": "KEEP_EXISTING_SELECT",
+      "positive_and_negative_evidence": "新規能力と比較する基準の原本。ベースの重みと通常量子化は別の学習成果ではない",
+      "primary_source": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "new_download_approval": false,
+      "quality_independently_matched": false,
+      "full_revision_and_hash_verified": false
+    },
+    {
+      "repo_id": "orcarouter/Qwen3.8-27B-Uncensored",
+      "learned_weight_identity": "QWEN38_ORCAROUTER",
+      "artifact_class": "WEIGHT_EDITED_SPECIAL",
+      "representation_policy": "BF16",
+      "preservation_verdict": "KEEP_EXISTING_CONDITIONAL",
+      "positive_and_negative_evidence": "拒否方向の重み編集という訓練状態の変更。未量子化27Bを単なる普通の量子化と誤分類しない。",
+      "primary_source": "https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored",
+      "new_download_approval": false,
+      "quality_independently_matched": false,
+      "full_revision_and_hash_verified": false
+    },
+    {
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "learned_weight_identity": "QWEN38_INTERPRETIC_V2",
+      "artifact_class": "SPECIAL_TRAINED_STATE_IN_QUANTIZED_FORMAT",
+      "representation_policy": "Q4_K_M_GGUF",
+      "preservation_verdict": "KEEP_EXISTING_CONDITIONAL_CHOOSE_ONE_REPRESENTATION",
+      "positive_and_negative_evidence": "中国語政治113問でQwen原本抑制98/113、特殊版Q4は4/113（作者測定）。一般的危険依頼はBF16で95/100拒否。特殊版の変更は独自だが、同じInterpretic版のBF16/FP8/Q4/IQ3は別学習モデルではない。Q4 main16.8GB+視覚0.93GB；IQ3は一般能力低下報告。",
+      "primary_source": "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "new_download_approval": false,
+      "quality_independently_matched": false,
+      "full_revision_and_hash_verified": false
+    },
+    {
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "learned_weight_identity": "QWEN38_RVN_ARA",
+      "artifact_class": "SPECIAL_TRAINED_STATE_IN_QUANTIZED_FORMAT",
+      "representation_policy": "RVN_multilingual_GGUF_choose_one",
+      "preservation_verdict": "KEEP_EXISTING_CONDITIONAL_NO_LEGACY_QUANT_HOARD",
+      "positive_and_negative_evidence": "親trohrbaugh ARAと作者による追加2回のARA重み編集。名前はGGUFでもQwen公式の単純量子化ではない。旧RVN以前のlegacy GGUFを同じ最新重みとして全保存しない。",
+      "primary_source": "https://huggingface.co/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "new_download_approval": false,
+      "quality_independently_matched": false,
+      "full_revision_and_hash_verified": false
+    },
+    {
+      "repo_id": "afdudley/Qwen3.8-27B-abliterated-NVFP4",
+      "learned_weight_identity": "QWEN38_AFDUDLEY_HERETIC",
+      "artifact_class": "SPECIAL_TRAINED_STATE_IN_QUANTIZED_FORMAT_WITH_RECIPE",
+      "representation_policy": "NVFP4_text_bf16_vision_MTP",
+      "preservation_verdict": "KEEP_EXISTING_HOLD_FOR_REPRODUCIBLE_METHOD",
+      "positive_and_negative_evidence": "Heretic重み編集+固定ツール/設定/パッチ。NVFP4圧縮だけが価値ではない。作者は20.56GB重み、元のBF16 text-only別公開、生成手順の完全ビット再現は不可と明示。査読済み独立能力比較未了。",
+      "primary_source": "https://huggingface.co/afdudley/Qwen3.8-27B-abliterated-NVFP4",
+      "new_download_approval": false,
+      "quality_independently_matched": false,
+      "full_revision_and_hash_verified": false
+    },
+    {
+      "repo_id": "Lightricks/LTX-2.5",
+      "learned_weight_identity": "LTX25_BASE",
+      "artifact_class": "ORIGINAL_FAMILY",
+      "representation_policy": "source_checkpoints",
+      "preservation_verdict": "KEEP_EXISTING_CONDITIONAL",
+      "positive_and_negative_evidence": "音声・動画生成の基準モデル。Distilled/未蒸留/量子化は入力出力と品質が違う場合にのみ各固定形式を選ぶ。",
+      "primary_source": "https://huggingface.co/Lightricks/LTX-2.5",
+      "new_download_approval": false,
+      "quality_independently_matched": false,
+      "full_revision_and_hash_verified": false
+    },
+    {
+      "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "learned_weight_identity": "LTX25_CHRIS",
+      "artifact_class": "CLAIMED_SPECIAL_MERGE_IN_FP8_NEEDS_LINEAGE_AUDIT",
+      "representation_policy": "FP8",
+      "preservation_verdict": "KEEP_EXISTING_CONDITIONAL_RESEARCH_ONLY",
+      "positive_and_negative_evidence": "現行台帳は成人向けLoRA/蒸留/参照保持マージを主張。HFメタデータは親のquantizedタグのみで変更履歴とweight provenanceは別途固定が必要。『FP8だから通常量子化』とも『uncensoredという名前だから学習成果あり』とも推定しない。",
+      "primary_source": "https://huggingface.co/ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "new_download_approval": false,
+      "quality_independently_matched": false,
+      "full_revision_and_hash_verified": false
+    },
+    {
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "learned_weight_identity": "LTX25_STUBELIUS_V1",
+      "artifact_class": "SPECIAL_RL_MERGE",
+      "representation_policy": "INT8_or_Q4_or_NVFP4_choose_one",
+      "preservation_verdict": "KEEP_EXISTING_CONDITIONAL_SELECTED_REPRESENTATION_ONLY",
+      "positive_and_negative_evidence": "作者v1 2026-10-07 はOmniNFT RL訓練結果をマージ、蒸留LoRAもベイク。独自のNSFW生成と映像細部・動画音声品質を主張。Q4/NVFP4/int8は同じv1の形式選択であり独立した特殊版ではない。",
+      "primary_source": "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5",
+      "new_download_approval": false,
+      "quality_independently_matched": false,
+      "full_revision_and_hash_verified": false
+    },
+    {
+      "repo_id": "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1",
+      "learned_weight_identity": "QWEN_IMAGE21_CHATR_LORA",
+      "artifact_class": "SPECIAL_ADAPTER_DELTA",
+      "representation_policy": "LoRA",
+      "preservation_verdict": "KEEP_EXISTING_CONDITIONAL_DELTA_ONLY_WHEN_BASE_SHA_CONFIRMED",
+      "positive_and_negative_evidence": "独自rank128アダプターの学習成果。対応する正確なQwen-Image2.1ベースを共有できればフルウェイトの再ダウンロード不要。親SHA未検証で節約確定としない。",
+      "primary_source": "https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1",
+      "new_download_approval": false,
+      "quality_independently_matched": false,
+      "full_revision_and_hash_verified": false
+    },
+    {
+      "repo_id": "ideogram-ai/ideogram-4-nf4",
+      "learned_weight_identity": "IDEOGRAM4",
+      "artifact_class": "DISTINCT_MODEL_FAMILY_PUBLISHED_IN_QUANTIZED_FORMAT",
+      "representation_policy": "NF4",
+      "preservation_verdict": "KEEP_EXISTING_CONDITIONAL",
+      "positive_and_negative_evidence": "他のFLUX等の重みを単純変換したものではなくIdeogram系の独立学習済み画像モデルをNF4形式で配布している候補。量子化の文字列だけで能力が重複しているとは言えない。",
+      "primary_source": "https://huggingface.co/ideogram-ai/ideogram-4-nf4",
+      "new_download_approval": false,
+      "quality_independently_matched": false,
+      "full_revision_and_hash_verified": false
+    },
+    {
+      "repo_id": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+      "learned_weight_identity": "DEEPSEEK_V41_1017",
+      "artifact_class": "ORDINARY_QUANTIZED_REPRESENTATION_OF_DIFFERENT_SOURCE_MODEL",
+      "representation_policy": "UD-Q2_K_XL_or_UD-IQ2_XXS",
+      "preservation_verdict": "SOURCE_MODEL_RESEARCH_HOLD_NO_INDEPENDENT_QUANT_SLOTS",
+      "positive_and_negative_evidence": "DeepSeek V4.1 1017自体の552B backbone+196B Engram/コード性能を既存Qwen3-Coder等と比べる。UnslothのQ2とIQ2は同じ訓練済みDeepSeek原本の量子化なので別々の新規モデルとして数えない。150B超例外が通れば代表量子化形式一つで保存可能。",
+      "primary_source": "https://unsloth.ai/docs/models/deepseek-v4.1-flash",
+      "new_download_approval": false,
+      "quality_independently_matched": false,
+      "full_revision_and_hash_verified": false
+    },
+    {
+      "repo_id": "unsloth/Mistral-Large-4-1T-A52B-GGUF",
+      "learned_weight_identity": "MISTRAL_LARGE4",
+      "artifact_class": "ORDINARY_QUANTIZED_REPRESENTATION_OF_EXISTING_HOLD",
+      "representation_policy": "UD-Q2_K_XL_or_UD-IQ2_XXS",
+      "preservation_verdict": "KEEP_EXISTING_HOLD_NO_INCREMENTAL_QUANT_SLOTS",
+      "positive_and_negative_evidence": "v19で既にMistral Large 4はHOLD。Unslothの2bit派生同士に新しい後学習能力はない。1T級モデル自体に他の大規模汎用モデルを上回る実証があった場合に実用表現を一つ選ぶ。",
+      "primary_source": "https://unsloth.ai/docs/models/mistral-large-4",
+      "new_download_approval": false,
+      "quality_independently_matched": false,
+      "full_revision_and_hash_verified": false
+    },
+    {
+      "repo_id": "orcarouter/Qwen3.8-Flash-Next-Uncensored",
+      "learned_weight_identity": "QWEN38_FLASH_NEXT_ORCAROUTER",
+      "artifact_class": "WEIGHT_EDITED_SPECIAL_OVER_150B",
+      "representation_policy": "BF16_source_and_possible_exact_quant",
+      "preservation_verdict": "KEEP_EXISTING_HOLD_SPECIAL_EXCEPTION",
+      "positive_and_negative_evidence": "約180B総数の拒否方向編集後学習成果。150B超の量子化を検討する理由は特殊重みの保存価値であり単にQ4であることではない。原本と量子化の両方を自動採用しない。",
+      "primary_source": "https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored",
+      "new_download_approval": false,
+      "quality_independently_matched": false,
+      "full_revision_and_hash_verified": false
+    }
+  ],
+  "explicit_family_notes": {
+    "qwen_27": "Base plus several special descendants may coexist: Orca general ablation, Interpretic selective political answers, RVN repeated ARA, afdudley reproducible recipe. Each requires distinct objective and quality evidence. Only their intra-checkpoint quant levels are redundant.",
+    "ltx_25": "ChrisColeTech and Stuubs may both be valuable because different learned merges and role-specific NSFW/video improvements, pending proof. One quant per saved trained state by default; do not save all FP8/Q4/INT8 versions.",
+    "large_models": "R28/R29 proposal to allocate 300-378GB to ordinary GGUFs without proving the SOURCE model's incremental value is withdrawn. No blanket ban on large quantized preservation; source and format must be separately justified."
+  },
+  "compatibility": {
+    "archive_plan_bytes": 4000000000000,
+    "free_floor_bytes": 200000000000,
+    "preferred_total_parameter_baseline": 150000000000,
+    "no_actual_formatted_volume_measurement": true
+  },
+  "metrics": {
+    "condition": "actual evidence for materially different learned state and task ability",
+    "minimum_paired_cases_for_llm": 200,
+    "runtime_repeat_min": 30,
+    "source_primary_before_lock": true,
+    "claims_vs_measurements_separated": true
+  },
+  "remaining_uncertainties": [
+    "Chris source merge exact lineage",
+    "Qwen derivatives same-condition benign retention vs edit scope",
+    "LTX merge donor weights and licenses",
+    "quantization selected revision and byte list",
+    "actual incremental storage and user hardware"
+  ],
+  "no_formal_new_selection": true,
+  "no_actual_weight_download": true
+}
