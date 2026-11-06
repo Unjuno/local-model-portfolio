@@ -27,6 +27,10 @@ class GR00T_N17_RightAudit(unittest.TestCase):
         o=m.classify_license(*examples())
         self.assertTrue(o["HF_license_section_3_3_noncommercial_research_evaluation_only"])
         self.assertTrue(o["contradictory_first_party_artifacts"])
+        multiline=list(examples())
+        multiline[0]=multiline[0].replace("research or evaluation purposes only",
+                                       "research or\n evaluation purposes only")
+        self.assertTrue(m.classify_license(*multiline)["contradictory_first_party_artifacts"])
         self.assertFalse(o["commercial_permission_verified"])
         self.assertFalse(o["download_approval_allowed"])
         s=list(examples())

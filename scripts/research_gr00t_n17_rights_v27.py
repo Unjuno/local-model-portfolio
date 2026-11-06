@@ -90,7 +90,7 @@ def issue_record():
        "publisher_definitive_resolution_verified":False}
 
 def classify_license(license_text,model_readme,code_readme_text):
-    txt=license_text.lower()
+    txt=" ".join(license_text.lower().split())
     need("nvidia license" in txt[:250].lower(),"different LICENSE identity")
     need("3.3 use limitation" in txt and "only may be used" in txt and
          "non-commercially" in txt and "research or evaluation purposes only" in txt,
