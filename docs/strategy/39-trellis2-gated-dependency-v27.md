@@ -4,13 +4,13 @@
 
 `Unjuno/local-model-portfolio`の[CURRENT](../../catalog/CURRENT.json)は **v27-20261107、173資産／有効126件**。選定一次ファイル126件を固定版メタデータで算定し、既知の論理重複排除後 **3,417,685,712,585 B**。外部依存・実行ABI・利用権利を含む完全な保全サイズは**UNKNOWN**、関連問題を持つ資産は**35件**。今回の研究はこの中の既採用`microsoft/TRELLIS.2-4B`を修復可能な状態へ近づける。新規モデルの選定・承認・ウェイト取得は実施しない。
 
-選定済みの親：`microsoft/TRELLIS.2-4B@af44b45f2e35a493886929c6d786e563ec68364d`、全24ファイル**16,237,485,044 B**。[固定版`pipeline.json`](https://huggingface.co/microsoft/TRELLIS.2-4B/blob/af44b45f2e35a493886929c6d786e563ec68364d/pipeline.json)と[Microsoft公式Git SHA](https://github.com/microsoft/TRELLIS.2/tree/75fbf0183001ed9876c8dbb35de6b68552ee08bd)を一次証拠とする。
+選定済みの親：`microsoft/TRELLIS.2-4B@af44b45f2e35a493886929c6d786e563ec68364d`、全22ファイル**16,237,485,044 B**。[固定版`pipeline.json`](https://huggingface.co/microsoft/TRELLIS.2-4B/blob/af44b45f2e35a493886929c6d786e563ec68364d/pipeline.json)と[Microsoft公式Git SHA](https://github.com/microsoft/TRELLIS.2/tree/75fbf0183001ed9876c8dbb35de6b68552ee08bd)を一次証拠とする。
 
 ## 1. 厳密なモデル復元依存（原本の重みからは再構築できない）
 
 | 外部配布元／ファイル | 役割・必須性 | 確認済みアクセスと異なる権利 |
 |---|---|---|
-| [`microsoft/TRELLIS-image-large`](https://huggingface.co/microsoft/TRELLIS-image-large)の`ckpts/ss_dec_conv3d_16l8_fp16`（同名`.safetensors`と`.json`） | **構造復号の学習済みモデル**。TRELLIS.2の`args.models.sparse_structure_decoder`が別repoを参照。TRELLIS.2の全24ファイルには同名の復号重みがない。 | 元のTRELLIS-image-largeのmodel cardはMIT。個別部品の正確な版・byte・SHAは[自動調査結果](../../catalog/research/2026-11-07-trellis2-closure/audit.json)を参照 |
+| [`microsoft/TRELLIS-image-large`](https://huggingface.co/microsoft/TRELLIS-image-large)の`ckpts/ss_dec_conv3d_16l8_fp16`（同名`.safetensors`と`.json`） | **構造復号の学習済みモデル**。TRELLIS.2の`args.models.sparse_structure_decoder`が別repoを参照。TRELLIS.2の全22ファイルには同名の復号重みがない。 | 元のTRELLIS-image-largeのmodel cardはMIT。個別部品の正確な版・byte・SHAは[自動調査結果](../../catalog/research/2026-11-07-trellis2-closure/audit.json)を参照 |
 | [`facebook/dinov3-vitl16-pretrain-lvd1689m`](https://huggingface.co/facebook/dinov3-vitl16-pretrain-lvd1689m) | **DINOv3 ViT-L16の画像特徴抽出器。学習成果として必須**。Microsoft実装の`DINOv3ViTModel.from_pretrained`が起動時に参照。 | **現在Gated**、[Meta DINOv3 License](https://huggingface.co/facebook/dinov3-vitl16-pretrain-lvd1689m/blob/main/LICENSE.md)。個人の本人アクセス許可未確認 |
 | [`briaai/RMBG-2.0`](https://huggingface.co/briaai/RMBG-2.0) | BiRefNetによる前景分割。背景除去機能自体は**交換可能**だが、標準`from_pretrained`はDINOと同じくRMBGも**無条件に初期化**。 | **現在Gated**、ライセンスmetadataは`other`。個別商用・再配布条件が確認されるまでは実際の保存と利用権限を推定しない |
 
@@ -24,9 +24,23 @@
 
 [機械監査`audit.json`](../../catalog/research/2026-11-07-trellis2-closure/audit.json)には、3つの外部配布元の**公開HF API固定head、完全tree可否、個別ファイル名と公称バイト、匿名Gated状態、公開LFS SHAの有無とmasked状態**を格納する。欠落・401・サイズ未確認の場合は`null`として残し、0としない。
 
-選定重みファイルは元BF16/Safetensors原本を優先。安全に比較できるSHAがないGated重みは、同名/同容量だけで既選定とdedupしない。Microsoftの外部構造decoderは`ss_dec_conv3d_16l8_fp16.safetensors`と同名`.json`を組にする。BRIA/RMBGはデフォルトの追加ソース重みだが、改変コードで回避できる機能と無条件初期化は区別。研究時点のAPI treeが失敗した依存は「source bytes UNKNOWN」とする。
+選定重みファイルは配布元のSаfetensors原本を優先し、学習精度は別途確認。安全に比較できるSHAがないGated重みは、同名/同容量だけで既選定とdedupしない。Microsoftの外部構造decoderは`ss_dec_conv3d_16l8_fp16.safetensors`と同名`.json`を組にする。BRIA/RMBGはデフォルトの追加ソース重みだが、改変コードで回避できる機能と無条件初期化は区別。研究時点のAPI treeが失敗した依存は「source bytes UNKNOWN」とする。
 
 v27の3,417,685,712,585 Bは一切変更しない。既存126件と外部重み3セット＋Microsoftコードソースに対して、同一identifierでの**調査用論理和**を計算し、源Repo合計・必要選定ファイル合計・権限未検証を混同しない。最低空き床200,000,000,000 B、計画枠4,000,000,000,000 Bは不変。ユーザーHDD空き・実staging/一時cache・完全オフライン復元実行の総量は**UNKNOWN**。
+
+### 調査CIの確定結果（配布元メタデータ、2026-11-07）
+
+| 必要外部ソース | 固定HF revision | 全repo公称バイト | 必要ファイル候補バイト | アクセス |
+|---|---|---:|---:|---|
+| `microsoft/TRELLIS-image-large` | `25e0d31ffbebe4b5a97464dd851910efc3002d96` | 3,299,240,850 | **147,592,217** | 非Gated |
+| `facebook/dinov3-vitl16-pretrain-lvd1689m` | `ea8dc2863c51be0a264bab82070e3e8836b02d51` | 1,212,584,680 | **1,212,583,161** | **Gated manual** |
+| `briaai/RMBG-2.0` | `2fd7b4b0f2393ddb39a267fb62df6c010928a6c6` | 5,369,483,778 | **884,980,744** | **Gated auto** |
+
+Microsoftの構造デコーダは`ckpts/ss_dec_conv3d_16l8_fp16.safetensors`（147,591,972 B）と対応`.json`（245 B）。DINOv3の`model.safetensors`は1,212,559,808 B、RMBGの`model.safetensors`は884,878,856 B。Gated重みの匿名配布元APIではLFS SHA256がマスクされているため、真正性の現物確認を完了したとは主張しない。
+
+Microsoftの固定Gitコード（271 blob）21,228,411 Bも含む追加ソース候補の単純合計は**2,266,384,533 B**、既存v27選定ファイル集合との識別子ベース重複排除後の増分は**2,266,376,399 B**。研究シナリオの既知論理容量は**3,419,952,088,984 B**となったが、これは許諾済み・実機保管済み・完全復元可能という意味ではない。物理空きと全ソフト依存は引き続きUNKNOWN。
+
+[機械監査](../../catalog/research/2026-11-07-trellis2-closure/audit.json)と[228テストのCI結果](https://github.com/Unjuno/local-model-portfolio/actions/runs/42267215757)を参照。
 
 ## 3. 反証可能性、一次論文、付随する新モデル動向
 
@@ -38,7 +52,7 @@ v27の3,417,685,712,585 Bは一切変更しない。既存126件と外部重み3
 ## 4. H/T/D/C/U・ERROR CHECK
 
 - **H：** TRELLIS.2の完全オフライン復元にはDINO ViT-L16と別配布元の構造デコーダが必要。標準ローダーの無改変保存にはRMBGを含む。既選定DINO 7B/H+を流用しても型・特徴空間互換が実証されない。
-- **T：** HF固定SHAの公開treeと各ファイルbyte、GitHub固定コードSHAのソース文字列、親の`pipeline.json`参照を機械照合。130モデル以上の既存選定・取得承認0・4TB制限に影響しないことを全回帰CIで監査する。TensorをダウンロードせずGitHub/Hubの公開meta情報と小型JSON/コードのみ読む。
+- **T：** HF固定SHAの公開treeと各ファイルbyte、GitHub固定コードSHAのソース文字列、親の`pipeline.json`参照を機械照合。126件の既存有効選定・取得承認0・4TB制限に影響しないことを全回帰CIで監査する。TensorをダウンロードせずGitHub/Hubの公開meta情報と小型JSON/コードのみ読む。
 - **D：** SOURCE PASS＝必須リポジトリが実在し正確な固定repo/ファイル/byteに解決できたこと。RESTORE PASS＝本人にGated権限、個別license、すべての現物SHAと実行ABI、オフライン同品質出力が確認されたこと。現時点は**RESTORE UNCERTAIN**。
 - **C：** Gated許可が拒否される、間違ったDINOの代用、別repo decoder欠損、source revisionに非互換なDINOv3 Transformers API、背景除去が必要だがRMBGは商用未許可、CUDAライセンスが目的に不適合。
 - **U：** 個人の権限/実ディスク、PyTorch/Transformers version、GPU VRAM/clock、source SHA maskedの現物ハッシュ、配布元LICENSE変化。確率分布がないため合成標準不確かさ`u_c`と包含係数`k`はUNKNOWN。
