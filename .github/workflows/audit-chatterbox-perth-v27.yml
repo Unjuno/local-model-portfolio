@@ -1,0 +1,110 @@
+name: Archive Chatterbox retired runtime and Perth watermark source identities
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - '.github/workflows/audit-chatterbox-perth-v27.yml'
+      - 'scripts/audit_chatterbox_perth_v27.py'
+      - 'tests/test_chatterbox_perth_v27.py'
+      - 'docs/strategy/38-chatterbox-retired-perth-v27.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-chatterbox-perth-source-v27-risk
+  cancel-in-progress: false
+jobs:
+  verify:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Validate immutable v27 baseline and synthetic fail-closed guards
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_chatterbox_perth_v27.py -v
+          python scripts/check_parameter_cutoff.py
+          python scripts/audit_selection_decisions.py
+      - name: Read only immutable GitHub source trees, labels and short source code
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m scripts.audit_chatterbox_perth_v27
+      - name: Verify evidence and full regression suite
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,re,subprocess,sys
+          from pathlib import Path
+          def load(p):return json.loads(Path(p).read_text(encoding="utf-8"))
+          c=load("catalog/CURRENT.json")
+          s=load("catalog/capacity/2026-11-07/v27/capacity-summary.json")
+          a=load("catalog/research/2026-11-07-chatterbox-perth/audit.json")
+          assert c["revision_id"]=="v27-20261107" and c["expected"]["tracked"]==173 and c["expected"]["active"]==126
+          assert s["known_scope_content_union_bytes"]==3_417_685_712_585
+          assert len(s["assets_with_open_dependency_issues"])==35
+          assert a["new_models_selected"]==a["model_downloads_approved"]==a["model_payload_downloaded_bytes"]==0
+          assert not load("queues/approved.json")["entries"]
+          assert a["chatterbox_source"]["file_count"]==66
+          assert a["perth_source"]["file_count"]==37
+          assert a["chatterbox_source"]["gross_source_blobs_bytes"]==1_870_627
+          assert a["perth_source"]["gross_source_blobs_bytes"]==38_066_448
+          assert a["perth_source"]["learned_watermark_checkpoint"]["bytes"]==37_429_684
+          assert not a["perth_source"]["learned_watermark_checkpoint"]["sha256_locally_verified"]
+          assert a["read_only_code_findings"]["publisher_retired_notice_confirmed"]
+          assert a["read_only_code_findings"]["perth_package_installed_from_MUTABLE_master"]
+          assert a["read_only_code_findings"]["explicit_t3_model_v3_required_for_selected_archive"]
+          assert a["read_only_code_findings"]["perth_implicit_checkpoint_path_required"]
+          incr=a["v27_research_capacity_addendum"]
+          assert incr["baseline_known_logical_bytes"]==s["known_scope_content_union_bytes"]
+          assert incr["new_publisher_code_tree_gross_bytes"]==39_937_075
+          assert 0 <= incr["hash_identity_aware_new_bytes"] <=39_937_075
+          assert incr["research_scenario_logical_bytes"]==incr["baseline_known_logical_bytes"]+incr["hash_identity_aware_new_bytes"]
+          assert incr["full_offline_archive_bytes"] is None and incr["physical_owner_disk_free_bytes"] is None
+          all_tests=subprocess.run([sys.executable,"-m","unittest","discover","-s","tests","-v"],capture_output=True,text=True)
+          log=all_tests.stdout+all_tests.stderr
+          print(log)
+          if all_tests.returncode:
+              raise SystemExit(all_tests.returncode)
+          for p in ["scripts/check_parameter_cutoff.py","scripts/audit_selection_decisions.py"]:
+              subprocess.run([sys.executable,p],check=True)
+          num=int(re.search(r"Ran (\d+) tests",log).group(1))
+          verification={"source_revision":"v27-20261107",
+               "tests_pass":True,"full_suite_tests_run":num,
+               "parameter_gate_pass":True,"selection_audit_pass":True,
+               "full_126_selected_primary_file_scopes_unchanged":True,
+               "owner_disk_measured":False,"complete_reconstruction_proven":False,
+               "model_payloads_downloaded":0,"downloads_authorized":0,
+               "code_trees_confirmed":2,
+               "learned_watermark_checkpoint_source_tree_metadata_confirmed":True,
+               "test_log_sha256":hashlib.sha256(log.encode()).hexdigest()}
+          p=Path("catalog/research/2026-11-07-chatterbox-perth/verification.json")
+          p.write_text(json.dumps(verification,indent=2)+"\n",encoding="utf-8")
+          print(json.dumps(verification,indent=2))
+          PY
+      - name: Commit source-metadata evidence only to research branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          test "$(git ls-remote origin "$GITHUB_REF" | cut -f1)" = "$GITHUB_SHA"
+          git add -- catalog/research/2026-11-07-chatterbox-perth
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'research: freeze retired Chatterbox/Perth code and learned watermark source metadata [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD
