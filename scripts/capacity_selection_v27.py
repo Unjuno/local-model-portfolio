@@ -83,6 +83,7 @@ def build(old,view,overlay,research,src,moss):
     assert all(x['repo_id']!=MOSS for x in old['dependencies'])
     codecfiles=moss_meta['codec_selected_files']
     assert len(codecfiles)==8 and len([f for f in codecfiles if f['path'].endswith('.safetensors')])==2
+    assert cap.sum_bytes(codecfiles)==moss_meta['required_moss_audio_codec_new_selected_primary_bytes']
     assert all(f.get('sha256') for f in codecfiles if f['path'].endswith('.safetensors'))
     dep={'parent':'OpenMOSS-Team/MOSS-TTS-v1.5','repo_id':MOSS,
          'revision':'3cd226ba2947efa357ef453bcad111b6eafba782',
@@ -97,6 +98,8 @@ def build(old,view,overlay,research,src,moss):
     entries=union_entries(items,deps)
     old_entries=union_entries(old['items'],old['dependencies'])
     assert cap.union_bytes(old_entries)==old['known_scope_content_union_bytes']
+    codec_only_union=cap.union_bytes(old_entries+[(MOSS+'@'+dep['revision'],f) for f in codecfiles])
+    assert codec_only_union==moss_meta['source_only_expanded_known_hash_aware_bytes']
     all_union=cap.union_bytes(entries)
     assert all_union>=moss_meta['source_only_expanded_known_hash_aware_bytes']
     assert all_union<=moss_meta['source_only_expanded_known_hash_aware_bytes']+row['primary_file_bytes']
