@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "archive_target_bytes": 3800000000000,
+  "archive_target_bytes": 4000000000000,
   "minimum_free_bytes": 200000000000,
   "inference_memory_policy": {
     "maximum_estimated_peak_ram_bytes_exclusive": 512000000000,
@@ -27,26 +27,25 @@
   "auto_delete_existing_files": false,
   "default_parallel_assets": 1,
   "storage_allocation_policy": {
-    "confirmed_on": "2026-11-02",
+    "confirmed_on": "2026-11-07",
     "advertised_drive_capacity_bytes": 4000000000000,
-    "permitted_archive_budget_bytes": 3800000000000,
+    "permitted_archive_budget_bytes": 4000000000000,
     "policy_type": "maximize_valuable_and_lawfully_obtainable_unique_assets_up_to_cap_not_mandatory_fill",
     "do_not_stop_at_provisional_3_28_tb_scenario": true,
     "requires_actual_formatted_volume_capacity_and_free_space_measurement": true,
     "free_space_floor_still_applies": true,
     "check_existing_content_cache_and_staging_peak": true,
     "source_model_selection_and_approval_remain_separate": true,
-    "notes": "User clarified that the 4TB-class HDD may be used for up to about 3.8 decimal TB of worthwhile archive. This does not waive the independently checked free-space floor. If formatted volume cannot satisfy both, actual allowed archive bytes will be smaller; do not invent capacity.",
+    "notes": "User reported 4TB actually usable on 2026-11-07. Treat as planning ceiling, not measured free space. Keep 200GB minimum free space as an independent gate. Preserve all existing selected, conditional, hold, backlog and past undecided research assets; do not infer download approval.",
     "user_reported_capacity": {
-      "reported_text": "about 3.8 TB displayed/usable on a purchased 4 TB-class HDD",
-      "report_date": "2026-11-02",
-      "unit_and_meaning": "not independently verified; TB vs TiB, total vs free, and exact bytes unknown",
+      "reported_text": "2026-11-07: actually 4TB usable; roughly 800GB additional opportunity",
+      "report_date": "2026-11-07",
       "formatted_volume_capacity_bytes_verified": null,
       "current_free_bytes_verified": null,
       "filesystem_name_verified": null,
-      "default_example_if_usable_bytes_exactly_3800000000000": {
-        "max_payload_bytes_before_existing_data_and_peak_working_space": 3600000000000,
-        "based_on_minimum_free_bytes": 200000000000
+      "unit_and_meaning": "rounded user report, not byte-accurate measurement; whether 200GB free floor is outside the usable 4TB remains unknown",
+      "safety_example_if_formatted_total_exactly_4tb_bytes": {
+        "maximum_archive_payload_before_existing_files_and_staging_bytes": 3800000000000
       },
       "never_treat_reported_size_as_download_authorization": true
     }
