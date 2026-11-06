@@ -1,5 +1,9 @@
 # Local Model Portfolio
 
+## 現行v24：2026年11月5日公開の独立学習成果3件
+
+[CURRENT](catalog/CURRENT.json)は168資産・有効121件。PFN PLaMo3 Translate 31B教師と0.8B蒸留生徒、NVIDIA Cosmos3 Nano Sim-Bimanual行動条件付き世界モデルを3件追加。旧165資産不変。v23の118一次ファイル容量は監査済み、v24の新3件は別途容量再検証。4TB上限、実空き200GB、150B超量子化同等RAM審査、ダウンロード承認0は不変。[今回の選定根拠](docs/strategy/31-new-translation-and-robotics-selection-v24.md)・[容量台帳](catalog/capacity/2026-11-06/v24/capacity-summary.json)。下の記録は履歴。
+
 ## v23容量・公開状態の再照合（2026-11-06）
 
 [118件の容量台帳](catalog/capacity/2026-11-06/v23/capacity-summary.json)・[最新公開状態](catalog/research/2026-11-06-latest-v23/freshness-summary.json)・[判断と限界](docs/strategy/30-v23-capacity-latest-check.md)。原本の固定選定と上流の現在版を区別。完全復元依存・保存先実空き・取得承認は別工程。

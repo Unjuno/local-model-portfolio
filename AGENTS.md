@@ -1,5 +1,9 @@
 # エージェント作業規約
 
+## 現行v24：2026年11月5日公開の独立学習成果3件
+
+[CURRENT](catalog/CURRENT.json)は168資産・有効121件。PFN PLaMo3 Translate 31B教師と0.8B蒸留生徒、NVIDIA Cosmos3 Nano Sim-Bimanual行動条件付き世界モデルを3件追加。旧165資産不変。v23の118一次ファイル容量は監査済み、v24の新3件は別途容量再検証。4TB上限、実空き200GB、150B超量子化同等RAM審査、ダウンロード承認0は不変。[今回の選定根拠](docs/strategy/31-new-translation-and-robotics-selection-v24.md)・[容量台帳](catalog/capacity/2026-11-06/v24/capacity-summary.json)。下の記録は履歴。
+
 ## 現行v23：容量監査に基づく独自学習成果2件の追加
 
 [CURRENT](catalog/CURRENT.json)は165資産・有効118件。v22の116件の一次ファイル範囲が確定した後、Hcompany/Holotron4-30B-A3BのNemotron後学習原本とLiquidAI/LFM2.5-24B-A2B-DSparkの学習済み投機ドラフターを条件付き選定。既存163件は不変。新2件の配布元全repo公称バイトは66,707,531,084であり最終採用ファイルや実ディスク必要量ではない。4TB上限、200GB実空き床、150B以上の量子化同等RAM条件、取得承認0件を維持。[選定根拠](docs/strategy/29-bounded-specialized-selection-v23.md)・[v22容量監査](catalog/capacity/2026-11-06/capacity-summary.json)。下のv22以前は履歴。
