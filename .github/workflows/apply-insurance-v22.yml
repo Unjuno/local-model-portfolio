@@ -1,0 +1,68 @@
+name: Apply insurance-first v22 metadata on risk branch
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - 'scripts/apply_selection_v22.py'
+      - 'tests/test_selection_v22.py'
+      - 'catalog/revisions/v22-2026-11-06.json'
+      - 'policies/archival-insurance.json'
+      - '.github/workflows/apply-insurance-v22.yml'
+permissions:
+  contents: read
+concurrency:
+  group: insurance-v22-risk-only
+  cancel-in-progress: false
+jobs:
+  apply:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 7
+    permissions:
+      contents: write
+    env:
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Test baseline and materialize metadata only
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -v
+          python scripts/check_parameter_cutoff.py
+          python scripts/audit_selection_decisions.py
+          python -m scripts.apply_selection_v22 --apply
+          python -m unittest discover -s tests -v 2>&1 | tee /tmp/v22-tests.log
+          python scripts/check_parameter_cutoff.py
+          python scripts/audit_selection_decisions.py
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          p=Path('catalog/preparation/2026-11-06-v22-integration-check.json')
+          r=json.loads(p.read_text())
+          log=Path('/tmp/v22-tests.log').read_text()
+          n=re.findall(r'Ran (\d+) tests',log)
+          if not n or '\nOK\n' not in log: raise SystemExit('missing successful test log')
+          r.update(full_suite_verified=True,full_repository_unittest_count=int(n[-1]),parameter_audit_passed=True,selection_audit_passed=True)
+          p.write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n')
+          PY
+      - name: Commit only generated metadata with unchanged branch lease
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          remote_sha=$(git ls-remote origin "$GITHUB_REF" | cut -f1)
+          test "$remote_sha" = "$GITHUB_SHA"
+          git add -- catalog/CURRENT.json catalog/effective-portfolio-2026-11-06-v22.json queues/proposed-v22-2026-11-06.json catalog/preparation/2026-11-06-insurance-bundles-v22.json catalog/preparation/2026-11-06-v22-integration-check.json policies/selection.md policies/selection-decision-v17.json README.md AGENTS.md scripts/audit_selection_decisions.py tests/test_catalog_v19.py
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'catalog: materialize insurance-first v22 and staged preservation bundles [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD
