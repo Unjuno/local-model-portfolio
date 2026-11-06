@@ -25,7 +25,7 @@ class V19SmallSpecializationTests(unittest.TestCase):
         offered={(x["asset_kind"],x["repo_id"]) for x in self.q["candidates"]}
         self.assertEqual(len(chosen),105)
         self.assertEqual(chosen,offered)
-        expected={"v19-20261106":(150,105),"v20-20261106":(154,108),"v21-20261106":(159,112),"v22-20261106":(163,116),"v23-20261106":(165,118),"v24-20261106":(168,121),"v25-20261106":(169,122),"v26-20261106":(172,125)}
+        expected={"v19-20261106":(150,105),"v20-20261106":(154,108),"v21-20261106":(159,112),"v22-20261106":(163,116),"v23-20261106":(165,118),"v24-20261106":(168,121),"v25-20261106":(169,122),"v26-20261106":(172,125),"v27-20261107":(173,126)}
         self.assertIn(c["revision_id"],expected)
         tracked,active=expected[c["revision_id"]]
         cv=load(c["materialized_catalog_path"])

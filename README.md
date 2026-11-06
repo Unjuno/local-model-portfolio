@@ -1,5 +1,9 @@
 # Local Model Portfolio
 
+## 現行v27：Kakao Kanana非生成型判断モデルとMOSS必須音声Codec
+
+[CURRENT](catalog/CURRENT.json)は173資産・有効126件。Kanana 3.665Bの型付き確率判断（choice/noul/score）をBF16原本一式として条件付き研究選定。Kanana Open LicenseのNOTICE/利用条件・別途商用API/SI/端末組込権利が未確認で取得承認不可。MOSS-TTS v1.5の外部必須v1音声Codecを容量に計上、v2は混同しない。Ricursive Ripple 65Bの事前学習原本・後学習版は研究HOLD。4TB上限・最低空き200GB・150B以上量子化同等RAM・承認0を維持。[評価](docs/strategy/37-kanana-moss-archive-v27.md)・[容量](catalog/capacity/2026-11-07/v27/capacity-summary.json)。以下は履歴。
+
 ## 現行v26：Cosmos Sim-AutoとPhononの独立学習成果3件
 
 [CURRENT](catalog/CURRENT.json)は172資産・有効125件。車載WSM+LiDARのCosmos3 Nano Sim-Autoと音声Phononの英語31M・多言語40M原本を条件付き選定。40Mは現在Gated＋CC BY-NC4.0なので本人権限確認まで研究専用で取得不可。Phononの話者コーデック自体は未公開であり、既存の潜在話者のみ記録。BaIDU ERNIE5.5 Flash Base 280Bは総150B超の同等RAM未実測で研究HOLD。v25の旧169資産不変、外部依存に声の潜在とCosmos共通VAEを記録。4TB・200GB空き・同等RAM・取得承認0を維持。[詳細](docs/strategy/33-phonon-cosmos-ernie-risk-v26.md)・[容量](catalog/capacity/2026-11-06/v26/capacity-summary.json)。以下の版は履歴。
