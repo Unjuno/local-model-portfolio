@@ -1,0 +1,95 @@
+name: Metadata-only capacity census
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - 'scripts/capacity_inventory.py'
+      - 'tests/test_capacity_inventory.py'
+      - '.github/workflows/capacity-census.yml'
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-capacity-census-risk-only
+  cancel-in-progress: false
+jobs:
+  census:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - name: Validate unchanged selection and collect public metadata only
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -v
+          python scripts/check_parameter_cutoff.py
+          python scripts/audit_selection_decisions.py
+          python scripts/capacity_inventory.py
+      - name: Record verified counts and pinned main difference
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,re,subprocess,sys
+          from pathlib import Path
+          root=Path('.')
+          out=root/'catalog/capacity/2026-11-06'
+          inv=json.loads((out/'inventory.json').read_text())
+          c=json.loads((root/'catalog/CURRENT.json').read_text())
+          v=json.loads((root/c['materialized_catalog_path']).read_text())
+          active={(x['asset_kind'],x['repo_id']) for x in v['items'] if x['portfolio_decision'] in ('select','conditional')}
+          assert active=={(x['asset_kind'],x['repo_id']) for x in inv['items']}
+          assert len(inv['items'])==116 and inv['download_enabled'] is False
+          for p,h in inv['baseline_sha256'].items():
+              assert hashlib.sha256((root/p).read_bytes()).hexdigest()==h,p
+          run=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],capture_output=True,text=True)
+          log=run.stdout+run.stderr
+          print(log)
+          if run.returncode: raise SystemExit(run.returncode)
+          count=int(re.search(r'Ran (\d+) tests',log).group(1))
+          for script in ('scripts/check_parameter_cutoff.py','scripts/audit_selection_decisions.py'):
+              subprocess.run([sys.executable,script],check=True)
+          main='29529656ac9af944e37c1a803d7271d045860a44'
+          base='7b4ffbf311cfa22a37ebdfd17ed4039042525ee1'
+          git=lambda *args:subprocess.check_output(['git',*args],text=True).strip()
+          mc=json.loads(git('show',main+':catalog/CURRENT.json'))
+          diff={'main_commit':main,'risk_baseline_commit':base,'main_revision':mc['revision_id'],
+                'main_expected':mc['expected'],'risk_revision':c['revision_id'],
+                'left_right_commit_counts':git('rev-list','--left-right','--count',main+'...'+base),
+                'changed_paths':git('diff','--name-status',main,base).splitlines(),
+                'main_modified_by_this_work':False}
+          (out/'main-comparison.json').write_text(json.dumps(diff,ensure_ascii=False,indent=2)+'\n')
+          check={'full_suite_verified':True,'full_repository_unittest_count':count,
+                 'test_log_sha256':hashlib.sha256(log.encode()).hexdigest(),
+                 'parameter_audit_passed':True,'selection_audit_passed':True,
+                 'active_identity_coverage_passed':True,'baseline_files_unchanged':True,
+                 'complete_source_trees':inv['complete_tree_count'],'failed_or_incomplete_source_trees':inv['failed_or_incomplete_count'],
+                 'runtime_tested':False,'owner_disk_measured':False,'model_payload_downloaded':False,
+                 'source_commit':git('rev-parse','HEAD')}
+          (out/'verification.json').write_text(json.dumps(check,ensure_ascii=False,indent=2)+'\n')
+          print(json.dumps(check,indent=2))
+          PY
+      - name: Commit metadata under unchanged risk-branch lease
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          test "$(git ls-remote origin "$GITHUB_REF" | cut -f1)" = "$GITHUB_SHA"
+          git add -- catalog/capacity/2026-11-06
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'audit: snapshot all active source inventories and capacity unknowns [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD
