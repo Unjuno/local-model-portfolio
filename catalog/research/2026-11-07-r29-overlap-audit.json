@@ -1,0 +1,343 @@
+{
+  "schema_version": 1,
+  "round": "R29",
+  "checked_on": "2026-11-07",
+  "reason": "User rejected R28's size-first bundles that included near-duplicates",
+  "main_baseline_sha": "7bf823bd4d6c11bdc32f62afebf3db4c38227e58",
+  "existing_v19_unchanged": true,
+  "existing_records_count": 150,
+  "existing_active_count": 105,
+  "existing_excluded_count": 6,
+  "nanbeige_decision": "select",
+  "prior_unresolved_records_retained": true,
+  "r28_status": "SUPERSEDED_SIZE_FIRST_PLANS_NOT_DOWNLOAD_CANDIDATES",
+  "catalog_scope": "Targeted high-overlap-family screen of 150 records, not exhaustive all 11,175 pairs",
+  "groups": [
+    {
+      "id": "qwen38_27b_same_base",
+      "members": [
+        {
+          "repo_id": "orcarouter/Qwen3.8-27B-Uncensored",
+          "existing_decision": "conditional"
+        },
+        {
+          "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+          "existing_decision": "conditional"
+        },
+        {
+          "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+          "existing_decision": "conditional"
+        },
+        {
+          "repo_id": "afdudley/Qwen3.8-27B-abliterated-NVFP4",
+          "existing_decision": "hold"
+        },
+        {
+          "repo_id": "Qwen/Qwen3.8-27B",
+          "existing_decision": "select"
+        }
+      ],
+      "priority": "HIGH",
+      "action": "CHOOSE_ONE_SPECIALIZED_WINNER_AFTER_MATCHED_BEHAVIOR_AND_GENERAL_QUALITY_TEST",
+      "why": "Original, low-refusal, targeted edit, Heretic and NVFP4 largely share ancestor; edited behavior needs separate evidence"
+    },
+    {
+      "id": "ltx25_same_video_family",
+      "members": [
+        {
+          "repo_id": "Lightricks/LTX-2.5",
+          "existing_decision": "conditional"
+        },
+        {
+          "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+          "existing_decision": "conditional"
+        },
+        {
+          "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+          "existing_decision": "conditional"
+        }
+      ],
+      "priority": "HIGH",
+      "action": "ONE_BASE_PLUS_ONLY_DISTINCT_TUNED_VARIANT",
+      "why": "Multiple 22B complete posttrained near derivatives, distinct NSFW/control value unverified"
+    },
+    {
+      "id": "qwen_tts_generators",
+      "members": [
+        {
+          "repo_id": "microsoft/VibeVoice-1.5B",
+          "existing_decision": "select"
+        },
+        {
+          "repo_id": "OpenMOSS-Team/MOSS-TTS-v1.5",
+          "existing_decision": "select"
+        },
+        {
+          "repo_id": "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+          "existing_decision": "select"
+        },
+        {
+          "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+          "existing_decision": "select"
+        },
+        {
+          "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+          "existing_decision": "select"
+        },
+        {
+          "repo_id": "Edge0/Audio8-TTS-Realistic-Air",
+          "existing_decision": "conditional"
+        },
+        {
+          "repo_id": "Edge0/Audio8-TTS-Realistic-0.6b",
+          "existing_decision": "hold"
+        }
+      ],
+      "priority": "MEDIUM",
+      "action": "COMPARE_FUNCTION_NOT_ALL_GENERATORS",
+      "why": "TTS general skill overlaps; special controls like VoiceDesign can be genuinely distinct"
+    },
+    {
+      "id": "qwen_image_base_adapter",
+      "members": [
+        {
+          "repo_id": "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1",
+          "existing_decision": "conditional"
+        },
+        {
+          "repo_id": "Qwen/Qwen-Image-2.1",
+          "existing_decision": "conditional"
+        }
+      ],
+      "priority": "HIGH",
+      "action": "REUSE_ONLY_VERIFIED_MATCHED_BASE_SHA",
+      "why": "LoRA is not independent full learned base"
+    },
+    {
+      "id": "omni_streaming_audio",
+      "members": [
+        {
+          "repo_id": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+          "existing_decision": "conditional"
+        }
+      ],
+      "priority": "HIGH",
+      "action": "NVIDIA_IS_CHALLENGER_NOT_NOVEL_VOICE_BY_DEFAULT",
+      "why": "Qwen3 Omni has speech in, speech out, realtime streaming, natural turn taking"
+    },
+    {
+      "id": "motion_video_incumbents",
+      "members": [
+        {
+          "repo_id": "KlingTeam/LivePortrait",
+          "existing_decision": "select"
+        },
+        {
+          "repo_id": "Lightricks/LTX-2.5",
+          "existing_decision": "conditional"
+        },
+        {
+          "repo_id": "Wan-AI/Wan2.2-TI2V-5B",
+          "existing_decision": "select"
+        }
+      ],
+      "priority": "MEDIUM",
+      "action": "EXPLICIT_DRIVING_CONTROL_TEST_FOR_WAN; LONGCAT_VS_LTX_TEST",
+      "why": "Generic video and face driving exist, full body driving may be genuinely unique"
+    },
+    {
+      "id": "large_text_agent",
+      "members": [
+        {
+          "repo_id": "Qwen/Qwen3-Coder-Next",
+          "existing_decision": "select"
+        },
+        {
+          "repo_id": "mistralai/Mistral-Small-4-119B-2603",
+          "existing_decision": "select"
+        },
+        {
+          "repo_id": "openai/gpt-oss-120b",
+          "existing_decision": "select"
+        },
+        {
+          "repo_id": "mistralai/Mistral-Large-4-1T-A52B",
+          "existing_decision": "hold"
+        }
+      ],
+      "priority": "HIGH",
+      "action": "AT_MOST_ONE_NEW_LARGE_QUANT_BEFORE_PROVING_TASK_GAIN",
+      "why": "General code, reasoning and agents overlap and must use same task/scaffold"
+    },
+    {
+      "id": "flux_family",
+      "members": [
+        {
+          "repo_id": "black-forest-labs/flux-3-image-klein-base",
+          "existing_decision": "conditional"
+        },
+        {
+          "repo_id": "black-forest-labs/FLUX.2-dev",
+          "existing_decision": "conditional"
+        },
+        {
+          "repo_id": "black-forest-labs/flux-3-image-klein",
+          "existing_decision": "deferred"
+        },
+        {
+          "repo_id": "black-forest-labs/FLUX.2-klein-9B",
+          "existing_decision": "deferred"
+        }
+      ],
+      "priority": "MEDIUM",
+      "action": "COMPARED_PER_IMAGE_TASK_AND_BASE_VS_POSTTRAIN",
+      "why": "Text-to-image/edit overlapping, Base may preserve distinct training stage"
+    },
+    {
+      "id": "complementary_pairs",
+      "members": [
+        {
+          "repo_id": "LiquidAI/LFM2.5-VL-3B",
+          "existing_decision": "conditional"
+        },
+        {
+          "repo_id": "LiquidAI/LFM2.5-VL-3B-DSpark",
+          "existing_decision": "conditional"
+        },
+        {
+          "repo_id": "udgamlabs/Lilavati",
+          "existing_decision": "conditional"
+        },
+        {
+          "repo_id": "udgamlabs/Lilavati-Checker",
+          "existing_decision": "conditional"
+        }
+      ],
+      "priority": "LOW",
+      "action": "KEEP_NECESSARY_TARGET_DRAFTER_OR_GENERATOR_CHECKER_PAIRS",
+      "why": "Component dependence is not redundant independent capability"
+    }
+  ],
+  "review": [
+    {
+      "repo_id": "Wan-AI/Wan2.2-Animate-2-14B-Diffusers",
+      "expected_bytes": 45920934868,
+      "decision": "PRIORITIZE_DIFFERENT_CONTROL_RESEARCH_ONLY",
+      "compared_to": [
+        "Wan-AI/Wan2.2-TI2V-5B",
+        "KlingTeam/LivePortrait",
+        "Lightricks/LTX-2.5"
+      ],
+      "unique_mechanism": "Source-video-conditioned full-body motion transfer",
+      "counterargument": "Existing models may approximate task; same-condition evaluation missing",
+      "next": "Test 30 diverse consented reference and motion clips against incumbent capabilities"
+    },
+    {
+      "repo_id": "dots-studio/dots.tts.edit",
+      "expected_bytes_approx": 5153200000,
+      "decision": "PRIORITIZE_DIFFERENT_CONTROL_RESEARCH_ONLY",
+      "compared_to": [
+        "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+        "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+      ],
+      "unique_mechanism": "Localized editing of source audio while preserving non-edit region",
+      "counterargument": "Author-only doteBench; weak intense emotion edit performance; Japanese unsupported",
+      "next": "Test paired target edit and source-region preservation, verify weight license"
+    },
+    {
+      "repo_id": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+      "variant": "UD-Q2_K_XL",
+      "expected_bytes_approx": 334800000000,
+      "decision": "OPTIONAL_ONE_LARGE_RESEARCH_ONLY",
+      "compared_to": [
+        "Qwen/Qwen3-Coder-Next",
+        "mistralai/Mistral-Small-4-119B-2603",
+        "openai/gpt-oss-120b"
+      ],
+      "unique_mechanism": "748B total, specialized RL and Engram architecture, author same-family GGUF six-task mean 87.49 vs Q8 87.68",
+      "counterargument": "Different task benchmarks across publishers not comparable, no independent local runtime or latency; >150B exception not passed",
+      "next": "Same fixed agent scaffold, code/reasoning tasks, 30+ cases, actual quant backend and RAM, legal/size lock"
+    },
+    {
+      "repo_id": "unsloth/Mistral-Large-4-1T-A52B-GGUF",
+      "variant": "UD-Q2_K_XL",
+      "expected_bytes_approx": 378300000000,
+      "decision": "NO_INCREMENTAL_CAPACITY_KEEP_EXISTING_HOLD",
+      "compared_to": [
+        "mistralai/Mistral-Small-4-119B-2603",
+        "openai/gpt-oss-120b",
+        "Qwen/Qwen3-Coder-Next"
+      ],
+      "counterargument": "Overlapping generalist; top-1 95.6% is agreement with its original, not matched benchmark gain",
+      "next": "Only reconsider on demonstrated multilingual/vision/long-horizon distinct gain and measured <512GB total peak RAM"
+    },
+    {
+      "repo_id": "meituan-longcat/LongCat-Video-Avatar-1.5",
+      "expected_bytes": 44788614746,
+      "decision": "NO_INCREMENTAL_CAPACITY_KEEP_R23_RESEARCH",
+      "compared_to": [
+        "Lightricks/LTX-2.5",
+        "KlingTeam/LivePortrait"
+      ],
+      "counterargument": "LTX 2.5 already has frozen-audio conditioning community path; independent small-sample deployment report not superiority proof",
+      "next": "Same supplied speech+person/reference, verify unique multiperson lip sync/body motion and compute"
+    },
+    {
+      "repo_id": "nvidia/NVIDIA-NemotronLabs-VoiceChat-11B",
+      "expected_bytes_approx": 44400000000,
+      "decision": "NO_INCREMENTAL_CAPACITY_KEEP_R27_RESEARCH",
+      "compared_to": [
+        "Qwen/Qwen3-Omni-30B-A3B-Instruct"
+      ],
+      "counterargument": "Qwen already supports streaming audio-in/audio-out, NVIDIA English only, tool Pass@1 33% creator metric",
+      "next": "Matched duplex interruption and tool completion evaluation"
+    },
+    {
+      "repo_id": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+      "variant": "UD-IQ2_XXS",
+      "decision": "ALTERNATE_QUANT_NOT_SECOND_MODEL",
+      "counterargument": "Same trained weights as preferred DeepSeek Q2, lesser author quality, do not save both"
+    },
+    {
+      "repo_id": "unsloth/Mistral-Large-4-1T-A52B-GGUF",
+      "variant": "UD-IQ2_XXS",
+      "decision": "ALTERNATE_QUANT_NOT_SECOND_MODEL",
+      "counterargument": "Same trained weights as another 1T variant, no independent archival role"
+    }
+  ],
+  "priority_shortlist": {
+    "repo_ids": [
+      "Wan-AI/Wan2.2-Animate-2-14B-Diffusers",
+      "dots-studio/dots.tts.edit"
+    ],
+    "conditional_big_exception": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF / UD-Q2_K_XL",
+    "max_illustrative_selected_bytes": 385874134868,
+    "source_bytes_rough": true,
+    "full_dependency_bytes": null,
+    "unallocated_of_user_reported_800GB": 414125865132,
+    "archive_approval_bytes": 0
+  },
+  "gates": {
+    "exact_immutable_revision_required": true,
+    "full_file_hash_required": true,
+    "user_approved_acquisition": false,
+    "user_machine_tested": false,
+    "one_quantization_per_model": true,
+    "under150B_baseline_except_verified_quantized_exception": true,
+    "measured_peak_ram_below_bytes": 512000000000,
+    "publisher_benchmarks_not_paired_independent": true,
+    "do_not_count_full_checkpoint_reuse_without_hash_match": true
+  },
+  "references": [
+    "https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct",
+    "https://unsloth.ai/docs/models/deepseek-v4.1-flash",
+    "https://unsloth.ai/docs/models/mistral-large-4",
+    "https://arxiv.org/abs/2608.06009",
+    "https://arxiv.org/abs/2608.02673",
+    "https://tight.studio/blog/open-source-talking-avatar-models/",
+    "https://huggingface.co/Lightricks/LTX-2.5/discussions/44"
+  ],
+  "no_model_download": true,
+  "no_queue_changes": true,
+  "no_formal_selection_edits": true
+}
