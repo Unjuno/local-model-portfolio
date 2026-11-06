@@ -1,3 +1,5 @@
+**R32訂正（2026-11-07）**：ChrisColeTech版について、Hugging Faceで複製元が明記された派生レポジトリのREADMEから、Eros10／DMD／IC-LoRA／Detailer／Img2Vidの5マージ元を確認。したがって『変更レシピの記載がない』は訂正。**ただし原本と複製先のSHA同一性、実行品質、ライセンス・アクセス許諾は未確認**。[R32根拠と6ファイルSHA](31-r32-ltx-donor-chain-and-license.md)を優先してください。
+
 # R31｜特殊学習済み重みと量子化の同一性：原論文・公開元・第三者の性能データによる再査定
 
 > 2026-11-07、研究専用。既存v19の150資産（SELECT 53／CONDITIONAL 52／HOLD 27／BACKLOG 12／EXCLUDED 6）は変更しない。Nanbeige4.3-33B SELECT、4TB計画、approved queue空は維持。詳細な[機械可読7件台帳](../../catalog/research/2026-11-07-r31-special-weights-evidence.json)。R20で既に調査したDavidAUを**新発見と数えない**。
