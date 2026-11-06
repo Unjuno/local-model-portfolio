@@ -47,8 +47,6 @@ jobs:
                           if actual!=expected:raise ValueError('index and selected shards disagree: '+prefix)
                           continue
                   if sorted(parts)"""
-              # Normalize indentation from this embedded patch to Python function scope.
-              lines=new.splitlines();new='\n'.join([lines[0]]+[line[10:] for line in lines[1:]])
               one(old,new)
               one('    check_shards(selected)','    check_shards(selected,profile.get("index_shards"))')
               anchor="        row={'asset_kind':item['asset_kind']"
@@ -60,7 +58,6 @@ jobs:
                               indexes.extend(str(parent/x) for x in d['json']['weight_map'].values() if isinstance(x,str))
                       if indexes:profile['index_shards']=sorted(set(indexes))
           """
-              lines=insert.splitlines();insert='\n'.join([lines[0]]+[line[10:] for line in lines[1:]])+'\n'
               one(anchor,insert+anchor)
               compile(s,str(p),'exec');p.write_text(s)
           PY
