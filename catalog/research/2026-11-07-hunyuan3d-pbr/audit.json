@@ -1,0 +1,3158 @@
+{
+  "schema_version": 1,
+  "audited_on": "2026-11-07",
+  "observed_at_utc": "2026-11-06T19:34:18.163138+00:00",
+  "baseline_revision": "v27-20261107",
+  "baseline_active_assets": 126,
+  "parent": {
+    "id": "tencent/Hunyuan3D-2.1",
+    "source_revision": "0b94677654c57bb9a6b6845cd7b704ccf551d327",
+    "source_gross_bytes": 14909683275,
+    "selected_in_portfolio": true
+  },
+  "code": {
+    "repo": "Tencent-Hunyuan/Hunyuan3D-2.1",
+    "revision": "82920d643c0dc2f7bfd7255f45f62d386edfe60c",
+    "complete_git_tree": true,
+    "code_and_examples_blob_count": 598,
+    "git_blob_gross_bytes": 173699323,
+    "source_files": [
+      {
+        "path": ".gitignore",
+        "bytes": 3666,
+        "git_blob_sha1": "72251f282ad47c79200f2bcae3a3a6734059d2ff"
+      },
+      {
+        "path": "API_DOCUMENTATION.md",
+        "bytes": 6745,
+        "git_blob_sha1": "1ff6fa048155c8ac3418fccc5e8526b376febbed"
+      },
+      {
+        "path": "API_TESTING_SUMMARY.md",
+        "bytes": 6545,
+        "git_blob_sha1": "1958e6e8b66dc056f8f13f0535dc64b0daf2d5f5"
+      },
+      {
+        "path": "LICENSE",
+        "bytes": 17914,
+        "git_blob_sha1": "40add23d41f73047640976aa7c8ac69b7b7776fb"
+      },
+      {
+        "path": "Notice.txt",
+        "bytes": 16644,
+        "git_blob_sha1": "bd3dea50102cdd5628a7a803c5d0c68a522a29ff"
+      },
+      {
+        "path": "README.md",
+        "bytes": 10203,
+        "git_blob_sha1": "e670cb0139d2cd35788043768249037e1aca6f68"
+      },
+      {
+        "path": "api_models.py",
+        "bytes": 2365,
+        "git_blob_sha1": "dd37989f7a5a815140f552e89609fe9152f80799"
+      },
+      {
+        "path": "api_server.py",
+        "bytes": 8168,
+        "git_blob_sha1": "ad1f219f44e9951d458a289b9eee67ec71b2daeb"
+      },
+      {
+        "path": "assets/1.glb",
+        "bytes": 720764,
+        "git_blob_sha1": "0d33b006c9dc26d77a1037d8593b458f2143de20"
+      },
+      {
+        "path": "assets/demo.png",
+        "bytes": 151014,
+        "git_blob_sha1": "00fda1dc914c0b085459d824ed20bc5cbf1233e7"
+      },
+      {
+        "path": "assets/env_maps/gradient.jpg",
+        "bytes": 68235,
+        "git_blob_sha1": "55546c1f260daa7d3c6eef36b70fe5d7e1697df0"
+      },
+      {
+        "path": "assets/env_maps/white.jpg",
+        "bytes": 8819,
+        "git_blob_sha1": "f7af1237608dd1d486edb9298c04fbe15ec74185"
+      },
+      {
+        "path": "assets/example_images/004.png",
+        "bytes": 82425,
+        "git_blob_sha1": "95eb0da790153f96b65210330761b28e5172be4c"
+      },
+      {
+        "path": "assets/example_images/052.png",
+        "bytes": 151386,
+        "git_blob_sha1": "685ef05af64c44daefae82184b414e0149ea8c12"
+      },
+      {
+        "path": "assets/example_images/073.png",
+        "bytes": 107735,
+        "git_blob_sha1": "0390125b59df2d8cdca99709ce57012d9b6888d9"
+      },
+      {
+        "path": "assets/example_images/075.png",
+        "bytes": 261670,
+        "git_blob_sha1": "1381f759beccc3a151d8981eb6894f9777da975a"
+      },
+      {
+        "path": "assets/example_images/1008.png",
+        "bytes": 127117,
+        "git_blob_sha1": "473c933050291f5c7634216ed4a1c782b87c7af5"
+      },
+      {
+        "path": "assets/example_images/101.png",
+        "bytes": 150532,
+        "git_blob_sha1": "b0c58750dbb8c433da3942922d101ff74588a203"
+      },
+      {
+        "path": "assets/example_images/1022.png",
+        "bytes": 189310,
+        "git_blob_sha1": "033fc3da469e9aa797acf17a89416dffca760aa3"
+      },
+      {
+        "path": "assets/example_images/1029.png",
+        "bytes": 170947,
+        "git_blob_sha1": "d3b13cd90d5443bcb578808f2b8654547b0f9d84"
+      },
+      {
+        "path": "assets/example_images/1037.png",
+        "bytes": 87870,
+        "git_blob_sha1": "e2ac72e17f6c3339d30454bba3c054e1cfa98e36"
+      },
+      {
+        "path": "assets/example_images/1079.png",
+        "bytes": 69365,
+        "git_blob_sha1": "0398f6b84204a1ff65722f609b3ead51c8dd94fb"
+      },
+      {
+        "path": "assets/example_images/1111.png",
+        "bytes": 133829,
+        "git_blob_sha1": "ea24af1c80b8281bf6c9036499ba4d6a0dad6b46"
+      },
+      {
+        "path": "assets/example_images/1123.png",
+        "bytes": 123524,
+        "git_blob_sha1": "71e862bc3f4635d08b1b346e0beaf571cb012a31"
+      },
+      {
+        "path": "assets/example_images/1128.png",
+        "bytes": 142824,
+        "git_blob_sha1": "f04d30df74197d21a365e3b8ce801928efafc179"
+      },
+      {
+        "path": "assets/example_images/1135.png",
+        "bytes": 598848,
+        "git_blob_sha1": "e4242dcda92c1ff0c9181ef470e0e01b9e5ee0f1"
+      },
+      {
+        "path": "assets/example_images/1146.png",
+        "bytes": 591263,
+        "git_blob_sha1": "d9541b67a0b3c01cdae493dea307e1e20c8c184a"
+      },
+      {
+        "path": "assets/example_images/1148.png",
+        "bytes": 505267,
+        "git_blob_sha1": "2d76c9eb4a3085efd8de26048995bcf0249c01eb"
+      },
+      {
+        "path": "assets/example_images/1154.png",
+        "bytes": 806734,
+        "git_blob_sha1": "2ab169c4c5725a18868bbb24a51800c1a6482d66"
+      },
+      {
+        "path": "assets/example_images/1180.png",
+        "bytes": 650239,
+        "git_blob_sha1": "1bf552b5e7d0bea10b5499bbf147b2bf4be17560"
+      },
+      {
+        "path": "assets/example_images/1196.png",
+        "bytes": 319028,
+        "git_blob_sha1": "c7c4e9da113c0f4ae4b2e30b41eadde60caae054"
+      },
+      {
+        "path": "assets/example_images/1204.png",
+        "bytes": 469722,
+        "git_blob_sha1": "569dd9eb290e496b2049159e082f918f31964211"
+      },
+      {
+        "path": "assets/example_images/1234.png",
+        "bytes": 683020,
+        "git_blob_sha1": "105a9a3746bccb04338d72a7204750cd7fbb9917"
+      },
+      {
+        "path": "assets/example_images/1310.png",
+        "bytes": 349994,
+        "git_blob_sha1": "42f5fddd59a9d2d9886d44749982666dd64fac92"
+      },
+      {
+        "path": "assets/example_images/1316.png",
+        "bytes": 499825,
+        "git_blob_sha1": "a3f2902bf94e2ac2987e8c6e778e3fdf802cb1cb"
+      },
+      {
+        "path": "assets/example_images/1354.png",
+        "bytes": 621931,
+        "git_blob_sha1": "685c11c5356f61bc5e8f20834c5af3ea9796cefd"
+      },
+      {
+        "path": "assets/example_images/1429.png",
+        "bytes": 625356,
+        "git_blob_sha1": "976d1a47cebf300f7c5ac5b1c11d43477f671052"
+      },
+      {
+        "path": "assets/example_images/1493.png",
+        "bytes": 132760,
+        "git_blob_sha1": "dd1e979b849f950709e46916f20dc8c52d53c7f6"
+      },
+      {
+        "path": "assets/example_images/1582.png",
+        "bytes": 182184,
+        "git_blob_sha1": "e67ed66bfd61b379fe2c6241d6074f9c6649a56d"
+      },
+      {
+        "path": "assets/example_images/1583.png",
+        "bytes": 137517,
+        "git_blob_sha1": "01f6a4885a207032717837119b5430ceb3367121"
+      },
+      {
+        "path": "assets/example_images/1596.png",
+        "bytes": 191746,
+        "git_blob_sha1": "55d397021ee01c54219ea5fabe958095961f0581"
+      },
+      {
+        "path": "assets/example_images/1601.png",
+        "bytes": 198760,
+        "git_blob_sha1": "e3bdbbdd7a0a45195fb1602639aad6deea845df6"
+      },
+      {
+        "path": "assets/example_images/1603.png",
+        "bytes": 197398,
+        "git_blob_sha1": "8f2eb53a1ee10e6cb88dd44ec86915b13e7b70c7"
+      },
+      {
+        "path": "assets/example_images/1626.png",
+        "bytes": 111076,
+        "git_blob_sha1": "faa2f735d58bc7381ff54e64949d11df6a89326a"
+      },
+      {
+        "path": "assets/example_images/1627.png",
+        "bytes": 269408,
+        "git_blob_sha1": "000c9abb39840e5fe7216cbcad58215f52843280"
+      },
+      {
+        "path": "assets/example_images/1654.png",
+        "bytes": 63108,
+        "git_blob_sha1": "2385031d0c0e6f0df1427a6516ee0b12c9cc14bf"
+      },
+      {
+        "path": "assets/example_images/167.png",
+        "bytes": 200695,
+        "git_blob_sha1": "ab59d3992fe8ccdf5757afdec9f5d98795b61080"
+      },
+      {
+        "path": "assets/example_images/1670.png",
+        "bytes": 193904,
+        "git_blob_sha1": "c6d715788fd2493bd281c1a73f222bdd78a23366"
+      },
+      {
+        "path": "assets/example_images/1679.png",
+        "bytes": 132581,
+        "git_blob_sha1": "ce145853fc1732d8f8ef3417ae04f6bfa07b6841"
+      },
+      {
+        "path": "assets/example_images/1687.png",
+        "bytes": 157743,
+        "git_blob_sha1": "90d406c9c2065689e1d9792ad826effdec889742"
+      },
+      {
+        "path": "assets/example_images/1698.png",
+        "bytes": 236338,
+        "git_blob_sha1": "91e70323baec9f8acd3e135f47500ff4d836d248"
+      },
+      {
+        "path": "assets/example_images/1715.png",
+        "bytes": 255078,
+        "git_blob_sha1": "2ee44dadf80af99863edc7860d37bbb93a073970"
+      },
+      {
+        "path": "assets/example_images/1735.png",
+        "bytes": 134865,
+        "git_blob_sha1": "a7a722ca060dfd6d2e63b0fa978d9eb36fa36c58"
+      },
+      {
+        "path": "assets/example_images/1738.png",
+        "bytes": 233988,
+        "git_blob_sha1": "50d4020bedba82d6b0754ce7e2b114fb14384585"
+      },
+      {
+        "path": "assets/example_images/1744.png",
+        "bytes": 127929,
+        "git_blob_sha1": "767f8208ba5497f36ae65a669529434f28f28521"
+      },
+      {
+        "path": "assets/example_images/1758.png",
+        "bytes": 202004,
+        "git_blob_sha1": "aafb219d676417bb8daf37737aa9c263fd698766"
+      },
+      {
+        "path": "assets/example_images/1772.png",
+        "bytes": 207360,
+        "git_blob_sha1": "17bcfff3a85e93a82496d398089b484f26f4bcc9"
+      },
+      {
+        "path": "assets/example_images/1773.png",
+        "bytes": 168548,
+        "git_blob_sha1": "1ffc05d5fff73ce8374621ac176725241e592a98"
+      },
+      {
+        "path": "assets/example_images/1778.png",
+        "bytes": 157988,
+        "git_blob_sha1": "48191631ae1d2969c52526fd3f2dacac6d5fb77a"
+      },
+      {
+        "path": "assets/example_images/179.png",
+        "bytes": 48073,
+        "git_blob_sha1": "a2d416073086d5eebf6609a9e803f4c624712444"
+      },
+      {
+        "path": "assets/example_images/1898.png",
+        "bytes": 121238,
+        "git_blob_sha1": "af43116bd2e0e4072dc8f274bade6144560bd42d"
+      },
+      {
+        "path": "assets/example_images/191.png",
+        "bytes": 142385,
+        "git_blob_sha1": "0d342ebe89e8241bd7605fe4a2370adb040ab580"
+      },
+      {
+        "path": "assets/example_images/195.png",
+        "bytes": 119924,
+        "git_blob_sha1": "530444fd6f62b99a6dac01c348e44865bea73afc"
+      },
+      {
+        "path": "assets/example_images/197.png",
+        "bytes": 147455,
+        "git_blob_sha1": "b23b422dc7d7f58cfa1a363b6fd3b438dae5c2a5"
+      },
+      {
+        "path": "assets/example_images/198.png",
+        "bytes": 210179,
+        "git_blob_sha1": "3215f00a0c800da1d68c1609138ebbec8a886783"
+      },
+      {
+        "path": "assets/example_images/202.png",
+        "bytes": 224840,
+        "git_blob_sha1": "a1389c870cea416d02df23c09fed1d15b91abcff"
+      },
+      {
+        "path": "assets/example_images/203.png",
+        "bytes": 143678,
+        "git_blob_sha1": "a45b38e485ce1df454e39bece9ce4320f81424fd"
+      },
+      {
+        "path": "assets/example_images/218.png",
+        "bytes": 183290,
+        "git_blob_sha1": "f8f9b290bd02568432a874bbfd3a9091c8dbe084"
+      },
+      {
+        "path": "assets/example_images/219.png",
+        "bytes": 164817,
+        "git_blob_sha1": "61369cf61956bb8617173f23f2b493c8f46d410c"
+      },
+      {
+        "path": "assets/example_images/379.png",
+        "bytes": 146849,
+        "git_blob_sha1": "0728d83ca3d6e414f2654b9724e877a0684580ad"
+      },
+      {
+        "path": "assets/example_images/380.png",
+        "bytes": 178552,
+        "git_blob_sha1": "084a4c73ad3049a3c31287e6c2378c2df3fcf2cb"
+      },
+      {
+        "path": "assets/example_images/419.png",
+        "bytes": 213693,
+        "git_blob_sha1": "8e7cec976bdc6bc882c1145dd962960f3c223b00"
+      },
+      {
+        "path": "assets/example_images/583.png",
+        "bytes": 79696,
+        "git_blob_sha1": "c303211f005577e5877883e2210db2a2755910b7"
+      },
+      {
+        "path": "assets/example_images/888.png",
+        "bytes": 162911,
+        "git_blob_sha1": "185a4ce478c0c3c8055d06365dd74a264b771514"
+      },
+      {
+        "path": "assets/example_images/895.png",
+        "bytes": 124156,
+        "git_blob_sha1": "cf29d13f3b21332e6e7296c6c7ef5f882ece1877"
+      },
+      {
+        "path": "assets/example_images/Camera_1040g0k031h3nikcok2105nmanksg8l5pbbr7bqo.png",
+        "bytes": 1428029,
+        "git_blob_sha1": "9344edda3571a579897f25361720cb8cfafd844b"
+      },
+      {
+        "path": "assets/example_images/Camera_1040g34o31hmm0kqa42405np612cg9dc6aqccf38.png",
+        "bytes": 1081753,
+        "git_blob_sha1": "b34c9a1b849b57db2304d218989a59a4338826c4"
+      },
+      {
+        "path": "assets/example_images/Camera_1040g34o31hmv1te73a3048jtdvj4c5rbhtrtu98.png",
+        "bytes": 1259694,
+        "git_blob_sha1": "23d50cc9b1641ad55f86f1dbe9de8fad1078407d"
+      },
+      {
+        "path": "assets/example_images/Camera_1040g34o31hnup72ck24g5nue8l108b6nb88hkf8.png",
+        "bytes": 2291497,
+        "git_blob_sha1": "170c63ade2cdc6b22f3a50d14176eb01c4bb1be2"
+      },
+      {
+        "path": "assets/example_images/Camera_1040g34o31hoft434340g5og0ja2oco7h0k4l5ro.png",
+        "bytes": 889588,
+        "git_blob_sha1": "527332f2eed795b2c5bb89e1f9d35ca9758d3bde"
+      },
+      {
+        "path": "assets/example_images/Camera_1040g3k031hitndtdk2605orjhoonrn9pgo7vls0.png",
+        "bytes": 2669422,
+        "git_blob_sha1": "e17e6822602c41b41e0bc98bdd88499ea6473bfe"
+      },
+      {
+        "path": "assets/example_images/Camera_1040g3k831ho6lsmo3ujg5pf2trqjcqh7vvmb00g.png",
+        "bytes": 954014,
+        "git_blob_sha1": "2865a9906a7c57acc28c32067797f9e9227b45ac"
+      },
+      {
+        "path": "assets/example_images/Camera_1040g3k831hp7srtcjoe05nihqp1g8rq0th69ncg.png",
+        "bytes": 1532920,
+        "git_blob_sha1": "8f7ed29c90af0ef0b7979e956e9994d9cf09cf83"
+      },
+      {
+        "path": "assets/example_images/Camera_1040g3k831hpb3dlt3idg5nr0msu0907jusb30n8.png",
+        "bytes": 1233930,
+        "git_blob_sha1": "1d39bd444fa84e8da8ac9b3479e43c01b543a744"
+      },
+      {
+        "path": "assets/example_images/Camera_XHS_17459220925801040g00831gddt2hh3a4g4a11mgjsgcu8r915tdg.png",
+        "bytes": 673822,
+        "git_blob_sha1": "c3cdf459d9b9ab3fc2238f6377bc0206f120f29d"
+      },
+      {
+        "path": "assets/example_images/Camera_XHS_17459220948541040g00831gddt2hh3a604a11mgjsgcu87ec4kd0.png",
+        "bytes": 644726,
+        "git_blob_sha1": "276b5c60015464a81996fc03748e11135a682e56"
+      },
+      {
+        "path": "assets/example_images/Camera_XHS_17459234709671040g00831g0tg76cge6g5n2g1pd4m8g1ijr22c8.png",
+        "bytes": 1974399,
+        "git_blob_sha1": "e89e5e98be2f017653838b6b565968b68518f120"
+      },
+      {
+        "path": "assets/example_images/Camera_XHS_17461776897281040g2sg31gvoem3pjqeg5pvr5s839cu1ae9vono.png",
+        "bytes": 1098032,
+        "git_blob_sha1": "4e4fd10c0e3a0d2f8361a7c445bbbf90720eedbe"
+      },
+      {
+        "path": "assets/example_images/Camera_XHS_17461776916821040g2sg31gvoem3pjqf05pvr5s839cu1pkdjmf8.png",
+        "bytes": 1162386,
+        "git_blob_sha1": "a09547277968187e7a12429a2a8180c2e3bc13b0"
+      },
+      {
+        "path": "assets/example_images/Camera_XHS_17478460238811040g00831hoen1ga3u0g5oha0d441i3j1s6i7eo.png",
+        "bytes": 1245063,
+        "git_blob_sha1": "a49e9915889b46e0093c1eaa2c571ed4c50fe95b"
+      },
+      {
+        "path": "assets/example_images/Camera_XHS_17480136679411040g00831hn2tbsojucg5pl27pu7c1mcgk10jug.png",
+        "bytes": 669697,
+        "git_blob_sha1": "c07dcdd6d71c2ea51a4cbc73c125805dbb612c4d"
+      },
+      {
+        "path": "assets/example_images/ainimal_14.png",
+        "bytes": 1190444,
+        "git_blob_sha1": "4a02bf020d8ef074ff1db2153b49d801e406f51a"
+      },
+      {
+        "path": "assets/example_images/ainimal_17.png",
+        "bytes": 898854,
+        "git_blob_sha1": "2887ec0638eb4ef18a7283782acb43f28fcf72d7"
+      },
+      {
+        "path": "assets/example_images/ainimal_21.png",
+        "bytes": 897465,
+        "git_blob_sha1": "40ae2675c5d4d6fc965de330f1533b8535eda9b2"
+      },
+      {
+        "path": "assets/example_images/ainimal_9.png",
+        "bytes": 855446,
+        "git_blob_sha1": "4c9ab7a011ab2459e35955734836ac4b87a3c99c"
+      },
+      {
+        "path": "assets/example_images/example_000.png",
+        "bytes": 64924,
+        "git_blob_sha1": "6222237f2229a1f3f5ba7651a93ebef216aea1ed"
+      },
+      {
+        "path": "assets/example_images/example_002.png",
+        "bytes": 82058,
+        "git_blob_sha1": "a6fd2a579660fbea42a86bda0a8344b577c12b8c"
+      },
+      {
+        "path": "assets/example_images/jimeng1.png",
+        "bytes": 975449,
+        "git_blob_sha1": "d777a89dad28175d22343d997ef89395196aff4f"
+      },
+      {
+        "path": "assets/example_images/jimeng11.png",
+        "bytes": 828010,
+        "git_blob_sha1": "a8b807a682158d7502131ed1957585d2c673b8b2"
+      },
+      {
+        "path": "assets/example_images/jimeng14.png",
+        "bytes": 814651,
+        "git_blob_sha1": "bc149813b10ca936cf6f8841779480889bc57972"
+      },
+      {
+        "path": "assets/example_images/jimeng16.png",
+        "bytes": 644574,
+        "git_blob_sha1": "aa423cf44310c98b98a1c352b10efc118e0b0531"
+      },
+      {
+        "path": "assets/example_images/jimeng18.png",
+        "bytes": 1726665,
+        "git_blob_sha1": "3bff4d95a6e7840aaa948fc7e93b7eff1accebab"
+      },
+      {
+        "path": "assets/example_images/jimeng2.png",
+        "bytes": 1182016,
+        "git_blob_sha1": "df85c87d5f6875a230c3dba77d17c76c6e63700e"
+      },
+      {
+        "path": "assets/example_images/jimeng20.png",
+        "bytes": 1384458,
+        "git_blob_sha1": "35f0e70f00decc330a12c13f731bcf674022372a"
+      },
+      {
+        "path": "assets/example_images/jimeng22.png",
+        "bytes": 932253,
+        "git_blob_sha1": "7950b30ef540bd6775d530870e25053b44756351"
+      },
+      {
+        "path": "assets/example_images/jimeng37.png",
+        "bytes": 1152064,
+        "git_blob_sha1": "ca89e6b8a09ab4884e8d7edbe30eef00f5bf314b"
+      },
+      {
+        "path": "assets/example_images/jimeng42.png",
+        "bytes": 1249285,
+        "git_blob_sha1": "9d5a0c896ae4fb48805fae38bae7c1deb55a39ad"
+      },
+      {
+        "path": "assets/example_images/jimeng43.png",
+        "bytes": 1095611,
+        "git_blob_sha1": "48fcdc670905e74b336cd0c2a8928c48dd74b5f0"
+      },
+      {
+        "path": "assets/example_images/jimeng44.png",
+        "bytes": 916914,
+        "git_blob_sha1": "9640c60041bcec8b4df5cbc6b53a8683e99e1aa6"
+      },
+      {
+        "path": "assets/example_images/jimeng54.png",
+        "bytes": 739245,
+        "git_blob_sha1": "8e43dcfc940eaac5f309856c31c3e8280f6902ed"
+      },
+      {
+        "path": "assets/example_images/jimeng6.png",
+        "bytes": 541571,
+        "git_blob_sha1": "b285647c2c17476ec7536b890094f04aa93add29"
+      },
+      {
+        "path": "assets/example_images/jimeng63.png",
+        "bytes": 786983,
+        "git_blob_sha1": "4a415463244c7eaea211bd3a3244bfc71825ce04"
+      },
+      {
+        "path": "assets/example_images/jimeng64.png",
+        "bytes": 166306,
+        "git_blob_sha1": "e753a3e8904e2147491a38ffada3184dc57ef0dc"
+      },
+      {
+        "path": "assets/example_images/jimeng65.png",
+        "bytes": 204019,
+        "git_blob_sha1": "dcbb8608396bbe4eb9ac9e7ab10593edcba361e0"
+      },
+      {
+        "path": "assets/example_images/jimeng75.png",
+        "bytes": 187736,
+        "git_blob_sha1": "78892a8e5866e228ac8e0fb9e1324efd49d14e29"
+      },
+      {
+        "path": "assets/example_images/jimeng82.png",
+        "bytes": 204526,
+        "git_blob_sha1": "96dac6c457c0376f53791651c7a2bf4f43441fdd"
+      },
+      {
+        "path": "assets/example_images/kaijia_qie.png",
+        "bytes": 863388,
+        "git_blob_sha1": "7c41b1284dbd0dadd15e5905f664447f6ef8b879"
+      },
+      {
+        "path": "assets/example_images/mmexport02df348f675e40d6e3828fae4cb8f2b3_1746117674020.png",
+        "bytes": 1173380,
+        "git_blob_sha1": "d07f0e5111f6c063358e4684eaa2b6eac8f491db"
+      },
+      {
+        "path": "assets/example_images/mmexportde235211f304fd83ec9d60e38c9f6f0b_1747975667632.png",
+        "bytes": 1408097,
+        "git_blob_sha1": "6f1c6afa9c8c3f0a0a03852dea026234ec25ce66"
+      },
+      {
+        "path": "assets/example_images/qie.png",
+        "bytes": 1070463,
+        "git_blob_sha1": "136b3f594bf3676ec1b0ccabc0962d938fd1c348"
+      },
+      {
+        "path": "assets/example_prompts.txt",
+        "bytes": 311,
+        "git_blob_sha1": "51550223aa081074d221a086ff76ff8ce2245c40"
+      },
+      {
+        "path": "assets/images/pipeline.png",
+        "bytes": 5050594,
+        "git_blob_sha1": "28bc0a3f48b6059221da2456ce66e816f140a56c"
+      },
+      {
+        "path": "assets/images/teaser.jpg",
+        "bytes": 4592632,
+        "git_blob_sha1": "1962e44b19482e7871ecb63792dd33a453a942d6"
+      },
+      {
+        "path": "assets/modelviewer-template.html",
+        "bytes": 3148,
+        "git_blob_sha1": "3406cb1950b03172b6836cbc66be37da5d654aa5"
+      },
+      {
+        "path": "assets/modelviewer-textured-template.html",
+        "bytes": 11870,
+        "git_blob_sha1": "6785124bc409bde2689885baaf45e89675a51e00"
+      },
+      {
+        "path": "assets/qrcode/discord.png",
+        "bytes": 56689,
+        "git_blob_sha1": "a9c326d016c9520980845705526f1779feb362a7"
+      },
+      {
+        "path": "assets/qrcode/wechat.png",
+        "bytes": 4745,
+        "git_blob_sha1": "4f25092d07ee612ff4ef82d4afd41acfca293f3c"
+      },
+      {
+        "path": "assets/qrcode/x.png",
+        "bytes": 26198,
+        "git_blob_sha1": "e5cf136c2d21b94a878ac1236b415022dca360f0"
+      },
+      {
+        "path": "assets/qrcode/xiaohongshu.png",
+        "bytes": 84703,
+        "git_blob_sha1": "7ace644a12f01967c27d7126c4eedde71e99e1ac"
+      },
+      {
+        "path": "constants.py",
+        "bytes": 1987,
+        "git_blob_sha1": "0bb982f662cee6830246ae54b10a5c28c2d5d6d2"
+      },
+      {
+        "path": "demo.py",
+        "bytes": 1489,
+        "git_blob_sha1": "cdb0a0ae5d7092272ee38a7cfe7888d4fd184b3d"
+      },
+      {
+        "path": "docker/Dockerfile",
+        "bytes": 4510,
+        "git_blob_sha1": "c08e1ade9d9089b93ba2c9c571b02e9f8f5e7bc7"
+      },
+      {
+        "path": "docker/README.md",
+        "bytes": 721,
+        "git_blob_sha1": "bfd672d3eda1198e42c09684943e2ac6745a69f4"
+      },
+      {
+        "path": "gradio_app.py",
+        "bytes": 34722,
+        "git_blob_sha1": "46b219d4b9b16937107c05a2b47f37c8f01f6bb4"
+      },
+      {
+        "path": "hy3dpaint/DifferentiableRenderer/MeshRender.py",
+        "bytes": 56848,
+        "git_blob_sha1": "83c8cf8d9a74d29e2a96756673c9987f9c38fd02"
+      },
+      {
+        "path": "hy3dpaint/DifferentiableRenderer/__init__.py",
+        "bytes": 0,
+        "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "hy3dpaint/DifferentiableRenderer/camera_utils.py",
+        "bytes": 3771,
+        "git_blob_sha1": "54369b557b23c7481ed0bbcff25840eb0802cfbf"
+      },
+      {
+        "path": "hy3dpaint/DifferentiableRenderer/compile_mesh_painter.sh",
+        "bytes": 158,
+        "git_blob_sha1": "cf24fb32b51edfda7c9e19cb11c1f72ccb95b68c"
+      },
+      {
+        "path": "hy3dpaint/DifferentiableRenderer/mesh_inpaint_processor.cpp",
+        "bytes": 15328,
+        "git_blob_sha1": "25678713d95eb185b39a0fc6a3c88910e61f32bf"
+      },
+      {
+        "path": "hy3dpaint/DifferentiableRenderer/mesh_utils.py",
+        "bytes": 10078,
+        "git_blob_sha1": "5b3e8317b7b8e8e3a293532cc278ede157d88e07"
+      },
+      {
+        "path": "hy3dpaint/LICENSE",
+        "bytes": 15928,
+        "git_blob_sha1": "96313b341082fb9f72a00b7c77accd8196390af0"
+      },
+      {
+        "path": "hy3dpaint/README.md",
+        "bytes": 4108,
+        "git_blob_sha1": "4aa3f0507eb8e36fcefa13880b7c867dd79a70a7"
+      },
+      {
+        "path": "hy3dpaint/assets/case_1/image.png",
+        "bytes": 883766,
+        "git_blob_sha1": "33aa47a2b4706102775d601dbf2c9d4105a2ea42"
+      },
+      {
+        "path": "hy3dpaint/assets/case_1/mesh.glb",
+        "bytes": 930460,
+        "git_blob_sha1": "2c64f1beeb2852f614e23e3a32366f2c6e37a07c"
+      },
+      {
+        "path": "hy3dpaint/assets/case_2/image.png",
+        "bytes": 663763,
+        "git_blob_sha1": "2cdf2374b02760fb5ffde065e44c101a141acde0"
+      },
+      {
+        "path": "hy3dpaint/assets/case_2/mesh.glb",
+        "bytes": 924556,
+        "git_blob_sha1": "ac0ecbc6a89ade7b73b3d9979f80c8e50b6e18c7"
+      },
+      {
+        "path": "hy3dpaint/cfgs/hunyuan-paint-pbr.yaml",
+        "bytes": 1240,
+        "git_blob_sha1": "27ed492e128832e2218d260265195b2a9b310d34"
+      },
+      {
+        "path": "hy3dpaint/convert_utils.py",
+        "bytes": 4542,
+        "git_blob_sha1": "7ca66c0b5bae337417e40a0669a780ef94602097"
+      },
+      {
+        "path": "hy3dpaint/custom_rasterizer/custom_rasterizer/__init__.py",
+        "bytes": 73,
+        "git_blob_sha1": "319995298d19a223710c1a608c5152c80a813ece"
+      },
+      {
+        "path": "hy3dpaint/custom_rasterizer/custom_rasterizer/render.py",
+        "bytes": 1556,
+        "git_blob_sha1": "9d06b5195ed18d3cb581ace9efc1c2cebed232eb"
+      },
+      {
+        "path": "hy3dpaint/custom_rasterizer/lib/custom_rasterizer_kernel/__init__.py",
+        "bytes": 0,
+        "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "hy3dpaint/custom_rasterizer/lib/custom_rasterizer_kernel/grid_neighbor.cpp",
+        "bytes": 22161,
+        "git_blob_sha1": "f02bcba5afd45a524143d06c972acb87c393fe97"
+      },
+      {
+        "path": "hy3dpaint/custom_rasterizer/lib/custom_rasterizer_kernel/rasterizer.cpp",
+        "bytes": 6777,
+        "git_blob_sha1": "b3ff69f5abe309be2784303d384524774708c2a3"
+      },
+      {
+        "path": "hy3dpaint/custom_rasterizer/lib/custom_rasterizer_kernel/rasterizer.h",
+        "bytes": 1972,
+        "git_blob_sha1": "cf4f9870bda0714763e4236f85293ca7cef7d51f"
+      },
+      {
+        "path": "hy3dpaint/custom_rasterizer/lib/custom_rasterizer_kernel/rasterizer_gpu.cu",
+        "bytes": 6398,
+        "git_blob_sha1": "709c1b86a5ee92e3c2ff6ce9df85f1492c3c5378"
+      },
+      {
+        "path": "hy3dpaint/custom_rasterizer/lib/custom_rasterizer_kernel_for_windows/__init__.py",
+        "bytes": 0,
+        "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "hy3dpaint/custom_rasterizer/lib/custom_rasterizer_kernel_for_windows/grid_neighbor.cpp",
+        "bytes": 22287,
+        "git_blob_sha1": "cbe21e11d9d1fd0d73fd92964be8b996d955703a"
+      },
+      {
+        "path": "hy3dpaint/custom_rasterizer/lib/custom_rasterizer_kernel_for_windows/rasterizer.cpp",
+        "bytes": 6817,
+        "git_blob_sha1": "c02f1f93fc6496b66a3e6f0847e5651fd49e5332"
+      },
+      {
+        "path": "hy3dpaint/custom_rasterizer/lib/custom_rasterizer_kernel_for_windows/rasterizer.h",
+        "bytes": 1980,
+        "git_blob_sha1": "8e198b13ad710ccf1849d677a5dde99a99c72fbc"
+      },
+      {
+        "path": "hy3dpaint/custom_rasterizer/lib/custom_rasterizer_kernel_for_windows/rasterizer_gpu.cu",
+        "bytes": 6456,
+        "git_blob_sha1": "ba6ab91998127e2fd4fcb73b0b6322ac0b68b804"
+      },
+      {
+        "path": "hy3dpaint/custom_rasterizer/setup.py",
+        "bytes": 1599,
+        "git_blob_sha1": "15192e9f5e1f4b0308ed6f1fdd3c93df8c35feef"
+      },
+      {
+        "path": "hy3dpaint/demo.py",
+        "bytes": 1651,
+        "git_blob_sha1": "44fb296526dacb4d82b85ac1228c34c6e7f26e00"
+      },
+      {
+        "path": "hy3dpaint/hunyuanpaintpbr/__init__.py",
+        "bytes": 1492,
+        "git_blob_sha1": "930d2fc856340ae4d9739925087304b4957f2c7f"
+      },
+      {
+        "path": "hy3dpaint/hunyuanpaintpbr/pipeline.py",
+        "bytes": 33717,
+        "git_blob_sha1": "871dae58e968cf887529a25b8d6fb48da5a97b4b"
+      },
+      {
+        "path": "hy3dpaint/hunyuanpaintpbr/unet/attn_processor.py",
+        "bytes": 35104,
+        "git_blob_sha1": "37ebde0f6f30230351f757e050e3b86fd8a06402"
+      },
+      {
+        "path": "hy3dpaint/hunyuanpaintpbr/unet/model.py",
+        "bytes": 25514,
+        "git_blob_sha1": "f98ca7e73a5fdc59d6fc1afb0b2f1f6eb75be169"
+      },
+      {
+        "path": "hy3dpaint/hunyuanpaintpbr/unet/modules.py",
+        "bytes": 45181,
+        "git_blob_sha1": "55f0404a452ecd9d7bc20d84303c151c67d8bf8f"
+      },
+      {
+        "path": "hy3dpaint/src/__init__.py",
+        "bytes": 921,
+        "git_blob_sha1": "1614ff826f65b4720649d343c43fb09dbb6b9fa5"
+      },
+      {
+        "path": "hy3dpaint/src/data/__init__.py",
+        "bytes": 921,
+        "git_blob_sha1": "1614ff826f65b4720649d343c43fb09dbb6b9fa5"
+      },
+      {
+        "path": "hy3dpaint/src/data/dataloader/loader_util.py",
+        "bytes": 8532,
+        "git_blob_sha1": "9f81adcb79601619e1e2ff3a073076f79574d19a"
+      },
+      {
+        "path": "hy3dpaint/src/data/dataloader/objaverse_loader_forTexturePBR.py",
+        "bytes": 6063,
+        "git_blob_sha1": "ce488d6ea36f75f7b188fd6e0f22da2e1e416480"
+      },
+      {
+        "path": "hy3dpaint/src/data/dataloader/pbr_data_format.txt",
+        "bytes": 549,
+        "git_blob_sha1": "9fd97d049194b788a735ac4814794c05bb3553ca"
+      },
+      {
+        "path": "hy3dpaint/src/data/objaverse_hunyuan.py",
+        "bytes": 3050,
+        "git_blob_sha1": "94e578220809673f5880f76b0f9b55f4ad99ac71"
+      },
+      {
+        "path": "hy3dpaint/src/utils/__init__.py",
+        "bytes": 921,
+        "git_blob_sha1": "1614ff826f65b4720649d343c43fb09dbb6b9fa5"
+      },
+      {
+        "path": "hy3dpaint/src/utils/train_util.py",
+        "bytes": 1779,
+        "git_blob_sha1": "dff39da91cc24c812251728c786ad0509c544351"
+      },
+      {
+        "path": "hy3dpaint/textureGenPipeline.py",
+        "bytes": 8136,
+        "git_blob_sha1": "a582892ad838be3924637e57b2d8910b31877a2a"
+      },
+      {
+        "path": "hy3dpaint/train.py",
+        "bytes": 14145,
+        "git_blob_sha1": "289f74b8e44b9c9931cc3dc749c9ca102811d62e"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/000_light_AL.png",
+        "bytes": 18877,
+        "git_blob_sha1": "027da5b73aa82fe00f7f0f026cb84242e5122eb8"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/000_light_ENVMAP.png",
+        "bytes": 18877,
+        "git_blob_sha1": "027da5b73aa82fe00f7f0f026cb84242e5122eb8"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/000_light_PL.png",
+        "bytes": 18877,
+        "git_blob_sha1": "027da5b73aa82fe00f7f0f026cb84242e5122eb8"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/001_light_AL.png",
+        "bytes": 16396,
+        "git_blob_sha1": "7f90007454795ed7d809eeccf2e444a9ba300c93"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/001_light_ENVMAP.png",
+        "bytes": 16396,
+        "git_blob_sha1": "7f90007454795ed7d809eeccf2e444a9ba300c93"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/001_light_PL.png",
+        "bytes": 16396,
+        "git_blob_sha1": "7f90007454795ed7d809eeccf2e444a9ba300c93"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/002_light_AL.png",
+        "bytes": 15407,
+        "git_blob_sha1": "40b827233d15aedbb8df34139cdb45694818a282"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/002_light_ENVMAP.png",
+        "bytes": 15407,
+        "git_blob_sha1": "40b827233d15aedbb8df34139cdb45694818a282"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/002_light_PL.png",
+        "bytes": 15407,
+        "git_blob_sha1": "40b827233d15aedbb8df34139cdb45694818a282"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/003_light_AL.png",
+        "bytes": 17190,
+        "git_blob_sha1": "fe4407b35b3211d3ac0f92b62618ba88ab044f14"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/003_light_ENVMAP.png",
+        "bytes": 17190,
+        "git_blob_sha1": "fe4407b35b3211d3ac0f92b62618ba88ab044f14"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/003_light_PL.png",
+        "bytes": 17190,
+        "git_blob_sha1": "fe4407b35b3211d3ac0f92b62618ba88ab044f14"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/004_light_AL.png",
+        "bytes": 12673,
+        "git_blob_sha1": "8ac1581f380d507b446b55f3e8ac3c3511ba213f"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/004_light_ENVMAP.png",
+        "bytes": 12673,
+        "git_blob_sha1": "8ac1581f380d507b446b55f3e8ac3c3511ba213f"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/004_light_PL.png",
+        "bytes": 12673,
+        "git_blob_sha1": "8ac1581f380d507b446b55f3e8ac3c3511ba213f"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/005_light_AL.png",
+        "bytes": 12319,
+        "git_blob_sha1": "a47c7a1d86bfc9fa3ce1b1e1f15577eb695b17ad"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/005_light_ENVMAP.png",
+        "bytes": 12319,
+        "git_blob_sha1": "a47c7a1d86bfc9fa3ce1b1e1f15577eb695b17ad"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/005_light_PL.png",
+        "bytes": 12319,
+        "git_blob_sha1": "a47c7a1d86bfc9fa3ce1b1e1f15577eb695b17ad"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/006_light_AL.png",
+        "bytes": 14538,
+        "git_blob_sha1": "99f6d9a5e713add1d3bd9ce8042359f2536babbf"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/006_light_ENVMAP.png",
+        "bytes": 14538,
+        "git_blob_sha1": "99f6d9a5e713add1d3bd9ce8042359f2536babbf"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/006_light_PL.png",
+        "bytes": 14538,
+        "git_blob_sha1": "99f6d9a5e713add1d3bd9ce8042359f2536babbf"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/007_light_AL.png",
+        "bytes": 15952,
+        "git_blob_sha1": "7258362047240b84860ebd26b1fd2d132289244f"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/007_light_ENVMAP.png",
+        "bytes": 15952,
+        "git_blob_sha1": "7258362047240b84860ebd26b1fd2d132289244f"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/007_light_PL.png",
+        "bytes": 15952,
+        "git_blob_sha1": "7258362047240b84860ebd26b1fd2d132289244f"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/008_light_AL.png",
+        "bytes": 14022,
+        "git_blob_sha1": "7794eb289be59527ef95236f16ad73e899c2e8af"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/008_light_ENVMAP.png",
+        "bytes": 14022,
+        "git_blob_sha1": "7794eb289be59527ef95236f16ad73e899c2e8af"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/008_light_PL.png",
+        "bytes": 14022,
+        "git_blob_sha1": "7794eb289be59527ef95236f16ad73e899c2e8af"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/009_light_AL.png",
+        "bytes": 15145,
+        "git_blob_sha1": "2ba4ae52ceadb0ba037505af93fdef69f1c8ca46"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/009_light_ENVMAP.png",
+        "bytes": 15145,
+        "git_blob_sha1": "2ba4ae52ceadb0ba037505af93fdef69f1c8ca46"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/009_light_PL.png",
+        "bytes": 15145,
+        "git_blob_sha1": "2ba4ae52ceadb0ba037505af93fdef69f1c8ca46"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/010_light_AL.png",
+        "bytes": 15285,
+        "git_blob_sha1": "617f1f36813da1a606891afd45855c4d185138c2"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/010_light_ENVMAP.png",
+        "bytes": 15285,
+        "git_blob_sha1": "617f1f36813da1a606891afd45855c4d185138c2"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/010_light_PL.png",
+        "bytes": 15285,
+        "git_blob_sha1": "617f1f36813da1a606891afd45855c4d185138c2"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/011_light_AL.png",
+        "bytes": 15764,
+        "git_blob_sha1": "920810f826551050e94992927334e6d68475dae5"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/011_light_ENVMAP.png",
+        "bytes": 15764,
+        "git_blob_sha1": "920810f826551050e94992927334e6d68475dae5"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/011_light_PL.png",
+        "bytes": 15764,
+        "git_blob_sha1": "920810f826551050e94992927334e6d68475dae5"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/012_light_AL.png",
+        "bytes": 15605,
+        "git_blob_sha1": "544c2fda2d3237ecd0fece7d04bb9fbf19339fa2"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/012_light_ENVMAP.png",
+        "bytes": 15605,
+        "git_blob_sha1": "544c2fda2d3237ecd0fece7d04bb9fbf19339fa2"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/012_light_PL.png",
+        "bytes": 15605,
+        "git_blob_sha1": "544c2fda2d3237ecd0fece7d04bb9fbf19339fa2"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/013_light_AL.png",
+        "bytes": 13332,
+        "git_blob_sha1": "b4f20d720fdd0199c2ad8f26a967726f6370d5a5"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/013_light_ENVMAP.png",
+        "bytes": 13332,
+        "git_blob_sha1": "b4f20d720fdd0199c2ad8f26a967726f6370d5a5"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/013_light_PL.png",
+        "bytes": 13332,
+        "git_blob_sha1": "b4f20d720fdd0199c2ad8f26a967726f6370d5a5"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/014_light_AL.png",
+        "bytes": 17835,
+        "git_blob_sha1": "3348fc48fbd16c852d45044a80aa7fbd286b559f"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/014_light_ENVMAP.png",
+        "bytes": 17835,
+        "git_blob_sha1": "3348fc48fbd16c852d45044a80aa7fbd286b559f"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/014_light_PL.png",
+        "bytes": 17835,
+        "git_blob_sha1": "3348fc48fbd16c852d45044a80aa7fbd286b559f"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/015_light_AL.png",
+        "bytes": 14131,
+        "git_blob_sha1": "e7cee4580529520ddc070b02cebda6f3f6580f76"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/015_light_ENVMAP.png",
+        "bytes": 14131,
+        "git_blob_sha1": "e7cee4580529520ddc070b02cebda6f3f6580f76"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/015_light_PL.png",
+        "bytes": 14131,
+        "git_blob_sha1": "e7cee4580529520ddc070b02cebda6f3f6580f76"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/016_light_AL.png",
+        "bytes": 15049,
+        "git_blob_sha1": "08fc6cfd00ae6168107a355e051a76c37264ba00"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/016_light_ENVMAP.png",
+        "bytes": 15049,
+        "git_blob_sha1": "08fc6cfd00ae6168107a355e051a76c37264ba00"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/016_light_PL.png",
+        "bytes": 15049,
+        "git_blob_sha1": "08fc6cfd00ae6168107a355e051a76c37264ba00"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/017_light_AL.png",
+        "bytes": 17502,
+        "git_blob_sha1": "9e57aa39b3c561cccc981149579282702035cd1a"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/017_light_ENVMAP.png",
+        "bytes": 17502,
+        "git_blob_sha1": "9e57aa39b3c561cccc981149579282702035cd1a"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/017_light_PL.png",
+        "bytes": 17502,
+        "git_blob_sha1": "9e57aa39b3c561cccc981149579282702035cd1a"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/018_light_AL.png",
+        "bytes": 18380,
+        "git_blob_sha1": "cb6b229f58a861eae17e35320cb0daa883b90502"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/018_light_ENVMAP.png",
+        "bytes": 18380,
+        "git_blob_sha1": "cb6b229f58a861eae17e35320cb0daa883b90502"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/018_light_PL.png",
+        "bytes": 18380,
+        "git_blob_sha1": "cb6b229f58a861eae17e35320cb0daa883b90502"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/019_light_AL.png",
+        "bytes": 14320,
+        "git_blob_sha1": "0966f29f719c1159f090d9e4ea476108c769d158"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/019_light_ENVMAP.png",
+        "bytes": 14320,
+        "git_blob_sha1": "0966f29f719c1159f090d9e4ea476108c769d158"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/019_light_PL.png",
+        "bytes": 14320,
+        "git_blob_sha1": "0966f29f719c1159f090d9e4ea476108c769d158"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/020_light_AL.png",
+        "bytes": 15769,
+        "git_blob_sha1": "c579532f41407268e397282122f8624f0c1f95f4"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/020_light_ENVMAP.png",
+        "bytes": 15769,
+        "git_blob_sha1": "c579532f41407268e397282122f8624f0c1f95f4"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/020_light_PL.png",
+        "bytes": 15769,
+        "git_blob_sha1": "c579532f41407268e397282122f8624f0c1f95f4"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/021_light_AL.png",
+        "bytes": 15149,
+        "git_blob_sha1": "111a34128b90395ad7dfadda9d0d4b5a5c564769"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/021_light_ENVMAP.png",
+        "bytes": 15149,
+        "git_blob_sha1": "111a34128b90395ad7dfadda9d0d4b5a5c564769"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/021_light_PL.png",
+        "bytes": 15149,
+        "git_blob_sha1": "111a34128b90395ad7dfadda9d0d4b5a5c564769"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/022_light_AL.png",
+        "bytes": 17635,
+        "git_blob_sha1": "ab721ca64063be647f900e50140e7b30e05bcbad"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/022_light_ENVMAP.png",
+        "bytes": 17635,
+        "git_blob_sha1": "ab721ca64063be647f900e50140e7b30e05bcbad"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/022_light_PL.png",
+        "bytes": 17635,
+        "git_blob_sha1": "ab721ca64063be647f900e50140e7b30e05bcbad"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/023_light_AL.png",
+        "bytes": 13528,
+        "git_blob_sha1": "2d0e08bcaf50aa45d432bb3c8d087f0e13bc2d38"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/023_light_ENVMAP.png",
+        "bytes": 13528,
+        "git_blob_sha1": "2d0e08bcaf50aa45d432bb3c8d087f0e13bc2d38"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/023_light_PL.png",
+        "bytes": 13528,
+        "git_blob_sha1": "2d0e08bcaf50aa45d432bb3c8d087f0e13bc2d38"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/mesh.ply",
+        "bytes": 47775,
+        "git_blob_sha1": "652534d9d9e977934138ab66a365db55f89b443a"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_cond/transforms.json",
+        "bytes": 25270,
+        "git_blob_sha1": "a9eae56d4335fca08a2de91bee8b97e87e7449df"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/000.png",
+        "bytes": 20399,
+        "git_blob_sha1": "9eb7edc8109fef32e2514c5482570368d91f38f1"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/000_albedo.png",
+        "bytes": 19050,
+        "git_blob_sha1": "843754f1d1f8c29f7a7c9560bac367ac98aac428"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/000_mr.png",
+        "bytes": 18512,
+        "git_blob_sha1": "c667cf385f4bc3e6a7d131025f6cfe0aa232f53a"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/000_normal.jpg",
+        "bytes": 4111,
+        "git_blob_sha1": "92383106e7d154b3f0d28b8b82a99e331a82f250"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/000_normal.png",
+        "bytes": 4111,
+        "git_blob_sha1": "92383106e7d154b3f0d28b8b82a99e331a82f250"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/000_pos.jpg",
+        "bytes": 3190,
+        "git_blob_sha1": "97b0f55f430cc32575a15ceb20e22423de8f3d8f"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/000_pos.png",
+        "bytes": 3190,
+        "git_blob_sha1": "97b0f55f430cc32575a15ceb20e22423de8f3d8f"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/001.png",
+        "bytes": 11810,
+        "git_blob_sha1": "c471f753a5174c3e63f58452627b2bc9073fc61c"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/001_albedo.png",
+        "bytes": 11066,
+        "git_blob_sha1": "12fc39ae66a5ef4521814ab9d066d554d449d838"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/001_mr.png",
+        "bytes": 11618,
+        "git_blob_sha1": "1137353d7a7114c14a85aa583344c80cdbe16b21"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/001_normal.jpg",
+        "bytes": 1585,
+        "git_blob_sha1": "2dee3c71550af010a901018920804510c74b7b9f"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/001_normal.png",
+        "bytes": 1585,
+        "git_blob_sha1": "2dee3c71550af010a901018920804510c74b7b9f"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/001_pos.jpg",
+        "bytes": 1642,
+        "git_blob_sha1": "382c653592dbbc4b64c5a3a110655a076bc7e6f6"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/001_pos.png",
+        "bytes": 1642,
+        "git_blob_sha1": "382c653592dbbc4b64c5a3a110655a076bc7e6f6"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/002.png",
+        "bytes": 19838,
+        "git_blob_sha1": "a3c120f4042eacff089a1bc4c4d3174e0dcc9c62"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/002_albedo.png",
+        "bytes": 19229,
+        "git_blob_sha1": "72b8b0b5f39d0438f3c718164a76d45a6efe5574"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/002_mr.png",
+        "bytes": 18450,
+        "git_blob_sha1": "226c0606858c18f5c0f76527ff83009ee871a1aa"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/002_normal.jpg",
+        "bytes": 4175,
+        "git_blob_sha1": "345552059a360fbe1557e0847607936ea7553c85"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/002_normal.png",
+        "bytes": 4175,
+        "git_blob_sha1": "345552059a360fbe1557e0847607936ea7553c85"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/002_pos.jpg",
+        "bytes": 3152,
+        "git_blob_sha1": "2f03b7aaf5544a992747fdcff7a50609aeaf4f15"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/002_pos.png",
+        "bytes": 3152,
+        "git_blob_sha1": "2f03b7aaf5544a992747fdcff7a50609aeaf4f15"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/003.png",
+        "bytes": 11845,
+        "git_blob_sha1": "6050552e596e80fa709978c0460dbb10b91751b0"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/003_albedo.png",
+        "bytes": 11110,
+        "git_blob_sha1": "84251143304eafa6b437b9f6a56fe553703c0d1c"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/003_mr.png",
+        "bytes": 11721,
+        "git_blob_sha1": "5c54d2e0f4fd8888108b6ec4ae89129ae048315d"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/003_normal.jpg",
+        "bytes": 1567,
+        "git_blob_sha1": "e7731e9ad3b5fc77080242876227738a80c42b18"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/003_normal.png",
+        "bytes": 1567,
+        "git_blob_sha1": "e7731e9ad3b5fc77080242876227738a80c42b18"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/003_pos.jpg",
+        "bytes": 1735,
+        "git_blob_sha1": "095ac191515c42e6de91b31ee7c413c78a6e39b3"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/003_pos.png",
+        "bytes": 1735,
+        "git_blob_sha1": "095ac191515c42e6de91b31ee7c413c78a6e39b3"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/004.png",
+        "bytes": 22512,
+        "git_blob_sha1": "8f48b693556944e7b6b8a0320d482054d403c75b"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/004_albedo.png",
+        "bytes": 20484,
+        "git_blob_sha1": "0a9c2761070597f83274cea0d33dc41aee9f012c"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/004_mr.png",
+        "bytes": 18413,
+        "git_blob_sha1": "7ea9c88ecb770e1ec2401a2c0072a16df5bdd7f2"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/004_normal.jpg",
+        "bytes": 3494,
+        "git_blob_sha1": "d1310d0d5378f63a12d11b4a72642088c849a896"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/004_normal.png",
+        "bytes": 3494,
+        "git_blob_sha1": "d1310d0d5378f63a12d11b4a72642088c849a896"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/004_pos.jpg",
+        "bytes": 2790,
+        "git_blob_sha1": "f68c29a8b142813c9dfb0093e46c6b433d91e4c4"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/004_pos.png",
+        "bytes": 2790,
+        "git_blob_sha1": "f68c29a8b142813c9dfb0093e46c6b433d91e4c4"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/005.png",
+        "bytes": 18849,
+        "git_blob_sha1": "2adc571790a41fe75a2056a3ee655f6f6245beea"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/005_albedo.png",
+        "bytes": 21043,
+        "git_blob_sha1": "2ab7b6022eacd599f90c3cd5b5e30e413c4d85a2"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/005_mr.png",
+        "bytes": 18921,
+        "git_blob_sha1": "29f6eee0667798f976cc758410268dd12b0b291a"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/005_normal.jpg",
+        "bytes": 3575,
+        "git_blob_sha1": "7efd3aa87c1875f098c51941c62ab629122858bd"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/005_normal.png",
+        "bytes": 3575,
+        "git_blob_sha1": "7efd3aa87c1875f098c51941c62ab629122858bd"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/005_pos.jpg",
+        "bytes": 3032,
+        "git_blob_sha1": "6b05568d77a5b69ef85679f9b8c5c5869ee139e3"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/005_pos.png",
+        "bytes": 3032,
+        "git_blob_sha1": "6b05568d77a5b69ef85679f9b8c5c5869ee139e3"
+      },
+      {
+        "path": "hy3dpaint/train_examples/001/render_tex/transforms.json",
+        "bytes": 5952,
+        "git_blob_sha1": "f7c46d458a00b2d44c1e4d0d03a8c4749846d979"
+      },
+      {
+        "path": "hy3dpaint/train_examples/examples.json",
+        "bytes": 38,
+        "git_blob_sha1": "11b519e210c18c687970a915ec98c27b02a454ab"
+      },
+      {
+        "path": "hy3dpaint/utils/__init__.py",
+        "bytes": 921,
+        "git_blob_sha1": "1614ff826f65b4720649d343c43fb09dbb6b9fa5"
+      },
+      {
+        "path": "hy3dpaint/utils/image_super_utils.py",
+        "bytes": 1706,
+        "git_blob_sha1": "8d56d4f2f27990392db9d531d77b220bfab61eb3"
+      },
+      {
+        "path": "hy3dpaint/utils/multiview_utils.py",
+        "bytes": 5576,
+        "git_blob_sha1": "03f0557f89ec5d8389bce89fd9c5f2acb3c9945b"
+      },
+      {
+        "path": "hy3dpaint/utils/pipeline_utils.py",
+        "bytes": 6078,
+        "git_blob_sha1": "6bc53826956211739250bc32914ce11a72809ce2"
+      },
+      {
+        "path": "hy3dpaint/utils/simplify_mesh_utils.py",
+        "bytes": 1680,
+        "git_blob_sha1": "7d3f10aa182c25ac4847f134a7189ab32b112054"
+      },
+      {
+        "path": "hy3dpaint/utils/torchvision_fix.py",
+        "bytes": 5201,
+        "git_blob_sha1": "40cef19f218704e0b92b8119b19d29a631e579e6"
+      },
+      {
+        "path": "hy3dpaint/utils/uvwrap_utils.py",
+        "bytes": 1379,
+        "git_blob_sha1": "f55a924f16aa6b2dce3347f39ff7e8ef190065f4"
+      },
+      {
+        "path": "hy3dshape/.gitignore",
+        "bytes": 3441,
+        "git_blob_sha1": "35000cb2173be759506038ac0372d2ba5177a3c8"
+      },
+      {
+        "path": "hy3dshape/LICENSE",
+        "bytes": 15928,
+        "git_blob_sha1": "96313b341082fb9f72a00b7c77accd8196390af0"
+      },
+      {
+        "path": "hy3dshape/NOTICE",
+        "bytes": 32142,
+        "git_blob_sha1": "e02234d9704824b109ffe3625aa9b8b94dad2d55"
+      },
+      {
+        "path": "hy3dshape/README.md",
+        "bytes": 2042,
+        "git_blob_sha1": "c81fc154b48696d7f1071bc1602ac527a4b0d6c0"
+      },
+      {
+        "path": "hy3dshape/configs/hunyuandit-finetuning-flowmatching-dinol518-bf16-lr1e5-4096.yaml",
+        "bytes": 3571,
+        "git_blob_sha1": "857ff1e5ea6167d9259a79589029d3e98c3b0fb7"
+      },
+      {
+        "path": "hy3dshape/configs/hunyuandit-mini-overfitting-flowmatching-dinol518-bf16-lr1e4-4096.yaml",
+        "bytes": 4159,
+        "git_blob_sha1": "b32a87eadc8bf1e8ef1043a273bc2e8380016517"
+      },
+      {
+        "path": "hy3dshape/demos/demo.png",
+        "bytes": 151014,
+        "git_blob_sha1": "00fda1dc914c0b085459d824ed20bc5cbf1233e7"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/__init__.py",
+        "bytes": 1181,
+        "git_blob_sha1": "1b1f9cce42c1d2bef94bbb2d7b088d24e76fe01e"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/data/dit_asl.py",
+        "bytes": 15137,
+        "git_blob_sha1": "21b045d06ebca12b544c974939a7ab4a56a6d349"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/data/utils.py",
+        "bytes": 5340,
+        "git_blob_sha1": "52adca1106abf1ce6375970eac7ac1fbe2824ff0"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/__init__.py",
+        "bytes": 1665,
+        "git_blob_sha1": "8179353ba7a5bdb8bcc30baa64e319fb8f884d57"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/autoencoders/__init__.py",
+        "bytes": 1360,
+        "git_blob_sha1": "20bbf8d9559f8d5de7d7ae2d88bbb0348a197dc4"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/autoencoders/attention_blocks.py",
+        "bytes": 27004,
+        "git_blob_sha1": "71ce880a0fa12416763e4e753b77e191d2e935ff"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/autoencoders/attention_processors.py",
+        "bytes": 3913,
+        "git_blob_sha1": "f7b232eb0d16d67b9598a7e49f57d6616f2e5bed"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/autoencoders/model.py",
+        "bytes": 12434,
+        "git_blob_sha1": "3d782f5804e6caf09ba72a47c8b3d2ddbedc1570"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/autoencoders/surface_extractors.py",
+        "bytes": 7074,
+        "git_blob_sha1": "8282aa2dc4e7b2b18b5605edf5dea7f32880e696"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/autoencoders/volume_decoders.py",
+        "bytes": 18300,
+        "git_blob_sha1": "d7bfd84647786b43d7815c788931326a305c7dca"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/conditioner.py",
+        "bytes": 9737,
+        "git_blob_sha1": "5c03464be79dfe6bf3de416a7f667a7e8996ecc7"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/denoisers/__init__.py",
+        "bytes": 961,
+        "git_blob_sha1": "72609333e27d68d377905ba9e67655de7021c31b"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/denoisers/hunyuan3ddit.py",
+        "bytes": 14981,
+        "git_blob_sha1": "5565cfaffa3500a60e56caa54f17ea46f4e27def"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/denoisers/hunyuandit.py",
+        "bytes": 23996,
+        "git_blob_sha1": "05514c01012dd96c1eaec2966810e78575d1bcec"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/denoisers/moe_layers.py",
+        "bytes": 7833,
+        "git_blob_sha1": "dbcf210b0e43d6bf5ab957dd73c59e39561bab99"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/diffusion/flow_matching_sit.py",
+        "bytes": 14990,
+        "git_blob_sha1": "7f94bb8056ef033e131e8a531808a0f343ade004"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/diffusion/transport/__init__.py",
+        "bytes": 3462,
+        "git_blob_sha1": "71164eaf5c447f9fc7bf3bc6ab4e8d6e0c67a05c"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/diffusion/transport/integrators.py",
+        "bytes": 4810,
+        "git_blob_sha1": "e2e011492ce8d7acc296df9bfe57d45ae01893e7"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/diffusion/transport/path.py",
+        "bytes": 8325,
+        "git_blob_sha1": "9c867929e9c570a5465c6bfd337cce27b0447041"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/diffusion/transport/transport.py",
+        "bytes": 18017,
+        "git_blob_sha1": "6b51d028da744d1241345086be4a06af90eb3f10"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/models/diffusion/transport/utils.py",
+        "bytes": 2025,
+        "git_blob_sha1": "5830aab015f9186c3e02d462af7580cfb223cfae"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/pipelines.py",
+        "bytes": 32244,
+        "git_blob_sha1": "71de472de2aa0e98461da4887d48d9cff8d88bb6"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/postprocessors.py",
+        "bytes": 7060,
+        "git_blob_sha1": "d258369e2b9116090ade3c955d57215d1481138e"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/preprocessors.py",
+        "bytes": 5992,
+        "git_blob_sha1": "8a9cb9ea1591363fb77f4e02351a0f945e3bc1ab"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/rembg.py",
+        "bytes": 1220,
+        "git_blob_sha1": "6247f060c9f325b1e267668baf236ec8e4c2dae9"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/schedulers.py",
+        "bytes": 18997,
+        "git_blob_sha1": "13f0da86b278679d427498128392a7a1ad69b2e6"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/surface_loaders.py",
+        "bytes": 9266,
+        "git_blob_sha1": "cb638f367d4ca7a69078878aca5a36d5f60972dc"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/utils/__init__.py",
+        "bytes": 181,
+        "git_blob_sha1": "0f92daa391f814e1a2c2cad0601e10be49b71998"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/utils/ema.py",
+        "bytes": 2982,
+        "git_blob_sha1": "d90df922fd96ab831a2fa26cd16cf1b565fbeb2b"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/utils/misc.py",
+        "bytes": 3573,
+        "git_blob_sha1": "f875e6bcd2d5ad3be2dcbd4f749e495c5f77c6f6"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/utils/trainings/__init__.py",
+        "bytes": 24,
+        "git_blob_sha1": "40a96afc6ff09d58a702b76e3f7dd412fe975e26"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/utils/trainings/callback.py",
+        "bytes": 8408,
+        "git_blob_sha1": "e75ac9f99b89a397ae461a3df2f0c317c4216e06"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/utils/trainings/lr_scheduler.py",
+        "bytes": 2268,
+        "git_blob_sha1": "bb7224776457a4395d309628ab62360d85cec1dc"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/utils/trainings/mesh.py",
+        "bytes": 3928,
+        "git_blob_sha1": "0af7da6256ecde08c49e7a2bc88d0a22e8e67fc7"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/utils/trainings/mesh_log_callback.py",
+        "bytes": 12817,
+        "git_blob_sha1": "d5f40497d81b197869f40d1c803b3cc5acdaa038"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/utils/trainings/peft.py",
+        "bytes": 3683,
+        "git_blob_sha1": "7b999defbb3b74a63ea86f9d6bf8e7851ff760b9"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/utils/utils.py",
+        "bytes": 4634,
+        "git_blob_sha1": "c88f6bb9a9e3f7aaf0ce68753757cd7816489915"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/utils/visualizers/__init__.py",
+        "bytes": 24,
+        "git_blob_sha1": "40a96afc6ff09d58a702b76e3f7dd412fe975e26"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/utils/visualizers/color_util.py",
+        "bytes": 2215,
+        "git_blob_sha1": "64f5ed382d657bcab3420c57f12845ba74bc9df7"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/utils/visualizers/html_util.py",
+        "bytes": 1809,
+        "git_blob_sha1": "b31c403777e44b948a088e6a60331061525e7a80"
+      },
+      {
+        "path": "hy3dshape/hy3dshape/utils/visualizers/pythreejs_viewer.py",
+        "bytes": 24165,
+        "git_blob_sha1": "817d2efaf74f376a419eae893996540fa643a38d"
+      },
+      {
+        "path": "hy3dshape/main.py",
+        "bytes": 8468,
+        "git_blob_sha1": "1f281eff22765a00cbdb08f76309763965360d77"
+      },
+      {
+        "path": "hy3dshape/minimal_demo.py",
+        "bytes": 1419,
+        "git_blob_sha1": "5a5ce8ca6c9cfc6667457ad678813edf740853b0"
+      },
+      {
+        "path": "hy3dshape/minimal_demo_with_ckpt.py",
+        "bytes": 2497,
+        "git_blob_sha1": "76c705c1480d041260f2d57dc908ff9ed1a4ead3"
+      },
+      {
+        "path": "hy3dshape/minimal_vae_demo.py",
+        "bytes": 1723,
+        "git_blob_sha1": "2b398cb7e37fa2a81b930a35b2bb70cd293707df"
+      },
+      {
+        "path": "hy3dshape/requirements.txt",
+        "bytes": 387,
+        "git_blob_sha1": "abdab84e043a82dc588767e52e925971dd183d4f"
+      },
+      {
+        "path": "hy3dshape/scripts/train_deepspeed.sh",
+        "bytes": 2278,
+        "git_blob_sha1": "444e5cc5cc2c45edb5926172872bdd29e79c92e0"
+      },
+      {
+        "path": "hy3dshape/tools/README-ch.md",
+        "bytes": 3839,
+        "git_blob_sha1": "af1c480aef1b6381e424608c52e2f794cd984b92"
+      },
+      {
+        "path": "hy3dshape/tools/README.md",
+        "bytes": 4128,
+        "git_blob_sha1": "38b70546fe2ec922ce735fdc89360aa2770e450e"
+      },
+      {
+        "path": "hy3dshape/tools/evaluation/chamfer_distance.py",
+        "bytes": 6116,
+        "git_blob_sha1": "1c0aab41db104f861bbd5ad022916fdd635a1f87"
+      },
+      {
+        "path": "hy3dshape/tools/evaluation/is_watertight.py",
+        "bytes": 389,
+        "git_blob_sha1": "3508bc1dc68b7a292fbf87355c795c2fb584d6c4"
+      },
+      {
+        "path": "hy3dshape/tools/mini_testset/images.json",
+        "bytes": 210,
+        "git_blob_sha1": "58919e4a9af4f3dc9a681c679e83c0bb85b0ee79"
+      },
+      {
+        "path": "hy3dshape/tools/mini_testset/images/012.png",
+        "bytes": 168490,
+        "git_blob_sha1": "2de5bde3f9426ce22892971911b66b2667d095d7"
+      },
+      {
+        "path": "hy3dshape/tools/mini_testset/images/015.png",
+        "bytes": 153289,
+        "git_blob_sha1": "c22466222c8350ff848c93413109b85bb1013413"
+      },
+      {
+        "path": "hy3dshape/tools/mini_testset/images/023.png",
+        "bytes": 149810,
+        "git_blob_sha1": "1ec35031b1919a19fc965c53aa30babad373037e"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/geo_data/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6_sdf.npz",
+        "bytes": 4998708,
+        "git_blob_sha1": "db33d17bd07ea9226f23c7a249475843bc4ef0e0"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/geo_data/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6_surface.npz",
+        "bytes": 2998812,
+        "git_blob_sha1": "9e2fe49bc2ce01b5570500c55a6fa1d8471ad1fe"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/000.png",
+        "bytes": 178613,
+        "git_blob_sha1": "1d1f9270082e35265388977313177b5cca7b5dbf"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/001.png",
+        "bytes": 186148,
+        "git_blob_sha1": "08e4c398344667d10c2bd140008d52171ab5af2c"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/002.png",
+        "bytes": 178954,
+        "git_blob_sha1": "2e1add7f0e49eb225358a3b1b1d5ecda883e2495"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/003.png",
+        "bytes": 188029,
+        "git_blob_sha1": "73faefae664e9ff25307267a98eb7163b55d829e"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/004.png",
+        "bytes": 182725,
+        "git_blob_sha1": "16ee200a440cca64b318c82592750d6293dab2f6"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/005.png",
+        "bytes": 179812,
+        "git_blob_sha1": "1337a818929a5ff7f64c563623aaa4155d634164"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/006.png",
+        "bytes": 184868,
+        "git_blob_sha1": "558596fb720be231e08a90b52a027e87a2d66951"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/007.png",
+        "bytes": 176146,
+        "git_blob_sha1": "fc7db4b8d9efe856d113ed3266b84fb3bfd5a827"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/008.png",
+        "bytes": 182771,
+        "git_blob_sha1": "6f97b6e792d68257f93e5c8808861395f3b6c3cc"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/009.png",
+        "bytes": 177817,
+        "git_blob_sha1": "118baeac5dec2292d9c159164d996d124572aaa6"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/010.png",
+        "bytes": 177118,
+        "git_blob_sha1": "f51452ed9e5b765af760c40f4b49a2a7292320b8"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/011.png",
+        "bytes": 172082,
+        "git_blob_sha1": "a06a3398ea0eab53b886c5c674c8bf6af3a77b7e"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/012.png",
+        "bytes": 173472,
+        "git_blob_sha1": "bbbb6ce550276b18cc938737ea6bcb45c6d955a7"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/013.png",
+        "bytes": 175268,
+        "git_blob_sha1": "0c3bddd3b77d3848fddb9eb1f9264c27c282262f"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/014.png",
+        "bytes": 180051,
+        "git_blob_sha1": "3f0268f53b8a007f3fbd7a3de060d48d2fc9a2b7"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/015.png",
+        "bytes": 174097,
+        "git_blob_sha1": "0c2519ea901a4804d2c468cd6cbd856f232eb92e"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/016.png",
+        "bytes": 171792,
+        "git_blob_sha1": "c56539c6754368da443e7ae31d81695c2906d084"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/017.png",
+        "bytes": 170808,
+        "git_blob_sha1": "b32a70a65aa86312602f9c7ef80d5a50338b4f98"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/018.png",
+        "bytes": 178707,
+        "git_blob_sha1": "4d0b4239cb063cf0ec02c3aca09eac758afc6994"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/019.png",
+        "bytes": 177454,
+        "git_blob_sha1": "2d2e32a5b72ef9f1b2578dc4d09534fc87269498"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/020.png",
+        "bytes": 180679,
+        "git_blob_sha1": "3b103a69d35bff167b2485d276ff789dead448fb"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/021.png",
+        "bytes": 180692,
+        "git_blob_sha1": "377d7fcc2b8b341ef6818bc6995d58893830ef3f"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/022.png",
+        "bytes": 178319,
+        "git_blob_sha1": "59e70f95f6ed71c86fcd17ddfb85a1ad2663bdee"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/023.png",
+        "bytes": 176349,
+        "git_blob_sha1": "d8b7dd9916d8d364f57ad7a93104a2143b3cf2e5"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/mesh.ply",
+        "bytes": 48951,
+        "git_blob_sha1": "8d98131ddebac78bf7fa68b710eb64b48e047829"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/00a4cff37043361068376104a292f5b44b5eacbd174651553b6a7ae35647a2a6/render_cond/transforms.json",
+        "bytes": 25243,
+        "git_blob_sha1": "0a8c037d22fdc67effcddd351600c618fa184f70"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/geo_data/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e_sdf.npz",
+        "bytes": 4998708,
+        "git_blob_sha1": "2e7c4566f18972499e46e2abfd4ec9897c97971a"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/geo_data/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e_surface.npz",
+        "bytes": 2998812,
+        "git_blob_sha1": "140c0471e0ad7acf905ef92c232dc14c0e954dde"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/000.png",
+        "bytes": 168678,
+        "git_blob_sha1": "2ea434b7c105edc0096c661164455ef157b8cf61"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/001.png",
+        "bytes": 173812,
+        "git_blob_sha1": "af624712f8d551103eee761764018a7c23f9ce08"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/002.png",
+        "bytes": 180363,
+        "git_blob_sha1": "38f31b95f1243de9d297cc80f74b572c7f9280c0"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/003.png",
+        "bytes": 179114,
+        "git_blob_sha1": "ecc6f5eacab395a53c980762a4f797b5a8e54dfb"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/004.png",
+        "bytes": 166474,
+        "git_blob_sha1": "3c896ab41249181f8bb39b95da9313f9c0f5d6e2"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/005.png",
+        "bytes": 170729,
+        "git_blob_sha1": "526dd829a38d9fa657754037c861415f210a0324"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/006.png",
+        "bytes": 171893,
+        "git_blob_sha1": "7a66a7a491f1888fd8f7b76a200b7c8a407cab12"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/007.png",
+        "bytes": 170430,
+        "git_blob_sha1": "ccacc66f0dbc8f7a1bd8b6154ef2be46e634f528"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/008.png",
+        "bytes": 167140,
+        "git_blob_sha1": "3eef4c5e34d47f00e7ae703efdb6026da47883e0"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/009.png",
+        "bytes": 169296,
+        "git_blob_sha1": "9592bf63deb2214df42793f9cbc44aa9dc6677f5"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/010.png",
+        "bytes": 172029,
+        "git_blob_sha1": "eceb70cb7aba82384473ccf7fb8f5b874ed0b1d2"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/011.png",
+        "bytes": 172147,
+        "git_blob_sha1": "729f2ff4f64fd72441638a497360fd16631e3230"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/012.png",
+        "bytes": 168490,
+        "git_blob_sha1": "2de5bde3f9426ce22892971911b66b2667d095d7"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/013.png",
+        "bytes": 170731,
+        "git_blob_sha1": "e20d9bc84cdc0165c4bbd8383e9ff75cd5a3ec05"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/014.png",
+        "bytes": 171123,
+        "git_blob_sha1": "69d5927942f922980d4f967b1749716252b1547a"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/015.png",
+        "bytes": 164737,
+        "git_blob_sha1": "a3dfcf8e42411d6adc8c955687b017186e55e17a"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/016.png",
+        "bytes": 169817,
+        "git_blob_sha1": "64ad6f91689e88771d567e99206e4ea95f01e29d"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/017.png",
+        "bytes": 180731,
+        "git_blob_sha1": "d975b2223a0430f08b1245ed05ad28e135de6fe5"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/018.png",
+        "bytes": 171258,
+        "git_blob_sha1": "4e48ee01662d2b933e141d2de7142afc662437d0"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/019.png",
+        "bytes": 164801,
+        "git_blob_sha1": "922501e6f551d2a39810e1ce7a15983ee73b8279"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/020.png",
+        "bytes": 167548,
+        "git_blob_sha1": "3b7dc6f9fe080c2a95580831e9dbd12ce9146707"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/021.png",
+        "bytes": 166833,
+        "git_blob_sha1": "dc0e75c483e2e16c6c4349f87082e4912cb86f11"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/022.png",
+        "bytes": 172087,
+        "git_blob_sha1": "7f2a6b3d366e933d1e74451fcdee69b07417bbc3"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/023.png",
+        "bytes": 170273,
+        "git_blob_sha1": "afa10c2568e1e24df6046bb33c9eacf7fa824751"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/mesh.ply",
+        "bytes": 683,
+        "git_blob_sha1": "4cea5c25a52ceec559030b60a5581fd359a816da"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af803d6846d1d2c80e65ba349345f00369141bf130f8169737b85e641bdff0e/render_cond/transforms.json",
+        "bytes": 25180,
+        "git_blob_sha1": "fcc80f149585a74eb4cfec311e27c8ffb797d96d"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/geo_data/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c_sdf.npz",
+        "bytes": 4998708,
+        "git_blob_sha1": "645c1cbadd71b4659bd95b33d537712ceee2a853"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/geo_data/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c_surface.npz",
+        "bytes": 2998812,
+        "git_blob_sha1": "d950cc6de20133f3b6029fdbd34bb2ff95a6bf4d"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/000.png",
+        "bytes": 143193,
+        "git_blob_sha1": "c8f2261a1b15f23c5343058baa11cb7241a215d2"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/001.png",
+        "bytes": 161191,
+        "git_blob_sha1": "bd7a90c7e05d6afaacbbd5ac317098db14a575f2"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/002.png",
+        "bytes": 150254,
+        "git_blob_sha1": "eb4b378e7e0ab52f783a3c26fe8a16802fe2a55f"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/003.png",
+        "bytes": 145357,
+        "git_blob_sha1": "edd0cfaa1d99b97c562cf104226e63b386d5c88b"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/004.png",
+        "bytes": 164334,
+        "git_blob_sha1": "06b488b38ff7057beefee1e162f8ad349df65b61"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/005.png",
+        "bytes": 161325,
+        "git_blob_sha1": "3a45ee2b3ff338f903b652dfe832b71ebe64d770"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/006.png",
+        "bytes": 158182,
+        "git_blob_sha1": "0be7931851b63c3e581e8f32f6202db069562ce9"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/007.png",
+        "bytes": 159603,
+        "git_blob_sha1": "2272688fed5504f1697f90f74de6b7f5cebcdd05"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/008.png",
+        "bytes": 158047,
+        "git_blob_sha1": "fac4dbbc4346bcb30de1ed2f583af6f3f9afc5dc"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/009.png",
+        "bytes": 165358,
+        "git_blob_sha1": "042cd942ce841a832e5fa9275c5946873193adb9"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/010.png",
+        "bytes": 148420,
+        "git_blob_sha1": "13712efe14bfdcd52857255c1b8499f300be8d79"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/011.png",
+        "bytes": 148694,
+        "git_blob_sha1": "91e726abe33a202cc4c1583bcd9b3c2bf323e420"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/012.png",
+        "bytes": 157419,
+        "git_blob_sha1": "0bf4ebeb74006b9d268fd151ca7602c2d5a0b6a8"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/013.png",
+        "bytes": 152271,
+        "git_blob_sha1": "021ce8e17d56b24ef9ec4aa791a07ec8e3b7b6ce"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/014.png",
+        "bytes": 161103,
+        "git_blob_sha1": "35c0773d2c64f8dcb95b823264575d2dfbdff992"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/015.png",
+        "bytes": 153289,
+        "git_blob_sha1": "c22466222c8350ff848c93413109b85bb1013413"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/016.png",
+        "bytes": 154367,
+        "git_blob_sha1": "40f7bf43115e8fee401303aed336769c37e22372"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/017.png",
+        "bytes": 154642,
+        "git_blob_sha1": "c88ca2a6114ac507a574cb114946bb7f23cdfa73"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/018.png",
+        "bytes": 139065,
+        "git_blob_sha1": "aa3e3684b884903853bce2dfdbccff20a8d8dab2"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/019.png",
+        "bytes": 134940,
+        "git_blob_sha1": "ebc809b4be8cffb8c20fec692c6149f93d61aa8c"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/020.png",
+        "bytes": 149072,
+        "git_blob_sha1": "a6ea59bb9d9ecdeaebe8096de672aa3c9ea35829"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/021.png",
+        "bytes": 144354,
+        "git_blob_sha1": "78a7ea13527b6a5da7185be7a50029d72dabba86"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/022.png",
+        "bytes": 139622,
+        "git_blob_sha1": "26b9b6597e1c14ab51ea4c683408263f33914348"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/023.png",
+        "bytes": 127791,
+        "git_blob_sha1": "de21d7dadcf48b810ea4f0df4565189b07e4d2de"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/mesh.ply",
+        "bytes": 787557,
+        "git_blob_sha1": "ce9b92862936bad96b28b63ad2ef37b0de67b569"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1af9172118894bad49159607b6083d3f2ae35d39e2a436da980684b990ae835c/render_cond/transforms.json",
+        "bytes": 25263,
+        "git_blob_sha1": "79fd1366931fd1ad40ce31d6f017add8c6994258"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/geo_data/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4_sdf.npz",
+        "bytes": 4998708,
+        "git_blob_sha1": "f9b8e8cf7d2e4e309f06d5cb7d443872ad7f1496"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/geo_data/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4_surface.npz",
+        "bytes": 2998812,
+        "git_blob_sha1": "948251368bfaf6ecad46173a1ed62735d8a9ee0b"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/000.png",
+        "bytes": 170415,
+        "git_blob_sha1": "015edc536a06d223c32efc71fb5e090fb2ea4432"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/001.png",
+        "bytes": 166811,
+        "git_blob_sha1": "533ee7e4a3f19b83f67b4fd2015060cb1bc259c6"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/002.png",
+        "bytes": 174237,
+        "git_blob_sha1": "bf459416aab88fa3aea7e4d4f159f5ae46eedc7d"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/003.png",
+        "bytes": 170485,
+        "git_blob_sha1": "ec7d79e4d60bfed3adf4955e757c4e0dbf0ded67"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/004.png",
+        "bytes": 171618,
+        "git_blob_sha1": "3c7a6e4b1efd4c5dd454c3ca86ad148b4268523e"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/005.png",
+        "bytes": 169629,
+        "git_blob_sha1": "eae4b6b348e7f04eab333533f2d46a21f74d6187"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/006.png",
+        "bytes": 171303,
+        "git_blob_sha1": "9e141f0cb9071d60b88a2b5446e81c429a5955b7"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/007.png",
+        "bytes": 166061,
+        "git_blob_sha1": "0b87ca7703e515a56636690f0a70af1adcbb5d18"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/008.png",
+        "bytes": 168408,
+        "git_blob_sha1": "7c60bb43290bf3d28a72e4f5362f82185a60a20a"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/009.png",
+        "bytes": 165924,
+        "git_blob_sha1": "c98832ba533ae2fc500df603e09335562228e3d0"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/010.png",
+        "bytes": 164571,
+        "git_blob_sha1": "446f998d6b2c06e9d92d2380a4442a00f8312f50"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/011.png",
+        "bytes": 167647,
+        "git_blob_sha1": "b344ca8532ee37e03e502510209599d12c5f2ef0"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/012.png",
+        "bytes": 169198,
+        "git_blob_sha1": "047efa7ddffaa27fe8cd06f7668438f8cb14d309"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/013.png",
+        "bytes": 175851,
+        "git_blob_sha1": "3c74484ec17abc77f617b6a8f113da85f6f21ccb"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/014.png",
+        "bytes": 174300,
+        "git_blob_sha1": "8bd42d3c1124a4a4198ba8de741e5c1bfe3a6d32"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/015.png",
+        "bytes": 175108,
+        "git_blob_sha1": "2e9e4bd009a05a309950c06acc7678f49c60e997"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/016.png",
+        "bytes": 170934,
+        "git_blob_sha1": "fca9bbfd98beb6385686cddece6a36791591d151"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/017.png",
+        "bytes": 171977,
+        "git_blob_sha1": "0e27a3b4290a8ea4dbc71fd4437e64af2c5ddccf"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/018.png",
+        "bytes": 164516,
+        "git_blob_sha1": "b73162cc3110af12a9b7231fa10358579b3523a2"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/019.png",
+        "bytes": 163056,
+        "git_blob_sha1": "69177ec8b19b8a30df19b8f8753af62d085dda0c"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/020.png",
+        "bytes": 174402,
+        "git_blob_sha1": "2a998f27c966a5d7aef1f97ba5cb7d071cfef13c"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/021.png",
+        "bytes": 169355,
+        "git_blob_sha1": "071c5fa287a2a067cf963fcc710950065e028fec"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/022.png",
+        "bytes": 164027,
+        "git_blob_sha1": "41df490185b54cde3b4e364fd36d0764d9febca3"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/023.png",
+        "bytes": 168459,
+        "git_blob_sha1": "cd04cd3ff20424dacc8345bc288b0c6bae06a10a"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/mesh.ply",
+        "bytes": 683,
+        "git_blob_sha1": "4cea5c25a52ceec559030b60a5581fd359a816da"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/1b81d3db8cb44f423a35c644253fb37392670f744f6881f964a3cd712740d3d4/render_cond/transforms.json",
+        "bytes": 25185,
+        "git_blob_sha1": "720ab5f1b654f6377ccfe28a6e938c1b1981fd1f"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/geo_data/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc_sdf.npz",
+        "bytes": 4998708,
+        "git_blob_sha1": "38ab5b1f14d23022913c83665fe9992d998b73e5"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/geo_data/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc_surface.npz",
+        "bytes": 2998812,
+        "git_blob_sha1": "2d107176611dea30fc24dd80a664a008fd465fc7"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/000.png",
+        "bytes": 184787,
+        "git_blob_sha1": "de480dae4a43072c3e16219b5987b46fcce81e40"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/001.png",
+        "bytes": 188345,
+        "git_blob_sha1": "ff724aab75026efb80a0d20886852ceef2bcbe5c"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/002.png",
+        "bytes": 179853,
+        "git_blob_sha1": "b93d7ca15cd8a1cdf1e1b3b4cdca8abf759883c9"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/003.png",
+        "bytes": 144169,
+        "git_blob_sha1": "77a4adcf1b4758130d385636bc81da1d1b8d2ab3"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/004.png",
+        "bytes": 143599,
+        "git_blob_sha1": "e54c82f4c8983e2688d065d65ce85a626787fe7f"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/005.png",
+        "bytes": 139576,
+        "git_blob_sha1": "5679f64c819c3ce802f69a4e0c4a03f7a86a52a4"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/006.png",
+        "bytes": 157437,
+        "git_blob_sha1": "68f8597adf7ed5dd9dc2bf1ab53e2af4567612fe"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/007.png",
+        "bytes": 151368,
+        "git_blob_sha1": "6121d73863217e5092d56c299b21d9398230941f"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/008.png",
+        "bytes": 156722,
+        "git_blob_sha1": "58306f02909b1e491c4163c0b76af053c12a0477"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/009.png",
+        "bytes": 148984,
+        "git_blob_sha1": "e2e298b0ffad5138d6c3c797c0093a5724541ce5"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/010.png",
+        "bytes": 151853,
+        "git_blob_sha1": "f6ad02401a8979f9ce623575eadd979221470fde"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/011.png",
+        "bytes": 167286,
+        "git_blob_sha1": "b8bc6b48b0bac87e97cd4c58386ce4eefddec569"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/012.png",
+        "bytes": 155396,
+        "git_blob_sha1": "2817a683f40573df40befa587bd1025ba27dd432"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/013.png",
+        "bytes": 170862,
+        "git_blob_sha1": "b9290031e665a3cf5506fab407a631f9d207855a"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/014.png",
+        "bytes": 152755,
+        "git_blob_sha1": "7bfbaa8d2d92f81c781b4c009cf5a84943dcdb46"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/015.png",
+        "bytes": 175446,
+        "git_blob_sha1": "f13907b8abd72ed0aca14ebae1a7fae9d3c08dab"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/016.png",
+        "bytes": 175993,
+        "git_blob_sha1": "0e14c9a8997c5ed3df4069cc5b42f95d5e0b234f"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/017.png",
+        "bytes": 167761,
+        "git_blob_sha1": "ff682a19ab3e84eb91eaec64824c0ea89821294b"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/018.png",
+        "bytes": 144890,
+        "git_blob_sha1": "b30e69f957316a80064f8e9eb9a619df0cf5a13f"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/019.png",
+        "bytes": 182055,
+        "git_blob_sha1": "7893b90dbcf8c1c979e6fe9dd21483d6d75e3ba2"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/020.png",
+        "bytes": 163388,
+        "git_blob_sha1": "1e77ce0363cca10ec0f050042781b53b61366ddd"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/021.png",
+        "bytes": 184752,
+        "git_blob_sha1": "b4743c9aba24c2755101b327a65871ebc4e2ab81"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/022.png",
+        "bytes": 163392,
+        "git_blob_sha1": "5d04c534a31403f7225bcbc36b7ea8bdea38eb5e"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/023.png",
+        "bytes": 193307,
+        "git_blob_sha1": "6f2cc19a86e8beaca090c4845c98be07b654f88d"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/mesh.ply",
+        "bytes": 6523,
+        "git_blob_sha1": "238cb42e8b355aa091c23c78780afc02c0601bc7"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e47ce1dc421d6638e36c0a6766fd35f8e54ab1280a59199dbf850622c5c47bc/render_cond/transforms.json",
+        "bytes": 25222,
+        "git_blob_sha1": "8b0511f2141381bf5e51f67ef5b48515f68d4f6a"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/geo_data/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc_sdf.npz",
+        "bytes": 4998708,
+        "git_blob_sha1": "b3fc0fb5202a138499e3059abe17b75b7edbfd33"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/geo_data/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc_surface.npz",
+        "bytes": 2998812,
+        "git_blob_sha1": "439724bf5dcaed95b45e2db1c2340421f5898a6f"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/000.png",
+        "bytes": 143645,
+        "git_blob_sha1": "eabc9225ffa584ef20305de66d54ef296c41b6c2"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/001.png",
+        "bytes": 146242,
+        "git_blob_sha1": "03b6c079d914d903257283e238d8eaf1d70fcc72"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/002.png",
+        "bytes": 158179,
+        "git_blob_sha1": "602238b791e24ba57b4bb03f0fab86990377d466"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/003.png",
+        "bytes": 153986,
+        "git_blob_sha1": "895ed5266320c1ef1b41c29dc69de64dd8ed379a"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/004.png",
+        "bytes": 157932,
+        "git_blob_sha1": "c9c34e4b978b495a96932947ace7662105de234b"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/005.png",
+        "bytes": 150176,
+        "git_blob_sha1": "b32c20cda7d25a1a7069cb28c3641e9ab05fe684"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/006.png",
+        "bytes": 164054,
+        "git_blob_sha1": "f49aaff29839faaa75068477bc1e44c9264228f2"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/007.png",
+        "bytes": 156296,
+        "git_blob_sha1": "0b94a8266265bfb9400a42731bcd2a009fbc7f5e"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/008.png",
+        "bytes": 143951,
+        "git_blob_sha1": "0eb5f6938365ee246a204e431a2ead456fa24aa9"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/009.png",
+        "bytes": 144410,
+        "git_blob_sha1": "c64d850b741604b1b9aa869510eae56d6159ead2"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/010.png",
+        "bytes": 160954,
+        "git_blob_sha1": "78a97a67bf8b714dec558adffd68d8e746ce0ff0"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/011.png",
+        "bytes": 153963,
+        "git_blob_sha1": "87dcd2c1ba4438811a2c247d1c091e6a5e277e52"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/012.png",
+        "bytes": 159725,
+        "git_blob_sha1": "22835123d80de11fa274f8001fb583ae44d75de4"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/013.png",
+        "bytes": 159032,
+        "git_blob_sha1": "76663e493e67b337c775684be0c0604901320347"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/014.png",
+        "bytes": 162658,
+        "git_blob_sha1": "c24d71e1ecce3061ae36854a0e72ed796772c7d0"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/015.png",
+        "bytes": 157184,
+        "git_blob_sha1": "c01687ab003d830815ea7e7bf589cabd7b4fce6a"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/016.png",
+        "bytes": 135270,
+        "git_blob_sha1": "3c1fc3d8d2fb6dc495c4a24b24578d03b5655f46"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/017.png",
+        "bytes": 137108,
+        "git_blob_sha1": "2d44cbebbd628154e0209de69a5b5992a172a96a"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/018.png",
+        "bytes": 151304,
+        "git_blob_sha1": "c4f34071a357e9bb72b7d9f5d5c737c904c1dba1"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/019.png",
+        "bytes": 143915,
+        "git_blob_sha1": "aa8a169c5121100d2a4f0e769cbf66a958f61bfa"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/020.png",
+        "bytes": 164310,
+        "git_blob_sha1": "b61d20db43789afab0919740fa21014836836c89"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/021.png",
+        "bytes": 158322,
+        "git_blob_sha1": "50151d74711972a11764f18637bc9ec28851f7eb"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/022.png",
+        "bytes": 157991,
+        "git_blob_sha1": "4075887d9e082c05c4b0c16118e639a515d6e236"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/023.png",
+        "bytes": 146808,
+        "git_blob_sha1": "5f82da93fe2cdb553171a15dd7502d486726ca2f"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/mesh.ply",
+        "bytes": 1171,
+        "git_blob_sha1": "6c7ae594ff37280a4c0d729f7fb85a687f8143c7"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/2e558708f817780dceee9d0c4f50748e683afadb78475c4c84f97fce7062d6bc/render_cond/transforms.json",
+        "bytes": 25249,
+        "git_blob_sha1": "e94ee69052cbc4a093b2c23acfff7e70239c5875"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/geo_data/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d_sdf.npz",
+        "bytes": 4998708,
+        "git_blob_sha1": "f3259bad36f0aa9d22d5f690aabb14402c98b48b"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/geo_data/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d_surface.npz",
+        "bytes": 2998812,
+        "git_blob_sha1": "46317f0b8058f4b1ed57f4c12f09d3507484bb5a"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/000.png",
+        "bytes": 136724,
+        "git_blob_sha1": "2f9befa7449394357e1f47ea5e11de58ccb2d4a8"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/001.png",
+        "bytes": 132834,
+        "git_blob_sha1": "240f24f536e6477e01c30c3d27fe659b79312fef"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/002.png",
+        "bytes": 125810,
+        "git_blob_sha1": "de587e0ace6be29422d48b1eda6b764ec4668850"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/003.png",
+        "bytes": 125017,
+        "git_blob_sha1": "6bcd74676781a5d2483571408f3a547e198efc1e"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/004.png",
+        "bytes": 125676,
+        "git_blob_sha1": "4cdf2a200081bc59f7924239dc4daf25de91bc22"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/005.png",
+        "bytes": 124568,
+        "git_blob_sha1": "8641ae2110a569a965db3df75cacc8ed8a42ac8e"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/006.png",
+        "bytes": 124393,
+        "git_blob_sha1": "1916457eb6763f4f57a612cf382b56c9ef75d9e1"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/007.png",
+        "bytes": 124992,
+        "git_blob_sha1": "204d83866b98b38112ebec33d8e6494d8fc00481"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/008.png",
+        "bytes": 124781,
+        "git_blob_sha1": "84379d4547f3bc5c4e234186996252a7e28ab683"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/009.png",
+        "bytes": 122515,
+        "git_blob_sha1": "7b6d5bd87bd719c3de333afaaf9cf48e8b56ff5c"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/010.png",
+        "bytes": 126412,
+        "git_blob_sha1": "82aefc39690e017a0b0219c828985a464eed8941"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/011.png",
+        "bytes": 127855,
+        "git_blob_sha1": "ad7f80c57740b75f047383756c08f91c487102ac"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/012.png",
+        "bytes": 129981,
+        "git_blob_sha1": "cc0a6b9ca2a6544de3081c038edf857158713677"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/013.png",
+        "bytes": 128952,
+        "git_blob_sha1": "a74dc85d0e5f8d4355a733936c38c69566302179"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/014.png",
+        "bytes": 128721,
+        "git_blob_sha1": "f49bc48081e295bc301738507fb7ddac97fbb7c0"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/015.png",
+        "bytes": 134937,
+        "git_blob_sha1": "ea8899f9eccb1c8234fe034b056c6796b9ec06dd"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/016.png",
+        "bytes": 137939,
+        "git_blob_sha1": "93a45bd98cccd5ad3bfe1ac563258ba738441938"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/017.png",
+        "bytes": 137002,
+        "git_blob_sha1": "30c43f35bbd4c05dbc52ee09b4bbfa75c1210408"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/018.png",
+        "bytes": 136738,
+        "git_blob_sha1": "18db9f1fdfad52a62dd81a692792d7edec64bf61"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/019.png",
+        "bytes": 136731,
+        "git_blob_sha1": "addc451846f655a5f26767228dfdfd7bf90c8676"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/020.png",
+        "bytes": 145109,
+        "git_blob_sha1": "847bb32975ea7e4c240ae8d7fbf6f47c29cc4332"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/021.png",
+        "bytes": 141101,
+        "git_blob_sha1": "a1cae82afb9bf1b892255637135afcaf5363d80e"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/022.png",
+        "bytes": 145611,
+        "git_blob_sha1": "01acc3e40a58b692678877d5880fb5aa56681421"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/023.png",
+        "bytes": 149810,
+        "git_blob_sha1": "1ec35031b1919a19fc965c53aa30babad373037e"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/mesh.ply",
+        "bytes": 67159,
+        "git_blob_sha1": "ab2f96d7c722a6646859be958a133fbab1b2609b"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/3c443fa7d3db9274512b79526118fae1b9fb13b59df7f90deec587ed62aa936d/render_cond/transforms.json",
+        "bytes": 25260,
+        "git_blob_sha1": "9c66dcf55e65cd5e26fb99e7fbaaf01b570edb61"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/geo_data/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8_sdf.npz",
+        "bytes": 4998708,
+        "git_blob_sha1": "1b7e9da12383e78915fe360f6fe029564c695f04"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/geo_data/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8_surface.npz",
+        "bytes": 2998812,
+        "git_blob_sha1": "e97e8ffb2c2424fd385ab9735c12a6e58206a3c1"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/000.png",
+        "bytes": 164114,
+        "git_blob_sha1": "7b6475f856b444389b07522bb07ebeaa8192185e"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/001.png",
+        "bytes": 177383,
+        "git_blob_sha1": "64e9285dd6fe3dc7821dc4dc8f2cae401255ddac"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/002.png",
+        "bytes": 173605,
+        "git_blob_sha1": "d3e52f031b5b535927dc48fdb32ef5c4fa05bca3"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/003.png",
+        "bytes": 175740,
+        "git_blob_sha1": "01a257d19cdaf43076f5d56a05f39e6b33811f85"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/004.png",
+        "bytes": 178540,
+        "git_blob_sha1": "c3e87f418797a5dc04015cf85317b4e219312b7b"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/005.png",
+        "bytes": 179852,
+        "git_blob_sha1": "12c332921945479bd6b8b401ab1dfdc0d8cac561"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/006.png",
+        "bytes": 176153,
+        "git_blob_sha1": "2f3c4454dbbbd90100b29ee4502b94b1840508cb"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/007.png",
+        "bytes": 179619,
+        "git_blob_sha1": "f1b122764e3ad1c0ee7cc715c04fbffe0f2ea47e"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/008.png",
+        "bytes": 183007,
+        "git_blob_sha1": "f24a38de81e61ca217a1419d067b67c9edd64e5f"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/009.png",
+        "bytes": 179988,
+        "git_blob_sha1": "c5db19fd03f2055fc7dc415c86fc074ad2cb5f1f"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/010.png",
+        "bytes": 184182,
+        "git_blob_sha1": "3152696d4ca32c5634945aa42db2982a83d926f3"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/011.png",
+        "bytes": 176590,
+        "git_blob_sha1": "48b38ea95375c8e2f63ccbbbeb0baef5ac2658c4"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/012.png",
+        "bytes": 178377,
+        "git_blob_sha1": "ed56879a31ad03aec538acae0fa39aeb4395dcb9"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/013.png",
+        "bytes": 190294,
+        "git_blob_sha1": "aaec16665e2038700c9d60cf8970c688ab32ff32"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/014.png",
+        "bytes": 175305,
+        "git_blob_sha1": "f66310210df4d4cacf8bb86a6d38ae314739befe"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/015.png",
+        "bytes": 170057,
+        "git_blob_sha1": "e5a593a2a7b83c1a00ebc9cd5e1133982e4de1e5"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/016.png",
+        "bytes": 165036,
+        "git_blob_sha1": "43a508cf1cc7f5e57fa1af3f57bf148ee550c447"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/017.png",
+        "bytes": 173999,
+        "git_blob_sha1": "aadda6ee0a6dd90afd92f3734cf42668affc05b3"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/018.png",
+        "bytes": 161535,
+        "git_blob_sha1": "afbf0921f6ec966f715621454488f0ba6ab73918"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/019.png",
+        "bytes": 171034,
+        "git_blob_sha1": "62505691a84e49f7ab456bb087e668369f62cab2"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/020.png",
+        "bytes": 162342,
+        "git_blob_sha1": "7bcc3e5cde9d853a296d0447caa656b2c2808057"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/021.png",
+        "bytes": 173645,
+        "git_blob_sha1": "3956bb3471f2c81c8fa8e9f1f6c542bfc43ffde3"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/022.png",
+        "bytes": 160464,
+        "git_blob_sha1": "a851195cba4628c100a2b22abd6f29d9bdca9a06"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/023.png",
+        "bytes": 155330,
+        "git_blob_sha1": "c8b17e673380104283a9ab1fb3f1d9c0b01b21fe"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/mesh.ply",
+        "bytes": 295974,
+        "git_blob_sha1": "7aaf041f1aac0a2712b4e50f73756ab00e0f0519"
+      },
+      {
+        "path": "hy3dshape/tools/mini_trainset/preprocessed/7dc69acf647a7ef597f0c9462097370f2c8f8e212f9fd1e7f3547f45b3f3a3d8/render_cond/transforms.json",
+        "bytes": 25241,
+        "git_blob_sha1": "ca06c0415f754d3ba8b39a9f6e41ba01eedc9bac"
+      },
+      {
+        "path": "hy3dshape/tools/pipeline.sh",
+        "bytes": 615,
+        "git_blob_sha1": "01d24785d9c6a8241f00023faf8be1880a57b1e7"
+      },
+      {
+        "path": "hy3dshape/tools/render/render.py",
+        "bytes": 35065,
+        "git_blob_sha1": "17011e6e825b3f7977f910812bc59eda9f0c98b2"
+      },
+      {
+        "path": "hy3dshape/tools/watertight/watertight_and_sample.py",
+        "bytes": 8808,
+        "git_blob_sha1": "9a1e684774db475931af9078a3cb153d935834c7"
+      },
+      {
+        "path": "hy3dshape/train_demo.sh",
+        "bytes": 628,
+        "git_blob_sha1": "717aff2620b3b9ffbe26aa71f4a164207c4b7684"
+      },
+      {
+        "path": "logger_utils.py",
+        "bytes": 3343,
+        "git_blob_sha1": "be6a155a0cd5bf9e9f114225313be523dd85369d"
+      },
+      {
+        "path": "model_worker.py",
+        "bytes": 8225,
+        "git_blob_sha1": "854f1d01f3036bfa9a87d29d80f55f76c2580d77"
+      },
+      {
+        "path": "requirements.txt",
+        "bytes": 1066,
+        "git_blob_sha1": "d9f1e4dd360c331340699efef53c98468b3eac6d"
+      },
+      {
+        "path": "test_api.ipynb",
+        "bytes": 2324,
+        "git_blob_sha1": "1602f9d884f01c4ea0e06b20e55db9400afd313b"
+      },
+      {
+        "path": "test_api_server.py",
+        "bytes": 9161,
+        "git_blob_sha1": "bb21d402ba3390978549074d2c881004e69c1298"
+      },
+      {
+        "path": "torchvision_fix.py",
+        "bytes": 4776,
+        "git_blob_sha1": "4ea6fb43fb61e3d1f201f78dfe0ef2a25a44b4e8"
+      }
+    ],
+    "no_source_payload_download": true
+  },
+  "checked_pbr_code_dependencies": {
+    "DINOv2_giant_required_by_default_pbr_checkpoint": true,
+    "external_super_resolution_checkpoint_required_for_default_paint_pipeline": true,
+    "DINOv2_giant_not_substitutable_with_DINOv3": true,
+    "pbr_model_weights_already_in_parent_repo": true,
+    "file_claim_only_not_runtime_test": true,
+    "root_community_license_excludes_EU_UK_South_Korea": true,
+    "source_header_says_noncommercial_but_actual_root_license_is_community": true,
+    "source_and_weight_licenses_must_be_reviewed_separately": true,
+    "environment_candidate": {
+      "python": "3.10",
+      "torch": "2.5.1+cu124",
+      "transformers": "4.46.0",
+      "diffusers": "0.30.0",
+      "custom_cuda": [
+        "custom_rasterizer",
+        "DifferentiableRenderer"
+      ],
+      "tested_on_owner_hardware": false
+    },
+    "official_vram_recommendation_gb": {
+      "shape": 10,
+      "texture": 21,
+      "combined": 29,
+      "publisher_claim_not_measured": true,
+      "clock": null,
+      "batch": null
+    }
+  },
+  "dino_model": {
+    "id": "facebook/dinov2-giant",
+    "pinned_revision": "611a9d42f2335e0f921f1e313ad3c1b7178d206d",
+    "source_repository_gross_bytes": 9092168005,
+    "source_files": 6,
+    "selected_original_files_bytes": 4546010968,
+    "selected_original_files": [
+      {
+        "path": ".gitattributes",
+        "bytes": 1519,
+        "sha256": null,
+        "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+        "identity_kind": "git_blob_sha1",
+        "payload_hash_masked": false,
+        "local_hash_verified": false
+      },
+      {
+        "path": "README.md",
+        "bytes": 3033,
+        "sha256": null,
+        "git_blob_sha1": "c31309adc935207373bdc847276bc085ef92a8c1",
+        "identity_kind": "git_blob_sha1",
+        "payload_hash_masked": false,
+        "local_hash_verified": false
+      },
+      {
+        "path": "config.json",
+        "bytes": 548,
+        "sha256": null,
+        "git_blob_sha1": "5f6d78927e4738cc844e868a5150753239927ef7",
+        "identity_kind": "git_blob_sha1",
+        "payload_hash_masked": false,
+        "local_hash_verified": false
+      },
+      {
+        "path": "model.safetensors",
+        "bytes": 4546005432,
+        "sha256": "917d3c470db999d32a312f8542149be91c7cbac61ee8fb4b67ae3d82b79ce21f",
+        "git_blob_sha1": "45d2f82a215791f593351aedcd2a85aea2defcd5",
+        "identity_kind": "lfs_payload_sha256",
+        "payload_hash_masked": false,
+        "local_hash_verified": false
+      },
+      {
+        "path": "preprocessor_config.json",
+        "bytes": 436,
+        "sha256": null,
+        "git_blob_sha1": "ff5b47c2edcd1d3556d63c01a65d93b58b9efce1",
+        "identity_kind": "git_blob_sha1",
+        "payload_hash_masked": false,
+        "local_hash_verified": false
+      }
+    ],
+    "not_chosen_alternative_weight_files": [
+      "pytorch_model.bin"
+    ],
+    "gated": false,
+    "license_metadata": "apache-2.0",
+    "locally_verified_source_hashes": false,
+    "publisher_snapshot_path": "catalog/research/2026-11-07-hunyuan3d-pbr/sources/facebook--dinov2-giant.json",
+    "license_specific_use_cleared": false,
+    "original_pretrained_weights_required": true,
+    "selected_file_scope_only_not_execution": true
+  },
+  "realesrgan_checkpoint": {
+    "repo": "xinntao/Real-ESRGAN",
+    "release_tag": "v0.1.0",
+    "release_id": 46632549,
+    "release_asset_id": 40831506,
+    "asset_name": "RealESRGAN_x4plus.pth",
+    "bytes": 67040989,
+    "digest_from_github_release_api": null,
+    "payload_sha256_verified": false,
+    "source_repo_license_spdx": "BSD-3-Clause (not independent pretrained checkpoint rights clearance)",
+    "download_url_for_later_authorized_acquisition_only": "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth",
+    "first_published_at": "2021-07-22T19:08:50Z",
+    "downloaded_this_audit": false
+  },
+  "capacity_scenario": {
+    "baseline_known_logical_bytes": 3417685712585,
+    "new_source_file_gross_bytes": 4786751280,
+    "new_source_hash_aware_logical_increment_bytes": 4785207663,
+    "new_source_only_logical_union_bytes": 3422470920248,
+    "newly_required_model_bytes_not_part_of_v27_selected_primary_scopes": true,
+    "real_esrgan_release_digest_unverified_not_sha256_deduplicated": true,
+    "exact_primary_scopes_unchanged": 126,
+    "owner_real_disk_capacity_bytes": null,
+    "owner_real_disk_free_bytes": null,
+    "acquisition_peak_bytes": null,
+    "complete_offline_archive_bytes": null,
+    "no_model_downloads": true,
+    "archive_budget_bytes": 4000000000000,
+    "minimum_free_space_bytes": 200000000000,
+    "hypothetical_4TB_difference_not_physical_available_bytes": 577529079752
+  },
+  "rights_and_reproducibility_gaps": [
+    "Tencent Community License territory excludes EU/UK/Korea, commercial MAU/Notice conditions need personal review",
+    "Legacy Tencent source header labels NON-COMMERCIAL and differs from modern community license header; reconcile rights",
+    "Meta DINOv2 Apache2 license metadata does not imply Tencent license grants third-party resale",
+    "RealESRGAN_x4plus.pth GitHub release digest is null; SHA256 identity and pretrained-weight-specific rights not verified",
+    "Python 3.10, PyTorch2.5.1+cu124, Diffusers0.30.0, Transformers4.46.0 and compiled CUDA extensions need ABI lock/test",
+    "Storage for original Python wheelhouse, compile toolchain, mesh renderers, staging remains UNKNOWN",
+    "Hunyuan3D PBR and DINOv2 full offline output has not been executed"
+  ],
+  "newly_selected_portfolio_assets": 0,
+  "newly_approved_downloads": 0,
+  "downloaded_model_payload_bytes": 0,
+  "owner_device_measured": false,
+  "complete_offline_restoration_verified": false,
+  "source_urls": {
+    "parent": "https://huggingface.co/tencent/Hunyuan3D-2.1/tree/0b94677654c57bb9a6b6845cd7b704ccf551d327",
+    "code": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1/tree/82920d643c0dc2f7bfd7255f45f62d386edfe60c",
+    "dino": "https://huggingface.co/facebook/dinov2-giant",
+    "real": "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth",
+    "paper": "https://arxiv.org/abs/2506.15442"
+  }
+}
