@@ -1,0 +1,92 @@
+name: Research Nov 5 releases with immutable metadata only
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - '.github/workflows/research-nov6-primary.yml'
+      - 'scripts/research_nov6_candidates.py'
+      - 'tests/test_research_nov6_candidates.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-nov6-primary-risk-only
+  cancel-in-progress: false
+jobs:
+  verify:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Read-only research and exact source-tree snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p 'test_research_nov6_candidates.py' -v
+          python -m scripts.research_nov6_candidates
+      - name: Verify identities, source snapshots, permissions and existing catalog
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,subprocess,sys
+          from pathlib import Path
+          def load(p):return json.loads(Path(p).read_text())
+          c=load('catalog/CURRENT.json')
+          v=load(c['materialized_catalog_path'])
+          q=load(c['priority_worklist_path'])
+          root=Path('catalog/research/2026-11-06-release-insurance')
+          r=load(root/'candidate-review.json')
+          assert c['revision_id']=='v23-20261106' and len(v['items'])==165
+          assert sum(x['portfolio_decision'] in ('select','conditional') for x in v['items'])==118
+          assert len(q['candidates'])==118 and not q['download_enabled'] and not q['approved']
+          assert not load('queues/approved.json')['entries']
+          assert len(r['decisions'])==4 and not r['download_authorized'] and r['new_formal_selections']==0
+          assert r['owner_disk_measured'] is False and r['model_payload_bytes_downloaded']==0
+          ids={x['repo_id'] for x in r['decisions']}
+          for id in ('pfnet/plamo-3-translate-31b','nvidia/Cosmos3-Nano-Sim-Bimanual'):
+              x=next(x for x in r['decisions'] if x['repo_id']==id)
+              assert x['tree_complete'] is True and x['source_revision_observed'] and len(x['source_revision_observed'])==40
+              assert isinstance(x['source_repo_bytes'],int) and x['source_repo_bytes']>0
+              assert x['observed_access'] is False and x['source_file_count']>5
+              assert not x['download_authorized'] and not x['legal_clearance_for_acquisition']
+          p=next(x for x in r['decisions'] if x['repo_id']=='pfnet/plamo-3-translate-31b')
+          assert p['technical_file_profile']['weights_shards_count']>=2
+          assert p['technical_file_profile']['candidate_selected_primary_bytes']>0
+          assert any(y['path']=='LICENSE/en' and y['retrieved'] for y in p['license_text_evidence'])
+          assert any(y['path']=='LICENSE/ja' and y['retrieved'] for y in p['license_text_evidence'])
+          assert 'orcarouter/GLM-5.3-Flash-Uncensored-GGUF' in ids
+          a=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],text=True,capture_output=True)
+          assert a.returncode==0,(a.stdout+a.stderr)[-4500:]
+          for script in ('scripts/check_parameter_cutoff.py','scripts/audit_selection_decisions.py'):
+              subprocess.run([sys.executable,script],check=True)
+          out={'source_revision':'v23-20261106','fixed_model_repo_sources_reviewed':4,
+               'tests_passed':True,'new_selection':0,'payloads_downloaded':0,
+               'previous_165_catalog_unchanged':True,'user_disk_measured':False,
+               'test_log_sha256':hashlib.sha256((a.stdout+a.stderr).encode()).hexdigest()}
+          (root/'research-verification.json').write_text(json.dumps(out,indent=2)+'\n')
+          print(json.dumps(out,indent=2))
+          PY
+      - name: Commit non-executable research evidence only to branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          test "$(git ls-remote origin "$GITHUB_REF" | cut -f1)" = "$GITHUB_SHA"
+          git add -- catalog/research/2026-11-06-release-insurance
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'research: preserve November 5 upstream release metadata and license evidence [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD
