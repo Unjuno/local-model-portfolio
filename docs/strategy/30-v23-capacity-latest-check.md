@@ -15,5 +15,5 @@ Saluki-27BはLICENSE本文の固定版履歴を調査。現在タグだけでは
 一次資料: https://www.preferred.jp/en/news/pr20261105 ; https://www.preferred.jp/en/blog/tech/plamo-3-translate-weight-release ; 各固定LICENSE URLはcandidate-decisions.jsonに記録。
 
 ## 検証と限界
-173テストと2監査を通過。モデル実行・本体取得・クラウド課金なし。保存先PC未接続で実空きはUNKNOWN。
+175テストと2監査を通過。モデル実行・本体取得・クラウド課金なし。保存先PC未接続で実空きはUNKNOWN。
 機械学習の独自性、供給網の版整合、契約上の許諾、アーカイブの物理復元を別に審査する。
