@@ -102,7 +102,7 @@ def classify(repo,src):
     names={f['path'] for f in src['files']}
     if repo==KAKAO:
         must(src['gated'] is False,'Kanana unexpectedly gated')
-        must(src['source_license_metadata']=='other','Kanana licence unexpectedly changed')
+        must(src['license_metadata']=='other','Kanana licence unexpectedly changed')
         must('model.safetensors' in names and 'tokenizer.json' in names and 'config.json' in names,'single full source model missing')
         must({'decision_kanana_v_decide.py','modeling_kanana_v_decide.py',
               'processing_kanana_v_decide.py','image_processing_kanana_v.py','LICENSE'}.issubset(names),'original custom decision/vision code missing')
