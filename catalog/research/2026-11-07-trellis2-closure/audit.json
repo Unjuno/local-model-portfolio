@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "source_revision": "v27-20261107",
+  "observed_at_utc": "2026-11-06T18:03:39.886379+00:00",
+  "parent": {
+    "id": "microsoft/TRELLIS.2-4B",
+    "immutable_revision": "af44b45f2e35a493886929c6d786e563ec68364d",
+    "source_repo_bytes": 16237485044,
+    "source_file_count": 22,
+    "model_pipeline_sha256": "222c359ab1ed9bc6735a640a34f95d47f8681b9bc4aaa101bfb80274676253c6",
+    "model_pipeline_json_bytes": 4186,
+    "published_mit_metadata_not_rights_for_dependencies": true
+  },
+  "microsoft_source": {
+    "repo": "microsoft/TRELLIS.2",
+    "git_revision": "75fbf0183001ed9876c8dbb35de6b68552ee08bd",
+    "code_tree_complete": true,
+    "blob_file_count": 271,
+    "gross_git_blob_bytes": 21228411,
+    "source_license": "MIT",
+    "weight_payload_in_code_repo_not_downloaded": true
+  },
+  "dependency_facts_from_pinned_code": {
+    "required_sparse_decoder_repo": "microsoft/TRELLIS-image-large",
+    "required_sparse_decoder_stem": "ckpts/ss_dec_conv3d_16l8_fp16",
+    "required_vision_model": "facebook/dinov3-vitl16-pretrain-lvd1689m",
+    "default_loader_rembg_model": "briaai/RMBG-2.0",
+    "DINOv3_is_always_constructed_by_default_loader": true,
+    "RMBG_is_always_constructed_by_default_loader": true,
+    "RMBG_is_functionally_replaceable_with_different_background_preprocessor": true,
+    "RMBG_is_not_proven_mandatory_for_rgba_geometry_without_source_modification": true,
+    "external_decoder_is_loaded_by_foreign_repo_fallback": true,
+    "offlinedemo_executed": false
+  },
+  "dependent_source_profiles": [
+    {
+      "repo_id": "microsoft/TRELLIS-image-large",
+      "source_revision": "25e0d31ffbebe4b5a97464dd851910efc3002d96",
+      "source_tree_complete": true,
+      "source_tree_error": null,
+      "source_all_repo_bytes": 3299240850,
+      "gated": false,
+      "source_license_metadata": "mit",
+      "source_snapshot_path": "catalog/research/2026-11-07-trellis2-closure/sources/microsoft--TRELLIS-image-large.json",
+      "selected_file_bytes": 147592217,
+      "selected_files": [
+        {
+          "path": "ckpts/ss_dec_conv3d_16l8_fp16.json",
+          "bytes": 245,
+          "sha256": null,
+          "git_blob_sha1": "9f3affaf13ab29fe48105229da9fab72ea8de716",
+          "identity_kind": "git_blob_sha1",
+          "payload_hash_masked": false,
+          "local_hash_verified": false
+        },
+        {
+          "path": "ckpts/ss_dec_conv3d_16l8_fp16.safetensors",
+          "bytes": 147591972,
+          "sha256": "1c76d4a40519aa2d711cc263a8404105231ac26db31d946bed48b84fee79009a",
+          "git_blob_sha1": "a4b577752af35caab154c83b72427d9cc92285f6",
+          "identity_kind": "lfs_payload_sha256",
+          "payload_hash_masked": false,
+          "local_hash_verified": false
+        }
+      ],
+      "personal_access_verified": false,
+      "license_body_cleared": false,
+      "read_only_source_metadata": true,
+      "payload_identity_verified_on_owner_disk": false,
+      "reconstruction_tested": false,
+      "masked_lfs_payload_files": 0,
+      "selected_files_missing_sha256": 0,
+      "original_tensor_layout": "BF16 or publisher format: do not infer real RAM from file extension",
+      "selection_is_only_a_research_profile": true
+    },
+    {
+      "repo_id": "facebook/dinov3-vitl16-pretrain-lvd1689m",
+      "source_revision": "ea8dc2863c51be0a264bab82070e3e8836b02d51",
+      "source_tree_complete": true,
+      "source_tree_error": null,
+      "source_all_repo_bytes": 1212584680,
+      "gated": "manual",
+      "source_license_metadata": "other",
+      "source_snapshot_path": "catalog/research/2026-11-07-trellis2-closure/sources/facebook--dinov3-vitl16-pretrain-lvd1689m.json",
+      "selected_file_bytes": 1212583161,
+      "selected_files": [
+        {
+          "path": "model.safetensors",
+          "bytes": 1212559808,
+          "sha256": null,
+          "git_blob_sha1": "5fe30316feaa07b25590197bfad7216e9747863d",
+          "identity_kind": "unverifiable_payload_hash",
+          "payload_hash_masked": true,
+          "local_hash_verified": false
+        },
+        {
+          "path": "LICENSE.md",
+          "bytes": 7503,
+          "sha256": null,
+          "git_blob_sha1": "f531b1e6b5ab2318957bbf8ad1bda9f800a23e17",
+          "identity_kind": "git_blob_sha1",
+          "payload_hash_masked": false,
+          "local_hash_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 14520,
+          "sha256": null,
+          "git_blob_sha1": "fc1b2f193fe95afb9f236810dbea3c3b436399e6",
+          "identity_kind": "git_blob_sha1",
+          "payload_hash_masked": false,
+          "local_hash_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 745,
+          "sha256": null,
+          "git_blob_sha1": "ab2a8b183fd4fd5213e9898a7f499c7c857b1a86",
+          "identity_kind": "git_blob_sha1",
+          "payload_hash_masked": false,
+          "local_hash_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 585,
+          "sha256": null,
+          "git_blob_sha1": "0126173c1ab7b75bbd9102e37de8a56ffe0a012b",
+          "identity_kind": "git_blob_sha1",
+          "payload_hash_masked": false,
+          "local_hash_verified": false
+        }
+      ],
+      "personal_access_verified": false,
+      "license_body_cleared": false,
+      "read_only_source_metadata": true,
+      "payload_identity_verified_on_owner_disk": false,
+      "reconstruction_tested": false,
+      "masked_lfs_payload_files": 1,
+      "selected_files_missing_sha256": 1,
+      "original_tensor_layout": "BF16 or publisher format: do not infer real RAM from file extension",
+      "selection_is_only_a_research_profile": true
+    },
+    {
+      "repo_id": "briaai/RMBG-2.0",
+      "source_revision": "2fd7b4b0f2393ddb39a267fb62df6c010928a6c6",
+      "source_tree_complete": true,
+      "source_tree_error": null,
+      "source_all_repo_bytes": 5369483778,
+      "gated": "auto",
+      "source_license_metadata": "other",
+      "source_snapshot_path": "catalog/research/2026-11-07-trellis2-closure/sources/briaai--RMBG-2.0.json",
+      "selected_file_bytes": 884980744,
+      "selected_files": [
+        {
+          "path": "model.safetensors",
+          "bytes": 884878856,
+          "sha256": null,
+          "git_blob_sha1": "121c871665f9d734c36f5be12556984df33667b1",
+          "identity_kind": "unverifiable_payload_hash",
+          "payload_hash_masked": true,
+          "local_hash_verified": false
+        },
+        {
+          "path": "BiRefNet_config.py",
+          "bytes": 298,
+          "sha256": null,
+          "git_blob_sha1": "37c8ac58bec2f52dac34204978a7b61b69e3da76",
+          "identity_kind": "git_blob_sha1",
+          "payload_hash_masked": false,
+          "local_hash_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 9391,
+          "sha256": null,
+          "git_blob_sha1": "53586d85afb950223e295d2d55138b3f40a65cfe",
+          "identity_kind": "git_blob_sha1",
+          "payload_hash_masked": false,
+          "local_hash_verified": false
+        },
+        {
+          "path": "birefnet.py",
+          "bytes": 91403,
+          "sha256": null,
+          "git_blob_sha1": "6d56778af0737ad21a8a877f79e534f848589f05",
+          "identity_kind": "git_blob_sha1",
+          "payload_hash_masked": false,
+          "local_hash_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 405,
+          "sha256": null,
+          "git_blob_sha1": "06d8fa9d7f2f4c6f1cf0dc6e7bfd194153176a42",
+          "identity_kind": "git_blob_sha1",
+          "payload_hash_masked": false,
+          "local_hash_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 391,
+          "sha256": null,
+          "git_blob_sha1": "825398cfd94a348babce456f2bcc8422c9bebb93",
+          "identity_kind": "git_blob_sha1",
+          "payload_hash_masked": false,
+          "local_hash_verified": false
+        }
+      ],
+      "personal_access_verified": false,
+      "license_body_cleared": false,
+      "read_only_source_metadata": true,
+      "payload_identity_verified_on_owner_disk": false,
+      "reconstruction_tested": false,
+      "masked_lfs_payload_files": 1,
+      "selected_files_missing_sha256": 1,
+      "original_tensor_layout": "BF16 or publisher format: do not infer real RAM from file extension",
+      "selection_is_only_a_research_profile": true
+    }
+  ],
+  "capacity_research_scenario": {
+    "baseline_known_logical_bytes": 3417685712585,
+    "new_source_selected_files_reported_gross_bytes": 2266384533,
+    "new_source_hash_identity_deduplicated_increment_bytes": 2266376399,
+    "new_source_partial_union_bytes": 3419952088984,
+    "research_only_not_complete_archive_bytes": true,
+    "required_dependency_profiles_all_complete": true,
+    "default_pipeline_three_dependencies_complete": true,
+    "remaining_archive_budget_if_all_scopes_cleared_not_computable": true,
+    "owner_disk_free_bytes": null,
+    "physical_archive_used_bytes": null,
+    "download_peak_bytes": null,
+    "model_payload_downloads": 0,
+    "approved_queue_unchanged": true
+  },
+  "current_DINOv3_variants_in_portfolio_not_substitutes": [
+    "facebook/dinov3-vit7b16-pretrain-lvd1689m",
+    "facebook/dinov3-vith16plus-pretrain-lvd1689m"
+  ],
+  "prerequisites_for_storage": [
+    "owner authenticates each gated HF repository individually",
+    "no unofficial mirror as alternative to license approval",
+    "confirm license terms for DINOv3 and RMBG; commercial/full pipeline terms distinct",
+    "verify immutable LFS payload SHA256 after lawful acquisition",
+    "pin torch/transformers/custom DINOv3 extractor ABI, NVIDIA rendering libraries",
+    "test RGBA-only path if opting out of default RMBG model without bypassing licensing"
+  ],
+  "research_only": true,
+  "new_assets_selected": 0,
+  "new_download_authorizations": 0,
+  "model_payload_bytes_downloaded": 0,
+  "owner_hardware_tested": false,
+  "full_offline_restoration_tested": false,
+  "main_branch_not_modified": true,
+  "source_urls": {
+    "trellis_code": "https://github.com/microsoft/TRELLIS.2/tree/75fbf0183001ed9876c8dbb35de6b68552ee08bd",
+    "model_pipeline": "https://huggingface.co/microsoft/TRELLIS.2-4B/blob/af44b45f2e35a493886929c6d786e563ec68364d/pipeline.json",
+    "microsoft_decoder": "https://huggingface.co/microsoft/TRELLIS-image-large",
+    "dino": "https://huggingface.co/facebook/dinov3-vitl16-pretrain-lvd1689m",
+    "rembg": "https://huggingface.co/briaai/RMBG-2.0",
+    "licensing_issue": "https://github.com/microsoft/TRELLIS.2/issues/22",
+    "reported_dino_compatibility_issue": "https://github.com/microsoft/TRELLIS.2/issues/161"
+  }
+}
