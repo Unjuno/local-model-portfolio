@@ -315,18 +315,20 @@
     "source_bytes_rough": true,
     "full_dependency_bytes": null,
     "unallocated_of_user_reported_800GB": 414125865132,
-    "archive_approval_bytes": 0
+    "archive_approval_bytes": 0,
+    "status": "PRIOR_EXPLORATORY_NOT_EXCLUSIVE_SPECIAL_VARIANT_SET"
   },
   "gates": {
     "exact_immutable_revision_required": true,
     "full_file_hash_required": true,
     "user_approved_acquisition": false,
     "user_machine_tested": false,
-    "one_quantization_per_model": true,
+    "one_quantization_per_model": "DEFAULT_ONE_RUNTIME_REPRESENTATION_PER_LEARNED_STATE_EXCEPT_PROVEN_NEED",
     "under150B_baseline_except_verified_quantized_exception": true,
     "measured_peak_ram_below_bytes": 512000000000,
     "publisher_benchmarks_not_paired_independent": true,
-    "do_not_count_full_checkpoint_reuse_without_hash_match": true
+    "do_not_count_full_checkpoint_reuse_without_hash_match": true,
+    "multiple_distinct_special_learned_states_allowed": true
   },
   "references": [
     "https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct",
@@ -339,5 +341,13 @@
   ],
   "no_model_download": true,
   "no_queue_changes": true,
-  "no_formal_selection_edits": true
+  "no_formal_selection_edits": true,
+  "r30_correction": {
+    "published_on": "2026-11-07",
+    "authoritative_latest_path": "catalog/research/2026-11-07-r30-training-state-vs-quantization.json",
+    "why": "R29 treated one base family or function as one default archival slot, insufficiently separating distinct special trained checkpoints from ordinary quantized formats.",
+    "overriding_rule": "No artificial ceiling of 1 specialty derivative per source. Compare distinct learned states individually; compressed representations of same trained state do not create an extra model. For >150B quant is an implementation/archival representation.",
+    "all_previous_150_and_research_records_preserved": true,
+    "no_new_download_authorization": true
+  }
 }
