@@ -1,0 +1,1687 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "source_revision": "v25-20261106",
+  "current_tracked": 169,
+  "current_active": 122,
+  "catalog_changed": false,
+  "current_known_dedup_bytes": 3372065984104,
+  "records": [
+    {
+      "repo_id": "gradium/phonon-31m-en",
+      "snapshot": "catalog/research/2026-11-06-round27/sources/gradium--phonon-31m-en.json",
+      "source_revision": "92741c5b07d085ff840e26fea8ce43110b87852f",
+      "fixed_version_is_selection_approval": false,
+      "tree_complete": true,
+      "source_scope_bytes": 223333254,
+      "source_is_not_selected_file_bytes": true,
+      "file_count": 14,
+      "gated": false,
+      "license_metadata": "apache-2.0",
+      "full_weights_not_downloaded": true,
+      "download_authorized": false,
+      "personal_access_verified": false,
+      "licensed_to_user_verified": false,
+      "param_total_publisher_display": 41096035,
+      "weighted_files": [
+        {
+          "path": "default-voice.safetensors",
+          "bytes": 256136,
+          "sha256": "dc537478eaadc1a5257fcda2e3501ab81e14c111a5d95a5838f350db2afd0f1a",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model.q4k.gguf",
+          "bytes": 55075168,
+          "sha256": "b89e867e995b45835cbe30564fe360178fb39f1fe457c13e1e559c2e4260e4f3",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model.q8.gguf",
+          "bytes": 64512352,
+          "sha256": "a7d9aad2cd6dc66473f24a08bc6d2939030ef4d751ef82349361fbef3272dbae",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 102823920,
+          "sha256": "8a04cf833cfe69b67c2ec968b2d31244655b9accc84ade9c0ebcc176f2074607",
+          "identity_kind": "lfs_payload_sha256"
+        }
+      ],
+      "license_evidence": [],
+      "observation_error": null,
+      "measured_peak_runtime_memory": null,
+      "legal_clearance": false,
+      "next_action": "Choose one complete source checkpoint (not source plus every GGUF); verify internal decoder and default voice, exact selected bytes and runtime commit.",
+      "decision": "HIGH_VALUE_RESEARCH_AND_CONDITIONAL_SELECTION_REVIEW",
+      "independent_learned_outcome": "Original English 31M Phonon flow-latent TTS; decoder-only PocketTTS/Mimi lineage, not another serialization of existing high-B TTS.",
+      "all_component_total_note": "HF safetensors displayed total includes decoder audio tokenizer ~10M; creator distinguishes base 30.8M vs processor decoder 10.3M.",
+      "must_preserve": [
+        "preferred original precision and matching voice latent",
+        "checkpoint processor and audio tokenizer decoder",
+        "gradium/phonon-voices selected precomputed voices",
+        "gradium-ai/xn-ptts runtime commit",
+        "Apache 2.0 license + rights for voice latents"
+      ],
+      "primary_urls": [
+        "https://gradium.ai/blog/phonon-closer-look",
+        "https://huggingface.co/gradium/phonon-31m-en",
+        "https://huggingface.co/docs/transformers/model_doc/gradium_phonon_tts"
+      ]
+    },
+    {
+      "repo_id": "gradium/phonon-40m-multilingual",
+      "snapshot": "catalog/research/2026-11-06-round27/sources/gradium--phonon-40m-multilingual.json",
+      "source_revision": "1537ce46c64f42903e0d608b132ccb073dac46d2",
+      "fixed_version_is_selection_approval": false,
+      "tree_complete": true,
+      "source_scope_bytes": 257581010,
+      "source_is_not_selected_file_bytes": true,
+      "file_count": 14,
+      "gated": "auto",
+      "license_metadata": "cc-by-nc-4.0",
+      "full_weights_not_downloaded": true,
+      "download_authorized": false,
+      "personal_access_verified": false,
+      "licensed_to_user_verified": false,
+      "param_total_publisher_display": 50539363,
+      "weighted_files": [
+        {
+          "path": "default-voice.safetensors",
+          "bytes": 256136,
+          "sha256": null,
+          "identity_kind": "unverifiable_payload_hash"
+        },
+        {
+          "path": "model.q4k.gguf",
+          "bytes": 60397792,
+          "sha256": null,
+          "identity_kind": "unverifiable_payload_hash"
+        },
+        {
+          "path": "model.q8.gguf",
+          "bytes": 74553568,
+          "sha256": null,
+          "identity_kind": "unverifiable_payload_hash"
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 121713400,
+          "sha256": null,
+          "identity_kind": "unverifiable_payload_hash"
+        }
+      ],
+      "license_evidence": [],
+      "observation_error": null,
+      "measured_peak_runtime_memory": null,
+      "legal_clearance": false,
+      "next_action": "Observe actual gate and CC BY-NC terms; do not treat anonymous file listing as personal rights. Pin selected source weights before formal adoption.",
+      "decision": "S1_GATED_RESEARCH_NOT_ACQUISITION_AUTHORIZED",
+      "independent_learned_outcome": "Additional 40M multilingual English/French/German/Spanish/Portuguese voice TTS learned checkpoint, distinct from 31M English model",
+      "primary_urls": [
+        "https://gradium.ai/blog/phonon-closer-look",
+        "https://huggingface.co/gradium/phonon-40m-multilingual"
+      ],
+      "must_preserve": [
+        "a complete multilingual learned checkpoint and internal decoder",
+        "precomputed voice latents and language normalization",
+        "license and pinned native runtime"
+      ]
+    },
+    {
+      "repo_id": "gradium/phonon-voices",
+      "snapshot": "catalog/research/2026-11-06-round27/sources/gradium--phonon-voices.json",
+      "source_revision": "0ee17205f254b5abc43b266c8a0f215565c352f7",
+      "fixed_version_is_selection_approval": false,
+      "tree_complete": true,
+      "source_scope_bytes": 69292384,
+      "source_is_not_selected_file_bytes": true,
+      "file_count": 2247,
+      "gated": false,
+      "license_metadata": "apache-2.0",
+      "full_weights_not_downloaded": true,
+      "download_authorized": false,
+      "personal_access_verified": false,
+      "licensed_to_user_verified": false,
+      "param_total_publisher_display": null,
+      "weighted_files": [
+        {
+          "path": "voices/0fvH6XAKvA748v2v.safetensors",
+          "bytes": 256136,
+          "sha256": "5646677e9cf4a517e8cc316f94a34e18fa987e224925d916d6fe13396579b95b",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/0zLApsZfVLLNaEGl.safetensors",
+          "bytes": 256136,
+          "sha256": "dc1341c8937af5534e6bbcc5c0fc5e7c10312229b59061228074f93683fe2261",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/20zdyYrQPzKlCwkk.safetensors",
+          "bytes": 256136,
+          "sha256": "28af62a4ed8af73b560dd5f78f48045969a74306f2d85aedcb4c820025f74870",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/2A2fFf8SkDEJ8nzx.safetensors",
+          "bytes": 256136,
+          "sha256": "5d5ad59fdd4642cd162f082873b27f658705a5d8598957d6274b30bf4bd4dc0b",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/3ZKKapPOvuWFcw9f.safetensors",
+          "bytes": 256136,
+          "sha256": "b645c79148a02f6cd2ef7a6b3658373166e19a9a1c49fb81408be5d79667e6cb",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/3p0eIGbkmny71GlA.safetensors",
+          "bytes": 256136,
+          "sha256": "275928c11b3c8b02e51c72653d060433e1d73a01458ef21b18e9a7f5cbd5205c",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/40QrMVgAxFiUnP9f.safetensors",
+          "bytes": 256136,
+          "sha256": "0de1098d1051686a138d068e83ff09deb5053328bc74ec9541a1fdb90bfc24da",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/4701YgRXjkBcg6sL.safetensors",
+          "bytes": 256136,
+          "sha256": "74c6bf732b76478e77072d21feca13b0bf0c664eccd2186902a63ba0d9effe59",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/4Mn9VfG2wsLLEzi5.safetensors",
+          "bytes": 256136,
+          "sha256": "720e656aa74cd81729593e0672a6213f5f9e5480bead08321e2a6a327eb8e453",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/4SZHfMpw-p46Ywgs.safetensors",
+          "bytes": 256136,
+          "sha256": "6b3da6e2d796a20c51af892c482bd6509fb88267a221aff83c870843dee2a123",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/4iKxBtHBRzr1YOph.safetensors",
+          "bytes": 256136,
+          "sha256": "c93483af64a9dd990e42264d2b6bb68909fcdff66873945acf7701e501d6e849",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/6HftnVU1XqVBJS8t.safetensors",
+          "bytes": 256136,
+          "sha256": "b0c3223c6de2597e3eef285e9def7998e9861b2056ee4784cddb29174bfc4dc4",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/6PWnV0Nq4wu7RVBT.safetensors",
+          "bytes": 256136,
+          "sha256": "56494ee67d533ad227ff0dfd0b1c13ff5aa91f1ad6e596e66c2986ba3005e844",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/6k6cRt7QJfm5ChrH.safetensors",
+          "bytes": 256136,
+          "sha256": "96ca40ceb24b3cbbff9868c6a920f6c7ff3d471b76698d8cd8b7c542c38d814f",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/ALczEazoF4n6PmGl.safetensors",
+          "bytes": 256136,
+          "sha256": "f4ebe6b59ebfa09339cb4c15c9c8f0af72fb6cecd9feb1f550dee0d95c8092c1",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/Adoh4wA9tp5QXJi9.safetensors",
+          "bytes": 256136,
+          "sha256": "0179a71e0aa1e89320ed35da4c6dea30384f98d24ee931517916742ccf7e6002",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/BkuASiOJRrJEB5qA.safetensors",
+          "bytes": 256136,
+          "sha256": "d32ad93e71b8c726a8f1aac62f276db82346fc1a74a02cfc18ce2b867cf20a07",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/CtNvKUUMrx1h56ih.safetensors",
+          "bytes": 256136,
+          "sha256": "ad6f5ca7df38abbb15b85a09613b14ebd76d70108d5420e6f21486a6a10154c9",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/EQcQFGkYfMn5YJgx.safetensors",
+          "bytes": 256136,
+          "sha256": "c419a49606182c98e06c369d0cfb9b66cc0f16bfdbc70490fa7daf2289144986",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/Ejb29qHnSOK0cIHY.safetensors",
+          "bytes": 256136,
+          "sha256": "471332253b2f76c406e395230453a7a737708cca18461237cfce0239430cb071",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/F05gqkzX7WhKVpSL.safetensors",
+          "bytes": 256136,
+          "sha256": "08159aad0d92cb391361abaf8c4bf6ac0d8358ab1514cce8cf5c89b448395ce5",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/FXxJ9mANRq6BCTX5.safetensors",
+          "bytes": 256136,
+          "sha256": "9f575447f6908727214c2a855e0e33a7c316e9360a0d8b66c6ccaa8f6e15dade",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/FaLVVqpFQcDOtq45.safetensors",
+          "bytes": 256136,
+          "sha256": "31a3837cc6705f37f95c27282ebeba71609b32204622245a6436258cd3d3497d",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/G5HLUsQd659UtRe7.safetensors",
+          "bytes": 256136,
+          "sha256": "fba1a4349c3c86aabc58d6570a82fac0ed643e5e7aa97b52a3ede6b792e6d420",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/GXaSqMEmOg12OIYb.safetensors",
+          "bytes": 256136,
+          "sha256": "bfa37bac98aefbb9de80f792c47d01a0f9e3b94e73776169040c249c8b722759",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/GgfEkEJtxZR7gnpy.safetensors",
+          "bytes": 256136,
+          "sha256": "eb3cd47418349e618408c16bea7153988b3ad04b41a6033039dd474a9a4dcd23",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/JOW0vchyswkQUMDS.safetensors",
+          "bytes": 256136,
+          "sha256": "cc9ac1107b0ffce282374a19beb7bfa95847724e6b7afbac991b4ae4277d5e6d",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/JYtmeaysoaR0Wybf.safetensors",
+          "bytes": 256136,
+          "sha256": "2450c247061a20c202f63caabe4594379a8fc8599f9fcbb28642a2dd3d247ad1",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/K8mj96kYHMy8q3Hb.safetensors",
+          "bytes": 256136,
+          "sha256": "00d4323db427bb68d8b6eed15b1294840e2037bcabc1d6fe6385191efae414b0",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/KJpIQlbYrZPA4aLq.safetensors",
+          "bytes": 256136,
+          "sha256": "b5bcbbce39a6332b2f79067be19688753c28c1fc4053bf41fd4608d54c24e1ee",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/Kf5m22mROozoMWj3.safetensors",
+          "bytes": 256136,
+          "sha256": "1cd9e5471568fe905906742568b5d3d2e89cdac1fa8b8272780d984d7d54ec9a",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/KgC2Nqnjj48NUiyV.safetensors",
+          "bytes": 256136,
+          "sha256": "f6b455eec3ad536c2c8b7b2f18a5620cb46ebf7576a040299fce4de6376ad3a3",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/LIv4NaG8ay4Mhqtd.safetensors",
+          "bytes": 256136,
+          "sha256": "4f7f904c976c0b493e9d42654dc81d4f9e686b986fbb3a7d511a7dcc41c7dea6",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/LMDIYE0Oa377Qh6Z.safetensors",
+          "bytes": 256136,
+          "sha256": "45c582673cb20edb04ddcca2b5a8865ddfb0a82599efadb269021e87d20fbdd4",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/MOrDPn052KUlnKXk.safetensors",
+          "bytes": 256136,
+          "sha256": "a0f55b29cf02a7bab15a9f8ff961f632e7f7a393b2c69a0ce2c4026e7a9c1742",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/MxhgvuHuUER7qjmL.safetensors",
+          "bytes": 256136,
+          "sha256": "05160ccf33ce0e22da9a2eb601e992bc9fc34e2591e22d3af4f07a07f3731cb7",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/NIWIOv5vTi5eRMj8.safetensors",
+          "bytes": 256136,
+          "sha256": "444378eb06b7c492b86e8fc7d13e4db1a3c0cf3e68891a960bf6f0a41a13ef35",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/NIWoEurJHMJjyUTe.safetensors",
+          "bytes": 256136,
+          "sha256": "bc8a8fcb95bb4f32d2d4376aa69d81b186b3ba2f8e9b6cb6a403b2b194590e85",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/NbpkqMVS3CJeq2j8.safetensors",
+          "bytes": 256136,
+          "sha256": "97c7f8c253413574406ab80dd23f49c3ebb2517163b00a9bf86b9c4cf43e7e23",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/NuUr_x5V90hSHzCJ.safetensors",
+          "bytes": 256136,
+          "sha256": "593c8c56619008116b30d7ad1bae5433d6834060b5b757e51799574601badd99",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/PwgPEaweQILZdGc4.safetensors",
+          "bytes": 256136,
+          "sha256": "91af1c0e9233b3069fab26eabd191e6be4d7825eff5d5e1ce3034fbd8f7fcf24",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/QXNr0SvkukLB4wPq.safetensors",
+          "bytes": 256136,
+          "sha256": "f390c09f5e279c0f2171995a534b92f5ca5c83443906879da68fc27445f89d89",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/R3uU1GTAZJotUhUs.safetensors",
+          "bytes": 256136,
+          "sha256": "36840305b88f217cc20e153276eaaf74718e5e2b50ac05f0dd6c4606b0d576a2",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/Sx8m6WdXBG06zwZT.safetensors",
+          "bytes": 256136,
+          "sha256": "8756dddf95fa449d0e5a8649c6a242a460329c53e2f870bbe6ed744d0573a251",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/TUk4X11S6UytB3G6.safetensors",
+          "bytes": 256136,
+          "sha256": "cae40431c178258727313c8c4f7c037645ece7fc2f4287644cc7a7138ca4e90c",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/Tek4tJXiX6_yvXq7.safetensors",
+          "bytes": 256136,
+          "sha256": "0106f9a0d53685471695a76827f7912e6c890f21fea10b5e5160379da38ffe5b",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/VDwnGxAo68C8U8vC.safetensors",
+          "bytes": 256136,
+          "sha256": "ccb1b88e3899db1cb7ba71007d08ed56dd743882214f0495b67feab89850ffe0",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/Vvakv7iWZCUrBooR.safetensors",
+          "bytes": 256136,
+          "sha256": "a8c97074fdb4044fc8da2873bdccd8b2a64beeedab859d241d5fc11c0c400aad",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/X6NceqF285Gr04gb.safetensors",
+          "bytes": 256136,
+          "sha256": "4de75497fff3030168e8aa6dca23ffeb332b1bc8c25d0bf3507ceadac953ae9c",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/Xn9xDzqSSr4xGTNg.safetensors",
+          "bytes": 256136,
+          "sha256": "275c9024bf16518fab2c477d4acdc76cad6f2c322ce083ab56238c3856012f57",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/YKeBw3OV1RgpdhLh.safetensors",
+          "bytes": 256136,
+          "sha256": "16c1df0d46be869159d4a40c81b888eaa8dbc494045e57b24d293384149f008e",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/YhIHaAfQ0cQPDV9R.safetensors",
+          "bytes": 256136,
+          "sha256": "fbed904e1c25c3410db4adc28b8e27686c9fd9d61353a02a23bcd1a6da054280",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/YyKcxPG7iIgS3jsK.safetensors",
+          "bytes": 256136,
+          "sha256": "3169d74b47a54d1eb15e4c243f56393abe9fe90c7e1c308ecf96ee67618b152a",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/ZeSg853xFACESHHI.safetensors",
+          "bytes": 256136,
+          "sha256": "21dd67c10f307aa48e1187f48159bb3d41b07d0cd17a3e6366efd508e6fe83a6",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/Zn7g6NxLqXlJb7Qi.safetensors",
+          "bytes": 256136,
+          "sha256": "baea0ea9506f3237a5ebfc61afb7c72dbd189c5603b199ef42fbb00dbda379e0",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/_6Aslh2DxfmnRLmP.safetensors",
+          "bytes": 256136,
+          "sha256": "beae9e4030efce0a935fcb0f807dc0784d598bcaa87ad4aacb047436b1eaa411",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/aXMVwiUhITMrwPzd.safetensors",
+          "bytes": 256136,
+          "sha256": "22421f1fbb25d325eabc351500fed2e92c53b54facc4bc97ba3bc6cc6e75e42c",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/ax7dW1XB0eiMfHgO.safetensors",
+          "bytes": 256136,
+          "sha256": "128eeba9b5f5c6d336e1246ae20a40765fba8e5ac268aafa691b98bce1e0acfd",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/b6FvJAiokjdqIti4.safetensors",
+          "bytes": 256136,
+          "sha256": "0bc37938a306a35f6c9f8ea53ccca14c5fc8b5575850f0cd15b352f4c3ce826e",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/bXwrkHhURL1VFJdG.safetensors",
+          "bytes": 256136,
+          "sha256": "a879938aa9a2df0a8220bdadef88137929f71e887bd91e7db205bd5fa11661d2",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/biuhvu17TxVKOcyy.safetensors",
+          "bytes": 256136,
+          "sha256": "a859356200a33faf75c591d24fc0fbb998aa66b53c2120f392ef6305d824ec9d",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/c9wqBDmQiBie5q6Y.safetensors",
+          "bytes": 256136,
+          "sha256": "4857d013c7502e4d074778b17122e85919bffa52741a0072e412dd3926853dcb",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/cXoIXJ2llS8S0WOW.safetensors",
+          "bytes": 256136,
+          "sha256": "a05944e4c69d61d10d66f689175ba0b081930df2d77b22f04d00ac40d3d69ecb",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/cYtsRSxV5q9IMehn.safetensors",
+          "bytes": 256136,
+          "sha256": "b30fa847686ec1eb6be8c5bea4b6a5c5076ea66c3ff053cf98210a155d8aad1e",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/d9XCyhjo4JhkHF1d.safetensors",
+          "bytes": 256136,
+          "sha256": "eab20e4f159b48cfbc01b1885804e24f681f80e7a64f909182763a4e3361bee8",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/dGyGDKo2osj7h3s7.safetensors",
+          "bytes": 256136,
+          "sha256": "83900e020c14946426614c6553c5a138ba6277e1aaa69832223bd0f0f8b73893",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/dME3IWyZBvmh1n1q.safetensors",
+          "bytes": 256136,
+          "sha256": "09ab315c7f4b72b4d71e66cb756184cedfb1f14d222d096e115bf95bfe7b29dc",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/evfxKSxpDIhmsNoq.safetensors",
+          "bytes": 256136,
+          "sha256": "549f2a8dec851b967edbbd67b29d2da0799eec9ec2fefb5b0ec8aa99436d3eea",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/fghJGlv90qu8OJ36.safetensors",
+          "bytes": 256136,
+          "sha256": "60656e9cd518454850a7e6ecacb953572a4a23f0a358fe3b4fb946b67f6bf934",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/gDT1nz7Ie36ZhL-C.safetensors",
+          "bytes": 256136,
+          "sha256": "1980ab3c35fa98a25b5f3b5e643fd852e14ca8a12a4a26b06aaf1abf2a8c68b1",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/gOc90Rjmv5CobHCj.safetensors",
+          "bytes": 256136,
+          "sha256": "f6e911481dd0bd60a36d77c1883f2f237b5b78275615498764a07456e8685c7c",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/gSgG5Tor0GPEnqzC.safetensors",
+          "bytes": 256136,
+          "sha256": "a83430cc022b85c83753f859f9e44f406651646dab994fced8ef7a9a88005971",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/gfP44RlHwr2kEwk7.safetensors",
+          "bytes": 256136,
+          "sha256": "bcc207a73b7885e45b49ab633d3377a10158292e3a7cef9cd6764ad107f1cb9b",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/jvPx8j8zLGQ3utZz.safetensors",
+          "bytes": 256136,
+          "sha256": "be8c5f329070f40c39007bea13cee9503fe71599704cfe55c67d6eb51f5e6eb2",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/l7520SIXi14iEamd.safetensors",
+          "bytes": 256136,
+          "sha256": "044d37978b68c5363e0fda99873c9f657323c350d8351b4d266bf03b2f839c30",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/lX3LavMNdlIbgEHH.safetensors",
+          "bytes": 256136,
+          "sha256": "d3f9429205e5906dcd3c78edaf7c9d5148c7e389e34c82c86f72f154adb5d923",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/m9MxpY6IUGXtWp76.safetensors",
+          "bytes": 256136,
+          "sha256": "a906ebf17e43fded12b3d6bd077abb2df33bc86eff51c1beeb82e5d416527db3",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/mWgyMRkFED70QxQv.safetensors",
+          "bytes": 256136,
+          "sha256": "8732e9ed54a3380cf864152d3adfd0ed056af85f5e2f468395244a51a923842e",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/nGzMHMPAWGaJFHOo.safetensors",
+          "bytes": 256136,
+          "sha256": "a0c3dcb91b2247eca56536be9ae8e8becc1c807b1136c5fe101552d6a155b24a",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/nOykTmcH9ydsGGIc.safetensors",
+          "bytes": 256136,
+          "sha256": "2ff2db91e70648623df8d42c0dcd7c336b2f14cb4362d602a20f292a4d862154",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/p6Uutkyi3j2iNAUu.safetensors",
+          "bytes": 256136,
+          "sha256": "0a4ec738c4222645f175dca1015686b0a628f100650a5e0ab26e88d0a9b60fd4",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/qDeAnE4L4bk0BRz1.safetensors",
+          "bytes": 256136,
+          "sha256": "842930df459e1d636cdd3414cd60ab2631ebfdff29460a922415e506b1cc5ed1",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/qG5BXOJYrKEnXLIX.safetensors",
+          "bytes": 256136,
+          "sha256": "3d5590357dbd87b697a14573bbdc1f29e2abc5b6cd8a5e9ed3c98e325dede435",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/qIxlZ7Ei8KvWlyQH.safetensors",
+          "bytes": 256136,
+          "sha256": "6e04b84d3ae8751b22bca0a4f63936f9cb648f4f2182b2d0788071ea1c0b68a1",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/qtPlUYAZ4EJDuWMm.safetensors",
+          "bytes": 256136,
+          "sha256": "250af13c97fdc3519ccde9c8d5e1ae1953f8ad365fc7d736aa5eae2ad2e14473",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/rmLBOdHrfkFym9MM.safetensors",
+          "bytes": 256136,
+          "sha256": "6ed37f47fe59674b0c9f2c099ab983d4a847ca14d09aedf80f1608a11148c757",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/rqqeErpASHVQXHDd.safetensors",
+          "bytes": 256136,
+          "sha256": "cce882370d25a3c4d29cb226af218a44274674805e7091447d27d3ad61bb25b3",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/s048cR1l2Jmu4k3B.safetensors",
+          "bytes": 256136,
+          "sha256": "f7b80c03210e3fd736de6596586305e9b7eb0e615047dd1cbb1b58fc3f92985f",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/s58clrg2fe0MO7Y-.safetensors",
+          "bytes": 256136,
+          "sha256": "ab923d4fd9ed09954e3a91c61780bcd536f5bb5787e1d0541cb6ff56dd7ff531",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/sGCMzFIA53ppIngM.safetensors",
+          "bytes": 256136,
+          "sha256": "edbfd1498e78dab5a1f707c4ff5a169e887741abf4e78d2e9759d242cd32b25c",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/t-_TS1e-0GzDAX02.safetensors",
+          "bytes": 256136,
+          "sha256": "25c6df91a261bcb96d9e5152c9b0988398859c0e6f4ee5f08dd577fd3bd0300d",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/tIjCgP8v3RY8UpgM.safetensors",
+          "bytes": 256136,
+          "sha256": "fc8828dcdad4a09b7066b9008b108b77976ec4880d531da7761ded9a431bd208",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/u2UscyAnHilpiwmf.safetensors",
+          "bytes": 256136,
+          "sha256": "edd14cc89944ec7a9b1a87cc6be6f371f1a56791d344d921f850e2106e6dee9e",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/uem82D50GRv2Dwma.safetensors",
+          "bytes": 256136,
+          "sha256": "d41a8f01d6e33450f1ce062d332914da10beee99e585dab531750706f187c48a",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/vjFyp2BcCyTlUmYb.safetensors",
+          "bytes": 256136,
+          "sha256": "958ea94da14f46dd48c7f64adac11ed2ad2aa45f7ccd165dfebab5272664402e",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/xO8xQo3BrB8FuI6J.safetensors",
+          "bytes": 256136,
+          "sha256": "63ab4b15427844a804480a1603774262e8903dee33cb279e2749860dbfaedd10",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/xPDpsV3F592srkjA.safetensors",
+          "bytes": 256136,
+          "sha256": "a09f615b0084980ebc4076d71550bf73ccd8d4df076bbbee4a9beb523a1379d9",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/y2eiKxtQo2B67deU.safetensors",
+          "bytes": 256136,
+          "sha256": "b3cea6789aeb58822af16ba08c4e5105d7febb840dcb67b47f426c19d1a8f209",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/y9bQqIDnyxwqK01t.safetensors",
+          "bytes": 256136,
+          "sha256": "21eade9d83b2e66b9364e1b6cd999a3a6704c000a71f27f34e05ace5cdfd58bb",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/yadpmqsHVrYC0NJp.safetensors",
+          "bytes": 256136,
+          "sha256": "f0c5e9b03ec651da1b8ae2d76f23b46381c9943e1e7c7ad434f66a6bb1a16d44",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/yyS1KYWs6mXoEw7D.safetensors",
+          "bytes": 256136,
+          "sha256": "4a1bea252ee32f44dff1852894a521bb5de0b58a3ba5f18011c84aab0ad45916",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "voices/zUCxzrOrugTSis03.safetensors",
+          "bytes": 256136,
+          "sha256": "ff1d0735b8b45710462b1d1f846da040f970c6eb62c7c2f36dbfb8e5bde74f1e",
+          "identity_kind": "lfs_payload_sha256"
+        }
+      ],
+      "license_evidence": [],
+      "observation_error": null,
+      "measured_peak_runtime_memory": null,
+      "legal_clearance": false,
+      "next_action": "Select full voice collection if inexpensive and rights verified. Preserve voices with Phonon original checkpoint, no claims that cloning from raw audio works offline.",
+      "decision": "SHARED_DEPENDENCY_CANDIDATE_NOT_NEW_AUTONOMOUS_MODEL",
+      "independent_learned_outcome": "Precomputed speaker-latent vectors; creator did not publish upstream speaker encoder required to make arbitrary new voice latents.",
+      "primary_urls": [
+        "https://huggingface.co/gradium/phonon-voices",
+        "https://huggingface.co/docs/transformers/model_doc/gradium_phonon_tts"
+      ],
+      "must_preserve": [
+        "voice .safetensors and mapping metadata",
+        "source voice-specific license and consent policies"
+      ]
+    },
+    {
+      "repo_id": "baidu/ERNIE-5.5-Flash-Base",
+      "snapshot": "catalog/research/2026-11-06-round27/sources/baidu--ERNIE-5.5-Flash-Base.json",
+      "source_revision": "028544b2ffceea189b2d8768ed2b9d09b06f2343",
+      "fixed_version_is_selection_approval": false,
+      "tree_complete": true,
+      "source_scope_bytes": 288464891869,
+      "source_is_not_selected_file_bytes": true,
+      "file_count": 139,
+      "gated": false,
+      "license_metadata": "other",
+      "full_weights_not_downloaded": true,
+      "download_authorized": false,
+      "personal_access_verified": false,
+      "licensed_to_user_verified": false,
+      "param_total_publisher_display": 286245697882,
+      "weighted_files": [
+        {
+          "path": "model-00001-of-00128.safetensors",
+          "bytes": 2253848024,
+          "sha256": "84c3dfa1b07f38863554778e6cefcdad303f7cfe31dffd92ad3095e16c303b69",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00002-of-00128.safetensors",
+          "bytes": 2253032088,
+          "sha256": "124d149589d9acfa6f6e6230e36ee3ba82ef89f8379d23337ecd0da8c4063e4b",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00003-of-00128.safetensors",
+          "bytes": 2253032080,
+          "sha256": "ef63e32416c15465e52e67bc9fe345efdbda34384d27636d0b94ebe4a7f947af",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00004-of-00128.safetensors",
+          "bytes": 2254366192,
+          "sha256": "d020174dc9e5d2d04ce59f41912fa6ac74fa955a66102f1081332d7b6fd1e3d4",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00005-of-00128.safetensors",
+          "bytes": 2253032088,
+          "sha256": "dd58dd2696cd01886ec7a6c11d95ad633a70a7eaadf07443bfc4d6a63554c4eb",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00006-of-00128.safetensors",
+          "bytes": 2253032080,
+          "sha256": "9f8250f39666debbbe673226e978a6acea00d52110040a1da200161d303a7fa6",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00007-of-00128.safetensors",
+          "bytes": 2254366256,
+          "sha256": "9894e0eddc4b8855915d3234985dc81229a4587445dc1f1829b0c731d2d84ed2",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00008-of-00128.safetensors",
+          "bytes": 2253032072,
+          "sha256": "c146d960990fcb00ea22beb79d495c53bc9d458c7084c7726e078e85bcf0d8a0",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00009-of-00128.safetensors",
+          "bytes": 2253032096,
+          "sha256": "c5c79b727c31430aeb42ced496d53bd8bde269bdc606d90c767d9c7488bf1242",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00010-of-00128.safetensors",
+          "bytes": 2254366320,
+          "sha256": "d54e8fa9b5bafe81c3b1630308070cd47a71597336192113354c61c94f341189",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00011-of-00128.safetensors",
+          "bytes": 2253032072,
+          "sha256": "1906eaa70ef371d3ab9222ec2cf03c7880d587d17fc11ecaa86f512296fd4f46",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00012-of-00128.safetensors",
+          "bytes": 2257227688,
+          "sha256": "d6cb59001d09b3f8b60baaaa7ac4399b0e1be0ce73e158ed9c47e5be44cc4a07",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00013-of-00128.safetensors",
+          "bytes": 2250170792,
+          "sha256": "ed2e2c2d7ad013fd3377123d54359555c75ce6502e17a3698cec01bd2294710a",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00014-of-00128.safetensors",
+          "bytes": 2253032072,
+          "sha256": "36f8f7671de813195fb77eda2cde0c1bebaf372b2db30ca31264e562aea1a004",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00015-of-00128.safetensors",
+          "bytes": 2257227688,
+          "sha256": "1a47c00d1ba855c1d48474fa1e85875738c04ac9d5f54ede08b23c0e5541ebee",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00016-of-00128.safetensors",
+          "bytes": 2250170864,
+          "sha256": "4b392c3edd85c7ad80fbecf5489118c373b06ca8bf080c31c5b97090a2f8d9b1",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00017-of-00128.safetensors",
+          "bytes": 2257227664,
+          "sha256": "bdd90d8e690388e9ffb4e676fa75dd36b7b634e057c21a10e259bf3c7709ad58",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00018-of-00128.safetensors",
+          "bytes": 2253032096,
+          "sha256": "528ef2ef885e6a0af063e92f001592662fd88cf40f1b523ad99957db2bd7be19",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00019-of-00128.safetensors",
+          "bytes": 2254366528,
+          "sha256": "d9c4bad9e9f42fbb8880965942abdb47a811c47e2ba9335f116b61e33789bcda",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00020-of-00128.safetensors",
+          "bytes": 2253032080,
+          "sha256": "949b5be52d26d926754e742e30ecf96499755d638ba37c9aa73ce70cc07bb718",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00021-of-00128.safetensors",
+          "bytes": 2253032080,
+          "sha256": "a99b6e13fbcd655bbb82aca8cba10c50994c947f056015b22dcf12d9a93f14a2",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00022-of-00128.safetensors",
+          "bytes": 2253843104,
+          "sha256": "70afb37830b9325287bf10e5b4b5f7346262e4798f5f95869e440d41e2bb8dea",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00023-of-00128.safetensors",
+          "bytes": 2253032080,
+          "sha256": "25f014b1920d772adf9c107f8069e37600ee60a82432c3d7f834c953b26155b1",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00024-of-00128.safetensors",
+          "bytes": 2253032080,
+          "sha256": "966e3d7395b78b1ab25cbeabe051ef91fb0dc07fc4cfe06eb2a3f859402bb5cf",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00025-of-00128.safetensors",
+          "bytes": 2254366712,
+          "sha256": "00757347b3ffe97e45b8a0e462a47a78882599d0086f9df0471c6f7866ac5fe5",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00026-of-00128.safetensors",
+          "bytes": 2253032080,
+          "sha256": "f007c0d2b830ffff42ff448cc5dbdd9d24441452304a5b3026262ecc3960e47a",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00027-of-00128.safetensors",
+          "bytes": 2253032024,
+          "sha256": "ac6d5eb61442f6cc860cc83339ebaab4e631c62d8797aed3205c1ee6b7fa8348",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00028-of-00128.safetensors",
+          "bytes": 2254366776,
+          "sha256": "dcc41f7f17c6cb4c0274e51dfec2d81c22a8a9f9109a2bcb35e06d7f3efdd790",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00029-of-00128.safetensors",
+          "bytes": 2253033160,
+          "sha256": "6a739ad00e61d5d37b93b6ced46bae9a30636b95d385c485ccb44efcb025dc2b",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00030-of-00128.safetensors",
+          "bytes": 2253033032,
+          "sha256": "1cb7527ed82a835f17a251bb8a42334d1d9e0b9ab03c91b78ba7052b5f724487",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00031-of-00128.safetensors",
+          "bytes": 2254368000,
+          "sha256": "5a83f38c545b531db47358a748c999b1088997a3dc6f7368876767ecbfe982a0",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00032-of-00128.safetensors",
+          "bytes": 2253033160,
+          "sha256": "58e3c1a9333b94e03f4c121be3f69bc544459ef7c09b6b282e18a75fe9e49551",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00033-of-00128.safetensors",
+          "bytes": 2257228552,
+          "sha256": "aed9d3830abd89b5463827cacc9009f9f9ba37dc3ac1e215d9d6493d2f14052e",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00034-of-00128.safetensors",
+          "bytes": 2250172592,
+          "sha256": "b0f475f97713fb4ffdbbd07025b2bbcc13d95336e60233c4a2f64f62f9f7b6ff",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00035-of-00128.safetensors",
+          "bytes": 2257228752,
+          "sha256": "1015e70e2db02d1137da8c91e5bde9879f0df48af3cd7e98d49ca14b6b7d3381",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00036-of-00128.safetensors",
+          "bytes": 2253032896,
+          "sha256": "15d96aa5a0d8c7eac205f63ddeb58cc4380e0301ee8220fa6c9ad20213beae50",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00037-of-00128.safetensors",
+          "bytes": 2250172792,
+          "sha256": "a82c470e8b38318adef11ea07d1d2ab362cd72fdc4134ae01581aa506c9924c4",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00038-of-00128.safetensors",
+          "bytes": 2257228752,
+          "sha256": "dd248618138f9ab93a2de625c14d0f222b89c6721a8cba1588e35a11dd662217",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00039-of-00128.safetensors",
+          "bytes": 2253032168,
+          "sha256": "fe52154511efa30692f4d2321a219615bbce79670baac617c578ad8ad5d10451",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00040-of-00128.safetensors",
+          "bytes": 2254369264,
+          "sha256": "05f3c0b4ad159a93a4436eeb3af2f1b2d19e900f6aef5a1f0144ee9f967c8edb",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00041-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "2effb4b7f9a8c4ebeae73afa6e30aed7512c5d759b32d063c6811e65119b655f",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00042-of-00128.safetensors",
+          "bytes": 2253835680,
+          "sha256": "d2fb61c44bb15542b8d9892fbbfc2e7893358813e95d331e5ccd9657a8c09c67",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00043-of-00128.safetensors",
+          "bytes": 2253040960,
+          "sha256": "9a080424efe44ae9128302aaf519541604bab3f4995908e596d41c0d0edfef2a",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00044-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "3101eb4d1d712d76245f87f4d484d7bba1250bb3c1b00eccccd9c9efa17f8673",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00045-of-00128.safetensors",
+          "bytes": 2254367064,
+          "sha256": "99c5bef07ae286d1bb14ce52db4679ccf37f3ae6337503269531c6d422ee2318",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00046-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "61197439edbeff59033901c8d50f8391eaca4e6ba977ef58a14baa650b9657c1",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00047-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "61b30556f215cfce74b49bae271c3cc351778172bca0d6b8b7d4c52eb6b0c49b",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00048-of-00128.safetensors",
+          "bytes": 2254367136,
+          "sha256": "920819e9a47e756b992c5908fd7418e951bf5a9563761e412a54eeb568390463",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00049-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "4a8b2a72efca1ba0ea134c0c5fedac70578d24ffb9c7001eb8a7fc852b9c38d0",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00050-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "0512d35c8f5fccc2c3bd54d04b3170894d91d8c2e650fcc7210302e01537e64f",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00051-of-00128.safetensors",
+          "bytes": 2254367200,
+          "sha256": "1bbf7cba971dcf23b4797e269562d906b50ecd85be9377e786ed390497f93547",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00052-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "1fbe2c5219f6f8bec87f6493941aa66f7d50d2167bc218101b7621579feb1afe",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00053-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "909f99b4648eb6c6eb5718cf114ff97a3f77432f1511ea7f00ddc1acc91ba4f1",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00054-of-00128.safetensors",
+          "bytes": 2254367264,
+          "sha256": "feaedc0689147bb115b6d4d3408a9aad12bcf4fd6c47551a7ff4961fb47674f8",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00055-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "e64e311d64bb4eb797ed22ddee2fb42fb88c26af352e2dba201c6b792cf5eafb",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00056-of-00128.safetensors",
+          "bytes": 2257228752,
+          "sha256": "e680e8af8e973db1ea068467fb4fcde2515b2d77e3a7f654eaf449c258c552eb",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00057-of-00128.safetensors",
+          "bytes": 2250171736,
+          "sha256": "6b80f4ae800f65706a144507801a26cf1520c6918e06cea88112d38885c7cfa0",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00058-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "41012f06b86b77d2fd44994122f36c4fe3615c17589fd81cd7a5b691080cf829",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00059-of-00128.safetensors",
+          "bytes": 2257228760,
+          "sha256": "1925693fb285079ff55cb2817070132fb929fe52a0f0433088637865bd20277f",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00060-of-00128.safetensors",
+          "bytes": 2250171800,
+          "sha256": "8bc2302bcc1773a94e8ef9aaaa33c2423a0ed140d90a0d58fa2690a3a58aa4ea",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00061-of-00128.safetensors",
+          "bytes": 2257228752,
+          "sha256": "6483c55a07475797f3b6c170ed595909b018c42d104b8fa4aea6f2da7b0e23ab",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00062-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "bae67c691d6cfea6a2382d7d0d0f7ee179cbd0a4ed7808d203cdb7d13878a503",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00063-of-00128.safetensors",
+          "bytes": 2253843904,
+          "sha256": "ad6cd256da34846a4881bac281d6918fa8a9c27df6e19088332aaffacb2b2338",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00064-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "60e1573f6a160aea5c3fbc63b87268cc3d924a3645b3e6d4e3f3e12cf155a803",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00065-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "5eb2a78dcf412d033fcbf9aadae4e540cd318712e16d1f986a7ac229c48af426",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00066-of-00128.safetensors",
+          "bytes": 2254367528,
+          "sha256": "f7cfb6779f154aab6d330537d29aa5f905814d98a5ae6cad82c5b7de865aa42c",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00067-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "8ce0cef9e58e1d6204c1158922d6079900e8625211b3836e395fa2e577a48658",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00068-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "6078f222dd1f1fa74c1ffcced6ab2f80ecc75c6840763d7dabc0274f92c22c9c",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00069-of-00128.safetensors",
+          "bytes": 2254367632,
+          "sha256": "53707906517520c6804004fda5d14af20d0f6403a275e12cf9865ceeda3e15d8",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00070-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "9e45a44b0be4a93b0bfdb2c1e59040575c4d75e6db80304f01e88f3f0cf1e0f5",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00071-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "332133a6c3b029179a5782c964c469bb23aee0364ac82602c177a268d72853ed",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00072-of-00128.safetensors",
+          "bytes": 2254367728,
+          "sha256": "13393f8657cca8f5aad055c0fab7bb3ee1a147971d96359f7a06a5466e263884",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00073-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "6b57fa1facbdbd4caa29f50455ef728f6b3646b41a4c92df4b929db646fca31c",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00074-of-00128.safetensors",
+          "bytes": 2253033120,
+          "sha256": "b46bf25bf9f3cfacccba8aa1a87e0ed7eb3fa99c8b15f2f0d3bd887b0acf7b8b",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00075-of-00128.safetensors",
+          "bytes": 2254367816,
+          "sha256": "fc42268b8f3d6b86ce491b9d453064ca47c0d630d386ccfe9dc5644d5d117493",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00076-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "e0bdff522a8f0110c4bc19db6dbe238b5283046cac47530b195b87955aea5118",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00077-of-00128.safetensors",
+          "bytes": 2257228648,
+          "sha256": "648d571608d1c3f2ba91bce2e918f8c3a6fd13ddb2128b66e698878c4472284f",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00078-of-00128.safetensors",
+          "bytes": 2250172352,
+          "sha256": "cb5ed17c3c3d14f868c987715b2bb43fc522d6115e6545996740e16b1a532236",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00079-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "1df60d3232d26ce1d05847302d1cbc9e47382ece24f11b04ba52d693662f5ac3",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00080-of-00128.safetensors",
+          "bytes": 2257228576,
+          "sha256": "ca745f3fedf0629dc4e713022e1556ab1e619e2cb69568b9f4eaa407741ea9d5",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00081-of-00128.safetensors",
+          "bytes": 2250172520,
+          "sha256": "50c51d49f42f91971cf45b9492b85481139d4163f9fdac6a58851fc448ae7b3b",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00082-of-00128.safetensors",
+          "bytes": 2257228760,
+          "sha256": "22a2c0bb07edef24c0ede4f48120ddafb9005e6b19ac9ddae2a0fa20adc31fea",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00083-of-00128.safetensors",
+          "bytes": 2253032920,
+          "sha256": "50ae5c6bd5ab1a578636c5384b62c4b5c64914a0f5a20273def5fa253d09583f",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00084-of-00128.safetensors",
+          "bytes": 2253844760,
+          "sha256": "f65caa69e261c9906a2286d863795faa8fb5bc9febb6660d2b1de3bbb9b2b0e7",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00085-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "bbcd3ecff44dddc56deab9972f353e4f87ca599b58804cdb94d3bf06d3e3b76d",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00086-of-00128.safetensors",
+          "bytes": 2253032856,
+          "sha256": "f699c570333f1d36eccb21b4906a300f3d2e1a9322ac751a8dd3a089afb3858d",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00087-of-00128.safetensors",
+          "bytes": 2254368512,
+          "sha256": "1c332977aeb54f5b20fbc439f073635e9c468fc315c037d044baf8cc3e5b05c6",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00088-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "34968a9e46c20aa28888ee865a0db836b73887698bca219050782e90b2ed0cbc",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00089-of-00128.safetensors",
+          "bytes": 2254362144,
+          "sha256": "3a425495a455e05233e5b3867df68e1de6c9c3d1ba7f1020e166da4db31422eb",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00090-of-00128.safetensors",
+          "bytes": 2253038120,
+          "sha256": "9046ac31124b14f922f8c4296bc74cd49d53b0cb2664763a573f9332c44aeaf0",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00091-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "0c788a621ae83f00aafdcc477c37ead3ec10b04580db6d35ec7255b6e7690156",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00092-of-00128.safetensors",
+          "bytes": 2254367048,
+          "sha256": "a7ecf155fc28f01c09517a1c4935e7af3a950f50e4b49e24952748df74378cdf",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00093-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "6271679217eaca06f0e861676601a76cdb4eab8b23be0220d1f10e506c0d8a2e",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00094-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "d0b5c5d2b1bc0880ceef6b42a730c15f1e68b2c66148f2b096abe4c3c35fde81",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00095-of-00128.safetensors",
+          "bytes": 2254367112,
+          "sha256": "00e9f1766ad3931e77c0e8061a699a6a0dc7a422ae28f5c82214cb3b567da963",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00096-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "a3053b0aa8fc29fd9d711f1dc3643da38bc2560c74de5b2cfcf3a4cb1bf9c29f",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00097-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "5852a25eb4b49224d876419addeb3d86cf0f5cfc3c8a1f91e96ae0cea34ae240",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00098-of-00128.safetensors",
+          "bytes": 2254367176,
+          "sha256": "b6c20bf5ce7c918af35d9e661557da1bb4439792c735ed2a75a9d4f9abecf71a",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00099-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "0a4e6798c4aff5773d18037ba88689eedecbd00026d6f6e7ec3f7a1abb53dcc7",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00100-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "45b4454f151048e5359472bb4fcff4e9ff42b83efd4b152ad80e44149275c400",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00101-of-00128.safetensors",
+          "bytes": 2254367240,
+          "sha256": "b06ffa08f230eaf220612cac0721d9499167459282541530a3417a4a0da90b5b",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00102-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "d0babfa5a259a3ceb4785112bc5d509562b909edc8f7efe828a280b9ce8d2dc0",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00103-of-00128.safetensors",
+          "bytes": 2257228752,
+          "sha256": "5ad4e8f7fb492ef752accaf5178eda7ccfd288f4309576e1255ec2a3c44a75de",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00104-of-00128.safetensors",
+          "bytes": 2253843752,
+          "sha256": "896e469a43aa6f38e282d3819627563a49e80d8dfd993f7ee0b7573edfcd39b6",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00105-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "fd6dfd8d2ef5eb2be35da6d40ffb9852970415cc5b5908d9ef047640c5b4c210",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00106-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "b579278c4a350b6932f82cec6ab87b751fac5bd408ca9b7f3ec3b502e28c1c9f",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00107-of-00128.safetensors",
+          "bytes": 2254367376,
+          "sha256": "70e4acde55ebeb77297cb58b3d74d5e8dc4a566ba6f32f0fe94b97f444eaade4",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00108-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "8307ba6a19d3bf2feee0dc762a0ac1930a8e58e7d57934f5f1b7941c4fdca08a",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00109-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "1d5ca5b31bfb4c4d3a93391dd17f82eb7c265f15a0267fbc53adc425133cd4d3",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00110-of-00128.safetensors",
+          "bytes": 2254367440,
+          "sha256": "3550f7a2daa09c6dc090f7013f7f5172b4efa6723d3d95f8d8be4e8c31cdfaeb",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00111-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "c11cb3e6d30f5e07127f180e2773dad7973de7f69305f50b2761133cfe393a30",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00112-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "d416d56aa478c7dacf062128dbf73a9a92a27fbdd76bcbac7cfd347b37c1c9e7",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00113-of-00128.safetensors",
+          "bytes": 2254367504,
+          "sha256": "3886d306c216e2356e9ba5dbfbb4d12eea1f8c440c08d463243e02016c6ceeff",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00114-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "b16b131faed2073b0302074ca868690048a6728ae5518f3019927de96c2cc863",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00115-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "f9dfd42809085d9c9c0efce7b14d77189cc84e01906601289ee6e05a6151639d",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00116-of-00128.safetensors",
+          "bytes": 2254367592,
+          "sha256": "3d26f164fec3b5fb6557cf96e5536eb9303d17e56f6981d81951a775332acf01",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00117-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "b21e3aa82948c5242e95035a3b7d6ebd802e2947056e68ebb598e1c1c5b62751",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00118-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "5b15bd925d652cd320e7286cf888fd84eee2db1d7b81a01ae908cc78ce24e4de",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00119-of-00128.safetensors",
+          "bytes": 2254367704,
+          "sha256": "b1b884fb2a1b2651dbdb4bb24581b9cc77b61495089e0054bceb7ed61208fb04",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00120-of-00128.safetensors",
+          "bytes": 2253033152,
+          "sha256": "0f2f59007b77043754d36cc53504db99e5efdf31497b48521bcc4636eb1f34c4",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00121-of-00128.safetensors",
+          "bytes": 2253033144,
+          "sha256": "60a57ca67738fcda83152fcfb7baf9793ca84c009a8c0642d00a5caf63ca4bc6",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00122-of-00128.safetensors",
+          "bytes": 2254367768,
+          "sha256": "bd4a1d554c3737d8f378b25a1145cfbe6899a5a93644e00c1e4e5fd879c98ba0",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00123-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "575a2cabd95085f01613412c1820aafeaf81680b6d8b0d6505ffd4eb96ed9042",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00124-of-00128.safetensors",
+          "bytes": 2257228664,
+          "sha256": "5bbe2da5de65df0291637f492a20e716450f5f0c9ee8ab733bf72ece84d65327",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00125-of-00128.safetensors",
+          "bytes": 2253844352,
+          "sha256": "0269bb1703674b429333e2a4572722c7b793cc5c4cc53befe0fb15c50877e520",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00126-of-00128.safetensors",
+          "bytes": 2253033168,
+          "sha256": "0b1cdb5327d208013350090d028911462f2985466d8cf4a5cbcf7c315560ea5a",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00127-of-00128.safetensors",
+          "bytes": 2253033008,
+          "sha256": "6273188624436bdd8efb52ed26405b4b2181a35eab4f75e6df000820a3b3e8cc",
+          "identity_kind": "lfs_payload_sha256"
+        },
+        {
+          "path": "model-00128-of-00128.safetensors",
+          "bytes": 2220327248,
+          "sha256": "977a9dc3a851c8e37095e6c67c7034b8625c41600daaaca14f98c7acb0719f22",
+          "identity_kind": "lfs_payload_sha256"
+        }
+      ],
+      "license_evidence": [
+        {
+          "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/raw/028544b2ffceea189b2d8768ed2b9d09b06f2343/LICENSE",
+          "repo_id": "baidu/ERNIE-5.5-Flash-Base",
+          "revision": "028544b2ffceea189b2d8768ed2b9d09b06f2343",
+          "path": "LICENSE",
+          "text_role": "license_terms",
+          "marker_is_not_legal_clearance": true,
+          "observed_bytes": 25619,
+          "sha256": "f896ab9f174d0d55943d6c90ec26ba919ec59e03620982370d27181d4497b254",
+          "license_marker": "undetermined",
+          "retrieved": true
+        }
+      ],
+      "observation_error": null,
+      "measured_peak_runtime_memory": null,
+      "legal_clearance": false,
+      "next_action": "Review fixed LICENSE and commercial threshold. Look for legitimate quantizer and measured same-condition <=150B reference peak with task fidelity before active selection.",
+      "decision": "S1_OVERSIZED_RESTRICTED_REGION_RESEARCH_ONLY",
+      "independent_learned_outcome": "Pre-training-only 280B-class sparse MoE after 33.5T tokens, no SFT/DPO; expensive unique base to reconstruct",
+      "primary_urls": [
+        "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base",
+        "https://ernie.baidu.com/release/ernie-5-5-flash-base/"
+      ],
+      "license_territory_excludes": [
+        "European Union",
+        "United Kingdom",
+        "South Korea"
+      ],
+      "verified_government_ban": false,
+      "size_rule": "total experts >=150B; source FP8 file bytes and active 14B are NOT verified 150B reference RAM equivalence"
+    },
+    {
+      "repo_id": "Qwen/Qwen2.5-1.5B",
+      "snapshot": "catalog/research/2026-11-06-round27/sources/Qwen--Qwen2.5-1.5B.json",
+      "source_revision": "8faed761d45a263340a0528343f099c05c9a4323",
+      "fixed_version_is_selection_approval": false,
+      "tree_complete": true,
+      "source_scope_bytes": 3098972223,
+      "source_is_not_selected_file_bytes": true,
+      "file_count": 10,
+      "gated": false,
+      "license_metadata": "apache-2.0",
+      "full_weights_not_downloaded": true,
+      "download_authorized": false,
+      "personal_access_verified": false,
+      "licensed_to_user_verified": false,
+      "param_total_publisher_display": 1543714304,
+      "weighted_files": [
+        {
+          "path": "model.safetensors",
+          "bytes": 3087467144,
+          "sha256": "a961db72e75d52b18e6b0c9d379e51a26973b233385e0e127fdda7d648aec796",
+          "identity_kind": "lfs_payload_sha256"
+        }
+      ],
+      "license_evidence": [
+        {
+          "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B/raw/8faed761d45a263340a0528343f099c05c9a4323/LICENSE",
+          "repo_id": "Qwen/Qwen2.5-1.5B",
+          "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+          "path": "LICENSE",
+          "text_role": "license_terms",
+          "marker_is_not_legal_clearance": true,
+          "observed_bytes": 11343,
+          "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "license_marker": "apache-2.0",
+          "retrieved": true
+        }
+      ],
+      "observation_error": null,
+      "measured_peak_runtime_memory": null,
+      "legal_clearance": false,
+      "next_action": "Verify pinned revision and exact tokenizer paths. Also pin canonical Transformers converter implementation; only relevant config/tokenizer source files required for VibeVoice, not 1.5B full weights.",
+      "decision": "VIBEVOICE_TOKENIZER_SOURCE_LOCK_ONLY",
+      "independent_learned_outcome": "Tokenizer provenance, NOT a reason to copy all Qwen2.5 pretrained weights",
+      "primary_urls": [
+        "https://huggingface.co/microsoft/VibeVoice-1.5B/discussions/54",
+        "https://huggingface.co/Qwen/Qwen2.5-1.5B"
+      ],
+      "subset_paths": [
+        "tokenizer.json",
+        "tokenizer_config.json",
+        "vocab.json",
+        "merges.txt",
+        "special_tokens_map.json",
+        "added_tokens.json",
+        "generation_config.json",
+        "config.json"
+      ],
+      "required_commit": "8faed761d45a263340a0528343f099c05c9a4323"
+    }
+  ],
+  "cosmos_sim_auto_comparison": {
+    "repo_id": "nvidia/Cosmos3-Nano-Sim-Auto",
+    "pinned_revision": "e289a50a4049614eaa62c9edc10b1e8d6cc1a6c1",
+    "source_scope_bytes": 32364133043,
+    "gated": false,
+    "license_tag": "other",
+    "shared_VAE_with_Bimanual_sha256": "230496cb59ff85bc9c040487737c4062480cb61c71e697b197b4c30142f2a0da",
+    "shared_VAE_bytes": 1409400600,
+    "changed_6_transformer_shards": [
+      "transformer/diffusion_pytorch_model-00001-of-00006.safetensors",
+      "transformer/diffusion_pytorch_model-00002-of-00006.safetensors",
+      "transformer/diffusion_pytorch_model-00003-of-00006.safetensors",
+      "transformer/diffusion_pytorch_model-00004-of-00006.safetensors",
+      "transformer/diffusion_pytorch_model-00005-of-00006.safetensors",
+      "transformer/diffusion_pytorch_model-00006-of-00006.safetensors"
+    ],
+    "developer_docs": "https://nvidia.github.io/cosmos-framework/inference_sim_auto/",
+    "creator_model_card": "https://huggingface.co/nvidia/Cosmos3-Nano-Sim-Auto",
+    "difference": "Causal 4-step distillation of multi-camera+LiDAR WSM-driven driving model; distinct from Bimanual robot-manipulation action-model.",
+    "negative": "Full offline Cosmos runtime, initial reference rig and WSM input files and independent driving physics/quality validation missing.",
+    "decision": "S1_CONDITIONAL_EVALUATION_DISTINCT_LEARNING_ALREADY_PINNED",
+    "formal_selection": false,
+    "download_authorized": false
+  },
+  "download_authorized": false,
+  "weight_payloads_downloaded": 0,
+  "paid_compute_authorized": false,
+  "owner_disk_measured": false,
+  "regulation_probabilities": null,
+  "license_or_gated_status_is_not_government_takedown": true
+}
