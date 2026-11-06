@@ -1,5 +1,10 @@
 # エージェント作業規約
 
+## 2026-11-07：最新ユーザー指示（4TBと候補保持）
+
+実際に4TBを使えるというユーザーの新しい申告を反映し、計画の上限を4,000,000,000,000 byteとした。過去の3.8TB予算、v3/v4の3.288TB仮見積りのみを理由に既存のSELECT/CONDITIONAL/HOLD/BACKLOGや以前の調査候補を削らない。Nanbeige/Nanbeige4.3-33BはSELECT保持。ユーザーによる6 EXCLUDEDは戻さない。200GB安全空きは別条件で、現物フォーマット容量・空き・staging・SHA重複は未測定。4TBがHDD全容量なら4TBのpayloadを満杯まで保存しない。詳細は[4TB計画](docs/strategy/27-four-tb-retention-and-800gb-options.md)と[調査台帳](catalog/proposals/2026-11-07-r28-four-tb-capacity.json)。選定・研究・取得承認・保存完了は別段階。
+
+
 ## 目的と入口
 
 まず README.md、policies/selection.md、policies/limits.json、docs/workflow.md を読む。
