@@ -1,5 +1,9 @@
 # Local Model Portfolio
 
+## v23容量・公開状態の再照合（2026-11-06）
+
+[118件の容量台帳](catalog/capacity/2026-11-06/v23/capacity-summary.json)・[最新公開状態](catalog/research/2026-11-06-latest-v23/freshness-summary.json)・[判断と限界](docs/strategy/30-v23-capacity-latest-check.md)。原本の固定選定と上流の現在版を区別。完全復元依存・保存先実空き・取得承認は別工程。
+
 ## 現行v23：容量監査に基づく独自学習成果2件の追加
 
 [CURRENT](catalog/CURRENT.json)は165資産・有効118件。v22の116件の一次ファイル範囲が確定した後、Hcompany/Holotron4-30B-A3BのNemotron後学習原本とLiquidAI/LFM2.5-24B-A2B-DSparkの学習済み投機ドラフターを条件付き選定。既存163件は不変。新2件の配布元全repo公称バイトは66,707,531,084であり最終採用ファイルや実ディスク必要量ではない。4TB上限、200GB実空き床、150B以上の量子化同等RAM条件、取得承認0件を維持。[選定根拠](docs/strategy/29-bounded-specialized-selection-v23.md)・[v22容量監査](catalog/capacity/2026-11-06/capacity-summary.json)。下のv22以前は履歴。

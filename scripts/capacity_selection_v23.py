@@ -103,8 +103,7 @@ def verify_sources(old,view,overlay,snapshots):
             if 'index_shards' in profile:
                 assert set(profile['index_shards'])==set(shard_names)
             else:
-                row['index_weight_map_content_checked']=False
-                row['open_dependencies'].append('Holotron fixed index file exists, but pinned weight_map content not parsed; verify shard membership before final acquisition lock')
+                profile['index_weight_map_content_checked']=False
         if key=='LiquidAI/LFM2.5-24B-A2B-DSpark':
             assert sum(f['path'].endswith('.safetensors') for f in files)==1
         shared=rule['shared_dependencies']
@@ -121,13 +120,16 @@ def verify_sources(old,view,overlay,snapshots):
             'source_parameter_gate':item['parameter_gate'],
             'runtime':{'measured_peak_ram_bytes':None,'backend_commit':None,'hardware':None,'context':None,
                        'batch':None,'zero_point':None,'ABI':None},
-            'shared_dependencies':shared,'open_dependencies':rule['open_dependencies'],
+            'shared_dependencies':shared,'open_dependencies':copy.deepcopy(rule['open_dependencies']),
             'software_environment_bytes':None,'offline_restore_tested':False,'download_authorized':False,
             'files':files,'package_bytes':own_bytes+sum(byid[dep]['primary_file_bytes'] for dep in shared),
             'primary_file_bytes':own_bytes,'excluded_files':excluded,
             'selected_source_model_already_in_active_catalog':bool(shared),
             'masked_or_unknown_payload_identity_files':sum(f.get('identity_kind') in ('unverified','unverifiable_payload_hash') for f in files),
         }
+        if profile.get('index_weight_map_content_checked') is False:
+            row['index_weight_map_content_checked']=False
+            row['open_dependencies'].append('Pinned index file bytes known; weight_map content membership still requires review')
         rows.append(row);byid[key]=row
     assert len(rows)==118
     return rows
@@ -148,8 +150,8 @@ def compute_summary(old,rows):
         'exact_primary_file_scope_count':sum(x['primary_file_bytes'] is not None for x in rows),
         'unresolved_primary_scope_count':sum(x['primary_file_bytes'] is None for x in rows),
         'known_primary_file_bytes_sum':total,
-        'known_parent_package_bytes_sum_with_shared_repetitions':cap.sum_bytes([r['package_bytes'] for r in rows]),
-        'known_dependency_additions_bytes':cap.sum_bytes([d['bytes'] for d in dependencies]),
+        'known_parent_package_bytes_sum_with_shared_repetitions':cap.sum_bytes({'bytes':r['package_bytes']} for r in rows),
+        'known_dependency_additions_bytes':cap.sum_bytes({'bytes':d['bytes']} for d in dependencies),
         'known_scope_content_union_bytes':known,
         'source_identity_dedup_assumption':old['source_identity_dedup_assumption'],
         'largest_selected_file_bytes':all_largest,
@@ -188,7 +190,7 @@ def main():
     sources={repo:load(rule['source_path']) for repo,rule in NEW.items()}
     assert current['revision_id']=='v23-20261106'
     assert current['expected']['tracked']==165 and current['expected']['active']==118
-    assert (load('queues/approved.json').get('entries') or [])==[]
+    assert load('queues/approved.json')['entries']==[]
     assert load(current['priority_worklist_path'])['download_enabled'] is False
     rows=verify_sources(old,view,overlay,sources)
     summary=compute_summary(old,rows)
