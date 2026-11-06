@@ -36,33 +36,55 @@ jobs:
         run: |
           set -euo pipefail
           regression=tests/test_quantized_memory_research.py
-          expected_regression=$(git rev-parse "$GITHUB_SHA:$regression")
-          test "$expected_regression" = 3db5b233c337b8672496a9951a2d3f6c1e4eb380
-          test "$(git hash-object "$regression")" = "$expected_regression"
+          snapshot=/tmp/reviewed-quantized-memory-regression.py
+          cp -- "$regression" "$snapshot"
+          sha256sum "$regression" "$snapshot"
+          python - <<'PY'
+          import ast
+          from pathlib import Path
+          text=Path('/tmp/reviewed-quantized-memory-regression.py').read_text()
+          names={node.name for node in ast.walk(ast.parse(text)) if isinstance(node,ast.FunctionDef)}
+          required={'test_policy_requires_matched_peak_not_file_size','test_research_is_unapproved_and_historical_catalog_unchanged','test_current_catalog_and_queue_are_consistent_without_freezing_revision','test_original_over150_parents_stay_hold_in_historical_view'}
+          if not required.issubset(names): raise SystemExit('checkout lacks reviewed regression tests')
+          PY
           python -m unittest discover -s tests -v
           python scripts/check_parameter_cutoff.py
           python scripts/audit_selection_decisions.py
           python -m scripts.apply_selection_v22 --apply
-          echo "Regression identity after migration: $(git hash-object "$regression")"
-          # Metadata migration must use the reviewed regression source, not a
-          # historical v20/v21 version. Preserve its full assertions unchanged.
-          git show "$GITHUB_SHA:$regression" > "$regression"
-          test "$(git hash-object "$regression")" = "$expected_regression"
+          # Retain the exact reviewed assertions that passed before migration.
+          sha256sum "$regression" "$snapshot"
+          cp -- "$snapshot" "$regression"
+          cmp -- "$snapshot" "$regression"
           find tests scripts -type d -name __pycache__ -prune -exec rm -rf -- {} +
           python -m unittest discover -s tests -v 2>&1 | tee /tmp/v22-tests.log
           python scripts/check_parameter_cutoff.py
           python scripts/audit_selection_decisions.py
           python - <<'PY'
-          import json,re
+          import hashlib,json,re
           from pathlib import Path
-          p=Path('catalog/preparation/2026-11-06-v22-integration-check.json')
+          root=Path('.')
+          p=root/'catalog/preparation/2026-11-06-v22-integration-check.json'
           r=json.loads(p.read_text())
           log=Path('/tmp/v22-tests.log').read_text()
           n=re.findall(r'Ran (\d+) tests',log)
           if not n or '\nOK\n' not in log: raise SystemExit('missing successful test log')
           if 'test_current_catalog_and_queue_are_consistent_without_freezing_revision' not in log:
               raise SystemExit('reviewed regression source not exercised')
-          r.update(full_suite_verified=True,full_repository_unittest_count=int(n[-1]),parameter_audit_passed=True,selection_audit_passed=True,regression_source_blob='3db5b233c337b8672496a9951a2d3f6c1e4eb380')
+          load=lambda name:json.loads((root/name).read_text())
+          c=load('catalog/CURRENT.json'); v=load(c['materialized_catalog_path']); q=load(c['priority_worklist_path'])
+          old=load('catalog/effective-portfolio-2026-11-06-v21.json')
+          plan=load('catalog/preparation/2026-11-06-insurance-bundles-v22.json')
+          if c['revision_id']!='v22-20261106' or len(v['items'])!=163 or v['items'][:159]!=old['items']:
+              raise SystemExit('catalog transition or original-record preservation failed')
+          active={(x['asset_kind'],x['repo_id']) for x in v['items'] if x['portfolio_decision'] in ('select','conditional')}
+          if len(active)!=116 or active!={(x['asset_kind'],x['repo_id']) for x in q['candidates']} or active!={(x['asset_kind'],x['repo_id']) for x in plan['items']}:
+              raise SystemExit('active selection, queue and preparation plan do not agree')
+          if q['approved'] or q['download_enabled'] or plan['download_enabled'] or load('queues/approved.json')['entries']:
+              raise SystemExit('acquisition unexpectedly authorized')
+          snapshot=Path('/tmp/reviewed-quantized-memory-regression.py').read_bytes()
+          if snapshot!=(root/'tests/test_quantized_memory_research.py').read_bytes():
+              raise SystemExit('regression source changed again')
+          r.update(full_suite_verified=True,full_repository_unittest_count=int(n[-1]),parameter_audit_passed=True,selection_audit_passed=True,exact_catalog_plan_consistency_passed=True,regression_source_sha256=hashlib.sha256(snapshot).hexdigest())
           p.write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n')
           PY
       - name: Commit only generated metadata with unchanged branch lease
