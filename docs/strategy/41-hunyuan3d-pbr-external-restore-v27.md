@@ -31,6 +31,20 @@
 
 追加モデルの配布元実ファイル容量が未確定なら`null`とする。CIのsource tree照合後の論理合計が4TB未満でも、**物理HDDにその容量があることを示さない**。最低空き床200,000,000,000 B・実環境のstagingとキャッシュ・GPUランタイム/ローカル依存wheelの格納量は別途評価する。4TBの数値差を「実際の残容量」と呼ばない。
 
+### 固定版メタデータ監査の結果（2026-11-07）
+
+| 必要部品 | 固定版 | 全配布元ファイル容量 | 実際に選ぶファイル容量 |
+|---|---|---:|---:|
+| `facebook/dinov2-giant` | `611a9d42f2335e0f921f1e313ad3c1b7178d206d` | 9,092,168,005 B | **4,546,010,968 B**（5ファイル） |
+| `RealESRGAN_x4plus.pth` | v0.1.0 GitHub Release asset #40831506 | — | **67,040,989 B**（1アセット、公開SHA256なし） |
+| Tencent公式コードのGit blob | `82920d643c0dc2f7bfd7255f45f62d386edfe60c` | — | **173,699,323 B**（598 blob、デモ・例示も含む） |
+
+DINOv2の`model.safetensors`は**4,546,005,432 B**、config／preprocessor／README／.gitattributesを含む5ファイルが**4,546,010,968 B**。原本`pytorch_model.bin`は同一学習重みの別シリアライズ形式として**今回の候補から除外**した。
+
+外部ファイル候補の単純総和は**4,786,751,280 B**、Git blob識別子と公開LFS SHA256による論理重複排除後の増分は**4,785,207,663 B**。現在のv27容量正本に加算した研究用シナリオは**3,422,470,920,248 B**。4TBとの数値上の差は**577,529,079,752 B**だが**保存先の空き容量ではない**。DINOv2は公開・Apache-2.0メタデータ表示、Real-ESRGANアセットはGitHub Release APIのdigest欄が`null`で現物SHA256を未検証。
+
+[生成した機械監査JSON](../../catalog/research/2026-11-07-hunyuan3d-pbr/audit.json)／[236件全テストおよび選定監査PASS](https://github.com/Unjuno/local-model-portfolio/actions/runs/42280761830)／[検証記録](../../catalog/research/2026-11-07-hunyuan3d-pbr/verification.json)。新規選定・取得承認は**0**。Metaの原本公開条件とTencent本体の地域契約、RealESRGANの重み固有の配布条件は引き続き**別々に確認**する。
+
 ## 5. H/T/D/C/Uと検証境界
 
 - **H**：Hunyuan3D-2.1 PBRの標準出力を再現するにはTencent本体repo以外にDINOv2 giantとRealESRGAN x4plusの別学習済み重み、固定CUDA拡張環境が必要。
