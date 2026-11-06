@@ -4,6 +4,7 @@ on:
     branches: ['strategy/2026-11-03-01-risk']
     paths:
       - 'scripts/apply_selection_v22.py'
+      - 'scripts/finalize_insurance_v22.py'
       - 'tests/test_selection_v22.py'
       - 'tests/test_quantized_memory_research.py'
       - 'catalog/revisions/v22-2026-11-06.json'
@@ -31,73 +32,28 @@ jobs:
         with:
           ref: ${{ github.sha }}
           fetch-depth: 1
-      - name: Test baseline and materialize metadata only
+      - name: Validate baseline and finalize reviewed metadata
         shell: bash
         run: |
           set -euo pipefail
-          regression=tests/test_quantized_memory_research.py
-          snapshot=/tmp/reviewed-quantized-memory-regression.py
-          cp -- "$regression" "$snapshot"
-          sha256sum "$regression" "$snapshot"
-          python - <<'PY'
-          import ast
-          from pathlib import Path
-          text=Path('/tmp/reviewed-quantized-memory-regression.py').read_text()
-          names={node.name for node in ast.walk(ast.parse(text)) if isinstance(node,ast.FunctionDef)}
-          required={'test_policy_requires_matched_peak_not_file_size','test_research_is_unapproved_and_historical_catalog_unchanged','test_current_catalog_and_queue_are_consistent_without_freezing_revision','test_original_over150_parents_stay_hold_in_historical_view'}
-          if not required.issubset(names): raise SystemExit('checkout lacks reviewed regression tests')
-          PY
           python -m unittest discover -s tests -v
           python scripts/check_parameter_cutoff.py
           python scripts/audit_selection_decisions.py
-          python -m scripts.apply_selection_v22 --apply
-          # Retain the exact reviewed assertions that passed before migration.
-          sha256sum "$regression" "$snapshot"
-          cp -- "$snapshot" "$regression"
-          cmp -- "$snapshot" "$regression"
-          find tests scripts -type d -name __pycache__ -prune -exec rm -rf -- {} +
-          python -m unittest discover -s tests -v 2>&1 | tee /tmp/v22-tests.log
+          python -m scripts.finalize_insurance_v22
+          python -m unittest discover -s tests -v
           python scripts/check_parameter_cutoff.py
           python scripts/audit_selection_decisions.py
-          python - <<'PY'
-          import hashlib,json,re
-          from pathlib import Path
-          root=Path('.')
-          p=root/'catalog/preparation/2026-11-06-v22-integration-check.json'
-          r=json.loads(p.read_text())
-          log=Path('/tmp/v22-tests.log').read_text()
-          n=re.findall(r'Ran (\d+) tests',log)
-          if not n or '\nOK\n' not in log: raise SystemExit('missing successful test log')
-          if 'test_current_catalog_and_queue_are_consistent_without_freezing_revision' not in log:
-              raise SystemExit('reviewed regression source not exercised')
-          load=lambda name:json.loads((root/name).read_text())
-          c=load('catalog/CURRENT.json'); v=load(c['materialized_catalog_path']); q=load(c['priority_worklist_path'])
-          old=load('catalog/effective-portfolio-2026-11-06-v21.json')
-          plan=load('catalog/preparation/2026-11-06-insurance-bundles-v22.json')
-          if c['revision_id']!='v22-20261106' or len(v['items'])!=163 or v['items'][:159]!=old['items']:
-              raise SystemExit('catalog transition or original-record preservation failed')
-          active={(x['asset_kind'],x['repo_id']) for x in v['items'] if x['portfolio_decision'] in ('select','conditional')}
-          if len(active)!=116 or active!={(x['asset_kind'],x['repo_id']) for x in q['candidates']} or active!={(x['asset_kind'],x['repo_id']) for x in plan['items']}:
-              raise SystemExit('active selection, queue and preparation plan do not agree')
-          if q['approved'] or q['download_enabled'] or plan['download_enabled'] or load('queues/approved.json')['entries']:
-              raise SystemExit('acquisition unexpectedly authorized')
-          snapshot=Path('/tmp/reviewed-quantized-memory-regression.py').read_bytes()
-          if snapshot!=(root/'tests/test_quantized_memory_research.py').read_bytes():
-              raise SystemExit('regression source changed again')
-          r.update(full_suite_verified=True,full_repository_unittest_count=int(n[-1]),parameter_audit_passed=True,selection_audit_passed=True,exact_catalog_plan_consistency_passed=True,regression_source_sha256=hashlib.sha256(snapshot).hexdigest())
-          p.write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n')
-          PY
-      - name: Commit only generated metadata with unchanged branch lease
+      - name: Commit generated metadata only under unchanged branch lease
         shell: bash
         run: |
           set -euo pipefail
           test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
           remote_sha=$(git ls-remote origin "$GITHUB_REF" | cut -f1)
           test "$remote_sha" = "$GITHUB_SHA"
-          git add -- catalog/CURRENT.json catalog/effective-portfolio-2026-11-06-v22.json queues/proposed-v22-2026-11-06.json catalog/preparation/2026-11-06-insurance-bundles-v22.json catalog/preparation/2026-11-06-v22-integration-check.json policies/selection.md policies/selection-decision-v17.json README.md AGENTS.md scripts/audit_selection_decisions.py tests/test_catalog_v19.py
+          git add -- catalog/CURRENT.json catalog/effective-portfolio-2026-11-06-v22.json queues/proposed-v22-2026-11-06.json catalog/preparation/2026-11-06-insurance-bundles-v22.json catalog/preparation/2026-11-06-v22-integration-check.json policies/selection.md policies/selection-decision-v17.json README.md AGENTS.md scripts/audit_selection_decisions.py tests/test_catalog_v19.py tests/test_research_round20.py
           if git diff --cached --quiet; then exit 0; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'catalog: materialize insurance-first v22 and staged preservation bundles [skip ci]'
+          git commit -m 'catalog: materialize insurance-first v22 with verified historical and current tests [skip ci]'
           git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
           git rev-parse HEAD
