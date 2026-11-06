@@ -35,10 +35,20 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          regression=tests/test_quantized_memory_research.py
+          expected_regression=$(git rev-parse "$GITHUB_SHA:$regression")
+          test "$expected_regression" = 3db5b233c337b8672496a9951a2d3f6c1e4eb380
+          test "$(git hash-object "$regression")" = "$expected_regression"
           python -m unittest discover -s tests -v
           python scripts/check_parameter_cutoff.py
           python scripts/audit_selection_decisions.py
           python -m scripts.apply_selection_v22 --apply
+          echo "Regression identity after migration: $(git hash-object "$regression")"
+          # Metadata migration must use the reviewed regression source, not a
+          # historical v20/v21 version. Preserve its full assertions unchanged.
+          git show "$GITHUB_SHA:$regression" > "$regression"
+          test "$(git hash-object "$regression")" = "$expected_regression"
+          find tests scripts -type d -name __pycache__ -prune -exec rm -rf -- {} +
           python -m unittest discover -s tests -v 2>&1 | tee /tmp/v22-tests.log
           python scripts/check_parameter_cutoff.py
           python scripts/audit_selection_decisions.py
@@ -50,7 +60,9 @@ jobs:
           log=Path('/tmp/v22-tests.log').read_text()
           n=re.findall(r'Ran (\d+) tests',log)
           if not n or '\nOK\n' not in log: raise SystemExit('missing successful test log')
-          r.update(full_suite_verified=True,full_repository_unittest_count=int(n[-1]),parameter_audit_passed=True,selection_audit_passed=True)
+          if 'test_current_catalog_and_queue_are_consistent_without_freezing_revision' not in log:
+              raise SystemExit('reviewed regression source not exercised')
+          r.update(full_suite_verified=True,full_repository_unittest_count=int(n[-1]),parameter_audit_passed=True,selection_audit_passed=True,regression_source_blob='3db5b233c337b8672496a9951a2d3f6c1e4eb380')
           p.write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n')
           PY
       - name: Commit only generated metadata with unchanged branch lease
