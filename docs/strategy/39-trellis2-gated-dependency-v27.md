@@ -24,7 +24,7 @@
 
 [機械監査`audit.json`](../../catalog/research/2026-11-07-trellis2-closure/audit.json)には、3つの外部配布元の**公開HF API固定head、完全tree可否、個別ファイル名と公称バイト、匿名Gated状態、公開LFS SHAの有無とmasked状態**を格納する。欠落・401・サイズ未確認の場合は`null`として残し、0としない。
 
-選定重みファイルは配布元のSаfetensors原本を優先し、学習精度は別途確認。安全に比較できるSHAがないGated重みは、同名/同容量だけで既選定とdedupしない。Microsoftの外部構造decoderは`ss_dec_conv3d_16l8_fp16.safetensors`と同名`.json`を組にする。BRIA/RMBGはデフォルトの追加ソース重みだが、改変コードで回避できる機能と無条件初期化は区別。研究時点のAPI treeが失敗した依存は「source bytes UNKNOWN」とする。
+選定重みファイルは配布元のSafetensors原本を優先し、学習精度は別途確認。安全に比較できるSHAがないGated重みは、同名/同容量だけで既選定とdedupしない。Microsoftの外部構造decoderは`ss_dec_conv3d_16l8_fp16.safetensors`と同名`.json`を組にする。BRIA/RMBGはデフォルトの追加ソース重みだが、改変コードで回避できる機能と無条件初期化は区別。研究時点のAPI treeが失敗した依存は「source bytes UNKNOWN」とする。
 
 v27の3,417,685,712,585 Bは一切変更しない。既存126件と外部重み3セット＋Microsoftコードソースに対して、同一identifierでの**調査用論理和**を計算し、源Repo合計・必要選定ファイル合計・権限未検証を混同しない。最低空き床200,000,000,000 B、計画枠4,000,000,000,000 Bは不変。ユーザーHDD空き・実staging/一時cache・完全オフライン復元実行の総量は**UNKNOWN**。
 
