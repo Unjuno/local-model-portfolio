@@ -118,8 +118,10 @@ class ResearchRound20Tests(unittest.TestCase):
         active = {k for k,r in keyed.items() if r['portfolio_decision'] in ('select','conditional')}
         self.assertEqual(active, {(r['asset_kind'],r['repo_id']) for r in proposed['candidates']})
         self.assertFalse(proposed['download_enabled'])
+        historical = json.loads((ROOT/'catalog/effective-portfolio-2026-11-04-v17.json').read_text(encoding='utf-8'))
+        historical_keys = {(r['asset_kind'],r['repo_id']) for r in historical['items']}
         for r in self.read_ledger()['decisions']:
-            self.assertNotIn(('model',r['repo_id']), keyed, 'R20 decisions are not materialized catalog entries')
+            self.assertNotIn(('model',r['repo_id']), historical_keys, 'R20 research must be checked against its historical v17 catalog')
         print('R20 full inventory:', len(items), dict(counts), 'active=',len(active))
 
 if __name__ == '__main__':
