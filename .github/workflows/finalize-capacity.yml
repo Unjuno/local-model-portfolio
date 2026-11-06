@@ -1,0 +1,170 @@
+name: Final capacity verification and bounded research
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths: ['.github/workflows/finalize-capacity.yml']
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-capacity-final-risk-only
+  cancel-in-progress: false
+jobs:
+  verify:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Apply tested index-aware shard validation
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('scripts/capacity_selection.py');s=p.read_text()
+          def one(old,new):
+              global s
+              if s.count(old)!=1:raise SystemExit('patch anchor mismatch: '+old[:70])
+              s=s.replace(old,new)
+          if 'def check_shards(files,declared_paths=None):' not in s:
+              one('def check_shards(files):','def check_shards(files,declared_paths=None):')
+              old="    for (prefix,n,suffix),parts in groups.items():\n        if sorted(parts)"
+              new="""    for (prefix,n,suffix),parts in groups.items():
+                  if declared_paths is not None:
+                      expected={x for x in declared_paths if (m:=SHARD.match(x)) and m.group(1)==prefix and int(m.group(3))==n}
+                      actual={f['path'] for f in files if (m:=SHARD.match(f['path'])) and m.group(1)==prefix and int(m.group(3))==n}
+                      if expected:
+                          if actual!=expected:raise ValueError('index and selected shards disagree: '+prefix)
+                          continue
+                  if sorted(parts)"""
+              # Normalize indentation from this embedded patch to Python function scope.
+              lines=new.splitlines();new='\n'.join([lines[0]]+[line[10:] for line in lines[1:]])
+              one(old,new)
+              one('    check_shards(selected)','    check_shards(selected,profile.get("index_shards"))')
+              anchor="        row={'asset_kind':item['asset_kind']"
+              insert="""        if 'r21' not in profile:
+                      indexes=[]
+                      for d in src.get('documentation',[]):
+                          if isinstance(d.get('json'),dict) and isinstance(d['json'].get('weight_map'),dict):
+                              parent=Path(d['path']).parent
+                              indexes.extend(str(parent/x) for x in d['json']['weight_map'].values() if isinstance(x,str))
+                      if indexes:profile['index_shards']=sorted(set(indexes))
+          """
+              lines=insert.splitlines();insert='\n'.join([lines[0]]+[line[10:] for line in lines[1:]])+'\n'
+              one(anchor,insert+anchor)
+              compile(s,str(p),'exec');p.write_text(s)
+          PY
+          python -m unittest discover -s tests -p test_capacity_index.py -v
+          python scripts/capacity_selection.py
+      - name: Pin limited candidate and missing-dependency metadata only
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from scripts.capacity_inventory import snapshot,dump
+          out=Path('catalog/capacity/2026-11-06/followup-sources')
+          ids=['LiquidAI/LFM2.5-24B-A2B-DSpark','Hcompany/Holotron4-30B-A3B','kyutai/mimi','speechbrain/spkrec-ecapa-voxceleb']
+          snapshots={}
+          for repo in ids:
+              r=snapshot({'asset_kind':'model','repo_id':repo,'portfolio_decision':'research_only_not_active'})
+              dump(out/(repo.replace('/','--')+'.json'),r);snapshots[repo]=r
+              print(repo,r.get('pinned_revision'),r.get('source_scope_bytes'),r.get('error'))
+          def prior(repo):
+              results=[]
+              for p in sorted(Path('catalog/research').glob('*.json')):
+                  if p.name=='2026-11-06-capacity-bounded-followup.json':continue
+                  if repo in p.read_text():results.append(str(p))
+              return results
+          records=[]
+          descriptions={
+            ids[0]:('Target-specific learned draft with confidence and Markov heads, not a format conversion. Existing 24B target can be referenced once.',
+                    'Publisher B300 FP8-target throughput is not owner runtime or task-quality gain. Publisher warns batched floating point can alter greedy outputs. Does not replace the existing VL3B drafter.',
+                    ['LiquidAI/LFM2.5-24B-A2B','LiquidAI/LFM2.5-VL-3B-DSpark']),
+            ids[1]:('Distinct NemotronH Nano Omni computer-use post-training, unlike existing Qwen-based Holo4-27B/Fara.',
+                    'Same application family may overlap Holo4/Fara. Publisher-only evaluation; harness, task protocol, full dependencies and NVIDIA agreement require review.',
+                    ['Hcompany/Holo4-27B','microsoft/Fara1.5-27B'])}
+          for repo in ids[:2]:
+              r=snapshots[repo];pos,neg,baselines=descriptions[repo]
+              records.append({'repo_id':repo,'decision':'HOLD_RESEARCH_NOT_FORMAL_CATALOG_CHANGE',
+                 'positive_evidence':pos,'negative_evidence':neg,'incumbent_comparison':baselines,
+                 'source_urls':['https://huggingface.co/'+repo,'https://huggingface.co/'+repo+'/blob/'+str(r.get('pinned_revision'))+'/README.md'],
+                 'pinned_metadata_snapshot_path':str(out/(repo.replace('/','--')+'.json')),
+                 'source_repository_bytes':r.get('source_scope_bytes'),'selected_file_bytes':None,'complete_dependency_bytes':None,
+                 'byte_evidence_kind':'publisher_API_exact_repository_scope_not_selected_capacity',
+                 'prior_string_mentions_requiring_review':prior(repo),
+                 'formal_active_selection':False,'download_authorized':False,'independent_quality_verified':False,
+                 'measurement_conditions':{'hardware':None,'clock':None,'backend':None,'context':None,'batch':None,'owner_trials':0},
+                 'restriction_evidence':{'observed_gated_metadata':r.get('gated'),'observed_license_metadata':r.get('license_metadata'),'specific_removal_notice_verified':False,'future_probability':None,'future_restriction_is_hypothesis':True},
+                 'next_validation':'Review prior mentions, exact file/dependency scope, contribution beyond incumbent, licenses and measured storage headroom. Do not expand active selection now.',
+                 'reversal_condition':'Promote only if distinct learned outcome is substantiated and complete package fits verified budget; reject a relabelled or reproducible format duplicate.'})
+          ledger={'date':'2026-11-06','baseline_revision':'v22-20261106','tracked':163,'active':116,
+              'effective_catalog_changed':False,'acquisition_queue_changed':False,'payload_downloads':0,
+              'scope':'two bounded research candidates after full active source inventory; not an unlimited search',
+              'decisions':records,'existing_dependency_followup':ids[2:]}
+          dump(Path('catalog/research/2026-11-06-capacity-bounded-followup.json'),ledger)
+          PY
+      - name: Full verification and compact evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,re,subprocess,sys
+          from pathlib import Path
+          def load(p):return json.loads(Path(p).read_text())
+          c=load('catalog/CURRENT.json');v=load(c['materialized_catalog_path']);q=load(c['priority_worklist_path'])
+          out=Path('catalog/capacity/2026-11-06');r=load(out/'selected-file-capacity.json')
+          active={(x['asset_kind'],x['repo_id']) for x in v['items'] if x['portfolio_decision'] in ('select','conditional')}
+          assert len(v['items'])==163 and len(active)==116
+          assert active=={(x['asset_kind'],x['repo_id']) for x in r['items']}
+          assert not q['download_enabled'] and not load('queues/approved.json')['entries']
+          assert r['complete_offline_archive_bytes'] is None and r['physical_disk_free_bytes'] is None
+          g=next(x for x in r['items'] if x['repo_id']=='openai/gpt-oss-120b')
+          assert g['primary_file_bytes'] is not None
+          assert sum(f['path'].startswith('model-') and f['path'].endswith('.safetensors') for f in g['files'])==15
+          run=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],capture_output=True,text=True)
+          log=run.stdout+run.stderr;print(log)
+          if run.returncode:raise SystemExit(run.returncode)
+          for script in ('scripts/check_parameter_cutoff.py','scripts/audit_selection_decisions.py'):
+              subprocess.run([sys.executable,script],check=True)
+          source=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+          protected=[c['materialized_catalog_path'],c['priority_worklist_path'],'queues/approved.json','policies/limits.json','catalog/CURRENT.json']
+          for p in protected:
+              before=subprocess.check_output(['git','show',source+':'+p])
+              assert before==Path(p).read_bytes(),p
+          check={'full_suite_verified':True,'full_repository_unittest_count':int(re.search(r'Ran (\d+) tests',log).group(1)),
+            'test_log_sha256':hashlib.sha256(log.encode()).hexdigest(),'parameter_audit_passed':True,'selection_audit_passed':True,
+            'exact_active_identity_coverage':116,'catalog_items_unchanged':True,'queue_and_limits_unchanged':True,
+            'owner_disk_measured':False,'model_payload_downloaded':False,'runtime_tested':False,
+            'gpt_oss_15_shards_validated_against_pinned_weight_map':True,
+            'source_commit':source,'tested_capacity_selection_sha256':hashlib.sha256(Path('scripts/capacity_selection.py').read_bytes()).hexdigest()}
+          (out/'selection-verification.json').write_text(json.dumps(check,indent=2)+'\n')
+          main_info={'main_not_modified':True,'main_sha_observed':subprocess.check_output(['git','ls-remote','origin','refs/heads/main'],text=True).split()[0]}
+          (out/'final-main-check.json').write_text(json.dumps(main_info,indent=2)+'\n')
+          compact={x['repo_id']:{'primary_file_bytes':x['primary_file_bytes'],'package_bytes':x['package_bytes'],'revision':x['source_revision']} for x in r['items']}
+          (out/'per-asset-totals.json').write_text(json.dumps(compact,indent=2)+'\n')
+          print(json.dumps(check,indent=2))
+          PY
+      - name: Commit verified evidence and index repair under branch lease
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          test "$(git ls-remote origin "$GITHUB_REF" | cut -f1)" = "$GITHUB_SHA"
+          git add -- scripts/capacity_selection.py catalog/capacity/2026-11-06 catalog/research/2026-11-06-capacity-bounded-followup.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'audit: verify selected capacity with publisher indexes and bounded research [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD
