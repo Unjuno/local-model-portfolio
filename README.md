@@ -1,5 +1,9 @@
 # Local Model Portfolio
 
+## 現行v26：Cosmos Sim-AutoとPhononの独立学習成果3件
+
+[CURRENT](catalog/CURRENT.json)は172資産・有効125件。車載WSM+LiDARのCosmos3 Nano Sim-Autoと音声Phononの英語31M・多言語40M原本を条件付き選定。40Mは現在Gated＋CC BY-NC4.0なので本人権限確認まで研究専用で取得不可。Phononの話者コーデック自体は未公開であり、既存の潜在話者のみ記録。BaIDU ERNIE5.5 Flash Base 280Bは総150B超の同等RAM未実測で研究HOLD。v25の旧169資産不変、外部依存に声の潜在とCosmos共通VAEを記録。4TB・200GB空き・同等RAM・取得承認0を維持。[詳細](docs/strategy/33-phonon-cosmos-ernie-risk-v26.md)・[容量](catalog/capacity/2026-11-06/v26/capacity-summary.json)。以下の版は履歴。
+
 ## 現行v25：地域制限付き画像モデルの学習成果を条件付き研究選定
 
 [CURRENT](catalog/CURRENT.json)は169資産・有効122件。PrunaAI/P-H3-Imageの8-step DMD蒸留・テキスト蒸留・専用VAE・学習済みプロンプト補完を別学習成果として1件conditional研究選定。MiniMax H3 Community License地域制限と総パラメータ未確定のため**最終取得ロック不可**。同一能力のComfy 4bitは二重採用せず。Maya2用Mimi/ECAPAの固定容量は別依存調査記録に記載。旧168資産を保持、v24の121件一次ファイル範囲は確定済み。4TB上限・実空き200GB・量子化後の同等RAM条件・取得承認0は維持。[根拠](docs/strategy/32-restricted-image-and-maya-dependencies-v25.md)・[容量](catalog/capacity/2026-11-06/v25/capacity-summary.json)。下のv24以前の数値は履歴。
