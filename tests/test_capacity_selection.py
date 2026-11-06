@@ -19,6 +19,29 @@ class CapacitySelectionTests(unittest.TestCase):
         rows=[self.f(x) for x in ['model.safetensors','codec.pth','audio_tokenizer/model.safetensors','config.json','pytorch_model.bin','onnx/model.onnx','original/model.pth']]
         selected,_=self.m.choose_files(rows,{})
         self.assertEqual({x['path'] for x in selected},{'model.safetensors','codec.pth','audio_tokenizer/model.safetensors','config.json'})
+    def test_granary_all_label_manifests_and_split_license(self):
+        profile=self.m.PROFILES['nvidia/Granary-v2']
+        rows=[self.f(x) for x in profile['support_paths']+profile['mandatory_labels']+
+              ['ja/fleurs/ja_asr.jsonl.gz','en/librilight/en_asr.part00.jsonl.gz',
+               'figures/granary-v2-icon.png','example_audio.wav']]
+        selected,excluded=self.m.choose_files(rows,profile)
+        self.assertEqual(len(selected),8)
+        self.assertEqual(len(excluded),2)
+        self.assertEqual(profile['license_scope']['en/people_speech/en_asr.jsonl.gz'],'CC-BY-SA-4.0')
+        self.assertTrue(profile['labels_only_no_audio'])
+        self.assertFalse(any(f['path'].endswith('.wav') for f in selected))
+    def test_granary_missing_notice_or_exception_fails_closed(self):
+        profile=self.m.PROFILES['nvidia/Granary-v2']
+        rows=[self.f(x) for x in profile['support_paths']+profile['mandatory_labels']+
+              ['ja/fleurs/ja_asr.jsonl.gz']]
+        for index in (0,3,5):
+            with self.subTest(index=index),self.assertRaises(ValueError):
+                self.m.choose_files([row for j,row in enumerate(rows) if j!=index],profile)
+    def test_granary_unrecognized_label_path_fails_closed(self):
+        profile=self.m.PROFILES['nvidia/Granary-v2']
+        rows=[self.f(x) for x in profile['support_paths']+profile['mandatory_labels']+
+              ['en/unknown/sneak_asr.jsonl.gz','../problem.jsonl.gz']]
+        with self.assertRaises(ValueError):self.m.choose_files(rows,profile)
     def test_dataset_subset_not_entire_repo(self):
         rows=[self.f(x) for x in ['math/math_proof.jsonl','swe/swe_agentic.jsonl','chat/all.jsonl','README.md']]
         selected,_=self.m.choose_files(rows,{'dataset_paths':['math/math_proof.jsonl','swe/swe_agentic.jsonl']})

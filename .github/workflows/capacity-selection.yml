@@ -46,6 +46,21 @@ jobs:
           report=load(str(out/'selected-file-capacity.json'))
           active={(x['asset_kind'],x['repo_id']) for x in v['items'] if x['portfolio_decision'] in ('select','conditional')}
           assert active=={(x['asset_kind'],x['repo_id']) for x in report['items']}
+          granary=next(r for r in report['items'] if r['repo_id']=='nvidia/Granary-v2')
+          assert granary['primary_file_bytes']==111_557_207_020
+          assert len(granary['files'])==153
+          license_partition=granary['license_partition']
+          assert license_partition['OpenMDW-1.1_manifest_count']==147
+          assert license_partition['OpenMDW-1.1_manifest_bytes']==109_167_802_339
+          assert license_partition['CC-BY-SA-4.0_people_speech_manifest_count']==1
+          assert license_partition['CC-BY-SA-4.0_people_speech_bytes']==2_389_312_660
+          assert license_partition['provenance_and_license_notice_bytes']==92_021
+          assert license_partition['audio_included'] is False
+          assert report['exact_primary_file_scope_count']==116
+          assert report['unresolved_primary_scope_count']==0
+          assert report['complete_learned_dependency_total_bytes'] is None
+          gpt=next(r for r in report['items'] if r['repo_id']=='openai/gpt-oss-120b')
+          assert sum(f['path'].startswith('model-') and f['path'].endswith('.safetensors') for f in gpt['files'])==15
           assert len(active)==116 and len(v['items'])==163
           assert report['executable'] is False and report['download_authorized'] is False
           assert report['complete_offline_archive_bytes'] is None and report['physical_disk_free_bytes'] is None
@@ -62,7 +77,7 @@ jobs:
           p=root/'README.md'; text=p.read_text()
           heading='## 容量監査（2026-11-06）：全116件の固定ファイル一覧\n'
           if heading not in text:
-              intro='\n'+heading+'\n[容量集計](catalog/capacity/2026-11-06/capacity-summary.json)・[全件表](catalog/capacity/2026-11-06/capacity-report.md)・[ファイル別証拠](catalog/capacity/2026-11-06/selected-file-capacity.json)。配布庫全量と選択形式を分離し、共有依存の繰り返しを除く。確定小計は配布元metadataの計算であり実ディスク使用量ではない。完全復元に必要な依存・実行環境、Granaryの許可subset、実機空き容量は未確定。v22の163管理／116有効、取得承認0を維持。\n'
+              intro='\n'+heading+'\n[容量集計](catalog/capacity/2026-11-06/capacity-summary.json)・[全件表](catalog/capacity/2026-11-06/capacity-report.md)・[ファイル別証拠](catalog/capacity/2026-11-06/selected-file-capacity.json)。配布庫全量と選択形式を分離し、共有依存の繰り返しを除く。確定小計は配布元metadataの計算であり実ディスク使用量ではない。完全復元に必要な依存・実行環境、Granaryは148件の公開ラベル＋LICENSE/NOTICEで一次ファイル範囲が確定。原音声・実機空き容量は未確定。v22の163管理／116有効、取得承認0を維持。\n'
               text=text.replace('# Local Model Portfolio\n','# Local Model Portfolio\n'+intro,1);p.write_text(text)
           run=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],capture_output=True,text=True)
           log=run.stdout+run.stderr;print(log)
@@ -76,7 +91,9 @@ jobs:
             'selection_audit_passed':True,'exact_active_identity_coverage':116,'catalog_items_unchanged':True,
             'queue_and_limits_unchanged':True,'current_only_additive_capacity_pointer':True,
             'owner_disk_measured':False,'model_payload_downloaded':False,'runtime_tested':False,
-            'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()}
+            'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+            'granary_label_manifest_files':148,'granary_label_only_bytes':111_557_207_020,
+            'all_116_primary_file_scopes_exact':True,'gpt_oss_15_shards_checked_from_pinned_index':True}
           (out/'selection-verification.json').write_text(json.dumps(check,indent=2)+'\n')
           print(json.dumps(check,indent=2))
           PY

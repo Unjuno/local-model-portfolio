@@ -19,7 +19,13 @@ PROFILES={
  'Qwen/Qwen-Image-2.1':{'r21':'qwen-image-base','note':'Exact R21 shared base rather than unreviewed newer HEAD.'},
  'ausboss/Qwen-Image-2.1-Consistency-LoRA':{'weights':['qwen-image-2.1-consistency.safetensors'],'note':'Step1500 only; step2000 is not claimed identical.'},
  'nvidia/Nemotron-Cascade-2-SFT-Data':{'dataset_paths':['math/math_proof.jsonl','swe/swe_agentic.jsonl']},
- 'nvidia/Granary-v2':{'scope_unresolved':'Permitted per-corpus label subset not determined; full repository is not automatically selected.'},
+ 'nvidia/Granary-v2':{'dataset_label_manifests':True,
+   'support_paths':['.gitattributes','LICENSE','LICENSES/CC-BY-SA-4.0.txt','NOTICE','README.md'],
+   'mandatory_labels':['en/people_speech/en_asr.jsonl.gz'],
+   'labels_only_no_audio':True,'license_scope':{
+     'all_except_people_speech':'OpenMDW-1.1',
+     'en/people_speech/en_asr.jsonl.gz':'CC-BY-SA-4.0'},
+   'note':'All 148 released multilingual label JSONL.gz manifests plus 5 provenance/license files; no source audio. Rights partition from pinned LICENSE and NOTICE; no audio acquisition.'},
  'BAAI/bge-m3':{'weights':['pytorch_model.bin','colbert_linear.pt','sparse_linear.pt']},
  'usezn/Galvanize-3':{'weights':['onnx/model.onnx'],'allowed_alt':['onnx'],'note':'Existing preferred CPU ONNX path; no duplicate safetensors.'},
  'mistralai/Mistral-Small-4-119B-2603':{'exclude_weight_prefixes':['consolidated-'],'note':'HF model shards only. Precision/quantization from config, never inferred from size.'},
@@ -36,7 +42,7 @@ PROFILES={
  'WhissleAI/steer-tts':{'exclude_prefixes':['native/int8/'],'note':'Original precision including bundled native encoders; interoperability and total count remain uncertified.'}
 }
 OPEN={
- 'nvidia/Granary-v2':['Per-corpus permitted subset and external source-audio scope'],
+ 'nvidia/Granary-v2':['All released labels have exact metadata bytes and license partition, but repository includes NO source audio. Future audio restoration requires separate lawful source corpus selection, bytes, revision, consent and hash review.'],
  'allenai/pixmo-cap':['External image URLs; captions alone are not requested image+caption package'],
  'ibm-granite/granite-switch-4.1-30b':['Decision/Guardian aLoRA and ASR attachment revisions'],
  'OpenMOSS-Team/MOSS-TTS-v1.5':['External audio tokenizer checkpoint/version'],
@@ -105,12 +111,24 @@ def choose_files(files,profile):
     available={f['path'] for f in files}
     for p in profile.get('weights',[]):
         if p not in available:raise ValueError('missing explicit weight: '+p)
+    if profile.get('dataset_label_manifests'):
+        support=set(profile['support_paths'])
+        if not support.issubset(available):raise ValueError('missing required label provenance/license/NOTICE')
+        mandatory=set(profile.get('mandatory_labels',[]))
+        if not mandatory.issubset(available):raise ValueError('mandatory separately licensed People_Speech manifest missing')
+        labels={p for p in available if p.endswith('.jsonl.gz')}
+        if not labels:raise ValueError('missing published label manifests')
+        if any(not re.fullmatch(r'[a-z]{2,3}/[a-z][a-z0-9_]+/[a-z]{2,3}_asr(?:\\.part[0-9]{2})?\\.jsonl\\.gz',p) for p in labels):
+            raise ValueError('unrecognized label filename, review license partition')
     for p in profile.get('dataset_paths',[]):
         if not any(f==p or f.startswith(p.rstrip('/')+'/') for f in available):raise ValueError('missing subset: '+p)
     selected=[];excluded=[]
     for f in files:
         p=f['path'];parts=Path(p).parts;weight=bool(WEIGHT.search(p));reason=None
-        if profile.get('dataset_paths') is not None:
+        if profile.get('dataset_label_manifests'):
+            if p not in set(profile['support_paths']) and p not in labels:
+                reason='outside published label manifests and LICENSE/NOTICE scope'
+        elif profile.get('dataset_paths') is not None:
             allowed=any(p==x or p.startswith(x.rstrip('/')+'/') for x in profile['dataset_paths'])
             support='/' not in p and (p in ('.gitattributes','README.md') or p.lower().startswith(('license','notice')))
             if not allowed and not support:reason='outside selected dataset subset'
@@ -154,7 +172,7 @@ def main():
     rows=[];byid={};all_entries=[]
     for item in active:
         repo=item['repo_id'];src=sources[(item['asset_kind'],repo)];profile=dict(PROFILES.get(repo,{}))
-        if item['asset_kind']=='dataset' and 'dataset_paths' not in profile:profile['dataset_all']=True
+        if item['asset_kind']=='dataset' and 'dataset_paths' not in profile and not profile.get('dataset_label_manifests'):profile['dataset_all']=True
         if 'r21' not in profile:
             indexes=[]
             for d in src.get('documentation',[]):
@@ -180,6 +198,22 @@ def main():
                 r=historical[profile['r21']];files=r21_files(r);row['source_revision']=r['revision']
                 row['scope_evidence']='R21 exact scope kept; current HEAD not automatically substituted'
             else:files,row['excluded_files']=choose_files(src['files'],profile)
+            if profile.get('dataset_label_manifests'):
+                manifests=[f for f in files if f['path'].endswith('.jsonl.gz')]
+                people=next(f for f in manifests if f['path']=='en/people_speech/en_asr.jsonl.gz')
+                row['license_partition']={
+                    'OpenMDW-1.1_manifest_count':len(manifests)-1,
+                    'OpenMDW-1.1_manifest_bytes':sum_bytes(f for f in manifests if f is not people),
+                    'CC-BY-SA-4.0_people_speech_manifest_count':1,
+                    'CC-BY-SA-4.0_people_speech_bytes':people['bytes'],
+                    'provenance_and_license_notice_bytes':sum_bytes(f for f in files if not f['path'].endswith('.jsonl.gz')),
+                    'license_full_text_read_from_fixed_source':True,
+                    'publisher_licenses_and_third_party_audio_not_individually_cleared':True,
+                    'audio_included':False,
+                    'primary_license_urls':[
+                        'https://huggingface.co/datasets/nvidia/Granary-v2/raw/'+src['pinned_revision']+'/LICENSE',
+                        'https://huggingface.co/datasets/nvidia/Granary-v2/raw/'+src['pinned_revision']+'/NOTICE']}
+                row['scope_status']='FULL_PUBLISHED_LABEL_MANIFEST_SCOPE_EXACT_AUDIO_DEPENDENCY_UNRESOLVED'
             row['files']=files;row['primary_file_bytes']=sum_bytes(files);row['package_bytes']=row['primary_file_bytes']
             row['masked_or_unknown_payload_identity_files']=sum(f.get('identity_kind') in ('unverifiable_payload_hash','unverified') for f in files)
             if item['asset_kind']=='model' and not any(WEIGHT.search(f['path']) for f in files):raise ValueError('no weights in scope')
