@@ -1,0 +1,112 @@
+name: Audit GR00T N1.7 publisher license contradiction and distinct robot learning (research only)
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - '.github/workflows/audit-gr00t-n17-rights-v27.yml'
+      - 'scripts/research_gr00t_n17_rights_v27.py'
+      - 'tests/test_research_gr00t_n17_rights_v27.py'
+      - 'docs/strategy/40-gr00t-n17-license-risk-2026-11-07.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-gr00t-n17-rights-risk-20261107
+  cancel-in-progress: false
+jobs:
+  source_only_audit:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 16
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Fail-closed v27 selection and immutable license contradiction tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_research_gr00t_n17_rights_v27.py -v
+          python scripts/check_parameter_cutoff.py
+          python scripts/audit_selection_decisions.py
+      - name: Read only two first-party model source trees and immutable rights text
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m scripts.research_gr00t_n17_rights_v27
+      - name: Compare exact pinned original weight byte union, rights and full unit suite
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,re,subprocess,sys
+          from pathlib import Path
+          def read(path):return json.loads(Path(path).read_text(encoding="utf-8"))
+          c=read("catalog/CURRENT.json")
+          q=read("queues/approved.json")
+          a=read("catalog/research/2026-11-07-gr00t-n17-rights/audit.json")
+          old=read("catalog/capacity/2026-11-07/v27/capacity-summary.json")
+          assert c["revision_id"]=="v27-20261107" and c["expected"]["tracked"]==173 and c["expected"]["active"]==126
+          assert old["exact_primary_file_scope_count"]==126
+          assert old["known_scope_content_union_bytes"]==3_417_685_712_585
+          assert not q["entries"]
+          assert a["new_models_selected"]==a["new_download_authorizations"]==a["model_payloads_downloaded"]==0
+          assert a["candidate"]["repo_id"]=="nvidia/GR00T-N1.7-3B"
+          assert a["candidate"]["source_repository_bytes"]>5_000_000_000
+          assert a["candidate"]["recommended_original_file_scope_bytes"]>5_000_000_000
+          assert a["candidate"]["parameter_magnitude_under_150B"]
+          assert a["rights_conflict"]["contradictory_first_party_artifacts"]
+          assert a["rights_conflict"]["HF_license_section_3_3_noncommercial_research_evaluation_only"]
+          assert not a["rights_conflict"]["commercial_permission_verified"]
+          assert not a["rights_conflict"]["download_approval_allowed"]
+          assert a["license_issue"]["number"]==803 and a["license_issue"]["state"]=="open"
+          assert a["source_code"]["n1d7_runtime_verified"] is False
+          assert a["potential_external_backbone"]["repo_id"]=="nvidia/Cosmos-Reason2-2B"
+          assert a["potential_external_backbone"]["gated"]
+          assert a["potential_external_backbone"]["required_separate_runtime_weight_download_verified"] is False
+          b=a["capacity"]
+          assert b["baseline_v27_logical_bytes"]==old["known_scope_content_union_bytes"]
+          assert b["N17_original_source_files_gross_bytes"]==a["candidate"]["recommended_original_file_scope_bytes"]
+          assert 0<b["N17_hash_identity_aware_logical_increment_bytes"]<=b["N17_original_source_files_gross_bytes"]
+          assert b["research_hold_scenario_logical_bytes"]<4_000_000_000_000
+          assert b["owner_disk_free_bytes"] is None and b["fully_restorable_archive_bytes"] is None
+          assert b["model_payloads_downloaded"]==0
+          run=subprocess.run([sys.executable,"-m","unittest","discover","-s","tests","-v"],capture_output=True,text=True)
+          out=run.stdout+run.stderr
+          if run.returncode:print(out);raise SystemExit(run.returncode)
+          for path in ["scripts/check_parameter_cutoff.py","scripts/audit_selection_decisions.py"]:
+              subprocess.run([sys.executable,path],check=True)
+          n=int(re.search(r"Ran (\d+) tests",out).group(1))
+          verification={"date":"2026-11-07","baseline_revision":"v27-20261107",
+             "full_suite_passed":True,"full_unit_test_count":n,
+             "parameter_and_selection_audit_passed":True,"new_selections":0,
+             "public_source_repositories_checked":2,"first_party_licensing_contradiction_verified":True,
+             "rights_cleared":False,"third_party_gated_access_verified":False,
+             "complete_restoration_tested":False,"real_disk_measured":False,
+             "actual_weights_downloaded":0,
+             "test_log_sha256":hashlib.sha256(out.encode("utf-8")).hexdigest()}
+          p=Path("catalog/research/2026-11-07-gr00t-n17-rights/verification.json")
+          p.write_text(json.dumps(verification,indent=2)+"\n",encoding="utf-8")
+          print(json.dumps(verification,indent=2))
+          PY
+      - name: Preserve source-only evidence on dedicated branch with branch-head lease
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          test "$(git ls-remote origin "$GITHUB_REF" | cut -f1)" = "$GITHUB_SHA"
+          git add -- catalog/research/2026-11-07-gr00t-n17-rights
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'research: pin GR00T N1.7 original source, license contradiction and predecessor comparison [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD
