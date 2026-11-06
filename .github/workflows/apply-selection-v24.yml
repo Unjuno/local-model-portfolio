@@ -1,0 +1,120 @@
+name: Apply 2026-11-06 three learned outcomes and compute 121 source file scopes
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - '.github/workflows/apply-selection-v24.yml'
+      - 'scripts/apply_selection_v24.py'
+      - 'catalog/revisions/v24-2026-11-06.json'
+      - 'tests/test_selection_v24.py'
+      - 'scripts/capacity_selection_v24.py'
+      - 'tests/test_capacity_selection_v24.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-v24-risk-only
+  cancel-in-progress: false
+jobs:
+  verify_and_apply:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Validate v24 selection transition before materialization
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_selection_v24.py -v
+          python scripts/check_parameter_cutoff.py
+          python scripts/audit_selection_decisions.py
+      - name: Materialize v24 and calculate immutable file scopes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m scripts.apply_selection_v24 --apply
+          python -m scripts.capacity_selection_v24
+      - name: Enforce non-executable rights, budget, old history and audits
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,re,subprocess,sys
+          from pathlib import Path
+          def load(p):return json.loads(Path(p).read_text())
+          c=load('catalog/CURRENT.json')
+          v=load(c['materialized_catalog_path'])
+          q=load(c['priority_worklist_path'])
+          old=load('catalog/effective-portfolio-2026-11-06-v23.json')
+          history=load('catalog/capacity/2026-11-06/v23/capacity-summary.json')
+          r=load('catalog/capacity/2026-11-06/v24/capacity-summary.json')
+          proposed=load('catalog/preparation/2026-11-06-insurance-bundles-v24.json')
+          applied=load('catalog/revisions/v24-2026-11-06.json')
+          approved=load('queues/approved.json')
+          assert c['revision_id']=='v24-20261106' and len(v['items'])==168
+          assert v['items'][:165]==old['items']
+          assert len([a for a in v['items'] if a['portfolio_decision'] in ('select','conditional')])==121
+          active={(x['asset_kind'],x['repo_id']) for x in v['items'] if x['portfolio_decision'] in ('select','conditional')}
+          assert active=={(x['asset_kind'],x['repo_id']) for x in q['candidates']}
+          assert active=={(x['asset_kind'],x['repo_id']) for x in proposed['items']}
+          assert len(q['candidates'])==len(proposed['items'])==121
+          assert r['source_revision']=='v24-20261106'
+          assert r['exact_primary_file_scope_count']==121 and r['unresolved_primary_scope_count']==0
+          assert r['known_scope_content_union_bytes']>history['known_scope_content_union_bytes']
+          assert r['known_scope_content_union_bytes']<4_000_000_000_000
+          assert r['complete_offline_archive_bytes'] is None and r['physical_disk_free_bytes'] is None
+          assert r['unknown_primary_scopes']==[] and r['model_payload_bytes_downloaded']==0
+          assert len(applied['additions'])==3 and sum(x['selection_budget_cap_bytes'] for x in applied['additions'])==102_000_000_000
+          assert not q['approved'] and not q['download_enabled'] and not proposed['download_enabled']
+          assert not approved['entries']
+          assert all(x['download_approved'] is False for x in v['items'])
+          assert all(x['fully_pinned_revision_sha'] is None and x['selected_file_bytes'] is None for x in v['items'][-3:])
+          assert load('policies/limits.json')['archive_target_bytes']==4_000_000_000_000
+          assert load('policies/limits.json')['minimum_free_bytes']==200_000_000_000
+          c['capacity_audit'].update(source_revision='v24-20261106',checked_on='2026-11-06',
+            summary_path='catalog/capacity/2026-11-06/v24/capacity-summary.json',
+            file_inventory_path='catalog/capacity/2026-11-06/v24/selected-file-capacity.json',
+            report_path='catalog/capacity/2026-11-06/v24/capacity-report.md',
+            status='ALL_121_PRIMARY_FILE_SCOPES_EXACT_DEPENDENCIES_AND_OWNER_DISK_UNKNOWN',
+            latest_revision_scope_coverage=121,v24_new_assets_unmeasured_count=0,
+            owner_disk_measured=False)
+          Path('catalog/CURRENT.json').write_text(json.dumps(c,ensure_ascii=False,indent=2)+'\n')
+          run=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],capture_output=True,text=True)
+          log=run.stdout+run.stderr;print(log)
+          if run.returncode:raise SystemExit(run.returncode)
+          for script in ('scripts/check_parameter_cutoff.py','scripts/audit_selection_decisions.py'):
+              subprocess.run([sys.executable,script],check=True)
+          n=int(re.search(r'Ran (\d+) tests',log).group(1))
+          meta=load('catalog/preparation/2026-11-06-v24-integration-check.json')
+          meta.update(full_suite_verified=True,unittest_count=n,parameter_and_selection_audit_passed=True,
+            exact_primary_scopes=121,full_offline_bytes_verified=False,
+            known_logical_dedup_bytes=r['known_scope_content_union_bytes'],
+            new_source_repos_all_bytes_sum=r['new_source_repos_all_bytes_sum'],
+            owner_disk_measured=False,model_payload_downloads=0,
+            source_test_log_sha256=hashlib.sha256(log.encode()).hexdigest())
+          Path('catalog/preparation/2026-11-06-v24-integration-check.json').write_text(json.dumps(meta,indent=2)+'\n')
+          print(json.dumps(meta,indent=2))
+          PY
+      - name: Commit generated v24 catalog only under branch lease
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          test "$(git ls-remote origin "$GITHUB_REF" | cut -f1)" = "$GITHUB_SHA"
+          git add -- catalog/CURRENT.json catalog/effective-portfolio-2026-11-06-v24.json queues/proposed-v24-2026-11-06.json catalog/preparation/2026-11-06-insurance-bundles-v24.json catalog/preparation/2026-11-06-v24-integration-check.json catalog/capacity/2026-11-06/v24 README.md AGENTS.md scripts/audit_selection_decisions.py tests/test_catalog_v19.py policies/selection-decision-v17.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'catalog: materialize three new learned outcomes and all 121 file scopes [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD
