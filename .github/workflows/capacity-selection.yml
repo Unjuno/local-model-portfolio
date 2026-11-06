@@ -1,0 +1,94 @@
+name: Verify selected-file capacity evidence
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - 'scripts/capacity_selection.py'
+      - 'tests/test_capacity_selection.py'
+      - '.github/workflows/capacity-selection.yml'
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-capacity-selection-risk-only
+  cancel-in-progress: false
+jobs:
+  verify:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Compute file profiles offline and verify invariants
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -v
+          python scripts/capacity_selection.py
+          python - <<'PY'
+          import copy,hashlib,json,re,subprocess,sys
+          from pathlib import Path
+          root=Path('.')
+          def load(p): return json.loads((root/p).read_text())
+          c=load('catalog/CURRENT.json'); original=copy.deepcopy(c)
+          v=load(c['materialized_catalog_path']); q=load(c['priority_worklist_path'])
+          protected={p:hashlib.sha256((root/p).read_bytes()).hexdigest() for p in (c['materialized_catalog_path'],c['priority_worklist_path'],'queues/approved.json','policies/limits.json')}
+          out=root/'catalog/capacity/2026-11-06'
+          report=load(str(out/'selected-file-capacity.json'))
+          active={(x['asset_kind'],x['repo_id']) for x in v['items'] if x['portfolio_decision'] in ('select','conditional')}
+          assert active=={(x['asset_kind'],x['repo_id']) for x in report['items']}
+          assert len(active)==116 and len(v['items'])==163
+          assert report['executable'] is False and report['download_authorized'] is False
+          assert report['complete_offline_archive_bytes'] is None and report['physical_disk_free_bytes'] is None
+          assert not load('queues/approved.json')['entries'] and not q['download_enabled']
+          c['capacity_audit']={'source_revision':'v22-20261106','checked_on':'2026-11-06',
+            'summary_path':'catalog/capacity/2026-11-06/capacity-summary.json',
+            'file_inventory_path':'catalog/capacity/2026-11-06/selected-file-capacity.json',
+            'report_path':'catalog/capacity/2026-11-06/capacity-report.md',
+            'source_inventory_path':'catalog/capacity/2026-11-06/inventory.json',
+            'status':'PARTIAL_EXACT_FILE_SCOPES_FULL_DEPENDENCIES_AND_OWNER_DISK_UNRESOLVED',
+            'download_authorized':False}
+          assert {k:v for k,v in c.items() if k!='capacity_audit'}=={k:v for k,v in original.items() if k!='capacity_audit'}
+          (root/'catalog/CURRENT.json').write_text(json.dumps(c,ensure_ascii=False,indent=2)+'\n')
+          p=root/'README.md'; text=p.read_text()
+          heading='## 容量監査（2026-11-06）：全116件の固定ファイル一覧\n'
+          if heading not in text:
+              intro='\n'+heading+'\n[容量集計](catalog/capacity/2026-11-06/capacity-summary.json)・[全件表](catalog/capacity/2026-11-06/capacity-report.md)・[ファイル別証拠](catalog/capacity/2026-11-06/selected-file-capacity.json)。配布庫全量と選択形式を分離し、共有依存の繰り返しを除く。確定小計は配布元metadataの計算であり実ディスク使用量ではない。完全復元に必要な依存・実行環境、Granaryの許可subset、実機空き容量は未確定。v22の163管理／116有効、取得承認0を維持。\n'
+              text=text.replace('# Local Model Portfolio\n','# Local Model Portfolio\n'+intro,1);p.write_text(text)
+          run=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],capture_output=True,text=True)
+          log=run.stdout+run.stderr;print(log)
+          if run.returncode: raise SystemExit(run.returncode)
+          count=int(re.search(r'Ran (\d+) tests',log).group(1))
+          for script in ('scripts/check_parameter_cutoff.py','scripts/audit_selection_decisions.py'):
+              subprocess.run([sys.executable,script],check=True)
+          for p,h in protected.items(): assert hashlib.sha256((root/p).read_bytes()).hexdigest()==h,p
+          check={'full_suite_verified':True,'full_repository_unittest_count':count,
+            'test_log_sha256':hashlib.sha256(log.encode()).hexdigest(),'parameter_audit_passed':True,
+            'selection_audit_passed':True,'exact_active_identity_coverage':116,'catalog_items_unchanged':True,
+            'queue_and_limits_unchanged':True,'current_only_additive_capacity_pointer':True,
+            'owner_disk_measured':False,'model_payload_downloaded':False,'runtime_tested':False,
+            'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()}
+          (out/'selection-verification.json').write_text(json.dumps(check,indent=2)+'\n')
+          print(json.dumps(check,indent=2))
+          PY
+      - name: Commit evidence to risk branch under lease
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          test "$(git ls-remote origin "$GITHUB_REF" | cut -f1)" = "$GITHUB_SHA"
+          git add -- catalog/capacity/2026-11-06 catalog/CURRENT.json README.md
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'audit: publish dependency-aware capacity scopes; preserve v22 and all approvals [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD
