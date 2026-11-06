@@ -16,7 +16,7 @@ BASE = Path('catalog/capacity/2026-11-06')
 CANDIDATES = ['pfnet/plamo-3-translate-0.8b', 'pfnet/plamo-3-translate-8b',
               'ConwayResearch/Underdog-Saluki-27B-1.0']
 SHA = re.compile(r'^[0-9a-f]{40}$')
-TEXT_NAMES = {'LICENSE','LICENSE.md','LICENSE.txt','NOTICE','README.md'}
+TEXT_NAMES = {'LICENSE','LICENSE.md','LICENSE.txt','LICENSE/en','LICENSE/ja','NOTICE','README.md'}
 
 
 def normalized(value):
@@ -37,7 +37,7 @@ def changes(prior, live):
 
 def detect_license(text):
     lower = text.lower()
-    if 'attribution-noncommercial 4.0' in lower or 'creativecommons.org/licenses/by-nc/4.0' in lower:
+    if any(x in lower for x in ('attribution-noncommercial 4.0','creativecommons.org/licenses/by-nc/4.0','cc by-nc 4.0')):
         return 'cc-by-nc-4.0'
     if 'plamo community license' in lower:
         return 'plamo-community'
@@ -53,7 +53,7 @@ def validate_text_url(url):
         raise ValueError('only anonymous immutable HF text URLs allowed')
     if '..' in path.split('/') or '\\' in path:
         raise ValueError('path traversal blocked')
-    m = re.fullmatch(r'/[\w.-]+/[\w.-]+/raw/([0-9a-f]{40})/([^/]+)', path)
+    m = re.fullmatch(r'/[\w.-]+/[\w.-]+/raw/([0-9a-f]{40})/(.+)', path)
     if not m or m.group(2) not in TEXT_NAMES:
         raise ValueError('payload or unpinned document blocked')
 
@@ -66,7 +66,9 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 def text_evidence(repo, rev, name):
     url = 'https://huggingface.co/'+repo+'/raw/'+rev+'/'+name
     validate_text_url(url)
-    result = {'url':url, 'repo_id':repo, 'revision':rev, 'path':name}
+    result = {'url':url, 'repo_id':repo, 'revision':rev, 'path':name,
+              'text_role':'license_terms' if name.startswith('LICENSE') else 'provenance_notice',
+              'marker_is_not_legal_clearance':True}
     try:
         opener = urllib.request.build_opener(NoRedirect)
         request = urllib.request.Request(url, headers={'User-Agent':'portfolio-readonly-text/1.0'})
@@ -147,7 +149,7 @@ def candidate(repo, view):
     rev=src.get('pinned_revision')
     if rev and SHA.fullmatch(rev):
         paths={x['path'] for x in src.get('files',[])}
-        names=[x for x in ('LICENSE','LICENSE.md','LICENSE.txt','NOTICE') if x in paths]
+        names=[x for x in ('LICENSE','LICENSE.md','LICENSE.txt','LICENSE/en','LICENSE/ja','NOTICE') if x in paths]
         row['license_text_evidence']=[text_evidence(repo,rev,name) for name in names]
     if repo.startswith('pfnet/'):
         row.update(decision='RESEARCH_PRIORITY_TRANSLATION_NO_AUTOMATIC_ADDITION',
@@ -196,6 +198,10 @@ def main():
              'changes':{k:[x['repo_id'] for x in records if x['comparison'][k] is True]
                         for k in ('revision_changed','gated_changed','license_metadata_changed')},
              'scope':'Current anonymous publisher metadata vs previous snapshots. Errors are not deletions; lastModified is not weight release date.',
+             'comparison_coverage':{k:{'changed':sum(x['comparison'][k] is True for x in records),
+                    'unchanged':sum(x['comparison'][k] is False for x in records),
+                    'unknown':sum(x['comparison'][k] is None for x in records)}
+                    for k in ('revision_changed','gated_changed','license_metadata_changed')},
              'candidate_reviews':len(reviews),'formal_selection_changes':0,'download_authorized':False,
              'weight_payload_bytes_downloaded':0,'owner_disk_connected':False,
              'specific_regulatory_probabilities_invented':False}

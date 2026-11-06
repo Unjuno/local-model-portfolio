@@ -41,6 +41,13 @@ class LatestAccessTests(unittest.TestCase):
         self.assertIsNotNone(validate_text_url)
         self.assertIsNone(validate_text_url('https://huggingface.co/pfnet/name/raw/'+'a'*40+'/LICENSE'))
         with self.assertRaises(ValueError):validate_text_url('https://huggingface.co/pfnet/name/raw/main/LICENSE')
+    def test_exact_nested_license_documents(self):
+        self.assertIsNone(validate_text_url('https://huggingface.co/pfnet/name/raw/'+'a'*40+'/LICENSE/en'))
+        self.assertIsNone(validate_text_url('https://huggingface.co/pfnet/name/raw/'+'a'*40+'/LICENSE/ja'))
+        with self.assertRaises(ValueError):validate_text_url('https://huggingface.co/pfnet/name/raw/'+'a'*40+'/LICENSE/model.bin')
+    def test_notice_parent_reference_is_not_assigned_as_child_license(self):
+        text='Parent: Apache License Version 2.0. The derived model: CC BY-NC 4.0.'
+        self.assertEqual(detect_license(text),'cc-by-nc-4.0')
     def test_weights_redirects_credentials_and_traversal_blocked(self):
         self.assertIsNotNone(validate_text_url)
         for u in ('https://huggingface.co/a/b/raw/'+'a'*40+'/model.safetensors',
