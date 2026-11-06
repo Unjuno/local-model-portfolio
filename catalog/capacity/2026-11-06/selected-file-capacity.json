@@ -8,23 +8,18 @@
     "hold_transitions": 0,
     "exclusions": 0
   },
-  "exact_primary_file_scope_count": 115,
-  "unresolved_primary_scope_count": 1,
-  "known_primary_file_bytes_sum": 2998442935252,
-  "known_parent_package_bytes_sum_with_shared_repetitions": 3106022114776,
+  "exact_primary_file_scope_count": 116,
+  "unresolved_primary_scope_count": 0,
+  "known_primary_file_bytes_sum": 3110000142272,
+  "known_parent_package_bytes_sum_with_shared_repetitions": 3217579321796,
   "known_dependency_additions_bytes": 336241419,
-  "known_scope_content_union_bytes": 2996883629685,
+  "known_scope_content_union_bytes": 3108440834201,
   "source_identity_dedup_assumption": "Content-addressed store; SHA256+size or ordinary Git blob SHA1+size only. Masked LFS uses scoped path, never pointer hash. Physical allocated bytes/local reuse unmeasured.",
   "largest_selected_file_bytes": 55942929173,
   "complete_learned_dependency_total_bytes": null,
   "complete_offline_archive_bytes": null,
   "complete_deduplicated_archive_bytes": null,
-  "unknown_primary_scopes": [
-    {
-      "repo_id": "nvidia/Granary-v2",
-      "reason": "Permitted per-corpus label subset not determined; full repository is not automatically selected."
-    }
-  ],
+  "unknown_primary_scopes": [],
   "assets_with_open_dependency_issues": [
     {
       "repo_id": "microsoft/VibeVoice-1.5B",
@@ -131,7 +126,7 @@
     {
       "repo_id": "nvidia/Granary-v2",
       "issues": [
-        "Per-corpus permitted subset and external source-audio scope"
+        "All released labels have exact metadata bytes and license partition, but repository includes NO source audio. Future audio restoration requires separate lawful source corpus selection, bytes, revision, consent and hash review."
       ]
     },
     {
@@ -181,7 +176,7 @@
   "all_runtime_environment_archives_unmeasured": true,
   "planning_cap_bytes": 4000000000000,
   "minimum_free_bytes": 200000000000,
-  "provisional_known_scope_budget_difference_bytes": 1003116370315,
+  "provisional_known_scope_budget_difference_bytes": 891559165799,
   "difference_is_not_available_headroom": true,
   "physical_disk_capacity_bytes": null,
   "physical_disk_free_bytes": null,
@@ -189,9 +184,9 @@
   "actual_remaining_archive_budget_bytes": null,
   "actual_acquisition_peak_bytes": null,
   "acquisition_scenarios_known_scope_only": {
-    "direct_final_volume_atomic_rename_no_retained_cache_payload_bytes": 2996883629685,
-    "one_extra_largest_file_copy_payload_upper_scenario_bytes": 3052826558858,
-    "retained_full_cache_plus_final_plus_one_staging_file_payload_upper_scenario_bytes": 6049710188543,
+    "direct_final_volume_atomic_rename_no_retained_cache_payload_bytes": 3108440834201,
+    "one_extra_largest_file_copy_payload_upper_scenario_bytes": 3164383763374,
+    "retained_full_cache_plus_final_plus_one_staging_file_payload_upper_scenario_bytes": 6272824597575,
     "assumptions": "Empty store, one asset at a time, no retries/residuals, logical bytes only; filesystem allocation, environments and unresolved components excluded. Not a measured maximum."
   },
   "download_authorized": false,
@@ -23680,14 +23675,29 @@
       "asset_kind": "dataset",
       "repo_id": "nvidia/Granary-v2",
       "portfolio_decision": "conditional",
-      "scope_status": "UNRESOLVED_SUBSET",
+      "scope_status": "FULL_PUBLISHED_LABEL_MANIFEST_SCOPE_EXACT_AUDIO_DEPENDENCY_UNRESOLVED",
       "capacity_evidence_kind": "computed_sum_of_publisher_exact_file_metadata_not_local_measurement",
       "source_revision": "81402b751b451b5fe4f4c29e8b40f92892f1e440",
       "source_observed_at_utc": "2026-11-06T04:42:37.261053+00:00",
       "source_scope_bytes": 111559928673,
       "profile": {
-        "scope_unresolved": "Permitted per-corpus label subset not determined; full repository is not automatically selected.",
-        "dataset_all": true
+        "dataset_label_manifests": true,
+        "support_paths": [
+          ".gitattributes",
+          "LICENSE",
+          "LICENSES/CC-BY-SA-4.0.txt",
+          "NOTICE",
+          "README.md"
+        ],
+        "mandatory_labels": [
+          "en/people_speech/en_asr.jsonl.gz"
+        ],
+        "labels_only_no_audio": true,
+        "license_scope": {
+          "all_except_people_speech": "OpenMDW-1.1",
+          "en/people_speech/en_asr.jsonl.gz": "CC-BY-SA-4.0"
+        },
+        "note": "All 148 released multilingual label JSONL.gz manifests plus 5 provenance/license files; no source audio. Rights partition from pinned LICENSE and NOTICE; no audio acquisition."
       },
       "gated": false,
       "license_metadata": [
@@ -23712,15 +23722,1266 @@
       },
       "shared_dependencies": [],
       "open_dependencies": [
-        "Per-corpus permitted subset and external source-audio scope"
+        "All released labels have exact metadata bytes and license partition, but repository includes NO source audio. Future audio restoration requires separate lawful source corpus selection, bytes, revision, consent and hash review."
       ],
       "software_environment_bytes": null,
       "offline_restore_tested": false,
       "download_authorized": false,
-      "files": [],
-      "package_bytes": null,
-      "primary_file_bytes": null,
-      "excluded_files": []
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2504,
+          "sha256": null,
+          "git_blob_sha1": "bed0738c7eeb449bca98b5d2f33c89a1ee56349a",
+          "identity_kind": "git_blob_sha1",
+          "local_hash_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 2619,
+          "sha256": null,
+          "git_blob_sha1": "ec297ac5456384786644013ec196da33b916be97",
+          "identity_kind": "git_blob_sha1",
+          "local_hash_verified": false
+        },
+        {
+          "path": "LICENSES/CC-BY-SA-4.0.txt",
+          "bytes": 20138,
+          "sha256": null,
+          "git_blob_sha1": "2d58298e6eda10e7204abb52722efbc840db2390",
+          "identity_kind": "git_blob_sha1",
+          "local_hash_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 1285,
+          "sha256": null,
+          "git_blob_sha1": "267de821ca3b4248fd9508b1ef8b85159de9c9c7",
+          "identity_kind": "git_blob_sha1",
+          "local_hash_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 65475,
+          "sha256": null,
+          "git_blob_sha1": "36af12239ae82c41cda0679edb4f2729f18e6dc1",
+          "identity_kind": "git_blob_sha1",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ar/fleurs/ar_asr.jsonl.gz",
+          "bytes": 1044741,
+          "sha256": "9536d6004e6f7e08b4f0279dfdb26d4a44bafd4500899f3ff29072ac6bc990d0",
+          "git_blob_sha1": "3ccfa347e91fc6d3f361fd3284dd16d2ccf9b7f3",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "as/fleurs/as_asr.jsonl.gz",
+          "bytes": 1824283,
+          "sha256": "b1fc1bf5d81c7b72193de440c9aa3a478386ca5ebbed0f6a3b84bcdf222b4580",
+          "git_blob_sha1": "df6ec510273248dae4c684e02e689b7a13cc3ae9",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "as/mcv26/as_asr.jsonl.gz",
+          "bytes": 347532,
+          "sha256": "b64733eee5c328f51481e82853448f0a506a23b464f51ad6e807044080c4e972",
+          "git_blob_sha1": "93db56b19f9d6b245e1f1cff54f44e30569413ce",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "bg/fleurs/bg_asr.jsonl.gz",
+          "bytes": 2321139,
+          "sha256": "1898918fd176cf7f7cb2329a611fd067bb6ba647d4278c88762bb60a3111ab44",
+          "git_blob_sha1": "09f1e6331e717aefcf6add44f64cb0926993495c",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "bg/mcv26/bg_asr.jsonl.gz",
+          "bytes": 2482501,
+          "sha256": "5df75c828d7c60a46cbad147a2da3dadd7cb6684c99c231e002f7a48d494eedf",
+          "git_blob_sha1": "6c0bd7ae1c61c1fc212a36478452676c670d5070",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "bg/voxpopuli/bg_asr.jsonl.gz",
+          "bytes": 1939113469,
+          "sha256": "30de88ea500c85bb825f3274befa4fdf1209286684757bce1c95e1d8d3d09ec0",
+          "git_blob_sha1": "53125baba982c1efdbe6662bfbcbdafd8a6dcb06",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "bn/fleurs/bn_asr.jsonl.gz",
+          "bytes": 2041974,
+          "sha256": "aabc4bfafd97806eaf9826634b42e2af970343da35a5f25ad62549d18222952e",
+          "git_blob_sha1": "4b217a7b12dcf85c08c842ce1bdd4e2b3da79d60",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "bn/mcv26/bn_asr.jsonl.gz",
+          "bytes": 10697157,
+          "sha256": "2e1640432eda85fe860de853d7d9fb256521ad476c87be3559912a6844a7538f",
+          "git_blob_sha1": "b94690a0a47943f61ebf1e698f7da35b2837ae99",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "cs/fleurs/cs_asr.jsonl.gz",
+          "bytes": 1975989,
+          "sha256": "2f190c47749a26cc7e5317b89d825fe990cdb37f03349a443ee8897710d73284",
+          "git_blob_sha1": "899362f7f49d6efc27d447a74b42ecb73c1257bf",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "cs/mcv26/cs_asr.jsonl.gz",
+          "bytes": 10786952,
+          "sha256": "d5a0f00cbd285deabe0d881968b6cf461ff68c2b7b540044d9ea65813521c206",
+          "git_blob_sha1": "d36258cadfd959db87124f4a174a56dea696f6bb",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "cs/voxpopuli/cs_asr.jsonl.gz",
+          "bytes": 1788464567,
+          "sha256": "c3b87de0606381079ffd4935d2b5389987c3c0e955bf2300d0e8596d2c981d1c",
+          "git_blob_sha1": "42412a3562c806f48711aab247d1c8db3ef18dc6",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "cs/voxpopuli_improved/cs_asr.jsonl.gz",
+          "bytes": 13404052,
+          "sha256": "c662db31935094b510b31d6a22ef6d1be3d37ed15c6cafc17c04ce27cdbb0758",
+          "git_blob_sha1": "5047fabcd6c4409e1e933fca75cc65ac13ba1651",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "da/fleurs/da_asr.jsonl.gz",
+          "bytes": 1637329,
+          "sha256": "842847f7134545852003aa95a169dfc4bfde07c6d31d75196410016264836e9d",
+          "git_blob_sha1": "6655903a31438d97e01a7f63e38bf6c4ac5293e4",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "da/mcv26/da_asr.jsonl.gz",
+          "bytes": 1406918,
+          "sha256": "cbf85fd5bce24ae92821812fb4160084d53305f68f4443dfda098b66ebba2d99",
+          "git_blob_sha1": "81c51ac35e5369f2ff7801dde78b5f464c87a7c9",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "da/voxpopuli/da_asr.jsonl.gz",
+          "bytes": 1373984079,
+          "sha256": "556b7f86fb3266deec318fbb91cf260335eec02901d7f0f9cce88a012e73a394",
+          "git_blob_sha1": "3c43152b30ec4e2278660d9b47b26bffe4f289e7",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "de/fleurs/de_asr.jsonl.gz",
+          "bytes": 1635238,
+          "sha256": "1d85180907aeea717724f013a9141caf268172724086523d0b296dc149692045",
+          "git_blob_sha1": "0963a2d29b733cc687e9a267edbc0fdb37baae7a",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "de/mcv26/de_asr.jsonl.gz",
+          "bytes": 275857488,
+          "sha256": "b8c67b0747be6974f6ed8018badd37535859f1951966f9b5cc70918920ceed1e",
+          "git_blob_sha1": "3fd5a6f9839f1b038598b46f802029b40946eda7",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "de/mls/de_asr.jsonl.gz",
+          "bytes": 184563176,
+          "sha256": "c7d33861348ef23ed3b2ddadd34af3d5dd0e8e8e7c7fbce908a2e355a141be24",
+          "git_blob_sha1": "22133780813834927b2e4bee7b2bd4a1214df39a",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "de/voxpopuli/de_asr.jsonl.gz",
+          "bytes": 2117936479,
+          "sha256": "ef2f4220434e15152965167eb586d15911c5746a37c36adcc9f2ebaa1667cc4a",
+          "git_blob_sha1": "5eeb84ff96118916c41caa9d504b1fcb818cf1d2",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "de/voxpopuli_improved/de_asr.jsonl.gz",
+          "bytes": 37049634,
+          "sha256": "6a1b29ddf80421b9cdd96803b98d2026447be7b3b1b1ca1157d11fbc45d6771f",
+          "git_blob_sha1": "93c3018955256c3cc1a9472a5b6970f90f41bb40",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "el/fleurs/el_asr.jsonl.gz",
+          "bytes": 2715424,
+          "sha256": "b03d4445560a7e0d05dda822a42a041d887865f4ae94184587211b030c2319ef",
+          "git_blob_sha1": "5bf13b971f7398d6cd8e8eb7559e68410c1d3bbb",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "el/mcv26/el_asr.jsonl.gz",
+          "bytes": 866605,
+          "sha256": "cfae094b17d97283c944439a92ce2e8801349b6f5e2cc631beaa39d4719513a9",
+          "git_blob_sha1": "c30aa6ec5dbb3826a94302a43bed90b361044aea",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "el/voxpopuli/el_asr.jsonl.gz",
+          "bytes": 1991145289,
+          "sha256": "57490c256f43c920f25fafe5b8c931868bf91be8a1b07892930e8fc11a84be6a",
+          "git_blob_sha1": "ba18c0017a746a9d1e4c93388053254102234564",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "en/ami/en_asr.jsonl.gz",
+          "bytes": 29845225,
+          "sha256": "2260024628c7a1fdf1f1a01dd936c48ddd73d0b68132217855ee060fdeea2beb",
+          "git_blob_sha1": "71c63803a9ba76c2aba04fc83fa2da35c7f49f19",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "en/europarl/en_asr.jsonl.gz",
+          "bytes": 1840079748,
+          "sha256": "d57af2a98e59d09cf59a264481a760b623be19fedcd613c86c6178b63a3f681c",
+          "git_blob_sha1": "057dd6e8c412dcafdd08f91bfab8de8fa72e087a",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "en/fleurs/en_asr.jsonl.gz",
+          "bytes": 8454589,
+          "sha256": "e5de4bfc80d740898d0e067bb954b388bf4fe7579dde65b3f6dc513ebdc49f4e",
+          "git_blob_sha1": "c1f6ceeda911341f4cebf6371b5e0894a6bbd8a4",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "en/google_speech_commands/en_asr.jsonl.gz",
+          "bytes": 21542171,
+          "sha256": "fbb86d61b7274f0e6bc0101f371600436bdca2b98a729188e541a7ab0a81eb45",
+          "git_blob_sha1": "0bb56de54f357b94618262fb2a40c6b7ef1858ce",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "en/librilight/en_asr.part00.jsonl.gz",
+          "bytes": 12214815615,
+          "sha256": "c939eb83d0f51565ec605d925130d3911555e6bd18a60565bcc3cbd1ae0ea4b1",
+          "git_blob_sha1": "addf4f7bf1f4dabc2c3876feaace01973ef61e46",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "en/librilight/en_asr.part01.jsonl.gz",
+          "bytes": 12175403888,
+          "sha256": "4f472262bc46455234e1176f50b0055db3d5b04609cb139ae747b9e3fb0a6186",
+          "git_blob_sha1": "7d5f7e9dcdeb9a30764555c7a54bcf9db45202a2",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "en/librilight/en_asr.part02.jsonl.gz",
+          "bytes": 12140860358,
+          "sha256": "bda9b5ebfb846ea16552b857ddcb7394ed9d43bcee37d3e0241e6c6dcbb82696",
+          "git_blob_sha1": "239780189c5b79f5092f97a688b0fcda88133f5d",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "en/librilight/en_asr.part03.jsonl.gz",
+          "bytes": 12414475594,
+          "sha256": "3abe28622a7e31ee02399a5ccc86a1bbc85022b65c86d6589d5b2cd5a76bea3f",
+          "git_blob_sha1": "df71b5531b596d771ebc61e2b067ff5aa5a60b05",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "en/librispeech_pc/en_asr.jsonl.gz",
+          "bytes": 1237508240,
+          "sha256": "48b852cfadc94fcb0e9d0587efa2bc76936e8e007543820a2b779a98b8cf7796",
+          "git_blob_sha1": "4a99c32fd73c0d9ab90f4caddc0e68f31887b400",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "en/mcv26/en_asr.jsonl.gz",
+          "bytes": 987649863,
+          "sha256": "e8888834e0982d51c637da867862bab5d188acdb4836f9e61ffbaf9d9cc4e717",
+          "git_blob_sha1": "c11d079b032754816198d7f5c0114d131cd3be7d",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "en/mls/en_asr.jsonl.gz",
+          "bytes": 498023253,
+          "sha256": "dc37c51227a72f7f692e2b36daf439ffbecd8edf86f7546c0b2684acf643262d",
+          "git_blob_sha1": "34670ab72f57718fd0c04c928877f108b8a8d9f5",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "en/nsc/en_asr.jsonl.gz",
+          "bytes": 3744413201,
+          "sha256": "444221b564e7ac6233eecf032e188338949557072169464d0454f2ca0759f3d9",
+          "git_blob_sha1": "88782929dbdf9ea5c580a890d933eed6699e9b2a",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "en/people_speech/en_asr.jsonl.gz",
+          "bytes": 2389312660,
+          "sha256": "1f459dd0c1d43d27c56badf5148f5135376ac249627d307fe51e2610cafc3c01",
+          "git_blob_sha1": "8d55640dc9efd591d28747471a585b5f9e55923f",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "en/vctk/en_asr.jsonl.gz",
+          "bytes": 191090782,
+          "sha256": "80f4c4fa93e4053f2b82f8a8cbd3261eb2001f14680b03a1317f809d80d671f3",
+          "git_blob_sha1": "4dfac15badd65fa7057a7101a04368c9c5f0a773",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "en/voxpopuli/en_asr.jsonl.gz",
+          "bytes": 14130959597,
+          "sha256": "7f97354b61a98b7f8af849141baa31858b5caee80dcc4bc8ddd887cdd16f5cb5",
+          "git_blob_sha1": "e1ec878c756afe951bcbfa99962558a47c135392",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "en/voxpopuli_improved/en_asr.jsonl.gz",
+          "bytes": 357155349,
+          "sha256": "fcbca4ea42247cec2ad490bcc334952b4731ae7c07776b57fd5112ea380507f5",
+          "git_blob_sha1": "e1440e4632d179efbae98b3efdad63e39840e87b",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "es/fleurs/es_asr.jsonl.gz",
+          "bytes": 1415228,
+          "sha256": "b9cf8c44e264e75944ef372320ee6c2a0f0861bdc88b64dd308cbe3f450a3b93",
+          "git_blob_sha1": "27300291a756c4ea3f4fe79ced193b0e05c8a74d",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "es/mcv26/es_asr.jsonl.gz",
+          "bytes": 150711145,
+          "sha256": "2b17d93d09b8d6352fd4b6ef9ad2cc166ed9740383ab45fd78ee9d94b2d229f3",
+          "git_blob_sha1": "123e98468b8b106014d857305b7b11462213024f",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "es/mls/es_asr.jsonl.gz",
+          "bytes": 102509089,
+          "sha256": "a20c162a8f8bb070f123cf110efed380bb7de167f43034053404633c17fa0aaa",
+          "git_blob_sha1": "448c4b6c2f79bc887fa6bdc67f3dc28c84bd940f",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "es/voxpopuli/es_asr.jsonl.gz",
+          "bytes": 2027310961,
+          "sha256": "b8938e5bac96fa4a1a0c441f70d38bdd0d22603def360b2cdc20e35b9b2929ee",
+          "git_blob_sha1": "660ac26fc6b6292858183ddcba7555065b59656d",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "es/voxpopuli_improved/es_asr.jsonl.gz",
+          "bytes": 21024418,
+          "sha256": "5fd8918c87dbccec7c4b3850f3585a9a9bfa90e94595daccdf4b2fdb5bf09ce0",
+          "git_blob_sha1": "de884bd0cb2a1c63bbad8019b1acf83720c93832",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "et/fleurs/et_asr.jsonl.gz",
+          "bytes": 1688928,
+          "sha256": "5a46325f0f220d41f251cab3a0fe32588d9d7cf5c1f6feec89a7472008e7f9dd",
+          "git_blob_sha1": "fd56edd5c4240a5f0f37433fe6bc95559a760310",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "et/mcv26/et_asr.jsonl.gz",
+          "bytes": 2084625,
+          "sha256": "0f7014d798128972868f335e799c7cf26656953d015251a037ce1618d0f14998",
+          "git_blob_sha1": "2f30c2816a72f21415e32a96e6f3cbb36cc9671c",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "et/voxpopuli/et_asr.jsonl.gz",
+          "bytes": 1089728943,
+          "sha256": "415fcd8258b5b2424d36cb98922100982c187c9de874c0caf13e99a276f99397",
+          "git_blob_sha1": "4899b53c221a342a49e018544c071f0bdd207d50",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "et/voxpopuli_improved/et_asr.jsonl.gz",
+          "bytes": 542102,
+          "sha256": "e4aea148ee88ba57a969530fc43e2101ada0374816c419ac15cdad4dc788070d",
+          "git_blob_sha1": "069fb84fb46d53af5e438615242c3f2f608920f8",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "fa/fleurs/fa_asr.jsonl.gz",
+          "bytes": 2013719,
+          "sha256": "86aca63e9f81f8ba265b4a08391cfee8bd6d9df034fb621309b932581e605c26",
+          "git_blob_sha1": "31b08cb1ef73deb8577e661171957e8e31f350d5",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "fi/fleurs/fi_asr.jsonl.gz",
+          "bytes": 1866435,
+          "sha256": "d0cbf95b79a91f3d819e8636cac45bb403f27e4bdc0ca68ea57f2aa69fdd61f4",
+          "git_blob_sha1": "10f86dd0d9b876fcf97964343d20780cceb64f0f",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "fi/mcv26/fi_asr.jsonl.gz",
+          "bytes": 766318,
+          "sha256": "d24f5e5e8abffebdad1c648a117d1fa5621529ef2b720bf6c97c00bc1643ca42",
+          "git_blob_sha1": "94b01913b7ed9d21793ff85ccbe6ec444bb7388b",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "fi/voxpopuli/fi_asr.jsonl.gz",
+          "bytes": 1360527168,
+          "sha256": "bf1a785c52084c6cd831c0da56009077a4c07c37b4103b886f4050f2eaa2dbbd",
+          "git_blob_sha1": "27c3ab93cc7c59566af73edcbc6de29d026889bc",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "fi/voxpopuli_improved/fi_asr.jsonl.gz",
+          "bytes": 5315242,
+          "sha256": "a8a0da86323344bb4622ab35f9a9499303605338cf0e38834de97ab4db61f516",
+          "git_blob_sha1": "e6b24dca3bdb47a062a63dfa20c38bdaba4e5ec6",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "fil/fleurs/fil_asr.jsonl.gz",
+          "bytes": 927944,
+          "sha256": "a749734d95ece34b3227bf79eaecc17b576fbe123c1aa54b82c595784982f82f",
+          "git_blob_sha1": "f773304ae9ca3f9542be891a17ace43d0caec058",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "fr/fleurs/fr_asr.jsonl.gz",
+          "bytes": 1829674,
+          "sha256": "37fd453002ef85d7428b9d5036e423a0f819aa96a206f400e4176c8eb8fbd9fc",
+          "git_blob_sha1": "a3ee4de1e6175b0c336a451782b1306d1dfcd383",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "fr/mcv26/fr_asr.jsonl.gz",
+          "bytes": 243350515,
+          "sha256": "af5f7135e6b1ff010a2462a3d055d46377fbd2182dcd5d1ede9903ec6440f531",
+          "git_blob_sha1": "00bd2bfb87fefe8dd45b2e9e2f636e44492b9380",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "fr/mls/fr_asr.jsonl.gz",
+          "bytes": 147123630,
+          "sha256": "3218803862bffbbda82b81e1d9c9d561c604fdc95f81f03be67c1a74839fa47e",
+          "git_blob_sha1": "ef68a4187dd08f06f63dbedf6b6d23dca8a40fc4",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "fr/voxpopuli/fr_asr.jsonl.gz",
+          "bytes": 2082240537,
+          "sha256": "32b5277316e724a0cad8d266ad29fe4acf1e21c99452ce394bd470557f8fc7ab",
+          "git_blob_sha1": "d6747090cd216892f73444fd48c24a75765a0fad",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "fr/voxpopuli_improved/fr_asr.jsonl.gz",
+          "bytes": 34133537,
+          "sha256": "fe2b2865a377045ea6784ca49fefecc641a2ea3f0a8b33507f8b5d8502204c81",
+          "git_blob_sha1": "7e1b57bb32ba19866b27f4a203a0c521045684c4",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "gu/fleurs/gu_asr.jsonl.gz",
+          "bytes": 2089373,
+          "sha256": "686ded13602f5a76f7ba8eacd6865fadc4ef5b0b9c73210dc2fa6a09e820e92d",
+          "git_blob_sha1": "042850cd34fcd3b5be161d9e0511d65cea56f0eb",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "he/fleurs/he_asr.jsonl.gz",
+          "bytes": 2239404,
+          "sha256": "9f1e22faecd98a240381d8d2323304c0999a0e864d47dbecf4a1936f24fe46d5",
+          "git_blob_sha1": "c00f44429f040814e41fa6bff04f3c1361753af8",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "he/mcv26/he_asr.jsonl.gz",
+          "bytes": 915977,
+          "sha256": "25afe7d895807f4e8429aa6b8b88c53a22b8460d783159cafb5d07b3797c4146",
+          "git_blob_sha1": "44908404ae53d1c44789d0c99c8054184640e1fa",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "hi/fleurs/hi_asr.jsonl.gz",
+          "bytes": 1652677,
+          "sha256": "7cca4ceeb01b1471c77b1c6339d89299ecefb18bf9aeca63442c37d025e03baf",
+          "git_blob_sha1": "540c069b8213fdbb73770cdf293c9262c67f8114",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "hi/mcv26/hi_asr.jsonl.gz",
+          "bytes": 2613604,
+          "sha256": "7852f0782fb494d39fe9e805a79b0a5b85c2edb013abd942f7ec897ded51f1cb",
+          "git_blob_sha1": "e4441ad560de46045930a5b8fffd1c45c14e91be",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "hr/fleurs/hr_asr.jsonl.gz",
+          "bytes": 2182042,
+          "sha256": "5666d1f8f0c72396f43622a2d2ad90d71b62f2f5529ec7e251c2691555a4313a",
+          "git_blob_sha1": "b9ad7c987432636fa1e6a36f5c3a5a7dfb2dc237",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "hr/mcv26/hr_asr.jsonl.gz",
+          "bytes": 4514,
+          "sha256": "14c483b46695eb735dc5b9541ec8b686c48f304a0c0b2ecf194ec16ccca60370",
+          "git_blob_sha1": "7860086ca29e1cd8eecf929e49f5dd355b0bc4ae",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "hr/voxpopuli/hr_asr.jsonl.gz",
+          "bytes": 711400239,
+          "sha256": "bdc2b18df1db157dba6fdd585f6013e69b79aa59f965a26dd1454ca0ff15e91b",
+          "git_blob_sha1": "40ebbf6cba6cde27641614fdfd2ddafe369b4e01",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "hr/voxpopuli_improved/hr_asr.jsonl.gz",
+          "bytes": 3962554,
+          "sha256": "482a65a7addd8b8bae294a8d774a7a7a5b12b7216ec4e2da37f40fefca5abd32",
+          "git_blob_sha1": "2fade2886671878796affe0db0cb462dce7a8ffe",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "hu/fleurs/hu_asr.jsonl.gz",
+          "bytes": 2222269,
+          "sha256": "7fb30d36a1a817e84c5d1b328cf89ae849ddf2620fd1a208fc08477eb969e2f3",
+          "git_blob_sha1": "fa5a22fbd1130ac157cc3969e0415e6281415da5",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "hu/mcv26/hu_asr.jsonl.gz",
+          "bytes": 30629511,
+          "sha256": "626e5fee51b7f7b3bb83c4754eb72c4a1aa895b489c77457ee8b0ba7554df791",
+          "git_blob_sha1": "405ad6e3b556f05e65e5a2a487b1bfe104594563",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "hu/voxpopuli/hu_asr.jsonl.gz",
+          "bytes": 1667338144,
+          "sha256": "eb1bf2319c5c095b8ddb1b26aee2d9eb842b179533896fc7793644a14c35a3b6",
+          "git_blob_sha1": "3d758b35cccc96c97f0a6b80cad7631179451ab5",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "hu/voxpopuli_improved/hu_asr.jsonl.gz",
+          "bytes": 13103923,
+          "sha256": "9770585fed61a301a4106782bf9af713b713e9c3804d7c94b01665fb79acc105",
+          "git_blob_sha1": "e4dadfc2dc5d5f2b99a603961721e464267cb613",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "id/fleurs/id_asr.jsonl.gz",
+          "bytes": 1178386,
+          "sha256": "7ad795964b840347b022a062eb35d3b60f425a6b1f1ff60aff96b1d339815455",
+          "git_blob_sha1": "20839cce8aacc6fafeb7bfcf7a6272a5f2d6c962",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "it/fleurs/it_asr.jsonl.gz",
+          "bytes": 1656007,
+          "sha256": "9aebbc9877d9477e5e68aac2df5606133dd2119c520324494b30837e0039d39f",
+          "git_blob_sha1": "584bfe41dd8ad9a434f09759c5f629cf6c787bd7",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "it/mcv26/it_asr.jsonl.gz",
+          "bytes": 72525867,
+          "sha256": "ce93b97461d32b3eb92b9b2ce3f3f8678fb153ec6c765649b9f54bb960ca42d3",
+          "git_blob_sha1": "b902043273db936a38d61fea390812f638dce9a6",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "it/mls/it_asr.jsonl.gz",
+          "bytes": 22095732,
+          "sha256": "1e87f41a71b3da63bec936ccdde99bc3385ce579421f76e3999002075e2600ff",
+          "git_blob_sha1": "c5b20a99acc65867efd81c119a553bc1dcc0a86e",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "it/voxpopuli/it_asr.jsonl.gz",
+          "bytes": 1935881693,
+          "sha256": "4210cff35025cd8b0f87cb62bb316c1365fbf259bad949ecb61c687d3a4cca75",
+          "git_blob_sha1": "aabebaa5a4d4061a580bdd7dd8ecd1ea39f7cc21",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "it/voxpopuli_improved/it_asr.jsonl.gz",
+          "bytes": 7409489,
+          "sha256": "f57cb39802c74d60bbee24592117341399a78aa1ea340cb66a570b353a222da6",
+          "git_blob_sha1": "872f66fc4d5ba3f503827abdce9a6bfbe2a85bf7",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ja/fleurs/ja_asr.jsonl.gz",
+          "bytes": 1341419,
+          "sha256": "93ff81ee15a4551c6c8acce3715b2bf633892cb8c763a5625e641fa92a5d4c15",
+          "git_blob_sha1": "6941bdaa2d59e089641b4869b24e54ab0afbc0d3",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ja/mcv26/ja_asr.jsonl.gz",
+          "bytes": 4840754,
+          "sha256": "811b9deacf8477b3ed00703eb725e7ec412218e7538cfbd16654bff5941677ca",
+          "git_blob_sha1": "069d4e4a0e7ac566b882ebe8c3c3fc4b615422b6",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "kn/fleurs/kn_asr.jsonl.gz",
+          "bytes": 1515240,
+          "sha256": "c9cbfe83d04a963215f6c832ca58976473e2771022f6b015599dc8a21e836047",
+          "git_blob_sha1": "72e49dcc54ef8c8a0f81348ff4ae76897c375ea0",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ko/fleurs/ko_asr.jsonl.gz",
+          "bytes": 1147793,
+          "sha256": "e9287796fa0395e1691ef9d65a8e78173c4c0c3e9d61cc3bf711aeda31eb244f",
+          "git_blob_sha1": "480920978cd815d69bf363b80301456802753611",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ko/mcv26/ko_asr.jsonl.gz",
+          "bytes": 200176,
+          "sha256": "0dabe3f4f653e866fae0457cbeb0e45f3bae9b71546ce945cc9e565b738300fc",
+          "git_blob_sha1": "9665a9da968da8e96149b9b4f5db6777c9905657",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "lt/fleurs/lt_asr.jsonl.gz",
+          "bytes": 2025034,
+          "sha256": "aaceb53321511276bb2ae4ebedb8ebb61f981e9f36bdc7a8d48fe05ed3d1e9e7",
+          "git_blob_sha1": "460f0f813e87093291b585fedf46d8b41da431d4",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "lt/mcv26/lt_asr.jsonl.gz",
+          "bytes": 4539525,
+          "sha256": "a2ccd1d10651609d137490ad163c6432cab0a6729b5772da09611d82b558da45",
+          "git_blob_sha1": "662a22d37efd126c5dab7f2469bfb8fad55963dd",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "lt/voxpopuli/lt_asr.jsonl.gz",
+          "bytes": 1340069209,
+          "sha256": "214d4a2ce96b71e89a7d60f3c33f2439dcad0890b1f2ef984c27689a4848eb04",
+          "git_blob_sha1": "14c82e583cbfc15615ce32d8bc4fe0561203c848",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "lt/voxpopuli_improved/lt_asr.jsonl.gz",
+          "bytes": 324743,
+          "sha256": "7d3f6a065c68ca774057a6830bd337209aa72e1790471476de9ceb3571a56bd4",
+          "git_blob_sha1": "941fc4100f0ba2f47774aeb7c6046e09a3fc0ae5",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "lv/fleurs/lv_asr.jsonl.gz",
+          "bytes": 1459195,
+          "sha256": "4ea3720681ca92d36ab96517c5ad3471f41bdd0e90c5533702fc00d5e6c62455",
+          "git_blob_sha1": "d9d8af1c197646e63d38716eb5900171fc68fbcd",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "lv/mcv26/lv_asr.jsonl.gz",
+          "bytes": 6892381,
+          "sha256": "10cf01fe4cc8f30592eb17c1093c7ea6eb481aaf9171602210dd8f8715d58dc0",
+          "git_blob_sha1": "182b6c6c95e369857025ab7a7463a73f4ef1794e",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "lv/voxpopuli/lv_asr.jsonl.gz",
+          "bytes": 1272435745,
+          "sha256": "efb69960dd8ceb1448f656b9b4ec68b48201d3a594e1588b26e3dc8cf4534d84",
+          "git_blob_sha1": "400e09f508468cfab5ac7f46b8fdf08d19aa77ac",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ml/fleurs/ml_asr.jsonl.gz",
+          "bytes": 2161048,
+          "sha256": "398277826c395c64e2b61ae97752f48fb4eb0af803c98b64f64736a08a951b7b",
+          "git_blob_sha1": "de5caf2b4a53a2b80d25197c47583329c6e022fb",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ml/mcv26/ml_asr.jsonl.gz",
+          "bytes": 444047,
+          "sha256": "0ff2856b96e76d139eb9bccfac6a55cacabee60cb649f530a8a579f9c3a89626",
+          "git_blob_sha1": "e60d717011e25280cdca91731db1f327dcba549e",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mr/fleurs/mr_asr.jsonl.gz",
+          "bytes": 2213606,
+          "sha256": "dd305f57873d28c0646f05895da3e43d100864abd7620910ad7333f5319491fc",
+          "git_blob_sha1": "803bd96ceac855118f139115e0521b1cc4563153",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mr/mcv26/mr_asr.jsonl.gz",
+          "bytes": 963441,
+          "sha256": "18f842b808a421b3aaf18df7f347dd530c97d914e588fd3be21eb6db270ed7c9",
+          "git_blob_sha1": "a1d46856f162597e69edd8a289130fff2b48b819",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mt/fleurs/mt_asr.jsonl.gz",
+          "bytes": 2009615,
+          "sha256": "8b7105e081d7e77a87a981202322185dc008ca9d1503f1d833d62250d211d722",
+          "git_blob_sha1": "91e8aabe136c97ad7af2d559526d1c1e2f0f9da6",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mt/mcv26/mt_asr.jsonl.gz",
+          "bytes": 859018,
+          "sha256": "1a7389033181b65ed8e48b500c7717a4c2ad9c6cb773532f0efbd382aff9d578",
+          "git_blob_sha1": "21c20a2863bdc0d1286c32df39fa1cc1ec206484",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mt/voxpopuli/mt_asr.jsonl.gz",
+          "bytes": 985645623,
+          "sha256": "ac97865c2d09588c9c310adff89bb889b8e2aba391f6d47a122e9cc538632660",
+          "git_blob_sha1": "fce9a262d636b4722cbcaade12b449bb3b6c83a0",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "nl/fleurs/nl_asr.jsonl.gz",
+          "bytes": 1422358,
+          "sha256": "03423382139c113632d17f46633c4424abbc186d85194c67212c82f58156769e",
+          "git_blob_sha1": "910bd6afe076833e2c6bf98fa3204ed4fff63353",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "nl/mcv26/nl_asr.jsonl.gz",
+          "bytes": 17232348,
+          "sha256": "635eac6c273a4a1eabcca1bd78d37691718540585e2ecf561b8d51eae38a95b6",
+          "git_blob_sha1": "d166a5e89190e9b208b461e7628e363c041421cd",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "nl/mls/nl_asr.jsonl.gz",
+          "bytes": 130321673,
+          "sha256": "9b29d191450b41c63547bad449038a66b48fdfea352f653db59a5090648213e2",
+          "git_blob_sha1": "0d4ce46dde9b0ea2e07147444874351aa3916022",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "nl/voxpopuli/nl_asr.jsonl.gz",
+          "bytes": 1843338683,
+          "sha256": "cecf6ae543330fbbcc70fbf2e9c5e8d2ec5c9d7205929514d0a0450d98f03151",
+          "git_blob_sha1": "01e3bd99df5fde99ec3b2045d66c1def6edd635d",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "nl/voxpopuli_improved/nl_asr.jsonl.gz",
+          "bytes": 8136812,
+          "sha256": "7e94aef4664c6766fa38ada1b383ac444346e1717db71858ba3773ac89a13e37",
+          "git_blob_sha1": "3c095f907d3cab35f148ed9dce7bdc4d08e0f12d",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "or/fleurs/or_asr.jsonl.gz",
+          "bytes": 729307,
+          "sha256": "c7ef8f85e3c9c98a68785c1dfcd5fecfbf35a98bab43f3dc532c8196ae57b18d",
+          "git_blob_sha1": "5d8dce61cf7fed938494977ea31c63783fd12803",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "or/mcv26/or_asr.jsonl.gz",
+          "bytes": 750409,
+          "sha256": "2debf8e3847a4756153932881541819002bf90ca09a330e5f7856bf3bf9c2bc6",
+          "git_blob_sha1": "9097347204128dfd16ef6ff6876bf9ea924efb2f",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "pa/fleurs/pa_asr.jsonl.gz",
+          "bytes": 1037988,
+          "sha256": "1d57acc51f7f76e090e73172f40fe26f329c99a58f21f8a6c5fd6986d54bc23c",
+          "git_blob_sha1": "32234a133b073d64539b023ceae3ac5a4d47969d",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "pa/mcv26/pa_asr.jsonl.gz",
+          "bytes": 290807,
+          "sha256": "b692b5bfff31d69a15baf0041ce0acac656f47cfcfae6077cc6bfa4a2be435c8",
+          "git_blob_sha1": "dbe55ad85af6dc31014cb04e65f42ce391a94c76",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "pl/fleurs/pl_asr.jsonl.gz",
+          "bytes": 2000699,
+          "sha256": "4fd2d160be32985d38150fa440170f61cf049c2c944986af992dabd03df2d6f5",
+          "git_blob_sha1": "70e43eb9636b0e795c0aff10a9e88aa30d6fbf1a",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "pl/mcv26/pl_asr.jsonl.gz",
+          "bytes": 11869644,
+          "sha256": "e03b721b722b27026b90d589220eb5da4ff82918ef73e74d6053204faee9f1bf",
+          "git_blob_sha1": "af41487ba1b25129dd6766a4efb6855593a3d932",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "pl/mls/pl_asr.jsonl.gz",
+          "bytes": 9328524,
+          "sha256": "43bac73c10dce66e5145549754b0716fa31e542bf81bcda9156daf314445027e",
+          "git_blob_sha1": "ca8d94c2428be2819e2f033aef7f214aa8591005",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "pl/voxpopuli/pl_asr.jsonl.gz",
+          "bytes": 2028622254,
+          "sha256": "3912eb7c574b436858b5d3756377e51c9c5ab47798d9c91719352dd8179199da",
+          "git_blob_sha1": "75b05d5e434c13af4239f423d9bab680162377cc",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "pl/voxpopuli_improved/pl_asr.jsonl.gz",
+          "bytes": 20762321,
+          "sha256": "e81ec5bd478f1fef067100fdff196d3e066c37f817604f7bacda7f62df68bad2",
+          "git_blob_sha1": "8e15d6e5b8848d09f3f6664fec8082c063a8c80e",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "pt/falar/pt_asr.jsonl.gz",
+          "bytes": 514578307,
+          "sha256": "5d815aad05d422c9b8784a4101fda1aba79920c0bae26616c19cec302f1524ec",
+          "git_blob_sha1": "686a0534122d32b2e8659a80f4e8493617d9b122",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "pt/fleurs/pt_asr.jsonl.gz",
+          "bytes": 1444788,
+          "sha256": "d88646f10e5bf2abfc4a49ecafcb3c2fa1645909a53afaa3d00ae238e408bb60",
+          "git_blob_sha1": "9d5fb48264d629bf073a66fe7a39fd0e0babc814",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "pt/mcv26/pt_asr.jsonl.gz",
+          "bytes": 7496264,
+          "sha256": "732ce6598059096293a035ee87f253e35780778d9347c3eee0fded3c2f21a110",
+          "git_blob_sha1": "3a947c6371da425bcc8cc2a859d06c827dd0bd3f",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "pt/mls/pt_asr.jsonl.gz",
+          "bytes": 17224451,
+          "sha256": "95e9841227d61fb6c5fe38bd3b3883a76d442ab30e2ae7f01d036b0cdc57d4a9",
+          "git_blob_sha1": "e9a83a3e6a431dc16af3f16cde85625f84d8fa0b",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "pt/voxpopuli/pt_asr.jsonl.gz",
+          "bytes": 1680362283,
+          "sha256": "492627014371e6630a7fd3e48901cda00765e34b3bd651fb55ac7a473fd05c75",
+          "git_blob_sha1": "51e4c760a03ff84e3115004b1fd3ca89861ac09a",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ro/fleurs/ro_asr.jsonl.gz",
+          "bytes": 2026610,
+          "sha256": "fa55007244d0a9c2b27d6af28bf56fd426b529d20c92174ac18cd86f08e55cd8",
+          "git_blob_sha1": "e2ec3fa4b64012d80fcd079b5daf5f07543c772f",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ro/mcv26/ro_asr.jsonl.gz",
+          "bytes": 2170645,
+          "sha256": "a91b4118abf0864a3a97e4efb30ab1c0a36990f4d1f912b2c64b3d863eaea3b6",
+          "git_blob_sha1": "676305ebd9b4576189c3ac598b25c4630fe193d4",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ro/voxpopuli/ro_asr.jsonl.gz",
+          "bytes": 1712295397,
+          "sha256": "ff67e44049d0e67319b1024bd62a266cf2d94eae19a7f1e26ba6b3421f0d6cb2",
+          "git_blob_sha1": "419bd969f73d0875e51ea3e97fb8ca1baebbd958",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ro/voxpopuli_improved/ro_asr.jsonl.gz",
+          "bytes": 17634051,
+          "sha256": "b9b3459d6d615faf8dfdd64136a2d172fee329354e9d91cda439a8b65ab45dae",
+          "git_blob_sha1": "256577a324d27945c451bb1f9eb2c45e3141d37f",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ru/dusha/ru_asr.jsonl.gz",
+          "bytes": 56829231,
+          "sha256": "a9814555d0ea644c8e54e8eb2c5b628376d56e39fc59384e2b0e093b23cc177f",
+          "git_blob_sha1": "c1d9f2b47b872e3a5a30d6603471de633b9dd585",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ru/fleurs/ru_asr.jsonl.gz",
+          "bytes": 1640834,
+          "sha256": "679b96f0b25418b8694c787f98fd3e1693eee1fc579b9af14d9384b3989df643",
+          "git_blob_sha1": "22f6ee4d34cd012bf16bfb06763b77e5af94ad43",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ru/golos/ru_asr.jsonl.gz",
+          "bytes": 411003775,
+          "sha256": "18de21de5d8c330ecc07220ef45c440d14965c1c976b86ee2dce40159c5f4503",
+          "git_blob_sha1": "6deb03ce7bda5e9081dcf7caee15348060681f72",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ru/mcv26/ru_asr.jsonl.gz",
+          "bytes": 12512737,
+          "sha256": "8847466deadf0835e41c65822406584791bfac80509cf748b3817078035f0f51",
+          "git_blob_sha1": "d47f7c437334562dd715d53d4bbf31576640459f",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "sk/fleurs/sk_asr.jsonl.gz",
+          "bytes": 1346233,
+          "sha256": "92e731ace255cda0b206b0f3f4b15ca566b6f8f558fb643c01f8fe93457062ad",
+          "git_blob_sha1": "2d82fdd270c6e85ebdd8b1d8a795b173c7dd6d04",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "sk/mcv26/sk_asr.jsonl.gz",
+          "bytes": 4067728,
+          "sha256": "738e9abfe934490d66db8316601a3c677c76284b3ba43c6c24ff9fe6c9a1f11a",
+          "git_blob_sha1": "583a47c87d5f7514db0e0e406a8fd65256073818",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "sk/voxpopuli/sk_asr.jsonl.gz",
+          "bytes": 1151898051,
+          "sha256": "c79224f6d51a589779a318c46e60302484047258ff785b5d8e207d6e49f1f14e",
+          "git_blob_sha1": "d5f887d663426d444be98c71e7e4127bd7a0e8fc",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "sk/voxpopuli_improved/sk_asr.jsonl.gz",
+          "bytes": 7740573,
+          "sha256": "66868e4b9db3693b4bd44a153bb6ba4b11bff50097baf1cd4aa73397a16013c4",
+          "git_blob_sha1": "47cc90071d69adf2df8c5587ecf9939b9143c805",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "sl/fleurs/sl_asr.jsonl.gz",
+          "bytes": 1708472,
+          "sha256": "1a9a020664672d6f6cda3d469bd09d60aa717164f88c944fcff4f210d9490b44",
+          "git_blob_sha1": "899a5273cee3574cedb0b03036f0b6899cb72f23",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "sl/mcv26/sl_asr.jsonl.gz",
+          "bytes": 507617,
+          "sha256": "769bf9c6f0240f96f7ddd445ac1bb39803982bb66777a22bb491a802b0b9ac87",
+          "git_blob_sha1": "043e83fc717fa63426026a32005cb2647e3715d9",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "sl/voxpopuli/sl_asr.jsonl.gz",
+          "bytes": 818406251,
+          "sha256": "ecd29c4d4faf4c93cdfdea6c5bd48dc5a81ee81281ac17c53b052a04d02da244",
+          "git_blob_sha1": "46644f9ec9e23d8f0dcfea85eceeefa931c00416",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "sl/voxpopuli_improved/sl_asr.jsonl.gz",
+          "bytes": 1484766,
+          "sha256": "e058df0aec0bdc004cf49cebcf3ed5f6428d6cc4775fa6ae721159652be9e841",
+          "git_blob_sha1": "e8a681f3c344a11112aae03c20d3bb1cf6baba5f",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "sv/fleurs/sv_asr.jsonl.gz",
+          "bytes": 1601431,
+          "sha256": "5d5b78057718976edf56fa0593addbfddfe3165e7200203c5c86aa1e614439dd",
+          "git_blob_sha1": "d0aabcbe927ce44f0c7e991b0c85a020f2146e69",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "sv/mcv26/sv_asr.jsonl.gz",
+          "bytes": 3348338,
+          "sha256": "e55547ef37e419e5830999200833062ad34ce411807bcbd5d221480e2b3b4bc0",
+          "git_blob_sha1": "36a64c78b3d589accef9defad95c1ce257b2d4f2",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "sv/voxpopuli/sv_asr.jsonl.gz",
+          "bytes": 1474842823,
+          "sha256": "0e95aa457ad81bf4aef492ce36459f8b18671716af2b632100940d5a0b248460",
+          "git_blob_sha1": "d6d5826eb0265fd9f0d54aabbd2ef6d45f122203",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ta/fleurs/ta_asr.jsonl.gz",
+          "bytes": 1651276,
+          "sha256": "be31662ae5ff1b4a3fb9effc3bb3913aa36780c9b8dcf5353cb905ac8758fe99",
+          "git_blob_sha1": "ef03cb59b7b2df968c5d76eb509aab6e745551f1",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "te/fleurs/te_asr.jsonl.gz",
+          "bytes": 1536061,
+          "sha256": "2201f150181b135a786eeb1a43950b41219147e3fe02eff324c0dde4fc1042e4",
+          "git_blob_sha1": "00a00dcd95b5ad254422b1f6a419e28b5baae512",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "te/mcv26/te_asr.jsonl.gz",
+          "bytes": 35822,
+          "sha256": "6436ec29614a809c044af54b5d130e87858fa82e0cf2ecf552b91d321116ce3a",
+          "git_blob_sha1": "341b94b774cfaf774e5d3754185c57245613554f",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "th/fleurs/th_asr.jsonl.gz",
+          "bytes": 2215480,
+          "sha256": "b729925909837d9aae7cc08ffb97aad423b16d9c7812e177956bb7abfe9cc23e",
+          "git_blob_sha1": "0e315d8a986f39056871d3bb1f0071fac83f0913",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "th/mcv26/th_asr.jsonl.gz",
+          "bytes": 15825371,
+          "sha256": "c21b36812ae7c72af87e19a2e5cb5187fb7cd4d29081a75d371b8004f217f72c",
+          "git_blob_sha1": "d57f36f93902cb710bf57f61abe31931804d97d2",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "tr/fleurs/tr_asr.jsonl.gz",
+          "bytes": 1015515,
+          "sha256": "074794469d39f84d6ce994aec7a4459bcb372413b4cf08fb50f5a85126928a83",
+          "git_blob_sha1": "2708a0279df9a84f6ecc79170eb4c72c339c4bf0",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "uk/fleurs/uk_asr.jsonl.gz",
+          "bytes": 2243399,
+          "sha256": "490bfb6ce675798cdb22b689d9d757f5fa0896dc782982bc33ce46563601e4bf",
+          "git_blob_sha1": "de10abb5de56fda94207c6cb2a4203340ce9279e",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "uk/mcv26/uk_asr.jsonl.gz",
+          "bytes": 12526307,
+          "sha256": "e162d7877f6e8d239d76acbc9d1a7d16036268b856e8968130501530c3fa5d73",
+          "git_blob_sha1": "1da99333d0045623017f59ac0f4204818bfc5ea0",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ur/fleurs/ur_asr.jsonl.gz",
+          "bytes": 766152,
+          "sha256": "e46867912731d2a398b9a8d963b2c9da24657863df15fc9fd5edce2f4efc81ba",
+          "git_blob_sha1": "951f5e0999c5e87ed0d2f3402963fbf656a2d28e",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "ur/mcv26/ur_asr.jsonl.gz",
+          "bytes": 1258436,
+          "sha256": "b956c5ed83cdda9e77d29f623dd4de1eca96f9ace60674aa3b3e2f9a23bf9729",
+          "git_blob_sha1": "27b065ba9427d88d636593120c152fc2104db474",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "vi/fleurs/vi_asr.jsonl.gz",
+          "bytes": 1528212,
+          "sha256": "4dba04d5cfd954f71b7478ceca2fcb97e24577dca8e01be1e5666ffeca797fbb",
+          "git_blob_sha1": "78b8ea0bd6468a6a869d9d63e4eed6be9be3b55f",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "vi/mcv26/vi_asr.jsonl.gz",
+          "bytes": 559402,
+          "sha256": "e0a4423d3a07f11e9d4050ff216eec30d81123917301294d301aa4524c649ac4",
+          "git_blob_sha1": "8deed3d911a9fbcc8b0e4fdcaa17c94400637f6a",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "zh/fleurs/zh_asr.jsonl.gz",
+          "bytes": 1746760,
+          "sha256": "def8462f23b602df2909557178ff5a1f6fb6436c859ad847f52c132f8e8988ec",
+          "git_blob_sha1": "960dedd4df07ac6efba81c5297ddb9f38d366baa",
+          "identity_kind": "lfs_payload_sha256",
+          "local_hash_verified": false
+        }
+      ],
+      "package_bytes": 111557207020,
+      "primary_file_bytes": 111557207020,
+      "excluded_files": [
+        {
+          "path": "figures/granary-v2-icon.png",
+          "bytes": 2400778,
+          "reason": "outside published label manifests and LICENSE/NOTICE scope"
+        },
+        {
+          "path": "figures/granary-v2-pipeline.gif",
+          "bytes": 320875,
+          "reason": "outside published label manifests and LICENSE/NOTICE scope"
+        }
+      ],
+      "license_partition": {
+        "OpenMDW-1.1_manifest_count": 147,
+        "OpenMDW-1.1_manifest_bytes": 109167802339,
+        "CC-BY-SA-4.0_people_speech_manifest_count": 1,
+        "CC-BY-SA-4.0_people_speech_bytes": 2389312660,
+        "provenance_and_license_notice_bytes": 92021,
+        "license_full_text_read_from_fixed_source": true,
+        "publisher_licenses_and_third_party_audio_not_individually_cleared": true,
+        "audio_included": false,
+        "primary_license_urls": [
+          "https://huggingface.co/datasets/nvidia/Granary-v2/raw/81402b751b451b5fe4f4c29e8b40f92892f1e440/LICENSE",
+          "https://huggingface.co/datasets/nvidia/Granary-v2/raw/81402b751b451b5fe4f4c29e8b40f92892f1e440/NOTICE"
+        ]
+      },
+      "masked_or_unknown_payload_identity_files": 0
     },
     {
       "asset_kind": "dataset",

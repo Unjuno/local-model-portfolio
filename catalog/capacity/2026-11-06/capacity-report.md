@@ -15,23 +15,18 @@ Publisher immutable file metadata and computed totals. No model payload or owner
     "hold_transitions": 0,
     "exclusions": 0
   },
-  "exact_primary_file_scope_count": 115,
-  "unresolved_primary_scope_count": 1,
-  "known_primary_file_bytes_sum": 2998442935252,
-  "known_parent_package_bytes_sum_with_shared_repetitions": 3106022114776,
+  "exact_primary_file_scope_count": 116,
+  "unresolved_primary_scope_count": 0,
+  "known_primary_file_bytes_sum": 3110000142272,
+  "known_parent_package_bytes_sum_with_shared_repetitions": 3217579321796,
   "known_dependency_additions_bytes": 336241419,
-  "known_scope_content_union_bytes": 2996883629685,
+  "known_scope_content_union_bytes": 3108440834201,
   "source_identity_dedup_assumption": "Content-addressed store; SHA256+size or ordinary Git blob SHA1+size only. Masked LFS uses scoped path, never pointer hash. Physical allocated bytes/local reuse unmeasured.",
   "largest_selected_file_bytes": 55942929173,
   "complete_learned_dependency_total_bytes": null,
   "complete_offline_archive_bytes": null,
   "complete_deduplicated_archive_bytes": null,
-  "unknown_primary_scopes": [
-    {
-      "repo_id": "nvidia/Granary-v2",
-      "reason": "Permitted per-corpus label subset not determined; full repository is not automatically selected."
-    }
-  ],
+  "unknown_primary_scopes": [],
   "assets_with_open_dependency_issues": [
     {
       "repo_id": "microsoft/VibeVoice-1.5B",
@@ -138,7 +133,7 @@ Publisher immutable file metadata and computed totals. No model payload or owner
     {
       "repo_id": "nvidia/Granary-v2",
       "issues": [
-        "Per-corpus permitted subset and external source-audio scope"
+        "All released labels have exact metadata bytes and license partition, but repository includes NO source audio. Future audio restoration requires separate lawful source corpus selection, bytes, revision, consent and hash review."
       ]
     },
     {
@@ -188,7 +183,7 @@ Publisher immutable file metadata and computed totals. No model payload or owner
   "all_runtime_environment_archives_unmeasured": true,
   "planning_cap_bytes": 4000000000000,
   "minimum_free_bytes": 200000000000,
-  "provisional_known_scope_budget_difference_bytes": 1003116370315,
+  "provisional_known_scope_budget_difference_bytes": 891559165799,
   "difference_is_not_available_headroom": true,
   "physical_disk_capacity_bytes": null,
   "physical_disk_free_bytes": null,
@@ -196,9 +191,9 @@ Publisher immutable file metadata and computed totals. No model payload or owner
   "actual_remaining_archive_budget_bytes": null,
   "actual_acquisition_peak_bytes": null,
   "acquisition_scenarios_known_scope_only": {
-    "direct_final_volume_atomic_rename_no_retained_cache_payload_bytes": 2996883629685,
-    "one_extra_largest_file_copy_payload_upper_scenario_bytes": 3052826558858,
-    "retained_full_cache_plus_final_plus_one_staging_file_payload_upper_scenario_bytes": 6049710188543,
+    "direct_final_volume_atomic_rename_no_retained_cache_payload_bytes": 3108440834201,
+    "one_extra_largest_file_copy_payload_upper_scenario_bytes": 3164383763374,
+    "retained_full_cache_plus_final_plus_one_staging_file_payload_upper_scenario_bytes": 6272824597575,
     "assumptions": "Empty store, one asset at a time, no retries/residuals, logical bytes only; filesystem allocation, environments and unresolved components excluded. Not a measured maximum."
   },
   "download_authorized": false,
@@ -286,7 +281,7 @@ Publisher immutable file metadata and computed totals. No model payload or owner
 | m-a-p/SheetSage2 | 231081591 | 2760959702 | No additional learned dependency identified in this review; runtime closure NOT certified |
 | m-a-p/YuE2-3B | 7264394226 | 7795145244 | No additional learned dependency identified in this review; runtime closure NOT certified |
 | m-a-p/YuE2-Vae | 530751018 | 530751018 | No additional learned dependency identified in this review; runtime closure NOT certified |
-| nvidia/Granary-v2 | None | None | Per-corpus permitted subset and external source-audio scope |
+| nvidia/Granary-v2 | 111557207020 | 111557207020 | All released labels have exact metadata bytes and license partition, but repository includes NO source audio. Future audio restoration requires separate lawful source corpus selection, bytes, revision, consent and hash review. |
 | nvidia/OpenCodeInstruct | 6861119940 | 6861119940 | No additional learned dependency identified in this review; runtime closure NOT certified |
 | nvidia/OpenMathInstruct-2 | 12628474179 | 12628474179 | No additional learned dependency identified in this review; runtime closure NOT certified |
 | facebook/dinov3-vit7b16-pretrain-lvd1689m | 26864283632 | 26864283632 | No additional learned dependency identified in this review; runtime closure NOT certified |
