@@ -1,0 +1,95 @@
+name: Apply bounded insurance selection v23
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - 'catalog/revisions/v23-2026-11-06.json'
+      - 'scripts/apply_selection_v23.py'
+      - 'tests/test_selection_v23.py'
+      - '.github/workflows/apply_selection_v23.yml'
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-v23-risk-only
+  cancel-in-progress: false
+jobs:
+  apply:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    env:
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Before selection - full historical regression
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -v
+          python scripts/check_parameter_cutoff.py
+          python scripts/audit_selection_decisions.py
+      - name: Materialize v23, verify both new outcomes and old 163
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m scripts.apply_selection_v23 --apply
+          python -m unittest discover -s tests -v 2>&1 | tee /tmp/v23-tests.log
+          python scripts/check_parameter_cutoff.py
+          python scripts/audit_selection_decisions.py
+          python - <<'PY'
+          import hashlib,json,re
+          from pathlib import Path
+          root=Path('.')
+          load=lambda p:json.loads((root/p).read_text())
+          c=load('catalog/CURRENT.json')
+          v=load(c['materialized_catalog_path'])
+          old=load('catalog/effective-portfolio-2026-11-06-v22.json')
+          q=load(c['priority_worklist_path'])
+          plan=load('catalog/preparation/2026-11-06-insurance-bundles-v23.json')
+          summary=load('catalog/capacity/2026-11-06/capacity-summary.json')
+          overlay=load('catalog/revisions/v23-2026-11-06.json')
+          approved=load('queues/approved.json')
+          assert c['revision_id']=='v23-20261106' and len(v['items'])==165
+          assert len(old['items'])==163 and v['items'][:163]==old['items']
+          assert c['expected']['active']==118 and len(q['candidates'])==118 and len(plan['items'])==118
+          active={(x['asset_kind'],x['repo_id']) for x in v['items'] if x['portfolio_decision'] in ('select','conditional')}
+          assert active=={(x['asset_kind'],x['repo_id']) for x in q['candidates']}
+          assert active=={(x['asset_kind'],x['repo_id']) for x in plan['items']}
+          assert len(overlay['additions'])==2 and sum(x['selection_budget_cap_bytes'] for x in overlay['additions'])==71_000_000_000
+          assert all(x['selected_file_bytes'] is None and not x['download_approved'] and x['fully_pinned_revision_sha'] is None for x in v['items'][-2:])
+          assert summary['source_revision']=='v22-20261106' and summary['exact_primary_file_scope_count']==116
+          assert summary['unresolved_primary_scope_count']==0 and summary['known_scope_content_union_bytes']==3_108_440_834_201
+          assert c['capacity_audit']['v23_new_assets_unmeasured_count']==2
+          assert c['expected']['archive_limit_bytes']==4_000_000_000_000
+          assert not q['download_enabled'] and not q['approved'] and not plan['download_enabled']
+          assert not approved['entries'] and all(not x['download_approved'] for x in v['items'])
+          log=Path('/tmp/v23-tests.log').read_text()
+          m=re.findall(r'Ran (\d+) tests',log)
+          assert m and '\nOK\n' in log
+          p=root/'catalog/preparation/2026-11-06-v23-integration-check.json'
+          check=load(str(p));check.update(full_suite_verified=True,unittest_count=int(m[-1]),audit_passed=True,
+              historical_capacity_116_assets_verified=True,full_118_archive_bytes_verified=False,
+              model_payload_downloads=0,owner_disk_measured=False,source_test_log_sha256=hashlib.sha256(log.encode()).hexdigest())
+          p.write_text(json.dumps(check,indent=2)+'\n')
+          print(json.dumps(check,indent=2))
+          PY
+      - name: Commit v23 derived catalog and preparation only to risk branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          test "$(git ls-remote origin "$GITHUB_REF" | cut -f1)" = "$GITHUB_SHA"
+          git add -- catalog/CURRENT.json catalog/effective-portfolio-2026-11-06-v23.json queues/proposed-v23-2026-11-06.json catalog/preparation/2026-11-06-insurance-bundles-v23.json catalog/preparation/2026-11-06-v23-integration-check.json README.md AGENTS.md scripts/audit_selection_decisions.py tests/test_catalog_v19.py policies/selection-decision-v17.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'catalog: adopt two learned-outcome insurance additions as conditional v23 [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD
