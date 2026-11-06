@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "round": "R32",
+  "reviewed_on": "2026-11-07",
+  "main_base_commit": "9e2cfa384ba3da306de8fd9e6caf3ddf96528c20",
+  "scope": "LTX 2.5 special video checkpoints: original donor evidence, metadata SHA256, license constraints",
+  "all_existing_150_still_intact": true,
+  "formal_changes": 0,
+  "new_download_approvals": 0,
+  "weight_downloaded": false,
+  "user_cap_bytes": 4000000000000,
+  "source_links": {
+    "chris_mirror": "https://huggingface.co/frtertaer/LTX-2.5-uncensored-v1.1-FP8",
+    "chris_mirror_readme": "https://huggingface.co/frtertaer/LTX-2.5-uncensored-v1.1-FP8/blob/main/README.md",
+    "chris_original": "https://huggingface.co/ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+    "stuubs_readme": "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5",
+    "stuubs_notice": "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5/blob/main/NOTICE.txt",
+    "omni_paper": "https://arxiv.org/abs/2605.12480",
+    "omni_code": "https://github.com/zghhui/OmniNFT/blob/master/README.md",
+    "omni_weights": "https://huggingface.co/zghhui/OmniNFT",
+    "ltx_license": "https://github.com/Lightricks/LTX-2/blob/main/LICENSE-2_x"
+  },
+  "classification": {
+    "chris": {
+      "research_decision": "CONDITIONAL_PROVENANCE_PARTIALLY_CONFIRMED",
+      "kind": "LTX2_5_SPECIAL_MULTI_LORA_MERGE_AUTHOR_CLAIM",
+      "model": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "mirror": "frtertaer/LTX-2.5-uncensored-v1.1-FP8",
+      "mirror_explicitly_says_duplicated_from_original": true,
+      "claimed_components": [
+        {
+          "name": "Eros10",
+          "strength": 0.7
+        },
+        {
+          "name": "DMD distillation",
+          "strength": 1
+        },
+        {
+          "name": "IC-LoRA",
+          "strength": 0.7
+        },
+        {
+          "name": "IC-LoRA Detailer",
+          "strength": 0.45
+        },
+        {
+          "name": "Img2Vid",
+          "strength": 0.45
+        }
+      ],
+      "mirror_example_components_gb": [
+        21.5,
+        13.2,
+        0.365,
+        1.47
+      ],
+      "mirror_approx_sum_gb": 36.535,
+      "actual_complete_bytes_verified": false,
+      "original_sha_matched_to_mirror": false,
+      "model_license_metadata": "unknown",
+      "independent_quality_verified": false,
+      "improvement_vs_R31": "A specific five-merge recipe exists in a platform-marked duplicate; full tensor and license evidence still missing",
+      "action": "Research priority upgrade, no acquisition lock; verify original and mirror weight Xet checksum, donor full revision, rights and quality."
+    },
+    "stuubs": {
+      "research_decision": "CONDITIONAL_PRIMARY",
+      "kind": "LTX2_5_CROSS_GENERATION_MERGED_RL_MODEL",
+      "model": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "donors": [
+        "Sulphur2+10Eros task-vector LTX2.3 deltas",
+        "LTX2.5 distilled LoRA",
+        "OmniNFT LTX2.3 RL LoRA"
+      ],
+      "v1_vs_beta2_author_judge": {
+        "win": 29,
+        "loss": 9,
+        "ties": 10
+      },
+      "two_representations_same_learned_state": true,
+      "full_repo_commit": null,
+      "staging_and_vae_unknown": true,
+      "action": "BF16 master for archival investigation; alternative INT8 for runtime; do not approve both by default."
+    },
+    "omni": {
+      "research_decision": "NEW_CONDITIONAL_PROVENANCE_SOURCE_CHECKPOINT",
+      "kind": "RANK32_LORA_MODALITY_WISE_VIDEO_AUDIO_RL",
+      "two_different_parent_checkpoints": true,
+      "adapter_config_ltx23": {
+        "rank": 32,
+        "alpha": 64,
+        "bytes": 885
+      },
+      "paper_doi": "10.48550/arXiv.2605.12480",
+      "direct_LTX2_3_to_LTX2_5_compatibility_proven": false,
+      "paper_model_scope": "LTX-2 and LTX-2.3, not native LTX-2.5",
+      "hf_license": "Apache-2.0",
+      "github_master_readme_license_line": "Research use only. See individual submodule licenses for their terms.",
+      "upstream_license": "LTX-2.x Community License for base and derivatives",
+      "rights_conflict_requires_resolution": true,
+      "full_repo_revision": null,
+      "action": "Preserve as a distinct high-value original RL adapter research candidate; no download and no claim LTX2.5 alone reproduces Stuubs merged model."
+    },
+    "donors": {
+      "research_decision": "HOLD_WHILE_LINEAGE_UNKNOWN",
+      "kind": "POSSIBLE_ANCESTOR_ORIGINAL_TRAINING_STATES",
+      "dmd_repo_has_three_variants": true,
+      "selected_which_in_chris_unknown": true,
+      "tenstrip_10eros_repo_has_many_full_variants": true,
+      "cannot_archive_all_with_justified_incremental_value": false
+    }
+  },
+  "file_manifest": [
+    {
+      "id": "stuubs_v1_bf16",
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "file": "ltx2.5-Stubelius_remix_v1_bf16.safetensors",
+      "role": "MERGED_SPECIAL_STATE_MASTER_BF16",
+      "displayed_gb": 42,
+      "sha256": "6e0ff9c9d8a1d0747579f1f50d10a9c3822a9a8f265322a5edd476044b0fbf4f",
+      "url": "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5/blob/main/ltx2.5-Stubelius_remix_v1_bf16.safetensors",
+      "decision": "CONDITIONAL_PRIMARY_EXACT_SHA_METADATA"
+    },
+    {
+      "id": "stuubs_v1_int8",
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "file": "ltx2.5-Stubelius_remix_v1_int8_convrot.safetensors",
+      "role": "SAME_STUUBS_V1_COMPRESSED_RUNTIME_REPRESENTATION",
+      "displayed_gb": 21.5,
+      "sha256": "ab4f2c731a34550337b14a9e9bdeafb85ef4a4f8b265d7c53503400b1d281fc6",
+      "url": "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5/blob/main/ltx2.5-Stubelius_remix_v1_int8_convrot.safetensors",
+      "decision": "ALTERNATIVE_FORMAT_NOT_ANOTHER_SPECIAL_MODEL"
+    },
+    {
+      "id": "omninft_ltx23",
+      "repo_id": "zghhui/OmniNFT",
+      "file": "LTX-2.3-RL-Lora/adapter_model.safetensors",
+      "role": "ORIGINAL_RL_LORA_FOR_LTX_2_3",
+      "displayed_gb": 1.23,
+      "sha256": "c8e59836f28a6a7d2660f2652a156e77493ba82fb53a1e1e84f258fdf94ac608",
+      "url": "https://huggingface.co/zghhui/OmniNFT/blob/main/LTX-2.3-RL-Lora/adapter_model.safetensors",
+      "decision": "NEW_CONDITIONAL_RESEARCH_SOURCE_CHECKPOINT"
+    },
+    {
+      "id": "omninft_ltx2",
+      "repo_id": "zghhui/OmniNFT",
+      "file": "LTX-2-RL-Lora/adapter_model.safetensors",
+      "role": "DIFFERENT_RL_LORA_FOR_LTX_2",
+      "displayed_gb": 1.23,
+      "sha256": "61c579f3c1de0dfc8aed1bf34dd92e1f54d4f55bb0abfcb260f19ba95a4fc975",
+      "url": "https://huggingface.co/zghhui/OmniNFT/blob/main/LTX-2-RL-Lora/adapter_model.safetensors",
+      "decision": "CONDITIONAL_OPTIONAL_RESEARCH_DIFFERENT_PARENT"
+    },
+    {
+      "id": "tenstrip_dmd_v2",
+      "repo_id": "TenStrip/LTX2.3_DMD_Lora",
+      "file": "LTX2.3_DMD_hybrid_v2.safetensors",
+      "role": "ORIGINAL_DISTILLATION_DONOR_UNKNOWN_IF_USED",
+      "displayed_gb": 5.1,
+      "sha256": "db418249c95eba25ed7d7d24f74a17e7cdc82c03b0ef34a477abdccb1d7a2915",
+      "url": "https://huggingface.co/TenStrip/LTX2.3_DMD_Lora/blob/main/LTX2.3_DMD_hybrid_v2.safetensors",
+      "decision": "HOLD_WHICH_DMD_VERSION_USED_UNCONFIRMED"
+    },
+    {
+      "id": "tenstrip_10eros_v1",
+      "repo_id": "TenStrip/LTX2.3-10Eros",
+      "file": "10Eros_v1_bf16.safetensors",
+      "role": "FULL_10EROS_LTX23_SOURCE_SNAPSHOT_NOT_SMALL_DELTA",
+      "displayed_gb": 46.1,
+      "sha256": "b4b3498eeafa4d52fab5222776e4fe8821787d11fff39de867b919c83e916d35",
+      "url": "https://huggingface.co/TenStrip/LTX2.3-10Eros/blob/main/10Eros_v1_bf16.safetensors",
+      "decision": "HOLD_DONOR_VERSION_AND_REDUNDANCY_UNCONFIRMED"
+    }
+  ],
+  "integrity": "SHA256 values were read from Hugging Face/Xet pointer metadata; they were NOT recomputed from downloaded weights. Exact file size in bytes and full immutable HF repo commits still unverified.",
+  "legal": "Lightricks LTX2.x Community License amended 2026-10-29 explicitly includes derived weights, use restrictions and commercial terms, and is separate from Apache-licensed code. OmniNFT Hugging Face Apache label and code GitHub 'Research use only' require manual resolution; do not infer unrestricted redistribution.",
+  "hypothesis": "The 1.23GB original OmniNFT adapter provides distinct training-history evidence not replaceable by an opaque 42GB Stuubs merged checkpoint; and Chris and Stuubs have different donor/control mechanisms despite both targeting adult LTX2.5 videos.",
+  "next_validation": "Full repo revision SHA, exact selected bytes, legality of each donor, actual hardware, paired 20 x 3 prompts same generation steps and blind outcome; no final archiving approval.",
+  "rules": {
+    "distinct_trained_states_not_files": true,
+    "no_same_merge_multiple_quant_archive_without_need": true,
+    "source_adapters_are_separate_training_states": true,
+    "unknown_full_pipeline_block_approval": true,
+    "older_donor_outside_90days_allowed_when_needed_for_newer_training_lineage": true
+  },
+  "checks": {
+    "unique_manifest_records": 6,
+    "publisher_sha256_count": 6,
+    "no_download": true
+  }
+}
