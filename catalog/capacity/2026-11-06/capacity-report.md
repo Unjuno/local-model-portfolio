@@ -15,24 +15,18 @@ Publisher immutable file metadata and computed totals. No model payload or owner
     "hold_transitions": 0,
     "exclusions": 0
   },
-  "exact_primary_file_scope_count": 114,
-  "unresolved_primary_scope_count": 2,
-  "known_primary_file_bytes_sum": 2933166075842,
-  "known_parent_package_bytes_sum_with_shared_repetitions": 3040745255366,
+  "exact_primary_file_scope_count": 115,
+  "unresolved_primary_scope_count": 1,
+  "known_primary_file_bytes_sum": 2998442935252,
+  "known_parent_package_bytes_sum_with_shared_repetitions": 3106022114776,
   "known_dependency_additions_bytes": 336241419,
-  "known_scope_content_union_bytes": 2931606771845,
+  "known_scope_content_union_bytes": 2996883629685,
   "source_identity_dedup_assumption": "Content-addressed store; SHA256+size or ordinary Git blob SHA1+size only. Masked LFS uses scoped path, never pointer hash. Physical allocated bytes/local reuse unmeasured.",
   "largest_selected_file_bytes": 55942929173,
   "complete_learned_dependency_total_bytes": null,
   "complete_offline_archive_bytes": null,
   "complete_deduplicated_archive_bytes": null,
   "unknown_primary_scopes": [
-    {
-      "repo_id": "openai/gpt-oss-120b",
-      "reason": [
-        "incomplete shards: model-"
-      ]
-    },
     {
       "repo_id": "nvidia/Granary-v2",
       "reason": "Permitted per-corpus label subset not determined; full repository is not automatically selected."
@@ -91,12 +85,6 @@ Publisher immutable file metadata and computed totals. No model payload or owner
       "repo_id": "ibm-granite/granite-switch-4.1-30b",
       "issues": [
         "Decision/Guardian aLoRA and ASR attachment revisions"
-      ]
-    },
-    {
-      "repo_id": "openai/gpt-oss-120b",
-      "issues": [
-        "incomplete shards: model-"
       ]
     },
     {
@@ -200,7 +188,7 @@ Publisher immutable file metadata and computed totals. No model payload or owner
   "all_runtime_environment_archives_unmeasured": true,
   "planning_cap_bytes": 4000000000000,
   "minimum_free_bytes": 200000000000,
-  "provisional_known_scope_budget_difference_bytes": 1068393228155,
+  "provisional_known_scope_budget_difference_bytes": 1003116370315,
   "difference_is_not_available_headroom": true,
   "physical_disk_capacity_bytes": null,
   "physical_disk_free_bytes": null,
@@ -208,9 +196,9 @@ Publisher immutable file metadata and computed totals. No model payload or owner
   "actual_remaining_archive_budget_bytes": null,
   "actual_acquisition_peak_bytes": null,
   "acquisition_scenarios_known_scope_only": {
-    "direct_final_volume_atomic_rename_no_retained_cache_payload_bytes": 2931606771845,
-    "one_extra_largest_file_copy_payload_upper_scenario_bytes": 2987549701018,
-    "retained_full_cache_plus_final_plus_one_staging_file_payload_upper_scenario_bytes": 5919156472863,
+    "direct_final_volume_atomic_rename_no_retained_cache_payload_bytes": 2996883629685,
+    "one_extra_largest_file_copy_payload_upper_scenario_bytes": 3052826558858,
+    "retained_full_cache_plus_final_plus_one_staging_file_payload_upper_scenario_bytes": 6049710188543,
     "assumptions": "Empty store, one asset at a time, no retries/residuals, logical bytes only; filesystem allocation, environments and unresolved components excluded. Not a measured maximum."
   },
   "download_authorized": false,
@@ -271,7 +259,7 @@ Publisher immutable file metadata and computed totals. No model payload or owner
 | nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB | 6180517517 | 6180517517 | No additional learned dependency identified in this review; runtime closure NOT certified |
 | LiquidAI/LFM2.5-VL-3B | 6265014358 | 6265014358 | No additional learned dependency identified in this review; runtime closure NOT certified |
 | LiquidAI/LFM2.5-VL-3B-DSpark | 558964083 | 6823978441 | No additional learned dependency identified in this review; runtime closure NOT certified |
-| openai/gpt-oss-120b | None | None | incomplete shards: model- |
+| openai/gpt-oss-120b | 65276859410 | 65276859410 | No additional learned dependency identified in this review; runtime closure NOT certified |
 | Qwen/Qwen3-Omni-30B-A3B-Instruct | 70530595574 | 70530595574 | No additional learned dependency identified in this review; runtime closure NOT certified |
 | Qwen/Qwen3.5-35B-A3B-Base | 71926986405 | 71926986405 | No additional learned dependency identified in this review; runtime closure NOT certified |
 | Qwen/Qwen3.8-27B | 55586114907 | 55586114907 | No additional learned dependency identified in this review; runtime closure NOT certified |

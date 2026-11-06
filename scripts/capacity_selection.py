@@ -86,13 +86,19 @@ def union_bytes(entries):
 def complete_total(items):
     if any(r['open_dependencies'] or r['package_bytes'] is None for r in items):return None
     return sum(r['package_bytes'] for r in items)
-def check_shards(files):
+def check_shards(files,declared_paths=None):
     groups={}
     for f in files:
         m=SHARD.match(f['path'])
         if m:
             prefix,i,n,suffix=m.groups();groups.setdefault((prefix,int(n),suffix),[]).append(int(i))
     for (prefix,n,suffix),parts in groups.items():
+        if declared_paths is not None:
+            expected={x for x in declared_paths if (m:=SHARD.match(x)) and m.group(1)==prefix and int(m.group(3))==n}
+            actual={f['path'] for f in files if (m:=SHARD.match(f['path'])) and m.group(1)==prefix and int(m.group(3))==n}
+            if expected:
+                if actual!=expected:raise ValueError('index and selected shards disagree: '+prefix)
+                continue
         if sorted(parts) not in (list(range(1,n+1)),list(range(n))):raise ValueError('incomplete shards: '+prefix)
 def choose_files(files,profile):
     if len({f['path'] for f in files})!=len(files):raise ValueError('duplicate path')
@@ -122,7 +128,7 @@ def choose_files(files,profile):
                     if p not in profile.get('weights',[]):reason='alternate framework export'
         if reason:excluded.append({'path':p,'bytes':f['bytes'],'reason':reason})
         else:selected.append(f)
-    check_shards(selected)
+    check_shards(selected,profile.get("index_shards"))
     if not selected:raise ValueError('empty selection')
     return selected,excluded
 
@@ -149,6 +155,13 @@ def main():
     for item in active:
         repo=item['repo_id'];src=sources[(item['asset_kind'],repo)];profile=dict(PROFILES.get(repo,{}))
         if item['asset_kind']=='dataset' and 'dataset_paths' not in profile:profile['dataset_all']=True
+        if 'r21' not in profile:
+            indexes=[]
+            for d in src.get('documentation',[]):
+                if isinstance(d.get('json'),dict) and isinstance(d['json'].get('weight_map'),dict):
+                    parent=Path(d['path']).parent
+                    indexes.extend(str(parent/x) for x in d['json']['weight_map'].values() if isinstance(x,str))
+            if indexes:profile['index_shards']=sorted(set(indexes))
         row={'asset_kind':item['asset_kind'],'repo_id':repo,'portfolio_decision':item['portfolio_decision'],
              'scope_status':'EXACT_NAMED_FILE_PROFILE_PENDING_RIGHTS_AND_DEPENDENCY_REVIEW',
              'capacity_evidence_kind':'computed_sum_of_publisher_exact_file_metadata_not_local_measurement',

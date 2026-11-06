@@ -1,0 +1,160 @@
+{
+  "asset_kind": "model",
+  "repo_id": "kyutai/mimi",
+  "portfolio_decision": "research_only_not_active",
+  "observed_at_utc": "2026-11-06T05:10:43.215676+00:00",
+  "evidence_kind": "anonymous_publisher_api_metadata_not_local_payload_measurement",
+  "download_authorized": false,
+  "payload_bytes_downloaded": 0,
+  "tree_complete": true,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 1519,
+      "sha256": null,
+      "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "identity_kind": "git_blob_sha1",
+      "payload_hash_masked": false,
+      "local_hash_verified": false
+    },
+    {
+      "path": "README.md",
+      "bytes": 4357,
+      "sha256": null,
+      "git_blob_sha1": "d1e30734ef1f02f47b5d4ade90707fbe5412151c",
+      "identity_kind": "git_blob_sha1",
+      "payload_hash_masked": false,
+      "local_hash_verified": false
+    },
+    {
+      "path": "config.json",
+      "bytes": 1117,
+      "sha256": null,
+      "git_blob_sha1": "907c57dc64c983785bfc68572e4e8ab8eddd64b8",
+      "identity_kind": "git_blob_sha1",
+      "payload_hash_masked": false,
+      "local_hash_verified": false
+    },
+    {
+      "path": "model.safetensors",
+      "bytes": 384649828,
+      "sha256": "bac7e85083dcded655d24eaadde7e6eea34c0da1b35fa2d284e641bd2b942a5e",
+      "git_blob_sha1": "76014877d4b6e844b44244cd8115a641ca5dc136",
+      "identity_kind": "lfs_payload_sha256",
+      "payload_hash_masked": false,
+      "local_hash_verified": false
+    },
+    {
+      "path": "preprocessor_config.json",
+      "bytes": 234,
+      "sha256": null,
+      "git_blob_sha1": "ba40914f4f49ab98a8ca545d4892ef7291a39592",
+      "identity_kind": "git_blob_sha1",
+      "payload_hash_masked": false,
+      "local_hash_verified": false
+    }
+  ],
+  "source_scope_bytes": 384657055,
+  "selected_files_bytes": null,
+  "complete_dependency_bytes": null,
+  "runtime_peak_ram_bytes": null,
+  "local_reuse_verified": false,
+  "prior_observed_access": null,
+  "prior_revision": null,
+  "requested_artifact": null,
+  "required_dependencies_note": null,
+  "parameter_gate_status": null,
+  "source_api_url": "https://huggingface.co/api/models/kyutai/mimi",
+  "head_revision_observed": "89091b3e466eb6a9d11e537bf26b144f194978f7",
+  "pinned_revision": "89091b3e466eb6a9d11e537bf26b144f194978f7",
+  "pinned_revision_origin": "head_observed_for_capacity_only_not_selection_approval",
+  "gated": false,
+  "private": false,
+  "license_metadata": "cc-by-4.0",
+  "metadata_sha256": "e64bfca71094c1d51728e5df8cfbb35ebd23204c1c5f07301a204f7d4923df17",
+  "last_modified": "2025-07-02T15:23:37.000Z",
+  "architecture_metadata": {
+    "architectures": [
+      "MimiModel"
+    ],
+    "model_type": "mimi"
+  },
+  "parameter_metadata": {
+    "parameters": {
+      "F32": 96151393
+    },
+    "total": 96151393
+  },
+  "source_scope": "repository_all_files_not_selection",
+  "file_count": 5,
+  "documentation": [
+    {
+      "path": "README.md",
+      "url": "https://huggingface.co/kyutai/mimi/raw/89091b3e466eb6a9d11e537bf26b144f194978f7/README.md",
+      "observed_bytes": 4357,
+      "sha256": "dd1070a95a83e4f07ccdf29f6ab2c387191c1cfa1deadcdc28dda9e83ad6e38b",
+      "repo_reference_leads_not_verified_dependencies": [
+        "hf-internal-testing/librispeech_asr_dummy",
+        "kyutai/mimi",
+        "production/uploads"
+      ],
+      "card_text_archived": false
+    },
+    {
+      "path": "config.json",
+      "url": "https://huggingface.co/kyutai/mimi/raw/89091b3e466eb6a9d11e537bf26b144f194978f7/config.json",
+      "observed_bytes": 1117,
+      "sha256": "aca6f44b04f7bc2e7466b71597d2d51e463ed1cf3cd7025d8848595580546c36",
+      "json": {
+        "architectures": [
+          "MimiModel"
+        ],
+        "attention_dropout": 0.0,
+        "audio_channels": 1,
+        "codebook_dim": 256,
+        "codebook_size": 2048,
+        "compress": 2,
+        "dilation_growth_rate": 2,
+        "frame_rate": 12.5,
+        "head_dim": 64,
+        "hidden_act": "gelu",
+        "hidden_size": 512,
+        "initializer_range": 0.02,
+        "intermediate_size": 2048,
+        "kernel_size": 7,
+        "last_kernel_size": 3,
+        "layer_scale_initial_scale": 0.01,
+        "max_position_embeddings": 8000,
+        "model_type": "mimi",
+        "norm_eps": 1e-05,
+        "normalize": false,
+        "num_attention_heads": 8,
+        "num_filters": 64,
+        "num_hidden_layers": 8,
+        "num_key_value_heads": 8,
+        "num_residual_layers": 1,
+        "num_semantic_quantizers": 1,
+        "pad_mode": "constant",
+        "residual_kernel_size": 3,
+        "rope_theta": 10000.0,
+        "sampling_rate": 24000,
+        "sliding_window": 250,
+        "torch_dtype": "float32",
+        "transformers_version": "4.45.0.dev0",
+        "trim_right_ratio": 1.0,
+        "upsample_groups": 512,
+        "upsampling_ratios": [
+          8,
+          6,
+          5,
+          4
+        ],
+        "use_cache": false,
+        "use_causal_conv": true,
+        "use_conv_shortcut": false,
+        "vector_quantization_hidden_dimension": 256
+      }
+    }
+  ],
+  "metadata_change_requires_review": false
+}
