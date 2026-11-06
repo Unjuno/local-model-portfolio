@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-07",
+  "baseline_revision": "v26-20261106",
+  "previous_tracked": 172,
+  "previous_active": 125,
+  "public_source_candidates": [
+    {
+      "repo_id": "kakaocorp/kanana-2-v-decide-3b-2611",
+      "pinned_source_sha": "1489062def4145ae3a0a9261fbac4f4d88a8c6d1",
+      "source_tree_complete": true,
+      "source_repo_bytes": 7341213499,
+      "source_repo_file_count": 20,
+      "source_all_files_not_selected_files": true,
+      "source_gated": false,
+      "source_license_metadata": "other",
+      "source_license_text_evidence": [
+        {
+          "url": "https://huggingface.co/kakaocorp/kanana-2-v-decide-3b-2611/raw/1489062def4145ae3a0a9261fbac4f4d88a8c6d1/LICENSE",
+          "repo_id": "kakaocorp/kanana-2-v-decide-3b-2611",
+          "revision": "1489062def4145ae3a0a9261fbac4f4d88a8c6d1",
+          "path": "LICENSE",
+          "text_role": "license_terms",
+          "marker_is_not_legal_clearance": true,
+          "observed_bytes": 11867,
+          "sha256": "3c13f0cf41c4d49f6d3885bffb27c39431826f9886cacac75349b4ffb58361c4",
+          "license_marker": "undetermined",
+          "retrieved": true
+        }
+      ],
+      "source_snapshot": "catalog/research/2026-11-07-r30/sources/kakaocorp--kanana-2-v-decide-3b-2611.json",
+      "total_safetensors_elements_publisher": 3665430640,
+      "personal_access_verified": false,
+      "download_approved": false,
+      "source_payload_downloaded_bytes": 0,
+      "hardware_peak_ram_measured_bytes": null,
+      "source_only_evidence_not_execution": true,
+      "forecast_regulation_probability": null,
+      "source_card_url": "https://huggingface.co/kakaocorp/kanana-2-v-decide-3b-2611",
+      "decision": "CONDITIONAL_ARCHIVAL_SELECTION_REVIEW_UNAPPROVED",
+      "creator_announcement_date": "2026-11-06",
+      "creator_announcement_url": "https://www.kakaocorp.com/page/detail/12193",
+      "independently_trained_outcome": "3.665B multimodal typed-decision probability embedding model adapted from Kanana-2-v-3b; NOT text-generative model, not quantization of another selected checkpoint",
+      "baseline_comparison": [
+        "microsoft/VibeVoice-1.5B",
+        "Hcompany/Holotron4-30B-A3B",
+        "nvidia/GR00T-N1.6-3B"
+      ],
+      "quantitative_negative_evidence": "Creator results on own Korean 15909-question Decision Bench 72.50 and public Decision Index 61.34/Vision 61.12; no independent benchmark or measured owner GPU. Not a general text-generation model, vision only still images, up to 10.",
+      "reported_h200_latency": "Developer claims <=0.04 sec per decision on single H200, batch/clock/backend not stated and performance NOT an independent benchmark",
+      "legal_critical_terms": [
+        "Kanana Open License (not Apache)",
+        "redistribution attribution/NOTICE and Powered by Kanana",
+        "separate commercial license for resold API/hosted access, SI/on-prem or on-device distribution",
+        "responsible-use guidelines incorporated"
+      ],
+      "candidate_original_selected_files_bytes": 7341102234,
+      "candidate_original_selected_paths": [
+        ".gitattributes",
+        "LICENSE",
+        "README.md",
+        "chat_template.jinja",
+        "config.json",
+        "configuration_kanana_v_decide.py",
+        "decision_kanana_v_decide.py",
+        "image_processing_kanana_v.py",
+        "model.safetensors",
+        "modeling_kanana_v_decide.py",
+        "pipeline_kanana_v_decide.py",
+        "preprocessor_config.json",
+        "processing_kanana_v_decide.py",
+        "requirements.txt",
+        "server_kanana_v_decide.py",
+        "tokenizer.json",
+        "tokenizer_config.json"
+      ],
+      "candidate_selected_original_model_weight_bytes": 7330945212,
+      "candidate_selection_is_not_approved_manifest": true,
+      "source_parameter_count_excludes_unverified_runtime_dependency": false,
+      "model_config_and_remote_code_execution_not_tested": true,
+      "required_pretrain_original_checkpoint_for_inference": false,
+      "all_code_dependencies_pinned_and_tested": false,
+      "falsification_condition": "Return HOLD if licensed use unacceptable, missing inferred learned component, not materially different from existing trained weights, or actual 4TB/200GB floor unmet."
+    },
+    {
+      "repo_id": "ricursiveAI/Ripple-65B-Base-Preview",
+      "pinned_source_sha": "6187d1108a25fcc31681ec942ec3c581721b9fe1",
+      "source_tree_complete": true,
+      "source_repo_bytes": 129569923434,
+      "source_repo_file_count": 29,
+      "source_all_files_not_selected_files": true,
+      "source_gated": false,
+      "source_license_metadata": "apache-2.0",
+      "source_license_text_evidence": [
+        {
+          "url": "https://huggingface.co/ricursiveAI/Ripple-65B-Base-Preview/raw/6187d1108a25fcc31681ec942ec3c581721b9fe1/LICENSE",
+          "repo_id": "ricursiveAI/Ripple-65B-Base-Preview",
+          "revision": "6187d1108a25fcc31681ec942ec3c581721b9fe1",
+          "path": "LICENSE",
+          "text_role": "license_terms",
+          "marker_is_not_legal_clearance": true,
+          "observed_bytes": 11357,
+          "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+          "license_marker": "apache-2.0",
+          "retrieved": true
+        }
+      ],
+      "source_snapshot": "catalog/research/2026-11-07-r30/sources/ricursiveAI--Ripple-65B-Base-Preview.json",
+      "total_safetensors_elements_publisher": 64782689360,
+      "personal_access_verified": false,
+      "download_approved": false,
+      "source_payload_downloaded_bytes": 0,
+      "hardware_peak_ram_measured_bytes": null,
+      "source_only_evidence_not_execution": true,
+      "forecast_regulation_probability": null,
+      "source_card_url": "https://huggingface.co/ricursiveAI/Ripple-65B-Base-Preview",
+      "decision": "RESEARCH_HOLD_CAPACITY_AND_DUPLICATE_COMPARISON",
+      "independently_trained_outcome": "Ricursive 65B dense pretrained-from-scratch 12T tokens, pretrain-only base and BF16 instruction-tuned are two different learned stages",
+      "training_provenance": "https://www.ricursive.com/ripple",
+      "preview_not_same_as_pretrain": false,
+      "research_negative_evidence": "Developer agentic coding claims only; owner RAM+backend+long-context and independent quality unknown. Repo source bulk >50GB; do not add BF16, base and NVFP4 as duplicate default formats.",
+      "next_gate": "Compare v26 general code models, pin runnable environment, verify smallest credible preservation of base vs post-train, then complete 4TB/200GB physical preflight."
+    },
+    {
+      "repo_id": "ricursiveAI/Ripple-65B-Preview",
+      "pinned_source_sha": "4f872a1ef1376a1962c56bab6d874d017be7eb96",
+      "source_tree_complete": true,
+      "source_repo_bytes": 129572880240,
+      "source_repo_file_count": 31,
+      "source_all_files_not_selected_files": true,
+      "source_gated": false,
+      "source_license_metadata": "apache-2.0",
+      "source_license_text_evidence": [
+        {
+          "url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview/raw/4f872a1ef1376a1962c56bab6d874d017be7eb96/LICENSE",
+          "repo_id": "ricursiveAI/Ripple-65B-Preview",
+          "revision": "4f872a1ef1376a1962c56bab6d874d017be7eb96",
+          "path": "LICENSE",
+          "text_role": "license_terms",
+          "marker_is_not_legal_clearance": true,
+          "observed_bytes": 11357,
+          "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+          "license_marker": "apache-2.0",
+          "retrieved": true
+        }
+      ],
+      "source_snapshot": "catalog/research/2026-11-07-r30/sources/ricursiveAI--Ripple-65B-Preview.json",
+      "total_safetensors_elements_publisher": 64782689360,
+      "personal_access_verified": false,
+      "download_approved": false,
+      "source_payload_downloaded_bytes": 0,
+      "hardware_peak_ram_measured_bytes": null,
+      "source_only_evidence_not_execution": true,
+      "forecast_regulation_probability": null,
+      "source_card_url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "decision": "RESEARCH_HOLD_CAPACITY_AND_DUPLICATE_COMPARISON",
+      "independently_trained_outcome": "Ricursive 65B dense pretrained-from-scratch 12T tokens, pretrain-only base and BF16 instruction-tuned are two different learned stages",
+      "training_provenance": "https://www.ricursive.com/ripple",
+      "preview_not_same_as_pretrain": true,
+      "research_negative_evidence": "Developer agentic coding claims only; owner RAM+backend+long-context and independent quality unknown. Repo source bulk >50GB; do not add BF16, base and NVFP4 as duplicate default formats.",
+      "next_gate": "Compare v26 general code models, pin runnable environment, verify smallest credible preservation of base vs post-train, then complete 4TB/200GB physical preflight."
+    }
+  ],
+  "mandatory_moss_codec_capacity_accounting": {
+    "source_revision": "v26-20261106",
+    "baseline_exact_primary_asset_count": 125,
+    "baseline_known_hash_aware_logical_bytes": 3403245899240,
+    "required_moss_audio_codec_new_selected_primary_bytes": 7098711111,
+    "required_moss_audio_codec_hash_aware_logical_new_bytes": 7098711111,
+    "source_only_expanded_known_hash_aware_bytes": 3410344610351,
+    "codec_source_ref": "catalog/research/2026-11-07-dependency-readiness/sources/OpenMOSS-Team--MOSS-Audio-Tokenizer.json",
+    "codec_full_repo_bytes": 7101115998,
+    "codec_selected_files": [
+      {
+        "path": "README.md",
+        "bytes": 10778,
+        "sha256": null,
+        "git_blob_sha1": "9c7fd4615e79e32fa82deb5b66aa44b641252f50",
+        "identity_kind": "git_blob_sha1"
+      },
+      {
+        "path": "__init__.py",
+        "bytes": 52,
+        "sha256": null,
+        "git_blob_sha1": "be87d805388ff76659c35e7273e8c3687b55eeff",
+        "identity_kind": "git_blob_sha1"
+      },
+      {
+        "path": "config.json",
+        "bytes": 6601,
+        "sha256": null,
+        "git_blob_sha1": "7683ae6ce1697e4ce5894de857a28d08df79ef59",
+        "identity_kind": "git_blob_sha1"
+      },
+      {
+        "path": "configuration_moss_audio_tokenizer.py",
+        "bytes": 12933,
+        "sha256": null,
+        "git_blob_sha1": "d82791b43f5cb87256a810b8ee718c2ba4b685fa",
+        "identity_kind": "git_blob_sha1"
+      },
+      {
+        "path": "model-00001-of-00002.safetensors",
+        "bytes": 4998259168,
+        "sha256": "037f441ed30a0ab59f6049de83b824a1b3bd6feb7dbd46c3fbca41fc2f649f28",
+        "git_blob_sha1": "176e76d9ecaed82fbc7149516701477c4769e362",
+        "identity_kind": "lfs_payload_sha256"
+      },
+      {
+        "path": "model-00002-of-00002.safetensors",
+        "bytes": 2100202560,
+        "sha256": "a187d73d2cda1c2d0676586d9d03c09c0a5813450266af32029c871493fc9582",
+        "git_blob_sha1": "bbe064fd21007d8ba810b6c6838873c9e411226e",
+        "identity_kind": "lfs_payload_sha256"
+      },
+      {
+        "path": "model.safetensors.index.json",
+        "bytes": 148113,
+        "sha256": null,
+        "git_blob_sha1": "f29f2656102e41040db3d3e5223464249891b44e",
+        "identity_kind": "git_blob_sha1"
+      },
+      {
+        "path": "modeling_moss_audio_tokenizer.py",
+        "bytes": 70906,
+        "sha256": null,
+        "git_blob_sha1": "2956a4b4482433ad3face7f6ee7eb176891a449a",
+        "identity_kind": "git_blob_sha1"
+      }
+    ],
+    "source_license_metadata": "apache-2.0",
+    "license_original_text_verified": false,
+    "executable_manifest": false,
+    "model_payload_bytes_downloaded": 0,
+    "model_payload_sha256_measured_locally": false,
+    "disk_real_free_bytes": null,
+    "download_time_peak_bytes": null,
+    "complete_offline_archive_bytes": null,
+    "source_dependency_completeness_improved_but_restoration_not_proven": true,
+    "open_parent_asset_count_still_unresolved": 34,
+    "owner_disk_unsafe_to_infer": true
+  },
+  "new_formal_selected_assets": 0,
+  "newly_approved_downloads": 0,
+  "model_payload_bytes_downloaded": 0,
+  "local_raid_or_hdd_tested": false,
+  "main_branch_modified": false,
+  "recommendation": "Select one Kanana trained BF16 model conditional research-only, keep Ripple Base/IT as research HOLD until capacity and quality comparison. Preserve MOSS original codec and do not replace it with v2."
+}
