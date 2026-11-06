@@ -1,5 +1,9 @@
 # エージェント作業規約
 
+## 現行v23：容量監査に基づく独自学習成果2件の追加
+
+[CURRENT](catalog/CURRENT.json)は165資産・有効118件。v22の116件の一次ファイル範囲が確定した後、Hcompany/Holotron4-30B-A3BのNemotron後学習原本とLiquidAI/LFM2.5-24B-A2B-DSparkの学習済み投機ドラフターを条件付き選定。既存163件は不変。新2件の配布元全repo公称バイトは66,707,531,084であり最終採用ファイルや実ディスク必要量ではない。4TB上限、200GB実空き床、150B以上の量子化同等RAM条件、取得承認0件を維持。[選定根拠](docs/strategy/29-bounded-specialized-selection-v23.md)・[v22容量監査](catalog/capacity/2026-11-06/capacity-summary.json)。下のv22以前は履歴。
+
 ## 現行v22：学習成果を失わないための保険
 
 [CURRENT](catalog/CURRENT.json)は163資産・有効116件。規制予測は先に確保する順番であり、保全対象をそこだけに限定しない。[保険方針](policies/archival-insurance.json)・[116件の段階別準備表](catalog/preparation/2026-11-06-insurance-bundles-v22.json)・[採用理由](docs/strategy/27-insurance-first-selection-v22.md)。Drama3公開元原本、DavidAU独自後学習、GroundGUI定位、Consistency LoRA差分を4件conditionalとして追加。全159旧レコード、4TB枠、200GB空き、150B超の量子化同等RAM条件を維持。追加計画枠156GBは実測容量ではない。取得承認0。以下v21以前の件数は履歴。
