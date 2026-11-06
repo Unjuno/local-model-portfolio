@@ -1,4 +1,8 @@
 # エージェント作業規約
+## R32（2026-11-07）：配布元ハッシュと元学習LoRAを追跡する
+
+[R32原本アダプター調査](catalog/research/2026-11-07-r32-ltx-donor-chain.json)と[資料・ライセンス報告](docs/strategy/31-r32-ltx-donor-chain-and-license.md)を参照。LTX2.5 ChrisColeTechはHF上の『Duplicated from』複製先READMEに5元LoRAのマージレシピがあり、以前の『変更手法未提示』は訂正。ただし原ChrisのファイルSHAとの一致は未確認なので**特殊マージと断定して取得lockしない**。Stubelius v1 BF16とINT8は同じ学習済みマージの異形式、42GB＋21.5GBを無目的に二重保存しない。zghhui/OmniNFTの元RL-LoRAは約1.23GBずつのLTX2系とLTX2.3系別親用checkpoint。**学習済み元LoRAはマージ済み重みから容易には復元できない**ため、特殊学習の独立候補として審査。HFのLoRAライセンスApache-2.0ラベルとGitHub作者の『Research use only』、LTX2.x上流の派生権利条件を照合するまで取得承認しない。公開XetのSHA-256は**配布元提示のメタデータで、取得後の再計算済みではない**。固定full revision、アクセス権、依存、実機を別条件にする。既存の150選定と4TB予算、空のapprovedキューを維持。
+
 ## R31（2026-11-07）：特殊版の原本・通常量子化・性能差を固定する
 
 [R31根拠台帳](catalog/research/2026-11-07-r31-special-weights-evidence.json)／[比較報告](docs/strategy/30-r31-provenance-quantization-evidence.md)参照。Stubelius LTX2.5 v1は変更来歴がREADME/NOTICEで明示された固有マージ済み学習重み。**原本保存なら42GB BF16を研究候補として優先**し、INT8 21.5GB・NVFP4 14.4GB・GGUF Q4 12.5GBを無理由に全取得しない。Interpretic特殊v2は作者のQ4/IQ3同条件テストでMMLU 81.9%/78.0%、中立回答破綻1/110対7/110であり、既存Q4を低精度IQ3で安易に置き換えない。RVNは反復ARAで別学習状態だが旧legacyと新版を分け、何十個もの同じRVN量子化を保存しない。DavidAU release #1には2026-10-20の第三者同条件Q6試験（MMLU-Pro 67.2%対Qwen 57.6%）があるが、新版や別精度に性能を移さない。ChrisColeTech LTX2.5はHF公開メタデータからは独自マージの来歴を確証できず、HOLD相当の取得ロックなし研究状態を維持。既存カタログ150件と取得キューは変更しない。
