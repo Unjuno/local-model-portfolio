@@ -118,7 +118,7 @@ def choose_files(files,profile):
         if not mandatory.issubset(available):raise ValueError('mandatory separately licensed People_Speech manifest missing')
         labels={p for p in available if p.endswith('.jsonl.gz')}
         if not labels:raise ValueError('missing published label manifests')
-        if any(not re.fullmatch(r'[a-z]{2,3}/[a-z][a-z0-9_]+/[a-z]{2,3}_asr(?:\\.part[0-9]{2})?\\.jsonl\\.gz',p) for p in labels):
+        if any(not re.fullmatch(r'[a-z]{2,3}/[a-z][a-z0-9_]+/[a-z]{2,3}_asr(?:\.part[0-9]{2})?\.jsonl\.gz',p) for p in labels):
             raise ValueError('unrecognized label filename, review license partition')
     for p in profile.get('dataset_paths',[]):
         if not any(f==p or f.startswith(p.rstrip('/')+'/') for f in available):raise ValueError('missing subset: '+p)
