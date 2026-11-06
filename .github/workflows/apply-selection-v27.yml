@@ -1,0 +1,136 @@
+name: Adopt Kakao Kanana decision outcome and account MOSS codec as a v27 dependency
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - '.github/workflows/apply-selection-v27.yml'
+      - 'catalog/revisions/v27-2026-11-07.json'
+      - 'scripts/apply_selection_v27.py'
+      - 'scripts/capacity_selection_v27.py'
+      - 'tests/test_selection_v27.py'
+      - 'tests/test_capacity_selection_v27.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-v27-risk-only
+  cancel-in-progress: false
+jobs:
+  apply_readonly:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 14
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Verify v26 base and one-item non-executable transition
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_selection_v27.py -v
+          python scripts/check_parameter_cutoff.py
+          python scripts/audit_selection_decisions.py
+      - name: Materialize v27, then audit 126 primary source scopes plus MOSS external codec
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m scripts.apply_selection_v27 --apply
+          python -m scripts.capacity_selection_v27
+      - name: Verify original 172, capacity and full suite without any weight access
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,re,subprocess,sys
+          from pathlib import Path
+          load=lambda p:json.loads(Path(p).read_text(encoding='utf-8'))
+          c=load('catalog/CURRENT.json')
+          v=load(c['materialized_catalog_path'])
+          old=load('catalog/effective-portfolio-2026-11-06-v26.json')
+          q=load(c['priority_worklist_path'])
+          plan=load(c['insurance_preparation_worklist_path'])
+          s=load('catalog/capacity/2026-11-07/v27/capacity-summary.json')
+          old_s=load('catalog/capacity/2026-11-06/v26/capacity-summary.json')
+          overlay=load('catalog/revisions/v27-2026-11-07.json')
+          app=load('queues/approved.json')
+          assert c['revision_id']=='v27-20261107' and c['expected']['tracked']==173 and c['expected']['active']==126
+          assert len(v['items'])==173 and v['items'][:172]==old['items']
+          assert len(q['candidates'])==126 and len(plan['items'])==126
+          active={(x['asset_kind'],x['repo_id']) for x in v['items'] if x['portfolio_decision'] in ('select','conditional')}
+          assert active=={(x['asset_kind'],x['repo_id']) for x in q['candidates']}
+          assert active=={(x['asset_kind'],x['repo_id']) for x in plan['items']}
+          assert v['items'][-1]['repo_id']=='kakaocorp/kanana-2-v-decide-3b-2611'
+          assert v['items'][-1]['download_approved'] is False
+          assert v['items'][-1]['selected_file_bytes'] is None and v['items'][-1]['fully_pinned_revision_sha'] is None
+          k=next(x for x in q['candidates'] if x['repo_id']=='kakaocorp/kanana-2-v-decide-3b-2611')
+          assert k['research_only'] is True and k['can_enter_approved_queue'] is False
+          assert k['personal_license_review_required'] is True
+          assert all(x['download_approved'] is False for x in v['items'])
+          assert not q['approved'] and not q['download_enabled'] and not plan['download_enabled']
+          assert not app['entries']
+          assert s['exact_primary_file_scope_count']==126 and s['unresolved_primary_scope_count']==0
+          assert old_s['exact_primary_file_scope_count']==125 and old_s['known_scope_content_union_bytes']==3_403_245_899_240
+          assert s['new_kanana_selected_primary_bytes']==7_341_102_234
+          assert s['new_moss_external_dependency_selected_bytes']==7_098_711_111
+          assert s['new_moss_external_dependency_hash_aware_logical_increment_bytes']==7_098_711_111
+          assert s['known_scope_content_union_bytes']>=3_410_344_610_351
+          assert s['known_scope_content_union_bytes']<4_000_000_000_000
+          assert len(s['assets_with_open_dependency_issues'])==35
+          assert s['complete_offline_archive_bytes'] is None and s['physical_disk_free_bytes'] is None
+          assert s['actual_acquisition_peak_bytes'] is None
+          assert s['moss_external_codec_not_newly_selected_asset'] and s['both_ripple_65B_variants_not_adopted']
+          assert len(overlay['additions'])==1 and len(overlay['research_not_selected'])==2
+          assert not s['download_authorized'] and s['model_payload_bytes_downloaded']==0
+          limits=load('policies/limits.json')
+          assert limits['archive_target_bytes']==4_000_000_000_000
+          assert limits['minimum_free_bytes']==200_000_000_000
+          c['capacity_audit'].update(
+             source_revision='v27-20261107',checked_on='2026-11-07',
+             status='ALL_126_PRIMARY_SOURCE_SCOPES_EXACT_AND_MOSS_V1_DEPENDENCY_ACCOUNTED_OFFLINE_AND_RIGHTS_UNVERIFIED',
+             summary_path='catalog/capacity/2026-11-07/v27/capacity-summary.json',
+             file_inventory_path='catalog/capacity/2026-11-07/v27/selected-file-capacity.json',
+             report_path='catalog/capacity/2026-11-07/v27/capacity-report.md',
+             latest_revision_scope_coverage=126,
+             v27_new_assets_unmeasured_count=0,
+             mandatory_moss_v1_codec_source_bytes=s['new_moss_external_dependency_selected_bytes'],
+             mandatory_moss_v1_codec_hash_aware_logical_increment_bytes=s['new_moss_external_dependency_hash_aware_logical_increment_bytes'],
+             owner_disk_measured=False)
+          Path('catalog/CURRENT.json').write_text(json.dumps(c,ensure_ascii=False,indent=2)+'\n')
+          full=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],capture_output=True,text=True)
+          log=full.stdout+full.stderr;print(log)
+          if full.returncode:raise SystemExit(full.returncode)
+          for script in ('scripts/check_parameter_cutoff.py','scripts/audit_selection_decisions.py'):
+              subprocess.run([sys.executable,script],check=True)
+          n=int(re.search(r'Ran (\d+) tests',log).group(1))
+          file=Path('catalog/preparation/2026-11-07-v27-integration-check.json')
+          evidence=load(file)
+          evidence.update(full_suite_verified=True,unittest_count=n,
+             parameter_and_selection_audits_passed=True,exact_primary_scopes=126,
+             known_logical_dedup_bytes=s['known_scope_content_union_bytes'],
+             complete_offline_archive_verified=False,model_payload_downloads=0,
+             rights_verified=False,owner_disk_measured=False,
+             source_test_log_sha256=hashlib.sha256(log.encode()).hexdigest())
+          file.write_text(json.dumps(evidence,indent=2)+'\n')
+          print(json.dumps(evidence,indent=2))
+          PY
+      - name: Commit generated v27 metadata after branch-head lease check
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          test "$(git ls-remote origin "$GITHUB_REF" | cut -f1)" = "$GITHUB_SHA"
+          git add -- catalog/CURRENT.json catalog/effective-portfolio-2026-11-07-v27.json queues/proposed-v27-2026-11-07.json catalog/preparation/2026-11-07-insurance-bundles-v27.json catalog/preparation/2026-11-07-v27-integration-check.json catalog/capacity/2026-11-07/v27 README.md AGENTS.md scripts/audit_selection_decisions.py tests/test_catalog_v19.py policies/selection-decision-v17.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'catalog: adopt Kanana learned decision weights and MOSS v1 decoder dependency [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD
