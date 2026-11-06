@@ -1,0 +1,50 @@
+{
+  "asset_kind": "model",
+  "repo_id": "EPFLiGHT/Meditron3-70B",
+  "portfolio_decision": "conditional",
+  "observed_at_utc": "2026-11-06T04:42:34.013548+00:00",
+  "evidence_kind": "anonymous_publisher_api_metadata_not_local_payload_measurement",
+  "download_authorized": false,
+  "payload_bytes_downloaded": 0,
+  "tree_complete": false,
+  "files": [],
+  "source_scope_bytes": null,
+  "selected_files_bytes": null,
+  "complete_dependency_bytes": null,
+  "runtime_peak_ram_bytes": null,
+  "local_reuse_verified": false,
+  "prior_observed_access": "gated",
+  "prior_revision": "1ec3a7ee2355e384149df2e4dd42fed41e7fd08f",
+  "requested_artifact": "original-precision-weights",
+  "required_dependencies_note": null,
+  "parameter_gate_status": "PASS_TOTAL_PARAMS_LT_150B",
+  "source_api_url": "https://huggingface.co/api/models/EPFLiGHT/Meditron3-70B",
+  "head_revision_observed": "1ec3a7ee2355e384149df2e4dd42fed41e7fd08f",
+  "pinned_revision": "1ec3a7ee2355e384149df2e4dd42fed41e7fd08f",
+  "pinned_revision_origin": "head_observed_for_capacity_only_not_selection_approval",
+  "gated": "auto",
+  "private": false,
+  "license_metadata": "llama3.1",
+  "metadata_sha256": "f438e63cc4882c965563d8490b1505da2428f248bfd416836de2d8c0b436372b",
+  "last_modified": "2026-06-26T14:42:47.000Z",
+  "architecture_metadata": {
+    "architectures": [
+      "LlamaForCausalLM"
+    ],
+    "model_type": "llama",
+    "tokenizer_config": {
+      "bos_token": "<|begin_of_text|>",
+      "chat_template": "{% set loop_messages = messages %}{% for message in loop_messages %}{% set content = '<|start_header_id|>' + message['role'] + '<|end_header_id|>\n\n'+ message['content'] | trim + '<|eot_id|>' %}{% if loop.index0 == 0 %}{% set content = bos_token + content %}{% endif %}{{ content }}{% endfor %}{{ '<|start_header_id|>assistant<|end_header_id|>\n\n' }}",
+      "eos_token": "<|eot_id|>",
+      "pad_token": "<|end_of_text|>"
+    }
+  },
+  "parameter_metadata": {
+    "parameters": {
+      "BF16": 70553706496
+    },
+    "total": 70553706496
+  },
+  "source_scope": "repository_all_files_not_selection",
+  "error": "ValueError: invalid LFS SHA256"
+}

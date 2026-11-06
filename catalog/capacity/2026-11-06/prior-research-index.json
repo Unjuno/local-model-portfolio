@@ -1,0 +1,209 @@
+[
+  {
+    "source_path": "catalog/research/2026-11-04-round19-decisions.json",
+    "repo_id": "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1",
+    "decision": "CONDITIONAL",
+    "why_not_add": "No independent paired image-quality or adult-content-coverage benchmark. Experimental v0.1; actual incremental bytes require verified reuse of the base, encoder and VAE."
+  },
+  {
+    "source_path": "catalog/research/2026-11-04-round19-decisions.json",
+    "repo_id": "fishaudio/drama-3-int4",
+    "decision": "CONDITIONAL",
+    "why_not_add": "22.1GB advertised download is not serving memory: source tree is about24GB including codec; tested A100 peak57.9GB with memory reservation settings. 24/32/48GB serving unverified. Occasional tag truncation; benchmark actually names akhaliq quant and all hashes across mirrors were not compared."
+  },
+  {
+    "source_path": "catalog/research/2026-11-04-round19-decisions.json",
+    "repo_id": "ausboss/Qwen-Image-2.1-Consistency-LoRA",
+    "decision": "CONDITIONAL",
+    "why_not_add": "Can resist new poses/head turns; may leave ghosts on large removals. Training/evaluation English; no independent replication. Primary page snapshots disagree about8-step Turbo/2MP tests, so these modes are not treated as verified."
+  },
+  {
+    "source_path": "catalog/research/2026-11-04-round19-decisions.json",
+    "repo_id": "laion/Humaneness-Voice-Converter",
+    "decision": "HOLD",
+    "why_not_add": "Target speaker cosine falls0.821 to0.773; source emotion MSE improves0.113 to0.092 but reuses training-reward judge. Ten curated UIDs overlap RL selection. No independent MOS/WER/Japanese evaluation. This is a research tradeoff, not established practical superiority."
+  },
+  {
+    "source_path": "catalog/research/2026-11-04-round19-decisions.json",
+    "repo_id": "laion/Humaneness-Voice-Large-1.6-Alpha",
+    "decision": "HOLD",
+    "why_not_add": "Historical unmerged rank4 WER cannot be attributed to the rounded merged1.6 checkpoint. No Japanese guarantee; specialist adapters are separate/gated; no independent naturalness or identity comparison to portfolio TTS."
+  },
+  {
+    "source_path": "catalog/research/2026-11-04-round19-decisions.json",
+    "repo_id": "laion/Humaneness-Voice-Large-1.5-Alpha",
+    "decision": "REJECT",
+    "why_not_add": "Do not add a second complete base package this cycle; creator identifies1.6 as the merged successor. Older1.5 proxy scores do not establish superiority over current portfolio TTS."
+  },
+  {
+    "source_path": "catalog/research/2026-11-04-round19-decisions.json",
+    "repo_id": "YueFong/Qwen-Image-2.1-Uncensored-GGUF",
+    "decision": "REJECT",
+    "why_not_add": "No separately demonstrated learned capability; marketing label and absent application filter are not evidence of extra fine-tuning. Do not create another capability slot for the same base."
+  },
+  {
+    "source_path": "catalog/research/2026-11-04-round19-decisions.json",
+    "repo_id": "laion/Humaneness-Voice-Small",
+    "decision": "HOLD",
+    "why_not_add": "Overlaps existing TTS; publisher acknowledges shakiness and timing/prompt limitations. No sufficiently controlled superiority to existing multilingual models was verified this cycle."
+  },
+  {
+    "source_path": "catalog/research/2026-11-05-round20-decisions.json",
+    "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+    "decision": "CONDITIONAL",
+    "negative_evidence": "Publisher-only evidence; training/edit method undisclosed. 2 of 115 sensitive questions excluded using knowledge probes. GPQA/IFBench use official-card baselines, not matched reruns. General capability and harmful-request tests are BF16, not Q4. All tests text-only; no independent truthfulness or multilingual validation.",
+    "next_validation": "Resolve full immutable SHA, record training/edit method if author supplies it; blinded complete 115+30 Chinese question evaluation, Japanese/English transfer, truthfulness, harmless overrefusal, harmful refusal and task quality on the actual Q4 build.",
+    "reversal_condition": "Move to HOLD if behavior is explained by factual errors or general quality loss; reject duplicate capability if an incumbent matches selective behavior under the same tests."
+  },
+  {
+    "source_path": "catalog/research/2026-11-05-round20-decisions.json",
+    "repo_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU",
+    "decision": "CONDITIONAL",
+    "negative_evidence": "Only one third-party benchmark project, not independently reproduced here; training contamination untested. Multiple comparisons unadjusted. No hardware model, clock or batch disclosed. Creator announces newer branches, but measurements cannot transfer to them or to creator Q4 builds. Large 55.6GB repository contains multiple artifacts.",
+    "next_validation": "Resolve benchmark revision fd6a26869dc5 to a full SHA, match chosen artifact to that revision, reproduce paired Q6 tests and held-out reasoning/RP on incumbent hardware; review donor/parent license notices.",
+    "reversal_condition": "Reject if held-out gains vanish or contamination/mismatched template explains them. Do not promote newer creator variants based on this release-1 evidence."
+  },
+  {
+    "source_path": "catalog/research/2026-11-05-round20-decisions.json",
+    "repo_id": "PrentisAI/GroundGUI-8B",
+    "decision": "CONDITIONAL",
+    "negative_evidence": "Author-only tests. Bounding-box hit accuracy is not multi-step task success. Requires explicit system prompt; inherited generation_config enables sampling although reported evaluation is greedy. Eval GPU, clock, batch and user RAM/latency unverified. Hub update date and relative file-history dates do not agree precisely.",
+    "next_validation": "Pin weights/tokenizer/system prompt and backend; measure visual localization and full Fara+GroundGUI pipeline separately on held-out screenshots/tasks. Start offline without executing predicted clicks.",
+    "reversal_condition": "Move to HOLD if Fara alone is as accurate/cost-effective under equal screenshot/action budgets, or planner+grounder integration loses task success."
+  },
+  {
+    "source_path": "catalog/research/2026-11-05-round20-decisions.json",
+    "repo_id": "inclusionAI/UI-Venus-2-9B",
+    "decision": "HOLD",
+    "negative_evidence": "Index incorrectly claims 1,469,680 parameters despite a single embedding matrix requiring more than one billion by the published config. Exact full learned total must be recounted. OSWorld 2.0 binary completion is 0/108 at 150 steps, despite 70.8% OSWorld-Verified reference result. Protocols/scaffolds differ. Runtime example is not live validated. Weight license is pending/conflicted, but this alone is not the research rejection reason.",
+    "next_validation": "Read all Safetensors headers without execution; reconcile parameter total and file sums; resolve published weight terms for personal research; rerun task completion on a common environment, not just grounding or partial score.",
+    "reversal_condition": "Promote if correct artifact census and reproducible matched end-to-end advantage are shown; otherwise retain Fara and avoid another full agent copy."
+  },
+  {
+    "source_path": "catalog/research/2026-11-05-round20-decisions.json",
+    "repo_id": "inclusionAI/UI-Venus-2-27B",
+    "decision": "HOLD",
+    "negative_evidence": "The exact inclusionAI/UI-Venus-2-27B lookup returned not found. A paper table is not evidence of a downloadable checkpoint. No private access or alternative identity was inferred.",
+    "next_validation": "Revisit only after author links an actual repository with weights, license, revision and component information.",
+    "reversal_condition": "Promote to research shortlist if a real author-published checkpoint appears; do not use 9B files or unofficial aliases as if they were 27B."
+  },
+  {
+    "source_path": "catalog/research/2026-11-05-round20-decisions.json",
+    "repo_id": "OBLITERATUS/Qwen3.8-27B-OBLITERATED",
+    "decision": "REJECT",
+    "negative_evidence": "For this performance-first archive cycle, third-party Q6 evaluation shows MMLU-Pro -4.6pp and 45.3% harmful refusals, with overlap against existing edited Qwen models. Phrase matching would falsely report zero refusals. Downloads and popularity do not resolve these disadvantages.",
+    "next_validation": "Reopen only for a pinned corrected revision with comparable independent general-quality/completion tests or a clearly justified failure-study requirement.",
+    "reversal_condition": "Reverse rejection only if matched evidence shows unique useful behavior or user explicitly requests the failure-case checkpoint; no prediction that future versions must fail."
+  },
+  {
+    "source_path": "catalog/research/2026-11-05-round23-motion-avatar-decisions.json",
+    "repo_id": "Wan-AI/Wan2.2-Animate-2-14B-Diffusers",
+    "decision": "CONDITIONAL",
+    "negative_evidence": "No independent reproduction. Study sample/rater count and evaluation hardware were not established. Selected Base is not the real-time Lite model; all-task viewpoint LoRA support not independently verified. Reference implementation uses multiple A800 GPUs.",
+    "reversal_condition": "Downgrade if target motions fail, runtime is unusable on available hardware, or a smaller existing model reproduces the same motion and identity retention."
+  },
+  {
+    "source_path": "catalog/research/2026-11-05-round23-motion-avatar-decisions.json",
+    "repo_id": "meituan-longcat/LongCat-Video-Avatar-1.5",
+    "decision": "CONDITIONAL",
+    "negative_evidence": "Author-organized evaluation, not independent reproduction. The non-accelerated Base retains better human-likeness and lip synchronization; accelerated results reduce distortion. Chinese/English evaluation does not establish Japanese quality. INT8 parity and practical single-GPU speed are unverified.",
+    "reversal_condition": "Downgrade if INT8 loses lip sync/identity or the runtime cost outweighs the distinct multi-person conditioning value."
+  },
+  {
+    "source_path": "catalog/research/2026-11-05-round23-motion-avatar-decisions.json",
+    "repo_id": "zai-org/SCAIL-2",
+    "decision": "HOLD",
+    "negative_evidence": "Overlap with Wan-Animate-2, no matched independent quality comparison found. Main checkpoint is a 65.58GB .pt file; no unsafe deserialization was attempted and total learned components remain unknown.",
+    "reversal_condition": "Promote only if replacement/relighting gains are reproducible and justify duplicate foundation weights."
+  },
+  {
+    "source_path": "catalog/research/2026-11-05-round23-motion-avatar-decisions.json",
+    "repo_id": "Quark-Vision/Live-Avatar",
+    "decision": "HOLD",
+    "negative_evidence": "Adapter-only 1.353GB does not include Wan2.2-S2V-14B or its dependencies. Reported 45fps uses a multi-H800 system, not a consumer GPU. Compared local quality and full costs unknown.",
+    "reversal_condition": "Promote only if required long-stream behavior is absent in selected models and the full cost is practical."
+  },
+  {
+    "source_path": "catalog/research/2026-11-05-round23-motion-avatar-decisions.json",
+    "repo_id": "fudan-generative-ai/Hallo-Live",
+    "decision": "HOLD",
+    "negative_evidence": "Very different hardware from user machine; batch, clock and independent practical quality not established. Full Ovi-related dependencies and parameter total unverified.",
+    "reversal_condition": "Promote if joint generation materially outperforms a modular pipeline within actual resource limits."
+  },
+  {
+    "source_path": "catalog/research/2026-11-05-round23-motion-avatar-decisions.json",
+    "repo_id": "avaturn-live/avtr-1",
+    "decision": "HOLD",
+    "negative_evidence": "No independent image/lip-sync benchmark; table trial count, clock and VRAM unknown, and a later card note refers to A100-only measurement. Full renderer/InsightFace/engine dependency count unknown. Gated access not accepted.",
+    "reversal_condition": "Promote only after quality and lightweight distinct behavior are validated without silently accepting gated terms."
+  },
+  {
+    "source_path": "catalog/research/2026-11-06-small-model-r26.json",
+    "repo_id": "LiquidAI/LFM3-1.7B",
+    "decision": "CONDITIONAL"
+  },
+  {
+    "source_path": "catalog/research/2026-11-06-small-model-r26.json",
+    "repo_id": "IFM/K2-Horizon-0.9B",
+    "decision": "CONDITIONAL"
+  },
+  {
+    "source_path": "catalog/research/2026-11-06-small-model-r26.json",
+    "repo_id": "LiquidAI/LFM2.5-VL-3B",
+    "decision": "CONDITIONAL"
+  },
+  {
+    "source_path": "catalog/research/2026-11-06-small-model-r26.json",
+    "repo_id": "LiquidAI/LFM2.5-VL-3B-DSpark",
+    "decision": "CONDITIONAL"
+  },
+  {
+    "source_path": "catalog/research/2026-11-06-small-model-r26.json",
+    "repo_id": "udgamlabs/Lilavati",
+    "decision": "CONDITIONAL"
+  },
+  {
+    "source_path": "catalog/research/2026-11-06-small-model-r26.json",
+    "repo_id": "udgamlabs/Lilavati-Checker",
+    "decision": "CONDITIONAL"
+  },
+  {
+    "source_path": "catalog/research/2026-11-06-small-model-r26.json",
+    "repo_id": "XHToken/Spark-X2.6-1.7B",
+    "decision": "HOLD_RESEARCH_ONLY_NOT_CATALOG"
+  },
+  {
+    "source_path": "catalog/research/2026-11-06-small-model-r26.json",
+    "repo_id": "Goekdeniz-Guelmez/JOSIE-2-4B-OSS",
+    "decision": "HOLD_RESEARCH_ONLY_NOT_CATALOG"
+  },
+  {
+    "source_path": "catalog/research/2026-11-06-small-model-r26.json",
+    "repo_id": "microsoft/Orchard-GUI-4B",
+    "decision": "HOLD_NO_VERIFIED_CHECKPOINT"
+  },
+  {
+    "source_path": "catalog/research/alternate-sources-pirateface-civitai-2026-11-04.json",
+    "repo_id": "Gryphe/Pantheon-Reasoning-27B",
+    "decision": "RESEARCH_ONLY",
+    "reason": "Roleplay SFT candidate, but author reports no extensive quality tests."
+  },
+  {
+    "source_path": "catalog/research/nsfw-multimodal-candidates-2026-11-04.json",
+    "repo_id": "ChrisColeTech/LTX-2.3-uncensored-v1.4-FP8",
+    "decision": "BLOCKED_RESEARCH_ONLY",
+    "reason": "Direct publisher card, but no confirmed total, full license, hashes, and quality comparison"
+  },
+  {
+    "source_path": "catalog/research/nsfw-multimodal-candidates-2026-11-04.json",
+    "repo_id": "IbarakiDouji/wai-nsfw-illustrious-sdxl",
+    "decision": "BLOCKED_RESEARCH_ONLY",
+    "reason": "Official publisher collection confirms family, exact repository/version and benchmark must be locked"
+  },
+  {
+    "source_path": "catalog/research/nsfw-multimodal-candidates-2026-11-04.json",
+    "repo_id": "Phr00t/LTX2-Rapid-Merges",
+    "decision": "REJECT_FOR_NOW",
+    "reason": "Author explicitly says NSFW merge outdated and maintenance winding down; newer LTX2.3 candidate merits comparison first"
+  }
+]

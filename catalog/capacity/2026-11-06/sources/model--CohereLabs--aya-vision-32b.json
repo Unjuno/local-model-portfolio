@@ -1,0 +1,60 @@
+{
+  "asset_kind": "model",
+  "repo_id": "CohereLabs/aya-vision-32b",
+  "portfolio_decision": "conditional",
+  "observed_at_utc": "2026-11-06T04:42:31.048645+00:00",
+  "evidence_kind": "anonymous_publisher_api_metadata_not_local_payload_measurement",
+  "download_authorized": false,
+  "payload_bytes_downloaded": 0,
+  "tree_complete": false,
+  "files": [],
+  "source_scope_bytes": null,
+  "selected_files_bytes": null,
+  "complete_dependency_bytes": null,
+  "runtime_peak_ram_bytes": null,
+  "local_reuse_verified": false,
+  "prior_observed_access": "gated",
+  "prior_revision": "0554d66834922fc0f2e5f47a12f78464f4a98533",
+  "requested_artifact": "original-precision-weights",
+  "required_dependencies_note": null,
+  "parameter_gate_status": "PASS_TOTAL_PARAMS_LT_150B",
+  "source_api_url": "https://huggingface.co/api/models/CohereLabs/aya-vision-32b",
+  "head_revision_observed": "0554d66834922fc0f2e5f47a12f78464f4a98533",
+  "pinned_revision": "0554d66834922fc0f2e5f47a12f78464f4a98533",
+  "pinned_revision_origin": "head_observed_for_capacity_only_not_selection_approval",
+  "gated": "auto",
+  "private": false,
+  "license_metadata": "cc-by-nc-4.0",
+  "metadata_sha256": "f7f38704699a41bbd638277c93bab5a39074ffa01a33dc2d39288207bffb3002",
+  "last_modified": "2026-01-09T23:09:29.000Z",
+  "architecture_metadata": {
+    "architectures": [
+      "AyaVisionForConditionalGeneration"
+    ],
+    "model_type": "aya_vision",
+    "processor_config": {
+      "chat_template": "{{ bos_token }}{%- if messages | selectattr('role', 'equalto', 'system') | list | length > 0 -%}\n    {%- for message in messages | selectattr('role', 'equalto', 'system') | list -%}\n<|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|>{{ message.content }}<|END_OF_TURN_TOKEN|>\n    {%- endfor -%}\n{%- else -%}\n<|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|>You are Aya Vision, a brilliant, sophisticated, AI-assistant chatbot trained to assist human users by providing thorough responses. You are a large vision language model built by the Cohere For AI. You are capable of interpreting images, including describing them, answering questions about their contents, extracting textual information, and analyzing visual context.<|END_OF_TURN_TOKEN|>\n{%- endif -%}\n{%- for message in messages | rejectattr('role', 'equalto', 'system') -%}\n    <|START_OF_TURN_TOKEN|>{{ message.role | replace(\"user\", \"<|USER_TOKEN|>\") | replace(\"assistant\", \"<|CHATBOT_TOKEN|><|START_RESPONSE|>\") | replace(\"system\", \"<|SYSTEM_TOKEN|>\") }}\n    {%- if message.content is defined -%}\n        {%- if message.content is string -%}\n{{ message.content }}\n        {%- else -%}\n            {%- for item in message.content | selectattr('type', 'equalto', 'image') -%}\n<image>\n            {%- endfor -%}\n            {%- for item in message.content | selectattr('type', 'equalto', 'text') -%}\n{{ item.text }}\n            {%- endfor -%}\n        {%- endif -%}\n    {%- elif message.message is defined -%}\n        {%- if message.message is string -%}\n{{ message.message }}\n        {%- else -%}\n            {%- for item in message.message | selectattr('type', 'equalto', 'image') -%}\n<image>\n            {%- endfor -%}\n            {%- for item in message.message | selectattr('type', 'equalto', 'text') -%}\n{{ item.text }}\n            {%- endfor -%}\n        {%- endif -%}\n    {%- endif -%}\n    {%- if message.role == \"assistant\" -%}\n<|END_RESPONSE|>\n    {%- endif -%}\n<|END_OF_TURN_TOKEN|>\n{%- endfor -%}\n{%- if add_generation_prompt -%}\n<|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>\n{%- endif -%}\n"
+    },
+    "tokenizer_config": {
+      "bos_token": "<BOS_TOKEN>",
+      "chat_template": [
+        {
+          "name": "default",
+          "template": "{{ bos_token }}<|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|>You are Aya Vision, a brilliant, sophisticated, AI-assistant chatbot trained to assist human users by providing thorough responses. You are a large vision language model built by the Cohere For AI. You are capable of interpreting images, including describing them, answering questions about their contents, extracting textual information, and analyzing visual context.<|END_OF_TURN_TOKEN|>\n{%- for message in messages -%}\n    <|START_OF_TURN_TOKEN|>{{ message.role | replace(\"user\", \"<|USER_TOKEN|>\") | replace(\"assistant\", \"<|CHATBOT_TOKEN|><|START_RESPONSE|>\") | replace(\"system\", \"<|SYSTEM_TOKEN|>\") }}\n    {%- if message.content is defined -%}\n        {%- if message.content is string -%}\n{{ message.content }}\n        {%- else -%}\n            {%- for item in message.content | selectattr('type', 'equalto', 'image') -%}\n<image>\n            {%- endfor -%}\n            {%- for item in message.content | selectattr('type', 'equalto', 'text') -%}\n{{ item.text }}\n            {%- endfor -%}\n        {%- endif -%}\n    {%- elif message.message is defined -%}\n        {%- if message.message is string -%}\n{{ message.message }}\n        {%- else -%}\n            {%- for item in message.message | selectattr('type', 'equalto', 'image') -%}\n<image>\n            {%- endfor -%}\n            {%- for item in message.message | selectattr('type', 'equalto', 'text') -%}\n{{ item.text }}\n            {%- endfor -%}\n        {%- endif -%}\n    {%- endif -%}\n    {%- if message.role == \"assistant\" -%}\n<|END_RESPONSE|>\n    {%- endif -%}\n<|END_OF_TURN_TOKEN|>\n{%- endfor -%}\n{%- if add_generation_prompt -%}\n<|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>\n{%- endif -%}\n"
+        }
+      ],
+      "eos_token": "<|END_OF_TURN_TOKEN|>",
+      "pad_token": "<PAD>",
+      "unk_token": null,
+      "use_default_system_prompt": false
+    }
+  },
+  "parameter_metadata": {
+    "parameters": {
+      "F16": 33137896688
+    },
+    "total": 33137896688
+  },
+  "source_scope": "repository_all_files_not_selection",
+  "error": "ValueError: invalid LFS SHA256"
+}

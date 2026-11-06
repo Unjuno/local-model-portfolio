@@ -1,0 +1,53 @@
+{
+  "asset_kind": "model",
+  "repo_id": "google/medgemma-4b-it",
+  "portfolio_decision": "conditional",
+  "observed_at_utc": "2026-11-06T04:42:34.226253+00:00",
+  "evidence_kind": "anonymous_publisher_api_metadata_not_local_payload_measurement",
+  "download_authorized": false,
+  "payload_bytes_downloaded": 0,
+  "tree_complete": false,
+  "files": [],
+  "source_scope_bytes": null,
+  "selected_files_bytes": null,
+  "complete_dependency_bytes": null,
+  "runtime_peak_ram_bytes": null,
+  "local_reuse_verified": false,
+  "prior_observed_access": "gated",
+  "prior_revision": "290cda5eeccbee130f987c4ad74a59ae6f196408",
+  "requested_artifact": "original-checkpoint",
+  "required_dependencies_note": null,
+  "parameter_gate_status": "PASS_TOTAL_PARAMS_LT_150B",
+  "source_api_url": "https://huggingface.co/api/models/google/medgemma-4b-it",
+  "head_revision_observed": "290cda5eeccbee130f987c4ad74a59ae6f196408",
+  "pinned_revision": "290cda5eeccbee130f987c4ad74a59ae6f196408",
+  "pinned_revision_origin": "head_observed_for_capacity_only_not_selection_approval",
+  "gated": "auto",
+  "private": false,
+  "license_metadata": "other",
+  "metadata_sha256": "857cbd1fe043e3d255c11e51cc7ba2d9dac71b4dc4fd158b0b35d96ffbd3958d",
+  "last_modified": "2025-10-28T17:24:49.000Z",
+  "architecture_metadata": {
+    "architectures": [
+      "Gemma3ForConditionalGeneration"
+    ],
+    "model_type": "gemma3",
+    "tokenizer_config": {
+      "bos_token": "<bos>",
+      "chat_template": "{{ bos_token }}\n{%- if messages[0]['role'] == 'system' -%}\n    {%- if messages[0]['content'] is string -%}\n        {%- set first_user_prefix = messages[0]['content'] + '\n\n' -%}\n    {%- else -%}\n        {%- set first_user_prefix = messages[0]['content'][0]['text'] + '\n\n' -%}\n    {%- endif -%}\n    {%- set loop_messages = messages[1:] -%}\n{%- else -%}\n    {%- set first_user_prefix = \"\" -%}\n    {%- set loop_messages = messages -%}\n{%- endif -%}\n{%- for message in loop_messages -%}\n    {%- if (message['role'] == 'user') != (loop.index0 % 2 == 0) -%}\n        {{ raise_exception(\"Conversation roles must alternate user/assistant/user/assistant/...\") }}\n    {%- endif -%}\n    {%- if (message['role'] == 'assistant') -%}\n        {%- set role = \"model\" -%}\n    {%- else -%}\n        {%- set role = message['role'] -%}\n    {%- endif -%}\n    {{ '<start_of_turn>' + role + '\n' + (first_user_prefix if loop.first else \"\") }}\n    {%- if message['content'] is string -%}\n        {{ message['content'] | trim }}\n    {%- elif message['content'] is iterable -%}\n        {%- for item in message['content'] -%}\n            {%- if item['type'] == 'image' -%}\n                {{ '<start_of_image>' }}\n            {%- elif item['type'] == 'text' -%}\n                {{ item['text'] | trim }}\n            {%- endif -%}\n        {%- endfor -%}\n    {%- else -%}\n        {{ raise_exception(\"Invalid content type\") }}\n    {%- endif -%}\n    {{ '<end_of_turn>\n' }}\n{%- endfor -%}\n{%- if add_generation_prompt -%}\n    {{'<start_of_turn>model\n'}}\n{%- endif -%}\n",
+      "eos_token": "<eos>",
+      "pad_token": "<pad>",
+      "unk_token": "<unk>",
+      "use_default_system_prompt": false
+    },
+    "chat_template_jinja": "{{ bos_token }}\n{%- if messages[0]['role'] == 'system' -%}\n    {%- if messages[0]['content'] is string -%}\n        {%- set first_user_prefix = messages[0]['content'] + '\n\n' -%}\n    {%- else -%}\n        {%- set first_user_prefix = messages[0]['content'][0]['text'] + '\n\n' -%}\n    {%- endif -%}\n    {%- set loop_messages = messages[1:] -%}\n{%- else -%}\n    {%- set first_user_prefix = \"\" -%}\n    {%- set loop_messages = messages -%}\n{%- endif -%}\n{%- for message in loop_messages -%}\n    {%- if (message['role'] == 'user') != (loop.index0 % 2 == 0) -%}\n        {{ raise_exception(\"Conversation roles must alternate user/assistant/user/assistant/...\") }}\n    {%- endif -%}\n    {%- if (message['role'] == 'assistant') -%}\n        {%- set role = \"model\" -%}\n    {%- else -%}\n        {%- set role = message['role'] -%}\n    {%- endif -%}\n    {{ '<start_of_turn>' + role + '\n' + (first_user_prefix if loop.first else \"\") }}\n    {%- if message['content'] is string -%}\n        {{ message['content'] | trim }}\n    {%- elif message['content'] is iterable -%}\n        {%- for item in message['content'] -%}\n            {%- if item['type'] == 'image' -%}\n                {{ '<start_of_image>' }}\n            {%- elif item['type'] == 'text' -%}\n                {{ item['text'] | trim }}\n            {%- endif -%}\n        {%- endfor -%}\n    {%- else -%}\n        {{ raise_exception(\"Invalid content type\") }}\n    {%- endif -%}\n    {{ '<end_of_turn>\n' }}\n{%- endfor -%}\n{%- if add_generation_prompt -%}\n    {{'<start_of_turn>model\n'}}\n{%- endif -%}\n"
+  },
+  "parameter_metadata": {
+    "parameters": {
+      "BF16": 4300079472
+    },
+    "total": 4300079472
+  },
+  "source_scope": "repository_all_files_not_selection",
+  "error": "ValueError: invalid LFS SHA256"
+}

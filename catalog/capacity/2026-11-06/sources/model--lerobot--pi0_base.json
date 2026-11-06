@@ -1,0 +1,191 @@
+{
+  "asset_kind": "model",
+  "repo_id": "lerobot/pi0_base",
+  "portfolio_decision": "conditional",
+  "observed_at_utc": "2026-11-06T04:42:35.441755+00:00",
+  "evidence_kind": "anonymous_publisher_api_metadata_not_local_payload_measurement",
+  "download_authorized": false,
+  "payload_bytes_downloaded": 0,
+  "tree_complete": true,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 1519,
+      "sha256": null,
+      "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "README.md",
+      "bytes": 4732,
+      "sha256": null,
+      "git_blob_sha1": "8827e5213b9e1dd6468c91b16a8c420e4e581121",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "config.json",
+      "bytes": 1895,
+      "sha256": null,
+      "git_blob_sha1": "58354c004ec619bc0b0d16faccf9a3c8f89e922b",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "model.safetensors",
+      "bytes": 14005618584,
+      "sha256": "8229fd9a7c3c2aafc1e223567b61b5fe3e25eef873bb4233928dbee4bd836303",
+      "git_blob_sha1": "5fff462a390aa0ee6f2ebdb0c40f2eceef4d870c",
+      "identity_kind": "lfs_payload_sha256",
+      "local_hash_verified": false
+    },
+    {
+      "path": "policy_postprocessor.json",
+      "bytes": 565,
+      "sha256": null,
+      "git_blob_sha1": "3941bbef53e1ed8e68203d379e6b09455cd50c9d",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "policy_preprocessor.json",
+      "bytes": 1218,
+      "sha256": null,
+      "git_blob_sha1": "c9ad5422ef356e8c748f5b4d45ada59c6266b716",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    }
+  ],
+  "source_scope_bytes": 14005628513,
+  "selected_files_bytes": null,
+  "complete_dependency_bytes": null,
+  "runtime_peak_ram_bytes": null,
+  "local_reuse_verified": false,
+  "prior_observed_access": "public",
+  "prior_revision": "6e245399ad403ccf02b8112b73cfdc2633068f38",
+  "requested_artifact": "original-checkpoint-and-code",
+  "required_dependencies_note": null,
+  "parameter_gate_status": "PASS_TOTAL_PARAMS_LT_150B",
+  "source_api_url": "https://huggingface.co/api/models/lerobot/pi0_base",
+  "head_revision_observed": "6e245399ad403ccf02b8112b73cfdc2633068f38",
+  "pinned_revision": "6e245399ad403ccf02b8112b73cfdc2633068f38",
+  "pinned_revision_origin": "head_observed_for_capacity_only_not_selection_approval",
+  "gated": false,
+  "private": false,
+  "license_metadata": "gemma",
+  "metadata_sha256": "e279331597f9a1a997ddec27fe77951cdfeb789f0a75cda5ba15136729fcb703",
+  "last_modified": "2026-10-06T14:11:10.000Z",
+  "architecture_metadata": {},
+  "parameter_metadata": {
+    "parameters": {
+      "F32": 3501372176
+    },
+    "total": 3501372176
+  },
+  "source_scope": "repository_all_files_not_selection",
+  "file_count": 6,
+  "documentation": [
+    {
+      "path": "README.md",
+      "url": "https://huggingface.co/lerobot/pi0_base/raw/6e245399ad403ccf02b8112b73cfdc2633068f38/README.md",
+      "observed_bytes": 4732,
+      "sha256": "f96a87778493441984eb5cf5f1ec4ca26f8eaf9d5c54817a1bc99882ec5ab036",
+      "repo_reference_leads_not_verified_dependencies": [
+        "docs/lerobot",
+        "lerobot/libero",
+        "lerobot/pi0_base"
+      ],
+      "card_text_archived": false
+    },
+    {
+      "path": "config.json",
+      "url": "https://huggingface.co/lerobot/pi0_base/raw/6e245399ad403ccf02b8112b73cfdc2633068f38/config.json",
+      "observed_bytes": 1895,
+      "sha256": "700c59d206885faff307d63272558fb9ad9a6b9feecdae55626ed9e3f594feb9",
+      "json": {
+        "type": "pi0",
+        "n_obs_steps": 1,
+        "input_features": {
+          "observation.images.base_0_rgb": {
+            "type": "VISUAL",
+            "shape": [
+              3,
+              224,
+              224
+            ]
+          },
+          "observation.images.left_wrist_0_rgb": {
+            "type": "VISUAL",
+            "shape": [
+              3,
+              224,
+              224
+            ]
+          },
+          "observation.images.right_wrist_0_rgb": {
+            "type": "VISUAL",
+            "shape": [
+              3,
+              224,
+              224
+            ]
+          },
+          "observation.state": {
+            "type": "STATE",
+            "shape": [
+              32
+            ]
+          }
+        },
+        "output_features": {
+          "action": {
+            "type": "ACTION",
+            "shape": [
+              32
+            ]
+          }
+        },
+        "device": "cuda",
+        "use_amp": false,
+        "push_to_hub": true,
+        "repo_id": null,
+        "private": null,
+        "tags": null,
+        "license": null,
+        "paligemma_variant": "gemma_2b",
+        "action_expert_variant": "gemma_300m",
+        "dtype": "float32",
+        "chunk_size": 50,
+        "n_action_steps": 50,
+        "max_action_dim": 32,
+        "max_state_dim": 32,
+        "num_inference_steps": 10,
+        "time_sampling_beta_alpha": 1.5,
+        "time_sampling_beta_beta": 1.0,
+        "min_period": 0.004,
+        "max_period": 4.0,
+        "image_resolution": [
+          224,
+          224
+        ],
+        "gradient_checkpointing": false,
+        "compile_model": false,
+        "compile_mode": "max-autotune",
+        "optimizer_lr": 2.5e-05,
+        "optimizer_betas": [
+          0.9,
+          0.95
+        ],
+        "optimizer_eps": 1e-08,
+        "optimizer_weight_decay": 0.01,
+        "optimizer_grad_clip_norm": 1.0,
+        "scheduler_warmup_steps": 1000,
+        "scheduler_decay_steps": 30000,
+        "scheduler_decay_lr": 2.5e-06,
+        "tokenizer_max_length": 48
+      }
+    }
+  ],
+  "metadata_change_requires_review": false
+}
