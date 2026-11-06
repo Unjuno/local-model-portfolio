@@ -1,0 +1,384 @@
+{
+  "schema_version": 1,
+  "round_id": "R31",
+  "date": "2026-11-07",
+  "source_main_commit": "ad45dc5b3b2b756f38b8cec6c56a1cca1616a35c",
+  "portfolio_snapshot": {
+    "tracked": 150,
+    "active": 105,
+    "nanbeige": "select"
+  },
+  "prior_work_acknowledged": [
+    "catalog/research/2026-11-05-round20-decisions.json",
+    "catalog/research/2026-11-07-r30-training-state-vs-quantization.json"
+  ],
+  "purpose": "Test whether specialized weight states deserve distinct preservation, while not separately archiving the same learned state at multiple ordinary quant levels",
+  "evidence_priority": "publisher readme+NOTICE+license; third-party fixed-revision same-scaffold comparison; model-card claim; speculative forecast separate",
+  "reviews": [
+    {
+      "rank": 1,
+      "repo_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU",
+      "lineage": "Qwen/Qwen3.8-27B → multistage posttraining + refusal surgery + healing, release #1",
+      "learned_state_class": "DISTINCT_SFT_HERETIC_AND_HEALING",
+      "research_decision": "CONDITIONAL_HIGH_PRIORITY_EXISTING_R20",
+      "catalog_decision": "NOT_IN_V19",
+      "source_date": "2026-09-16 Hub model lastModified; third party benchmark 2026-10-20",
+      "measurements": {
+        "source": "https://huggingface.co/datasets/spicysharkco/uncensored-leaderboard",
+        "evaluator": "different from developer but competitor model quants disclosure",
+        "backend": "llama.cpp c1d0e7a00",
+        "quant": "Q6_K",
+        "gpu": "CUDA device, model and clocks not disclosed",
+        "context": null,
+        "batch": null,
+        "n_gsm8k": 250,
+        "gsm8k_stock_pct": 94,
+        "gsm8k_variant_pct": 96.4,
+        "n_mmlu_pro": 500,
+        "mmlu_pro_stock_pct": 57.6,
+        "mmlu_pro_variant_pct": 67.2,
+        "all_six_common_correct_format_n": 430,
+        "common_correct_format_delta_pp": 8.8,
+        "harmful_refusals_n": 300,
+        "harmful_refusals_count": 51,
+        "harmless_refusals_n": 350,
+        "harmless_refusals_count": 2,
+        "kld_relative_to_stock": 0.8649,
+        "reported_unadjusted_p_mmlu": 2.8e-7,
+        "multiple_test_adjustment": false,
+        "training_contamination_checked": false,
+        "independent_matched": true
+      },
+      "unique_value": "Third-party measured reasoning and instruction-format benefit in a special trained+healed checkpoint, not a regular Qwen quant.",
+      "negative": "KLD=0.865 is large behavior distance (not by itself damage); one benchmark group, training contamination and newer versions untested; GB from source repo includes several versions, selected exact bytes unknown.",
+      "preservation_format": "Pin exact Q6_K build used by third-party; do not substitute arbitrary creator Q4 or later release #2.",
+      "selected_weights_bytes": null,
+      "other_repos_need_not_be_auto_archived": true,
+      "next": "Resolve original release #1 full SHA from benchmark prefix fd6a26869dc5, fixed Q6 source artifact, test 200 benign/200 refusal/200 instruction/200 general with matched stock and additional roleplay."
+    },
+    {
+      "rank": 2,
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "lineage": "LTX-2.5 + Sulphur 2/10Eros LTX2.3 task-vector deltas + LTX2.5 distilled LoRA + OmniNFT RL LoRA",
+      "learned_state_class": "DISTINCT_CROSS_GENERATION_MERGE_AND_RL_LOSS",
+      "research_decision": "CONDITIONAL_HIGH_PRIORITY_RESEARCH_NOT_READY",
+      "catalog_decision": "conditional",
+      "source_date": "2026-10-07 v1 publisher date, Hub updated 2026-10-09",
+      "measurements": {
+        "source": "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5",
+        "evaluator": "author; 48 paired frames, AI judge",
+        "pairs_total": 48,
+        "v1_win": 29,
+        "beta2_win": 9,
+        "tie": 10,
+        "author_claim_detail_gain_pct": 55,
+        "author_claim_motion_gain_pct": 15,
+        "independent_matched": false,
+        "hw": null,
+        "clock": null,
+        "batch": null,
+        "denoise_steps": 8,
+        "cfg": 1
+      },
+      "positive": "NOTICE.txt explicitly names different donors and change sequence; genuine merged learned state. v1 42GB BF16 archival master is not interchangeable with stock LTX 2.5.",
+      "negative": "Author AI judge and image crops not independent evaluation; claimed % detail/motion lack measurement definition; quality/rights of 10Eros and other donors require full license scope.",
+      "archive_representation_preferred": {
+        "file": "ltx2.5-Stubelius_remix_v1_bf16.safetensors",
+        "publisher_approx_bytes": 42000000000,
+        "goal": "preserve high-fidelity distinct training/merge state for future conversions",
+        "not_final_locked": true
+      },
+      "runtime_alternative": {
+        "file": "ltx2.5-Stubelius_remix_v1_int8_convrot.safetensors",
+        "publisher_approx_bytes": 21500000000,
+        "goal": "ComfyUI deployment if BF16 archive unavailable or constrained",
+        "do_not_duplicate_without_measured_reason": true
+      },
+      "other_formats_not_independent": [
+        {
+          "file": "ltx2.5-Stubelius_remix_v1_nvfp4.safetensors",
+          "approx_bytes": 14400000000,
+          "status": "EXPERIMENTAL_BF16_COMPARISON_MISSING"
+        },
+        {
+          "file": "ltx2.5-Stubelius_remix_v1_Q4_K_S.gguf",
+          "approx_bytes": 12500000000,
+          "status": "EXPERIMENTAL_BF16_COMPARISON_MISSING"
+        }
+      ],
+      "runtime_dependencies": [
+        "Gemma4 12B with LTX2.5 projection int8 ConvRot text encoder",
+        "LTX2.5 video VAE BF16",
+        "LTX2.5 audio VAE BF16",
+        "ComfyUI version matching int8 loader or converter"
+      ],
+      "full_selected_pipeline_bytes": null,
+      "license": {
+        "name": "LTX-2.x Community License Agreement",
+        "notice": "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5/blob/main/NOTICE.txt",
+        "conditions": "Section 4 and Attachment A use restrictions; >=US$10M revenues commercial license except noncommercial terms specified in Section 2.2; multiple donor licenses must be separately inspected",
+        "rights_to_republish_verified": false
+      },
+      "next": "Record full current HF commit and selected bf16 LFS SHA; inspect donor 10Eros and Sulphur terms and license; 20 prompts × 3 seeds on same video audio prompts, compare base, beta2 and v1, plus rights."
+    },
+    {
+      "rank": 3,
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "lineage": "Interpretic Qwen3.8-27B-Uncensored-v2 specialized political refusal edit, then Q4_K_M",
+      "learned_state_class": "DISTINCT_SPECIAL_WEIGHT_STATE_QUANTIZED",
+      "research_decision": "CONDITIONAL_KEEP_Q4_REFERENCE_NOT_IQ3_EXTRA",
+      "catalog_decision": "conditional",
+      "source_date": "2026-11-04 Hub latest observation and model-card evaluation",
+      "measurements": {
+        "q4_file_bytes_exact_prior_round20": 16810714592,
+        "optional_vision_projector_exact_prior_round20": 927606944,
+        "q4_publisher_rounded_gb": 16.8,
+        "iq3_publisher_rounded_gb": 10.5,
+        "source": "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v2-IQ3_XXS-GGUF",
+        "comparison": "same-run author Q4 vs IQ3; distinct from original GGUF model-card political run",
+        "backend": "llama-server; version not specified",
+        "decoding": "non-thinking greedy",
+        "mmlu_n": 1000,
+        "mmlu_q4_pct": 81.9,
+        "mmlu_iq3_pct": 78,
+        "harmful_n": 100,
+        "harmful_refusal_q4": 92,
+        "harmful_refusal_iq3": 85,
+        "political_n": 113,
+        "political_refusal_q4_same_run": 5,
+        "political_refusal_iq3_same_run": 3,
+        "neutral_n": 110,
+        "degenerate_q4": 1,
+        "degenerate_iq3": 7,
+        "earlier_q4_card_political_censored": 4,
+        "independent_matched": false,
+        "hw": null,
+        "clock": null,
+        "batch": null
+      },
+      "unique_value": "Specific political answer control while retaining general refusal behavior better than broad abliterations; its Q4 is a representation, not its own learned objective.",
+      "negative": "IQ3 saves 6.3GB but degrades MMLU by 3.9 percentage points and neutral degeneration by 6 additional samples/110; paired Q4 5/113 differs from older card Q4 4/113 due rerun, not merged. Full selected package/rights not final lock.",
+      "archive_representation_preferred": "Q4_K_M full model 16,810,714,592 bytes plus projector 927,606,944 bytes only if images required",
+      "other_formats_not_independent": [
+        "BF16",
+        "FP8",
+        "IQ3_XXS"
+      ],
+      "next": "Keep R22 pinned Q4 per-file bytes/headers and verify source+revision SHA, match English/Japanese transfer and all 115 political items plus benign/safety controls. No extra IQ3 archive slot."
+    },
+    {
+      "rank": 4,
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "lineage": "Qwen3.8 → trohrbaugh ARA → RVN two additional ARA full-weight passes",
+      "learned_state_class": "DISTINCT_REPEATED_WEIGHT_EDIT",
+      "research_decision": "CONDITIONAL_KEEP_RVN_SINGLE_MULTILINGUAL_REPRESENTATION",
+      "catalog_decision": "conditional",
+      "source_date": "creator model card observed 2026-11-07; HF updated 2026-09-20",
+      "measurements": {
+        "author_reported_refusal_from_original_n": 100,
+        "ara_source_refusal": 3,
+        "rvn_refusal_range": [
+          0,
+          1
+        ],
+        "source_kld": 0.0535,
+        "rvn_kld": 0.0085,
+        "author_claim_independent_hardware": "two rented GPU machines by project; not external independent evaluator",
+        "preferred_candidate_file": "RVN-Q4_K_M-multilingual.gguf",
+        "publisher_size_gib": 15.41,
+        "optional_mmproj": "mmproj-Qwen3.8-27B-Q8_0.gguf",
+        "optional_projector_approx_gb": 0.63,
+        "source": "https://huggingface.co/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+        "independent_matched": false,
+        "hw": "two rented GPU machines not specified",
+        "backend": "llama.cpp/chat-template embedded in current multilingual files; pin exact build",
+        "quant": "Q4_K_M multilingual",
+        "clock": null,
+        "batch": null
+      },
+      "unique_value": "ARO extra full-weight optimization creates different trained state from one-shot ablation and original Heretic weight.",
+      "negative": "Refusal improvement may come at safety/functional cost; no third-party matched quality, live repo has many quants and older legacy files from a DIFFERENT previous ablation. Same name revisions may have been replaced.",
+      "archive_representation_preferred": "one currently recommended RVN multilingual GGUF; do not bulk save many variants",
+      "legacy_file": "Qwen3.8-27B-Heretic-Q4_K_M.gguf is a different earlier edited state, not merely low bit quant of RVN",
+      "next": "Pin RVN current immutable commit and selected multilingual GGUF, verify per-file embedded chat template and checksum; compare original, trohrbaugh and RVN under fixed benign/refusal/reasoning and Japanese tasks."
+    },
+    {
+      "rank": 5,
+      "repo_id": "JonathanColetti/Qwen3.8-27B-Uncensored",
+      "lineage": "Qwen3.8 base → reported abliteration; creator-specific weighted state",
+      "learned_state_class": "DISTINCT_ABLITERATION_CANDIDATE",
+      "research_decision": "HOLD_COMPARATOR_TO_HUIHUI_AND_CURRENT_ORCA",
+      "catalog_decision": "NOT_IN_V19",
+      "source_date": "2026-08-14 Hub updated, independent evaluator 2026-10-20",
+      "measurements": {
+        "source": "https://huggingface.co/datasets/spicysharkco/uncensored-leaderboard",
+        "hw": "CUDA GPU unspecified",
+        "quant": "Q6_K",
+        "harmful_refusals_n": 300,
+        "harmful_refusals": 27,
+        "harmless_refusals_n": 350,
+        "harmless_refusals": 0,
+        "mmlu_pro_n": 500,
+        "mmlu_pct": 57.2,
+        "stock_mmlu_pct": 57.6,
+        "gsm8k_n": 250,
+        "gsm8k_pct": 94,
+        "stock_gsm8k_pct": 94,
+        "stock_kld_reference": 0.0164,
+        "model_mean_kld": 0.0394,
+        "independent_matched": true
+      },
+      "positive": "Low overrefusal with near-stock reasoning, third-party paired test for exact revision.",
+      "negative": "Same task niche as Huihui and current Orca; no evidence that it adds a separate capability from both, exact full revision/size not fixed",
+      "next": "Match conditions to Huihui and Orca; if parity and no distinct training-provenance value, do not add second same-purpose ordinary low-refusal slot."
+    },
+    {
+      "rank": 6,
+      "repo_id": "huihui-ai/Huihui-Qwen3.8-27B-abliterated",
+      "lineage": "Qwen3.8 base → reported Huihui-specific ablation",
+      "learned_state_class": "DISTINCT_ABLITERATION_CANDIDATE",
+      "research_decision": "CONDITIONAL_COMPARATOR_ONE_LOW_REFUSAL_FAMILY_NOT_AUTOSAVE_BOTH",
+      "catalog_decision": "NOT_IN_V19",
+      "source_date": "2026-08-24 Hub updated, independent evaluator 2026-10-20",
+      "measurements": {
+        "source": "https://huggingface.co/datasets/spicysharkco/uncensored-leaderboard",
+        "hw": "CUDA GPU unspecified",
+        "quant": "Q6_K",
+        "harmful_refusals_n": 300,
+        "harmful_refusals": 34,
+        "harmless_refusals_n": 350,
+        "harmless_refusals": 0,
+        "mmlu_pro_n": 500,
+        "mmlu_pct": 57,
+        "stock_mmlu_pct": 57.6,
+        "gsm8k_n": 250,
+        "gsm8k_pct": 94.4,
+        "stock_gsm8k_pct": 94,
+        "model_mean_kld": 0.0198,
+        "independent_matched": true
+      },
+      "positive": "Near-stock distribution distance and near-stock general task quality; candidate for gentle ablation baseline.",
+      "negative": "Significance of differences from Jonathan and current Orca unproven; no unique function established just from lower KLD; current v19 already contains multiple edits.",
+      "next": "Match independent benchmark with existing Orca, Interpretic and RVN and report actual paired significance before preserving another complete copy."
+    },
+    {
+      "rank": 7,
+      "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "lineage": "Official LTX2.5 base; additional fine-tune/LoRA merge claimed in existing catalog but not authenticated from accessible publisher card",
+      "learned_state_class": "UNRESOLVED_COULD_BE_SPECIAL_MERGE_OR_STANDARD_QUANT",
+      "research_decision": "CONDITIONAL_IN_CATALOG_BUT_BLOCK_ACQUISITION_UNTIL_PROVEN_SPECIAL",
+      "catalog_decision": "conditional",
+      "source_date": "2026-10-15 Hub updated",
+      "measurements": {
+        "source": "https://huggingface.co/ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+        "hf_tags": [
+          "base_model:quantized:Lightricks/LTX-2.5",
+          "license:unknown",
+          "not-for-all-audiences"
+        ],
+        "readme_access": "Age/sensitive-content interstitial returned in unauthenticated public page; training and merge methodology not verified",
+        "independent_matched": false,
+        "hw": null,
+        "clock": null,
+        "batch": null
+      },
+      "positive": "Might be distinctive adult-style LTX 2.5 fine-tune, already conditional research; do not auto-reject on GGUF/FP8 or sensitivity tag.",
+      "negative": "Special learned state is NOT established. Public tags even label it quantized, creator inaccessible in this unauthenticated pass; exact donor notices, before/after weights and evaluation absent.",
+      "preservation_format": "NONE_YET_NO_LOCK",
+      "next": "Only normal authorized model-card access; verify donor checkpoints, LoRA/SFT/merge source, rights, selected SHA and matched video quality. If no changed learned weights, reclassify as ordinary quant and do not grant extra model slot."
+    }
+  ],
+  "flags": {
+    "format_difference_is_not_learned_difference": true,
+    "no_arbitrary_one_special_per_parent_cap": true,
+    "do_not_hoard_53plus_quant_formats": true,
+    "old_r29_wrong_caps_superseded": true,
+    "research_only": true,
+    "all_previous_selection_stays": true,
+    "download_queue_entries_added": 0,
+    "weights_downloaded": 0,
+    "all_source_errors_explicit": true
+  },
+  "model_family_vs_artifact_relationships": {
+    "interpretic": "BF16/FP8/Q4/IQ3 all share Interpretic v2 special learned state; IQ3 is a representation not another new specialty",
+    "stubelius": "v1 BF16/INT8/NVFP4/GGUF Q4 share one Stuubs v1 learned merge; beta1/beta2 are genuinely earlier different merge stages, not automatically unnecessary identical copies",
+    "rvn": "Q4/Q5 and multilingual versions of current RVN share one learned state; previous original Heretic legacy is different edit, NOT just another RVN quant",
+    "davidau": "release #1 is one learned state; later release #2/3 and GGUF re-quants require separate technical evaluation and cannot inherit release #1 third-party scores",
+    "chris": "quant tag cannot alone prove equal tensors; name 'uncensored' cannot prove different tensors"
+  },
+  "recommended_actions": [
+    {
+      "action": "KEEP_R22_Q4_NOT_IQ3_DUPLICATE",
+      "repo": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "reason": "same-run author MMLU and output degeneration favor Q4; quantitative difference against IQ3"
+    },
+    {
+      "action": "PREFER_V1_BF16_FOR_ARCHIVAL_EVALUATION",
+      "repo": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "reason": "42GB master is re-quantizable if proven rights/availability; do not also budget 21.5GB INT8 unless deployment need"
+    },
+    {
+      "action": "PRIORITIZE_THIRD_PARTY_MATCHED_SPECIAL_CANDIDATE",
+      "repo": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU",
+      "reason": "release1 evaluator +9.6 percentage points MMLU-Pro versus stock but contamination and exact revision unresolved"
+    },
+    {
+      "action": "ONE_REP_FOR_RVN_NOT_ALL_QUANTS",
+      "repo": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "reason": "three ARA steps alter weights, but no independent matched task benchmark or user hardware check"
+    },
+    {
+      "action": "HOLD_CHRIS_PROVENANCE_LOCK",
+      "repo": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "reason": "cannot verify changed learned weights from normal public metadata"
+    }
+  ],
+  "benchmark_reproduction": {
+    "llm_axis_per_policy_min_200_each": [
+      "benign",
+      "safety_refusal",
+      "instruction_following",
+      "general_quality"
+    ],
+    "video_min_prompts": 20,
+    "seeds_per_prompt": 3,
+    "runtime_repetitions_min": 30,
+    "harmful_prompt_publication": false,
+    "quality_metrics": [
+      "paired task accuracy",
+      "neutral degeneration rate",
+      "benign overrefusal",
+      "task-specific edit or prompt success",
+      "reference image temporal consistency",
+      "peak host RAM",
+      "selected exact bytes"
+    ],
+    "hardware_user_verified": false,
+    "license_and_parent_fixed": false
+  },
+  "conflicts": [
+    {
+      "issue": "Interpretic Q4 politically censored 4/113 in GGUF card versus 5/113 in newer same-run IQ3 comparison",
+      "interpretation": "Different evaluation batches and LLM judge/protocol; do not mix numerators"
+    },
+    {
+      "issue": "RVN source says independent tested on two rented GPU machines",
+      "interpretation": "Different hardware runs within model project, NOT independently replicated by unrelated external evaluators"
+    },
+    {
+      "issue": "Stuubs developer says +55% detail and +15% motion",
+      "interpretation": "No published measurement definition; do not assign quantitative confidence to improvements"
+    },
+    {
+      "issue": "Chris metadata 'quantized' against previous R30 description specialized merge",
+      "interpretation": "Cannot classify confidently without source README/notice/provenance audit"
+    }
+  ],
+  "future_safety_scenario": "no verified model-specific future regulation/takedown or probability",
+  "checks": {
+    "case_count": 7,
+    "unique_repo_count": 7,
+    "all_sources": true,
+    "no_model_execution": true
+  }
+}
