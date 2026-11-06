@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Bounded, anonymous Hugging Face metadata census. Never download model payloads.
-
-This is evidence collection, not an executable acquisition manifest. Repository
-sizes do not establish selected dependency closure, runtime RAM or disk capacity.
-"""
+"""Anonymous metadata census; never download model weights or execute remote code."""
 from __future__ import annotations
 import concurrent.futures
 import hashlib
@@ -41,8 +37,7 @@ def validate_url(url):
     if api:
         if '/resolve/' in decoded: raise ValueError('payload URL')
         return
-    if raw and SAFE_DOC.search(raw.group(1)):
-        return
+    if raw and SAFE_DOC.search(raw.group(1)): return
     raise ValueError('only repository metadata and named small text documents allowed')
 
 class MetadataRedirect(urllib.request.HTTPRedirectHandler):
@@ -55,8 +50,8 @@ def get(url, limit=MAX_BODY):
     opener = urllib.request.build_opener(MetadataRedirect)
     for attempt in range(3):
         try:
-            request = urllib.request.Request(url, headers={'User-Agent':'portfolio-metadata-census/1.0','Accept':'application/json,text/plain'})
-            with opener.open(request, timeout=25) as response:
+            req = urllib.request.Request(url, headers={'User-Agent':'portfolio-metadata-census/1.0','Accept':'application/json,text/plain'})
+            with opener.open(req, timeout=25) as response:
                 body = response.read(limit + 1)
                 if len(body) > limit: raise ValueError('metadata response exceeds byte limit')
                 return body, response.headers.get('Link','')
@@ -80,10 +75,13 @@ def normalize_file(row):
         if size is not None and size != lfs['size']: raise ValueError('LFS size mismatch')
         size = lfs['size']
     digest = lfs.get('oid') or lfs.get('sha256')
+    masked = bool(digest and re.fullmatch(r'\*{64}',digest))
+    if masked: digest = None
     if digest and not re.fullmatch('[0-9a-f]{64}',digest): raise ValueError('invalid LFS SHA256')
+    large_object = bool(lfs or row.get('xetHash'))
     return {'path':path,'bytes':size,'sha256':digest,'git_blob_sha1':row.get('oid'),
-            'identity_kind':'lfs_payload_sha256' if digest else 'git_blob_sha1' if row.get('oid') else 'unverified',
-            'local_hash_verified':False}
+            'identity_kind':'lfs_payload_sha256' if digest else 'unverifiable_payload_hash' if large_object else 'git_blob_sha1' if row.get('oid') else 'unverified',
+            'payload_hash_masked':masked,'local_hash_verified':False}
 
 def deduplicated_bytes(entries):
     unique = {}
@@ -91,7 +89,7 @@ def deduplicated_bytes(entries):
         size = f['bytes']
         exact_sum([size])
         identity = ('sha256',f['sha256']) if f.get('sha256') else (
-            ('git-blob-sha1',f['git_blob_sha1']) if f.get('git_blob_sha1') else ('path',scope,f['path']))
+            ('git-blob-sha1',f['git_blob_sha1']) if f.get('git_blob_sha1') and f.get('identity_kind')=='git_blob_sha1' else ('path',scope,f['path']))
         if identity in unique and unique[identity] != size: raise ValueError('same digest, different size')
         unique[identity] = size
     return exact_sum(unique.values())
@@ -164,8 +162,7 @@ def snapshot(item):
                       gated=info.get('gated'),private=info.get('private'),
                       license_metadata=(info.get('cardData') or {}).get('license'),
                       metadata_sha256=hashlib.sha256(body).hexdigest(),
-                      last_modified=info.get('lastModified'),
-                      architecture_metadata=info.get('config'),
+                      last_modified=info.get('lastModified'),architecture_metadata=info.get('config'),
                       parameter_metadata=info.get('safetensors'))
         subpath='sample/10BT' if repo=='HuggingFaceFW/fineweb-edu' else ''
         result['source_scope']=subpath or 'repository_all_files_not_selection'
@@ -199,6 +196,26 @@ def history_index():
         walk(json.loads(p.read_text(encoding='utf-8')),str(p.relative_to(ROOT)))
     return records
 
+def write_review(rows):
+    review=['# Source capacity review (metadata only)', '', 'Repository scope is NOT selected scope. Masked hashes never authorize deduplication.', '']
+    for row in rows:
+        src=json.loads((ROOT/row['snapshot_path']).read_text())
+        review += ['## '+row['repo_id'], 'Revision: '+str(row.get('pinned_revision')),
+                   'Source bytes: '+str(row['source_scope_bytes'])+'; files: '+str(row.get('file_count'))+'; gated: '+str(row.get('gated')), '']
+        if row.get('error'): review += ['ERROR: '+row['error'], '']
+        groups={}
+        for f in src['files']:
+            if re.search(r'\.(safetensors|gguf|bin|pt|pth|ckpt|onnx|nemo|npz|h5|msgpack)$',f['path']):
+                name=re.sub(r'-[0-9]+-of-[0-9]+','-SHARDS',f['path'])
+                groups.setdefault(name,[]).append(f['bytes'])
+        for name,values in sorted(groups.items()):
+            review.append('- `'+name+'`: '+str(len(values))+' files; '+str(exact_sum(values))+' bytes')
+        leads=[]
+        for d in src.get('documentation',[]): leads.extend(d.get('repo_reference_leads_not_verified_dependencies',[]))
+        if leads: review += ['', 'Unverified reference leads: '+', '.join(sorted(set(leads)))]
+        review += ['', 'Existing dependency note: '+str(row.get('required_dependencies_note')), '']
+    (OUT/'source-review.md').write_text('\n'.join(review)+'\n',encoding='utf-8')
+
 def main():
     current=json.loads((ROOT/'catalog/CURRENT.json').read_text())
     view=json.loads((ROOT/current['materialized_catalog_path']).read_text())
@@ -210,8 +227,17 @@ def main():
     baseline={p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in ('catalog/CURRENT.json',current['materialized_catalog_path'],current['priority_worklist_path'],'queues/approved.json','policies/limits.json')}
     OUT.mkdir(parents=True,exist_ok=True)
     rows=[]
+    previous_path=OUT/'inventory.json'
+    previous=json.loads(previous_path.read_text()) if previous_path.exists() else {}
+    reuse=previous.get('baseline_sha256')==baseline
+    def load_or_collect(item):
+        path=OUT/'sources'/(item['asset_kind']+'--'+item['repo_id'].replace('/','--')+'.json')
+        if reuse and path.exists():
+            old=json.loads(path.read_text())
+            if old.get('tree_complete'): return old
+        return snapshot(item)
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
-        tasks={pool.submit(snapshot,x):x for x in active}
+        tasks={pool.submit(load_or_collect,x):x for x in active}
         for task in concurrent.futures.as_completed(tasks):
             r=task.result()
             path=OUT/'sources'/(r['asset_kind']+'--'+r['repo_id'].replace('/','--')+'.json')
@@ -232,6 +258,7 @@ def main():
              'download_enabled':False,'payload_bytes_downloaded':0,'baseline_sha256':baseline,'items':rows}
     dump(OUT/'inventory.json',summary)
     dump(OUT/'prior-research-index.json',history_index())
+    write_review(rows)
     for p,h in baseline.items(): assert hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==h
     print('SUMMARY',json.dumps({k:v for k,v in summary.items() if k not in ('items','baseline_sha256')},ensure_ascii=False),flush=True)
 
