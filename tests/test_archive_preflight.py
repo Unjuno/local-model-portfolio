@@ -5,7 +5,10 @@ import os
 from pathlib import Path
 import tempfile
 import unittest
-from scripts.archive_preflight import audit_source_manifest, inspect_archive
+from scripts.archive_preflight import (
+    DEFAULT_ARCHIVE_TARGET, DEFAULT_FREE_FLOOR,
+    audit_source_manifest, inspect_archive,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -36,6 +39,36 @@ class ArchivePreflightTests(unittest.TestCase):
         self.assertEqual([],audit_source_manifest(d))
         self.assertEqual(sum(len(x['files']) for x in d['repositories']),47)
         self.assertEqual(sum(x['selected_bytes'] for x in d['repositories']),51_541_147_139)
+    def test_defaults_follow_current_4tb_policy_with_free_floor(self):
+        limits = json.loads((ROOT / "policies/limits.json").read_text(encoding="utf-8"))
+        self.assertEqual(DEFAULT_ARCHIVE_TARGET, limits["archive_target_bytes"])
+        self.assertEqual(DEFAULT_FREE_FLOOR, limits["minimum_free_bytes"])
+        self.assertEqual(DEFAULT_ARCHIVE_TARGET, 4_000_000_000_000)
+        self.assertEqual(DEFAULT_FREE_FLOOR, 200_000_000_000)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            plan, _, _ = fixture(root)
+            report = inspect_archive(
+                plan, root, {}, hash_existing=False,
+                staging_reserve_bytes=0, existing_archive_bytes=0
+            )
+            self.assertEqual(report["capacity"]["archive_target_bytes"], DEFAULT_ARCHIVE_TARGET)
+            self.assertEqual(report["capacity"]["free_floor_bytes"], DEFAULT_FREE_FLOOR)
+            self.assertFalse(report["download_authorized"])
+
+    def test_explicit_old_3_8tb_scenario_is_not_the_default(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            plan, _, _ = fixture(root)
+            report = inspect_archive(
+                plan, root, {}, hash_existing=False,
+                staging_reserve_bytes=0, existing_archive_bytes=0,
+                archive_target_bytes=3_800_000_000_000, free_floor_bytes=0
+            )
+            self.assertEqual(report["capacity"]["archive_target_bytes"], 3_800_000_000_000)
+            self.assertNotEqual(report["capacity"]["archive_target_bytes"], DEFAULT_ARCHIVE_TARGET)
+            self.assertFalse(report["download_authorized"])
+
     def test_unknown_evidence_must_not_pass(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);p,_,_=fixture(root)
