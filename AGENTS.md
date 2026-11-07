@@ -1,4 +1,10 @@
 # エージェント作業規約
+## R36（2026-11-08）：22件の固定ファイルソース情報・非実行マニフェスト
+
+[22件の固定版メタデータR36](catalog/research/2026-11-08-r36-22-asset-source-closure.json)／[判断報告](docs/strategy/35-r36-22-asset-pinned-source-capacity.md)：v19有効105件のうちR34でsource repoサイズ未確定だった22件は、**21モデルrepoの全ファイル容量を固定40文字SHAで取得**。FineWeb-Eduは全データ未集計のまま、sample/10BTの14 parquet=28,518,193,415byteだけを具体例として確認。Chatterboxはrepo全体bytesと12個のモデルファイルが判明したが、T3/S3Gen v2/v3構成が未確定。LTX2.5原本はGated=autoでファイルサイズしか確認できずLFS SHAが伏せられているため、取得や権利・ハッシュlockは不可。Heretic RVNは全repo約1,645GBに多数の量子化・旧学習状態を含み、現行RVN Q4 multilingual+mmprojは17,176,647,232byteの研究用ファイル選択で、取得・実機品質は未検証。Lilavati/Checkerは各189,484,448byteで同じサイズだが**LFS SHAが異なる別学習重み**、LiquidAI VLM/DSparkはtargetとdraftの補完。単一モデルの複数量子化だけを整理し、異なるSFT/RL/特殊編集や独立機能の補助重みを削らない。
+
+[20ファイル・4パッケージの取得前ドラフト](manifests/drafts/r36-22-source-closure-weight-only.candidate.json)は52,879,817,929byteの**ファイル構成の証拠**であり、executable=false、approved_manifest=false、download_authorized=false。必要コード、LICENSE全文、全依存、実機空きとstaging、推論適合とユーザーの明示承認を未確認のまま取得しない。保存上限は4,000,000,000,000byteと独立200GB最低空き。既存150選定とNanbeige SELECT、ユーザー指定6 EXCLUDED、空のapprovedキューを維持する。R34の83既知/22未知は調査前の歴史値でありR36の更新を上書きせず追記している。
+
 ## R34/R35（2026-11-08）：4TBは選択ファイルで計算、特殊重みと量子化を混同しない
 
 [全150資産の容量証拠R34](catalog/research/2026-11-08-r34-capacity-evidence.json)／[比較報告](docs/strategy/33-r34-capacity-evidence-and-4tb-policy.md)：現行105有効資産のうち、全repo表示bytesが判明するのは83件、未知22件。83件の参考source総和2,861,783,364,610byteを『実際のアーカイブ済み容量』や『4TBから差し引ける既知使用量』と解釈してはいけない。現行itemのselected_file_bytes確定は2件のみで、親/許諾/encoder/Codec等を別に積む。読み取り専用`archive_preflight.py`の既定予算は**policies/limits.jsonの4TB**と独立200GB最低空きから読むよう修正し、旧3.8TB固定値に戻さない。
