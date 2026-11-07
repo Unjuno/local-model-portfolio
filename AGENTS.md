@@ -1,4 +1,8 @@
 # エージェント作業規約
+## R33（2026-11-07）：派生元バージョンの誤特定を訂正・原FP32と実行BF16を二重計上しない
+
+[原本追跡R33](catalog/research/2026-11-07-r33-ltx-exact-donor-and-adapter-conversion.json)／[解説](docs/strategy/32-r33-correct-donor-and-adapter-representations.md)。StubeliusのNOTICEは**10Eros v1.5**を供与元に指定。R32で記録したv1ではない。正しい原本は`10Eros_v1.5_bf16.safetensors`（46,139,886,366 byte、Git sha `99be68b2b6a3f68cde86b3b70e6f71bc26e726fb`）。OmniNFT LTX2.3元FP32（1,233,512,728 byte）とKijai ComfyUI BF16変換（616,948,520 byte）は**同一RL-LoRAの別保存表現**であり別モデルではない。原本保存の研究候補はFP32。Kijai版は適用強度2.0を要するruntime代替。Chrisのfrtertaer複製は2026-09-14作成後に本家が更新されているので、現在の元repoと同一重みとは認めない。派生ライセンス/実機品質は未検証、通常量子化の増分を機械的に新しい特殊版と数えない。ユーザーの4TB計画・150既存資産・Nanbeige SELECT・無承認取得なしを継続。
+
 ## R32（2026-11-07）：配布元ハッシュと元学習LoRAを追跡する
 
 [R32原本アダプター調査](catalog/research/2026-11-07-r32-ltx-donor-chain.json)と[資料・ライセンス報告](docs/strategy/31-r32-ltx-donor-chain-and-license.md)を参照。LTX2.5 ChrisColeTechはHF上の『Duplicated from』複製先READMEに5元LoRAのマージレシピがあり、以前の『変更手法未提示』は訂正。ただし原ChrisのファイルSHAとの一致は未確認なので**特殊マージと断定して取得lockしない**。Stubelius v1 BF16とINT8は同じ学習済みマージの異形式、42GB＋21.5GBを無目的に二重保存しない。zghhui/OmniNFTの元RL-LoRAは約1.23GBずつのLTX2系とLTX2.3系別親用checkpoint。**学習済み元LoRAはマージ済み重みから容易には復元できない**ため、特殊学習の独立候補として審査。HFのLoRAライセンスApache-2.0ラベルとGitHub作者の『Research use only』、LTX2.x上流の派生権利条件を照合するまで取得承認しない。公開XetのSHA-256は**配布元提示のメタデータで、取得後の再計算済みではない**。固定full revision、アクセス権、依存、実機を別条件にする。既存の150選定と4TB予算、空のapprovedキューを維持。
