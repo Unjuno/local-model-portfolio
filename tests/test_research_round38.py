@@ -92,6 +92,22 @@ class R38LargeArtifactTests(unittest.TestCase):
         self.assertGreater(x["other_languages_plus_support_bytes"],35_000_000_000)
         self.assertTrue(x["individual_corpus_rights_require_review"])
 
+    def test_316gb_format_scenario_is_only_a_hypothetical_avoidance(self):
+        alternatives = [
+            ("mistralai/Mistral-Small-4-119B-2603", self.c["mistral_small4"]["hf_bytes"]),
+            ("openai/gpt-oss-120b", self.c["gpt_oss_120b"]["hf_bytes"]),
+            ("black-forest-labs/FLUX.2-dev",
+             self.c["flux2_dev"]["selected_diffusers_three_component_groups_bytes"]),
+        ]
+        difference = sum(self.rows[repo]["source_repo_bytes"] - subset
+                         for repo, subset in alternatives)
+        self.assertEqual(difference, 316_316_441_385)
+        report = (ROOT / "docs/strategy/37-r38-large-model-format-and-dataset-roles.md"
+                  ).read_text(encoding="utf-8")
+        self.assertIn("316,316,441,385", report)
+        self.assertIn("実回収ではない", report)
+        self.assertEqual(self.approved["entries"], [])
+
     def test_4tb_user_budget_no_downloads_or_formal_promotion(self):
         self.assertEqual(self.current["expected"]["archive_limit_bytes"],4_000_000_000_000)
         self.assertEqual(self.current["expected"]["tracked"],150)
