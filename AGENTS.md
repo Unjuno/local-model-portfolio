@@ -1,4 +1,16 @@
 # エージェント作業規約
+## R40（2026-11-08）：特殊モデルを維持し、同一SHAのファイルだけを再利用
+
+[R40台帳](catalog/research/2026-11-08-r40-cross-manifest-sha-union.json)／[容量と根拠](docs/strategy/39-r40-cross-manifest-identity-and-capacity.md)／[読み取り専用監査ツール](scripts/audit_candidate_manifest_union.py)を使用。15パッケージ・181ファイル参照を横断し、別の学習済みモデルを削らずに、公開元LFS SHA256＋byteが同じファイルだけを共有候補として算出する。
+
+**Wan-Animate-2とLongCat Avatar1.5は別々の特殊学習成果**だが、映像VAEの公開SHAが一致する。共有VAEは507,591,892 byteで、完全SHAは `d6e524b3fffede1787a74e81b30976dce5400c4439ba64222168e607ed19e793`。両方の特殊モデルを一律に除外せず、依存ファイルのSHA同一性だけで重複排除する。
+
+15パッケージの公開元メタデータ容量は単純和392,782,078,397 byte、SHA一致を一度計上した値392,274,486,505 byte。別のChrisとStubelius特殊版2件を任意追加した場合は470,751,478,121 byte。**105資産全部の完成容量でも実機の空き容量でもない**。181参照中93件のSHAが未記録であり、更なる重複不存在を断定しない。実際に保存されたファイルのハッシュ再計算、実機の4TB枠・200GB最低空き、Gated権利、runtime依存、staging、ユーザー承認は別条件。
+
+R19のChatR LoRAの証拠はR21と公開SHA＋byteが一致するため、別の新規取得資産として重複登録しない。異なるRL・SFT・NSFW・重み編集やBase/LoRA、動画処理固有能力、target/draftなどは削らない。
+
+監査コマンド：`python3 scripts/audit_candidate_manifest_union.py`（Python標準ライブラリのみ。読み取り専用）。元11マニフェストとrepo/revision/path/byte/SHAを比較し、不一致でFAIL、欠測SHAは共有として計上しない。既存150管理・105有効、Nanbeige SELECT、ユーザー指定EXCLUDED 6件、4TB計画と空の取得承認キューを維持。ダウンロード・削除・実行・配布は許可なしに行わない。
+
 ## R39（2026-11-08）：大型重みの複数パッケージを取得前に一つの実行形式へ分ける
 
 [R39 7形式の固定ファイル一覧](manifests/drafts/r39-backend-specific-large-sources.candidate.json)／[技術報告](docs/strategy/38-r39-backend-specific-selection.md)を参照。Mistral Small4 119BはHF3 shardとNative7 shard、GPT-OSS120BはHF15・OpenAI original7・Apple Metal1、FLUX2-devはDiffusers分割と単一DiTの両形式が存在する。**通常量子化・別backend配置を独立の後学習モデルとしてカウントしない**。ただし元のNative/research形式には再現可能性の別価値があるため、実行環境・変換同等性・長期保存目的の証拠なしに削除もしない。
