@@ -23,8 +23,8 @@ class TestR40SHAUnion(unittest.TestCase):
         self.assertEqual(len(self.core), 15)
         self.assertEqual(len(self.opt), 2)
         self.assertEqual(len({x["package_id"] for x in self.core+self.opt}), 17)
-        self.assertEqual(self.r["core_statistics"]["source_file_references"], 181)
-        self.assertEqual(self.r["with_optional_special_statistics"]["source_file_references"], 186)
+        self.assertEqual(self.r["core_statistics"]["file_references"], 181)
+        self.assertEqual(self.r["with_optional_special_statistics"]["file_references"], 186)
 
     def test_all_pinned_source_metadata_is_verified_against_each_manifest(self):
         self.assertEqual(self.check["status"], "PASS_PUBLISHER_METADATA_ONLY")
