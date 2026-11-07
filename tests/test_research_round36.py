@@ -69,7 +69,7 @@ class R36SourceClosureTests(unittest.TestCase):
         self.assertEqual(x["pinned_file_count"], 14)
         self.assertEqual(x["selected_weight_or_subset_bytes"], 28_518_193_415)
         self.assertIsNone(x["full_source_repo_bytes"])
-        self.assertTrue(x["repo_size_unverified_for_full_dataset"])
+        self.assertFalse(x["full_dataset_repo_bytes_known"])
         self.assertEqual(len(x["components"]), 14)
         self.assertTrue(all(c["path"].startswith("sample/10BT/") for c in x["components"]))
         self.assertTrue(all(c["sha256"] is not None for c in x["components"]))
@@ -124,8 +124,8 @@ class R36SourceClosureTests(unittest.TestCase):
         self.assertEqual(self.limits["archive_target_bytes"], 4_000_000_000_000)
         self.assertEqual(self.limits["minimum_free_bytes"], 200_000_000_000)
         self.assertEqual(self.queue["entries"], [])
-        self.assertEqual(self.e["policy"]["download_approval_count"], 0)
-        self.assertIsNone(self.e["policy"]["physical_free_bytes"])
+        self.assertTrue(self.e["research_recommendation"]["no_approved_downloads"])
+        self.assertFalse(self.e["source_lock_draft"]["original_owner_disk_checked"])
         self.assertEqual(self.e["verification_scope"]["existing_model_states_changed"], 0)
         self.assertEqual(next(x for x in self.view["items"] if
                               x["repo_id"] == "Nanbeige/Nanbeige4.3-33B")["portfolio_decision"],
