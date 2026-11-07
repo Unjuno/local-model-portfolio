@@ -1,4 +1,10 @@
 # エージェント作業規約
+## R34/R35（2026-11-08）：4TBは選択ファイルで計算、特殊重みと量子化を混同しない
+
+[全150資産の容量証拠R34](catalog/research/2026-11-08-r34-capacity-evidence.json)／[比較報告](docs/strategy/33-r34-capacity-evidence-and-4tb-policy.md)：現行105有効資産のうち、全repo表示bytesが判明するのは83件、未知22件。83件の参考source総和2,861,783,364,610byteを『実際のアーカイブ済み容量』や『4TBから差し引ける既知使用量』と解釈してはいけない。現行itemのselected_file_bytes確定は2件のみで、親/許諾/encoder/Codec等を別に積む。読み取り専用`archive_preflight.py`の既定予算は**policies/limits.jsonの4TB**と独立200GB最低空きから読むよう修正し、旧3.8TB固定値に戻さない。
+
+[特殊LTXの実ファイル監査R35](catalog/research/2026-11-08-r35-ltx-pinned-file-census.json)／[解説](docs/strategy/34-r35-ltx-source-vs-mirror-file-identity.md)：ChrisColeTech LTX2.5本家とfrtertaer複製先は、対応するモデル重み・補助重み**15ファイル**の配布元LFS SHA256とbytesがすべて一致するので**異なる学習成果として二重保存しない**。本家のmetadata SHA=`592aaa11f13a7e480169455aa885f58c42d89766`。Chris本家全repo166,915,795,579byte、暫定FP8 scaled/INT8 Gemma4/audio+video VAEの4重み36,468,259,016byte（その他必要コード/依存未完）。Stubelius全repo195,942,118,539byte、v1 BF16単一重み42,008,732,600byte。ただしbeta1/beta2/v1は異なる改変段階であり、**過去の特殊学習成果まで無条件削除しない**。一方同じv1のBF16/INT8/NVFP4/Q4を独立モデルとして全取得しない。公開LFS SHAはローカル再ハッシュではなく、元Gated・LTX2.x Community License・donor別許諾/運用許可は依然別ゲート。選定/ダウンロード/実行は分離し、承認なしに取得・削除しない。
+
 ## R33（2026-11-07）：派生元バージョンの誤特定を訂正・原FP32と実行BF16を二重計上しない
 
 [原本追跡R33](catalog/research/2026-11-07-r33-ltx-exact-donor-and-adapter-conversion.json)／[解説](docs/strategy/32-r33-correct-donor-and-adapter-representations.md)。StubeliusのNOTICEは**10Eros v1.5**を供与元に指定。R32で記録したv1ではない。正しい原本は`10Eros_v1.5_bf16.safetensors`（46,139,886,366 byte、Git sha `99be68b2b6a3f68cde86b3b70e6f71bc26e726fb`）。OmniNFT LTX2.3元FP32（1,233,512,728 byte）とKijai ComfyUI BF16変換（616,948,520 byte）は**同一RL-LoRAの別保存表現**であり別モデルではない。原本保存の研究候補はFP32。Kijai版は適用強度2.0を要するruntime代替。Chrisのfrtertaer複製は2026-09-14作成後に本家が更新されているので、現在の元repoと同一重みとは認めない。派生ライセンス/実機品質は未検証、通常量子化の増分を機械的に新しい特殊版と数えない。ユーザーの4TB計画・150既存資産・Nanbeige SELECT・無承認取得なしを継続。
