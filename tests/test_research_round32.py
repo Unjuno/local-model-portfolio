@@ -52,8 +52,10 @@ class TestR32ResearchProvenance(unittest.TestCase):
         self.assertIsNone(self.data["classification"]["stuubs"]["full_repo_commit"])
 
     def test_no_selection_or_download_mutation(self):
-        self.assertEqual(self.data["existing_tracked"], 150)
-        self.assertEqual(self.data["existing_active"], 105)
+        current = json.loads((ROOT / "catalog/CURRENT.json").read_text(encoding="utf-8"))
+        self.assertEqual(current["expected"]["tracked"], 150)
+        self.assertEqual(current["expected"]["active"], 105)
+        self.assertTrue(self.data["all_existing_150_still_intact"])
         self.assertEqual(self.data["formal_changes"], 0)
         self.assertEqual(self.data["new_download_approvals"], 0)
         self.assertFalse(self.data["weight_downloaded"])
