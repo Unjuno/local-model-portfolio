@@ -2165,5 +2165,73 @@
     "Resolve 8 active >=100GB source repositories for one learned state per distinct training or modality; no whole-repo auto-download.",
     "Inspect user-owned archive free and exact local source SHA via read-only preflight before any capacity fit claim, distinguish 4TB logical planning budget from 200GB physical free floor.",
     "Only evaluate additional <150B trained special states or >150B one-quant exceptions on capability and price, no arbitrary one-derivative cap."
+  ],
+  "stuubs_representation_scenario": {
+    "primary_source": "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5/tree/main",
+    "source_readme": "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5",
+    "observed_files": [
+      {
+        "file": "ltx2.5-Stubelius_remix_beta1.safetensors",
+        "learned_state": "BETA1_ORIGINAL_TRANSFER",
+        "displayed_gb": 42
+      },
+      {
+        "file": "ltx2.5-Stubelius_remix_beta2_bf16.safetensors",
+        "learned_state": "BETA2_NEW_DISTILLED_MERGE",
+        "displayed_gb": 42
+      },
+      {
+        "file": "ltx2.5-Stubelius_remix_beta2_int8_convrot.safetensors",
+        "learned_state": "BETA2_NEW_DISTILLED_MERGE",
+        "displayed_gb": 21.5
+      },
+      {
+        "file": "ltx2.5-Stubelius_remix_v1_Q4_K_S.gguf",
+        "learned_state": "V1_RL_MERGED",
+        "displayed_gb": 12.5
+      },
+      {
+        "file": "ltx2.5-Stubelius_remix_v1_bf16.safetensors",
+        "learned_state": "V1_RL_MERGED",
+        "displayed_gb": 42
+      },
+      {
+        "file": "ltx2.5-Stubelius_remix_v1_int8_convrot.safetensors",
+        "learned_state": "V1_RL_MERGED",
+        "displayed_gb": 21.5
+      },
+      {
+        "file": "ltx2.5-Stubelius_remix_v1_nvfp4.safetensors",
+        "learned_state": "V1_RL_MERGED",
+        "displayed_gb": 14.4
+      }
+    ],
+    "distinct_public_training_stages": [
+      "BETA1_ORIGINAL_TRANSFER",
+      "BETA2_NEW_DISTILLED_MERGE",
+      "V1_RL_MERGED"
+    ],
+    "source_all_weight_variants_displayed_gb_approx": 195.9,
+    "current_v1_bf16_only_displayed_gb_approx": 42,
+    "illustrative_weight_payload_dedup_saving_displayed_gb_approx": 153.9,
+    "conditions": "Only if preserving the v1 final trained state without beta-stage archives and selecting BF16 master, one would avoid ~153.9GB of full repo weights. Beta1/Beta2 are DIFFERENT learned states (not mere quants) and may merit historical preservation; excluding them requires independent evidence. No shared Gemma encoder/audio/video VAE or staging included.",
+    "actual_disk_savings_verified": false,
+    "live_repo_sizes_rounded_not_exact": true,
+    "not_all_source_files_separate_models": true,
+    "quant_variants_same_v1_state": 4
+  },
+  "research_alerts": [
+    {
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "issue": "Hub main tree reportedly renamed Q4 and mmproj files recently while keeping tensor data; R21 is pinned to immutable revision e6924b3a08765341e01546308ccf2683d43e880b.",
+      "next": "Always use pinned revision and verify file identities, not latest path. Do not assume latest R21 path is still present.",
+      "source": "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF/tree/main"
+    },
+    {
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "issue": "Repository bundles three training states and seven displayed files totaling approx 195.9GB; full download duplicates quant representations in beta2 and v1.",
+      "next": "Pick one representation per chosen training state, keep beta1/beta2 separate only when historical stage value is documented.",
+      "source": "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5/tree/main"
+    }
   ]
 }
