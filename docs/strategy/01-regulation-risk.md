@@ -296,3 +296,57 @@ JSONの132ユニークrepoから1行ずつ、一次URL・観測日・制限・�
 **反証判定**：出版社公認の合法な完全同一revision・SHA-256原本が別配布から確認されれば、そのrepoの「再取得困難」判断を引き下げる。逆に一次資料による新たな配布制限・条文に基づく対象指定を確認できれば、**実際の観測事実として記録し**優先順位を再審査する。仮説T1→T2→T3と矛盾する公開順・規制順が生じれば、順序仮説を棄却する。禁止内容の先回り推測は、いずれの場合も契約違反・無許可取得の免責にならない。
 
 **更新後ERROR CHECK（静的）**：全132行はv9 repo IDと一致。2026-11-08の一覧照合はGated24／Public107／同一性未確定1。モデル109の総パラメータ判定はPASS95／150B以上PX2／未確定12。各資産の危険性・予測段階・調査順位はダウンロード承認を意味せず、全132件がdownload_approved=false、規制確率null。実機のHDD、RAM、権利、固定revision、ファイルハッシュ、合法ミラーの同一性は追加で要監査。
+
+## 12. 2026-11-08追補：一次資料と取得準備を分離した再監査
+
+Exaにより欧州委員会、モデル配布元の一次資料を追加確認した。2026-11-08に実施された132 IDのHugging Face読み取り専用照合結果（**Gated24、Public一覧107、別名同一性未確定1**）は再監査と一致し、131件で2026-11-03の一覧区分から差分がなかった。ただし本人別Gated承認、ライセンス正文、重み固定SHAの再確認ではない。
+
+### 12.1 確認事実／誤解しやすい予測
+
+| 一次資料と公表日 | 確認事実 | そこから導けない結論 |
+| --- | --- | --- |
+| [欧州委員会・2026-07-31公表](https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august) | 2026-08-02以降、一定のGPAI提供者義務と生成コンテンツ透明性義務について執行権限が適用 | 全オープンウェイト配布が一律禁止された |
+| [EU AI Act第93条](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-93) | 条件下で委員会が市場提供制限・撤回・回収を求める権限が存在する | 本132件への個別撤去命令が出た、又はT1→T2→T3が必ず起きる |
+| [OnomaAIResearch公式Illustrious XL v1.1カード](https://huggingface.co/OnomaAIResearch/Illustrious-XL-v1.1/blob/main/README.md)（2026-11-08確認） | メタデータは `license: other`、`license_name: sdxl-license`。Hub構造化出力は上位カテゴリ`other`を表示 | 旧`sdxl-license`から法的ライセンスが改訂されたとの推論は**誤り**。本文・派生条件の審査はなお必要 |
+| [Black Forest Labs公式2025-06-26告知](https://bfl.ai/blog/flux-1-kontext-dev) | FLUX.1 [dev]の利用条件を改訂した実例 | FLUX.2-devの現行契約を同一条件と自動認定する |
+
+**政策上の正しい区分**：EU第93条は撤回を求める権限の存在、GEITje等は実際の公開元削除、HubのGatedはアクセス手段、S1/S2/S3とT1/T2/T3は仮説。これらを一つの「規制確率」に置換しない。
+
+### 12.2 132件ごとの最初の調査レーン（取得順ではない）
+
+`catalog/proposals/01-regulation-priority.json` の各 `assets[].operational_audit_2026_11_08` に、**P帯と独立した最初の停止ゲート**を一つずつ追記した。複数の未解決条件がある場合、最初の条件を解消しても残る契約・依存・容量条件を免除しない。
+
+| 調査レーン | 件数 | 根拠となる最初の監査 |
+| --- | ---: | --- |
+| `HARD_EXCLUSION` | 2 | 150B以上のモデル本体・量子化版を絶対除外。重み取得準備も行わない。 |
+| `PARAMETER_CENSUS_STOP` | 12 | MoE全expert・埋込み・出力ヘッドを含む総パラメータ数を一次テンソル範囲で確認するまで取得準備停止。 |
+| `REPOSITORY_IDENTITY_REVIEW` | 1 | 元repo IDと返された別名repoの固定revision・各ファイルSHA-256を検証。単なる名称の一致を同一原本と扱わない。 |
+| `BUDGET_SCOPE_REVIEW_ONLY` | 1 | 全repoが物理容量予算を超える。正規許諾を前提に部分集合の可否・容量を調査する。 |
+| `DATA_RIGHTS_CONTRACT_REVIEW` | 6 | データの著作権・opt-out・PII・外部契約、由来・利用範囲の確認を先行。 |
+| `GATED_ACCESS_RIGHTS_REVIEW` | 17 | 本人別Gated許可・現行利用規約と親モデル等の権利条件を確認する。 |
+| `FILE_SCOPE_UNKNOWN` | 12 | 選択ファイルと依存・全容量を一次データで確定する。未確定のバイトをゼロ計上しない。 |
+| `LICENSE_REVISION_DEPENDENCY_REVIEW` | 81 | 利用規約正文、必要シャード、依存、固定revision、SHA-256と保存コストを照合する。 |
+| **合計** | **132** | **取得許可・取得開始は0件** |
+
+代表的な再検査項目：
+
+| repo ID | 優先度 | 最初のゲート | 次の反証可能な検査 |
+| --- | --- | --- | --- |
+| `orcarouter/Qwen3.8-27B-Uncensored` | P0 | `GATED_ACCESS_RIGHTS_REVIEW` | 本人別Gated許可と派生元権利。高リスクという予測は権利ゲートを緩めない |
+| `bigcode/the-stack-v2` | P0 | `DATA_RIGHTS_CONTRACT_REVIEW` | 外部の大口コード利用契約・opt-out・出典。全repo約427GBは採用ファイルの確定容量ではない |
+| `Plachta/Seed-VC` | P0 | `PARAMETER_CENSUS_STOP` | 総パラメータ不明のため取得準備を停止し、必須依存の総数を静的に調査 |
+| `Edge0/Audio8-TTS-Realistic-0.6b` | P1 | `REPOSITORY_IDENTITY_REVIEW` | Realistic-Airと重み・Codecの同一revision/ハッシュを証明するまで別物として保留 |
+| `black-forest-labs/FLUX.2-dev` | P0 | `GATED_ACCESS_RIGHTS_REVIEW` | FLUX.1の過去のライセンス改訂からFLUX.2の現在の条件を推定しない |
+| `nvidia/PhysicalAI-Autonomous-Vehicles-Foundation4D` | P3 | `BUDGET_SCOPE_REVIEW_ONLY` | 全repo約9.225TBは本提案の3.8TB予算を超える。全量取得案は対象外 |
+| `facebook/dinov3-vit7b16-pretrain-lvd1689m` | P0 | `GATED_ACCESS_RIGHTS_REVIEW` | 同系統の小型DINOv3との差を確認し、二重採用を当然視しない |
+| `facebook/dinov3-vith16plus-pretrain-lvd1689m` | P0 | `GATED_ACCESS_RIGHTS_REVIEW` | 7B級DINOv3の代替・補完関係と実行条件を検証する |
+
+P0のGated資産は**許諾・権利の優先調査対象**であり、即取得する順ではない。正規の同一revision・SHA-256代替元が確認されたら、当該資産の再取得困難評価を引き下げる。逆に法令適用・公開中止を確認した場合のみ実際の事象として記録する。近い機能を持つモデルがあっても同一学習成果と決めつけず、両方の原本が必要か検証する。
+
+### 12.3 ERROR CHECK
+
+v9母集団は重複のない132資産（モデル109、データ23）。調査レーン合計132。モデル上限判定はPASS95／**150B以上2をPX絶対除外**／総数不明12を取得準備停止。MoEの稼働expert数は全パラメータの代替にならない。全132件で規制確率は`null`、ダウンロード承認は`false`。既存のP0=22／P1=59／P2=37／P3=12／PX=2は**新たな個別公開停止事実・再取得可能な承認済みミラーが見つからないため今回は変更なし**。現行v27の別の量子化例外規約は、**指定されたv9・150B絶対除外**に適用しない。
+
+実施していないこと：モデル・データセットの取得、Gated条件の代理受諾、各repoの現行ライセンス全文審査、モデル実行、固定revisionと全シャードSHA-256確定、ユーザー実機の空き容量とRAM測定。閲覧可能なカードや過去のlicenseタグだけでは、取得・複製・再配布の許可を証明しない。
+
+**次に考える問い：** 希少なモデルでも、保存の独自価値が高いことを根拠に、本人別Gated承認・原本ライセンス・依存権利の未確認を許容してよいか。本手順では許容しない。
