@@ -6,7 +6,7 @@
 
 [Resemble AI公式GitHub](https://github.com/resemble-ai/chatterbox/blob/master/README.md)は**2026年8月に研究が退役し、保守は終了**したと明記した。コードはMITライセンスの研究アーカイブとして残る。**重みの削除・Gated化が予告されたとは書かれていない**。将来の改修が期待できない状態は事実だが、保存禁止の予測とは別。
 
-同READMEでは**Chatterbox Multilingual V3**が日本語を含む23言語の新しい推奨TTS。公式[src/chatterbox/mtl_tts.py](https://github.com/resemble-ai/chatterbox/blob/master/src/chatterbox/mtl_tts.py)は`from_pretrained(device, t3_model=None)`の既定を**V2**に設定する。V3を使うときは次のように明示する。
+同READMEでは**Chatterbox Multilingual V3**が日本語を含む23言語の新しい推奨TTS。公式[固定版 src/chatterbox/mtl_tts.py](https://github.com/resemble-ai/chatterbox/blob/ab55923c27757c90cfcc407baa57dc25a7d25217/src/chatterbox/mtl_tts.py)は`from_pretrained(device, t3_model=None)`の既定を**V2**に設定する。V3を使うときは次のように明示する。
 
 ```python
 from chatterbox.mtl_tts import ChatterboxMultilingualTTS
@@ -14,6 +14,8 @@ tts = ChatterboxMultilingualTTS.from_pretrained(device="cuda", t3_model="v3")
 ```
 
 このコードは調査用の記法で、実行もインストールもしていない。**公式V3ローダーは`t3_mtl23ls_v3.safetensors`と従来の`s3gen.pt`を組み合わせて読む**。同repoの`s3gen_v3.pt`/`.safetensors`は別途配布されているが、元ローダーが自動でV3 S3Genをロードするわけではない。バージョン混在に注意。
+
+**実装の固定コミットを追加確認（2026-11-08）**：開発元GitHubの2026-11-04コミット `ab55923c27757c90cfcc407baa57dc25a7d25217` を[正式なコード参照](https://github.com/resemble-ai/chatterbox/commit/ab55923c27757c90cfcc407baa57dc25a7d25217)として記録。固定した[Multilingualローダー](https://github.com/resemble-ai/chatterbox/blob/ab55923c27757c90cfcc407baa57dc25a7d25217/src/chatterbox/mtl_tts.py)がV2既定／V3明示選択／従来の`s3gen.pt`を使用すること、および[Turbo/Nanoローダー](https://github.com/resemble-ai/chatterbox/blob/ab55923c27757c90cfcc407baa57dc25a7d25217/src/chatterbox/tts_turbo.py)がMeanFlowを使うことを一次コードで確認した。これは実行したという意味ではなく、Python/PyTorch/Perth等の依存ABIを固定できた意味でもない。
 
 ## 2. V3の固定ファイル構成
 
