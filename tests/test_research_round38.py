@@ -52,7 +52,7 @@ class R38LargeArtifactTests(unittest.TestCase):
         self.assertEqual(x["native_bytes"],120_927_211_096)
         self.assertEqual(x["hf_bytes"],120_922_973_936)
         self.assertNotEqual(x["native_bytes"],x["hf_bytes"])
-        self.assertIn("not bitwise",x["note"])
+        self.assertIn("no tensorwise",x["note"])
         self.assertIn("sgl-project",x["sglang_bugfix_primary"])
 
     def test_gpt_oss_root_original_and_metal_are_backend_representations(self):
@@ -60,7 +60,7 @@ class R38LargeArtifactTests(unittest.TestCase):
         self.assertEqual((x["hf_15_shards"],x["original_7_shards"],x["metal_file_count"]),(15,7,1))
         self.assertEqual(x["hf_bytes"],65_248_893_184)
         self.assertEqual(x["metal_bytes"],65_238_253_568)
-        self.assertIn("not three post-trained",x["note"])
+        self.assertIn("No evidence",x["note"])
 
     def test_flux_root_and_diffusers_transformer_are_alternatives_with_dependencies(self):
         x=self.c["flux2_dev"]
@@ -68,7 +68,7 @@ class R38LargeArtifactTests(unittest.TestCase):
         self.assertEqual(x["text_encoder_shard_count"],10)
         self.assertEqual(x["selected_diffusers_three_component_groups_bytes"],112_805_617_244)
         self.assertGreater(x["root_single_transformer_bytes"],64_000_000_000)
-        self.assertTrue(x["source_weight_shas_masked"])
+        self.assertTrue(x["hashes_redacted"])
         self.assertTrue(x["gated"])
         self.assertFalse(self.rows["black-forest-labs/FLUX.2-dev"]["model_weight_sha_complete"])
 
