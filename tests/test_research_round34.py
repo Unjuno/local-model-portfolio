@@ -86,6 +86,20 @@ class TestR34CapacityEvidence(unittest.TestCase):
                          e["chatr_complete_r21_package_bytes"])
         self.assertFalse(e["shared_base_locally_hash_verified"])
 
+    def test_stuubs_separate_trained_stages_from_quantizations(self):
+        x = self.audit["stuubs_representation_scenario"]
+        files = x["observed_files"]
+        self.assertEqual(len(files), 7)
+        self.assertEqual(len(set(f["file"] for f in files)), 7)
+        self.assertEqual(len(set(f["learned_state"] for f in files)), 3)
+        self.assertEqual(x["quant_variants_same_v1_state"], 4)
+        self.assertAlmostEqual(sum(f["displayed_gb"] for f in files), 195.9)
+        self.assertAlmostEqual(x["current_v1_bf16_only_displayed_gb_approx"], 42.0)
+        self.assertAlmostEqual(x["illustrative_weight_payload_dedup_saving_displayed_gb_approx"], 153.9)
+        self.assertFalse(x["actual_disk_savings_verified"])
+        self.assertTrue(x["live_repo_sizes_rounded_not_exact"])
+        self.assertTrue(any("DIFFERENT" in x for x in [x["conditions"]]))
+
     def test_user_selected_model_and_capacity_limits_not_weakened(self):
         n = [x for x in self.items if x["repo_id"] == "Nanbeige/Nanbeige4.3-33B"]
         self.assertEqual(len(n), 1)
