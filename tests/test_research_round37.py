@@ -30,7 +30,11 @@ class R37ChatterboxArchiveTests(unittest.TestCase):
         self.assertIn('t3_model="v3"', code["v3_explicit_argument"])
         self.assertTrue(code["default_without_argument"].startswith("v2"))
         self.assertEqual(code["standard_decoder_path"], "s3gen.pt")
-        self.assertFalse(code["loader_rev_immutable_pinned"])
+        self.assertTrue(code["loader_rev_immutable_pinned"])
+        self.assertEqual(code["source_commit_sha"],
+                         "ab55923c27757c90cfcc407baa57dc25a7d25217")
+        self.assertIn(code["source_commit_sha"], code["pinned_multilingual_loader_url"])
+        self.assertIn(code["source_commit_sha"], code["pinned_turbo_nano_loader_url"])
 
     def test_v3_six_files_match_pinned_source_and_total(self):
         v3 = self.r["multilingual_v3"]
@@ -78,7 +82,15 @@ class R37ChatterboxArchiveTests(unittest.TestCase):
         self.assertIn("retired research", self.r["first_party_status"]["as_of_august_2026"].lower())
         self.assertIn("NOT evidence", self.r["first_party_status"]["as_of_august_2026"])
         self.assertFalse(self.r["quality_and_scope"]["independent_claim_v3_better_not_verified"] is False)
-        self.assertFalse(self.r["rights_and_security"]["source_revision_for_loader_unpinned"] is False)
+        self.assertFalse(self.r["rights_and_security"]["source_revision_for_loader_unpinned"])
+
+    def test_source_code_pin_explains_actual_v3_and_meanflow_file_choice(self):
+        source = self.r["reference_implementation"]["verified_pinned_loader_behavior"]
+        self.assertEqual(source["multilingual_default"], "t3_mtl23ls_v2.safetensors")
+        self.assertEqual(source["v3_opt_in"], "t3_mtl23ls_v3.safetensors")
+        self.assertEqual(source["standard_s3gen_loaded"], "s3gen.pt")
+        self.assertEqual(source["turbo_nano_decoder_loaded"], "s3gen_meanflow.safetensors")
+        self.assertFalse(self.r["reference_implementation"]["runtime_quality_user_measured"])
 
     def test_existing_selection_and_queue_unchanged(self):
         self.assertEqual(self.current["expected"]["tracked"], 150)
