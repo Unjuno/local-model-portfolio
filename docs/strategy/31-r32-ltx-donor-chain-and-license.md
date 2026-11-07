@@ -1,3 +1,5 @@
+**R35最新訂正（2026-11-08）**：Chris本家とfrtertaer複製先のモデル・補助重み15ファイルを公開APIのLFS SHA-256＋byteで照合し、全件一致した。R32時点の『一致未確認』は現在の固定revisionでは解決。ただしライセンス・実機ハッシュ・推論品質は未検証。[R35固定ファイル監査](34-r35-ltx-source-vs-mirror-file-identity.md)。
+
 **R33重要訂正（2026-11-07）**：R32が追跡した`TenStrip/LTX2.3-10Eros`のv1 BF16は、Stubeliusが指定する実際の10Eros donorではない。作者`NOTICE.txt`は**10Eros v1.5**を指定。正しい原本は`10Eros_v1.5_bf16.safetensors`（46,139,886,366 byte、SHA-256 `2383d87bc1eea4fc00b73a52eb177bea868c2c46da621511acf9e54b92309f24`、Git commit `99be68b2b6a3f68cde86b3b70e6f71bc26e726fb`）。加えて、[R33台帳](../../catalog/research/2026-11-07-r33-ltx-exact-donor-and-adapter-conversion.json)はOmniNFT元FP32とKijai BF16変換を**同一RL学習状態の異なる表現**として整理。旧v1のハッシュと容量は歴史比較のみとして保持。[R33訂正報告](32-r33-correct-donor-and-adapter-representations.md)が現行判断。
 
 # R32 — LTX 2.5特殊版の元学習成果・権利・公開ハッシュの追跡（2026-11-07）
