@@ -107,7 +107,9 @@
       "dmd_repo_has_three_variants": true,
       "selected_which_in_chris_unknown": true,
       "tenstrip_10eros_repo_has_many_full_variants": true,
-      "cannot_archive_all_with_justified_incremental_value": false
+      "cannot_archive_all_with_justified_incremental_value": false,
+      "corrected_donor_version": "10Eros v1.5, NOT v1",
+      "r33_source": "catalog/research/2026-11-07-r33-ltx-exact-donor-and-adapter-conversion.json"
     }
   },
   "file_manifest": [
@@ -165,11 +167,11 @@
       "id": "tenstrip_10eros_v1",
       "repo_id": "TenStrip/LTX2.3-10Eros",
       "file": "10Eros_v1_bf16.safetensors",
-      "role": "FULL_10EROS_LTX23_SOURCE_SNAPSHOT_NOT_SMALL_DELTA",
+      "role": "HISTORICAL_10EROS_V1_COMPARISON_ONLY_NOT_THE_STUBELIUS_NAMED_SOURCE",
       "displayed_gb": 46.1,
       "sha256": "b4b3498eeafa4d52fab5222776e4fe8821787d11fff39de867b919c83e916d35",
       "url": "https://huggingface.co/TenStrip/LTX2.3-10Eros/blob/main/10Eros_v1_bf16.safetensors",
-      "decision": "HOLD_DONOR_VERSION_AND_REDUNDANCY_UNCONFIRMED"
+      "decision": "NOT_THE_NAMED_STUBELIUS_DONOR_R33_CORRECTED_TO_V1_5"
     }
   ],
   "integrity": "SHA256 values were read from Hugging Face/Xet pointer metadata; they were NOT recomputed from downloaded weights. Exact file size in bytes and full immutable HF repo commits still unverified.",
@@ -194,5 +196,20 @@
     "scope": "No network, no weight download. Verify six distinct observed SHA metadata, correct class separation, no unwarranted mirror equality, license conflict, and zero formal approvals.",
     "not_model_quality_validation": true,
     "corrected_after_first_run": "2026-11-07: One test erroneously addressed non-existent existing_tracked/existing_active keys in R32; fixed to assert catalog/CURRENT.json expected.tracked and expected.active; no model or policy state was changed."
+  },
+  "r33_mandatory_erratum": {
+    "date": "2026-11-07",
+    "severity": "SOURCE_VERSION_ERROR",
+    "what_was_wrong": "R32 captured TenStrip 10Eros v1 BF16 as a plausible source; Stubelius NOTICE specifically states v1.5.",
+    "actual_donor": {
+      "repo_id": "TenStrip/LTX2.3-10Eros",
+      "file": "10Eros_v1.5_bf16.safetensors",
+      "bytes": 46139886366,
+      "sha256": "2383d87bc1eea4fc00b73a52eb177bea868c2c46da621511acf9e54b92309f24",
+      "upload_commit": "99be68b2b6a3f68cde86b3b70e6f71bc26e726fb"
+    },
+    "new_original_adapter_precision_record": "OmniNFT LTX2.3 FP32 1,233,512,728 B; Kijai ComfyUI BF16 616,948,520 B is not a separate trained state.",
+    "read_latest_report": "docs/strategy/32-r33-correct-donor-and-adapter-representations.md",
+    "preserve_historical_v1_metadata_but_not_donor": true
   }
 }
