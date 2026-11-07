@@ -192,6 +192,7 @@
     "path": "tests/test_research_round32.py",
     "test_count": 7,
     "scope": "No network, no weight download. Verify six distinct observed SHA metadata, correct class separation, no unwarranted mirror equality, license conflict, and zero formal approvals.",
-    "not_model_quality_validation": true
+    "not_model_quality_validation": true,
+    "corrected_after_first_run": "2026-11-07: One test erroneously addressed non-existent existing_tracked/existing_active keys in R32; fixed to assert catalog/CURRENT.json expected.tracked and expected.active; no model or policy state was changed."
   }
 }
