@@ -60,7 +60,7 @@ class R38LargeArtifactTests(unittest.TestCase):
         self.assertEqual((x["hf_15_shards"],x["original_7_shards"],x["metal_file_count"]),(15,7,1))
         self.assertEqual(x["hf_bytes"],65_248_893_184)
         self.assertEqual(x["metal_bytes"],65_238_253_568)
-        self.assertIn("No evidence",x["note"])
+        self.assertIn("not three post-trained models",x["note"])
 
     def test_flux_root_and_diffusers_transformer_are_alternatives_with_dependencies(self):
         x=self.c["flux2_dev"]
