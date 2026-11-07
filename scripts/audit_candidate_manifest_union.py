@@ -164,8 +164,8 @@ def verify_report(report_path: str = DEFAULT_REPORT) -> dict[str, Any]:
     for name, packages, stored in scenarios:
         calc = aggregate(packages)
         field_map = {
-            "package_count": "packages",
-            "file_references": "source_file_references",
+            "package_count": "package_count",
+            "file_references": "file_references",
             "publisher_file_bytes_before_sha_reuse": "unreconciled_sum_file_bytes",
             "publisher_sha_reusable_bytes": "repeated_publisher_sha_total_bytes",
             "publisher_sha_unique_bytes": "deduplicated_publisher_hash_unique_bytes",
