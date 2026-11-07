@@ -236,3 +236,20 @@ JSONの132ユニークrepoから1行ずつ、一次URL・観測日・制限・�
 ## 9. 〈次に考える問い〉
 
 もしGatedの依存Encoderだけが失われ、関連モデル本体は公開状態が続くなら、必要な**正規ライセンス・revision・互換性検証**のどれを満たすまでモデル本体の保存優先度を引き下げるべきか。
+
+
+## 10. 2026-11-08 Exa一次資料追補（差分監査）
+
+**調査範囲**：ExaでHugging Face公式gating仕様、米NTIAの2024年報告、欧州委員会AI Act公式FAQ、Stability AI公式ライセンス改定、GEITje作者による削除報告を再照会した。これは**132件の当日Hub API再監査ではない**。各資産の2026-11-08時点のアクセス可否、本人権限、固定revision、ファイルSHAは未確認であり、2026-11-03の観測を当日確認と読み替えない。
+
+| 一次資料 | 確認された事実 | 予測とは区別する点 |
+| --- | --- | --- |
+| https://huggingface.co/docs/hub/models-gated | 作者が個人別アクセスを承認・拒否・取消可能 | 個別repoの将来停止日を示さない |
+| https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report/policy-approaches-recommendations/recommendations | 2024年NTIAは監視と証拠に基づく対応を勧告し、将来の限定的制限を政策選択肢として検討 | 2026年に公開ウェイト全般が禁止された証拠ではない |
+| https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/how-does-ai-act-apply-general-purpose-ai-models-released-open-source | 一定のオープンソースGPAIに義務例外がある一方、著作権方針と学習データ概要義務等は残る | GPAI規制をウェイトの一律保存禁止と同一視しない |
+| https://stability.ai/news-updates/license-update | 2024-07-05にSD3を含むCommunity License条件を改定 | 全派生モデルの現行利用権限を自動確定しない |
+| https://goingdutch.ai/en/posts/geitje-takedown/ | 2025-01-25にGEITje作者が権利者団体の要請を受け重み削除を報告 | 個別著作権事案を一般的規制確率へ外挿しない |
+
+**結論**：既存のP0/P1/P2/P3/PXは暫定の調査順位として維持するが、2026-11-08の個別資産別再判定が済んだとの主張はしない。取得のPASS判定は引き続きゼロ。特に未知総パラメータ12件は取得準備停止、150B以上2件は絶対除外。リスクを高く見積もることは無許可取得の免責ではない。
+
+**反証可能性**：将来、一次配布元の同一revisionとSHA-256が正規の別配布元から合法に取得可能と証明されれば、当該資産の再取得困難性を引き下げる。反対に公式な削除通知・gating変更が確認されれば観測欄を更新し、予測欄と混同しない。
