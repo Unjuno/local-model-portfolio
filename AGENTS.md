@@ -1,4 +1,10 @@
 # エージェント作業規約
+## R39（2026-11-08）：大型重みの複数パッケージを取得前に一つの実行形式へ分ける
+
+[R39 7形式の固定ファイル一覧](manifests/drafts/r39-backend-specific-large-sources.candidate.json)／[技術報告](docs/strategy/38-r39-backend-specific-selection.md)を参照。Mistral Small4 119BはHF3 shardとNative7 shard、GPT-OSS120BはHF15・OpenAI original7・Apple Metal1、FLUX2-devはDiffusers分割と単一DiTの両形式が存在する。**通常量子化・別backend配置を独立の後学習モデルとしてカウントしない**。ただし元のNative/research形式には再現可能性の別価値があるため、実行環境・変換同等性・長期保存目的の証拠なしに削除もしない。
+
+新R39は配布元40文字コミットを付した研究専用マニフェストであり、全7形式の重み/必要なsupport byteまで固定。ただし**完全に実行できる環境、必要な特殊コードと権利、実機の空き・RAM・performanceは未検証、承認済み取得0**。参考のMistral HF 120,956,545,012 byte＋GPT-OSS HF 65,276,857,840 byte = 186,233,402,852 byteを「完成済みアーカイブ」や「取得許可された容量」と誤解しない。FLUX2-devはGatedでLFS SHAが公開されず最終ロック不可。Native/HF設定混合でのMistral起動不良を防ぐ（[SGLang修正PR #21620](https://github.com/sgl-project/sglang/pull/21620)）。GPT-OSSは[公式コードcommit](https://github.com/openai/gpt-oss/tree/277020131d524f06bed5f66b694a92ed7f6e5224)を紐付け、original/Triton、HF/vLLM、Metalの用途を区別する。モデルの独自訓練済みSFT、特殊RL/NSFW、医学特化、データセットの役割を保存候補から勝手に除外しない。4TBの計画枠、200GB物理安全空き、Nanbeige SELECT、既存150件と空のapprovedキューを維持する。
+
 ## R37/R38（2026-11-08）：退役TTS研究と大型モデルの保存形式を固定する
 
 [R37 Chatterbox9レポジトリのSHA・依存台帳](catalog/research/2026-11-08-r37-chatterbox-versioned-source-manifest.json)／[解説](docs/strategy/36-r37-chatterbox-preservation-manifest.md)：2026年8月にResemble AI Chatterboxは保守終了（公開停止の予告とは異なる）。公式`ChatterboxMultilingualTTS.from_pretrained(device="cuda", t3_model="v3")`を明示しない場合、**V2が既定**。公式V3はT3 V3＋通常`s3gen.pt`を用い、`s3gen_v3`を自動ではロードしない。**実装は[固定2026-11-04コミット](https://github.com/resemble-ai/chatterbox/commit/ab55923c27757c90cfcc407baa57dc25a7d25217)で検証済み**（コード実行・PyTorch等のABI固定・性能ベンチ実施という意味ではない）。固定6ファイルは3,208,951,924byte。六つの地域/言語特化モデルは**それぞれ異なるT3重み**で、共通`s3gen_v3.pt`のSHAは6repoで同じ。Turbo/Nanoも別T3を持つがMeanFlowデコーダーが同一SHA。新たな特殊学習成果と通常の重み表現を混同しない。作者のV3改善主張には独立した日本語対V2比較が未完。
