@@ -1679,5 +1679,52 @@
     "all_packages_approved": false,
     "all_trained_state_labels_unique_by_source_not_by_layout": true,
     "no_downloads_executed": true
-  }
+  },
+  "source_code_evidence": {
+    "gpt_oss": {
+      "repo": "openai/gpt-oss",
+      "commit": "277020131d524f06bed5f66b694a92ed7f6e5224",
+      "commit_date_utc": "2026-10-29T16:42:12Z",
+      "pinned_url": "https://github.com/openai/gpt-oss/tree/277020131d524f06bed5f66b694a92ed7f6e5224",
+      "source_reference": "https://github.com/openai/gpt-oss",
+      "per_backend_map": {
+        "original": "torch/triton source reference",
+        "hf": "vLLM and Transformers",
+        "metal": "Apple Silicon Metal compiled artifact"
+      },
+      "python": "3.12 per source README",
+      "installation_not_verified": true
+    },
+    "mistral": {
+      "repo": "sgl-project/sglang",
+      "relevant_mistral_native_fix_merged_commit": "1d6424d5ad2dd1edb5ce9bb477be81dcf2b06eef",
+      "url": "https://github.com/sgl-project/sglang/pull/21620",
+      "merged_at_utc": "2026-03-30T08:57:35Z",
+      "vllm_recipe": "https://recipes.vllm.ai/mistralai/Mistral-Small-4-119B-2603",
+      "vllm_version_min_from_recipe": "0.20.0",
+      "mistral_common_min_from_recipe": "1.11.0",
+      "transformers_runtime_version": "5.x in recipe; exact wheel not pinned",
+      "tested_on_user_hardware": false
+    },
+    "flux": {
+      "official_repo": "https://github.com/black-forest-labs/flux2",
+      "license_source": "https://huggingface.co/black-forest-labs/FLUX.2-dev",
+      "license": "FLUX Non-Commercial model terms (HF tag other)",
+      "gated": "auto",
+      "source_weight_hashes_redacted": true
+    },
+    "weight_licenses": {
+      "mistral": "Apache-2.0 model card",
+      "gptoss": "Apache-2.0 weights plus published usage policy",
+      "flux": "Non-Commercial gated terms need authorized review"
+    },
+    "copyright_and_rights_note": "Dependency terms may differ from base weights; this is metadata evidence, not legal clearance."
+  },
+  "more_precise_uncertainties": [
+    "Compiled Metal model.bin contains compiled inference representation, and is not necessarily reproducible bitwise from HF root without exact source/SDK; do not call it a superfluous copy in all research settings.",
+    "GPT-OSS original weights are not an added training run; they may be preferable to HF for reference code provenance.",
+    "Mistral native and HF shard values may have conversion differences, so size similarity alone is not proof of numerical equivalence.",
+    "FLUX gated weights have no publicly inspectable LFS SHA, cannot constitute a pinned downloadable package without user authorization."
+  ],
+  "summary_for_action": "Mistral HF 120,956,545,012 bytes and GPT-OSS HF 65,276,857,840 bytes, 186,233,402,852 bytes combined of pinned source weight/config files; this is conditional research choice, not verified complete runnable archive or approved download."
 }
