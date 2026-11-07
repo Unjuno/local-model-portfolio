@@ -19,10 +19,22 @@
     "standard_decoder_path": "s3gen.pt",
     "v3_decoder_exists_but_not_loaded_by_default": "s3gen_v3.pt (different trained decoder checkpoint, not an implicit part of official general V3 loader)",
     "original_optional_builtin_voice": "conds.pt",
-    "loader_rev_immutable_pinned": false,
+    "loader_rev_immutable_pinned": true,
     "requires_weights_only_torch_load": true,
     "backend": "Python PyTorch, safetensors load_file T3, torch.load(weights_only=True) for older s3gen and voice encoder, MTLTokenizer grapheme JSON; device cuda/cpu/mps; watermark library perth",
-    "runtime_quality_user_measured": false
+    "runtime_quality_user_measured": false,
+    "source_commit_sha": "ab55923c27757c90cfcc407baa57dc25a7d25217",
+    "source_commit_date_utc": "2026-11-04T18:48:10Z",
+    "source_commit_url": "https://github.com/resemble-ai/chatterbox/commit/ab55923c27757c90cfcc407baa57dc25a7d25217",
+    "pinned_multilingual_loader_url": "https://github.com/resemble-ai/chatterbox/blob/ab55923c27757c90cfcc407baa57dc25a7d25217/src/chatterbox/mtl_tts.py",
+    "pinned_turbo_nano_loader_url": "https://github.com/resemble-ai/chatterbox/blob/ab55923c27757c90cfcc407baa57dc25a7d25217/src/chatterbox/tts_turbo.py",
+    "verified_pinned_loader_behavior": {
+      "multilingual_default": "t3_mtl23ls_v2.safetensors",
+      "v3_opt_in": "t3_mtl23ls_v3.safetensors",
+      "standard_s3gen_loaded": "s3gen.pt",
+      "turbo_nano_decoder_loaded": "s3gen_meanflow.safetensors",
+      "verified_by": "public GitHub source at exact commit, metadata only; not executed or benchmarked"
+    }
   },
   "source_repositories": [
     {
@@ -687,7 +699,7 @@
     "third_party_voice_permissions_not_inherited": true,
     "torch_pt_files_use_pickle_format": true,
     "readable_code_weights_only_loading_reviewed": true,
-    "source_revision_for_loader_unpinned": true,
+    "source_revision_for_loader_unpinned": false,
     "no_automatic_untrusted_code_execution": true
   },
   "decision": {
@@ -705,9 +717,11 @@
     "physical_free_bytes": null
   },
   "next": [
+    "Code source pin resolved: use GitHub code commit ab55923c27757c90cfcc407baa57dc25a7d25217 for offline build, and record exact Python/PyTorch requirements before execution.",
     "Freeze exact official loader source commit and its dependency ABI, compare V3 against V2 on 200 Japanese/English/WER/voice-identity cases without reusing training contamination.",
     "Decide whether dedicated six-language T3 stages add enough dialect fidelity vs V3; preserve each trained T3 only when independently worthwhile, reuse shared S3Gen SHA once.",
     "Turbo/Nano are separate low-latency architectures; don't hoard their duplicated S3Gen original plus meanflow decoder unless distinct use demonstrated.",
     "Do not mistake ceased maintenance for confirmed deletion, and retain source provenance & model notices."
-  ]
+  ],
+  "r38_status_context": "R38 large model report and this R37 software pin are separate archived sources; no downloads authorized."
 }
