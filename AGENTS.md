@@ -1,4 +1,10 @@
 # エージェント作業規約
+## R37/R38（2026-11-08）：退役TTS研究と大型モデルの保存形式を固定する
+
+[R37 Chatterbox9レポジトリのSHA・依存台帳](catalog/research/2026-11-08-r37-chatterbox-versioned-source-manifest.json)／[解説](docs/strategy/36-r37-chatterbox-preservation-manifest.md)：2026年8月にResemble AI Chatterboxは保守終了（公開停止の予告とは異なる）。公式`ChatterboxMultilingualTTS.from_pretrained(device="cuda", t3_model="v3")`を明示しない場合、**V2が既定**。公式V3はT3 V3＋通常`s3gen.pt`を用い、`s3gen_v3`を自動ではロードしない。固定6ファイルは3,208,951,924byte。六つの地域/言語特化モデルは**それぞれ異なるT3重み**で、共通`s3gen_v3.pt`のSHAは6repoで同じ。Turbo/Nanoも別T3を持つがMeanFlowデコーダーが同一SHA。新たな特殊学習成果と通常の重み表現を混同しない。作者のV3改善主張には独立した日本語対V2比較が未完。
+
+[R38 100GB超8資産の固定形式監査](catalog/research/2026-11-08-r38-large-asset-alternative-layouts.json)／[解説](docs/strategy/37-r38-large-model-format-and-dataset-roles.md)：Mistral Small4はnative7＋HF3シャード、GPT-OSS120Bは公式original7＋HF15＋Metal単一、FLUX2-devは単独TransformerとDiffusers7分割が同居する。異なる推論ABI形式を何も考えず重複保存しない。GPT-OSS MXFP4自体は公式の学習済み原本形式なので、単なる非公式量子化と混同しない。Qwen3-Coder Nextの40分割、Llama4 Scout50分割、Meditron3の30分割は**一つのモデルの分割**であり捨ててはいけない。IFMの事前学習と指示追従、Granaryの各コーパスは別の学習資料であり量子化重複ではない。FLUX2/Scout/MeditronのGated許諾と非公開LFSハッシュは最終lock未完。150資産・105有効・Nanbeige SELECT・4TB枠・200GB最低空き・取得承認0の既存条件を維持する。
+
 ## R36（2026-11-08）：22件の固定ファイルソース情報・非実行マニフェスト
 
 [22件の固定版メタデータR36](catalog/research/2026-11-08-r36-22-asset-source-closure.json)／[判断報告](docs/strategy/35-r36-22-asset-pinned-source-capacity.md)：v19有効105件のうちR34でsource repoサイズ未確定だった22件は、**21モデルrepoの全ファイル容量を固定40文字SHAで取得**。FineWeb-Eduは全データ未集計のまま、sample/10BTの14 parquet=28,518,193,415byteだけを具体例として確認。Chatterboxはrepo全体bytesと12個のモデルファイルが判明したが、T3/S3Gen v2/v3構成が未確定。LTX2.5原本はGated=autoでファイルサイズしか確認できずLFS SHAが伏せられているため、取得や権利・ハッシュlockは不可。Heretic RVNは全repo約1,645GBに多数の量子化・旧学習状態を含み、現行RVN Q4 multilingual+mmprojは17,176,647,232byteの研究用ファイル選択で、取得・実機品質は未検証。Lilavati/Checkerは各189,484,448byteで同じサイズだが**LFS SHAが異なる別学習重み**、LiquidAI VLM/DSparkはtargetとdraftの補完。単一モデルの複数量子化だけを整理し、異なるSFT/RL/特殊編集や独立機能の補助重みを削らない。
