@@ -49,7 +49,12 @@
     "us_2025_rule_original_text": "https://www.federalregister.gov/documents/2025/01/15/2025-00636/framework-for-artificial-intelligence-diffusion",
     "black_forest_labs_2025_license_revision": "https://bfl.ai/blog/flux-1-kontext-dev",
     "illustrious_v1_1_model_card": "https://huggingface.co/OnomaAIResearch/Illustrious-XL-v1.1/blob/main/README.md",
-    "eu_2026_07_31_enforcement_announcement": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august"
+    "eu_2026_07_31_enforcement_announcement": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august",
+    "seed_vc_license_metadata_commit": "https://huggingface.co/Plachta/Seed-VC/commit/4925814",
+    "flux_dev_v2_governing_terms": "https://bfl.ai/legal/non-commercial-license-terms",
+    "boson_v3_author_readme": "https://github.com/boson-ai/higgs-audio",
+    "lance_author_moe_report": "https://lance-project.github.io/assets/lance.pdf",
+    "puffin_author_report": "https://arxiv.org/abs/2609.04196"
   },
   "confirmed_policy_events": [
     {
@@ -1539,7 +1544,8 @@
         "First-party full trained model-parameter count including MoE experts and additional learned components required",
         "Complete current license/usage-terms text not reviewed",
         "Dependencies and parent model terms not fully reviewed",
-        "Selected-file bytes and cryptographic lock manifest not finalized"
+        "Selected-file bytes and cryptographic lock manifest not finalized",
+        "2026-11-08 targeted first-party research: Define one exact pipeline/variant; statically enumerate all tensors and dependencies; assess legal scope of the README metadata change separately from the GitHub code license."
       ],
       "independent_observation_required": true,
       "disappearance_risk": {
@@ -1584,6 +1590,37 @@
         "user_download_approved": false,
         "full_license_and_individual_gated_entitlement_checked": false,
         "same_revision_file_hash_dependency_approved": false
+      },
+      "targeted_primary_evidence_2026_11_08": {
+        "confirmed_on": "2026-11-08",
+        "classification": "AUTHOR_METADATA_CHANGE_AND_COMPONENT_MANIFEST",
+        "evidence_level": "FIRST_PARTY_LICENSE_OR_AUTHOR_MODEL_CARD_EXCERPT_NOT_COMPLETE_LEGAL_CLEARANCE",
+        "primary_urls": [
+          "https://huggingface.co/Plachta/Seed-VC/commit/4925814",
+          "https://huggingface.co/Plachta/Seed-VC/blob/main/README.md",
+          "https://github.com/Plachtaa/seed-vc"
+        ],
+        "observed_claims_verified": [
+          "2024-09-23 author commit changed HF README metadata from license: mit to license: gpl-3.0",
+          "Developer GitHub repository was archived on 2025-11-21; this is a source-code maintenance change, not a demonstrated weights takedown",
+          "Developer lists 25M, 98M, 200M and v2 67M(CFM)+90M(AR) for selected principal variants; these exclude independent encoder/vocoder component totals"
+        ],
+        "model_and_dependency_scope": [
+          "independent alternative model checkpoint variants",
+          "XLSR-large or Whisper content encoder, depending on variant",
+          "HIFT or BigVGAN vocoder and other speech/speaker conditioning modules"
+        ],
+        "parameters_and_scope_limitation": "Publisher's variant numbers are partial; no complete selected-variant plus mandatory learned dependencies census. Remains UNVERIFIED; do not prepare acquisition.",
+        "next_nonexecuting_verification": "Define one exact pipeline/variant; statically enumerate all tensors and dependencies; assess legal scope of the README metadata change separately from the GitHub code license.",
+        "falsification_test": "Publisher supplies a complete immutable per-variant component manifest proving total trained parameters and governing rights.",
+        "access_and_contract_signal": "LICENSE_METADATA_CHANGED_HISTORICALLY_NOT_WEIGHTS_TAKEDOWN",
+        "status_is_not_future_prediction": true,
+        "per_user_gated_permission_verified": false,
+        "approved_model_license_and_downstream_rights": false,
+        "full_total_parameters_verified_for_preparation": false,
+        "acquisition_approved": false,
+        "new_band": "P0",
+        "status": "NEW_PRIMARY_EVIDENCE_NO_AUTHORIZED_WEIGHT_DOWNLOAD"
       }
     },
     {
@@ -2428,7 +2465,8 @@
         "Complete current license/usage-terms text not reviewed",
         "Dependencies and parent model terms not fully reviewed",
         "Selected-file bytes and cryptographic lock manifest not finalized",
-        "High source byte cost; full-repo bytes include possible optional formats, dedup only by verified hashes"
+        "High source byte cost; full-repo bytes include possible optional formats, dedup only by verified hashes",
+        "2026-11-08 targeted first-party research: Verify individual Gated grant, intended preservation rights, exact license version plus commercial vs noncommercial purpose and all downstream dependencies."
       ],
       "independent_observation_required": true,
       "disappearance_risk": {
@@ -2495,6 +2533,36 @@
         "user_download_approved": false,
         "full_license_and_individual_gated_entitlement_checked": false,
         "same_revision_file_hash_dependency_approved": false
+      },
+      "targeted_primary_evidence_2026_11_08": {
+        "confirmed_on": "2026-11-08",
+        "classification": "AUTHOR_LICENSE_DIRECT",
+        "evidence_level": "FIRST_PARTY_LICENSE_OR_AUTHOR_MODEL_CARD_EXCERPT_NOT_COMPLETE_LEGAL_CLEARANCE",
+        "primary_urls": [
+          "https://bfl.ai/legal/non-commercial-license-terms",
+          "https://github.com/black-forest-labs/flux2/blob/main/model_cards/FLUX.2-dev.md"
+        ],
+        "observed_claims_verified": [
+          "FLUX [dev] Non-Commercial License v2.0 revised 2025-11-25 explicitly names FLUX.2 [dev]",
+          "Grant is conditional, revocable, non-transferable and non-sublicensable, restricted to non-commercial/non-production use",
+          "Content filters or review and distribution notices are required under specified circumstances; license permits termination by notice"
+        ],
+        "model_and_dependency_scope": [
+          "FLUX.2 dev transformer (~32B)",
+          "text encoders and image VAE as configured by actual selected pipeline",
+          "third-party filters and components, if selected"
+        ],
+        "parameters_and_scope_limitation": "Main transformer has verified 32.2233B catalog count; the separately governed runtime/component scope still needs review, not a new 150B exemption.",
+        "next_nonexecuting_verification": "Verify individual Gated grant, intended preservation rights, exact license version plus commercial vs noncommercial purpose and all downstream dependencies.",
+        "falsification_test": "Original publisher publishes a dated amendment replacing the named v2.0 agreement for this exact revision; re-evaluate terms then.",
+        "access_and_contract_signal": "GATED_AND_REVOCABLE_CONTRACT_OBSERVED",
+        "status_is_not_future_prediction": true,
+        "per_user_gated_permission_verified": false,
+        "approved_model_license_and_downstream_rights": false,
+        "full_total_parameters_verified_for_preparation": true,
+        "acquisition_approved": false,
+        "new_band": "P0",
+        "status": "NEW_PRIMARY_EVIDENCE_NO_AUTHORIZED_WEIGHT_DOWNLOAD"
       }
     },
     {
@@ -6700,7 +6768,8 @@
         "First-party full trained model-parameter count including MoE experts and additional learned components required",
         "Complete current license/usage-terms text not reviewed",
         "Dependencies and parent model terms not fully reviewed",
-        "Selected-file bytes and cryptographic lock manifest not finalized"
+        "Selected-file bytes and cryptographic lock manifest not finalized",
+        "2026-11-08 targeted first-party research: Resolve the exact face encoder and base model access/license/weight scope; do not treat Apache code license as a blanket weights license."
       ],
       "independent_observation_required": true,
       "disappearance_risk": {
@@ -6745,6 +6814,37 @@
         "user_download_approved": false,
         "full_license_and_individual_gated_entitlement_checked": false,
         "same_revision_file_hash_dependency_approved": false
+      },
+      "targeted_primary_evidence_2026_11_08": {
+        "confirmed_on": "2026-11-08",
+        "classification": "AUTHOR_RIGHTS_DEPENDENCY_SEPARATION",
+        "evidence_level": "FIRST_PARTY_LICENSE_OR_AUTHOR_MODEL_CARD_EXCERPT_NOT_COMPLETE_LEGAL_CLEARANCE",
+        "primary_urls": [
+          "https://github.com/instantx-research/InstantID",
+          "https://huggingface.co/InstantX/InstantID"
+        ],
+        "observed_claims_verified": [
+          "Developer says project code is Apache 2.0 but released checkpoints are for research only",
+          "Developer explicitly distinguishes InsightFace face models as non-commercial research-only",
+          "Inference combines ControlNet, IP adapter, face analyzer and a separate diffusion base model"
+        ],
+        "model_and_dependency_scope": [
+          "InstantID IP-Adapter",
+          "ControlNet",
+          "InsightFace/antelopev2 face recognition/landmark weights",
+          "SDXL-compatible diffusion base and any separate VAE"
+        ],
+        "parameters_and_scope_limitation": "Single repo does not include every necessary learned dependency; total full pipeline unknown.",
+        "next_nonexecuting_verification": "Resolve the exact face encoder and base model access/license/weight scope; do not treat Apache code license as a blanket weights license.",
+        "falsification_test": "Developer publishes complete checkpoint and dependency rights with verified exact-revision parameter census.",
+        "access_and_contract_signal": "THIRD_PARTY_NONCOMMERCIAL_DEPENDENCY",
+        "status_is_not_future_prediction": true,
+        "per_user_gated_permission_verified": false,
+        "approved_model_license_and_downstream_rights": false,
+        "full_total_parameters_verified_for_preparation": false,
+        "acquisition_approved": false,
+        "new_band": "P1",
+        "status": "NEW_PRIMARY_EVIDENCE_NO_AUTHORIZED_WEIGHT_DOWNLOAD"
       }
     },
     {
@@ -7076,7 +7176,8 @@
         "First-party full trained model-parameter count including MoE experts and additional learned components required",
         "Complete current license/usage-terms text not reviewed",
         "Dependencies and parent model terms not fully reviewed",
-        "Selected-file bytes and cryptographic lock manifest not finalized"
+        "Selected-file bytes and cryptographic lock manifest not finalized",
+        "2026-11-08 targeted first-party research: Choose variant, distinguish independent training runs from redundancy; verify CC-BY-NC scope for weights, separate encoder/vocoder size and terms."
       ],
       "independent_observation_required": true,
       "disappearance_risk": {
@@ -7121,6 +7222,37 @@
         "user_download_approved": false,
         "full_license_and_individual_gated_entitlement_checked": false,
         "same_revision_file_hash_dependency_approved": false
+      },
+      "targeted_primary_evidence_2026_11_08": {
+        "confirmed_on": "2026-11-08",
+        "classification": "AUTHOR_CODE_VS_WEIGHTS_LICENSE",
+        "evidence_level": "FIRST_PARTY_LICENSE_OR_AUTHOR_MODEL_CARD_EXCERPT_NOT_COMPLETE_LEGAL_CLEARANCE",
+        "primary_urls": [
+          "https://github.com/SWivid/F5-TTS",
+          "https://github.com/SWivid/F5-TTS/blob/main/src/f5_tts/infer/SHARED.md",
+          "https://huggingface.co/SWivid/F5-TTS"
+        ],
+        "observed_claims_verified": [
+          "Developer says inference code is MIT, pretrained models are CC-BY-NC due to the Emilia training data",
+          "Official repository lists F5-TTS v1 Base, older Base and E2-TTS as distinct checkpoints",
+          "Author model list explicitly references associated vocab files"
+        ],
+        "model_and_dependency_scope": [
+          "one selected F5-TTS-v1 or F5-TTS Base or E2-TTS checkpoint",
+          "matching vocabulary",
+          "associated audio vocoder and inference configuration as selected"
+        ],
+        "parameters_and_scope_limitation": "No static all-learned-components total for selected pipeline; multiple checkpoint variants must not be counted as a single automatically required model.",
+        "next_nonexecuting_verification": "Choose variant, distinguish independent training runs from redundancy; verify CC-BY-NC scope for weights, separate encoder/vocoder size and terms.",
+        "falsification_test": "Publisher produces exact tensor census and documented materially different authorized license for the selected weights.",
+        "access_and_contract_signal": "WEIGHTS_NONCOMMERCIAL_CODE_MIT",
+        "status_is_not_future_prediction": true,
+        "per_user_gated_permission_verified": false,
+        "approved_model_license_and_downstream_rights": false,
+        "full_total_parameters_verified_for_preparation": false,
+        "acquisition_approved": false,
+        "new_band": "P1",
+        "status": "NEW_PRIMARY_EVIDENCE_NO_AUTHORIZED_WEIGHT_DOWNLOAD"
       }
     },
     {
@@ -7328,7 +7460,8 @@
         "The existing HOLD/BACKLOG decision must be resolved in a separate authorized selection process",
         "Complete current license/usage-terms text not reviewed",
         "Dependencies and parent model terms not fully reviewed",
-        "Selected-file bytes and cryptographic lock manifest not finalized"
+        "Selected-file bytes and cryptographic lock manifest not finalized",
+        "2026-11-08 targeted first-party research: Review CPML and dependencies, statically inspect safe file structure without deserializing arbitrary pickle; do not treat code license as the model license."
       ],
       "independent_observation_required": true,
       "disappearance_risk": {
@@ -7373,6 +7506,37 @@
         "user_download_approved": false,
         "full_license_and_individual_gated_entitlement_checked": false,
         "same_revision_file_hash_dependency_approved": false
+      },
+      "targeted_primary_evidence_2026_11_08": {
+        "confirmed_on": "2026-11-08",
+        "classification": "AUTHOR_MODEL_LICENSE_AND_SERIALIZATION",
+        "evidence_level": "FIRST_PARTY_LICENSE_OR_AUTHOR_MODEL_CARD_EXCERPT_NOT_COMPLETE_LEGAL_CLEARANCE",
+        "primary_urls": [
+          "https://huggingface.co/coqui/XTTS-v2/blob/main/LICENSE.txt",
+          "https://huggingface.co/coqui/XTTS-v2/tree/main"
+        ],
+        "observed_claims_verified": [
+          "Coqui Public Model License 1.0.0 explicitly permits non-commercial use only for the model and outputs",
+          "Repository includes model.pth and separate dvae.pth, speakers_xtts.pth and vocabulary files",
+          "Hugging Face identifies pickle-based weight files; merely listing does not justify executing checkpoint loaders"
+        ],
+        "model_and_dependency_scope": [
+          "model.pth",
+          "dvae.pth",
+          "speakers_xtts.pth",
+          "vocab.json and configuration"
+        ],
+        "parameters_and_scope_limitation": "Model checkpoint byte sizes are not a complete learned-parameter census including independent codec; static tensor inspection still required.",
+        "next_nonexecuting_verification": "Review CPML and dependencies, statically inspect safe file structure without deserializing arbitrary pickle; do not treat code license as the model license.",
+        "falsification_test": "Publisher provides a verified alternative legally governing exact original v2.0.3 checkpoint and all learned component counts.",
+        "access_and_contract_signal": "MODEL_AND_OUTPUT_NONCOMMERCIAL_LICENSE",
+        "status_is_not_future_prediction": true,
+        "per_user_gated_permission_verified": false,
+        "approved_model_license_and_downstream_rights": false,
+        "full_total_parameters_verified_for_preparation": false,
+        "acquisition_approved": false,
+        "new_band": "P1",
+        "status": "NEW_PRIMARY_EVIDENCE_NO_AUTHORIZED_WEIGHT_DOWNLOAD"
       }
     },
     {
@@ -7707,7 +7871,8 @@
         "The existing HOLD/BACKLOG decision must be resolved in a separate authorized selection process",
         "Complete current license/usage-terms text not reviewed",
         "Dependencies and parent model terms not fully reviewed",
-        "Selected-file bytes and cryptographic lock manifest not finalized"
+        "Selected-file bytes and cryptographic lock manifest not finalized",
+        "2026-11-08 targeted first-party research: Obtain publisher-approved lineage and separate exact model-graph/codec parameter census; review Boson terms and converter attribution, never assume a mirror is checksum-identical."
       ],
       "independent_observation_required": true,
       "disappearance_risk": {
@@ -7752,6 +7917,37 @@
         "user_download_approved": false,
         "full_license_and_individual_gated_entitlement_checked": false,
         "same_revision_file_hash_dependency_approved": false
+      },
+      "targeted_primary_evidence_2026_11_08": {
+        "confirmed_on": "2026-11-08",
+        "classification": "THIRD_PARTY_CONVERSION_UPSTREAM_LICENSE",
+        "evidence_level": "FIRST_PARTY_LICENSE_OR_AUTHOR_MODEL_CARD_EXCERPT_NOT_COMPLETE_LEGAL_CLEARANCE",
+        "primary_urls": [
+          "https://huggingface.co/onnx-community/higgs-audio-v3-tts-4b/blob/main/LICENSE",
+          "https://huggingface.co/onnx-community/higgs-audio-v3-tts-4b/blob/main/README.md",
+          "https://github.com/boson-ai/higgs-audio"
+        ],
+        "observed_claims_verified": [
+          "ONNX-community model card names upstream bosonai/higgs-audio-v3-tts-4b",
+          "Included Boson Higgs Audio v3 Research and Non-Commercial License dated 2026-05-21 requires separate written agreement for commercial production/hosting",
+          "Publisher Boson confirms the current v3 checkpoint is a standalone release distinct from legacy Higgs Audio code"
+        ],
+        "model_and_dependency_scope": [
+          "ONNX converted autoregressive backbone (~4B nominal)",
+          "Higgs audio tokenizer (8 codebooks)",
+          "audio vocoder/decoder and other conversion-specific external components"
+        ],
+        "parameters_and_scope_limitation": "~4B refers to backbone, not a verified total of selected ONNX graph plus independently learned audio decoder. Conversion cannot have byte-identical SHA256 to original by assumption.",
+        "next_nonexecuting_verification": "Obtain publisher-approved lineage and separate exact model-graph/codec parameter census; review Boson terms and converter attribution, never assume a mirror is checksum-identical.",
+        "falsification_test": "Signed publisher statement plus complete upstream/converted artifact manifests and reconciliation test establish authorized conversion and totals.",
+        "access_and_contract_signal": "NONCOMMERCIAL_UPSTREAM_LICENSE_THIRD_PARTY_CONVERSION",
+        "status_is_not_future_prediction": true,
+        "per_user_gated_permission_verified": false,
+        "approved_model_license_and_downstream_rights": false,
+        "full_total_parameters_verified_for_preparation": false,
+        "acquisition_approved": false,
+        "new_band": "P1",
+        "status": "NEW_PRIMARY_EVIDENCE_NO_AUTHORIZED_WEIGHT_DOWNLOAD"
       }
     },
     {
@@ -7964,7 +8160,8 @@
         "The existing HOLD/BACKLOG decision must be resolved in a separate authorized selection process",
         "Complete current license/usage-terms text not reviewed",
         "Dependencies and parent model terms not fully reviewed",
-        "Selected-file bytes and cryptographic lock manifest not finalized"
+        "Selected-file bytes and cryptographic lock manifest not finalized",
+        "2026-11-08 targeted first-party research: Choose one stage and exact dependency graph; verify rights for each model and whether a legitimately licensed base is already present."
       ],
       "independent_observation_required": true,
       "disappearance_risk": {
@@ -8009,6 +8206,37 @@
         "user_download_approved": false,
         "full_license_and_individual_gated_entitlement_checked": false,
         "same_revision_file_hash_dependency_approved": false
+      },
+      "targeted_primary_evidence_2026_11_08": {
+        "confirmed_on": "2026-11-08",
+        "classification": "AUTHOR_LICENSE_AND_MULTI_UPSTREAM_DEPENDENCIES",
+        "evidence_level": "FIRST_PARTY_LICENSE_OR_AUTHOR_MODEL_CARD_EXCERPT_NOT_COMPLETE_LEGAL_CLEARANCE",
+        "primary_urls": [
+          "https://github.com/ByteDance/InfiniteYou",
+          "https://huggingface.co/ByteDance/InfiniteYou/blob/main/LICENSE"
+        ],
+        "observed_claims_verified": [
+          "Project code Apache 2.0, trained model is CC BY-NC 4.0 and described by the authors as academic research only",
+          "Publisher explicitly lists InsightFace face models, FLUX.1-dev base model and realism/anti-blur LoRAs as separately licensed dependencies",
+          "Model zoo includes stage-1 similarity and stage-2 SFT artifacts; these are not proven redundant"
+        ],
+        "model_and_dependency_scope": [
+          "InfuseNet identity adapter stage1/stage2",
+          "FLUX.1-dev base transformer and supporting encoders/VAE",
+          "InsightFace face encoder/detector",
+          "optional realism/anti-blur LoRAs"
+        ],
+        "parameters_and_scope_limitation": "Full system includes independent pretrained base, face and optional addon weights; exact selected system total remains unknown.",
+        "next_nonexecuting_verification": "Choose one stage and exact dependency graph; verify rights for each model and whether a legitimately licensed base is already present.",
+        "falsification_test": "Exact revision, all-component hash & total parameter manifest and cross-license clearance published by upstream owners.",
+        "access_and_contract_signal": "RESEARCH_ONLY_WEIGHTS_AND_NESTED_LICENSES",
+        "status_is_not_future_prediction": true,
+        "per_user_gated_permission_verified": false,
+        "approved_model_license_and_downstream_rights": false,
+        "full_total_parameters_verified_for_preparation": false,
+        "acquisition_approved": false,
+        "new_band": "P1",
+        "status": "NEW_PRIMARY_EVIDENCE_NO_AUTHORIZED_WEIGHT_DOWNLOAD"
       }
     },
     {
@@ -8091,7 +8319,8 @@
         "The existing HOLD/BACKLOG decision must be resolved in a separate authorized selection process",
         "Complete current license/usage-terms text not reviewed",
         "Dependencies and parent model terms not fully reviewed",
-        "Selected-file bytes and cryptographic lock manifest not finalized"
+        "Selected-file bytes and cryptographic lock manifest not finalized",
+        "2026-11-08 targeted first-party research: Pin V1.5, confirm the specific license/README and current repository listing versus historical gated metadata; count vocoder separately."
       ],
       "independent_observation_required": true,
       "disappearance_risk": {
@@ -8136,6 +8365,37 @@
         "user_download_approved": false,
         "full_license_and_individual_gated_entitlement_checked": false,
         "same_revision_file_hash_dependency_approved": false
+      },
+      "targeted_primary_evidence_2026_11_08": {
+        "confirmed_on": "2026-11-08",
+        "classification": "AUTHOR_VERSION_SPECIFIC_NONCOMMERCIAL_RIGHTS",
+        "evidence_level": "FIRST_PARTY_LICENSE_OR_AUTHOR_MODEL_CARD_EXCERPT_NOT_COMPLETE_LEGAL_CLEARANCE",
+        "primary_urls": [
+          "https://huggingface.co/fishaudio/fish-speech-1.5/blob/main/README.md",
+          "https://github.com/fishaudio/fish-speech",
+          "https://arxiv.org/abs/2411.01156"
+        ],
+        "observed_claims_verified": [
+          "V1.5 model card uses CC-BY-NC-SA-4.0 and separately records an additional non-commercial use prompt in YAML",
+          "Latest fish-speech GitHub may describe different current family license; it does not retroactively identify v1.5 weights with those later checkpoints",
+          "Research paper describes dual-AR and a separate neural audio vocoder"
+        ],
+        "model_and_dependency_scope": [
+          "Fish-Speech 1.5 dual-AR backbone",
+          "audio tokenizer and vocoder",
+          "generation configuration and speaker tokens"
+        ],
+        "parameters_and_scope_limitation": "No independently verified exact combined learned component count for V1.5 at fixed revision.",
+        "next_nonexecuting_verification": "Pin V1.5, confirm the specific license/README and current repository listing versus historical gated metadata; count vocoder separately.",
+        "falsification_test": "Fixed-revision V1.5 checkpoint and complete dependencies yield exact total and governing license text.",
+        "access_and_contract_signal": "NONCOMMERCIAL_SHAREALIKE_VERSION_SCOPE",
+        "status_is_not_future_prediction": true,
+        "per_user_gated_permission_verified": false,
+        "approved_model_license_and_downstream_rights": false,
+        "full_total_parameters_verified_for_preparation": false,
+        "acquisition_approved": false,
+        "new_band": "P1",
+        "status": "NEW_PRIMARY_EVIDENCE_NO_AUTHORIZED_WEIGHT_DOWNLOAD"
       }
     },
     {
@@ -8344,7 +8604,8 @@
         "The existing HOLD/BACKLOG decision must be resolved in a separate authorized selection process",
         "Complete current license/usage-terms text not reviewed",
         "Dependencies and parent model terms not fully reviewed",
-        "Selected-file bytes and cryptographic lock manifest not finalized"
+        "Selected-file bytes and cryptographic lock manifest not finalized",
+        "2026-11-08 targeted first-party research: Confirm this exact HF repo is v1 or v2, list source weights and attached face modules, scope Apache carveouts."
       ],
       "independent_observation_required": true,
       "disappearance_risk": {
@@ -8389,6 +8650,37 @@
         "user_download_approved": false,
         "full_license_and_individual_gated_entitlement_checked": false,
         "same_revision_file_hash_dependency_approved": false
+      },
+      "targeted_primary_evidence_2026_11_08": {
+        "confirmed_on": "2026-11-08",
+        "classification": "AUTHOR_VERSION_DEPENDENT_THIRD_PARTY_SCOPE",
+        "evidence_level": "FIRST_PARTY_LICENSE_OR_AUTHOR_MODEL_CARD_EXCERPT_NOT_COMPLETE_LEGAL_CLEARANCE",
+        "primary_urls": [
+          "https://github.com/TencentARC/PhotoMaker/blob/main/LICENSE",
+          "https://github.com/TencentARC/PhotoMaker/issues/142",
+          "https://huggingface.co/TencentARC/PhotoMaker"
+        ],
+        "observed_claims_verified": [
+          "Official PhotoMaker license states Apache 2.0 except separately licensed third-party components",
+          "Developer discussion distinguishes PhotoMaker V1 from V2 and warns V2 InsightFace embeddings are subject to separate InsightFace license",
+          "Original repository is an adapter-style system with a separate diffusion base"
+        ],
+        "model_and_dependency_scope": [
+          "selected PhotoMaker v1 or v2 identity module",
+          "underlying diffusion base, encoders, VAE",
+          "V2 specific InsightFace embedding and detection modules"
+        ],
+        "parameters_and_scope_limitation": "Author repo v1 versus v2 and the corresponding full pipeline are not yet pinned; no full learned tensor census.",
+        "next_nonexecuting_verification": "Confirm this exact HF repo is v1 or v2, list source weights and attached face modules, scope Apache carveouts.",
+        "falsification_test": "Author-pinned revision documents actual variant, all parameter totals and third-party licensing approvals.",
+        "access_and_contract_signal": "APACHE_EXCEPT_THIRD_PARTY_COMPONENTS",
+        "status_is_not_future_prediction": true,
+        "per_user_gated_permission_verified": false,
+        "approved_model_license_and_downstream_rights": false,
+        "full_total_parameters_verified_for_preparation": false,
+        "acquisition_approved": false,
+        "new_band": "P1",
+        "status": "NEW_PRIMARY_EVIDENCE_NO_AUTHORIZED_WEIGHT_DOWNLOAD"
       }
     },
     {
@@ -11496,7 +11788,8 @@
         "First-party full trained model-parameter count including MoE experts and additional learned components required",
         "Complete current license/usage-terms text not reviewed",
         "Dependencies and parent model terms not fully reviewed",
-        "Selected-file bytes and cryptographic lock manifest not finalized"
+        "Selected-file bytes and cryptographic lock manifest not finalized",
+        "2026-11-08 targeted first-party research: Pin selected variant, identify whether pretrained parts are embedded or external; compare publisher-referenced KangLiao ID with catalog ID at revision/checksum level."
       ],
       "independent_observation_required": true,
       "disappearance_risk": {
@@ -11541,6 +11834,37 @@
         "user_download_approved": false,
         "full_license_and_individual_gated_entitlement_checked": false,
         "same_revision_file_hash_dependency_approved": false
+      },
+      "targeted_primary_evidence_2026_11_08": {
+        "confirmed_on": "2026-11-08",
+        "classification": "AUTHOR_MULTI_CHECKPOINT_COMPONENT_TREE",
+        "evidence_level": "FIRST_PARTY_LICENSE_OR_AUTHOR_MODEL_CARD_EXCERPT_NOT_COMPLETE_LEGAL_CLEARANCE",
+        "primary_urls": [
+          "https://huggingface.co/ACERobotics/Puffin-World",
+          "https://arxiv.org/abs/2609.04196",
+          "https://github.com/KangLiao929/Puffin"
+        ],
+        "observed_claims_verified": [
+          "Author model card provides Base, Pro and Caption checkpoints with distinct Qwen, C-RADIO and Stable Diffusion 3.5 components",
+          "Project declares NTU S-Lab License 1.0",
+          "Card's example command points to KangLiao/Puffin-World rather than this catalog's ACERobotics/Puffin-World, but no exact byte-equivalence has been confirmed"
+        ],
+        "model_and_dependency_scope": [
+          "Base: Qwen2.5-7B + C-RADIOv3-H + SD3.5-medium + connectors",
+          "Pro: Qwen2.5-1.5B + C-RADIOv4-H + SD3.5-large + connectors",
+          "Caption: Qwen3.5-0.8B + C-RADIOv3-H + connectors"
+        ],
+        "parameters_and_scope_limitation": "Three distinct trained pipelines cannot be represented by one claimed 'Puffin' size. Each variant requires its own full census and rights.",
+        "next_nonexecuting_verification": "Pin selected variant, identify whether pretrained parts are embedded or external; compare publisher-referenced KangLiao ID with catalog ID at revision/checksum level.",
+        "falsification_test": "Per-variant official tensor/component manifest and first-party same-checksum equivalence for both repository IDs.",
+        "access_and_contract_signal": "EXTERNAL_LICENSES_AND_REPO_ALIAS",
+        "status_is_not_future_prediction": true,
+        "per_user_gated_permission_verified": false,
+        "approved_model_license_and_downstream_rights": false,
+        "full_total_parameters_verified_for_preparation": false,
+        "acquisition_approved": false,
+        "new_band": "P2",
+        "status": "NEW_PRIMARY_EVIDENCE_NO_AUTHORIZED_WEIGHT_DOWNLOAD"
       }
     },
     {
@@ -11747,7 +12071,8 @@
         "First-party full trained model-parameter count including MoE experts and additional learned components required",
         "Complete current license/usage-terms text not reviewed",
         "Dependencies and parent model terms not fully reviewed",
-        "Selected-file bytes and cryptographic lock manifest not finalized"
+        "Selected-file bytes and cryptographic lock manifest not finalized",
+        "2026-11-08 targeted first-party research: Inspect model architecture/config and static learned tensor manifest for every expert and external encoder; don't infer total from marketing active count."
       ],
       "independent_observation_required": true,
       "disappearance_risk": {
@@ -11792,6 +12117,37 @@
         "user_download_approved": false,
         "full_license_and_individual_gated_entitlement_checked": false,
         "same_revision_file_hash_dependency_approved": false
+      },
+      "targeted_primary_evidence_2026_11_08": {
+        "confirmed_on": "2026-11-08",
+        "classification": "AUTHOR_MOE_ACTIVE_VS_TOTAL",
+        "evidence_level": "FIRST_PARTY_LICENSE_OR_AUTHOR_MODEL_CARD_EXCERPT_NOT_COMPLETE_LEGAL_CLEARANCE",
+        "primary_urls": [
+          "https://lance-project.github.io/assets/lance.pdf",
+          "https://lance-project.github.io/",
+          "https://github.com/bytedance/Lance"
+        ],
+        "observed_claims_verified": [
+          "Authors present a roughly 3B-active dual-stream MoE architecture for unified image/video tasks",
+          "Publisher states ViT and VAE encoders are separately pretrained, with 3D causal VAE from Wan2.2 family",
+          "Activation count does not establish all expert parameters in a MoE"
+        ],
+        "model_and_dependency_scope": [
+          "all parameters across dual-stream mixture-of-experts",
+          "pretrained image ViT",
+          "pretrained video 3D causal VAE and necessary learned integration modules"
+        ],
+        "parameters_and_scope_limitation": "3B ACTIVE (not verified total); no >=150B admission and no acquisition preparation until full experts and encoders counted.",
+        "next_nonexecuting_verification": "Inspect model architecture/config and static learned tensor manifest for every expert and external encoder; don't infer total from marketing active count.",
+        "falsification_test": "Original publisher reports a bounded total parameter census tied to immutable revision and dependency list.",
+        "access_and_contract_signal": "TOTAL_MOE_UNVERIFIED_ACTIVE_COUNT_ONLY",
+        "status_is_not_future_prediction": true,
+        "per_user_gated_permission_verified": false,
+        "approved_model_license_and_downstream_rights": false,
+        "full_total_parameters_verified_for_preparation": false,
+        "acquisition_approved": false,
+        "new_band": "P2",
+        "status": "NEW_PRIMARY_EVIDENCE_NO_AUTHORIZED_WEIGHT_DOWNLOAD"
       }
     },
     {
@@ -12878,7 +13234,8 @@
         "First-party full trained model-parameter count including MoE experts and additional learned components required",
         "Complete current license/usage-terms text not reviewed",
         "Dependencies and parent model terms not fully reviewed",
-        "Selected-file bytes and cryptographic lock manifest not finalized"
+        "Selected-file bytes and cryptographic lock manifest not finalized",
+        "2026-11-08 targeted first-party research: Use no-execution static header/state_dict inventory in an authorized setting; distinguish published intended use from binding license terms."
       ],
       "independent_observation_required": true,
       "disappearance_risk": {
@@ -12923,6 +13280,37 @@
         "user_download_approved": false,
         "full_license_and_individual_gated_entitlement_checked": false,
         "same_revision_file_hash_dependency_approved": false
+      },
+      "targeted_primary_evidence_2026_11_08": {
+        "confirmed_on": "2026-11-08",
+        "classification": "AUTHOR_COMPONENT_SCOPE_AND_INTENDED_USE",
+        "evidence_level": "FIRST_PARTY_LICENSE_OR_AUTHOR_MODEL_CARD_EXCERPT_NOT_COMPLETE_LEGAL_CLEARANCE",
+        "primary_urls": [
+          "https://huggingface.co/microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+          "https://huggingface.co/microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224/tree/main"
+        ],
+        "observed_claims_verified": [
+          "Microsoft card describes PubMedBERT text tower and ViT-B image tower in a contrastive model",
+          "Publisher describes intended uses as research/reproducibility and deployed uses as out-of-scope, not per se a legal prohibition",
+          "Repo contains open_clip_pytorch_model.bin with pickle serialization and a separate open_clip_config.json"
+        ],
+        "model_and_dependency_scope": [
+          "PubMedBERT text branch",
+          "ViT-B visual branch",
+          "cross-modal projection and logit scale",
+          "open_clip_config.json"
+        ],
+        "parameters_and_scope_limitation": "Weight file size alone cannot certify full model parameter total without static tensor count and dependency definition.",
+        "next_nonexecuting_verification": "Use no-execution static header/state_dict inventory in an authorized setting; distinguish published intended use from binding license terms.",
+        "falsification_test": "Publisher provides exact learned-tensor count and full first-party use conditions for pinned weights.",
+        "access_and_contract_signal": "RESEARCH_INTENDED_USE_SCOPE_NOT_LEGAL_BAN",
+        "status_is_not_future_prediction": true,
+        "per_user_gated_permission_verified": false,
+        "approved_model_license_and_downstream_rights": false,
+        "full_total_parameters_verified_for_preparation": false,
+        "acquisition_approved": false,
+        "new_band": "P2",
+        "status": "NEW_PRIMARY_EVIDENCE_NO_AUTHORIZED_WEIGHT_DOWNLOAD"
       }
     },
     {
@@ -13630,7 +14018,8 @@
         "First-party full trained model-parameter count including MoE experts and additional learned components required",
         "Complete current license/usage-terms text not reviewed",
         "Dependencies and parent model terms not fully reviewed",
-        "Selected-file bytes and cryptographic lock manifest not finalized"
+        "Selected-file bytes and cryptographic lock manifest not finalized",
+        "2026-11-08 targeted first-party research: Statically inspect safetensors headers and parent SDXL full license, classify refinement as distinct training result only if measured."
       ],
       "independent_observation_required": true,
       "disappearance_risk": {
@@ -13684,6 +14073,35 @@
         "source": "https://huggingface.co/OnomaAIResearch/Illustrious-XL-v1.1/blob/main/README.md",
         "decision": "METADATA_NORMALIZATION_NOT_PROVEN_LICENSE_CHANGE",
         "complete_licence_and_derivative_rights_verified": false
+      },
+      "targeted_primary_evidence_2026_11_08": {
+        "confirmed_on": "2026-11-08",
+        "classification": "AUTHOR_CARD_LICENSE_CATEGORY_RESOLUTION",
+        "evidence_level": "FIRST_PARTY_LICENSE_OR_AUTHOR_MODEL_CARD_EXCERPT_NOT_COMPLETE_LEGAL_CLEARANCE",
+        "primary_urls": [
+          "https://huggingface.co/OnomaAIResearch/Illustrious-XL-v1.1/blob/main/README.md",
+          "https://huggingface.co/OnomaAIResearch/Illustrious-XL-v1.1/tree/main"
+        ],
+        "observed_claims_verified": [
+          "Official YAML uses license: other, license_name: sdxl-license, and links to SDXL parent license; not a dated legal license change",
+          "Official repo lists 6.94GB safetensors checkpoint and a refinement from v1.0",
+          "No full component-specific tensor count found in current first-party model card"
+        ],
+        "model_and_dependency_scope": [
+          "Illustrious SDXL trained checkpoint",
+          "text encoders and VAE if required by selected runtime"
+        ],
+        "parameters_and_scope_limitation": "The ~6.94GB weights payload does not itself certify all learned component parameters or upstream rights.",
+        "next_nonexecuting_verification": "Statically inspect safetensors headers and parent SDXL full license, classify refinement as distinct training result only if measured.",
+        "falsification_test": "Complete same-revision tensor count and license text establish fully bounded dependency scope; performance benchmarking could revise duplicate value.",
+        "access_and_contract_signal": "LICENSE_TAG_NORMALIZATION_NOT_REAL_TAKEDOWN",
+        "status_is_not_future_prediction": true,
+        "per_user_gated_permission_verified": false,
+        "approved_model_license_and_downstream_rights": false,
+        "full_total_parameters_verified_for_preparation": false,
+        "acquisition_approved": false,
+        "new_band": "P2",
+        "status": "NEW_PRIMARY_EVIDENCE_NO_AUTHORIZED_WEIGHT_DOWNLOAD"
       }
     },
     {
@@ -17295,5 +17713,38 @@
     "license_tag_false_positive_reconciled": true,
     "all_download_approval_false": true,
     "no_weight_or_dataset_download_performed": true
+  },
+  "targeted_primary_review_2026_11_08": {
+    "iteration": "primary-contracts-and-unknown-parameters",
+    "checked_on": "2026-11-08",
+    "scoped_assets": 13,
+    "all_12_unknown_models_researched": true,
+    "outcome": "Partial rights/component primary-source evidence only; zero unknown model total-parameter gates closed.",
+    "unknown_model_total_before": 12,
+    "unknown_model_total_after": 12,
+    "confirmed_license_metadata_change_case": "Plachta/Seed-VC README author commit Sep 23 2024 MIT to GPL-3.0; legal retroactivity not determined",
+    "confirmed_explicit_bfl_2_license": "FLUX [dev] Non-Commercial License v2.0 Nov 25 2025 explicitly names FLUX.2 dev",
+    "third_party_license_separation": [
+      "InstantX/InstantID",
+      "ByteDance/InfiniteYou",
+      "TencentARC/PhotoMaker",
+      "ACERobotics/Puffin-World",
+      "onnx-community/higgs-audio-v3-tts-4b"
+    ],
+    "legal_probabilities_invented": false,
+    "priority_changes": 0,
+    "source_method": "Exa first-party author/licensor docs and publisher model cards; authenticated HF metadata read-only. No weight/model data accessed or code executed.",
+    "error_check": {
+      "target_count": 13,
+      "untested_total_count": 12,
+      "stop_count": 12,
+      "by_priority": {
+        "P0": 22,
+        "P1": 59,
+        "P2": 37,
+        "P3": 12,
+        "PX": 2
+      }
+    }
   }
 }
