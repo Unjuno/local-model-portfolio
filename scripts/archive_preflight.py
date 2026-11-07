@@ -17,8 +17,11 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MANIFEST = ROOT / "manifests/drafts/round21-pinned-preservation.candidate.json"
-DEFAULT_ARCHIVE_TARGET = 3_800_000_000_000
-DEFAULT_FREE_FLOOR = 200_000_000_000
+# The repository policy is authoritative. Never silently restore an outdated
+# archival cap when the owner has revised policies/limits.json.
+_LIMITS = json.loads((ROOT / "policies" / "limits.json").read_text(encoding="utf-8"))
+DEFAULT_ARCHIVE_TARGET = _LIMITS["archive_target_bytes"]
+DEFAULT_FREE_FLOOR = _LIMITS["minimum_free_bytes"]
 
 def _safe_relative_path(value: str) -> bool:
     if not isinstance(value, str) or not value or "\\" in value or ":" in value or "\x00" in value:
