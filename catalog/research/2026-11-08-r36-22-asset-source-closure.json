@@ -948,5 +948,17 @@
     "remaining_full_dataset_size_unknown_count": 1,
     "formal_approval_count": 0,
     "hash_source": "Hugging Face publisher LFS metadata at immutable git commits, not independently recomputed bytes"
+  },
+  "test_contract_correction": {
+    "date": "2026-11-08",
+    "issue": "First 140-test GitHub Actions run had two test KeyError exceptions: the test referred to repo_size_unverified_for_full_dataset and policy but R36 source JSON uses full_dataset_repo_bytes_known and research_recommendation/source_lock_draft.",
+    "fix_commit": "cbdf65853c10cc7e8ba77ceebb359c2496ed7cb2",
+    "fix_kind": "test assertion schema only, no source size/sha or candidate decision changed",
+    "expected_test_modules": [
+      "tests/test_research_round36.py",
+      "tests/test_research_round36_manifest.py"
+    ],
+    "test_methods_total": 18,
+    "will_not_claim_success_without_latest_GitHub_actions_log": true
   }
 }
