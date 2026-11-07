@@ -923,5 +923,30 @@
     "For the 21 known model repo sizes, fill a staged selected-components budget only after dependencies and runtime are checked; LTX gated hashes blocked.",
     "FineWeb 10BT sample 14 LFS shards: audit dataset license and overlap with the 100BT/350BT samples before optional acquisition.",
     "Verify real machine free bytes and existing SHA matches; no false capacity claim based on repo totals."
-  ]
+  ],
+  "source_lock_draft": {
+    "path": "manifests/drafts/r36-22-source-closure-weight-only.candidate.json",
+    "fixed_repositories": 6,
+    "fixed_source_files": 20,
+    "pinned_packages": 4,
+    "payload_selected_bytes": 52879817929,
+    "selected_paths_but_no_full_runtime_dependencies": true,
+    "real_archive_contents_inspected": false,
+    "download_authorized": false,
+    "original_owner_disk_checked": false,
+    "tests": [
+      "tests/test_research_round36.py",
+      "tests/test_research_round36_manifest.py"
+    ],
+    "reason": "Four concrete example packages with source hashes; not whole repo mirroring, no model download permit."
+  },
+  "audit_tracking": {
+    "latest_report": "docs/strategy/35-r36-22-asset-pinned-source-capacity.md",
+    "policy_reference": "policies/selection.md",
+    "baseline_source_count_from_R34": 22,
+    "new_resolved_model_repo_size_count": 21,
+    "remaining_full_dataset_size_unknown_count": 1,
+    "formal_approval_count": 0,
+    "hash_source": "Hugging Face publisher LFS metadata at immutable git commits, not independently recomputed bytes"
+  }
 }
