@@ -350,3 +350,71 @@ v9母集団は重複のない132資産（モデル109、データ23）。調査�
 実施していないこと：モデル・データセットの取得、Gated条件の代理受諾、各repoの現行ライセンス全文審査、モデル実行、固定revisionと全シャードSHA-256確定、ユーザー実機の空き容量とRAM測定。閲覧可能なカードや過去のlicenseタグだけでは、取得・複製・再配布の許可を証明しない。
 
 **次に考える問い：** 希少なモデルでも、保存の独自価値が高いことを根拠に、本人別Gated承認・原本ライセンス・依存権利の未確認を許容してよいか。本手順では許容しない。
+
+## 13. 2026-11-08継続調査：13資産の一次契約・依存証拠
+
+**調査範囲**：Exaでライセンス供与者、開発元GitHub、モデルカード、開発論文・作者コミットを照合し、Hugging Face接続の読み取り専用メタデータで対象10件の一覧状態を再確認。基準はv9の132件であり、現行v27は本研究の母集団ではない。モデル本体・チェックポイント・データセットを取得または実行していない。
+
+### 13.1 主要な新しい確認事実
+
+1. **BFL FLUX.2-dev**：2025-11-25改定の[FLUX [dev] Non-Commercial License v2.0](https://bfl.ai/legal/non-commercial-license-terms)はFLUX.2 [dev]を明示的に含む。契約には、非商用・非本番利用、条件付き取消可能な許諾、content filtersまたは配布前確認、解除・終了時の条件等がある。これらは**配布者の現在の契約条項**であり、将来の政府規制やモデル撤去の確率を示さない。本人のGatedアクセス許可・予定用途への適用・第三者依存は未審査。
+2. **Seed-VCの実際のメタデータ変更**：[モデルカードの作者コミット4925814](https://huggingface.co/Plachta/Seed-VC/commit/4925814)（2024-09-23）は`license: mit`から`license: gpl-3.0`への変更を明示。2025-11-21に[開発元コードリポジトリがアーカイブ](https://github.com/Plachtaa/seed-vc)。**モデルカード記述の変更**と**過去の重みファイルに作用する法的効力**、及び**ウェイト配布の停止**は区別。後2者は確認できていない。
+3. **コードと重みのライセンスが違う**：[F5-TTS](https://github.com/SWivid/F5-TTS)はMITコード／CC-BY-NC学習済み重み、[InstantID](https://github.com/instantx-research/InstantID)はApache2.0コード／研究用チェックポイント／非商用研究用InsightFace顔Encoder、[InfiniteYou](https://github.com/ByteDance/InfiniteYou)はApache2.0コード／CC-BY-NC学習済みモデル、外部FLUX.1-dev/InsightFace/LoRAも別契約。『コードを合法に取得できる』だけでは、全構成のモデルを合法に保存・再配布できることにならない。
+4. **ライセンスがオープンソースではない例**：[Coqui XTTS-v2 LICENSE.txt](https://huggingface.co/coqui/XTTS-v2/blob/main/LICENSE.txt)はCoqui Public Model License 1.0.0（モデルおよび出力の非商用用途）、[Boson Higgs Audio v3 LICENSE](https://huggingface.co/onnx-community/higgs-audio-v3-tts-4b/blob/main/LICENSE)は2026-05-21付の研究・非商用・本番利用別契約。前者は`model.pth`と`dvae.pth`等を別途含み、後者は`onnx-community`による派生変換であり、配布元の`bosonai`原本と同じSHAを自動想定しない。
+5. **総数の厳格判定**：[Lance著者論文](https://lance-project.github.io/assets/lance.pdf)の3BはMoEの稼働側で、全expert総数ではない。[Puffin-World著者カード](https://huggingface.co/ACERobotics/Puffin-World)のBase/Pro/Captionは別のLLM・視覚Encoder・拡散モデル群。[Seed-VC著者表](https://github.com/Plachtaa/seed-vc)に25M/98M/200M、v2: 67M+90M等があるものの、Content EncoderとVocoderを含めた完全総数ではない。**3モデルとも取得準備を継続停止**。
+
+### 13.2 原本・条件・独自性・反証の直接比較（2026-11-08）
+
+下記は対象132件のうち一次根拠を追加確認できた13件。最上位優先度P0でも取得許可ではない。『現在の制限』は配布元契約・公開カード・実際の変更記録、『予測』はv9から提案したT段階であり法的施行予告ではない。モデル独自性はv9の編集者判断で、第三者による独立性能実測ではない。
+
+| repo ID | 確認日 | 一次URL | 確認済み制限・公開事実 | 予測（非確率） | 独自性・保全意義（仮評価） | 調査優先 | 反証条件 | 未解決事項 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `Plachta/Seed-VC` | 2026-11-08 | [一次資料](https://huggingface.co/Plachta/Seed-VC/commit/4925814) | 2024-09-23本人コミットでHFモデルカードMIT→GPL-3.0。開発元GitHubは2025-11-21にアーカイブ。 | S1→T1（仮説） | TTSとは別の音声変換方式を保全し、声質再現・音声編集を比較できるようにする。 | **P0** | Publisher supplies a complete immutable per-variant component manifest proving total trained parameters and governing rights. | 総数不明につき取得準備停止。本体4系統（25M/98M/200M、v2は67M+90M）、XLSR/Whisper、HIFT/BigVGANの総合数未確定 |
+| `black-forest-labs/FLUX.2-dev` | 2026-11-08 | [一次資料](https://bfl.ai/legal/non-commercial-license-terms) | BFL正式v2.0規約がFLUX.2を列挙。非商用・非本番、条件付き取消可能、出力審査等。 | S1→T2（仮説） | 独立した32B級画像生成・画像編集の重み。人物・物体の参照編集などをモデル一式として再現したい。 | **P0** | Original publisher publishes a dated amendment replacing the named v2.0 agreement for this exact revision; re-evaluate terms then. | 本人別Gated許可・現行契約正文・依存権利・SHA未確定 |
+| `InstantX/InstantID` | 2026-11-08 | [一次資料](https://github.com/instantx-research/InstantID) | コードApache2.0、公開チェックポイントは研究用。InsightFace顔モデルは非商用研究用途。 | S1→T1（仮説） | 単一参照画像からID保持生成を行う独自アダプタ/制御ネットワークを研究用に保全する。 | **P1** | Developer publishes complete checkpoint and dependency rights with verified exact-revision parameter census. | 総数不明につき取得準備停止。ControlNet、IP-Adapter、InsightFace、SDXL系baseを固定できていない |
+| `SWivid/F5-TTS` | 2026-11-08 | [一次資料](https://github.com/SWivid/F5-TTS) | コードMIT、学習済み重みCC-BY-NC。F5 v1/旧版/E2は別checkpoint。 | S1→T1（仮説） | フローマッチング型TTSの原本と音声コーデックの比較を可能にする。 | **P1** | Publisher produces exact tensor census and documented materially different authorized license for the selected weights. | 総数不明につき取得準備停止。v1/旧/E2の選択版と音声Vocoder・語彙等の範囲未確定 |
+| `coqui/XTTS-v2` | 2026-11-08 | [一次資料](https://huggingface.co/coqui/XTTS-v2/blob/main/LICENSE.txt) | Coqui Public Model License 1.0.0でモデルと出力は非商用用途。dVAEなど別重みあり。 | S1→T1（仮説） | 比較原本として多言語声質複製・音声スタイル移行を保全する。 | **P1** | Publisher provides a verified alternative legally governing exact original v2.0.3 checkpoint and all learned component counts. | 総数不明につき取得準備停止。model.pth・dvae.pth等を実行せず静的計数していない |
+| `onnx-community/higgs-audio-v3-tts-4b` | 2026-11-08 | [一次資料](https://huggingface.co/onnx-community/higgs-audio-v3-tts-4b/blob/main/LICENSE) | 元Bosonの2026-05-21研究・非商用ライセンスがONNX版に表示。元checkpointとは別変換。 | S1→T1（仮説） | 音声会話、感情・間・効果音の制御に関するONNX配布形態の保存価値を調査する。 | **P1** | Signed publisher statement plus complete upstream/converted artifact manifests and reconciliation test establish authorized conversion and totals. | 総数不明につき取得準備停止。推定4B backboneだけでcodec/decoderを含めたONNX計数が未完 |
+| `ByteDance/InfiniteYou` | 2026-11-08 | [一次資料](https://github.com/ByteDance/InfiniteYou) | モデルCC-BY-NC4.0・学術研究向け、コードApache2.0。FLUX.1-dev/InsightFace等を別管理。 | S1→T1（仮説） | FLUX系の人物パーソナライズ適応重みを保全する。 | **P1** | Exact revision, all-component hash & total parameter manifest and cross-license clearance published by upstream owners. | 総数不明につき取得準備停止。FLUX.1-dev＋InsightFace＋Adapter＋任意LoRAの選択が未確定 |
+| `fishaudio/fish-speech-1.5` | 2026-11-08 | [一次資料](https://huggingface.co/fishaudio/fish-speech-1.5/blob/main/README.md) | v1.5カードはCC-BY-NC-SA4.0。新しいFish系ソフトウェアの表示と混同しない。 | S1→T1（仮説） | DualAR音声合成系統の旧世代原本を保存し、S2-Proとの発展比較を可能にする。 | **P1** | Fixed-revision V1.5 checkpoint and complete dependencies yield exact total and governing license text. | 総数不明につき取得準備停止。v1.5 dual-AR本体とVocoderの固定重み総数未確定 |
+| `TencentARC/PhotoMaker` | 2026-11-08 | [一次資料](https://github.com/TencentARC/PhotoMaker/blob/main/LICENSE) | 開発元LICENSEはApache2.0（外部部品を除く）。V2のInsightFaceは別権利。 | S1→T1（仮説） | 人物の一貫性を保つ写真・画像生成アダプタを比較基準として保全する。 | **P1** | Author-pinned revision documents actual variant, all parameter totals and third-party licensing approvals. | 総数不明につき取得準備停止。V1かV2か未固定、SDXL baseとInsightFace等を追加計数していない |
+| `ACERobotics/Puffin-World` | 2026-11-08 | [一次資料](https://huggingface.co/ACERobotics/Puffin-World) | Base/Pro/Captionはそれぞれ異なるQwen/C-RADIO/SD3.5構成。NTU S-Labライセンス表示。 | S2→T2（仮説） | 画像から重力・深度・見た目を統合した3D世界状態を推論・生成する独自世界モデル。RGB動画生成器だけでは同じ幾何表現を復元できない。 | **P2** | Per-variant official tensor/component manifest and first-party same-checksum equivalence for both repository IDs. | 総数不明につき取得準備停止。Base/Pro/Caption各variantのLLM/vision/diffusion構成、重複テンソル計数未完 |
+| `bytedance-research/Lance` | 2026-11-08 | [一次資料](https://lance-project.github.io/assets/lance.pdf) | 論文の『3B active』はMoE稼働パラメータであり総数ではない。VAE/ViTも別範囲。 | S1→T2（仮説） | 約3Bで画像/動画の理解・生成・編集を統合した独特のマルチタスク研究モデル。複数機能を小容量にまとめた学習レシピと原本の保存価値が高い。 | **P2** | Original publisher reports a bounded total parameter census tied to immutable revision and dependency list. | 総数不明につき取得準備停止。MoE全expertと別のViT・Wan系VAEの合算数が不明 |
+| `microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224` | 2026-11-08 | [一次資料](https://huggingface.co/microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224) | PubMedBERT+ViT-B構造。開発者は研究・再現を想定し、実運用はout-of-scopeと説明。 | S2→T2（仮説） | 医学論文の画像とテキストを結びつけた表現学習系統を保全する。 | **P2** | Publisher provides exact learned-tensor count and full first-party use conditions for pinned weights. | 総数不明につき取得準備停止。PubMedBERT・ViT-B・射影層の正規重みテンソル計数未実施 |
+| `OnomaAIResearch/Illustrious-XL-v1.1` | 2026-11-08 | [一次資料](https://huggingface.co/OnomaAIResearch/Illustrious-XL-v1.1/blob/main/README.md) | license:other/ license_name:sdxl-licenseの階層差。モデルカードから新たな改定は確認されない。 | S1→T2（仮説） | 画像生成の独立したアニメ・イラスト特化微調整系統の原本を比較用に保全する。 | **P2** | Complete same-revision tensor count and license text establish fully bounded dependency scope; performance benchmarking could revise duplicate value. | 総数不明につき取得準備停止。SDXL派生checkpoint/テキストencoder/VAEの選択固定とテンソル計数未完 |
+
+### 13.3 150B絶対ゲート：未確定12件の具体的な停止理由
+
+| repo ID | まだ未計数の学習済み構成 | 結論 |
+| --- | --- | --- |
+| `Plachta/Seed-VC` | 本体4系統（25M/98M/200M、v2は67M+90M）、XLSR/Whisper、HIFT/BigVGANの総合数未確定 | **STOP** |
+| `InstantX/InstantID` | ControlNet、IP-Adapter、InsightFace、SDXL系baseを固定できていない | **STOP** |
+| `SWivid/F5-TTS` | v1/旧/E2の選択版と音声Vocoder・語彙等の範囲未確定 | **STOP** |
+| `coqui/XTTS-v2` | model.pth・dvae.pth等を実行せず静的計数していない | **STOP** |
+| `onnx-community/higgs-audio-v3-tts-4b` | 推定4B backboneだけでcodec/decoderを含めたONNX計数が未完 | **STOP** |
+| `ByteDance/InfiniteYou` | FLUX.1-dev＋InsightFace＋Adapter＋任意LoRAの選択が未確定 | **STOP** |
+| `fishaudio/fish-speech-1.5` | v1.5 dual-AR本体とVocoderの固定重み総数未確定 | **STOP** |
+| `TencentARC/PhotoMaker` | V1かV2か未固定、SDXL baseとInsightFace等を追加計数していない | **STOP** |
+| `ACERobotics/Puffin-World` | Base/Pro/Caption各variantのLLM/vision/diffusion構成、重複テンソル計数未完 | **STOP** |
+| `bytedance-research/Lance` | MoE全expertと別のViT・Wan系VAEの合算数が不明 | **STOP** |
+| `microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224` | PubMedBERT・ViT-B・射影層の正規重みテンソル計数未実施 | **STOP** |
+| `OnomaAIResearch/Illustrious-XL-v1.1` | SDXL派生checkpoint/テキストencoder/VAEの選択固定とテンソル計数未完 | **STOP** |
+
+主モデルのパラメータ（とくにMoEのactive count）を公式に公表していても、外部の学習済みEncoder／VAE／Vocoder、全expert、variantの指定がなければ**本件の完全総数確定とはしない**。複数の選択肢を全部一緒に取得すべきという結論も導かれない。どのvariantが独立の学習成果か、類似能力との重複を実測または構成差で審査する。
+
+### 13.4 次回の最短検証・合否条件（H/T/D/C/U）
+
+- **H（仮説）**：追加確認した外部依存・ライセンス条件を考慮すると、少なくとも12件の現状『本体名またはactive countだけでは完全な取得仕様にならない』という停止判断が維持される。
+- **T（最小検証）**：各モデルの固定revisionを決定し、選択variant・全learned dependenciesの構成ファイルと各重みヘッダ・作者契約正文を確認。pickleのロード・コード実行・Gated受諾はせず、公開された静的情報のみで調査する。n_min=1件の完全manifest/assetを最小単位とし、各条件が欠けた時点で当該資産の取得準備を即停止。
+- **D（合否）**：PASS=全学習済みパラメータ合算が150B未満、正規許諾・固定revision・全必要ファイルが明示され別途利用承認あり。FAIL=150B以上、許諾不可または承認外取得。UNCERTAIN=総数・契約・ハッシュ・依存のいずれか不明（現状12件）。本研究にはPASSで取得許可されたモデルはない。
+- **C（対立仮説）**：一部のencoderがcheckpoint内に統合されている、外部依存は不要なvariantもある、作者が新たな正式総数・ライセンスを提示した。この場合、対象の構成を狭めて再審査し、憶測でゲートを解除しない。
+- **U（不確かさ）**：上流READMEの版ずれ、モデルカードと契約正文の差、別repo同名モデル、コンバート版の差、推論実装依存・tensorの重複。これは標本統計ではないため合成標準不確かさu_cや包含係数kによる数値誤差を算出せず、未知項目として残す。
+
+### 13.5 ERROR CHECKと更新範囲
+
+- JSONでは**13件**の`targeted_primary_evidence_2026_11_08`を追加。12件は従前からの総数未確定モデルに対応、残る1件は既に主モデル総数PASSのFLUX.2-dev。
+- **総数不明12件→12件**。作者公称active値・パイプライン断片情報・重みファイルのバイトサイズから総数を捏造していない。150B以上2件の絶対除外、P0/P1/P2/P3/PX=22/59/37/12/2も継続。
+- `Seed-VC`の歴史的変更はREADMEメタデータの差分であり『無許可取得を正当化する規制』とはしない。`BiomedCLIP`の研究対象というモデルカードは原則として**意図された用途の説明**であり、別途確認されない限り法的禁止とみなさない。
+- **無断操作なし**：本体取得・推論実行・Gated代理同意・第三者ミラーからの収集・認証情報収集・取得キュー更新なし。今回の追加証拠13件は『調査完了』ではなく『個別停止根拠が具体化』したことを意味する。
+
+**〈次に考える問い〉** 12件のうち、複数の外部Encoderを必要とする『パイプライン一式』と、追加学習した『差分重みのみ』のどちらを資産の単位にすべきか。無駄な重複を避けるには、原本と共有依存を別々のハッシュ付き単位に切り分けるべきである。
