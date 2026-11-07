@@ -1,3 +1,5 @@
+**R39更新（2026-11-08）**：Mistral Small4・GPT-OSS120B・FLUX.2-devの7実行形式について、重み全シャード＋必要な設定/Tokenizer/許諾ファイルの**選択byteと固定revision**を作成。[R39詳細報告](38-r39-backend-specific-selection.md)／[R39非実行マニフェスト](../../manifests/drafts/r39-backend-specific-large-sources.candidate.json)。本R38の全repo・参考差額の表は歴史的な容量比較であり、取得承認や物理的な空き領域ではない。
+
 # R38｜大型8資産の形式別・訓練工程別容量（2026-11-08）
 
 現行v19の有効資産で配布元全体が100GB以上の8件を、**各リポジトリの固定40桁コミットと全ファイル容量**で確認した。[機械可読の全ファイル台帳](../../catalog/research/2026-11-08-r38-large-asset-alternative-layouts.json)。合計1,403,226,367,788 byteは全repo容量であり、選択モデルの実必要容量ではない。4TBを使えるという指示と、現行の150資産・105有効・Nanbeige SELECTを維持する。取得承認0。
