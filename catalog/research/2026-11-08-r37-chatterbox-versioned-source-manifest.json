@@ -1,0 +1,713 @@
+{
+  "schema_version": 1,
+  "round": "R37",
+  "date": "2026-11-08",
+  "baseline_main_sha": "129443f30dffad5aa20889881a44afd6dd5791e9",
+  "base_catalog_revision": "v19-20261106",
+  "question": "Chatterbox is in current v19 as SELECT, but generic repo contains multiple trained generations and several packaging variants. Preserve novel V3 and optional language-specific fine-tunes without treating their shared decoder as six independently trained models.",
+  "first_party_status": {
+    "github_readme": "https://github.com/resemble-ai/chatterbox/blob/master/README.md",
+    "as_of_august_2026": "Retired research, no longer maintained; code stays public as MIT archive. NOT evidence of planned weights deletion.",
+    "hf_model_cards": "https://huggingface.co/ResembleAI/chatterbox",
+    "license": "MIT model card and official code; voice identity and audio reference data not licensed by model"
+  },
+  "reference_implementation": {
+    "source": "https://github.com/resemble-ai/chatterbox/blob/master/src/chatterbox/mtl_tts.py",
+    "v3_explicit_argument": "ChatterboxMultilingualTTS.from_pretrained(device=\"cuda\", t3_model=\"v3\")",
+    "default_without_argument": "v2, t3_mtl23ls_v2.safetensors",
+    "v3_t3_only_change_from_default": true,
+    "standard_decoder_path": "s3gen.pt",
+    "v3_decoder_exists_but_not_loaded_by_default": "s3gen_v3.pt (different trained decoder checkpoint, not an implicit part of official general V3 loader)",
+    "original_optional_builtin_voice": "conds.pt",
+    "loader_rev_immutable_pinned": false,
+    "requires_weights_only_torch_load": true,
+    "backend": "Python PyTorch, safetensors load_file T3, torch.load(weights_only=True) for older s3gen and voice encoder, MTLTokenizer grapheme JSON; device cuda/cpu/mps; watermark library perth",
+    "runtime_quality_user_measured": false
+  },
+  "source_repositories": [
+    {
+      "id": "ResembleAI/chatterbox",
+      "sha": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+      "role": "MAIN_MULTILINGUAL_V2_V3",
+      "source_repo_bytes": 13866212931,
+      "file_count": 18,
+      "tree_url": "https://huggingface.co/ResembleAI/chatterbox/tree/5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18"
+    },
+    {
+      "id": "ResembleAI/Chatterbox-Multilingual-zh-cmn",
+      "sha": "2432cb141088d54f666894996d959294a74a13ce",
+      "role": "LANGUAGE_ZH_CMN",
+      "source_repo_bytes": 4263120842,
+      "file_count": 8,
+      "tree_url": "https://huggingface.co/ResembleAI/Chatterbox-Multilingual-zh-cmn/tree/2432cb141088d54f666894996d959294a74a13ce"
+    },
+    {
+      "id": "ResembleAI/Chatterbox-Multilingual-es-mx-latam",
+      "sha": "27e595bf2fe7be0533ca299d9afafcde08b7cca7",
+      "role": "LANGUAGE_ES_MX",
+      "source_repo_bytes": 4257349567,
+      "file_count": 6,
+      "tree_url": "https://huggingface.co/ResembleAI/Chatterbox-Multilingual-es-mx-latam/tree/27e595bf2fe7be0533ca299d9afafcde08b7cca7"
+    },
+    {
+      "id": "ResembleAI/Chatterbox-Multilingual-pt-br",
+      "sha": "b3952f18bc2eaa72b9bd7c17d2c4653bcad4770d",
+      "role": "LANGUAGE_PT_BR",
+      "source_repo_bytes": 4257349523,
+      "file_count": 6,
+      "tree_url": "https://huggingface.co/ResembleAI/Chatterbox-Multilingual-pt-br/tree/b3952f18bc2eaa72b9bd7c17d2c4653bcad4770d"
+    },
+    {
+      "id": "ResembleAI/Chatterbox-Multilingual-es-es",
+      "sha": "7262b364e3222ba9446c9289e7485eadc47ed902",
+      "role": "LANGUAGE_ES_ES",
+      "source_repo_bytes": 4257349472,
+      "file_count": 6,
+      "tree_url": "https://huggingface.co/ResembleAI/Chatterbox-Multilingual-es-es/tree/7262b364e3222ba9446c9289e7485eadc47ed902"
+    },
+    {
+      "id": "ResembleAI/Chatterbox-Multilingual-pt-pt",
+      "sha": "d728f1a01d7d2c634462ae33e8dd16fe56f6d874",
+      "role": "LANGUAGE_PT_PT",
+      "source_repo_bytes": 4257349528,
+      "file_count": 6,
+      "tree_url": "https://huggingface.co/ResembleAI/Chatterbox-Multilingual-pt-pt/tree/d728f1a01d7d2c634462ae33e8dd16fe56f6d874"
+    },
+    {
+      "id": "ResembleAI/Chatterbox-Multilingual-hi",
+      "sha": "82ca71273cc2a9ab19efdf8315f865c1a5af0ee7",
+      "role": "LANGUAGE_HI",
+      "source_repo_bytes": 4257349363,
+      "file_count": 6,
+      "tree_url": "https://huggingface.co/ResembleAI/Chatterbox-Multilingual-hi/tree/82ca71273cc2a9ab19efdf8315f865c1a5af0ee7"
+    },
+    {
+      "id": "ResembleAI/chatterbox-turbo",
+      "sha": "749d1c1a46eb10492095d68fbcf55691ccf137cd",
+      "role": "TURBO_EN_350M",
+      "source_repo_bytes": 4044184736,
+      "file_count": 13,
+      "tree_url": "https://huggingface.co/ResembleAI/chatterbox-turbo/tree/749d1c1a46eb10492095d68fbcf55691ccf137cd"
+    },
+    {
+      "id": "ResembleAI/chatterbox-nano",
+      "sha": "71ccd1d0081b430592cea481f4307e764e07bc64",
+      "role": "NANO_EN_110M",
+      "source_repo_bytes": 2998605148,
+      "file_count": 13,
+      "tree_url": "https://huggingface.co/ResembleAI/chatterbox-nano/tree/71ccd1d0081b430592cea481f4307e764e07bc64"
+    }
+  ],
+  "multilingual_v3": {
+    "repo_id": "ResembleAI/chatterbox",
+    "sha": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+    "selected_files": [
+      {
+        "repo": "ResembleAI/chatterbox",
+        "path": "t3_mtl23ls_v3.safetensors",
+        "bytes": 2143989928,
+        "sha256": "5abca8321ede76f8e61f1cc0d19aea6c946b28871017ce8726f8a69203f05953",
+        "git_blob_sha1": "1c209b87ad60fc1d4924b0ae2aee5c830c2a4a91"
+      },
+      {
+        "repo": "ResembleAI/chatterbox",
+        "path": "s3gen.pt",
+        "bytes": 1057165844,
+        "sha256": "9b9ff07e60b20c136e2b1b3d7563a24604e8d2c4c267888d1ee929dd0151d2a3",
+        "git_blob_sha1": "d4ef76740efef1aeb5eb1415214083288cf2cfde"
+      },
+      {
+        "repo": "ResembleAI/chatterbox",
+        "path": "ve.pt",
+        "bytes": 5698626,
+        "sha256": "4b16d836bc598509860f6fa068165a8bb5e9ac84f05582dfcf278a5a372879f1",
+        "git_blob_sha1": "adae22451d455ceb0592efc42464cadb21978b2a"
+      },
+      {
+        "repo": "ResembleAI/chatterbox",
+        "path": "grapheme_mtl_merged_expanded_v1.json",
+        "bytes": 69989,
+        "sha256": null,
+        "git_blob_sha1": "d27fb3f2fd38ca39b7bbfbf83a13b3c617e551df"
+      },
+      {
+        "repo": "ResembleAI/chatterbox",
+        "path": "Cangjie5_TC.json",
+        "bytes": 1920163,
+        "sha256": null,
+        "git_blob_sha1": "d77891f84ca1db0d6f7058a4ee081d4bb0bfe88e"
+      },
+      {
+        "repo": "ResembleAI/chatterbox",
+        "path": "conds.pt",
+        "bytes": 107374,
+        "sha256": "6552d70568833628ba019c6b03459e77fe71ca197d5c560cef9411bee9d87f4e",
+        "git_blob_sha1": "e13b43d1ce809473454627428ff413ebfc7e8660"
+      }
+    ],
+    "selected_six_file_bytes": 3208951924,
+    "full_repo_bytes": 13866212931,
+    "v2_alternative": {
+      "file": {
+        "path": "t3_mtl23ls_v2.safetensors",
+        "bytes": 2143989752,
+        "sha256": "b1237586127ce98e7800a68e49938eb5092846862aabcb6e17b2fda7889a6c75",
+        "git_blob_sha1": "482ccdb7195ef1a44cafee78c72020bdb89c7e86"
+      },
+      "additional_bytes_to_keep_v2_with_v3_source": 2143989752,
+      "different_training_stage_not_plain_quant": true
+    },
+    "main_v3_t3": {
+      "path": "t3_mtl23ls_v3.safetensors",
+      "bytes": 2143989928,
+      "sha256": "5abca8321ede76f8e61f1cc0d19aea6c946b28871017ce8726f8a69203f05953",
+      "git_blob_sha1": "1c209b87ad60fc1d4924b0ae2aee5c830c2a4a91"
+    },
+    "s3gen_v3_extra_for_other_workflows": {
+      "path": "s3gen_v3.safetensors",
+      "bytes": 1056381804,
+      "sha256": "4a46190f3dccc2230fbb3488a930bccc925862ee68f2662433dfcfe93ce6c2cb",
+      "git_blob_sha1": "da4e499e980f32d2cf87615a8b71711dcca1cc68"
+    },
+    "native_japanese": true,
+    "exact_runtime_code_rev_pinned": false
+  },
+  "language_packs": {
+    "number": 6,
+    "language_codes": [
+      "zh-cmn",
+      "es-mx-latam",
+      "pt-br",
+      "es-es",
+      "pt-pt",
+      "hi"
+    ],
+    "contains_dedicated_japanese_model": false,
+    "entries": [
+      {
+        "repo_id": "ResembleAI/Chatterbox-Multilingual-zh-cmn",
+        "revision": "2432cb141088d54f666894996d959294a74a13ce",
+        "full_repo_bytes": 4263120842,
+        "unique_t3": {
+          "path": "t3_zh_cmn.safetensors",
+          "bytes": 2143989880,
+          "sha256": "659d2ab081d6ab709fa1f712fb2b084e29471d53c106765566f53db960048cc9",
+          "git_blob_sha1": "0e327cc679e2389f4ccf63a07a2ac232cac88194"
+        },
+        "common_s3gen_v3_pt": {
+          "bytes": 1056903694,
+          "sha256": "f7abce4b196dae2d08d9296cbebc6521b046079577643b42a19a03499d08721e"
+        },
+        "common_s3gen_v3_safetensors": {
+          "bytes": 1056381804,
+          "sha256": "4a46190f3dccc2230fbb3488a930bccc925862ee68f2662433dfcfe93ce6c2cb"
+        },
+        "other_support": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1519,
+            "sha256": null
+          },
+          {
+            "path": "README.md",
+            "bytes": 2324,
+            "sha256": null
+          },
+          {
+            "path": "conds.pt",
+            "bytes": 73006,
+            "sha256": "b305f24ad6d6385b042e6b054fb3808f838539d7969433931ee7d8ef484266f2"
+          },
+          {
+            "path": "grapheme_mtl_merged_expanded_v1.json",
+            "bytes": 69989,
+            "sha256": null
+          },
+          {
+            "path": "ve.pt",
+            "bytes": 5698626,
+            "sha256": "4b16d836bc598509860f6fa068165a8bb5e9ac84f05582dfcf278a5a372879f1"
+          }
+        ],
+        "kind": "SPECIAL_LANGUAGE_FINETUNE_NOT_QUANTIZED_BASE",
+        "validated_loader_for_pack": false
+      },
+      {
+        "repo_id": "ResembleAI/Chatterbox-Multilingual-es-mx-latam",
+        "revision": "27e595bf2fe7be0533ca299d9afafcde08b7cca7",
+        "full_repo_bytes": 4257349567,
+        "unique_t3": {
+          "path": "t3_es_mx_latam.safetensors",
+          "bytes": 2143990280,
+          "sha256": "c66c4517f11c2b35a56e28615c0689deb864cbc411e329552223bbd0a6a063f8",
+          "git_blob_sha1": "76b233f8a390bc90c3c9d41f75ee71ee98772fcc"
+        },
+        "common_s3gen_v3_pt": {
+          "bytes": 1056903694,
+          "sha256": "f7abce4b196dae2d08d9296cbebc6521b046079577643b42a19a03499d08721e"
+        },
+        "common_s3gen_v3_safetensors": {
+          "bytes": 1056381804,
+          "sha256": "4a46190f3dccc2230fbb3488a930bccc925862ee68f2662433dfcfe93ce6c2cb"
+        },
+        "other_support": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1519,
+            "sha256": null
+          },
+          {
+            "path": "README.md",
+            "bytes": 2281,
+            "sha256": null
+          },
+          {
+            "path": "grapheme_mtl_merged_expanded_v1.json",
+            "bytes": 69989,
+            "sha256": null
+          }
+        ],
+        "kind": "SPECIAL_LANGUAGE_FINETUNE_NOT_QUANTIZED_BASE",
+        "validated_loader_for_pack": false
+      },
+      {
+        "repo_id": "ResembleAI/Chatterbox-Multilingual-pt-br",
+        "revision": "b3952f18bc2eaa72b9bd7c17d2c4653bcad4770d",
+        "full_repo_bytes": 4257349523,
+        "unique_t3": {
+          "path": "t3_pt_br.safetensors",
+          "bytes": 2143990296,
+          "sha256": "074aaf65255eb9cb960288f7cc72e09d3b5008f6e0b14868c0d4e5b0bd7cbb6c",
+          "git_blob_sha1": "8a615d34a075cb23b26da6cbcfebbc24fe041c95"
+        },
+        "common_s3gen_v3_pt": {
+          "bytes": 1056903694,
+          "sha256": "f7abce4b196dae2d08d9296cbebc6521b046079577643b42a19a03499d08721e"
+        },
+        "common_s3gen_v3_safetensors": {
+          "bytes": 1056381804,
+          "sha256": "4a46190f3dccc2230fbb3488a930bccc925862ee68f2662433dfcfe93ce6c2cb"
+        },
+        "other_support": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1519,
+            "sha256": null
+          },
+          {
+            "path": "README.md",
+            "bytes": 2221,
+            "sha256": null
+          },
+          {
+            "path": "grapheme_mtl_merged_expanded_v1.json",
+            "bytes": 69989,
+            "sha256": null
+          }
+        ],
+        "kind": "SPECIAL_LANGUAGE_FINETUNE_NOT_QUANTIZED_BASE",
+        "validated_loader_for_pack": false
+      },
+      {
+        "repo_id": "ResembleAI/Chatterbox-Multilingual-es-es",
+        "revision": "7262b364e3222ba9446c9289e7485eadc47ed902",
+        "full_repo_bytes": 4257349472,
+        "unique_t3": {
+          "path": "t3_es_es.safetensors",
+          "bytes": 2143990264,
+          "sha256": "d85844b13ea8cb45e95b8d84a55bcfeccb2d743035cf304ee3d778fc6be39546",
+          "git_blob_sha1": "59a620f8bca5920768888a20bd27cd1504a6439c"
+        },
+        "common_s3gen_v3_pt": {
+          "bytes": 1056903694,
+          "sha256": "f7abce4b196dae2d08d9296cbebc6521b046079577643b42a19a03499d08721e"
+        },
+        "common_s3gen_v3_safetensors": {
+          "bytes": 1056381804,
+          "sha256": "4a46190f3dccc2230fbb3488a930bccc925862ee68f2662433dfcfe93ce6c2cb"
+        },
+        "other_support": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1519,
+            "sha256": null
+          },
+          {
+            "path": "README.md",
+            "bytes": 2202,
+            "sha256": null
+          },
+          {
+            "path": "grapheme_mtl_merged_expanded_v1.json",
+            "bytes": 69989,
+            "sha256": null
+          }
+        ],
+        "kind": "SPECIAL_LANGUAGE_FINETUNE_NOT_QUANTIZED_BASE",
+        "validated_loader_for_pack": false
+      },
+      {
+        "repo_id": "ResembleAI/Chatterbox-Multilingual-pt-pt",
+        "revision": "d728f1a01d7d2c634462ae33e8dd16fe56f6d874",
+        "full_repo_bytes": 4257349528,
+        "unique_t3": {
+          "path": "t3_pt_pt.safetensors",
+          "bytes": 2143990296,
+          "sha256": "547c6e734908621badc806f5b56d773f05271b4ae653ae448c5d068e94de12db",
+          "git_blob_sha1": "09494cbd344948c8225f21922e293423b889d1fc"
+        },
+        "common_s3gen_v3_pt": {
+          "bytes": 1056903694,
+          "sha256": "f7abce4b196dae2d08d9296cbebc6521b046079577643b42a19a03499d08721e"
+        },
+        "common_s3gen_v3_safetensors": {
+          "bytes": 1056381804,
+          "sha256": "4a46190f3dccc2230fbb3488a930bccc925862ee68f2662433dfcfe93ce6c2cb"
+        },
+        "other_support": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1519,
+            "sha256": null
+          },
+          {
+            "path": "README.md",
+            "bytes": 2226,
+            "sha256": null
+          },
+          {
+            "path": "grapheme_mtl_merged_expanded_v1.json",
+            "bytes": 69989,
+            "sha256": null
+          }
+        ],
+        "kind": "SPECIAL_LANGUAGE_FINETUNE_NOT_QUANTIZED_BASE",
+        "validated_loader_for_pack": false
+      },
+      {
+        "repo_id": "ResembleAI/Chatterbox-Multilingual-hi",
+        "revision": "82ca71273cc2a9ab19efdf8315f865c1a5af0ee7",
+        "full_repo_bytes": 4257349363,
+        "unique_t3": {
+          "path": "t3_hi.safetensors",
+          "bytes": 2143990224,
+          "sha256": "89fd813802e2cf7350d609959cec4dae63dd58f445651b05009262d7e24780f9",
+          "git_blob_sha1": "70bfe0177eec1ab097cd5b98be2d5f135252d000"
+        },
+        "common_s3gen_v3_pt": {
+          "bytes": 1056903694,
+          "sha256": "f7abce4b196dae2d08d9296cbebc6521b046079577643b42a19a03499d08721e"
+        },
+        "common_s3gen_v3_safetensors": {
+          "bytes": 1056381804,
+          "sha256": "4a46190f3dccc2230fbb3488a930bccc925862ee68f2662433dfcfe93ce6c2cb"
+        },
+        "other_support": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1519,
+            "sha256": null
+          },
+          {
+            "path": "README.md",
+            "bytes": 2133,
+            "sha256": null
+          },
+          {
+            "path": "grapheme_mtl_merged_expanded_v1.json",
+            "bytes": 69989,
+            "sha256": null
+          }
+        ],
+        "kind": "SPECIAL_LANGUAGE_FINETUNE_NOT_QUANTIZED_BASE",
+        "validated_loader_for_pack": false
+      }
+    ],
+    "shared_v3_s3gen_pt": {
+      "bytes": 1056903694,
+      "sha256": "f7abce4b196dae2d08d9296cbebc6521b046079577643b42a19a03499d08721e"
+    },
+    "shared_v3_s3gen_safetensors": {
+      "bytes": 1056381804,
+      "sha256": "4a46190f3dccc2230fbb3488a930bccc925862ee68f2662433dfcfe93ce6c2cb"
+    },
+    "all_identical_shared_s3gen_sha_across_six": true,
+    "different_t3_sha": true,
+    "each_is_special_language_finetune": true,
+    "availability_no_download": true,
+    "same_6_packs_cannot_be_considered_ordinary_quant": true,
+    "pack_specific_runtime_has_not_been_checked": true
+  },
+  "turbo_and_nano": {
+    "entries": [
+      {
+        "repo_id": "ResembleAI/chatterbox-turbo",
+        "revision": "749d1c1a46eb10492095d68fbcf55691ccf137cd",
+        "unique_t3": {
+          "path": "t3_turbo_v1.safetensors",
+          "bytes": 1915480052,
+          "sha256": "fcf1f8c1d651bb7e3acd69ee5be269b4ac10c02980b7708213d598bc9f7cdf87",
+          "git_blob_sha1": "d25802c72273ca6e1f776a85b7cd7b042e1c3247"
+        },
+        "shared_meanflow": {
+          "path": "s3gen_meanflow.safetensors",
+          "bytes": 1064875036,
+          "sha256": "d65cb687a2ed581ee6cc297e919ffefa63386944f42364ae13b78a594945514f"
+        },
+        "shared_ve": {
+          "path": "ve.safetensors",
+          "bytes": 5695784,
+          "sha256": "f0921cab452fa278bc25cd23ffd59d36f816d7dc5181dd1bef9751a7fb61f63c",
+          "git_blob_sha1": "0713f1587e627f23d93121e154a7de490d549dfb"
+        },
+        "source_repo_bytes": 4044184736,
+        "files": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1519,
+            "sha256": null,
+            "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b"
+          },
+          {
+            "path": "README.md",
+            "bytes": 9544,
+            "sha256": null,
+            "git_blob_sha1": "7d61412fa834e0e8d9217e86a8ad0bf44de04b6d"
+          },
+          {
+            "path": "added_tokens.json",
+            "bytes": 418,
+            "sha256": null,
+            "git_blob_sha1": "fd85325cdfafc690469b6f0e8aeb5cf4649c1450"
+          },
+          {
+            "path": "conds.pt",
+            "bytes": 169454,
+            "sha256": "b1852099306fd6a7814eb9d0bd10186caba7249596cc23868f78a0eefbfa5033",
+            "git_blob_sha1": "a7f5dfc71c3a2cb450ef4fbda5a0a52c8d6102fe"
+          },
+          {
+            "path": "merges.txt",
+            "bytes": 456318,
+            "sha256": null,
+            "git_blob_sha1": "226b0752cac7789c48f0cb3ec53eda48b7be36cc"
+          },
+          {
+            "path": "s3gen.safetensors",
+            "bytes": 1056484620,
+            "sha256": "2b78103c654207393955e4900aac14a12de8ef25f4b09424f1ef91941f161d4e",
+            "git_blob_sha1": "b752a028b2a1c2843b76e0df9582d8d81d10669d"
+          },
+          {
+            "path": "s3gen_meanflow.safetensors",
+            "bytes": 1064875036,
+            "sha256": "d65cb687a2ed581ee6cc297e919ffefa63386944f42364ae13b78a594945514f",
+            "git_blob_sha1": "f6cfa2a96f3ac1f6c65f371c42b856c16409fe12"
+          },
+          {
+            "path": "special_tokens_map.json",
+            "bytes": 470,
+            "sha256": null,
+            "git_blob_sha1": "b2d2dbc845800c78fe98656af927d831ab4ff7b7"
+          },
+          {
+            "path": "t3_turbo_v1.safetensors",
+            "bytes": 1915480052,
+            "sha256": "fcf1f8c1d651bb7e3acd69ee5be269b4ac10c02980b7708213d598bc9f7cdf87",
+            "git_blob_sha1": "d25802c72273ca6e1f776a85b7cd7b042e1c3247"
+          },
+          {
+            "path": "t3_turbo_v1.yaml",
+            "bytes": 8457,
+            "sha256": null,
+            "git_blob_sha1": "ff62b05c534a082aa5c5399c98986b8450205cc8"
+          },
+          {
+            "path": "tokenizer_config.json",
+            "bytes": 3878,
+            "sha256": null,
+            "git_blob_sha1": "58bc759ea7dab3dd5442f0500e493f170eeba67f"
+          },
+          {
+            "path": "ve.safetensors",
+            "bytes": 5695784,
+            "sha256": "f0921cab452fa278bc25cd23ffd59d36f816d7dc5181dd1bef9751a7fb61f63c",
+            "git_blob_sha1": "0713f1587e627f23d93121e154a7de490d549dfb"
+          },
+          {
+            "path": "vocab.json",
+            "bytes": 999186,
+            "sha256": null,
+            "git_blob_sha1": "a15dd0028acd1dd2c1c2394c80e1de8f3f12a0e4"
+          }
+        ],
+        "training_role": "TURBO_EN_350M",
+        "official_loader_module": "src/chatterbox/tts_turbo.py",
+        "performance_not_independently_verified": true
+      },
+      {
+        "repo_id": "ResembleAI/chatterbox-nano",
+        "revision": "71ccd1d0081b430592cea481f4307e764e07bc64",
+        "unique_t3": {
+          "path": "t3_nano_v1.safetensors",
+          "bytes": 869899204,
+          "sha256": "72b110185087d945dbdf54dee4e333848e1811bdd5fd6cb16ceb8da50006f0c9",
+          "git_blob_sha1": "0aa6bda24f6d331c100686e506d6a640fb5d5fdc"
+        },
+        "shared_meanflow": {
+          "path": "s3gen_meanflow.safetensors",
+          "bytes": 1064875036,
+          "sha256": "d65cb687a2ed581ee6cc297e919ffefa63386944f42364ae13b78a594945514f"
+        },
+        "shared_ve": {
+          "path": "ve.safetensors",
+          "bytes": 5695784,
+          "sha256": "f0921cab452fa278bc25cd23ffd59d36f816d7dc5181dd1bef9751a7fb61f63c",
+          "git_blob_sha1": "0713f1587e627f23d93121e154a7de490d549dfb"
+        },
+        "source_repo_bytes": 2998605148,
+        "files": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1519,
+            "sha256": null,
+            "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b"
+          },
+          {
+            "path": "README.md",
+            "bytes": 10773,
+            "sha256": null,
+            "git_blob_sha1": "0445115f28b92ed511397bbccdcc9f3910139086"
+          },
+          {
+            "path": "added_tokens.json",
+            "bytes": 418,
+            "sha256": null,
+            "git_blob_sha1": "fd85325cdfafc690469b6f0e8aeb5cf4649c1450"
+          },
+          {
+            "path": "conds.pt",
+            "bytes": 169454,
+            "sha256": "b1852099306fd6a7814eb9d0bd10186caba7249596cc23868f78a0eefbfa5033",
+            "git_blob_sha1": "a7f5dfc71c3a2cb450ef4fbda5a0a52c8d6102fe"
+          },
+          {
+            "path": "merges.txt",
+            "bytes": 456318,
+            "sha256": null,
+            "git_blob_sha1": "226b0752cac7789c48f0cb3ec53eda48b7be36cc"
+          },
+          {
+            "path": "s3gen.safetensors",
+            "bytes": 1056484620,
+            "sha256": "2b78103c654207393955e4900aac14a12de8ef25f4b09424f1ef91941f161d4e",
+            "git_blob_sha1": "b752a028b2a1c2843b76e0df9582d8d81d10669d"
+          },
+          {
+            "path": "s3gen_meanflow.safetensors",
+            "bytes": 1064875036,
+            "sha256": "d65cb687a2ed581ee6cc297e919ffefa63386944f42364ae13b78a594945514f",
+            "git_blob_sha1": "f6cfa2a96f3ac1f6c65f371c42b856c16409fe12"
+          },
+          {
+            "path": "special_tokens_map.json",
+            "bytes": 470,
+            "sha256": null,
+            "git_blob_sha1": "b2d2dbc845800c78fe98656af927d831ab4ff7b7"
+          },
+          {
+            "path": "t3_nano_v1.safetensors",
+            "bytes": 869899204,
+            "sha256": "72b110185087d945dbdf54dee4e333848e1811bdd5fd6cb16ceb8da50006f0c9",
+            "git_blob_sha1": "0aa6bda24f6d331c100686e506d6a640fb5d5fdc"
+          },
+          {
+            "path": "t3_nano_v1.yaml",
+            "bytes": 8488,
+            "sha256": null,
+            "git_blob_sha1": "1a1c3c937c231ee4090fe8624d5e8c09a9cc14c1"
+          },
+          {
+            "path": "tokenizer_config.json",
+            "bytes": 3878,
+            "sha256": null,
+            "git_blob_sha1": "58bc759ea7dab3dd5442f0500e493f170eeba67f"
+          },
+          {
+            "path": "ve.safetensors",
+            "bytes": 5695784,
+            "sha256": "f0921cab452fa278bc25cd23ffd59d36f816d7dc5181dd1bef9751a7fb61f63c",
+            "git_blob_sha1": "0713f1587e627f23d93121e154a7de490d549dfb"
+          },
+          {
+            "path": "vocab.json",
+            "bytes": 999186,
+            "sha256": null,
+            "git_blob_sha1": "a15dd0028acd1dd2c1c2394c80e1de8f3f12a0e4"
+          }
+        ],
+        "training_role": "NANO_EN_110M",
+        "official_loader_module": "src/chatterbox/tts_turbo.py",
+        "performance_not_independently_verified": true
+      }
+    ],
+    "one_step_meanflow_distilled_decoder_shared_sha": true,
+    "official_loader": "https://github.com/resemble-ai/chatterbox/blob/master/src/chatterbox/tts_turbo.py",
+    "loader_behavior": "S3Gen(meanflow=True) loads s3gen_meanflow.safetensors and T3 Turbo or Nano; s3gen.safetensors also shipped but is not loaded by this official loader",
+    "distinct_t3_trained_weights": true,
+    "voice_encoder_is_shared_by_exact_sha": true,
+    "unused_s3gen_pt_not_counted": false
+  },
+  "totals": {
+    "official_v3_six_files_bytes": 3208951924,
+    "official_v2_uses_same_support_except_t3": true,
+    "v2_increment_if_v3_already_retained_bytes": 2143989752,
+    "six_language_unique_t3_files_bytes": 12863941240,
+    "six_pack_entire_repo_download_bytes": 25549868295,
+    "six_pack_shared_s3gen_v3_pt_sha": "f7abce4b196dae2d08d9296cbebc6521b046079577643b42a19a03499d08721e",
+    "six_pack_shared_s3gen_v3_safe_sha": "4a46190f3dccc2230fbb3488a930bccc925862ee68f2662433dfcfe93ce6c2cb",
+    "six_pack_one_shared_s3gen_v3_pt_plus_six_t3_bytes": 13920844934,
+    "turbo_nano_unique_t3_and_one_meanflow_bytes": 3850254292,
+    "turbo_nano_full_repo_bytes": 7042789884,
+    "main_chatterbox_full_repo_bytes": 13866212931,
+    "nine_repo_download_bytes": 46458871110,
+    "shared_s3gen_v3_across_packs_exact_sha": true,
+    "shared_meanflow_turbo_nano_exact_sha": true
+  },
+  "quality_and_scope": {
+    "publisher_v3_claim": "Higher multilingual speaker similarity, reduced hallucinations, conversational speech. Publisher claim, not independent paired v2-v3 evidence.",
+    "external_cross_model_reference": "https://soniqo.audio/blog/voice-cloning-benchmarks",
+    "external_limit": "Independent FLEURS cross-model tests cover five languages but do not pin an independently tested official V3 revision or full v2-v3 paired change; do not project their metrics on V3 specifically.",
+    "japanese_test_required": true,
+    "independent_claim_v3_better_not_verified": true,
+    "hardware_benchmarks_not_measured": true
+  },
+  "rights_and_security": {
+    "mit_label_per_hf": true,
+    "third_party_voice_permissions_not_inherited": true,
+    "torch_pt_files_use_pickle_format": true,
+    "readable_code_weights_only_loading_reviewed": true,
+    "source_revision_for_loader_unpinned": true,
+    "no_automatic_untrusted_code_execution": true
+  },
+  "decision": {
+    "existing_chatterbox_select_unchanged": true,
+    "preserve_v3_as_primary_RESEARCH_PROPOSAL": true,
+    "preserve_v2_as_separately_trained_optional_research": true,
+    "language_specific_finetunes_distinct_preservation_candidates": true,
+    "common_s3gen_and_voice_encoder_share_only_sha_identical_files": true,
+    "turbo_and_nano_not_quantized_v3": true,
+    "new_selects": 0,
+    "downloads": 0,
+    "approved_queue_changed": false,
+    "all_150_states_preserved": true,
+    "budget_bytes": 4000000000000,
+    "physical_free_bytes": null
+  },
+  "next": [
+    "Freeze exact official loader source commit and its dependency ABI, compare V3 against V2 on 200 Japanese/English/WER/voice-identity cases without reusing training contamination.",
+    "Decide whether dedicated six-language T3 stages add enough dialect fidelity vs V3; preserve each trained T3 only when independently worthwhile, reuse shared S3Gen SHA once.",
+    "Turbo/Nano are separate low-latency architectures; don't hoard their duplicated S3Gen original plus meanflow decoder unless distinct use demonstrated.",
+    "Do not mistake ceased maintenance for confirmed deletion, and retain source provenance & model notices."
+  ]
+}
