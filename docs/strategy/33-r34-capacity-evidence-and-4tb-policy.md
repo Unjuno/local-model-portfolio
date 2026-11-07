@@ -1,3 +1,5 @@
+**R35容量更新（2026-11-08）**：Stubelius全14ファイル**195,942,118,539 byte**、最新版v1 BF16**42,008,732,600 byte**、差**153,933,385,939 byte**へ丸め値を置換。Chrisの本家・ミラー15重みSHAが一致し、FP8 scaledの暫定基本構成は**36,468,259,016 byte**と確定。[R35 exact LFSファイル監査](34-r35-ltx-source-vs-mirror-file-identity.md)を参照。下記の約195.9GB/42GB/153.9GB表記は当時の丸め値のまま保持。
+
 # R34｜4TB保存計画の容量証拠：150資産のメタデータ監査
 
 2026-11-08。現行v19の150資産を再集計した読み取り専用の研究。今までのSELECT/CONDITIONAL/HOLD/BACKLOG、Nanbeige4.3-33B SELECT、6件のユーザー指定EXCLUDEDを変更しない。
