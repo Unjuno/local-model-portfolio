@@ -43,7 +43,11 @@
     "laion_2023_withdrawal": "https://laion.ai/notes/laion-maintenance",
     "research_science": "https://doi.org/10.1126/science.adp1848",
     "research_arxiv": "https://arxiv.org/abs/2311.09227",
-    "research_empirical": "https://arxiv.org/abs/2508.03153"
+    "research_empirical": "https://arxiv.org/abs/2508.03153",
+    "eu_article93": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-93",
+    "eu_2026_enforcement": "https://digital-strategy.ec.europa.eu/en/policies/enforcement-ai-act",
+    "us_2025_rule_original_text": "https://www.federalregister.gov/documents/2025/01/15/2025-00636/framework-for-artificial-intelligence-diffusion",
+    "black_forest_labs_2025_license_revision": "https://bfl.ai/blog/flux-1-kontext-dev"
   },
   "confirmed_policy_events": [
     {
@@ -101,6 +105,34 @@
       "source": "https://www.bis.gov/press-release/department-commerce-announces-rescission-biden-era-artificial-intelligence-diffusion-rule-strengthens",
       "type": "HISTORICAL_NON_ENFORCEMENT_AND_FUTURE_REPLACEMENT_INTENT",
       "scope": "Original controls focused certain closed-weight models; this is not evidence of a presently effective universal ban on open model weights. Legal text and export transactions require fresh counsel."
+    },
+    {
+      "event": "EU AI Act Article 93 provides conditional Commission power to request restriction, withdrawal or recall of a GPAI model",
+      "date": "2026-11-08 checked (consolidated AI Act text as of 2026-07-27)",
+      "source": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-93",
+      "type": "BINDING_LEGAL_POWER_NOT_MODEL_SPECIFIC_ORDER",
+      "scope": "Necessary and appropriate provider-directed measures under Article 93; no order against any of these 132 repositories confirmed."
+    },
+    {
+      "event": "EU AI Office GPAI enforcement powers began applying 2026-08-02",
+      "date": "2026-08-02",
+      "source": "https://digital-strategy.ec.europa.eu/en/policies/enforcement-ai-act",
+      "type": "CURRENT_ENFORCEMENT_FRAMEWORK",
+      "scope": "Provider enforcement and corrective-measure authority, not an automatic blanket ban on downloads or already-archived model weights."
+    },
+    {
+      "event": "2025 BIS AI Diffusion Rule originally scoped advanced closed-weight AI model weight export controls, expressly not open-weight models",
+      "date": "2025-01-15",
+      "source": "https://www.federalregister.gov/documents/2025/01/15/2025-00636/framework-for-artificial-intelligence-diffusion",
+      "type": "HISTORICAL_RULE_SCOPE_WITH_SUBSEQUENT_NON_ENFORCEMENT",
+      "scope": "This describes rule text and then 2025 BIS announced non-enforcement/rescission intent; not proof the rule currently restricts the 132 open-weight repositories."
+    },
+    {
+      "event": "Black Forest Labs revised FLUX.1 [dev] Non-Commercial License, including content filtering/manual review and provenance conditions",
+      "date": "2025-06-26",
+      "source": "https://bfl.ai/blog/flux-1-kontext-dev",
+      "type": "FIRST_PARTY_LICENSE_CHANGE_PRECEDENT",
+      "scope": "Specific to FLUX.1 [dev] terms on that date; do not import automatically into the v9 FLUX.2-dev model without inspecting its exact current license."
     }
   ],
   "contrary_evidence": [
@@ -178,7 +210,16 @@
     "unresolved_exact_repo_id_lookup_today": 1,
     "public_repo_count_historical_v9": 108,
     "option_value_band_changes": 29,
-    "publisher_naming_alignment_evidence_found": 1
+    "publisher_naming_alignment_evidence_found": 1,
+    "listing_recheck_2026_11_08": {
+      "requested_ids": 132,
+      "exact_repo_id_resolved": 131,
+      "gated": 24,
+      "public_listings": 107,
+      "unresolved_alias": 1,
+      "observed_changes_from_2026_11_03": 0,
+      "user_specific_authorization_verified": 0
+    }
   },
   "assets": [
     {
@@ -280,9 +321,29 @@
           "source": "https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "orcarouter/Qwen3.8-27B-Uncensored",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -383,9 +444,29 @@
           "source": "https://huggingface.co/datasets/StephaneBah/AfroRadVoice-FR",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/datasets/StephaneBah/AfroRadVoice-FR",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/StephaneBah/AfroRadVoice-FR",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "StephaneBah/AfroRadVoice-FR",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -487,9 +568,29 @@
           "source": "https://huggingface.co/datasets/amphion/Emilia-Dataset",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/datasets/amphion/Emilia-Dataset",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/amphion/Emilia-Dataset",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "amphion/Emilia-Dataset",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -592,9 +693,29 @@
           "source": "https://huggingface.co/datasets/bigcode/the-stack-v2",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/datasets/bigcode/the-stack-v2",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/bigcode/the-stack-v2",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "bigcode/the-stack-v2",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -696,9 +817,29 @@
           "source": "https://huggingface.co/datasets/laion/relaion2B-en-research",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/datasets/laion/relaion2B-en-research",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/laion/relaion2B-en-research",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "laion/relaion2B-en-research",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -800,9 +941,29 @@
           "source": "https://huggingface.co/datasets/lmsys/lmsys-chat-1m",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/datasets/lmsys/lmsys-chat-1m",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/lmsys/lmsys-chat-1m",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "lmsys/lmsys-chat-1m",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -904,9 +1065,29 @@
           "source": "https://huggingface.co/datasets/bigcode/starcoderdata",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/datasets/bigcode/starcoderdata",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/bigcode/starcoderdata",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "bigcode/starcoderdata",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -1001,7 +1182,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/KlingTeam/LivePortrait",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "KlingTeam/LivePortrait",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -1096,7 +1290,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/microsoft/Fara1.5-27B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "microsoft/Fara1.5-27B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -1192,7 +1399,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN"
+      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Plachta/Seed-VC",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Plachta/Seed-VC",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -1289,7 +1509,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Qwen/Qwen3-Coder-Next",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Qwen/Qwen3-Coder-Next",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -1384,7 +1617,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -1481,7 +1727,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "HuggingFaceFW/fineweb-edu",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -1577,7 +1836,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/allenai/WildChat-1M",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "allenai/WildChat-1M",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -1674,7 +1946,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/laion/emotional-roleplay-finetuning-dataset",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "laion/emotional-roleplay-finetuning-dataset",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -1775,7 +2060,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/nvidia/Granary-v2",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "nvidia/Granary-v2",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -1877,9 +2175,36 @@
           "source": "https://huggingface.co/black-forest-labs/FLUX.2-dev",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/black-forest-labs/FLUX.2-dev",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/black-forest-labs/FLUX.2-dev",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "black-forest-labs/FLUX.2-dev",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      },
+      "license_change_scope_followup": {
+        "reviewed_on": "2026-11-08",
+        "verified_precedent_url": "https://bfl.ai/blog/flux-1-kontext-dev",
+        "precedent_applies_to": "FLUX.1-dev Non-Commercial License on 2025-06-26",
+        "target_model_legal_terms_not_inferred": true,
+        "required_next_step": "Inspect the current FLUX.2-dev first-party license body and its fixed revision before any rights decision."
+      }
     },
     {
       "asset_kind": "model",
@@ -1981,9 +2306,29 @@
           "source": "https://huggingface.co/EPFLiGHT/Meditron3-70B",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/EPFLiGHT/Meditron3-70B",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/EPFLiGHT/Meditron3-70B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "EPFLiGHT/Meditron3-70B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -2084,9 +2429,29 @@
           "source": "https://huggingface.co/google/medgemma-4b-it",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/google/medgemma-4b-it",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/google/medgemma-4b-it",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "google/medgemma-4b-it",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -2187,9 +2552,29 @@
           "source": "https://huggingface.co/facebook/dinov3-vit7b16-pretrain-lvd1689m",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/facebook/dinov3-vit7b16-pretrain-lvd1689m",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/facebook/dinov3-vit7b16-pretrain-lvd1689m",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "facebook/dinov3-vit7b16-pretrain-lvd1689m",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -2290,9 +2675,29 @@
           "source": "https://huggingface.co/facebook/dinov3-vith16plus-pretrain-lvd1689m",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/facebook/dinov3-vith16plus-pretrain-lvd1689m",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/facebook/dinov3-vith16plus-pretrain-lvd1689m",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "facebook/dinov3-vith16plus-pretrain-lvd1689m",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -2393,9 +2798,29 @@
           "source": "https://huggingface.co/facebook/sam3",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/facebook/sam3",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/facebook/sam3",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "facebook/sam3",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -2492,7 +2917,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/lightonai/LightOnOCR-3-0.8B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "lightonai/LightOnOCR-3-0.8B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -2589,7 +3027,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/autogluon/chronos-2",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "autogluon/chronos-2",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -2686,7 +3137,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/GSAI-ML/iLLaDA-8B-Base",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "GSAI-ML/iLLaDA-8B-Base",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -2783,7 +3247,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/RWKV/RWKV7-7.2B-20260805",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "RWKV/RWKV7-7.2B-20260805",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -2880,7 +3357,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/state-spaces/mamba-2.8b",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "state-spaces/mamba-2.8b",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -2977,7 +3467,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/CohereLabs/aya_dataset",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "CohereLabs/aya_dataset",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -3074,7 +3577,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/elyza/ELYZA-tasks-100",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "elyza/ELYZA-tasks-100",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -3171,7 +3687,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/llm-jp/magpie-sft-v1.0",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "llm-jp/magpie-sft-v1.0",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -3268,7 +3797,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/Wigtn/KoGovDoc-Bench",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Wigtn/KoGovDoc-Bench",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -3365,7 +3907,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Wigtn/Qwen3-VL-2B-WigtnOCR",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Wigtn/Qwen3-VL-2B-WigtnOCR",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -3462,7 +4017,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/HuggingFaceH4/ultrafeedback_binarized",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "HuggingFaceH4/ultrafeedback_binarized",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -3559,7 +4127,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/lerobot/aloha_sim_insertion_human",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "lerobot/aloha_sim_insertion_human",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -3654,7 +4235,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/nvidia/OpenMathInstruct-2",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "nvidia/OpenMathInstruct-2",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -3749,7 +4343,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/nvidia/OpenCodeInstruct",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "nvidia/OpenCodeInstruct",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -3846,7 +4453,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/deepseek-ai/DeepSeek-OCR-2",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "deepseek-ai/DeepSeek-OCR-2",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -3943,7 +4563,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.5",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "PaddlePaddle/PaddleOCR-VL-1.5",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -4040,7 +4673,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/answerdotai/ModernBERT-large",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "answerdotai/ModernBERT-large",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -4137,7 +4783,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/BAAI/bge-m3",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "BAAI/bge-m3",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -4234,7 +4893,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Qwen/Qwen3-Reranker-0.6B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Qwen/Qwen3-Reranker-0.6B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -4331,7 +5003,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Qwen/Qwen3-Embedding-0.6B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -4428,7 +5113,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "ibm-granite/granite-speech-5.0-470m-turboctc",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -4525,7 +5223,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/m-a-p/SheetSage2",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "m-a-p/SheetSage2",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -4622,7 +5333,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/m-a-p/MERT-v2-FullSong",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "m-a-p/MERT-v2-FullSong",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -4719,7 +5443,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/m-a-p/YuE2-Vae",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "m-a-p/YuE2-Vae",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -4816,7 +5553,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/openai/whisper-large-v3-turbo",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "openai/whisper-large-v3-turbo",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -4913,7 +5663,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/facebook/vjepa2-vitg-fpc64-384",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "facebook/vjepa2-vitg-fpc64-384",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -5008,7 +5771,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/dphn/Dolphin3.0-Llama3.1-8B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "dphn/Dolphin3.0-Llama3.1-8B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -5104,7 +5880,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN"
+      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/InstantX/InstantID",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "InstantX/InstantID",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -5199,7 +5988,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "LiquidAI/LFM2.5-24B-A2B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -5294,7 +6096,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/ResembleAI/chatterbox",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "ResembleAI/chatterbox",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -5390,7 +6205,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN"
+      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/SWivid/F5-TTS",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "SWivid/F5-TTS",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -5485,7 +6313,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/tencent/Hy-Memory-30B-A3B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "tencent/Hy-Memory-30B-A3B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -5582,7 +6423,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN"
+      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/coqui/XTTS-v2",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "coqui/XTTS-v2",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -5678,7 +6532,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/fishaudio/s2-pro",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "fishaudio/s2-pro",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -5774,7 +6641,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/knoveleng/Qwen3.5-9B-Uncensored",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "knoveleng/Qwen3.5-9B-Uncensored",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -5871,7 +6751,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN"
+      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/onnx-community/higgs-audio-v3-tts-4b",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "onnx-community/higgs-audio-v3-tts-4b",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -5968,7 +6861,23 @@
         "followup": "Check both canonical Hub API IDs and commit history via first-party API, compare original and Air manifests' exact SHA-256 hashes per selected file under publisher terms; keep user approval unset."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Edge0/Audio8-TTS-Realistic-0.6b",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Edge0/Audio8-TTS-Realistic-0.6b",
+        "exact_repo_id_resolved": false,
+        "observed_listing_status": "unresolved_exact_repo_id",
+        "returned_alias_repo_id": "Edge0/Audio8-TTS-Realistic-Air",
+        "alias_source_url": "https://huggingface.co/Edge0/Audio8-TTS-Realistic-Air",
+        "same_weight_identity_verified": false,
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "unresolved"
+      }
     },
     {
       "asset_kind": "model",
@@ -6065,7 +6974,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN"
+      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/ByteDance/InfiniteYou",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "ByteDance/InfiniteYou",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -6162,7 +7084,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN"
+      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/fishaudio/fish-speech-1.5",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "fishaudio/fish-speech-1.5",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -6258,7 +7193,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/inclusionAI/Ming-3.0-tts-0.5B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "inclusionAI/Ming-3.0-tts-0.5B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -6355,7 +7303,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN"
+      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/TencentARC/PhotoMaker",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "TencentARC/PhotoMaker",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -6456,9 +7417,29 @@
           "source": "https://huggingface.co/black-forest-labs/flux-3-image-klein-base",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/black-forest-labs/flux-3-image-klein-base",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-base",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "black-forest-labs/flux-3-image-klein-base",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -6559,9 +7540,29 @@
           "source": "https://huggingface.co/briaai/Fibo-2.0-dev",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/briaai/Fibo-2.0-dev",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/briaai/Fibo-2.0-dev",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "briaai/Fibo-2.0-dev",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -6662,9 +7663,29 @@
           "source": "https://huggingface.co/CohereLabs/aya-vision-32b",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/CohereLabs/aya-vision-32b",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/CohereLabs/aya-vision-32b",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "CohereLabs/aya-vision-32b",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -6765,9 +7786,29 @@
           "source": "https://huggingface.co/ideogram-ai/ideogram-4-nf4",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/ideogram-ai/ideogram-4-nf4",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/ideogram-ai/ideogram-4-nf4",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "ideogram-ai/ideogram-4-nf4",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -6870,9 +7911,29 @@
           "source": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "meta-llama/Llama-4-Scout-17B-16E",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -6973,9 +8034,29 @@
           "source": "https://huggingface.co/nvidia/Cosmos-Predict2-2B-Video2World",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/nvidia/Cosmos-Predict2-2B-Video2World",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/nvidia/Cosmos-Predict2-2B-Video2World",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "nvidia/Cosmos-Predict2-2B-Video2World",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -7077,9 +8158,29 @@
           "source": "https://huggingface.co/black-forest-labs/flux-3-image-klein",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/black-forest-labs/flux-3-image-klein",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/black-forest-labs/flux-3-image-klein",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "black-forest-labs/flux-3-image-klein",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -7181,9 +8282,29 @@
           "source": "https://huggingface.co/black-forest-labs/FLUX.2-klein-9B",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/black-forest-labs/FLUX.2-klein-9B",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/black-forest-labs/FLUX.2-klein-9B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "black-forest-labs/FLUX.2-klein-9B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -7285,9 +8406,29 @@
           "source": "https://huggingface.co/briaai/Fibo-2.0-edit-turbo",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/briaai/Fibo-2.0-edit-turbo",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/briaai/Fibo-2.0-edit-turbo",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "briaai/Fibo-2.0-edit-turbo",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -7382,7 +8523,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/lerobot/pi0_base",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "lerobot/pi0_base",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -7477,7 +8631,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/lerobot/smolvla_base",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "lerobot/smolvla_base",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -7573,7 +8740,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Lightricks/LTX-2.3",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Lightricks/LTX-2.3",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -7668,7 +8848,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/microsoft/TRELLIS.2-4B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "microsoft/TRELLIS.2-4B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -7763,7 +8956,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/nvidia/GR00T-N1.6-3B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "nvidia/GR00T-N1.6-3B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -7858,7 +9064,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/speridlabs/idol",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "speridlabs/idol",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -7953,7 +9172,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/allenai/Olmo-3-1125-32B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "allenai/Olmo-3-1125-32B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -8048,7 +9280,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B-Base",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Qwen/Qwen3.5-35B-A3B-Base",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -8143,7 +9388,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Qwen/Qwen3.8-27B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -8240,7 +9498,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Qwen/Qwen3.5-0.8B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Qwen/Qwen3.5-0.8B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -8337,7 +9608,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/google/siglip2-base-patch16-224",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "google/siglip2-base-patch16-224",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -8434,7 +9718,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Qwen/Qwen3-VL-2B-Instruct",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -8531,7 +9828,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/ibm-granite/granite-speech-5.0-2b",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "ibm-granite/granite-speech-5.0-2b",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -8628,7 +9938,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Qwen/Qwen3-ASR-1.7B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Qwen/Qwen3-ASR-1.7B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -8724,7 +10047,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN"
+      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/ACERobotics/Puffin-World",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "ACERobotics/Puffin-World",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -8819,7 +10155,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/boltz-community/boltz-2",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "boltz-community/boltz-2",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -8915,7 +10264,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN"
+      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/bytedance-research/Lance",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "bytedance-research/Lance",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -9012,7 +10374,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/EPFLiGHT/fully-open-meditron",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "EPFLiGHT/fully-open-meditron",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -9107,7 +10482,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/EPFLiGHT/OLMo-2-32B-MeditronFO",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "EPFLiGHT/OLMo-2-32B-MeditronFO",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -9202,7 +10590,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/facebook/esm2_t33_650M_UR50D",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "facebook/esm2_t33_650M_UR50D",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -9297,7 +10698,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/HuggingFaceBio/Carbon-X",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "HuggingFaceBio/Carbon-X",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -9392,7 +10806,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/ibm-granite/granite-switch-4.1-30b",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "ibm-granite/granite-switch-4.1-30b",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -9490,7 +10917,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/IFM/SFT-Reasoning",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "IFM/SFT-Reasoning",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -9585,7 +11025,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/LiquidAI/LFM3-Omni-2B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "LiquidAI/LFM3-Omni-2B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -9680,7 +11133,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/m-a-p/YuE2-3B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "m-a-p/YuE2-3B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -9776,7 +11242,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN"
+      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -9871,7 +11350,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/microsoft/VibeVoice-1.5B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "microsoft/VibeVoice-1.5B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -9967,7 +11459,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "mistralai/Mistral-Small-4-119B-2603",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -10062,7 +11567,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Nanbeige/Nanbeige4.3-33B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Nanbeige/Nanbeige4.3-33B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -10157,7 +11675,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -10252,7 +11783,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/OctoMed/OctoMed-32B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "OctoMed/OctoMed-32B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -10348,7 +11892,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN"
+      "acquisition_preparation": "STOP_FULL_TOTAL_PARAMETERS_UNKNOWN",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/OnomaAIResearch/Illustrious-XL-v1.1",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "OnomaAIResearch/Illustrious-XL-v1.1",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -10444,7 +12001,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/openai/gpt-oss-120b",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "openai/gpt-oss-120b",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -10539,7 +12109,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/OpenMOSS-Team/MOSS-TTS-v1.5",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "OpenMOSS-Team/MOSS-TTS-v1.5",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -10634,7 +12217,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Qwen/Qwen-Image-2.1",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Qwen/Qwen-Image-2.1",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -10729,7 +12325,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -10824,7 +12433,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -10919,7 +12541,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -11014,7 +12649,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/tencent/Hunyuan3D-2.1",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "tencent/Hunyuan3D-2.1",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -11109,7 +12757,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Tongyi-MAI/Z-Image-Turbo",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -11204,7 +12865,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Wan-AI/Wan2.2-TI2V-5B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -11299,7 +12973,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/google/gemma-4-31B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "google/gemma-4-31B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -11395,7 +13082,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Laxhar/noobai-XL-Vpred-1.0",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Laxhar/noobai-XL-Vpred-1.0",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -11491,7 +13191,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/StanfordAIMI/CheXagent-8b",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "StanfordAIMI/CheXagent-8b",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -11588,7 +13301,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/EPFLiGHT/Apertus-70B-MeditronFO",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "EPFLiGHT/Apertus-70B-MeditronFO",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -11684,7 +13410,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/Nanbeige/Nanbeige4.3-33B-Base",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "Nanbeige/Nanbeige4.3-33B-Base",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -11790,9 +13529,29 @@
           "source": "https://huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles-Foundation4D",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles-Foundation4D",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles-Foundation4D",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "nvidia/PhysicalAI-Autonomous-Vehicles-Foundation4D",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -11887,7 +13646,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/allenai/pixmo-cap",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "allenai/pixmo-cap",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "dataset",
@@ -11982,7 +13754,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/datasets/allenai/tulu-3-sft-mixture",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "allenai/tulu-3-sft-mixture",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -12077,7 +13862,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/LiquidAI/d1-omni-600M",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "LiquidAI/d1-omni-600M",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -12172,7 +13970,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/PerceptronAI/Isaac-0.2-2B-Preview",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "PerceptronAI/Isaac-0.2-2B-Preview",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -12267,7 +14078,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/tencent/Hy-SimulMT-30B-A3B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "tencent/Hy-SimulMT-30B-A3B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -12362,7 +14186,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/LiquidAI/LFM3-1.7B-Base",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "LiquidAI/LFM3-1.7B-Base",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -12457,7 +14294,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/nvidia/nemotron-labs-unified-asr-0.6b",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "nvidia/nemotron-labs-unified-asr-0.6b",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -12552,7 +14402,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/qvac/TranscribePsy-250M-EU",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "qvac/TranscribePsy-250M-EU",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -12648,7 +14511,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/lightonai/LightOnOCR-3-4B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "lightonai/LightOnOCR-3-4B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -12744,7 +14620,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/m-a-p/MERT-v2-30s",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "m-a-p/MERT-v2-30s",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -12840,7 +14729,20 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES"
+      "acquisition_preparation": "RESEARCH_METADATA_ONLY_NO_LOCK_NO_DOWNLOAD_UNTIL_ALL_GATES",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -12941,9 +14843,29 @@
           "source": "https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored",
           "evidence_scope": "HUGGING_FACE_APP_METADATA_RECHECKED_2026_11_03",
           "individual_permission_verified": false
+        },
+        {
+          "restriction": "HUGGING_FACE_GATED_REPO",
+          "verified_at": "2026-11-08",
+          "source": "https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored",
+          "evidence_scope": "CONNECTED_HF_HUB_REPO_DETAILS_METADATA",
+          "individual_permission_verified": false
         }
       ],
-      "acquisition_preparation": "DO_NOT_PREPARE_150B_OR_ABOVE"
+      "acquisition_preparation": "DO_NOT_PREPARE_150B_OR_ABOVE",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "orcarouter/Qwen3.8-Flash-Next-Uncensored",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "gated",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     },
     {
       "asset_kind": "model",
@@ -13039,25 +14961,48 @@
         "followup": "Confirm original publisher-authorized mirrors, exact snapshot revisions, per-file SHA-256 and right to re-acquire. A functional substitute is NOT an identical snapshot."
       },
       "confirmed_restrictions": [],
-      "acquisition_preparation": "DO_NOT_PREPARE_150B_OR_ABOVE"
+      "acquisition_preparation": "DO_NOT_PREPARE_150B_OR_ABOVE",
+      "listing_recheck_2026_11_08": {
+        "checked_on": "2026-11-08",
+        "source_primary_url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+        "method": "authenticated_hugging_face_hub_repo_details_metadata_read_only",
+        "requested_repo_id": "mistralai/Mistral-Large-4-1T-A52B",
+        "exact_repo_id_resolved": true,
+        "observed_listing_status": "public_listing",
+        "evidence_scope": "repository metadata only; no model, dataset, checkpoint, license agreement or gated file fetched",
+        "individual_download_authorization_verified": false,
+        "license_full_text_verified": false,
+        "fixed_revision_and_file_hashes_verified": false,
+        "source_change_since_2026_11_03": "none_observed_in_listing_status"
+      }
     }
   ],
   "risk_probability_policy": "No numeric probability without empirical source-frequency design. Forecast is stress testing, not a prediction.",
   "distribution_alternatives_policy": "No alternate host is counted as an authorized same-weight mirror without original license permission, exact revision, file-level SHA-256 equality; all 132 remain unverified.",
   "latest_differential_review": {
     "date": "2026-11-08",
-    "method": "Exa first-party source search; no fresh per-asset Hub API or personal authorization verification",
-    "sources": [
-      "https://huggingface.co/docs/hub/models-gated",
-      "https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report/policy-approaches-recommendations/recommendations",
-      "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/how-does-ai-act-apply-general-purpose-ai-models-released-open-source",
-      "https://stability.ai/news-updates/license-update",
-      "https://goingdutch.ai/en/posts/geitje-takedown/"
+    "method": "Exa first-party primary-source research plus authenticated Hugging Face hub_repo_details read-only metadata for all 132 requested IDs",
+    "primary_source_urls": [
+      "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-93",
+      "https://digital-strategy.ec.europa.eu/en/policies/enforcement-ai-act",
+      "https://www.federalregister.gov/documents/2025/01/15/2025-00636/framework-for-artificial-intelligence-diffusion",
+      "https://bfl.ai/blog/flux-1-kontext-dev",
+      "https://huggingface.co/content-policy",
+      "https://huggingface.co/docs/hub/models-gated"
     ],
-    "asset_specific_status_as_of_date": "NOT_RECHECKED",
+    "asset_specific_listing_status_as_of_date": "2026-11-08",
+    "requested_repo_id_count": 132,
+    "exact_repo_id_match_count": 131,
+    "counts": {
+      "gated": 24,
+      "public_listing": 107,
+      "unresolved_id_alias": 1
+    },
+    "status_changes_in_131_exact_matches": 0,
+    "unresolved_alias": "Edge0/Audio8-TTS-Realistic-0.6b -> Edge0/Audio8-TTS-Realistic-Air; revision/sha256 identity unverified",
     "priority_changes": 0,
-    "reason": "No new asset-specific evidence sufficient to revise existing ordinal ranks",
-    "policy": "No inferred legal-ban probabilities; all unknown total parameter counts block acquisition preparation; >=150B excluded; access permission never presumed",
-    "note": "Previous 2026-11-03 statuses remain historical observations, not 2026-11-08 verification"
+    "reason": "All 131 exact-ID listing statuses still agree with the November 3 observation. New legal-power and historical-license evidence affects contingency framing, not model-specific realized takedown or download authorization.",
+    "limits": "Read-only Hub listing data is NOT per-user gated artifact authorization, complete license review, verified immutable revision, trusted mirror, or model file acquisition.",
+    "policy": "No numeric ban probabilities; 12 unknown parameter models have acquisition preparation blocked; >=150B 2 models excluded; no download approval."
   }
 }
