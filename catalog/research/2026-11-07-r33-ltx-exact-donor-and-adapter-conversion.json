@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "round": "R33",
+  "research_date": "2026-11-07",
+  "parent_round": "R32",
+  "baseline_main_commit": "fa4f5881f63d3e35fabe799e631b00eb9e77d1c9",
+  "goal": "Fix incorrect donor version, lock exact Git LFS file bytes/revisions and differentiate original FP32 RL adapter from its BF16 ComfyUI conversion.",
+  "primary_files": [
+    {
+      "role": "STUUBS_ACTUAL_10EROS_V15_DONOR",
+      "repo_id": "TenStrip/LTX2.3-10Eros",
+      "file": "10Eros_v1.5_bf16.safetensors",
+      "source_git_commit": "99be68b2b6a3f68cde86b3b70e6f71bc26e726fb",
+      "bytes": 46139886366,
+      "sha256": "2383d87bc1eea4fc00b73a52eb177bea868c2c46da621511acf9e54b92309f24",
+      "source": "https://huggingface.co/TenStrip/LTX2.3-10Eros/commit/99be68b2b6a3f68cde86b3b70e6f71bc26e726fb",
+      "evidence_class": "CREATOR_NOTICE_PLUS_UPSTREAM_GIT_LFS_POINTER",
+      "new_trained_state": "YES_AN_ORIGINAL_FINETUNED_SOURCE_NOT_QUANT_ONLY",
+      "decision": "HOLD_LINEAGE_VERIFIED_CAPACITY_NOT_APPROVED",
+      "note": "R32 listed 10Eros v1 as possible donor; Stuubs NOTICE unambiguously says v1.5. This is original v1.5 BF16, not same as v1 and not a delta."
+    },
+    {
+      "role": "OMNINFT_LTX23_ORIGINAL_FP32_SOURCE",
+      "repo_id": "zghhui/OmniNFT",
+      "file": "LTX-2.3-RL-Lora/adapter_model.safetensors",
+      "source_git_commit": "f9546e6c51b02b901abc8b2cb0716439594eff8a",
+      "bytes": 1233512728,
+      "sha256": "c8e59836f28a6a7d2660f2652a156e77493ba82fb53a1e1e84f258fdf94ac608",
+      "source": "https://huggingface.co/zghhui/OmniNFT/commit/f9546e6c51b02b901abc8b2cb0716439594eff8a",
+      "evidence_class": "ORIGINAL_AUTHOR_GIT_LFS_POINTER",
+      "new_trained_state": "YES_LEARNED_RL_DELTA",
+      "decision": "CONDITIONAL_PREFER_ORIGINAL_OVER_CONVERTED_COPY",
+      "note": "Rank32 alpha64 from adapter_config. Original is FP32 per Kijai conversion note. Requires matched LTX2.3 base, incompatible with arbitrary LTX2.5 unless recipe converted."
+    },
+    {
+      "role": "OMNINFT_LTX23_KIJAI_BF16_RUNTIME_CONVERSION",
+      "repo_id": "Kijai/LTX2.3_comfy",
+      "file": "loras/LTX-2.3-OmniNFT-RL-Lora_bf16.safetensors",
+      "source_git_commit": "ebb24a4a410308bd701438159f341a4060edd87f",
+      "bytes": 616948520,
+      "sha256": "204b491f76da5c7ef0998dee636b4db695a00d28729ebccfda8dfdc3c37df63c",
+      "source": "https://huggingface.co/Kijai/LTX2.3_comfy/commit/ebb24a4a410308bd701438159f341a4060edd87f",
+      "evidence_class": "CONVERTER_REPO_GIT_LFS_POINTER_AND_README",
+      "new_trained_state": "NO_SAME_RL_DELTA_REPRESENTED_IN_BF16",
+      "decision": "DO_NOT_ADD_INDEPENDENT_MODEL_SLOT; RUNTIME_ALTERNATIVE_ONLY",
+      "note": "Converted from FP32 to ComfyUI BF16. README says UI strength=2.0 to match alpha64/rank32. Same training result as original, different binary; cannot reconstruct original FP32 losslessly."
+    }
+  ],
+  "independent_learnt_states_count": 2,
+  "original_rl_conversion": {
+    "original": "LTX-2.3-RL-Lora/adapter_model.safetensors",
+    "converted": "loras/LTX-2.3-OmniNFT-RL-Lora_bf16.safetensors",
+    "same_learned_adapter": true,
+    "quantization_only_copy": true,
+    "metadata_sha_identical": false,
+    "original_rank": 32,
+    "original_alpha": 64,
+    "ui_strength_needed_for_kijai": 2,
+    "conversion": "fp32 to bf16 in Kijai README, ComfyUI key format. Do not mistake loss of precision for distinct RL training",
+    "archive_incremental_if_exact_original_saved_bytes": 0,
+    "conversion_is_reconstructible_exactly": false
+  },
+  "corrected_lineage": {
+    "stubelius_notice_source": "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5/blob/main/NOTICE.txt",
+    "source_notice_full_commit": "febb0f007e53b87e0859a2709eb044bec35b1e44",
+    "stuubs_current_full_repo_commit_observed": "829cf2f7cbdf79872ff365787ba50f80006efe76",
+    "stuubs_merges_10Eros_version": "v1.5",
+    "prior_R32_v1_is_not_named_donor": true,
+    "stuubs_v1_bf16_sha_from_R32": "6e0ff9c9d8a1d0747579f1f50d10a9c3822a9a8f265322a5edd476044b0fbf4f",
+    "stuubs_v1_bf16_exact_bytes": null,
+    "approximate_42GB_not_a_final_lock": true,
+    "loras": [
+      "Sulphur2/10Eros v1.5 task vector into LTX2.5",
+      "LTX2.5 distilled LoRA",
+      "OmniNFT LTX2.3 via Kijai conversion"
+    ],
+    "finding": "At least two distinct preserved research states are v1.5 upstream source and original OmniNFT RL; a converted BF16 adapter is not a third trained state."
+  },
+  "chris_mirror_caveat": {
+    "original": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+    "historical_duplicate": "frtertaer/LTX-2.5-uncensored-v1.1-FP8",
+    "mirror_creation_commit": "66cfb26ed3639ccf9fb1360b37a523ed4f9c5c54",
+    "mirror_created_date": "2026-09-14",
+    "original_repo_changed_after_mirror": true,
+    "original_changes_observed": [
+      "2026-09-15 new weights and README",
+      "2026-10-15 workflow example"
+    ],
+    "original_mirror_current_weight_sha_matched": false,
+    "decision": "PROVENANCE_RECIPE_CONDITIONAL; NO_ORIGINAL_MIRROR_DEDUP_CREDIT",
+    "reference": "https://huggingface.co/ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8/commits/main"
+  },
+  "additional_quant_quality_counterexample": {
+    "repo_id": "JoaoZaokk/10Eros-v1.5-W4A8-ConvRot",
+    "source": "https://huggingface.co/JoaoZaokk/10Eros-v1.5-W4A8-ConvRot",
+    "same_original_state": "TenStrip/LTX2.3-10Eros/10Eros_v1.5_bf16.safetensors",
+    "variants": [
+      {
+        "file": "10Eros_v1.5_bf16_w4a8.safetensors",
+        "bytes": 16641963302,
+        "scheme": "W4A8 video+audio",
+        "quality_claim": "Author reports metallic hiss on audio."
+      },
+      {
+        "file": "10Eros_v1.5_bf16_w4a8_audioint8.safetensors",
+        "bytes": 19107895342,
+        "scheme": "W4A8 video + INT8 audio",
+        "quality_claim": "Author reports removing hiss, but no controlled human score."
+      }
+    ],
+    "hiss_evidence": "QUANTIZER_CREATOR_LISTENING_TEST_NOT_INDEPENDENT",
+    "hardware": "ComfyUI Ampere/Ada SM8.x 4bit kernels; H100/Blackwell runtime not measured",
+    "source_bf16_eval_hardware": "BF16 cloud ComfyUI used Gemma BF16 text encoder, local W4A8/INT8 used different FP8 text encoder; therefore not same full stack",
+    "decision": "DO_NOT_ADD_AS_NEW_MODELS; record how compression may harm video sound, and pick ONE execution format only when measured"
+  },
+  "licensing": {
+    "ltx_license": "https://github.com/Lightricks/LTX-2/blob/main/LICENSE-2_x",
+    "upstream_derivative_applies": true,
+    "omni_hf_license": "apache-2.0",
+    "omni_github_statement": "Research use only",
+    "omni_weights_rights_resolution": "UNRESOLVED",
+    "chris_hf_license": "unknown",
+    "weight_download_authorized": false
+  },
+  "assumptions": {
+    "publisher_lfs_sha256_not_recomputed_after_download": true,
+    "base_repo_sha_does_not_imply_parent_rights": true,
+    "comfyui_dtype_rounding_not_new_training": true,
+    "actual_selected_bytes_including_dependencies": null,
+    "actual_disk_bytes_available_verified": null,
+    "weight_quality_actual_user_hardware_tested": false,
+    "unit": "byte, decimal when GB is used; cache/staging not included"
+  },
+  "decision": {
+    "new_select": 0,
+    "new_formal_conditional": 0,
+    "new_research_only_adapters": 1,
+    "existing_portfolio_untouched": true,
+    "download_queue_changes": 0,
+    "model_downloads": 0,
+    "old_R32_not_deleted": true,
+    "archive_target_bytes": 4000000000000,
+    "minimum_free_floor_bytes": 200000000000,
+    "blocked_if_license_unknown": true,
+    "blocked_if_unpinned_dependencies": true
+  },
+  "source_list": [
+    "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5/blob/main/NOTICE.txt",
+    "https://huggingface.co/TenStrip/LTX2.3-10Eros/commit/99be68b2b6a3f68cde86b3b70e6f71bc26e726fb",
+    "https://huggingface.co/zghhui/OmniNFT/commit/f9546e6c51b02b901abc8b2cb0716439594eff8a",
+    "https://huggingface.co/Kijai/LTX2.3_comfy/commit/ebb24a4a410308bd701438159f341a4060edd87f",
+    "https://huggingface.co/ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8/commits/main",
+    "https://huggingface.co/JoaoZaokk/10Eros-v1.5-W4A8-ConvRot"
+  ],
+  "statics": {
+    "distinct_files": 3,
+    "metadata_hash_pattern_verified": true,
+    "hash_equality_not_equated_to_same_learning": true,
+    "source_v15_not_v1": true
+  }
+}
