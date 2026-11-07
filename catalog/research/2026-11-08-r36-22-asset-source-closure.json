@@ -1,0 +1,927 @@
+{
+  "schema_version": 1,
+  "round": "R36",
+  "date": "2026-11-08",
+  "parent": "catalog/research/2026-11-08-r34-capacity-evidence.json",
+  "main_baseline_sha": "ac40ad953ef33d28c6c44e56f054c1e7f9ab33dd",
+  "purpose": "Resolve 22 active assets with unknown v19 source repo byte size using immutable source file trees, not blindly count extra quants or remove learned specialties",
+  "verification_scope": {
+    "existing_active_assets_reviewed": 22,
+    "model_full_tree_confirmed": 21,
+    "fineweb_dataset_subset_only": 1,
+    "pinned_hf_40char_revisions": 22,
+    "local_full_sha_checks": 0,
+    "full_archive_content_inventory_verified": false,
+    "quality_or_hardware_benchmarks_completed": false,
+    "existing_model_states_changed": 0
+  },
+  "source_records": [
+    {
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "asset_kind": "model",
+      "decision": "conditional",
+      "full_revision_sha": "ab8d7bd81d03117501e4da60cccdff4c80f0eea0",
+      "pinned_file_count": 182,
+      "full_source_repo_bytes": 1645270647302,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 17176647232,
+      "components": [
+        {
+          "path": "RVN-Q4_K_M-multilingual.gguf",
+          "bytes": 16547400224,
+          "sha256": "9ed40ccc8b8432f38b9a85d0ca67928167f5719e8c10bd299e56d34facaf6e61",
+          "sha256_redacted": false,
+          "git_blob_sha1": "c0a07d32a1dfa0aec7a756267314404215731b37"
+        },
+        {
+          "path": "mmproj-Qwen3.8-27B-Q8_0.gguf",
+          "bytes": 629247008,
+          "sha256": "2e968a6af97ce35d8971890b257b9b7edabf20ad91450501fa53162a19ee33eb",
+          "sha256_redacted": false,
+          "git_blob_sha1": "1f53dcb74687a88208cdea802a0ebdb9efbdef5e"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF/tree/ab8d7bd81d03117501e4da60cccdff4c80f0eea0?recursive=true",
+      "model_files_in_repo": 172,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "boltz-community/boltz-2",
+      "asset_kind": "model",
+      "decision": "conditional",
+      "full_revision_sha": "6fdef46d763fee7fbb83ca5501ccceff43b85607",
+      "pinned_file_count": 5,
+      "full_source_repo_bytes": 6204364262,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 6204362719,
+      "components": [
+        {
+          "path": "boltz2_aff.ckpt",
+          "bytes": 2062139170,
+          "sha256": "dcc5cd3722b1c9eaa34267e4ae32f55cbbf1963f4c19319381ccfa30fdd2ca9e",
+          "sha256_redacted": false,
+          "git_blob_sha1": "25a519f867a57d440bb7897b63522cc87aeb3d05"
+        },
+        {
+          "path": "boltz2_conf.ckpt",
+          "bytes": 2286561469,
+          "sha256": "090e82ac8c92f5e943fa1b39e7410a44027bea7243c0bbb3caa67a77fc1428e1",
+          "sha256_redacted": false,
+          "git_blob_sha1": "1b5e3eeb8e8ace389133320c3a45eefd1ee7e7d8"
+        },
+        {
+          "path": "mols.tar",
+          "bytes": 1855662080,
+          "sha256": "39e076d96dbec6b4e86982bbda16f3a53a2a60c9bdc17828d88f6f9a0c7d1fd7",
+          "sha256_redacted": false,
+          "git_blob_sha1": "208ea19ae0a7c18dbc1b224b74c4a33f726f8738"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/boltz-community/boltz-2/tree/6fdef46d763fee7fbb83ca5501ccceff43b85607?recursive=true",
+      "model_files_in_repo": 2,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1",
+      "asset_kind": "model",
+      "decision": "conditional",
+      "full_revision_sha": "aa213272180d6ad0d03f5fb3d597f0f0322647c5",
+      "pinned_file_count": 8,
+      "full_source_repo_bytes": 671173375,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 671151136,
+      "components": [
+        {
+          "path": "chatrlabs-omni-lora-v0.1-bf16.safetensors",
+          "bytes": 671151136,
+          "sha256": "5991a9845bc5251240febf944f653505a00966515b77073f2c639c4dfcba672a",
+          "sha256_redacted": false,
+          "git_blob_sha1": "d4bf56f2db7622a69d5a399b22ed64b2cd46722b"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1/tree/aa213272180d6ad0d03f5fb3d597f0f0322647c5?recursive=true",
+      "model_files_in_repo": 1,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "asset_kind": "model",
+      "decision": "conditional",
+      "full_revision_sha": "592aaa11f13a7e480169455aa885f58c42d89766",
+      "pinned_file_count": 43,
+      "full_source_repo_bytes": 166915795579,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 36468259016,
+      "components": [
+        {
+          "path": "split/diffusion_models/ltx25_uncensored_v1.1-fp8_scaled.safetensors",
+          "bytes": 21473651432,
+          "sha256": "25a62cfdbcf7337c5c610447ce446330d21ccde44c8d31a4ae725bab0a9e9de9",
+          "sha256_redacted": false,
+          "git_blob_sha1": "4802f41758b7046412118830c41387fd234b3b7d"
+        },
+        {
+          "path": "split/text_encoders/gemma4_12b_ltx25_uncensored-int8.safetensors",
+          "bytes": 13157517698,
+          "sha256": "61e0ada28e8e016e5c5bbd7a830b0c4ed4a574a203e0d7d347db6474b77d00c9",
+          "sha256_redacted": false,
+          "git_blob_sha1": "696b7f1f8964ac87fed6d0862855528e93759991"
+        },
+        {
+          "path": "split/vae/ltx25_uncensored_audio_vae.safetensors",
+          "bytes": 364866540,
+          "sha256": "c52733d37f6a7fb7949c3dc0fb468c6cb2169e4d836983a73babb9f0d54837a5",
+          "sha256_redacted": false,
+          "git_blob_sha1": "08403b5a5cf13570829b59c13ad3cafbff6b04e9"
+        },
+        {
+          "path": "split/vae/ltx25_uncensored_video_vae.safetensors",
+          "bytes": 1472223346,
+          "sha256": "847e14ca7f3355debca0cea4eaa24ac0fbcdf0061da054ac89ca638a869ddba3",
+          "sha256_redacted": false,
+          "git_blob_sha1": "4f679fe8f92b8758468fb51aae91d9fe996a4fec"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8/tree/592aaa11f13a7e480169455aa885f58c42d89766?recursive=true",
+      "model_files_in_repo": 15,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "Edge0/Audio8-TTS-Realistic-Air",
+      "asset_kind": "model",
+      "decision": "conditional",
+      "full_revision_sha": "23c305cc013fde378edb459f538317043c993a74",
+      "pinned_file_count": 24,
+      "full_source_repo_bytes": 2565567307,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 2552200087,
+      "components": [
+        {
+          "path": "model.safetensors",
+          "bytes": 1202342528,
+          "sha256": "f590053e980a45ebcbb2e787cff4f2dead932b2b61e5cf54d05664d9764e12d8",
+          "sha256_redacted": false,
+          "git_blob_sha1": "e2d5a8671a8905db8ab9696ab49826c9090f64ec"
+        },
+        {
+          "path": "codec.pth",
+          "bytes": 1349857559,
+          "sha256": "c310505aa11fe2f6cc63b8d3130dc7e77e73227774f5c62575769b1f47a8d048",
+          "sha256_redacted": false,
+          "git_blob_sha1": "688a3a6fbcea352037fd0e5953f5a429c0a5d715"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/Edge0/Audio8-TTS-Realistic-Air/tree/23c305cc013fde378edb459f538317043c993a74?recursive=true",
+      "model_files_in_repo": 2,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2",
+      "asset_kind": "model",
+      "decision": "conditional",
+      "full_revision_sha": "6af1278a92223c717ccea671e4571a5cc135f5d8",
+      "pinned_file_count": 12,
+      "full_source_repo_bytes": 53121584389,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 53088404444,
+      "components": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "bytes": 49171536480,
+          "sha256": "25b9bbda873b017f3aef54234542e4daf322f7117d7ebafa90dce405ea50f547",
+          "sha256_redacted": false,
+          "git_blob_sha1": "ec32ce8e1751528e3b1635f4daf6b0bb194f246f"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "bytes": 3916867964,
+          "sha256": "eb7eaf504f060ecd157ef4e03b1a174ed62f23c8a119d620f63138c1e1396183",
+          "sha256_redacted": false,
+          "git_blob_sha1": "90e12b0c28f4b6937cb43bae37dc7029d87084da"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2/tree/6af1278a92223c717ccea671e4571a5cc135f5d8?recursive=true",
+      "model_files_in_repo": 2,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "HuggingFaceFW/fineweb-edu",
+      "asset_kind": "dataset",
+      "decision": "conditional",
+      "full_revision_sha": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+      "pinned_file_count": 14,
+      "full_source_repo_bytes": null,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "SAMPLE_10BT_ONLY",
+      "selected_weight_or_subset_bytes": 28518193415,
+      "components": [
+        {
+          "path": "sample/10BT/000_00000.parquet",
+          "bytes": 2152819114,
+          "sha256": "b1ba7b2ce4cb5ea6ef42dca40263eabb85f37700d01693a68e9b30a31d78e871",
+          "sha256_redacted": false,
+          "git_blob_sha1": "2df63e03a865d1045dcb477fcdd68635faf226ef"
+        },
+        {
+          "path": "sample/10BT/001_00000.parquet",
+          "bytes": 2152222432,
+          "sha256": "3fcf2dc69cd52503986276d3d2d26a8c356d0f2ea28a0de4fdbda8cf87755693",
+          "sha256_redacted": false,
+          "git_blob_sha1": "c2021c8c564a8a3fca7ba114afc9069bd0bcd2d2"
+        },
+        {
+          "path": "sample/10BT/002_00000.parquet",
+          "bytes": 2151796315,
+          "sha256": "547ae182d132c9f06b6ce63149567208ea9f57630bfd9b1a2938e504f0c9ebd7",
+          "sha256_redacted": false,
+          "git_blob_sha1": "e42928ee6a755554d7f348456ca62a66a9abc08c"
+        },
+        {
+          "path": "sample/10BT/003_00000.parquet",
+          "bytes": 2152437524,
+          "sha256": "22184e6eb25759ddd97783751ffc73e1705dfa2542e630dae1f2a8bac8ee6ddb",
+          "sha256_redacted": false,
+          "git_blob_sha1": "2c9b4a5357740163228979d4887b6639977b650f"
+        },
+        {
+          "path": "sample/10BT/004_00000.parquet",
+          "bytes": 2152338550,
+          "sha256": "33557ddd87a07a4ae6fcaf7a4789c7b484e5cc0c273ca12a65b74200e6d8748b",
+          "sha256_redacted": false,
+          "git_blob_sha1": "29f28906fd7457a4bad8e8181c9432ac90aac030"
+        },
+        {
+          "path": "sample/10BT/005_00000.parquet",
+          "bytes": 2152189947,
+          "sha256": "e08d79927ecb377786572cd854817c748ceb8880878b1a0eb91abf8c85d505ea",
+          "sha256_redacted": false,
+          "git_blob_sha1": "92cc8d92e5e4cc710a53a14c4999373152b83e41"
+        },
+        {
+          "path": "sample/10BT/006_00000.parquet",
+          "bytes": 2152689867,
+          "sha256": "554fa2613c9261d6c9c396caab881de3160175794c6c3e1856bf28a0e9cb9b76",
+          "sha256_redacted": false,
+          "git_blob_sha1": "fb75f6c578c1f731b79ec5982e462e75931a6954"
+        },
+        {
+          "path": "sample/10BT/007_00000.parquet",
+          "bytes": 2150686637,
+          "sha256": "4b7d1f697d4afff7f5f65cb7aa4d83acc6db716da4d46ea23399d0c50608c6e3",
+          "sha256_redacted": false,
+          "git_blob_sha1": "a9d5d796ea550171f13e71995dfd30a77c766437"
+        },
+        {
+          "path": "sample/10BT/008_00000.parquet",
+          "bytes": 2151274846,
+          "sha256": "a6d9dcc0c72ecd7c7f0173c2d06b3a4249a2ccaa94961469d1a522ca689bbf1a",
+          "sha256_redacted": false,
+          "git_blob_sha1": "2535d7e76c7972978eb48a8a8ca4d8b6a718fea1"
+        },
+        {
+          "path": "sample/10BT/009_00000.parquet",
+          "bytes": 2151913277,
+          "sha256": "f836cd3c70b95776699eb6c356b2dbf702816e25dcf39992f5c80a29029d23c3",
+          "sha256_redacted": false,
+          "git_blob_sha1": "a9fcab0229d213864efab5812255f3ff272fc6d4"
+        },
+        {
+          "path": "sample/10BT/010_00000.parquet",
+          "bytes": 2152798864,
+          "sha256": "e5a2eae25f057f0856a10bfae314c6ca8ea8bb08456d2131e9e89b2b8305e2f6",
+          "sha256_redacted": false,
+          "git_blob_sha1": "2c1203939e5139226910db563e21fdf754974e65"
+        },
+        {
+          "path": "sample/10BT/011_00000.parquet",
+          "bytes": 2152323681,
+          "sha256": "db71cf0425bb3d1813a09f12ff1acd6dabdfb91a2e4f141960254ee5a7f036e7",
+          "sha256_redacted": false,
+          "git_blob_sha1": "7f557356b7446c6209ed4e51eb97d65324d75b77"
+        },
+        {
+          "path": "sample/10BT/012_00000.parquet",
+          "bytes": 2152069689,
+          "sha256": "08b47a3e1c25161f796d2f8dbf99ccf60affdebdcea4910833d0d5783315551f",
+          "sha256_redacted": false,
+          "git_blob_sha1": "08bc10f931c49d4f5e2e832af85c88d19f9a30e9"
+        },
+        {
+          "path": "sample/10BT/013_00000.parquet",
+          "bytes": 540632672,
+          "sha256": "b393f51fefab26cd6f4c8f65707c1924f6666c4961a0ebebe04bb57f7ec832de",
+          "sha256_redacted": false,
+          "git_blob_sha1": "3f659cc279c926e8baeda616b688b4e704b7fa09"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/datasets/HuggingFaceFW/fineweb-edu/tree/87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/sample/10BT?recursive=true",
+      "model_files_in_repo": null,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "IFM/K2-Horizon-0.9B",
+      "asset_kind": "model",
+      "decision": "conditional",
+      "full_revision_sha": "c4f92a0d66e2ec6685ed9fff4f6c33e2a217f23b",
+      "pinned_file_count": 17,
+      "full_source_repo_bytes": 2162938584,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 2156600968,
+      "components": [
+        {
+          "path": "model-00000-of-00001.safetensors",
+          "bytes": 2156600968,
+          "sha256": "6392cc67c8dcc7aef1575f94ecdf3c7113b7d0e8f4e7058c4c3c74d4d876c365",
+          "sha256_redacted": false,
+          "git_blob_sha1": "56168c14d47de713442ce6ce40a9ca0c537242ee"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/IFM/K2-Horizon-0.9B/tree/c4f92a0d66e2ec6685ed9fff4f6c33e2a217f23b?recursive=true",
+      "model_files_in_repo": 1,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "asset_kind": "model",
+      "decision": "conditional",
+      "full_revision_sha": "f1a9272aaee6178ff598e3d025dd6709800db968",
+      "pinned_file_count": 6,
+      "full_source_repo_bytes": 17738507975,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 17738321536,
+      "components": [
+        {
+          "path": "Qwen3.8-27B-Uncensored-v2-Q4_K_M.gguf",
+          "bytes": 16810714592,
+          "sha256": "2a76f31d17e879589f2527bb4f657526ce0f4719aa352adc944e13f9f7365972",
+          "sha256_redacted": false,
+          "git_blob_sha1": "2bb4d63553ec39a8d00a7a3d8dd29a7aa84b9f3c"
+        },
+        {
+          "path": "mmproj-Qwen3.8-27B-Uncensored-v2-F16.gguf",
+          "bytes": 927606944,
+          "sha256": "0b296c3155e945290000aa4eb62edec4a5d2d183aae52feca3df39798095a9db",
+          "sha256_redacted": false,
+          "git_blob_sha1": "b3fcaf4b1f693ea2c1488ba07410eef05bc36360"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF/tree/f1a9272aaee6178ff598e3d025dd6709800db968?recursive=true",
+      "model_files_in_repo": 2,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "kandinskylab/Kandinsky-6.0-Lite-distill-5s-Diffusers",
+      "asset_kind": "model",
+      "decision": "conditional",
+      "full_revision_sha": "4c487e8b4aeeb9059e5a77905aa2ddb59ec28f81",
+      "pinned_file_count": 40,
+      "full_source_repo_bytes": 26683134869,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 26644072108,
+      "components": [
+        {
+          "path": "audio_vae/diffusion_pytorch_model.safetensors",
+          "bytes": 1711158920,
+          "sha256": "dfccdf9d0d8d3de270a23b097400f21adb91f4ec683bdc26369cb65b08a5af87",
+          "sha256_redacted": false,
+          "git_blob_sha1": "a8d352aa3e97cef1013162bf527d90f4159e3d7e"
+        },
+        {
+          "path": "text_encoder/model-00001-of-00005.safetensors",
+          "bytes": 3900233256,
+          "sha256": "e97b877e47fde53a6c6e77aafb36e58e91ee9d95c4a3eeac6f1b5c0e6a1c986e",
+          "sha256_redacted": false,
+          "git_blob_sha1": "77da309030fbb0afdd36ab5899f9e515758b50f5"
+        },
+        {
+          "path": "text_encoder/model-00002-of-00005.safetensors",
+          "bytes": 3864726320,
+          "sha256": "a9a300a43b4724eee2abe7c18ceb26768d0ab011eb0cad19d9bfd2476a24d024",
+          "sha256_redacted": false,
+          "git_blob_sha1": "b404bf51eaa1b3231f6ac670e6c1d83fdddc9e5c"
+        },
+        {
+          "path": "text_encoder/model-00003-of-00005.safetensors",
+          "bytes": 3864726424,
+          "sha256": "111223d173e00bbee81cba1216fad28668df3476706b7fd26f4d5b50f8b3a507",
+          "sha256_redacted": false,
+          "git_blob_sha1": "24df661f0acaa6c1d3368ddf2aff98da02a183c2"
+        },
+        {
+          "path": "text_encoder/model-00004-of-00005.safetensors",
+          "bytes": 3864733680,
+          "sha256": "ef47f634fa57d46ee134edcc09f34085a47da1e16c12a2abe0d67118be6d72ed",
+          "sha256_redacted": false,
+          "git_blob_sha1": "b95b193f3c1b6d531efce9fb16a68f260a30a241"
+        },
+        {
+          "path": "text_encoder/model-00005-of-00005.safetensors",
+          "bytes": 1089994880,
+          "sha256": "0c859795ad3a627a9b95bcb762e059d5b768a4a36fdd4affeff269d93fdecc67",
+          "sha256_redacted": false,
+          "git_blob_sha1": "cf27374081ee269586ec091f14f0f82f8ef5ad3e"
+        },
+        {
+          "path": "text_encoder_2/model.safetensors",
+          "bytes": 492263008,
+          "sha256": "5f02387099a844470dcf7e621cb0af6106bb7ce428666e3bdffbd80b777b458a",
+          "sha256_redacted": false,
+          "git_blob_sha1": "ae27cfa1b3cde1cae9d48677676f90c1cf94d75b"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model.safetensors",
+          "bytes": 6381599096,
+          "sha256": "b1b52668561d9138d93bb4da13c9999e615bf569be9f8cf65732d54652447f53",
+          "sha256_redacted": false,
+          "git_blob_sha1": "9dcc5158208e47efcd91049d1b200d85f7bbd18c"
+        },
+        {
+          "path": "vae/diffusion_pytorch_model.safetensors",
+          "bytes": 985943868,
+          "sha256": "7c68a6295f9034a88225fbafb1f3258291a08d57a1fdb938233fa57b1b8f4883",
+          "sha256_redacted": false,
+          "git_blob_sha1": "d97994b0af66370e1e47bcdbc6901bcbd2e08db3"
+        },
+        {
+          "path": "vocoder/diffusion_pytorch_model.safetensors",
+          "bytes": 488692656,
+          "sha256": "abf0536824bdce8dcf8ee10b815770111f4b5d05d0122e1bab4b5719324edca7",
+          "sha256_redacted": false,
+          "git_blob_sha1": "a1b6914323bdd4e773b499ed214f135bd8fc5182"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/kandinskylab/Kandinsky-6.0-Lite-distill-5s-Diffusers/tree/4c487e8b4aeeb9059e5a77905aa2ddb59ec28f81?recursive=true",
+      "model_files_in_repo": 10,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "KlingTeam/LivePortrait",
+      "asset_kind": "model",
+      "decision": "select",
+      "full_revision_sha": "82a4fa6735ca58432b6ce39301b4b9ee066dea47",
+      "pinned_file_count": 24,
+      "full_source_repo_bytes": 2139986693,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 658941445,
+      "components": [
+        {
+          "path": "insightface/models/buffalo_l/2d106det.onnx",
+          "bytes": 5030888,
+          "sha256": "f001b856447c413801ef5c42091ed0cd516fcd21f2d6b79635b1e733a7109dbf",
+          "sha256_redacted": false,
+          "git_blob_sha1": "cdb163d88b5f51396855ebc795e0114322c98b6b"
+        },
+        {
+          "path": "insightface/models/buffalo_l/det_10g.onnx",
+          "bytes": 16923827,
+          "sha256": "5838f7fe053675b1c7a08b633df49e7af5495cee0493c7dcf6697200b85b5b91",
+          "sha256_redacted": false,
+          "git_blob_sha1": "aa586e034379fa5ea5babc8aa73d47afcd0fa6c2"
+        },
+        {
+          "path": "liveportrait/base_models/appearance_feature_extractor.pth",
+          "bytes": 3387959,
+          "sha256": "5279bb8654293dbdf327030b397f107237dd9212fb11dd75b83dfb635211ceb5",
+          "sha256_redacted": false,
+          "git_blob_sha1": "f05eb700c3eca1939c9d4e436bd063217eaa4587"
+        },
+        {
+          "path": "liveportrait/base_models/motion_extractor.pth",
+          "bytes": 112545506,
+          "sha256": "251e6a94ad667a1d0c69526d292677165110ef7f0cf0f6d199f0e414e8aa0ca5",
+          "sha256_redacted": false,
+          "git_blob_sha1": "a118cb8e26afc734be9abd4a6ef0163adcbd63b0"
+        },
+        {
+          "path": "liveportrait/base_models/spade_generator.pth",
+          "bytes": 221813590,
+          "sha256": "4780afc7909a9f84e24c01d73b31a555ef651521a1fe3b2429bd04534d992aee",
+          "sha256_redacted": false,
+          "git_blob_sha1": "0086702b84762790e06c5a4332f36d0857f594fc"
+        },
+        {
+          "path": "liveportrait/base_models/warping_module.pth",
+          "bytes": 182180086,
+          "sha256": "2f61a6f265fe344f14132364859a78bdbbc2068577170693da57fb96d636e282",
+          "sha256_redacted": false,
+          "git_blob_sha1": "e9d4cd1bcb62e2b654c28e32f66e56d51fb10389"
+        },
+        {
+          "path": "liveportrait/landmark.onnx",
+          "bytes": 114666491,
+          "sha256": "31d22a5041326c31f19b78886939a634a5aedcaa5ab8b9b951a1167595d147db",
+          "sha256_redacted": false,
+          "git_blob_sha1": "48eb59185aa92b6efa2855ce99129d8aff248938"
+        },
+        {
+          "path": "liveportrait/retargeting_models/stitching_retargeting_module.pth",
+          "bytes": 2393098,
+          "sha256": "3652d5a3f95099141a56986aaddec92fadf0a73c87a20fac9a2c07c32b28b611",
+          "sha256_redacted": false,
+          "git_blob_sha1": "59f0f3830b78b8587f0bd8b9ef8fd3ffdbd9290a"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/KlingTeam/LivePortrait/tree/82a4fa6735ca58432b6ce39301b4b9ee066dea47?recursive=true",
+      "model_files_in_repo": 18,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "Lightricks/LTX-2.5",
+      "asset_kind": "model",
+      "decision": "conditional",
+      "full_revision_sha": "49b093a39c19169a8a81721dcc541e07e945232f",
+      "pinned_file_count": 17,
+      "full_source_repo_bytes": 200853702264,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "UNAUTHORIZED_GATED_PIPELINE_EXAMPLE",
+      "selected_weight_or_subset_bytes": 38694140060,
+      "components": [
+        {
+          "path": "diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
+          "bytes": 21504034224,
+          "sha256": null,
+          "sha256_redacted": true,
+          "git_blob_sha1": "9307bd1b0500f10b705a1ba96eaad6be476f9d62"
+        },
+        {
+          "path": "text_encoders/gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors",
+          "bytes": 15372969374,
+          "sha256": null,
+          "sha256_redacted": true,
+          "git_blob_sha1": "c76fcd4e2ab13968eecab98b6115e4bdd1795890"
+        },
+        {
+          "path": "vae/ltx-2.5-audio-vae-bf16.safetensors",
+          "bytes": 364866540,
+          "sha256": null,
+          "sha256_redacted": true,
+          "git_blob_sha1": "08403b5a5cf13570829b59c13ad3cafbff6b04e9"
+        },
+        {
+          "path": "vae/ltx-2.5-video-vae-conv-bf16.safetensors",
+          "bytes": 1452269922,
+          "sha256": null,
+          "sha256_redacted": true,
+          "git_blob_sha1": "2905ee1b0e1c63ea00687989c5e5d27b5d15b8b6"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/Lightricks/LTX-2.5/tree/49b093a39c19169a8a81721dcc541e07e945232f?recursive=true",
+      "model_files_in_repo": 14,
+      "source_hash_available_for_all_selected": false
+    },
+    {
+      "repo_id": "LiquidAI/LFM2.5-VL-3B",
+      "asset_kind": "model",
+      "decision": "conditional",
+      "full_revision_sha": "35a118d938ce6d123ac2d371649f24a8efb69058",
+      "pinned_file_count": 10,
+      "full_source_repo_bytes": 6265014358,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 6247065472,
+      "components": [
+        {
+          "path": "model.safetensors",
+          "bytes": 6247065472,
+          "sha256": "8413ba08bc7490552f3cf7611809927a825067e4375f7c39dfcb74df95301908",
+          "sha256_redacted": false,
+          "git_blob_sha1": "4c1c81b8ce967e594fe0aac1cd10fd40b40b1387"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/LiquidAI/LFM2.5-VL-3B/tree/35a118d938ce6d123ac2d371649f24a8efb69058?recursive=true",
+      "model_files_in_repo": 1,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "LiquidAI/LFM2.5-VL-3B-DSpark",
+      "asset_kind": "model",
+      "decision": "conditional",
+      "full_revision_sha": "af77e9306a26e8625fde74d2a3051ab6d21bd955",
+      "pinned_file_count": 5,
+      "full_source_repo_bytes": 558964083,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 558942914,
+      "components": [
+        {
+          "path": "model.safetensors",
+          "bytes": 558942914,
+          "sha256": "1ee593180b41b6789d7bf01879b41ee20244ecd0ad9f66c64ddc79175aeffdfd",
+          "sha256_redacted": false,
+          "git_blob_sha1": "2a9169672477d639e68c4a55c3755bd33860d700"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/LiquidAI/LFM2.5-VL-3B-DSpark/tree/af77e9306a26e8625fde74d2a3051ab6d21bd955?recursive=true",
+      "model_files_in_repo": 1,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "LiquidAI/LFM3-1.7B",
+      "asset_kind": "model",
+      "decision": "conditional",
+      "full_revision_sha": "0dc4268b561499c648c7ba7c9466bf3d8d01517a",
+      "pinned_file_count": 24,
+      "full_source_repo_bytes": 3476072349,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 3457635448,
+      "components": [
+        {
+          "path": "model.safetensors",
+          "bytes": 3457635448,
+          "sha256": "135922caef64e81e52af88ede8b7c3ddaa9d6da220a9737fb3065275dbfb4330",
+          "sha256_redacted": false,
+          "git_blob_sha1": "fe4026d62a6850c14abd481137e151920a37072f"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/LiquidAI/LFM3-1.7B/tree/0dc4268b561499c648c7ba7c9466bf3d8d01517a?recursive=true",
+      "model_files_in_repo": 1,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "OpenMOSS-Team/MOSS-TTS-v1.5",
+      "asset_kind": "model",
+      "decision": "select",
+      "full_revision_sha": "cdd3b911b1585e3f2dbc7775ef10f9926f58850a",
+      "pinned_file_count": 22,
+      "full_source_repo_bytes": 16995761910,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 16979739072,
+      "components": [
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "bytes": 4932667368,
+          "sha256": "749b82d07cebea77dd15af365e2efeb1dc0dd54537f7010795fdf42f520743a9",
+          "sha256_redacted": false,
+          "git_blob_sha1": "b2e20dc4c501eb79166c54810542c9f6d9fbaba5"
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "bytes": 4915961640,
+          "sha256": "4d891c8adb8bf9c135e8a44cd9f003f1dbf8b09278ced48d5af1fe7d989efb39",
+          "sha256_redacted": false,
+          "git_blob_sha1": "611a81237e577ab68b445dd3a35aedf3d5297590"
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "bytes": 4983069760,
+          "sha256": "111013e05174e67748443eafdd4d64c051292d0e5fce2cac23a16988b661eea1",
+          "sha256_redacted": false,
+          "git_blob_sha1": "e512bc209d20b2e1dedb99d56f9c5a6b599b0871"
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "bytes": 2148040304,
+          "sha256": "951ee88cf85996ee5c39441ace6e50f52894adad5da42ad2314b9a9db7f940b8",
+          "sha256_redacted": false,
+          "git_blob_sha1": "e9f63538bcdb8900b27d61dde5dcb37249987857"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/OpenMOSS-Team/MOSS-TTS-v1.5/tree/cdd3b911b1585e3f2dbc7775ef10f9926f58850a?recursive=true",
+      "model_files_in_repo": 4,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+      "asset_kind": "model",
+      "decision": "select",
+      "full_revision_sha": "fd4b254389122332181a7c3db7f27e918eec64e3",
+      "pinned_file_count": 13,
+      "full_source_repo_bytes": 4544229700,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 4539706836,
+      "components": [
+        {
+          "path": "model.safetensors",
+          "bytes": 3857413744,
+          "sha256": "38fc7fc51c5e776e840414b6fd443962e9411b9654888fd7913e4da643cb857c",
+          "sha256_redacted": false,
+          "git_blob_sha1": "ddd8a08fb25fddc128a33dd3f7352c778acce927"
+        },
+        {
+          "path": "speech_tokenizer/model.safetensors",
+          "bytes": 682293092,
+          "sha256": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+          "sha256_redacted": false,
+          "git_blob_sha1": "026d66bfb5d730dcfd56450c5e9e51b3ef4e0712"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/Qwen/Qwen3-TTS-12Hz-1.7B-Base/tree/fd4b254389122332181a7c3db7f27e918eec64e3?recursive=true",
+      "model_files_in_repo": 2,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "ResembleAI/chatterbox",
+      "asset_kind": "model",
+      "decision": "select",
+      "full_revision_sha": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+      "pinned_file_count": 18,
+      "full_source_repo_bytes": 13866212931,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "UNDECIDED_MULTI_VERSION_TTS",
+      "selected_weight_or_subset_bytes": null,
+      "components": null,
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/ResembleAI/chatterbox/tree/5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18?recursive=true",
+      "model_files_in_repo": 12,
+      "source_hash_available_for_all_selected": false
+    },
+    {
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "asset_kind": "model",
+      "decision": "conditional",
+      "full_revision_sha": "829cf2f7cbdf79872ff365787ba50f80006efe76",
+      "pinned_file_count": 14,
+      "full_source_repo_bytes": 195942118539,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 42008732600,
+      "components": [
+        {
+          "path": "ltx2.5-Stubelius_remix_v1_bf16.safetensors",
+          "bytes": 42008732600,
+          "sha256": "6e0ff9c9d8a1d0747579f1f50d10a9c3822a9a8f265322a5edd476044b0fbf4f",
+          "sha256_redacted": false,
+          "git_blob_sha1": "3a5981db8bfe9a3dfb54af820c4a49fb66e8fbd8"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/Stuubs/Stubelius_Remix_Ltx2.5/tree/829cf2f7cbdf79872ff365787ba50f80006efe76?recursive=true",
+      "model_files_in_repo": 7,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati",
+      "asset_kind": "model",
+      "decision": "conditional",
+      "full_revision_sha": "59004a9b6f75bc39e78790d7aca6b1adb6e4b7ac",
+      "pinned_file_count": 10,
+      "full_source_repo_bytes": 190815045,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 189484448,
+      "components": [
+        {
+          "path": "model.safetensors",
+          "bytes": 189484448,
+          "sha256": "24c02955743f5b918dff4e8709075ac7d9a05255739545ce1543ae10e72c8349",
+          "sha256_redacted": false,
+          "git_blob_sha1": "903686bd9c345b0f2e3ee8bc0c1eedf16949823b"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/udgamlabs/Lilavati/tree/59004a9b6f75bc39e78790d7aca6b1adb6e4b7ac?recursive=true",
+      "model_files_in_repo": 1,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati-Checker",
+      "asset_kind": "model",
+      "decision": "conditional",
+      "full_revision_sha": "206b53c0e491ff1d88dbc48862332b7e63200303",
+      "pinned_file_count": 8,
+      "full_source_repo_bytes": 190676375,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 189484448,
+      "components": [
+        {
+          "path": "model.safetensors",
+          "bytes": 189484448,
+          "sha256": "b537563da101acc99fd800ae8798ce1f287d469da29f43ba824ab49d36ed164a",
+          "sha256_redacted": false,
+          "git_blob_sha1": "e3ef60c4a784339815ee989961133693de8846ef"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/udgamlabs/Lilavati-Checker/tree/206b53c0e491ff1d88dbc48862332b7e63200303?recursive=true",
+      "model_files_in_repo": 1,
+      "source_hash_available_for_all_selected": true
+    },
+    {
+      "repo_id": "usezn/Galvanize-3",
+      "asset_kind": "model",
+      "decision": "select",
+      "full_revision_sha": "597237be3b0fabbf5d70ff16ce95fad14a591f20",
+      "pinned_file_count": 13,
+      "full_source_repo_bytes": 1160571956,
+      "full_dataset_repo_bytes_known": false,
+      "selected_example_kind": "RESEARCH_FILE_SELECTION_NOT_FINAL_MANIFEST",
+      "selected_weight_or_subset_bytes": 562583392,
+      "components": [
+        {
+          "path": "model.safetensors",
+          "bytes": 562583392,
+          "sha256": "a17273035cf5f52b6363d3420695c8809be33913ef6ece4bd72927bf93741305",
+          "sha256_redacted": false,
+          "git_blob_sha1": "22145bdebda89e00b33ca0baa29f84fc7a577da4"
+        }
+      ],
+      "fully_complete_dependency_and_code_manifest": false,
+      "source_api_url": "https://huggingface.co/api/models/usezn/Galvanize-3/tree/597237be3b0fabbf5d70ff16ce95fad14a591f20?recursive=true",
+      "model_files_in_repo": 2,
+      "source_hash_available_for_all_selected": true
+    }
+  ],
+  "derived": {
+    "heretic": {
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "full_source_bytes": 1645270647302,
+      "q4_multilingual_plus_projector_bytes": 17176647232,
+      "unused_source_formats_if_only_this_example_bytes": 1628094000070,
+      "multiple_quant_and_older_ARA_variants": true,
+      "does_not_prove_unneeded_different_ARA_stages": true
+    },
+    "official_ltx": {
+      "repo_id": "Lightricks/LTX-2.5",
+      "gated": "auto",
+      "file_tree_bytes": 200853702264,
+      "example_distilled_int8_weights_bytes": 38694140060,
+      "required_source_sha_masked": true,
+      "final_lock_blocked": true,
+      "dev_and_distilled_stages_may_have_separate_archival_value": true
+    },
+    "fineweb": {
+      "repo_id": "HuggingFaceFW/fineweb-edu",
+      "sample_path": "sample/10BT",
+      "sample_file_count": 14,
+      "sample_bytes": 28518193415,
+      "full_dataset_total_bytes": null,
+      "other_sample_dirs": [
+        "sample/100BT",
+        "sample/350BT"
+      ],
+      "possible_overlap_unverified": true
+    },
+    "complementary": {
+      "liquid_vlm_target_plus_drafter_weight_bytes": 6806008386,
+      "lilavati_generator_plus_checker_weight_bytes": 378968896,
+      "lilavati_same_bytes_but_different_sha": true,
+      "tts_audio8_model_and_codec_bytes": 2552200087
+    },
+    "lineage": {
+      "chris_fp8_pipeline_research_bytes": 36468259016,
+      "chris_mirror_is_same_weight_state_by_15_source_sha": true,
+      "stuubs_v1_bf16_bytes": 42008732600,
+      "interpretic_immutable_prior_weights_match_current": true,
+      "chatr_parent_base_dependency_not_included": true,
+      "liveportrait_people_and_animals_different_trained_stages": true,
+      "chatterbox_distinct_versions_not_yet_separated": true
+    }
+  },
+  "source_total_bytes_across_21_models_not_the_download_need": 2367517839845,
+  "research_recommendation": {
+    "model_storage_units": "distinct trained weight state + needed support closure. A transform/quant is a representation, not a separate model.",
+    "strict_noncompensatory_gates": [
+      "official gated and license/access check",
+      "exact chosen files+sha+revision",
+      "safetensors GGUF torch loader/backend and ABI",
+      "performance vs closest incumbent",
+      "physical user disk free and 200GB reserve",
+      "user explicit download approval"
+    ],
+    "do_not_treat_source_sum_as_archival_consumption": true,
+    "do_not_count_datasets_entire_repo_from_14file_sample": true,
+    "do_not_skip_quantized_specials_just_because_file_name_is_gguf": true,
+    "distinct_deployment_pairs_are_complementary_not_duplicates": true,
+    "no_approved_downloads": true,
+    "no_disk_changes": true,
+    "archive_budget_bytes": 4000000000000,
+    "minimum_free_bytes": 200000000000
+  },
+  "followups": [
+    "For Chatterbox v3 versus v2, determine which T3/S3/VE files form an exact complete legal inference stack; consider unique historical version if justified.",
+    "For the 21 known model repo sizes, fill a staged selected-components budget only after dependencies and runtime are checked; LTX gated hashes blocked.",
+    "FineWeb 10BT sample 14 LFS shards: audit dataset license and overlap with the 100BT/350BT samples before optional acquisition.",
+    "Verify real machine free bytes and existing SHA matches; no false capacity claim based on repo totals."
+  ]
+}
