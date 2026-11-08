@@ -522,3 +522,86 @@ v9母集団は重複のない132資産（モデル109、データ23）。調査�
 ## 15. 〈次に考える問い〉：失われると困る「重み」ではなく「権利を含む再現単位」は何か
 
 **独立に学習した重み、正規の利用権限、依存Codec/Encoder、固定revision、バイト列のハッシュを一体の再現可能な単位として定義したとき、現在のP0は何件残るか。** 単純な危険性や規制連鎖より、全条件を同時に満たす保全実現性で順位を再設計する必要がある。
+
+## 16. 2026-11-08：P0全22件の保存実体・契約継続性再監査
+
+**対象固定**：v9の132資産から既存P0の22件（モデル12／データ10）だけを、2026-11-08の一次配布元・契約・原本構成で再監査した。ここでの「P0」は**調査の優先度**であり、取得優先度・確率・許可を表さない。既存P0/P1/P2/P3/PXの件数、現行v27、本体取得キューは変更していない。
+
+### 16.1 本当に保存できる対象を区別した重要確認事項
+
+| 対象 | 一次資料 | 確認した実体と保全上の帰結 |
+| --- | --- | --- |
+| Granary-v2 | [NVIDIA](https://huggingface.co/datasets/nvidia/Granary-v2) | 48言語・16音声コーパス・約463,062時間分の**学習ラベル/指示manifest**。raw音声は含まれず、各配布元の別契約。Hub合計約112GB。 |
+| LAION Re-LAION | [LAION FAQ](https://laion.ai/faq/) | URL・ALTテキスト等の**索引**。元画像は原ホストが保有し、索引のCC-BYから元画像の複製権は発生しない。対象Hub索引約481GB。 |
+| The Stack v2 | [BigCode](https://huggingface.co/datasets/bigcode/the-stack-v2/blob/main/README.md) | HubのSWHID/出典とSoftware Heritage側のrawコードは別。bulk契約・権利者opt-out反映・最新版への更新義務を区別。 |
+| StarCoderData | [BigCode](https://huggingface.co/datasets/bigcode/starcoderdata) | 元の訓練コーパスの説明はコード783GB等、Hub表示約311GB。圧縮、スコープ、版の差は未同定。The Stack v2のID索引と同一資産ではない。 |
+| WildChat-1M | [AllenAI](https://huggingface.co/datasets/allenai/WildChat-1M/blob/main/README.md) | 作者は2024-06-26 ODC-BYへ変更したと説明、07-22有害会話、10-17個人情報の含まれる会話を除去。公開非有害版と別GatedのFull版は異なる。 |
+| LMSYS-Chat-1M | [LMSYS](https://huggingface.co/datasets/lmsys/lmsys-chat-1m) | 契約は通知による終了を認め、終了時にコピー全体の破棄を要求。Gated本人承認と**保管の継続権限**は別確認。 |
+| AfroRadVoice-FR | [作者](https://huggingface.co/datasets/StephaneBah/AfroRadVoice-FR) | 562音声（実録177、合成317、拡張68）、約4.54時間。話者同意・合成TTSのライセンスが本体CC-BY宣言のみで確定したとはいえない。 |
+| Emotional Roleplay | [LAION配布者](https://huggingface.co/datasets/laion/emotional-roleplay-finetuning-dataset) | 67,491の**全合成音声**、約184時間、生成元MOSS-TTS、音声説明も自動生成。`is_human`は実人間の録音であることを示さない。 |
+| Emilia | [Amphion](https://huggingface.co/datasets/amphion/Emilia-Dataset) | Emilia約2.4TBとYODAS約2.1TBを合わせ全量約4.5TB。前者CC-BY-NC、後者CC-BY。3.8TB枠の全量保存は不成立。 |
+| FineWeb-Edu | [作者](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu) | 約5.84TB、1.3兆tokens。`sample-10BT/100BT/350BT`と教育フィルタも公開。**部分集合の正規保存**と元Webコンテンツの権利を分離。 |
+| Qwen3-TTS Base | [Qwen](https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base) | 独立の学習済み`Qwen/Qwen3-TTS-Tokenizer-12Hz` Codecが音声生成に必要。通常のテキストtokenizerファイルだけでは再現不可。 |
+| LivePortrait | [作者の依存ツリー](https://github.com/KlingTeam/LivePortrait/blob/main/assets/docs/directory-structure.md) | 顔アニメーション本体とInsightFace顔ランドマーク、動物版X-Poseは別の学習済み資産。本体MITと外部重みの利用条件を混ぜない。 |
+
+特にGranary-v2、The Stack v2、LAION系は**データを参照するmanifest/index**と**データ本体**を分けて採用すべきである。元音声・元画像・rawソースの取得や長期保持はそれぞれ別権利となる。データの仮想規模（学習に対応する時間・tokens）を物理保存済みの容量と同じに扱わない。
+
+WildChatに関しては、作者がライセンス変更の遡及適用を記載していることが一次事実であり、**過去に取得したコピーへの法的効力の確定は別問題**である。LMSYSでは提供者から契約が終了された場合の破棄義務が明確なため、再取得困難でも「永久保存してよい」とは扱わない。
+
+### 16.2 P0・22件の再検査順（独立の調査トリアージ）
+
+既存`priority.band=P0`はそのまま保存し、JSONの`p0_scope_and_legal_audit_2026_11_08.new_research_triage_rank`に**1から22まで重複のない新調査順**を追加した。優先するのは契約終了・削除/opt-out、本人のGated許可、独立の学習済み重み、外部Codec/Encoder依存、保存できる範囲の確定である。将来規制確率は一切計算していない。
+
+| 新順（旧順） | repo ID | 確認日 | 一次URL | 確認済み制限・契約 | 予測（仮説） | 独自性（v9評価） | 優先帯 | 反証条件 | 未解決事項／次の行動 |
+| ---: | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1（旧6） | `lmsys/lmsys-chat-1m` | 2026-11-08 | [配布者一次](https://huggingface.co/datasets/lmsys/lmsys-chat-1m) | 作者契約は任意の理由で通知後に終了可能とし、終了時に利用停止と全コピーの破棄を要求する。 | S1→T1（仮説） | 大規模な人間-LLM対話ログ。再収集が難しい研究資産。 | **P0** | 配布元が当該版に適用する新しい書面契約を公表し、終了時破棄条件が削除・変更されたと確認できれば更新。 | 本人のGated受諾状況・継続保管を認める契約条項・返却/削除手順を審査。 |
+| 2（旧3） | `amphion/Emilia-Dataset` | 2026-11-08 | [配布者一次](https://huggingface.co/datasets/amphion/Emilia-Dataset) | Emilia CC-BY-NC4.0、Emilia-YODAS CC-BY4.0、Gated条件にアクセス解除留保がある。 | S1→T1（仮説） | 多数話者音声と注釈からなるTTS学習データ。再取得・再注釈のコストが高い。 | **P0** | 出版社による別の一括権利許諾、同一revisionの容量集計、subset別の完全原本同一性が確認された場合。 | 本人Gated権限、音声原著作者の権利、合法な地域・言語単位のサブセット、選択ファイルのバイト数を確認。 |
+| 3（旧4） | `bigcode/the-stack-v2` | 2026-11-08 | [配布者一次](https://huggingface.co/datasets/bigcode/the-stack-v2/blob/main/README.md) | rawソース一括アクセスにはSoftware Heritage/INRIAとの別契約。権利者opt-outを反映し最新版usable versionに更新する条件。 | S1→T1（仮説） | 大規模コード事前学習データ。ソースライセンス・帰属・削除履歴を含む研究価値は高い。 | **P0** | 指定版のrawコードが作者許諾の単一snapshotとして同一ハッシュ・一括権利付きで公開された場合。 | Hub部分とSoftware Heritage側の契約、v2.2.0除外履歴、選択できる合法なID subsetを確定。 |
+| 4（旧1） | `orcarouter/Qwen3.8-27B-Uncensored` | 2026-11-08 | [配布者一次](https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored/blob/main/README.md) | Gated、ライセンスタグApache-2.0。作者は研究・ロバストネス検査用途と説明、追加条件/個人許可は未確認。 | S1→T1（仮説） | OrcaRouterによる27B級BF16拒否方向編集版。公式の元重みと並べれば編集後の振る舞いと差分を比較でき、第三者配布物そのものの再現は保証されない。 | **P0** | 作者が同一編集成果ではない別学習重みを正式証明、または同一SHAで権利付き代替公開した場合。 | 本人アクセス認可、正規契約、18shard/processor/MTPの固定revisionとhash・再構成性を監査。 |
+| 5（旧2） | `StephaneBah/AfroRadVoice-FR` | 2026-11-08 | [配布者一次](https://huggingface.co/datasets/StephaneBah/AfroRadVoice-FR) | CC-BY4.0タグ/作者説明、研究用途の注意、Gated。18名の実録話者同意・声の二次利用契約の原本は未検証。 | S1→T1（仮説） | 放射線医療分野の仏語音声と注釈。少数の専門家が作った音声データは再録音・再注釈が難しい。 | **P0** | 実録が全て契約で再利用許可済みと証明され、音声単位の来歴が固定できれば権利HOLDを再評価。 | 実録の同意/許諾資料、合成音声の元TTS規約、提供元のGated許諾、実録・合成の区分を確認。 |
+| 6（旧17） | `black-forest-labs/FLUX.2-dev` | 2026-11-08 | [配布者一次](https://bfl.ai/legal/non-commercial-license-terms) | FLUX [dev] Non-Commercial License v2.0（2025-11-25）はFLUX.2-devを列挙。非商用・非本番・取消可能許諾とコンテンツ審査条件。Gated。 | S1→T2（仮説） | 独立した32B級画像生成・画像編集の重み。人物・物体の参照編集などをモデル一式として再現したい。 | **P0** | 対象版に適用する新ライセンス・正式な権利例外が一次配布元で確認された場合。 | 本人Gated権限、実際の保管・再配布目的への契約適合、全依存ライセンスとバイトを検証。 |
+| 7（旧19） | `google/medgemma-4b-it` | 2026-11-08 | [配布者一次](https://developers.google.com/health-ai-developer-foundations/terms) | Health AI Developer Foundations契約/用途制限。臨床診断や治療の直接利用は想定せず、検証と開発者による適応が必要。Gated。 | S2→T2（仮説） | 4B級の医療画像・テキスト特化モデル。専門後学習済み重みは汎用Gemmaから容易に復元できない。 | **P0** | Googleが対象版に対して別の拘束力ある契約を公表し、権利・依存が変わった場合。 | 本人Gated権限、HAI-DEF契約の保存と終了時の義務、必要依存と用途制約を文書化。 |
+| 8（旧21） | `facebook/dinov3-vith16plus-pretrain-lvd1689m` | 2026-11-08 | [配布者一次](https://huggingface.co/facebook/dinov3-vith16plus-pretrain-lvd1689m) | Meta DINOv3独自ライセンスおよびGated。許諾違反時の終了/破棄条項に注意。 | S3→T3（仮説） | Idolの画像条件付けに必要な公式DINOv3 ViT-H+/16 encoder。既存のDINOv3 ViT-7Bは別重み・別構造で、置換互換が示されていないた… | **P0** | Idol作者が7B版または別の合法配布物への互換置換を検証可能な形で公開した場合。 | 依存グラフ・版・ハッシュ、本人Gatedアクセス、Meta条件に合う保存/利用形態を確認。 |
+| 9（旧22） | `facebook/sam3` | 2026-11-08 | [配布者一次](https://huggingface.co/facebook/sam3/blob/main/LICENSE) | SAM License（2025-11-19）、契約違反で終了・破棄、貿易管理等の条項。Gated。 | S3→T3（仮説） | 単なる画像生成では代替しづらいプロンプトによる領域分割能力を保全する。小容量で異なる画像・動画系機能を確保できる。 | **P0** | 公式発行者が当該版の契約と提供物を更新したことが確認できた場合。 | 本人Gated権限、最新SAM License、必要なsegmentation依存とSHAを確認。 |
+| 10（旧20） | `facebook/dinov3-vit7b16-pretrain-lvd1689m` | 2026-11-08 | [配布者一次](https://huggingface.co/facebook/dinov3-vit7b16-pretrain-lvd1689m/blob/main/LICENSE.md) | DINOv3 License（2025-08-19）、Gated、契約違反時の破棄義務。 | S3→T3（仮説） | 約6.7Bの巨大な自己教師あり視覚Encoder。画像生成とは違う汎用表現学習を再現なしで確保する価値がある。 | **P0** | ViT-H+だけでv9の必要研究タスクが全て再現可能と検証され、7Bの独自価値がなくなれば優先度を降格。 | ViT-H+との実用途上の比較、原本の固定revision/依存の権利、容量費用対効果を審査。 |
+| 11（旧18） | `EPFLiGHT/Meditron3-70B` | 2026-11-08 | [配布者一次](https://huggingface.co/EPFLiGHT/Meditron3-70B) | Meta Llama 3.1 Community License継承。作者は研究用途・未臨床検証と明記。Gated。 | S2→T2（仮説） | Llama 3.1由来の70B級医療特化重み。一般のLlamaを残しても専門学習成果はそのまま戻らない。 | **P0** | 研究以外の用途が正式に別契約で許可される、または作者が同性能・同一チェックポイントを他所に権利付きで提供した場合。 | 本人Gated承認、Llamaの利用条件と出典証明、医学的用途の制限・依存を確認。 |
+| 12（旧5） | `laion/relaion2B-en-research` | 2026-11-08 | [配布者一次](https://laion.ai/faq/) | URL収録の画像は別の権利者・元ホストに属する。CC-BY4.0索引タグは画像原本の複製権を与えない。 | S1→T1（仮説） | 大規模画像・文章ペアを含む学習用資料。入手可能性と権利情報が重要。 | **P0** | 原著作者から元画像を含む再配布許可が直接与えられる、又は別の合法な限定集合が証明された場合。 | 現行Re-LAION版の削除/opt-out反映・アクセス条件、索引と画像の権利分離と固定版を検証。 |
+| 13（旧7） | `bigcode/starcoderdata` | 2026-11-08 | [配布者一次](https://huggingface.co/datasets/bigcode/starcoderdata) | The Stack由来のGated条件。各ソースのライセンス遵守、opt-outを反映した最新版への更新、再ホスト時の規約同梱等。 | S1→T1（仮説） | 別時代の多言語コード学習データ。出典付きの大量コードとして再現価値が高い。 | **P0** | 開発者がその版の正規ファイル集合・圧縮差・削除対象の完全集計を確証した場合。 | 元ソース参照先、公開版と古い訓練時点のscope差、本人権限、削除更新義務を監査。 |
+| 14（旧12） | `Qwen/Qwen3-TTS-12Hz-1.7B-Base` | 2026-11-08 | [配布者一次](https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base) | 公開モデルのライセンスと、音声Codec/実際の第三者音声に適用される条件を分離する。 | S1→T1（仮説） | ゼロショット声質適応と追加学習向けBase重みを保存する。 | **P0** | 出版社が同じ固定本体にCodecが内包され外部重み不要と証明した場合。 | 本体とCodecをimmutable revisionで特定、全learned tensors・ライセンス・Codecの重複保存を審査。 |
+| 15（旧8） | `KlingTeam/LivePortrait` | 2026-11-08 | [配布者一次](https://github.com/KlingAIResearch/LivePortrait/issues/193) | 本体コード/重みMITと作者が説明。ただしInsightFace pretrained重みは研究用途等に制限あり。 | S1→T1（仮説） | 静止人物画像のモーション/表情制御を保存し、動画生成系と区別する。 | **P0** | 作者から選定variantの外部依存まで合法にカバーする完全な権利・ファイル台帳が公表された場合。 | human/animal variantを先に選択して外部部品を列挙し、完全ソース許諾・SHA・各モジュールの容量を確認。 |
+| 16（旧9） | `microsoft/Fara1.5-27B` | 2026-11-08 | [配布者一次](https://huggingface.co/microsoft/Fara1.5-27B) | 公開MIT重みは確認。ただしベースモデル/依存のLICENSE・固定ファイル、実機実行の安全境界を別審査。 | S1→T1（仮説） | PC画面を見て操作する27B級GUIエージェントの学習成果。一般会話モデルの重みだけでは行動ポリシーを再現できない。 | **P0** | 元Qwenと同一重みであると証明、または異なるモデルで行動分布・安全条件が再現され独自価値が消えた場合。 | immutable revisionとファイル、safeguards含む非実行研究再現要件を点検。 |
+| 17（旧10） | `Plachta/Seed-VC` | 2026-11-08 | [配布者一次](https://github.com/Plachtaa/seed-vc) | HFのモデルカードmetadataは2024-09-23にMIT→GPL-3.0変更。各重みと外部モデルで権利条件が異なる可能性。 | S1→T1（仮説） | TTSとは別の音声変換方式を保全し、声質再現・音声編集を比較できるようにする。 | **P0** | 出版社が選定実行variantの全外部重みまで含むパラメータ総数を固定revisionで証明できた場合。 | MoE/外部部品も含め総数静的に計測するまで取得準備STOP（v9上限の例外なし）。 |
+| 18（旧16） | `nvidia/Granary-v2` | 2026-11-08 | [配布者一次](https://huggingface.co/datasets/nvidia/Granary-v2) | マニフェスト原則OpenMDW-1.1、people_speechはCC BY-SA 4.0、音声原本は元コーパスの別契約。 | S2→T1（仮説） | 48言語・16コーパスの音声を再ラベル化した、数十万時間分のASR・翻訳・音声QA向け学習資料。専門的なラベル生成をそのまま再現するのは困難。 | **P0** | 作者が当該revisionのrepoに実際のraw音声を含むことを公式に確認した場合。 | コーパス別manifest/labelの固定版とライセンスをマッピング。元音声取得は独立に本人権限を審査。 |
+| 19（旧14） | `allenai/WildChat-1M` | 2026-11-08 | [配布者一次](https://huggingface.co/datasets/allenai/WildChat-1M/blob/main/README.md) | 作者は新ライセンスが過去の取得にも遡及適用されると説明。これが既取得ファイルに及ぼす法的効果は別審査。 | S1→T1（仮説） | 実際のユーザー対話記録に基づくSFT候補で貴重な自然発話分布を含む。 | **P0** | 作者の最新版を静的比較し削除/ライセンス内容が変わった場合、版と権利を再判定。 | ソースごとのモデルカード・バージョン・リダクションと同意範囲を確認し、Fullへの自動移行をしない。 |
+| 20（旧11） | `Qwen/Qwen3-Coder-Next` | 2026-11-08 | [配布者一次](https://huggingface.co/Qwen/Qwen3-Coder-Next) | 現在一般公開。高能力が将来制限対象になるという規制確率は不明。 | S1→T1（仮説） | 約80Bのコード・エージェント専用学習済み重み。汎用Qwenを保存しても専用のコード学習成果は自明に戻らない。 | **P0** | 本体と派生モデルが独立の学習成果ではないと原本差分で実証された場合。 | 80B全総数、選択checkpoint/index/量子化・容量の互換性、正規ライセンスを確定。 |
+| 21（旧15） | `laion/emotional-roleplay-finetuning-dataset` | 2026-11-08 | [配布者一次](https://huggingface.co/datasets/laion/emotional-roleplay-finetuning-dataset/blob/main/README.md) | 作者は録音された人間の元音声を再配布していないと説明。`is_human`は音声キャラクター系統の派生ラベルで、実録人間の証拠ではない。 | S2→T1（仮説） | 感情表現音声と注釈の対を用いるTTS向け専門調整データ。音声だけでなく注釈の再収集が難しい。 | **P0** | 生成元・captionerが消失し第三者が同一出力を一切復元不能であるなど独自性が追加証明されればP0研究順位再昇格。 | MOSS生成モデルと生成条件・追加VoiceCLAP埋込みの再現性、2形式の内容差、合法なコンパクトsnapshotを比較。 |
+| 22（旧13） | `HuggingFaceFW/fineweb-edu` | 2026-11-08 | [配布者一次](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu) | ODC-By1.0+Common Crawl Terms適用。Web上の元コンテンツの権利/削除要求は別途。 | S3→T1（仮説） | 事前学習の教師なしテキストを部分保存し、モデルの再学習可能性を維持する。 | **P0** | 正式な同一版・権利清算済みで3.8TB以下の完全原本等価snapshotが一次公開されれば再評価。 | 最小の代表サンプルの選択ファイル・版・ハッシュ、元コンテンツ権利と公開変更履歴を審査。 |
+
+新しい調査順は、**Gatedモデル7、Gatedデータ6、公開モデル5、公開データ4**の条件を区別する。一覧を見られたものも含め本人別Gated権限は未検証である。新順を「ダウンロードの先着順」に利用してはならない。
+
+### 16.3 モデル系の依存と重複の設計
+
+- **OrcaRouter 27B**：18-shard BF16拒否方向編集済み原本は約55.6GB。派生FP8/GGUF/MLXを全て別の学習済み重みとして数えない。原本権利と固定revision/ファイルSHA-256を先に確認し、単なる変換でない独自後学習成果を優先する。
+- **Qwen3-TTS**：学習済みの独立`Qwen3-TTS-Tokenizer-12Hz`を外部音声Codecとして明示。Codecの重みを含めずにBaseだけを「完全に再生できる」と判定しない。BaseとVoiceDesign/CustomVoiceは別タスクだが、全variantの二重取得は必須でない。
+- **LivePortrait**：人間/動物処理の学習済みモジュールと外部顔検出器を分割。コアのMIT条件はInsightFaceの配布重みまで包括しない。合意済みの置換を選択できるかは次の検証事項。
+- **DINOv3**：7Bは大規模表現モデル、ViT-H+はIdol依存。両方が同じ会社の同系列でも、別次元の学習済み重みを単なる量子化と扱わない。反対に、研究用途が重複するなら容量のため7Bを無条件に増やさない。
+- **Qwen3-Coder-Next**：MoEの総数80B、active約3Bという別指標。150B制限は常に**全expert総数**で検査。量子化ファイル、index、依存含め選択バイトを確定するまで取得準備は進めない。
+
+### 16.4 現在P0だが将来P1への降格を検査する候補
+
+`laion/emotional-roleplay-finetuning-dataset`（全合成・自動ラベル）と`HuggingFaceFW/fineweb-edu`（公開5.84TB・合法な部分集合と分類器が既に提供）については、**P0調査を続けることが容量と希少性の観点で最適か**に疑義がある。ただし後者のデータは元Webの消失・版の再現性、前者の合成音声は生成元の学習済み重みやラベルの再現可能性が未検証。よって、JSONに`REVIEW_P1_IN_NEXT_PROPOSAL`と反証条件を記録したが、既存P0帯を恣意的に変更しない。
+
+### 16.5 反証可能な最小検査 H/T/D/C/U
+
+**H**（仮説）：学習成果の優先順位はS1/S2/S3の推測順より、著作権・Gated契約の持続性、素材がrawかindexか、独立訓練済みCodec/Encoder、部分集合の再現性で変化する。**T**（試験）：P0各資産につき、選択対象を一種類の完全な再現単位として定義し、一次ライセンス＋source repo＋固定revision/依存ファイルを静的照合する。最低n=1構成/資産を最小単位とし、権利または総数未知なら逐次停止。**D**（合否）：PASS=当該モデルの全総数が150B未満、利用権・同一原本・選択ファイルの完全SHA/容量・依存・本人の最終承認がそろう。FAIL=150B以上、明示的取得・保存権なし、選択範囲が容量超過。UNCERTAIN=いずれか検査欠落。**C**（対立仮説）：契約改訂、同一SHAが確認された正規代替配布、十分な合法サブセット、依存の共有・互換代替が新たに一次資料で確認された場合は順位を再検討。**U**（不確かさ）：本体とmanifestの集計差、モデルカード/ライセンス改訂、本人別ゲート非公開、encoderの重複、原データの利用許諾。検査対象は離散的な権利・構成条件であり、標本に基づく規制発生率が無いので合成標準不確かさ`u_c`と包含係数`k`を数値化しない。
+
+### 16.6 ERROR CHECK
+
+- 132件はv9固定。P0モデル12／データ10＝22。新トリアージ順位22件すべてユニーク、Gated13・public9。
+- 150B以上2件PX絶対除外、総数不明モデル12件は取得準備停止（P0のSeed-VCを含む）。全132件で`priority.download_approved=false`、規制確率`null`。
+- **実行していない**：重み・データセット・raw映像/音声/画像の取得、Gated受諾、外部有料サービス利用、実機RAM/容量試験、モデルのロード、承認済みキュー更新。
+- 正規の別配布元を同一原本と認めるには、提供者による再配布権と固定版の同一SHA-256を別途確認する。
+
+## 17.〈次に考える問い〉
+
+**音声や画像そのものの複製権が無いとき、合法に保全できる索引・ラベル・依存構成だけでもどれだけ将来再構成ができるのか。** 次の研究は、許諾済み原本と学習成果を別レイヤーで保存する設計に移るべきである。
