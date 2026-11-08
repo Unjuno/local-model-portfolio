@@ -418,3 +418,107 @@ v9母集団は重複のない132資産（モデル109、データ23）。調査�
 - **無断操作なし**：本体取得・推論実行・Gated代理同意・第三者ミラーからの収集・認証情報収集・取得キュー更新なし。今回の追加証拠13件は『調査完了』ではなく『個別停止根拠が具体化』したことを意味する。
 
 **〈次に考える問い〉** 12件のうち、複数の外部Encoderを必要とする『パイプライン一式』と、追加学習した『差分重みのみ』のどちらを資産の単位にすべきか。無駄な重複を避けるには、原本と共有依存を別々のハッシュ付き単位に切り分けるべきである。
+
+## 14. 2026-11-08継続：高レバレッジ資産30件と配布停止の実証
+
+**実施内容**：Exaの一次配布元カード・作者GitHub/契約正文・政府資料を使ってv9の30資産に資産固有の制限・独自性・次の反証可能な調査項目を追加した。別途、S1またはGatedまたはP0の重複排除後57資産について公開された**描画ページ**を読み取り専用で追加照会した。これは本体ファイルの読み出し成功や、本人のアクセス承認を意味しない。
+
+### 14.1 新たに確実性が増した公開・権利・保守の実例
+
+| 分類 | 一次資料 | 事実と限定 |
+| --- | --- | --- |
+| 出版社／法令 | Hugging Faceの[停止画面](https://huggingface.co/audnai/penclaw-GLM-5.3-abliterated-for-offensive-cyber/tree/main) | 対象外モデル1件にアクセス停止。Content Policy違反表示は一次観測。何条に違反したか、政府命令があったか、実際の停止日は確認できない。 |
+| プラットフォームの評価誤差 | 同repoに対する読み取り専用Hubの一覧メタデータと描画ページ | Hub詳細ツールはGatedと表示した一方、公式の描画ページはDisabled。**Gated/Publicメタデータのみで利用可能性を保証しない**。 |
+| 権利・期間制限 | [NVIDIA Foundation4D原文](https://huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles-Foundation4D) | 自動運転内部開発目的、NVIDIA技術使用、派生・第三者提供制限、旧版削除要請、12か月契約終了時の破棄など。一般の永続保全目的の権利は確認できない。 |
+| 実際のopt-out | [The Stack v2配布元](https://huggingface.co/datasets/bigcode/the-stack-v2/blob/main/README.md) | v2.2.0で2026-07-29以前の除外要求を反映。HubのSWHID/メタデータは、別契約が必要な原コード本体と同一ではない。 |
+| 出版社の保守中止 | [Resemble AI開発元](https://www.resemble.ai/resources/why-a-former-voice-ai-company-went-all-in-on-deepfake-detection) | 2026年8月にChatterboxの商用提供・保守を終了、原本は研究用に引き続き公開。停止を約束または予告したわけではない。 |
+
+**前提の更新**：2025年BIS AI Diffusion Ruleの『特定closed-weightモデル』に関する輸出管理と、2026年のホスト企業が特定リポジトリをDisabledにした事実は別の措置である。どちらからも『公開ウェイト全般が一律禁止された』『個々のv9資産が次に削除される確率が高い』とは論証できない。2026年11月8日に追加照会した57資産では、描画ページ上にDisabledの警告文は見つからなかったが、閲覧・検索・一覧表示と合法的ファイル取得は異なる。
+
+### 14.2 保存計画の最初の停止条件：容量・契約・更新義務
+
+| repo ID | 公表された全量規模／形態 | 3.8TBに対する処置 | 権利上の制約 |
+| --- | --- | --- | --- |
+| `amphion/Emilia-Dataset` | [公式カード](https://huggingface.co/datasets/amphion/Emilia-Dataset)：Emilia約2.4TB＋Emilia-YODAS約2.1TB＝全量約4.5TB | **全量保存は予算超過。** 言語、版、ライセンス単位で対象を絞る | 前者CC-BY-NC、後者CC-BY。音声原著作者の権利やGated条件は別。作者はアクセス解除権限を留保 |
+| `HuggingFaceFW/fineweb-edu` | [公式カード](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu)の現行表示約5.84TB（過去の作者発言8.84TBとは改訂・集計条件が未一致） | **全量保存は予算超過。** `sample-10BT`等の合法で再現性のある部分集合を検討 | ODC-ByおよびCommonCrawl利用規約。ファイル別同一性とサブセット範囲未検証 |
+| `nvidia/PhysicalAI-Autonomous-Vehicles-Foundation4D` | v9全repo約9.225TB | **全量予算超過。** さらに一般の長期アーカイブは契約に適合するとの証明なし | 内部AV開発用途限定、許諾期間12か月、終了時削除、第三者配布制限。**権利のない部分取得も不承認** |
+| `bigcode/the-stack-v2` | v9のメタデータrepo約427GB。ただし**SWHID索引と原コード本体の区別が必須** | 容量だけで完全コード原本保存可と判断しない | 原コード本体は別途Software Heritage/INRIA bulk agreement、ソースごとのライセンス、opt-out更新への対応が必要 |
+
+数値は出版社公表の概数または台帳の全repo総量であり、選択済みSHAつきシャードの最終バイト数を意味しない。未知をゼロとして扱わず、P0の研究順位は全量収集命令でもない。
+
+### 14.3 似たモデルを重複保存しないための系譜・学習成果の区別
+
+| 資産・系列 | 学習上の区別 | 選定上の結論（暫定） |
+| --- | --- | --- |
+| `orcarouter/Qwen3.8-27B-Uncensored` | 編集済みBF16原本 | FP8/GGUF/MLXは派生の量子化形態であり、追加学習した独立重みとの同一視を禁止。比較実験は未実施。 |
+| `knoveleng/Qwen3.5-9B-Uncensored` | 原本のorthex重み直交化版 | 単なる重み編集を新たな大規模事前・後学習と区別。作者のperplexity悪化を含め、独立評価を要する。 |
+| `briaai/Fibo-2.0-dev ↔ briaai/Fibo-2.0-edit-turbo` | 非蒸留Dev ↔ 蒸留4-step編集専用 | 別の蒸留学習成果であり単純なbit量子化ではない。両方必須と仮定せず実タスクで比較。 |
+| `black-forest-labs/flux-3-image-klein-base ↔ black-forest-labs/flux-3-image-klein` | 非蒸留50-step ↔ 蒸留16-step | 学習成果の差がある。各repo同梱のFP8/NVFP4は選択bit形式であり、必ず多重保存する必要はない。 |
+| `ideogram-ai/ideogram-4-nf4` | Ideogram 4のNF4提供 | FP8もあるが同じ9.3Bモデルの別量子化。独立に学習した新モデルと数えない。 |
+| `facebook/dinov3-vit7b16-pretrain-lvd1689m ↔ facebook/dinov3-vith16plus-pretrain-lvd1689m` | ViT-7B ↔ ViT-H+（約840M） | 同系統だが埋込み/構造の異なる重み。後者のIdol依存と7B原本の研究用途を分離。 |
+
+### 14.4 個別30資産：一次情報・予測・未解決事項
+
+下表の『確認事実・契約』は配布者の現在表示・供与条件。モデル危険性・独自能力の評価値は独立実測がない限り**作成者の主張または旧v9の編集判断**であり、政府規制の実施証拠ではない。各行は既存の132件詳細表に追加する差分監査として扱い、元のrepo IDを置き換えない。
+
+| repo ID | 確認日 | 一次URL | 確認済み制限・契約 | 予測仮説 | 独自性（旧評価） | 優先帯 | 反証条件 | 未解決事項・次の検査 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `orcarouter/Qwen3.8-27B-Uncensored` | 2026-11-08 | [一次URL](https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored) | 研究用途と利用規約を作者が限定的に説明。Hugging FaceはGated; 本人のファイルアクセス許諾未検証。 | S1→T1（仮説） | OrcaRouterによる27B級BF16拒否方向編集版。公式の元重みと並べれば編集後の振る舞いと差分を比較でき、第三者配布物そのものの再現は保証され… | **P0** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | 公開停止と区別し、現在のGated契約・本人権限・全シャード固定revision・親モデルの権利を先に審査。 |
+| `amphion/Emilia-Dataset` | 2026-11-08 | [一次URL](https://huggingface.co/datasets/amphion/Emilia-Dataset) | 4.5TB全量は3.8TB予算超過。混載データを単一CC BYとして扱わない。 | S1→T1（仮説） | 多数話者音声と注釈からなるTTS学習データ。再取得・再注釈のコストが高い。 | **P0** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | 本人Gated条件、著作権、サンプル選定・選択バイトと改訂履歴を確認。 |
+| `bigcode/the-stack-v2` | 2026-11-08 | [一次URL](https://huggingface.co/datasets/bigcode/the-stack-v2/blob/main/README.md) | Gatedリポジトリの承認だけで原コード本体を無期限取得する権利は得られない。 | S1→T1（仮説） | 大規模コード事前学習データ。ソースライセンス・帰属・削除履歴を含む研究価値は高い。 | **P0** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | 更新・削除反映義務の下での版固定/再現性を法的に判断、必要なら原文閲覧のみ。 |
+| `laion/relaion2B-en-research` | 2026-11-08 | [一次URL](https://huggingface.co/datasets/laion/relaion2B-en-research) | 過去のLAION-5B取り下げを、このexact Re-LAION repoの新たな削除予告と解釈しない。 | S1→T1（仮説） | 大規模画像・文章ペアを含む学習用資料。入手可能性と権利情報が重要。 | **P0** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | ゲート/利用条件/リンク削除の更新履歴と合法な最小研究サンプルを点検。 |
+| `lmsys/lmsys-chat-1m` | 2026-11-08 | [一次URL](https://huggingface.co/datasets/lmsys/lmsys-chat-1m) | PII除去済みとは識別リスク0を意味しない。rawログを無条件に保存しない。 | S1→T1（仮説） | 大規模な人間-LLM対話ログ。再収集が難しい研究資産。 | **P0** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | redacted版を優先し、rawは個別権利がなければ収集対象としない。 |
+| `KlingTeam/LivePortrait` | 2026-11-08 | [一次URL](https://github.com/KlingAIResearch/LivePortrait/issues/193) | InsightFaceの学習済みモデルは研究用途制限。商用用途では別の許可済み顔検出器に替えるよう作者が案内。 | S1→T1（仮説） | 静止人物画像のモーション/表情制御を保存し、動画生成系と区別する。 | **P0** | By 2027-11-03, if publisher's public distribution terms and exact-revision download … | 依存の現行実装・版・ライセンスを再固定、写真/肖像権の遵守も別審査。 |
+| `microsoft/Fara1.5-27B` | 2026-11-08 | [一次URL](https://huggingface.co/microsoft/Fara1.5-27B) | MIT重み公開と公式研究プレビュー。安全上のcritical-point確認やsandbox推奨は公開停止令ではない。 | S1→T1（仮説） | PC画面を見て操作する27B級GUIエージェントの学習成果。一般会話モデルの重みだけでは行動ポリシーを再現できない。 | **P0** | By 2027-11-03, if publisher's public distribution terms and exact-revision download … | モデルライセンスとコード、必要なサンドボックス・操作監査を分離して確認。 |
+| `Qwen/Qwen3-Coder-Next` | 2026-11-08 | [一次URL](https://huggingface.co/Qwen/Qwen3-Coder-Next) | 公開は停止していない。能力の悪用可能性は個別制限の証拠にはならない。 | S1→T1（仮説） | 約80Bのコード・エージェント専用学習済み重み。汎用Qwenを保存しても専用のコード学習成果は自明に戻らない。 | **P0** | By 2027-11-03, if publisher's public distribution terms and exact-revision download … | 実行環境・量子化可否・権利・所要容量を固定。active3Bだけで負担を算出しない。 |
+| `Qwen/Qwen3-TTS-12Hz-1.7B-Base` | 2026-11-08 | [一次URL](https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base) | 音声再現機能があること自体は公開停止の証拠でない。 | S1→T1（仮説） | ゼロショット声質適応と追加学習向けBase重みを保存する。 | **P0** | By 2027-11-03, if publisher's public distribution terms and exact-revision download … | Codecのrevision・重み・権利、本人同意の要否を区別して調査。 |
+| `HuggingFaceFW/fineweb-edu` | 2026-11-08 | [一次URL](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu) | 全量データの保存は3.8TB予算超過。公開モデル一覧があっても権利や容量が自明ではない。 | S3→T1（仮説） | 事前学習の教師なしテキストを部分保存し、モデルの再学習可能性を維持する。 | **P0** | By 2027-11-03, if publisher's public distribution terms and exact-revision download … | 合法なサンプル指定と固定revision、重要な分類器/レシピを先に調査。 |
+| `allenai/WildChat-1M` | 2026-11-08 | [一次URL](https://huggingface.co/datasets/allenai/WildChat-1M) | 匿名化は完全無害を意味しない。データカードの具体的許諾・opt-out処理を確認。 | S1→T1（仮説） | 実際のユーザー対話記録に基づくSFT候補で貴重な自然発話分布を含む。 | **P0** | By 2027-11-03, if publisher's public distribution terms and exact-revision download … | プライバシーの失敗例や報告されたデータ修正を一次資料で追跡。 |
+| `EPFLiGHT/Meditron3-70B` | 2026-11-08 | [一次URL](https://huggingface.co/EPFLiGHT/Meditron3-70B) | Llama3.1契約・Gated本人許可・用途制限は別に必要。 | S2→T2（仮説） | Llama 3.1由来の70B級医療特化重み。一般のLlamaを残しても専門学習成果はそのまま戻らない。 | **P0** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | 試験/MCQ成績を臨床使用可能性と同一視しない。 |
+| `google/medgemma-4b-it` | 2026-11-08 | [一次URL](https://developers.google.com/health-ai-developer-foundations/terms) | Googleのモデルカードは臨床診断・治療の直接利用は想定しないと記載。オープンモデルでも検証・適応が必須。 | S2→T2（仮説） | 4B級の医療画像・テキスト特化モデル。専門後学習済み重みは汎用Gemmaから容易に復元できない。 | **P0** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | 医療機器許認可と一般アーカイブ権限を混同しない。Gated本人許可は未確認。 |
+| `facebook/dinov3-vit7b16-pretrain-lvd1689m` | 2026-11-08 | [一次URL](https://huggingface.co/facebook/dinov3-vit7b16-pretrain-lvd1689m/blob/main/LICENSE.md) | 約6.716Bの自己教師ありEncoderとして独立原本。 | S3→T3（仮説） | 約6.7Bの巨大な自己教師あり視覚Encoder。画像生成とは違う汎用表現学習を再現なしで確保する価値がある。 | **P0** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | 単に同じDINOv3ブランドとして二重排除しない一方、Idol依存に不要な7Bは優先を評価し直す。 |
+| `facebook/dinov3-vith16plus-pretrain-lvd1689m` | 2026-11-08 | [一次URL](https://huggingface.co/facebook/dinov3-vith16plus-pretrain-lvd1689m) | Idolの必要Encoderとして従属価値があり、単独の表現学習価値と区別。 | S3→T3（仮説） | Idolの画像条件付けに必要な公式DINOv3 ViT-H+/16 encoder。既存のDINOv3 ViT-7Bは別重み・別構造で、置換互換が示さ… | **P0** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | Idol dependencyと元tensorの法的許可・hashを固定してから保存可否を判断。 |
+| `facebook/sam3` | 2026-11-08 | [一次URL](https://huggingface.co/facebook/sam3/blob/main/LICENSE) | Gated状態、本人アクセス許可未確認。保存権と利用条件は別。 | S3→T3（仮説） | 単なる画像生成では代替しづらいプロンプトによる領域分割能力を保全する。小容量で異なる画像・動画系機能を確保できる。 | **P0** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | 同一revision固定、依存と用途契約を点検。 |
+| `dphn/Dolphin3.0-Llama3.1-8B` | 2026-11-08 | [一次URL](https://huggingface.co/dphn/Dolphin3.0-Llama3.1-8B) | Llama 3.1 Community Licenseを継承。上流契約・用途制限を確認する。 | S1→T1（仮説） | 独自の命令追従・対話後学習重みを保全し、公式Llama系との差分と安全性評価を可能にする。 | **P1** | By 2027-11-03, if publisher's public distribution terms and exact-revision download … | 原本と差分・公開訓練データ再現性を比較し、危険性ラベルだけで優先しない。 |
+| `ResembleAI/chatterbox` | 2026-11-08 | [一次URL](https://github.com/resemble-ai/chatterbox) | ソフトMIT。保守停止は権利撤回・重み削除と異なる。 | S1→T1（仮説） | 感情強度制御・多言語音声合成・音声透かしなど独立した対話TTS系統を保全する。 | **P1** | By 2027-11-03, if publisher's public distribution terms and exact-revision download … | 長期保守中止を原本固定/依存保存の優先観測とするが、迫る公開停止日は推定しない。 |
+| `knoveleng/Qwen3.5-9B-Uncensored` | 2026-11-08 | [一次URL](https://huggingface.co/knoveleng/Qwen3.5-9B-Uncensored) | 公開モデルカードで原本ライセンス・使用方針の継承を明記; 新たな追加権利なし。 | S1→T1（仮説） | 拒否方向を重み直交化した小型Qwen派生の再現性を研究する。 | **P1** | By 2027-11-03, if publisher's public distribution terms and exact-revision download … | 編集実験・refusal以外の評価の独立再現を要求。公開中であり削除予告は見つからない。 |
+| `black-forest-labs/flux-3-image-klein-base` | 2026-11-08 | [一次URL](https://huggingface.co/black-forest-labs/flux-3-image-klein-base/blob/main/LICENSE.md) | 一般の商用重み使用/学習/配布を無条件に許すものではない。Gated本人権限未検証。 | S1→T2（仮説） | FLUX 3 Kleinの蒸留前Base。高品質生成能力と追加学習の出発点を保存するためで、API利用だけでは内部解析ができない。 | **P1** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | Distilledとの別学習成果を保持するか比較し、変換精度バリエーションを重複保存しない。 |
+| `briaai/Fibo-2.0-dev` | 2026-11-08 | [一次URL](https://huggingface.co/briaai/Fibo-2.0-dev/blob/main/README.md) | 作者はライセンスされた訓練データのみ使用と主張。独立した法務監査証明ではない。 | S1→T2（仮説） | 独立した画像生成・編集の非蒸留原本。許諾済みデータのみで訓練したと配布者は説明。FLUX系列に集中した保存を分散できる。 | **P1** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | Turboは4ステップ蒸留で別成果。基底と外部encoderの重複保存は避ける。 |
+| `ideogram-ai/ideogram-4-nf4` | 2026-11-08 | [一次URL](https://huggingface.co/ideogram-ai/ideogram-4-nf4/blob/main/LICENSE.md) | NF4は9.3B独自学習モデルの量子化配布。同日FP8版も公開; 別学習成果とは限らない。 | S1→T2（仮説） | Ideogram系の独立画像生成能力、特に画像内テキスト表現の比較に価値がある。FLUXやQwen-Imageだけでは同一の学習済み重みを復元できない。 | **P1** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | Gated本人許可、ライセンス本文、固定revision、選択形式の負荷を確認。 |
+| `meta-llama/Llama-4-Scout-17B-16E` | 2026-11-08 | [一次URL](https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E) | 150B未満条件PASSは全総数109Bであり稼働数は上限比較に使わない。 | S2→T2（仮説） | Meta Llama 4の約109B MoE。QwenやMistralとは異なる学習済みパラメータと設計を研究用に保全する。 | **P1** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | Gated本人許可、親コード・NOTICE/利用規約、選択容量と実行メモリを審査。 |
+| `nvidia/Cosmos-Predict2-2B-Video2World` | 2026-11-08 | [一次URL](https://huggingface.co/nvidia/Cosmos-Predict2-2B-Video2World) | NVIDIA Open Model Licenseを安全機能除去版の無条件再配布許可と解釈しない。 | S2→T2（仮説） | 動画から次の世界状態を予測する世界モデル。汎用言語LLMや一般動画生成器とは異なる学習成果を保存する。 | **P1** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | モデルカードの最新版とlicense版、選択variant、必須VAE/補助重みを審査。 |
+| `black-forest-labs/flux-3-image-klein` | 2026-11-08 | [一次URL](https://docs.bfl.ml/flux_3/flux3_image_klein) | 別の入力文言・推論条件、共通encoder/VAE。Gated許可と契約正文別途。 | S1→T2（仮説） | FLUX.3 Image Kleinの蒸留済み5.6B画像生成・編集重み。Baseと違い少ステップ推論に最適化されており、蒸留済みの学習成果はBase… | **P1** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | 本体・codec/encoderの固定版を共有、蒸留差の評価を要求。 |
+| `black-forest-labs/FLUX.2-klein-9B` | 2026-11-08 | [一次URL](https://huggingface.co/black-forest-labs/FLUX.2-klein-9B/blob/main/LICENSE.md) | 非商用・非本番モデル、inference filters又は審査の義務。4BモデルのApache2.0と混同不可。 | S1→T2（仮説） | FLUX2の9B版という別実装・別重み。画像編集系で大規模devとの特性差を保全できる。 | **P1** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | license v2.1原文・text encoder・派生元固定を審査。 |
+| `briaai/Fibo-2.0-edit-turbo` | 2026-11-08 | [一次URL](https://huggingface.co/briaai/Fibo-2.0-edit-turbo) | 権利・外部Qwen/FLUX VAE・Gated条件は別に確認。 | S1→T2（仮説） | Fibo2の数ステップ編集に最適化された蒸留済み重み。Baseから単純に復元できないが、同時に取得する優先度は一段低い。 | **P1** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | 編集品質・latency・容量の差を測定後に重複判断。 |
+| `Lightricks/LTX-2.3` | 2026-11-08 | [一次URL](https://huggingface.co/Lightricks/LTX-2.3/blob/main/LICENSE) | 附則の用途制限と派生作品/再配布条項あり。オープンウェイトでもApacheやMITではない。 | S1→T2（仮説） | 22B級の動画と音声を統合した生成モデル。独自の映像・音声同期学習を再学習し直すコストが高い。 | **P1** | By 2027-11-03, if publisher's public distribution terms and exact-revision download … | 全構成・用途・適用されるmodel licenseと動作前提を静的審査。 |
+| `nvidia/PhysicalAI-Autonomous-Vehicles-Foundation4D` | 2026-11-08 | [一次URL](https://huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles-Foundation4D) | 一般的な無期限研究保全用ライセンスではない。Gated本人契約/正規目的が証明できない限り取得/保存案を承認しない。 | S2→T2（仮説） | 自律走行向け実空間データと注釈は収集・再現困難で重要だが、ファイル全量が9.23TBでHDD容量を超える。 | **P3** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | 法的に許可される目的/期間/保管形態の明示確認なしに部分保存すら承認しない。 |
+| `orcarouter/Qwen3.8-Flash-Next-Uncensored` | 2026-11-08 | [一次URL](https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored) | 作者が研究向けの拒否方向編集版と説明。アクセス権も別途必要。 | S1→T1（仮説） | 約180B級MoEの拒否方向編集済みBF16原本。小さなLLMでは比較できない改変研究価値がある。 | **PX** | By 2027-11-03, if publisher's Gated terms/access status and exact-revision download … | 取得準備をしない。active expertや量子化後バイト数で総数制限を迂回しない。 |
+
+### 14.5 保存優先順位の改善：『高レバレッジ』と『現に失われる』を分離
+
+**観測されたプラットフォーム措置**：Audn AI由来の外部GLM-5.3は公式ページでDisabled。これはContent Policyの執行実例であり、v9の高危険モデルや検閲解除版全体への自動連鎖を示さない。Hubツールが同repoをGatedと表示した不整合があり、将来の障害監査ではレンダリングされた**公式停止通知**を独立に照合する。
+
+**現にGated・契約上の制限があるもの**：OrcaRouter BF16、Bria Dev/Turbo、Ideogram NF4、BFL Klein、Meta DINO/SAM、医療系など。規制確率や拒否率ではなく、個人の正規許可、許諾用途、再配布制限、終了時の保管義務から先に審査する。著作権・データプライバシーはAI能力に依存せず停止理由になり得る。
+
+**今は公開だが供給継続を保証しないもの**：Chatterboxは作者が保守終了を公表しつつ重みを公開継続。Qwen Coder Nextは80B総数、Llama 4 Scoutは109B総数で上限内だがMoEを稼働数だけで計算してはいけない。一方、OrcaRouter Flash Next 180BはGatedでも**絶対除外**。公開撤去リスクと選定可能性は非補償型の別条件。
+
+**S1→S2→S3の順番は検証されていない**。この追加事実は旧P0=22／P1=59／P2=37／P3=12／PX=2の研究分類を直ちに上書きしない。しかし実際の次作業には、別軸の`heightened_policy_review_2026_11_08`（30件）、`read_only_public_page_spotcheck_2026_11_08`（57件）、明示的な契約HOLDを適用する。特にNVIDIA Foundation4Dは全量取得はもちろん、契約目的に合わない部分取得も準備しない。
+
+### 14.6 H/T/D/C/U：次段階の最小反証検査
+
+- **H（仮説）**：高リスクな資産の喪失・入手障害は、能力のみよりもGated個人権限、契約終了条件、rawデータの著作権・opt-out、保守中断、依存不足という独立の経路によって生じ得る。これは発生確率の定量推定ではない。
+- **T（最小検証）**：高優先資産では配布者カードと契約正文の少なくとも2種類の一次資料、可能なら配布元の更新コミットと同じ固定revisionを確認。外部停止事例は描画された停止通知を必須とする。`n_min=1`の具体的改訂コミット・公式停止通知・契約条項を独立事象の存在証明とし、他のモデルへの普遍化は別検査。どれか法的・容量ゲートが未解決なら逐次停止。
+- **D（判定）**：PASS=一次資料に現行の制限や実措置があることを出典・観測日付きで確証。FAIL=原本が実際には公開されているなど、当該停止主張の矛盾が確認。UNCERTAIN=本人認可、変更前の規約、SHA同一性、現在のファイルアクセス、モデル能力の独立評価が未確認。権利のPASSと取得のPASSは分離。
+- **C（破れ方）**：同repoの別名、新旧版、量子化形式、静的一覧と描画ページの不一致、別の有効な公式配布元、現行権利の改訂。これらが示されたら個別判断を改訂し、危険性から削除を推定しない。
+- **U（不確かさ）**：カード本文の更新、配布元再編、個人Gated条件非公開、サブセット容量概数、メタデータと契約正文の粒度差、拒否率の作者自己評価。**u_cと包含係数kに対応する測定モデルは存在しない**ため数値の『規制確率』や確信度を生成せず、unknownとして保持。
+
+### 14.7 ERROR CHECK（コミット後の再検証を含む）
+
+- v9母集団132件のうち30件へ追加根拠。S1/Gated/P0の重複除去57件を公開の描画ページで追加照会。個別資産の正式取得権限・SHA付き最終マニフェストは承認ゼロ。
+- 外部Hugging Face Disabled実例1件、v9の57チェックにはDisabled明示なし。Metaや医療モデルのGatedを『実際に禁止済み』とは表現しない。
+- 150B以上モデル2件PXのまま絶対除外（MoEは全expert込み）。総数不明モデル12件の取得準備を引き続き停止。本人Gated承認や本体取得を自動処理しない。
+- 契約・容量の**法令・利用規約上の限界**は独自性や将来の撤去予想と相殺できない。原本・蒸留・量子化・Encoder共有を判別できない限り重複取得の優先度を上げない。
+
+## 15. 〈次に考える問い〉：失われると困る「重み」ではなく「権利を含む再現単位」は何か
+
+**独立に学習した重み、正規の利用権限、依存Codec/Encoder、固定revision、バイト列のハッシュを一体の再現可能な単位として定義したとき、現在のP0は何件残るか。** 単純な危険性や規制連鎖より、全条件を同時に満たす保全実現性で順位を再設計する必要がある。
