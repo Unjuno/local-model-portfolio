@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "kind": "SOPHON_REALTIME_PROVENANCE_AND_REDUNDANCY_FOLLOWUP",
+  "audit_date": "2026-11-10",
+  "repo": "Unjuno/local-model-portfolio",
+  "branch": "strategy/2026-11-03-01-risk",
+  "reference_head": "c67c9598af3678b2c0b3f6a31f19ad20f62d9c87",
+  "source_catalog_path": "catalog/effective-portfolio-2026-11-07-v27.json",
+  "source_catalog_blob_sha": "ad7dc54dd67e7421cb685750238658f2f4e05e41",
+  "source_previous_candidate_path": "catalog/research/2026-11-09-sophon-realtime-family.json",
+  "source_previous_candidate_blob_sha": "0c4cec4a1dca6b46d474ceae4844e1ba425f7a01",
+  "source_qwen_tts_capacity_path": "catalog/capacity/2026-11-06/sources/model--Qwen--Qwen3-TTS-12Hz-1.7B-Base.json",
+  "source_qwen_tts_capacity_sha": "1f47a4c8622c088a2341d7d2e119326345748ec2",
+  "v27_tracked_before": 173,
+  "v27_tracked_after": 173,
+  "approved_queue_count": 0,
+  "versions": {
+    "tag": "20e03f35c2b2c6f45691e1a1108e1e0635ba6f1a",
+    "flash": "8d8d5d8a13ca0120042f1d7ac445e47dba68de7c",
+    "e2e": "7a701a25a8f746aae8cd4cc4f85deec883d4801c",
+    "standalone": "3a125cba1a24a14e308f410f0d51bea0ba6a03ce",
+    "duplex4": "a0aea2e705b2503695d61629f543d0fc9d30f8a7",
+    "duplex32": "757f9df3bf72ffc5b7a708696d47982c39d48d8c",
+    "sophonFamilyPage": "2e52bd4ade5ab9353a387de0b8930d305b1aff88",
+    "qwenBase": "fd4b254389122332181a7c3db7f27e918eec64e3"
+  },
+  "verification": "READ_ONLY_PRIMARY_SOURCE_METADATA_AND_REPOSITORY_CODE_NO_PAYLOAD",
+  "current_status": "HIGH_PRESERVATION_VALUE_RESEARCH_NO_APPROVAL",
+  "facts_and_legal_conflicts": [
+    {
+      "issue": "CC_BY_NC_TO_APACHE_DERIVATIVE",
+      "severity": "P0_STOP_LICENSE_CONSENT",
+      "fact": "DuplexJev-32B-Para v1.5 and complete DuplexJev-4B are published as CC BY-NC 4.0, with documented ESD research-only, EARS/Expresso/noncommercial datasets. Sophon Tag/Flash/E2E cards and code publicly claim Apache-2.0; tag/NOTICE and flash/NOTICE confirm derivation via DuplexJev-32B-Para.",
+      "not_proven": "The rightsholder's separate commercial clearance, clean retraining or data licenses are not documented in audited public repo files. This is not proof of infringement or invalid relicensing.",
+      "action": "Request publisher's derivation rights/dual-license or clean-source evidence and verify downstream rights independently before acquisition/redistribution/commercial use.",
+      "sources": [
+        "https://github.com/adventists-ai/duplexjev/blob/b851ea57ba48b351bb9381d6c16d6d10619a9d6b/README.md",
+        "https://huggingface.co/adventists-ai/DuplexJev-32B-Para",
+        "https://github.com/adventists-ai/sophon-realtime/blob/3585943e8f6ea33ebfc4d077d24b4b59bbde924c/tag/NOTICE",
+        "https://github.com/adventists-ai/sophon-realtime/blob/3585943e8f6ea33ebfc4d077d24b4b59bbde924c/flash/NOTICE"
+      ]
+    },
+    {
+      "issue": "ABI_AUDIO_FULL_LENGTH",
+      "severity": "P0_STOP_REPRO",
+      "fact": "Sophon Tag/Flash install.sh pins duplexjev-vllm==0.3.0; upstream DuplexJev v1.5 (2026-11-03) says duplexjev-vllm>=0.4 is needed for audio_full_length, warning older code can drop about 4% at the end of 30s chunks. DuplexJev-32B-Para config has audio_full_length=true; Sophon nested thinker/config.json has different architecture schema without that top-level flag.",
+      "not_proven": "No Sophon runtime was run; its custom Qwen3-VL speaker processor may handle audio timing separately, so direct failure cannot be inferred.",
+      "action": "Audit actual source-level audio frame-to-token rate and 30s trailing audio with pinned backend ABI; no auto-upgrade of 0.3 to 0.4 without compatibility proof.",
+      "sources": [
+        "https://github.com/adventists-ai/sophon-realtime/blob/3585943e8f6ea33ebfc4d077d24b4b59bbde924c/tag/install.sh",
+        "https://github.com/adventists-ai/sophon-realtime/blob/3585943e8f6ea33ebfc4d077d24b4b59bbde924c/flash/install.sh",
+        "https://github.com/adventists-ai/duplexjev/blob/b851ea57ba48b351bb9381d6c16d6d10619a9d6b/docs/news.md",
+        "https://huggingface.co/adventists-ai/DuplexJev-32B-Para/raw/757f9df3bf72ffc5b7a708696d47982c39d48d8c/config.json"
+      ]
+    },
+    {
+      "issue": "PAPER_AND_BENCHMARK_ATTRIBUTION",
+      "severity": "P1_SCORE_NOT_INDEPENDENT",
+      "fact": "arXiv:2609.21967 linked in Sophon family tag is NVIDIA's NemotronLabs VoiceChat paper; research primary arXiv:2610.02638 is about DuplexJev, not a standalone independently peer-reviewed Sophon 82.8 score. Sophon author's VoiceBench 82.8 and first-audio benchmarks are vendor-run.",
+      "not_proven": "This does not imply fabricated scores or misuse; paper tag may intentionally reference comparator.",
+      "action": "Preserve benchmark protocols, judges, test set and raw per-question outputs; require independent repeat before performance-tier promotion.",
+      "sources": [
+        "https://arxiv.org/abs/2609.21967",
+        "https://arxiv.org/abs/2610.02638",
+        "https://github.com/adventists-ai/sophon-realtime/blob/3585943e8f6ea33ebfc4d077d24b4b59bbde924c/README.md"
+      ]
+    },
+    {
+      "issue": "MODEL_LICENSE_FILES_IN_SNAPSHOT",
+      "severity": "P1_ARCHIVE_BUNDLE_GAP",
+      "fact": "Tag pinned checkpoint has talker/LICENSE and talker/NOTICE only (no root LICENSE); Flash has root LICENSE and NOTICE; E2E root LICENSE/NOTICE are absent in exposed file list. Code repo has license and notice.",
+      "not_proven": "Absence from weight repo alone is not a finding of license infringement.",
+      "action": "For legal archival, preserve immutable code LICENSE, relevant build notices and per-component creator agreements in each bundle.",
+      "sources": [
+        "https://github.com/adventists-ai/sophon-realtime/blob/3585943e8f6ea33ebfc4d077d24b4b59bbde924c/LICENSE",
+        "https://github.com/adventists-ai/sophon-realtime/blob/3585943e8f6ea33ebfc4d077d24b4b59bbde924c/NOTICE"
+      ]
+    },
+    {
+      "issue": "HISTORIC_E2E_SNAPSHOT_NOT_FOUND_AT_FAMILY_HF_REPO",
+      "severity": "P2_REACQUISITION_GAP",
+      "fact": "Current HF family page Sophon-Realtime-v1 (pinned 2e52...) has zero reported model storage and only README, README_CN, .gitattributes and two banner images, while E2E card refers to earlier weights in the family repo.",
+      "not_proven": "ModelScope or historical commits may hold the earlier weights; absence from current HF tree is not proof of deletion.",
+      "action": "Resolve exact historical revision and original/reissued checksum on ModelScope or Hugging Face, no arbitrary mirrors.",
+      "sources": [
+        "https://huggingface.co/api/models/adventists-ai/Sophon-Realtime-v1",
+        "https://huggingface.co/adventists-ai/Sophon-Realtime-32B-E2E"
+      ]
+    }
+  ],
+  "capacity": {
+    "v27_baseline_known_source_union_bytes": 3417685712585,
+    "tag_source_bytes": 44614285749,
+    "flash_source_bytes": 40888822749,
+    "e2e_source_bytes": 79003893156,
+    "tag_flash_shared_lfs_bytes": 36339946112,
+    "tag_flash_shared_lfs_count": 19,
+    "tag_flash_source_union_before_v27_comparison_bytes": 49163162386,
+    "v27_qwen_tts_tokenizer_shared_lfs_bytes": 682293092,
+    "tag_flash_additional_source_upper_bound_after_verified_selected_v27_parent_bytes": 48480869294,
+    "all_three_source_union_before_v27_comparison_bytes": 128155632702,
+    "all_three_additional_source_upper_bound_after_verified_selected_v27_parent_bytes": 127473339610,
+    "tag_plus_flash_v27_source_only_new_union_upper_bound": 3466166581879,
+    "all_three_v27_source_only_new_union_upper_bound": 3545159052195,
+    "publisher_tag_tts_standalone_bytes": 7725543570,
+    "publisher_tag_tts_standalone_shared_with_tag_lfs_bytes": 3038629775,
+    "publisher_tag_tts_standalone_source_only_approx_incremental_after_tag_bytes": 4686913795,
+    "duplexjev_4b_pinned_bytes": 8455528999,
+    "duplexjev_4b_published_safetensors_tensor_count": 4219708800,
+    "exact_physical_disk_free_bytes": null,
+    "complete_runtime_dependencies_bytes": null,
+    "all_source_duplicates_with_existing_v27_verified": false,
+    "legal_access_cleared": false,
+    "archive_policy_ceiling_bytes": 4000000000000,
+    "min_free_bytes": 200000000000
+  },
+  "selection_recommendations": [
+    {
+      "asset": "adventists-ai/Sophon-Realtime-32B-Tag",
+      "advice": "P0 evidence-first, CONDITIONAL CANDIDATE ONLY",
+      "reason": "Audio interruption-aware and expressive speech with learned Tag TTS; most feature-complete one-GPU version. Different from current standalone ASR/TTS models.",
+      "final_lock": "HOLD",
+      "vendor_hw": "H100 80 GB, ~65GB per instance, 16 concurrent suggested (vendor)"
+    },
+    {
+      "asset": "adventists-ai/Sophon-Realtime-32B-Flash",
+      "advice": "P1 compact differential with Tag, CONDITIONAL CANDIDATE ONLY",
+      "reason": "Same 32B thinker but independently fine-tuned Qwen3-TTS-based streaming talker. Of 40.889GB files, 36.340GB LFS exactly shared with Tag and 0.682GB tokenizer exactly shared with v27 Qwen3 TTS. Not merely quantization.",
+      "final_lock": "HOLD",
+      "vendor_hw": "H100 80 GB, ~55GB per instance, 40 concurrent suggested (vendor)"
+    },
+    {
+      "asset": "adventists-ai/Sophon-Realtime-32B-E2E",
+      "advice": "P2 research-only mechanism insurance",
+      "reason": "Separate continuous-vector and E2 decoder mechanism. High unshared source bytes and 2×80GB GPU requirement, preview status.",
+      "final_lock": "HOLD",
+      "vendor_hw": "2×80GB GPUs, unknown runtime success"
+    },
+    {
+      "asset": "adventists-ai/DuplexJev-4B-Para",
+      "advice": "P1 small audio-decision fallback candidate, NO STT/TTS by itself",
+      "reason": "4.2197088B in published safetensors metadata, 8.455528999GB pinned repo; learned speech-turn decisions and paralinguistics. CC BY-NC 4.0, not general commercial successor to Sophon.",
+      "final_lock": "HOLD",
+      "vendor_hw": "~10 GB GPU memory claimed by publisher, no local tests"
+    },
+    {
+      "asset": "adventists-ai/tag-tts",
+      "advice": "P2 component-level historical preservation only after quality/ABI comparison",
+      "reason": "7.725543570GB standalone source; 6 same-LFS objects shared with Tag, but llm.pt and flow.pt have DIFFERENT LFS SHA256 from Tag, thus not a byte-identical duplicate. Standalone speech component useful if independent.",
+      "final_lock": "HOLD",
+      "vendor_hw": "not independently verified"
+    }
+  ],
+  "lfs_overlap_verified_with_tag": [
+    {
+      "file": "CosyVoice-BlankEN/model.safetensors",
+      "bytes": 988097824
+    },
+    {
+      "file": "asset/dingding.png",
+      "bytes": 122824
+    },
+    {
+      "file": "campplus.onnx",
+      "bytes": 28303423
+    },
+    {
+      "file": "hift.pt",
+      "bytes": 83202622
+    },
+    {
+      "file": "speech_tokenizer_v3.batch.onnx",
+      "bytes": 969451579
+    },
+    {
+      "file": "speech_tokenizer_v3.onnx",
+      "bytes": 969451503
+    }
+  ],
+  "source_first_party": [
+    {
+      "label": "parent code & licensing",
+      "url": "https://github.com/adventists-ai/duplexjev/tree/b851ea57ba48b351bb9381d6c16d6d10619a9d6b"
+    },
+    {
+      "label": "Sophon pinned code",
+      "url": "https://github.com/adventists-ai/sophon-realtime/tree/3585943e8f6ea33ebfc4d077d24b4b59bbde924c"
+    },
+    {
+      "label": "qwen parent model",
+      "url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base/tree/fd4b254389122332181a7c3db7f27e918eec64e3"
+    },
+    {
+      "label": "Sophon Tag",
+      "url": "https://huggingface.co/adventists-ai/Sophon-Realtime-32B-Tag/tree/20e03f35c2b2c6f45691e1a1108e1e0635ba6f1a"
+    },
+    {
+      "label": "Sophon Flash",
+      "url": "https://huggingface.co/adventists-ai/Sophon-Realtime-32B-Flash/tree/8d8d5d8a13ca0120042f1d7ac445e47dba68de7c"
+    },
+    {
+      "label": "Sophon E2E",
+      "url": "https://huggingface.co/adventists-ai/Sophon-Realtime-32B-E2E/tree/7a701a25a8f746aae8cd4cc4f85deec883d4801c"
+    },
+    {
+      "label": "tag-tts original",
+      "url": "https://huggingface.co/adventists-ai/tag-tts/tree/3a125cba1a24a14e308f410f0d51bea0ba6a03ce"
+    },
+    {
+      "label": "DuplexJev4",
+      "url": "https://huggingface.co/adventists-ai/DuplexJev-4B-Para/tree/a0aea2e705b2503695d61629f543d0fc9d30f8a7"
+    },
+    {
+      "label": "DuplexJev32 CC BY NC",
+      "url": "https://huggingface.co/adventists-ai/DuplexJev-32B-Para/tree/757f9df3bf72ffc5b7a708696d47982c39d48d8c"
+    },
+    {
+      "label": "DuplexJev paper",
+      "url": "https://arxiv.org/abs/2610.02638"
+    },
+    {
+      "label": "NVIDIA peer comparison paper",
+      "url": "https://arxiv.org/abs/2609.21967"
+    }
+  ],
+  "gates": {
+    "parameter_census_complete_tag_flash_e2e": false,
+    "commercial_and_redistribution_legal_status_confirmed": false,
+    "hardware_owner_measured": false,
+    "abi_audio_timing_tested": false,
+    "benchmark_independently_repeated": false,
+    "user_approved_for_acquisition": false,
+    "all_required_sha256_locally_verified": false,
+    "model_payload_downloaded": false,
+    "software_installed": false,
+    "model_executed": false,
+    "manifest_executable": false
+  },
+  "stop_conditions": [
+    "SOPHON_CC_BY_NC_SOURCE_VS_APACHE_RELICENSING_UNRESOLVED",
+    "AUDIO_FULL_LENGTH_ABI_MISMATCH_UNTESTED",
+    "NO_FULL_PIPELINE_PARAMETER_COUNT",
+    "OWNER_DISK_NOT_MEASURED_OR_200GB_FLOOR_UNVERIFIED",
+    "MODEL_WEIGHTS_NOT_HASHED_LOCALLY",
+    "NO_EXPLICIT_USER_APPROVAL"
+  ],
+  "validation": {
+    "checks": {
+      "catalog173": true,
+      "approvedEmpty": true,
+      "sourceShaPinned": true,
+      "tagFlashShared19": true,
+      "qwenSourceShaSame": true,
+      "qwenByteSame": true,
+      "expectedDuplex42": true,
+      "sourceOnlyCapped": true,
+      "all3SourceOnlyCapped": true,
+      "noDownload": true,
+      "noApproval": true,
+      "unknownRights": true,
+      "noRuntimeClaims": true,
+      "allHOLD": true
+    },
+    "failures": []
+  }
+}
