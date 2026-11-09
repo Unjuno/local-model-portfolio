@@ -605,3 +605,100 @@ WildChatに関しては、作者がライセンス変更の遡及適用を記載
 ## 17.〈次に考える問い〉
 
 **音声や画像そのものの複製権が無いとき、合法に保全できる索引・ラベル・依存構成だけでもどれだけ将来再構成ができるのか。** 次の研究は、許諾済み原本と学習成果を別レイヤーで保存する設計に移るべきである。
+
+## 18. 2026-11-09：固定revision容量と重複ファイルの実証
+
+**定義と方法**：公開された[Hugging Face Hub公式API](https://huggingface.co/.well-known/openapi.md)のモデル/データセット`sha`でP0全22件の最上位コミットを識別し、`GET /api/{models|datasets}/{owner}/{repo}/treesize/{sha}`をそのshaの固定snapshotについて照会。以下の容量は**固定revisionのGitツリーに含まれるファイルのバイトサイズ合計**であり、現物取得・実機空き容量・利用権限・選択済み必要ファイルの容量ではない。確認日：2026-11-09。データは最新公開メタデータの静的照会、同じファイルの独立ダウンロードも実行していない。
+
+### 18.1 P0全22件の完全revisionと総ファイル容量
+
+| 2026-11-08調査順 | repo ID | 確認したコミットSHA / 公式tree | 当該revision全ファイル（byte） | Gated方式 | 全量の容量判定のみ |
+| ---: | --- | --- | ---: | --- | --- |
+| 1 | `lmsys/lmsys-chat-1m` | `200748d9d3cddcc9d782887541057aca0b18c5da` [rev](https://huggingface.co/datasets/lmsys/lmsys-chat-1m/tree/200748d9d3cddcc9d782887541057aca0b18c5da) | 1,488,861,436 | auto | 全量容量のみ上限内 |
+| 2 | `amphion/Emilia-Dataset` | `d7f2f7340a6385696f3766c8049fa920a4707c07` [rev](https://huggingface.co/datasets/amphion/Emilia-Dataset/tree/d7f2f7340a6385696f3766c8049fa920a4707c07) | 4,746,257,588,199 | auto | 全量容量超過 |
+| 3 | `bigcode/the-stack-v2` | `e565caa3a78c2423bd374333a472b049eb090e47` [rev](https://huggingface.co/datasets/bigcode/the-stack-v2/tree/e565caa3a78c2423bd374333a472b049eb090e47) | 426,977,264,286 | auto | 全量容量のみ上限内 |
+| 4 | `orcarouter/Qwen3.8-27B-Uncensored` | `0f639a9bde23fe229a7b064b40a5153c5bec0b48` [rev](https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored/tree/0f639a9bde23fe229a7b064b40a5153c5bec0b48) | 55,586,066,230 | auto | 全量容量のみ上限内 |
+| 5 | `StephaneBah/AfroRadVoice-FR` | `eb9200abd571ac4a6616e0ab89501747acb57a2b` [rev](https://huggingface.co/datasets/StephaneBah/AfroRadVoice-FR/tree/eb9200abd571ac4a6616e0ab89501747acb57a2b) | 1,040,330,586 | auto | 全量容量のみ上限内 |
+| 6 | `black-forest-labs/FLUX.2-dev` | `26afe3a78bb242c0a8bb181dcc8937bb16e5c66c` [rev](https://huggingface.co/black-forest-labs/FLUX.2-dev/tree/26afe3a78bb242c0a8bb181dcc8937bb16e5c66c) | 177,640,374,395 | auto | 全量容量のみ上限内 |
+| 7 | `google/medgemma-4b-it` | `290cda5eeccbee130f987c4ad74a59ae6f196408` [rev](https://huggingface.co/google/medgemma-4b-it/tree/290cda5eeccbee130f987c4ad74a59ae6f196408) | 8,639,644,263 | auto | 全量容量のみ上限内 |
+| 8 | `facebook/dinov3-vith16plus-pretrain-lvd1689m` | `c807c9eeea853df70aec4069e6f56b28ddc82acc` [rev](https://huggingface.co/facebook/dinov3-vith16plus-pretrain-lvd1689m/tree/c807c9eeea853df70aec4069e6f56b28ddc82acc) | 3,362,457,679 | manual | 全量容量のみ上限内 |
+| 9 | `facebook/sam3` | `3c879f39826c281e95690f02c7821c4de09afae7` [rev](https://huggingface.co/facebook/sam3/tree/3c879f39826c281e95690f02c7821c4de09afae7) | 6,895,093,624 | manual | 全量容量のみ上限内 |
+| 10 | `facebook/dinov3-vit7b16-pretrain-lvd1689m` | `b80367753773648a6793235ab9c65cdbb029506f` [rev](https://huggingface.co/facebook/dinov3-vit7b16-pretrain-lvd1689m/tree/b80367753773648a6793235ab9c65cdbb029506f) | 26,864,283,632 | manual | 全量容量のみ上限内 |
+| 11 | `EPFLiGHT/Meditron3-70B` | `1ec3a7ee2355e384149df2e4dd42fed41e7fd08f` [rev](https://huggingface.co/EPFLiGHT/Meditron3-70B/tree/1ec3a7ee2355e384149df2e4dd42fed41e7fd08f) | 141,116,879,850 | auto | 全量容量のみ上限内 |
+| 12 | `laion/relaion2B-en-research` | `cb2173cfd818b41c8370b287dabf93ae85231c42` [rev](https://huggingface.co/datasets/laion/relaion2B-en-research/tree/cb2173cfd818b41c8370b287dabf93ae85231c42) | 481,452,536,472 | auto | 全量容量のみ上限内 |
+| 13 | `bigcode/starcoderdata` | `9fc30b578cedaec69e47302df72cf00feed7c8c4` [rev](https://huggingface.co/datasets/bigcode/starcoderdata/tree/9fc30b578cedaec69e47302df72cf00feed7c8c4) | 310,802,038,700 | auto | 全量容量のみ上限内 |
+| 14 | `Qwen/Qwen3-TTS-12Hz-1.7B-Base` | `fd4b254389122332181a7c3db7f27e918eec64e3` [rev](https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base/tree/fd4b254389122332181a7c3db7f27e918eec64e3) | 4,544,229,700 | public | 全量容量のみ上限内 |
+| 15 | `KlingTeam/LivePortrait` | `82a4fa6735ca58432b6ce39301b4b9ee066dea47` [rev](https://huggingface.co/KlingTeam/LivePortrait/tree/82a4fa6735ca58432b6ce39301b4b9ee066dea47) | 2,139,986,693 | public | 全量容量のみ上限内 |
+| 16 | `microsoft/Fara1.5-27B` | `299c8406a6c6256d45ec200d1ac12b34c5599d9b` [rev](https://huggingface.co/microsoft/Fara1.5-27B/tree/299c8406a6c6256d45ec200d1ac12b34c5599d9b) | 54,743,814,229 | public | 全量容量のみ上限内 |
+| 17 | `Plachta/Seed-VC` | `257283f9f41585055e8f858fba4fd044e5caed6e` [rev](https://huggingface.co/Plachta/Seed-VC/tree/257283f9f41585055e8f858fba4fd044e5caed6e) | 3,941,527,490 | public | 全量容量のみ上限内 |
+| 18 | `nvidia/Granary-v2` | `81402b751b451b5fe4f4c29e8b40f92892f1e440` [rev](https://huggingface.co/datasets/nvidia/Granary-v2/tree/81402b751b451b5fe4f4c29e8b40f92892f1e440) | 111,559,928,673 | public | 全量容量のみ上限内 |
+| 19 | `allenai/WildChat-1M` | `7d6490e462285cf85d91eabea0f9a954fbddcd1f` [rev](https://huggingface.co/datasets/allenai/WildChat-1M/tree/7d6490e462285cf85d91eabea0f9a954fbddcd1f) | 3,360,869,442 | public | 全量容量のみ上限内 |
+| 20 | `Qwen/Qwen3-Coder-Next` | `a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb` [rev](https://huggingface.co/Qwen/Qwen3-Coder-Next/tree/a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb) | 159,376,351,965 | public | 全量容量のみ上限内 |
+| 21 | `laion/emotional-roleplay-finetuning-dataset` | `68acdac74d30c12140fe3ebb9a5db30c7247cf1c` [rev](https://huggingface.co/datasets/laion/emotional-roleplay-finetuning-dataset/tree/68acdac74d30c12140fe3ebb9a5db30c7247cf1c) | 6,667,420,582 | public | 全量容量のみ上限内 |
+| 22 | `HuggingFaceFW/fineweb-edu` | `87f09149ef4734204d70ed1d046ddc9ca3f2b8f9` [rev](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu/tree/87f09149ef4734204d70ed1d046ddc9ca3f2b8f9) | 5,835,742,481,176 | public | 全量容量超過 |
+
+- **Gated**：`manual`3件（Meta DINOv3 7B、DINOv3 ViT-H+、SAM3）、`auto`10件、公開9件。アクセス方式の値は**個人のアクセス権限があることを意味しない**。承認状況は22件とも未検証。全22件でAPIの`disabled`明示フラグはfalseだが、将来の配布継続を保証しない。
+- **全P0の全repoを別個のファイル集合として足した概数**：**12,570,200,029,302 bytes（約12.57 TB、十進単位）**。これには同一SHAや各repo内の代替形式が重複し得る。実際の独立コンテンツ量ではない。
+- **全量で単独の3.8TB予算を超過する2件**：`amphion/Emilia-Dataset`（4,746,257,588,199 byte）、`HuggingFaceFW/fineweb-edu`（5,835,742,481,176 byte）。これら2件を全量保存対象としない場合、**残り20件の全repo単純合計は1,988,199,959,927 byte（約1.99TB）**。ただし権利・無条件の取得準備・共有依存・他帯の容量は一切未加算であり、予算内で取得が承認されたという意味ではない。
+
+### 18.2 `usedStorage`を保存容量と取り違える重大リスク
+
+| リポジトリ | `treesize(sha)` byte | Hub `usedStorage` byte | 誤差の規模 |
+| --- | ---: | ---: | --- |
+| LMSYS-Chat-1M | 1,488,861,436 | 142,671,529,700 | 約95.8倍 |
+| WildChat-1M | 3,360,869,442 | 18,967,671,990 | 約5.6倍 |
+| Seed-VC | 3,941,527,490 | 12,990,991,330 | 約3.3倍 |
+| Granary-v2 | 111,559,928,673 | 200,482,570,960 | 約1.8倍 |
+| LivePortrait | 2,139,986,693 | 3,613,893,019 | 約1.7倍 |
+| Emilia-Dataset | 4,746,257,588,199 | 7,171,088,300,975 | 約1.5倍 |
+
+同じHubの公開APIでも`usedStorage`（リポジトリ全体のストレージ使用量）と`treesize/{sha}`（選択revisionの実ファイル量）は**別の統計量**である。巨大な差を履歴・別ブランチ・キャッシュ等の単一原因と断定しない。v9の`archival_source_cost.upstream_all_files_bytes`では、P0の9件で旧`null`をこの固定revision計数に更新した。`selected_file_bytes=null`は維持。予算を超えた2件の`full_repo_exceeds_budget`を正しく`true`に更新した。
+
+### 18.3 SHA-256で実証した重複と、まだ同一視できない派生
+
+**A. Qwen3-TTSの「別Codecが必須」の正しい意味（旧説明の修正）**
+
+[Qwen3-TTS Base](https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base/tree/fd4b254389122332181a7c3db7f27e918eec64e3)内の`speech_tokenizer/model.safetensors`は682,293,092 byte。同じSHA-256 `836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258`を、独立[Qwen3-TTS-Tokenizer-12Hz](https://huggingface.co/Qwen/Qwen3-TTS-Tokenizer-12Hz)の`model.safetensors`でも確認。
+
+v9の`Qwen3-TTS-12Hz-1.7B-VoiceDesign`と`Qwen3-TTS-12Hz-0.6B-CustomVoice`にも同じSHAのCodecが同梱されている。**3資産をそれぞれ無重複のファイルとして保存する場合に比べ、Codec重み1コピーの共有で1,364,586,184 byteの重複を回避し得る。** これはファイルSHAが完全一致する同一バイトの証拠であり、各Talker本体が同一という意味ではない。構成JSON・語彙は各選択モデルのものを保持する。
+
+前節16の『Codecを外部で必ず別途取得する』とも読める表現は**ここで訂正する**。学習済みCodecはモデル構造上の独立部品だが、配布物としてはBase repo内部の`speech_tokenizer/`で完結する。別repoを重複して物理保管する必要はない。
+
+**B. LivePortrait：正式リダイレクトとhuman-only案の実容量**
+
+[作者の案内する旧`KwaiVGI/LivePortrait`](https://huggingface.co/KwaiVGI/LivePortrait)は、現在のHub APIで`KlingTeam/LivePortrait`に解決され、両URIが`82a4fa6735ca58432b6ce39301b4b9ee066dea47`の同じcommitを指す。**同じrepoを2件の保存価値として評価しない**。
+
+固定snapshot全体2,139,986,693 byteのうち、`liveportrait/`配下の人間用本体6ファイルは636,986,730 byte、`insightface/`配下の独立顔検出重み2ファイルは21,954,715 byte、`liveportrait_animals/`配下は1,477,328,231 byte。従って、人間用のみを候補とするなら**コア636.99MB＋正当に利用可能な顔検出依存＋小さな設定等**として構成可能。これは完成済みの合法的推論環境ではない（InsightFaceの学習済み重みには独立の非商用研究制限）。
+
+`liveportrait/retargeting_models/stitching_retargeting_module.pth`と動物版同名ファイルは、SHA-256 `3652d5a3f95099141a56986aaddec92fadf0a73c87a20fac9a2c07c32b28b611`で**2,393,098 byteのビット単位重複**。動物系の標準版とv1.1版は別SHAなので、性能・互換が未実証の間は単なる同一量子化として削除しない。
+
+**C. FLUX.2-dev：1リポジトリに複数の重みパッケージ**
+
+[配布元の固定revision](https://huggingface.co/black-forest-labs/FLUX.2-dev/tree/26afe3a78bb242c0a8bb181dcc8937bb16e5c66c)に、単一`flux2-dev.safetensors`（64,446,596,128 byte）と`transformer/`下の分割重み群（64,446,639,353 byte）、`text_encoder/`（48,022,859,875 byte）、`ae.safetensors`（336,211,292 byte）、`vae/`下のVAE（336,213,556 byte）が並存する。単一TransformerとDiffusers分割重みは**ハッシュが異なる別のパッケージ表現**であり、モデルの学習成果が二つ存在することの証明ではない。一方、**数値完全一致・指定backendでの再構成性は未試験**なので削除確定でもない。Python/Diffusers等の利用経路を先に指定して、選択ファイルの同一性を調べる。
+
+[Idol作者SDK](https://github.com/speridlabs/idol-sdk)が要求するのはMeta DINOv3 ViT-H+と**FLUX.2-devのVAE部分**であり、Idolのためだけに177.64GBのFLUX.2-dev全repoを保全する必要はない。ただしFLUX.2-dev自身はv9 P0の**独立した画像生成学習成果**であるため、Idol依存の観点だけでP0から除外しない。両Gatedの許諾も別々に必要。
+
+**D. DINOv3 ViT-H+：合法性を含めた原本と変換品の区別**
+
+Meta公式元`model.safetensors`：3,362,432,800 byte、SHA-256 `3e1d4d18b9bfa9f28fad8e9de6a783f1313532d3460efa4cd0b12521d81d1a4d`、revision `c807c9eeea853df70aec4069e6f56b28ddc82acc`。
+
+第三者`LibreYOLO/LibreDINOv3vith16plus`：1,681,247,720 byte、SHA-256 `34252ee11eeebf00d50c528d53d725672f03ad88ff30cb724ddf3920bf67dc4c`、revision `e849a3492905c6dabc89758042bf1402770fb4e6`。第三者は`fp32→bf16`変換で、bf16推論時に元モデルとビット同値と**作者が主張**しているが、こちらではモデルロードや独立の出力比較をしていない。**別SHAなので元ファイルの完全代替ではなく、Meta原本の手動Gated申請を無視して第三者repoから取得してよいという結論も導かれない。** 正規許諾・再配布権の確認が別途必要。
+
+### 18.4 次の工程の反証可能なH/T/D/C/U
+
+- **H（仮説）**：v9のP0で誤った全repo容量、bit単位の重複、異なるbackendの配布表現を分離すれば、非重複・正規許諾を前提とした保存構成は全repo単純合算より小さくなる。ただし同等の研究能力が残るかは未確認。
+- **T（最小検証）**：各選定パイプラインの独立重みファイルに固定SHAとファイルSHA-256、用途と契約、必須Codec/Encoder、推論backendを対応させる。最小試験n=1のモデル構成と比較ファイル2種類。SHA一致なら物理ファイル共有候補、相違なら必要に応じ著作権と許諾を確認した上でオフライン数値比較。研究・取得準備権が不明なら逐次STOP。
+- **D（合否）**：PASS=固定revision・全必要ファイルのbit一致または指定backendでの数値同等性、正規の保管権、150B制約、容量と本人別許諾が揃う。FAIL=明示的な法的禁止、必要学習済み重み欠損、150B以上。UNCERTAIN=数値同等性、本人Gated権限、変換済み重みの再配布許諾、個別用途条件が未確認。
+- **C（破れ方）**：Codec自体のrev差替え、FLUXの二表現で推論差、DINO BF16変換で許容できない性能低下、画像・音声の元ライセンス変更、manifestの一部欠損で再現性が壊れる。
+- **U（不確かさ）**：Hub公開API更新、モデルロード未実行、正規ライセンスと第三者再配布許可の差、Xetファイル署名、実機空き容量不明。SHA同一判定に「統計誤差」は設定しないが、観測時点のrev更新による差は残る。規制確率や`u_c`を数値で捏造しない。
+
+### 18.5 ERROR CHECK／非実行性
+
+- v9全132件・P0全22件維持、P0固定revision22件、`manual`3・`auto`10・`public`9。元モデル総数不明12件は取得準備STOP、150B以上2件はPX。
+- コミット前の`upstream_all_files_bytes=null`はP0の9件。いずれも公式の固定`treesize`で補完。選択ファイルの必要バイトは引き続き全22件未承認の`null`。P0全量超過2件の予算フラグは修正。
+- **今回の重み/音声/画像ファイル実ダウンロード・モデル推論実行・Gated利用規約の代理同意・有料クラウド使用・バックアップの実行は0件**。モデルの再配布も行っていない。
+- 同一SHA-256の確認は公式APIメタデータの比較であり、各ファイル自体のハッシュをローカルで再計算したわけではない。最終保存物に対するローカル実測のSHA検査は未実施。
+
+## 19.〈次に考える問い〉
+
+**今のP0で最小限必要なファイルセットを固定したとき、フルウェイト・蒸留重み・単なる量子化・同一Codec／Encoderをどこまで合法に共有でき、3.8TBの保存枠の内訳を確定できるか。** 次の監査では本体だけでなく、同一SHAの共有物・再現実行に必要なコードと契約の版まで束ねる。
