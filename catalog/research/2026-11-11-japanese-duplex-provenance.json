@@ -1,0 +1,977 @@
+{
+  "schema_version": 1,
+  "kind": "2026_11_11_JAPANESE_FULL_DUPLEX_PROVENANCE_AND_CAPACITY_AUDIT",
+  "as_of_jst": "2026-11-11",
+  "repository": "Unjuno/local-model-portfolio",
+  "branch": "strategy/2026-11-03-01-risk",
+  "reference_head": "f45a30ceea81cabcc0cd386bb97cb0aa8ac9182a",
+  "source_refs": {
+    "current": {
+      "repo_path": "catalog/CURRENT.json",
+      "git_blob_sha": "54dabeeb5f0597c48a8369626a01161d39b29be1"
+    },
+    "capacity": {
+      "repo_path": "catalog/capacity/2026-11-07/v27/capacity-summary.json",
+      "git_blob_sha": "5646a967a674080cbb610f5813de42d649a8b0f4"
+    },
+    "v28research": {
+      "repo_path": "catalog/research/2026-11-08-r33/pinned-file-capacity-and-dependency-audit.json",
+      "git_blob_sha": "6fa725d88404aa56071bdd85c88667e09e712ea9"
+    },
+    "approved": {
+      "repo_path": "queues/approved.json",
+      "git_blob_sha": "df0e369abda4b765533e0af3921c54a5cb164787"
+    }
+  },
+  "v27_untouched": true,
+  "v27_tracked": 173,
+  "v27_active": 126,
+  "approved_queue_count": 0,
+  "model_payload_downloaded": false,
+  "software_executed": false,
+  "personal_access_tested": false,
+  "facts": {
+    "source_trees": [
+      {
+        "key": "moshi",
+        "id": "kyutai/moshiko-pytorch-bf16",
+        "sha": "2bfc9ae6e89079a5cc7ed2a68436010d91a3d289",
+        "file_count": 5,
+        "bytes": 15760704992,
+        "core_params": 7687729152,
+        "license": "cc-by-4.0",
+        "access": "PUBLIC",
+        "priority": "P1_FOUNDATIONAL",
+        "why": "Original Moshi English full duplex, historically important learned speech interleaving; keep one original BF16, not redundant quant formats",
+        "api_url": "https://huggingface.co/api/models/kyutai/moshiko-pytorch-bf16/tree/2bfc9ae6e89079a5cc7ed2a68436010d91a3d289?recursive=true",
+        "tree_files": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1519,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "README.md",
+            "bytes": 5659,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "0b45b5f519005a76234eca19f7b08ce3ac6322d3",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "model.safetensors",
+            "bytes": 15375500136,
+            "source_lfs_sha256": "5b835c664f3830bf453808cbca9bfbcc9de332c328cc01cbffdfbaba2a8838a7",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "tokenizer-e351c8d8-checkpoint125.safetensors",
+            "bytes": 384644900,
+            "source_lfs_sha256": "09b782f0629851a271227fb9d36db65c041790365f11bbe5d3d59369cf863f50",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "tokenizer_spm_32k_3.model",
+            "bytes": 552778,
+            "source_lfs_sha256": "78d4336533ddc26f9acf7250d7fb83492152196c6ea4212c841df76933f18d2d",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          }
+        ],
+        "source_checkpoint_files": [
+          {
+            "path": "model.safetensors",
+            "bytes": 15375500136,
+            "sha256": "5b835c664f3830bf453808cbca9bfbcc9de332c328cc01cbffdfbaba2a8838a7"
+          },
+          {
+            "path": "tokenizer-e351c8d8-checkpoint125.safetensors",
+            "bytes": 384644900,
+            "sha256": "09b782f0629851a271227fb9d36db65c041790365f11bbe5d3d59369cf863f50"
+          }
+        ]
+      },
+      {
+        "key": "llmjp",
+        "id": "llm-jp/llm-jp-moshi-v1",
+        "sha": "1b5ccfae9cb4f9e981af7538c55671175236af40",
+        "file_count": 7,
+        "bytes": 15760962950,
+        "core_params": 7687729152,
+        "license": "apache-2.0_publisher_declared_with_J_CHAT_NC_data_rights_unresolved",
+        "access": "PUBLIC",
+        "priority": "P0_JAPANESE_RESEARCH_HOLD_LEGAL",
+        "why": "Separately fine-tuned full-duplex Japanese speech model with J-CHAT + 1000h LLM-jp-Zoom1; credible institutional source and publisher evaluation vs J-Moshi; confirm training-data rights",
+        "api_url": "https://huggingface.co/api/models/llm-jp/llm-jp-moshi-v1/tree/1b5ccfae9cb4f9e981af7538c55671175236af40?recursive=true",
+        "tree_files": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1519,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "README-en.md",
+            "bytes": 4516,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "012d7fe113857af839dc83f2afdcd31029423dd0",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "README.md",
+            "bytes": 5265,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "8f16ba622f560b92c474dbed6c2778e8df913ecf",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "model.safetensors",
+            "bytes": 15375500136,
+            "source_lfs_sha256": "c502864735c99a760be9e8db364a1c016ac253337c1e45f4f102258927780fa9",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "moshi_lm_kwargs.json",
+            "bytes": 980,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "1790d981547319fbebe286c940f029e531ebfe0b",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "tokenizer-e351c8d8-checkpoint125.safetensors",
+            "bytes": 384644900,
+            "source_lfs_sha256": "09b782f0629851a271227fb9d36db65c041790365f11bbe5d3d59369cf863f50",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "tokenizer_spm_32k_3.model",
+            "bytes": 805634,
+            "source_lfs_sha256": "b5cbdfa8aa7c54c8c5af85b78c309c54a5f2749a20468bf6f60eee007fe6fec1",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          }
+        ],
+        "source_checkpoint_files": [
+          {
+            "path": "model.safetensors",
+            "bytes": 15375500136,
+            "sha256": "c502864735c99a760be9e8db364a1c016ac253337c1e45f4f102258927780fa9"
+          },
+          {
+            "path": "tokenizer-e351c8d8-checkpoint125.safetensors",
+            "bytes": 384644900,
+            "sha256": "09b782f0629851a271227fb9d36db65c041790365f11bbe5d3d59369cf863f50"
+          }
+        ]
+      },
+      {
+        "key": "jmoshi",
+        "id": "nu-dialogue/j-moshi",
+        "sha": "bb8192b7abb97decb676e5b9613eb42072ab9d1a",
+        "file_count": 6,
+        "bytes": 15760964957,
+        "core_params": 7687729152,
+        "license": "cc-by-nc-4.0",
+        "access": "PUBLIC",
+        "priority": "P2_HISTORICAL_RESEARCH",
+        "why": "Original separately fine-tuned Japanese full-duplex; historical preservation, NC terms, less attractive than LLM-jp for practical archive",
+        "api_url": "https://huggingface.co/api/models/nu-dialogue/j-moshi/tree/bb8192b7abb97decb676e5b9613eb42072ab9d1a?recursive=true",
+        "tree_files": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1519,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "README-en.md",
+            "bytes": 5659,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "e2e8da38104f01ec1a44f9f6e91d9cc6daf27b67",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "README.md",
+            "bytes": 7109,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "eece8692daab844b1e081a28229c8e7b8d6662e7",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "model.safetensors",
+            "bytes": 15375500136,
+            "source_lfs_sha256": "2fff84d9b7693548c7905fad9fc898a6aae7c81332b4712bb8eee8772d244367",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "tokenizer-e351c8d8-checkpoint125.safetensors",
+            "bytes": 384644900,
+            "source_lfs_sha256": "09b782f0629851a271227fb9d36db65c041790365f11bbe5d3d59369cf863f50",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "tokenizer_spm_32k_3.model",
+            "bytes": 805634,
+            "source_lfs_sha256": "b5cbdfa8aa7c54c8c5af85b78c309c54a5f2749a20468bf6f60eee007fe6fec1",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          }
+        ],
+        "source_checkpoint_files": [
+          {
+            "path": "model.safetensors",
+            "bytes": 15375500136,
+            "sha256": "2fff84d9b7693548c7905fad9fc898a6aae7c81332b4712bb8eee8772d244367"
+          },
+          {
+            "path": "tokenizer-e351c8d8-checkpoint125.safetensors",
+            "bytes": 384644900,
+            "sha256": "09b782f0629851a271227fb9d36db65c041790365f11bbe5d3d59369cf863f50"
+          }
+        ]
+      },
+      {
+        "key": "jmoshiext",
+        "id": "nu-dialogue/j-moshi-ext",
+        "sha": "c4676f5aae2155bb20c300dd6c71b6115f97ec1f",
+        "file_count": 6,
+        "bytes": 15760964960,
+        "core_params": 7687729152,
+        "license": "cc-by-nc-4.0",
+        "access": "PUBLIC",
+        "priority": "P2_DISTINCT_TRAINING",
+        "why": "Synthetic expanded Japanese conversation training, own independently different 15.3755GB checkpoint, not mere conversion",
+        "api_url": "https://huggingface.co/api/models/nu-dialogue/j-moshi-ext/tree/c4676f5aae2155bb20c300dd6c71b6115f97ec1f?recursive=true",
+        "tree_files": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1519,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "README-en.md",
+            "bytes": 5661,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "009527b49a651d0e78c582b4d3ea8c60356fb2c3",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "README.md",
+            "bytes": 7110,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "9da9390426d2cdf339f355166271950cb03c6ec6",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "model.safetensors",
+            "bytes": 15375500136,
+            "source_lfs_sha256": "24b89af07dddd5b2d2d1adef35834fe996e4e2518d0fe58b3be1aebab8fe86f9",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "tokenizer-e351c8d8-checkpoint125.safetensors",
+            "bytes": 384644900,
+            "source_lfs_sha256": "09b782f0629851a271227fb9d36db65c041790365f11bbe5d3d59369cf863f50",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "tokenizer_spm_32k_3.model",
+            "bytes": 805634,
+            "source_lfs_sha256": "b5cbdfa8aa7c54c8c5af85b78c309c54a5f2749a20468bf6f60eee007fe6fec1",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          }
+        ],
+        "source_checkpoint_files": [
+          {
+            "path": "model.safetensors",
+            "bytes": 15375500136,
+            "sha256": "24b89af07dddd5b2d2d1adef35834fe996e4e2518d0fe58b3be1aebab8fe86f9"
+          },
+          {
+            "path": "tokenizer-e351c8d8-checkpoint125.safetensors",
+            "bytes": 384644900,
+            "sha256": "09b782f0629851a271227fb9d36db65c041790365f11bbe5d3d59369cf863f50"
+          }
+        ]
+      },
+      {
+        "key": "bayling",
+        "id": "BayLing-Models/BayLing-Duplex",
+        "sha": "b314288d7fc545cdac3b2fe0c4caeb9084c5526b",
+        "file_count": 21,
+        "bytes": 19091806599,
+        "core_params": null,
+        "license": "glm-4-voice-License_registration_for_commercial_use",
+        "access": "PUBLIC",
+        "priority": "P1_ARCHITECTURE_LICENSE_AUDIT",
+        "why": "GLM-4-Voice posttrained end-to-end full-duplex with token-based turn control; 400k author-reported samples, DPO; license restricts usage and requires commercial registration",
+        "api_url": "https://huggingface.co/api/models/BayLing-Models/BayLing-Duplex/tree/b314288d7fc545cdac3b2fe0c4caeb9084c5526b?recursive=true",
+        "tree_files": [
+          {
+            "path": ".gitattributes",
+            "bytes": 296,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "88e0654483902f5e487cb73e0bd8b69ffd15bd28",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "CITATION.cff",
+            "bytes": 261,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "d23734522acb4827d528f3c16a5a0c5e845b3c12",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "LICENSE",
+            "bytes": 3528,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "d405ad96c144aeb661627b597eeb175cabade96a",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "NOTICE.md",
+            "bytes": 622,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "8a65f5775af4b30080b3c3d4f31a245de1ce63cc",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "README.md",
+            "bytes": 5045,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "2761e18b7c5fbdc128f710b667ac3faf0dae2c89",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "added_tokens.json",
+            "bytes": 497753,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "7905f9cf6473cd36f3e0a6139111b87dca54bb40",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "chat_template.jinja",
+            "bytes": 443,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "9dd80303a0d84568dfc4f6dc7a1a27925674f1ae",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "config.json",
+            "bytes": 1411,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "bff70bfc315506fd95a835c92bcc1d27f8711ba7",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "configuration_chatglm.py",
+            "bytes": 2267,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "65efd3ad198e42868ff0803975ff4b4246c008b8",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "generation_config.json",
+            "bytes": 240,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "2fa8e938668009c9bb973363552692274e63127f",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "images/bayling_duplex_model.png",
+            "bytes": 252329,
+            "source_lfs_sha256": "da4d6637cf71ef6275fed824a7a1e20437fac20041f1d8ed44fd3130bbc4748a",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "bytes": 4943226352,
+            "source_lfs_sha256": "ee73d2cb0e5fe5fca4c64db3cd2626832bb7d6beaf20a5890b02a854d7eede5c",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "bytes": 4895071352,
+            "source_lfs_sha256": "391be30fbed8d38faab4c2eee2410c9df980b092ec55df3ea400eee44bab1a6a",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "bytes": 4895071368,
+            "source_lfs_sha256": "b22c7587a6fef0e41ca6e18c203c46b28f80ec6f19b133d0469281c8ef053ed2",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "bytes": 4351784792,
+            "source_lfs_sha256": "4104039bc836dfbedd4ede7b2680c1bd19a03cd51307da2238911dc20bcbbe91",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "bytes": 29086,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "db4c2991c2bdb2d82ceca8d3da9e20a3e449b0e7",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "modeling_chatglm.py",
+            "bytes": 47282,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "15402563a5b343e2029e75c3873246f0a94384ed",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "special_tokens_map.json",
+            "bytes": 761,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "ee3a9d2f7a1dbbc28c2058b4f4df89a8e866eaaf",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "tokenization_chatglm.py",
+            "bytes": 8986,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "cadd24d098a4b96ca8aa63f593dc88480e79a6c9",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "tokenizer.model",
+            "bytes": 2623634,
+            "source_lfs_sha256": "5a493598071550244b2ee7f26118f3edec2150b9dfa967929a99052ac83fe716",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "tokenizer_config.json",
+            "bytes": 3178791,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "20ffddea82d3bee4788b2f5d247ad5244d6a60a0",
+            "local_sha256_verified": false
+          }
+        ],
+        "source_checkpoint_files": [
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "bytes": 4943226352,
+            "sha256": "ee73d2cb0e5fe5fca4c64db3cd2626832bb7d6beaf20a5890b02a854d7eede5c"
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "bytes": 4895071352,
+            "sha256": "391be30fbed8d38faab4c2eee2410c9df980b092ec55df3ea400eee44bab1a6a"
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "bytes": 4895071368,
+            "sha256": "b22c7587a6fef0e41ca6e18c203c46b28f80ec6f19b133d0469281c8ef053ed2"
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "bytes": 4351784792,
+            "sha256": "4104039bc836dfbedd4ede7b2680c1bd19a03cd51307da2238911dc20bcbbe91"
+          }
+        ]
+      },
+      {
+        "key": "glm_token",
+        "id": "zai-org/glm-4-voice-tokenizer",
+        "sha": "a5f2404e63c84e92f5238908e1706316324ebafa",
+        "file_count": 6,
+        "bytes": 1458385871,
+        "core_params": 364587264,
+        "license": "glm-4-voice-License_registration_for_commercial_use",
+        "access": "PUBLIC",
+        "priority": "DEPENDENCY_OF_BAYLING_ONLY",
+        "why": "External trained speech tokenizer required to reconstruct BayLing pipeline",
+        "api_url": "https://huggingface.co/api/models/zai-org/glm-4-voice-tokenizer/tree/a5f2404e63c84e92f5238908e1706316324ebafa?recursive=true",
+        "tree_files": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1519,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "LICENSE",
+            "bytes": 6490,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "a6bb941bd9d7c6f6a9ca745499971af703de33dd",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "README.md",
+            "bytes": 1296,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "920a07de4547a73d79e71376a4271ec9be4a0e91",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "config.json",
+            "bytes": 1746,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "d5765b0940b8fe62ba00b7ed5ee5892a56a78f70",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "model.safetensors",
+            "bytes": 1458374480,
+            "source_lfs_sha256": "2800bd503f52b51e45f0c53cfd5c31dcfe8ef7f13d22b396aa3d53e0280dd1e4",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "preprocessor_config.json",
+            "bytes": 340,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "931c77a740890c46365c7ae0c9d350ba3cca908f",
+            "local_sha256_verified": false
+          }
+        ],
+        "source_checkpoint_files": [
+          {
+            "path": "model.safetensors",
+            "bytes": 1458374480,
+            "sha256": "2800bd503f52b51e45f0c53cfd5c31dcfe8ef7f13d22b396aa3d53e0280dd1e4"
+          }
+        ]
+      },
+      {
+        "key": "glm_decoder",
+        "id": "zai-org/glm-4-voice-decoder",
+        "sha": "81ed541f0350d0b81728681afb628acee62772c2",
+        "file_count": 6,
+        "bytes": 527082087,
+        "core_params": null,
+        "license": "glm-4-voice-License_registration_for_commercial_use",
+        "access": "PUBLIC",
+        "priority": "DEPENDENCY_OF_BAYLING_ONLY",
+        "why": "External speech decoder trained weights flow.pt and hift.pt required to reconstruct BayLing audio",
+        "api_url": "https://huggingface.co/api/models/zai-org/glm-4-voice-decoder/tree/81ed541f0350d0b81728681afb628acee62772c2?recursive=true",
+        "tree_files": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1519,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "LICENSE",
+            "bytes": 6490,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "a6bb941bd9d7c6f6a9ca745499971af703de33dd",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "README.md",
+            "bytes": 1415,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "5ff4108008892255b0414a095df371597e4e907c",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "config.yaml",
+            "bytes": 4447,
+            "source_lfs_sha256": null,
+            "source_git_blob_sha1": "3cd2469f443087972d12104c5d395dc03698e9a4",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "flow.pt",
+            "bytes": 445171500,
+            "source_lfs_sha256": "450f52ba9cbea63757914e72b42ac5af21509a2767de0b18b4694546fd1d30ed",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "hift.pt",
+            "bytes": 81896716,
+            "source_lfs_sha256": "91e679b6ca1eff71187ffb4f3ab0444935594cdcc20a9bd12afad111ef8d6012",
+            "source_git_blob_sha1": null,
+            "local_sha256_verified": false
+          }
+        ],
+        "source_checkpoint_files": [
+          {
+            "path": "flow.pt",
+            "bytes": 445171500,
+            "sha256": "450f52ba9cbea63757914e72b42ac5af21509a2767de0b18b4694546fd1d30ed"
+          },
+          {
+            "path": "hift.pt",
+            "bytes": 81896716,
+            "sha256": "91e679b6ca1eff71187ffb4f3ab0444935594cdcc20a9bd12afad111ef8d6012"
+          }
+        ]
+      }
+    ],
+    "shared_moshi_lineage": [
+      {
+        "id": "kyutai/moshiko-pytorch-bf16",
+        "core": "5b835c664f3830bf453808cbca9bfbcc9de332c328cc01cbffdfbaba2a8838a7",
+        "mimi": "09b782f0629851a271227fb9d36db65c041790365f11bbe5d3d59369cf863f50",
+        "text": "78d4336533ddc26f9acf7250d7fb83492152196c6ea4212c841df76933f18d2d"
+      },
+      {
+        "id": "llm-jp/llm-jp-moshi-v1",
+        "core": "c502864735c99a760be9e8db364a1c016ac253337c1e45f4f102258927780fa9",
+        "mimi": "09b782f0629851a271227fb9d36db65c041790365f11bbe5d3d59369cf863f50",
+        "text": "b5cbdfa8aa7c54c8c5af85b78c309c54a5f2749a20468bf6f60eee007fe6fec1"
+      },
+      {
+        "id": "nu-dialogue/j-moshi",
+        "core": "2fff84d9b7693548c7905fad9fc898a6aae7c81332b4712bb8eee8772d244367",
+        "mimi": "09b782f0629851a271227fb9d36db65c041790365f11bbe5d3d59369cf863f50",
+        "text": "b5cbdfa8aa7c54c8c5af85b78c309c54a5f2749a20468bf6f60eee007fe6fec1"
+      },
+      {
+        "id": "nu-dialogue/j-moshi-ext",
+        "core": "24b89af07dddd5b2d2d1adef35834fe996e4e2518d0fe58b3be1aebab8fe86f9",
+        "mimi": "09b782f0629851a271227fb9d36db65c041790365f11bbe5d3d59369cf863f50",
+        "text": "b5cbdfa8aa7c54c8c5af85b78c309c54a5f2749a20468bf6f60eee007fe6fec1"
+      }
+    ],
+    "computed_sizes": {
+      "bayling_model_bytes": 19091806599,
+      "bayling_tokenizer_bytes": 1458385871,
+      "bayling_decoder_bytes": 527082087,
+      "bayling_complete_three_repos_source_bytes": 21077274557,
+      "japanese_core_weight_bytes": 15375500136,
+      "japanese_mimi_shared_lfs_bytes": 384644900,
+      "japanese_text_token_shared_bytes": 805634,
+      "jmoshi_ext_after_llmjp_lfs_dedup_upper_bytes": 15375514426,
+      "bayling_safetensors_metadata_conflict": {
+        "index_metadata_total_parameters": 516096,
+        "index_metadata_total_size_bytes": 19085115456,
+        "huggingface_api_reported_BF16_parameter_count": 9542557728,
+        "hf_safetensors_total_reported": 516096,
+        "warning": "Source index 516096 is inconsistent with sharded BF16 tensors covering 19.085 GB; never use 516096 as model total. External tokenizer 364587264, decoder unknown, full trained count HOLD."
+      }
+    }
+  },
+  "author_claims_and_uncertainties": [
+    {
+      "id": "JPN-L1",
+      "severity": "HIGH_REVIEW",
+      "basis": "NII states Apache-2.0 open weights, but explicitly pretrains on J-CHAT; J-CHAT public data card itself says CC BY-NC 4.0 and commercial use is not admitted.",
+      "conclusion": "Dataset NC restrictions do NOT automatically prove trained weights are NC; independent authorization or research-specific rights may apply. Do not assert commercial legal clearance without source clarifications.",
+      "next_action": "Check dataset provider rights and NII separate authorization, training lineage and original source notices; archive for own lawful research only after relevant gate.",
+      "sources": [
+        "https://www.nii.ac.jp/news/release/2026/0225.html",
+        "https://huggingface.co/datasets/sarulab-speech/J-CHAT"
+      ]
+    },
+    {
+      "id": "JPN-L2",
+      "severity": "RESEARCH_HOLD",
+      "basis": "NII describes LLM-jp-Zoom1 1000 hours collected and a future release; full publicly released raw source with legal permissions not verified.",
+      "conclusion": "Cannot claim full training reproducibility from weights alone.",
+      "next_action": "Track official dataset release and verified speaker consent/license; do not seek unauthorized recordings",
+      "sources": [
+        "https://www.nii.ac.jp/news/release/2026/0225.html"
+      ]
+    },
+    {
+      "id": "BAY-L1",
+      "severity": "PERSONAL_RIGHTS_REVIEW",
+      "basis": "BayLing-Duplex repo and upstream tokenizer/decoder use glm-4-voice License, commercial registration required, attribution/naming restrictions and defined prohibited uses.",
+      "conclusion": "Not Apache-2.0 and not commercial-clear based solely on public repo listing.",
+      "next_action": "Review original license for user's actual personal intended use; do not auto-register or accept",
+      "sources": [
+        "https://huggingface.co/BayLing-Models/BayLing-Duplex/raw/b314288d7fc545cdac3b2fe0c4caeb9084c5526b/LICENSE"
+      ]
+    },
+    {
+      "id": "BAY-N1",
+      "severity": "DATA_QUALITY_BLOCK",
+      "basis": "BayLing model.safetensors.index.json metadata.total_parameters=516,096 while HF model API reports BF16 tensors 9,542,557,728 parameters; four sharded model files total ~19.085GB. External tokenizer reports 364,587,264 and decoder total unverified.",
+      "conclusion": "Count published index as inconsistent; do not use 516,096. Full trained pipeline total remains unverified and blocked for final acquisition manifest.",
+      "next_action": "Validate safetensors file headers by controlled metadata-only source later; enumerate codec weights exactly",
+      "sources": [
+        "https://huggingface.co/BayLing-Models/BayLing-Duplex/raw/b314288d7fc545cdac3b2fe0c4caeb9084c5526b/model.safetensors.index.json",
+        "https://arxiv.org/abs/2606.14528"
+      ]
+    },
+    {
+      "id": "JPN-M1",
+      "severity": "NOT_DOWNLOADABLE",
+      "basis": "Shizuku-Duplex 2026-11-08 announcement includes Japanese live 80ms architecture and self-reported evaluation but no official checkpoint download link in inspected blog.",
+      "conclusion": "Publisher-only research lead; do not represent as publicly released weights.",
+      "next_action": "Watch publisher source for direct immutable checkpoint and clear license rather than media claims.",
+      "sources": [
+        "https://shizuku.ai/blog/1/"
+      ]
+    }
+  ],
+  "shizuku": {
+    "official_blog": "https://shizuku.ai/blog/1/",
+    "announced": "2026-11-08",
+    "weights_url_verified": null,
+    "files_verified": 0,
+    "model_status": "RESEARCH_ANNOUNCEMENT_NO_CHECKPOINT_PROVEN",
+    "vendor_performance": "80ms per tick and 0.57 seconds first response (publisher; nonuniform clocks), not independent"
+  },
+  "research_and_evaluation": {
+    "peer_reviewed_framework": {
+      "name": "Speaking While Listening",
+      "published": "EMNLP 2026",
+      "url": "https://aclanthology.org/2026.emnlp-main.1126/",
+      "axes": [
+        "L0-L3 architectural decision location",
+        "T×I×R timing/intent/response",
+        "idle/listen/speak/wait/dual state machine"
+      ],
+      "note": "Full duplex badge alone is not performance/architectural equivalence; L3 claims require implementation validation"
+    },
+    "independent_benchmark": {
+      "name": "InteractionBench",
+      "url": "https://arxiv.org/abs/2611.02430",
+      "code": "https://github.com/avera-labs/InteractionBench",
+      "arxiv": "2611.02430",
+      "run_dates": "Aug-Sep 2026",
+      "total_graded_runs": 1519,
+      "samples_per_system_requested": 221,
+      "method": "same recorded audio across all assessed systems, timing recorded at client; some items missing per model",
+      "results": [
+        {
+          "model": "Moshi",
+          "spoken_correct_of_50": 3,
+          "grounded_passed_of_50": 7,
+          "timing_percent": 41
+        },
+        {
+          "model": "PersonaPlex",
+          "spoken_correct_of_50": 9,
+          "grounded_passed_of_50": 15,
+          "timing_percent": 68
+        },
+        {
+          "model": "turn_based_cascade",
+          "spoken_correct_of_50": 38,
+          "grounded_passed_of_52": 39,
+          "timing_percent": 49
+        }
+      ],
+      "exclusions": "Does not evaluate Sophon, BayLing, Japanese Moshi or new Shizuku; English results do not prove Japanese capabilities.",
+      "independence": "AveraLabs authors measured these systems; do not generalize beyond named versions/configurations."
+    },
+    "future_test_plan": {
+      "scope": "only if user explicitly authorizes model acquisition and tests",
+      "fixed_parameters": [
+        "HW_GPU_VRAM_CPU_RAM",
+        "driver_CUDA_backend_ABI",
+        "zero_point_quantization",
+        "context_batch_clock",
+        "audio_length",
+        "Japanese native vs English"
+      ],
+      "min_samples_per_condition": 30,
+      "metrics": [
+        "barge_in_stop_delay",
+        "backchannel_false_cutoff",
+        "word_error_rate",
+        "task_accuracy",
+        "long_turn_grounding",
+        "p50_p90_first_audio",
+        "real_peak_ram",
+        "external_network_requests"
+      ],
+      "hold_until_completed": true
+    }
+  },
+  "capacity": {
+    "v27_known_source_only_bytes": 3417685712585,
+    "v28_three_nonadopted_source_increment_bytes": 145004061364,
+    "scenarios": [
+      {
+        "name": "A_v27_only",
+        "source_only_bytes": 3417685712585,
+        "source_only_headroom_bytes_if_empty_3point8TB_with_200GB_floor": 182314287415,
+        "conditional_source_only_feasible": true,
+        "requires_actual_disk_and_extra_dependencies": true,
+        "no_approvals": true
+      },
+      {
+        "name": "B_v27_plus_llmjp",
+        "source_only_bytes": 3433446675535,
+        "source_only_headroom_bytes_if_empty_3point8TB_with_200GB_floor": 166553324465,
+        "conditional_source_only_feasible": true,
+        "requires_actual_disk_and_extra_dependencies": true,
+        "no_approvals": true
+      },
+      {
+        "name": "C_v27_plus_llmjp_and_bayling",
+        "source_only_bytes": 3454523950092,
+        "source_only_headroom_bytes_if_empty_3point8TB_with_200GB_floor": 145476049908,
+        "conditional_source_only_feasible": true,
+        "requires_actual_disk_and_extra_dependencies": true,
+        "no_approvals": true
+      },
+      {
+        "name": "D_v27_plus_unadopted_v28",
+        "source_only_bytes": 3562689773949,
+        "source_only_headroom_bytes_if_empty_3point8TB_with_200GB_floor": 37310226051,
+        "conditional_source_only_feasible": true,
+        "requires_actual_disk_and_extra_dependencies": true,
+        "no_approvals": true
+      },
+      {
+        "name": "E_v27_v28_plus_llmjp",
+        "source_only_bytes": 3578450736899,
+        "source_only_headroom_bytes_if_empty_3point8TB_with_200GB_floor": 21549263101,
+        "conditional_source_only_feasible": true,
+        "requires_actual_disk_and_extra_dependencies": true,
+        "no_approvals": true
+      },
+      {
+        "name": "F_v27_v28_llmjp_and_bayling",
+        "source_only_bytes": 3599528011456,
+        "source_only_headroom_bytes_if_empty_3point8TB_with_200GB_floor": 471988544,
+        "conditional_source_only_feasible": true,
+        "requires_actual_disk_and_extra_dependencies": true,
+        "no_approvals": true
+      },
+      {
+        "name": "G_v27_v28_llmjp_and_minicpm",
+        "source_only_bytes": 3598499372719,
+        "source_only_headroom_bytes_if_empty_3point8TB_with_200GB_floor": 1500627281,
+        "conditional_source_only_feasible": true,
+        "requires_actual_disk_and_extra_dependencies": true,
+        "no_approvals": true
+      }
+    ],
+    "assumed_empty_formatted_volume_bytes": 3800000000000,
+    "minimum_free_bytes": 200000000000,
+    "real_volume_free_bytes": null,
+    "complete_bundle_and_cache_bytes": null,
+    "default_action": "DO_NOT_ADOPT_UNTIL_RIGHTS_AND_PHYSICAL_CAPACITY_PROVEN",
+    "full_reproducibility_verified": false
+  },
+  "candidate_recommendation": [
+    {
+      "repo_id": "llm-jp/llm-jp-moshi-v1",
+      "priority": "P0_RESEARCH_HOLD_LICENSE",
+      "value": "Independent Japanese conversational audio posttraining and publisher-supported release",
+      "blockers": [
+        "JCHAT_NC_DATASET_PROVENANCE",
+        "ZOOM1_RAW_DATA_RELEASE_UNKNOWN",
+        "NO_LOCAL_FILE_HASH",
+        "OWNER_DISK_UNMEASURED"
+      ]
+    },
+    {
+      "repo_id": "BayLing-Models/BayLing-Duplex",
+      "priority": "P1_ARCHITECTURAL_DIVERSITY_RESEARCH_HOLD",
+      "value": "GLM4 Voice-based native token-interleaved speech turn control with 400K posttraining examples, distinct from Moshi",
+      "blockers": [
+        "GLM4_VOICE_LICENSE_REGISTRATION_WHEN_COMMERCIAL",
+        "METADATA_PARAMETER_INDEX_CONTRADICTION",
+        "EXTERNAL_AUDIO_COMPONENTS",
+        "NO_LOCAL_TEST"
+      ]
+    },
+    {
+      "repo_id": "nu-dialogue/j-moshi-ext",
+      "priority": "P2_RESEARCH_HISTORICAL_HOLD",
+      "value": "Different trained weights with synthetic dialogue expansion; not simple quant",
+      "blockers": [
+        "CC_BY_NC",
+        "ADDITIONAL_15GB_SOURCE_PRESSURE",
+        "INDEPENDENT_QUALITY_EVAL"
+      ]
+    },
+    {
+      "repo_id": "nu-dialogue/j-moshi",
+      "priority": "P2_RESEARCH_HISTORICAL_HOLD",
+      "value": "Early Japanese Moshi adaptation, primary Interspeech 2025 history, baseline for later Japanese work",
+      "blockers": [
+        "CC_BY_NC",
+        "DUPLICATE_MECHANISM_WITH_LLMJP",
+        "ADDITIONAL_15GB_SOURCE_PRESSURE"
+      ]
+    },
+    {
+      "repo_id": "kyutai/moshiko-pytorch-bf16",
+      "priority": "P1_FOUNDATIONAL_ORIGINAL_RESEARCH",
+      "value": "Original open speech dual-stream model; current v27 does not include it",
+      "blockers": [
+        "PUBLISHER_WEIGHT_ATTRIBUTION",
+        "RUNTIME_ABI_AND_RAM",
+        "NEED_MANIFEST"
+      ]
+    },
+    {
+      "repo_id": "Shizuku AI / Shizuku-Duplex",
+      "priority": "WATCH_NO_DOWNLOADABLE_WEIGHTS",
+      "value": "Japanese low latency async backend model announced, but no authoritative public downloadable weights identified",
+      "blockers": [
+        "NOT_AN_OPEN_WEIGHT_ASSET",
+        "NO_LICENSE_OR_SHA"
+      ]
+    }
+  ],
+  "prohibitions": [
+    "NO_DOWNLOAD_MODEL_PAYLOAD",
+    "NO_INSTALL_OR_EXECUTE_PUBLISHER_CODE",
+    "NO_3RD_PARTY_LICENSE_ACCEPT",
+    "NO_GATED_ACCESS_BYPASS",
+    "NO_CURRENT_V27_OR_APPROVAL_QUEUE_EDIT",
+    "NO_PRESUMED_CAPACITY_FIT"
+  ],
+  "evidence_urls": {
+    "institutional_llmjp": "https://www.nii.ac.jp/news/release/2026/0225.html",
+    "llmjp_academic": "https://aclanthology.org/2026.iwsds-1.10/",
+    "jchat_license": "https://huggingface.co/datasets/sarulab-speech/J-CHAT",
+    "jmoshi_original": "https://arxiv.org/abs/2506.02979",
+    "jmoshi_doi": "https://doi.org/10.21437/Interspeech.2025-2564",
+    "bayling_paper": "https://arxiv.org/abs/2606.14528",
+    "bayling_license": "https://huggingface.co/BayLing-Models/BayLing-Duplex/raw/b314288d7fc545cdac3b2fe0c4caeb9084c5526b/LICENSE",
+    "bayling_index": "https://huggingface.co/BayLing-Models/BayLing-Duplex/raw/b314288d7fc545cdac3b2fe0c4caeb9084c5526b/model.safetensors.index.json",
+    "shizuku_company": "https://shizuku.ai/blog/1/",
+    "benchmark_paper": "https://arxiv.org/abs/2611.02430",
+    "benchmark_code": "https://github.com/avera-labs/InteractionBench",
+    "full_duplex_survey": "https://aclanthology.org/2026.emnlp-main.1126/",
+    "hfcautions": "https://huggingface.co/docs/hub/models-gated"
+  },
+  "validation": {
+    "checks": {
+      "base_v27_173": true,
+      "approval_zero": true,
+      "seven_exact_snapshot_trees": true,
+      "all_40char_revisions": true,
+      "four_moshi_core_sha256_distinct": true,
+      "four_moshi_audio_mimi_shared": true,
+      "japanese_text_token_shared": true,
+      "bayling_three_parts": true,
+      "bayling_wrong_index_metadata_not_trusted": true,
+      "mimi_384644900": true,
+      "bayling_sum_21077274557": true,
+      "v28_145004061364": true,
+      "no_model_download": true,
+      "no_selection_change": true
+    },
+    "failures": [],
+    "passed": 14
+  }
+}
