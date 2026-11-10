@@ -1,0 +1,1618 @@
+{
+  "schema_version": 1,
+  "kind": "UNDerdog_2026_11_11_METADATA_ONLY_RESEARCH",
+  "date": "2026-11-11",
+  "repo": "Unjuno/local-model-portfolio",
+  "branch": "strategy/2026-11-03-01-risk",
+  "reference_head": "1b38a156567e43bd921845cc8f289c0ebee36c3a",
+  "current_v27_173_unchanged": true,
+  "source_catalog_refs": [
+    {
+      "path": "catalog/CURRENT.json",
+      "sha": "54dabeeb5f0597c48a8369626a01161d39b29be1"
+    },
+    {
+      "path": "catalog/effective-portfolio-2026-11-07-v27.json",
+      "sha": "ad7dc54dd67e7421cb685750238658f2f4e05e41"
+    },
+    {
+      "path": "catalog/capacity/2026-11-07/v27/capacity-summary.json",
+      "sha": "5646a967a674080cbb610f5813de42d649a8b0f4"
+    },
+    {
+      "path": "queues/approved.json",
+      "sha": "df0e369abda4b765533e0af3921c54a5cb164787"
+    },
+    {
+      "path": "policies/limits.json",
+      "sha": "bb389458b9681aaa3d994ef86efe09f505256bb1"
+    }
+  ],
+  "current_v27_comparators": [
+    {
+      "repo_id": "orcarouter/Qwen3.8-27B-Uncensored",
+      "decision": "conditional"
+    },
+    {
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "decision": "conditional"
+    },
+    {
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "decision": "conditional"
+    },
+    {
+      "repo_id": "afdudley/Qwen3.8-27B-abliterated-NVFP4",
+      "decision": "hold"
+    },
+    {
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+      "decision": "select"
+    },
+    {
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+      "decision": "select"
+    },
+    {
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "decision": "select"
+    },
+    {
+      "repo_id": "Qwen/Qwen3.8-27B",
+      "decision": "select"
+    },
+    {
+      "repo_id": "Qwen/Qwen3-ASR-1.7B",
+      "decision": "select"
+    },
+    {
+      "repo_id": "orcarouter/Qwen3.8-27B-Uncensored-FP8",
+      "decision": "deferred"
+    },
+    {
+      "repo_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU",
+      "decision": "conditional"
+    },
+    {
+      "repo_id": "gradium/phonon-31m-en",
+      "decision": "conditional"
+    },
+    {
+      "repo_id": "gradium/phonon-40m-multilingual",
+      "decision": "conditional"
+    }
+  ],
+  "candidates": [
+    {
+      "key": "woof_ja",
+      "repo_id": "ConwayResearch/Underdog-Woof-Japanese",
+      "revision_sha": "2814985816be329a9574dc79944927adc53318fb",
+      "source_tree_api": "https://huggingface.co/api/models/ConwayResearch/Underdog-Woof-Japanese/tree/2814985816be329a9574dc79944927adc53318fb?recursive=true",
+      "file_count": 16,
+      "full_repo_source_bytes": 43835158,
+      "license_metadata": "underdog-non-commercial-1.0",
+      "access": "PUBLIC_UNGATED_METADATA",
+      "research_priority": "P0",
+      "novelty": "Japanese two-voice CPU TTS; independent specialized pronunciation and number reading; total learned parameters and pyopenjtalk ABI not yet verified",
+      "primary_weight_path": "woof_ja_int8.npz",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1561,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "83cfd8dbb643612f79f25d84b65ac7e4b3c4fb7f",
+          "local_hash_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 7612,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "d1148b7b7d1ce968fde22afd36b8f281a116fdb5",
+          "local_hash_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 1259,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "880a42eb1db5961590aca7bc2b1a720c18286fb9",
+          "local_hash_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 5091,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "7985cd44030049c229022c01b6aaa5b1b7cdba97",
+          "local_hash_verified": false
+        },
+        {
+          "path": "requirements.txt",
+          "bytes": 34,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "fdbb41291c3441149284015756ca6fbb16e6f363",
+          "local_hash_verified": false
+        },
+        {
+          "path": "samples/mikasa_1.wav",
+          "bytes": 478604,
+          "source_lfs_sha256": "8bfaaf3ab7c9b359fd7cd8ac8bfa2cc65cbb4da3d5a28265d21807b7afde1cbc",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "samples/mikasa_2.wav",
+          "bytes": 808844,
+          "source_lfs_sha256": "4aa33ccab28b8f1da8ef5f8c3baecda688375c54cbdddd4efa1a55d8e9188b71",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "samples/mikasa_3.wav",
+          "bytes": 345644,
+          "source_lfs_sha256": "33591935b2caa610b1c4a521aec5a2a9de5b0628717f46a3fadae8e07dee8ad5",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "samples/misa_1.wav",
+          "bytes": 451724,
+          "source_lfs_sha256": "ae6c151c819509ea05028ea767f3774aea1aace46b904c55fbac94c2e55dc812",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "samples/misa_2.wav",
+          "bytes": 818444,
+          "source_lfs_sha256": "eb69fd45d27443a694001fc0afb1bee0c9bfd31b90a59e3170cdec180945c14d",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "samples/misa_3.wav",
+          "bytes": 380204,
+          "source_lfs_sha256": "e495cd17e0fa578a9a2a0cd9a8b0535cc1ac022208e3e38821a9e1fb7cb14de6",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "underdog_woof_ja/__init__.py",
+          "bytes": 3727,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "e1d949fde776ff944781894493c6b685b4477b91",
+          "local_hash_verified": false
+        },
+        {
+          "path": "underdog_woof_ja/__main__.py",
+          "bytes": 444,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "b793f487950397ea4fecec75764848c6d0e4ba84",
+          "local_hash_verified": false
+        },
+        {
+          "path": "underdog_woof_ja/ja_front.py",
+          "bytes": 3382,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "37bd5085d7ea1f8e37b204b81c0c73f21cb08672",
+          "local_hash_verified": false
+        },
+        {
+          "path": "underdog_woof_ja/runtime.py",
+          "bytes": 16030,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "956f2df08feb592a69a199c83c1a38f9f9cbf8e8",
+          "local_hash_verified": false
+        },
+        {
+          "path": "woof_ja_int8.npz",
+          "bytes": 40512554,
+          "source_lfs_sha256": "e777c7fb76428f4424d6a16fa3f3636e9097fecd9a2609d46570f71586fe4595",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        }
+      ],
+      "strategic": "RESEARCH_CANDIDATE",
+      "acquisition_decision": "HOLD_NO_USER_APPROVAL",
+      "complete_learned_pipeline_total_verified": false,
+      "rights_verified": false,
+      "download_approved": false
+    },
+    {
+      "key": "woof_en",
+      "repo_id": "ConwayResearch/Underdog-Woof",
+      "revision_sha": "be702960539777fc3f698e54335276a8391b00f9",
+      "source_tree_api": "https://huggingface.co/api/models/ConwayResearch/Underdog-Woof/tree/be702960539777fc3f698e54335276a8391b00f9?recursive=true",
+      "file_count": 21,
+      "full_repo_source_bytes": 45258148,
+      "license_metadata": "underdog-non-commercial-1.0",
+      "access": "PUBLIC_UNGATED_METADATA",
+      "research_priority": "P1",
+      "novelty": "English two-voice CPU TTS; vendor reports 38.24M learned speech and Mimi-adapted decoder; compare against v27 Phonon",
+      "primary_weight_path": "woof_int8.npz",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2136,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "09a804f81062ffbc5649d7765291000d34a8dd67",
+          "local_hash_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 7612,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "d1148b7b7d1ce968fde22afd36b8f281a116fdb5",
+          "local_hash_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 919,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "d72b3dd2af3e5906c15e06a649df6c7fa0e669ff",
+          "local_hash_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 9028,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "85be5571790f9a211ad0b38b982469b297cc9a1d",
+          "local_hash_verified": false
+        },
+        {
+          "path": "assets/woof-frontier.png",
+          "bytes": 925504,
+          "source_lfs_sha256": "36e627f5bf285f5f39d001de440295cb1a3952b9961b9823c377c10b733190c6",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "assets/woof-to-scale.png",
+          "bytes": 371541,
+          "source_lfs_sha256": "4324097ff5fa108fab23ea3f06b9135c2ea792499898bad8947c9eaee2389e3d",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "requirements.txt",
+          "bytes": 12,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "9f161acad9345ad485c69c3900c8cbe263a3a9bd",
+          "local_hash_verified": false
+        },
+        {
+          "path": "samples/juno_0.wav",
+          "bytes": 263084,
+          "source_lfs_sha256": "68ee75de670027b1b173ad70cd1db5e9c39e484dc4febaedc6a3685f49652a5b",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "samples/juno_1.wav",
+          "bytes": 362924,
+          "source_lfs_sha256": "63264726408b5af4f154f015eec73a054e020b8c5de3d9882c07c252b4c769a2",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "samples/juno_2.wav",
+          "bytes": 583724,
+          "source_lfs_sha256": "eb080f8584bedc2512dc302d3901ed1c231e0f4d9eda1e32cfa389c2821aba54",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "samples/mira_0.wav",
+          "bytes": 345644,
+          "source_lfs_sha256": "0b10a7f9aa62da182e718d847fc2cdd5c203e6f8d69685529bfba25f736e3079",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "samples/mira_1.wav",
+          "bytes": 437804,
+          "source_lfs_sha256": "27f3c9efd8448add68492713aefafa410dab780380a18be2ee085496db5491f7",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "samples/mira_2.wav",
+          "bytes": 687404,
+          "source_lfs_sha256": "c77cc2796bddf4bb079fd59def972c218ed59c74790d371dc12a6f0c6190c481",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "underdog_woof/__init__.py",
+          "bytes": 3002,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "a7fdeea61c21e3882e6ceaaf98561c81ebb96620",
+          "local_hash_verified": false
+        },
+        {
+          "path": "underdog_woof/__main__.py",
+          "bytes": 832,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "9b02adcb575866075a3ecb0548963ea5420f2b5c",
+          "local_hash_verified": false
+        },
+        {
+          "path": "underdog_woof/normalize.py",
+          "bytes": 47736,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "4b0456d1aa6e50f4552331cb5aac800f64fb4861",
+          "local_hash_verified": false
+        },
+        {
+          "path": "underdog_woof/respell.py",
+          "bytes": 4248,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "c49830c9e01c6a938cb84cdb477cb0b95d6e3ba6",
+          "local_hash_verified": false
+        },
+        {
+          "path": "underdog_woof/respell.tsv",
+          "bytes": 590622,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "c035cddefbc09872e07f3f5b7cb088dc0f4da4c0",
+          "local_hash_verified": false
+        },
+        {
+          "path": "underdog_woof/runtime.py",
+          "bytes": 15964,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "6cb96e219cda009817131fdaa2f786d6a54b1ad3",
+          "local_hash_verified": false
+        },
+        {
+          "path": "underdog_woof/textsplit.py",
+          "bytes": 2982,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "4cf93247c88f76ad0c841b72fa245fed6255f977",
+          "local_hash_verified": false
+        },
+        {
+          "path": "woof_int8.npz",
+          "bytes": 40595426,
+          "source_lfs_sha256": "d895fbbe84b8f4f461e3e94ab48b1164353b1988ce8d365f5aa8263d0de1203e",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        }
+      ],
+      "strategic": "RESEARCH_CANDIDATE",
+      "acquisition_decision": "HOLD_NO_USER_APPROVAL",
+      "complete_learned_pipeline_total_verified": false,
+      "rights_verified": false,
+      "download_approved": false
+    },
+    {
+      "key": "bark_clean",
+      "repo_id": "ConwayResearch/Underdog-Bark-3.0-Clean",
+      "revision_sha": "73775471a9410b75ceb2401e837861dac12bd76d",
+      "source_tree_api": "https://huggingface.co/api/models/ConwayResearch/Underdog-Bark-3.0-Clean/tree/73775471a9410b75ceb2401e837861dac12bd76d?recursive=true",
+      "file_count": 12,
+      "full_repo_source_bytes": 180405622,
+      "license_metadata": "cc-by-nc-4.0",
+      "access": "PUBLIC_UNGATED_METADATA",
+      "research_priority": "P1",
+      "novelty": "Parakeet-derived ASR posttrained from Bark Plus for disfluency suppression; distinct objective not a standard quant duplicate",
+      "primary_weight_path": "model.bark",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1620,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "a8fb7618ceed05f6fd969da8d57c85167cef0214",
+          "local_hash_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 19347,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "fe463e0f7888bbf8b82e42d55f5743508ddafb7e",
+          "local_hash_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 759,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "d4ad30a47cf5d4d42a8eb4f9b99e1147d64dace5",
+          "local_hash_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 8522,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "f851afc4c6eea1f272334f7e354b27337e85f10a",
+          "local_hash_verified": false
+        },
+        {
+          "path": "bark_frontier.png",
+          "bytes": 160476,
+          "source_lfs_sha256": "ac0d9f97d95b2af5d06ce38d4d69c038f76247aa5bf83074fdddecbb84b7a0e4",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "bark_loader.py",
+          "bytes": 5819,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "d94b36bf6394c43bbf4ab8272621c81f44259369",
+          "local_hash_verified": false
+        },
+        {
+          "path": "bark_mlx.py",
+          "bytes": 5007,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "1c0423ae6cb133b6916ea8a24beda0afbc0846df",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/config.json",
+          "bytes": 237042,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "6cfd6a00307dffbdf587ed6399aeacae44eedad3",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/tokenizer.model",
+          "bytes": 360621,
+          "source_lfs_sha256": "5f16692abe03349cab19d6b878b2a3ab1249183586363d1625b5b6f163596d18",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/tokenizer.vocab",
+          "bytes": 101024,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "3fa4c819f33b03e876ce33c0aa34866ed2b5e17a",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/vocab.txt",
+          "bytes": 46772,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "d2fc51742d86127c241018b728e72b3a336225a1",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model.bark",
+          "bytes": 179458613,
+          "source_lfs_sha256": "b67ca90d94b79a36af4616f1cb3f241884925de7aa9f3e673a8d5c6c4cfd3436",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        }
+      ],
+      "strategic": "RESEARCH_CANDIDATE",
+      "acquisition_decision": "HOLD_NO_USER_APPROVAL",
+      "complete_learned_pipeline_total_verified": false,
+      "rights_verified": false,
+      "download_approved": false
+    },
+    {
+      "key": "bark_pro",
+      "repo_id": "ConwayResearch/Underdog-Bark-3.0-Pro",
+      "revision_sha": "d87f288a9a0b0cdb92228057e168ce575b300a6b",
+      "source_tree_api": "https://huggingface.co/api/models/ConwayResearch/Underdog-Bark-3.0-Pro/tree/d87f288a9a0b0cdb92228057e168ce575b300a6b?recursive=true",
+      "file_count": 33,
+      "full_repo_source_bytes": 2490403398,
+      "license_metadata": "cc-by-nc-4.0",
+      "access": "PUBLIC_UNGATED_METADATA",
+      "research_priority": "P1",
+      "novelty": "Parakeet TDT 0.6B English ASR; public bf16 tensor count 627057286; repo includes alternative CoreML copies not all needed",
+      "primary_weight_path": "model.safetensors",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1573,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "77d0d8376703c0a3a3ef54461de3bf4499351ae6",
+          "local_hash_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 19347,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "fe463e0f7888bbf8b82e42d55f5743508ddafb7e",
+          "local_hash_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 755,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "df5a448448aabb97a182a1726621a1a90106dddc",
+          "local_hash_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 13437,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "8ceb92f486d7f92a63542aeed63a245c6881e347",
+          "local_hash_verified": false
+        },
+        {
+          "path": "bark_frontier.png",
+          "bytes": 160476,
+          "source_lfs_sha256": "ac0d9f97d95b2af5d06ce38d4d69c038f76247aa5bf83074fdddecbb84b7a0e4",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 1174,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "6c1c8310dbc6555e82b6c277785b58edfb989538",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/Decoder.mlpackage/Data/com.apple.CoreML/model.mlmodel",
+          "bytes": 11612,
+          "source_lfs_sha256": "00cd3bdf438e859eff16d1376cab86f6214d0e44b1876316e30550e35d012763",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/Decoder.mlpackage/Data/com.apple.CoreML/weights/weight.bin",
+          "bytes": 23604992,
+          "source_lfs_sha256": "b6bfa9053e8e20d1e80a7522ddba5c66e2c8c77cfc956d4ebccf749baf4d3d69",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/Decoder.mlpackage/Manifest.json",
+          "bytes": 617,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "b92f763abc9862262e65c993aba1d8f677d77698",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/Encoder.mlpackage/Data/com.apple.CoreML/model.mlmodel",
+          "bytes": 1206573,
+          "source_lfs_sha256": "d82718558f523dc13f9c0ede57d6f8e37d953950808a5aaa3a4633a7f752dd77",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/Encoder.mlpackage/Data/com.apple.CoreML/weights/weight.bin",
+          "bytes": 1195742464,
+          "source_lfs_sha256": "619757bd47bc5cc131a85e54e94ffacc1b8c1bce737c1f1f6569eda8621a30d6",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/Encoder.mlpackage/Manifest.json",
+          "bytes": 617,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "500299461545b4f41656f68426916763d20e933c",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/JointDecisionv3.mlpackage/Data/com.apple.CoreML/model.mlmodel",
+          "bytes": 8759,
+          "source_lfs_sha256": "1057c2d9e9efce23258dbf2e7747e6facf7a42f4fcbcf2a21cdd160e065b18ac",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/JointDecisionv3.mlpackage/Data/com.apple.CoreML/weights/weight.bin",
+          "bytes": 12642764,
+          "source_lfs_sha256": "90257de4d4582921c31db6efe9668017274b7c4cfdfe5aac9b9183233f7a9bdd",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/JointDecisionv3.mlpackage/Manifest.json",
+          "bytes": 617,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "c945ca49f656f874893d17adfc7d34e41bf79e1a",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/LICENSE",
+          "bytes": 19347,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "fe463e0f7888bbf8b82e42d55f5743508ddafb7e",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/LICENSE-CC-BY-4.0",
+          "bytes": 18657,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "da6ab6cc8f333d7e89a99812866df8f24374d47c",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/NOTICE",
+          "bytes": 755,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "df5a448448aabb97a182a1726621a1a90106dddc",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/Preprocessor.mlpackage/Data/com.apple.CoreML/model.mlmodel",
+          "bytes": 18839,
+          "source_lfs_sha256": "dd4a5266ed9048aae620e73aa983eab93256654a343ded1226f9456b79f79a67",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/Preprocessor.mlpackage/Data/com.apple.CoreML/weights/weight.bin",
+          "bytes": 1184512,
+          "source_lfs_sha256": "7a31e2bd311bfa97ea3fe73d4a6c029824327a71590397bd8784089a88754a77",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/Preprocessor.mlpackage/Manifest.json",
+          "bytes": 617,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "4f38f3d175e9b8a1684a2934c40f634052609e39",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/parakeet_v3_vocab.json",
+          "bytes": 143080,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "35808bc2ec37f995050956dd92de791a8ca3eeeb",
+          "local_hash_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 285,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "ff7001cb187d10b1f05845adfac2f3c05490baaa",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/config.json",
+          "bytes": 237042,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "6cfd6a00307dffbdf587ed6399aeacae44eedad3",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 1254196636,
+          "source_lfs_sha256": "6f84b33e63ebd1851e910e8b2fe299d29f5e0efc6f57e84d92d2f79af464e0e5",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 392,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "7acffca89b7dd12e0ebcd085c7181c91cae6575c",
+          "local_hash_verified": false
+        },
+        {
+          "path": "runtime/coreml/Package.resolved",
+          "bytes": 367,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "cda4d887ba5ddf579206db0db8887b286ee917ca",
+          "local_hash_verified": false
+        },
+        {
+          "path": "runtime/coreml/Package.swift",
+          "bytes": 464,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "531f1036b1d505e4846ed31e3609c81c02084485",
+          "local_hash_verified": false
+        },
+        {
+          "path": "runtime/coreml/Sources/main.swift",
+          "bytes": 3741,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "b121203fa54c9447078a7d0ec838dc93f9fc1779",
+          "local_hash_verified": false
+        },
+        {
+          "path": "runtime/requirements.txt",
+          "bytes": 151,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "87f0c5532d977cb09fafe823b5db4eb23e871717",
+          "local_hash_verified": false
+        },
+        {
+          "path": "runtime/transcribe_bark_pro.py",
+          "bytes": 2486,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "ca7e1871729dfd9b73ba3c7827e3fd9242ebfae3",
+          "local_hash_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 1159960,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "a10a554cf61e38108756650018d5781ae9675c1d",
+          "local_hash_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 290,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "8a31c60ee8ce7b81b999061d3a233845cf8bd033",
+          "local_hash_verified": false
+        }
+      ],
+      "strategic": "RESEARCH_CANDIDATE",
+      "acquisition_decision": "HOLD_NO_USER_APPROVAL",
+      "complete_learned_pipeline_total_verified": false,
+      "rights_verified": false,
+      "download_approved": false
+    },
+    {
+      "key": "bark_plus",
+      "repo_id": "ConwayResearch/Underdog-Bark-3.0-Plus",
+      "revision_sha": "28a7d4234146b0f01c11e0c6b72dfa29028a4758",
+      "source_tree_api": "https://huggingface.co/api/models/ConwayResearch/Underdog-Bark-3.0-Plus/tree/28a7d4234146b0f01c11e0c6b72dfa29028a4758?recursive=true",
+      "file_count": 30,
+      "full_repo_source_bytes": 591247778,
+      "license_metadata": "cc-by-nc-4.0",
+      "access": "PUBLIC_UNGATED_METADATA",
+      "research_priority": "P2",
+      "novelty": "Compact verbatim ASR 180MB core and optional CoreML; hold unless independent speed/quality benefit to Pro",
+      "primary_weight_path": "model.bark",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1620,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "5ca1a4dd7f25ea4183cd56c013bba231bfef60b2",
+          "local_hash_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 19347,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "fe463e0f7888bbf8b82e42d55f5743508ddafb7e",
+          "local_hash_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 757,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "8a657466c5dd18933e2b532bf406d67be8360baf",
+          "local_hash_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 12701,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "141a7da50dd66a887604b7a48c093c092035b38d",
+          "local_hash_verified": false
+        },
+        {
+          "path": "bark_frontier.png",
+          "bytes": 160476,
+          "source_lfs_sha256": "ac0d9f97d95b2af5d06ce38d4d69c038f76247aa5bf83074fdddecbb84b7a0e4",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "bark_loader.py",
+          "bytes": 5820,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "72c340cfe6074b9857e2a0e4025179f82dcd5183",
+          "local_hash_verified": false
+        },
+        {
+          "path": "bark_mlx.py",
+          "bytes": 5011,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "0cf543b75a7a5d62e95064e9d10b475f94ed9130",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/LICENSE",
+          "bytes": 19347,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "fe463e0f7888bbf8b82e42d55f5743508ddafb7e",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/LICENSE-CC-BY-4.0",
+          "bytes": 18657,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "da6ab6cc8f333d7e89a99812866df8f24374d47c",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/NOTICE",
+          "bytes": 757,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "8a657466c5dd18933e2b532bf406d67be8360baf",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/ane/BarkEncoder.mlpackage/Data/com.apple.CoreML/model.mlmodel",
+          "bytes": 1784701,
+          "source_lfs_sha256": "bfc5b4e6fde8cd06722ae37bee6bea044f9c4e3bbb25c9945a48edc3e5df0ec1",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/ane/BarkEncoder.mlpackage/Data/com.apple.CoreML/weights/weight.bin",
+          "bytes": 192940480,
+          "source_lfs_sha256": "6b2c1c9ca7fdd8d18abee2452b54a978dcb1c31d0460bded396d9e61e3e9a59f",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/ane/BarkEncoder.mlpackage/Manifest.json",
+          "bytes": 617,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "b1e83d2348460ba96ebec0320569e67ac4d38f4d",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/ane/bark_coreml.py",
+          "bytes": 8247,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "915b25fa6843e748e5a0bb0b3bb2d36941e15fdb",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/ane/decoder.npz",
+          "bytes": 11168286,
+          "source_lfs_sha256": "1ce79071f54c3dcec9aa9bb1d488486766f1fdbb3fd988b776da3f4da8024665",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/ane/vocab.json",
+          "bytes": 115878,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "86ce2b32ce5820d7fe7c9e7969a77f9efc336137",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/gpu/BarkEncoder.mlpackage/Data/com.apple.CoreML/model.mlmodel",
+          "bytes": 893240,
+          "source_lfs_sha256": "8e3464d4018f31058e99a229ae67c4017683422630ef772d49ae7ec305ee43cd",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/gpu/BarkEncoder.mlpackage/Data/com.apple.CoreML/weights/weight.bin",
+          "bytes": 192526528,
+          "source_lfs_sha256": "586931fc6a375a2759f0f047a8f888453878ad33dcc613ee673667d39b95e79e",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/gpu/BarkEncoder.mlpackage/Manifest.json",
+          "bytes": 617,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "09e69554d80788e73619588ac67b1bbf996d8528",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/gpu/bark_coreml.py",
+          "bytes": 8245,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "409d6e0a04f15c1d86ac433ffd992702c9781235",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/gpu/decoder.npz",
+          "bytes": 11168286,
+          "source_lfs_sha256": "1ce79071f54c3dcec9aa9bb1d488486766f1fdbb3fd988b776da3f4da8024665",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/gpu/vocab.json",
+          "bytes": 115878,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "86ce2b32ce5820d7fe7c9e7969a77f9efc336137",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/config.json",
+          "bytes": 237042,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "6cfd6a00307dffbdf587ed6399aeacae44eedad3",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/tokenizer.model",
+          "bytes": 360621,
+          "source_lfs_sha256": "5f16692abe03349cab19d6b878b2a3ab1249183586363d1625b5b6f163596d18",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/tokenizer.vocab",
+          "bytes": 101024,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "3fa4c819f33b03e876ce33c0aa34866ed2b5e17a",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/vocab.txt",
+          "bytes": 46772,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "d2fc51742d86127c241018b728e72b3a336225a1",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model.bark",
+          "bytes": 179524845,
+          "source_lfs_sha256": "fdd9f1052e4fdead07d71e8cd2138813eb0c209fd6ff8b1b6f47737e1e501857",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "runtime/requirements-coreml.txt",
+          "bytes": 60,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "4dfb85e1980ea614fe00efac4f7b994bf6107fc6",
+          "local_hash_verified": false
+        },
+        {
+          "path": "runtime/requirements-windows.txt",
+          "bytes": 101,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "285ef4498227c140136880cbc5757d4f32e78174",
+          "local_hash_verified": false
+        },
+        {
+          "path": "runtime/transcribe_bark.py",
+          "bytes": 1817,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "853e984f7b1aeb92a259ac5d7e94e21a3b1c6601",
+          "local_hash_verified": false
+        }
+      ],
+      "strategic": "RESEARCH_CANDIDATE",
+      "acquisition_decision": "HOLD_NO_USER_APPROVAL",
+      "complete_learned_pipeline_total_verified": false,
+      "rights_verified": false,
+      "download_approved": false
+    },
+    {
+      "key": "bark_base",
+      "repo_id": "ConwayResearch/Underdog-Bark-3.0",
+      "revision_sha": "e7a641c0fdd4cdf1818dde62a98c26e11d65c061",
+      "source_tree_api": "https://huggingface.co/api/models/ConwayResearch/Underdog-Bark-3.0/tree/e7a641c0fdd4cdf1818dde62a98c26e11d65c061?recursive=true",
+      "file_count": 30,
+      "full_repo_source_bytes": 567508081,
+      "license_metadata": "cc-by-nc-4.0",
+      "access": "PUBLIC_UNGATED_METADATA",
+      "research_priority": "P3",
+      "novelty": "Likely redundant lower-cost core; ~17MB smaller than Plus but vendor accuracy lower; DROP candidate only, never delete existing files",
+      "primary_weight_path": "model.bark",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1620,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "5ca1a4dd7f25ea4183cd56c013bba231bfef60b2",
+          "local_hash_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 19347,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "fe463e0f7888bbf8b82e42d55f5743508ddafb7e",
+          "local_hash_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 747,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "19d7222fc76268d57c4cbf8f4ee832d19c5b2fe9",
+          "local_hash_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 12920,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "377665f1501bc954bec5c4e09b35dafb53cfbb86",
+          "local_hash_verified": false
+        },
+        {
+          "path": "bark_frontier.png",
+          "bytes": 160476,
+          "source_lfs_sha256": "ac0d9f97d95b2af5d06ce38d4d69c038f76247aa5bf83074fdddecbb84b7a0e4",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "bark_loader.py",
+          "bytes": 5820,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "72c340cfe6074b9857e2a0e4025179f82dcd5183",
+          "local_hash_verified": false
+        },
+        {
+          "path": "bark_mlx.py",
+          "bytes": 5011,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "0cf543b75a7a5d62e95064e9d10b475f94ed9130",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/LICENSE",
+          "bytes": 19347,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "fe463e0f7888bbf8b82e42d55f5743508ddafb7e",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/LICENSE-CC-BY-4.0",
+          "bytes": 18657,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "da6ab6cc8f333d7e89a99812866df8f24374d47c",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/NOTICE",
+          "bytes": 747,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "19d7222fc76268d57c4cbf8f4ee832d19c5b2fe9",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/ane/BarkEncoder.mlpackage/Data/com.apple.CoreML/model.mlmodel",
+          "bytes": 1784701,
+          "source_lfs_sha256": "7c3f1c1612ba21bcc4d8efff1b32154b39cb3e1e2f10020117793acc5c96fcdf",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/ane/BarkEncoder.mlpackage/Data/com.apple.CoreML/weights/weight.bin",
+          "bytes": 189133632,
+          "source_lfs_sha256": "98979e5dd731486ddfb2c312f80a3038205c058aac9fe0f403ba26e1a158d385",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/ane/BarkEncoder.mlpackage/Manifest.json",
+          "bytes": 617,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "82bd4af2a2e0784ca504bf4a19ef9a700494fa8f",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/ane/bark_coreml.py",
+          "bytes": 8247,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "915b25fa6843e748e5a0bb0b3bb2d36941e15fdb",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/ane/decoder.npz",
+          "bytes": 11168286,
+          "source_lfs_sha256": "1ce79071f54c3dcec9aa9bb1d488486766f1fdbb3fd988b776da3f4da8024665",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/ane/vocab.json",
+          "bytes": 115878,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "86ce2b32ce5820d7fe7c9e7969a77f9efc336137",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/gpu/BarkEncoder.mlpackage/Data/com.apple.CoreML/model.mlmodel",
+          "bytes": 893240,
+          "source_lfs_sha256": "641eebfbe87f83252e09113913d2081b047b37751be64fd2e9541260c319f76d",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/gpu/BarkEncoder.mlpackage/Data/com.apple.CoreML/weights/weight.bin",
+          "bytes": 188719680,
+          "source_lfs_sha256": "c19b7d1eb72d7b3175e536c8c142fbd207263a70c84a71b676d3e3d7803fbc82",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/gpu/BarkEncoder.mlpackage/Manifest.json",
+          "bytes": 617,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "6ba5f70df6b0bc107b24d6b1b0299f8dc7ad15f8",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/gpu/bark_coreml.py",
+          "bytes": 8245,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "409d6e0a04f15c1d86ac433ffd992702c9781235",
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/gpu/decoder.npz",
+          "bytes": 11168286,
+          "source_lfs_sha256": "1ce79071f54c3dcec9aa9bb1d488486766f1fdbb3fd988b776da3f4da8024665",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "coreml/gpu/vocab.json",
+          "bytes": 115878,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "86ce2b32ce5820d7fe7c9e7969a77f9efc336137",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/config.json",
+          "bytes": 237042,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "6cfd6a00307dffbdf587ed6399aeacae44eedad3",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/tokenizer.model",
+          "bytes": 360621,
+          "source_lfs_sha256": "5f16692abe03349cab19d6b878b2a3ab1249183586363d1625b5b6f163596d18",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/tokenizer.vocab",
+          "bytes": 101024,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "3fa4c819f33b03e876ce33c0aa34866ed2b5e17a",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/vocab.txt",
+          "bytes": 46772,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "d2fc51742d86127c241018b728e72b3a336225a1",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model.bark",
+          "bytes": 163398645,
+          "source_lfs_sha256": "c18de9418d73cbeb80b8c1287b392d480a56e191ef4a81d1baaa1b02e66d92ed",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "runtime/requirements-coreml.txt",
+          "bytes": 60,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "4dfb85e1980ea614fe00efac4f7b994bf6107fc6",
+          "local_hash_verified": false
+        },
+        {
+          "path": "runtime/requirements-windows.txt",
+          "bytes": 101,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "285ef4498227c140136880cbc5757d4f32e78174",
+          "local_hash_verified": false
+        },
+        {
+          "path": "runtime/transcribe_bark.py",
+          "bytes": 1817,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "853e984f7b1aeb92a259ac5d7e94e21a3b1c6601",
+          "local_hash_verified": false
+        }
+      ],
+      "strategic": "RESEARCH_CANDIDATE",
+      "acquisition_decision": "HOLD_NO_USER_APPROVAL",
+      "complete_learned_pipeline_total_verified": false,
+      "rights_verified": false,
+      "download_approved": false
+    },
+    {
+      "key": "saluki",
+      "repo_id": "ConwayResearch/Underdog-Saluki-27B-1.0",
+      "revision_sha": "442e28ec9d89d9e732ddea2f0b9e017db20730a8",
+      "source_tree_api": "https://huggingface.co/api/models/ConwayResearch/Underdog-Saluki-27B-1.0/tree/442e28ec9d89d9e732ddea2f0b9e017db20730a8?recursive=true",
+      "file_count": 8,
+      "full_repo_source_bytes": 9455260760,
+      "license_metadata": "cc-by-nc-4.0",
+      "access": "PUBLIC_UNGATED_METADATA",
+      "research_priority": "P2",
+      "novelty": "Qwen3.8 27B IQ2 quant derivative already overlaps v27 family. No confirmed independently trained value; historical license changed on unchanged payload",
+      "primary_weight_path": "Underdog-Saluki-27B-1.0-IQ2-mix.gguf",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1745,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "f6fc5cda27f2bfaaf1fb9db9292c047771c91610",
+          "local_hash_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 19347,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "fe463e0f7888bbf8b82e42d55f5743508ddafb7e",
+          "local_hash_verified": false
+        },
+        {
+          "path": "LICENSE-APACHE",
+          "bytes": 11358,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+          "local_hash_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 725,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "be3af856b03b86370ab0f36c3a739613c9f0b5c6",
+          "local_hash_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 4545,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "f4685b308d9df012ddd3272daf955ca59d0ba2bc",
+          "local_hash_verified": false
+        },
+        {
+          "path": "Underdog-Saluki-27B-1.0-IQ2-mix.gguf",
+          "bytes": 7898369152,
+          "source_lfs_sha256": "4a673518b11b1c4445f9b9a9d3c40356f5ba39f6a6260dcb25f3fbfd475d9efb",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "mmproj-Underdog-Saluki-27B-1.0-F16.gguf",
+          "bytes": 927606912,
+          "source_lfs_sha256": "f3aa57813a513420c2ef765503b057c1946bf4c8cdf3679d266a6644fc6cfd50",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "mmproj-Underdog-Saluki-27B-1.0-Q8_0.gguf",
+          "bytes": 629246976,
+          "source_lfs_sha256": "2e0b88b680a45a58eea666b9776a89601b16f4ef575b871a686d82ee65938756",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        }
+      ],
+      "strategic": "RESEARCH_CANDIDATE",
+      "acquisition_decision": "HOLD_NO_USER_APPROVAL",
+      "complete_learned_pipeline_total_verified": false,
+      "rights_verified": false,
+      "download_approved": false
+    },
+    {
+      "key": "poodle",
+      "repo_id": "ConwayResearch/Underdog-Poodle-4B",
+      "revision_sha": "2ed6b9e2ee5af06bb63469312c870aed4fa94cd6",
+      "source_tree_api": "https://huggingface.co/api/models/ConwayResearch/Underdog-Poodle-4B/tree/2ed6b9e2ee5af06bb63469312c870aed4fa94cd6?recursive=true",
+      "file_count": 28,
+      "full_repo_source_bytes": 12404368132,
+      "license_metadata": "cc-by-nc-4.0",
+      "access": "PUBLIC_UNGATED_METADATA",
+      "research_priority": "P2",
+      "novelty": "Qwen3.5-4B posttrained agent tool calling; vendor measured improvements but repo BF16 and MLX overlap; select only one after independent tests",
+      "primary_weight_path": "model-00001-of-00003.safetensors",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1629,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "ddb32fca5e505d4fd71389ab24ffbdb5f8472d56",
+          "local_hash_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 19347,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "fe463e0f7888bbf8b82e42d55f5743508ddafb7e",
+          "local_hash_verified": false
+        },
+        {
+          "path": "LICENSE-APACHE",
+          "bytes": 11343,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "1d5180a42f1c3383ba7c7bd0a50f0837ef0168df",
+          "local_hash_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 428,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "a6786f9e276ea195bc6fedde48f63a08f4d5fb5f",
+          "local_hash_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 4038,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "0c4ac982708f4a5f1c0925f141aa66d382351025",
+          "local_hash_verified": false
+        },
+        {
+          "path": "assets/poodle-card.png",
+          "bytes": 399670,
+          "source_lfs_sha256": "bd7e07d99f5478646c59d2d91228d38a4982ccd90d1749bb0e56c2e25d4abf2a",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 7756,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "a585dec894e63da457d9440ec6aa7caa16d20860",
+          "local_hash_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 3161,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "557d961b205319c6a7da5f757f565b69b3967b7d",
+          "local_hash_verified": false
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 3353259,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "a494e019ca1502219fd0128658b979e5f05ae8e8",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/chat_template.jinja",
+          "bytes": 7756,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "a585dec894e63da457d9440ec6aa7caa16d20860",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/config.json",
+          "bytes": 3366,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "cb3e1a878a5c4a0505e0c9967da45820b2ca6bd3",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/model.safetensors",
+          "bytes": 3034300817,
+          "source_lfs_sha256": "ecad79fce9c2fe19c6ab251eb8677878446eb26f28ba009debe3203ea0ba89cd",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/model.safetensors.index.json",
+          "bytes": 97048,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "75239ade9ff776256134cb89f508453612a3dae6",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/preprocessor_config.json",
+          "bytes": 390,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/processor_config.json",
+          "bytes": 1300,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "7ad6acdf4203f22b7b990e36ccc3a1fe38563d5e",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/tokenizer.json",
+          "bytes": 19989343,
+          "source_lfs_sha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/tokenizer_config.json",
+          "bytes": 1139,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "a068e2468cff426a9b105006e74e044030a6faf4",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/video_preprocessor_config.json",
+          "bytes": 385,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe",
+          "local_hash_verified": false
+        },
+        {
+          "path": "mlx/vocab.json",
+          "bytes": 6722759,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "0aa0ce0658d60ac4a5d609f4eadb0e8e43514176",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00001-of-00003.safetensors",
+          "bytes": 4012273320,
+          "source_lfs_sha256": "67260e5649e5b44cc783fd1fa435e4098d40ee68563592ff63a2796a3d793431",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00002-of-00003.safetensors",
+          "bytes": 4010901352,
+          "source_lfs_sha256": "754ca5d1b57726ea3ab793cafb7087a3b126a736f7fefd8d990bd4a837dedae9",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00003-of-00003.safetensors",
+          "bytes": 1296652992,
+          "source_lfs_sha256": "7ff732a139b704f4877215a9db40183e9e48bd3f3779e6b8e2c6e5d0a12e5d98",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 67308,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "5748b8d2b76a249bcbfa1608786a1b4897569794",
+          "local_hash_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 390,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64",
+          "local_hash_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 12807982,
+          "source_lfs_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+          "git_blob_sha1": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 16710,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "eda48d3e75a8e59a8479ee4ec8b37f76e711d9c1",
+          "local_hash_verified": false
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 385,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe",
+          "local_hash_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 6722759,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "0aa0ce0658d60ac4a5d609f4eadb0e8e43514176",
+          "local_hash_verified": false
+        }
+      ],
+      "strategic": "RESEARCH_CANDIDATE",
+      "acquisition_decision": "HOLD_NO_USER_APPROVAL",
+      "complete_learned_pipeline_total_verified": false,
+      "rights_verified": false,
+      "download_approved": false
+    }
+  ],
+  "policy_events": [
+    {
+      "id": "SALUKI_LICENSE_CHANGE_SAME_BITS",
+      "observation": "Historical initial revision 903e38e7b8ea4976404a7c3b963480e76d1a25cc README Apache-2.0; current revision 442e28ec9d89d9e732ddea2f0b9e017db20730a8 CC BY-NC 4.0; same model GGUF LFS payload SHA256 and exact bytes",
+      "previous_revision": "903e38e7b8ea4976404a7c3b963480e76d1a25cc",
+      "current_revision": "442e28ec9d89d9e732ddea2f0b9e017db20730a8",
+      "same_main_gguf_sha256": "4a673518b11b1c4445f9b9a9d3c40356f5ba39f6a6260dcb25f3fbfd475d9efb",
+      "same_main_gguf_size_bytes": 7898369152,
+      "legal_effect": "UNKNOWN; changing public license display does not by itself prove retroactive termination",
+      "source_prev": "https://huggingface.co/ConwayResearch/Underdog-Saluki-27B-1.0/blob/903e38e7b8ea4976404a7c3b963480e76d1a25cc/README.md",
+      "source_current": "https://huggingface.co/ConwayResearch/Underdog-Saluki-27B-1.0/blob/442e28ec9d89d9e732ddea2f0b9e017db20730a8/README.md"
+    }
+  ],
+  "legal_blockers": {
+    "woof": "Underdog Non-Commercial License 1.0, credit, commercial separate agreement; outputs cannot train other audio model without permission. Japanese NOTICE includes Emilia CC BY-NC data; check rights.",
+    "bark_saluki_poodle": "All current metadata CC BY-NC 4.0; individual actual license use/retention approval not proven.",
+    "personal_access_verified": false
+  },
+  "model_uncertainties": {
+    "woof_japanese_total_params_not_verified": true,
+    "woof_english_publisher_total_approx_38240000_not_independently_counted": true,
+    "bark_pro_metadata_total_params": 627057286,
+    "bark_clean_plus_base_full_model_parameter_counts_unverified": true,
+    "poodle_publisher_tensor_count": 4659865088,
+    "saluki_total_model_count_needs_parent_evidence": true
+  },
+  "runtime_blocks": {
+    "woof_japanese": [
+      "numpy>=1.24",
+      "pyopenjtalk-plus>=0.4",
+      "Open JTalk pronunciation dictionary version and OS/ABI unpinned"
+    ],
+    "woof_english": [
+      "numpy, Python; publisher says only numpy + standard library"
+    ],
+    "bark_pro": [
+      "BF16/torch or alternative CoreML; no need both formats unless separately chosen"
+    ],
+    "bark_compressed": [
+      "model.bark custom entropy decoding & unpacking/MLX caches"
+    ],
+    "poodle": [
+      "vLLM 0.32, H100 publisher benchmark, BF16/MLX variants"
+    ],
+    "saluki": [
+      "stock llama.cpp GGUF, mixed IQ2 and optional mmproj F16/Q8"
+    ]
+  },
+  "evidence_quality": {
+    "woof_japanese": "Author 446 Japanese kana-error sentences (281 hard,165 everyday), normalization on both references by Open JTalk, 14.5x realtime reported Apple M5 Max one CPU thread six sentences three rounds; no independent MOS",
+    "woof_english": "Author English WER 1.42% 500 Gradium Hard Cases; 13.8x realtime Apple M5 Max CPU1 thread 200 sentences x3 rounds",
+    "bark_pro": "Author-run not official leaderboard submission: WER average 4.286% vs Hojo4.291% (difference 0.005 percentage point), confidence interval not supplied",
+    "bark_clean": "Cleaned-reference vs verbatim-reference error not directly comparable",
+    "saluki": "Author BFCL task subset 120 cases 88 vs 84, AIME2025 79.2 vs 96.7 full-size; independent quality unknown"
+  },
+  "volume": {
+    "v27_known_deduplicated_source_bytes": 3417685712585,
+    "woof_pair": {
+      "keys": [
+        "woof_ja",
+        "woof_en"
+      ],
+      "known_source_union_bytes": 89093306,
+      "dedup_source_lfs_bytes": 0,
+      "cross_v27_hashes_not_checked": true
+    },
+    "priority4_full_repo_upper": {
+      "keys": [
+        "woof_ja",
+        "woof_en",
+        "bark_clean",
+        "bark_pro"
+      ],
+      "known_source_union_bytes": 2759741850,
+      "dedup_source_lfs_bytes": 160476,
+      "cross_v27_hashes_not_checked": true
+    },
+    "all8_full_repo_upper": {
+      "keys": [
+        "woof_ja",
+        "woof_en",
+        "bark_clean",
+        "bark_pro",
+        "bark_plus",
+        "bark_base",
+        "saluki",
+        "poodle"
+      ],
+      "known_source_union_bytes": 25743579549,
+      "dedup_source_lfs_bytes": 34707528,
+      "cross_v27_hashes_not_checked": true
+    },
+    "priority4_added_to_v27_source_upper_bytes": 3420445454435,
+    "actual_owner_disk_free_bytes": null,
+    "complete_runtime_and_staging_size_bytes": null
+  },
+  "permissions": {
+    "acquisition_authorized": false,
+    "installation_authorized": false,
+    "model_execution_authorized": false,
+    "model_payload_fetched": 0,
+    "approval_queue_entries": 0,
+    "selection_not_adopted": true,
+    "manifest_not_executable": true
+  },
+  "checks": {
+    "results": {
+      "catalog_173": true,
+      "queue_zero": true,
+      "all_not_in_v27": true,
+      "unique_8": true,
+      "all_revision_40": true,
+      "all_files_verified_metadata": true,
+      "all_primary_weights_have_source_sha": true,
+      "english_japanese_different_hash": true,
+      "bark_four_different_hashes": true,
+      "saluki_old_same_weight_sha": true,
+      "no_payload_acquisition": true,
+      "plan_ceiling_known": true,
+      "min_free_floor": true,
+      "source_sizes_not_physical": true
+    },
+    "passed": 14,
+    "failures": []
+  }
+}
