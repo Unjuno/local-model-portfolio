@@ -1,0 +1,534 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-11",
+  "type": "SELECTED_V27_HIGH_VALUE_WAVE2_NONEXECUTABLE_SOURCE_MANIFEST",
+  "repository": "Unjuno/local-model-portfolio",
+  "branch": "strategy/2026-11-03-01-risk",
+  "parent_commit": "ddc48f03bfc7dca1d7d2665a43a36618bf77818b",
+  "source_v27_scope_url": "https://github.com/Unjuno/local-model-portfolio/blob/strategy/2026-11-03-01-risk/catalog/capacity/2026-11-07/v27/selected-file-capacity.json",
+  "based_on_v27": true,
+  "added_asset_count": 0,
+  "changed_asset_count": 0,
+  "owner_download_authorized": false,
+  "selected_assets": [
+    {
+      "order": 1,
+      "repo_id": "usezn/Galvanize-3",
+      "repo_type": "model",
+      "revision": "597237be3b0fabbf5d70ff16ce95fad14a591f20",
+      "source_profile_path": "catalog/capacity/2026-11-06/sources/model--usezn--Galvanize-3.json",
+      "source_profile_blob_sha": "671f5ab1d50c580cd19ef7b26b47ace69e346b0b",
+      "source_profile_observed_utc": "2026-11-06T04:42:26.934714+00:00",
+      "original_v27_approval": false,
+      "public_metadata_ungated": true,
+      "license_metadata": "apache-2.0",
+      "license_text_owner_confirmed": false,
+      "v27_decision": "select",
+      "v27_scope_file_count": 11,
+      "v27_scope_bytes": 597573024,
+      "source_repo_all_bytes": 1160571956,
+      "extra_repo_bytes_excluded": 562998932,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1636,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "d4fe519fc1604fded249837457a741380b3ae0f8",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11358,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 572,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "8cabce1c5df3f64766883b3be2652636fd14626e",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 14114,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "6326696474bebd4045960e093c295ef4f69957cd",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "assets/every-call.svg",
+          "bytes": 18402,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "4af2733e2fee1b179b9eb638705e55f3a28e1447",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "assets/long-text-false-alarms.svg",
+          "bytes": 34109,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "1da9cde400daefc8757aaece60d17943bc232910",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 2031,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "6a46922ae7772eff6125ae1daba6a72dfe38d3cd",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "onnx/model.onnx",
+          "bytes": 563102066,
+          "source_lfs_sha256": "bc46a1f1146e492700a919b0f3edf7f9efa4391da75a81e2e5ac9e294373e399",
+          "git_blob_sha1": "0af11d4d73dbba594aee3344608caad75d5b381e",
+          "identity_kind": "lfs_payload_sha256",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "thresholds.json",
+          "bytes": 333,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "ef985befb47272b529f1a5a9b8bc55cf88b6b215",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 34387721,
+          "source_lfs_sha256": "8ab59b95e06d1d289dba953ef1ab95044067692bf5877f49236ebd1d8a24dcdf",
+          "git_blob_sha1": "2946350ffb697f8a437941cc33f86820e8d9578d",
+          "identity_kind": "lfs_payload_sha256",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 682,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "1da03dd2a07dfc120556a00941a9ba98a8f16c00",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        }
+      ],
+      "trained_dependency_closure_verified": false,
+      "model_executed": false,
+      "download_authorized": false,
+      "research": {
+        "classification": "DOMAIN_SPECIFIC_POSTTRAINED_PROMPT_INJECTION_CLASSIFIER",
+        "current_metadata_license": "apache-2.0",
+        "scope_rule": "Retain pinned ONNX (563,102,066B) + tokenizer, config, thresholds and provenance. Exclude redundant 562,583,392B safetensors and media asset from this selected build.",
+        "rights_status": "HALT_UNTIL_APACHE_LICENSE_AND_NOTICE_READ_AND_OWNER_APPROVAL",
+        "value": "Safety classifier with ModernBERT architecture; selected CPU ONNX vs full repo double formats.",
+        "compatibility": "ONNX Runtime opset/tokenizer version, normalization and decision thresholds untested",
+        "latest_source_claim": "Publisher HF still lists Apache-2.0 and 140.6M parameters (2026-11-11 metadata lookup)."
+      },
+      "stop_conditions": [
+        "NO_PERSONAL_OWNER_APPROVAL",
+        "DISK_CURRENT_FREE_UNMEASURED",
+        "NO_MODEL_DOWNLOAD_OR_EXECUTION",
+        "SOURCE_RECORDED_ON_2026_11_06_NOT_REVALIDATED_AS_LIVE_PINNED_TREE"
+      ],
+      "pilot_status": "HOLD_BEFORE_PHYSICAL_TRANSFER"
+    },
+    {
+      "order": 2,
+      "repo_id": "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1",
+      "repo_type": "model",
+      "revision": "aa213272180d6ad0d03f5fb3d597f0f0322647c5",
+      "source_profile_path": "catalog/capacity/2026-11-06/sources/model--chatrlabs--Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1.json",
+      "source_profile_blob_sha": "b68537cb2ac8c34168578e999eefce3db91bd262",
+      "source_profile_observed_utc": "2026-11-06T04:42:28.021467+00:00",
+      "original_v27_approval": false,
+      "public_metadata_ungated": true,
+      "license_metadata": "other",
+      "license_text_owner_confirmed": false,
+      "v27_decision": "conditional",
+      "v27_scope_file_count": 8,
+      "v27_scope_bytes": 671173375,
+      "source_repo_all_bytes": 671173375,
+      "extra_repo_bytes_excluded": 0,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1641,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "fab06b360bdf49af49b80e97832e8937db8096b3",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 7831,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "13ae08d5a5828f508cf0e852b1b316c0c0bbb9b3",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "Notice",
+          "bytes": 640,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "7f2543cd806c21352db843e52948d457cb2de169",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 8876,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "3f440342ca6937f67b95557669f33de95b3da848",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "SHA256SUMS",
+          "bytes": 493,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "08d304414b44b7295139e2277f6736a533f0e426",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "chatrlabs-omni-lora-v0.1-bf16.safetensors",
+          "bytes": 671151136,
+          "source_lfs_sha256": "5991a9845bc5251240febf944f653505a00966515b77073f2c639c4dfcba672a",
+          "git_blob_sha1": "d4bf56f2db7622a69d5a399b22ed64b2cd46722b",
+          "identity_kind": "lfs_payload_sha256",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "inference.py",
+          "bytes": 2492,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "535832e07c58ef090eb0cac63759b235d358e077",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "requirements.txt",
+          "bytes": 266,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "c709e99d0fae4a318b5c53c3dc731b20b50fd619",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        }
+      ],
+      "trained_dependency_closure_verified": false,
+      "model_executed": false,
+      "download_authorized": false,
+      "research": {
+        "classification": "ORIGINAL_TRAINED_RANK128_ADAPTER",
+        "current_metadata_license": "qwen-research",
+        "scope_rule": "Adapter alone is 671,151,136B; base Qwen-Image-2.1 selected in v27 but must be downloaded/verified separately. Keep license, Notice and SHA256SUMS.",
+        "rights_status": "HOLD_NONCOMMERCIAL_QWEN_RESEARCH_LICENSE_AND_PARENT_BASE_RIGHTS",
+        "value": "Separate trained 32,000-step checkpoint; 448 BF16 tensors rank128 adapting text-to-image AND editing; not a direct base quantization.",
+        "training_base_revision_claim": "790c92633540aa0cb11d9abf19eb46d861714758",
+        "diffusers_revision_claim": "80c7ed262aeffbeb43ef13ae04baeb9b84515a69",
+        "performance": "Publisher reference 2x RTX4090 24GB; 25 steps CFG4: 33.2 seconds 1344×768 single queued prompt, not user hardware benchmark",
+        "abi": "Qwen-Image-2.1-specific. Earlier 2512/2511 model families incompatible, independent image generation quality unverified"
+      },
+      "stop_conditions": [
+        "NO_PERSONAL_OWNER_APPROVAL",
+        "DISK_CURRENT_FREE_UNMEASURED",
+        "NO_MODEL_DOWNLOAD_OR_EXECUTION",
+        "SOURCE_RECORDED_ON_2026_11_06_NOT_REVALIDATED_AS_LIVE_PINNED_TREE"
+      ],
+      "pilot_status": "HOLD_BEFORE_PHYSICAL_TRANSFER"
+    },
+    {
+      "order": 3,
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "repo_type": "model",
+      "revision": "e6924b3a08765341e01546308ccf2683d43e880b",
+      "source_profile_path": "catalog/capacity/2026-11-06/sources/model--InterpreticAI--Qwen3.8-27B-Uncensored-v2-GGUF.json",
+      "source_profile_blob_sha": "9333c53a6cd3bbe93b8f71789b63e07a656071f4",
+      "source_profile_observed_utc": "2026-11-06T04:42:26.432340+00:00",
+      "original_v27_approval": false,
+      "public_metadata_ungated": true,
+      "license_metadata": "apache-2.0",
+      "license_text_owner_confirmed": false,
+      "v27_decision": "conditional",
+      "v27_scope_file_count": 5,
+      "v27_scope_bytes": 17738327225,
+      "source_repo_all_bytes": 17738327225,
+      "extra_repo_bytes_excluded": 0,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1900,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "0685e2fe221aa52ddd2cde53637986cb7c48e4f4",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "Qwen3.8-27B-Uncensored-v2-Q4_K_M.gguf",
+          "bytes": 16810714592,
+          "source_lfs_sha256": "2a76f31d17e879589f2527bb4f657526ce0f4719aa352adc944e13f9f7365972",
+          "git_blob_sha1": "2bb4d63553ec39a8d00a7a3d8dd29a7aa84b9f3c",
+          "identity_kind": "lfs_payload_sha256",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 3577,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "bed55429f9f4888bb54a76bf3ed5417700dee419",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "SHA256SUMS",
+          "bytes": 212,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "4ea99c1b4ba07658bc63ffff0e1bb98cf43bb51a",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "mmproj-Qwen3.8-27B-Uncensored-v2-F16.gguf",
+          "bytes": 927606944,
+          "source_lfs_sha256": "0b296c3155e945290000aa4eb62edec4a5d2d183aae52feca3df39798095a9db",
+          "git_blob_sha1": "b3fcaf4b1f693ea2c1488ba07410eef05bc36360",
+          "identity_kind": "lfs_payload_sha256",
+          "local_sha256_verified": false
+        }
+      ],
+      "trained_dependency_closure_verified": false,
+      "model_executed": false,
+      "download_authorized": false,
+      "research": {
+        "classification": "NARROWLY_POSTTRAINED_POLITICAL_RESPONSE_VARIANT",
+        "current_metadata_license": "apache-2.0",
+        "scope_rule": "Select one Q4_K_M GGUF + F16 vision projector and provenance; do not fetch BF16/FP8/IQ3 variants.",
+        "rights_status": "REVIEW_PROJECTOR_PARENT_LICENSE_AND_PINNED_REVISION_BEFORE_ANY_DOWNLOAD",
+        "value": "Chinese-political-question response treatment differs from generic broad refusal-abliterated models; v2 retains MTP head.",
+        "freshness_blocker": "Current Hub main page advertises revision prefix 7057fd1 (2026-11-11), whereas selected 40-char commit is e6924b3a... recorded 2026-11-06. Verify historical snapshot still exists and SHA256SUMS matches; no automatic HEAD substitution.",
+        "publisher_evaluation": "Q4 model 4/113 classified as censored versus parent 98/113, assessed only within author's Chinese questions; model factual correctness and broader harmful task response not independently validated."
+      },
+      "stop_conditions": [
+        "NO_PERSONAL_OWNER_APPROVAL",
+        "DISK_CURRENT_FREE_UNMEASURED",
+        "NO_MODEL_DOWNLOAD_OR_EXECUTION",
+        "SOURCE_RECORDED_ON_2026_11_06_NOT_REVALIDATED_AS_LIVE_PINNED_TREE"
+      ],
+      "pilot_status": "HOLD_BEFORE_PHYSICAL_TRANSFER"
+    },
+    {
+      "order": 4,
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "repo_type": "model",
+      "revision": "ab8d7bd81d03117501e4da60cccdff4c80f0eea0",
+      "source_profile_path": "catalog/capacity/2026-11-06/sources/model--0bserverx--Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF.json",
+      "source_profile_blob_sha": "72446754d26512265655c0d442cbe47150dea449",
+      "source_profile_observed_utc": "2026-11-06T04:42:26.432791+00:00",
+      "original_v27_approval": false,
+      "public_metadata_ungated": true,
+      "license_metadata": "apache-2.0",
+      "license_text_owner_confirmed": false,
+      "v27_decision": "conditional",
+      "v27_scope_file_count": 11,
+      "v27_scope_bytes": 16560392734,
+      "source_repo_all_bytes": 1645270647302,
+      "extra_repo_bytes_excluded": 1628710254568,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 9879,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "651a83beea5f180f82db1da41bc8145b04759f7a",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "GSQ-3bit/README.md",
+          "bytes": 1007,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "b5346090b2a0a4ce509a5dbd74322470bbd01da9",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "GSQ-3bit/config.json",
+          "bytes": 3404,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "c115d3614ff39a1a45770178fd5dea264f906b68",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "GSQ-3bit/generation_config.json",
+          "bytes": 202,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "023756cfadf88e5bf69eefeee3e172f38c448d64",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "GSQ-3bit/model.safetensors.index.json",
+          "bytes": 105173,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "6de4b849e22611ac4d2b2183fdfdfb4a4c7c0306",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "GSQ-3bit/receipt.md",
+          "bytes": 1478,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "e3140d4b7f59c5d2d7393cbdfad08344ac3b7cc6",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "GSQ-3bit/tokenizer.json",
+          "bytes": 12809320,
+          "source_lfs_sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3",
+          "git_blob_sha1": "9328ce9c41e80f6dd7bc2c66d8ae1fc93bf87440",
+          "identity_kind": "lfs_payload_sha256",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "GSQ-3bit/tokenizer_config.json",
+          "bytes": 17928,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "5de744b3fca2129d7186979ae47c06be33903243",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 35167,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "618fdfe63164d41c91c14e32c55ca1dfacbea569",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "RVN-Q4_K_M-multilingual.gguf",
+          "bytes": 16547400224,
+          "source_lfs_sha256": "9ed40ccc8b8432f38b9a85d0ca67928167f5719e8c10bd299e56d34facaf6e61",
+          "git_blob_sha1": "c0a07d32a1dfa0aec7a756267314404215731b37",
+          "identity_kind": "lfs_payload_sha256",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 8952,
+          "source_lfs_sha256": null,
+          "git_blob_sha1": "c0c686f9c38d70d179fb7b5f5aa7530bc913dda3",
+          "identity_kind": "git_blob_sha1",
+          "local_sha256_verified": false
+        }
+      ],
+      "trained_dependency_closure_verified": false,
+      "model_executed": false,
+      "download_authorized": false,
+      "research": {
+        "classification": "DIFFERENT_HERETIC_RVN_WEIGHT_EDIT",
+        "current_metadata_license": "apache-2.0",
+        "scope_rule": "Keep one RVN-Q4_K_M-multilingual.gguf plus associated small metadata; do NOT download all 182 source files/quantizations.",
+        "rights_status": "REVIEW_PUBLISHER_README_AND_PARENT_RIGHTS_NO_ROOT_LICENSE_FILE_IN_SCOPE",
+        "value": "ARA/RVN revision differs from Interpretic's narrow politics edit; distinct design but runtime quality unverified.",
+        "overselection_warning": "Existing 11-file scope includes GSQ-3bit config and tokenizer that may be unnecessary for self-contained GGUF. Do not silently change v27; test scoped standalone reconstruction before dropping.",
+        "source_repo_total_bytes": 1645270647302,
+        "source_repo_selected_bytes": 16560392734
+      },
+      "stop_conditions": [
+        "NO_PERSONAL_OWNER_APPROVAL",
+        "DISK_CURRENT_FREE_UNMEASURED",
+        "NO_MODEL_DOWNLOAD_OR_EXECUTION",
+        "SOURCE_RECORDED_ON_2026_11_06_NOT_REVALIDATED_AS_LIVE_PINNED_TREE"
+      ],
+      "pilot_status": "HOLD_BEFORE_PHYSICAL_TRANSFER"
+    }
+  ],
+  "volume": {
+    "v27_total_source_only_bytes": 3417685712585,
+    "selected_wave2_subset_of_v27_bytes": 35567466358,
+    "tiny_two_asset_subset_bytes": 1268746399,
+    "two_large_asset_subset_bytes": 34298719959,
+    "source_LFS_files": 7,
+    "unique_source_LFS_sha256": 7,
+    "source_LFS_cross_duplicate_bytes": 0,
+    "wave2_one_extra_largest_file_copy_peak_bytes": 52378180950,
+    "source_repo_all_0bserverx_bytes": 1645270647302,
+    "source_v27_selected_0bserverx_bytes": 16560392734,
+    "observer_optional_unapproved_minimal4_files_bytes": 16547454222,
+    "observer_optional_unapproved_trim_savings_bytes": 12938512,
+    "data_is_subset_do_not_add_to_v27_total": true,
+    "actual_owner_free_bytes": null,
+    "download_staging_unknown": true
+  },
+  "new_unadopted_model_research": {
+    "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v3-GGUF",
+    "publication_observed": "2026-11-10",
+    "source": "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v3-GGUF",
+    "base": "NousResearch/Arete-27B",
+    "comparison_version_in_v27": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+    "changes": [
+      "v3 base posttrained Arete differs from v2 base Qwen3.8-27B",
+      "v3 lacks MTP, v2 includes MTP",
+      "author-reported 2.6% versus v2 3.5% censorship labels on Chinese political questions, not independent, evaluation cohorts not fully matched",
+      "v3 Q4 reported ~16.6GB; original vision projector ~0.93GB"
+    ],
+    "author_license_metadata": "apache-2.0",
+    "data_reproducibility": "UNVERIFIED",
+    "immutable_revision_SHA": null,
+    "full_file_sha256": null,
+    "selected_as_v27_asset": false,
+    "decision": "P1_RESEARCH_HOLD_NOT_AUTOMATIC_REPLACE_OR_ADD"
+  },
+  "store_diagnostics": {
+    "source_snapshot_date": "2026-11-06",
+    "pinned_source_objects_no_new_live_checksum_retrieval": true,
+    "hf_user_session_authenticated_read_only": true,
+    "hf_user_individual_gated_permissions_unverified": true,
+    "intended_use_and_licenses_not_cleared": true,
+    "license_of_adapter_not_apache": true,
+    "some_hub_main_revisions_newer_than_source_profiles": true,
+    "requires_live_dry_run_compare_but_not_executed": true,
+    "do_not_run_any_model_or_install_dependencies": true
+  },
+  "documentation": {
+    "hf_docs_cli": "https://huggingface.co/docs/huggingface_hub/main/package_reference/cli",
+    "hf_docs_cache": "https://huggingface.co/docs/huggingface_hub/main/guides/download",
+    "hf_docs_gated": "https://huggingface.co/docs/hub/models-gated",
+    "interpretic_v2_card": "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+    "interpretic_v3_card": "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v3-GGUF",
+    "chatrlabs_card": "https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1"
+  },
+  "approval_gate": "ALL_BLOCKED_UNTIL_EXPLICIT_APPROVAL_EXACT_REVISION_LICENSE_FILE_LIST_DESTINATION_AND_DISK_MEASUREMENT",
+  "sha_verification": "Remote HF LFS source SHA256 checks only; all local checksums remain untested.",
+  "static_validation": {
+    "checks": {
+      "v27_173": true,
+      "v27_126": true,
+      "queue_zero": true,
+      "original_HEAD_matches_latest": true,
+      "selected_four": true,
+      "metadata_matches_all_source_profiles": true,
+      "four_sum_correct": true,
+      "micro_sum_correct": true,
+      "raw_0bser_1645TB": true,
+      "selected_0bser_16GB": true,
+      "source_sha_count7": true,
+      "source_all_distinct": true,
+      "all_lfs_64": true,
+      "wave_is_subset_not_extra": true,
+      "all_approval_false": true,
+      "output_revision_40": true,
+      "v3_not_added": true
+    },
+    "count": 17,
+    "failures": []
+  }
+}
