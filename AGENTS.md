@@ -1,5 +1,9 @@
 # エージェント作業規約
 
+## 現行v28（2026-11-12）：小型独立学習BotPsyとIBM TTM R3
+
+[CURRENT](catalog/CURRENT.json)は**175資産／有効128件**。新たに`qvac/BotPsy-0.8B`と`ibm-granite/granite-timeseries-ttm-r3`を独立学習成果としてCONDITIONAL研究採用。従来173件、6件EXCLUDED、HOLD28、4TB上限、200GB最低空き、150B超の同条件RAM例外とゼロ取得承認は維持。以前のv28-r1大型3モデル提案は未採用の研究候補。[評価と停止条件](docs/strategy/46-botpsy-ttm-v28-selection.md)。以下は履歴。
+
 ## 現行v27：Kakao Kanana非生成型判断モデルとMOSS必須音声Codec
 
 [CURRENT](catalog/CURRENT.json)は173資産・有効126件。Kanana 3.665Bの型付き確率判断（choice/noul/score）をBF16原本一式として条件付き研究選定。Kanana Open LicenseのNOTICE/利用条件・別途商用API/SI/端末組込権利が未確認で取得承認不可。MOSS-TTS v1.5の外部必須v1音声Codecを容量に計上、v2は混同しない。Ricursive Ripple 65Bの事前学習原本・後学習版は研究HOLD。4TB上限・最低空き200GB・150B以上量子化同等RAM・承認0を維持。[評価](docs/strategy/37-kanana-moss-archive-v27.md)・[容量](catalog/capacity/2026-11-07/v27/capacity-summary.json)。以下は履歴。
