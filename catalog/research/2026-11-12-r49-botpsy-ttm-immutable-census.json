@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "artifact_type": "NON_EXECUTABLE_PRIMARY_SOURCE_CENSUS",
+  "round": "R49",
+  "checked_on": "2026-11-12",
+  "repo": "Unjuno/local-model-portfolio",
+  "branch": "strategy/2026-11-03-01-risk",
+  "baseline_commit": "394ca677ec6755ac0ab39f98786ff7114df9f440",
+  "catalog_revision_unchanged": "v29-20261112",
+  "total_selected_assets_unchanged": 177,
+  "active_assets_unchanged": 130,
+  "source_metadata_gated_status_says_public": true,
+  "download_authorized": false,
+  "executable": false,
+  "model_weights_downloaded": 0,
+  "model_code_executed": false,
+  "scope_counts": {
+    "package_count": 2,
+    "asset_repo_files": 17,
+    "lfs_sha256_rows": 4,
+    "git_blob_sha1_rows": 13,
+    "full_snapshot_bytes": 1732327856,
+    "weight_only_bytes": 1711759952,
+    "research_budget_cap_bytes_v28": 2700000000,
+    "unused_reservation_after_full_source_snapshot_bytes": 967672144
+  },
+  "packages": [
+    {
+      "asset_kind": "model",
+      "repo_id": "qvac/BotPsy-0.8B",
+      "source_revision": "24561e9681643eaf807fc28b0875210cb17f89c1",
+      "repo_type": "model",
+      "gated": false,
+      "publisher_license_metadata": "apache-2.0",
+      "source_has_license_file": true,
+      "publisher_full_snapshot": true,
+      "code_runtime_source": "Qwen3.5 Transformers standard architecture; no special runtime code in model repo; exact Transformers 5.8.1 in config is model serializer note only; real ABI untested",
+      "published_safetensors_total_parameters": 852985920,
+      "architecture": "Qwen3_5ForConditionalGeneration (Qwen3.5 hybrid text), text-only used; video/image tokens in config but not proof of vision task ability",
+      "base": "Qwen/Qwen3.5-0.8B",
+      "source_urls": [
+        "https://huggingface.co/api/models/qvac/BotPsy-0.8B",
+        "https://huggingface.co/qvac/BotPsy-0.8B/raw/24561e9681643eaf807fc28b0875210cb17f89c1/README.md",
+        "https://qvac.tether.io/blog/on-device-ai-agent-botpsy"
+      ],
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "hash_kind": "GIT_BLOB_SHA1",
+          "source_hash": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+          "sha256_of_actual_user_file_verified": false
+        },
+        {
+          "path": "ATTRIBUTIONS.md",
+          "bytes": 120449,
+          "hash_kind": "GIT_BLOB_SHA1",
+          "source_hash": "b97391b7f5c2506d2d57101a0e4e9b123e39b2ab",
+          "sha256_of_actual_user_file_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11357,
+          "hash_kind": "GIT_BLOB_SHA1",
+          "source_hash": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+          "sha256_of_actual_user_file_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 35273,
+          "hash_kind": "GIT_BLOB_SHA1",
+          "source_hash": "3b8751e4532ccac636fc61ee673862cea1a8ca7e",
+          "sha256_of_actual_user_file_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 7791,
+          "hash_kind": "GIT_BLOB_SHA1",
+          "source_hash": "f93170cf133aa497f5c3e59982a49227fef3037a",
+          "sha256_of_actual_user_file_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 2701,
+          "hash_kind": "GIT_BLOB_SHA1",
+          "source_hash": "d0cde32242f7a5136a43aa17add8dab0e531e22c",
+          "sha256_of_actual_user_file_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 208,
+          "hash_kind": "GIT_BLOB_SHA1",
+          "source_hash": "fb98e5df99c5d7f1440253722a5c26a73ee76c07",
+          "sha256_of_actual_user_file_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 1706030528,
+          "hash_kind": "HF_LFS_SHA256",
+          "source_hash": "9a52e9fb1552e8592542e3de8104af9040b56c60644f5a9c2c270621a3b0ab48",
+          "sha256_of_actual_user_file_verified": false
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 1191,
+          "hash_kind": "GIT_BLOB_SHA1",
+          "source_hash": "33818c7f9e991ad735fd240209f4fa73e6c28c50",
+          "sha256_of_actual_user_file_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 19989325,
+          "hash_kind": "HF_LFS_SHA256",
+          "source_hash": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+          "sha256_of_actual_user_file_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1088,
+          "hash_kind": "GIT_BLOB_SHA1",
+          "source_hash": "474e8f37cf89cb17231803bb0f4e1ef26f47d863",
+          "sha256_of_actual_user_file_verified": false
+        }
+      ],
+      "benchmarks": {
+        "publisher_context": "all 5 models in thinking mode shared harness; vLLM BF16; November 3 2026 external API-dependent tests",
+        "BFCL_v4": {
+          "model": 44,
+          "base": 23.4,
+          "runs": 3
+        },
+        "ACEBench": {
+          "model": 58.7,
+          "base": 30.1,
+          "runs": 2
+        },
+        "BrowserComp_Plus": {
+          "model": 4.5,
+          "base": 1.9,
+          "warning": "low absolute performance"
+        },
+        "caveat": "publisher self-evaluated; Japanese and user hardware not independently measured"
+      },
+      "license_notes": "LICENSE and ATTRIBUTIONS.md present; keep both even if model weights dominate bytes; action-tool prompts and inference tool schemas require separate abuse & authorization controls",
+      "conflicts": [
+        "Parent Qwen3.5-0.8B tokenizer.json published 12.8MB with different LFS SHA5f9e4..., BotPsy selected 19,989,325B with SHA06b950...; byte reuse NOT proven and likely false. Use exact SHA, do not assume tokenizer equivalence.",
+        "Local user device and exact tokenizer/processor ABI untested"
+      ],
+      "known_source_scope_file_count": 11,
+      "known_source_scope_bytes": 1726201481,
+      "source_weight_bytes": 1706030528
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ibm-granite/granite-timeseries-ttm-r3",
+      "source_revision": "ea17cfd2e3edcaea21eb8dcecd18bf88971482fa",
+      "repo_type": "model",
+      "gated": false,
+      "publisher_license_metadata": "apache-2.0",
+      "source_has_license_file": false,
+      "publisher_full_snapshot": true,
+      "code_runtime_source": "https://github.com/ibm-granite/granite-tsfm/tree/31fa2f01573341f17e9997280f61481de18ce28c, observed HEAD not proven exact model compatibility",
+      "published_safetensors_total_parameters": 1414514,
+      "architecture": "TinyTimeMixer one decomposed R3 main F32 checkpoint, NOT multi-revision TTM family or runtime mixture",
+      "source_urls": [
+        "https://huggingface.co/api/models/ibm-granite/granite-timeseries-ttm-r3",
+        "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r3/raw/ea17cfd2e3edcaea21eb8dcecd18bf88971482fa/config.json",
+        "https://github.com/ibm-granite/granite-tsfm"
+      ],
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "hash_kind": "GIT_BLOB_SHA1",
+          "source_hash": "8b76d9ddf713ef3a3a82e98dafb962e0b67b753b",
+          "sha256_of_actual_user_file_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 6389,
+          "hash_kind": "GIT_BLOB_SHA1",
+          "source_hash": "20c3fa57fbc63e881998a9b8134bdce03ab8d68b",
+          "sha256_of_actual_user_file_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 2668,
+          "hash_kind": "GIT_BLOB_SHA1",
+          "source_hash": "bb274aa67c6d5c5d65ecc233564aa40ff97e6454",
+          "sha256_of_actual_user_file_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 5729424,
+          "hash_kind": "HF_LFS_SHA256",
+          "source_hash": "8ec0509a18a38f65b02f046fc28298ab3acf5d54eecb0a0df959b9fa001bc9fb",
+          "sha256_of_actual_user_file_verified": false
+        },
+        {
+          "path": "model.sig",
+          "bytes": 8912,
+          "hash_kind": "GIT_BLOB_SHA1",
+          "source_hash": "7252e4c5f2706a2774faa66ba00de1ed0b30ce45",
+          "sha256_of_actual_user_file_verified": false
+        },
+        {
+          "path": "ttm_image.webp",
+          "bytes": 377412,
+          "hash_kind": "HF_LFS_SHA256",
+          "source_hash": "ec63340da31707b78e94252177bc57e1c7d27713734f8e4aa393ca826375d5d9",
+          "sha256_of_actual_user_file_verified": false
+        }
+      ],
+      "inference_spec": {
+        "context_length": 512,
+        "prediction_length": 30,
+        "frequency_encoder": "FFT-based (config use_fft_embedding true)",
+        "quantiles": [
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9
+        ],
+        "distribution_output": "student_t",
+        "tensor_dtype": "F32",
+        "config_transformers_version": "4.38.0",
+        "pinned_code_observed_head": "31fa2f01573341f17e9997280f61481de18ce28c",
+        "repo_code_version_reproducible": false,
+        "python_distribution_candidate": "granite-tsfm 0.3.12 at PyPI (2026-10-29); compatibility with this precise checkpoint unverified"
+      },
+      "license_notes": "Official HF card states Apache-2.0; current six-file model repo has NO LICENSE file. Must separately preserve legal source and publisher attribution. Source code license separately. Do not silently mark full publisher-grant file verified.",
+      "sigstore": {
+        "file": "model.sig",
+        "bytes": 8912,
+        "type": "application/vnd.dev.sigstore.bundle.v0.3+json",
+        "issuer_identity_procedure": "https://www.ibm.com/granite/docs/model-standards/signature-verification",
+        "cryptographically_verified": false,
+        "model_signature_body_coverage_verified": false,
+        "comment": "Signature existence does not prove trust or verified artifact until author identity, coverage and payload are checked with known-safe tooling."
+      },
+      "hub_storage_statistic_bytes": 1475868508,
+      "hub_storage_is_selected_snapshot_size": false,
+      "confirmed_snapshot_only_ttm_1p4m": true,
+      "benchmarks": {
+        "publisher_GIFT_Eval": "MASE/CRPS values describe model FAMILY, no proof exact chosen main=benchmarked evaluated variant",
+        "publisher_throughput": "CPU ~180/s and GPU ~7500/s; hardware clock, batch unspecified; no user benchmark"
+      },
+      "conflicts": [
+        "model.sig cryptographic trust not verified, despite Sigstore object present",
+        "R3 family may route among other revisions; one main is 512 context/30 horizon, not universal coverage",
+        "No original license file in snapshot; Apache-2.0 on card only; full immutable runtime dependency closure unknown"
+      ],
+      "known_source_scope_file_count": 6,
+      "known_source_scope_bytes": 6126375,
+      "source_weight_bytes": 5729424
+    }
+  ],
+  "observations": {
+    "qvac/BotPsy-0.8B": {
+      "published_safetensors_parameters": 852985920,
+      "published_usedStorage_bytes": 1726019853,
+      "source_snapshot_11_files_bytes": 1726201481,
+      "same_snapshot_source_blob_storage_never_auto_equated": true,
+      "license_path_present": true,
+      "tool_chat_template_file_required": true
+    },
+    "ibm-granite/granite-timeseries-ttm-r3": {
+      "published_safetensors_parameters": 1414514,
+      "published_usedStorage_bytes": 1475868508,
+      "source_snapshot_6_files_bytes": 6126375,
+      "model_sigstore_bundle_present_unverified": true,
+      "license_file_in_source_tree": false,
+      "publisher_card_license": "apache-2.0",
+      "exact_checkpoint_context_length": 512,
+      "prediction_length": 30,
+      "model_code_compatible_backend_tested": false
+    }
+  },
+  "reference_sources": [
+    "https://huggingface.co/api/models/qvac/BotPsy-0.8B/tree/24561e9681643eaf807fc28b0875210cb17f89c1?recursive=true",
+    "https://huggingface.co/api/models/ibm-granite/granite-timeseries-ttm-r3/tree/ea17cfd2e3edcaea21eb8dcecd18bf88971482fa?recursive=true",
+    "https://huggingface.co/qvac/BotPsy-0.8B/raw/24561e9681643eaf807fc28b0875210cb17f89c1/README.md",
+    "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r3/raw/ea17cfd2e3edcaea21eb8dcecd18bf88971482fa/config.json",
+    "https://www.ibm.com/granite/docs/model-standards/signature-verification",
+    "https://pypi.org/project/granite-tsfm/"
+  ],
+  "limits": {
+    "current_lawful_download_authorization": false,
+    "physical_user_disk_free_bytes": null,
+    "complete_learned_runtime_dependencies_bytes": null,
+    "selected_byte_dedup_vs_existing_v29_unverified": true,
+    "selected_own_tree_shas_from_upstream_not_local": true,
+    "backend_abi_not_verified": true,
+    "license_text_all_repo_checked": false
+  },
+  "checks": {
+    "unique_exact_source_rows": true,
+    "all_hash_lengths_valid": true,
+    "all_snapshot_file_sums_recomputed": true,
+    "all_17_paths_present_on_fixed_snapshot": true,
+    "model_runtime_tests_run": false,
+    "github_actions_run": false,
+    "archive_hdd_measured": false
+  }
+}
