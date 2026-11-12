@@ -1,5 +1,9 @@
 # エージェント作業規約
 
+## 現行v29（2026-11-12）：ZONOS3-MiniとLingBot-Touch-Tinyの独立能力2件
+
+[CURRENT](catalog/CURRENT.json)は**177資産／有効130件**（旧175件維持、研究用CONDITIONAL2件追加）。Zyphra ZONOS3-Miniの公開標準TTS・ZAC-1音声Codecと、Robbyant LingBot-Touch-Tinyの磁気／圧抵抗／視触覚JEPAの原本。ZONOS3公開repoには別形式が多いためPyTorch原本一構成に絞り、非公開の音声編集LoRAを取得対象としない。LingBot Smallは実ロボット評価根拠が不足して別HOLD。Alpamayo2 Edge／Praxis DROID／Simons297M／PAN2は研究HOLD。4TB・200GB物理空き・150B以上同等RAM実測・総数不明20モデルの取得STOP・承認0を維持。[原論文・取得ゲート](docs/strategy/47-nov12-distinct-modality-selection.md)。以下はv28以前の履歴。
+
 ## 現行v28（2026-11-12）：小型独立学習BotPsyとIBM TTM R3
 
 [CURRENT](catalog/CURRENT.json)は**175資産／有効128件**。新たに`qvac/BotPsy-0.8B`と`ibm-granite/granite-timeseries-ttm-r3`を独立学習成果としてCONDITIONAL研究採用。従来173件、6件EXCLUDED、HOLD28、4TB上限、200GB最低空き、150B超の同条件RAM例外とゼロ取得承認は維持。以前のv28-r1大型3モデル提案は未採用の研究候補。[評価と停止条件](docs/strategy/46-botpsy-ttm-v28-selection.md)。以下は履歴。

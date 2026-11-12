@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "round": "R47",
+  "checked_on": "2026-11-12",
+  "source_branch": "strategy/2026-11-03-01-risk",
+  "source_parent_sha": "79a533807da1337387612132a5745060e77caeb0",
+  "exhaustiveness": "limited targeted first-party verification; not exhaustive of all new November models",
+  "observed_hf_connection": true,
+  "exa_status": "HTTP402 credit limit, fallback to official model pages, HF first-party connector and publisher GitHub",
+  "new_model_decisions": [
+    {
+      "rank": 1,
+      "repo_id": "Zyphra/ZONOS3-Mini",
+      "decision": "ADOPT_CONDITIONAL_CORE_TTS_ONLY",
+      "distinguishing": "ZAC-1 codec, 43-language voice cloning, GDN+MoE, DPO+GRPO, word-level steering",
+      "total_params_evidence": "Official 800M main vs 886M product named total, 100M active; full dependency tensor census needed",
+      "source": "https://www.zyphra.com/our-work/zonos3-mini",
+      "other_sources": [
+        "https://www.zyphra.com/models/zonos3-mini",
+        "https://github.com/Zyphra/ZONOS3-Mini",
+        "https://huggingface.co/Zyphra/ZONOS3-Mini"
+      ],
+      "known_storage": "whole multi-format repo 30.7 GB; official CUDA core about 9 GB; exact subset bytes unknown",
+      "rights": "public HF Apache weights tag; source MIT; optional private edit LoRA inaccessible",
+      "counterargument": "TTS overlaps Qwen/MOSS unless cross-lingual and voice controls really independent; full word edit not open"
+    },
+    {
+      "rank": 2,
+      "repo_id": "robbyant/lingbot-touch-tiny",
+      "decision": "ADOPT_CONDITIONAL_TINY_ONLY",
+      "distinguishing": "tactile cross-sensor JEPA frozen encoder trained on 4983h, no comparable tactile encoder in v28",
+      "total_params_evidence": "5.46M Tiny per official project, exact tensor metadata pending",
+      "source": "https://technology.robbyant.com/lingbot-touch",
+      "other_sources": [
+        "https://github.com/Robbyant/lingbot-touch",
+        "https://arxiv.org/abs/2611.12806",
+        "https://huggingface.co/robbyant/lingbot-touch-tiny"
+      ],
+      "known_storage": "~22MB model bundle config+encoder.pt, code separate",
+      "rights": "Apache model metadata and GitHub source; note source says permission may be needed",
+      "counterargument": "Only representation encoder, no policy, sensor geometry and downstream heads missing"
+    },
+    {
+      "rank": 3,
+      "repo_id": "nvidia/Alpamayo2-Edge",
+      "decision": "HOLD_PRIORITY_SOURCE_LICENSE_AND_RUNTIME_AUDIT",
+      "distinguishing": "Driving causation explanation+trajectory decoder vs existing video-generating Cosmos3 and general GR00T",
+      "total_params_evidence": "2.45B backbone +0.2B action expert, HF model size 2.6512B; includes all components named in card",
+      "source": "https://huggingface.co/nvidia/Alpamayo2-Edge",
+      "other_sources": [
+        "https://github.com/NVlabs/alpamayo2-edge"
+      ],
+      "known_storage": "exact released files not pinned",
+      "rights": "weights OpenMDW-1.1, code Apache2, external PhysicalAI dataset separate access",
+      "counterargument": "H100 80GB only benchmark, NVIDIA reports 12.06GiB process peak under 22 images batch1 6 trajectories; no user machine or AV test"
+    },
+    {
+      "rank": 4,
+      "repo_id": "runwayml/praxis-1-droid",
+      "decision": "HOLD_COMPARE_ROBOTICS_VS_COSMOS_FIRST",
+      "distinguishing": "joint video-action 27B posttrained DROID and separately bimanual YAM variants",
+      "total_params_evidence": "HF metadata 27.2024B vs 27B named by publisher",
+      "source": "https://runway.com/news/company-news/praxis-1-is-now-available",
+      "other_sources": [
+        "https://github.com/runwayml/praxis-1-oss",
+        "https://huggingface.co/runwayml/praxis-1-droid"
+      ],
+      "known_storage": "publisher BF16 ~54.4GB, NVFP4 QAT planned ~17.5GB; no all-formats collection",
+      "rights": "Apache-2.0 declared; source/source weights legal context to validate",
+      "counterargument": "Publisher RoboLab-120 46.2% over 1200 episodes vs other models not independent, user robot rigs absent; base/droid/yam/QAT not same trained state"
+    },
+    {
+      "rank": 5,
+      "repo_id": "abel-lab/Simons-297M",
+      "decision": "HOLD_COMPARE_WITH_TTM_R3_AND_CHRONOS2",
+      "distinguishing": "297.2M quantile forecast with known future covariates, some training data and recipe public",
+      "total_params_evidence": "HF metadata 297.2M",
+      "source": "https://abel.ai/research/simons/",
+      "other_sources": [
+        "https://huggingface.co/abel-lab/Simons-297M",
+        "https://github.com/Abel-ai-lab/Simons"
+      ],
+      "known_storage": "source checkpoint size not pinned, likely larger than new TTM1.41M",
+      "rights": "OpenMDW-1.1 on weights, Apache code, training data licenses vary",
+      "counterargument": "Just selected TTM R3; no need a second forecasting foundation before same GIFT/fev eval"
+    },
+    {
+      "rank": 6,
+      "repo_id": "IFM/PAN2",
+      "decision": "HOLD_DUPLICATE_WORLD_SIMULATION_AND_DEPENDENCY",
+      "distinguishing": "29.202B action-conditioned text/image→video simulation up to 20s",
+      "total_params_evidence": "HF metadata total 29.202B",
+      "source": "https://huggingface.co/IFM/PAN2",
+      "other_sources": [
+        "https://arxiv.org/abs/2507.05169"
+      ],
+      "known_storage": "source selected shards and dependencies unknown",
+      "rights": "Apache-2.0 Hub tag, separate runtime requirements",
+      "counterargument": "large world-model video overlap with Cosmos3/PrimeSim, publisher evaluation not independent"
+    },
+    {
+      "rank": 7,
+      "repo_id": "robbyant/lingbot-touch-small",
+      "decision": "HOLD_SIZE_VARIANT_TINY_FIRST",
+      "distinguishing": "distinct larger tactile encoder same architecture; potentially higher perception accuracy",
+      "total_params_evidence": "exact total not publisher-verified from first-party; no total used for acquired package",
+      "source": "https://huggingface.co/robbyant/lingbot-touch-small",
+      "other_sources": [
+        "https://github.com/Robbyant/lingbot-touch"
+      ],
+      "known_storage": "~87MB in secondary index, selected bytes/SHA unknown",
+      "rights": "Apache-2.0 Hub tag; same permission uncertainty",
+      "counterargument": "26 actual real-robot tasks evaluated with Tiny, Small not independently proven necessary"
+    }
+  ],
+  "license_scope_flags": [
+    "Zyphra official weights Apache-2.0 versus code MIT, verify complete current original text and submodules",
+    "Zyphra public core vs private editor LoRA cannot be equated",
+    "LingBot official GitHub permission wording vs HF public listing unresolved individual entitlement",
+    "LingBot .pt serialization may be unsafe to load; inspect only as data until explicit runtime approval",
+    "Alpamayo and Simons weights OpenMDW-1.1 vs Apache on code",
+    "No new regulatory takedown probability from subjective danger"
+  ],
+  "identity_check": {
+    "existing175_ids_unchanged": true,
+    "new_unique_models": 2,
+    "no_quantization_duplicates": true
+  },
+  "storage_impact": {
+    "v29_two_budget_reservations_bytes": 16300000000,
+    "logical_v27_known_bytes": 3417685712585,
+    "no_measured_new_selected_bytes": true,
+    "user_device_free_bytes": null
+  },
+  "user_download_approval": false
+}

@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "revision_id": "v29-20261112",
+  "previous_revision_id": "v28-20261112",
+  "decision_date": "2026-11-12",
+  "source_branch_commit": "79a533807da1337387612132a5745060e77caeb0",
+  "target_branch": "strategy/2026-11-03-01-risk",
+  "decision_status": "TWO_DISTINCT_NONEXECUTABLE_CONDITIONAL_ADDITIONS",
+  "purpose": "Preserve two entirely new modalities or learned architectures with smallest supported exemplar; no quantization duplicates; keep all other research in HOLD.",
+  "archive_target_bytes": 4000000000000,
+  "minimum_free_bytes": 200000000000,
+  "max_new_selection_budget_bytes": 16300000000,
+  "planning_budget_not_final_files": true,
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "Zyphra/ZONOS3-Mini",
+      "url": "https://huggingface.co/Zyphra/ZONOS3-Mini",
+      "group": "ゼロショット声質複製と語単位ステアリングを備えた独立小型MoE TTS",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "2026-11-09公開のZAC-1 15Hz音声Codecと11層のGated DeltaNet+Global AttentionハイブリッドMoEに基づく独立の多言語TTS。話者表現、43言語、日本語、音声の語単位制御、DPO→GRPOの後学習は既存Qwen3-TTS/MOSS/Phononの単純量子化では再現できない。公開標準TTSの一構成のみ保全候補とし、編集用の別非公開LoRAや多形式一括取得を含めない。",
+      "quality_positive": "Zyphra公式2026-11-09技術記事ではLM全MoE約800M、活性約100M、公式製品ページではtotal約886Mを表示。H100 80GB/8並列で初回音声まで中央値80ms、最適並列時457秒音声/秒をメーカー報告。43言語と日本語対応、音声Codec ZAC-1が別学習済み構成要素。",
+      "quality_negative": "800M LMと886M製品totalの数値範囲が異なり完全学習済み部品を含む固定版のテンソル計数は未完。元repoは約30.7GBでBF16/GGUF/WebGPUを同居。公開標準CUDAモデルは作者案内約9GBだが実選択バイトとcodec、speaker encoder、tokenizer/steer bundleを静的確定できていない。語単位編集に別の非公開Zyphra/ZONOS3_Mini編集LoRA、別のFuseAlignやASRが必要なケースがあり公開原本だけで完全編集再現とは主張しない。本人の音声同意・日本語自然さ・OS/backend実行も未検証。",
+      "evidence_date": "2026-11-12",
+      "release_date_reported": "2026-11-09",
+      "evidence_scope": "Zyphra first-party technical release, source GitHub and HF publisher metadata; no payload download, model execution or user-gated entitlement test",
+      "evidence_urls": [
+        "https://www.zyphra.com/our-work/zonos3-mini",
+        "https://www.zyphra.com/models/zonos3-mini",
+        "https://huggingface.co/Zyphra/ZONOS3-Mini",
+        "https://github.com/Zyphra/ZONOS3-Mini"
+      ],
+      "observed_access": "Public publisher model listing, HF metadata apache-2.0; current individual file access and optional private dependent LoRA not validated",
+      "license_metadata": "apache-2.0_weights;MIT_code_reported",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "personal_access_verified": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": null,
+      "upstream_all_files_bytes_observed": null,
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 886000000,
+        "count_scope": "Publisher product page rounded model total; technical post reports 800M language backbone and 100M active, excludes exact fixed tensor census of external learned components",
+        "evidence_kind": "official Zyphra model page and technical report; far below 150B; exact full binary census not performed",
+        "review_date": "2026-11-12"
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "category": "distinct_speech_cloning_and_control_learning",
+        "rank": null,
+        "scenario_status": "hypothetical future condition change only, not a confirmed model-specific ban"
+      },
+      "restriction_assessment": {
+        "observed": "HF repo public and Apache-2.0 model-tag; source code GitHub advertises MIT with third-party notices; optional advanced edit LoRA appears private, so no assumption of rights or availability.",
+        "scenario": "Speech identity/reuse access terms could change as a stress test; no known scheduled withdrawal or probability.",
+        "probability": null
+      },
+      "source_code": {
+        "repo_id": "Zyphra/ZONOS3-Mini",
+        "observed_commit_sha": "3a294675a06dd496242e8dbdf2232116a874f67a",
+        "source_url": "https://github.com/Zyphra/ZONOS3-Mini",
+        "source_code_sha_is_not_model_repo_sha": true,
+        "all_submodules_audited": false
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Core ZONOS3-Mini voice-cloning/multilingual TTS and ZAC-1 15Hz codec",
+        "must_preserve": [
+          "one standard PyTorch BF16 lm/zonos3_mini checkpoint and configs; no duplicate gguf/web of same trained LM",
+          "autoencoder ZAC-1 decoder selected type and speaker_encoders",
+          "speaker prompt and optional public steering tables required for baseline capability, named files and exact SHAs",
+          "SuperBPE tokenizer and Zyphra text normalizer version",
+          "runtime code at fixed Git commit, its Git submodules, MIT code license and Apache weights notices",
+          "user-consented speaker inputs only; separately gate FuseAlign, Qwen3-ASR and private edit LoRA"
+        ],
+        "excluded_optional_private_dependency_without_permission": [
+          "Zyphra/ZONOS3_Mini private speech editing LoRA/phoneme extras"
+        ],
+        "format_redundancy_policy": "PyTorch BF16 single canonical baseline; do not acquire gguf/ web/ MLX conversions automatically",
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "incumbent_comparison": [
+        "OpenMOSS-Team/MOSS-TTS-v1.5",
+        "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+        "ResembleAI/chatterbox",
+        "gradium/phonon-40m-multilingual"
+      ],
+      "falsification_condition": "If identical trained parameter SHA to existing voice model, no independent Japanese/prosody advantage on matched tasks, or required public codec/runtime does not restore baseline audio, downgrade; private edit assets remain separate HOLD.",
+      "selection_budget_cap_bytes": 16000000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "publisher_full_repo_size_approx_bytes": 30700000000,
+        "publisher_canonical_pytorch_parts_approx_bytes": 9000000000,
+        "source_format_duplicate_issues": true,
+        "hw_tested_on_user_machine": false
+      },
+      "download_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "robbyant/lingbot-touch-tiny",
+      "url": "https://huggingface.co/robbyant/lingbot-touch-tiny",
+      "group": "実触覚JEPAのヘテロセンサー共通表現・凍結Encoder",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "2026-11-09公開の磁気/圧抵抗/視触覚の3センサー形式を同一JEPA表現へ統合した約5.46M凍結触覚encoder。既存GR00T/π0/Cosmosは画像・行動・世界モデルであり、触覚token encoderの学習済み重みを代替できない。実ロボット26タスクの開発元検証はTiny版なので、Tinyを1代表としSmallを無条件で同時保存しない。",
+      "quality_positive": "Robbyantの公式プロジェクトは4,983時間、464,431エピソード、約13.3億触覚フレームでの学習とHaT-Tiny 5.46Mを公表。26現実の手操作タスク、12シミュレーションタスクの評価を公表。HFモデルrepoはApache-2.0表示、配布物はconfig.json+encoder.pt（計約22MBの概数）。",
+      "quality_negative": "全26タスクの開発元評価はTinyの凍結Encoderを他の動作ポリシーに接続した実験であり、Tiny単体がロボットを制御するわけではない。全学習データ/訓練レシピ/予測head/最終タスクheadは公開されず、同じ性能の再訓練は不能。PyTorch .ptは安全なsafetensorsではなくweights_only=Trueの別工程実行審査が必要。GitHubのREADMEに『account with permission』とあり、Hubのpublic listingだけではユーザー個別の現在の取得権限を証明しない。固定Hub SHA・実体SHA/byte、PyTorch ABI、センサ較正は未確定。",
+      "evidence_date": "2026-11-12",
+      "release_date_reported": "2026-11-09",
+      "evidence_scope": "Robbyant official project+GitHub, HF publisher metadata and primary arxiv technical report; no model payload download/torch load",
+      "evidence_urls": [
+        "https://technology.robbyant.com/lingbot-touch",
+        "https://github.com/Robbyant/lingbot-touch",
+        "https://huggingface.co/robbyant/lingbot-touch-tiny",
+        "https://arxiv.org/abs/2611.12806"
+      ],
+      "observed_access": "HF public model listing and Apache-2.0 metadata, but original GitHub warns permission may be required; user access unknown",
+      "license_metadata": "apache-2.0_model_and_code_metadata",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "personal_access_verified": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": null,
+      "upstream_all_files_bytes_observed": null,
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 5460000,
+        "count_scope": "Publisher HaT-Tiny frozen target encoder rounded 5.46M; no independent static census of exact .pt tensor keys",
+        "evidence_kind": "Robbyant official project + linked paper, no checkpoint execution",
+        "review_date": "2026-11-12"
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "category": "tactile_multisensor_robotics_jepa",
+        "rank": null,
+        "scenario_status": "hypothetical future distribution constraints, not observed"
+      },
+      "restriction_assessment": {
+        "observed": "Official public GitHub and listed public model, Apache-2.0 tags. GitHub user-permission statement conflicts with presumed anonymous availability; actual entitlement unverified.",
+        "scenario": "Cross-sensor tactile research data/rights could affect future distribution, no model-specific legal probability.",
+        "probability": null
+      },
+      "source_code": {
+        "repo_id": "Robbyant/lingbot-touch",
+        "observed_commit_sha": "dec8025b212e7099b235cc2ef13a4921a7e59545",
+        "source_url": "https://github.com/Robbyant/lingbot-touch",
+        "source_code_sha_is_not_model_repo_sha": true,
+        "all_dependencies_audited": false
+      },
+      "preservation_bundle": {
+        "learned_outcome": "One trained 5.46M Tiny JEPA frozen encoder for three tactile sensor classes",
+        "must_preserve": [
+          "one trusted encoder.pt and matching config.json; count all tensors without executing",
+          "inference code pinned at the observed GitHub commit and THIRD_PARTY_NOTICES",
+          "exact normalization, finger order, geometry canonicalization and calibrated sensor samples/metadata",
+          "Python 3.12.13, PyTorch 2.11.0, NumPy 2.4.4 and platform ABI; no automatic installation",
+          "no package executable or torch.load during archive-only acquisition"
+        ],
+        "excluded_variant_without_evidence": [
+          "robbyant/lingbot-touch-small"
+        ],
+        "format_redundancy_policy": "Keep Tiny one representative; Small is different training size but no independent real-robot advantage established",
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "incumbent_comparison": [
+        "lerobot/smolvla_base",
+        "lerobot/pi0_base",
+        "nvidia/GR00T-N1.6-3B",
+        "nvidia/Cosmos3-Nano-Sim-Bimanual"
+      ],
+      "falsification_condition": "If Tiny public checkpoint is unavailable without permission, lacks full learned encoder, same SHA as already selected tactile model, or cannot form interoperable inputs on supported sensor layouts, keep research but block acquisition.",
+      "selection_budget_cap_bytes": 300000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "publisher_weight_bundle_approx_bytes": 22000000,
+        "hw_tested_on_user_machine": false
+      },
+      "download_ready": false
+    }
+  ],
+  "non_selected_research": [
+    {
+      "rank": 3,
+      "repo_id": "nvidia/Alpamayo2-Edge",
+      "decision": "HOLD_PRIORITY_SOURCE_LICENSE_AND_RUNTIME_AUDIT",
+      "distinguishing": "Driving causation explanation+trajectory decoder vs existing video-generating Cosmos3 and general GR00T",
+      "total_params_evidence": "2.45B backbone +0.2B action expert, HF model size 2.6512B; includes all components named in card",
+      "source": "https://huggingface.co/nvidia/Alpamayo2-Edge",
+      "other_sources": [
+        "https://github.com/NVlabs/alpamayo2-edge"
+      ],
+      "known_storage": "exact released files not pinned",
+      "rights": "weights OpenMDW-1.1, code Apache2, external PhysicalAI dataset separate access",
+      "counterargument": "H100 80GB only benchmark, NVIDIA reports 12.06GiB process peak under 22 images batch1 6 trajectories; no user machine or AV test"
+    },
+    {
+      "rank": 4,
+      "repo_id": "runwayml/praxis-1-droid",
+      "decision": "HOLD_COMPARE_ROBOTICS_VS_COSMOS_FIRST",
+      "distinguishing": "joint video-action 27B posttrained DROID and separately bimanual YAM variants",
+      "total_params_evidence": "HF metadata 27.2024B vs 27B named by publisher",
+      "source": "https://runway.com/news/company-news/praxis-1-is-now-available",
+      "other_sources": [
+        "https://github.com/runwayml/praxis-1-oss",
+        "https://huggingface.co/runwayml/praxis-1-droid"
+      ],
+      "known_storage": "publisher BF16 ~54.4GB, NVFP4 QAT planned ~17.5GB; no all-formats collection",
+      "rights": "Apache-2.0 declared; source/source weights legal context to validate",
+      "counterargument": "Publisher RoboLab-120 46.2% over 1200 episodes vs other models not independent, user robot rigs absent; base/droid/yam/QAT not same trained state"
+    },
+    {
+      "rank": 5,
+      "repo_id": "abel-lab/Simons-297M",
+      "decision": "HOLD_COMPARE_WITH_TTM_R3_AND_CHRONOS2",
+      "distinguishing": "297.2M quantile forecast with known future covariates, some training data and recipe public",
+      "total_params_evidence": "HF metadata 297.2M",
+      "source": "https://abel.ai/research/simons/",
+      "other_sources": [
+        "https://huggingface.co/abel-lab/Simons-297M",
+        "https://github.com/Abel-ai-lab/Simons"
+      ],
+      "known_storage": "source checkpoint size not pinned, likely larger than new TTM1.41M",
+      "rights": "OpenMDW-1.1 on weights, Apache code, training data licenses vary",
+      "counterargument": "Just selected TTM R3; no need a second forecasting foundation before same GIFT/fev eval"
+    },
+    {
+      "rank": 6,
+      "repo_id": "IFM/PAN2",
+      "decision": "HOLD_DUPLICATE_WORLD_SIMULATION_AND_DEPENDENCY",
+      "distinguishing": "29.202B action-conditioned text/image→video simulation up to 20s",
+      "total_params_evidence": "HF metadata total 29.202B",
+      "source": "https://huggingface.co/IFM/PAN2",
+      "other_sources": [
+        "https://arxiv.org/abs/2507.05169"
+      ],
+      "known_storage": "source selected shards and dependencies unknown",
+      "rights": "Apache-2.0 Hub tag, separate runtime requirements",
+      "counterargument": "large world-model video overlap with Cosmos3/PrimeSim, publisher evaluation not independent"
+    },
+    {
+      "rank": 7,
+      "repo_id": "robbyant/lingbot-touch-small",
+      "decision": "HOLD_SIZE_VARIANT_TINY_FIRST",
+      "distinguishing": "distinct larger tactile encoder same architecture; potentially higher perception accuracy",
+      "total_params_evidence": "exact total not publisher-verified from first-party; no total used for acquired package",
+      "source": "https://huggingface.co/robbyant/lingbot-touch-small",
+      "other_sources": [
+        "https://github.com/Robbyant/lingbot-touch"
+      ],
+      "known_storage": "~87MB in secondary index, selected bytes/SHA unknown",
+      "rights": "Apache-2.0 Hub tag; same permission uncertainty",
+      "counterargument": "26 actual real-robot tasks evaluated with Tiny, Small not independently proven necessary"
+    }
+  ],
+  "no_payloads_downloaded": true,
+  "no_user_authorizations_created": true
+}
