@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "round": "R52",
+  "as_of": "2026-11-13",
+  "repo": "Unjuno/local-model-portfolio",
+  "branch": "strategy/2026-11-03-01-risk",
+  "base_commit": "d2653aaf4bda91be501c117305c3ec727d0a0df9",
+  "policy": {
+    "current_revision": "v30-20261112",
+    "tracked_assets": 178,
+    "active_assets": 131,
+    "unknown_total_models": 20,
+    "active_unknown_models": 7,
+    "approved_downloads": 0,
+    "no_formal_changes": true
+  },
+  "facts": {
+    "nano_publisher_header_version": 2,
+    "c_loader_version": 1,
+    "github_code_pin": "5008f8e032f69266c3f37788825cfda3112eab55",
+    "actual_nano_binary_header_seen": false,
+    "matching_v2_loader_proved": false,
+    "source_compatibility_conclusion": "HOLD; if actual file is STNB v2, this pinned v1 C loader rejects it.",
+    "edge_pr": {
+      "state": "open",
+      "merged": false,
+      "author_originating_result": true,
+      "compared_old_versions": [
+        "v1.3.0",
+        "edge v2.0.0"
+      ],
+      "current_pr_test_code_pins": [
+        "v1.4.0",
+        "edge v2.1.0"
+      ],
+      "old_author_score": {
+        "v1_3_avg_wer_pct": 0.97,
+        "v1_3_utmos": 4.418,
+        "edge2_0_avg_wer_pct": 0.92,
+        "edge2_0_utmos": 4.322,
+        "source": "publisher-run PR body; not formal independent leaderboard"
+      },
+      "new_version_assessed_by_those_scores": false
+    },
+    "maya": {
+      "main_elements_from_existing_snapshot": 2502398656,
+      "third_party_mimi_approx_elements": 96200000,
+      "ecapa_exact_elements": null,
+      "exact_runtime_mimi_sha": null,
+      "exact_runtime_ecapa_sha": null,
+      "parent_qwen_checkpoint_required_separately": false
+    },
+    "pruna": {
+      "main_hf_safetensors_elements_from_existing_snapshot": 33122992896,
+      "learned_weight_shards_in_existing_view": 15,
+      "full_trained_pipeline_elements": null,
+      "prompt_upsampler_can_be_disabled": true,
+      "territory_rights_and_runtime_unverified": true
+    }
+  },
+  "sources": {
+    "nano_model_card": {
+      "url": "https://huggingface.co/WhissleAI/steer-tts-nano",
+      "declaration": "STNB version2, gated, CC BY-NC4.0 plus Whissle terms",
+      "kind": "publisher_claim_not_binary_observation"
+    },
+    "loader_header": {
+      "url": "https://github.com/WhissleAI/steer-tts/blob/5008f8e032f69266c3f37788825cfda3112eab55/esp32/components/steertts_nano/include/nano_bin.h",
+      "observation": "NANO_BIN_VERSION 1",
+      "kind": "pinned_source_code"
+    },
+    "loader_impl": {
+      "url": "https://github.com/WhissleAI/steer-tts/blob/5008f8e032f69266c3f37788825cfda3112eab55/esp32/components/steertts_nano/src/nano_model.c",
+      "observation": "h->version != NANO_BIN_VERSION yields reject",
+      "kind": "pinned_source_code"
+    },
+    "writer": {
+      "url": "https://github.com/WhissleAI/steer-tts/blob/5008f8e032f69266c3f37788825cfda3112eab55/esp32/tools/nanobin.py",
+      "observation": "VERSION=1, 256byte header, no proof actual nano.bin version",
+      "kind": "pinned_source_code"
+    },
+    "leaderboard_pr": {
+      "url": "https://github.com/huggingface/open-tts-leaderboard/pull/39",
+      "state_as_checked": "open, unmerged",
+      "reported_by": "model publisher submitter",
+      "body_versions": [
+        "WhissleAI/steer-tts v1.3.0",
+        "WhissleAI/steer-tts-edge v2.0.0"
+      ],
+      "head_commit": "00298cd0580e18487cead341975e3c536c722d9a",
+      "head_code_versions": [
+        "WhissleAI/steer-tts v1.4.0",
+        "WhissleAI/steer-tts-edge v2.1.0"
+      ],
+      "source_update_date": "2026-11-03T05:14:13Z",
+      "warning": "Self-reported PR body metrics are not final official HF leaderboard measurements, nor measurements of the newer head pin revisions."
+    },
+    "leaderboard_issue": {
+      "url": "https://github.com/huggingface/open-tts-leaderboard/issues/15",
+      "state_as_checked": "open",
+      "publisher_stated_self_reported": true
+    },
+    "maya_card": {
+      "url": "https://huggingface.co/maya-research/maya2-native",
+      "dependencies": [
+        "Kyutai Mimi (CC BY 4.0), loaded separately at runtime",
+        "SpeechBrain ECAPA-TDNN (Apache-2.0), loaded separately",
+        "Qwen3-1.7B training initializer already integrated in Maya2 backbone weight shards"
+      ],
+      "offline_restore_gap": "Neither external Mimi nor SpeechBrain pinned immutable repo+file SHA in portfolio, and actual installed backend ABI not proven"
+    },
+    "pruna_card": {
+      "url": "https://huggingface.co/PrunaAI/P-H3-Image",
+      "dependencies": [
+        "33.1B transformer",
+        "Qwen3-VL-4B text encoder",
+        "Qwen3.5-9B-derived prompt upsampler",
+        "text connector and image VAE"
+      ],
+      "licensing": "MiniMax H3 Community License restrictions including EU, UK, Korea, USA; independent Qwen Apache components",
+      "runtime": "diffusers ModularPipeline custom image workflow, 8MP"
+    },
+    "pruna_diffusers": {
+      "url": "https://huggingface.co/docs/diffusers/main/en/api/pipelines/p_h3_image",
+      "version": "current docs not pinned to commit",
+      "runtime": "Prompt upsampler can be removed, affecting trained-component closure; Tensor bytes alone not a runtime evidence."
+    }
+  },
+  "non_executing_header_validator": {
+    "script": "scripts/check_stnb_abi.py",
+    "tests": "tests/test_check_stnb_abi.py",
+    "reads_only_first_bytes": 8,
+    "default_pinned_runtime_version": 1,
+    "expected_magic": "STNB",
+    "version_endianness": "little",
+    "not_whole_model_certification": true,
+    "model_download_disabled": true,
+    "requires_previously_authorized_local_file": true,
+    "test_suite": "5 deterministic synthetic tests, standard library, local run all passed",
+    "ci_or_full_repo_suite_executed": false
+  },
+  "decisions": {
+    "Nano": "HOLD, no formal selection and no gated download",
+    "Edge": "HOLD, separate trained v2 acoustic candidate but new-version benchmark unresolved",
+    "Maya2": "retain conditional; exact external Mimi/ECAPA SHA+params pending",
+    "Pruna": "retain conditional; 33B main is not complete total; dependents and restricted rights unresolved"
+  },
+  "dimensions": {
+    "version_field": "unsigned 32-bit integer (unit 1)",
+    "magic_bytes": 4,
+    "version_bytes": 4,
+    "required_prefix_bytes": 8,
+    "param_count_unit": "1",
+    "file_bytes_unit": "byte",
+    "no_runtime_or_disk_measured": true
+  }
+}
