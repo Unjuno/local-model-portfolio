@@ -1,5 +1,9 @@
 # エージェント作業規約
 
+## 現行v30（2026-11-12）：Alpamayo 2 Edgeの独立運転VLA原本を条件付き追加
+
+[CURRENT](catalog/CURRENT.json)は**178資産／有効131件**。新規条件付き研究`nvidia/Alpamayo2-Edge`は2,651,163,378総学習済みパラメータ、公開BF16二シャードの計約5.302GBを含む12ファイルの別後学習成果。既存Cosmos Sim-Autoの動画・LiDARシミュレーションでは生成できない64姿勢の運転軌道とChain-of-Causation説明を出す。原重み・ライセンス全文・固定runtimeコードが公開され、重み2シャードの旧/新revision SHA一致を監査。日本国内を含む用途での権利・別Gatedデータ、実機のLinux/H100以外での性能・自動運転安全性は未確認。モデル本体取得/実行・承認0、177旧資産・除外6・4TBと空き200GBを維持。[R50と採否](docs/strategy/50-alpamayo-edge-distinct-driving-policy.md)。以下v29以前は履歴。
+
 ## 現行v29（2026-11-12）：ZONOS3-MiniとLingBot-Touch-Tinyの独立能力2件
 
 [CURRENT](catalog/CURRENT.json)は**177資産／有効130件**（旧175件維持、研究用CONDITIONAL2件追加）。Zyphra ZONOS3-Miniの公開標準TTS・ZAC-1音声Codecと、Robbyant LingBot-Touch-Tinyの磁気／圧抵抗／視触覚JEPAの原本。ZONOS3公開repoには別形式が多いためPyTorch原本一構成に絞り、非公開の音声編集LoRAを取得対象としない。LingBot Smallは実ロボット評価根拠が不足して別HOLD。Alpamayo2 Edge／Praxis DROID／Simons297M／PAN2は研究HOLD。4TB・200GB物理空き・150B以上同等RAM実測・総数不明20モデルの取得STOP・承認0を維持。[原論文・取得ゲート](docs/strategy/47-nov12-distinct-modality-selection.md)。以下はv28以前の履歴。
