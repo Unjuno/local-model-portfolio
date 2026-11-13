@@ -14,4 +14,9 @@
 - `queues/approved.json` は空。本マージでモデル重みの取得・同意・実行は行わない。
 - 旧文書に残るv19等の集計は歴史値。以後の通常作業では `main` だけを更新する。
 
-元ブランチはGit履歴で復元可能。不要参照の削除は全ブランチの取り込みを確認してからのみ行う。
+## 整理完了の確認
+
+2026-11-13、旧3ブランチの先端がmainの祖先であることと、削除直前にSHAが移動していないことを全件検査し、GitHub Actionsで **3参照を削除済み**。実行履歴：[one-time cleanup run 43413402363](https://github.com/Unjuno/local-model-portfolio/actions/runs/43413402363)（成功）。一時的なcleanupワークフローもmainから削除した。残存ブランチは **mainのみ**。全コミットは統合マージの履歴から追跡可能。
+
+統合時に見つかった過去v19/v27-v30を現行CURRENTと誤比較するテストを、固定スナップショット参照へ修正。GitHub Actions [run 43413174164](https://github.com/Unjuno/local-model-portfolio/actions/runs/43413174164) は成功（333テスト）。カタログv31の179件・有効132件、承認キュー0件を維持。
+
