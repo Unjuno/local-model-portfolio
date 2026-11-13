@@ -106,7 +106,7 @@ class TestR34CapacityEvidence(unittest.TestCase):
         self.assertEqual(n[0]["portfolio_decision"], "select")
         self.assertEqual(self.limits["archive_target_bytes"], 4_000_000_000_000)
         self.assertEqual(self.limits["minimum_free_bytes"], 200_000_000_000)
-        self.assertEqual(self.cur["counts"]["archive_limit_bytes"],
+        self.assertEqual(self.audit["archive_policy"]["user_planning_budget_bytes"],
                          self.limits["archive_target_bytes"])
         self.assertEqual(self.audit["archive_policy"]["actual_free_disk_bytes"], None)
 
