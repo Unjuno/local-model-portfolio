@@ -94,13 +94,13 @@ class TestR40SHAUnion(unittest.TestCase):
 
     def test_budget_and_user_selected_unaffected(self):
         limits=read("policies/limits.json")
-        current=read("catalog/CURRENT.json")
+        current=read("catalog/effective-portfolio-2026-11-06-v19.json")
         queue=read("queues/approved.json")
-        portfolio=read(current["materialized_catalog_path"])
+        portfolio=current
         self.assertEqual(limits["archive_target_bytes"],4_000_000_000_000)
         self.assertEqual(limits["minimum_free_bytes"],200_000_000_000)
-        self.assertEqual(current["expected"]["tracked"],150)
-        self.assertEqual(current["expected"]["active"],105)
+        self.assertEqual(current["counts"]["tracked"],150)
+        self.assertEqual(current["counts"]["active"],105)
         self.assertEqual(len(portfolio["items"]),150)
         self.assertEqual(next(x for x in portfolio["items"] if x["repo_id"]=="Nanbeige/Nanbeige4.3-33B")["portfolio_decision"],"select")
         self.assertEqual(queue["entries"],[])

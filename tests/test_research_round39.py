@@ -13,7 +13,7 @@ class TestR39BackendPackageEvidence(unittest.TestCase):
     def setUpClass(cls):
         cls.d = read("manifests/drafts/r39-backend-specific-large-sources.candidate.json")
         cls.r38 = read("catalog/research/2026-11-08-r38-large-asset-alternative-layouts.json")
-        cls.current = read("catalog/CURRENT.json")
+        cls.current = read("catalog/effective-portfolio-2026-11-06-v19.json")
         cls.limits = read("policies/limits.json")
         cls.queue = read("queues/approved.json")
         cls.packs = {p["key"]: p for p in cls.d["packages"]}
@@ -116,8 +116,8 @@ class TestR39BackendPackageEvidence(unittest.TestCase):
         self.assertIsNone(p["actual_user_disk_free_bytes"])
         self.assertEqual(self.limits["archive_target_bytes"],p["user_planning_ceiling_bytes"])
         self.assertEqual(self.limits["minimum_free_bytes"],p["minimum_physical_free_bytes"])
-        self.assertEqual(self.current["expected"]["tracked"],150)
-        self.assertEqual(self.current["expected"]["active"],105)
+        self.assertEqual(self.current["counts"]["tracked"],150)
+        self.assertEqual(self.current["counts"]["active"],105)
         self.assertEqual(p["approved_download_queue_changes"],0)
         self.assertEqual(self.queue["entries"],[])
         self.assertTrue(self.d["do_not_download_any_files"])

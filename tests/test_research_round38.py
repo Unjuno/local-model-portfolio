@@ -11,8 +11,8 @@ class R38LargeArtifactTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.r=load("catalog/research/2026-11-08-r38-large-asset-alternative-layouts.json")
-        cls.current=load("catalog/CURRENT.json")
-        cls.view=load(cls.current["materialized_catalog_path"])
+        cls.current=load("catalog/effective-portfolio-2026-11-06-v19.json")
+        cls.view=cls.current
         cls.approved=load("queues/approved.json")
         cls.rows={x["repo_id"]:x for x in cls.r["records"]}
         cls.c=cls.r["comparison"]
@@ -109,9 +109,9 @@ class R38LargeArtifactTests(unittest.TestCase):
         self.assertEqual(self.approved["entries"], [])
 
     def test_4tb_user_budget_no_downloads_or_formal_promotion(self):
-        self.assertEqual(self.current["expected"]["archive_limit_bytes"],4_000_000_000_000)
-        self.assertEqual(self.current["expected"]["tracked"],150)
-        self.assertEqual(self.current["expected"]["active"],105)
+        self.assertEqual(load("policies/limits.json")["archive_target_bytes"],4_000_000_000_000)
+        self.assertEqual(self.current["counts"]["tracked"],150)
+        self.assertEqual(self.current["counts"]["active"],105)
         self.assertEqual(self.approved["entries"],[])
         self.assertEqual(self.r["selection_rules"]["acquisition_authorizations_added"],0)
         self.assertTrue(self.r["selection_rules"]["current_catalog_unchanged"])

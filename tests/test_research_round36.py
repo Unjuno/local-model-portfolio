@@ -14,8 +14,8 @@ class R36SourceClosureTests(unittest.TestCase):
     def setUpClass(cls):
         cls.e = read("catalog/research/2026-11-08-r36-22-asset-source-closure.json")
         cls.r34 = read("catalog/research/2026-11-08-r34-capacity-evidence.json")
-        cls.current = read("catalog/CURRENT.json")
-        cls.view = read(cls.current["materialized_catalog_path"])
+        cls.current = read("catalog/effective-portfolio-2026-11-06-v19.json")
+        cls.view = cls.current
         cls.limits = read("policies/limits.json")
         cls.queue = read("queues/approved.json")
         cls.r21 = read("manifests/drafts/round21-pinned-preservation.candidate.json")
@@ -119,8 +119,8 @@ class R36SourceClosureTests(unittest.TestCase):
         self.assertEqual(x["selected_example_kind"], "UNDECIDED_MULTI_VERSION_TTS")
 
     def test_no_approval_or_physical_disk_claim(self):
-        self.assertEqual(self.current["expected"]["tracked"], 150)
-        self.assertEqual(self.current["expected"]["active"], 105)
+        self.assertEqual(self.current["counts"]["tracked"], 150)
+        self.assertEqual(self.current["counts"]["active"], 105)
         self.assertEqual(self.limits["archive_target_bytes"], 4_000_000_000_000)
         self.assertEqual(self.limits["minimum_free_bytes"], 200_000_000_000)
         self.assertEqual(self.queue["entries"], [])

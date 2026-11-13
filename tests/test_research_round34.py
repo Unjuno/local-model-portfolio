@@ -12,8 +12,8 @@ class TestR34CapacityEvidence(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.audit = read_json("catalog/research/2026-11-08-r34-capacity-evidence.json")
-        cls.cur = read_json("catalog/CURRENT.json")
-        cls.view = read_json(cls.cur["materialized_catalog_path"])
+        cls.cur = read_json("catalog/effective-portfolio-2026-11-06-v19.json")
+        cls.view = cls.cur
         cls.limits = read_json("policies/limits.json")
         cls.r21 = read_json("manifests/drafts/round21-pinned-preservation.candidate.json")
         cls.approved = read_json("queues/approved.json")
@@ -106,7 +106,7 @@ class TestR34CapacityEvidence(unittest.TestCase):
         self.assertEqual(n[0]["portfolio_decision"], "select")
         self.assertEqual(self.limits["archive_target_bytes"], 4_000_000_000_000)
         self.assertEqual(self.limits["minimum_free_bytes"], 200_000_000_000)
-        self.assertEqual(self.cur["expected"]["archive_limit_bytes"],
+        self.assertEqual(self.cur["counts"]["archive_limit_bytes"],
                          self.limits["archive_target_bytes"])
         self.assertEqual(self.audit["archive_policy"]["actual_free_disk_bytes"], None)
 

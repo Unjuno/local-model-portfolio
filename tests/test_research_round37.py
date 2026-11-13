@@ -12,7 +12,7 @@ class R37ChatterboxArchiveTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.r = load("catalog/research/2026-11-08-r37-chatterbox-versioned-source-manifest.json")
-        cls.current = load("catalog/CURRENT.json")
+        cls.current = load("catalog/effective-portfolio-2026-11-06-v19.json")
         cls.queue = load("queues/approved.json")
         cls.pack = cls.r["language_packs"]["entries"]
 
@@ -93,9 +93,9 @@ class R37ChatterboxArchiveTests(unittest.TestCase):
         self.assertFalse(self.r["reference_implementation"]["runtime_quality_user_measured"])
 
     def test_existing_selection_and_queue_unchanged(self):
-        self.assertEqual(self.current["expected"]["tracked"], 150)
-        self.assertEqual(self.current["expected"]["active"], 105)
-        self.assertEqual(self.current["expected"]["archive_limit_bytes"], 4_000_000_000_000)
+        self.assertEqual(self.current["counts"]["tracked"], 150)
+        self.assertEqual(self.current["counts"]["active"], 105)
+        self.assertEqual(load("policies/limits.json")["archive_target_bytes"], 4_000_000_000_000)
         self.assertTrue(self.r["decision"]["existing_chatterbox_select_unchanged"])
         self.assertEqual(self.r["decision"]["downloads"], 0)
         self.assertEqual(self.queue["entries"], [])

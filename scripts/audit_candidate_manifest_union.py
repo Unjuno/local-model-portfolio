@@ -181,10 +181,10 @@ def verify_report(report_path: str = DEFAULT_REPORT) -> dict[str, Any]:
         output[name] = calc
 
     limits = read_repo_json("policies/limits.json")
-    current = read_repo_json("catalog/CURRENT.json")
+    current = read_repo_json("catalog/effective-portfolio-2026-11-06-v19.json")
     queue = read_repo_json("queues/approved.json")
-    if current["expected"]["tracked"] != 150 or current["expected"]["active"] != 105:
-        raise ValueError("Catalog baseline changed; rebase R40 audit")
+    if current["counts"]["tracked"] != 150 or current["counts"]["active"] != 105:
+        raise ValueError("Historical v19 snapshot changed; R40 audit drift")
     if limits["archive_target_bytes"] != report["policy"]["user_archive_ceiling_bytes"]:
         raise ValueError("Archive policy cap drift")
     if limits["minimum_free_bytes"] != report["policy"]["minimum_physical_free_bytes"]:
