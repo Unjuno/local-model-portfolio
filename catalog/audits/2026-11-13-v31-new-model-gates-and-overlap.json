@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "reviewed_at_jst": "2026-11-13",
+  "artifact_kind": "non_executable_v31_audit_addendum",
+  "basis": {
+    "repo": "Unjuno/local-model-portfolio",
+    "branch": "strategy/2026-11-03-01-risk",
+    "head": "e60a31e4625a9ea12db429bd3a8e8335b132270c",
+    "revision": "v31-20261113",
+    "total_items": 179,
+    "active_items": 132,
+    "models": 153,
+    "datasets": 26,
+    "approved_downloads": 0
+  },
+  "catalog_consistency": {
+    "total_unique_id_matches": true,
+    "by_decision": {
+      "select": 53,
+      "conditional": 79,
+      "hold": 28,
+      "deferred": 13,
+      "excluded": 6
+    },
+    "active_unknown_total_parameters": 7,
+    "active_missing_final_sha": 130,
+    "active_missing_selected_bytes": 130,
+    "required_source_v31": "catalog/effective-portfolio-2026-11-13-v31.json"
+  },
+  "critical_access_status_schema_issue": {
+    "risk": "EXACT_STRING_GATE_FILTER_BYPASS",
+    "description": "metadata-confirmed conditional gated models=17, while 16 records have observed_access exactly 'gated'; gradium/phonon-40m-multilingual uses free-text 'Gated auto (anonymous metadata); user authenticated gate permission NOT verified' and must be treated as gated.",
+    "repo_id": "gradium/phonon-40m-multilingual",
+    "canonical_solution": "separate enum upstream_access_status={public,gated_auto,gated_manual,unknown}, owner_access_authorized={true,false,unknown}; default unknown => no download. Historic observed_access retained for provenance.",
+    "source_audit": "https://github.com/Unjuno/local-model-portfolio/blob/strategy/2026-11-03-01-risk/catalog/proposals/05-v31-conditional-selection-review.json",
+    "status": "P1_BLOCKER_FOR_ANY_AUTOMATED_QUEUE_FILTER"
+  },
+  "candidates": [
+    {
+      "repo_id": "tencent/Qwen3.8-27B-DSpine-b16",
+      "catalog_in_v31": false,
+      "decision": "PROPOSE_CONDITIONAL_ARCHIVE_RESEARCH_NOT_DOWNLOAD",
+      "identity": "separately trained 5-layer, block16, 8192-window speculative decoding drafter for existing Qwen3.8-27B",
+      "publisher_total_draft_parameters_approx": 2025900000,
+      "upstream_repo_display_bytes_approx": 4050000000,
+      "required_existing_parent": "Qwen/Qwen3.8-27B",
+      "source_urls": [
+        "https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16",
+        "https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16/blob/main/README.md",
+        "https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16/blob/main/LICENSE",
+        "https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16/tree/main"
+      ],
+      "observed_license": "Apache-2.0 publisher license file",
+      "publisher_runtime": "SGLang 0.5.22, BF16, FlashAttention 3, concurrency 8, ReplaySSM; example not owner-HW benchmark",
+      "publisher_workbuddy_code_low_throughput_tokens_per_second": {
+        "autoregressive": 253.35,
+        "dflash2": 590.27,
+        "dspine": 686.23
+      },
+      "missing": [
+        "immutable 40-char source revision and sha256",
+        "exact source file byte count",
+        "compatible source parent immutable revision / draft target compatibility",
+        "current real-World workload throughput and peak RAM",
+        "software ABI / license rights"
+      ],
+      "unselected_others": [
+        "same-trained-state GGUF replicas",
+        "DFlash2 and variants without demonstrated role"
+      ]
+    },
+    {
+      "repo_id": "IFM/PAN2",
+      "catalog_in_v31": false,
+      "decision": "PROPOSE_CONDITIONAL_WORLD_MODEL_RESEARCH_NOT_DOWNLOAD",
+      "identity": "separately published PAN2 world/video model; original transformer differs from incumbent Wan/Cosmos trained states",
+      "publisher_model_tensor_parameters_approx": 29202000000,
+      "full_upstream_repo_display_bytes_approx": 86200000000,
+      "upstream_main_transformer_display_bytes_approx": 67400000000,
+      "upstream_text_encoder_display_bytes_approx": 15900000000,
+      "upstream_vae_display_bytes_approx": 2820000000,
+      "source_urls": [
+        "https://huggingface.co/IFM/PAN2",
+        "https://huggingface.co/IFM/PAN2/tree/main",
+        "https://huggingface.co/IFM/PAN2/tree/main/transformer",
+        "https://huggingface.co/IFM/PAN2/tree/main/text_encoder",
+        "https://huggingface.co/IFM/PAN2/tree/main/vae"
+      ],
+      "observed_license": "Apache-2.0 for own weights; third-party Wan2.2 and Qwen3.5-9B separate terms",
+      "external_training_dependencies": [
+        "Wan 2.2",
+        "Qwen3.5-9B",
+        "Diffusers"
+      ],
+      "missing": [
+        "pinned source sha and complete sha256",
+        "trained learned-component and third-party exact file hash identity",
+        "license, NOTICE and THIRD_PARTY_LICENSES",
+        "precise full pipeline selected bytes",
+        "independent distinctness/quality against selected Wan/Cosmos",
+        "hardware/ABI"
+      ]
+    },
+    {
+      "repo_id": "MiniMaxAI/MiniMax-H3-Image",
+      "catalog_in_v31": false,
+      "decision": "HOLD_ORIGINAL_VS_DISTILLED_AND_LICENSE_REVIEW_NOT_DOWNLOAD",
+      "identity": "original 33.1B image DiT; distinct training state from v31 conditional PrunaAI/P-H3-Image distillation",
+      "main_dit_parameters_approx": 33100000000,
+      "upstream_repo_display_bytes_approx": 204000000000,
+      "publisher_component_size_gb_decimal": {
+        "transformer": 66.28,
+        "pdd_heads": 0.012,
+        "vae": 2.34,
+        "tokenizer_processor": 0.023,
+        "external_text_encoder": 66.7
+      },
+      "illustrative_source_component_sum_gb_decimal": 135.355,
+      "observed_license": "MiniMax-H3-Image Community License, dated November 10 2026; updated November 11; excludes EU/UK/Republic of Korea/USA from standard grant",
+      "source_urls": [
+        "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image",
+        "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/blob/main/LICENSE",
+        "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/tree/main",
+        "https://huggingface.co/PrunaAI/P-H3-Image"
+      ],
+      "missing": [
+        "exact immutable revision matching the current LICENSE and weights",
+        "parent MiniMax-H3 text encoder rights and SHA",
+        "user intended use and applicable authorization; Japan itself is not a listed excluded territory",
+        "chosen original-versus-Diffusers file variant and full dependency closure",
+        "matched comparison to Pruna's separately distilled weights"
+      ],
+      "do_not_fetch": [
+        "entire 204 GB multiformat repository by default",
+        "both transformer/ and transformer_diffusers/ without proof",
+        "optional PE as mandatory"
+      ]
+    },
+    {
+      "repo_id": "meta-models/Muse-Glimmer-30B",
+      "catalog_in_v31": false,
+      "decision": "REUSE_PRIOR_RESEARCH_NOT_NEW_DISCOVERY",
+      "identity": "independent Meta multimodal model; previously scoped in v28 R33, do not count as new",
+      "upstream_repo_display_bytes_approx": 59600000000,
+      "source_urls": [
+        "https://huggingface.co/meta-models/Muse-Glimmer-30B",
+        "https://github.com/Unjuno/local-model-portfolio/blob/strategy/2026-11-03-01-risk/docs/strategy/44-v28-pinned-source-capacity-2026-11-08.md"
+      ],
+      "missing": [
+        "do not duplicate earlier R33 audit; revisit only unresolved gates"
+      ]
+    },
+    {
+      "repo_id": "thinkingmachines/Inkling-2-Small",
+      "catalog_in_v31": false,
+      "decision": "HOLD_OVER150B_EXCEPTION_NOT_DOWNLOAD",
+      "publisher_total_moe_parameters_approx": 594000000000,
+      "publisher_activated_parameters_approx": 17000000000,
+      "source_urls": [
+        "https://huggingface.co/thinkingmachines/Inkling-2-Small"
+      ],
+      "missing": [
+        "matched <150B reference memory on same hardware/backend/context/batch",
+        "<512GB true peak including OS/codec/KV",
+        "license and full select bytes"
+      ]
+    }
+  ],
+  "non_actions": [
+    "no changes to v31 selection decisions",
+    "no new record added to effective catalog",
+    "no download",
+    "no use of Desktop Commander",
+    "no license acceptance",
+    "no approved manifest",
+    "no P2P"
+  ],
+  "scope_caveats": [
+    "Publisher model card and public web/file listings only; no complete mutable-main source revision or file hash lock",
+    "All GB sizes decimal display rounded; not selected exact bytes or measured disk",
+    "No independent user-HW performance or synthetic-content quality validation"
+  ],
+  "followup": [
+    "Implement fail-closed normalized gating status independent of descriptive observed_access",
+    "Resolve DSpine parent exact revision/draft file SHA & licensing",
+    "Resolve PAN2 transformer/encoder/VAE exact file census and shared parent SHA",
+    "Resolve MiniMax current LICENSE at immutable weight revision and original-vs-Pruna performance and rights",
+    "Dedup against already archived research: Muse Glimmer and LingBot tiny already tracked"
+  ]
+}
