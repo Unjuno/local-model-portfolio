@@ -1,0 +1,1174 @@
+{
+  "schema_version": 1,
+  "kind": "R58_SEVEN_ACTIVE_UNKNOWN_TOTAL_SOURCE_RECHECK_RESEARCH_ONLY",
+  "research_date_jst": "2026-11-14",
+  "catalog_revision": "v32-20261114",
+  "main_head_before_update": "c91d0a90eb47de07e014ae7952dc016adf401429",
+  "scope": "7 active model records whose full pipeline total parameter gate remains UNVERIFIED_BLOCK_FINAL_LOCK",
+  "records": [
+    {
+      "repo_id": "WhissleAI/steer-tts",
+      "publisher_revision_sha": "65ec6a637f4bd9d868064846c69ed85e37d302a0",
+      "previous_r51_revision": "65ec6a637f4bd9d868064846c69ed85e37d302a0",
+      "revision_drift_since_r51": false,
+      "observed_publisher_lastModified": "2026-11-03T14:30:07.000Z",
+      "public_hub_gated": "auto",
+      "hub_license_tag": "cc-by-nc-4.0",
+      "hf_safetensors_main_count": 9585639,
+      "source_file_count": 79,
+      "weight_like_file_count": 21,
+      "all_publisher_weight_file_options": [
+        {
+          "path": "events.safetensors",
+          "size_bytes": 1495008,
+          "publisher_lfs_sha256": "41efbdb102c3033efbf0973b7f5fde6b2991df6e9a7dde9cad674ae549e5ad43",
+          "git_blob_sha1": "7cfa6139ec23f1bc9278a91629ec2ecad75d44aa",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "flow.safetensors",
+          "size_bytes": 70580400,
+          "publisher_lfs_sha256": "585ff2c931811c30d0ec953a947dc23ffb305979471f5be5133a1f2b708c1e90",
+          "git_blob_sha1": "c9db57b0f4f5fc99b152e508dcee4d3190a8c11c",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "int8/flow.safetensors",
+          "size_bytes": 17785248,
+          "publisher_lfs_sha256": "c54a362bc3de279e1209ba9ae5fab96e430ec2ae1433de91f56f9665f8494a6d",
+          "git_blob_sha1": "84d7bc20d3c27447f6d5497099784271f6fd4675",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "int8/model.safetensors",
+          "size_bytes": 9848280,
+          "publisher_lfs_sha256": "67d1469b0751b6ae193894ce1612c9ec91f57f9a0b2151771eabc53a8eae714c",
+          "git_blob_sha1": "49aafafc71bd9f32dd7e6995de95c0a1fbc7ec50",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "int8/pflow.safetensors",
+          "size_bytes": 24878040,
+          "publisher_lfs_sha256": "83c419128d9fa0e4fb03ecbc110e2caaed47fa1e51c05367dba3e0fc8b47fc71",
+          "git_blob_sha1": "0ef1519757c80c0fdf814202a0320602a4d2fb99",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "int8/prompt_adapter.safetensors",
+          "size_bytes": 503356,
+          "publisher_lfs_sha256": "b09f25b15e5017925f7a4c52e241a45b753a3c34098c4b8584afe62c475b6885",
+          "git_blob_sha1": "e337e845a3d5b44f5405eed527614125a3629a21",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "int8/speaker_vectors.safetensors",
+          "size_bytes": 1452330,
+          "publisher_lfs_sha256": "1e5a8de163dc2b38dc392169842c2c6008f4d6d636d8a9b36df19b13ea3f8236",
+          "git_blob_sha1": "3e843044c3f549115d5c5c748ff057226c6d0c00",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "size_bytes": 38395692,
+          "publisher_lfs_sha256": "b67b27763d6f19136d69651b344dffbb819dc38e1a2294ca12e0e285a6830e31",
+          "git_blob_sha1": "c03ae0f35aa1845ccaa8950ccdfb1d7b3f6573fc",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "native/front/gru.bin",
+          "size_bytes": 741772,
+          "publisher_lfs_sha256": "0cd8b8c3baf1a5000680190e8db4d1a2d3e092377182c41876b106a85a52aa49",
+          "git_blob_sha1": "16da06bb369e2c4e81ee9ffbbd44bbf29df60a8a",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "native/front/lexicon.bin",
+          "size_bytes": 1709144,
+          "publisher_lfs_sha256": "7a493737376cfc027622cc611380762ed544a11d83eaf222924b54ffbc742d6a",
+          "git_blob_sha1": "490991bf35510a38049654e8a46fd206f17ceb78",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "native/front/oov.bin",
+          "size_bytes": 27885,
+          "publisher_lfs_sha256": "3165504f8c154690b2ade69e7ff26489a95cfa7449809d826c6411b83051b317",
+          "git_blob_sha1": "619222a5daf6467a710f98297582bc564571ae89",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "native/front/unicode.bin",
+          "size_bytes": 10166,
+          "publisher_lfs_sha256": "11ebc8a63194e71576e7cf199d81b2d12474bbdf8c62a07b31c79cd4f6a0e48b",
+          "git_blob_sha1": "496897eeea024a5d707474c8fb8e0beef68a6970",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "native/int8/minilm.safetensors",
+          "size_bytes": 22873628,
+          "publisher_lfs_sha256": "66fc95f4a342caf90492f420b89dd4375bad96f2d6a96eb5fbbfb922382e3c95",
+          "git_blob_sha1": "a2221b4711b745fa8039fcf33ea0eb511f11569e",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "native/int8/vocos.safetensors",
+          "size_bytes": 13628584,
+          "publisher_lfs_sha256": "9fcdd375e866c4c40f19d24aaf2e585e6aee78eeda0452ef4733ec70a11a7d7f",
+          "git_blob_sha1": "724ce7373db68a2dbf385fe8fa2ad2d812c98747",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "native/int8/wavlm_sv.safetensors",
+          "size_bytes": 114770602,
+          "publisher_lfs_sha256": "0612a92a566a2eda6cb563ef28b6c4f0518fcb0f2377928a96a91708330019a9",
+          "git_blob_sha1": "41fa900b2e3a2a5795ab4cd12778a10522f73b19",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "native/minilm.safetensors",
+          "size_bytes": 90864224,
+          "publisher_lfs_sha256": "31b0d0d0dd78d718c9e2f332e759c0f06fa141acd82e34618ec0eb670d81eb2e",
+          "git_blob_sha1": "8a180857bb7852fd6748f422390b92f440639e71",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "native/vocos.safetensors",
+          "size_bytes": 54134728,
+          "publisher_lfs_sha256": "e0570b20982ce81c8d02f55a6bc9e8836a8d5f30be176d0dd0576d22e1c4379f",
+          "git_blob_sha1": "230ddac02c7a8d3705991bc812efc0ef46456bd1",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "native/wavlm_sv.safetensors",
+          "size_bytes": 400945676,
+          "publisher_lfs_sha256": "6071eea607575d9fea46c50a6c6a60712925a3d2f27692dc1e5b644a07a260e3",
+          "git_blob_sha1": "25554e46ba63214ca757b4328f08dee23453d139",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "pflow.safetensors",
+          "size_bytes": 98711656,
+          "publisher_lfs_sha256": "877f81523dfaba5061823f6e6543b83edd88c72a3df724666ce3ee74de259327",
+          "git_blob_sha1": "06ada5872f0faf1d7b3282b5cf03caaeecd9f480",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "prompt_adapter.safetensors",
+          "size_bytes": 1993780,
+          "publisher_lfs_sha256": "aca34bf753456e469bae22f59217512f8cbe8efb326bfbede1529eeb9e817727",
+          "git_blob_sha1": "5623b56e71653914e257af0416cc7ad016650ee5",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "speaker_vectors.safetensors",
+          "size_bytes": 5785680,
+          "publisher_lfs_sha256": "edcabfd02dd4a5203309e9b1d6d6adb84d31a18285916238541cf93a0764d4ae",
+          "git_blob_sha1": "7ec64466d35c57f6864bde6a2b896798e792642d",
+          "local_file_sha256_verified": false
+        }
+      ],
+      "chosen_source_subset_nonexecuting": [
+        {
+          "path": "events.safetensors",
+          "size_bytes": 1495008,
+          "publisher_lfs_sha256": "41efbdb102c3033efbf0973b7f5fde6b2991df6e9a7dde9cad674ae549e5ad43",
+          "git_blob_sha1": "7cfa6139ec23f1bc9278a91629ec2ecad75d44aa",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "flow.safetensors",
+          "size_bytes": 70580400,
+          "publisher_lfs_sha256": "585ff2c931811c30d0ec953a947dc23ffb305979471f5be5133a1f2b708c1e90",
+          "git_blob_sha1": "c9db57b0f4f5fc99b152e508dcee4d3190a8c11c",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "size_bytes": 38395692,
+          "publisher_lfs_sha256": "b67b27763d6f19136d69651b344dffbb819dc38e1a2294ca12e0e285a6830e31",
+          "git_blob_sha1": "c03ae0f35aa1845ccaa8950ccdfb1d7b3f6573fc",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "pflow.safetensors",
+          "size_bytes": 98711656,
+          "publisher_lfs_sha256": "877f81523dfaba5061823f6e6543b83edd88c72a3df724666ce3ee74de259327",
+          "git_blob_sha1": "06ada5872f0faf1d7b3282b5cf03caaeecd9f480",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "prompt_adapter.safetensors",
+          "size_bytes": 1993780,
+          "publisher_lfs_sha256": "aca34bf753456e469bae22f59217512f8cbe8efb326bfbede1529eeb9e817727",
+          "git_blob_sha1": "5623b56e71653914e257af0416cc7ad016650ee5",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "speaker_vectors.safetensors",
+          "size_bytes": 5785680,
+          "publisher_lfs_sha256": "edcabfd02dd4a5203309e9b1d6d6adb84d31a18285916238541cf93a0764d4ae",
+          "git_blob_sha1": "7ec64466d35c57f6864bde6a2b896798e792642d",
+          "local_file_sha256_verified": false
+        }
+      ],
+      "chosen_source_subset_weight_bytes": 216962216,
+      "subset_is_complete_archive": false,
+      "representation_policy": "TOP_LEVEL_FP32_MULTIMODE",
+      "optional_or_excluded": [
+        "native/ (C runtime; separate rights)",
+        "int8/ (quantized duplicates)",
+        "external frozen Vocos/MiniLM/WavLM"
+      ],
+      "disposition": "RETAIN_CONDITIONAL_RESEARCH_GATED",
+      "preservation_value": "Unique numeric acoustic/prosody controls, different learned flow and prompted-flow objectives, not ordinary precision changes",
+      "missing_requirements": [
+        "gated_auto owner permission unknown",
+        "CC BY-NC4.0 plus Whissle extra terms; third-party separate",
+        "total trained voice+Vocos+flow/WavLM/MiniLM not exhaustively enumerated",
+        "native C/runtime ABI and voices consent"
+      ],
+      "owner_entitlement_verified": false,
+      "source_license_text_legally_cleared": false,
+      "full_trained_pipeline_parameters_verified": false,
+      "personal_disk_free_verified": false,
+      "download_authorized": false,
+      "source_metadata_url": "https://huggingface.co/api/models/WhissleAI/steer-tts?blobs=true"
+    },
+    {
+      "repo_id": "maya-research/maya2-native",
+      "publisher_revision_sha": "87a83efdd6551e038246b6b37836a6264713eec3",
+      "previous_r51_revision": "87a83efdd6551e038246b6b37836a6264713eec3",
+      "revision_drift_since_r51": false,
+      "observed_publisher_lastModified": "2026-11-03T10:04:47.000Z",
+      "public_hub_gated": false,
+      "hub_license_tag": "apache-2.0",
+      "hf_safetensors_main_count": 2502398656,
+      "source_file_count": 30,
+      "weight_like_file_count": 2,
+      "all_publisher_weight_file_options": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "size_bytes": 5000017272,
+          "publisher_lfs_sha256": "a6f3488abb925ec758a3e6908ffa105f4b2db93662e1471be6819111196c7f8c",
+          "git_blob_sha1": "c243baea18beb26f2f7a6cf92d8a03bc6cb6bd52",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "size_bytes": 4862496,
+          "publisher_lfs_sha256": "5e3bfab00767a3035a93f527c6021e7ab01988d63ddf137ccbf1edb13e4d75d2",
+          "git_blob_sha1": "d06a15638ed1dcaf4e0cc083e2aac3e426bb97c6",
+          "local_file_sha256_verified": false
+        }
+      ],
+      "chosen_source_subset_nonexecuting": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "size_bytes": 5000017272,
+          "publisher_lfs_sha256": "a6f3488abb925ec758a3e6908ffa105f4b2db93662e1471be6819111196c7f8c",
+          "git_blob_sha1": "c243baea18beb26f2f7a6cf92d8a03bc6cb6bd52",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "size_bytes": 4862496,
+          "publisher_lfs_sha256": "5e3bfab00767a3035a93f527c6021e7ab01988d63ddf137ccbf1edb13e4d75d2",
+          "git_blob_sha1": "d06a15638ed1dcaf4e0cc083e2aac3e426bb97c6",
+          "local_file_sha256_verified": false
+        }
+      ],
+      "chosen_source_subset_weight_bytes": 5004879768,
+      "subset_is_complete_archive": false,
+      "representation_policy": "TWO_SHARD_ORIGINAL_ONLY",
+      "optional_or_excluded": [
+        "Kyutai Mimi checkpoint (external exact SHA)",
+        "SpeechBrain ECAPA (external exact SHA)"
+      ],
+      "disposition": "RETAIN_CONDITIONAL_RESEARCH",
+      "preservation_value": "Independent multilingual Indian-languages TTS posttraining; Qwen initial backbone is integrated in publisher weight",
+      "missing_requirements": [
+        "Mimi plus ECAPA immutable exact dependent model count not pinned",
+        "required tokenizer/config and CODECs full original file selection",
+        "license for external independent components and backend ABI"
+      ],
+      "owner_entitlement_verified": false,
+      "source_license_text_legally_cleared": false,
+      "full_trained_pipeline_parameters_verified": false,
+      "personal_disk_free_verified": false,
+      "download_authorized": false,
+      "source_metadata_url": "https://huggingface.co/api/models/maya-research/maya2-native?blobs=true"
+    },
+    {
+      "repo_id": "fishaudio/drama-3",
+      "publisher_revision_sha": "78e5ab79e49aa9a25abe8799eff2c4d73a1c3216",
+      "previous_r51_revision": "78e5ab79e49aa9a25abe8799eff2c4d73a1c3216",
+      "revision_drift_since_r51": false,
+      "observed_publisher_lastModified": "2026-10-29T06:46:37.000Z",
+      "public_hub_gated": false,
+      "hub_license_tag": "other",
+      "hf_safetensors_main_count": 35899643008,
+      "source_file_count": 25,
+      "weight_like_file_count": 16,
+      "all_publisher_weight_file_options": [
+        {
+          "path": "codec.pth",
+          "size_bytes": 1871099728,
+          "publisher_lfs_sha256": "74fc41c5a7151c6f350af8bd7e5d6e3accfcc7f3dfbfac23afd35af07052bb2f",
+          "git_blob_sha1": "720d65abd6e6d80a6e4e2b87f8248450615107af",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00001-of-00015.safetensors",
+          "size_bytes": 2862881576,
+          "publisher_lfs_sha256": "a1b7af15210d2eda2d75a2cf976295f80e345855b745b109aa3ce49d26a44497",
+          "git_blob_sha1": "865e593334233cca145b36cd2d69521b1f00a249",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00002-of-00015.safetensors",
+          "size_bytes": 2628610248,
+          "publisher_lfs_sha256": "a95e113c6f32f8fcb23ecb618cd4384fad6358f3c0ac31cfbf352daf5370db94",
+          "git_blob_sha1": "fe7b91e49e58071eadc0b1b22337271f218fb3a6",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00003-of-00015.safetensors",
+          "size_bytes": 2628610224,
+          "publisher_lfs_sha256": "a34d0952d6369f5c73e6ae06138ef96bc6a3af9bb259c4e41425a33706cf5b68",
+          "git_blob_sha1": "34f3edc4aca7b6fb9a8e9604949e190e9066202d",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00004-of-00015.safetensors",
+          "size_bytes": 2628611792,
+          "publisher_lfs_sha256": "13ac368d87441a18752e424e485b711a115ea1084e3a18ab13276e73eedef8b4",
+          "git_blob_sha1": "7c3d3c60149c3aa172a94a43e6891fea52537335",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00005-of-00015.safetensors",
+          "size_bytes": 2641525264,
+          "publisher_lfs_sha256": "c432fa0dac97471f0d625bc67eb94fe084ca2e5ecd8865f457b751479b50e363",
+          "git_blob_sha1": "6200ed0330cef9ef1c82e20970181997d6d173b3",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00006-of-00015.safetensors",
+          "size_bytes": 2628614896,
+          "publisher_lfs_sha256": "661a31433747fa9d029632a61350ea9eb105bf7276d013ff0901b6a939fb2dcb",
+          "git_blob_sha1": "75046c4055b248fc4ee511544ea2a19987dc77e3",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00007-of-00015.safetensors",
+          "size_bytes": 2628614880,
+          "publisher_lfs_sha256": "4a7574b5c238f424b37aa945a736da1994a26bd38b86bf3ec4abf524c0969cc8",
+          "git_blob_sha1": "dbf25b2b7f3ea638440275438258783777292d34",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00008-of-00015.safetensors",
+          "size_bytes": 2628614888,
+          "publisher_lfs_sha256": "7fac6d1e899939eb03c9cf28a33b0bfd9c7a599298662f26d9a59d64c96d007f",
+          "git_blob_sha1": "7b022c82d706e2f89548955e8335ab40dc27d0c6",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00009-of-00015.safetensors",
+          "size_bytes": 2641525264,
+          "publisher_lfs_sha256": "fcf1313744ea5978e363b2bb49c3b66748d886d79f3ec102f4346a462385de4b",
+          "git_blob_sha1": "afbe8ad7f3b99c62eec813d70f639ba50f903b0d",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00010-of-00015.safetensors",
+          "size_bytes": 2628614896,
+          "publisher_lfs_sha256": "6db3f7cd9d49806ae4f17b6f6d17a0c8dd9686aee57728da1b50ec0c6139a629",
+          "git_blob_sha1": "019e53544d280e1f2e7405487654cb5300bf6000",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00011-of-00015.safetensors",
+          "size_bytes": 2628614880,
+          "publisher_lfs_sha256": "a9027ef4db30bb1875bd2bc93b80bae785c5943807efe63bf09834b66e49fc16",
+          "git_blob_sha1": "9b4569f72f4db42c02a667b65a8d019c71229307",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00012-of-00015.safetensors",
+          "size_bytes": 2628614888,
+          "publisher_lfs_sha256": "c16fea955e973010064ff7bc907a6fa67821956e0de23f74807c31fb48339f3a",
+          "git_blob_sha1": "972faa5f323cce3ccf87e4dd05064c9a21240b88",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00013-of-00015.safetensors",
+          "size_bytes": 2641525264,
+          "publisher_lfs_sha256": "64861c8e1ee13a0cbb5ec9431f402cee33edcbcbc744ff63091fe3a997f0da19",
+          "git_blob_sha1": "9eb0cdc7f8e2ea483640f809d469054aa23acd18",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00014-of-00015.safetensors",
+          "size_bytes": 3749111392,
+          "publisher_lfs_sha256": "ba5319475a6258984143b69af8380f166df8179af90378f2f4e02694cad87baf",
+          "git_blob_sha1": "b14c8870545f113eca9bee75435e61779032056b",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00015-of-00015.safetensors",
+          "size_bytes": 1409461016,
+          "publisher_lfs_sha256": "1e2ddf01c1be73fb19f3022c28e90d24e730c1bc759e5de78083afb39aab3fb7",
+          "git_blob_sha1": "dda533ff18adf1b6a6bc4f728e8ffd695df134e2",
+          "local_file_sha256_verified": false
+        }
+      ],
+      "chosen_source_subset_nonexecuting": [
+        {
+          "path": "codec.pth",
+          "size_bytes": 1871099728,
+          "publisher_lfs_sha256": "74fc41c5a7151c6f350af8bd7e5d6e3accfcc7f3dfbfac23afd35af07052bb2f",
+          "git_blob_sha1": "720d65abd6e6d80a6e4e2b87f8248450615107af",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00001-of-00015.safetensors",
+          "size_bytes": 2862881576,
+          "publisher_lfs_sha256": "a1b7af15210d2eda2d75a2cf976295f80e345855b745b109aa3ce49d26a44497",
+          "git_blob_sha1": "865e593334233cca145b36cd2d69521b1f00a249",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00002-of-00015.safetensors",
+          "size_bytes": 2628610248,
+          "publisher_lfs_sha256": "a95e113c6f32f8fcb23ecb618cd4384fad6358f3c0ac31cfbf352daf5370db94",
+          "git_blob_sha1": "fe7b91e49e58071eadc0b1b22337271f218fb3a6",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00003-of-00015.safetensors",
+          "size_bytes": 2628610224,
+          "publisher_lfs_sha256": "a34d0952d6369f5c73e6ae06138ef96bc6a3af9bb259c4e41425a33706cf5b68",
+          "git_blob_sha1": "34f3edc4aca7b6fb9a8e9604949e190e9066202d",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00004-of-00015.safetensors",
+          "size_bytes": 2628611792,
+          "publisher_lfs_sha256": "13ac368d87441a18752e424e485b711a115ea1084e3a18ab13276e73eedef8b4",
+          "git_blob_sha1": "7c3d3c60149c3aa172a94a43e6891fea52537335",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00005-of-00015.safetensors",
+          "size_bytes": 2641525264,
+          "publisher_lfs_sha256": "c432fa0dac97471f0d625bc67eb94fe084ca2e5ecd8865f457b751479b50e363",
+          "git_blob_sha1": "6200ed0330cef9ef1c82e20970181997d6d173b3",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00006-of-00015.safetensors",
+          "size_bytes": 2628614896,
+          "publisher_lfs_sha256": "661a31433747fa9d029632a61350ea9eb105bf7276d013ff0901b6a939fb2dcb",
+          "git_blob_sha1": "75046c4055b248fc4ee511544ea2a19987dc77e3",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00007-of-00015.safetensors",
+          "size_bytes": 2628614880,
+          "publisher_lfs_sha256": "4a7574b5c238f424b37aa945a736da1994a26bd38b86bf3ec4abf524c0969cc8",
+          "git_blob_sha1": "dbf25b2b7f3ea638440275438258783777292d34",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00008-of-00015.safetensors",
+          "size_bytes": 2628614888,
+          "publisher_lfs_sha256": "7fac6d1e899939eb03c9cf28a33b0bfd9c7a599298662f26d9a59d64c96d007f",
+          "git_blob_sha1": "7b022c82d706e2f89548955e8335ab40dc27d0c6",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00009-of-00015.safetensors",
+          "size_bytes": 2641525264,
+          "publisher_lfs_sha256": "fcf1313744ea5978e363b2bb49c3b66748d886d79f3ec102f4346a462385de4b",
+          "git_blob_sha1": "afbe8ad7f3b99c62eec813d70f639ba50f903b0d",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00010-of-00015.safetensors",
+          "size_bytes": 2628614896,
+          "publisher_lfs_sha256": "6db3f7cd9d49806ae4f17b6f6d17a0c8dd9686aee57728da1b50ec0c6139a629",
+          "git_blob_sha1": "019e53544d280e1f2e7405487654cb5300bf6000",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00011-of-00015.safetensors",
+          "size_bytes": 2628614880,
+          "publisher_lfs_sha256": "a9027ef4db30bb1875bd2bc93b80bae785c5943807efe63bf09834b66e49fc16",
+          "git_blob_sha1": "9b4569f72f4db42c02a667b65a8d019c71229307",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00012-of-00015.safetensors",
+          "size_bytes": 2628614888,
+          "publisher_lfs_sha256": "c16fea955e973010064ff7bc907a6fa67821956e0de23f74807c31fb48339f3a",
+          "git_blob_sha1": "972faa5f323cce3ccf87e4dd05064c9a21240b88",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00013-of-00015.safetensors",
+          "size_bytes": 2641525264,
+          "publisher_lfs_sha256": "64861c8e1ee13a0cbb5ec9431f402cee33edcbcbc744ff63091fe3a997f0da19",
+          "git_blob_sha1": "9eb0cdc7f8e2ea483640f809d469054aa23acd18",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00014-of-00015.safetensors",
+          "size_bytes": 3749111392,
+          "publisher_lfs_sha256": "ba5319475a6258984143b69af8380f166df8179af90378f2f4e02694cad87baf",
+          "git_blob_sha1": "b14c8870545f113eca9bee75435e61779032056b",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "model-00015-of-00015.safetensors",
+          "size_bytes": 1409461016,
+          "publisher_lfs_sha256": "1e2ddf01c1be73fb19f3022c28e90d24e730c1bc759e5de78083afb39aab3fb7",
+          "git_blob_sha1": "dda533ff18adf1b6a6bc4f728e8ffd695df134e2",
+          "local_file_sha256_verified": false
+        }
+      ],
+      "chosen_source_subset_weight_bytes": 41474651096,
+      "subset_is_complete_archive": false,
+      "representation_policy": "ALL_15_MODEL_SHARDS_PLUS_CODEC",
+      "optional_or_excluded": [
+        "No automatic bsgemm-moe installation",
+        "codec.pth requires static pickle and rights review"
+      ],
+      "disposition": "RETAIN_CONDITIONAL_RESEARCH",
+      "preservation_value": "Multi-speaker editing/expressive speech model original 35.9B MoE plus separately trained codec",
+      "missing_requirements": [
+        "codec.pth saved as PyTorch pickle, never load before isolated review",
+        "Fish Audio Research License use terms need source-text audit",
+        "complete tensor count includes codec; main alone not full pipeline"
+      ],
+      "owner_entitlement_verified": false,
+      "source_license_text_legally_cleared": false,
+      "full_trained_pipeline_parameters_verified": false,
+      "personal_disk_free_verified": false,
+      "download_authorized": false,
+      "source_metadata_url": "https://huggingface.co/api/models/fishaudio/drama-3?blobs=true"
+    },
+    {
+      "repo_id": "ausboss/Qwen-Image-2.1-Consistency-LoRA",
+      "publisher_revision_sha": "58897a02f4f60f88376eab5676738dd45e5ed1a2",
+      "previous_r51_revision": "58897a02f4f60f88376eab5676738dd45e5ed1a2",
+      "revision_drift_since_r51": false,
+      "observed_publisher_lastModified": "2026-10-30T16:00:19.000Z",
+      "public_hub_gated": false,
+      "hub_license_tag": "other",
+      "hf_safetensors_main_count": null,
+      "source_file_count": 11,
+      "weight_like_file_count": 2,
+      "all_publisher_weight_file_options": [
+        {
+          "path": "qwen-image-2.1-consistency-2000.safetensors",
+          "size_bytes": 159436496,
+          "publisher_lfs_sha256": "a0bf043edc4695b1661a0e768e49a7fdff9a656b7d4313203d590e0262b64beb",
+          "git_blob_sha1": "c66c8df7bd9516fd44835c76c7fa1e08e29af586",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "qwen-image-2.1-consistency.safetensors",
+          "size_bytes": 159436496,
+          "publisher_lfs_sha256": "4f44ada1be2189cc23b3d010f9603543403f48454e2f76842a3d30109b20bd63",
+          "git_blob_sha1": "91f93c2d6a1227d94173558956103dfe941091cd",
+          "local_file_sha256_verified": false
+        }
+      ],
+      "chosen_source_subset_nonexecuting": [
+        {
+          "path": "qwen-image-2.1-consistency-2000.safetensors",
+          "size_bytes": 159436496,
+          "publisher_lfs_sha256": "a0bf043edc4695b1661a0e768e49a7fdff9a656b7d4313203d590e0262b64beb",
+          "git_blob_sha1": "c66c8df7bd9516fd44835c76c7fa1e08e29af586",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "qwen-image-2.1-consistency.safetensors",
+          "size_bytes": 159436496,
+          "publisher_lfs_sha256": "4f44ada1be2189cc23b3d010f9603543403f48454e2f76842a3d30109b20bd63",
+          "git_blob_sha1": "91f93c2d6a1227d94173558956103dfe941091cd",
+          "local_file_sha256_verified": false
+        }
+      ],
+      "chosen_source_subset_weight_bytes": 318872992,
+      "subset_is_complete_archive": false,
+      "representation_policy": "BOTH_STAGES_HAVE_DISTINCT_QUALITY_TRADEOFF",
+      "optional_or_excluded": [
+        "Both share one Qwen/Qwen-Image-2.1 parent (never duplicate parent)",
+        "select 1500 as visual/style default, 2000 optional alignment special"
+      ],
+      "disposition": "RETAIN_CONDITIONAL_RESEARCH_DIFFERENT_TRAINING_STEPS",
+      "preservation_value": "1500 and 2000 steps have different LFS SHA; author has evidence tradeoff alignment vs color, not only ordinary quantization",
+      "missing_requirements": [
+        "Qwen parent and text encoder+VAE exact weighted totals unknown",
+        "Qwen research license / derived rights need full text",
+        "author-only benchmark and stage tradeoff not independently repeated"
+      ],
+      "owner_entitlement_verified": false,
+      "source_license_text_legally_cleared": false,
+      "full_trained_pipeline_parameters_verified": false,
+      "personal_disk_free_verified": false,
+      "download_authorized": false,
+      "source_metadata_url": "https://huggingface.co/api/models/ausboss/Qwen-Image-2.1-Consistency-LoRA?blobs=true"
+    },
+    {
+      "repo_id": "PrunaAI/P-H3-Image",
+      "publisher_revision_sha": "7f98acef503cf2bcfba821a78cb1cf1a9928b2df",
+      "previous_r51_revision": "7f98acef503cf2bcfba821a78cb1cf1a9928b2df",
+      "revision_drift_since_r51": false,
+      "observed_publisher_lastModified": "2026-11-03T16:08:56.000Z",
+      "public_hub_gated": false,
+      "hub_license_tag": "other",
+      "hf_safetensors_main_count": 33122992896,
+      "source_file_count": 54,
+      "weight_like_file_count": 15,
+      "all_publisher_weight_file_options": [
+        {
+          "path": "prompt_upsampler/model-00001-of-00004.safetensors",
+          "size_bytes": 4942706120,
+          "publisher_lfs_sha256": "5af4cf75e63a8d7cb96d03d25add224b243380f04a8c83ef4b47c40a50e36962",
+          "git_blob_sha1": "400467f07125cc6b3c645cbf93cf809f28890b34",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "prompt_upsampler/model-00002-of-00004.safetensors",
+          "size_bytes": 4987757928,
+          "publisher_lfs_sha256": "ffb3821101877085712f6d51510bf0796d7b5bd50d3804f299472ce94b449302",
+          "git_blob_sha1": "790dd2a95f558147d7866cd81d5db8b96c5d2204",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "prompt_upsampler/model-00003-of-00004.safetensors",
+          "size_bytes": 4954810240,
+          "publisher_lfs_sha256": "078775ad9f57fac960fd5bf53754b9e4b07dd403e60b15de15998e876926a312",
+          "git_blob_sha1": "8dcff4c87e84f7f7b4328ed7ba89348ebb8eb7ab",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "prompt_upsampler/model-00004-of-00004.safetensors",
+          "size_bytes": 3934446832,
+          "publisher_lfs_sha256": "24196f3a3680e0d72270fa6c7d27379690d5887fa4af5bcd1f5beecdd843fbcf",
+          "git_blob_sha1": "98da82f3ea58615b34c1f168682d653cdf3bca3a",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "text_connector/diffusion_pytorch_model.safetensors",
+          "size_bytes": 262308352,
+          "publisher_lfs_sha256": "4c4ad8cbf37db8a2da22cdd9905e566e259cf3477ea242f6aee1cf3fb695f070",
+          "git_blob_sha1": "88355d58b1fee547b98b9299b68af20b802207bc",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "text_encoder/model-00001-of-00002.safetensors",
+          "size_bytes": 4990822120,
+          "publisher_lfs_sha256": "be8454bc80eb7b91da25273ab71e0f4a627cf1d5588e91da2e052297da8879cd",
+          "git_blob_sha1": "0d39124a2a00d13afa03c0799746561966826a30",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "text_encoder/model-00002-of-00002.safetensors",
+          "size_bytes": 3884897208,
+          "publisher_lfs_sha256": "d3a4781fcec3eeaf8ba5adef647df3d21eed238dfc6be5e4aa96cf941cbe61b1",
+          "git_blob_sha1": "ac0af7476c86f5b9b226e26f1e44427d2d677b47",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00001-of-00007.safetensors",
+          "size_bytes": 9717836216,
+          "publisher_lfs_sha256": "b689c640d136d19bf342bf0f8244c54a2943df4accb447873734a006329d4720",
+          "git_blob_sha1": "188443fa128815b68f83401db825b251e84c0308",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00002-of-00007.safetensors",
+          "size_bytes": 9500437776,
+          "publisher_lfs_sha256": "96f3806ddce6f9791f2d1c443c0e0326514dbbdc1dcbdd5fbc4d2995a9e3aab9",
+          "git_blob_sha1": "fdd387814f0449e4a301ee5c53d8f6dd26e48f2d",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00003-of-00007.safetensors",
+          "size_bytes": 9866738392,
+          "publisher_lfs_sha256": "b930512e9f9b2d30190806938dff3bf3ef32b673a7c9e3f4f54b45dc56631eb1",
+          "git_blob_sha1": "b5befa54e3eeabae371543f6714e84981dfd0e4b",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00004-of-00007.safetensors",
+          "size_bytes": 9500437816,
+          "publisher_lfs_sha256": "c0f62c509e1fe316c63df8cd762aa221cd794609c404b5f03c3dbbda2161154c",
+          "git_blob_sha1": "2f088ae3946a203dafd225cc18d9dccc2dc69119",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00005-of-00007.safetensors",
+          "size_bytes": 9866738392,
+          "publisher_lfs_sha256": "b1fa4c087263e72a187c3377a606bc2b4da8be2e03d5112c59d72cd4ff056166",
+          "git_blob_sha1": "bac1d1e72f8f7418a3d635fb2582fe1c57bdedc5",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00006-of-00007.safetensors",
+          "size_bytes": 9500437816,
+          "publisher_lfs_sha256": "d173d97711b49a81cca22d38ddb3f605dab2d96b9f217077d205b82702322df0",
+          "git_blob_sha1": "6ac6b100de6ddc6250a68cb3eda709638137f363",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00007-of-00007.safetensors",
+          "size_bytes": 8327877680,
+          "publisher_lfs_sha256": "f06823dfd540c58b2f9c343eded05424d9d6488bcd6847c73b5fd37caf9f659b",
+          "git_blob_sha1": "300cbba7900e8e4d5b0defce16c25928cea8ea8f",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "vae/diffusion_pytorch_model.safetensors",
+          "size_bytes": 5559055392,
+          "publisher_lfs_sha256": "264964208bea153ca6366570b66d793c75b0fc64716fb6515a41b54e3dce6bf1",
+          "git_blob_sha1": "d296a2b1323b8c81cb14a28f5fa49a8a6f125f7d",
+          "local_file_sha256_verified": false
+        }
+      ],
+      "chosen_source_subset_nonexecuting": [
+        {
+          "path": "prompt_upsampler/model-00001-of-00004.safetensors",
+          "size_bytes": 4942706120,
+          "publisher_lfs_sha256": "5af4cf75e63a8d7cb96d03d25add224b243380f04a8c83ef4b47c40a50e36962",
+          "git_blob_sha1": "400467f07125cc6b3c645cbf93cf809f28890b34",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "prompt_upsampler/model-00002-of-00004.safetensors",
+          "size_bytes": 4987757928,
+          "publisher_lfs_sha256": "ffb3821101877085712f6d51510bf0796d7b5bd50d3804f299472ce94b449302",
+          "git_blob_sha1": "790dd2a95f558147d7866cd81d5db8b96c5d2204",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "prompt_upsampler/model-00003-of-00004.safetensors",
+          "size_bytes": 4954810240,
+          "publisher_lfs_sha256": "078775ad9f57fac960fd5bf53754b9e4b07dd403e60b15de15998e876926a312",
+          "git_blob_sha1": "8dcff4c87e84f7f7b4328ed7ba89348ebb8eb7ab",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "prompt_upsampler/model-00004-of-00004.safetensors",
+          "size_bytes": 3934446832,
+          "publisher_lfs_sha256": "24196f3a3680e0d72270fa6c7d27379690d5887fa4af5bcd1f5beecdd843fbcf",
+          "git_blob_sha1": "98da82f3ea58615b34c1f168682d653cdf3bca3a",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "text_connector/diffusion_pytorch_model.safetensors",
+          "size_bytes": 262308352,
+          "publisher_lfs_sha256": "4c4ad8cbf37db8a2da22cdd9905e566e259cf3477ea242f6aee1cf3fb695f070",
+          "git_blob_sha1": "88355d58b1fee547b98b9299b68af20b802207bc",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "text_encoder/model-00001-of-00002.safetensors",
+          "size_bytes": 4990822120,
+          "publisher_lfs_sha256": "be8454bc80eb7b91da25273ab71e0f4a627cf1d5588e91da2e052297da8879cd",
+          "git_blob_sha1": "0d39124a2a00d13afa03c0799746561966826a30",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "text_encoder/model-00002-of-00002.safetensors",
+          "size_bytes": 3884897208,
+          "publisher_lfs_sha256": "d3a4781fcec3eeaf8ba5adef647df3d21eed238dfc6be5e4aa96cf941cbe61b1",
+          "git_blob_sha1": "ac0af7476c86f5b9b226e26f1e44427d2d677b47",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00001-of-00007.safetensors",
+          "size_bytes": 9717836216,
+          "publisher_lfs_sha256": "b689c640d136d19bf342bf0f8244c54a2943df4accb447873734a006329d4720",
+          "git_blob_sha1": "188443fa128815b68f83401db825b251e84c0308",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00002-of-00007.safetensors",
+          "size_bytes": 9500437776,
+          "publisher_lfs_sha256": "96f3806ddce6f9791f2d1c443c0e0326514dbbdc1dcbdd5fbc4d2995a9e3aab9",
+          "git_blob_sha1": "fdd387814f0449e4a301ee5c53d8f6dd26e48f2d",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00003-of-00007.safetensors",
+          "size_bytes": 9866738392,
+          "publisher_lfs_sha256": "b930512e9f9b2d30190806938dff3bf3ef32b673a7c9e3f4f54b45dc56631eb1",
+          "git_blob_sha1": "b5befa54e3eeabae371543f6714e84981dfd0e4b",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00004-of-00007.safetensors",
+          "size_bytes": 9500437816,
+          "publisher_lfs_sha256": "c0f62c509e1fe316c63df8cd762aa221cd794609c404b5f03c3dbbda2161154c",
+          "git_blob_sha1": "2f088ae3946a203dafd225cc18d9dccc2dc69119",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00005-of-00007.safetensors",
+          "size_bytes": 9866738392,
+          "publisher_lfs_sha256": "b1fa4c087263e72a187c3377a606bc2b4da8be2e03d5112c59d72cd4ff056166",
+          "git_blob_sha1": "bac1d1e72f8f7418a3d635fb2582fe1c57bdedc5",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00006-of-00007.safetensors",
+          "size_bytes": 9500437816,
+          "publisher_lfs_sha256": "d173d97711b49a81cca22d38ddb3f605dab2d96b9f217077d205b82702322df0",
+          "git_blob_sha1": "6ac6b100de6ddc6250a68cb3eda709638137f363",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00007-of-00007.safetensors",
+          "size_bytes": 8327877680,
+          "publisher_lfs_sha256": "f06823dfd540c58b2f9c343eded05424d9d6488bcd6847c73b5fd37caf9f659b",
+          "git_blob_sha1": "300cbba7900e8e4d5b0defce16c25928cea8ea8f",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "vae/diffusion_pytorch_model.safetensors",
+          "size_bytes": 5559055392,
+          "publisher_lfs_sha256": "264964208bea153ca6366570b66d793c75b0fc64716fb6515a41b54e3dce6bf1",
+          "git_blob_sha1": "d296a2b1323b8c81cb14a28f5fa49a8a6f125f7d",
+          "local_file_sha256_verified": false
+        }
+      ],
+      "chosen_source_subset_weight_bytes": 99797308280,
+      "subset_is_complete_archive": false,
+      "representation_policy": "ALL_15_DISTINCT_LEARNED_COMPONENT_SHARDS",
+      "optional_or_excluded": [
+        "prompt_upsampler four shards can be disabled only for manual fully specified prompts",
+        "upscaler is a different learned role not a normal quant"
+      ],
+      "disposition": "RETAIN_CONDITIONAL_RESEARCH_REGION_RESTRICTED",
+      "preservation_value": "Distinct 8-step MiniMax H3 distillation; independent transformer, text encoder, prompt upsampler, connector, VAE",
+      "missing_requirements": [
+        "MiniMax H3 license territorial/use conditions not approved",
+        "15 learned weights complete tensor count not certified",
+        "optionally omitting prompt upsampler reduces functional scope",
+        "Diffusers custom modular backend and matching code not frozen"
+      ],
+      "owner_entitlement_verified": false,
+      "source_license_text_legally_cleared": false,
+      "full_trained_pipeline_parameters_verified": false,
+      "personal_disk_free_verified": false,
+      "download_authorized": false,
+      "source_metadata_url": "https://huggingface.co/api/models/PrunaAI/P-H3-Image?blobs=true"
+    },
+    {
+      "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "publisher_revision_sha": "592aaa11f13a7e480169455aa885f58c42d89766",
+      "previous_r51_revision": "592aaa11f13a7e480169455aa885f58c42d89766",
+      "revision_drift_since_r51": false,
+      "observed_publisher_lastModified": "2026-10-15T15:35:43.000Z",
+      "public_hub_gated": false,
+      "hub_license_tag": "unknown",
+      "hf_safetensors_main_count": null,
+      "source_file_count": 43,
+      "weight_like_file_count": 15,
+      "all_publisher_weight_file_options": [
+        {
+          "path": "split/diffusion_models/ltx25_uncensored_v1.1-Q4_K_M.gguf",
+          "size_bytes": 14179508672,
+          "publisher_lfs_sha256": "64fcebbbc233ad4b2c1c0badb7e70c5eda1fc4e1aed095462b4b4ebe34634911",
+          "git_blob_sha1": "13f188f3b8e44c1a6c416d8400f1c5f19e0d5a55",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/diffusion_models/ltx25_uncensored_v1.1-Q6_K.gguf",
+          "size_bytes": 17759973824,
+          "publisher_lfs_sha256": "88b73acf4c798fc8f617c2209a863e2d7137dd1ddee38288ae9d5feb950c42ed",
+          "git_blob_sha1": "1bb0b996ada67916ac3c554724ae87cb744e3c47",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/diffusion_models/ltx25_uncensored_v1.1-Q8_0.gguf",
+          "size_bytes": 22334842304,
+          "publisher_lfs_sha256": "35d734ea5bb9aaf6bb790d6474c46703d519be3696843dbd3bb24c01cd3187d5",
+          "git_blob_sha1": "4628b5feb596637ca307192fa9e2bb95421cfc17",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/diffusion_models/ltx25_uncensored_v1.1-fp8.safetensors",
+          "size_bytes": 21016146736,
+          "publisher_lfs_sha256": "5886847221e5602bd93d4e03005aae6ae3737196a73cd80924e574efd941b76e",
+          "git_blob_sha1": "60be059500fb07f6c26346a44bfc1c30dd66fb76",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/diffusion_models/ltx25_uncensored_v1.1-fp8_scaled.safetensors",
+          "size_bytes": 21473651432,
+          "publisher_lfs_sha256": "25a62cfdbcf7337c5c610447ce446330d21ccde44c8d31a4ae725bab0a9e9de9",
+          "git_blob_sha1": "4802f41758b7046412118830c41387fd234b3b7d",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/diffusion_models/ltx25_uncensored_v1.1-int8.safetensors",
+          "size_bytes": 21473644264,
+          "publisher_lfs_sha256": "1b717ed9396d441e70341c581aef19ad9041707ee05faf4fe1546a23c6be52d2",
+          "git_blob_sha1": "79bd55887175085ca2ee522899782c76e0eabe3b",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
+          "size_bytes": 995778752,
+          "publisher_lfs_sha256": "eb5a71fe4068ee87ccdb1c3aa635e547ca76bd2d30ae20ae889f2c325c0677e8",
+          "git_blob_sha1": "cec7bee6186295d8120b8006785564c95027e526",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/latent_upscale_models/ltx-2.5-latent-temporal-upscaler-x2-bf16-1.0.safetensors",
+          "size_bytes": 261944000,
+          "publisher_lfs_sha256": "2bc3300f2b3c3c1834d72164fbf13a3b9fd73e5a741e8a2c3f4035f89a75c3fe",
+          "git_blob_sha1": "3fe643add92be8191326890fea5ea5c97470d3b7",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/text_encoders/gemma4_12b_ltx25_uncensored-int8.safetensors",
+          "size_bytes": 13157517698,
+          "publisher_lfs_sha256": "61e0ada28e8e016e5c5bbd7a830b0c4ed4a574a203e0d7d347db6474b77d00c9",
+          "git_blob_sha1": "696b7f1f8964ac87fed6d0862855528e93759991",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/text_encoders/gguf/gemma4_12b_ltx25_uncensored-Q4_K_M.gguf",
+          "size_bytes": 7509634752,
+          "publisher_lfs_sha256": "79f1a1e0744e74713ed192ab3bca224aa5ce9cd20b08e52e1ad08fd32778e40b",
+          "git_blob_sha1": "64e42bdc2ea7f31cd811612c302290ca9f1bca9f",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/text_encoders/gguf/gemma4_12b_ltx25_uncensored-Q6_K.gguf",
+          "size_bytes": 10806889152,
+          "publisher_lfs_sha256": "94d20e0bfdcbd651ef88b66d17daf6f238bc6533f1f72be9a4b649453143c1bd",
+          "git_blob_sha1": "560f31c6d5848f5facf02ad5ad409bf469ac1e1b",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/text_encoders/gguf/gemma4_12b_ltx25_uncensored-Q8_0.gguf",
+          "size_bytes": 13970127552,
+          "publisher_lfs_sha256": "692a0fab16ebd0771d9651d7d2fdeb49e65a0300bbb6977c119e40d2a7fbec76",
+          "git_blob_sha1": "1f3231795bc13ae9565d9f3be4e1c56380de7410",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/text_encoders/gguf/mmproj-gemma4_12b_ltx25_uncensored-f16.gguf",
+          "size_bytes": 122031040,
+          "publisher_lfs_sha256": "3a97f732fa244ad8d039f65bf32f3c4fe07e197bcabc85e1fee6e6eb363a3cdb",
+          "git_blob_sha1": "24c14dd53f85347d3326641de56fec6cabbdd077",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/vae/ltx25_uncensored_audio_vae.safetensors",
+          "size_bytes": 364866540,
+          "publisher_lfs_sha256": "c52733d37f6a7fb7949c3dc0fb468c6cb2169e4d836983a73babb9f0d54837a5",
+          "git_blob_sha1": "08403b5a5cf13570829b59c13ad3cafbff6b04e9",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/vae/ltx25_uncensored_video_vae.safetensors",
+          "size_bytes": 1472223346,
+          "publisher_lfs_sha256": "847e14ca7f3355debca0cea4eaa24ac0fbcdf0061da054ac89ca638a869ddba3",
+          "git_blob_sha1": "4f679fe8f92b8758468fb51aae91d9fe996a4fec",
+          "local_file_sha256_verified": false
+        }
+      ],
+      "chosen_source_subset_nonexecuting": [
+        {
+          "path": "split/diffusion_models/ltx25_uncensored_v1.1-fp8.safetensors",
+          "size_bytes": 21016146736,
+          "publisher_lfs_sha256": "5886847221e5602bd93d4e03005aae6ae3737196a73cd80924e574efd941b76e",
+          "git_blob_sha1": "60be059500fb07f6c26346a44bfc1c30dd66fb76",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/text_encoders/gguf/gemma4_12b_ltx25_uncensored-Q4_K_M.gguf",
+          "size_bytes": 7509634752,
+          "publisher_lfs_sha256": "79f1a1e0744e74713ed192ab3bca224aa5ce9cd20b08e52e1ad08fd32778e40b",
+          "git_blob_sha1": "64e42bdc2ea7f31cd811612c302290ca9f1bca9f",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/text_encoders/gguf/mmproj-gemma4_12b_ltx25_uncensored-f16.gguf",
+          "size_bytes": 122031040,
+          "publisher_lfs_sha256": "3a97f732fa244ad8d039f65bf32f3c4fe07e197bcabc85e1fee6e6eb363a3cdb",
+          "git_blob_sha1": "24c14dd53f85347d3326641de56fec6cabbdd077",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/vae/ltx25_uncensored_audio_vae.safetensors",
+          "size_bytes": 364866540,
+          "publisher_lfs_sha256": "c52733d37f6a7fb7949c3dc0fb468c6cb2169e4d836983a73babb9f0d54837a5",
+          "git_blob_sha1": "08403b5a5cf13570829b59c13ad3cafbff6b04e9",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "split/vae/ltx25_uncensored_video_vae.safetensors",
+          "size_bytes": 1472223346,
+          "publisher_lfs_sha256": "847e14ca7f3355debca0cea4eaa24ac0fbcdf0061da054ac89ca638a869ddba3",
+          "git_blob_sha1": "4f679fe8f92b8758468fb51aae91d9fe996a4fec",
+          "local_file_sha256_verified": false
+        }
+      ],
+      "chosen_source_subset_weight_bytes": 30484902414,
+      "subset_is_complete_archive": false,
+      "representation_policy": "ONE_DIT_ONE_ENCODER_AND_AUDIO_VIDEO_VAES",
+      "optional_or_excluded": [
+        "FP8, INT8, FP8-scaled and GGUF DIT formats are same broad trained state until contrary proof",
+        "one text-encoder precision, audio+video VAE and projector if actually required"
+      ],
+      "disposition": "RETAIN_CONDITIONAL_RESEARCH_DO_NOT_OVERDOWNLOAD",
+      "preservation_value": "Independently edited / claimed uncensored LTX2.5 weights but producer/donor provenance and parent license unresolved",
+      "missing_requirements": [
+        "15 alternatives sum >166GB though selected package must choose one coherent format",
+        "Gemma4 text encoder+audio/video VAE and training provenance",
+        "license unknown in HF metadata and donor terms unclear",
+        "not independently tested trained-state difference"
+      ],
+      "owner_entitlement_verified": false,
+      "source_license_text_legally_cleared": false,
+      "full_trained_pipeline_parameters_verified": false,
+      "personal_disk_free_verified": false,
+      "download_authorized": false,
+      "source_metadata_url": "https://huggingface.co/api/models/ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8?blobs=true"
+    },
+    {
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "publisher_revision_sha": "f3160a69a833565d2c2c620c61d40102c1b2910c",
+      "previous_r51_revision": "829cf2f7cbdf79872ff365787ba50f80006efe76",
+      "revision_drift_since_r51": true,
+      "observed_publisher_lastModified": "2026-11-08T08:29:40.000Z",
+      "public_hub_gated": false,
+      "hub_license_tag": "other",
+      "hf_safetensors_main_count": null,
+      "source_file_count": 14,
+      "weight_like_file_count": 7,
+      "all_publisher_weight_file_options": [
+        {
+          "path": "ltx2.5-Stubelius_remix_beta1.safetensors",
+          "size_bytes": 42008731056,
+          "publisher_lfs_sha256": "26499ababa8e0a4c3ac75bbeae9514e15f74cb4b261c70b3c4969e2ddda77b41",
+          "git_blob_sha1": "b3336570598fc6260ea2ef43d52a7a6e0f6a17f9",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "ltx2.5-Stubelius_remix_beta2_bf16.safetensors",
+          "size_bytes": 42008731832,
+          "publisher_lfs_sha256": "4e6b2b5ed0fb11d8b175744af6fa02dddddb4c66183a857996dfbe941d228f14",
+          "git_blob_sha1": "41627c909423a436c81850f94030f41c6c26f412",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "ltx2.5-Stubelius_remix_beta2_int8_convrot.safetensors",
+          "size_bytes": 21504051080,
+          "publisher_lfs_sha256": "f108d8db65f8a0a32f9fbbcf718dd80d191e96406acfb383af0912ff9aef6285",
+          "git_blob_sha1": "e6c29d32407a11ecfb074b8e542371ce6c26fa5b",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "ltx2.5-Stubelius_remix_v1_Q4_K_S.gguf",
+          "size_bytes": 12512012416,
+          "publisher_lfs_sha256": "cc52453d50f507006c46a3e3c227165e9016eb65b9efbb2bf0cfa9e0ca5fe265",
+          "git_blob_sha1": "7a8228729e0e56acfecb57e6f82a88f7b7a8072a",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "ltx2.5-Stubelius_remix_v1_bf16.safetensors",
+          "size_bytes": 42008732600,
+          "publisher_lfs_sha256": "6e0ff9c9d8a1d0747579f1f50d10a9c3822a9a8f265322a5edd476044b0fbf4f",
+          "git_blob_sha1": "3a5981db8bfe9a3dfb54af820c4a49fb66e8fbd8",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "ltx2.5-Stubelius_remix_v1_int8_convrot.safetensors",
+          "size_bytes": 21504051856,
+          "publisher_lfs_sha256": "ab4f2c731a34550337b14a9e9bdeafb85ef4a4f8b265d7c53503400b1d281fc6",
+          "git_blob_sha1": "d0b84e547a9f9af72fbb06c0c0f52651ec639bf3",
+          "local_file_sha256_verified": false
+        },
+        {
+          "path": "ltx2.5-Stubelius_remix_v1_nvfp4.safetensors",
+          "size_bytes": 14397181704,
+          "publisher_lfs_sha256": "c2d7bf2f549ea9ef9e4533cfff0dff99f6032f7c132dd269da0da1411b895022",
+          "git_blob_sha1": "cd24517a6234686d01d6fed4aeee36e556aa9ca3",
+          "local_file_sha256_verified": false
+        }
+      ],
+      "chosen_source_subset_nonexecuting": [
+        {
+          "path": "ltx2.5-Stubelius_remix_v1_bf16.safetensors",
+          "size_bytes": 42008732600,
+          "publisher_lfs_sha256": "6e0ff9c9d8a1d0747579f1f50d10a9c3822a9a8f265322a5edd476044b0fbf4f",
+          "git_blob_sha1": "3a5981db8bfe9a3dfb54af820c4a49fb66e8fbd8",
+          "local_file_sha256_verified": false
+        }
+      ],
+      "chosen_source_subset_weight_bytes": 42008732600,
+      "subset_is_complete_archive": false,
+      "representation_policy": "V1_BF16_CANONICAL_ONE_TRAINED_STATE",
+      "optional_or_excluded": [
+        "beta1 and beta2 are separate learned-stage research candidates, not merely v1 quantization",
+        "v1-int8/nvfp4/GGUF are representation alternatives, not extra learned models"
+      ],
+      "disposition": "RETAIN_CONDITIONAL_RESEARCH_USE_V1_BF16",
+      "preservation_value": "Publisher details donor 10Eros v1.5; v1 vs beta1/beta2 require independent stage evidence before simultaneous acquisition",
+      "missing_requirements": [
+        "v1 source full learned Gemma4/video/audio dependencies not pinned",
+        "LTX Community License plus donor terms not fully reviewed",
+        "publisher revision changed since historical R51; exact old/new files not compared",
+        "benchmark and kernel ABI unverified"
+      ],
+      "owner_entitlement_verified": false,
+      "source_license_text_legally_cleared": false,
+      "full_trained_pipeline_parameters_verified": false,
+      "personal_disk_free_verified": false,
+      "download_authorized": false,
+      "source_metadata_url": "https://huggingface.co/api/models/Stuubs/Stubelius_Remix_Ltx2.5?blobs=true"
+    }
+  ],
+  "source_metadata_observed_complete_7_of_7": true,
+  "upstream_weight_option_count": 78,
+  "candidate_weight_subset_file_count": 47,
+  "candidate_weight_subset_bytes_excluding_configs_external_dependencies": 219306309366,
+  "full_offline_archive_capacity_bytes": null,
+  "parameter_gate_changes": 0,
+  "selection_decision_changes": 0,
+  "download_approvals_created": 0,
+  "license_acceptances": 0,
+  "local_payloads_downloaded": 0,
+  "source_git_revision_drift": [
+    {
+      "id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "old_sha": "829cf2f7cbdf79872ff365787ba50f80006efe76",
+      "new_sha": "f3160a69a833565d2c2c620c61d40102c1b2910c"
+    }
+  ],
+  "conclusions": {
+    "SteerTTS": "gated auto; source 6 original fp32 learned weights plus independent code and legal/voice restrictions",
+    "Maya2": "two primary learned shards, external Mimi/ECAPA unresolved",
+    "Drama3": "15 primary shards and non-Safetensors codec.pth are separate mandatory weights",
+    "ConsistencyLoRA": "1500 and 2000 are two distinct trained checkpoints; distinct aesthetic vs alignment tradeoff, low incremental bytes",
+    "Pruna": "15 component shard files across transformer/text-encoder/prompt-upsample/connector/vae must be counted; territorial license",
+    "Chris": "source 15 weight variants; choose coherent one-per-trained-state composite, parent Gemma/VAEs, provenance uncertain",
+    "Stuubs": "v1 bf16 independent, four v1 quant formats duplicate; beta phases not proven identical, old R51 vs current revision changed"
+  },
+  "next_steps": [
+    "Pin missing exact learned dependent weights and their source SHA for Maya2, Drama3, SteerTTS, Pruna",
+    "License text review/owner permissions particularly SteerTTS and Pruna, Fish Audio, LTX donor and Qwen research license",
+    "For each seven, decide minimal coherent restore bundle; never treat whole HF repo as selected file bytes",
+    "Keep active unknown lock failures until total tensor census/verified conservative bound with underlying components"
+  ]
+}
