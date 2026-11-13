@@ -26,15 +26,15 @@ class CurrentPortfolioIntegrity(unittest.TestCase):
         cls.prep = read(cls.current["insurance_preparation_worklist_path"])
         cls.access = read(cls.current["latest_conditional_access_audit"]["path"])
 
-    def test_materialized_v31_matches_current(self):
+    def test_materialized_v32_matches_current(self):
         items = self.catalog["items"]
-        self.assertEqual(self.current["revision_id"], "v31-20261113")
+        self.assertEqual(self.current["revision_id"], "v32-20261114")
         self.assertEqual(self.catalog["revision_id"], self.current["revision_id"])
-        self.assertEqual(len(items), 179)
-        self.assertEqual(len({identity(item) for item in items}), 179)
-        self.assertEqual(sum(item["asset_kind"] == "model" for item in items), 153)
+        self.assertEqual(len(items), 182)
+        self.assertEqual(len({identity(item) for item in items}), 182)
+        self.assertEqual(sum(item["asset_kind"] == "model" for item in items), 156)
         self.assertEqual(sum(item["asset_kind"] == "dataset" for item in items), 26)
-        for decision, count in {"select": 53, "conditional": 79,
+        for decision, count in {"select": 53, "conditional": 82,
                                 "hold": 28, "deferred": 13, "excluded": 6}.items():
             self.assertEqual(sum(item["portfolio_decision"] == decision
                                  for item in items), count)
@@ -48,16 +48,16 @@ class CurrentPortfolioIntegrity(unittest.TestCase):
             self.assertIn(identity(item), present)
             self.assertEqual(item["portfolio_decision"],
                              present[identity(item)]["portfolio_decision"])
-        self.assertEqual(len(present) - len(before["items"]), 29)
+        self.assertEqual(len(present) - len(before["items"]), 32)
 
-    def test_candidate_queue_and_dependencies_are_same_132(self):
+    def test_candidate_queue_and_dependencies_are_same_135(self):
         active = {identity(item) for item in self.catalog["items"]
                   if item["portfolio_decision"] in ("select", "conditional")}
         proposed = [identity(item) for item in self.queue["candidates"]]
         prepared = [identity(item) for item in self.prep["items"]]
-        self.assertEqual(len(active), 132)
-        self.assertEqual(len(proposed), 132)
-        self.assertEqual(len(prepared), 132)
+        self.assertEqual(len(active), 135)
+        self.assertEqual(len(proposed), 135)
+        self.assertEqual(len(prepared), 135)
         self.assertEqual(set(proposed), active)
         self.assertEqual(set(prepared), active)
         self.assertEqual(self.queue["source_revision"], self.current["revision_id"])
@@ -75,7 +75,7 @@ class CurrentPortfolioIntegrity(unittest.TestCase):
         entries = self.access["entries"]
         self.assertEqual(self.access["source_revision"], self.current["revision_id"])
         self.assertTrue(self.access["fail_closed_if_missing"])
-        self.assertEqual(len(entries), 79)
+        self.assertEqual(len(entries), 82)
         self.assertEqual({identity(row) for row in entries}, cond)
         self.assertEqual(sum(row["hub_gated"] for row in entries), 17)
         self.assertTrue(next(row["hub_gated"] for row in entries
