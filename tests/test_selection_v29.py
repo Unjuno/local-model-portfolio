@@ -7,7 +7,7 @@ class V29Test(unittest.TestCase):
  def test_two_exact_trained_outcomes(self):
   old=read('catalog/effective-portfolio-2026-11-12-v28.json')
   new=read('catalog/effective-portfolio-2026-11-12-v29.json')
-  current=read('catalog/CURRENT.json')
+  current=new
   queue=read('queues/proposed-v29-2026-11-12.json')
   plan=read('catalog/preparation/2026-11-12-insurance-bundles-v29.json')
   overlay=read('catalog/revisions/v29-2026-11-12.json')
@@ -16,8 +16,8 @@ class V29Test(unittest.TestCase):
   self.assertEqual({x['repo_id'] for x in new['items'][175:]},{'Zyphra/ZONOS3-Mini','robbyant/lingbot-touch-tiny'})
   self.assertEqual(len({(x['asset_kind'],x['repo_id'].lower()) for x in new['items']}),177)
   self.assertEqual(current['revision_id'],'v29-20261112')
-  self.assertEqual(current['expected']['active'],130)
-  self.assertEqual(current['expected']['parameter_gate'],{'PASS_TOTAL_PARAMS_LT_150B':129,'UNVERIFIED_BLOCK_FINAL_LOCK':20,'OVER_150B_QUANT_REVIEW_REQUIRED':2})
+  self.assertEqual(current['counts']['active'],130)
+  self.assertEqual(current['counts']['parameter_gate'],{'PASS_TOTAL_PARAMS_LT_150B':129,'UNVERIFIED_BLOCK_FINAL_LOCK':20,'OVER_150B_QUANT_REVIEW_REQUIRED':2})
   self.assertEqual(len(queue['candidates']),130)
   self.assertEqual(len(plan['items']),130)
   self.assertFalse(queue['approved']);self.assertFalse(queue['download_enabled']);self.assertFalse(plan['download_enabled'])

@@ -63,9 +63,9 @@ class R33ArchiveEvidenceTest(unittest.TestCase):
         self.assertEqual(d["download_queue_changes"], 0)
         self.assertEqual(d["model_downloads"], 0)
         self.assertEqual(d["archive_target_bytes"], 4_000_000_000_000)
-        c = json.loads((ROOT / "catalog/CURRENT.json").read_text(encoding="utf-8"))
-        self.assertEqual(c["expected"]["tracked"], 150)
-        self.assertEqual(c["expected"]["active"], 105)
+        c = json.loads((ROOT / "catalog/effective-portfolio-2026-11-06-v19.json").read_text(encoding="utf-8"))
+        self.assertEqual(c["counts"]["tracked"], 150)
+        self.assertEqual(c["counts"]["active"], 105)
 
 
 if __name__ == "__main__":

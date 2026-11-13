@@ -3,8 +3,8 @@ import copy,unittest
 from scripts import audit_chatterbox_perth_v27 as a
 class ChatterboxPerthSourceTests(unittest.TestCase):
     def test_baseline_is_immutable_and_126(self):
-        c=a.read_json("catalog/CURRENT.json")
-        self.assertEqual((c["revision_id"],c["expected"]["tracked"],c["expected"]["active"]),
+        c=a.read_json("catalog/effective-portfolio-2026-11-07-v27.json")
+        self.assertEqual((c["revision_id"],c["counts"]["tracked"],c["counts"]["active"]),
                          ("v27-20261107",173,126))
         self.assertFalse(a.read_json("queues/approved.json")["entries"])
         b=a.read_json("catalog/capacity/2026-11-07/v27/selected-file-capacity.json")

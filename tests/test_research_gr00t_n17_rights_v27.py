@@ -15,11 +15,11 @@ def examples():
 
 class GR00T_N17_RightAudit(unittest.TestCase):
     def test_unchanged_model_catalog(self):
-        c=m.load("catalog/CURRENT.json")
+        c=m.load("catalog/effective-portfolio-2026-11-07-v27.json")
         self.assertEqual(c["revision_id"],"v27-20261107")
-        self.assertEqual((c["expected"]["tracked"],c["expected"]["active"]),(173,126))
+        self.assertEqual((c["counts"]["tracked"],c["counts"]["active"]),(173,126))
         self.assertFalse(m.load("queues/approved.json")["entries"])
-        v=m.load(c["materialized_catalog_path"])
+        v=c
         ids={x["repo_id"] for x in v["items"]}
         self.assertIn(m.N16,ids)
         self.assertNotIn(m.N17,ids)

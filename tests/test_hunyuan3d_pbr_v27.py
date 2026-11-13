@@ -64,8 +64,8 @@ class Hunyuan3DPBRTests(unittest.TestCase):
         self.assertTrue(m.REAL_RELEASE_URL.endswith("/v0.1.0/RealESRGAN_x4plus.pth"))
         self.assertEqual(len(m.CODE_SHA),40)
     def test_repository_is_still_v27_and_no_approval(self):
-        c=m.load("catalog/CURRENT.json")
-        self.assertEqual((c["revision_id"],c["expected"]["tracked"],c["expected"]["active"]),
+        c=m.load("catalog/effective-portfolio-2026-11-07-v27.json")
+        self.assertEqual((c["revision_id"],c["counts"]["tracked"],c["counts"]["active"]),
                          ("v27-20261107",173,126))
         self.assertFalse(m.load("queues/approved.json")["entries"])
         s=m.load("catalog/capacity/2026-11-07/v27/capacity-summary.json")

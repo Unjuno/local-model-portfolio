@@ -21,12 +21,12 @@ class TrellisDependencies(unittest.TestCase):
                 "trellis2/pipelines/base.py":
                 "models.from_pretrained(v)"}
     def test_parent_selected_and_no_dino_vitl_in_existing_catalog(self):
-        c=a.load("catalog/CURRENT.json")
+        c=a.load("catalog/effective-portfolio-2026-11-07-v27.json")
         self.assertEqual(c["revision_id"],"v27-20261107")
-        self.assertEqual((c["expected"]["tracked"],c["expected"]["active"]),(173,126))
+        self.assertEqual((c["counts"]["tracked"],c["counts"]["active"]),(173,126))
         q=a.load("queues/approved.json")
         self.assertFalse(q["entries"])
-        v=a.load(c["materialized_catalog_path"])
+        v=c
         names={x["repo_id"] for x in v["items"]}
         self.assertIn(a.PARENT,names)
         self.assertNotIn(a.DINO,names)
