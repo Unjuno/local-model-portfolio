@@ -56,4 +56,5 @@ class R57(unittest.TestCase):
         self.assertIsNone(next(t for t in x["files"] if t["path"]=="README.md")["source_sha256"])
         self.assertTrue(self.d["external_dependencies_not_included"])
         self.assertTrue(self.d["sha256_of_text_files_not_claimed_from_git_blob_sha1"])
+        self.assertEqual(self.d["partial_source_subset_total_bytes"], self.a["statistics"]["partial_upstream_bytes"])
 if __name__=="__main__":unittest.main()
