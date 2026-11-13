@@ -1,5 +1,17 @@
 # 資産台帳
 
+## 現行正本（main・v31／2026-11-13）
+
+[CURRENT.json](CURRENT.json)が選定正本。[v31全179資産](effective-portfolio-2026-11-13-v31.json)はモデル153・データ26、SELECT53・CONDITIONAL79・HOLD28・DEFERRED13・EXCLUDED6。旧v19の150件を保持し29件を追加。
+
+- [v31承認前の132件キュー](../queues/proposed-v31-2026-11-13.json)
+- [v31依存・保全準備132件](preparation/2026-11-13-insurance-bundles-v31.json)
+- [条件付き79件のGated再監査](access/2026-11-13-v31-conditional-hub-gates.json)：Gated17件、他の100件は当該監査の対象外
+- [v31全件監査](audits/2026-11-13-v31-portfolio-assessment.json)
+
+**採否選定はダウンロード承認ではない。取得承認キューは0件。容量上限は十進4TB、HDDの実空き200GBは別条件。以下のv3〜v9で「現行」「最新版」と書かれている箇所は当時の履歴であり現在値ではない。**
+
+
 1つの論理的な資産につき1 JSON。モデル、データ、ランタイム、知識資料を同じ原則で管理する。
 サブフォルダーは models、datasets、software、knowledge を用途に応じて作る。初回一括レビューは[119件](review-2026-10-30.json)で固定し、その後のリスク監視候補は[別台帳](risk-watch-2026-10-30.json)で重複を管理する。追加候補の個別JSONは models と datasets に置く。
 
@@ -54,10 +66,10 @@ evidenceには、確認日時、URL、対象リビジョン、確認内容、fac
 この台帳にDownloadedやTestedを手入力して、実ファイルの検証記録の代わりにしない。
 
 
-## 現行v9の正本（2026-11-03）
+## 旧版v9の正本（2026-11-03・履歴）
 
-- [CURRENT.json](CURRENT.json)の最新版は**v9**。[effective-portfolio-2026-11-03-v9.json](effective-portfolio-2026-11-03-v9.json)に132件の選定・規制予測順位・コスパ監査・150Bゲートを統合。
-- [revisions/v9-2026-11-03.json](revisions/v9-2026-11-03.json)は、旧v8で総数未確認だった25モデルを全件監査。13件に一次資料で確認した**モデル本体/主要コンポーネントの概数**を記録、12件は総数未確認としてロック停止。モデル109件の現在は **95通過・2除外・12未確認**。
+- 2026-11-03時点の旧選定は**v9**。[effective-portfolio-2026-11-03-v9.json](effective-portfolio-2026-11-03-v9.json)に132件の選定・規制予測順位・コスパ監査・150Bゲートを統合。
+- [revisions/v9-2026-11-03.json](revisions/v9-2026-11-03.json)は、旧v8で総数未確認だった25モデルを全件監査。13件に一次資料で確認した**モデル本体/主要コンポーネントの概数**を記録、12件は総数未確認としてロック停止。当時のモデル109件は **95通過・2除外・12未確認**。
 - [検証方法](../docs/parameter-audit-v9-2026-11-03.md)、[非実行提案キュー](../queues/proposed-v9-2026-11-03.json)、[静的検査のCI](../.github/workflows/audit-parameter-cap.yml)。この確認はモデル実行・Gated同意・ダウンロード許可ではない。
 
 ## 旧版v8の正本（2026-11-03、履歴）
