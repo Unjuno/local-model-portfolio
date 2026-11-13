@@ -5,47 +5,51 @@
 **通常の調査・選定・監査・更新の正本は `main` のみ。** 既存ブランチの成果はmainへ統合し、ユーザーから別途指示されない限り新しいブランチを作らない。旧資料の専用ブランチ名は歴史的な出典であり、新しい作業ブランチの作成命令ではない。
 
 
+## モデルの現在構成（必ずmainの正本から照合）
+
+[CURRENT.json](catalog/CURRENT.json) → [v31全資産179件](catalog/effective-portfolio-2026-11-13-v31.json) → [承認前候補132件](queues/proposed-v31-2026-11-13.json) → [依存・保存準備132件](catalog/preparation/2026-11-13-insurance-bundles-v31.json)を照合する。[Gated台帳](catalog/access/2026-11-13-v31-conditional-hub-gates.json)はCONDITIONAL79件の部分監査であり、他の資産の権利を許諾したものではない。旧版で「現行」と記された数値は当時の履歴。**採否判断をダウンロード承認に読み替えない。**
+
 ## 現行v31（2026-11-13）：楽曲生成能力の空白を補うACE-Step 1.5 XL Turbo
 
 [CURRENT](catalog/CURRENT.json)は**179資産／有効132件**。現行178件にMERT音楽解析はあるがopen music generatorが欠けていたため、[ACE-Step/acestep-v15-xl-turbo](https://huggingface.co/ACE-Step/acestep-v15-xl-turbo)を独立8-step蒸留DiTとして**CONDITIONAL研究1件**追加。HF F32原本約20GBと音楽LM1.7B/Qwen Embedding/VAEの外部学習済み依存を分離。XL Baseは全タスク機能の別学習状態だが過剰収集回避のためHOLD。提供リンクのACE Music v1はサービス提供中、重み公開は確認できず、ACE Music公式は**v1 Flashの2026年末公開計画**だけを明記。購入/Cloud利用/取得承認を自動開始しない。4TB・200GB実空き床、未知20・150B超例外2、承認0は維持。[R53選定根拠](docs/strategy/53-ace-music-promise-and-ace-step-gap-v31.md)。以下v30以前は履歴。
 
-## 現行v30（2026-11-12）：Alpamayo 2 Edgeの独立運転VLA原本を条件付き追加
+## 旧版v30（2026-11-12）：Alpamayo 2 Edgeの独立運転VLA原本を条件付き追加
 
 [CURRENT](catalog/CURRENT.json)は**178資産／有効131件**。新規条件付き研究`nvidia/Alpamayo2-Edge`は2,651,163,378総学習済みパラメータ、公開BF16二シャードの計約5.302GBを含む12ファイルの別後学習成果。既存Cosmos Sim-Autoの動画・LiDARシミュレーションでは生成できない64姿勢の運転軌道とChain-of-Causation説明を出す。原重み・ライセンス全文・固定runtimeコードが公開され、重み2シャードの旧/新revision SHA一致を監査。日本国内を含む用途での権利・別Gatedデータ、実機のLinux/H100以外での性能・自動運転安全性は未確認。モデル本体取得/実行・承認0、177旧資産・除外6・4TBと空き200GBを維持。[R50と採否](docs/strategy/50-alpamayo-edge-distinct-driving-policy.md)。以下v29以前は履歴。
 
-## 現行v29（2026-11-12）：ZONOS3-MiniとLingBot-Touch-Tinyの独立能力2件
+## 旧版v29（2026-11-12）：ZONOS3-MiniとLingBot-Touch-Tinyの独立能力2件
 
 [CURRENT](catalog/CURRENT.json)は**177資産／有効130件**（旧175件維持、研究用CONDITIONAL2件追加）。Zyphra ZONOS3-Miniの公開標準TTS・ZAC-1音声Codecと、Robbyant LingBot-Touch-Tinyの磁気／圧抵抗／視触覚JEPAの原本。ZONOS3公開repoには別形式が多いためPyTorch原本一構成に絞り、非公開の音声編集LoRAを取得対象としない。LingBot Smallは実ロボット評価根拠が不足して別HOLD。Alpamayo2 Edge／Praxis DROID／Simons297M／PAN2は研究HOLD。4TB・200GB物理空き・150B以上同等RAM実測・総数不明20モデルの取得STOP・承認0を維持。[原論文・取得ゲート](docs/strategy/47-nov12-distinct-modality-selection.md)。以下はv28以前の履歴。
 
-## 現行v28（2026-11-12）：小型独立学習BotPsyとIBM TTM R3
+## 旧版v28（2026-11-12）：小型独立学習BotPsyとIBM TTM R3
 
 [CURRENT](catalog/CURRENT.json)は**175資産／有効128件**。新たに`qvac/BotPsy-0.8B`と`ibm-granite/granite-timeseries-ttm-r3`を独立学習成果としてCONDITIONAL研究採用。従来173件、6件EXCLUDED、HOLD28、4TB上限、200GB最低空き、150B超の同条件RAM例外とゼロ取得承認は維持。以前のv28-r1大型3モデル提案は未採用の研究候補。[評価と停止条件](docs/strategy/46-botpsy-ttm-v28-selection.md)。以下は履歴。
 
-## 現行v27：Kakao Kanana非生成型判断モデルとMOSS必須音声Codec
+## 旧版v27：Kakao Kanana非生成型判断モデルとMOSS必須音声Codec
 
 [CURRENT](catalog/CURRENT.json)は173資産・有効126件。Kanana 3.665Bの型付き確率判断（choice/noul/score）をBF16原本一式として条件付き研究選定。Kanana Open LicenseのNOTICE/利用条件・別途商用API/SI/端末組込権利が未確認で取得承認不可。MOSS-TTS v1.5の外部必須v1音声Codecを容量に計上、v2は混同しない。Ricursive Ripple 65Bの事前学習原本・後学習版は研究HOLD。4TB上限・最低空き200GB・150B以上量子化同等RAM・承認0を維持。[評価](docs/strategy/37-kanana-moss-archive-v27.md)・[容量](catalog/capacity/2026-11-07/v27/capacity-summary.json)。以下は履歴。
 
-## 現行v26：Cosmos Sim-AutoとPhononの独立学習成果3件
+## 旧版v26：Cosmos Sim-AutoとPhononの独立学習成果3件
 
 [CURRENT](catalog/CURRENT.json)は172資産・有効125件。車載WSM+LiDARのCosmos3 Nano Sim-Autoと音声Phononの英語31M・多言語40M原本を条件付き選定。40Mは現在Gated＋CC BY-NC4.0なので本人権限確認まで研究専用で取得不可。Phononの話者コーデック自体は未公開であり、既存の潜在話者のみ記録。BaIDU ERNIE5.5 Flash Base 280Bは総150B超の同等RAM未実測で研究HOLD。v25の旧169資産不変、外部依存に声の潜在とCosmos共通VAEを記録。4TB・200GB空き・同等RAM・取得承認0を維持。[詳細](docs/strategy/33-phonon-cosmos-ernie-risk-v26.md)・[容量](catalog/capacity/2026-11-06/v26/capacity-summary.json)。以下の版は履歴。
 
-## 現行v25：地域制限付き画像モデルの学習成果を条件付き研究選定
+## 旧版v25：地域制限付き画像モデルの学習成果を条件付き研究選定
 
 [CURRENT](catalog/CURRENT.json)は169資産・有効122件。PrunaAI/P-H3-Imageの8-step DMD蒸留・テキスト蒸留・専用VAE・学習済みプロンプト補完を別学習成果として1件conditional研究選定。MiniMax H3 Community License地域制限と総パラメータ未確定のため**最終取得ロック不可**。同一能力のComfy 4bitは二重採用せず。Maya2用Mimi/ECAPAの固定容量は別依存調査記録に記載。旧168資産を保持、v24の121件一次ファイル範囲は確定済み。4TB上限・実空き200GB・量子化後の同等RAM条件・取得承認0は維持。[根拠](docs/strategy/32-restricted-image-and-maya-dependencies-v25.md)・[容量](catalog/capacity/2026-11-06/v25/capacity-summary.json)。下のv24以前の数値は履歴。
 
-## 現行v24：2026年11月5日公開の独立学習成果3件
+## 旧版v24：2026年11月5日公開の独立学習成果3件
 
 [CURRENT](catalog/CURRENT.json)は168資産・有効121件。PFN PLaMo3 Translate 31B教師と0.8B蒸留生徒、NVIDIA Cosmos3 Nano Sim-Bimanual行動条件付き世界モデルを3件追加。旧165資産不変。v23の118一次ファイル容量は監査済み、v24の新3件は別途容量再検証。4TB上限、実空き200GB、150B超量子化同等RAM審査、ダウンロード承認0は不変。[今回の選定根拠](docs/strategy/31-new-translation-and-robotics-selection-v24.md)・[容量台帳](catalog/capacity/2026-11-06/v24/capacity-summary.json)。下の記録は履歴。
 
-## 現行v23：容量監査に基づく独自学習成果2件の追加
+## 旧版v23：容量監査に基づく独自学習成果2件の追加
 
 [CURRENT](catalog/CURRENT.json)は165資産・有効118件。v22の116件の一次ファイル範囲が確定した後、Hcompany/Holotron4-30B-A3BのNemotron後学習原本とLiquidAI/LFM2.5-24B-A2B-DSparkの学習済み投機ドラフターを条件付き選定。既存163件は不変。新2件の配布元全repo公称バイトは66,707,531,084であり最終採用ファイルや実ディスク必要量ではない。4TB上限、200GB実空き床、150B以上の量子化同等RAM条件、取得承認0件を維持。[選定根拠](docs/strategy/29-bounded-specialized-selection-v23.md)・[v22容量監査](catalog/capacity/2026-11-06/capacity-summary.json)。下のv22以前は履歴。
 
-## 現行v22：学習成果を失わないための保険
+## 旧版v22：学習成果を失わないための保険
 
 [CURRENT](catalog/CURRENT.json)は163資産・有効116件。規制予測は先に確保する順番であり、保全対象をそこだけに限定しない。[保険方針](policies/archival-insurance.json)・[116件の段階別準備表](catalog/preparation/2026-11-06-insurance-bundles-v22.json)・[採用理由](docs/strategy/27-insurance-first-selection-v22.md)。Drama3公開元原本、DavidAU独自後学習、GroundGUI定位、Consistency LoRA差分を4件conditionalとして追加。全159旧レコード、4TB枠、200GB空き、150B超の量子化同等RAM条件を維持。追加計画枠156GBは実測容量ではない。取得承認0。以下v21以前の件数は履歴。
 
-## 現行v21：配布制限の証拠と独自能力による追加選定
+## 旧版v21：配布制限の証拠と独自能力による追加選定
 
 [CURRENT](catalog/CURRENT.json)・[159資産](catalog/effective-portfolio-2026-11-06-v21.json)・[112件の非実行キュー](queues/proposed-v21-2026-11-06.json)。Holo4-27B、SteerTTS、Maya2 Native、Hcompany公開評価軌跡を4件conditionalに追加。StyleStreamは一部非公開・総数未確定のためHOLD。追加計画枠92GBは実測容量ではない。4TB上限、実空き200GB、150B超の量子化同等RAM規則、取得承認0は維持。[判断と一次出典](docs/strategy/26-risk-evidence-selection-v21.md)。以下のv20以前の件数は履歴。
 
@@ -141,7 +145,7 @@ Pirate Faceは二次のハッシュ付きTorrent索引、Civitaiは別ID体系�
 
 [完成度台帳](catalog/preparation/2026-11-05-completion-readiness.json)は重点2構成のチェックリストのスナップショット。16項目中8件PASSは**作業量の50%やユーザー実機保存率ではない**。ユーザーPC未接続ならHDD総量・既存重み・空き・ダウンロード状態はUNKNOWNとする。[オフライン検査](scripts/archive_preflight.py)は読み取り専用で、`--hash`による全ファイル確認がない場合「同サイズだから再利用できる」としない。実機のパス・stage見積・容量はユーザーの確認が要る。検査がPASSでも`queues/approved.json`へ自動登録・重み取得・実行しない。
 
-## 現行v18：R21/R22の固定保存構成を正式選定に反映
+## 旧版v18：R21/R22の固定保存構成を正式選定に反映
 
 [固定保存構成](manifests/drafts/round21-pinned-preservation.candidate.json)および[R22全構成ヘッダー検査](catalog/preparation/2026-11-05-component-census.json)を参照。ChatRのLoRAは既存Qwen-Image基盤との完全同一性を実機で検証するまで増分節約と扱わない。Interpretic Q4の一般能力はBF16実験と混同しない。R22の作者SHA256SUMSとREADME/inference.pyの不一致記録を消してはならない。新規選定は2件ともconditional、**approved/dlは0**。
 

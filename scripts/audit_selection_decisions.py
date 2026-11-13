@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit current v19 selection and historic v17 evidence without downloading weights.
+"""Audit CURRENT.json materialized selection and historic v17 evidence without downloading weights.
 
 Python >=3.10; standard library only. Read-only.
 """
