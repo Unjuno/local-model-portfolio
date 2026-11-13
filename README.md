@@ -6,10 +6,12 @@
 
 **運用の正本は `main` の `catalog/CURRENT.json`。新たな調査ブランチは作らずmain一本で更新します。**
 
-**実際の選定構成**：[v31の179資産](catalog/effective-portfolio-2026-11-13-v31.json)（SELECT53・CONDITIONAL79・HOLD28・DEFERRED13・EXCLUDED6）／[132件の承認前キュー](queues/proposed-v31-2026-11-13.json)／[132件の依存準備](catalog/preparation/2026-11-13-insurance-bundles-v31.json)。[Gated監査](catalog/access/2026-11-13-v31-conditional-hub-gates.json)は条件付き79件のみ対象。正式取得承認は0件。**
+**現行の正本**：[v32／182資産（モデル156・データ26）](catalog/effective-portfolio-2026-11-14-v32.json)。SELECT53・CONDITIONAL82・HOLD28・DEFERRED13・EXCLUDED6、[有効135件の取得前キュー](queues/proposed-v32-2026-11-14.json)と[同135件の依存準備](catalog/preparation/2026-11-14-insurance-bundles-v32.json)が対応。[今回のDSpine/Nemotron/RFD4選定](docs/strategy/56-v32-small-specialist-selection-2026-11-14.md)。**すべて未承認で、本体DLは未実施。**
+
+**歴史資料v31の選定構成**：[v31の179資産](catalog/effective-portfolio-2026-11-13-v31.json)（SELECT53・CONDITIONAL79・HOLD28・DEFERRED13・EXCLUDED6）／[132件の承認前キュー](queues/proposed-v31-2026-11-13.json)／[132件の依存準備](catalog/preparation/2026-11-13-insurance-bundles-v31.json)。[Gated監査](catalog/access/2026-11-13-v31-conditional-hub-gates.json)は条件付き79件のみ対象。正式取得承認は0件。**
 
 
-## 現行v31（2026-11-13）：楽曲生成能力の空白を補うACE-Step 1.5 XL Turbo
+## 旧版v31（2026-11-13・履歴）：楽曲生成能力の空白を補うACE-Step 1.5 XL Turbo
 
 [CURRENT](catalog/CURRENT.json)は**179資産／有効132件**。現行178件にMERT音楽解析はあるがopen music generatorが欠けていたため、[ACE-Step/acestep-v15-xl-turbo](https://huggingface.co/ACE-Step/acestep-v15-xl-turbo)を独立8-step蒸留DiTとして**CONDITIONAL研究1件**追加。HF F32原本約20GBと音楽LM1.7B/Qwen Embedding/VAEの外部学習済み依存を分離。XL Baseは全タスク機能の別学習状態だが過剰収集回避のためHOLD。提供リンクのACE Music v1はサービス提供中、重み公開は確認できず、ACE Music公式は**v1 Flashの2026年末公開計画**だけを明記。購入/Cloud利用/取得承認を自動開始しない。4TB・200GB実空き床、未知20・150B超例外2、承認0は維持。[R53選定根拠](docs/strategy/53-ace-music-promise-and-ace-step-gap-v31.md)。以下v30以前は履歴。
 

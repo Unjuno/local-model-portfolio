@@ -1,6 +1,12 @@
 # 資産台帳
 
-## 現行正本（main・v31／2026-11-13）
+## 現行正本（main・v32／2026-11-14）
+
+[CURRENT.json](CURRENT.json)がv32を指定する。**182資産（モデル156／データ26）、SELECT53、CONDITIONAL82、HOLD28、DEFERRED13、EXCLUDED6**。[全件](effective-portfolio-2026-11-14-v32.json)／[非実行135件取得候補](../queues/proposed-v32-2026-11-14.json)／[135件の依存](preparation/2026-11-14-insurance-bundles-v32.json)／[CONDITIONAL82件の公開メタデータ](access/2026-11-14-v32-conditional-hub-gates.json)／[追加採否](revisions/v32-2026-11-14.json)。
+
+**旧v31の179資産はすべて採否を変えず保持**。v32にDSpine・NVIDIA Diarization・RFD4の独立学習済み原本を3件追加。これらを通常の別精度コピーとみなさない。新しい3件も取得許可0。
+
+## 旧版v31の正本（2026-11-13・履歴）
 
 [CURRENT.json](CURRENT.json)が選定正本。[v31全179資産](effective-portfolio-2026-11-13-v31.json)はモデル153・データ26、SELECT53・CONDITIONAL79・HOLD28・DEFERRED13・EXCLUDED6。旧v19の150件を保持し29件を追加。
 

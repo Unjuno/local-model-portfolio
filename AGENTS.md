@@ -5,11 +5,15 @@
 **通常の調査・選定・監査・更新の正本は `main` のみ。** 既存ブランチの成果はmainへ統合し、ユーザーから別途指示されない限り新しいブランチを作らない。旧資料の専用ブランチ名は歴史的な出典であり、新しい作業ブランチの作成命令ではない。
 
 
-## モデルの現在構成（必ずmainの正本から照合）
+## モデルの現在構成（main／v32・2026-11-14）
+
+**唯一の正本は `catalog/CURRENT.json` のv32、182資産・有効135件**。v31からDSpine-b16、Nemotron-3-Diarization、RFD4-Proteinaを独立後学習・専門学習成果として3件CONDITIONAL研究追加。[v32全件](catalog/effective-portfolio-2026-11-14-v32.json)、[非実行135件候補](queues/proposed-v32-2026-11-14.json)、[依存台帳](catalog/preparation/2026-11-14-insurance-bundles-v32.json)、[研究記録](docs/strategy/56-v32-small-specialist-selection-2026-11-14.md)。取得承認0、4TB計画と空き200GB別条件。旧版v31以下は履歴。
+
+## 以前のモデル構成参照（v31スナップショット）
 
 [CURRENT.json](catalog/CURRENT.json) → [v31全資産179件](catalog/effective-portfolio-2026-11-13-v31.json) → [承認前候補132件](queues/proposed-v31-2026-11-13.json) → [依存・保存準備132件](catalog/preparation/2026-11-13-insurance-bundles-v31.json)を照合する。[Gated台帳](catalog/access/2026-11-13-v31-conditional-hub-gates.json)はCONDITIONAL79件の部分監査であり、他の資産の権利を許諾したものではない。旧版で「現行」と記された数値は当時の履歴。**採否判断をダウンロード承認に読み替えない。**
 
-## 現行v31（2026-11-13）：楽曲生成能力の空白を補うACE-Step 1.5 XL Turbo
+## 旧版v31（2026-11-13・履歴）：楽曲生成能力の空白を補うACE-Step 1.5 XL Turbo
 
 [CURRENT](catalog/CURRENT.json)は**179資産／有効132件**。現行178件にMERT音楽解析はあるがopen music generatorが欠けていたため、[ACE-Step/acestep-v15-xl-turbo](https://huggingface.co/ACE-Step/acestep-v15-xl-turbo)を独立8-step蒸留DiTとして**CONDITIONAL研究1件**追加。HF F32原本約20GBと音楽LM1.7B/Qwen Embedding/VAEの外部学習済み依存を分離。XL Baseは全タスク機能の別学習状態だが過剰収集回避のためHOLD。提供リンクのACE Music v1はサービス提供中、重み公開は確認できず、ACE Music公式は**v1 Flashの2026年末公開計画**だけを明記。購入/Cloud利用/取得承認を自動開始しない。4TB・200GB実空き床、未知20・150B超例外2、承認0は維持。[R53選定根拠](docs/strategy/53-ace-music-promise-and-ace-step-gap-v31.md)。以下v30以前は履歴。
 
