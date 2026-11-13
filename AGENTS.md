@@ -1,5 +1,9 @@
 # エージェント作業規約
 
+## 現行v31（2026-11-13）：楽曲生成能力の空白を補うACE-Step 1.5 XL Turbo
+
+[CURRENT](catalog/CURRENT.json)は**179資産／有効132件**。現行178件にMERT音楽解析はあるがopen music generatorが欠けていたため、[ACE-Step/acestep-v15-xl-turbo](https://huggingface.co/ACE-Step/acestep-v15-xl-turbo)を独立8-step蒸留DiTとして**CONDITIONAL研究1件**追加。HF F32原本約20GBと音楽LM1.7B/Qwen Embedding/VAEの外部学習済み依存を分離。XL Baseは全タスク機能の別学習状態だが過剰収集回避のためHOLD。提供リンクのACE Music v1はサービス提供中、重み公開は確認できず、ACE Music公式は**v1 Flashの2026年末公開計画**だけを明記。購入/Cloud利用/取得承認を自動開始しない。4TB・200GB実空き床、未知20・150B超例外2、承認0は維持。[R53選定根拠](docs/strategy/53-ace-music-promise-and-ace-step-gap-v31.md)。以下v30以前は履歴。
+
 ## 現行v30（2026-11-12）：Alpamayo 2 Edgeの独立運転VLA原本を条件付き追加
 
 [CURRENT](catalog/CURRENT.json)は**178資産／有効131件**。新規条件付き研究`nvidia/Alpamayo2-Edge`は2,651,163,378総学習済みパラメータ、公開BF16二シャードの計約5.302GBを含む12ファイルの別後学習成果。既存Cosmos Sim-Autoの動画・LiDARシミュレーションでは生成できない64姿勢の運転軌道とChain-of-Causation説明を出す。原重み・ライセンス全文・固定runtimeコードが公開され、重み2シャードの旧/新revision SHA一致を監査。日本国内を含む用途での権利・別Gatedデータ、実機のLinux/H100以外での性能・自動運転安全性は未確認。モデル本体取得/実行・承認0、177旧資産・除外6・4TBと空き200GBを維持。[R50と採否](docs/strategy/50-alpamayo-edge-distinct-driving-policy.md)。以下v29以前は履歴。

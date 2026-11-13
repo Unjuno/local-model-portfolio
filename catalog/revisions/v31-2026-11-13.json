@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "revision_id": "v31-20261113",
+  "previous_revision_id": "v30-20261112",
+  "decision_date": "2026-11-13",
+  "source_branch_commit": "19f68aaeb5a04acd3d2d1c71325c97bfc9c8bdc4",
+  "target_branch": "strategy/2026-11-03-01-risk",
+  "decision_status": "SINGLE_DISTINCT_MUSIC_GENERATOR_CONDITIONAL_NO_DOWNLOADER",
+  "purpose": "Fill missing open music generation mode with one independently distilled 4B-class XL model; don't confuse ACE Music v1/Flash hosted/future with released ACE-Step 1.5",
+  "archive_target_bytes": 4000000000000,
+  "minimum_free_bytes": 200000000000,
+  "planning_reservation_bytes": 40000000000,
+  "planning_not_physical_selected_bytes": true,
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "ACE-Step/acestep-v15-xl-turbo",
+      "url": "https://huggingface.co/ACE-Step/acestep-v15-xl-turbo",
+      "group": "楽曲生成の欠落補完：ACE-Step 1.5 XL 8-step蒸留音声DiTと楽曲計画LMの再現可能性",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "現行178資産にMERT FullSong音楽特徴抽出はあるが楽曲生成checkpointが未登録。公式ACE-Step 1.5 XL Turboは約5BのF32 DiT、8-step蒸留で完全な曲/歌声のテキスト・歌詞生成/cover/repaintを可能にする別学習済み状態。ACE Music v1ホスト専用や将来公開予定のv1 Flashとは同一ではない。XL Base/SFT、通常量子化、2B Turboを自動多重採用しない。",
+      "quality_positive": "2026-04公開の4B級XL Turbo、公式HFメタデータは約4,987.3M要素F32で公開snapshot約20GB、MITモデルタグ。ACE-Step v1.5一次arXiv:2602.00744は音楽プランナーLMと音声DiT分離設計を発表。公式GitHubコードMIT、固定モデルrevisionを参照可能。既存MERTは解析専用で非代替。",
+      "quality_negative": "主F32約20GBと作者BF16公称約18.8GBを同一実体として扱えない。共有LM1.7B、Qwen embedding0.6B、VAE等の別学習済み依存が必要。HFモデル独自pickle silence_latent.ptとtrust_remote_code実装は安全監査が必要。完全file SHA/selected bytes、全テンソル正確総数、モデルrepo LICENSE全文、実機HW性能未確認。各原音源権利・学習データ許諾は出版社自己申告。ACE Music v1本体の公開約束とは別。",
+      "evidence_date": "2026-11-13",
+      "release_date_reported": "2026-04-02",
+      "evidence_scope": "Official ACE-Step HF model and files pages, fixed HF 40-character revision for XL and shared base, official GitHub source+MIT LICENSE pinned; paper arxiv; no weights downloaded or model code run.",
+      "evidence_urls": [
+        "https://huggingface.co/ACE-Step/acestep-v15-xl-turbo",
+        "https://huggingface.co/ACE-Step/Ace-Step1.5",
+        "https://github.com/ace-step/ACE-Step-1.5",
+        "https://arxiv.org/abs/2602.00744"
+      ],
+      "observed_access": "Public official HF listing, MIT license metadata, source GitHub public. Actual payload access, license dependency rights and user disk unknown.",
+      "license_metadata": "mit_publisher_tag_and_code_mit",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "personal_access_verified": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "d4a0b288b83ebb7e25a8c0b32c573c22e134e8ee",
+      "upstream_all_files_bytes_observed": null,
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 4987300000,
+        "count_scope": "Publisher one-decimal million approximation for separate XL DiT checkpoint, NOT full learnt pipeline count",
+        "evidence_kind": "Official HF safetensors F32 model ~5B plus LM 1.7B, text embedding 0.6B and VAE, bounded substantially below 150B by publisher figures; exact full tensor census still required before download",
+        "review_date": "2026-11-13",
+        "complete_pipeline_exact_parameters": null,
+        "screening_only_not_full_census": true
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "category": "unique_open_music_generation_trained_DiT_with_LM",
+        "rank": 161,
+        "scenario_status": "Stress scenario hypothetical; no confirmed ACE-Step weight takedown or future regulatory schedule"
+      },
+      "restriction_assessment": {
+        "observed": "Official MIT code/license tag on publicly listed XL. No evidence ACE Music closed weight licensing transfers to ACE-Step; user must retain upstream notices.",
+        "scenario": "Copyright or provider distribution restrictions might change. The future ACE Music Flash announcement is not a weight release.",
+        "probability": null
+      },
+      "preservation_bundle": {
+        "learned_outcome": "ACE-Step 1.5 XL Turbo additional SFT/distilled 8-step 4B-class music DiT, distinct from 2B and XL pretrained base.",
+        "must_preserve": [
+          "XL Turbo F32 4 safetensors shards and index at fixed publisher revision plus config and matching custom code",
+          "silence_latent.pt (pickle; static/security review before loading)",
+          "shared ACE-Step/Ace-Step1.5 LM1.7B planning weights, Qwen3-Embedding-0.6B, VAE and their tokenizers/configs at shared fixed revision",
+          "official GitHub runtime sha and pyproject/uv.lock or reproducible dependency manifests; licensed notices",
+          "model card MIT license text and third-party component notice provenance",
+          "record original training/distillation family and 8 steps / no CFG as separate learned state"
+        ],
+        "excluded_same_training_formats": [
+          "all regular INT8/GGUF/MLX conversions if reproducible",
+          "whole shared repo 2B DiT turbo when only LM/embedding/VAE required"
+        ],
+        "research_only_optional_independently_trained": [
+          "ACE-Step/acestep-v15-xl-base all-task native state",
+          "ACE-Step/acestep-5Hz-lm-4B stronger separately tuned composition LM",
+          "ACE Music v1 Flash once legally released under verified different repo"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "source_code": {
+        "repo_id": "ace-step/ACE-Step-1.5",
+        "source_sha": "ca1e85fe9430179831e6bc6be790c332190a3866",
+        "code_license": "MIT",
+        "code_license_text_read": true,
+        "runtime_tested": false
+      },
+      "incumbent_comparison": [
+        "m-a-p/MERT-v2-FullSong",
+        "Edge0/Audio8-TTS-Realistic-Air",
+        "Lightricks/LTX-2.5"
+      ],
+      "falsification_condition": "No officially accessible XL Turbo trained checkpoint, unlicensed dependency, identical weights to a previously selected music generator, full tensor/size incompatible with policy, or same-task quality insufficient vs a smaller substitute after matched testing.",
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "author_hf_full_repo_display_approx_bytes": 20000000000,
+        "author_shared_repo_all_files_display_approx_bytes": 10100000000,
+        "author_hf_tensor_summary": "approx 4,987.3M F32 elements in XL; publisher calls 4B class and bf16 ~18.8GB",
+        "archivable_shared_parts_not_all_unified_repo": true,
+        "full_dependency_file_bytes": null,
+        "hw_tested_on_user_machine": false
+      },
+      "selection_budget_cap_bytes": 40000000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "download_ready": false,
+      "position": 179
+    }
+  ],
+  "not_adopted_but_follow": [
+    {
+      "repo_id": "ACE-Step/acestep-v15-xl-base",
+      "reason": "~20GB independent pretrained XL state with all editing tasks extract/lego/complete, but overlap and extra space; don't add without incremental-use proof",
+      "status": "HOLD_SEPARATE_TRAINED_STATE_NOT_QUANT"
+    },
+    {
+      "repo_id": "ACE-Step/Ace-Step1.5",
+      "reason": "Official 10.1GB shared LM/vae/embedding/2B turbo bundle; use shared subcomponents as dependencies for XL, do not add 2B DiT as second selected trained model automatically",
+      "status": "DEPENDENCY_SOURCE_ONLY"
+    },
+    {
+      "repo_id": "ACE-Step/acestep-5Hz-lm-4B",
+      "reason": "Separate trained 4B planner model enhances composition, but 1.7B default already present in shared repo and no measured increment.",
+      "status": "HOLD_OPTIONAL_PLANNER"
+    },
+    {
+      "repo_id": "ACE Music v1 Flash",
+      "official_weight_repo": null,
+      "status": "AWAIT_WEIGHT_RELEASE_LICENSE_PARAMS_SHA"
+    },
+    {
+      "repo_id": "ACE Music v1",
+      "official_weight_repo": null,
+      "status": "HOSTED_CLOSED_NO_DOWNLOAD"
+    },
+    {
+      "id": "ACE Music v1.1 Preview",
+      "status": "CLOSED_SCORE_TO_SONG_RESEARCH_HOLD"
+    }
+  ],
+  "research_path": "catalog/research/2026-11-13-r53-ace-music-release-and-ace-step.json",
+  "download_authorizations_created": 0
+}
