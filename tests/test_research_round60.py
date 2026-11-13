@@ -7,7 +7,7 @@ class R60(unittest.TestCase):
  def setUp(self):self.r=read("catalog/research/2026-11-14-r60-pruna-minimax-h3-licensing-format.json")
  def test_formats(self):
   x=self.r
-  self.assertEqual(x["Pruna_full"]["weight_file_count"],15)
+  self.assertEqual(x["Pruna_full"]["learned_weight_file_count"],15)
   self.assertEqual(x["Pruna_full"]["weight_bytes"],99797308280)
   self.assertEqual(x["MiniMax_H3_Image"]["all_weight_files"],41)
   self.assertEqual(x["MiniMax_H3_Image"]["all_weight_bytes"],203969758064)
@@ -29,7 +29,7 @@ class R60(unittest.TestCase):
   self.assertFalse(x["Pruna_comfy"]["lora"]["standalone_model"])
   self.assertEqual(x["rights"]["pruna"]["annual_revenue_prior_written_authorization_threshold_usd"],20000000)
   self.assertEqual(x["rights"]["minimax_image"]["annualized_revenue_prior_written_authorization_threshold_usd"],1000000)
-  self.assertTrue(x["rights"]["minimax_image"]["any_third_party_hosted_service_requires_prior_written_authorization"])
+  self.assertTrue(x["rights"]["minimax_image"]["any_hosted_service_to_third_parties_requires_prior_written_authorization"])
   self.assertTrue(x["rights"]["two_different_model_products_not_evidence_of_retroactive_license_change"])
  def test_main_unchanged(self):
   c=read("catalog/CURRENT.json")
