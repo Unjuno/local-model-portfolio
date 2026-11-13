@@ -1,0 +1,284 @@
+{
+  "schema_version": 1,
+  "revision_id": "v32-20261114",
+  "previous_revision_id": "v31-20261113",
+  "decision_date": "2026-11-14",
+  "target_branch": "main",
+  "source_commit": "ca6c2b3920b075d76c11580aca74021c4ebe9ca8",
+  "archive_target_bytes": 4000000000000,
+  "minimum_free_bytes": 200000000000,
+  "decision_status": "THREE_DISTINCT_SMALL_TRAINED_STATES_CONDITIONAL_NON_EXECUTABLE",
+  "planning_reservation_bytes": 9700000000,
+  "planning_not_observed_selected_bytes": true,
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "tencent/Qwen3.8-27B-DSpine-b16",
+      "url": "https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16",
+      "group": "投機デコード・学習済みドラフター",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "既存Qwen3.8-27Bに依存する5層・block16の別学習済み並列draft重み。通常量子化やLiquidAI DSparkの同一重みコピーではない。元Qwen原本を二重取得せず、targetとdraftを別々に版管理する。",
+      "quality_positive": "Tencent公式はSGLang 0.5.22/BF16/FlashAttention3/concurrency8のWorkBuddy Code lowで、AR253.35、DFlash2 590.27、DSpine 686.23 aggregate tokens/sと発表（作者測定）。4.05GB重みSHA256をXetで公開。",
+      "quality_negative": "親Qwen3.8-27Bの正確な対応revision、ドラフターの完全40桁commit、config/code安全監査とOS/backend互換・本人実機の独立速度は未確認。trust_remote_codeは自動実行しない。",
+      "evidence_date": "2026-11-14",
+      "evidence_kind": "publisher_first_party_HF_card_file_hash_and_license_metadata",
+      "evidence_urls": [
+        "https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16",
+        "https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16/blob/main/model.safetensors",
+        "https://github.com/Tencent/DSpine",
+        "https://arxiv.org/abs/2609.36173"
+      ],
+      "observed_access": "public_HF_listing_not_authenticated_payload_or_permission",
+      "license_metadata": "apache-2.0",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": null,
+      "upstream_model_file": {
+        "path": "model.safetensors",
+        "sha256": "ac90f1df842ea66b23e4224f3e86624add547526f689ffe9e9c6b7a5937116b1",
+        "bytes_exact": null,
+        "display_model_bytes_rounded": 4050000000,
+        "original_publisher_hash_only_no_local_reevaluation": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 2025900000,
+        "evidence_kind": "official HF parameter metadata or publisher release-checkpoints manifest",
+        "review_date": "2026-11-14",
+        "complete_pipeline_tensor_count_not_locally_verified": true
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 162,
+        "category": "unique_learned_specialist",
+        "scenario_status": "hypothetical_stress_no_confirmed_takedown"
+      },
+      "restriction_assessment": {
+        "observed": "Public model listing and publisher license metadata; no known imminent model-specific removal.",
+        "scenario": "Access or redistribution rules may change, but no probability is measured.",
+        "probability": null
+      },
+      "preservation_bundle": {
+        "learned_outcome": "既存Qwen3.8-27Bに依存する5層・block16の別学習済み並列draft重み。通常量子化やLiquidAI DSparkの同一重みコピーではない。元Qwen原本を二重取得せず、targetとdraftを別々に版管理する。",
+        "must_preserve": [
+          "model.safetensors SHA256 and exact bytes",
+          "config, README, Apache 2.0 LICENSE, code revision",
+          "original target repo SHA + tokenizer",
+          "ReplaySSM/FA3/SGLang compatibility settings"
+        ],
+        "external_learned_and_software_dependencies": [
+          "Qwen/Qwen3.8-27B immutable target and tokenizer",
+          "Tencent/DSpine source code version and SGLang/MLX ABI"
+        ],
+        "excluded_duplicate_or_optional_formats": [
+          "ordinary conversion copies of DSpine",
+          "additional Qwen3.8-27B checkpoint identical to existing original"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "publisher_rounded_full_repo_bytes": 4050000000,
+        "source_bytes_are_not_selected_bytes": true,
+        "selected_file_bytes_final": null,
+        "hw_tested_on_user_machine": false
+      },
+      "falsification_condition": "Source is not an independently trained state, lawful access/rights fail, complete dependency bundle cannot be formed, or measured quality is inadequate in its claimed distinct task.",
+      "selection_budget_cap_bytes": 5000000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "download_ready": false,
+      "position": 180
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/Nemotron-3-Diarization",
+      "url": "https://huggingface.co/nvidia/Nemotron-3-Diarization",
+      "group": "音声・ストリーミング話者分離",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "会話音声から誰がいつ話したかを予測するSortformer/AOSC学習済み重み。ASR・TTSでは代替しない。公開safetensors/NeMo/GGUFは同じ能力の別形式であり原則1種類を選ぶ。",
+      "quality_positive": "NVIDIA公式は最大8話者、推奨0.32秒〜30.4秒バッファを記載。モデル本体397MB SafetensorsのXet SHA256公開、NeMo199MBとGGUF107MBも併記。",
+      "quality_negative": "最小80ms入力バッファは実機の推論待ち時間ではない。話者権利/個人情報、NeMo/Transformers ABI、形式間テンソル一致と独立DERの確認は未完了。",
+      "evidence_date": "2026-11-14",
+      "evidence_kind": "publisher_first_party_HF_card_file_hash_and_license_metadata",
+      "evidence_urls": [
+        "https://huggingface.co/nvidia/Nemotron-3-Diarization",
+        "https://huggingface.co/nvidia/Nemotron-3-Diarization/blob/main/model.safetensors",
+        "https://huggingface.co/nvidia/Nemotron-3-Diarization/blob/main/README.md"
+      ],
+      "observed_access": "public_HF_listing_not_authenticated_payload_or_permission",
+      "license_metadata": "openmdw-1.1",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": null,
+      "upstream_model_file": {
+        "path": "model.safetensors",
+        "sha256": "c074d86335b3b794f8fa5edc25594558f128bdb3914d27806a3a5a2e44963cb6",
+        "bytes_exact": null,
+        "display_model_bytes_rounded": 397000000,
+        "original_publisher_hash_only_no_local_reevaluation": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 99200000,
+        "evidence_kind": "official HF parameter metadata or publisher release-checkpoints manifest",
+        "review_date": "2026-11-14",
+        "complete_pipeline_tensor_count_not_locally_verified": true
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 163,
+        "category": "unique_learned_specialist",
+        "scenario_status": "hypothetical_stress_no_confirmed_takedown"
+      },
+      "restriction_assessment": {
+        "observed": "Public model listing and publisher license metadata; no known imminent model-specific removal.",
+        "scenario": "Access or redistribution rules may change, but no probability is measured.",
+        "probability": null
+      },
+      "preservation_bundle": {
+        "learned_outcome": "会話音声から誰がいつ話したかを予測するSortformer/AOSC学習済み重み。ASR・TTSでは代替しない。公開safetensors/NeMo/GGUFは同じ能力の別形式であり原則1種類を選ぶ。",
+        "must_preserve": [
+          "one high-fidelity model.safetensors and config/processor",
+          "LICENSE+README+model evaluation and privacy notices",
+          "pinned C++/NeMo/Transformers code versions"
+        ],
+        "external_learned_and_software_dependencies": [
+          "NVIDIA NeMo or Transformers pinned ABI and processor",
+          "source OpenMDW-1.1 text, privacy notices"
+        ],
+        "excluded_duplicate_or_optional_formats": [
+          "automatic extra NeMo native 199MB and GGUF107MB before proof of independent archival purpose",
+          "voice recordings without consent"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "publisher_rounded_full_repo_bytes": 710000000,
+        "source_bytes_are_not_selected_bytes": true,
+        "selected_file_bytes_final": null,
+        "hw_tested_on_user_machine": false
+      },
+      "falsification_condition": "Source is not an independently trained state, lawful access/rights fail, complete dependency bundle cannot be formed, or measured quality is inadequate in its claimed distinct task.",
+      "selection_budget_cap_bytes": 700000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "download_ready": false,
+      "position": 181
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/RFD4-Proteina",
+      "url": "https://huggingface.co/nvidia/RFD4-Proteina",
+      "group": "分子生物学・独立Flow+Autoencoder",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "構造予測/言語埋込とは異なり配列・全原子構造を生成設計する学習済みFlow+AE原本。2026-10-19のLoRAマージ済みroot 1.74266GBに互換AEを含むため、106GB repoの重複ckptやruntime映像、別2.13TB学習データを全取得しない。",
+      "quality_positive": "配布元release-checkpoints.jsonに435,622,465要素、1,742,660,596bytes、全SHA256、latent32／147 residue classesを記録。モデル本体BSD-3-Clause、オプションのAlphaFold/OpenFold等は別権利。",
+      "quality_negative": "全model directoryが106GBで追加base/adapter・本体と互換性のない旧版・複数native ckptを含む。別々の学習済みpretrained baseとLoRAを研究する場合だけ追加1.75GBを検討。Linux x86-64/Python3.12/CUDA13の作者環境や受益者のHW、refold用oracleは本体から分離する。",
+      "evidence_date": "2026-11-14",
+      "evidence_kind": "publisher_first_party_HF_card_file_hash_and_license_metadata",
+      "evidence_urls": [
+        "https://huggingface.co/nvidia/RFD4-Proteina",
+        "https://huggingface.co/nvidia/RFD4-Proteina/blob/main/release-checkpoints.json",
+        "https://huggingface.co/nvidia/RFD4-Proteina/blob/main/LICENSE",
+        "https://huggingface.co/datasets/nvidia/RFD4-Proteina"
+      ],
+      "observed_access": "public_HF_listing_not_authenticated_payload_or_permission",
+      "license_metadata": "bsd-3-clause",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "cf31b93509df5af854c7f6ad704f5c83c77c0698",
+      "upstream_model_file": {
+        "path": "model.safetensors",
+        "sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0",
+        "bytes_exact": 1742660596,
+        "display_model_bytes_rounded": 1742660596,
+        "original_publisher_hash_only_no_local_reevaluation": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 435622465,
+        "evidence_kind": "official HF parameter metadata or publisher release-checkpoints manifest",
+        "review_date": "2026-11-14",
+        "complete_pipeline_tensor_count_not_locally_verified": true
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 164,
+        "category": "unique_learned_specialist",
+        "scenario_status": "hypothetical_stress_no_confirmed_takedown"
+      },
+      "restriction_assessment": {
+        "observed": "Public model listing and publisher license metadata; no known imminent model-specific removal.",
+        "scenario": "Access or redistribution rules may change, but no probability is measured.",
+        "probability": null
+      },
+      "preservation_bundle": {
+        "learned_outcome": "構造予測/言語埋込とは異なり配列・全原子構造を生成設計する学習済みFlow+AE原本。2026-10-19のLoRAマージ済みroot 1.74266GBに互換AEを含むため、106GB repoの重複ckptやruntime映像、別2.13TB学習データを全取得しない。",
+        "must_preserve": [
+          "root model.safetensors and config.json exact matched publisher checksum",
+          "BSD-3-Clause LICENSE, release-checkpoints.json, provenance.json, README",
+          "official RFD4 runtime source commit/compatible environment"
+        ],
+        "external_learned_and_software_dependencies": [
+          "native root flow and corresponding AE matched latent v32",
+          "official source code and file-verified release-checkpoints.json"
+        ],
+        "excluded_duplicate_or_optional_formats": [
+          "all native ckpt duplicates and 106GB repo",
+          "RFD4 2.13TB training dataset",
+          "optional refolding oracles unless separately selected"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "publisher_rounded_full_repo_bytes": 106000000000,
+        "source_bytes_are_not_selected_bytes": true,
+        "selected_file_bytes_final": null,
+        "hw_tested_on_user_machine": false
+      },
+      "falsification_condition": "Source is not an independently trained state, lawful access/rights fail, complete dependency bundle cannot be formed, or measured quality is inadequate in its claimed distinct task.",
+      "selection_budget_cap_bytes": 4000000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "download_ready": false,
+      "position": 182
+    }
+  ],
+  "not_adopted": [
+    {
+      "repo_id": "IFM/PAN2",
+      "decision": "HOLD_RESEARCH_ONLY",
+      "why": "86.2GB repo, Qwen3.5-9B/Wan2.2 dependent and similar world models; exact files and rights/unique outcome must be compared before 4TB selection"
+    },
+    {
+      "repo_id": "MiniMaxAI/MiniMax-H3-Image",
+      "decision": "HOLD_RESEARCH_ONLY",
+      "why": "204GB multi-format repo and territorial community license; select original vs Pruna trained distillation first"
+    },
+    {
+      "repo_id": "nvidia/RFD4-Proteina",
+      "related_dataset": "nvidia/RFD4-Proteina",
+      "decision": "DO_NOT_ADD_DATASET",
+      "why": "2.13TB original training-data repo not required to run root model and has separate source rights"
+    }
+  ],
+  "download_authorizations_created": 0
+}
