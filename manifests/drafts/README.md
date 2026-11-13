@@ -1,5 +1,7 @@
 # 取得前の固定ファイル案（すべて未承認・旧版を含む）
 
+**現行v32 R57**：[DSpine／Nemotron Diarization／RFD4の固定ソース部分](r57-v32-three-source-scopes.candidate.json)（計23ファイル、6,191,586,316バイト）。主重みの上流公開SHA256を含むが、外部学習済み依存やライセンス等が未確定のため**非実行・非承認**。[調査根拠](../../docs/strategy/57-v32-source-identity-and-packaging-audit.md)。
+
 **すべて未承認です。** 小容量の既存3件は**ダウンローダー安全試験に使う先行固定案**であり、現行v32における最終取得順位ではありません。最新の判断は[v32正本](../../catalog/CURRENT.json)と[v32候補135件](../../queues/proposed-v32-2026-11-14.json)、[依存・保全準備](../../catalog/preparation/2026-11-14-insurance-bundles-v32.json)を参照。 現時点の必要な別資産/ランタイム依存、権利の最終許諾、推論RAM、実機HDD照合は未完了であり、このフォルダーは`queues/approved.json`から参照されない。
 
 | 順位 | 資産 | 完全固定版のファイル数 | 選択バイト数 | 状態 |

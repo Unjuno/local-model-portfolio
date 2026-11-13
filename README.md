@@ -6,6 +6,8 @@
 
 **運用の正本は `main` の `catalog/CURRENT.json`。新たな調査ブランチは作らずmain一本で更新します。**
 
+**R57固定ファイル監査（11月14日）**：[3専門モデルの正確なソース部分23ファイル・6,191,586,316バイト](docs/strategy/57-v32-source-identity-and-packaging-audit.md)／[機械可読の公開元SHA・容量](catalog/research/2026-11-14-r57-v32-frozen-source-scopes.json)／[非実行の取得前候補](manifests/drafts/r57-v32-three-source-scopes.candidate.json)。外部依存・権利・実機容量は未確定、取得承認0。
+
 **現行の正本**：[v32／182資産（モデル156・データ26）](catalog/effective-portfolio-2026-11-14-v32.json)。SELECT53・CONDITIONAL82・HOLD28・DEFERRED13・EXCLUDED6、[有効135件の取得前キュー](queues/proposed-v32-2026-11-14.json)と[同135件の依存準備](catalog/preparation/2026-11-14-insurance-bundles-v32.json)が対応。[今回のDSpine/Nemotron/RFD4選定](docs/strategy/56-v32-small-specialist-selection-2026-11-14.md)。**すべて未承認で、本体DLは未実施。**
 
 **歴史資料v31の選定構成**：[v31の179資産](catalog/effective-portfolio-2026-11-13-v31.json)（SELECT53・CONDITIONAL79・HOLD28・DEFERRED13・EXCLUDED6）／[132件の承認前キュー](queues/proposed-v31-2026-11-13.json)／[132件の依存準備](catalog/preparation/2026-11-13-insurance-bundles-v31.json)。[Gated監査](catalog/access/2026-11-13-v31-conditional-hub-gates.json)は条件付き79件のみ対象。正式取得承認は0件。**

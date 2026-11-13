@@ -2,6 +2,8 @@
 
 ## 現行正本（main・v32／2026-11-14）
 
+**R57現在の保存準備成果**：[公開元の固定ファイル23件と容量・SHA](research/2026-11-14-r57-v32-frozen-source-scopes.json)／[非実行の候補スコープ](../manifests/drafts/r57-v32-three-source-scopes.candidate.json)／[権利と重複の判断](../docs/strategy/57-v32-source-identity-and-packaging-audit.md)。182件の正式採否は変更なし。
+
 [CURRENT.json](CURRENT.json)がv32を指定する。**182資産（モデル156／データ26）、SELECT53、CONDITIONAL82、HOLD28、DEFERRED13、EXCLUDED6**。[全件](effective-portfolio-2026-11-14-v32.json)／[非実行135件取得候補](../queues/proposed-v32-2026-11-14.json)／[135件の依存](preparation/2026-11-14-insurance-bundles-v32.json)／[CONDITIONAL82件の公開メタデータ](access/2026-11-14-v32-conditional-hub-gates.json)／[追加採否](revisions/v32-2026-11-14.json)。
 
 **旧v31の179資産はすべて採否を変えず保持**。v32にDSpine・NVIDIA Diarization・RFD4の独立学習済み原本を3件追加。これらを通常の別精度コピーとみなさない。新しい3件も取得許可0。
