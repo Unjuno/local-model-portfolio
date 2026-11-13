@@ -1,0 +1,332 @@
+{
+  "schema_version": 1,
+  "revision_id": "v3-risk-focus-proposal-20261030",
+  "prepared_on": "2026-10-30",
+  "status": "proposal_not_applied_to_catalog_CURRENT",
+  "based_on_revision": "v2-20261030",
+  "purpose": "制限・Gated化・ライセンス変更の実証と利用規制シナリオを分け、再取得困難になり得る固有モデルを選ぶ。単なる用途網羅ではない。",
+  "selection_order": [
+    "concrete_access_or_license_restriction",
+    "documented_provider_policy_change",
+    "plausible_regulation_scenario_labeled_inference",
+    "unique_training_and_weight_preservation_value",
+    "legal_rights_and_machine_fit"
+  ],
+  "replacement_operations": [],
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "fishaudio/s1-mini",
+      "url": "https://huggingface.co/fishaudio/s1-mini",
+      "risk_tier": "R0",
+      "portfolio_decision": "conditional",
+      "reason_selected": "0.5B蒸留TTS重み。多言語の感情・話し方制御を原系列から独立して保存。既存のQwen-TTS等とは学習済み成果・codecが異なり、音声アイデンティティ関連の研究比較に価値。",
+      "risk_and_alternative_assessment": "観測:Gated、ファイルアクセス前に連絡先共有と条件同意が必要、Hub上NC-SA。将来の削除や法的規制は未発表。声の無断模倣に関する権利・誤用のシナリオは推論。",
+      "required_dependencies_note": "元配布者のGated同意とCC-BY-NC-SA本文。model.pthとcodec.pthの別依存、pickle実行禁止。本人同意のない声生成をしない。",
+      "observed_access": "gated",
+      "license_metadata": "cc-by-nc-sa-4.0",
+      "evidence_urls": [
+        "https://huggingface.co/fishaudio/s1-mini",
+        "https://huggingface.co/fishaudio/s1-mini/tree/main",
+        "https://github.com/fishaudio/fish-speech"
+      ],
+      "evidence_date": "2026-10-30",
+      "evidence_kind": "first_party_publisher_model_card_license_and_source_code",
+      "upstream_revision_sha_observed": null,
+      "upstream_all_files_bytes_observed": null,
+      "upstream_all_files_are_selected": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "model_quality_independently_tested": false,
+      "download_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "fishaudio/drama-3",
+      "url": "https://huggingface.co/fishaudio/drama-3",
+      "risk_tier": "R0",
+      "portfolio_decision": "conditional",
+      "reason_selected": "2026年10月公開の35B-A3B級音声生成モデル。複数話者会話・長文保持・音声の部分編集と自然言語での修正という独立学習済み機能を持ち、S2-Proの単純量子化では復元できない可能性。",
+      "risk_and_alternative_assessment": "観測:公開ウェイト、配布元LICENSEはFish Audio Community License 1.0 (2026-10-13)、収益/サービス種別で別途商用許諾と本人の同意が必要。HFページのライセンス欄はresearch-license表示も見られ、本文との表示不一致を確認する。将来規制は仮説。",
+      "required_dependencies_note": "モデル重み・codec/processor・推論コードを固定。LICENSEを個別審査、ホスティング/商用可否と声の同意条件を確認。HFメタデータ表示とLICENSE本文の差異を解消する。",
+      "observed_access": "public",
+      "license_metadata": "other / license_metadata_discrepancy",
+      "evidence_urls": [
+        "https://huggingface.co/fishaudio/drama-3",
+        "https://huggingface.co/fishaudio/drama-3/blob/main/LICENSE",
+        "https://github.com/fishaudio/fish-speech",
+        "https://fish.audio/ja/blog/fish-audio-drama-3/"
+      ],
+      "evidence_date": "2026-10-30",
+      "evidence_kind": "first_party_publisher_model_card_license_and_source_code",
+      "upstream_revision_sha_observed": null,
+      "upstream_all_files_bytes_observed": null,
+      "upstream_all_files_are_selected": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "model_quality_independently_tested": false,
+      "download_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "stabilityai/stable-audio-open-1.0",
+      "url": "https://huggingface.co/stabilityai/stable-audio-open-1.0",
+      "risk_tier": "R0",
+      "portfolio_decision": "conditional",
+      "reason_selected": "環境音・効果音のDiT拡散生成。既存YuE2の音楽生成やQwen-TTSの人声生成とは異なる音源生成系列。権利条件を満たす場合のみ研究用原本保全を検討。",
+      "risk_and_alternative_assessment": "観測:Gated、Stable Audio Community Licenseへの同意必須、商用案内は別。将来の配布停止は未確認。音声著作権への配慮はモデル削除の確証ではない。",
+      "required_dependencies_note": "ライセンス同意、重み/Autoencoder/T5/runtime、フォーマット重複の照合。利用条件に反する配布や生成素材の使用は禁止。",
+      "observed_access": "gated",
+      "license_metadata": "stable-audio-community",
+      "evidence_urls": [
+        "https://huggingface.co/stabilityai/stable-audio-open-1.0",
+        "https://huggingface.co/stabilityai/stable-audio-open-1.0/tree/main",
+        "https://huggingface.co/stabilityai/stable-audio-open-1.0/blob/main/LICENSE.md"
+      ],
+      "evidence_date": "2026-10-30",
+      "evidence_kind": "first_party_publisher_model_card_license_and_source_code",
+      "upstream_revision_sha_observed": null,
+      "upstream_all_files_bytes_observed": null,
+      "upstream_all_files_are_selected": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "model_quality_independently_tested": false,
+      "download_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ByteDance/LatentSync-1.6",
+      "url": "https://huggingface.co/ByteDance/LatentSync-1.6",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "既存の動画生成とは異なる、音声に合わせて既存顔映像の口元を修正する専用重み。LatentSync 1.5より512x512データを用いた別チェックポイントであり、非同意の人物動画合成に関する利用条件の変化が研究上の監視対象。",
+      "risk_and_alternative_assessment": "観測:公式HF公開、openrail++表示、官方GitHubは1.6を現行リリースと記載。違法ななりすまし規制の適用可能性は用途依存で、モデル重みの配布禁止を示す証拠はない。実際の利用禁止条項は未精読。",
+      "required_dependencies_note": "配布元の実ライセンス、人物の同意・プライバシー保護、Whisper/Stable Diffusion/SyncNet補助依存、pt/Pickle隔離、512解像度と実行バックエンドを確認。",
+      "observed_access": "public",
+      "license_metadata": "openrail++",
+      "evidence_urls": [
+        "https://huggingface.co/ByteDance/LatentSync-1.6",
+        "https://github.com/bytedance/LatentSync",
+        "https://arxiv.org/abs/2412.09262"
+      ],
+      "evidence_date": "2026-10-30",
+      "evidence_kind": "first_party_publisher_model_card_license_and_source_code",
+      "upstream_revision_sha_observed": null,
+      "upstream_all_files_bytes_observed": null,
+      "upstream_all_files_are_selected": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "model_quality_independently_tested": false,
+      "download_approved": false
+    },
+    {
+      "evidence_date": "2026-10-31",
+      "evidence_kind": "publisher_primary_model_page_and_public_weight_processing_code",
+      "upstream_revision_sha_observed": null,
+      "upstream_all_files_bytes_observed": null,
+      "upstream_all_files_are_selected": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "model_quality_independently_tested": false,
+      "download_approved": false,
+      "asset_kind": "model",
+      "repo_id": "kyutai/pocket-tts",
+      "url": "https://huggingface.co/kyutai/pocket-tts",
+      "risk_tier": "R0",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Kyutai 100M級CPU推論TTS。Gated原本は任意の合法な参照音声からの声特徴抽出に必要なMimi encoderを持つ。配布者自身のremove_voice_cloning_and_push.pyではmimi.encoderで始まる重みをゼロにして非Gated版を作成。従って無効化された重みを公開版だけから逆算して再構築できず、機能制限別の原本保全という固有価値がある。",
+      "risk_and_alternative_assessment": "観測: Gated配布、連絡先共有と禁止用途への同意が必要。対照としてkyutai/pocket-tts-without-voice-cloningを公開。CC-BY-4.0モデル表示と公式記事内のMIT表現はコード/重みの対象が異なる可能性があるため区別を精査。これは現在の配布管理の事実だが、将来の法的禁止・削除予定を意味しない。",
+      "required_dependencies_note": "正規HF Gated承認、mimi.encoderの有無の独立比較、tokenizer.model、tts_*.safetensors、対応Pocket-TTSランタイム版。英語本体と他言語版の選択・声サンプルの本人同意、predefined voice個別ライセンス、容量と完全SHAを確認。",
+      "observed_access": "gated",
+      "license_metadata": "cc-by-4.0 (HF model card) plus prohibited-use gate",
+      "evidence_urls": [
+        "https://huggingface.co/kyutai/pocket-tts",
+        "https://huggingface.co/kyutai/pocket-tts/tree/main",
+        "https://huggingface.co/kyutai/pocket-tts-without-voice-cloning",
+        "https://huggingface.co/kyutai/pocket-tts-without-voice-cloning/blob/main/remove_voice_cloning_and_push.py",
+        "https://kyutai.org/pocket-tts-technical-report/"
+      ],
+      "evidence_note": "publisher-origin script explicitly zeroes mimi.encoder; strongest observed access/feature split evidence in this round",
+      "priority_relative": "high_review_priority_not_download_urgency"
+    },
+    {
+      "evidence_date": "2026-10-31",
+      "evidence_kind": "publisher_primary_model_page_and_public_weight_processing_code",
+      "upstream_revision_sha_observed": null,
+      "upstream_all_files_bytes_observed": null,
+      "upstream_all_files_are_selected": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "model_quality_independently_tested": false,
+      "download_approved": false,
+      "asset_kind": "model",
+      "repo_id": "GuidenAI/genpio_voice",
+      "url": "https://huggingface.co/GuidenAI/genpio_voice",
+      "risk_tier": "R0",
+      "portfolio_decision": "conditional",
+      "reason_selected": "単独提供者が104言語の音声複製/合成に対応すると説明する約0.6B級モデル。配布者は既存重みを受け継がず共同学習したと主張し、仮に真なら既存Fish/Qwen重みから同じ学習成果を復元できない。広い多言語範囲は配布者の主張であり実測・独立評価は行っていない。",
+      "risk_and_alternative_assessment": "観測: HFページで個人/組織の身元と用途の手動審査、承認取り消し可能、商用権別契約と明記。独自のGenpio Voices Model License。将来の規制や停止は未確認。現時点で実際にアクセス可能なmodel.safetensors、正確なファイルハッシュ、学習原本性、許諾本文の確認が不十分なので取得許可しない。",
+      "required_dependencies_note": "正規の手動承認手順、モデルの実在・ファイルツリー/完全revision、ライセンス本文と第三者データ由来、DAC/OmniVoice依存、利用条件・声の同意。承認されない場合は保留し代理取得やミラー回避をしない。",
+      "observed_access": "manual_gated",
+      "license_metadata": "genpio-voices-model-license",
+      "evidence_urls": [
+        "https://huggingface.co/GuidenAI/genpio_voice",
+        "https://huggingface.co/GuidenAI/genpio_voice?hardware=t10",
+        "https://genpio.com/technology"
+      ],
+      "evidence_note": "publisher-controlled manual gate with revocation; model provenance and existence not independently validated",
+      "priority_relative": "access_restriction_high_confidence_model_integrity_uncertain"
+    }
+  ],
+  "deferred_prior_candidates": [
+    {
+      "repo_id": "pyannote/speaker-diarization-community-1",
+      "previous_tier": "R0",
+      "previous_decision": "conditional",
+      "new_state": "screened_out_watch_only",
+      "reason": "配布者自身が『常に無料公開』と表明。現Gatedは連絡先/利用条件の確認であり、公開停止の兆候とは区別。"
+    },
+    {
+      "repo_id": "microsoft/aurora",
+      "previous_tier": "R1",
+      "previous_decision": "select",
+      "new_state": "screened_out_watch_only",
+      "reason": "独自の専門能力はあるが、制限に向かう具体的根拠がなく、規制・再取得リスク主目的での当面の上位採用には適さない。"
+    },
+    {
+      "repo_id": "boltz-community/boltz-2",
+      "previous_tier": "R1",
+      "previous_decision": "conditional",
+      "new_state": "screened_out_watch_only",
+      "reason": "生命科学だがモデルの配布規制との具体的因果が未確認。配布条件に変化があれば再審査。"
+    },
+    {
+      "repo_id": "ibm-nasa-geospatial/Prithvi-EO-2.0-300M-TL",
+      "previous_tier": "R1",
+      "previous_decision": "select",
+      "new_state": "screened_out_watch_only",
+      "reason": "独自の専門能力はあるが、制限に向かう具体的根拠がなく、規制・再取得リスク主目的での当面の上位採用には適さない。"
+    },
+    {
+      "repo_id": "facebook/sam2.1-hiera-small",
+      "previous_tier": "R2",
+      "previous_decision": "select",
+      "new_state": "screened_out_watch_only",
+      "reason": "独自の専門能力はあるが、制限に向かう具体的根拠がなく、規制・再取得リスク主目的での当面の上位採用には適さない。"
+    },
+    {
+      "repo_id": "depth-anything/Depth-Anything-V2-Small-hf",
+      "previous_tier": "R1",
+      "previous_decision": "select",
+      "new_state": "screened_out_watch_only",
+      "reason": "独自の専門能力はあるが、制限に向かう具体的根拠がなく、規制・再取得リスク主目的での当面の上位採用には適さない。"
+    }
+  ],
+  "watch_only": [
+    {
+      "repo_id": "coqui/XTTS-v2",
+      "url": "https://huggingface.co/coqui/XTTS-v2",
+      "status": "watch_only",
+      "observed": "公開、Coqui Public Model License（非商用用途）。音声複製機能はあるが広範に配布・利用されており、同条件をもつ新しいFishモデルを先に審査。",
+      "unknown": "再配布状況、原重みの固有性、改訂の固定"
+    },
+    {
+      "repo_id": "fishaudio/s2-pro",
+      "url": "https://huggingface.co/fishaudio/s2-pro",
+      "status": "watch_only",
+      "observed": "公開、Fish Audio Research License（商用は別契約）。Drama3と同一系列だがサイズ・学習版は別。",
+      "unknown": "Drama3と独立保全すべき価値とライセンス本文"
+    },
+    {
+      "repo_id": "moonshotai/Kimi-K3",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "status": "hardware_hold_risk_watch",
+      "observed": "2026年のKimi K3カスタムライセンスには収益規模に応じたMaaS別契約要件。2.78T総パラメータ。",
+      "unknown": "現行512GBピークRAM基準では3/4bit重みだけで超過するため採用不可。将来の別ハード構成で再審査。",
+      "evidence_url": "https://github.com/MoonshotAI/Kimi-K3/blob/main/LICENSE"
+    },
+    {
+      "repo_id": "Qwen/Qwen3.8-2.4T-A95B",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+      "status": "hardware_hold_risk_watch",
+      "observed": "2026年公開のQwen3.8-Max独自ライセンスには一定規模のMaaS等で別契約要件。2.446T総パラメータ。",
+      "unknown": "現行512GBピークRAM基準では3/4bit重みだけで超過。完全ファイル/最適化可能性は未判定。",
+      "evidence_url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B/blob/main/LICENSE"
+    },
+    {
+      "repo_id": "sesame/csm-1b",
+      "url": "https://huggingface.co/sesame/csm-1b",
+      "status": "watch_only_existing_mirrors",
+      "observed": "公開モデルカードはGated・Apache-2.0。話者条件付き音声合成重みが実際に存在するが、複数の公開代替配布・変換版があり、現時点の回復不能性がKyutaiのエンコーダ差分ほど高くない。",
+      "next_gate": "公式の重み/ミラー同一性と利用条件の違いを検証し、独自重みが失われる証拠があれば昇格。",
+      "evidence_urls": [
+        "https://huggingface.co/sesame/csm-1b",
+        "https://huggingface.co/sesame/csm-1b/tree/main",
+        "https://huggingface.co/unsloth/csm-1b"
+      ]
+    },
+    {
+      "repo_id": "canopylabs/orpheus-3b-0.1-ft",
+      "url": "https://huggingface.co/canopylabs/orpheus-3b-0.1-ft",
+      "status": "watch_only_existing_derivatives",
+      "observed": "Gated・Apache-2.0、Llama系音声生成の3B級後学習済み重み。ただし多数の量子化・派生版があるため規制/供給リスク主目的の緊急度は下げる。",
+      "next_gate": "元モデルと派生/ミラーのハッシュと再入手可能性を検証し、独自微調整重みを唯一保存する必要性を確認。",
+      "evidence_urls": [
+        "https://huggingface.co/canopylabs/orpheus-3b-0.1-ft",
+        "https://huggingface.co/canopylabs/orpheus-3b-0.1-ft/tree/main"
+      ]
+    },
+    {
+      "repo_id": "kyutai/pocket-tts-without-voice-cloning",
+      "url": "https://huggingface.co/kyutai/pocket-tts-without-voice-cloning",
+      "status": "reference_only_not_separate_adoption",
+      "observed": "KyutaiがMimi.encoder重みをゼロにして公開した非Gated比較版。gated原本の差分を証明する対照資産。",
+      "next_gate": "無効化された重み以外が同一か同一revision/モデル系列で比較。ファイルコピーの重複には予算を割かない。",
+      "evidence_urls": [
+        "https://huggingface.co/kyutai/pocket-tts-without-voice-cloning/blob/main/remove_voice_cloning_and_push.py"
+      ]
+    }
+  ],
+  "proposed_counts": {
+    "new": 6,
+    "R0": 5,
+    "R1": 1,
+    "R2": 0,
+    "conditional": 6,
+    "select": 0,
+    "tracked_after_apply": 116,
+    "active_after_apply": 100
+  },
+  "hard_limits": {
+    "archive_bytes": 3800000000000,
+    "minimum_free_bytes": 200000000000,
+    "estimated_peak_ram_bytes_exclusive": 512000000000
+  },
+  "capacity_note": "No selected files have been fixed. Exact sizes, 40-character revisions, hashes and all dependencies are unknown for these proposals. Do not infer disk/RAM eligibility from model card size alone.",
+  "policy_note": "EU AI Act is not a blanket ban on open-weight models. These are exposure scenarios, not confirmed upcoming model bans. License/gated restrictions are distinct from government regulation.",
+  "approval_note": "No model retrieval, license acceptance, execution, user-data collection, changes to catalog/CURRENT.json or queues/approved.json. Promotion of candidate not equivalent to authorization.",
+  "updated_on": "2026-10-31",
+  "review_round": "access-gating-and-weight-differential-audit",
+  "excluded_no_weights": [
+    {
+      "repo_id": "alignedsi/Aligned-1",
+      "url": "https://huggingface.co/alignedsi/Aligned-1",
+      "status": "exclude_until_weights_exist",
+      "observed": "2026-10の配布者カードが明示的に「重みはまだ公開していない」と記載。Gatedページの存在だけで保存可能と判断してはいけない。",
+      "evidence_url": "https://huggingface.co/alignedsi/Aligned-1"
+    }
+  ],
+  "confidence_note": "Priority levels describe investigation order, not estimated probability of future legal regulation or removal. Distinguish access terms from actual government controls. All approvals remain false."
+}

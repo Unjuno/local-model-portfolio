@@ -1,0 +1,158 @@
+{
+  "asset_kind": "model",
+  "repo_id": "autogluon/chronos-2",
+  "portfolio_decision": "select",
+  "observed_at_utc": "2026-11-06T04:42:38.143604+00:00",
+  "evidence_kind": "anonymous_publisher_api_metadata_not_local_payload_measurement",
+  "download_authorized": false,
+  "payload_bytes_downloaded": 0,
+  "tree_complete": true,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 1519,
+      "sha256": null,
+      "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "README.md",
+      "bytes": 7774,
+      "sha256": null,
+      "git_blob_sha1": "ba74254c22542ab400ac2ff7b85eefc1a8f37027",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "config.json",
+      "bytes": 1067,
+      "sha256": null,
+      "git_blob_sha1": "f3207394965100a2aa18820b87da3d2bbad3b1f0",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "model.safetensors",
+      "bytes": 477930472,
+      "sha256": "ddcda3c7508bf2528087723e98a20707cc04b7f370ae275a9fd88078ddba4f42",
+      "git_blob_sha1": "583070cca6b6f539b3d712c517ebbc0893cb754a",
+      "identity_kind": "lfs_payload_sha256",
+      "local_hash_verified": false
+    }
+  ],
+  "source_scope_bytes": 477940832,
+  "selected_files_bytes": null,
+  "complete_dependency_bytes": null,
+  "runtime_peak_ram_bytes": null,
+  "local_reuse_verified": false,
+  "prior_observed_access": "public",
+  "prior_revision": "60088152a34e242427b44c3100014473a0157d53",
+  "requested_artifact": null,
+  "required_dependencies_note": "独自評価セットと季節性・欠測データへの適応・CPU実行を検証。",
+  "parameter_gate_status": "PASS_TOTAL_PARAMS_LT_150B",
+  "source_api_url": "https://huggingface.co/api/models/autogluon/chronos-2",
+  "head_revision_observed": "60088152a34e242427b44c3100014473a0157d53",
+  "pinned_revision": "60088152a34e242427b44c3100014473a0157d53",
+  "pinned_revision_origin": "head_observed_for_capacity_only_not_selection_approval",
+  "gated": false,
+  "private": false,
+  "license_metadata": "apache-2.0",
+  "metadata_sha256": "46b354873ab013d04e913dfc40b79b449dc05f4081991a5e44b92f692c9f003d",
+  "last_modified": "2026-06-05T11:59:59.000Z",
+  "architecture_metadata": {
+    "architectures": [
+      "Chronos2Model"
+    ],
+    "model_type": "t5"
+  },
+  "parameter_metadata": {
+    "parameters": {
+      "F32": 119477664
+    },
+    "total": 119477664
+  },
+  "source_scope": "repository_all_files_not_selection",
+  "file_count": 4,
+  "documentation": [
+    {
+      "path": "README.md",
+      "url": "https://huggingface.co/autogluon/chronos-2/raw/60088152a34e242427b44c3100014473a0157d53/README.md",
+      "observed_bytes": 7774,
+      "sha256": "bf2c0a3320652b8f3c31cd06953dad3e7891368de7307001d80882c3075ca244",
+      "repo_reference_leads_not_verified_dependencies": [
+        "amazon/chronos-2",
+        "datasets/Salesforce",
+        "datasets/autogluon",
+        "spaces/Salesforce",
+        "spaces/autogluon"
+      ],
+      "card_text_archived": false
+    },
+    {
+      "path": "config.json",
+      "url": "https://huggingface.co/autogluon/chronos-2/raw/60088152a34e242427b44c3100014473a0157d53/config.json",
+      "observed_bytes": 1067,
+      "sha256": "ef1143bfdc9c0376d9a056eefca46cb4b1ec3d0ffacd541ff56feb40fb708031",
+      "json": {
+        "architectures": [
+          "Chronos2Model"
+        ],
+        "chronos_config": {
+          "context_length": 8192,
+          "input_patch_size": 16,
+          "input_patch_stride": 16,
+          "max_output_patches": 64,
+          "output_patch_size": 16,
+          "quantiles": [
+            0.01,
+            0.05,
+            0.1,
+            0.15,
+            0.2,
+            0.25,
+            0.3,
+            0.35,
+            0.4,
+            0.45,
+            0.5,
+            0.55,
+            0.6,
+            0.65,
+            0.7,
+            0.75,
+            0.8,
+            0.85,
+            0.9,
+            0.95,
+            0.99
+          ],
+          "time_encoding_scale": 8192,
+          "use_arcsinh": true,
+          "use_reg_token": true
+        },
+        "chronos_pipeline_class": "Chronos2Pipeline",
+        "d_ff": 3072,
+        "d_kv": 64,
+        "d_model": 768,
+        "dense_act_fn": "relu",
+        "dropout_rate": 0.1,
+        "feed_forward_proj": "relu",
+        "initializer_factor": 0.05,
+        "is_gated_act": false,
+        "layer_norm_epsilon": 1e-06,
+        "model_type": "t5",
+        "num_heads": 12,
+        "num_layers": 12,
+        "pad_token_id": 0,
+        "reg_token_id": 1,
+        "rope_theta": 10000.0,
+        "torch_dtype": "float32",
+        "transformers_version": "4.49.0",
+        "use_cache": true,
+        "vocab_size": 2
+      }
+    }
+  ],
+  "metadata_change_requires_review": false
+}

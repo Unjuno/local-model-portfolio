@@ -1,0 +1,107 @@
+name: Audit new on-device TTS and region-limited pretrain weights (read-only)
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - '.github/workflows/research-round27.yml'
+      - 'scripts/research_nov6_round27.py'
+      - 'tests/test_research_nov6_round27.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-round27-metadata-risk-only
+  cancel-in-progress: false
+jobs:
+  inspect:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Existing v25 and scope invariants
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          load=lambda p:json.loads(Path(p).read_text())
+          c=load('catalog/CURRENT.json')
+          x=load(c['materialized_catalog_path'])
+          y=load(c['priority_worklist_path'])
+          s=load('catalog/capacity/2026-11-06/v25/capacity-summary.json')
+          assert c['revision_id']=='v25-20261106' and c['expected']['tracked']==169 and c['expected']['active']==122
+          assert len(x['items'])==169 and len(y['candidates'])==122
+          assert s['exact_primary_file_scope_count']==122 and s['unresolved_primary_scope_count']==0
+          assert s['known_scope_content_union_bytes']==3_372_065_984_104
+          assert not y['download_enabled'] and not y['approved']
+          assert not load('queues/approved.json')['entries']
+          PY
+          python -m unittest discover -s tests -p test_research_nov6_round27.py -v
+      - name: Obtain bounded public metadata only
+        run: python -m scripts.research_nov6_round27
+      - name: Audit source rights, entire regression and immutable catalog
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json,re,hashlib,subprocess,sys
+          load=lambda p:json.loads(Path(p).read_text())
+          base=Path('catalog/research/2026-11-06-round27')
+          r=load(base/'research.json')
+          assert r['source_revision']=='v25-20261106'
+          assert r['catalog_changed'] is False and r['download_authorized'] is False
+          assert r['weight_payloads_downloaded']==0 and r['owner_disk_measured'] is False
+          assert len(r['records'])==5
+          assert r['cosmos_sim_auto_comparison']['changed_6_transformer_shards']
+          assert len(r['cosmos_sim_auto_comparison']['changed_6_transformer_shards'])==6
+          for x in r['records']:
+              assert not x['download_authorized'] and not x['personal_access_verified']
+              assert x['source_is_not_selected_file_bytes']
+              if x['tree_complete']:
+                  assert len(x['source_revision'])==40 and x['source_scope_bytes']>0
+              if x['repo_id']=='gradium/phonon-40m-multilingual':
+                  assert x['decision']=='S1_GATED_RESEARCH_NOT_ACQUISITION_AUTHORIZED'
+              if x['repo_id']=='baidu/ERNIE-5.5-Flash-Base':
+                  assert x['decision']=='S1_OVERSIZED_RESTRICTED_REGION_RESEARCH_ONLY'
+          a=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],capture_output=True,text=True)
+          if a.returncode:print(a.stdout+a.stderr);raise SystemExit(a.returncode)
+          for p in ('scripts/check_parameter_cutoff.py','scripts/audit_selection_decisions.py'):
+              subprocess.run([sys.executable,p],check=True)
+          log=a.stdout+a.stderr
+          n=int(re.search(r'Ran (\d+) tests',log).group(1))
+          state={'source_revision':'v25-20261106','research_objects':len(r['records']),
+             'complete_public_source_trees':sum(x['tree_complete'] is True for x in r['records']),
+             'partial_or_gated_sources':[x['repo_id'] for x in r['records'] if x['tree_complete'] is not True],
+             'all_six_cosmos_transformer_shards_distinct':True,'shared_vae_verified':True,
+             'full_tests_passed':True,'test_count':n,'parameter_and_selection_audits_passed':True,
+             'effective_catalog_not_changed':True,'owner_disk_unmeasured':True,
+             'weights_downloaded':0,'download_approved':False,
+             'test_log_sha256':hashlib.sha256(log.encode()).hexdigest()}
+          (base/'verification.json').write_text(json.dumps(state,ensure_ascii=False,indent=2)+'\n')
+          print(json.dumps(state,ensure_ascii=False,indent=2))
+          PY
+      - name: Commit only research data under lease to risk branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          test "$(git ls-remote origin "$GITHUB_REF" | cut -f1)" = "$GITHUB_SHA"
+          git add -- catalog/research/2026-11-06-round27
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'research: pin Phonon / ERNIE model availability and VibeVoice tokenizer source [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD

@@ -1,0 +1,189 @@
+{
+  "asset_kind": "model",
+  "repo_id": "Qwen/Qwen2.5-1.5B",
+  "portfolio_decision": "research_only",
+  "observed_at_utc": "2026-11-06T13:36:58.570762+00:00",
+  "evidence_kind": "anonymous_publisher_api_metadata_not_local_payload_measurement",
+  "download_authorized": false,
+  "payload_bytes_downloaded": 0,
+  "tree_complete": true,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 1519,
+      "sha256": null,
+      "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "identity_kind": "git_blob_sha1",
+      "payload_hash_masked": false,
+      "local_hash_verified": false
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11343,
+      "sha256": null,
+      "git_blob_sha1": "6634c8cc3133b3848ec74b9f275acaaa1ea618ab",
+      "identity_kind": "git_blob_sha1",
+      "payload_hash_masked": false,
+      "local_hash_verified": false
+    },
+    {
+      "path": "README.md",
+      "bytes": 3850,
+      "sha256": null,
+      "git_blob_sha1": "b2861f7da85a5af5e321b57c7bbf98ae17255992",
+      "identity_kind": "git_blob_sha1",
+      "payload_hash_masked": false,
+      "local_hash_verified": false
+    },
+    {
+      "path": "config.json",
+      "bytes": 684,
+      "sha256": null,
+      "git_blob_sha1": "169d606d5cf502a5628a52381586679a6d0caaab",
+      "identity_kind": "git_blob_sha1",
+      "payload_hash_masked": false,
+      "local_hash_verified": false
+    },
+    {
+      "path": "generation_config.json",
+      "bytes": 138,
+      "sha256": null,
+      "git_blob_sha1": "cbbb3133034e192527e5321b4c679154e4819ab8",
+      "identity_kind": "git_blob_sha1",
+      "payload_hash_masked": false,
+      "local_hash_verified": false
+    },
+    {
+      "path": "merges.txt",
+      "bytes": 1671839,
+      "sha256": null,
+      "git_blob_sha1": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0",
+      "identity_kind": "git_blob_sha1",
+      "payload_hash_masked": false,
+      "local_hash_verified": false
+    },
+    {
+      "path": "model.safetensors",
+      "bytes": 3087467144,
+      "sha256": "a961db72e75d52b18e6b0c9d379e51a26973b233385e0e127fdda7d648aec796",
+      "git_blob_sha1": "de4b04359b427ed291b005f62b749531d45e3e5f",
+      "identity_kind": "lfs_payload_sha256",
+      "payload_hash_masked": false,
+      "local_hash_verified": false
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 7031645,
+      "sha256": null,
+      "git_blob_sha1": "443909a61d429dff23010e5bddd28ff530edda00",
+      "identity_kind": "git_blob_sha1",
+      "payload_hash_masked": false,
+      "local_hash_verified": false
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 7228,
+      "sha256": null,
+      "git_blob_sha1": "ba7e4c5637b9732dadcd66286ce48334e8b31e9e",
+      "identity_kind": "git_blob_sha1",
+      "payload_hash_masked": false,
+      "local_hash_verified": false
+    },
+    {
+      "path": "vocab.json",
+      "bytes": 2776833,
+      "sha256": null,
+      "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "identity_kind": "git_blob_sha1",
+      "payload_hash_masked": false,
+      "local_hash_verified": false
+    }
+  ],
+  "source_scope_bytes": 3098972223,
+  "selected_files_bytes": null,
+  "complete_dependency_bytes": null,
+  "runtime_peak_ram_bytes": null,
+  "local_reuse_verified": false,
+  "prior_observed_access": null,
+  "prior_revision": null,
+  "requested_artifact": null,
+  "required_dependencies_note": null,
+  "parameter_gate_status": null,
+  "source_api_url": "https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B",
+  "head_revision_observed": "8faed761d45a263340a0528343f099c05c9a4323",
+  "pinned_revision": "8faed761d45a263340a0528343f099c05c9a4323",
+  "pinned_revision_origin": "existing_explicit_pin",
+  "gated": false,
+  "private": false,
+  "license_metadata": "apache-2.0",
+  "metadata_sha256": "2cf27ede0fc7adf5bbdca5a6eac02f040107f5adca4bc3daf59156502b272272",
+  "last_modified": "2024-10-08T10:56:50.000Z",
+  "architecture_metadata": {
+    "architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "model_type": "qwen2",
+    "tokenizer_config": {
+      "bos_token": null,
+      "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n",
+      "eos_token": "<|endoftext|>",
+      "pad_token": "<|endoftext|>",
+      "unk_token": null
+    }
+  },
+  "parameter_metadata": {
+    "parameters": {
+      "BF16": 1543714304
+    },
+    "total": 1543714304
+  },
+  "source_scope": "repository_all_files_not_selection",
+  "file_count": 10,
+  "documentation": [
+    {
+      "path": "README.md",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B/raw/8faed761d45a263340a0528343f099c05c9a4323/README.md",
+      "observed_bytes": 3850,
+      "sha256": "84cc3bdbfd781149913126b70981cf1e341176fe4bc9d878601a83f18b035ddf",
+      "repo_reference_leads_not_verified_dependencies": [
+        "Qwen/Qwen2.5-1.5B"
+      ],
+      "card_text_archived": false
+    },
+    {
+      "path": "config.json",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B/raw/8faed761d45a263340a0528343f099c05c9a4323/config.json",
+      "observed_bytes": 684,
+      "sha256": "0e8c8aa86468aba09c9d32157ff4bc2301c7e6c50e4398960425b2ea71e66f77",
+      "json": {
+        "architectures": [
+          "Qwen2ForCausalLM"
+        ],
+        "attention_dropout": 0.0,
+        "bos_token_id": 151643,
+        "eos_token_id": 151643,
+        "hidden_act": "silu",
+        "hidden_size": 1536,
+        "initializer_range": 0.02,
+        "intermediate_size": 8960,
+        "max_position_embeddings": 131072,
+        "max_window_layers": 28,
+        "model_type": "qwen2",
+        "num_attention_heads": 12,
+        "num_hidden_layers": 28,
+        "num_key_value_heads": 2,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "sliding_window": 131072,
+        "tie_word_embeddings": true,
+        "torch_dtype": "bfloat16",
+        "transformers_version": "4.40.1",
+        "use_cache": true,
+        "use_mrope": false,
+        "use_sliding_window": false,
+        "vocab_size": 151936
+      }
+    }
+  ],
+  "metadata_change_requires_review": false
+}

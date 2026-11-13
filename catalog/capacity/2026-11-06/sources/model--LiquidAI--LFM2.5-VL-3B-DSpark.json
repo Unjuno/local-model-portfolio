@@ -1,0 +1,148 @@
+{
+  "asset_kind": "model",
+  "repo_id": "LiquidAI/LFM2.5-VL-3B-DSpark",
+  "portfolio_decision": "conditional",
+  "observed_at_utc": "2026-11-06T04:42:32.820474+00:00",
+  "evidence_kind": "anonymous_publisher_api_metadata_not_local_payload_measurement",
+  "download_authorized": false,
+  "payload_bytes_downloaded": 0,
+  "tree_complete": true,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 1519,
+      "sha256": null,
+      "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 10572,
+      "sha256": null,
+      "git_blob_sha1": "272d23491019471e6776d23ae995f41b164ea34c",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "README.md",
+      "bytes": 8271,
+      "sha256": null,
+      "git_blob_sha1": "9db6f3a26916357eefb9941df97239839d37ab3a",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "config.json",
+      "bytes": 807,
+      "sha256": null,
+      "git_blob_sha1": "f77aec78452097d44d37780254422ff96f51594b",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "model.safetensors",
+      "bytes": 558942914,
+      "sha256": "1ee593180b41b6789d7bf01879b41ee20244ecd0ad9f66c64ddc79175aeffdfd",
+      "git_blob_sha1": "2a9169672477d639e68c4a55c3755bd33860d700",
+      "identity_kind": "lfs_payload_sha256",
+      "local_hash_verified": false
+    }
+  ],
+  "source_scope_bytes": 558964083,
+  "selected_files_bytes": null,
+  "complete_dependency_bytes": null,
+  "runtime_peak_ram_bytes": null,
+  "local_reuse_verified": false,
+  "prior_observed_access": "public_ungated_hub_metadata_not_payload_access_tested",
+  "prior_revision": null,
+  "requested_artifact": "one original published precision checkpoint plus license, tokenizer/config, exact immutable revision and backend; no duplicate easy-derived formats",
+  "required_dependencies_note": null,
+  "parameter_gate_status": "PASS_TOTAL_PARAMS_LT_150B",
+  "source_api_url": "https://huggingface.co/api/models/LiquidAI/LFM2.5-VL-3B-DSpark",
+  "head_revision_observed": "af77e9306a26e8625fde74d2a3051ab6d21bd955",
+  "pinned_revision": "af77e9306a26e8625fde74d2a3051ab6d21bd955",
+  "pinned_revision_origin": "head_observed_for_capacity_only_not_selection_approval",
+  "gated": false,
+  "private": false,
+  "license_metadata": "other",
+  "metadata_sha256": "bb6ff0b31995d7e146e282f729bdb6410175fa864cb8fe65439a80dfcb96e8cc",
+  "last_modified": "2026-09-24T14:18:16.000Z",
+  "architecture_metadata": {
+    "architectures": [
+      "Lfm2DSparkDraftModel"
+    ],
+    "model_type": "qwen3"
+  },
+  "parameter_metadata": {
+    "parameters": {
+      "BF16": 279468801
+    },
+    "total": 279468801
+  },
+  "source_scope": "repository_all_files_not_selection",
+  "file_count": 5,
+  "documentation": [
+    {
+      "path": "README.md",
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B-DSpark/raw/af77e9306a26e8625fde74d2a3051ab6d21bd955/README.md",
+      "observed_bytes": 8271,
+      "sha256": "e2506a13bb6712d7b6354bfd957210b3b873f5e58bd6c365fae0cf5e4704b983",
+      "repo_reference_leads_not_verified_dependencies": [
+        "LiquidAI/LFM2.5-VL-3B",
+        "LiquidAI/LFM2.5-VL-3B-DSpark",
+        "LiquidAI/LFM2.5-VL-3B-DSpark-GGUF",
+        "LiquidAI/LFM2.5-VL-3B-GGUF",
+        "production/uploads"
+      ],
+      "card_text_archived": false
+    },
+    {
+      "path": "config.json",
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B-DSpark/raw/af77e9306a26e8625fde74d2a3051ab6d21bd955/config.json",
+      "observed_bytes": 807,
+      "sha256": "d27752772953bb64e70a6a1c5a28b23b03dfb76bb920a001184b87dbf61d98df",
+      "json": {
+        "architectures": [
+          "Lfm2DSparkDraftModel"
+        ],
+        "model_type": "qwen3",
+        "dtype": "bfloat16",
+        "hidden_size": 2048,
+        "num_hidden_layers": 4,
+        "num_attention_heads": 32,
+        "num_key_value_heads": 8,
+        "head_dim": 64,
+        "intermediate_size": 6144,
+        "hidden_act": "silu",
+        "rms_norm_eps": 1e-05,
+        "vocab_size": 128000,
+        "rope_theta": 1000000.0,
+        "max_position_embeddings": 128000,
+        "layer_types": [
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention"
+        ],
+        "block_size": 9,
+        "dflash_config": {
+          "mask_token_id": 125017,
+          "target_layer_ids": [
+            2,
+            9,
+            17,
+            21,
+            27
+          ],
+          "num_target_layers": 30
+        },
+        "markov_rank": 256,
+        "rope_is_neox_style": false,
+        "enable_confidence_head": true,
+        "markov_head_type": "vanilla"
+      }
+    }
+  ],
+  "metadata_change_requires_review": false
+}

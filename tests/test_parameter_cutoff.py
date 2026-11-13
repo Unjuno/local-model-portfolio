@@ -26,6 +26,16 @@ def verified_example():
         "minimum_acceptable_tokens_per_second":5.0,"measured_user_hardware":True,
         "task_quality_pass":True,"license_text_reviewed":True,
         "dependencies_reviewed":True,"personal_gated_access_verified":True,
+        "reference_model_repo_id":"unit/reference-120b",
+        "reference_revision_sha":"b"*40,
+        "reference_model_total_parameters":120_000_000_000,
+        "reference_measured_peak_host_ram_plus_vram_bytes":170_000_000_000,
+        "reference_context_tokens":8192,"reference_batch_size":1,
+        "reference_throughput_trials":30,
+        "reference_hardware_record":"test 512GB RAM 24GB VRAM, actual available tracked",
+        "reference_backend_and_version":"llama.cpp commit aaaa",
+        "reference_memory_comparison_verified":True,
+        "measured_memory_no_unified_double_count":True,
     }
     return x
 
@@ -78,6 +88,31 @@ class ParameterBaselineTests(unittest.TestCase):
         x=verified_example()
         x["quantized_exception"]["throughput_median_tokens_per_second"]=1.0
         self.assertTrue(validate_model(x))
+    def test_memory_equivalence_blocks_more_ram_than_reference(self):
+        x=verified_example()
+        x["quantized_exception"]["reference_measured_peak_host_ram_plus_vram_bytes"]=159_000_000_000
+        self.assertFalse(verified_quant_exception(x))
+        self.assertTrue(validate_model(x))
+    def test_reference_must_be_truly_under_150b_and_immutable(self):
+        for k,v in (("reference_model_total_parameters",150_000_000_000),
+                    ("reference_revision_sha","main"),
+                    ("reference_model_repo_id","")):
+            with self.subTest(k=k):
+                x=verified_example()
+                x["quantized_exception"][k]=v
+                self.assertFalse(verified_quant_exception(x))
+    def test_reference_runtime_and_method_must_match(self):
+        for k,v in (("reference_context_tokens",4096),
+                    ("reference_batch_size",2),
+                    ("reference_throughput_trials",1),
+                    ("reference_hardware_record","another GPU"),
+                    ("reference_backend_and_version","other commit"),
+                    ("reference_memory_comparison_verified",False),
+                    ("measured_memory_no_unified_double_count",False)):
+            with self.subTest(k=k):
+                x=verified_example()
+                x["quantized_exception"][k]=v
+                self.assertFalse(verified_quant_exception(x))
     def test_current_repository(self):
         self.assertEqual([],audit())
 

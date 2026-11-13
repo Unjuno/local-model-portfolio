@@ -1,0 +1,115 @@
+name: Census gated DINOv3 and TRELLIS.2 decoder source dependencies (research only)
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - '.github/workflows/audit-trellis2-dependencies-v27.yml'
+      - 'scripts/audit_trellis2_dependencies_v27.py'
+      - 'tests/test_trellis2_dependencies_v27.py'
+      - 'docs/strategy/39-trellis2-gated-dependency-v27.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-trellis2-dependencies-source-v27
+  cancel-in-progress: false
+jobs:
+  research_audit:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Verify stable v27 and anonymous-access control tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_trellis2_dependencies_v27.py -v
+          python scripts/check_parameter_cutoff.py
+          python scripts/audit_selection_decisions.py
+      - name: Read only publisher tree metadata and pinned small source/config text
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m scripts.audit_trellis2_dependencies_v27
+      - name: Verify dependency identities, no false approval and all regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,re,subprocess,sys
+          from pathlib import Path
+          load=lambda p:json.loads(Path(p).read_text(encoding='utf-8'))
+          c=load('catalog/CURRENT.json')
+          b=load('catalog/capacity/2026-11-07/v27/capacity-summary.json')
+          a=load('catalog/research/2026-11-07-trellis2-closure/audit.json')
+          assert c['revision_id']=='v27-20261107' and c['expected']['tracked']==173 and c['expected']['active']==126
+          assert b['exact_primary_file_scope_count']==126
+          assert b['known_scope_content_union_bytes']==3_417_685_712_585
+          assert len(b['assets_with_open_dependency_issues'])==35
+          assert a['new_assets_selected']==0 and a['new_download_authorizations']==0
+          assert a['model_payload_bytes_downloaded']==0 and not load('queues/approved.json')['entries']
+          assert a['parent']['immutable_revision']=='af44b45f2e35a493886929c6d786e563ec68364d'
+          assert a['parent']['source_repo_bytes']==16_237_485_044
+          assert a['microsoft_source']['git_revision']=='75fbf0183001ed9876c8dbb35de6b68552ee08bd'
+          assert a['microsoft_source']['code_tree_complete']
+          deps=a['dependency_facts_from_pinned_code']
+          assert deps['required_vision_model']=='facebook/dinov3-vitl16-pretrain-lvd1689m'
+          assert deps['required_sparse_decoder_repo']=='microsoft/TRELLIS-image-large'
+          assert deps['default_loader_rembg_model']=='briaai/RMBG-2.0'
+          assert deps['DINOv3_is_always_constructed_by_default_loader']
+          assert deps['RMBG_is_always_constructed_by_default_loader']
+          r=a['dependent_source_profiles']
+          assert len(r)==3 and {x['repo_id'] for x in r}=={
+            'microsoft/TRELLIS-image-large',
+            'facebook/dinov3-vitl16-pretrain-lvd1689m',
+            'briaai/RMBG-2.0'}
+          assert next(x for x in r if x['repo_id']=='microsoft/TRELLIS-image-large')['selected_file_bytes']>0
+          for item in r:
+              assert not item['personal_access_verified'] and not item['license_body_cleared']
+              assert item['selected_file_bytes'] is None or item['selected_file_bytes']>0
+          capacity=a['capacity_research_scenario']
+          assert capacity['baseline_known_logical_bytes']==b['known_scope_content_union_bytes']
+          assert capacity['new_source_partial_union_bytes']>=capacity['baseline_known_logical_bytes']
+          assert capacity['owner_disk_free_bytes'] is None and capacity['physical_archive_used_bytes'] is None and capacity['download_peak_bytes'] is None
+          assert not a['full_offline_restoration_tested'] and not a['owner_hardware_tested']
+          run=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],capture_output=True,text=True)
+          log=run.stdout+run.stderr
+          print(log)
+          if run.returncode:raise SystemExit(run.returncode)
+          for name in ['scripts/check_parameter_cutoff.py','scripts/audit_selection_decisions.py']:
+              subprocess.run([sys.executable,name],check=True)
+          count=int(re.search(r'Ran (\d+) tests',log).group(1))
+          proof={'source_revision':'v27-20261107','full_tests_pass':True,'test_count':count,
+           'parameter_and_selection_audits_pass':True,'new_models_selected':0,
+           'exact_primary_file_scopes_unchanged':126,'owner_disk_measured':False,
+           'full_offline_restoration_tested':False,'model_payloads_downloaded':0,
+           'gated_access_verified':False,
+           'audited_dependency_source_repos':3,
+           'test_log_sha256':hashlib.sha256(log.encode()).hexdigest()}
+          Path('catalog/research/2026-11-07-trellis2-closure/verification.json').write_text(
+              json.dumps(proof,indent=2)+'\n',encoding='utf-8')
+          print(json.dumps(proof,indent=2))
+          PY
+      - name: Commit metadata evidence only and preserve main/approved queue
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          test "$(git ls-remote origin "$GITHUB_REF" | cut -f1)" = "$GITHUB_SHA"
+          git add -- catalog/research/2026-11-07-trellis2-closure
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'research: pin TRELLIS.2 gated DINOv3 and external decoder source manifest [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD

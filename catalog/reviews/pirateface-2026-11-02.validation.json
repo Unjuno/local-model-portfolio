@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "review_id": "pirateface-social-post-source-audit-20261102",
+  "checked_on": "2026-11-02",
+  "status": "PASS_METADATA_ONLY",
+  "checks": {
+    "post_id_and_time": true,
+    "announcement_is_unverified": true,
+    "third_party_is_discovery_not_authority": true,
+    "eight_distinct_examined": true,
+    "two_distinct_capabilities": true,
+    "repo_id_and_full_sha": true,
+    "nine_selected_files": true,
+    "model_sum_exact": true,
+    "selected_and_excluded_partition": true,
+    "per_file_bytes_equal": true,
+    "source_weight_hash_published": true,
+    "source_git_blob_id_well_formed": true,
+    "relative_safe_paths": true,
+    "verified_publisher_license_metadata": true,
+    "prior_efficiency_scenario_remains_draft": true,
+    "mirror_unverified": true,
+    "not_approved": true,
+    "main_and_branch_current_unchanged": true,
+    "queue_main_and_branch_empty": true,
+    "doc_exists_with_limitations": true
+  },
+  "failed": [],
+  "summary": {
+    "sampled_repo_ids": 8,
+    "small_candidates": 2,
+    "watch_or_defer": 6,
+    "selected_model_side_files": 9,
+    "selected_model_side_bytes": 140719353,
+    "approved_downloads": 0,
+    "existing_canonical_assets": 110
+  },
+  "source_blobs": {
+    "audit": "b3d127817e15a07ee8c0e1f4aca826e796c87a8e",
+    "doc": "c5c3a719f33d57ffbab1463b543820e7100e02ce",
+    "currentMain": "91dc8c042cf46242e020c0261c01cd5856c5ec36",
+    "queueMain": "df0e369abda4b765533e0af3921c54a5cb164787"
+  },
+  "limitations": [
+    "Checks verify this GitHub review's metadata, file sizes and published hashes, not actual model binaries or complete torrents.",
+    "No evidence all 1000 announced torrents are distinct, complete, legally usable, currently seeded or independently checked.",
+    "No torrent magnet, P2P connection, package installation, login or redistribution used.",
+    "140,719,353 bytes excludes runtimes, dataset rights and necessary third-party dependencies."
+  ],
+  "note": "One 39-character EuroSAT config Git blob hash was detected by pre-write validation and corrected against official fixed HF tree. The present audit checks 40-character IDs."
+}

@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "revision_id": "v27-20261107",
+  "previous_revision_id": "v26-20261106",
+  "source_branch_commit": "ac37e75ad7a5cafb5ae5bcbad2b680e3a2b9c087",
+  "target_branch": "strategy/2026-11-03-01-risk",
+  "decision_date": "2026-11-07",
+  "purpose": "Insure newly published 3.665B Kanana typed multimodal decision training, and account required MOSS audio codec as shared non-duplicate dependency in a source-only capacity audit. Do not promote 65B Ripple without quality/capacity review.",
+  "decision_status": "ONE_CONDITIONAL_RESEARCH_SELECTION_NO_APPROVED_DOWNLOAD",
+  "archive_target_bytes": 4000000000000,
+  "minimum_free_bytes": 200000000000,
+  "max_new_selection_budget_bytes": 8000000000,
+  "download_enabled": false,
+  "previous_verified_capacity": {
+    "source_revision": "v26-20261106",
+    "tracked": 172,
+    "active": 125,
+    "known_logical_dedup_bytes": 3403245899240,
+    "known_primary_file_bytes_sum": 3406271632830,
+    "exact_primary_file_scope_count": 125,
+    "assets_with_open_dependency_issues": 34,
+    "complete_offline_archive_bytes": null,
+    "owner_physical_free_bytes": null
+  },
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "kakaocorp/kanana-2-v-decide-3b-2611",
+      "url": "https://huggingface.co/kakaocorp/kanana-2-v-decide-3b-2611",
+      "group": "エージェント判断用の非生成型マルチモーダル確率決定モデル",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Kanana-2-v-3bの視覚＋言語能力を、状態と選択肢の独立embeddingを比較する型付き判定・信頼度分布（choice/noul/score）へ独自再学習した3.665Bの別重み。元の文章生成モデル、GUIクリックモデル、汎用embedding原本の単なる量子化ではない。",
+      "quality_positive": "2026-11-06開発元公表：Decision Index 61.34、Decision Index Vision 61.12、平均61.23、韓国語社内判断評価72.50（15,909問）。単一H200で0.04秒以内の平均応答を主張。",
+      "quality_negative": "開発元評価のみで独立追試なし。公表表ではDecision Index単体ではBase Labs Joey-1の63.31に及ばず、平均だけで優越断定不可。H200 clock/batch/backendと入力画像長は揃っていない。動画不可、最大10画像/20,480 tokens、長文は無警告で先頭末尾を残す切詰め、極端なアスペクト比不可。custom trust_remote_codeのコード監査・全依存・本人実機ピークRAM未検証。",
+      "evidence_date": "2026-11-07",
+      "evidence_scope": "Creator announcement Nov 6, publisher HF pinned tree, official license file hash, publisher safetensors metadata; no runtime eval or payload download",
+      "evidence_urls": [
+        "https://huggingface.co/kakaocorp/kanana-2-v-decide-3b-2611",
+        "https://www.kakaocorp.com/page/detail/12193",
+        "https://huggingface.co/kakaocorp/kanana-2-v-decide-3b-2611/blob/1489062def4145ae3a0a9261fbac4f4d88a8c6d1/LICENSE"
+      ],
+      "observed_access": "Public ungated anonymous publisher metadata, not personal license clearance",
+      "license_metadata": "other:Kanana-Open-License",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "personal_access_verified": false,
+      "fully_pinned_revision_sha": null,
+      "selected_file_bytes": null,
+      "download_approved": false,
+      "upstream_revision_sha_observed": "1489062def4145ae3a0a9261fbac4f4d88a8c6d1",
+      "upstream_all_files_bytes_observed": 7341213499,
+      "preliminary_named_selected_primary_bytes": 7341102234,
+      "planning_cap_is_not_observed_bytes": true,
+      "upstream_snapshot_path": "catalog/research/2026-11-07-r30/sources/kakaocorp--kanana-2-v-decide-3b-2611.json",
+      "source_research_path": "catalog/research/2026-11-07-r30/research.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 3665430640,
+        "evidence_kind": "Hugging Face publisher safetensors.total at fixed SHA, single original BF16 model.safetensors; full executable dependency closure NOT proven",
+        "review_date": "2026-11-07",
+        "note": "3.665B elements serialized in one checkpoint; not equivalent to complete process resident peak RAM."
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "category": "distinct_multimodal_decision_training",
+        "scenario_status": "FUTURE_PLATFORM_RESTRICTION_HYPOTHESIS_NOT_CURRENT_BAN"
+      },
+      "restriction_assessment": {
+        "observed": "Public ungated source under Kanana Open License, including copyright notices and separate commercial license for API resale, system integration and embedded on-device sale. No government takedown/closure forecast independently verified.",
+        "scenario": "Publisher could change access or platform policy; weight-specific future ban not confirmed.",
+        "probability": null
+      },
+      "license_detail": {
+        "immutable_license_sha256": "3c13f0cf41c4d49f6d3885bffb27c39431826f9886cacac75349b4ffb58361c4",
+        "license_text_from_original_publisher": true,
+        "must_check": [
+          "Responsible AI guidelines incorporated by license",
+          "redistribution needs licence copy, NOTICE and visible Powered by Kanana",
+          "commercial licenses for third-party API, system integration/on-prem and on-device distribution",
+          "trade mark, model derivative naming, local law"
+        ]
+      },
+      "selection_budget_cap_bytes": 8000000000,
+      "resource_screen": {
+        "source_all_repo_bytes": 7341213499,
+        "source_bytes_are_not_selected_bytes": true,
+        "selected_source_preview_bytes": 7341102234,
+        "owner_disk_tested": false,
+        "publisher_hardware_claim": {
+          "hw": "NVIDIA H200 single GPU",
+          "clock": null,
+          "batch": null,
+          "backend": null,
+          "mean_latency_seconds": 0.04,
+          "independent_test": false
+        }
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Trainable 3.665B vision-language probability typed-decision checkpoint with custom System One reasoning input/output contract",
+        "must_preserve": [
+          "single BF16 model.safetensors (~7.331GB) with full tensor index or single-file header",
+          "tokenizer.json, tokenizer_config.json, chat_template.jinja, config.json and preprocessor_config.json",
+          "configuration_kanana_v_decide.py, modeling_kanana_v_decide.py, image_processing_kanana_v.py, processing_kanana_v_decide.py, decision_kanana_v_decide.py and pipeline/server components",
+          "complete Kanana Open License and evidence hashes, NOTICE required when redistributed",
+          "fixed Python/Transformers/PyTorch runtime ABI and a local-only offline regression harness (unverified)"
+        ],
+        "shared_dependencies": [],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "incumbent_comparison": [
+        "Hcompany/Holotron4-30B-A3B",
+        "microsoft/VibeVoice-1.5B",
+        "nvidia/GR00T-N1.6-3B"
+      ],
+      "falsification_condition": "Demote if this is mere reserialization of existing active same weights, required trained component missing, contract cannot be met, empirically poor decision calibration, or verified disk/restore constraint exceeds policy.",
+      "retention_basis": "INSURANCE_NON_GENERATIVE_MULTIMODAL_DECISION_LEARNING"
+    }
+  ],
+  "newly_confirmed_nonselected_required_dependency": {
+    "repo_id": "OpenMOSS-Team/MOSS-Audio-Tokenizer",
+    "parent_id": "OpenMOSS-Team/MOSS-TTS-v1.5",
+    "source_sha": "3cd226ba2947efa357ef453bcad111b6eafba782",
+    "candidate_selected_source_bytes": 7098711111,
+    "observed_independent_nonduplicate_logical_increment_bytes": 7098711111,
+    "license_metadata": "apache-2.0",
+    "source": "catalog/research/2026-11-07-r30/codec-capacity.json",
+    "dependent_codec_default_vs_v2": "original codec for MOSS TTS v1.5, not v2",
+    "approved_download": false,
+    "fully_restored": false
+  },
+  "research_not_selected": [
+    {
+      "repo_id": "ricursiveAI/Ripple-65B-Base-Preview",
+      "classification": "RESEARCH_HOLD_PRETRAIN_ORIGINAL",
+      "source_sha": "6187d1108a25fcc31681ec942ec3c581721b9fe1",
+      "publisher_all_repo_bytes": 129569923434,
+      "license_metadata": "apache-2.0",
+      "reasoning": "Pretraining-only 12T-token independent learned source, ~129.57GB. Archive value high but ~22% of pre-added 596.75GB policy difference, plus owner disk unknown and source runtime/quality not audited."
+    },
+    {
+      "repo_id": "ricursiveAI/Ripple-65B-Preview",
+      "classification": "RESEARCH_HOLD_DISTINCT_POSTTRAIN",
+      "source_sha": "4f872a1ef1376a1962c56bab6d874d017be7eb96",
+      "publisher_all_repo_bytes": 129572880240,
+      "license_metadata": "apache-2.0",
+      "reasoning": "Independent midtraining/SFT/RL, same parent 65B but posttrain not identical, BF16 instruction plus NVFP4 alternate serialization. Need benchmark and budget discussion; do not automatically collect all three."
+    }
+  ]
+}

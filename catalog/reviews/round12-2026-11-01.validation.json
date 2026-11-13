@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "review_id": "round12-2026-11-01-efficiency",
+  "checked_on": "2026-11-01",
+  "status": "PASS_METADATA_ONLY",
+  "checks": {
+    "source_hashes": true,
+    "canonical_invariant": true,
+    "queue_invariant": true,
+    "top5_unique": true,
+    "top5_original_total": true,
+    "top5_one_format_total": true,
+    "top5_delta_total": true,
+    "top5_all_file_partitions": true,
+    "top5_no_cross_file_duplicate": true,
+    "top5_upstream_sha_types": true,
+    "formats_not_equivalence_claim": true,
+    "compact_new_unique": true,
+    "compact_pin_integrity": true,
+    "compact_total_bytes": true,
+    "compact_licensing_and_no_approval": true,
+    "compact_gated_nclimit": true,
+    "coder_base_status": true,
+    "coder_only_defer": true,
+    "scenario_accounting": true,
+    "scenario_counts": true,
+    "readme_canonical_correct": true,
+    "doc_unapplied_flags": true,
+    "nothing_executed": true
+  },
+  "failed": [],
+  "summary": {
+    "canonical_assets": 110,
+    "canonical_active": 94,
+    "proposed_assets": 117,
+    "proposed_active": 100,
+    "new_compact_assets": 7,
+    "coder_draft_deferred": 1,
+    "seven_model_file_bytes": 7743321682,
+    "top5_source_file_bytes": 991985986504,
+    "top5_one_format_file_bytes": 675748493662,
+    "possible_format_savings_bytes": 316237492842,
+    "scenarios": [
+      {
+        "id": "v2_with_seven_no_refinement",
+        "provisional_bytes": 3241810999942,
+        "provisional_headroom_bytes": 558189000058
+      },
+      {
+        "id": "v2_defer_qwen_add_seven_no_format_change",
+        "provisional_bytes": 3082434647977,
+        "provisional_headroom_bytes": 717565352023
+      },
+      {
+        "id": "v2_defer_qwen_add_seven_choose_one_format_top_three",
+        "provisional_bytes": 2766197155135,
+        "provisional_headroom_bytes": 1033802844865
+      }
+    ],
+    "approved_downloads": 0
+  },
+  "source_blob_sha": {
+    "scenario": "fe1e43c3d95a23dfdcfc5ae665b9a3233d27fa9d",
+    "top5": "9d51ca3fb922ff1bfbf2ef9e7e0bce8a3472edc9",
+    "r8": "bb445615c200f32862bcbe8c014f4ae3e08b0848",
+    "r11": "da2fff8cfae5cd270adf9a19c5b322aa10488d08",
+    "r7": "22d3f1d0292372d9dff01dd5d296f04c7a6b6b33",
+    "readme": "030918e1afe7dde1cb3af92bd2c4860fa216b300",
+    "doc": "91b81a04f037634d816e4d63802ec5945c1de964",
+    "currentM": "91dc8c042cf46242e020c0261c01cd5856c5ec36",
+    "queueM": "df0e369abda4b765533e0af3921c54a5cb164787"
+  },
+  "limitations": [
+    "This validates source metadata and arithmetic; it does not validate checkpoint weights equivalence, applicable license permissions, model usefulness, or inference performance.",
+    "Scenario excludes v3/r4/r5/r6 draft additions and runtime, staging and transitive dependency costs.",
+    "No checkpoint/installer bytes were fetched or executed; no local HDD measurements, Gated acceptances or queued downloads."
+  ]
+}

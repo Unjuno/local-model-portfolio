@@ -1,0 +1,1339 @@
+{
+  "schema_version": 1,
+  "kind": "FULL_DUPLEX_CANDIDATE_ARCHIVAL_AUDIT_METADATA_ONLY",
+  "research_date_jst": "2026-11-10",
+  "repo": "Unjuno/local-model-portfolio",
+  "branch": "strategy/2026-11-03-01-risk",
+  "reference_head": "16d198a01aa669d8b7d6abed21fbe2e0630ff91f",
+  "source_repo_shas": {
+    "current": {
+      "path": "catalog/CURRENT.json",
+      "sha": "54dabeeb5f0597c48a8369626a01161d39b29be1"
+    },
+    "v27": {
+      "path": "catalog/effective-portfolio-2026-11-07-v27.json",
+      "sha": "ad7dc54dd67e7421cb685750238658f2f4e05e41"
+    },
+    "cap": {
+      "path": "catalog/capacity/2026-11-07/v27/capacity-summary.json",
+      "sha": "5646a967a674080cbb610f5813de42d649a8b0f4"
+    },
+    "queue": {
+      "path": "queues/approved.json",
+      "sha": "df0e369abda4b765533e0af3921c54a5cb164787"
+    },
+    "sophon": {
+      "path": "catalog/research/2026-11-10-sophon-provenance-followup.json",
+      "sha": "6a64f4c4797e5f393395c3fac58fddb3e304a746"
+    }
+  },
+  "catalog_revision": "v27-20261107",
+  "catalog_assets": 173,
+  "active_assets": 126,
+  "approved_queue_entries": 0,
+  "download_enabled": false,
+  "model_payload_downloaded": false,
+  "executed": false,
+  "model_adoption_applied": false,
+  "candidate_snapshots": [
+    {
+      "key": "minicpm",
+      "id": "openbmb/MiniCPM-o-4_5",
+      "rev": "fb09628e98b1f55d8d5b863e0eccfcdd11bff499",
+      "bytes": 20048635820,
+      "files": 54,
+      "params": 9371787666,
+      "license": "apache-2.0",
+      "access": "PUBLIC",
+      "priority": "P0_RESEARCH_CONDITIONAL",
+      "reason": "独自Omni-Flow・音声＋映像の同時処理と自発話；v27のオムニモデルと機能が等しいと未検証",
+      "runtime": "全二重デモ>=28GB NVIDIA GPU（開発元）；一般推論BF16 19GBは別条件",
+      "code": "https://github.com/OpenBMB/MiniCPM-V/tree/4dbbb6c58b6f8a004d6689028417296719f0831a",
+      "paper": "https://arxiv.org/abs/2604.27393",
+      "source_tree_api": "https://huggingface.co/api/models/openbmb/MiniCPM-o-4_5/tree/fb09628e98b1f55d8d5b863e0eccfcdd11bff499?recursive=true",
+      "source_url": "https://huggingface.co/openbmb/MiniCPM-o-4_5/tree/fb09628e98b1f55d8d5b863e0eccfcdd11bff499",
+      "source_repo_all_files_bytes": 20048635820,
+      "file_list": [
+        {
+          "path": ".gitattributes",
+          "bytes": 3091,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "03e95844970b6ee1ed98a30d080dc14b40d89cbb",
+          "locally_verified": false
+        },
+        {
+          "path": ".gitignore",
+          "bytes": 9,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "496ee2ca6a2f08396a4076fe43dedf3dc0da8b6d",
+          "locally_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 85896,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "1780565abefb9cd6b3116fe1abdaf3000d207f9a",
+          "locally_verified": false
+        },
+        {
+          "path": "added_tokens.json",
+          "bytes": 2706,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "e55036c1289fa049c28e238e7c7b051ade0eb4da",
+          "locally_verified": false
+        },
+        {
+          "path": "assets/HT_ref_audio.wav",
+          "bytes": 192590,
+          "source_lfs_sha256": "cb8f06ba5080cdf548969138881fb8ad8b04e2516108f4e08ba0363b68b613ea",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/Skiing.mp4",
+          "bytes": 8534409,
+          "source_lfs_sha256": "479ace116d6ac92487ad90f415b3ef817cd019bba4521043ef0d5faaa1a8415d",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/Trump_WEF_2018_10s.mp3",
+          "bytes": 161053,
+          "source_lfs_sha256": "4fb796c2bb95538eab22d9b68a31add560305b6d5ccbf150c3f96e7671b6db64",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/audio_cases/assistant_ref.mp4",
+          "bytes": 65478,
+          "source_lfs_sha256": "7e4a56e4418740ee0326f11ca2bd61a54d84e7d23e86a5e030369ee89f8e8390",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/audio_cases/assistant_response.mp4",
+          "bytes": 269504,
+          "source_lfs_sha256": "d46268e3beb78b4287a896a09b2df0f895629ecbdcdc4cf3c519fe040084860f",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/audio_cases/elon_musk__000_assistant_audio.wav",
+          "bytes": 1762604,
+          "source_lfs_sha256": "ff6dced2e686b743f39eee36aef1410913c8d31459bb564dbbf8f81ef8a2da88",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/audio_cases/elon_musk__system_ref_audio.wav",
+          "bytes": 539032,
+          "source_lfs_sha256": "2c4109b2d685e1923ed66433eb08c92047a1f67510629a27edf49af4e5c606dd",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/audio_cases/elon_musk_ref.mp4",
+          "bytes": 165179,
+          "source_lfs_sha256": "206c48ec4b08898fbfbfb1ea1fec058750c39c97cd2e5088b15b61fb194d6f7e",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/audio_cases/elon_musk_response.mp4",
+          "bytes": 388534,
+          "source_lfs_sha256": "d83c3a977fd444351710c9ba2c347c90efd49ed990276c5309867374df373a4f",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/audio_cases/hermione__000_assistant_audio.wav",
+          "bytes": 1534124,
+          "source_lfs_sha256": "cfd18a2ee9e27fdcd65e2d9bf0fe0b3c9ebc28cda6c43279c12e077889c2b88d",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/audio_cases/hermione__system_ref_audio.wav",
+          "bytes": 197322,
+          "source_lfs_sha256": "46bd82796ce5ebc15b29bc21c1de38284cfa972b2f27cca1f17086516a757dee",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/audio_cases/minicpm_assistant__000_assistant_audio.wav",
+          "bytes": 1246124,
+          "source_lfs_sha256": "fe3b793a6436682d1e684e0f4c158718208ed38926880e01ee84f5aa61c78331",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/audio_cases/minicpm_assistant__system_ref_audio.wav",
+          "bytes": 192556,
+          "source_lfs_sha256": "ad576b50fd2f53ad4bb317b97ed33bc7027071e7e0811a2a2110d995614f1f42",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/audio_cases/paimon__000_assistant_audio.wav",
+          "bytes": 697004,
+          "source_lfs_sha256": "9ddd9d8358950a8dab385b8031cb8371a832460f3db4d91e399373705158f346",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/audio_cases/paimon__system_ref_audio.wav",
+          "bytes": 479304,
+          "source_lfs_sha256": "b9625e7115ff1f47cf842fecbb31db82057ff1863c080870539c31107aa93b9d",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/audio_cases/readme.txt",
+          "bytes": 57,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "e5364e8ddd7b78003689302b84b2d155bdd3f8be",
+          "locally_verified": false
+        },
+        {
+          "path": "assets/bajie.wav",
+          "bytes": 636512,
+          "source_lfs_sha256": "16aa8ca3da7dad53680bac68cfde569e11e2f9ef5387b3ae60d68626e94db9d7",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/fossil.png",
+          "bytes": 465898,
+          "source_lfs_sha256": "b8b3f1668da6e2b503ecea5a6fd40c1a2a666b4bd07b903ba0728fd2fc9f74fb",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/haimianbaobao.wav",
+          "bytes": 343120,
+          "source_lfs_sha256": "27405cf5977f04d3f248693f9b978654fad4f02f931d9746006bffb0ed7b66e1",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/highway.png",
+          "bytes": 840874,
+          "source_lfs_sha256": "87c32da6ee77730423ec5fc29d7110878ab18a35791eb11a803088976c3b1f76",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/nezha.wav",
+          "bytes": 457802,
+          "source_lfs_sha256": "fe5d8932013ff30a9d8114a6d62e5342999d8c2ddf8509ecfeb1ead71cacf432",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/omni_duplex1.mp4",
+          "bytes": 7295040,
+          "source_lfs_sha256": "31622e1efd9a7b197a340266037b45aeec13b3b27f010f1ea1d22d9c6e69405f",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/omni_duplex2.mp4",
+          "bytes": 29285216,
+          "source_lfs_sha256": "c04eaef27a821e18db3686fdcc9d4b1dafd441e08f6a0e12d4075b81cb04517e",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/sunwukong.wav",
+          "bytes": 644650,
+          "source_lfs_sha256": "3bdb6c175bd3b2bb02fe7a8cf0ced847d41ab552b2e318bc3c26ee477255eff7",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/system_ref_audio.wav",
+          "bytes": 539032,
+          "source_lfs_sha256": "2c4109b2d685e1923ed66433eb08c92047a1f67510629a27edf49af4e5c606dd",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/system_ref_audio_2.wav",
+          "bytes": 341192,
+          "source_lfs_sha256": "4a65d17099239711601cb17e28b7aa7b6149acd153b92fd0366c23902bd4f687",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/token2wav/campplus.onnx",
+          "bytes": 28303423,
+          "source_lfs_sha256": "a6ac6a63997761ae2997373e2ee1c47040854b4b759ea41ec48e4e42df0f4d73",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/token2wav/flow.pt",
+          "bytes": 623466603,
+          "source_lfs_sha256": "15ccff24256ff61537c7f8b51e025116b83405f3fb017b54b008fc97da115446",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/token2wav/flow.yaml",
+          "bytes": 1099,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "8638dca97881751e50c132498acbfa41ecf74d6f",
+          "locally_verified": false
+        },
+        {
+          "path": "assets/token2wav/hift.pt",
+          "bytes": 83390254,
+          "source_lfs_sha256": "3386cc880324d4e98e05987b99107f49e40ed925b8ecc87c1f4939432d429879",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/token2wav/speech_tokenizer_v2_25hz.onnx",
+          "bytes": 496082973,
+          "source_lfs_sha256": "d43342aa12163a80bf07bffb94c9de2e120a8df2f9917cd2f642e7f4219c6f71",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 6439,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "e432e235513e707b58c4e2055b9d6dc94fc1b22d",
+          "locally_verified": false
+        },
+        {
+          "path": "configuration_minicpmo.py",
+          "bytes": 10135,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "5bd97d9b4d6aadb1adb9757a107484e8ee6b9ea2",
+          "locally_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 178,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "6e2cfc9f6f67a9cb1ede9375dc2abf42df55f84b",
+          "locally_verified": false
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 1402109,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "90d3d82d027eadcc6a5e77c38eb82d43fc51b53b",
+          "locally_verified": false
+        },
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "bytes": 5273477136,
+          "source_lfs_sha256": "30c40b9a10386c1bc404568d8829e5aada2e3501d9de6fb46ff80451aff7e077",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "bytes": 5301855080,
+          "source_lfs_sha256": "fe0faef420aca8f771bec1f9fcfaae01206c56b8e64e4429a1ff500c962fbf96",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "bytes": 5301855048,
+          "source_lfs_sha256": "5d0b20153f9bfa88ebcd1cb6bbd5b7cac4c217b3cafb137a291a1b380d8b7821",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "bytes": 2866549964,
+          "source_lfs_sha256": "f61addf4747c94fedcaee059e5d9918ed15543beec494404139a99f2f86c9b31",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 117202,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "0a6db9f6fae3c752056ffa2a42991d6e6e5b9cb1",
+          "locally_verified": false
+        },
+        {
+          "path": "modeling_minicpmo.py",
+          "bytes": 214356,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "e9f61c093d6711793dfb629634cdca9fb900b2d0",
+          "locally_verified": false
+        },
+        {
+          "path": "modeling_navit_siglip.py",
+          "bytes": 42559,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "58b991de066008f5dbf873e80e23e15fd5ddde2d",
+          "locally_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 842,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "c56a32b8f1ad1afb2fb17dce37e4e64e99ef7e6e",
+          "locally_verified": false
+        },
+        {
+          "path": "processing_minicpmo.py",
+          "bytes": 67284,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "e05383bf2541109661ffd7ce09f3d69ec51f4746",
+          "locally_verified": false
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 12002,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "5365eeae71bc6006003c7c981576ced10d8ec59d",
+          "locally_verified": false
+        },
+        {
+          "path": "tokenization_minicpmo_fast.py",
+          "bytes": 3249,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "5aa9932fdb825beaa25c1dddd59da426d4acfd63",
+          "locally_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 11437712,
+          "source_lfs_sha256": "6d55eb34389b8c87403763cc1d80447d91c85c7cd39cd5e3c0dc2d49edad989d",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 101726,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "d747bccb54853d1298ba1a6a52a3625f26ccdb65",
+          "locally_verified": false
+        },
+        {
+          "path": "utils.py",
+          "bytes": 95702,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "d68e1a82d022f885d7d2c88da9939aa14eea4e61",
+          "locally_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 2776833,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+          "locally_verified": false
+        }
+      ],
+      "is_final_selection": false,
+      "download_approved": false,
+      "whole_pipeline_params_verified": false
+    },
+    {
+      "key": "moshi",
+      "id": "kyutai/moshiko-pytorch-bf16",
+      "rev": "2bfc9ae6e89079a5cc7ed2a68436010d91a3d289",
+      "bytes": 15760704992,
+      "files": 5,
+      "params": 7687729152,
+      "license": "cc-by-4.0",
+      "access": "PUBLIC",
+      "priority": "P1_ORIGINAL_BASELINE",
+      "reason": "音声同時入出力の独立基盤；Mimi符号器と7.69B原本を保存、通常量子化重複を増やさない",
+      "runtime": "PyTorch版約24GB GPU推奨（開発元）、MLX/Rustは別ABI",
+      "code": "https://github.com/kyutai-labs/moshi/tree/e6a55d2722a65870ef52a6c9f6ecfc0e90f38362",
+      "paper": "https://arxiv.org/abs/2410.00037",
+      "source_tree_api": "https://huggingface.co/api/models/kyutai/moshiko-pytorch-bf16/tree/2bfc9ae6e89079a5cc7ed2a68436010d91a3d289?recursive=true",
+      "source_url": "https://huggingface.co/kyutai/moshiko-pytorch-bf16/tree/2bfc9ae6e89079a5cc7ed2a68436010d91a3d289",
+      "source_repo_all_files_bytes": 15760704992,
+      "file_list": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "locally_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 5659,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "0b45b5f519005a76234eca19f7b08ce3ac6322d3",
+          "locally_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 15375500136,
+          "source_lfs_sha256": "5b835c664f3830bf453808cbca9bfbcc9de332c328cc01cbffdfbaba2a8838a7",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "tokenizer-e351c8d8-checkpoint125.safetensors",
+          "bytes": 384644900,
+          "source_lfs_sha256": "09b782f0629851a271227fb9d36db65c041790365f11bbe5d3d59369cf863f50",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "tokenizer_spm_32k_3.model",
+          "bytes": 552778,
+          "source_lfs_sha256": "78d4336533ddc26f9acf7250d7fb83492152196c6ea4212c841df76933f18d2d",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        }
+      ],
+      "is_final_selection": false,
+      "download_approved": false,
+      "whole_pipeline_params_verified": false
+    },
+    {
+      "key": "persona",
+      "id": "nvidia/personaplex-7b-v1",
+      "rev": "fdaf4090a61cb315c138a1faee287ffd6c716309",
+      "bytes": 17135667560,
+      "files": 16,
+      "params": 8371408896,
+      "license": "nvidia-open-model-license",
+      "access": "GATED_AUTO_USER_CONSENT_MISSING",
+      "priority": "P0_AUTH_FIRST_P1_MODEL",
+      "reason": "Moshi派生で独立に訓練された音声+ロールペルソナ。同一BF16量子化ではない",
+      "runtime": "公式CPUオフロード有。本人実機のVRAM・遅延は未計測",
+      "code": "https://github.com/NVIDIA/personaplex/tree/16419a2ef7b98611f58c9df07477d00e5ad61d5f",
+      "paper": "https://arxiv.org/abs/2602.06053",
+      "source_tree_api": "https://huggingface.co/api/models/nvidia/personaplex-7b-v1/tree/fdaf4090a61cb315c138a1faee287ffd6c716309?recursive=true",
+      "source_url": "https://huggingface.co/nvidia/personaplex-7b-v1/tree/fdaf4090a61cb315c138a1faee287ffd6c716309",
+      "source_repo_all_files_bytes": 17135667560,
+      "file_list": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1732,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "87bee6585b23920dca8eb23b1c22a04143375870",
+          "locally_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 11080,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "8f8cc8f2d386db580bcefbc0564796c93f746b7c",
+          "locally_verified": false
+        },
+        {
+          "path": "bias.md",
+          "bytes": 593,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "9baa1e2d459f6b68620a594b35ee895df0e16798",
+          "locally_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 56,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "ea73fb777e4c52591206739b67254dd0c43bf604",
+          "locally_verified": false
+        },
+        {
+          "path": "dist.tgz",
+          "bytes": 598195,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": true,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "explainability.md",
+          "bytes": 4693,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "be40081bf17e6e3905bfc068fe1b13b67c4f1e60",
+          "locally_verified": false
+        },
+        {
+          "path": "figures/.DS_Store",
+          "bytes": 6148,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "f1fc27da02ee6d7ae4893b4328ea671e10cb099b",
+          "locally_verified": false
+        },
+        {
+          "path": "figures/results_conversation_dynamics.png",
+          "bytes": 265915,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": true,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "figures/results_latency.png",
+          "bytes": 354245,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": true,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "figures/results_task_adherence.png",
+          "bytes": 254701,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": true,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 16742874000,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": true,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "privacy.md",
+          "bytes": 2143,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "301b83e66d9134fbae050852378c1d8a0a32c946",
+          "locally_verified": false
+        },
+        {
+          "path": "safety.md",
+          "bytes": 860,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "f74140c4e9508e13c352012b5118526031074d87",
+          "locally_verified": false
+        },
+        {
+          "path": "tokenizer-e351c8d8-checkpoint125.safetensors",
+          "bytes": 384644900,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": true,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "tokenizer_spm_32k_3.model",
+          "bytes": 552778,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": true,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "voices.tgz",
+          "bytes": 6095521,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": true,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        }
+      ],
+      "is_final_selection": false,
+      "download_approved": false,
+      "whole_pipeline_params_verified": false
+    },
+    {
+      "key": "lychee",
+      "id": "HIT-TMG/Lychee-FD",
+      "rev": "ac06087bef70b33d4dfebf63a3eadadb4e024f33",
+      "bytes": 25630746830,
+      "files": 19,
+      "params": 12812043520,
+      "license": "apache-2.0",
+      "access": "PUBLIC",
+      "priority": "P1_NATIVE_HIERARCHICAL_MODEL",
+      "reason": "音響・意味経路を分離するネイティブ多重ストリームと外部StepAudio復号器",
+      "runtime": "カスタムvLLM+token2wav、GPUデフォルト分離、単一GPUはOOM可能",
+      "code": "https://github.com/HITsz-TMG/Lychee-FD/tree/7bb1068c59b578e1f8e65fb762cd26708c14cc6d",
+      "paper": "https://arxiv.org/abs/2607.06540",
+      "source_tree_api": "https://huggingface.co/api/models/HIT-TMG/Lychee-FD/tree/ac06087bef70b33d4dfebf63a3eadadb4e024f33?recursive=true",
+      "source_url": "https://huggingface.co/HIT-TMG/Lychee-FD/tree/ac06087bef70b33d4dfebf63a3eadadb4e024f33",
+      "source_repo_all_files_bytes": 25630746830,
+      "file_list": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "locally_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 4439,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "4dfc5050ec039ece1b4e82b7f01a54dbcf85242b",
+          "locally_verified": false
+        },
+        {
+          "path": "added_tokens.json",
+          "bytes": 173611,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "9ded68b4c0f0d7ab4478cc881c0e8e12e48dbaab",
+          "locally_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 2427,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "28028c056af412405debd878cdda0171e35fa5d1",
+          "locally_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 10038,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "b18d12248cb40f2497d6cea6d2be67931c87e0b3",
+          "locally_verified": false
+        },
+        {
+          "path": "configuration_step_audio_2.py",
+          "bytes": 4555,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "95c636d22187de863d21fb5c01aa375cb4d841dc",
+          "locally_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 69,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "bc30559de59580fc24696caf7790c19c6a525c4b",
+          "locally_verified": false
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 1671853,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+          "locally_verified": false
+        },
+        {
+          "path": "model-00001-of-00006.safetensors",
+          "bytes": 4922812008,
+          "source_lfs_sha256": "1a7783ef988d3f617c2f38d4f397c0090f06dc064f17ae33c99110d480bc1597",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "model-00002-of-00006.safetensors",
+          "bytes": 4932751008,
+          "source_lfs_sha256": "9a25a737023da1ac3f1e9e893873c8ad86e550be8dcaef6f21db157748ea82a9",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "model-00003-of-00006.safetensors",
+          "bytes": 4330865200,
+          "source_lfs_sha256": "2f03a2753a20ba27f29f310857ea8ec5c0ee3242298877cb7388b543a8b017ac",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "model-00004-of-00006.safetensors",
+          "bytes": 4931196440,
+          "source_lfs_sha256": "378dcebcc0c5b9296e89dd15eb45947cb8e5379e87587df37aa380c2b303543b",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "model-00005-of-00006.safetensors",
+          "bytes": 4997303504,
+          "source_lfs_sha256": "c53dce8bcda72e94b2c997b7185965f3b2a424aa8f064a85e279507cafc13821",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "model-00006-of-00006.safetensors",
+          "bytes": 1509268128,
+          "source_lfs_sha256": "f9946c7c66ecee67050ba064a9619ea3e7e889bb256a8d20d41ad26bdde2d048",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 77810,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "7f5e7a6c76a0f78214d945cbe4102551a695326a",
+          "locally_verified": false
+        },
+        {
+          "path": "modeling_step_audio_2.py",
+          "bytes": 16647,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "50dfd88aeb19f32e8488f4391cda9b5cc83e537c",
+          "locally_verified": false
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 1134,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "f5e8baaba55bddb8a325bc245b788f1e32bed540",
+          "locally_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1203033,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "6c617708b41e829039bb0a43332fc6bb42091739",
+          "locally_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 3383407,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "6bce3a0a3866c4791a74d83d78f6824c3af64ec3",
+          "locally_verified": false
+        }
+      ],
+      "is_final_selection": false,
+      "download_approved": false,
+      "whole_pipeline_params_verified": false
+    },
+    {
+      "key": "step",
+      "id": "stepfun-ai/Step-Audio-2-mini",
+      "rev": "e36fdd5d71e0ea22f09dd94bbab9bfc544ca1e36",
+      "bytes": 17883677266,
+      "files": 27,
+      "params": 8315179264,
+      "license": "apache-2.0",
+      "access": "PUBLIC",
+      "priority": "COMPONENT_ONLY_NOT_FULL_PARENT",
+      "reason": "Lycheeに必要なのはtoken2wav/5ファイルのみ。8B原本を不要に複製しない",
+      "runtime": "component ABI未検証",
+      "code": null,
+      "paper": null,
+      "source_tree_api": "https://huggingface.co/api/models/stepfun-ai/Step-Audio-2-mini/tree/e36fdd5d71e0ea22f09dd94bbab9bfc544ca1e36?recursive=true",
+      "source_url": "https://huggingface.co/stepfun-ai/Step-Audio-2-mini/tree/e36fdd5d71e0ea22f09dd94bbab9bfc544ca1e36",
+      "source_repo_all_files_bytes": 17883677266,
+      "file_list": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1744,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "330e055a31886d17502b3b68016f0a838c1d96ac",
+          "locally_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 32766,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "e561da6b7f9caf7667727b78fc79cbe4f23c17e6",
+          "locally_verified": false
+        },
+        {
+          "path": "added_tokens.json",
+          "bytes": 173344,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "3dc2bd80bb01fd6a02b7f3e755c212925c0204b1",
+          "locally_verified": false
+        },
+        {
+          "path": "assets/architecture5.png",
+          "bytes": 1547253,
+          "source_lfs_sha256": "3c85a631baf8687bf35edaa22a76af8b641ece3cefc114befd6c9f27f72f73b0",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/arxiv.svg",
+          "bytes": 1114,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "9e815e78e563907ba325f9c4eb553e18c75357ed",
+          "locally_verified": false
+        },
+        {
+          "path": "assets/logo.png",
+          "bytes": 6870,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "0b972779477f5707f49b9f4db9c920af87ed90d7",
+          "locally_verified": false
+        },
+        {
+          "path": "assets/qrcode.jpg",
+          "bytes": 57678,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "d543543dea98c57c46f5e0597b8eb9fe126d8a67",
+          "locally_verified": false
+        },
+        {
+          "path": "assets/radar.png",
+          "bytes": 1733839,
+          "source_lfs_sha256": "f7c16383ccd791312635793fb214aa53cce9a0b2135ab9e56672d873fee231ab",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "assets/wechat_group.png",
+          "bytes": 4751,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "d4abcf9af152c59c437ed8f23a295539127f1e4b",
+          "locally_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 1030,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "3434805f04fee7ddcdd6f7b57d273a4616466f27",
+          "locally_verified": false
+        },
+        {
+          "path": "configuration_step_audio_2.py",
+          "bytes": 4555,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "95c636d22187de863d21fb5c01aa375cb4d841dc",
+          "locally_verified": false
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 1671853,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+          "locally_verified": false
+        },
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "bytes": 4925370984,
+          "source_lfs_sha256": "7b88e02b0b8c643412ec68cae009b3952dbd8e27642d61626065a2c420a8b73c",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "bytes": 4932751008,
+          "source_lfs_sha256": "3d412c8d2fc17ca3351751f3171d48ff5b139af623aa05749062f132ac2585f1",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "bytes": 4988307424,
+          "source_lfs_sha256": "135ae4a891350e8ebf9791ef073d310314e1f75192bece0971bfab7b86c5587c",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "bytes": 1784019520,
+          "source_lfs_sha256": "d35bf0ec42ff9ec160dfc6c5cb20a65247f0f8ba1c6edc620398c2ef49a66295",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 64645,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "438fd67c13e0369bf05b6d11159f063dd412b55d",
+          "locally_verified": false
+        },
+        {
+          "path": "modeling_step_audio_2.py",
+          "bytes": 16647,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "50dfd88aeb19f32e8488f4391cda9b5cc83e537c",
+          "locally_verified": false
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 819,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "48237cf3928d1d2b90e2ac3018b8a694b15448bd",
+          "locally_verified": false
+        },
+        {
+          "path": "token2wav/campplus.onnx",
+          "bytes": 28303423,
+          "source_lfs_sha256": "a6ac6a63997761ae2997373e2ee1c47040854b4b759ea41ec48e4e42df0f4d73",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "token2wav/flow.pt",
+          "bytes": 623466603,
+          "source_lfs_sha256": "15ccff24256ff61537c7f8b51e025116b83405f3fb017b54b008fc97da115446",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "token2wav/flow.yaml",
+          "bytes": 1099,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "8638dca97881751e50c132498acbfa41ecf74d6f",
+          "locally_verified": false
+        },
+        {
+          "path": "token2wav/hift.pt",
+          "bytes": 83390254,
+          "source_lfs_sha256": "3386cc880324d4e98e05987b99107f49e40ed925b8ecc87c1f4939432d429879",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "token2wav/speech_tokenizer_v2_25hz.onnx",
+          "bytes": 496082973,
+          "source_lfs_sha256": "d43342aa12163a80bf07bffb94c9de2e120a8df2f9917cd2f642e7f4219c6f71",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 12684784,
+          "source_lfs_sha256": "529f599b059f0e73c30a25205b906a84add3988c964de0b7db090f34d71e2e6e",
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": null,
+          "locally_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1203453,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "efec20d5b802e723549a85acd030bef77793a35d",
+          "locally_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 2776833,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+          "locally_verified": false
+        }
+      ],
+      "is_final_selection": false,
+      "download_approved": false,
+      "whole_pipeline_params_verified": false
+    },
+    {
+      "key": "smol",
+      "id": "PranavHarshan/SmolDuplex",
+      "rev": "cca4a5e1ed0703650b97cb4beee480a726672be3",
+      "bytes": 12430,
+      "files": 3,
+      "params": null,
+      "license": null,
+      "access": "PUBLIC_DOCUMENTATION_ONLY",
+      "priority": "HOLD_NO_WEIGHTS",
+      "reason": "135M級の主張のみで、公開repoにREADME/ARCHITECTURE文書しかない",
+      "runtime": "重みがないため動作再現不可",
+      "code": null,
+      "paper": null,
+      "source_tree_api": "https://huggingface.co/api/models/PranavHarshan/SmolDuplex/tree/cca4a5e1ed0703650b97cb4beee480a726672be3?recursive=true",
+      "source_url": "https://huggingface.co/PranavHarshan/SmolDuplex/tree/cca4a5e1ed0703650b97cb4beee480a726672be3",
+      "source_repo_all_files_bytes": 12430,
+      "file_list": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "locally_verified": false
+        },
+        {
+          "path": "ARCHITECTURE.md",
+          "bytes": 9310,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "8ebeb4acd585abe765e554b802e9d1e9e1e8e901",
+          "locally_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 1601,
+          "source_lfs_sha256": null,
+          "gated_hash_redacted": false,
+          "source_git_blob_sha1": "f1eac792ea134bdd84fde12c41117ee72db5b5c2",
+          "locally_verified": false
+        }
+      ],
+      "is_final_selection": false,
+      "download_approved": false,
+      "whole_pipeline_params_verified": false
+    }
+  ],
+  "cross_source_sha256_overlap": {
+    "miniCPM_vs_stepAudio_token2wav": [
+      {
+        "external_path": "token2wav/campplus.onnx",
+        "minicpm_path": "assets/token2wav/campplus.onnx",
+        "bytes": 28303423,
+        "sha256": "a6ac6a63997761ae2997373e2ee1c47040854b4b759ea41ec48e4e42df0f4d73"
+      },
+      {
+        "external_path": "token2wav/flow.pt",
+        "minicpm_path": "assets/token2wav/flow.pt",
+        "bytes": 623466603,
+        "sha256": "15ccff24256ff61537c7f8b51e025116b83405f3fb017b54b008fc97da115446"
+      },
+      {
+        "external_path": "token2wav/hift.pt",
+        "minicpm_path": "assets/token2wav/hift.pt",
+        "bytes": 83390254,
+        "sha256": "3386cc880324d4e98e05987b99107f49e40ed925b8ecc87c1f4939432d429879"
+      },
+      {
+        "external_path": "token2wav/speech_tokenizer_v2_25hz.onnx",
+        "minicpm_path": "assets/token2wav/speech_tokenizer_v2_25hz.onnx",
+        "bytes": 496082973,
+        "sha256": "d43342aa12163a80bf07bffb94c9de2e120a8df2f9917cd2f642e7f4219c6f71"
+      }
+    ],
+    "token2wav_file_count": 5,
+    "total_bytes": 1231244352,
+    "exact_payload_shared_bytes": 1231243253,
+    "only_unshared_source_file": {
+      "path": "token2wav/flow.yaml",
+      "bytes": 1099
+    },
+    "any_runtime_compatibility_measured": false
+  },
+  "source_only_capacity_scenarios": [
+    {
+      "scenario": "v27_only",
+      "source_only_publisher_hash_upper_bound_bytes": 3417685712585,
+      "headroom_if_empty_formatted_3p8TB_plus_200GB_floor_bytes": 182314287415,
+      "source_only_budget_feasible_in_this_hypothetical": true,
+      "physical_disk_verified": false,
+      "approved": false
+    },
+    {
+      "scenario": "v27+MiniCPM+Moshi",
+      "source_only_publisher_hash_upper_bound_bytes": 3453495053397,
+      "headroom_if_empty_formatted_3p8TB_plus_200GB_floor_bytes": 146504946603,
+      "source_only_budget_feasible_in_this_hypothetical": true,
+      "physical_disk_verified": false,
+      "approved": false
+    },
+    {
+      "scenario": "previous+Lychee_and_step_dependency",
+      "source_only_publisher_hash_upper_bound_bytes": 3479125801326,
+      "headroom_if_empty_formatted_3p8TB_plus_200GB_floor_bytes": 120874198674,
+      "source_only_budget_feasible_in_this_hypothetical": true,
+      "physical_disk_verified": false,
+      "approved": false
+    },
+    {
+      "scenario": "previous+SophonTagFlash",
+      "source_only_publisher_hash_upper_bound_bytes": 3527606670620,
+      "headroom_if_empty_formatted_3p8TB_plus_200GB_floor_bytes": 72393329380,
+      "source_only_budget_feasible_in_this_hypothetical": true,
+      "physical_disk_verified": false,
+      "approved": false
+    },
+    {
+      "scenario": "previous+GatedPersonaHypothetical",
+      "source_only_publisher_hash_upper_bound_bytes": 3544742338180,
+      "headroom_if_empty_formatted_3p8TB_plus_200GB_floor_bytes": 55257661820,
+      "source_only_budget_feasible_in_this_hypothetical": true,
+      "physical_disk_verified": false,
+      "approved": false
+    },
+    {
+      "scenario": "previous+SophonE2EHypothetical",
+      "source_only_publisher_hash_upper_bound_bytes": 3623734808496,
+      "headroom_if_empty_formatted_3p8TB_plus_200GB_floor_bytes": -23734808496,
+      "source_only_budget_feasible_in_this_hypothetical": false,
+      "physical_disk_verified": false,
+      "approved": false
+    }
+  ],
+  "sophon_carryover": {
+    "pinned_report": "catalog/research/2026-11-10-sophon-provenance-followup.json",
+    "tag_flash_increment_upper_bound_bytes": 48480869294,
+    "e2e_increment_upper_bound_bytes": 78992470316,
+    "license_lineage_status": "DuplexJev CC BY-NC to Sophon Apache-2.0 unresolved; relicensing may be authorized but no proof in checked files",
+    "ABI_status": "Sophon pins duplexjev-vllm 0.3 while DuplexJev v1.5 needs >=0.4 for audio_full_length; runtime failure NOT established",
+    "optional_live_gateway": "SOPHON_LIVE_BACKEND defaults disabled but if set, SOPHON_LIVE_BACKEND_URL defaults to DashScope; optional delegated transcript/task may be transmitted; restrict to local-only until reviewed",
+    "independent_voicebench_reproduced": false
+  },
+  "research_gate": [
+    "TOTAL_TRAINED_PARAMETERS_OF_EXTERNAL_CODECS_UNKNOWN",
+    "PERSONA_GATED_PERSONAL_LICENSE_NOT_ACCEPTED",
+    "COMPLETE_CODE_RUNTIME_ABI_NOT_LOCKED",
+    "LOCAL_CHECKSUMS_NOT_COMPUTED",
+    "PHYSICAL_DISK_CURRENT_FREE_NOT_MEASURED",
+    "STAGING_CACHE_PEAK_UNKNOWN",
+    "LICENSE_CONTINUITY_REQUIRES_FULL_TEXT_REVIEW",
+    "EXPLICIT_PER_ASSET_ACQUISITION_APPROVAL_NOT_GRANTED"
+  ],
+  "policy": {
+    "planning_cap_bytes": 4000000000000,
+    "min_free_bytes": 200000000000,
+    "physical_disk_capacity_bytes": null,
+    "physical_free_bytes": null,
+    "simulated_usable_disk_total_bytes": 3800000000000,
+    "simulated_volume_must_be_empty": true,
+    "formula": "B_case=B_v27 + sum(B_source_new)-sum(B_sha256_identical); B_case+B_unmeasured+200e9<=measured_formatted_free_budget required, B_unmeasured UNKNOWN"
+  },
+  "review_thresholds": {
+    "test_needed_only_after_owner_download_approval": true,
+    "min_clips_per_condition": 30,
+    "independent_baseline_v27_comparators": [
+      "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+      "LiquidAI/LFM3-Omni-2B"
+    ],
+    "measure": [
+      "end_of_turn_false_cutoff",
+      "barge_in",
+      "speech_WER",
+      "realtime_latency_P50_P90",
+      "semantic_quality",
+      "sound_tag_occurrence",
+      "memory_peak"
+    ],
+    "fixed_environment": [
+      "CPU",
+      "GPU",
+      "driver",
+      "clock",
+      "CUDA",
+      "backend",
+      "ABI",
+      "batch",
+      "context",
+      "input_audio_length"
+    ],
+    "benchmarks_from_publishers_not_independent": true
+  },
+  "negative_control": {
+    "id": "PranavHarshan/SmolDuplex",
+    "checkpoint_file_count": 0,
+    "model_repo_docs_only": true,
+    "candidate_not_to_download": true
+  },
+  "validation": {
+    "static_checks": {
+      "v27": true,
+      "approved0": true,
+      "source_unique": true,
+      "not_current": true,
+      "stable_sources": true,
+      "step5": true,
+      "overlap4": true,
+      "zero_weight_smol": true,
+      "gated_redaction": true,
+      "physical_unknown": true,
+      "no_approval": true,
+      "not_executed": true,
+      "v27_kept": true
+    },
+    "all_pass": true,
+    "failed_checks": []
+  }
+}

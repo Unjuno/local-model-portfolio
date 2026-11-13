@@ -1,0 +1,126 @@
+{
+  "main_commit": "29529656ac9af944e37c1a803d7271d045860a44",
+  "risk_baseline_commit": "7b4ffbf311cfa22a37ebdfd17ed4039042525ee1",
+  "main_revision": "v19-20261106",
+  "main_expected": {
+    "tracked": 150,
+    "active": 105,
+    "by_tier": {
+      "R0": 14,
+      "R1": 64,
+      "R2": 27,
+      "BACKLOG": 12,
+      "HOLD": 27,
+      "EXCLUDED": 6
+    },
+    "by_decision": {
+      "select": 53,
+      "conditional": 52,
+      "hold": 27,
+      "deferred": 12,
+      "excluded": 6
+    },
+    "provisional_active_repo_bytes_plus_fineweb_sample": null,
+    "archive_limit_bytes": 3800000000000,
+    "provisional_headroom_bytes": null,
+    "budget_scenario": {
+      "base_planning_total_bytes": 3281639664565,
+      "additional_all_repo_bytes_observed": 6490849017,
+      "provisional_total_bytes": 3288130513582,
+      "archive_limit_bytes": 3800000000000,
+      "provisional_headroom_bytes": 511869486418,
+      "warning": "Historical v3/v4 planning scenario ONLY, not recomputed for v19; 6 new selected weights total ~12.799GB before dependencies/metadata/staging, no real filesystem measured."
+    },
+    "by_forecast_wave": {
+      "S1": {
+        "active": 31,
+        "inactive": 27
+      },
+      "S2": {
+        "active": 42,
+        "inactive": 7
+      },
+      "S3": {
+        "active": 32,
+        "inactive": 11
+      }
+    },
+    "resource_screen": {
+      "tracked": 150,
+      "source_repo_bytes_unknown": 46,
+      "active_source_repo_bytes_unknown": 22,
+      "active_ge_100GB_repo_assets": 8
+    },
+    "parameter_gate": {
+      "PASS_TOTAL_PARAMS_LT_150B": 111,
+      "UNVERIFIED_BLOCK_FINAL_LOCK": 14,
+      "OVER_150B_QUANT_REVIEW_REQUIRED": 2,
+      "EXCLUDED_TOTAL_PARAMS_GE_150B": 0
+    },
+    "parameter_evidence_review": {
+      "previous_unknown": 25,
+      "verified_new": 15,
+      "remaining_unknown": 14,
+      "remaining_active_unknown": 2,
+      "revision_note": "6 small models with Hub/source parameter size screen; source weight LFS checksums observed but repository revisions not locked; unknown 14 prior models unchanged.",
+      "r22_full_pipeline_ceiling_new": 2,
+      "v19_added_small_models_below150b": 6,
+      "source_weight_main_sha_pinned_count": 0
+    },
+    "quantized_exception_review": {
+      "over_baseline_held": 2,
+      "verified_runtime": 0,
+      "approved_downloads": 0
+    }
+  },
+  "risk_revision": "v22-20261106",
+  "left_right_commit_counts": "0\t15",
+  "changed_paths": [
+    "A\t.github/workflows/apply-insurance-v22.yml",
+    "A\t.github/workflows/apply-risk-selection-v20.yml",
+    "A\t.github/workflows/apply-risk-selection-v21.yml",
+    "A\t.github/workflows/audit-quantized-memory-equivalence.yml",
+    "M\tAGENTS.md",
+    "M\tREADME.md",
+    "M\tcatalog/CURRENT.json",
+    "A\tcatalog/effective-portfolio-2026-11-06-v20.json",
+    "A\tcatalog/effective-portfolio-2026-11-06-v21.json",
+    "A\tcatalog/effective-portfolio-2026-11-06-v22.json",
+    "A\tcatalog/preparation/2026-11-06-insurance-bundles-v22.json",
+    "A\tcatalog/preparation/2026-11-06-v20-integration-check.json",
+    "A\tcatalog/preparation/2026-11-06-v21-integration-check.json",
+    "A\tcatalog/preparation/2026-11-06-v22-integration-check.json",
+    "A\tcatalog/proposals/2026-11-06-orcarouter-regulation-followup.json",
+    "A\tcatalog/research/2026-11-06-over150b-memory-equivalence.json",
+    "A\tcatalog/revisions/v20-2026-11-06.json",
+    "A\tcatalog/revisions/v21-2026-11-06.json",
+    "A\tcatalog/revisions/v22-2026-11-06.json",
+    "A\tdocs/strategy/2026-11-06-orcarouter-regulation-followup.md",
+    "A\tdocs/strategy/24-selected-cascade-4tb-v20.md",
+    "A\tdocs/strategy/25-quantized-equivalent-memory-2026-11-06.md",
+    "A\tdocs/strategy/26-risk-evidence-selection-v21.md",
+    "A\tdocs/strategy/27-insurance-first-selection-v22.md",
+    "M\tdocs/workflow.md",
+    "A\tpolicies/archival-insurance.json",
+    "M\tpolicies/limits.json",
+    "M\tpolicies/selection-decision-v17.json",
+    "M\tpolicies/selection.md",
+    "A\tqueues/proposed-v20-2026-11-06.json",
+    "A\tqueues/proposed-v21-2026-11-06.json",
+    "A\tqueues/proposed-v22-2026-11-06.json",
+    "A\tscripts/apply_selection_v20.py",
+    "A\tscripts/apply_selection_v21.py",
+    "A\tscripts/apply_selection_v22.py",
+    "M\tscripts/audit_selection_decisions.py",
+    "M\tscripts/check_parameter_cutoff.py",
+    "A\tscripts/finalize_insurance_v22.py",
+    "M\ttests/test_catalog_v19.py",
+    "M\ttests/test_parameter_cutoff.py",
+    "A\ttests/test_quantized_memory_research.py",
+    "M\ttests/test_research_round20.py",
+    "A\ttests/test_selection_v20.py",
+    "A\ttests/test_selection_v21.py",
+    "A\ttests/test_selection_v22.py"
+  ],
+  "main_modified_by_this_work": false
+}

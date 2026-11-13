@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "review_id": "round9-runtime-license-20261101",
+  "status": "PASS_METADATA_ONLY",
+  "checks": {
+    "four_unique_open_models": true,
+    "all_model_revisions_full": true,
+    "model_bytes_reconcile": true,
+    "software_bytes_reconcile": true,
+    "software_hashes_well_formed": true,
+    "software_ids_unique": true,
+    "fixed_native_source_commit": true,
+    "all_model_native_paths_pinned": true,
+    "license_scope_not_overclaimed": true,
+    "native_source_not_inference": true,
+    "runtime_missing_not_zero": true,
+    "smol_specific_dependency": true,
+    "processor_checkpoint_parameter_preserved": true,
+    "gated_stays_blocked": true,
+    "no_software_binary_fetch": true,
+    "no_model_download_approval": true,
+    "no_execution_or_mutation": true,
+    "security_not_certified": true
+  },
+  "checked_on": "2026-11-01",
+  "payload_sha256": "9a964f442379bec72335c6c75124a5d5e0ca063dfe22b882377ce9ef95053446",
+  "payload_git_blob_sha1": "aa481be30b3cae480c3e37a99536811ef8d1c92c",
+  "limitations": "18 metadata/arithmetic/guard checks plus remote file-identity/state verification. No package binaries, weights or inference tested. Package dependency closure and target hardware remain unresolved.",
+  "remote_verification": {
+    "runtime_json_blob_matches_local": true,
+    "runtime_json_blob": "aa481be30b3cae480c3e37a99536811ef8d1c92c",
+    "review_document_blob_matches_local": true,
+    "review_document_blob": "cc5edb1ef92b469406d7a18acd3fa26f92374c77",
+    "current_main_and_branch_blob": "91dc8c042cf46242e020c0261c01cd5856c5ec36",
+    "approved_queue_main_and_branch_blob": "df0e369abda4b765533e0af3921c54a5cb164787",
+    "canonical_unchanged": true,
+    "approved_queue_unchanged_and_empty": true
+  }
+}

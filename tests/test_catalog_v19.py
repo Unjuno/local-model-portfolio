@@ -14,9 +14,10 @@ class V19SmallSpecializationTests(unittest.TestCase):
         cls.q=load("queues/proposed-v19-2026-11-06.json")
         cls.r=load("catalog/research/2026-11-06-small-model-r26.json")
     def test_counts_and_queue_identity(self):
+        # v19 remains an immutable historical view after CURRENT advances.
         v=self.view; c=self.current
-        self.assertEqual(c["revision_id"],"v19-20261106")
-        self.assertEqual(v["revision_id"],c["revision_id"])
+        self.assertEqual(v["revision_id"],"v19-20261106")
+        self.assertEqual(self.q["source_revision"],v["revision_id"])
         self.assertEqual(len(v["items"]),150)
         keys=[(x["asset_kind"],x["repo_id"]) for x in v["items"]]
         self.assertEqual(len(keys),len(set(keys)))
@@ -24,8 +25,25 @@ class V19SmallSpecializationTests(unittest.TestCase):
         offered={(x["asset_kind"],x["repo_id"]) for x in self.q["candidates"]}
         self.assertEqual(len(chosen),105)
         self.assertEqual(chosen,offered)
-        self.assertEqual(c["expected"]["tracked"],150)
-        self.assertEqual(c["expected"]["active"],105)
+        expected={"v19-20261106":(150,105),"v20-20261106":(154,108),"v21-20261106":(159,112),"v22-20261106":(163,116),"v23-20261106":(165,118),"v24-20261106":(168,121),"v25-20261106":(169,122),"v26-20261106":(172,125),"v27-20261107":(173,126),"v28-20261112":(175,128),"v29-20261112":(177,130),"v30-20261112":(178,131),"v31-20261113":(179,132)}
+        self.assertIn(c["revision_id"],expected)
+        tracked,active=expected[c["revision_id"]]
+        cv=load(c["materialized_catalog_path"])
+        cq=load(c["priority_worklist_path"])
+        self.assertEqual(cv["revision_id"],c["revision_id"])
+        self.assertEqual(cq["source_revision"],c["revision_id"])
+        self.assertEqual(c["expected"]["tracked"],tracked)
+        self.assertEqual(c["expected"]["active"],active)
+        self.assertEqual(len(cv["items"]),tracked)
+        ck={(x["asset_kind"],x["repo_id"]) for x in cv["items"]}
+        ca={(x["asset_kind"],x["repo_id"]) for x in cv["items"] if x["portfolio_decision"] in ("select","conditional")}
+        self.assertEqual(len(ck),tracked)
+        self.assertEqual(len(ca),active)
+        self.assertEqual(len(cq["candidates"]),active)
+        self.assertEqual(ca,{(x["asset_kind"],x["repo_id"]) for x in cq["candidates"]})
+        if c["revision_id"]=="v20-20261106":
+            self.assertEqual(cv["items"][:150],v["items"])
+            self.assertEqual(load("policies/limits.json")["archive_target_bytes"],4000000000000)
     def test_exact_six_new_and_evidence_scope(self):
         rows=self.r["source_weight_evidence"]; self.assertEqual(len(rows),6)
         m={x["repo_id"]:x for x in self.view["items"]}

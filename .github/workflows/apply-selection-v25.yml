@@ -1,0 +1,120 @@
+name: Apply restricted-license trained image v25 and audit 122 exact primary files
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - '.github/workflows/apply-selection-v25.yml'
+      - 'catalog/revisions/v25-2026-11-06.json'
+      - 'scripts/apply_selection_v25.py'
+      - 'scripts/capacity_selection_v25.py'
+      - 'tests/test_selection_v25.py'
+      - 'tests/test_capacity_selection_v25.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-v25-restricted-license-risk-only
+  cancel-in-progress: false
+jobs:
+  verify_and_apply:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Verify history and v25 non-executable transition
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_selection_v25.py -v
+          python scripts/check_parameter_cutoff.py
+          python scripts/audit_selection_decisions.py
+      - name: Apply v25 then check exact 122 file scopes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m scripts.apply_selection_v25 --apply
+          python -m scripts.capacity_selection_v25
+      - name: Audit complete regression and unique learned outcome
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,re,subprocess,sys
+          from pathlib import Path
+          load=lambda p:json.loads(Path(p).read_text(encoding='utf-8'))
+          c=load('catalog/CURRENT.json')
+          v=load(c['materialized_catalog_path'])
+          o=load('catalog/revisions/v25-2026-11-06.json')
+          old=load('catalog/effective-portfolio-2026-11-06-v24.json')
+          q=load(c['priority_worklist_path'])
+          plan=load('catalog/preparation/2026-11-06-insurance-bundles-v25.json')
+          s=load('catalog/capacity/2026-11-06/v25/capacity-summary.json')
+          prev=load('catalog/capacity/2026-11-06/v24/capacity-summary.json')
+          assert c['revision_id']=='v25-20261106'
+          assert len(v['items'])==169 and v['items'][:168]==old['items']
+          assert c['expected']['active']==122 and len(q['candidates'])==len(plan['items'])==122
+          active={(x['asset_kind'],x['repo_id']) for x in v['items'] if x['portfolio_decision'] in ('select','conditional')}
+          assert active=={(x['asset_kind'],x['repo_id']) for x in q['candidates']}
+          assert active=={(x['asset_kind'],x['repo_id']) for x in plan['items']}
+          new=v['items'][-1]
+          assert new['repo_id']=='PrunaAI/P-H3-Image' and new['portfolio_decision']=='conditional'
+          assert new['parameter_gate']['status']=='UNVERIFIED_BLOCK_FINAL_LOCK'
+          assert new['selected_file_bytes'] is None and new['download_approved'] is False
+          assert new['fully_pinned_revision_sha'] is None and new['license_text_reviewed'] is False
+          nc=next(x for x in q['candidates'] if x['repo_id']==new['repo_id'])
+          assert nc['research_only'] is True and nc['can_enter_approved_queue'] is False
+          assert s['exact_primary_file_scope_count']==122 and s['unresolved_primary_scope_count']==0
+          assert s['known_scope_content_union_bytes']>prev['known_scope_content_union_bytes']
+          assert s['known_scope_content_union_bytes']<4_000_000_000_000
+          assert s['complete_offline_archive_bytes'] is None and s['physical_disk_free_bytes'] is None
+          assert s['maya2_external_two_repo_publisher_bytes_reported_not_double_counted']==473790793
+          assert not q['approved'] and not q['download_enabled'] and not plan['download_enabled']
+          assert not load('queues/approved.json')['entries'] and not s['download_authorized']
+          assert len(o['additions'])==1 and o['max_new_selection_budget_bytes']==105_000_000_000
+          assert load('policies/limits.json')['archive_target_bytes']==4_000_000_000_000
+          assert load('policies/limits.json')['minimum_free_bytes']==200_000_000_000
+          c['capacity_audit'].update(source_revision='v25-20261106',checked_on='2026-11-06',
+             status='ALL_122_PRIMARY_SCOPES_EXACT_LICENSE_AND_MODEL_TOTAL_BLOCK_DOWNLOAD',
+             summary_path='catalog/capacity/2026-11-06/v25/capacity-summary.json',
+             file_inventory_path='catalog/capacity/2026-11-06/v25/selected-file-capacity.json',
+             report_path='catalog/capacity/2026-11-06/v25/capacity-report.md',
+             latest_revision_scope_coverage=122,v25_new_assets_unmeasured_count=0,owner_disk_measured=False)
+          Path('catalog/CURRENT.json').write_text(json.dumps(c,ensure_ascii=False,indent=2)+'\n')
+          run=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],capture_output=True,text=True)
+          log=run.stdout+run.stderr;print(log)
+          if run.returncode:raise SystemExit(run.returncode)
+          for sc in ('scripts/check_parameter_cutoff.py','scripts/audit_selection_decisions.py'):
+              subprocess.run([sys.executable,sc],check=True)
+          num=int(re.search(r'Ran (\d+) tests',log).group(1))
+          p=Path('catalog/preparation/2026-11-06-v25-integration-check.json')
+          check=load(p);check.update(full_suite_verified=True,
+             unittest_count=num,parameter_and_selection_audits_passed=True,
+             exact_primary_scopes=122,known_logical_dedup_bytes=s['known_scope_content_union_bytes'],
+             full_offline_archive_verified=False,model_payload_downloads=0,owner_disk_measured=False,
+             source_test_log_sha256=hashlib.sha256(log.encode()).hexdigest())
+          p.write_text(json.dumps(check,indent=2)+'\n')
+          print(json.dumps(check,indent=2))
+          PY
+      - name: Commit read-only selection metadata to risk branch under head lease
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          test "$(git ls-remote origin "$GITHUB_REF" | cut -f1)" = "$GITHUB_SHA"
+          git add -- catalog/CURRENT.json catalog/effective-portfolio-2026-11-06-v25.json queues/proposed-v25-2026-11-06.json catalog/preparation/2026-11-06-insurance-bundles-v25.json catalog/preparation/2026-11-06-v25-integration-check.json catalog/capacity/2026-11-06/v25 README.md AGENTS.md scripts/audit_selection_decisions.py tests/test_catalog_v19.py policies/selection-decision-v17.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'catalog: adopt P-H3 trained image as restricted research-only conditional [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD

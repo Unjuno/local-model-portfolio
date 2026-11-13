@@ -1,0 +1,219 @@
+{
+  "asset_kind": "model",
+  "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+  "portfolio_decision": "select",
+  "observed_at_utc": "2026-11-06T04:42:40.887032+00:00",
+  "evidence_kind": "anonymous_publisher_api_metadata_not_local_payload_measurement",
+  "download_authorized": false,
+  "payload_bytes_downloaded": 0,
+  "tree_complete": true,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 1570,
+      "sha256": null,
+      "git_blob_sha1": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "1_Pooling/config.json",
+      "bytes": 313,
+      "sha256": null,
+      "git_blob_sha1": "b6291baabbc39f9792d6759883a47d7d5bd0fbcf",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "README.md",
+      "bytes": 17237,
+      "sha256": null,
+      "git_blob_sha1": "00a82ea60dfb1d8aed899c16e2b4f12673cd2f79",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "config.json",
+      "bytes": 727,
+      "sha256": null,
+      "git_blob_sha1": "cef2749ee93607b8f9a58ec72f4f6bfaf874e71d",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "config_sentence_transformers.json",
+      "bytes": 215,
+      "sha256": null,
+      "git_blob_sha1": "76aef3ade63553ebb698fe3c2a3264040ed093f8",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "generation_config.json",
+      "bytes": 117,
+      "sha256": null,
+      "git_blob_sha1": "d46f1983345269c582611bbedb3ca0a13f8e5f7b",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "merges.txt",
+      "bytes": 1671853,
+      "sha256": null,
+      "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "model.safetensors",
+      "bytes": 1191586416,
+      "sha256": "0437e45c94563b09e13cb7a64478fc406947a93cb34a7e05870fc8dcd48e23fd",
+      "git_blob_sha1": "9116264a405846ebfe4e95556b63b1ca07c892a0",
+      "identity_kind": "lfs_payload_sha256",
+      "local_hash_verified": false
+    },
+    {
+      "path": "modules.json",
+      "bytes": 349,
+      "sha256": null,
+      "git_blob_sha1": "952a9b81c0bfd99800fabf352f69c7ccd46c5e43",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 11423705,
+      "sha256": "def76fb086971c7867b829c23a26261e38d9d74e02139253b38aeb9df8b4b50a",
+      "git_blob_sha1": "18a4abbf4a408dc534006a455544dcc195f356d2",
+      "identity_kind": "lfs_payload_sha256",
+      "local_hash_verified": false
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 9706,
+      "sha256": null,
+      "git_blob_sha1": "7345216a0785dc7086e8c245b2a9d3896ce2b756",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "vocab.json",
+      "bytes": 2776833,
+      "sha256": null,
+      "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    }
+  ],
+  "source_scope_bytes": 1207489041,
+  "selected_files_bytes": null,
+  "complete_dependency_bytes": null,
+  "runtime_peak_ram_bytes": null,
+  "local_reuse_verified": false,
+  "prior_observed_access": "public",
+  "prior_revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+  "requested_artifact": null,
+  "required_dependencies_note": "Embeddingの次元・正規化・インデックスとの互換性に注意。",
+  "parameter_gate_status": "PASS_TOTAL_PARAMS_LT_150B",
+  "source_api_url": "https://huggingface.co/api/models/Qwen/Qwen3-Embedding-0.6B",
+  "head_revision_observed": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+  "pinned_revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+  "pinned_revision_origin": "head_observed_for_capacity_only_not_selection_approval",
+  "gated": false,
+  "private": false,
+  "license_metadata": "apache-2.0",
+  "metadata_sha256": "0d6ad4ba1433faf8adbc0ad43f1c5811e17b2c64dd0a798e44501f986bca42fd",
+  "last_modified": "2026-04-20T02:45:58.000Z",
+  "architecture_metadata": {
+    "architectures": [
+      "Qwen3ForCausalLM"
+    ],
+    "model_type": "qwen3",
+    "tokenizer_config": {
+      "bos_token": null,
+      "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0].role == 'system' %}\n        {{- messages[0].content + '\\n\\n' }}\n    {%- endif %}\n    {{- \"# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0].content + '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == \"user\" and not(message.content.startswith('<tool_response>') and message.content.endswith('</tool_response>')) %}\n        {%- set ns.multi_step_tool = false %}\n        {%- set ns.last_query_index = index %}\n    {%- endif %}\n{%- endfor %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {%- set content = message.content %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is defined and message.reasoning_content is not none %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- else %}\n            {%- if '</think>' in message.content %}\n                {%- set content = message.content.split('</think>')[-1].lstrip('\\n') %}\n                {%- set reasoning_content = message.content.split('</think>')[0].rstrip('\\n').split('<think>')[-1].lstrip('\\n') %}\n            {%- endif %}\n        {%- endif %}\n        {%- if loop.index0 > ns.last_query_index %}\n            {%- if loop.last or (not loop.last and reasoning_content) %}\n                {{- '<|im_start|>' + message.role + '\\n<think>\\n' + reasoning_content.strip('\\n') + '\\n</think>\\n\\n' + content.lstrip('\\n') }}\n            {%- else %}\n                {{- '<|im_start|>' + message.role + '\\n' + content }}\n            {%- endif %}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if (loop.first and content) or (not loop.first) %}\n                    {{- '\\n' }}\n                {%- endif %}\n                {%- if tool_call.function %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {{- '<tool_call>\\n{\"name\": \"' }}\n                {{- tool_call.name }}\n                {{- '\", \"arguments\": ' }}\n                {%- if tool_call.arguments is string %}\n                    {{- tool_call.arguments }}\n                {%- else %}\n                    {{- tool_call.arguments | tojson }}\n                {%- endif %}\n                {{- '}\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.first or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\\n\\n</think>\\n\\n' }}\n    {%- endif %}\n{%- endif %}",
+      "eos_token": "<|im_end|>",
+      "pad_token": "<|endoftext|>",
+      "unk_token": null
+    }
+  },
+  "parameter_metadata": {
+    "parameters": {
+      "BF16": 595776512
+    },
+    "total": 595776512
+  },
+  "source_scope": "repository_all_files_not_selection",
+  "file_count": 12,
+  "documentation": [
+    {
+      "path": "README.md",
+      "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/raw/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3/README.md",
+      "observed_bytes": 17237,
+      "sha256": "c34d9b7e5a267ad3fdd13227a253686bc90844ff4744a2a6a86c7c905e3d06f3",
+      "repo_reference_leads_not_verified_dependencies": [
+        "Qwen/Qwen3-Embedding-0.6B",
+        "Qwen/Qwen3-Embedding-4B",
+        "Qwen/Qwen3-Embedding-8B",
+        "Qwen/Qwen3-Reranker-0.6B",
+        "Qwen/Qwen3-Reranker-4B",
+        "Qwen/Qwen3-Reranker-8B",
+        "spaces/mteb"
+      ],
+      "card_text_archived": false
+    },
+    {
+      "path": "config.json",
+      "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/raw/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3/config.json",
+      "observed_bytes": 727,
+      "sha256": "b5bf1f51fc45be473a54718cef92448d90a1be001bf9b9a44b8c7f10a19feaa9",
+      "json": {
+        "architectures": [
+          "Qwen3ForCausalLM"
+        ],
+        "attention_bias": false,
+        "attention_dropout": 0.0,
+        "bos_token_id": 151643,
+        "eos_token_id": 151643,
+        "head_dim": 128,
+        "hidden_act": "silu",
+        "hidden_size": 1024,
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "max_position_embeddings": 32768,
+        "max_window_layers": 28,
+        "model_type": "qwen3",
+        "num_attention_heads": 16,
+        "num_hidden_layers": 28,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_scaling": null,
+        "rope_theta": 1000000,
+        "sliding_window": null,
+        "tie_word_embeddings": true,
+        "torch_dtype": "bfloat16",
+        "transformers_version": "4.51.3",
+        "use_cache": true,
+        "use_sliding_window": false,
+        "vocab_size": 151669
+      }
+    },
+    {
+      "path": "1_Pooling/config.json",
+      "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/raw/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3/1_Pooling/config.json",
+      "observed_bytes": 313,
+      "sha256": "37bf193fa101f19101bfad9c31d3eb0f786e247b7b1e5cb7f007d730eed1ddbd",
+      "json": {
+        "word_embedding_dimension": 1024,
+        "pooling_mode_cls_token": false,
+        "pooling_mode_mean_tokens": false,
+        "pooling_mode_max_tokens": false,
+        "pooling_mode_mean_sqrt_len_tokens": false,
+        "pooling_mode_weightedmean_tokens": false,
+        "pooling_mode_lasttoken": true,
+        "include_prompt": true
+      }
+    }
+  ],
+  "metadata_change_requires_review": false
+}

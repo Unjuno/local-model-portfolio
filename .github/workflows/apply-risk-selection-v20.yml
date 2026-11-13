@@ -1,0 +1,50 @@
+name: Apply reviewed v20 selection on risk branch only
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - 'catalog/revisions/v20-2026-11-06.json'
+      - 'scripts/apply_selection_v20.py'
+      - 'tests/test_catalog_v19.py'
+      - 'tests/test_selection_v20.py'
+      - '.github/workflows/apply-risk-selection-v20.yml'
+permissions:
+  contents: read
+concurrency:
+  group: apply-risk-selection-v20
+  cancel-in-progress: false
+jobs:
+  apply:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Test transition then apply metadata only
+        run: |
+          python -m unittest discover -s tests -p test_selection_v20.py -v
+          python scripts/check_parameter_cutoff.py
+          python scripts/audit_selection_decisions.py
+          python scripts/apply_selection_v20.py --apply
+          python -m unittest discover -s tests -v
+          python scripts/check_parameter_cutoff.py
+          python scripts/audit_selection_decisions.py
+      - name: Commit only generated catalog files to this branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          git add -- catalog/CURRENT.json catalog/effective-portfolio-2026-11-06-v20.json catalog/preparation/2026-11-06-v20-integration-check.json queues/proposed-v20-2026-11-06.json policies/limits.json policies/selection-decision-v17.json policies/selection.md docs/workflow.md scripts/audit_selection_decisions.py README.md AGENTS.md
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'catalog: materialize adopted v20 selections and 4TB budget [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD

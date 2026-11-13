@@ -17,7 +17,9 @@
     "require_estimate_before_approval": true,
     "require_backend_context_batch_assumptions": true,
     "include_os_kv_cache_runtime_overheads": true,
-    "require_measured_peak_for_over_baseline": true
+    "require_measured_peak_for_over_baseline": true,
+    "require_matched_under150b_reference_for_over150b": true,
+    "quantized_disk_file_bytes_do_not_prove_peak_ram": true
   },
   "unknown_file_sizes_block_download": true,
   "require_pinned_revision": true,
@@ -27,7 +29,7 @@
   "auto_delete_existing_files": false,
   "default_parallel_assets": 1,
   "storage_allocation_policy": {
-    "confirmed_on": "2026-11-07",
+    "confirmed_on": "2026-11-06",
     "advertised_drive_capacity_bytes": 4000000000000,
     "permitted_archive_budget_bytes": 4000000000000,
     "policy_type": "maximize_valuable_and_lawfully_obtainable_unique_assets_up_to_cap_not_mandatory_fill",
@@ -36,19 +38,21 @@
     "free_space_floor_still_applies": true,
     "check_existing_content_cache_and_staging_peak": true,
     "source_model_selection_and_approval_remain_separate": true,
-    "notes": "User reported 4TB actually usable on 2026-11-07. Treat as planning ceiling, not measured free space. Keep 200GB minimum free space as an independent gate. Preserve all existing selected, conditional, hold, backlog and past undecided research assets; do not infer download approval.",
+    "notes": "User authorized a 4,000,000,000,000-byte selection ceiling. This is not a disk measurement. Retain the 200GB free-space floor; if usable total is exactly 4TB, payload must be below 3.8TB before existing data/staging.",
     "user_reported_capacity": {
-      "reported_text": "2026-11-07: actually 4TB usable; roughly 800GB additional opportunity",
-      "report_date": "2026-11-07",
+      "reported_text": "about 3.8 TB displayed/usable on a purchased 4 TB-class HDD",
+      "report_date": "2026-11-02",
+      "unit_and_meaning": "not independently verified; TB vs TiB, total vs free, and exact bytes unknown",
       "formatted_volume_capacity_bytes_verified": null,
       "current_free_bytes_verified": null,
       "filesystem_name_verified": null,
-      "unit_and_meaning": "rounded user report, not byte-accurate measurement; whether 200GB free floor is outside the usable 4TB remains unknown",
-      "safety_example_if_formatted_total_exactly_4tb_bytes": {
-        "maximum_archive_payload_before_existing_files_and_staging_bytes": 3800000000000
+      "default_example_if_usable_bytes_exactly_3800000000000": {
+        "max_payload_bytes_before_existing_data_and_peak_working_space": 3600000000000,
+        "based_on_minimum_free_bytes": 200000000000
       },
       "never_treat_reported_size_as_download_authorization": true
-    }
+    },
+    "latest_user_statement": "リポに選定して入れて行ってください4tまでいれることができます"
   },
   "inference_operational_cost_policy": {
     "revised_on": "2026-11-03",
@@ -73,7 +77,7 @@
     "evaluation_artifact": "docs/resource-cost-screen-v6-2026-11-03.md"
   },
   "total_parameter_policy": {
-    "revised_on": "2026-11-04",
+    "revised_on": "2026-11-06",
     "baseline_model_total_parameters": 150000000000,
     "mode": "BASELINE_WITH_QUANTIZED_RUNTIME_EXCEPTION",
     "compare_field": "actual total learned parameters including inactive MoE experts, embedding, MTP; quantization does NOT reduce count",
@@ -93,7 +97,11 @@
       "all trained dependencies and their count/rights",
       "measured complete peak inference memory <512GB decimal",
       "actual quality pass and useful speed at fixed hardware/context/batch",
-      "explicit separately approved manifest"
+      "explicit separately approved manifest",
+      "matched pinned selected reference <150B, identical hardware/driver/backend ABI/context/batch and workload, >=30 trials of both",
+      "candidate peak runtime memory <= reference peak runtime memory, both <512e9 bytes, no unified RAM double-count",
+      "measure task quality, latency and throughput; SSD streaming can pass capacity but fail utility",
+      "source and derivative license text, individual gated permission and complete immutable quantized file set must be checked"
     ],
     "evidence": [
       "https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored-GGUF",
@@ -103,6 +111,24 @@
     ],
     "no_override_from_regulatory_forecast": true,
     "dataset_exempt": true,
-    "previous_policy": "v8-v11 >=150B hard exclusion is HISTORICAL and superseded; no exception granted solely by this revision"
+    "previous_policy": "v8-v11 >=150B hard exclusion is HISTORICAL and superseded; no exception granted solely by this revision",
+    "user_2026_11_06_clarification": "150B total model parameters are NOT an absolute exclusion. Quantized >=150B models may be selected after measured complete runtime memory no greater than a pinned comparable <150B selected model under identical hardware/backend/context/batch, and independently pass <512GB, quality, throughput, rights, manifest, 4TB/archive and user approval. Quantized file bytes are not peak RAM.",
+    "hard_exclusion_by_parameter_count_alone": false,
+    "memory_equivalence": {
+      "comparison_type": "MATCHED_UNDER_150B_REFERENCE_PEAK_NOT_FILE_SIZE",
+      "reference_model_total_parameters_must_be_strictly_below": 150000000000,
+      "reference_must_be_pre_registered_pinned_active_catalog_model": true,
+      "same_hardware_backend_context_batch_and_workload": true,
+      "required_trials_per_candidate_and_reference": 30,
+      "candidate_measured_complete_peak_must_be_at_or_below_reference": true,
+      "candidate_and_reference_both_must_be_below_global_peak_ram_bytes": 512000000000,
+      "combined_memory_no_unified_ram_gpu_double_count": true,
+      "include_os_runtime_kv_cache_learned_dependencies_ssd_mmap_residency": true,
+      "allow_different_quant_schemes_only_if_recorded": true,
+      "no_peer_data_means_hold": true,
+      "no_percent_tolerance_invented": true,
+      "no_claim_from_gguf_size_virtual_rss_or_active_expert_parameters": true,
+      "cloud_rental_and_model_execution_require_separate_user_permission": true
+    }
   }
 }

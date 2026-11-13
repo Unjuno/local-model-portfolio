@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "artifact_type": "non_executable_conditional_selection_proposal",
+  "proposal_id": "v28-r1-2026-11-08",
+  "source_date": "2026-11-08",
+  "source_revision": "v27-20261107",
+  "source_catalog_sha": "ad7dc54dd67e7421cb685750238658f2f4e05e41",
+  "source_capacity_sha": "5646a967a674080cbb610f5813de42d649a8b0f4",
+  "source_branch_commit": "c46e4446bb699ce7353077041c5c4ec046dd5e1b",
+  "target_branch": "strategy/2026-11-03-01-risk",
+  "adoption_status": "THREE_INDEPENDENT_TRAINED_MODELS_RECOMMENDED_FOR_CONDITIONAL_V28_OVERLAY_NOT_APPLIED",
+  "current_state_unchanged": true,
+  "existing_asset_counts": {
+    "tracked": 173,
+    "active": 126,
+    "models": 147,
+    "datasets": 26,
+    "approved_downloads": 0
+  },
+  "if_adopted_counts": {
+    "tracked": 176,
+    "active": 129,
+    "models": 150,
+    "datasets": 26
+  },
+  "future_policy": {
+    "over_150b_rule": "V27 permits exceptional >=150B quantized only on measured equal or lower RAM than fixed <150B reference under same HW OS driver backend context batch with quality speed and rights; NOT approved here",
+    "parameter_threshold_for_automatic_pass": 150000000000,
+    "minimum_free_physical_bytes": 200000000000,
+    "unverified_pipeline_total_blocks_final_lock": true,
+    "gated_access_never_inferred": true,
+    "distribution_change_forecasts_not_facts": true
+  },
+  "archive_budget": {
+    "v27_source_scope_logical_bytes": 3417685712585,
+    "archive_ceiling_bytes": 4000000000000,
+    "existing_difference_bytes": 582314287415,
+    "three_new_conservative_policy_reservations_bytes": 171000000000,
+    "arithmetic_difference_after_reservations_bytes": 411314287415,
+    "all_sources_actual_selected_bytes_complete": false,
+    "owner_disk_free_bytes": null,
+    "complete_restoration_bytes": null,
+    "cache_staging_additions_bytes": null,
+    "planned_reservation_not_measured_storage": true
+  },
+  "decisions": {
+    "new_candidates_to_adopt_conditionally": 3,
+    "legacy_active_change": 0,
+    "actual_current_revision_changed": false,
+    "download_authorizations": 0,
+    "acquisition_lock_created": false,
+    "external_code_executed": false
+  },
+  "evidence_classification": {
+    "fact": "First-party model/technical cards, published HF repo existence, named GitHub source and official model/benchmark descriptions",
+    "vendor_report": "Publisher benchmark scores not independently repeated; clock, batch may be missing",
+    "inference": "New trained checkpoint improves preservation diversity and likely cannot be recreated from parent without training data/recipe",
+    "hypothesis": "Future distribution restrictions are possible but model-specific imminent removal has NOT been verified",
+    "unknown": "Complete rights clearances, runtime reproducibility, exact source file bytes/hashes for PrimeSim and final offline capacity"
+  },
+  "additions": [
+    {
+      "rank": 1,
+      "repo_id": "beipo-ai/NorthCUA-Mini",
+      "alias_repo_id": "china-beipo/NorthCUA-Mini",
+      "hf_url": "https://huggingface.co/beipo-ai/NorthCUA-Mini",
+      "model_type": "vision-driven computer-use MoE posttrained checkpoint",
+      "decision": "PROPOSE_CONDITIONAL_ADD_TO_V28",
+      "proposed_tier": "R1",
+      "s_wave": "S1",
+      "reason": "Long-horizon GUI desktop/web posttraining with staged midtraining, SFT and joint RL; separate learned 35B checkpoint compared with existing Fara1.5-27B, Holo4-27B and general Qwen3.5; retain only Mini as one NorthCUA family exemplar.",
+      "nonredundancy": [
+        "microsoft/Fara1.5-27B",
+        "Hcompany/Holo4-27B",
+        "PrentisAI/GroundGUI-8B"
+      ],
+      "total_parameters_observed_approx": 35107200000,
+      "active_parameters_nominal": 3000000000,
+      "parameter_source": "HF Hub repo metadata; MoE TOTAL not active count; HF rounded M",
+      "parameter_gate": "BELOW_150B_MODEL_TOTAL_REQUIRES_INDEX_CHECK",
+      "access": "public HF metadata; official docs report anonymous access",
+      "license_metadata": "apache-2.0",
+      "license_text_read_in_this_turn": false,
+      "pinned_source_revision_from_official_docs": "cafee9af6a950bffea2a4a17544f253abf80d44b",
+      "source_snapshot_evidence": "https://github.com/beipo-ai/NorthCUA/blob/main/docs/models.md",
+      "released_weight_shards": 16,
+      "publisher_reported_weight_tensor_payload_bytes": 70214363872,
+      "source_repo_size_approx_bytes": 70230000000,
+      "selected_bytes_exact": null,
+      "bounded_planning_reservation_bytes": 75000000000,
+      "requested_artifact": "ONE full native BF16 checkpoint (16 shards) with index, native processor/tokenizer/chat template, LICENSE, NOTICE, checksums and pinned NorthCUA Harness source; not Nano and not Pro",
+      "required_runtime": "Transformers 5.20.2 export; Qwen3_5MoeForConditionalGeneration; native vision tools; normalized_1000 coordinate contract; harness must be revision-locked separately; code execution not authorized",
+      "publisher_evidence": {
+        "osworld_verified_success_rate_percent": 85.3,
+        "osworld_n_tasks": 361,
+        "webarena_verified_success_percent": 70.43,
+        "webarena_n_tasks": 812,
+        "max_steps_per_task": 100,
+        "benchmark_attribution": "Developer technical-report RL checkpoint results, not independently tied to this export or this user's hardware",
+        "papers": [
+          "https://arxiv.org/abs/2611.02102"
+        ]
+      },
+      "risks": [
+        "Benchmark numbers are publisher report not local measurements",
+        "Model/Harness integration, actual peak 512GB RAM, rev and full archive SHA not tested",
+        "Public status is not a perpetual entitlement",
+        "Availability of original parent Qwen3.5 doesn't recreate the separate GUI-tuned weights"
+      ],
+      "falsify": "Same file SHA as preexisting selected model, no reproducible GUI action contract, or materially inferior same-harness evaluation."
+    },
+    {
+      "rank": 2,
+      "repo_id": "qiyuan-robot/PrimeSim",
+      "hf_url": "https://huggingface.co/qiyuan-robot/PrimeSim",
+      "model_type": "robot action-conditioned multiview world-model posttrained checkpoint",
+      "decision": "PROPOSE_CONDITIONAL_ADD_TO_V28",
+      "proposed_tier": "R1",
+      "s_wave": "S2",
+      "reason": "Joint world simulation in three camera views, 31-slot embodiment-unified actions from 30,110 h/22-platform demonstrations; distinct from existing NVIDIA Cosmos3 Nano Bimanual/Sim-Auto and general Wan2.2 video, with causal four-step posttraining.",
+      "nonredundancy": [
+        "nvidia/Cosmos3-Nano-Sim-Bimanual",
+        "nvidia/Cosmos3-Nano-Sim-Auto",
+        "Wan-AI/Wan2.2-TI2V-5B"
+      ],
+      "total_parameters_observed_approx": 5047769281,
+      "parameter_source": "source model-card description and secondary public safetensors-base-header count; complete pipeline total not verified",
+      "parameter_gate": "UNVERIFIED_FULL_PIPELINE_BLOCK_FINAL_LOCK",
+      "access": "HF public ungated metadata on 2026-11-08, private license/rights still not personally audited",
+      "license_metadata": "apache-2.0",
+      "license_text_read_in_this_turn": false,
+      "pinned_source_revision_from_official_docs": null,
+      "source_code_pinned_git_revision": "b1e92466184da1bf3c55cc1a555dc4c2a06a597a",
+      "source_code_url": "https://github.com/PrimebotTech/PrimeSim",
+      "source_repo_size_approx_bytes": null,
+      "selected_bytes_exact": null,
+      "bounded_planning_reservation_bytes": 26000000000,
+      "requested_artifact": "ONE primesim_posttrain_g2.safetensors (~10.1 GB, publisher release), not primesim_base; track Wan2.2-TI2V-5B text encoder, Wan2.2 VAE, umT5 tokenizer as 14GB shared dependency only after pinned SHA match",
+      "required_runtime": "Official Python code pinned commit, native Wan2.2-VAE and T5, source action layout and inference script; official A100/H100 80GB GPU reference, no local run",
+      "publisher_evidence": {
+        "claimed_video_frames_per_second": 10.1,
+        "hardware": "single NVIDIA A100 80GB, BF16, 3 camera views 288x384 pixels per view, 4 denoise steps",
+        "batch": null,
+        "gpu_clock": null,
+        "source": "https://primebottech.github.io/PrimeSim-website/",
+        "papers": [
+          "https://arxiv.org/abs/2611.04870"
+        ],
+        "code": "https://github.com/PrimebotTech/PrimeSim"
+      },
+      "risks": [
+        "Complete trained pipeline parameter total unresolved; no acquisition lock",
+        "HF original weight revision and per-file SHA missing",
+        "Companion Wan2.2 source files need legitimate access and immutable SHA; no assumed dedup savings",
+        "Benchmarks are developer claims; 80GB test is not this user's runtime",
+        "Dataset 30,110 hours not released as downloadable archive"
+      ],
+      "falsify": "Selected trained G2 is only a repackaged existing Wan2.2/Cosmos model, or required 31-slot controls and 3-view rollouts cannot be restored from pinned native code."
+    },
+    {
+      "rank": 3,
+      "repo_id": "meta-models/Muse-Glimmer-30B",
+      "hf_url": "https://huggingface.co/meta-models/Muse-Glimmer-30B",
+      "model_type": "distilled dense 30B multimodal agent and optional learned DFlash drafter",
+      "decision": "PROPOSE_CONDITIONAL_ADD_TO_V28",
+      "proposed_tier": "R1",
+      "s_wave": "S2",
+      "reason": "Meta separately distills Muse Spark for local multimodal agentic tool use and perception; different teacher/architecture/training than existing Qwen3.8 27B, Gemma4 31B and Holo4, and optional separately trained DFlash drafter provides a distinct verified-by-target decoding mechanism.",
+      "nonredundancy": [
+        "Qwen/Qwen3.8-27B",
+        "google/gemma-4-31B",
+        "Hcompany/Holo4-27B"
+      ],
+      "total_parameters_observed_approx": 29776626688,
+      "optional_dflash_drafter_parameters_reported": 2555985152,
+      "parameter_source": "HF Hub metadata and immutable 2026 BF16 analysis, full pipeline still requires independent tensor census",
+      "parameter_gate": "BELOW_150B_BASE_DRAFTER_OPTIONAL_AUDIT",
+      "access": "ungated publicly listed publisher weights, Meta official documentation says no gated access",
+      "license_metadata": "apache-2.0 plus USAGE_POLICY.md",
+      "license_text_read_in_this_turn": false,
+      "pinned_source_revision_from_publisher_tree_history": "f84ecc3a0ea984a4c04542a84269e3d065350a6e",
+      "newer_official_sft_recipe_revision_observed": "a4e59da52a7bc87ae7251dd5545c0dd437c44b68",
+      "source_repo_size_approx_bytes": 59600000000,
+      "selected_bytes_exact": null,
+      "bounded_planning_reservation_bytes": 70000000000,
+      "requested_artifact": "ONE original BF16 two-shard checkpoint with vision encoder, index, processor/tokenizer/chat template, LICENSE and USAGE_POLICY; optional one native DFlash assistant if source pin and compatible ABI validated; no two GGUF k-quant variants, no ExecuTorch PTE zoo",
+      "optional_component_repo": "meta-models/Muse-Glimmer-30B-assistant",
+      "required_runtime": "Transformers native muse_glimmer or pinned vLLM/SGLang; BF16 reference requires ~72GB VRAM per Meta documentation; DFlash backend target/draft pairing must be checked independently",
+      "publisher_evidence": {
+        "full_bf16_model_publisher_report_bytes_approx": 59600000000,
+        "baseline_precision": "bf16",
+        "runtime_peak_vram_estimate_bytes_approx": 72000000000,
+        "source": "https://dev.meta.ai/docs/muse-glimmer/deploy",
+        "reference_benchmark": {
+          "hardware": "NVIDIA RTX 5090",
+          "backend": "llama.cpp",
+          "batch": 1,
+          "decode": "greedy",
+          "target": "K-Quant-17GB + DFlash quantized, not BF16",
+          "tokens_per_second_baseline": 74.9,
+          "tokens_per_second_dflash": 233.4,
+          "source": "https://huggingface.co/meta-models/Muse-Glimmer-30B"
+        }
+      },
+      "risks": [
+        "Different source revisions f84ecc vs a4e59da need integrity comparison before final lock",
+        "USAGE_POLICY and upstream content rights independently to inspect",
+        "BF16 original isn't proven to run within user-specific VRAM/RAM though Meta states ~72GB VRAM",
+        "DFlash must pair exactly; both GGUF variants and PTE formats are redundant for archival source"
+      ],
+      "falsify": "Fails independent agent+multimodal workload, lacks official source revision identity or rights clearance, or duplicates previously selected SHA."
+    }
+  ],
+  "held_candidates": [
+    {
+      "repo_id": "vernerobotics/v0.5-base",
+      "decision": "HOLD_RESEARCH_RIGHTS",
+      "reason": "Original world-action joint video/action learned model, ~8.216B and 16.4GB, but currently manual Gated approval, custom Verne license with commercial contact, no user's entitlement verified, no public fine-tune code; compared to selected pi0/SmolVLA and new PrimeSim, cannot promote under unresolved access",
+      "url": "https://huggingface.co/vernerobotics/v0.5-base",
+      "revisit": "Gated approval and usage-contract review; show standalone independent task quality, full dependencies and architecture difference",
+      "no_download": true
+    },
+    {
+      "repo_id": "baselabs/joey-1",
+      "decision": "HOLD_COMPARATIVE_RESEARCH",
+      "reason": "MIT, independently fine-tuned Qwen3.5 multimodal decision model ~2.72B, but functionality overlaps recently adopted Kanana typed choice/noul/score; verify independent calibration and quality gains with same workload and serving cost before second same-role model",
+      "url": "https://huggingface.co/baselabs/joey-1",
+      "revisit": "Same-harness Brier score/calibration, latency, quality and 5.44GB value against Kanana",
+      "no_download": true
+    },
+    {
+      "repo_id": "beipo-ai/NorthCUA-Nano",
+      "decision": "HOLD_DUPLICATE_FAMILY",
+      "reason": "Same NorthCUA training family 9B with lower publisher-reported task success than the selected Mini. Do not acquire both by default.",
+      "url": "https://huggingface.co/beipo-ai/NorthCUA-Nano",
+      "revisit": "If Mini cannot meet hardware/latency budget, single substitute Nano may be considered",
+      "no_download": true
+    },
+    {
+      "repo_id": "beipo-ai/NorthCUA-Pro",
+      "decision": "HOLD_OVER_150B_EXCEPTION_UNPROVEN",
+      "reason": "397B total / 17B active; total >150B. No measured same-hardware quantized memory equivalence and quality/rights under current v27 exception rule; not eligible for acquisition or formal conditional selection.",
+      "url": "https://huggingface.co/beipo-ai/NorthCUA-Pro",
+      "revisit": "Strict measured same-backend/context/batch peak memory plus <512GB and independent rights; all explicitly approved",
+      "no_download": true
+    }
+  ],
+  "verification": {
+    "records_unique": true,
+    "all_have_primary_source_urls": true,
+    "all_candidate_counts_under_150b": true,
+    "all_candidates_download_approved": false,
+    "source_catalog_matches_v27": true,
+    "has_explicit_uncertainty": true
+  }
+}

@@ -1,0 +1,115 @@
+name: Audit Hunyuan3D PBR DINOv2 giant and RealESRGAN external weights without downloads
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - '.github/workflows/audit-hunyuan3d-pbr-v27.yml'
+      - 'scripts/audit_hunyuan3d_pbr_v27.py'
+      - 'tests/test_hunyuan3d_pbr_v27.py'
+      - 'docs/strategy/41-hunyuan3d-pbr-external-restore-v27.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: model-portfolio-hunyuan3d-source-v27-risk
+  cancel-in-progress: false
+jobs:
+  pin_public_dependency_metadata:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Check v27 original selection, tests and authorization lock
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_hunyuan3d_pbr_v27.py -v
+          python scripts/check_parameter_cutoff.py
+          python scripts/audit_selection_decisions.py
+      - name: Read pinned small code and HF/GitHub repository metadata, no weights
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m scripts.audit_hunyuan3d_pbr_v27
+      - name: Verify all regressions and source-only capacity scenario
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,re,subprocess,sys
+          from pathlib import Path
+          def load(p):return json.loads(Path(p).read_text(encoding='utf-8'))
+          c=load('catalog/CURRENT.json')
+          s=load('catalog/capacity/2026-11-07/v27/capacity-summary.json')
+          a=load('catalog/research/2026-11-07-hunyuan3d-pbr/audit.json')
+          assert c['revision_id']=='v27-20261107' and c['expected']['tracked']==173 and c['expected']['active']==126
+          assert s['exact_primary_file_scope_count']==126
+          assert s['known_scope_content_union_bytes']==3_417_685_712_585
+          assert len(s['assets_with_open_dependency_issues'])==35
+          assert not load('queues/approved.json')['entries']
+          assert a['newly_selected_portfolio_assets']==0 and a['newly_approved_downloads']==0
+          assert a['downloaded_model_payload_bytes']==0
+          assert a['parent']['source_revision']=='0b94677654c57bb9a6b6845cd7b704ccf551d327'
+          assert a['code']['revision']=='82920d643c0dc2f7bfd7255f45f62d386edfe60c'
+          assert a['code']['complete_git_tree']
+          assert a['code']['git_blob_gross_bytes']==173_699_323
+          assert a['dino_model']['id']=='facebook/dinov2-giant'
+          assert a['dino_model']['selected_original_files_bytes']>2_000_000_000
+          assert a['dino_model']['gated'] is False
+          assert a['dino_model']['license_metadata']=='apache-2.0'
+          assert a['realesrgan_checkpoint']['bytes']==67_040_989
+          assert a['realesrgan_checkpoint']['release_asset_id']==40_831_506
+          assert a['realesrgan_checkpoint']['digest_from_github_release_api'] is None
+          assert not a['realesrgan_checkpoint']['payload_sha256_verified']
+          assert a['checked_pbr_code_dependencies']['DINOv2_giant_required_by_default_pbr_checkpoint']
+          assert a['checked_pbr_code_dependencies']['external_super_resolution_checkpoint_required_for_default_paint_pipeline']
+          assert a['checked_pbr_code_dependencies']['root_community_license_excludes_EU_UK_South_Korea']
+          q=a['capacity_scenario']
+          assert q['baseline_known_logical_bytes']==s['known_scope_content_union_bytes']
+          assert q['new_source_only_logical_union_bytes']>=q['baseline_known_logical_bytes']
+          assert q['new_source_hash_aware_logical_increment_bytes']>2_000_000_000
+          assert q['new_source_only_logical_union_bytes']<4_000_000_000_000
+          assert q['owner_real_disk_free_bytes'] is None and q['complete_offline_archive_bytes'] is None
+          tests=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],
+                               capture_output=True,text=True)
+          output=tests.stdout+tests.stderr
+          print(output)
+          if tests.returncode:raise SystemExit(tests.returncode)
+          for script in ('scripts/check_parameter_cutoff.py','scripts/audit_selection_decisions.py'):
+              subprocess.run([sys.executable,script],check=True)
+          count=int(re.search(r'Ran (\d+) tests',output).group(1))
+          proof={'source_revision':'v27-20261107',
+              'full_regression_pass':True,'tests_run':count,
+              'parameter_gate_and_selection_audit_pass':True,
+              'owner_disk_measured':False,'full_offline_restoration_tested':False,
+              'model_payloads_downloaded':0,'new_model_selections':0,
+              'source_subsets_pinned':2,'release_asset_sha256_unverified':True,
+              'test_log_sha256':hashlib.sha256(output.encode()).hexdigest()}
+          Path('catalog/research/2026-11-07-hunyuan3d-pbr/verification.json').write_text(
+              json.dumps(proof,indent=2)+'\n',encoding='utf-8')
+          print(json.dumps(proof,indent=2))
+          PY
+      - name: Commit only generated metadata to risk branch after optimistic lease
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          test "$(git ls-remote origin "$GITHUB_REF" | cut -f1)" = "$GITHUB_SHA"
+          git add -- catalog/research/2026-11-07-hunyuan3d-pbr
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'research: pin Hunyuan3D PBR DINOv2 plus RealESRGAN release asset provenance [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD

@@ -1,0 +1,103 @@
+name: Audit MOSS codec source and native video/audio restoration dependencies
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - '.github/workflows/research-restoration-v26.yml'
+      - 'scripts/research_dependency_closure_v26.py'
+      - 'tests/test_research_dependency_closure_v26.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-restoration-v26-readonly
+  cancel-in-progress: false
+jobs:
+  inspect:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Verify v26 no approvals and known metadata before research
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          load=lambda x:json.loads(Path(x).read_text())
+          c=load('catalog/CURRENT.json');s=load('catalog/capacity/2026-11-06/v26/capacity-summary.json')
+          q=load(c['priority_worklist_path'])
+          assert c['revision_id']=='v26-20261106' and c['expected']['tracked']==172 and c['expected']['active']==125
+          assert s['known_scope_content_union_bytes']==3_403_245_899_240 and s['exact_primary_file_scope_count']==125
+          assert len(s['assets_with_open_dependency_issues'])==34
+          assert not q['download_enabled'] and not q['approved'] and not load('queues/approved.json')['entries']
+          PY
+          python -m unittest discover -s tests -p test_research_dependency_closure_v26.py -v
+      - name: Audit two public codec source trees without weight download
+        run: python -m scripts.research_dependency_closure_v26
+      - name: Verify index shards, license classes, history and all regression
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,re,subprocess,sys
+          from pathlib import Path
+          load=lambda x:json.loads(Path(x).read_text())
+          c=load('catalog/CURRENT.json')
+          q=load(c['priority_worklist_path'])
+          a=load('catalog/research/2026-11-07-dependency-readiness/audit.json')
+          assert c['revision_id']=='v26-20261106' and c['expected']['active']==125 and c['expected']['tracked']==172
+          assert a['formal_selections_added']==a['formal_selections_removed']==0
+          assert not a['download_approved'] and a['model_payload_bytes_downloaded']==0
+          assert a['owner_disk_measured'] is False and a['full_offline_total_bytes'] is None
+          assert len(a['codec_source_snapshots'])==2
+          originals={x['repo_id']:x for x in a['codec_source_snapshots']}
+          assert originals['OpenMOSS-Team/MOSS-Audio-Tokenizer']['source_repository_bytes']>3_000_000_000
+          assert originals['OpenMOSS-Team/MOSS-Audio-Tokenizer-v2']['source_repository_bytes']>3_000_000_000
+          for x in originals.values():
+              assert x['all_index_shards_present'] and not x['personal_access_approved']
+              assert x['model_weights_bytes']>0 and x['model_weight_file_count']>=2
+              assert len(x['fixed_source_sha_observed'])==40
+          assert a['moss_v1_5_required_audio_codec_repo']=='OpenMOSS-Team/MOSS-Audio-Tokenizer'
+          assert a['moss_v2_codec_is_not_default_v1_5_dependency']
+          assert a['parents']['ltx_2_5']['preselected_original_BF16_bytes']==71_118_789_776
+          assert a['parents']['vibevoice']['qwen_tokenizer_nine_source_files_bytes']==11_505_079
+          assert not q['approved'] and not q['download_enabled'] and not load('queues/approved.json')['entries']
+          test=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],capture_output=True,text=True)
+          log=test.stdout+test.stderr
+          if test.returncode:print(log);raise SystemExit(test.returncode)
+          for path in ('scripts/check_parameter_cutoff.py','scripts/audit_selection_decisions.py'):
+              subprocess.run([sys.executable,path],check=True)
+          n=int(re.search(r'Ran (\d+) tests',log).group(1))
+          proof={'base_revision':'v26-20261106','new_selected_assets':0,
+             'codec_sources_verified':2,'full_unit_tests_pass':True,
+             'test_count':n,'parameter_and_selection_audits_pass':True,
+             'weights_downloaded':0,'owner_disk_measured':False,'physical_restore_verified':False,
+             'test_log_sha256':hashlib.sha256(log.encode()).hexdigest()}
+          Path('catalog/research/2026-11-07-dependency-readiness/verification.json').write_text(json.dumps(proof,indent=2)+'\n')
+          print(json.dumps(proof,indent=2))
+          PY
+      - name: Commit metadata-only evidence to dedicated branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          test "$(git ls-remote origin "$GITHUB_REF" | cut -f1)" = "$GITHUB_SHA"
+          git add -- catalog/research/2026-11-07-dependency-readiness
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'research: lock public MOSS audio-codec source metadata and restoration evidence [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD

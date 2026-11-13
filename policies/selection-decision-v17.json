@@ -2,9 +2,9 @@
   "schema_version": 1,
   "policy_id": "noncompensatory-portfolio-selection-v17",
   "effective_on": "2026-11-04",
-  "objective": "Select strong independent technical mechanisms likely to face earlier distribution scrutiny as an unproven scenario; never equate censorship label with quality or probability.",
+  "objective": "Insure against loss of public distribution by preserving valuable learned outcomes and their dependencies. Early-restriction scenarios order preparation but are not the sole eligibility test; daily-use optimization is separate.",
   "hard_boundaries": {
-    "archive_target_bytes": 3800000000000,
+    "archive_target_bytes": 4000000000000,
     "free_space_floor_bytes": 200000000000,
     "inference_peak_ram_limit_exclusive_bytes": 512000000000,
     "preferred_max_model_total_parameters": 150000000000,
@@ -14,7 +14,10 @@
     "never_auto_download_or_seed": true,
     "never_auto_delete": true,
     "conditional_research_may_have_unknown_total_with_non_executable_marker": true,
-    "no_auto_reject_from_license_metadata_unknown": true
+    "no_auto_reject_from_license_metadata_unknown": true,
+    "over150b_is_not_absolute_exclusion": true,
+    "require_comparable_matched_reference_peak_for_over150b": true,
+    "comparison_policy": "policies/limits.json#total_parameter_policy.memory_equivalence"
   },
   "decision_stages": [
     {
@@ -42,7 +45,8 @@
         "verified original identity and metadata",
         "relevant technical mechanism not replicated by incumbent",
         "no contradictory serious performance failure unaddressed; negative evidence documented",
-        "full total under 150B or validated exception before approved lock; research stage may still be conditional nonexecutably"
+        "full total under 150B or validated exception before approved lock; research stage may still be conditional nonexecutably",
+        "Over150B quantized assets remain HOLD/research only until matched reference RAM and all runtime and rights gates verified; parameter count alone not a ban"
       ],
       "allowed_result": "conditional (NOT download permission)"
     },
@@ -64,7 +68,8 @@
         "immutable repo/revision and all selected files SHA256",
         "exact bytes and actual free disk minus staging >=200GB",
         "peak RAM and speed quality measured when oversized",
-        "explicit separately user-approved lock"
+        "explicit separately user-approved lock",
+        "Over150B: measured candidate peak RAM <= pinned active under150B reference peak RAM under same hardware/backend/context/batch with >=30 trials each, in addition to absolute <512GB and quality/speed/rights"
       ],
       "allowed_result": "download permission only after all"
     }
@@ -101,7 +106,7 @@
     "U": "no verifiable test"
   },
   "non_compensatory_rule": "No weighted ranking, downloads, likes, claimed uncensor level, model size or forecast tier can override missing legal/identity/total/runtime rights. For optional research priority first compare S1/S2/S3, unique mechanism, observed changes and quality within an evidence grade.",
-  "conditional_minimum_quality": "Show a plausible task-specific advantage supported at least by third-party or reproducible creator test, and explicitly publish negative evidence. Without that, HOLD.",
+  "conditional_minimum_quality": "Credible evidence of a distinct learned mechanism or research value, with negative evidence recorded; neither imminent-ban proof nor overall benchmark superiority is required for conditional archival selection. Acquisition and existing oversized runtime gates remain separate.",
   "benchmark_plan": {
     "llm": {
       "min_benign": 200,
@@ -226,5 +231,8 @@
     "https://caliperbench.com/m/pantheon-reasoning-26b-a4b-1.1-v2/"
   ],
   "manual_user_override": "User may explicitly preserve unique heavy models like Nanbeige dense 33B; maintain rights/runtime and manifest rules.",
-  "rights_policy_path": "policies/personal-research-rights-v17.json"
+  "rights_policy_path": "policies/personal-research-rights-v17.json",
+  "archive_budget_last_user_authorization": "2026-11-06",
+  "memory_equivalence_clarified_on": "2026-11-06",
+  "archival_insurance_policy_path": "policies/archival-insurance.json"
 }

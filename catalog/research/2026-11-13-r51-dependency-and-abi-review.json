@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "round": "R51",
+  "reviewed_on": "2026-11-13",
+  "source_branch": "strategy/2026-11-03-01-risk",
+  "base_commit": "29da1dc0c6f1aad599b74a4eb60864d1890edfd6",
+  "canonical_revision": "v30-20261112",
+  "catalog_changes": 0,
+  "download_approvals": 0,
+  "old_tracked": 178,
+  "old_active": 131,
+  "active_unknown_records": [
+    {
+      "id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "revision": "592aaa11f13a7e480169455aa885f58c42d89766",
+      "repo_bytes": 166915795579,
+      "root_elements": null,
+      "blocker": "LTX2.5 DiT＋Gemma4 text encoder＋映像/音声VAEの総数とdonor license。FP8/INT8/GGUF同重み多形式は一代表。",
+      "asset_kind": "model",
+      "original_decision": "conditional",
+      "full_pipeline_total_parameters": null,
+      "final_lock_allowed": false,
+      "source_snapshot_date": "2026-11-06",
+      "live_hf_revision_rechecked_on_2026_11_13": false
+    },
+    {
+      "id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "revision": "829cf2f7cbdf79872ff365787ba50f80006efe76",
+      "repo_bytes": 195942118539,
+      "root_elements": null,
+      "blocker": "v1 DiT＋Gemma4/VAE総数、LTX Community License。beta1/beta2/v1は別学習成果だがv1の4精度は別形式。",
+      "asset_kind": "model",
+      "original_decision": "conditional",
+      "full_pipeline_total_parameters": null,
+      "final_lock_allowed": false,
+      "source_snapshot_date": "2026-11-06",
+      "live_hf_revision_rechecked_on_2026_11_13": false
+    },
+    {
+      "id": "WhissleAI/steer-tts",
+      "revision": "65ec6a637f4bd9d868064846c69ed85e37d302a0",
+      "repo_bytes": 973512551,
+      "root_elements": 9585639,
+      "blocker": "Vocos13.53M、flow17.64Mまたはpflow24.67M、WavLM約101M、MiniLM約22.7Mなど全学習済み依存。本人Gated権とCC BY-NC code+weights。",
+      "asset_kind": "model",
+      "original_decision": "conditional",
+      "full_pipeline_total_parameters": null,
+      "final_lock_allowed": false,
+      "source_snapshot_date": "2026-11-06",
+      "live_hf_revision_rechecked_on_2026_11_13": false
+    },
+    {
+      "id": "maya-research/maya2-native",
+      "revision": "87a83efdd6551e038246b6b37836a6264713eec3",
+      "repo_bytes": 5056388035,
+      "root_elements": 2502398656,
+      "blocker": "Mimi約96.2MとSpeechBrain ECAPAを追加し完全数を確定。Qwen backbone/depth decoderは本体に含まれ元親の重複取得は不要。",
+      "asset_kind": "model",
+      "original_decision": "conditional",
+      "full_pipeline_total_parameters": null,
+      "final_lock_allowed": false,
+      "source_snapshot_date": "2026-11-06",
+      "live_hf_revision_rechecked_on_2026_11_13": false
+    },
+    {
+      "id": "fishaudio/drama-3",
+      "revision": "78e5ab79e49aa9a25abe8799eff2c4d73a1c3216",
+      "repo_bytes": 41502571262,
+      "root_elements": 35899643008,
+      "blocker": "外部codec.pth 1,871,099,728byteの学習済み総数、Fish Audio Research License。非承認pickleロード禁止。",
+      "asset_kind": "model",
+      "original_decision": "conditional",
+      "full_pipeline_total_parameters": null,
+      "final_lock_allowed": false,
+      "source_snapshot_date": "2026-11-06",
+      "live_hf_revision_rechecked_on_2026_11_13": false
+    },
+    {
+      "id": "ausboss/Qwen-Image-2.1-Consistency-LoRA",
+      "revision": "58897a02f4f60f88376eab5676738dd45e5ed1a2",
+      "repo_bytes": 328616200,
+      "root_elements": null,
+      "blocker": "rank32 LoRAとQwen Image2.1親＋text encoder/VAEを合算。step1500/2000は各159,436,496byteでSHAが異なる学習段階、二重採用未承認。",
+      "asset_kind": "model",
+      "original_decision": "conditional",
+      "full_pipeline_total_parameters": null,
+      "final_lock_allowed": false,
+      "source_snapshot_date": "2026-11-06",
+      "live_hf_revision_rechecked_on_2026_11_13": false
+    },
+    {
+      "id": "PrunaAI/P-H3-Image",
+      "revision": "7f98acef503cf2bcfba821a78cb1cf1a9928b2df",
+      "repo_bytes": 99845388933,
+      "root_elements": 33122992896,
+      "blocker": "Transformer7 shard以外にencoder2、prompt upsampler4、connector1、VAE1の計15学習済みsafetensors。MiniMax地域/用途制限とApache部品。",
+      "asset_kind": "model",
+      "original_decision": "conditional",
+      "full_pipeline_total_parameters": null,
+      "final_lock_allowed": false,
+      "source_snapshot_date": "2026-11-06",
+      "live_hf_revision_rechecked_on_2026_11_13": false
+    }
+  ],
+  "rights_correction": {
+    "repo_id": "WhissleAI/steer-tts",
+    "source": "https://github.com/WhissleAI/steer-tts/blob/5008f8e032f69266c3f37788825cfda3112eab55/LICENSE",
+    "source_code_commit": "5008f8e032f69266c3f37788825cfda3112eab55",
+    "observed_terms": "Whissle code, weights and voices CC BY-NC4.0 plus Whissle additional terms; historical MIT-code statements conflict",
+    "old_grants_retroactively_changed": false,
+    "change_date_proven": false,
+    "first_observed_git_license_commit": "2026-10-31",
+    "third_party": [
+      "WavLM CC BY-SA 3.0",
+      "Vocos MIT",
+      "MiniLM Apache-2.0",
+      "recorded events CC BY-SA4.0"
+    ],
+    "personal_gated_access_verified": false
+  },
+  "new_research_holds": [
+    {
+      "repo_id": "WhissleAI/steer-tts-nano",
+      "decision": "HOLD_NON_EXECUTABLE",
+      "gated": true,
+      "license": "CC BY-NC4.0 plus Whissle terms including inference code",
+      "model_card_stnb_version": 2,
+      "github_C_loader_supported_version": 1,
+      "actual_model_binary_header_checked": false,
+      "model_runtime_compatibility_verified": false,
+      "exact_total_parameters": null,
+      "fixed_code_sha": "5008f8e032f69266c3f37788825cfda3112eab55",
+      "loader_url": "https://github.com/WhissleAI/steer-tts/blob/5008f8e032f69266c3f37788825cfda3112eab55/esp32/components/steertts_nano/src/nano_model.c",
+      "c_header_url": "https://github.com/WhissleAI/steer-tts/blob/5008f8e032f69266c3f37788825cfda3112eab55/esp32/components/steertts_nano/include/nano_bin.h",
+      "counterexample": "If published nano.bin actual header is v1 or v2-compatible code is supplied, mismatch disappears; neither verified.",
+      "unique_value": "16kHz, 2 voice, ~2.99MB int8 weights and ~1.8MB front data for ESP32-S3 without PSRAM; separate learned architecture, not just full-model quantization.",
+      "developer_metrics": "240MHz ESP32-S3 no-PSRAM, GitHub RTF0.66 and HF card 0.75 with differing test setup; do not average.",
+      "download_authorized": false
+    },
+    {
+      "repo_id": "WhissleAI/steer-tts-edge",
+      "decision": "HOLD_COMPARE_V2_VS_BASE",
+      "gated": true,
+      "license": "CC BY-NC4.0 plus Whissle terms",
+      "reason": "Edge 2.0 has independently trained v2 acoustic checkpoint and ~12MB packaged formats; don't treat ONNX/INT4/runtime layouts as separate trained models; overlaps current SteerTTS v1.",
+      "tested_on_user_hw": false,
+      "download_authorized": false
+    }
+  ],
+  "verified_abi_issue": "Publisher Nano card declares STNB2 but pinned C loader rejects any version other than 1. No actual binary header checked.",
+  "research_limitations": "Firecrawl credits exhausted. HF connector and original vendor docs with previously pinned source trees consulted. No payload downloads, runtime execution, legal accept, physical HDD measurement or full tensor census.",
+  "error_check": {
+    "seven_repo_ids_unique": true,
+    "all_complete_pipeline_counts_remain_unknown": true,
+    "catalog_and_approved_unchanged": true
+  }
+}

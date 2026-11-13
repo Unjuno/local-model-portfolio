@@ -1,0 +1,131 @@
+name: Apply v26 Phonon/Cosmos insurance and verify 125 immutable file scopes
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - '.github/workflows/apply-selection-v26.yml'
+      - 'catalog/revisions/v26-2026-11-06.json'
+      - 'scripts/apply_selection_v26.py'
+      - 'tests/test_selection_v26.py'
+      - 'scripts/capacity_selection_v26.py'
+      - 'tests/test_capacity_selection_v26.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-selection-v26-risk-only
+  cancel-in-progress: false
+jobs:
+  audit_apply:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Test v26 selection protocol before any metadata materialization
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_selection_v26.py -v
+          python scripts/check_parameter_cutoff.py
+          python scripts/audit_selection_decisions.py
+      - name: Materialize v26 view/queue and account all 125 primary files offline
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m scripts.apply_selection_v26 --apply
+          python -m scripts.capacity_selection_v26
+      - name: Verify all 169 historical identities, license gates, 4TB and full regression
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,re,subprocess,sys
+          from pathlib import Path
+          load=lambda p:json.loads(Path(p).read_text(encoding='utf-8'))
+          c=load('catalog/CURRENT.json')
+          v=load(c['materialized_catalog_path'])
+          prev=load('catalog/effective-portfolio-2026-11-06-v25.json')
+          q=load(c['priority_worklist_path'])
+          w=load(c['insurance_preparation_worklist_path'])
+          s=load('catalog/capacity/2026-11-06/v26/capacity-summary.json')
+          historical=load('catalog/capacity/2026-11-06/v25/capacity-summary.json')
+          overlay=load('catalog/revisions/v26-2026-11-06.json')
+          assert c['revision_id']=='v26-20261106' and len(v['items'])==172
+          assert len(prev['items'])==169 and v['items'][:169]==prev['items']
+          assert c['expected']['active']==125 and len(q['candidates'])==125 and len(w['items'])==125
+          active={(x['asset_kind'],x['repo_id']) for x in v['items'] if x['portfolio_decision'] in ('select','conditional')}
+          assert active=={(x['asset_kind'],x['repo_id']) for x in q['candidates']}
+          assert active=={(x['asset_kind'],x['repo_id']) for x in w['items']}
+          new=v['items'][-3:]
+          assert {x['repo_id'] for x in new}=={'nvidia/Cosmos3-Nano-Sim-Auto','gradium/phonon-31m-en','gradium/phonon-40m-multilingual'}
+          assert all(x['selected_file_bytes'] is None and x['fully_pinned_revision_sha'] is None and x['download_approved'] is False for x in new)
+          gate=next(x for x in q['candidates'] if x['repo_id']=='gradium/phonon-40m-multilingual')
+          assert gate['research_only'] is True and gate['gated_approval_required'] is True
+          assert gate['can_enter_approved_queue'] is False and gate['personal_gated_access_verification_required'] is True
+          assert all(not x['download_approved'] for x in v['items'])
+          assert not q['approved'] and not q['download_enabled'] and not w['download_enabled']
+          assert not load('queues/approved.json')['entries']
+          assert len(overlay['additions'])==3
+          assert overlay['research_not_selected'][0]['repo_id']=='baidu/ERNIE-5.5-Flash-Base'
+          assert historical['exact_primary_file_scope_count']==122 and historical['known_scope_content_union_bytes']==3_372_065_984_104
+          assert s['exact_primary_file_scope_count']==125 and s['unresolved_primary_scope_count']==0
+          assert s['known_scope_content_union_bytes']>historical['known_scope_content_union_bytes']
+          assert s['known_scope_content_union_bytes']<4_000_000_000_000
+          assert s['complete_offline_archive_bytes'] is None and s['physical_disk_free_bytes'] is None
+          assert s['new_shared_voices_source_selected_bytes']==26_183_423
+          assert s['new_vibevoice_qwen_tokenizer_only_bytes']==11_505_079
+          assert s['nvidia_Cosmos_common_vae_bytes']==1_409_400_600
+          assert not s['download_authorized'] and s['model_payload_bytes_downloaded']==0
+          limits=load('policies/limits.json')
+          assert limits['archive_target_bytes']==4_000_000_000_000
+          assert limits['minimum_free_bytes']==200_000_000_000
+          c['capacity_audit'].update(source_revision='v26-20261106',
+             checked_on='2026-11-06',
+             summary_path='catalog/capacity/2026-11-06/v26/capacity-summary.json',
+             file_inventory_path='catalog/capacity/2026-11-06/v26/selected-file-capacity.json',
+             report_path='catalog/capacity/2026-11-06/v26/capacity-report.md',
+             status='ALL_125_PRIMARY_SCOPES_EXACT_GATED_ACCESS_AND_EXTERNAL_RUNTIME_BLOCK_FINAL_DOWNLOAD',
+             latest_revision_scope_coverage=125,v26_new_assets_unmeasured_count=0,
+             owner_disk_measured=False)
+          Path('catalog/CURRENT.json').write_text(json.dumps(c,ensure_ascii=False,indent=2)+'\n')
+          a=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],capture_output=True,text=True)
+          text=a.stdout+a.stderr
+          print(text)
+          if a.returncode:raise SystemExit(a.returncode)
+          for script in ('scripts/check_parameter_cutoff.py','scripts/audit_selection_decisions.py'):
+              subprocess.run([sys.executable,script],check=True)
+          n=int(re.search(r'Ran (\d+) tests',text).group(1))
+          p=Path('catalog/preparation/2026-11-06-v26-integration-check.json')
+          proof=load(p)
+          proof.update(full_suite_verified=True,unittest_count=n,
+             parameter_and_selection_audits_passed=True,exact_primary_scopes=125,
+             known_logical_dedup_bytes=s['known_scope_content_union_bytes'],
+             full_offline_archive_verified=False,model_payload_downloads=0,
+             gated_access_unverified_no_download=True,owner_disk_measured=False,
+             source_test_log_sha256=hashlib.sha256(text.encode()).hexdigest())
+          p.write_text(json.dumps(proof,indent=2)+'\n')
+          print(json.dumps(proof,indent=2))
+          PY
+      - name: Commit derived v26 selection, accounting and audit pointers to risk only
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          test "$(git ls-remote origin "$GITHUB_REF" | cut -f1)" = "$GITHUB_SHA"
+          git add -- catalog/CURRENT.json catalog/effective-portfolio-2026-11-06-v26.json queues/proposed-v26-2026-11-06.json catalog/preparation/2026-11-06-insurance-bundles-v26.json catalog/preparation/2026-11-06-v26-integration-check.json catalog/capacity/2026-11-06/v26 README.md AGENTS.md scripts/audit_selection_decisions.py tests/test_catalog_v19.py policies/selection-decision-v17.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'catalog: adopt three trained outcomes and account exact v26 source bytes [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD

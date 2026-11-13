@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "round": "R53",
+  "as_of": "2026-11-13",
+  "source_branch": "strategy/2026-11-03-01-risk",
+  "base_commit": "19f68aaeb5a04acd3d2d1c71325c97bfc9c8bdc4",
+  "direct_post": "https://x.com/acemusicai/status/2120945723005166053",
+  "direct_post_body_verified": false,
+  "announcement": {
+    "name": "ACE Music v1",
+    "state": "HOSTED_ONLY_NOT_PUBLIC_WEIGHTS",
+    "official_site": "https://acemusic.ai/acemusic-v1/",
+    "official_publisher_claim": "ACE Music v1 ranked first on Artificial Analysis AA-Music-Vocal v1.1; separate from ACE-Step open models.",
+    "weight_repo_verified": false,
+    "weight_sha": null,
+    "number_of_parameters": null,
+    "redistribution_license": null,
+    "source_release_date": null,
+    "publisher_main_weights_promise_ambiguity": "Secondary paraphrases of November 12 social post say 'model weights in next few weeks', but the official site explicitly names ACE Music v1 Flash (not flagship v1) for late-2026 open-source. Do not treat this as confirmed release of flagship.",
+    "official_promised_variant": "ACE Music v1 Flash",
+    "official_promised_window": "late 2026, not a binding or exact date",
+    "flash_weight_repo_verified": false,
+    "flash_license": null,
+    "flash_parameters": null,
+    "other_closed_variant": {
+      "name": "ACE Music v1.1 Preview",
+      "site": "https://acemusic.ai/acemusic-v1-1-preview/",
+      "novelty": "ABC-notation score planning and melody/MIDI conditioning; hosted preview, weights not confirmed public",
+      "selection": "RESEARCH_HOLD_NO_ARCHIVE"
+    },
+    "caveat": "Hosted model output rights/plan prices are not a license to its weights. Do not scrape private APIs or circumvent access."
+  },
+  "independent_evaluation": {
+    "evaluator": "Artificial Analysis",
+    "primary_announcement_url": "https://x.com/ArtificialAnlys/status/2120337324898992298",
+    "benchmark": "AA-Music-Vocal v1.1",
+    "ace_v1_elo_at_debut": 1160,
+    "suno_v6_elo_at_debut": 1144,
+    "ace_v1_reported_95pct_interval": [
+      1139,
+      1181
+    ],
+    "suno_v6_reported_95pct_interval": [
+      1126,
+      1162
+    ],
+    "intervals_overlap": true,
+    "interpretation": "Observed vocal-music leaderboard lead (16 Elo) is not an established universal quality gap, especially for instrumental work. Confidence intervals overlap, no paired significance test verified.",
+    "ace_music_v1_instrumental_rank_verified": false
+  },
+  "existing_portfolio_gap": {
+    "baseline_catalog_assets": 178,
+    "existing_open_music_generator_repo_ids": [],
+    "relevant_audio_analysis_model": "m-a-p/MERT-v2-FullSong",
+    "MERT_does_not_generate_songs": true,
+    "source_of_repo_ids": "v30 effective portfolio materialized catalog 2026-11-12",
+    "official_alternative": "https://huggingface.co/ACE-Step/Ace-Step1.5"
+  },
+  "ACE_Step_open_original": {
+    "trained_outcome_id": "ACE-Step/acestep-v15-xl-turbo",
+    "kind": "original additional distilled XL 8-step music DiT, not mere serialization of 2B variant",
+    "official_checkpoint": "https://huggingface.co/ACE-Step/acestep-v15-xl-turbo",
+    "checkpoint_hf_observed_revision": "d4a0b288b83ebb7e25a8c0b32c573c22e134e8ee",
+    "checkpoint_hf_approx_repo_gb": 20,
+    "checkpoint_hf_weight_dtype": "F32 according to HF tensor summary; publisher card says BF16 weight size ~18.8GB; actual selected file bytes and dtype must be frozen",
+    "checkpoint_hf_safetensors_publisher_total_rounded_params": 4987300000,
+    "checkpoint_file_inventory_from_hf_html": "4 safetensors each approx 4.99GB, config, 1 model index, two custom Python files and silence_latent.pt (pickle), no full byte/hash verification",
+    "publisher_model_card_license": "mit",
+    "full_model_repo_license_file_text_verified": false,
+    "official_runtime_source": "https://github.com/ace-step/ACE-Step-1.5",
+    "runtime_source_fixed_sha": "ca1e85fe9430179831e6bc6be790c332190a3866",
+    "runtime_license_text": "MIT license at fixed code sha inspected",
+    "source_python_range": "3.11–<3.13",
+    "source_torch_linux_cuda_x86_64": "torch==2.10.0+cu128",
+    "source_diffusers": "diffusers>=0.37.0",
+    "source_transformers": "transformers>=4.51.0,<4.58.0",
+    "dependency_shared_repo": "https://huggingface.co/ACE-Step/Ace-Step1.5",
+    "dependency_shared_repo_fixed_revision": "19671f406d603126926c1b7e2adc169acbcade22",
+    "dependency_shared_repo_display_gb": 10.1,
+    "dependency_required_components": [
+      "acestep-5Hz-lm-1.7B (trained composition planner, default with XL)",
+      "Qwen3-Embedding-0.6B (text embedding, licensed separately if upstream license applies)",
+      "vae (trained audio codec)",
+      "config/model registry, tokenizer and speaker/metadata assets only as required by inspected source",
+      "silence_latent.pt from XL repo; PyTorch pickle not blindly load"
+    ],
+    "duplicate_avoidance": [
+      "Exclude acetep-v15-turbo 2B DiT from full shared repository source unless separate selection justifies it",
+      "No GGUF/INT8/MLX converted copies of same XL trained state",
+      "Do not add XL base or XL SFT without task/quality evidence; XL base can extract/lego/complete, XL turbo standard tasks only",
+      "Do not assume ACE Music v1 Flash is derived from this exact training lineage"
+    ],
+    "publisher_claims": [
+      "8 diffusion steps with no CFG; publisher says higher music quality than 2B",
+      "About 20 GB HF source F32 checkpoint, not guaranteed 18.8GB BF16 download",
+      "GPU 12GB with offload+INT8, 16GB with offload, 20GB without offload, 24GB for full XL+4B LM; manufacturer claims, hardware version/batch not verified"
+    ],
+    "training_report": "https://arxiv.org/abs/2602.00744",
+    "rights_warning": "The MIT model card and runtime code license do not independently prove underlying training data authorization. Publisher claims licensed/public-domain/synthetic data; no third-party audit or user output copyright guarantees.",
+    "allocation_reservation_bytes": 40000000000,
+    "resource_bytes_last_snapshot_selected": null,
+    "full_learned_pipeline_tensor_census": null,
+    "owner_hardware_peak_ram_bytes": null,
+    "final_download_approval": false
+  },
+  "research_holds": [
+    {
+      "repo_id": "ACE-Step/acestep-v15-xl-base",
+      "reason": "~20GB independent pretrained XL state with all editing tasks extract/lego/complete, but overlap and extra space; don't add without incremental-use proof",
+      "status": "HOLD_SEPARATE_TRAINED_STATE_NOT_QUANT"
+    },
+    {
+      "repo_id": "ACE-Step/Ace-Step1.5",
+      "reason": "Official 10.1GB shared LM/vae/embedding/2B turbo bundle; use shared subcomponents as dependencies for XL, do not add 2B DiT as second selected trained model automatically",
+      "status": "DEPENDENCY_SOURCE_ONLY"
+    },
+    {
+      "repo_id": "ACE-Step/acestep-5Hz-lm-4B",
+      "reason": "Separate trained 4B planner model enhances composition, but 1.7B default already present in shared repo and no measured increment.",
+      "status": "HOLD_OPTIONAL_PLANNER"
+    },
+    {
+      "repo_id": "ACE Music v1 Flash",
+      "official_weight_repo": null,
+      "status": "AWAIT_WEIGHT_RELEASE_LICENSE_PARAMS_SHA"
+    },
+    {
+      "repo_id": "ACE Music v1",
+      "official_weight_repo": null,
+      "status": "HOSTED_CLOSED_NO_DOWNLOAD"
+    }
+  ],
+  "release_acceptance_gates": [
+    "Public publisher repo has immutable 40-char revision",
+    "Model license in full text, no licensing conflation with hosted service",
+    "Check exact learned weight files, dependency/shard SHAs and selected bytes; no duplicates",
+    "Check independent training vs prior 2B or XL base",
+    "Verify full learnt total parameters and 150B cap",
+    "Verify compute/backend/python/CUDA/ABI and user's physical disk with min 200GB free",
+    "Separate user download approval"
+  ],
+  "no_files_downloaded": true,
+  "no_model_code_executed": true,
+  "no_hosted_service_scraping": true
+}

@@ -1,0 +1,212 @@
+{
+  "asset_kind": "model",
+  "repo_id": "m-a-p/MERT-v2-FullSong",
+  "portfolio_decision": "conditional",
+  "observed_at_utc": "2026-11-06T04:42:36.553342+00:00",
+  "evidence_kind": "anonymous_publisher_api_metadata_not_local_payload_measurement",
+  "download_authorized": false,
+  "payload_bytes_downloaded": 0,
+  "tree_complete": true,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 1585,
+      "sha256": null,
+      "git_blob_sha1": "eb4675bc7098415d44aa399a51acc8a11476f7c9",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 20000,
+      "sha256": null,
+      "git_blob_sha1": "ce18e5ba29e6ad24f24b0bfaa4a682a6cf824ff6",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "README.md",
+      "bytes": 11861,
+      "sha256": null,
+      "git_blob_sha1": "a57cf0701c2a27f9b9dc675d90e4f028d1372b3f",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 541,
+      "sha256": null,
+      "git_blob_sha1": "b330a93214b6516f4721fa91521332383484a1f0",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "assets/mert2-architecture.png",
+      "bytes": 488467,
+      "sha256": "98bfa98a643a9078f85bb4b4e14989ed0d2f0d3740ff94c5b64ee1d72e32579f",
+      "git_blob_sha1": "d4138bce476c3bc39de705e853c27025a466c828",
+      "identity_kind": "lfs_payload_sha256",
+      "local_hash_verified": false
+    },
+    {
+      "path": "config.json",
+      "bytes": 882,
+      "sha256": null,
+      "git_blob_sha1": "e6adbdaf587c162a7d1e03a252372f90ce0efe8f",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "configuration_mert2.py",
+      "bytes": 3860,
+      "sha256": null,
+      "git_blob_sha1": "f07208f8a08b8743d47026956c622eaa062d6963",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "marble_results.json",
+      "bytes": 8997,
+      "sha256": null,
+      "git_blob_sha1": "8b7519c12ab259ef6dc0ac067e610a3b431528aa",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "model.safetensors",
+      "bytes": 2529812848,
+      "sha256": "e6dd2ab187d6dd62b6521cd7d8f932e237acf0c5757745a7232082e28391350d",
+      "git_blob_sha1": "4e3d1b39d19efcb24c39bfc426c952da1a45fbb1",
+      "identity_kind": "lfs_payload_sha256",
+      "local_hash_verified": false
+    },
+    {
+      "path": "modeling_mert2.py",
+      "bytes": 17081,
+      "sha256": null,
+      "git_blob_sha1": "0369f732d561917d8d1a4d252f802ad4e23f3d4c",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "preprocessor_config.json",
+      "bytes": 215,
+      "sha256": null,
+      "git_blob_sha1": "54daaeee6f791c77a0057800b1ec1da60190cfb6",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    },
+    {
+      "path": "weights_manifest.json",
+      "bytes": 241,
+      "sha256": null,
+      "git_blob_sha1": "1b7d41ec8430dea4fa6f29e4c146a7cb99f12895",
+      "identity_kind": "git_blob_sha1",
+      "local_hash_verified": false
+    }
+  ],
+  "source_scope_bytes": 2530366578,
+  "selected_files_bytes": null,
+  "complete_dependency_bytes": null,
+  "runtime_peak_ram_bytes": null,
+  "local_reuse_verified": false,
+  "prior_observed_access": "public",
+  "prior_revision": "7001f7657276238629e61c7746ce70735e0604c0",
+  "requested_artifact": null,
+  "required_dependencies_note": "採譜モデル・音声前処理・librosa/torchaudio互換環境",
+  "parameter_gate_status": "PASS_TOTAL_PARAMS_LT_150B",
+  "source_api_url": "https://huggingface.co/api/models/m-a-p/MERT-v2-FullSong",
+  "head_revision_observed": "7001f7657276238629e61c7746ce70735e0604c0",
+  "pinned_revision": "7001f7657276238629e61c7746ce70735e0604c0",
+  "pinned_revision_origin": "head_observed_for_capacity_only_not_selection_approval",
+  "gated": false,
+  "private": false,
+  "license_metadata": "cc-by-nc-4.0",
+  "metadata_sha256": "35f0e5d6ae082f03a9ce53a36143cb3bd8157c81d5f43c109cb8b996a4299a86",
+  "last_modified": "2026-09-29T16:14:22.000Z",
+  "architecture_metadata": {
+    "architectures": [
+      "MERT2Model"
+    ],
+    "auto_map": {
+      "AutoConfig": "configuration_mert2.MERT2Config",
+      "AutoModel": "modeling_mert2.MERT2Model"
+    },
+    "model_type": "mert2"
+  },
+  "parameter_metadata": {
+    "parameters": {
+      "F32": 632429312
+    },
+    "total": 632429312
+  },
+  "source_scope": "repository_all_files_not_selection",
+  "file_count": 12,
+  "documentation": [
+    {
+      "path": "README.md",
+      "url": "https://huggingface.co/m-a-p/MERT-v2-FullSong/raw/7001f7657276238629e61c7746ce70735e0604c0/README.md",
+      "observed_bytes": 11861,
+      "sha256": "86eae75e4b64846abdf4af52d973ed959d17c3fcf8959f7d5a3919aace6d382f",
+      "repo_reference_leads_not_verified_dependencies": [
+        "datasets/m-a-p",
+        "m-a-p/MERT-v1-330M",
+        "m-a-p/MERT-v2-30s",
+        "m-a-p/MERT-v2-FullSong",
+        "m-a-p/SheetSage2",
+        "m-a-p/YuE2-3B",
+        "m-a-p/YuE2-Vae",
+        "m-a-p/YuE2-Vae-legacy"
+      ],
+      "card_text_archived": false
+    },
+    {
+      "path": "config.json",
+      "url": "https://huggingface.co/m-a-p/MERT-v2-FullSong/raw/7001f7657276238629e61c7746ce70735e0604c0/config.json",
+      "observed_bytes": 882,
+      "sha256": "f2e194895f58be3ddba327255db129ff0e3bee550cc0ecf08e4d22d79ce3bca3",
+      "json": {
+        "architectures": [
+          "MERT2Model"
+        ],
+        "auto_map": {
+          "AutoConfig": "configuration_mert2.MERT2Config",
+          "AutoModel": "modeling_mert2.MERT2Model"
+        },
+        "context_seconds": 360.0,
+        "conv_depthwise_kernel_size": 31,
+        "frame_rate": 25.0,
+        "hidden_size": 1024,
+        "hop_length": 240,
+        "initializer_range": 0.02,
+        "inputs_to_logits_ratio": 960,
+        "intermediate_size": 4096,
+        "layer_norm_eps": 1e-05,
+        "minimum_input_samples": 1025,
+        "model_type": "mert2",
+        "n_fft": 2048,
+        "num_attention_heads": 16,
+        "num_hidden_layers": 24,
+        "num_mel_bins": 128,
+        "rotary_embedding_base": 10000,
+        "sampling_rate": 24000,
+        "subsampling_channels": [
+          128,
+          512,
+          1024
+        ],
+        "subsampling_depths": [
+          3,
+          4,
+          5
+        ],
+        "subsampling_layer_norm_eps": 1e-06,
+        "torch_dtype": "float32",
+        "transformers_version": "4.53.2",
+        "variant": "fs",
+        "win_length": 2048
+      }
+    }
+  ],
+  "metadata_change_requires_review": false
+}

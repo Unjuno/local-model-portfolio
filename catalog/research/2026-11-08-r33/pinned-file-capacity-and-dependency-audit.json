@@ -1,0 +1,696 @@
+{
+  "schema_version": 1,
+  "artifact_type": "metadata_only_pinned_file_scope_evidence",
+  "review_date": "2026-11-08",
+  "reference_branch": "strategy/2026-11-03-01-risk",
+  "reference_branch_head_before_commit": "3634157c5a9d4a54e1cd19544088aab0798a2869",
+  "base_current_revision": "v27-20261107",
+  "base_capacity_source_revision": "v27-20261107",
+  "base_173_catalog_unmodified": true,
+  "model_payload_bytes_downloaded": 0,
+  "new_download_approvals": 0,
+  "research_scope": "3 v28 conditional model candidates, Meta optional DFlash drafter, common v27 Wan2.2 dependency; primary HF file-tree metadata only",
+  "model_recommendations": [
+    {
+      "repo_id": "beipo-ai/NorthCUA-Mini",
+      "decision": "KEEP_CONDITIONAL_V28_RECOMMENDATION",
+      "reason": "Native computer-use finetune and verified 16-shard publisher SHA manifest, not Nano duplicate"
+    },
+    {
+      "repo_id": "qiyuan-robot/PrimeSim",
+      "decision": "KEEP_CONDITIONAL_V28_RECOMMENDATION_BLOCK_FINAL_LOCK",
+      "reason": "5B world-model stage4 checkpoint has immutable SHA and exact byte size, but full learned dependency tensor census and offline ABI pending"
+    },
+    {
+      "repo_id": "meta-models/Muse-Glimmer-30B",
+      "decision": "KEEP_CONDITIONAL_V28_RECOMMENDATION_WITH_OPTIONAL_DFLASH",
+      "reason": "Original BF16 with separate original trained 5-layer DFlash drafter; preserve one reference set and no duplicate GGUF/PTE"
+    }
+  ],
+  "model_parameter_evidence": {
+    "north_cua_mini_total_at_hf": 35107181936,
+    "muse_glimmer_total_at_hf": 29776626688,
+    "muse_dflash_total_at_hf": 2555985152,
+    "muse_plus_dflash_sum": 32332611840,
+    "primesim_main_tensor_total_exact": null,
+    "primesim_complete_pipeline_tensor_total_exact": null,
+    "prime_performance_hardware": "Publisher A100 80GB BF16 3x288x384 at four denoise steps, 10.1 FPS; no local benchmark",
+    "source_type": "model hub reported counts and pinned model.safetensors.index.json; PrimeSim per-file metadata does not expose complete tensor count"
+  },
+  "publisher_claims_unverified": {
+    "north_osworld_361_task_success_fraction": 0.853,
+    "north_webarena_812_task_success_fraction": 0.7043,
+    "muse_rtx5090_llamacpp_batch1_kquant_greedy_baseline_tok_s": 74.9,
+    "muse_rtx5090_llamacpp_batch1_kquant_greedy_dflash_tok_s": 233.4,
+    "prime_a100_80gb_three_view_video_fps": 10.1
+  },
+  "license_review": {
+    "north": "LICENSE and NOTICE in HF pinned repo (legal applicability still unverified)",
+    "prime": "HF repo has NO separate LICENSE file; HF metadata/README says Apache-2.0 and fixed GitHub code LICENSE is Apache-2.0; weight contract needs reviewer decision",
+    "muse": "Apache-2.0 LICENSE and separate USAGE_POLICY.md in pinned HF repo, actual contractual scope and policy obligations require review",
+    "personal_access_rights_cleared": false
+  },
+  "file_census": [
+    {
+      "role": "north",
+      "repo_id": "beipo-ai/NorthCUA-Mini",
+      "repo_url": "https://huggingface.co/beipo-ai/NorthCUA-Mini",
+      "pinned_revision": "cafee9af6a950bffea2a4a17544f253abf80d44b",
+      "api_evidence_url": "https://huggingface.co/api/models/beipo-ai/NorthCUA-Mini/tree/cafee9af6a950bffea2a4a17544f253abf80d44b?recursive=true&expand=true",
+      "source_file_count": 32,
+      "all_repo_bytes": 70235250229,
+      "selection_status": "RESEARCH_SELECTED_SCOPE_ONLY_NO_DOWNLOAD",
+      "selected_file_count": 27,
+      "selected_files_bytes": 70234627663,
+      "incremental_known_source_bytes_against_v27_and_previous_in_this_census": 70214626587,
+      "required_files": [
+        {
+          "path": "LICENSE",
+          "bytes": 11343,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "1d5180a42f1c3383ba7c7bd0a50f0837ef0168df",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 404,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "8ea6b77ddebe2808705f3186b64a18276c23c14b",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 15330,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "5685d7615d52e7fce2c04591213b7c2f651c082d",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 7743,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "34398e4315897b110ab12fcd0837af47ed95c790",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "checksums.sha256",
+          "bytes": 2338,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "e4818f796c5a3aaa0bd964f5cc4ae0a798009ebf",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 3297,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "b56db891f52b6bfdd0d37276438dd177d42d440c",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00001-of-00016.safetensors",
+          "bytes": 4744232576,
+          "lfs_payload_sha256": "a6dd47dad2f1390dbbad10fad0cbe0b6062efff71b9c7095d54be45085e0f870",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00002-of-00016.safetensors",
+          "bytes": 3969560800,
+          "lfs_payload_sha256": "ea1e976f6707db1a3fa20472f8b776daef1767561beb8626a91fe5ebea865aba",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00003-of-00016.safetensors",
+          "bytes": 4981425992,
+          "lfs_payload_sha256": "d7b8fc995584d1cec0bfb1333e01392556fc733dd97a1d48a172960db7f109cd",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00004-of-00016.safetensors",
+          "bytes": 4506427496,
+          "lfs_payload_sha256": "3eabafbee29283ebaefbdf33d670f93b21ce246235571867d3dcd4a30587dc92",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00005-of-00016.safetensors",
+          "bytes": 3969560792,
+          "lfs_payload_sha256": "b39ae234ff5613f3da883157f4180b362d3ab78c8c95452ff0fe79d496ecc144",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00006-of-00016.safetensors",
+          "bytes": 4981426032,
+          "lfs_payload_sha256": "3788e0e13a578b69ca46a62cf5c617a6a23f4c9c5b20c4175612f84ad58d575b",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00007-of-00016.safetensors",
+          "bytes": 4506427544,
+          "lfs_payload_sha256": "8ced25ecfa881d1d0c5a7b095a27a2645e84667d7f5b9172be909e11a6000a6a",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00008-of-00016.safetensors",
+          "bytes": 3969560848,
+          "lfs_payload_sha256": "f730d8459f6de6b98eecd018a8e867d8c04a0e6a9d35031bbc65c0182723860b",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00009-of-00016.safetensors",
+          "bytes": 4981426032,
+          "lfs_payload_sha256": "c50817a68d95027c73188e31ae31320e1760ab89f972f6edcf21905ed89b1ace",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00010-of-00016.safetensors",
+          "bytes": 4506427544,
+          "lfs_payload_sha256": "5ae802046281ac928a9f15295fdc60ca773982ad4be02d31c2fa8c2915989a42",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00011-of-00016.safetensors",
+          "bytes": 3969560848,
+          "lfs_payload_sha256": "e3519ee15976df5645e93bd02cc9bb4431e655ef9a5076b9aa014a100eb296fd",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00012-of-00016.safetensors",
+          "bytes": 4981426032,
+          "lfs_payload_sha256": "2999af94d6012e4a116eacf5723020393d856cec5136effb3e43ab9679a25c7e",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00013-of-00016.safetensors",
+          "bytes": 4506427544,
+          "lfs_payload_sha256": "14683b43b204ee822d4c68374d9e0f20d50d022a7f7682bcb55cd37aaa819dec",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00014-of-00016.safetensors",
+          "bytes": 3969560848,
+          "lfs_payload_sha256": "27f8764a2ed017e581e816102952191e3517ede88c69cb6646aed4c5426b5063",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00015-of-00016.safetensors",
+          "bytes": 4981426032,
+          "lfs_payload_sha256": "d9246cf7de05dfeb1455b14839c234fc04a2fe29871aa2df81b254f0e8546dd3",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00016-of-00016.safetensors",
+          "bytes": 2689617056,
+          "lfs_payload_sha256": "b2c9923a05de7758856a1524f11e69b9d31645a29e1ad160320ce766e41d4871",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 100996,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "b8ee06e5258900f2a2ac715053b8e7df2d44c82d",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 390,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 1296,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "8af8110fe33fb48d1a0aefafb83005347beda96a",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 19989343,
+          "lfs_payload_sha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1167,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "3cf057407d893f16041bbd9a21b63f5bc7d09a78",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        }
+      ],
+      "excluded_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1635,
+          "reason": "not_in_selected_runtime_scope"
+        },
+        {
+          "path": "northcua-experience-loop.png",
+          "bytes": 470940,
+          "reason": "demonstration_media_not_required"
+        },
+        {
+          "path": "northcua-logo-dark.png",
+          "bytes": 29652,
+          "reason": "demonstration_media_not_required"
+        },
+        {
+          "path": "northcua-logo.png",
+          "bytes": 29775,
+          "reason": "demonstration_media_not_required"
+        },
+        {
+          "path": "northcua-report-results.png",
+          "bytes": 90564,
+          "reason": "demonstration_media_not_required"
+        }
+      ],
+      "full_offline_restore_verified": false,
+      "local_weights_obtained": false,
+      "download_approved": false
+    },
+    {
+      "role": "prime",
+      "repo_id": "qiyuan-robot/PrimeSim",
+      "repo_url": "https://huggingface.co/qiyuan-robot/PrimeSim",
+      "pinned_revision": "2b213fa94d2c84cb3e042283c9c92aaa3ea8ba3b",
+      "api_evidence_url": "https://huggingface.co/api/models/qiyuan-robot/PrimeSim/tree/2b213fa94d2c84cb3e042283c9c92aaa3ea8ba3b?recursive=true&expand=true",
+      "source_file_count": 4,
+      "all_repo_bytes": 20191252577,
+      "selection_status": "RESEARCH_SELECTED_SCOPE_ONLY_NO_DOWNLOAD",
+      "selected_file_count": 2,
+      "selected_files_bytes": 10095626552,
+      "incremental_known_source_bytes_against_v27_and_previous_in_this_census": 10095626552,
+      "required_files": [
+        {
+          "path": "README.md",
+          "bytes": 2046,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "d028f26457175f387e32bd50acdbfcf4fda3acc8",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "primesim_posttrain_g2.safetensors",
+          "bytes": 10095624506,
+          "lfs_payload_sha256": "ce2abce0ae21090392e0825e8b7c9052c7f05f1d5a009fa1762d4ad53671b39d",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        }
+      ],
+      "excluded_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "reason": "not_in_selected_runtime_scope"
+        },
+        {
+          "path": "primesim_base.safetensors",
+          "bytes": 10095624506,
+          "reason": "not_in_selected_runtime_scope"
+        }
+      ],
+      "full_offline_restore_verified": false,
+      "local_weights_obtained": false,
+      "download_approved": false
+    },
+    {
+      "role": "muse",
+      "repo_id": "meta-models/Muse-Glimmer-30B",
+      "repo_url": "https://huggingface.co/meta-models/Muse-Glimmer-30B",
+      "pinned_revision": "f84ecc3a0ea984a4c04542a84269e3d065350a6e",
+      "api_evidence_url": "https://huggingface.co/api/models/meta-models/Muse-Glimmer-30B/tree/f84ecc3a0ea984a4c04542a84269e3d065350a6e?recursive=true&expand=true",
+      "source_file_count": 13,
+      "all_repo_bytes": 59581826323,
+      "selection_status": "RESEARCH_SELECTED_SCOPE_ONLY_NO_DOWNLOAD",
+      "selected_file_count": 12,
+      "selected_files_bytes": 59581824753,
+      "incremental_known_source_bytes_against_v27_and_previous_in_this_census": 59581813395,
+      "required_files": [
+        {
+          "path": "LICENSE",
+          "bytes": 11358,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 16878,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "2c4aa0bc98340ca9a93264600cb6c1b27ae95819",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "USAGE_POLICY.md",
+          "bytes": 5230,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "1a9ed6cffc54585daf9cc904c07cb6e436a9444b",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 7167,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "8a8673897ed588c171d50088c89e25360130abe6",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 5109,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "190826dc834c13c86b8dc68e775a888a852d7c34",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 148,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "3495c31ea76c03c093a1d14e8221c3410b76ded2",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "bytes": 49950112952,
+          "lfs_payload_sha256": "8eef61530e1283642c77ce2e6721feb5c6f348fa055c00e90f2844a136372694",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "bytes": 9603322320,
+          "lfs_payload_sha256": "b58cc2144ba1ba1af4420f67f4ca3ced7f09298510b80464cc75018a0be14381",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 132674,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "00b257ef0c8bce1b001a6266f6b1f66f4fe16a6b",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 1084,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "ec9a07be13ea1dadf7395131871753b13f406c26",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 28129897,
+          "lfs_payload_sha256": "c9dbee66967b58f31a7c27f723c3760da3526ccd0427578e8905b0abb0031c4d",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 79936,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "fe7f0bb90fb0d0288e3a505974ae0e4baf1d3e61",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        }
+      ],
+      "excluded_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "reason": "not_in_selected_runtime_scope"
+        }
+      ],
+      "full_offline_restore_verified": false,
+      "local_weights_obtained": false,
+      "download_approved": false
+    },
+    {
+      "role": "assistant",
+      "repo_id": "meta-models/Muse-Glimmer-30B-assistant",
+      "repo_url": "https://huggingface.co/meta-models/Muse-Glimmer-30B-assistant",
+      "pinned_revision": "2c86316d689027b91123638739743fef1d425233",
+      "api_evidence_url": "https://huggingface.co/api/models/meta-models/Muse-Glimmer-30B-assistant/tree/2c86316d689027b91123638739743fef1d425233?recursive=true&expand=true",
+      "source_file_count": 6,
+      "all_repo_bytes": 5112012937,
+      "selection_status": "RESEARCH_SELECTED_SCOPE_ONLY_NO_DOWNLOAD",
+      "selected_file_count": 5,
+      "selected_files_bytes": 5112011418,
+      "incremental_known_source_bytes_against_v27_and_previous_in_this_census": 5111994830,
+      "required_files": [
+        {
+          "path": "LICENSE",
+          "bytes": 11358,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 17339,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "7ae6e9162b5be5839c4d787a508b62938729c8e9",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "USAGE_POLICY.md",
+          "bytes": 5230,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "1a9ed6cffc54585daf9cc904c07cb6e436a9444b",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 883,
+          "lfs_payload_sha256": null,
+          "git_blob_sha1": "9f53b2bc254926fe8ca86b3e10fbc453c2dc3ec3",
+          "source_file_id_kind": "GIT_BLOB_SHA1_NOT_SHA256",
+          "local_hash_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 5111976608,
+          "lfs_payload_sha256": "fd88d337eb84f8d0e6ba33a7684d7efa6722d4460ba4d6badca9699418392a84",
+          "git_blob_sha1": null,
+          "source_file_id_kind": "LFS_PAYLOAD_SHA256",
+          "local_hash_verified": false
+        }
+      ],
+      "excluded_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "reason": "not_in_selected_runtime_scope"
+        }
+      ],
+      "full_offline_restore_verified": false,
+      "local_weights_obtained": false,
+      "download_approved": false
+    }
+  ],
+  "wan_parent_reuse": {
+    "repo_id": "Wan-AI/Wan2.2-TI2V-5B",
+    "source_revision": "921dbaf3f1674a56f47e83fb80a34bac8a8f203e",
+    "already_selected_v27": true,
+    "required_files": [
+      {
+        "path": "models_t5_umt5-xxl-enc-bf16.pth",
+        "bytes": 11361920418,
+        "sha256": "7cace0da2b446bbbbc57d031ab6cf163a3d59b366da94e5afe36745b746fd81d",
+        "git_blob_sha1": "d5dad910304ab4b909a2c8a225a71840606e6de4",
+        "already_present_in_v27_selected_primary_scope": true
+      },
+      {
+        "path": "Wan2.2_VAE.pth",
+        "bytes": 2818839170,
+        "sha256": "20eb789667fa5e60e7516bf509512f6cb61f01b0aa0695eadaea930c13892b36",
+        "git_blob_sha1": "2264ad59a1f3be73cf56ff0dcf7d0a8e06efe8ed",
+        "already_present_in_v27_selected_primary_scope": true
+      },
+      {
+        "path": "google/umt5-xxl/special_tokens_map.json",
+        "bytes": 6623,
+        "sha256": null,
+        "git_blob_sha1": "14855e7052ffbb595057dfd791d293c1c940db2c",
+        "already_present_in_v27_selected_primary_scope": true
+      },
+      {
+        "path": "google/umt5-xxl/spiece.model",
+        "bytes": 4548313,
+        "sha256": "e3909a67b780650b35cf529ac782ad2b6b26e6d1f849d3fbb6a872905f452458",
+        "git_blob_sha1": "2fe5f347e9f9367585589ae89e997dfbd5cf802c",
+        "already_present_in_v27_selected_primary_scope": true
+      },
+      {
+        "path": "google/umt5-xxl/tokenizer.json",
+        "bytes": 16837417,
+        "sha256": "6e197b4d3dbd71da14b4eb255f4fa91c9c1f2068b20a2de2472967ca3d22602b",
+        "git_blob_sha1": "7bd4ee3cf5633e49c0e06a3aac2a621559e6222a",
+        "already_present_in_v27_selected_primary_scope": true
+      },
+      {
+        "path": "google/umt5-xxl/tokenizer_config.json",
+        "bytes": 61728,
+        "sha256": null,
+        "git_blob_sha1": "4e1cc1cd85599ce0b47fd0a746af188fe4043ff2",
+        "already_present_in_v27_selected_primary_scope": true
+      }
+    ],
+    "required_total_bytes": 14202213669,
+    "all_six_files_verified_present_in_v27_primary_file_inventory": true,
+    "physical_local_presence_verified": false,
+    "additional_logical_bytes_required_for_wan_files_under_v27_source_scope": 0,
+    "comment": "Exact same pinned repository and primary file identities in v27; does not prove files exist on owner's HDD."
+  },
+  "deduplication": {
+    "previously_selected_content_id_count": 58043,
+    "duplicate_against_v27": [
+      {
+        "repo": "beipo-ai/NorthCUA-Mini",
+        "path": "LICENSE",
+        "bytes": 11343,
+        "identity": "git1:1d5180a42f1c3383ba7c7bd0a50f0837ef0168df"
+      },
+      {
+        "repo": "beipo-ai/NorthCUA-Mini",
+        "path": "preprocessor_config.json",
+        "bytes": 390,
+        "identity": "git1:2ea84a437d448ff71b08df68fdd949d5cc4ebb64"
+      },
+      {
+        "repo": "beipo-ai/NorthCUA-Mini",
+        "path": "tokenizer.json",
+        "bytes": 19989343,
+        "identity": "s256:87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4"
+      },
+      {
+        "repo": "meta-models/Muse-Glimmer-30B",
+        "path": "LICENSE",
+        "bytes": 11358,
+        "identity": "git1:d645695673349e3947e8e5ae42332d0ac3164cd7"
+      },
+      {
+        "repo": "meta-models/Muse-Glimmer-30B-assistant",
+        "path": "LICENSE",
+        "bytes": 11358,
+        "identity": "git1:d645695673349e3947e8e5ae42332d0ac3164cd7"
+      }
+    ],
+    "duplicate_between_new": [
+      {
+        "repo": "meta-models/Muse-Glimmer-30B-assistant",
+        "path": "USAGE_POLICY.md",
+        "bytes": 5230,
+        "identity": "git1:1a9ed6cffc54585daf9cc904c07cb6e436a9444b"
+      }
+    ],
+    "selected_gross_bytes": 145024090386,
+    "selected_known_sha_aware_logical_increment_bytes": 145004061364,
+    "negative_scope": "Files with no locally computed SHA but fixed Git blob identity are source-metadata-only identities"
+  },
+  "capacity": {
+    "baseline_v27_known_scope_union_bytes": 3417685712585,
+    "added_new_known_scope_bytes": 145004061364,
+    "new_source_only_known_union_bytes": 3562689773949,
+    "archive_planning_cap_bytes": 4000000000000,
+    "arithmetic_difference_source_only_bytes": 437310226051,
+    "prior_three_candidate_reservation_bytes": 171000000000,
+    "source_only_increment_within_prior_reservation": true,
+    "unmeasured_restoration_and_environment_bytes": null,
+    "unmeasured_staging_cache_peak_bytes": null,
+    "owner_physical_disk_free_bytes": null,
+    "minimum_required_physical_free_bytes": 200000000000,
+    "final_budget_status": "UNKNOWN_NOT_APPROVED"
+  },
+  "blocking_unknowns": [
+    "PrimeSim model/G2 complete trained tensor total and static runtime code/ABI audit pending",
+    "G2 model source LICENSE body not included in weight repo, use checked GitHub license and apply to weights only after reviewing provenance",
+    "Muse DFlash target-drafter compatibility specific commits and preserving/reproducibility benchmark untested",
+    "NorthCUA harness pinned source & normalization contract untested",
+    "No actual owner disk free, code environment storage, staging estimate, local SHA hash, Gated authorization or approved queue"
+  ],
+  "secondary_discoveries": [
+    {
+      "candidate": "Dharma-AI Field Extractor",
+      "current_status": "RESEARCH_HOLD",
+      "facts": "Nov4 vendor post claims 2B DharmaOCR-LITE v1.1 plus LoRA trained on 43,384 annotated examples, 546 documents x3 scenarios; OCR to structured JSON is distinct",
+      "observed_hf_model_author_results": [
+        "Dharma-AI/Dharma-OCR-LITE"
+      ],
+      "reason": "Official HF author listing and field-extractor search on Nov8 did not identify a separate published extraction checkpoint or adapter. Vendor demo/blog not proof of public downloadable weights.",
+      "primary": "https://huggingface.co/blog/Dharma-AI/dharma-field-extractor"
+    },
+    {
+      "candidate": "Granite Switch 4.1.1",
+      "current_status": "NOT_AN_ADDITION_DUPLICATE_EXISTING_V27",
+      "facts": "IBM revises decision aLoRA and ASR without retraining main 30B base",
+      "reason": "Already selected under ibm-granite/granite-switch-4.1-30b v27 pinned revision eb206725d03c0f1c409ce3aa512afe325fdf8731",
+      "primary": "https://huggingface.co/ibm-granite/granite-switch-4.1-30b"
+    }
+  ],
+  "verification": {
+    "north_checksum_list_matches_all_16_weight_LFS_SHA256": true,
+    "north_checksum_declared_entries": 25,
+    "wan_pin_v27_exact": true,
+    "models_with_exact_pinned_file_lists": 3,
+    "optional_dflash_pinned_file_list": true,
+    "model_acquisition_authorized": false
+  }
+}

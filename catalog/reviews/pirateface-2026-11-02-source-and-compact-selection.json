@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "review_id": "pirateface-social-post-source-audit-20261102",
+  "review_date": "2026-11-02",
+  "status": "REVIEW_ONLY_NOT_CANONICAL_OR_APPROVED",
+  "context": "User-provided 2026-11-02 X thread; evaluate an alternative swarm model index and 8 featured or thread-sampled Hugging Face model IDs for lawful reproducible local preservation.",
+  "post": {
+    "url": "https://x.com/thepirateface/status/2117074347752149358",
+    "id": "2117074347752149358",
+    "published_utc": "2026-11-02T02:00:32Z",
+    "root_post_url": "https://x.com/thepirateface/status/2117074235965215181",
+    "root_published_utc": "2026-11-02T02:00:05Z",
+    "claim": "Pirate Face added 1000 model torrents, with examples. Claim originates from service, not an independent audit.",
+    "examples_were_sampled": true,
+    "all_thousand_independently_examined": false
+  },
+  "platform_assessment": {
+    "site": "https://pirateface.co",
+    "how_it_works": "https://pirateface.co/how-it-works",
+    "listing_policy": "https://pirateface.co/policy",
+    "seeding_guide": "https://pirateface.co/articles/practical-guide-to-seeding-ai-models",
+    "publisher_claims": [
+      "Community Torrent listings reference a Hugging Face repository and pinned revision and can include only a subset of files.",
+      "Matching Hugging Face SHA-256 when available is the proposed source integrity mechanism.",
+      "Pirate Face itself describes itself as an index, not the weight host; P2P depends on actual complete peers after webseeds disappear.",
+      "Site listing policy says redistribution licenses restrict eligibility and some special licenses require accepting terms; Gated or non-commercial rights are not bypassed.",
+      "BitTorrent connectivity discloses peers' IP addresses; it does not provide anonymity."
+    ],
+    "independent_limitations": [
+      "No torrent magnet fetched, no peer connectivity checked, no source-vs-torrent file manifest equality verified.",
+      "A listed magnet does not show that a complete copy is presently seeded.",
+      "A torrent-piece recheck or site's advertised hash matching is not evidence that a model is safe or correctly licensed.",
+      "The open HF license metadata of the sample does not prove all derivatives or underlying data are redistributable.",
+      "No third-party package, shell installer, HF_ENDPOINT override or network interception adopted."
+    ],
+    "admissible_role": "SECONDARY_DISTRIBUTION_DISCOVERY_ONLY_NOT_TRUSTED_SOURCE_OR_APPROVED_ACQUISITION"
+  },
+  "counts": {
+    "models_sampled": 8,
+    "new_conditional_compact_candidates": 2,
+    "deferred_or_watch": 6,
+    "new_selected_file_count": 9,
+    "new_selected_model_repo_bytes": 140719353,
+    "previously_tracked_entries_untouched": 110
+  },
+  "compact_candidates": [
+    {
+      "repo_id": "tue-mps/coco_panoptic_eomt_small_640_2x",
+      "category": "panoptic_semantic_instance_segmentation",
+      "decision": "candidate_R2_verify_bundle",
+      "revision": "10f5326794a8ce7e0e975791033ae1c13aec3767",
+      "license": "mit",
+      "full_repo_bytes": 191908075,
+      "selected_files": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 1519,
+          "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "upstream_lfs_sha256": null
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 2740,
+          "git_blob_sha1": "92afe0b2800173349415502e2ef7a02a68b13568",
+          "upstream_lfs_sha256": null
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 6426,
+          "git_blob_sha1": "45fe51cfca4eebbfb3d4154b1a8e5fe659dffa42",
+          "upstream_lfs_sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "size_bytes": 95927796,
+          "git_blob_sha1": "c5d8fd7fc196fe8f252af7937fcca2acfdb3a83f",
+          "upstream_lfs_sha256": "516b0b23acace639cc27739593881dda1c0010b3bec06aae138b615717fb8855"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "size_bytes": 664,
+          "git_blob_sha1": "df6bf0497a80c6a515519fed94c457e19e742352",
+          "upstream_lfs_sha256": null
+        }
+      ],
+      "excluded_file_bytes": 95968930,
+      "why": "CVPR 2025 EoMT: prompt-independent panoptic/semantic/instance segmentation, unlike the interactive SAM2 tiny mask baseline; small model offers another precise spatial capability.",
+      "limitations": "MIT as published on Hub and official GitHub. No proven urgent withdrawal or regulation. Verify config, task metrics, runtime; selected safetensors is not proven bit-identical to excluded PyTorch bin.",
+      "related_existing_assets": [
+        "facebook/sam2-hiera-tiny",
+        "facebook/sam3"
+      ],
+      "code_url": "https://github.com/tue-mps/eomt",
+      "source_card": "https://huggingface.co/tue-mps/coco_panoptic_eomt_small_640_2x",
+      "asset_kind": "model",
+      "source_tree": "https://huggingface.co/api/models/tue-mps/coco_panoptic_eomt_small_640_2x/tree/10f5326794a8ce7e0e975791033ae1c13aec3767?recursive=true",
+      "selected_model_repo_bytes": 95939145,
+      "download_approved": false,
+      "execution_approved": false,
+      "license_text_review_complete": false,
+      "full_runtime_bytes": null,
+      "peer_completeness_verified": false,
+      "alternate_format_equivalence_verified": false
+    },
+    {
+      "repo_id": "cm93/resnet18-eurosat",
+      "category": "satellite_RGB_land_cover_classification",
+      "decision": "candidate_R2_verify_bundle",
+      "revision": "f416c040bab2a4ce61704eb8c8e07016722446f1",
+      "license": "mit",
+      "full_repo_bytes": 89590813,
+      "selected_files": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 1519,
+          "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "upstream_lfs_sha256": null
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 1846,
+          "git_blob_sha1": "70d5a68b90088c3b9bd8108df7ba1532a25a9ffa",
+          "upstream_lfs_sha256": null
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 963,
+          "git_blob_sha1": "3e9a3c74c7a2139e66fc6cb33e40cf15da5c4f3f",
+          "upstream_lfs_sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "size_bytes": 44775880,
+          "git_blob_sha1": "0415eeff48eb8db99a5e3bdc9a35294d7b0422f4",
+          "upstream_lfs_sha256": "73f574447eeaff3f3c179bcf106b94bdc89ef7b3def2b64873a1494b4c3d15a9"
+        }
+      ],
+      "excluded_file_bytes": 44810605,
+      "why": "ResNet18 fine-tuned on EuroSAT RGB satellite Sentinel-2 image chips for 10 land-cover classes. Tiny independent remote-sensing classifier for reproducible baseline, not equivalent to multispectral Prithvi-EO.",
+      "limitations": "MIT according to Hub and official code. Original satellite dataset rights not independently audited. Vendor card accuracy not independently reproduced; official model openly available and no loss risk evidenced.",
+      "related_existing_assets": [
+        "autogluon/chronos-2",
+        "ibm-nasa-geospatial/Prithvi-EO-2.0-300M-TL"
+      ],
+      "code_url": "https://github.com/chathumal93/EuroSat-RGB-Classifiers",
+      "source_card": "https://huggingface.co/cm93/resnet18-eurosat",
+      "asset_kind": "model",
+      "source_tree": "https://huggingface.co/api/models/cm93/resnet18-eurosat/tree/f416c040bab2a4ce61704eb8c8e07016722446f1?recursive=true",
+      "selected_model_repo_bytes": 44780208,
+      "download_approved": false,
+      "execution_approved": false,
+      "license_text_review_complete": false,
+      "full_runtime_bytes": null,
+      "peer_completeness_verified": false,
+      "alternate_format_equivalence_verified": false
+    }
+  ],
+  "not_selected": [
+    {
+      "repo_id": "timm/efficientvit_b1.r288_in1k",
+      "decision": "watch_low_urgency",
+      "upstream_bytes": 73080884,
+      "representative_safetensors_bytes": 36494688,
+      "reason": "Small 9.1M image-classification backbone, but the current catalog has several capable small vision encoders; unique archival value and withdrawal scenario weak.",
+      "url": "https://huggingface.co/timm/efficientvit_b1.r288_in1k",
+      "download_approved": false,
+      "source_status": "public model metadata at inspected time; torrent actual availability unverified"
+    },
+    {
+      "repo_id": "AEON-7/Qwen3.8-27B-AEON-ULTIMATE-UNCENSORED-NVFP4-MIXED",
+      "decision": "watch_quantization_not_independent",
+      "upstream_bytes": 24717113189,
+      "base_model": "AEON-7/Qwen3.8-27B-AEON-ULTIMATE-UNCENSORED-BF16",
+      "reason": "Publisher calls it ModelOpt quantized deployment derivative. Selection should assess BF16 master and differences; do not preserve both simply because two torrents exist.",
+      "url": "https://huggingface.co/AEON-7/Qwen3.8-27B-AEON-ULTIMATE-UNCENSORED-NVFP4-MIXED",
+      "download_approved": false,
+      "source_status": "public model metadata at inspected time; torrent actual availability unverified"
+    },
+    {
+      "repo_id": "AEON-7/Qwen3.8-27B-AEON-ULTIMATE-UNCENSORED-BF16",
+      "decision": "hold_large_overlap_comparison",
+      "upstream_bytes": 55584924799,
+      "related_existing": "orcarouter/Qwen3.8-27B-Uncensored; Qwen/Qwen3.8-27B",
+      "reason": "55.58GB specialist altered Qwen weights overlap with existing base and a gated uncensored derivative. Distinctiveness, legal reavailability, measured gain unproven.",
+      "url": "https://huggingface.co/AEON-7/Qwen3.8-27B-AEON-ULTIMATE-UNCENSORED-BF16",
+      "download_approved": false,
+      "source_status": "public model metadata at inspected time; torrent actual availability unverified"
+    },
+    {
+      "repo_id": "axiomofmind/Moss-image-beauty-lora",
+      "decision": "hold_base_dependency",
+      "upstream_bytes": 347837551,
+      "example_main_adapter_bytes": 74377208,
+      "base_model": "OpenMOSS-Team/MOSS-Image-SFT",
+      "base_full_repo_bytes": 27229060886,
+      "reason": "Small ~74MB adapter is not independently executable; requires roughly 27.23GB source MOSS-Image-SFT repository or compatible original. Portrait styling not top archival priority.",
+      "url": "https://huggingface.co/axiomofmind/Moss-image-beauty-lora",
+      "download_approved": false,
+      "source_status": "public model metadata at inspected time; torrent actual availability unverified"
+    },
+    {
+      "repo_id": "isilicon/mango-qwen38-flashnext-iq4xs",
+      "decision": "defer_large_quantized_mirror",
+      "upstream_bytes": 98422202410,
+      "base_model": "mradermacher/Qwen3.8-Flash-Next-Uncensored-GGUF",
+      "reason": "Though named IQ4_XS, its sole GGUF is ~98.42GB; appears as quantization/preservation mirror of another model and is not compact by this archive's budget.",
+      "url": "https://huggingface.co/isilicon/mango-qwen38-flashnext-iq4xs",
+      "download_approved": false,
+      "source_status": "public model metadata at inspected time; torrent actual availability unverified"
+    },
+    {
+      "repo_id": "huihui-ai/Huihui-Qwythos-9B-Claude-Mythos-5-1M-abliterated",
+      "decision": "watch_lineage_marketing_name",
+      "upstream_bytes": 19333096957,
+      "base_model": "empero-ai/Qwythos-9B-Claude-Mythos-5-1M",
+      "reason": "Publisher labels this an abliteration of an empero-ai Qwythos model. The name 'Claude-Mythos' is not verification that the weights originate from any Anthropic proprietary model.",
+      "url": "https://huggingface.co/huihui-ai/Huihui-Qwythos-9B-Claude-Mythos-5-1M-abliterated",
+      "download_approved": false,
+      "source_status": "public model metadata at inspected time; torrent actual availability unverified"
+    }
+  ],
+  "vetting_stages": [
+    "1. Verify first-party repo and complete revision with HF; verify exact filename, LFS SHA256, upstream card and correct license and conditional obligations.",
+    "2. Check overlaps with the portfolio; only new distinctive abilities or rare original training justify capacity.",
+    "3. Determine complete needed original files, dependencies, correct backend and disk footprint, not the site's total torrent count.",
+    "4. Only if legal and access conditions permit, check whether a third-party torrent covers every selected path and hash, with complete seed availability and separately approved networking/privacy risks.",
+    "5. No autonomous torrent consumption, seeding, public-IP exposure, Gated license bypass, software installation or approved queue mutation."
+  ],
+  "caveats": [
+    "The two R2 candidate models have small first-party weights, but no proven access withdrawal or government regulatory threat.",
+    "Their repo sizes include alternative .bin checkpoint weights; selected metadata uses Safetensors only and cannot claim proven tensor equivalence without testing.",
+    "No torrent listing verified for these specific two models. Their presence in the post thread does not establish a live seed.",
+    "All capacities in decimal bytes and selected files are not full offline runtime dependencies."
+  ],
+  "canonical_untouched": true,
+  "approval_queue_untouched": true,
+  "download_approved": false,
+  "execution_approved": false
+}

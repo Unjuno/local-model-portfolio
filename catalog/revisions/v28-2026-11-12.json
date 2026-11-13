@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "revision_id": "v28-20261112",
+  "previous_revision_id": "v27-20261107",
+  "source_branch_commit": "5327907928efc9743ea5b5ec0fb8fc9ca45c215b",
+  "target_branch": "strategy/2026-11-03-01-risk",
+  "decision_date": "2026-11-12",
+  "purpose": "Two small independent trained states only, conditional non-executable selection",
+  "archive_target_bytes": 4000000000000,
+  "minimum_free_bytes": 200000000000,
+  "max_new_selection_budget_bytes": 2700000000,
+  "planning_reservation_is_not_selected_bytes": true,
+  "download_enabled": false,
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "qvac/BotPsy-0.8B",
+      "url": "https://huggingface.co/qvac/BotPsy-0.8B",
+      "portfolio_decision": "conditional",
+      "evidence_date": "2026-11-12",
+      "license_metadata": "apache-2.0",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": null,
+      "upstream_all_files_bytes_observed": null,
+      "observed_access": "public_Hub_listing_not_payload_tested",
+      "personal_access_verified": false,
+      "risk_tier": "R1",
+      "group": "端末ツール操作SFT・蒸留・RL独立学習",
+      "reason_selected": "既選定Qwen3.5-0.8Bの単純量子化ではなく、別のSFT・複数教師蒸留・RL2段階でツール呼出しを習得した学習済み重み。端末ツール制御の復元不能な訓練状態を小容量で確保。",
+      "quality_positive": "2026-11-11開発元公開。BFCL v4 44.0対元23.4をメーカー報告。HF metadata 約853M total、BF16約1.73GB。",
+      "quality_negative": "メーカー自己報告で独立追試なし。英語推奨、日本語/機微用途は未検証。固定revision、SHA、正確な選択バイト、LICENSE本文、backend/ABI、実機RAM未確認。",
+      "requested_artifact": "one original BF16 safetensors with tokenizer/config/chat-template/LICENSE, not GGUF+BF16 duplicates",
+      "evidence_kind": "publisher_first_party_and_Hugging_Face_metadata",
+      "evidence_urls": [
+        "https://qvac.tether.io/blog/on-device-ai-agent-botpsy",
+        "https://qvac.tether.io/models/botpsy",
+        "https://huggingface.co/qvac/BotPsy-0.8B"
+      ],
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 853000000,
+        "count_scope": "specific published checkpoint rounded Hub metadata, not complete exact tensor census",
+        "review_date": "2026-11-12"
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": null,
+        "category": "small_agent_posttrained",
+        "scenario_status": "hypothetical future distribution stress test not a removal prediction"
+      },
+      "restriction_assessment": {
+        "observed": "First-party public model listing and Apache-2.0 metadata; actual rights, present payload and changes unverified",
+        "scenario": "Publisher/hosting conditions could change; no known model-specific removal or legal probability",
+        "probability": null
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "publisher_approx_bytes": 1730000000,
+        "hw_tested_on_user_machine": false
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Qwen3.5-0.8B independently posttrained for multi-step tool routing by SFT, teacher distillation and RL",
+        "must_preserve": [
+          "one BF16 model.safetensors and exact SHA",
+          "tokenizer/config/chat-template",
+          "full LICENSE/NOTICE",
+          "frozen Transformers tool schema and inference ABI"
+        ],
+        "shared_dependencies": [],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "incumbent_comparison": [
+        "Qwen/Qwen3.5-0.8B",
+        "LiquidAI/LFM3-1.7B"
+      ],
+      "selection_budget_cap_bytes": 2500000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "falsification_condition": "Same trained weight as baseline or no independent functional advantage, unreconstructable source/rights or incorrect total",
+      "download_ready": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ibm-granite/granite-timeseries-ttm-r3",
+      "url": "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r3",
+      "portfolio_decision": "conditional",
+      "evidence_date": "2026-11-12",
+      "license_metadata": "apache-2.0",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": null,
+      "upstream_all_files_bytes_observed": null,
+      "observed_access": "public_Hub_listing_not_payload_tested",
+      "personal_access_verified": false,
+      "risk_tier": "R2",
+      "group": "超小型時系列TinyTimeMixer R3",
+      "reason_selected": "既選定Chronos-2と異なる時系列Mixerの独立事前学習重み。trend-residual分解、GLU/多解像度や外生変数系のR3 mainチェックポイントのみを保存候補とし、全R3 family枝を自動収集しない。",
+      "quality_positive": "IBM公式Hubカードでmain約1.41M params、モデルrepo約6.13MB、モデルファイル約5.73MB。メーカーGIFT-Eval MASE/CRPS、CPU約180 samples/sを報告。",
+      "quality_negative": "CPU/GPUの計測HW/clock/batchが揃わずChronos-2との独立比較なし。R3には別チェックポイント枝が多数あり、mainの総数をfamily全体と混同できない。immutable SHAとLICENSE正文/ABI未監査。",
+      "requested_artifact": "one IBM TTM R3 main checkpoint (model.safetensors) with config/license/readme, not all R3 branches",
+      "evidence_kind": "publisher_first_party_and_Hugging_Face_metadata",
+      "evidence_urls": [
+        "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r3",
+        "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r3/tree/main",
+        "https://github.com/ibm-granite/granite-tsfm/blob/main/tsfm_public/toolkit/get_model.py",
+        "https://arxiv.org/abs/2401.03955"
+      ],
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 1410000,
+        "count_scope": "specific published checkpoint rounded Hub metadata, not complete exact tensor census",
+        "review_date": "2026-11-12"
+      },
+      "forecast_priority": {
+        "wave": "S3",
+        "rank": null,
+        "category": "tiny_time_series_original",
+        "scenario_status": "hypothetical future distribution stress test not a removal prediction"
+      },
+      "restriction_assessment": {
+        "observed": "First-party public model listing and Apache-2.0 metadata; actual rights, present payload and changes unverified",
+        "scenario": "Publisher/hosting conditions could change; no known model-specific removal or legal probability",
+        "probability": null
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "publisher_approx_bytes": 6130000,
+        "hw_tested_on_user_machine": false
+      },
+      "preservation_bundle": {
+        "learned_outcome": "IBM R3 TinyTimeMixer trend/residual and multiresolution specialist forecasting",
+        "must_preserve": [
+          "one main model.safetensors with source SHA",
+          "config README model signature/LICENSE",
+          "pinned granite-tsfm runtime, backend ABI",
+          "same-task Chronos-2 benchmark protocol"
+        ],
+        "shared_dependencies": [],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "incumbent_comparison": [
+        "autogluon/chronos-2"
+      ],
+      "selection_budget_cap_bytes": 200000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "falsification_condition": "Main is not verified as 1.41M model or no distinct forecasting utility versus Chronos2",
+      "download_ready": false
+    }
+  ],
+  "previous_verified_capacity": {
+    "v27_known_logical_sha_union_bytes": 3417685712585,
+    "physical_disk_free_bytes": null
+  },
+  "not_adopted_research": [
+    {
+      "repo_id": "NousResearch/Arete-27B",
+      "decision": "HOLD_FOR_TASK_SPECIFIC_VALUE_AND_54GB_COST",
+      "reason": "SFT distinct from Qwen3.8 but 54.7GB and no independent task value/rights confirmed"
+    },
+    {
+      "repo_id": "autotrust/AutoTrust-JEV-27B-v1.1",
+      "decision": "HOLD_COMPARE_WITH_KANANA",
+      "reason": "27B typed choice probabilities, 3B Kanana overlap"
+    },
+    {
+      "repo_id": "beipo-ai/NorthCUA-Mini",
+      "decision": "UNADOPTED_PREVIOUS_V28_PROPOSAL"
+    },
+    {
+      "repo_id": "qiyuan-robot/PrimeSim",
+      "decision": "UNADOPTED_PREVIOUS_V28_PROPOSAL"
+    },
+    {
+      "repo_id": "meta-models/Muse-Glimmer-30B",
+      "decision": "UNADOPTED_PREVIOUS_V28_PROPOSAL"
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "revision_id": "v23-20261106",
+  "previous_revision_id": "v22-20261106",
+  "source_branch_commit": "673798de5d034e36fe61d86cd929b75b0b8a233e",
+  "target_branch": "strategy/2026-11-03-01-risk",
+  "decision_status": "CONDITIONAL_PRESERVATION_SELECTION_NO_PAYLOAD_APPROVAL",
+  "decision_date": "2026-11-06",
+  "purpose": "Bounded 2-model promotion only after primary file size metadata of existing 116 selections was counted, preserving 4TB cap and outstanding dependency uncertainties.",
+  "archive_target_bytes": 4000000000000,
+  "minimum_free_bytes": 200000000000,
+  "max_new_selection_budget_bytes": 71000000000,
+  "budget_note": "71GB combined policy caps are not measured final bytes. At v22 primary logical known 3,108,440,834,201; v23 source repos 66,707,531,084 additional before SHA dedup, and unknown remaining dependencies and physical disk cannot be treated as zero.",
+  "previous_verified_capacity": {
+    "source_revision": "v22-20261106",
+    "active": 116,
+    "known_logical_dedup_bytes": 3108440834201,
+    "all_primary_scopes_exact": true,
+    "external_dependency_issues": 25,
+    "full_offline_total": null,
+    "owner_disk_free": null
+  },
+  "download_enabled": false,
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "Hcompany/Holotron4-30B-A3B",
+      "url": "https://huggingface.co/Hcompany/Holotron4-30B-A3B",
+      "group": "Nemotron系GUI/MCP専用後学習・異系統アーカイブ",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Nemotron H Nano Omni系をHcompanyがGUI/MCP/コード実行に後学習した独立約33.0B MoE checkpoint。既存Qwen系Holo4-27BやFaraを保存しても当該学習済み重みは復元できない。将来の公開経路喪失に備え、元精度・コード・ライセンスを一組で保存選定する。",
+      "quality_positive": "Hcompany一次モデルカードでNemotron baseからOSWorld 21.0→76.3、AutomationBench19.4→35.6、PinchBench84.7→88.6と報告。元基盤からの後学習による差別化の作者証拠。",
+      "quality_negative": "同一作者の評価で独立再現なし。OSWorld2では7.9で、Holo4 27Bとの公平な直接比較ではない。GPU/RAM・クロック・batchや各タスクstep budgetが不明。NVIDIA Open Model Agreementと独自コードを要審査。",
+      "evidence_date": "2026-11-06",
+      "evidence_urls": [
+        "https://huggingface.co/Hcompany/Holotron4-30B-A3B",
+        "https://huggingface.co/blog/Hcompany/holo4",
+        "https://hcompany.ai/research/models"
+      ],
+      "evidence_kind": "creator_primary_model_card_and_immutable_HF_source_tree_plus_historical_v22_comparison",
+      "source_relation": "Hcompany Holo4-27B/Qwen3.8-derived vs Holotron4-30B/NemotronH Nano Omni derived; not another precision of same learned weights",
+      "incumbent_comparison": [
+        "Hcompany/Holo4-27B",
+        "microsoft/Fara1.5-27B",
+        "Hcompany/trajectories"
+      ],
+      "previous_research_ledger": "catalog/research/2026-11-06-capacity-bounded-followup.json",
+      "previous_decision": "HOLD_RESEARCH_NOT_FORMAL_CATALOG_CHANGE",
+      "decision_change_reason": "Capacity audit now pinned 116/116 existing primary file scopes; new immutable source tree 17 BF16 shards and exact 66,051,239,820 bytes, quantized-format duplication avoided, different trained foundation shown in first-party card. Formal conditional for insurance, NOT executable approval.",
+      "observed_access": "public_ungated_metadata_not_payload_access_verified",
+      "license_metadata": "other:NVIDIA Open Model Agreement",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "fully_pinned_revision_sha": null,
+      "selected_file_bytes": null,
+      "upstream_revision_sha_observed": "52184310f6c916e5e7d4b8f055af49fc41642574",
+      "upstream_all_files_bytes_observed": 66051239820,
+      "source_scope_bytes_are_not_selected_bytes": true,
+      "publisher_immutable_snapshot_path": "catalog/capacity/2026-11-06/followup-sources/Hcompany--Holotron4-30B-A3B.json",
+      "selection_budget_cap_bytes": 70000000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 33015598915,
+        "evidence_kind": "HF_safetensors_serialized_element_upper_bound_includes_BF16_F32_I64_not_proof_all_optional_external_learned_dependencies",
+        "evidence_urls": [
+          "https://huggingface.co/Hcompany/Holotron4-30B-A3B"
+        ],
+        "review_date": "2026-11-06",
+        "note": "33,015,595,968 BF16 +2,944 F32+3 I64 serialized scalar entries; MoE all experts counted, not only 3B active. Confirm exact inference closure before approval."
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "category": "autonomous_gui_code_mcp_agent_posttraining",
+        "scenario_status": "HYPOTHESIS_NOT_MODEL_SPECIFIC_BAN"
+      },
+      "restriction_assessment": {
+        "observed": "Public listing with custom NVIDIA model agreement; no verified withdrawal notice or governmental order",
+        "scenario": "GUI/MCP external action models may have future distribution controls; cannot infer specific probability",
+        "probability": null
+      },
+      "performance_evidence": {
+        "publisher_only": true,
+        "osworld_base_percent": 21,
+        "osworld_candidate_percent": 76.3,
+        "osworld2_candidate_percent": 7.9,
+        "automation_base_percent": 19.4,
+        "automation_candidate_percent": 35.6,
+        "pinch_base_percent": 84.7,
+        "pinch_candidate_percent": 88.6,
+        "hardware": null,
+        "clock": null,
+        "batch": null,
+        "context": null,
+        "independent_reproduction": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 66051239820,
+        "source_bytes_are_not_selected_bytes": true,
+        "hw_tested_on_user_machine": false,
+        "proposed_cap_bytes": 70000000000
+      },
+      "preservation_bundle": {
+        "learned_outcome": "NemotronH-based Holotron4 GUI/MCP/code SFT+RL checkpoint, distinct from Qwen-family Holo4",
+        "must_preserve": [
+          "17 intact BF16 safetensors shards and model.safetensors.index.json at same revision",
+          "tokenizer and chat template, image processor and config",
+          "custom modeling_nemotron_h.py, processing, configuration and audio module code as static reviewed source",
+          "NVIDIA Open Model Agreement text, relevant NOTICE and parent license provenance",
+          "pinned compatible inference harness and task scoring; do not execute trust_remote_code until audited"
+        ],
+        "shared_dependencies": [],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "falsification_condition": "If it is proved identical to an already-selected checkpoint, not a distinct trained outcome, or legally unsuitable, switch to HOLD; lack of imminent ban or slower day-to-day runtime alone does not defeat insurance selection.",
+      "retention_basis": "INSURANCE_DISTINCT_LEARNED_OUTCOME"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "LiquidAI/LFM2.5-24B-A2B-DSpark",
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B-DSpark",
+      "group": "学習済み投機デコードdrafter・既存24B専用依存",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "327,707,521要素の別個に訓練されたドラフター。既存のLiquidAI/LFM2.5-24B-A2B用に、推論速度向上とMarkov/confidence-headを学習している。別のVLM3B向けDSparkや元ターゲットからこの重みは復元できないため低増分で学習成果を保存する。",
+      "quality_positive": "配布者はNVIDIA B300でFP8ターゲット、SGLangの単一GPU・batch環境で平均出力スループット2.38倍（concurrency1）と1.71倍（256）と報告。ソースrepoの全ファイルは約656.3MB。",
+      "quality_negative": "速度改善は配布者のB300による評価。確率分布やタスク品質の向上ではない。FP8ターゲットと適合するSGLang commit、モデル・ドラフトのversion結合、必要追加メモリは未検証。batch検証時の浮動小数点差でgreedy出力が変わる可能性を作者自身が警告。",
+      "evidence_date": "2026-11-06",
+      "evidence_urls": [
+        "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B-DSpark",
+        "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B",
+        "https://www.liquid.ai/blog/lfm2.5-dspark"
+      ],
+      "evidence_kind": "creator_primary_card_B300_benchmark_protocol_source_tree_and_original_target_in_catalog",
+      "source_relation": "Learned speculative drafter targeted to specific 24B MoE and NOT re-quantized original or LFM2.5-VL-3B-DSpark",
+      "incumbent_comparison": [
+        "LiquidAI/LFM2.5-24B-A2B",
+        "LiquidAI/LFM2.5-VL-3B-DSpark"
+      ],
+      "previous_research_ledger": "catalog/research/2026-11-06-capacity-bounded-followup.json",
+      "previous_decision": "HOLD_RESEARCH_NOT_FORMAL_CATALOG_CHANGE",
+      "decision_change_reason": "Unique target-specific trained 327.7M draft was validated in publisher fixed source metadata (0.656GB all files); existing 24B target is selected and no second full target is automatically added. Conditioned preservation is worth the low incremental storage while hardware/backend equivalence remains unapproved.",
+      "observed_access": "public_ungated_metadata_not_payload_access_verified",
+      "license_metadata": "other:lfm1.0",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "fully_pinned_revision_sha": null,
+      "selected_file_bytes": null,
+      "upstream_revision_sha_observed": "e052e5b1dd103c38cdd4f8ddc068d7dea4586f55",
+      "upstream_all_files_bytes_observed": 656291264,
+      "source_scope_bytes_are_not_selected_bytes": true,
+      "publisher_immutable_snapshot_path": "catalog/capacity/2026-11-06/followup-sources/LiquidAI--LFM2.5-24B-A2B-DSpark.json",
+      "selection_budget_cap_bytes": 1000000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 24299307521,
+        "evidence_kind": "conservative_deployed_pair_upper_screen_23971600000_original_target_plus_327707521_drafter",
+        "evidence_urls": [
+          "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B-DSpark",
+          "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B"
+        ],
+        "review_date": "2026-11-06",
+        "note": "Model own safetensors 327,707,521 entries; deployment target approximated 23,971,600,000 from existing catalog + drafter =24,299,307,521. Pair not 327.7M alone."
+      },
+      "source_model_standalone_parameters": 327707521,
+      "required_target_parameters_approx": 23971600000,
+      "forecast_priority": {
+        "wave": "S2",
+        "category": "target_specific_learned_speculative_drafter",
+        "scenario_status": "BROAD_DISTRIBUTION_LOSS_INSURANCE_NOT_IMMINENT_BAN"
+      },
+      "restriction_assessment": {
+        "observed": "Public with LFM1.0 license tag, no creator stop notice and no model-specific government order",
+        "scenario": "Trained efficiency components may vanish with their target distribution even if low individual regulatory sensitivity",
+        "probability": null
+      },
+      "performance_evidence": {
+        "publisher_only": true,
+        "hardware": "NVIDIA B300 single GPU, FP8 target, BF16 KV",
+        "backend": "SGLang DSPARK (commit/PR numbers cited in card, exact release unpinned)",
+        "batch": "concurrency 1/32/256",
+        "clock": null,
+        "context": null,
+        "trials_per_measurement": null,
+        "average_speedup_at_concurrency1": 2.38,
+        "average_speedup_at_concurrency256": 1.71,
+        "actual_task_accuracy_change_not_proven": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 656291264,
+        "source_bytes_are_not_selected_bytes": true,
+        "hw_tested_on_user_machine": false,
+        "proposed_cap_bytes": 1000000000
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Target-specific draft Markov and confidence weights for LFM2.5-24B-A2B",
+        "must_preserve": [
+          "model.safetensors and config.json at same revision",
+          "LICENSE and benchmark protocol CSV/JSON, runtime.patch metadata",
+          "pinned compatible LiquidAI/LFM2.5-24B-A2B target and exact quantization format after compatibility check",
+          "SGLang DSpark implementation version, tokenizer, speculative block size and cache policy"
+        ],
+        "shared_dependencies": [
+          {
+            "repo_id": "LiquidAI/LFM2.5-24B-A2B",
+            "role": "exact_target_model",
+            "reuse_only_after_revision_and_sha256_match": true,
+            "reuse_verified": false
+          }
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "falsification_condition": "If the drafter proves incompatible with the selected target revision, does not actually add a distinct trained component, or its license conflicts with original terms, return to HOLD. Source size and vendor speed are not final archive-cost or user-HW measurements.",
+      "retention_basis": "INSURANCE_DISTINCT_LEARNED_OUTCOME"
+    }
+  ]
+}

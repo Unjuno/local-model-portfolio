@@ -1,0 +1,264 @@
+{
+  "date": "2026-11-06",
+  "source_revision": "v23-20261106",
+  "source_branch_commit": "c636244dc3864c68980a4a36a482d76292cc60d0",
+  "revision_id": "v24-20261106",
+  "previous_revision_id": "v23-20261106",
+  "schema_version": 1,
+  "target_branch": "strategy/2026-11-03-01-risk",
+  "decision_status": "CONDITIONAL_PRESERVATION_SELECTION_NO_PAYLOAD_APPROVAL",
+  "purpose": "Select three distinct original trained outcomes identified by Nov 5 official releases; no duplicate quant formats or uncertain claims of imminent ban.",
+  "archive_target_bytes": 4000000000000,
+  "minimum_free_bytes": 200000000000,
+  "max_new_selection_budget_bytes": 102000000000,
+  "download_enabled": false,
+  "previous_verified_capacity": {
+    "source_revision": "v23-20261106",
+    "active": 118,
+    "known_primary_file_bytes_sum": 3176707137046,
+    "known_logical_dedup_bytes": 3175147816831,
+    "exact_file_scopes": 118,
+    "open_dependency_issues": 27,
+    "complete_offline_archive_bytes": null,
+    "owner_disk_free_bytes": null
+  },
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "pfnet/plamo-3-translate-31b",
+      "url": "https://huggingface.co/pfnet/plamo-3-translate-31b",
+      "group": "日本語・多言語翻訳の独自SFT/DPO教師モデル",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "PFN/NICT事前学習基盤に数十Bトークンの翻訳専門SFT二段階・DPOを施した31B原本。単なるchat modelや量子化違いではなく、歴史的な翻訳後学習成果を保全する。0.8Bはさらに蒸留した別重みであり、教員と生徒を異なる資産として扱う。",
+      "quality_positive": "PFN一次論文・技術記事による53言語、用語集・文脈・日本語敬体指定。作者比較で31B BF16 PFTB En↔Ja=0.6244、WMT24++ COMET-22 En→Ja=0.8799など。ただし自社評価。",
+      "quality_negative": "ベンチマークは作者評価、少数言語ペアと大規模文脈の独立確認なし。NICT基盤の権利、PLaMo Community Licenseの利用・派生・再配布条件、custom Plamo tokenizer/modelingコードABIの監査が必要。",
+      "evidence_date": "2026-11-06",
+      "evidence_urls": [
+        "https://www.preferred.jp/en/news/pr20261105",
+        "https://www.preferred.jp/en/blog/tech/plamo-3-translate-weight-release",
+        "https://huggingface.co/pfnet/plamo-3-translate-31b"
+      ],
+      "evidence_scope": "2026-11-05 official announcement, publisher card, Nov6 pinned source tree and immutable LICENSE/en/ja checked; no payload",
+      "incumbent_comparison": [
+        "tencent/Hy-SimulMT-30B-A3B",
+        "CohereLabs/aya-vision-32b"
+      ],
+      "source_relation": "distinct posttrained teacher, not quantized form of 8B or 0.8B student",
+      "previous_research_ledger": "catalog/research/2026-11-06-release-insurance/candidate-review.json",
+      "previous_decision": "CONDITIONAL_SELECTION_EVALUATION_AFTER_EXACT_BYTES",
+      "decision_change_reason": "Fixed source commit, all 14 shards plus tokenizer/modeling evidence and exact selected primary bytes; creator confirms teacher separate from distilled students. A bounded 65GB budget is reserved, not proof of entire 4TB fit.",
+      "observed_access": "public_ungated_metadata_not_verified_personal_legal_access",
+      "license_metadata": "other:plamo-community",
+      "license_text_reviewed": false,
+      "permission_to_download_verified": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "fully_pinned_revision_sha": null,
+      "selected_file_bytes": null,
+      "upstream_revision_sha_observed": "01eac57bf80ef8114decd998f8f3a803ba795557",
+      "upstream_all_files_bytes_observed": 63519912375,
+      "preliminary_named_selected_primary_bytes": 63518748101,
+      "publisher_snapshot": "catalog/research/2026-11-06-release-insurance/sources/pfnet--plamo-3-translate-31b.json",
+      "selection_budget_cap_bytes": 65000000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 31757456384,
+        "evidence_kind": "HF safetensors element count including all model shards; external learned component census pending",
+        "evidence_urls": [
+          "https://huggingface.co/pfnet/plamo-3-translate-31b"
+        ],
+        "review_date": "2026-11-06",
+        "note": "Not 31B exactly; model metadata totals 31,757,456,384. Not hardware RAM or all deployment dependency guarantee."
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "category": "specialized_japanese_multilingual_translation_teacher",
+        "scenario_status": "PUBLIC_DISTRIBUTION_LOSS_HYPOTHESIS"
+      },
+      "restriction_assessment": {
+        "observed": "2026-11-05 public source release under PLaMo Community License. No verified takedown.",
+        "scenario": "License revisions or broad open-weight distribution loss could remove access; not a model-specific imminent ban.",
+        "probability": null
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 63519912375,
+        "hw_tested_on_user_machine": false
+      },
+      "preservation_bundle": {
+        "learned_outcome": "31B trained SFT+DPO Japanese/multilingual translation model original weights",
+        "must_preserve": [
+          "complete 14-shard BF16 safetensors, matching index and config",
+          "original tokenization_plamo.py and modeling_plamo.py as static untrusted-code artifacts; no import",
+          "tokenizer.jsonl, chat template, generation configs",
+          "English and Japanese PLaMo Community LICENSE files, PFN/NICT provenance and original model card",
+          "compatible Transformers/PLaMo custom architecture commit and task evaluation recipe"
+        ],
+        "shared_dependencies": [],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "falsification_condition": "If checkpoint incomplete/identical to an already selected learned checkpoint, rights cannot be met, or exact bounded full package does not fit after dependency and real disk audit, demote to HOLD. Lack of imminent restriction alone is not rejection.",
+      "retention_basis": "INSURANCE_DISTINCT_TRAINED_TEACHER"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "pfnet/plamo-3-translate-0.8b",
+      "url": "https://huggingface.co/pfnet/plamo-3-translate-0.8b",
+      "group": "31Bから追加蒸留したエッジ翻訳student",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "31B教師完成後にSFT・DPO間で追加のtoken-distribution蒸留を受けた別パラメータの0.8B生徒。31Bの単純量子化では再現できない『蒸留による圧縮』の学習成果を小容量で保存する。",
+      "quality_positive": "PFNによる53言語/スマホオフライン実演、日英・日本語多言語の作者同条件比較で同規模の翻訳モデルを上回ると報告。31B teacherと本体スケールが異なる。",
+      "quality_negative": "作者評価中心で、同じ言語群の全翻訳方向品質・歪み・用語遵守の独立測定なし。再配布のライセンス表示義務、custom tokenizer/code ABIと既存Hy-SimulMTとの重複評価が必要。",
+      "evidence_date": "2026-11-06",
+      "evidence_urls": [
+        "https://www.preferred.jp/en/blog/tech/plamo-3-translate-weight-release",
+        "https://huggingface.co/pfnet/plamo-3-translate-0.8b",
+        "https://huggingface.co/pfnet/plamo-3-translate-0.8b/raw/cc8e88169807d5a272e8ff06db12eb0129b67f81/LICENSE/en"
+      ],
+      "evidence_scope": "Primary developer 31B student-distillation methodology and pinned Nov6 HF metadata with English/Japanese LICENSE digests",
+      "incumbent_comparison": [
+        "pfnet/plamo-3-translate-31b",
+        "tencent/Hy-SimulMT-30B-A3B"
+      ],
+      "source_relation": "0.8B independently distilled posttrained student; not a lower-bit serialization of 31B",
+      "previous_research_ledger": "catalog/research/2026-11-06-latest-v23/candidate-decisions.json",
+      "previous_decision": "RESEARCH_PRIORITY_TRANSLATION_NO_AUTOMATIC_ADDITION",
+      "decision_change_reason": "Paired teacher/student learned outcomes established in creator's technical training recipe; exact 0.8B BF16 publisher metadata 1,785,576,024 bytes and shared-license hash known; small incremental footprint.",
+      "observed_access": "public_ungated_metadata_not_verified_personal_legal_access",
+      "license_metadata": "other:plamo-community",
+      "license_text_reviewed": false,
+      "permission_to_download_verified": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "fully_pinned_revision_sha": null,
+      "selected_file_bytes": null,
+      "upstream_revision_sha_observed": "cc8e88169807d5a272e8ff06db12eb0129b67f81",
+      "upstream_all_files_bytes_observed": 1785576024,
+      "publisher_snapshot": "catalog/research/2026-11-06-latest-v23/sources/pfnet--plamo-3-translate-0.8b.json",
+      "selection_budget_cap_bytes": 2000000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 890344960,
+        "evidence_kind": "HF safetensors element count, source BF16; exact deployment tensor closure pending",
+        "evidence_urls": [
+          "https://huggingface.co/pfnet/plamo-3-translate-0.8b"
+        ],
+        "review_date": "2026-11-06"
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "category": "distilled_translation_learned_student",
+        "scenario_status": "PUBLIC_DISTRIBUTION_LOSS_HYPOTHESIS"
+      },
+      "restriction_assessment": {
+        "observed": "2026-11-05 release; current source publicly listed under PLaMo Community License, not a government restriction",
+        "scenario": "Private offline teacher/student capabilities disappear if proprietary later release stops, probability unassigned",
+        "probability": null
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 1785576024,
+        "hw_tested_on_user_machine": false
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Teacher-student distillation conditioned Japanese multilingual translation student",
+        "must_preserve": [
+          "one original BF16 model.safetensors (not same weight as teacher)",
+          "matching model/tokenizer custom scripts, tokenizer.jsonl and chat template",
+          "source-license English/Japanese hashes with teacher shared provenance",
+          "training recipe origin; 31B teacher is comparison/provenance only, not mandatory runtime parent"
+        ],
+        "shared_dependencies": [],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "falsification_condition": "If student equals a mechanical re-quantization rather than trained student, or rights/reproducibility fail, demote. Do not discard solely because teacher also selected.",
+      "retention_basis": "INSURANCE_SEPARATE_DISTILLED_LEARNED_STUDENT"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/Cosmos3-Nano-Sim-Bimanual",
+      "url": "https://huggingface.co/nvidia/Cosmos3-Nano-Sim-Bimanual",
+      "group": "行動条件付き世界モデル・ロボット双腕シミュレーション",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Cosmos3 Nanoを双腕ロボットYAM/AgiBotの操作・カメラ姿勢から次映像を予測するよう後学習し、因果蒸留したモデル。既存Cosmos-Predict2-2B-Video2WorldやSim-Auto運転生成と異なる学習成果。動作定義スキーマを含む91ファイル一式の保全を条件付き選定する。",
+      "quality_positive": "NVIDIA一次モデルカードと2026-11-05技術記事に、59操作値を64次元にpadした動作表現、初期画像+行動列からのchunk-wise動画生成、対話式の視点変更と双腕操作。固定版に行動schemaと本体/vaeの分割重みが存在。",
+      "quality_negative": "NVIDIA側の試験構成はGB200で、必要最小RAMやowner HW速度ではない。物理シミュレータを代替せず接触・物理・時系列の誤差あり。推論runtime・schema-5適合・OpenMDWと第三者権利を審査。",
+      "evidence_date": "2026-11-06",
+      "evidence_urls": [
+        "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation",
+        "https://huggingface.co/nvidia/Cosmos3-Nano-Sim-Bimanual",
+        "https://nvidia.github.io/cosmos-framework/inference_bimanual/"
+      ],
+      "evidence_scope": "Model card says checkpoint originally available 2026-10-20; Nov5 Hugging Face announcement discusses it. Distinguish checkpoint first date from blog date.",
+      "incumbent_comparison": [
+        "nvidia/Cosmos-Predict2-2B-Video2World",
+        "nvidia/GR00T-N1.6-3B",
+        "lerobot/pi0_base"
+      ],
+      "source_relation": "Distinct trained action-to-video world model for bimanual robotics; not a quantized Cosmos Predict2 variant, not an inference variant of Sim-Auto",
+      "previous_research_ledger": "catalog/research/2026-11-06-release-insurance/candidate-review.json",
+      "previous_decision": "CONDITIONAL_SELECTION_EVALUATION_AFTER_EXACT_BYTES",
+      "decision_change_reason": "Release source immutable all files 31,830,399,442 bytes, action schema/provenance/vae/config visible. Preserves distinct action-conditioned learned outcome within 35GB planning cap; alternative Cosmos checkpoints not automatically selected.",
+      "observed_access": "public_ungated_metadata_not_verified_personal_legal_access",
+      "license_metadata": "other:OpenMDW-1.1",
+      "license_text_reviewed": false,
+      "permission_to_download_verified": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "fully_pinned_revision_sha": null,
+      "selected_file_bytes": null,
+      "upstream_revision_sha_observed": "a9e3adf6235f56f0082be7a96e497348c286c472",
+      "upstream_all_files_bytes_observed": 31830399442,
+      "publisher_snapshot": "catalog/research/2026-11-06-release-insurance/sources/nvidia--Cosmos3-Nano-Sim-Bimanual.json",
+      "selection_budget_cap_bytes": 35000000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 15173136576,
+        "evidence_kind": "HF safetensors element counts; NVIDIA calls it a 16B trained model, actual tensor census and external pipeline components not audited",
+        "evidence_urls": [
+          "https://huggingface.co/nvidia/Cosmos3-Nano-Sim-Bimanual"
+        ],
+        "review_date": "2026-11-06",
+        "note": "Serialized 15,173,136,576 vs rounded trainable 16B in model card; do not substitute active or omit VAEs."
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "category": "robotics_action_conditioned_video_world_simulator",
+        "scenario_status": "POTENTIAL_EARLY_CONTROL_NOT_MODEL_SPECIFIC_BAN"
+      },
+      "restriction_assessment": {
+        "observed": "Public OpenMDW 1.1 model card, original release date 2026-10-20; no verified governmental takedown of this checkpoint",
+        "scenario": "Interactive physical action-conditioned world models could face future access restrictions, hypothetical. Open-source use remains allowed now subject to rights.",
+        "probability": null
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 31830399442,
+        "hw_tested_on_user_machine": false
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Posttrained action/observation video world model for two-arm robotics",
+        "must_preserve": [
+          "six transformer safetensors shards plus explicit model.safetensors.index.json and transformer index",
+          "included VAE learned weights and matching configs; full source repo covers action schema-5 and resolved configs",
+          "embodiment/control mapping, inference YAML/jsonl, sample normalized action traces and provenance",
+          "OpenMDW-1.1 license text/version and Cosmos Framework pinned commit, dependencies and container ABI",
+          "model card bias/privacy/safety notices and external test reports"
+        ],
+        "shared_dependencies": [],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "falsification_condition": "If action-conditioned model is an identical byte repack of already selected Cosmos model, or incomplete schema/runtime makes preservation unusable, demote to HOLD until fixed. Author blog date is not original release date.",
+      "retention_basis": "INSURANCE_DISTINCT_ROBOT_ACTION_VIDEO_WORLD_LEARNING"
+    }
+  ]
+}

@@ -1,0 +1,497 @@
+{
+  "schema_version": 1,
+  "review_id": "pytorch-off-hf-originals-round13-20261102",
+  "review_date": "2026-11-02",
+  "status": "UNMERGED_RESEARCH_SELECTION_ONLY_NO_ACQUISITION",
+  "objective": "Investigate TorchHub entrypoints, PyTorch repo checkpoints and original GitHub/NGC/CDN distributions beyond Hugging Face, prioritize observed disappearance, model distinctiveness, and lawful minimal archival cost.",
+  "coverage": {
+    "pytorch_hub": true,
+    "github_release_assets": true,
+    "unmaintained_source_repos": true,
+    "external_creator_checkpoints": true,
+    "legacy_pytorch_abi": true,
+    "not_an_exhaustive_crawl": true
+  },
+  "counts": {
+    "source_review_candidates": 5,
+    "rights_or_access_holds": 4,
+    "lower_priority_watch": 4,
+    "software_items": 3
+  },
+  "candidateList": [
+    {
+      "id": "snakers4/silero-vad",
+      "type": "model_and_pytorch_hub_source",
+      "group": "speech_endpoint_detection",
+      "priority": "A",
+      "selection": "PROMOTE_TO_FILE_SCOPED_CANDIDATE",
+      "source_commit": "066409f3d9db45a30d21dfcbf9147826ffdd7052",
+      "code_archived": false,
+      "model_access": "public_git_embedded_weight",
+      "license": "MIT; verify original training data/packaging rights separately",
+      "observed": "Official PyTorch Hub entry uses torch.hub.load; embedded silero_vad.jit checkpoint is 2,272,526 B, alternatives ONNX also in repo.",
+      "reason": "Very low-cost speech activity detector, distinct from ASR/TTS models in the existing catalog. Complete code and model source can be pinned without relying on an external CDN at this commit.",
+      "manifest": {
+        "selected_files": [
+          {
+            "path": "LICENSE",
+            "size_bytes": 1075,
+            "git_blob_sha1": "0bf5e90cac691b999d4a35044f97167d7bbbf0b9",
+            "payload_sha256": null,
+            "verdict": "publisher_git_tree_blob_sha_only_no_download"
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 9725,
+            "git_blob_sha1": "88db3cf16beba65e88a5a2486fe1fc9d1f3f0cd2",
+            "payload_sha256": null,
+            "verdict": "publisher_git_tree_blob_sha_only_no_download"
+          },
+          {
+            "path": "hubconf.py",
+            "size_bytes": 1978,
+            "git_blob_sha1": "48e89bae266c071b0ed84b6c3458258e5aa15a20",
+            "payload_sha256": null,
+            "verdict": "publisher_git_tree_blob_sha_only_no_download"
+          },
+          {
+            "path": "pyproject.toml",
+            "size_bytes": 1945,
+            "git_blob_sha1": "951de2f5beaf661146006c2383abd7678087c702",
+            "payload_sha256": null,
+            "verdict": "publisher_git_tree_blob_sha_only_no_download"
+          },
+          {
+            "path": "src/silero_vad/__init__.py",
+            "size_bytes": 1288,
+            "git_blob_sha1": "910001a6233f9ba54c4ac41e94bddf8301d87557",
+            "payload_sha256": null,
+            "verdict": "publisher_git_tree_blob_sha_only_no_download"
+          },
+          {
+            "path": "src/silero_vad/data/__init__.py",
+            "size_bytes": 0,
+            "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+            "payload_sha256": null,
+            "verdict": "publisher_git_tree_blob_sha_only_no_download"
+          },
+          {
+            "path": "src/silero_vad/data/silero_vad.jit",
+            "size_bytes": 2272526,
+            "git_blob_sha1": "5c6988d663950a93a5f0d6c38c2fe024653ec552",
+            "payload_sha256": null,
+            "verdict": "publisher_git_tree_blob_sha_only_no_download"
+          },
+          {
+            "path": "src/silero_vad/model.py",
+            "size_bytes": 1504,
+            "git_blob_sha1": "99955ee6f37604c0164e381c55c37d0a2adec330",
+            "payload_sha256": null,
+            "verdict": "publisher_git_tree_blob_sha_only_no_download"
+          },
+          {
+            "path": "src/silero_vad/utils_vad.py",
+            "size_bytes": 31474,
+            "git_blob_sha1": "4b3bef714cae87a44381077ac0519fd1a0f45089",
+            "payload_sha256": null,
+            "verdict": "publisher_git_tree_blob_sha_only_no_download"
+          }
+        ],
+        "model_weight_file": "src/silero_vad/data/silero_vad.jit",
+        "selected_files_bytes": 2321515,
+        "alternate_onnx_files": "excluded_from_TorchScript_first_pass"
+      },
+      "blocks": [
+        "TorchScript .jit should never be automatically loaded as trusted code; sandbox with explicit authorization.",
+        "No confirmed benchmark under user's OS/CPU/clock/batch; no full runtime transitive lock.",
+        "Git blob hash is Git SHA-1, not file SHA-256; verify only after permitted download."
+      ],
+      "sources": [
+        "https://pytorch.org/hub/snakers4_silero-vad_vad/",
+        "https://github.com/snakers4/silero-vad/tree/066409f3d9db45a30d21dfcbf9147826ffdd7052",
+        "https://github.com/snakers4/silero-vad/blob/066409f3d9db45a30d21dfcbf9147826ffdd7052/LICENSE"
+      ],
+      "asset_kind": "pytorch_model_family",
+      "model_and_files_download_approved": false,
+      "execution_approved": false,
+      "checkpoints_verified_local": false,
+      "rights_final_approved": false
+    },
+    {
+      "id": "facebookresearch/demucs",
+      "type": "model_and_archived_software",
+      "group": "music_source_separation",
+      "priority": "A",
+      "selection": "PIN_SOURCE_AND_ORIGIN_MODEL_POINTER_NEXT",
+      "source_commit": "e976d93ecc3865e5757426930257e200846a520a",
+      "code_archived": true,
+      "model_access": "remote_CDN_endpoint_in_official_source_UNCHECKED",
+      "license": "MIT source; pretrained checkpoint terms and training music data require independent audit",
+      "observed": "Original Meta repository archived Jan 1 2025; publisher warns no active maintenance; Hybrid Transformer Demucs v4 htdemucs=955717e8 model signature in remote/htdemucs.yaml; files.txt maps 955717e8-8726e21a.th.",
+      "reason": "Original source separation weights and old decoding code may not remain reproducible as PyTorch/TorchAudio evolves; a high-priority supply-loss investigation, unlike just another music generator.",
+      "manifest": {
+        "source_config_paths": [
+          "demucs/remote/files.txt",
+          "demucs/remote/htdemucs.yaml",
+          "demucs/pretrained.py",
+          "demucs/repo.py",
+          "LICENSE"
+        ],
+        "candidate_checkpoint_url": "https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/955717e8-8726e21a.th",
+        "original_file_bytes": null,
+        "publisher_full_sha256": null,
+        "server_reachability_verified": false
+      },
+      "blocks": [
+        "A file name containing 8 hex digits is not the complete SHA-256.",
+        "Need verify remote original weight size, live availability, checksum and weight distribution rights before a manifest.",
+        "Selected htdemucs_ft is a 4-network ensemble; don't conflate it with single htdemucs default."
+      ],
+      "sources": [
+        "https://github.com/facebookresearch/demucs",
+        "https://github.com/facebookresearch/demucs/blob/e976d93ecc3865e5757426930257e200846a520a/demucs/pretrained.py",
+        "https://github.com/facebookresearch/demucs/blob/e976d93ecc3865e5757426930257e200846a520a/demucs/remote/files.txt",
+        "https://github.com/facebookresearch/demucs/blob/e976d93ecc3865e5757426930257e200846a520a/demucs/remote/htdemucs.yaml"
+      ],
+      "asset_kind": "pytorch_model_family",
+      "model_and_files_download_approved": false,
+      "execution_approved": false,
+      "checkpoints_verified_local": false,
+      "rights_final_approved": false
+    },
+    {
+      "id": "facebookresearch/denoiser",
+      "type": "model_and_archived_software",
+      "group": "speech_enhancement",
+      "priority": "A",
+      "selection": "PIN_SOURCE_AND_ORIGIN_MODEL_POINTER_NEXT",
+      "source_commit": "8afd7c166699bb3c8b2d95b6dd706f71e1075df0",
+      "code_archived": true,
+      "model_access": "remote_CDN_endpoint_in_official_source_UNCHECKED",
+      "license": "CC-BY-NC-4.0 per official README; dependent third party code differs",
+      "observed": "GitHub repository archived; source pretrained.py includes dns48-11decc9d8e3f0998.th and other original preset URLs.",
+      "reason": "Causal real-time speech denoiser weights and original CPU code, distinct from generative TTS and source separation; archive/update risk is observed for source, not proven for pretrained weights.",
+      "manifest": {
+        "candidate_checkpoint_url": "https://dl.fbaipublicfiles.com/adiyoss/denoiser/dns48-11decc9d8e3f0998.th",
+        "also_available_by_code": [
+          "dns64-a7761ff99a7d5bb6.th",
+          "master64-8a5dfb4bb92753dd.th",
+          "valentini_nc-93fc4337.th"
+        ],
+        "original_file_bytes": null,
+        "publisher_full_sha256": null,
+        "reachability_verified": false
+      },
+      "blocks": [
+        "CC BY-NC 4.0 requires compatible non-commercial research purpose and third-party data rights.",
+        "Original checkpoint formats .th may depend on unsafe legacy torch.load and old Python library versions.",
+        "Check exact file bytes, checksum, source and model rights before approval."
+      ],
+      "sources": [
+        "https://github.com/facebookresearch/denoiser",
+        "https://github.com/facebookresearch/denoiser/blob/8afd7c166699bb3c8b2d95b6dd706f71e1075df0/denoiser/pretrained.py",
+        "https://github.com/facebookresearch/denoiser/blob/8afd7c166699bb3c8b2d95b6dd706f71e1075df0/README.md"
+      ],
+      "asset_kind": "pytorch_model_family",
+      "model_and_files_download_approved": false,
+      "execution_approved": false,
+      "checkpoints_verified_local": false,
+      "rights_final_approved": false
+    },
+    {
+      "id": "sczhou/CodeFormer",
+      "type": "pytorch_git_release_weights",
+      "group": "face_restoration_and_repair",
+      "priority": "B",
+      "selection": "CONDITIONAL_NONCOMMERCIAL_RESEARCH_CANDIDATE",
+      "source_commit": "b33cc7d639d6545bfcccc7e0bc6ae51f24e79c2b",
+      "code_archived": false,
+      "model_access": "public_GitHub_Release_v0.1.0",
+      "license": "NTU S-Lab License 1.0; noncommercial use only, including checkpoint-derived outputs according to source scope",
+      "observed": "Original project uses GitHub release v0.1.0, with codeformer.pth 376,637,898 B; additional face detection/parsing checkpoints are separate assets.",
+      "reason": "Original codebook based blind face restoration and editing weights; no identical task already selected. Special noncommercial license and face/person research demand separate rights control.",
+      "manifest": {
+        "release_tag": "v0.1.0",
+        "selected_reference_assets": [
+          {
+            "filename": "codeformer.pth",
+            "bytes": 376637898,
+            "source_url": "https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/codeformer.pth",
+            "publisher_sha256": null
+          },
+          {
+            "filename": "detection_Resnet50_Final.pth",
+            "bytes": 109497761,
+            "source_url": "https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/detection_Resnet50_Final.pth",
+            "publisher_sha256": null
+          },
+          {
+            "filename": "parsing_bisenet.pth",
+            "bytes": 53289463,
+            "source_url": "https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/parsing_bisenet.pth",
+            "publisher_sha256": null
+          }
+        ],
+        "possible_reference_bundle_bytes": 539425122,
+        "complete_bundle_verified": false
+      },
+      "blocks": [
+        "GitHub Release assets lacked publisher SHA-256 digest; cannot claim payload hash verified.",
+        "Select exact compatible face detector/face parser and optional enhancer after code path and license audit.",
+        ".pth model loading must be quarantined; code has third-party dependencies and may not work under modern PyTorch.",
+        "Check overlaps with TencentARC/GFPGAN and whether author-reported 376,637,898 B CodeFormer weights are identical."
+      ],
+      "sources": [
+        "https://github.com/sczhou/CodeFormer",
+        "https://github.com/sczhou/CodeFormer/releases/tag/v0.1.0",
+        "https://github.com/sczhou/CodeFormer/blob/master/LICENSE",
+        "https://arxiv.org/abs/2206.11253"
+      ],
+      "asset_kind": "pytorch_model_family",
+      "model_and_files_download_approved": false,
+      "execution_approved": false,
+      "checkpoints_verified_local": false,
+      "rights_final_approved": false
+    },
+    {
+      "id": "NVlabs/stylegan3",
+      "type": "pytorch_git_NVIDIA_NGC_pretrained",
+      "group": "original_gan_generator_and_media_forensics",
+      "priority": "B",
+      "selection": "CONDITIONAL_NONCOMMERCIAL_ORIGINAL_RESEARCH_CANDIDATE",
+      "source_commit": "c233a919a6faee6e36a316ddd4eddababad1adf9",
+      "code_archived": false,
+      "model_access": "original_checkpoint_NVIDIA_NGC_endpoint_NOT_VERIFIED",
+      "license": "NVIDIA Source Code License; section 3.3 limits use to non-commercial research/evaluation",
+      "observed": "Official NVIDIA research GitHub declares one-time code drop and points to native NVIDIA NGC .pkl pretrained variants; code uses old PyTorch ecosystem.",
+      "reason": "Alias-free GAN synthesis research differs from diffusion text-to-image systems; native ffhq checkpoint is a historically important original for controlled media forensics.",
+      "manifest": {
+        "candidate_original_filename": "stylegan3-r-ffhq-1024x1024.pkl",
+        "candidate_original_url": "https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/files/stylegan3-r-ffhq-1024x1024.pkl",
+        "weight_size_bytes": null,
+        "publisher_sha256": null,
+        "endpoint_reachability_verified": false
+      },
+      "blocks": [
+        "NVIDIA license is NOT MIT/Apache2; assess pretrained model/FFHQ training data terms separately.",
+        "Legacy .pkl file is not a trusted weight-only serialization; do not load without separate controlled test.",
+        "No verified payload hash, actual checkpoint size, current NGC availability or exact runtime compatibility."
+      ],
+      "sources": [
+        "https://github.com/NVlabs/stylegan3",
+        "https://github.com/NVlabs/stylegan3/blob/main/LICENSE.txt",
+        "https://arxiv.org/abs/2106.12423"
+      ],
+      "asset_kind": "pytorch_model_family",
+      "model_and_files_download_approved": false,
+      "execution_approved": false,
+      "checkpoints_verified_local": false,
+      "rights_final_approved": false
+    }
+  ],
+  "legalHolds": [
+    {
+      "id": "deepinsight/insightface:cheetah_s",
+      "source_repo": "deepinsight/insightface",
+      "priority": "A_RIGHTS",
+      "classification": "hold_lawful_use_and_biometric_data",
+      "artifact": {
+        "repo": "deepinsight/insightface",
+        "tag": "model-zoo",
+        "filename": "cheetah_s.zip",
+        "bytes": 27116086,
+        "source_url": "https://github.com/deepinsight/insightface/releases/download/model-zoo/cheetah_s.zip",
+        "release_publisher_sha256": "b6ef9fada66d335968333f880064b1bbe4b12dff85b3fb460183687c4946f49a"
+      },
+      "issue": "One of the smaller original face/person recognition packages (PersonAnalysis). Source SDK is MIT but official pretrained weights are noncommercial research only. Data subject consent and any special licensing/manifest authorization must be reviewed. Release is current (2026-10-03 upload).",
+      "sources": [
+        "https://github.com/deepinsight/insightface",
+        "https://github.com/deepinsight/insightface/releases/tag/model-zoo",
+        "https://github.com/deepinsight/insightface/blob/master/python-package/docs/model_zoo.md"
+      ]
+    },
+    {
+      "id": "deepinsight/insightface:inswapper_128",
+      "source_repo": "deepinsight/insightface",
+      "priority": "A_RIGHTS",
+      "classification": "hold_face_swap_license_and_consent",
+      "artifact": {
+        "repo": "deepinsight/insightface",
+        "tag": "model-zoo",
+        "filename": "inswapper_128.onnx",
+        "bytes": 554253681,
+        "source_url": "https://github.com/deepinsight/insightface/releases/download/model-zoo/inswapper_128.onnx",
+        "release_publisher_sha256": "e4a3f08c753cb72d04e10aa0f7dbe3deebbf39567d4ead6dce08e98aa49e16af"
+      },
+      "issue": "The author announced special contacts for face-swap licensing in 2025-11. The GitHub published ONNX binary is not proof of unlimited commercial or identity-image rights. Do not use for nonconsensual identity editing or tracking.",
+      "sources": [
+        "https://github.com/deepinsight/insightface",
+        "https://github.com/deepinsight/insightface/releases/tag/model-zoo"
+      ]
+    },
+    {
+      "id": "Rudrabha/Wav2Lip",
+      "source_repo": "Rudrabha/Wav2Lip",
+      "priority": "A_ACCESS_RIGHTS",
+      "classification": "hold_no_proven_original_checkpoint_digest_or_redistribution_right",
+      "artifact": {
+        "project_commit": "bac9a81e63ecc153202353372e5724b83d9e6322",
+        "original_checkpoint_source": "Google Drive folders linked in official README",
+        "weight_size_bytes": null,
+        "original_sha256": null,
+        "source_url": "https://github.com/Rudrabha/Wav2Lip"
+      },
+      "issue": "Original lip-sync model weights are linked through Google Drive; the author states research/academic/personal use only and forbids commercial use because of LRS2 training data. Current downloadable complete checkpoint and hashes not checked. Existing LatentSync overlaps task but not original weights.",
+      "sources": [
+        "https://github.com/Rudrabha/Wav2Lip",
+        "https://arxiv.org/abs/2008.10010"
+      ]
+    },
+    {
+      "id": "snakers4/silero-models:v5_cis_base_nostress",
+      "source_repo": "snakers4/silero-models",
+      "priority": "B_LICENSE_SPLIT",
+      "classification": "hold_language_and_per-model_license_scope",
+      "artifact": {
+        "project_commit": "e382298387332f2bf461fe6eadfde99104611b0c",
+        "origin_url": "https://models.silero.ai/models/tts/ru/v5_cis_base_nostress.jit",
+        "weight_size_bytes": null,
+        "sha256": null
+      },
+      "issue": "Original Silero Models repository LICENSE is CC BY-NC-SA 4.0, but LICENSE_CIS is MIT. Must prove this particular chosen CIS model is covered by permissive LICENSE_CIS and the source server's required distribution and data rights. Dataset and speaker permission distinct.",
+      "sources": [
+        "https://github.com/snakers4/silero-models",
+        "https://github.com/snakers4/silero-models/blob/master/models.yml",
+        "https://github.com/snakers4/silero-models/blob/master/LICENSE_CIS"
+      ]
+    }
+  ],
+  "watches": [
+    {
+      "id": "facebookresearch/pytorchvideo:efficient_x3d_xs",
+      "source_repo": "facebookresearch/pytorchvideo",
+      "category": "low_cost_video_action_classification",
+      "status": "WATCH_R2",
+      "source_commit": "2ac6ed361309cb25144636ad82dd8bd6a4970e0c",
+      "checkpoint_source": "https://dl.fbaipublicfiles.com/pytorchvideo/model_zoo/kinetics/efficient_x3d_xs_original_form.pyth",
+      "checkpoint_bytes": null,
+      "reason": "Official PyTorch Hub action classification differs from generative video but the repo remains active; no observed removal. Independent checkpoint hash, file size and exact preprocessing are not pinned.",
+      "sources": [
+        "https://pytorch.org/hub/facebookresearch_pytorchvideo_x3d/",
+        "https://github.com/facebookresearch/pytorchvideo/blob/main/pytorchvideo/models/hub/efficient_x3d_mobile_cpu.py"
+      ]
+    },
+    {
+      "id": "TencentARC/GFPGAN:GFPGANv1.4.pth",
+      "source_repo": "TencentARC/GFPGAN",
+      "category": "face_restoration_competitor",
+      "status": "WATCH_COMPARE_CODEFORMER",
+      "checkpoint_bytes": 348632874,
+      "source_url": "https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/GFPGANv1.4.pth",
+      "reason": "Official pretrained portrait restoration competing with CodeFormer; root code license says Apache2 excluding third-party components. No independent same-task quality or additional value established.",
+      "sources": [
+        "https://github.com/TencentARC/GFPGAN",
+        "https://github.com/TencentARC/GFPGAN/releases/tag/v1.3.4"
+      ]
+    },
+    {
+      "id": "s0md3v/roop",
+      "source_repo": "s0md3v/roop",
+      "category": "archived_face_swap_wrapper",
+      "status": "WATCH_SOURCE_ONLY_NOT_EXTRA_WEIGHT",
+      "code_archived": true,
+      "reason": "Project is archived with AGPL code, but original independent weight asset was not verified; it depends on externally licensed face swap model packages. Do not mistake code-only wrapper for a distinct archive checkpoint.",
+      "sources": [
+        "https://github.com/s0md3v/roop",
+        "https://github.com/deepinsight/insightface"
+      ]
+    },
+    {
+      "id": "NVlabs/stylegan2-ada-pytorch",
+      "source_repo": "NVlabs/stylegan2-ada-pytorch",
+      "category": "GAN_compare",
+      "status": "WATCH_SUBSTITUTE_STYLEGAN3",
+      "reason": "Historical GAN baseline and older source. Compare alias-free StyleGAN3 original with older StyleGAN2 variant; do not automatically retain every training set/resolution/checkpoint.",
+      "sources": [
+        "https://github.com/NVlabs/stylegan2-ada-pytorch",
+        "https://github.com/NVlabs/stylegan3"
+      ]
+    }
+  ],
+  "software": [
+    {
+      "id": "pytorch/text",
+      "type": "software_legacy",
+      "priority": "A",
+      "status": "SOURCE_PRESERVATION_PREP",
+      "source_commit": "9bed85d7a7ae13cf8c28598a88d8e461fe1afcb4",
+      "version": "v0.18.0",
+      "archived": true,
+      "license": "BSD-3-Clause",
+      "reason": "Official repo archived. Legacy pretrained tokenization/vocabulary and older torchtext pipeline reproduction can be lost when only current PyTorch wheels are retained. Keep tag-specific source and compatible Python ABI as separate runnable artifact.",
+      "source": "https://github.com/pytorch/text/releases/tag/v0.18.0",
+      "dependencies_complete": false
+    },
+    {
+      "id": "pytorch/audio",
+      "type": "software_legacy",
+      "priority": "A",
+      "status": "PIN_LEGACY_AND_MIGRATION",
+      "source_commit": "6e1c7fe9ff6d82b8665d0a46d859d3357d2ebaaa",
+      "version": "v2.8.0",
+      "archived": false,
+      "license": "BSD-2-Clause",
+      "reason": "APIs deprecated in 2.8 and some removed in 2.9, while media I/O migrated to TorchCodec. Preserve old source/version for PyTorch models whose checkpoint-era pipeline requires it, not blindly in the same environment as recent Torch 2.14.",
+      "source": "https://github.com/pytorch/audio/releases/tag/v2.8.0",
+      "dependencies_complete": false
+    },
+    {
+      "id": "meta-pytorch/torchcodec",
+      "type": "software_current_dependency",
+      "priority": "A",
+      "status": "ALREADY_IN_PRIOR_RUNTIME_REVIEW_NO_DUPLICATE",
+      "reason": "Needed for current video/audio decoding, already selected as software review in earlier round. Do not create another download allocation. Previously specified in round10 CPU reference profile; it is not an entry in round6's 20-source-software review list.",
+      "source": "https://github.com/meta-pytorch/torchcodec",
+      "dependencies_complete": false,
+      "source_review_path": "catalog/runtime-drafts/round10-cpu-reference-compatibility-2026-11-01.json"
+    }
+  ],
+  "security_gate": {
+    "advisory": "GHSA-63cw-57p8-fm3p",
+    "source": "https://github.com/pytorch/pytorch/security/advisories/GHSA-63cw-57p8-fm3p",
+    "issued": "2026-01-26",
+    "scope": "PyTorch torch.load weights_only=True malicious checkpoint memory corruption and possible code execution",
+    "reported_vulnerable": "<=2.9.1",
+    "fixed": ">=2.10.0",
+    "absolute_controls": [
+      "Treat .pth .pt .th .pkl checkpoint file contents as untrusted before parsing; no direct model load.",
+      "torch.hub.load imports GitHub code and may download external weights automatically; use read-only metadata APIs and pinned source instead.",
+      "Even patched weights_only=True is not a proof that an artifact or any downstream model code is safe.",
+      "Future authorized test should run only in isolated OS/container with network blocked, no user secrets mounts, and resource constraints.",
+      "Preserve original opaque artifact bytes and provenance first. Safe conversion requires explicit separate review and execution authorization."
+    ]
+  },
+  "caution": {
+    "source_ARCHIVED_not_equal_weights_removed": true,
+    "github_release_asset_digest_null_not_sha256": true,
+    "code_license_not_weights_license": true,
+    "github_sha1_not_file_sha256": true,
+    "running_unsupported_legacy_versions_not_approved": true,
+    "benches_measured_under_user_hardware": false,
+    "memory_peak_confirmed": false,
+    "gated_acceptance": false,
+    "no_downloads": true,
+    "no_torrent_p2p": true,
+    "no_change_to_catalog_current": true,
+    "approved_queue_entries": 0
+  },
+  "capacity_notes": {
+    "confirmed_SileroVAD_code_and_jit_selected_bytes": 2321515,
+    "confirmed_CodeFormer_partial_bundle_bytes": 539425122,
+    "confirmed_InsightFace_CheetahS_release_bytes": 27116086,
+    "confirmed_InsightFace_InSwapper128_release_bytes": 554253681,
+    "unknown_size_count": 5,
+    "note": "Known sizes are upstream logical source/license or release assets, not total runnable offline bundles. Unknown must remain null, not zero."
+  },
+  "previous_round10_runtime_source_blob_sha": "0051b442ec9b9212f60db351c5ec65b2d416142b"
+}

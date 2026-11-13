@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "date": "2026-10-31",
+  "status": "review_only_not_applied",
+  "method": "unique modality + lawful availability + minimal necessary source files + measured task performance before final adoption",
+  "records": [
+    {
+      "asset_kind": "model",
+      "repo_id": "facebook/dinov3-vits16-pretrain-lvd1689m",
+      "url": "https://huggingface.co/facebook/dinov3-vits16-pretrain-lvd1689m",
+      "priority_tier": "R0",
+      "selection_decision": "conditional",
+      "capability": "visual-feature",
+      "size_observed": "86.4 MB model.safetensors; Gated",
+      "reason": "既存DINOv3 ViT-7Bとは別の蒸留21M級。画像特徴の軽量比較原本。7B重みの完全代替ではない。",
+      "review_date": "2026-10-31",
+      "fully_pinned_sha": null,
+      "selected_file_bytes": null,
+      "license_review_complete": false,
+      "download_approved": false,
+      "execute_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "depth-anything/Depth-Anything-V2-Small-hf",
+      "url": "https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf",
+      "priority_tier": "R2",
+      "selection_decision": "select_proposed",
+      "capability": "relative-depth",
+      "size_observed": "99.2 MB safetensors; Apache-2.0",
+      "reason": "24.8Mの単眼相対深度推定。既存OCRやセグメンテーションにはない出力。",
+      "review_date": "2026-10-31",
+      "fully_pinned_sha": null,
+      "selected_file_bytes": null,
+      "license_review_complete": false,
+      "download_approved": false,
+      "execute_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "facebook/sam2-hiera-tiny",
+      "url": "https://huggingface.co/facebook/sam2-hiera-tiny",
+      "priority_tier": "R2",
+      "selection_decision": "select_proposed",
+      "capability": "video-segmentation",
+      "size_observed": "156 MB safetensors; Apache-2.0; full repo 312 MB",
+      "reason": "38.9M級の軽量動画分割。SAM3は機能が異なり同一原本として置換できない。",
+      "review_date": "2026-10-31",
+      "fully_pinned_sha": null,
+      "selected_file_bytes": null,
+      "license_review_complete": false,
+      "download_approved": false,
+      "execute_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3Guard-Gen-0.6B",
+      "url": "https://huggingface.co/Qwen/Qwen3Guard-Gen-0.6B",
+      "priority_tier": "R1",
+      "selection_decision": "select_proposed",
+      "capability": "text-safety",
+      "size_observed": "1.52 GB full repo; Apache-2.0",
+      "reason": "小型テキスト安全性分類の専用後学習。大きなShieldstralやLlamaGuardと同一評価で比較。",
+      "review_date": "2026-10-31",
+      "fully_pinned_sha": null,
+      "selected_file_bytes": null,
+      "license_review_complete": false,
+      "download_approved": false,
+      "execute_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "microsoft/OmniParser-v2.0",
+      "url": "https://huggingface.co/microsoft/OmniParser-v2.0",
+      "priority_tier": "R1",
+      "selection_decision": "conditional",
+      "capability": "gui-screen-parsing",
+      "size_observed": "main 1.12 GB; MIT caption; MIT detector in refs/pr/37 ~281 MB",
+      "reason": "スクリーン操作領域とアイコン説明の専門モデル。main内の旧検出器はAGPLのためMIT版との組み合わせを別revisionで検査。",
+      "review_date": "2026-10-31",
+      "fully_pinned_sha": null,
+      "selected_file_bytes": null,
+      "license_review_complete": false,
+      "download_approved": false,
+      "execute_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "facebook/nllb-200-distilled-600M",
+      "url": "https://huggingface.co/facebook/nllb-200-distilled-600M",
+      "priority_tier": "R1",
+      "selection_decision": "conditional",
+      "capability": "low-resource-translation",
+      "size_observed": "2.48 GB full repo; CC-BY-NC-4.0",
+      "reason": "低資源言語の文字翻訳向け蒸留重み。大型同時翻訳と異なり、非商用条件とPyTorch bin形式を審査。",
+      "review_date": "2026-10-31",
+      "fully_pinned_sha": null,
+      "selected_file_bytes": null,
+      "license_review_complete": false,
+      "download_approved": false,
+      "execute_approved": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
+      "url": "https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
+      "priority_tier": "R2",
+      "selection_decision": "select_proposed",
+      "capability": "compact-video-QA",
+      "size_observed": "2.03 GB model.safetensors; 7.92 GB full repo; Apache-2.0",
+      "reason": "動画理解の500M級モデル。全repoのONNX等を重複保存せず、実用する形式を選ぶ。",
+      "review_date": "2026-10-31",
+      "fully_pinned_sha": null,
+      "selected_file_bytes": null,
+      "license_review_complete": false,
+      "download_approved": false,
+      "execute_approved": false
+    }
+  ],
+  "hold_and_watch": [
+    {
+      "repo_id": "facebook/watermark-anything",
+      "url": "https://huggingface.co/facebook/watermark-anything",
+      "status": "HOLD",
+      "reason": "HFのcheckpoint.pthと公式READMEのwam_mit.pthの同一性・適用ライセンスが未確認。"
+    },
+    {
+      "repo_id": "depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf",
+      "url": "https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf",
+      "status": "HOLD",
+      "reason": "公式配布メタデータにライセンスの記載がない。相対深度版の条件を流用しない。"
+    },
+    {
+      "repo_id": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+      "url": "https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+      "status": "HOLD",
+      "reason": "屋外メートル深度版の許諾本文と重複を検査。"
+    },
+    {
+      "repo_id": "microsoft/Florence-2-base",
+      "url": "https://huggingface.co/microsoft/Florence-2-base",
+      "status": "WATCH",
+      "reason": "OmniParserのcaption依存元。別に保存する増分価値は未評価。"
+    },
+    {
+      "repo_id": "google/timesfm-2.0-500m-pytorch",
+      "url": "https://huggingface.co/google/timesfm-2.0-500m-pytorch",
+      "status": "WATCH",
+      "reason": "既存Chronos2と同一時系列データで性能比較後に判断。"
+    }
+  ],
+  "observations": {
+    "smallest_MB": 86.4,
+    "source_display_sizes_are_rounded": true,
+    "full_repo_not_equal_to_selected_files": true,
+    "existing_canonical_assets": 110,
+    "existing_provisional_bytes": 3234067678260,
+    "approval_queue_entries": 0
+  },
+  "notes": "Documented candidate selection only. No model data fetched or execution authorized."
+}

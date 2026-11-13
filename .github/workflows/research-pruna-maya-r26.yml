@@ -1,0 +1,104 @@
+name: Pruna H3 license and Maya2 dependency research (metadata only)
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - '.github/workflows/research-pruna-maya-r26.yml'
+      - 'scripts/research_pruna_maya_r26.py'
+      - 'tests/test_research_pruna_maya_r26.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-pruna-maya-r26-risk-only
+  cancel-in-progress: false
+jobs:
+  metadata:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Ensure clean read-only baseline and exact previous capacity
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          load=lambda p:json.loads(Path(p).read_text())
+          c=load('catalog/CURRENT.json')
+          v=load(c['materialized_catalog_path'])
+          q=load(c['priority_worklist_path'])
+          p=load('catalog/capacity/2026-11-06/v24/capacity-summary.json')
+          assert c['revision_id']=='v24-20261106' and len(v['items'])==168 and c['expected']['active']==121
+          assert p['exact_primary_file_scope_count']==121 and p['unresolved_primary_scope_count']==0
+          assert p['known_scope_content_union_bytes']==3_272_248_434_044
+          assert not q['download_enabled'] and not q['approved'] and not load('queues/approved.json')['entries']
+          PY
+          python -m unittest discover -s tests -p 'test_research_pruna_maya_r26.py' -v
+      - name: Capture public publisher metadata and fixed-license text only
+        run: python -m scripts.research_pruna_maya_r26
+      - name: Full regression and legal/access evidence limits
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,re,hashlib,subprocess,sys
+          from pathlib import Path
+          load=lambda p:json.loads(Path(p).read_text())
+          c=load('catalog/CURRENT.json')
+          o=Path('catalog/research/2026-11-06-insurance-r26')
+          a=load(o/'research.json')
+          assert len(a['Pruna_candidates'])==2
+          assert a['maya2_external_publisher_repo_sum_bytes']==473790793
+          assert a['selection_changes']==0 and a['download_authorized'] is False
+          assert a['user_disk_measured'] is False
+          original=next(x for x in a['Pruna_candidates'] if x['repo_id']=='PrunaAI/P-H3-Image')
+          assert original['source_tree_complete'] and len(original['pinned_source_revision'])==40
+          assert original['candidate_full_diffusers_profile']['selected_file_bytes']>10_000_000_000
+          assert original['candidate_full_diffusers_profile']['is_executable_manifest'] is False
+          assert original['source_repository_bytes']>0
+          assert original['license_tag']=='other'
+          assert original['license_terms_need_personal_legal_review'] is True
+          assert set(original['license_territorial_exclusions'])=={'European Union','United Kingdom','Republic of Korea','United States'}
+          assert all(x.get('retrieved') for x in original['license_evidence'])
+          assert not original['download_authorized'] and not original['legal_clearance_for_acquisition'] if 'legal_clearance_for_acquisition' in original else not original['download_authorized']
+          source=load(o/'sources/PrunaAI--P-H3-Image.json')
+          assert source['pinned_revision']==original['pinned_source_revision']
+          assert source['source_scope_bytes']==original['source_repository_bytes']
+          suite=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],capture_output=True,text=True)
+          log=suite.stdout+suite.stderr;print(log)
+          if suite.returncode:raise SystemExit(suite.returncode)
+          for script in ('scripts/check_parameter_cutoff.py','scripts/audit_selection_decisions.py'):
+              subprocess.run([sys.executable,script],check=True)
+          n=int(re.search(r'Ran (\d+) tests',log).group(1))
+          audit={'base_revision':'v24-20261106','full_tests_passed':True,'unittest_count':n,
+             'parameter_and_selection_audits_passed':True,'weights_downloaded':0,
+             'Pruna_sources_retrieved_as_metadata':2,'maya_dependency_sources_pinned':2,
+             'formal_selection_changed':False,'owner_disk_measured':False,
+             'test_log_sha256':hashlib.sha256(log.encode()).hexdigest()}
+          (o/'verification.json').write_text(json.dumps(audit,indent=2)+'\n')
+          print(json.dumps(audit,indent=2))
+          PY
+      - name: Commit research only under branch lease
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          test "$(git ls-remote origin "$GITHUB_REF" | cut -f1)" = "$GITHUB_SHA"
+          git add -- catalog/research/2026-11-06-insurance-r26
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'research: pin Pruna trained-image source metadata and Maya2 codec dependency evidence [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD

@@ -1,0 +1,108 @@
+name: Pin Kanana decision weights, Ripple base/instruct, and MOSS codec budget (metadata-only)
+on:
+  push:
+    branches: ['strategy/2026-11-03-01-risk']
+    paths:
+      - '.github/workflows/research-nov7-r30.yml'
+      - 'scripts/research_nov7_r30.py'
+      - 'tests/test_research_nov7_r30.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-r30-research-risk
+  cancel-in-progress: false
+jobs:
+  read_only_research:
+    if: github.repository == 'Unjuno/local-model-portfolio' && github.ref == 'refs/heads/strategy/2026-11-03-01-risk'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Test immutable v26 and MOSS inclusion method
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_research_nov7_r30.py -v
+          python scripts/check_parameter_cutoff.py
+          python scripts/audit_selection_decisions.py
+      - name: Capture 3 named anonymous HF source trees (no weights)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m scripts.research_nov7_r30
+      - name: Verify fixed license, capacity and complete regression
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,re,subprocess,sys
+          from pathlib import Path
+          def load(path):return json.loads(Path(path).read_text(encoding='utf-8'))
+          c=load('catalog/CURRENT.json')
+          view=load(c['materialized_catalog_path'])
+          r=load('catalog/research/2026-11-07-r30/research.json')
+          old=load('catalog/capacity/2026-11-06/v26/capacity-summary.json')
+          assert c['revision_id']=='v26-20261106' and c['expected']['tracked']==172 and c['expected']['active']==125
+          assert len(view['items'])==172 and old['known_scope_content_union_bytes']==3_403_245_899_240
+          assert r['new_formal_selected_assets']==r['newly_approved_downloads']==r['model_payload_bytes_downloaded']==0
+          assert len(r['public_source_candidates'])==3
+          assert len({x['repo_id'] for x in r['public_source_candidates']})==3
+          assert all(x['source_tree_complete'] and x['source_repo_bytes']>0 for x in r['public_source_candidates'])
+          assert all(all(e['retrieved'] for e in x['source_license_text_evidence']) for x in r['public_source_candidates'])
+          k=next(x for x in r['public_source_candidates'] if x['repo_id']=='kakaocorp/kanana-2-v-decide-3b-2611')
+          assert k['source_license_metadata']=='other' and k['source_gated'] is False
+          assert k['candidate_original_selected_files_bytes']>=7_000_000_000
+          assert k['candidate_original_selected_files_bytes']<=k['source_repo_bytes']
+          assert k['candidate_selected_original_model_weight_bytes']>=7_000_000_000
+          assert 'LICENSE' in k['candidate_original_selected_paths']
+          assert 'decision_kanana_v_decide.py' in k['candidate_original_selected_paths']
+          for item in r['public_source_candidates']:
+              assert item['pinned_source_sha'] and len(item['pinned_source_sha'])==40
+              assert item['download_approved'] is False
+              assert item['hardware_peak_ram_measured_bytes'] is None
+          m=r['mandatory_moss_codec_capacity_accounting']
+          assert m['baseline_known_hash_aware_logical_bytes']==3_403_245_899_240
+          assert m['required_moss_audio_codec_new_selected_primary_bytes']==7_098_711_111
+          assert m['source_only_expanded_known_hash_aware_bytes']<4_000_000_000_000
+          assert m['complete_offline_archive_bytes'] is None
+          assert load('queues/approved.json')['entries']==[]
+          full=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],capture_output=True,text=True)
+          log=full.stdout+full.stderr;print(log)
+          if full.returncode:raise SystemExit(full.returncode)
+          for script in ('scripts/check_parameter_cutoff.py','scripts/audit_selection_decisions.py'):
+              subprocess.run([sys.executable,script],check=True)
+          count=int(re.search(r'Ran (\d+) tests',log).group(1))
+          out=Path('catalog/research/2026-11-07-r30/verification.json')
+          out.write_text(json.dumps({
+               'baseline_revision':'v26-20261106','research_only':True,
+               'number_of_publisher_repos_examined':3,'full_unittest_passed':True,
+               'tests_run':count,'parameter_gate_audit_passed':True,'selection_audit_passed':True,
+               'model_payloads_downloaded':0,'owner_disk_measured':False,
+               'actual_offline_restore_verified':False,'new_selection_count':0,
+               'test_log_sha256':hashlib.sha256(log.encode()).hexdigest()
+          },indent=2)+'\n',encoding='utf-8')
+          print(out.read_text())
+          PY
+      - name: Commit only generated source data to risk branch under lease
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/strategy/2026-11-03-01-risk
+          test "$(git ls-remote origin "$GITHUB_REF" | cut -f1)" = "$GITHUB_SHA"
+          git add -- catalog/research/2026-11-07-r30
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'research: pin source-only Kanana and Ripple releases plus MOSS codec byte union [skip ci]'
+          git push origin HEAD:refs/heads/strategy/2026-11-03-01-risk
+          git rev-parse HEAD

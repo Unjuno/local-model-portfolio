@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "revision_id": "v26-20261106",
+  "previous_revision_id": "v25-20261106",
+  "source_branch_commit": "dd2cf8729b2511503effadcadaf6275b994ba6e5",
+  "target_branch": "strategy/2026-11-03-01-risk",
+  "decision_date": "2026-11-06",
+  "purpose": "Bounded distinct learned outcomes: separately posttrained CUDA/automotive Cosmos model, on-device TTS English and already gated multilingual checkpoints; additionally research 280B ERNIE, restore dependency sources. No downloads.",
+  "decision_status": "CONDITIONAL_RESEARCH_SELECTION_NO_DOWNLOAD",
+  "archive_target_bytes": 4000000000000,
+  "minimum_free_bytes": 200000000000,
+  "max_new_selection_budget_bytes": 35600000000,
+  "download_enabled": false,
+  "previous_verified_capacity": {
+    "source_revision": "v25-20261106",
+    "tracked": 169,
+    "active": 122,
+    "known_logical_dedup_bytes": 3372065984104,
+    "exact_primary_file_scope_count": 122,
+    "open_dependency_issues": 31,
+    "complete_offline_archive_bytes": null,
+    "owner_disk_free_bytes": null
+  },
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/Cosmos3-Nano-Sim-Auto",
+      "url": "https://huggingface.co/nvidia/Cosmos3-Nano-Sim-Auto",
+      "portfolio_decision": "conditional",
+      "evidence_date": "2026-11-06",
+      "evidence_scope": "publisher immutable API model file tree and official technical card; metadata only, no user disk or inference",
+      "evidence_urls": [
+        "https://huggingface.co/nvidia/Cosmos3-Nano-Sim-Auto",
+        "https://nvidia.github.io/cosmos-framework/inference_sim_auto/",
+        "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation"
+      ],
+      "observed_access": "publisher listing is not personal access approval",
+      "license_metadata": "other:OpenMDW-1.1",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "personal_access_verified": false,
+      "fully_pinned_revision_sha": null,
+      "selected_file_bytes": null,
+      "download_approved": false,
+      "upstream_revision_sha_observed": "e289a50a4049614eaa62c9edc10b1e8d6cc1a6c1",
+      "upstream_all_files_bytes_observed": 32364133043,
+      "upstream_snapshot_path": "catalog/research/2026-11-06-release-insurance/sources/nvidia--Cosmos3-Nano-Sim-Auto.json",
+      "planning_cap_is_not_observed_bytes": true,
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 15157324096,
+        "review_date": "2026-11-06",
+        "evidence_kind": "HF publisher safetensors tensor element count including decoder; whole runtime dependency review outstanding"
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "category": "action_conditioned_simulation_and_multisensor_world_model",
+        "scenario_status": "HYPOTHETICAL_EARLY_RESTRICTION_NOT_PROOF_OF_GOVERNMENT_BAN"
+      },
+      "restriction_assessment": {
+        "observed": "Public publisher source listing and model card are not proof of future takedown or government regulation.",
+        "scenario": "Restricted or terminated distribution channels could make this independently learned result difficult to reacquire.",
+        "probability": null
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Transfer-Auto posttraining + 4-step self-forcing distillation with synchronized driving/WSM cameras and LiDAR",
+        "must_preserve": [
+          "six transformer shards with exact source index + lidar_vae and rgb vae weights",
+          "camera/range-map/control source schemas and rolling KV settings",
+          "tokenizer/processor config, native repo README and OpenMDW notice",
+          "pinned Cosmos Framework Git commit, CUDA/FlashAttention-4 and VLLM-Omni ABI",
+          "pinned external WSM reference rig and sample inputs (size/licensing pending)"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true,
+        "shared_dependencies": [
+          {
+            "repo_id": "nvidia/Cosmos3-Nano-Sim-Bimanual",
+            "role": "same_sha256_rgb_VAE",
+            "shared_sha256": "230496cb59ff85bc9c040487737c4062480cb61c71e697b197b4c30142f2a0da",
+            "bytes": 1409400600,
+            "reuse_verified_by_publisher_sha256": true,
+            "local_reuse_not_verified": true
+          }
+        ]
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 32364133043,
+        "source_bytes_are_not_selected_bytes": true,
+        "hw_tested_on_user_machine": false
+      },
+      "retention_basis": "INSURANCE_DISTINCT_LEARNED_OUTCOME",
+      "falsification_condition": "Demote if objectively identical learned weights, required dependency unrecoverable, rights insufficient, or storage budget fails after actual disk/rights checks.",
+      "group": "行動条件付きAV世界シミュレーション・同期LiDARの別蒸留成果",
+      "risk_tier": "R1",
+      "reason_selected": "Cosmos3 Transfer-Autoを車載WSM入力/複数カメラ+LiDARの短ステップ因果シミュレータへ再学習・蒸留。既採用Cosmos3 Sim-Bimanualの6変換器shardとSHA256が異なり、VAEは同一SHAで共有できる。物理/運転マルチセンサ学習の独立成果は現採用の双腕操作学習から復元できない。",
+      "quality_positive": "NVIDIA一次カードは最大11カメラとLiDAR同期、30fps RGB・10Hz LiDAR・4-step causal self-forcing rolling KVを解説。元モデル3.236TBではなく全repo約32.364GBで、15.157B総elementを報告。",
+      "quality_negative": "実機未測定、Windows/消費者GPU互換性なし。参照カメラリグ以外では品質劣化、LiDARサンプルのHD-map/WSM/動画外部データと固定Cosmos Framework/FA4 runtimeが必要。NVIDIAの評価は独立ではない。",
+      "selection_budget_cap_bytes": 35000000000,
+      "incumbent_comparison": [
+        "nvidia/Cosmos3-Nano-Sim-Bimanual",
+        "nvidia/Cosmos-Predict2-2B-Video2World",
+        "nvidia/GR00T-N1.6-3B"
+      ],
+      "decision_change_reason": "Previously HOLD as comparative candidate; 6/6 separate transformer weight SHA256 confirmed vs existing Bimanual, exact published package and internal lidar_vae identified, independent causal distillation established.",
+      "prior_research_path": "catalog/research/2026-11-06-round27/research.json"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "gradium/phonon-31m-en",
+      "url": "https://huggingface.co/gradium/phonon-31m-en",
+      "portfolio_decision": "conditional",
+      "evidence_date": "2026-11-06",
+      "evidence_scope": "publisher immutable API model file tree and official technical card; metadata only, no user disk or inference",
+      "evidence_urls": [
+        "https://huggingface.co/gradium/phonon-31m-en",
+        "https://gradium.ai/blog/phonon-closer-look",
+        "https://huggingface.co/docs/transformers/model_doc/gradium_phonon_tts"
+      ],
+      "observed_access": "publisher listing is not personal access approval",
+      "license_metadata": "apache-2.0",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "personal_access_verified": false,
+      "fully_pinned_revision_sha": null,
+      "selected_file_bytes": null,
+      "download_approved": false,
+      "upstream_revision_sha_observed": "92741c5b07d085ff840e26fea8ce43110b87852f",
+      "upstream_all_files_bytes_observed": 223333254,
+      "upstream_snapshot_path": "catalog/research/2026-11-06-round27/sources/gradium--phonon-31m-en.json",
+      "planning_cap_is_not_observed_bytes": true,
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 41096035,
+        "review_date": "2026-11-06",
+        "evidence_kind": "HF publisher safetensors tensor element count including decoder; whole runtime dependency review outstanding"
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "category": "offline_low_parameter_tts",
+        "scenario_status": "HYPOTHETICAL_EARLY_RESTRICTION_NOT_PROOF_OF_GOVERNMENT_BAN"
+      },
+      "restriction_assessment": {
+        "observed": "Public publisher source listing and model card are not proof of future takedown or government regulation.",
+        "scenario": "Restricted or terminated distribution channels could make this independently learned result difficult to reacquire.",
+        "probability": null
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Original BF16 Phonon English 31M TTS flow-latent generator + 10M decoder and frozen default speaker latent",
+        "must_preserve": [
+          "one BF16 model.safetensors (not alternate q8/q4 GGUF), default-voice.safetensors",
+          "config, chat template, tokenizer.model/json/tokenizer_config and processor",
+          "gradium/phonon-voices pretrained speaker latents and voices.jsonl catalog; no unpublished new-speaker encoder",
+          "frozen gradium-ai/xn-ptts engine or Transformers implementation ABI",
+          "Apache-2.0 attribution, voice-specific consent/legal status"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true,
+        "shared_dependencies": [
+          {
+            "repo_id": "gradium/phonon-voices",
+            "role": "precomputed_voice_latents_metadata",
+            "publisher_repository_bytes": 69292384,
+            "sha": "0ee17205f254b5abc43b266c8a0f215565c352f7",
+            "user_permission_pending": true
+          }
+        ]
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 223333254,
+        "source_bytes_are_not_selected_bytes": true,
+        "hw_tested_on_user_machine": false
+      },
+      "retention_basis": "INSURANCE_DISTINCT_LEARNED_OUTCOME",
+      "falsification_condition": "Demote if objectively identical learned weights, required dependency unrecoverable, rights insufficient, or storage budget fails after actual disk/rights checks.",
+      "group": "数千万規模端末内TTS・学習済み音声潜在",
+      "risk_tier": "R2",
+      "reason_selected": "31M英語Phononは自前のflow head/学習済み話者潜在で、既採用の高パラメータTTSとは異なる低計算音声生成成果。元モデルの32D連続潜在→Mimi/PocketTTS decoderへの学習済みmappingは形式変換では再構築できない。",
+      "quality_positive": "Gradium一次記事はstreamingオンデバイスでの英語・数値読上げ品質の作者評価、HF Transformers公式は31M本体/別audio decoder 10.3Mの構成を説明。公開形式のBF16 model.safetensorsと64MB q8 GGUFは同じ学習成果。",
+      "quality_negative": "端末速度や自然さは作者結果で実測なし。話者の音声からのspeaker codec encoderは公開されず、default-voiceと事前生成voice latentsのみ;任意の話者を無制限に作る能力は保存できない。decoder/voice同期・音声素材権利は別途確認。",
+      "selection_budget_cap_bytes": 300000000,
+      "incumbent_comparison": [
+        "OpenMOSS-Team/MOSS-TTS-v1.5",
+        "microsoft/VibeVoice-1.5B",
+        "maya-research/maya2-native"
+      ],
+      "decision_change_reason": "Phonon publisher files reveal original BF16 + q8/q4 duplicate; retain one BF16 checkpoint with default voice and share the small precomputed voices bundle.",
+      "prior_research_path": "catalog/research/2026-11-06-round27/research.json"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "gradium/phonon-40m-multilingual",
+      "url": "https://huggingface.co/gradium/phonon-40m-multilingual",
+      "portfolio_decision": "conditional",
+      "evidence_date": "2026-11-06",
+      "evidence_scope": "publisher immutable API model file tree and official technical card; metadata only, no user disk or inference",
+      "evidence_urls": [
+        "https://huggingface.co/gradium/phonon-40m-multilingual",
+        "https://gradium.ai/blog/phonon-closer-look",
+        "https://huggingface.co/docs/transformers/model_doc/gradium_phonon_tts"
+      ],
+      "observed_access": "Gated auto (anonymous metadata); user authenticated gate permission NOT verified",
+      "license_metadata": "cc-by-nc-4.0",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "personal_access_verified": false,
+      "fully_pinned_revision_sha": null,
+      "selected_file_bytes": null,
+      "download_approved": false,
+      "upstream_revision_sha_observed": "1537ce46c64f42903e0d608b132ccb073dac46d2",
+      "upstream_all_files_bytes_observed": 257581010,
+      "upstream_snapshot_path": "catalog/research/2026-11-06-round27/sources/gradium--phonon-40m-multilingual.json",
+      "planning_cap_is_not_observed_bytes": true,
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 50539363,
+        "review_date": "2026-11-06",
+        "evidence_kind": "HF publisher safetensors tensor element count including decoder; whole runtime dependency review outstanding"
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "category": "current_provider_gated_noncommercial_voice_multilingual",
+        "scenario_status": "HYPOTHETICAL_EARLY_RESTRICTION_NOT_PROOF_OF_GOVERNMENT_BAN"
+      },
+      "restriction_assessment": {
+        "observed": "Publisher's multilingual model is currently Gated and licensed CC BY-NC4.0; this is an actual distribution restriction, not a government ban.",
+        "scenario": "Restricted or terminated distribution channels could make this independently learned result difficult to reacquire.",
+        "probability": null
+      },
+      "preservation_bundle": {
+        "learned_outcome": "40M five-language on-device voice flow TTS checkpoint with distinct trained weights and matching decoder",
+        "must_preserve": [
+          "one BF16 model.safetensors with default voice and locked revision; no separate Q4/Q8 by default",
+          "multilingual tokenizer, voice normalization config and chat template",
+          "same pinned gradium/phonon-voices saved latents with rights",
+          "CC BY-NC4.0 full agreement and individual gate approval before any payload transfer",
+          "Gradium runtime pinned commit and decoder-only audio tokenizer"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true,
+        "shared_dependencies": [
+          {
+            "repo_id": "gradium/phonon-voices",
+            "role": "precomputed_voice_latents_metadata",
+            "publisher_repository_bytes": 69292384,
+            "sha": "0ee17205f254b5abc43b266c8a0f215565c352f7",
+            "user_permission_pending": true
+          }
+        ]
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 257581010,
+        "source_bytes_are_not_selected_bytes": true,
+        "hw_tested_on_user_machine": false
+      },
+      "retention_basis": "INSURANCE_DISTINCT_LEARNED_OUTCOME",
+      "falsification_condition": "Demote if objectively identical learned weights, required dependency unrecoverable, rights insufficient, or storage budget fails after actual disk/rights checks.",
+      "group": "Gated多言語端末内TTS・英仏独西葡追加学習",
+      "risk_tier": "R1",
+      "reason_selected": "Phonon 40M multiは英語31M版と別の学習済み重みで、独仏西葡を含む5言語と音声潜在の生成が可能。現在GatedかつCC BY-NC4.0でアクセス制限・非商用条件が存在するため、将来消失の保険として条件付き研究選定する。",
+      "quality_positive": "2026-11-05開発元記事は5言語TTSと低遅延・語彙/数字発音の作者評価。固定配布元BF16ファイル121,713,400 byteとdefault voice、処理器、別GGUF量子化形式を確認。",
+      "quality_negative": "Gated本人許諾未確認、LFS SHAは匿名メタデータでmasked、現物の同一性未保証。CC BY-NC4.0は商業利用禁止、話者encode codecは非公開、Gatedファイルの表示だけでは取得許可にならない。",
+      "selection_budget_cap_bytes": 300000000,
+      "gated_approval_required": true,
+      "research_only_gated_access": true,
+      "incumbent_comparison": [
+        "gradium/phonon-31m-en",
+        "OpenMOSS-Team/MOSS-TTS-v1.5",
+        "WhissleAI/steer-tts"
+      ],
+      "decision_change_reason": "Published gated multilingual checkpoint is distinct trained 40M TTS and smaller than 0.3GB; gate restrictions and masked hashes require research-only/never automatic acquisition.",
+      "prior_research_path": "catalog/research/2026-11-06-round27/research.json"
+    }
+  ],
+  "research_not_selected": [
+    {
+      "repo_id": "baidu/ERNIE-5.5-Flash-Base",
+      "decision": "S1_OVER_150B_HOLD_UNTIL_MATCHED_RAM_AND_RIGHTS",
+      "source_url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base",
+      "snapshot_path": "catalog/research/2026-11-06-round27/sources/baidu--ERNIE-5.5-Flash-Base.json",
+      "publisher_sha": "028544b2ffceea189b2d8768ed2b9d09b06f2343",
+      "publisher_full_repo_bytes": 288464891869,
+      "publisher_tensor_elements": 286245697882,
+      "license_tag": "ERNIE-5.5-Flash-Base-License-v1.0",
+      "restrictions": [
+        "EU",
+        "UK",
+        "South Korea"
+      ],
+      "date_of_release": "2026-11-05",
+      "risk_value": "unique 33.5T-token base pretraining; original 280B MoE unlike 14B active",
+      "why_not_active": "No pinned >=150B quantized matched user-memory comparison, 512GB peak and task-quality eval; region/commerce license audit pending.",
+      "download_authorized": false
+    }
+  ]
+}

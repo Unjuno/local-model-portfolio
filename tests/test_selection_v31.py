@@ -1,0 +1,35 @@
+"""v31: original open music generator and future closed ACE Music distinction."""
+import json,unittest
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+def load(p):return json.loads((ROOT/p).read_text(encoding='utf-8'))
+class V31(unittest.TestCase):
+ def test_music_without_duplicate_other_formats(self):
+  old=load('catalog/effective-portfolio-2026-11-12-v30.json')
+  new=load('catalog/effective-portfolio-2026-11-13-v31.json')
+  c=load('catalog/CURRENT.json');q=load('queues/proposed-v31-2026-11-13.json')
+  p=load('catalog/preparation/2026-11-13-insurance-bundles-v31.json')
+  x=load('catalog/research/2026-11-13-r53-ace-music-release-and-ace-step.json')
+  self.assertEqual(old['items'],new['items'][:178])
+  self.assertEqual(len(new['items']),179)
+  self.assertEqual(len({(a['asset_kind'],a['repo_id'].lower()) for a in new['items']}),179)
+  self.assertEqual(c['revision_id'],'v31-20261113')
+  self.assertEqual(c['expected']['tracked'],179)
+  self.assertEqual(c['expected']['active'],132)
+  self.assertEqual(c['expected']['models'],153)
+  self.assertEqual(c['expected']['parameter_gate'],{'PASS_TOTAL_PARAMS_LT_150B':131,'UNVERIFIED_BLOCK_FINAL_LOCK':20,'OVER_150B_QUANT_REVIEW_REQUIRED':2})
+  self.assertEqual(new['items'][-1]['repo_id'],'ACE-Step/acestep-v15-xl-turbo')
+  self.assertEqual(new['items'][-1]['portfolio_decision'],'conditional')
+  self.assertFalse(new['items'][-1]['download_approved'])
+  self.assertIsNone(new['items'][-1]['fully_pinned_revision_sha'])
+  self.assertIsNone(new['items'][-1]['selected_file_bytes'])
+  self.assertEqual(len(q['candidates']),132)
+  self.assertEqual(len(p['items']),132)
+  self.assertTrue(all(a['not_authorized'] and not a['download_approved'] for a in q['candidates']))
+  self.assertFalse(q['download_enabled']);self.assertFalse(p['download_enabled'])
+  self.assertEqual(load('queues/approved.json')['entries'],[])
+  self.assertFalse(x['announcement']['weight_repo_verified'])
+  self.assertFalse(x['announcement']['flash_weight_repo_verified'])
+  self.assertIsNone(x['ACE_Step_open_original']['resource_bytes_last_snapshot_selected'])
+  self.assertEqual(x['ACE_Step_open_original']['checkpoint_hf_observed_revision'],'d4a0b288b83ebb7e25a8c0b32c573c22e134e8ee')
+if __name__=='__main__':unittest.main()
