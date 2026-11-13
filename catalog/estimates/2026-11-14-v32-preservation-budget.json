@@ -1,0 +1,351 @@
+{
+  "review_date": "2026-11-14",
+  "repo": "Unjuno/local-model-portfolio",
+  "base_branch": "main",
+  "base_commit": "9c91204e685c5433e5cb824ecb2b30d26b781caf",
+  "base_revision": "v32-20261114",
+  "baseline_tracked": 182,
+  "baseline_active": 135,
+  "historical_hash_union_v27_assets": 126,
+  "input_policies": [
+    "policies/selection.md",
+    "policies/archival-insurance.json",
+    "policies/selection-decision-v17.json"
+  ],
+  "planning_ceiling_bytes": 4000000000000,
+  "physical_free_floor_bytes": 200000000000,
+  "budget_summary": {
+    "v27_known_source_union_bytes": 3417685712585,
+    "v28_to_v32_without_v31_ACE_source_scope_additions_bytes": 24342724173,
+    "known_source_scope_arithmetic_without_ACE_bytes": 3442028436758,
+    "ACE_XL_root_publisher_display_approx_bytes": 20000000000,
+    "ACE_shared_repo_full_display_approx_bytes": 10100000000,
+    "scenarios": [
+      {
+        "id": "S0_FROZEN_PLUS_R48_NATIVE_RESEARCH",
+        "description": "v27 known publisher SHA union + v28/v29/v30/v32 source scopes; exclude ACE",
+        "byte_scope": 3442028436758,
+        "capacity_arithmetic_difference_without_free_floor": 557971563242,
+        "empty_four_tb_and_floor_arithmetic_margin": 357971563242,
+        "certainty": "MIXED_PINNED_SOURCE_SCOPE_NOT_COMPLETE_PACKAGE"
+      },
+      {
+        "id": "S1_ACE_XL_DISPLAY_PROXY",
+        "description": "S0 plus approximate XL Turbo model root public display, exclude shared",
+        "byte_scope": 3462028436758,
+        "capacity_arithmetic_difference_without_free_floor": 537971563242,
+        "empty_four_tb_and_floor_arithmetic_margin": 337971563242,
+        "certainty": "ARITHMETIC_WITH_PUBLISHER_DISPLAY_APPROX"
+      },
+      {
+        "id": "S2_ACE_XL_AND_SHARED_FULL_REPO_PROXY",
+        "description": "S1 plus full ACE shared repo public display approx; contains unneeded 2B weights and may miss other dependencies",
+        "byte_scope": 3472128436758,
+        "capacity_arithmetic_difference_without_free_floor": 527871563242,
+        "empty_four_tb_and_floor_arithmetic_margin": 327871563242,
+        "certainty": "ARITHMETIC_WITH_OPTIONAL_FULL_REPO_PROXY_NOT_FINAL_SELECTION"
+      }
+    ],
+    "other_actual_dependencies_bytes": null,
+    "actual_HDD_total_bytes": null,
+    "actual_HDD_free_bytes": null,
+    "final_v32_hash_union_bytes": null,
+    "final_v32_download_peak_bytes": null
+  },
+  "source_scope_lines": [
+    {
+      "stage": "v27",
+      "repo": "126 then-active source union",
+      "kind": "PUBLISHER_SHA_AWARE_UNION_ONLY",
+      "bytes": 3417685712585,
+      "source_path": "catalog/capacity/2026-11-07/v27/capacity-summary.json",
+      "note": "Already hash-aware deduplicated within v27; excludes complete offline dependency closures"
+    },
+    {
+      "stage": "v28",
+      "repo": "qvac/BotPsy-0.8B + ibm-granite/granite-timeseries-ttm-r3",
+      "kind": "PUBLISHER_FULL_FIXED_REPOS",
+      "bytes": 1732327856,
+      "source_path": "catalog/research/2026-11-12-r49-botpsy-ttm-immutable-census.json",
+      "note": "17 files across two repositories, source metadata; not owner HDD"
+    },
+    {
+      "stage": "v29",
+      "repo": "Zyphra/ZONOS3-Mini",
+      "kind": "PINNED_KEEP2_REFERENCE_NOT_MINIMAL",
+      "bytes": 11076560635,
+      "source_path": "catalog/research/2026-11-12-r48-pinned-scopes.json",
+      "note": "Native keep2 research profile, optional components and incomplete runtime; not a final baseline package"
+    },
+    {
+      "stage": "v29",
+      "repo": "robbyant/lingbot-touch-tiny",
+      "kind": "PUBLISHER_FIXED_REPO",
+      "bytes": 21873479,
+      "source_path": "catalog/research/2026-11-12-r48-pinned-scopes.json",
+      "note": "Full five-file source scope; sensor/runtime calibration missing"
+    },
+    {
+      "stage": "v30",
+      "repo": "nvidia/Alpamayo2-Edge",
+      "kind": "PUBLISHER_FULL_FIXED_REPO",
+      "bytes": 5320375887,
+      "source_path": "catalog/research/2026-11-12-r50-alpamayo-edge-immutable.json",
+      "note": "Actual samples/robot runtime and any external dataset rights not included"
+    },
+    {
+      "stage": "v32",
+      "repo": "tencent/Qwen3.8-27B-DSpine-b16 + nvidia/Nemotron-3-Diarization + nvidia/RFD4-Proteina",
+      "kind": "PUBLISHER_FIXED_SELECTED_SOURCE_SCOPE",
+      "bytes": 6191586316,
+      "source_path": "catalog/research/2026-11-14-r57-v32-frozen-source-scopes.json",
+      "note": "Three source subsets, 23 files, 3 model LFS SHA-256; local SHA untested. Parent Qwen shard reuse supported by matching publisher hashes"
+    }
+  ],
+  "already_in_v32_research_additions": [
+    {
+      "repo_id": "tencent/Qwen3.8-27B-DSpine-b16",
+      "source_revision": "5f54174d301dbca65d9aa4448dc47e56732d9a12",
+      "source_scope_bytes": 4051857976,
+      "source_file_count": 5,
+      "source_model_sha256": "ac90f1df842ea66b23e4224f3e86624add547526f689ffe9e9c6b7a5937116b1",
+      "download_approved": false
+    },
+    {
+      "repo_id": "nvidia/Nemotron-3-Diarization",
+      "source_revision": "52a432672732425e4c19765b9fec9b5810e6f4ba",
+      "source_scope_bytes": 397030277,
+      "source_file_count": 11,
+      "source_model_sha256": "c074d86335b3b794f8fa5edc25594558f128bdb3914d27806a3a5a2e44963cb6",
+      "download_approved": false
+    },
+    {
+      "repo_id": "nvidia/RFD4-Proteina",
+      "source_revision": "a06e2509c7033b010fc43614e9fd840303588502",
+      "source_scope_bytes": 1742698063,
+      "source_file_count": 7,
+      "source_model_sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0",
+      "download_approved": false
+    }
+  ],
+  "outside_portfolio_candidate_research": [
+    {
+      "id": "nvidia/Kumo-Relational",
+      "kind": "model",
+      "status": "NOT_V32_ACTIVE",
+      "public_access": "UNGATED_PUBLIC_METADATA",
+      "license_tag": "openmdw-1.1",
+      "learned_state": "KumoRFM-2 relational inference, with TabICLv2 BSD-3-Clause parent notice",
+      "files": [
+        "classifier.pt",
+        "regressor.pt"
+      ],
+      "publisher_display_sizes": [
+        "120 MB",
+        "124 MB"
+      ],
+      "public_repo_total_display_bytes_approx": 244000000,
+      "model_file_bytes_exact": null,
+      "publisher_revision_immutable_sha": null,
+      "source_urls": [
+        "https://huggingface.co/nvidia/Kumo-Relational/tree/main",
+        "https://huggingface.co/nvidia/Kumo-Relational"
+      ],
+      "incremental_selected_bytes": null,
+      "priority": "P0_ARCHIVE_RESEARCH",
+      "legal_gap": "Full OpenMDW notice and TabICLv2 notice; selecting classifier vs regressor must match intended tasks",
+      "notes": "Rounded 244MB repo size is NOT selected exact bytes, no weight SHA, do not debit active portfolio"
+    },
+    {
+      "id": "nvidia/Nemotron-3.5-Parse",
+      "kind": "model",
+      "status": "NOT_V32_ACTIVE",
+      "public_access": "UNGATED_PUBLIC_METADATA",
+      "license_tag": "openmdw-1.1",
+      "learned_state": "Structured document, tables/figures, spatial reading-order trained parser",
+      "model_file_display_approx_bytes": 2520000000,
+      "public_repo_total_display_approx_bytes": 2740000000,
+      "model_file_bytes_exact": null,
+      "incremental_selected_bytes": null,
+      "priority": "P1_ARCHIVE_RESEARCH",
+      "reported_model_parameters_approx": 630800000,
+      "source_urls": [
+        "https://huggingface.co/nvidia/Nemotron-3.5-Parse/tree/main",
+        "https://huggingface.co/nvidia/Nemotron-3.5-Parse/blob/main/model.safetensors",
+        "https://huggingface.co/nvidia/Nemotron-3.5-Parse/commit/9a64c9d390232578b9124212a3c1f84e5440e31c"
+      ],
+      "current_or_newer_publisher_weight_sha256": "81dd7609c589f3694ce75520c25af5010953231358de6aec4d03e8c6aac787e9",
+      "earlier_rc3_weight_sha256": "fa5980193d8519efbdcd45054f3a7616c961d06f7a7653bdafcfba60a412f09c",
+      "older_rc3_revision": "8570c1c75bc1b1ab4176066d0d250056048e2611",
+      "older_rc3_runtime": {
+        "vllm": "0.26.0",
+        "transformers": "5.14.1",
+        "torch": "2.11.0",
+        "nemotron_parse": "3.5.0rc3",
+        "wheel_sha256": "20d3a4504c1a74cac4b403f7afd72d77ce07d5c335993bb5fb53a44c164a0171"
+      },
+      "newer_package_note": "Creator commit says post-release wheel rebuilt and GPU validation NOT rerun",
+      "optional_dflash2": "separately learned; not auto included",
+      "legal_gap": "Freeze a version-consistent model.safetensors + wheel/backend/runtime and parent notices; no old/new hash mix"
+    },
+    {
+      "id": "nvidia/Ising-Decoder-ColorCode-1-Fast",
+      "kind": "model",
+      "status": "NOT_V32_ACTIVE",
+      "public_access": "GATED",
+      "license_tag": "openmdw-1.1",
+      "model_file_bytes_exact": null,
+      "incremental_selected_bytes": null,
+      "priority": "P0_GATED_PERMISSION",
+      "source_urls": [
+        "https://huggingface.co/nvidia/Ising-Decoder-ColorCode-1-Fast",
+        "https://github.com/NVIDIA/Ising"
+      ],
+      "legal_gap": "Individual publisher authorization not verified; full decoder/ABI/files unknown",
+      "notes": "Gated is CURRENT observed, future withdrawal unproven"
+    },
+    {
+      "id": "nvidia/Ising-Decoder-SurfaceCode-1-Fast",
+      "kind": "model",
+      "status": "NOT_V32_ACTIVE",
+      "public_access": "GATED",
+      "license_tag": "other / confirm NVIDIA license text",
+      "model_file_bytes_exact": null,
+      "incremental_selected_bytes": null,
+      "priority": "P0_GATED_PERMISSION",
+      "source_urls": [
+        "https://huggingface.co/nvidia/Ising-Decoder-SurfaceCode-1-Fast",
+        "https://github.com/NVIDIA/Ising"
+      ],
+      "legal_gap": "Individual publisher authorization and license text not verified",
+      "notes": "Different error-correction code from ColorCode; do not substitute Accurate-version 3.6MB for Fast"
+    },
+    {
+      "id": "nvidia/Kumo-Anomaly",
+      "kind": "model",
+      "status": "NOT_V32_ACTIVE",
+      "public_access": "UNGATED_PUBLIC_METADATA",
+      "license_tag": "apache-2.0",
+      "model_file_bytes_exact": null,
+      "incremental_selected_bytes": null,
+      "priority": "P0_SPECIALIST",
+      "source_urls": [
+        "https://huggingface.co/nvidia/Kumo-Anomaly"
+      ],
+      "legal_gap": "Frozen file sizes/checksums and native Kumo-TS runtime not confirmed",
+      "notes": "Diffusion anomalies distinct from forecasting"
+    },
+    {
+      "id": "nvidia/Kumo-Tabular",
+      "kind": "model",
+      "status": "NOT_V32_ACTIVE",
+      "public_access": "UNGATED_PUBLIC_METADATA",
+      "license_tag": "openmdw-1.1",
+      "model_file_bytes_exact": null,
+      "incremental_selected_bytes": null,
+      "priority": "P1_SPECIALIST",
+      "source_urls": [
+        "https://huggingface.co/nvidia/Kumo-Tabular"
+      ],
+      "legal_gap": "Select ONE justified model checkpoint size (publisher family approx 28M-215M); immutable manifest",
+      "notes": "Do not adopt every size"
+    },
+    {
+      "id": "nvidia/Kumo-Forecast",
+      "kind": "model",
+      "status": "NOT_V32_ACTIVE",
+      "public_access": "UNGATED_PUBLIC_METADATA",
+      "license_tag": "apache-2.0",
+      "model_file_bytes_exact": null,
+      "incremental_selected_bytes": null,
+      "priority": "P1_SPECIALIST",
+      "source_urls": [
+        "https://huggingface.co/nvidia/Kumo-Forecast"
+      ],
+      "legal_gap": "MOMENT base and DARR related learned components need byte/hash closure",
+      "notes": "Historic retrieval+forecast vs existing Chronos/TTM forecast"
+    },
+    {
+      "id": "nvidia/GR00T-N1.7-3B",
+      "kind": "model",
+      "status": "NOT_V32_ACTIVE",
+      "public_access": "UNGATED_PUBLIC_METADATA",
+      "license_tag": "other / NVIDIA terms per revision",
+      "model_file_bytes_exact": null,
+      "incremental_selected_bytes": null,
+      "priority": "P1_ROBOT_ACTION",
+      "reported_model_parameters_approx": 3144000000,
+      "source_urls": [
+        "https://huggingface.co/nvidia/GR00T-N1.7-3B"
+      ],
+      "legal_gap": "Specific license, controller action schema, fixed model+code; exclude automatically adding all DROID fine-tunes",
+      "notes": "N1.6 and N1.7 are not mere format conversions"
+    },
+    {
+      "id": "nvidia/QCalEval",
+      "kind": "dataset",
+      "status": "NOT_V32_ACTIVE",
+      "public_access": "UNGATED_PUBLIC_METADATA",
+      "license_tag": "cc-by-4.0",
+      "model_file_bytes_exact": null,
+      "incremental_selected_bytes": null,
+      "priority": "P0_ANNOTATED_SCIENCE",
+      "source_urls": [
+        "https://huggingface.co/datasets/nvidia/QCalEval"
+      ],
+      "legal_gap": "Rights to original quantum calibration plots; exact file scope/rights",
+      "notes": "Publisher dataset card says 309 PNG images and 243 QA examples; metadata not exact selected bytes"
+    }
+  ],
+  "diagnostic": {
+    "selected_assets_unchanged": true,
+    "authorization_queue_entries": 0,
+    "public_research_only": true,
+    "candidate_sizes_not_included_in_scenarios": true,
+    "published_SHA_vs_local_SHA": "Publisher LFS SHA256 and Git blob hashes have not been locally verified",
+    "cross_revision_sha_union": "NOT_RECOMPUTED: arithmetically added source scopes, not a globally deduplicated source union",
+    "source_repo_vs_selected_scope": "Original repository size (may include irrelevant variants, datasets, runtime) differs from necessary selected preservation files.",
+    "estimates_in_yen": "NOT_AVAILABLE_NO_VENDOR_OR_PHYSICAL_PURCHASE_REQUEST",
+    "GATED_USER_AUTH": "NOT_VERIFIED_NO_AUTHORIZED_DOWNLOAD",
+    "benchmark_quality_unrelated_to_preservation_uniqueness": "Independent objective SFT/RL/pretraining, different modality, codec and nonreconstructible annotations matter; no general speed ranking gate"
+  },
+  "immediate_next_gates": [
+    "Resolve v31 ACE XL Turbo full exact required LM/embedding/VAE source bytes and third-party license",
+    "Choose reproducible minimal ZONOS3 reference preserving desired TTS/codec function; current 11.08GB scope is not proven minimal",
+    "Freeze optional Parse model release (rc3 vs current 3.5.0) with matching wheel SHA/backend ABI, full byte count and notices before considering as selected",
+    "Verify Kumo Relational both trained heads per real use, exact file bytes/SHA and Git source runtime before any selection",
+    "For Ising gates obtain owner-specific consent via official UI, otherwise stop",
+    "Measure owner HDD total/free/filesystem and acquisition cache/staging path; do not confuse 4TB policy ceiling with real storage",
+    "Do not automatically collect derivative quantization formats or full 106GB RFD4 repo; reuse matching known parent SHA"
+  ],
+  "source_urls": [
+    "https://github.com/Unjuno/local-model-portfolio/blob/main/catalog/capacity/2026-11-07/v27/capacity-summary.json",
+    "https://github.com/Unjuno/local-model-portfolio/blob/main/catalog/research/2026-11-12-r49-botpsy-ttm-immutable-census.json",
+    "https://github.com/Unjuno/local-model-portfolio/blob/main/catalog/research/2026-11-12-r48-pinned-scopes.json",
+    "https://github.com/Unjuno/local-model-portfolio/blob/main/catalog/research/2026-11-12-r50-alpamayo-edge-immutable.json",
+    "https://github.com/Unjuno/local-model-portfolio/blob/main/catalog/research/2026-11-14-r57-v32-frozen-source-scopes.json",
+    "https://huggingface.co/nvidia/Kumo-Relational/tree/main",
+    "https://huggingface.co/nvidia/Nemotron-3.5-Parse/tree/main",
+    "https://huggingface.co/nvidia/Nemotron-3.5-Parse/commit/9a64c9d390232578b9124212a3c1f84e5440e31c"
+  ],
+  "note_for_excel": "Workbook user attachment in ChatGPT; this JSON and MD are canonical GitHub quotation/audit entries, not actual HDD invoice.",
+  "new_nvidia_research_doc": "docs/strategy/58-v32-updated-storage-estimate-and-nvidia-evidence-2026-11-14.md",
+  "variables": {
+    "C": 4000000000000,
+    "Fmin": 200000000000,
+    "B27": 3417685712585,
+    "DeltaB": 24342724173,
+    "A": 20000000000,
+    "S": 10100000000,
+    "units": "byte",
+    "P": "dimensionless"
+  },
+  "calculation_validation": {
+    "v27_plus_increment": 3442028436758,
+    "case_A": 3462028436758,
+    "case_B": 3472128436758,
+    "empty_4TB_caseB_margin": 327871563242,
+    "empty_3p8TB_caseB_margin": 127871563242,
+    "no_final_coverage_claim": true
+  }
+}
