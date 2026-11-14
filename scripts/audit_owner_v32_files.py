@@ -139,8 +139,9 @@ def check_file(root: Path, f: dict) -> str:
         return "READ_ERROR"
 
 
-def inspect_asset(archive: Path, asset: dict) -> dict:
-    loc = archive / "store" / "huggingface" / asset["kind"] / asset["repo_id"] / asset["revision"]
+def inspect_asset(archive: Path, asset: dict, source_root: Path | None = None) -> dict:
+    loc = (source_root if source_root is not None else
+           archive / "store" / "huggingface" / asset["kind"] / asset["repo_id"] / asset["revision"])
     counts: dict[str, int] = {}
     for file in asset["files"]:
         code = check_file(loc, file)
@@ -160,6 +161,8 @@ def main() -> None:
                    help="Existing owner archive root; never created by this program")
     p.add_argument("--asset-id", action="append", required=True,
                    help="Exact one v32 active HF repo ID; repeat explicitly if desired")
+    p.add_argument("--source-root", action="append", default=[], metavar="REPO_ID=LOCAL_DIR",
+                   help="Already-owned local repo dir, useful for existing HF cache layout; repeat")
     args = p.parse_args()
     idx = build_index(
         load(args.catalog_root, "catalog/effective-portfolio-2026-11-14-v32.json"),
@@ -171,7 +174,16 @@ def main() -> None:
         raise ValueError("owner archive root is absent; do not create or download")
     if len(set(args.asset_id)) != len(args.asset_id) or any(k not in idx for k in args.asset_id):
         raise ValueError("non-active/unknown or repeated asset ID")
-    rows = [inspect_asset(args.archive_root, idx[k]) for k in args.asset_id]
+    overrides: dict[str, Path] = {}
+    for spec in args.source_root:
+        if "=" not in spec:
+            raise ValueError("--source-root requires REPO_ID=LOCAL_DIR")
+        repo, directory = spec.split("=", 1)
+        if repo in overrides or repo not in args.asset_id or not directory:
+            raise ValueError("duplicate, unselected or empty --source-root")
+        overrides[repo] = Path(directory)
+    rows = [inspect_asset(args.archive_root, idx[k], overrides.get(k))
+            for k in args.asset_id]
     print(json.dumps({"schema_version":1,"scope":"LOCAL_FILES_ONLY",
                       "network_used":False, "downloads_authorized":False,
                       "models_executed":False,"files_modified":False,
