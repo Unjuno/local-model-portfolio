@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-11-15",
+  "review_round": "R66",
+  "portfolio_version": "v32-20261114",
+  "based_on_main_commit": "4de985668b3f6d6e5381d75412a7fcda0a78037f",
+  "kind": "STRICT_STATIC_TOTAL_PARAMETER_BOUND_AND_DEPENDENCY_CLOSURE_FOR_SEVEN_ACTIVE_UNKNOWN",
+  "active_unknown_before": 7,
+  "active_unknown_after_canonical": 7,
+  "evidence_status": {
+    "pruna_15_original_safetensors_source_stored_elements_upper_bound": 49635347496,
+    "pruna_source_safetensors_count": 15,
+    "maya_main_and_mimi_partial_known_sum": 2598550049,
+    "drama_main_count": 35899643008,
+    "source_payloads_downloaded": 0,
+    "pickle_executed": 0
+  },
+  "gate_policy": "A count of stored tensor elements in an audited self-contained checkpoint set is a conservative upper bound on parameter elements stored there, but does not include unseen mandatory external trained checkpoints. Any unbounded external component prevents final pipeline total lock, independent of model quality.",
+  "canonical_selection_changed": false,
+  "download_approval_changed": false,
+  "owner_disks_checked": false,
+  "records": [
+    {
+      "repo_id": "PrunaAI/P-H3-Image",
+      "existing_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "current_research_status": "PUBLISHED_15_SAFETENSORS_STORED_ELEMENTS_BOUND_UNDER150B",
+      "exact_publisher_revision": "7f98acef503cf2bcfba821a78cb1cf1a9928b2df",
+      "access_observed": false,
+      "current_license_tag": "other",
+      "primary_model_params_observed": 33122992896,
+      "research_detail": {
+        "status": "PUBLISHED_15_SAFETENSORS_STORED_ELEMENTS_BOUND_UNDER150B",
+        "bound_elements": 49635347496,
+        "source_revision": "7f98acef503cf2bcfba821a78cb1cf1a9928b2df",
+        "internal_count_verified": true,
+        "full_training_parameters_exact": false,
+        "corpus_method": "Complete 15 safetensors model components: Transformer7, prompt upsampler4, text encoder2, connector1, VAE1. Static safetensors headers only. Includes buffers/tied representations; may exceed count of unique trainable parameters, therefore stored-element bound is conservative for those files.",
+        "external_learned_dependency_graph_complete": false,
+        "reason_not_promoted": "The catalog's FINAL_LOCK gate demands full learned pipeline (including external components if any), publisher license/rights and owner authorization; static headers only bound the 15 repository files. The original source review says standalone MiniMax donor not required for full Diffusers restore but actual loader ABI and external models have not been independently checked.",
+        "source_references": [
+          "catalog/research/2026-11-14-pruna-header-census.json",
+          "catalog/research/2026-11-14-r61-pruna-source-curve-capacity.json"
+        ]
+      },
+      "source_evidence": "catalog/research/2026-11-14-r58-seven-active-unknown-dependency-and-format.json",
+      "acquisition_allowed": false,
+      "canonical_parameter_gate_changed": false
+    },
+    {
+      "repo_id": "maya-research/maya2-native",
+      "existing_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "current_research_status": "MAIN_PLUS_MIMI_COUNT_PARTIAL",
+      "exact_publisher_revision": "87a83efdd6551e038246b6b37836a6264713eec3",
+      "access_observed": false,
+      "current_license_tag": "apache-2.0",
+      "primary_model_params_observed": 2502398656,
+      "research_detail": {
+        "status": "MAIN_PLUS_MIMI_COUNT_PARTIAL",
+        "main_safetensors_parameters": 2502398656,
+        "known_mimi_parameter_count": 96151393,
+        "third_party_ecapa_parameter_count": null,
+        "known_partial_sum": 2598550049,
+        "reason_not_promoted": "ECAPA trained checkpoint tensor element count and full required module scope remain unknown. Do not treat partial counts as total.",
+        "source_references": [
+          "catalog/research/2026-11-14-r59-maya2-drama3-cross-repo-components.json"
+        ]
+      },
+      "source_evidence": "catalog/research/2026-11-14-r58-seven-active-unknown-dependency-and-format.json",
+      "acquisition_allowed": false,
+      "canonical_parameter_gate_changed": false
+    },
+    {
+      "repo_id": "fishaudio/drama-3",
+      "existing_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "current_research_status": "MAIN_COUNTED_CODEC_PICKLE_BLOCKS_STATIC_FULL_COUNT",
+      "exact_publisher_revision": "78e5ab79e49aa9a25abe8799eff2c4d73a1c3216",
+      "access_observed": false,
+      "current_license_tag": "other",
+      "primary_model_params_observed": 35899643008,
+      "research_detail": {
+        "status": "MAIN_COUNTED_CODEC_PICKLE_BLOCKS_STATIC_FULL_COUNT",
+        "main_safetensors_parameters": 35899643008,
+        "codec_file_bytes": 1871099728,
+        "codec_parameters": null,
+        "reason_not_promoted": "Mandatory codec.pth is serialized PyTorch pickle, not safetensors; do not unpickle or execute, custom learned state unknown. Full rights require Fish Audio Research License.",
+        "source_references": [
+          "catalog/research/2026-11-14-r59-maya2-drama3-cross-repo-components.json"
+        ]
+      },
+      "source_evidence": "catalog/research/2026-11-14-r58-seven-active-unknown-dependency-and-format.json",
+      "acquisition_allowed": false,
+      "canonical_parameter_gate_changed": false
+    },
+    {
+      "repo_id": "WhissleAI/steer-tts",
+      "existing_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "current_research_status": "MAIN_ONLY_9P59M_GATED_AND_EXTERNAL_CODEC",
+      "exact_publisher_revision": "65ec6a637f4bd9d868064846c69ed85e37d302a0",
+      "access_observed": "auto",
+      "current_license_tag": "cc-by-nc-4.0",
+      "primary_model_params_observed": 9585639,
+      "research_detail": {
+        "status": "MAIN_ONLY_9P59M_GATED_AND_EXTERNAL_CODEC",
+        "main_safetensors_parameters": 9585639,
+        "external_learned_count": null,
+        "reason_not_promoted": "External Vocos/WavLM/MiniLM, optional native/int8 variants and Gated auto entitlement unresolved."
+      },
+      "source_evidence": "catalog/research/2026-11-14-r58-seven-active-unknown-dependency-and-format.json",
+      "acquisition_allowed": false,
+      "canonical_parameter_gate_changed": false
+    },
+    {
+      "repo_id": "ausboss/Qwen-Image-2.1-Consistency-LoRA",
+      "existing_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "current_research_status": "TWO_INDEPENDENT_1500_2000_LEARNED_ADAPTERS",
+      "exact_publisher_revision": "58897a02f4f60f88376eab5676738dd45e5ed1a2",
+      "access_observed": false,
+      "current_license_tag": "other",
+      "primary_model_params_observed": null,
+      "research_detail": {
+        "status": "TWO_INDEPENDENT_1500_2000_LEARNED_ADAPTERS",
+        "stored_weight_options_bytes": 318872992,
+        "full_pipeline_count": null,
+        "reason_not_promoted": "Qwen Image 2.1 parent/encoder/VAE count and exact compatible trained state must be traced, both LoRAs differ in LFS SHA and are not ordinary re-quantizations."
+      },
+      "source_evidence": "catalog/research/2026-11-14-r58-seven-active-unknown-dependency-and-format.json",
+      "acquisition_allowed": false,
+      "canonical_parameter_gate_changed": false
+    },
+    {
+      "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "existing_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "current_research_status": "ONE_ORIGINAL_PREFERRED_OVER_FORMAT_DUPLICATES",
+      "exact_publisher_revision": "592aaa11f13a7e480169455aa885f58c42d89766",
+      "access_observed": false,
+      "current_license_tag": "unknown",
+      "primary_model_params_observed": null,
+      "research_detail": {
+        "status": "ONE_ORIGINAL_PREFERRED_OVER_FORMAT_DUPLICATES",
+        "source_option_weight_bytes": 30484902414,
+        "full_pipeline_count": null,
+        "reason_not_promoted": "Gemma4 text encoder, video/audio VAEs, LTX 2.5 donor/original license and complete tensor census unverified."
+      },
+      "source_evidence": "catalog/research/2026-11-14-r58-seven-active-unknown-dependency-and-format.json",
+      "acquisition_allowed": false,
+      "canonical_parameter_gate_changed": false
+    },
+    {
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "existing_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "current_research_status": "BF16_V1_AND_DISTINCT_BETA_TRAINED_STATES",
+      "exact_publisher_revision": "f3160a69a833565d2c2c620c61d40102c1b2910c",
+      "access_observed": false,
+      "current_license_tag": "other",
+      "primary_model_params_observed": null,
+      "research_detail": {
+        "status": "BF16_V1_AND_DISTINCT_BETA_TRAINED_STATES",
+        "BF16_V1_weight_bytes": 42008732600,
+        "full_pipeline_count": null,
+        "reason_not_promoted": "External learned text encoder and audio/video VAE counts missing, old/new publisher revisions need trained-payload SHA comparison; normal INT8/FP8/GGUF duplicates not extra learned states."
+      },
+      "source_evidence": "catalog/research/2026-11-14-r58-seven-active-unknown-dependency-and-format.json",
+      "acquisition_allowed": false,
+      "canonical_parameter_gate_changed": false
+    }
+  ],
+  "next_actions": [
+    {
+      "repo_id": "PrunaAI/P-H3-Image",
+      "check": "STATIC_CODE_GRAPH_PROVE_NO_EXTERNAL_LEARNED_COMPONENTS_AND_LICENSE_TERRITORY",
+      "goal": "If external trained models not required and original 15 source tensor upper bound remains 49.636B, under150B can be recorded with clear dependency scope. Do not assume rights/ready."
+    },
+    {
+      "repo_id": "maya-research/maya2-native",
+      "check": "STATIC_ECAPA_TENSOR_COUNT_AND_FULL_MODEL_GRAPH",
+      "goal": "Bound ECAPA safely without unpickling, enumerate Mimi trained codec vs source voice modes."
+    },
+    {
+      "repo_id": "fishaudio/drama-3",
+      "check": "SAFE_CODEC_PTH_TENSOR_METADATA_OR_AUTHOR_ATTESTATION_WITHOUT_UNPICKLE",
+      "goal": "Count codec and determine complete pipeline under 150B while preserving Fish research license."
+    },
+    {
+      "repo_id": "ausboss/Qwen-Image-2.1-Consistency-LoRA",
+      "check": "PIN_QWEN_IMAGE_PARENT_DEPS_AND_COUNT_FULL_STORED_TENSORS",
+      "goal": "No duplicate parent SHAs; preserve genuinely distinct adapter stages only."
+    },
+    {
+      "repo_id": "WhissleAI/steer-tts",
+      "check": "RESOLVE_GATED_ENTITLEMENT_AND_VOCOS_WAVLM_MINILM_COUNTS",
+      "goal": "No Gated bypass or proprietary voice harvesting."
+    },
+    {
+      "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "check": "ONE_LOSSY_EXACT_SOURCE_AND_LTX_GEMMA_VAE_TOTAL",
+      "goal": "Correct counts not all format variants."
+    },
+    {
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "check": "OLD_NEW_CHECKPOINT_SHA_DIFF_AND_TEXT_VAE_COUNTS",
+      "goal": "Distinguish independently trained β fine-tunes from standard duplicate quantization."
+    }
+  ]
+}
