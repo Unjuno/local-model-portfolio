@@ -9,9 +9,9 @@ class R58(unittest.TestCase):
     def setUpClass(cls):
         cls.data=read("catalog/research/2026-11-14-r58-seven-active-unknown-dependency-and-format.json")
     def test_exact_seven_active_parameter_unknown(self):
-        current=read("catalog/CURRENT.json");view=read(current["materialized_catalog_path"])
-        self.assertEqual(current["revision_id"],"v32-20261114")
-        self.assertEqual((current["expected"]["tracked"],current["expected"]["active"]),(182,135))
+        view=read("catalog/effective-portfolio-2026-11-14-v32.json")
+        self.assertEqual(view["revision_id"],"v32-20261114")
+        self.assertEqual((view["counts"]["tracked"],view["counts"]["active"]),(182,135))
         unknown={x["repo_id"] for x in view["items"] if x["asset_kind"]=="model"
                  and x["portfolio_decision"] in ("select","conditional")
                  and x.get("parameter_gate",{}).get("status")=="UNVERIFIED_BLOCK_FINAL_LOCK"}

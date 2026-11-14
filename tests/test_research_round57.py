@@ -9,9 +9,9 @@ class R57(unittest.TestCase):
     def setUpClass(cls):
         cls.a=read("catalog/research/2026-11-14-r57-v32-frozen-source-scopes.json"); cls.d=read("manifests/drafts/r57-v32-three-source-scopes.candidate.json")
     def test_current_selected_portfolio_unchanged(self):
-        c=read("catalog/CURRENT.json")
+        c=read("catalog/effective-portfolio-2026-11-14-v32.json")
         self.assertEqual(c["revision_id"],"v32-20261114")
-        self.assertEqual((c["expected"]["tracked"],c["expected"]["active"]),(182,135))
+        self.assertEqual((c["counts"]["tracked"],c["counts"]["active"]),(182,135))
         self.assertEqual(read("queues/approved.json")["entries"],[])
         self.assertFalse(self.a["acquisition_gates"]["model_files_locally_downloaded"])
         self.assertFalse(self.d["download_enabled"])
