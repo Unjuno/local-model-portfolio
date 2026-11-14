@@ -30,6 +30,27 @@ class RareSpecialistSourceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "unsafe decision"):
             validate(x, self.catalog, self.approvals)
 
+    def test_kumo_anomaly_must_remain_nonexecutable(self):
+        x = copy.deepcopy(self.proposal)
+        item = next(r for r in x["candidates"] if r["repo_id"] == "nvidia/Kumo-Anomaly")
+        item["runtime_execution_hold"] = False
+        with self.assertRaisesRegex(ValueError, "insecure or unverified runtime"):
+            validate(x, self.catalog, self.approvals)
+
+    def test_kumo_anomaly_publisher_hash_must_match_safe_loader(self):
+        x = copy.deepcopy(self.proposal)
+        item = next(r for r in x["candidates"] if r["repo_id"] == "nvidia/Kumo-Anomaly")
+        item["official_safe_alternative"]["sha256"] = "0" * 64
+        with self.assertRaisesRegex(ValueError, "insecure or unverified runtime"):
+            validate(x, self.catalog, self.approvals)
+
+    def test_kumo_anomaly_parameter_disagreement_stays_unknown(self):
+        x = copy.deepcopy(self.proposal)
+        item = next(r for r in x["candidates"] if r["repo_id"] == "nvidia/Kumo-Anomaly")
+        item["parameter_screening"]["status"] = "PUBLISHER_MODEL_COUNT_SCREENING_ONLY"
+        with self.assertRaisesRegex(ValueError, "disputed parameters"):
+            validate(x, self.catalog, self.approvals)
+
     def test_ising_gated_metadata_never_implies_entitlement(self):
         x = copy.deepcopy(self.proposal)
         item = next(r for r in x["candidates"]
