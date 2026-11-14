@@ -1,5 +1,7 @@
 # Local Model Portfolio
 
+**R69固定runtime監査（11月15日）**：[IBM TTM R3の公式モデルSHA一致・公式granite-tsfmコードcommit・Python/PyTorch依存の具体的な範囲・不足しているimport経路](docs/strategy/69-ibm-ttm-r3-offline-runtime-evidence.md)／[機械可読証拠](catalog/research/2026-11-15-r69-ibm-ttm-r3-publisher-runtime-pin.json)。R68で有効135件の先頭調査ゲートを一意に整理（[監査結果](docs/strategy/68-v32-135-next-gate-triage-2026-11-15.md)／[全件JSON](catalog/readiness/v32-2026-11-15-r68-135-actionable-triage.json)）。**保存・実行・承認は未実施**。
+
 **R64完成準備（11月15日）**：[全135件の取得ゲート台帳](catalog/readiness/v32-2026-11-15-r64-all-active.json)／[8資産91ファイルの取得前マニフェスト](manifests/drafts/r64-eight-source-scopes.candidate.json)／[実HDD読み取り専用監査手順](docs/strategy/65-v32-owner-offline-preflight.md)。保存完了を示すものではなく、承認済みダウンロード0件。
 
 将来もAIをローカルで利用・比較・解析・追加学習できるよう、モデル、データ、実行環境を選び、保存するためのポートフォリオです。
