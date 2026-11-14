@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-15",
+  "base_revision": "v32-20261114",
+  "base_catalog_blob_sha": "b32c37352ffe9c1e4ca4aaed8e9401c348355633",
+  "source_file": "catalog/effective-portfolio-2026-11-14-v32.json",
+  "scope": "READ_ONLY_MODEL_CONTENT_REVIEW_NON_EXECUTABLE",
+  "model_content_scope": "Hub model metadata (architecture, model class, parameter counts, licenses, publisher-linked papers) and first-party model cards; no tensor files downloaded or executed",
+  "reviewed": 7,
+  "conditional_addition": 1,
+  "hold": 6,
+  "active_catalog_unchanged": true,
+  "download_approved": false,
+  "exclusion_policy": "No model >=150B is promoted; total MoE count includes inactive experts; unknown blocks acquisition.",
+  "notes": "Candidate decisions are evidence-based but not materialized into CURRENT. No file bytes or complete dependency manifest verified. Exa research unavailable due to 402 credit exhaustion; primary publisher pages/Hugging Face structured metadata and publisher cards used instead.",
+  "candidates": [
+    {
+      "repo_id": "XiaomiRobotics/Xiaomi-Robotics-U0-4B",
+      "decision": "ADD_CONDITIONAL_TO_NEXT_REVISION",
+      "model_total_parameters": 5082100000,
+      "license_metadata": "apache-2.0",
+      "primary_url": "https://huggingface.co/XiaomiRobotics/Xiaomi-Robotics-U0-4B",
+      "paper": "https://arxiv.org/abs/2607.11643",
+      "reason": "独立したUNISベースのembodied world model。Scene Gen/Transfer/T2I/X2Iを持つ4B系列で、既存のCosmos3 Sim-AutoやWan2.2-TI2V-5Bと重み・学習設計が異なる。5.0821BはHub safetensorsメタデータ値。4B-Sequence等の近縁重複は同時採用しない。",
+      "independent_value": "Embodied multi-view scene/world generation, separate trained architecture",
+      "status": "PASS_MODEL_TOTAL_UNDER_150B_PENDING_FULL_PIPELINE_AND_RIGHTS",
+      "review_required": [
+        "model card license full text",
+        "revision and file list SHA256",
+        "dependency and custom code audit",
+        "selected bytes",
+        "actual model family differentiation vs Cosmos3 and Wan"
+      ]
+    },
+    {
+      "repo_id": "ByteDance-Seed/Cola2",
+      "decision": "HOLD_LICENSE_AND_RUNTIME_REVIEW",
+      "model_total_parameters": 8768000000,
+      "license_metadata": null,
+      "primary_url": "https://huggingface.co/ByteDance-Seed/Cola2",
+      "paper": "https://arxiv.org/abs/2610.31305",
+      "reason": "8.768B continuous-latent diffusion text-generation原本。iLLaDA離散拡散とは表現が異なるが、Hub metadataにlicenseタグが見つからず、custom codeを要するため現時点では保存選定せず保留。",
+      "independent_value": "Continuous-latent diffusion compared to existing discrete diffusion language model",
+      "status": "HOLD_MISSING_LICENSE_METADATA_AND_UNVERIFIED_DEPENDENCIES",
+      "review_required": [
+        "first-party LICENSE file",
+        "architecture and decoder dependencies",
+        "revision SHA and tensor scope",
+        "selected bytes",
+        "quality and behavior compared with iLLaDA"
+      ]
+    },
+    {
+      "repo_id": "domyn/Domyn-Edge-Base",
+      "decision": "HOLD_REDUNDANCY_REVIEW",
+      "model_total_parameters": 3928800000,
+      "license_metadata": "apache-2.0",
+      "primary_url": "https://huggingface.co/domyn/Domyn-Edge-Base",
+      "reason": "3.9288B独立事前学習base、学習データ公開が特徴。ただし既存base多数との保存限界価値未確定。追加するなら学習データ・コードの検証可能な組合せが必要。",
+      "status": "HOLD_NO_CONFIRMED_MARGINAL_VALUE",
+      "review_required": [
+        "training data manifest",
+        "full license",
+        "base vs SFT duplication",
+        "revision and selected bytes"
+      ]
+    },
+    {
+      "repo_id": "UBTECH-Robotics/Thinker-WM",
+      "decision": "HOLD_TOTAL_PARAMETERS_AND_LICENSE",
+      "model_total_parameters": null,
+      "license_metadata": "other",
+      "primary_url": "https://huggingface.co/UBTECH-Robotics/Thinker-WM",
+      "paper": "https://arxiv.org/abs/2610.18447",
+      "reason": "RGB/depth/action同時生成を公表したWan2.2派生world-action model。全学習済みパラメータ総数とotherライセンス正文が未確定。既存Wan2.2と同じ重みではない可能性があるが採用停止。",
+      "status": "HOLD_UNKNOWN_TOTAL_AND_RIGHTS",
+      "review_required": [
+        "full total model parameters",
+        "license and parent terms",
+        "weights versus adapters",
+        "revision and selected bytes"
+      ]
+    },
+    {
+      "repo_id": "tencent/Youtu-Parsing-Omni",
+      "decision": "HOLD_COMPARATOR_REVIEW",
+      "model_total_parameters": 5334500000,
+      "license_metadata": "other",
+      "primary_url": "https://huggingface.co/tencent/Youtu-Parsing-Omni",
+      "paper": "https://arxiv.org/abs/2610.39301",
+      "reason": "5.3345Bの文書理解＋音声動画対応。既存PaddleOCR-VL/DeepSeek-OCRと機能重複するためライセンスotherと差分評価が済むまで保留。",
+      "status": "HOLD_OTHER_LICENSE_AND_OVERLAP",
+      "review_required": [
+        "license full text",
+        "document layout and omni task differential",
+        "custom code and dependencies",
+        "selected bytes"
+      ]
+    },
+    {
+      "repo_id": "GroundingPI/GroundingPI",
+      "decision": "HOLD_COMPARATOR_REVIEW",
+      "model_total_parameters": 4843700000,
+      "license_metadata": "other",
+      "primary_url": "https://huggingface.co/GroundingPI/GroundingPI",
+      "paper": "https://arxiv.org/abs/2609.39601",
+      "reason": "4.8437Bの視覚grounding/pointing専門原本。ただしSAM3やDINOv3との役割差はあるもののlicense otherとcustom codeが未精査。",
+      "status": "HOLD_OTHER_LICENSE_AND_DEPENDENCIES",
+      "review_required": [
+        "license full text",
+        "custom code",
+        "grounding task comparisons",
+        "selected bytes"
+      ]
+    },
+    {
+      "repo_id": "inclusionAI/Ling-2.6-flash",
+      "decision": "HOLD_STORAGE_MARGINAL_VALUE",
+      "model_total_parameters": 107494400000,
+      "license_metadata": "mit",
+      "primary_url": "https://huggingface.co/inclusionAI/Ling-2.6-flash",
+      "paper": "https://arxiv.org/abs/2606.15079",
+      "reason": "全107.4944B、active 7.4Bと公称する独立MoE。150B未満だが既存119B/120B系と比べた容量・性能・独自性の増分が未測定。active数だけで判断しない。",
+      "status": "PASS_TOTAL_UNDER_150B_HOLD_HIGH_COST",
+      "review_required": [
+        "full repository bytes",
+        "token efficiency reproducible comparison",
+        "runtime backend",
+        "license and revision"
+      ]
+    }
+  ]
+}
