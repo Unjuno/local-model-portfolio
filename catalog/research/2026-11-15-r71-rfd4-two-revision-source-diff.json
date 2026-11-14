@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "artifact": "R71_RFD4_VERSIONED_PUBLISHER_FILE_DIGEST_RECONCILIATION",
+  "as_of": "2026-11-15",
+  "repo_id": "nvidia/RFD4-Proteina",
+  "source_method": "LIVE_FIRST_PARTY_HUGGING_FACE_REVISION_API_BLOBS_TRUE",
+  "old_catalog_observed_revision": "cf31b93509df5af854c7f6ad704f5c83c77c0698",
+  "selected_candidate_revision": "a06e2509c7033b010fc43614e9fd840303588502",
+  "source_urls": [
+    "https://huggingface.co/api/models/nvidia/RFD4-Proteina/revision/cf31b93509df5af854c7f6ad704f5c83c77c0698?blobs=true",
+    "https://huggingface.co/api/models/nvidia/RFD4-Proteina/revision/a06e2509c7033b010fc43614e9fd840303588502?blobs=true"
+  ],
+  "source_evidence_scope": "R64 candidate's seven selected path names compared at both revisions, not entire repository",
+  "result": {
+    "matched_selected_files": 3,
+    "differing_selected_files": 4,
+    "identical_main_weight_digest": true,
+    "identical_main_weight_bytes": 1742660596,
+    "weight_lfs_sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0",
+    "same_license_file_git_blob": true,
+    "same_config_file_git_blob": true,
+    "nonidentical_support_files": [
+      "README.md",
+      "inference.yaml",
+      "provenance.json",
+      "release-checkpoints.json"
+    ],
+    "interpretation": "The main safetensors payload matches byte-for-byte by publisher LFS SHA256 across the two revisions. Execution recipe and provenance documents differ. Keep distinct revision metadata and do not silently rewrite the canonical catalog or claim offline functional equivalence."
+  },
+  "files": [
+    {
+      "path": "LICENSE",
+      "older": {
+        "bytes": 1533,
+        "git_blob_sha1": "db22701893d09ea1d7126b68cc7262695278551f",
+        "lfs_sha256": null
+      },
+      "newer": {
+        "bytes": 1533,
+        "git_blob_sha1": "db22701893d09ea1d7126b68cc7262695278551f",
+        "lfs_sha256": null
+      },
+      "byte_and_digest_identical": true
+    },
+    {
+      "path": "README.md",
+      "older": {
+        "bytes": 19387,
+        "git_blob_sha1": "38973b88f8f0d9db49d063cdb44686443774faa1",
+        "lfs_sha256": null
+      },
+      "newer": {
+        "bytes": 18756,
+        "git_blob_sha1": "a48b4228e25c94d43faa033f8bb8fc7b8bc350af",
+        "lfs_sha256": null
+      },
+      "byte_and_digest_identical": false
+    },
+    {
+      "path": "config.json",
+      "older": {
+        "bytes": 7270,
+        "git_blob_sha1": "6e12704f9b16392d9d3b5fedda1638f3b7759b6a",
+        "lfs_sha256": null
+      },
+      "newer": {
+        "bytes": 7270,
+        "git_blob_sha1": "6e12704f9b16392d9d3b5fedda1638f3b7759b6a",
+        "lfs_sha256": null
+      },
+      "byte_and_digest_identical": true
+    },
+    {
+      "path": "inference.yaml",
+      "older": {
+        "bytes": 2891,
+        "git_blob_sha1": "e96774540c1b691d86a25b353546bfaf32dd324e",
+        "lfs_sha256": null
+      },
+      "newer": {
+        "bytes": 3673,
+        "git_blob_sha1": "72df987c63f545c2ea1af3bf342b7bfa26ffad46",
+        "lfs_sha256": null
+      },
+      "byte_and_digest_identical": false
+    },
+    {
+      "path": "model.safetensors",
+      "older": {
+        "bytes": 1742660596,
+        "git_blob_sha1": "3a6858ef2ee0cdf80a432f433b29915537629a50",
+        "lfs_sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0"
+      },
+      "newer": {
+        "bytes": 1742660596,
+        "git_blob_sha1": "3a6858ef2ee0cdf80a432f433b29915537629a50",
+        "lfs_sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0"
+      },
+      "byte_and_digest_identical": true
+    },
+    {
+      "path": "provenance.json",
+      "older": {
+        "bytes": 1893,
+        "git_blob_sha1": "c2bac271158df33bfe872c581a172ae604122726",
+        "lfs_sha256": null
+      },
+      "newer": {
+        "bytes": 2480,
+        "git_blob_sha1": "ef6ee26800b16e51369cb12f0d544b9c3c94b6fe",
+        "lfs_sha256": null
+      },
+      "byte_and_digest_identical": false
+    },
+    {
+      "path": "release-checkpoints.json",
+      "older": {
+        "bytes": 2260,
+        "git_blob_sha1": "b13be959d51a86a3e932dfed67149552eb9ee868",
+        "lfs_sha256": null
+      },
+      "newer": {
+        "bytes": 3755,
+        "git_blob_sha1": "3ede0e399ba496fe3e852f0e776d98f943f01d44",
+        "lfs_sha256": null
+      },
+      "byte_and_digest_identical": false
+    }
+  ],
+  "decision": {
+    "duplicate_main_weight_download_needed_for_both_revisions": false,
+    "conditional_on_byte_identical_publisher_lfs_object": true,
+    "exact_full_pipeline_reproducibility_verified": false,
+    "legal_acquisition_reviewed": false,
+    "local_sha256_verified": false,
+    "selected_manifest_approved": false,
+    "download_approved": false,
+    "canonical_selection_modified": false
+  },
+  "falsifiers": [
+    "Non-selected required release checkpoint differs across snapshots",
+    "The pipeline loads old vs new inference.yaml in incompatible ways",
+    "Publisher API metadata is inconsistent with on-disk object after an authorized acquisition"
+  ],
+  "uncertainty": [
+    "Full external dependencies and runtime ABI remain unverified",
+    "No local physical file hashes or disk capacity were measured"
+  ]
+}
