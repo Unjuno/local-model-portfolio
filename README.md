@@ -6,6 +6,9 @@
 
 **運用の正本は `main` の `catalog/CURRENT.json`。新たな調査ブランチは作らずmain一本で更新します。**
 
+**R61（11月14日）**：[Pruna P-H3高精度原本44ファイルとComfy圧縮カーブ形式・正確な容量比較](docs/strategy/61-pruna-original-vs-curve-and-precise-capacity.md)。原本の公開ソース部分 99,840,428,064 byte、完全同一SHAのmetadata重複を除いた固有部分 99,828,998,036 byte。ComfyのBF16/INT8/W4A8は別学習モデルと数えず、権利・実機・runtimeは未検証。取得承認0。
+
+
 **R60（11月14日）**：[Pruna P-H3／MiniMax H3 Image原本のLICENSE比較・SHA重複・容量監査](docs/strategy/60-pruna-minimax-h3-licensing-and-format-audit.md)。Pruna15重み約99.8GB、MiniMax Image一形式約135.3GB。MiniMax H3動画とImageでText Encoder14ファイル約66.7GBを共有するが、両者は現行v32選定外。Pruna条件付き維持、原本HOLD、取得承認0。
 
 
