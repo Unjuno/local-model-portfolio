@@ -37,6 +37,7 @@ def safe_filename(name: object) -> bool:
     return (
         isinstance(name, str) and bool(name)
         and "\x00" not in name
+        and ":" not in name
         and not name.startswith("/")
         and not GLOB.search(name)
         and all(part not in ("", ".", "..") for part in name.split("/"))
@@ -51,6 +52,9 @@ def validate(
     need(approvals.get("entries") == [], "approved queue is not empty")
     need(draft.get("source_catalog_revision") == "v32-20261114", "wrong R74 catalog")
     need(source.get("portfolio_revision") == "v32-20261114", "wrong R73 catalog")
+    need(draft.get("historical_source_blob_sha") == source.get("input_blob_sha", {}).get("historical")
+         and draft.get("historical_source_path") == source.get("input_paths", {}).get("historical"),
+         "historical source blob provenance mismatch")
     for key in ("executable", "approved_manifest", "download_authorized",
                 "auto_execute", "auto_seed", "allow_full_repo_download"):
         need(draft.get(key) is False, "unsafe draft flag: " + key)
@@ -115,11 +119,14 @@ def validate(
             need(name not in paths, "duplicate filename: " + rid + " " + name)
             paths.add(name)
             n = f.get("bytes")
-            need(type(n) is int and n > 0, "invalid file bytes: " + rid + " " + name)
+            need(type(n) is int and n >= 0, "invalid file bytes: " + rid + " " + name)
             sha1 = f.get("git_blob_sha1_reference")
             need(isinstance(sha1, str) and HEX40.fullmatch(sha1) is not None,
                  "bad Git blob identity: " + rid + " " + name)
             kind = f.get("identity_kind")
+            if n == 0:
+                need(kind == "git_blob_sha1" and sha1 == "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+                     "invalid zero-byte Git blob identity: " + rid + " " + name)
             sha256 = f.get("publisher_payload_sha256")
             unknown = f.get("publisher_payload_sha256_unverified")
             if kind == "lfs_payload_sha256":
