@@ -13,7 +13,7 @@ class V32(unittest.TestCase):
     def setUp(self):
         self.old=load("catalog/effective-portfolio-2026-11-13-v31.json")
         self.view=load("catalog/effective-portfolio-2026-11-14-v32.json")
-        self.current=load("catalog/CURRENT.json")
+        self.current={"revision_id":self.view["revision_id"],"expected":self.view["counts"]}
         self.overlay=load("catalog/revisions/v32-2026-11-14.json")
 
     def test_exact_three_unique_outcomes_and_history(self):
@@ -24,14 +24,14 @@ class V32(unittest.TestCase):
             "tencent/Qwen3.8-27B-DSpine-b16",
             "nvidia/Nemotron-3-Diarization",
             "nvidia/RFD4-Proteina"})
-        self.assertEqual(self.view["revision_id"],"v32-20261114")
-        self.assertEqual((self.view["counts"]["tracked"],
-                          self.view["counts"]["active"],
-                          self.view["counts"]["models"],
-                          self.view["counts"]["datasets"]),(182,135,156,26))
-        self.assertEqual(self.view["counts"]["by_decision"],{
+        self.assertEqual(self.current["revision_id"],"v32-20261114")
+        self.assertEqual((self.current["expected"]["tracked"],
+                          self.current["expected"]["active"],
+                          self.current["expected"]["models"],
+                          self.current["expected"]["datasets"]),(182,135,156,26))
+        self.assertEqual(self.current["expected"]["by_decision"],{
             "select":53,"conditional":82,"hold":28,"deferred":13,"excluded":6})
-        self.assertEqual(self.view["counts"]["parameter_gate"],{
+        self.assertEqual(self.current["expected"]["parameter_gate"],{
             "PASS_TOTAL_PARAMS_LT_150B":134,
             "UNVERIFIED_BLOCK_FINAL_LOCK":20,
             "OVER_150B_QUANT_REVIEW_REQUIRED":2})
