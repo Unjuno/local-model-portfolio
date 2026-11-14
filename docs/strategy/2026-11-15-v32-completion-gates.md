@@ -138,3 +138,55 @@ Official [old-revision API](https://huggingface.co/api/models/nvidia/RFD4-Protei
 **U:** Numeric combined `u_c` and coverage factor `k` are not estimable because underlying legal permissions, owner filesystem capacity, runtime dependencies and local physical hashes remain unmeasured; no fabricated risk probability.
 
 **ERROR CHECK:** Current inventory 182, active 135, source-evidence cohorts 126/8/1, one R64 extra external repo, RFD4 7 selected paths=3 identical+4 changed, canonical final pins missing 133, approvals 0. **No source-weight download or local file validation performed.**
+
+## 2026-11-15 R70/R71: reconcile every active asset and resolve the RFD4 source-commit discrepancy
+
+**Machine-readable evidence:** [R70 135-ID source-evidence join](../../catalog/research/2026-11-15-r70-v32-all135-source-evidence-reconciliation.json), [R71 seven-file RFD4 publisher identity check](../../catalog/research/2026-11-15-r71-rfd4-revision-file-identity.json). The offline standard-library validator [`scripts/validate_v32_source_evidence.py`](../../scripts/validate_v32_source_evidence.py) also checks the R71 identity comparison and R64 internal content references. **Its successful execution on the owner's full repository was not observed here; the source joins and arithmetic were independently checked during research.**
+
+### Verified scope coverage, not final lock coverage
+
+All **135 active IDs** are accounted for as 126 retained v27 assets with historical primary-source scope audits, eight post-v27 assets with R64 fixed candidate file lists, and one ZONOS3-Mini asset with the R48 pinned **reference** profile. This closes the *source-evidence discovery coverage* gap, not the rights/runtime/final-revision gap. The 126 older scopes must still be reconciled to v32 exact selected-file choices. In the canonical catalog, 133 selected-byte fields and 133 final-revision fields remain null.
+
+R64 has **9 publisher repositories, 91 source-file references, 38,519,866,446 bytes**. Their exact SHA256/Git-blob identities show four repeated non-LFS source references (two matching `.gitattributes` files and matching ACE Step vocabulary/merge support pairs), totaling **4,451,775 repeated bytes**; consequently the R64 internal source identity union is **38,515,414,671 bytes**. This is *not* a cross-revision deduplicated portfolio total. It makes no claim about the physical disk or SHA of material not in the manifest.
+
+### RFD4-Proteina revision comparison: critical primary-source correction
+
+The canonical v32 **observed** SHA is `cf31b93509df5af854c7f6ad704f5c83c77c0698`; the R64 candidate source revision is `a06e2509c7033b010fc43614e9fd840303588502`. First-party, immutable [old API file tree](https://huggingface.co/api/models/nvidia/RFD4-Proteina/tree/cf31b93509df5af854c7f6ad704f5c83c77c0698?recursive=false) and [candidate API file tree](https://huggingface.co/api/models/nvidia/RFD4-Proteina/tree/a06e2509c7033b010fc43614e9fd840303588502?recursive=false) were compared for **all seven R64 selected files**.
+
+| Selected file class | Exact file-OID comparison | Consequence |
+| --- | --- | --- |
+| `model.safetensors` | **Identical**, LFS SHA256 `5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0`, 1,742,660,596 B in both | Do **not** re-archive this trained root model twice |
+| `config.json` and `LICENSE` | Identical Git blob OIDs and bytes | Reuse identical files by immutable identity |
+| `README.md`, `inference.yaml`, `provenance.json`, `release-checkpoints.json` | Four different Git blob OIDs | Retain the chosen commit's matching support metadata; distinguish code/inference compatibility |
+| Seven-file source subset total | Old: **1,742,695,830 B**; candidate: **1,742,698,063 B** | 2,233 B net difference, **not** a weight-model change |
+
+**Version-trap:** The [old release-checkpoints.json](https://huggingface.co/nvidia/RFD4-Proteina/blob/cf31b93509df5af854c7f6ad704f5c83c77c0698/release-checkpoints.json) claims the prior bundle SHA `5f00cdcd...` and 435,622,721 stored parameters. Nevertheless the **actual old-commit root weight file** already has SHA `5b549dd6...`, and the [newer release-checkpoints.json](https://huggingface.co/nvidia/RFD4-Proteina/blob/a06e2509c7033b010fc43614e9fd840303588502/release-checkpoints.json) accurately records this with 435,622,465 stored parameters. **This is stale indirect publisher metadata at the older commit, not evidence that the selected root checkpoint changed between the two specified commits.** Extra `base/` and `adapter/` components appear at the candidate revision and are outside the selected seven-file subset; do not imply their training states are identical or already archived.
+
+R71 therefore resolves the **main-weight identity question** but *does not approve* either revision as the complete legally reproducible archive. The owner still needs a deliberate pinned source choice, full compatible component/runtime selection, full rights review and physical-file verification.
+
+### Source-byte scenario, not disk availability
+
+The historical v27 SHA-aware union plus R64's **internally** deduplicated references plus ZONOS's reference profile sum to **3,467,277,687,891 B** (still not globally deduplicated and not a complete offline runtime). The nominal empty-4TB/200GB-floor arithmetic difference is **332,722,312,109 B**, excluding unknown external learned components, runtime packages, staging/cache, existing files and physical HDD measurements. This number is **neither certified available disk capacity nor a safe acquisition budget**.
+
+### Variable table and dimensional check
+
+| Symbol | Meaning (Japanese) | SI unit | Definition | Domain / assumption | Type |
+| --- | --- | --- | --- | --- | --- |
+| `B27` | v27既知ソースのSHA-aware容量 | byte | 3,417,685,712,585 | 過去126資産の監査範囲のみ | 非負整数スカラー |
+| `BR64` | R64のファイル参照容量 | byte | 38,519,866,446 | 9repo・91ファイル、重複含む | 非負整数スカラー |
+| `DR64` | R64内のSHA/Git重複容量 | byte | 4,451,775 | R64内で証拠が一致する4参照 | 非負整数スカラー |
+| `BZ` | ZONOS固定リファレンスの容量 | byte | 11,076,560,635 | 必須最小構成である証明なし | 非負整数スカラー |
+| `BC` | 計画容量上限 | byte | 4,000,000,000,000 | 実ドライブの測定値ではない | 非負整数スカラー |
+| `BF` | 空き容量の最低床 | byte | 200,000,000,000 | 実測未知 | 非負整数スカラー |
+
+The arithmetic-only source scenario is `B27 + BR64 - DR64 + BZ`; dimensions are byte + byte − byte + byte = byte. Its difference from the nominal safe empty-drive ceiling `BC - BF` is also in bytes. No comparison against parameter count or actual physical free space is inferred.
+
+### H/T/D/C/U and ERROR CHECK
+
+**H:** The two RFD4 commits have equal selected main-model bytes and SHA, but differ in support-file identities. **T:** 7/7 selected paths checked against two immutable publisher trees, 91/91 R64 references checked for duplicate SHA/Git identities, 135/135 selected asset IDs joined. **D:** PASS for RFD4 root model equality, SHA/size metadata and the 135-source coverage; FAIL/UNCERTAIN for a fully runnable lawful archive. **C:** Older release metadata was stale even while actual root weights had changed to newer payload; other optional components may have distinct training states. **U:** Publisher file metadata is not owner-local SHA verification, and runtime/rightsclearance/disk measurements remain unknown. No measured distribution supports `u_c` or `k`.
+
+**ERROR CHECK:** selected files compared=7; identical=3, changed support=4, net size delta=2,233 B. R64 file references=91, duplicate references=4, duplicate bytes=4,451,775. v32 active=135, approved download=0. No model payloads or datasets were downloaded.
+
+**Interdisciplinary links:** ML tensor provenance; software supply-chain commit and blob identity; long-term digital archiving and content-addressed deduplication; license and authorization governance.
+
+**Next question:** Should the archive preserve the older RFD4 README/inference recipe as historical documentation alongside the newer selected seven-file source set, while storing the main trained weight file only once? The hashes support this as a research option; rights and runtime verification remain independent.
