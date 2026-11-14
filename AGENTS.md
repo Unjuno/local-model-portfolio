@@ -1,5 +1,9 @@
 # エージェント作業規約
 
+## 現行モデル選定（main・v33・2026-11-15）
+
+**唯一の正式選定正本は`catalog/CURRENT.json`のv33、[185資産（モデル159・データ26）](catalog/effective-portfolio-2026-11-15-v33.json)／有効138件（SELECT53・CONDITIONAL85）**。[差分v33](catalog/revisions/v33-2026-11-15.json)ではIBM Granite 4.1 3B LLMON、Perplexity Decider Flash v1.3、NVIDIA Kumo-Relationalの実際の学習済み中身を確認し3件CONDITIONAL追加。[理由・比較・非採用](docs/strategy/77-v33-weight-content-selection-and-alternatives-2026-11-15.md)。同族8B/26B、依存未確定のDuoや比較利益未確定のAreteは追加しない。旧182件は削除なし。[有効138研究候補](queues/proposed-v33-2026-11-15.json)、[138依存準備](catalog/preparation/2026-11-15-insurance-bundles-v33.json)。**新規Kumo総数不明は最終取得ロック停止**、Perplexity公開manifestのprivateフラグは本人権限未確定、取得承認0。以下のv32節は履歴であり現行正本と解釈しない。
+
 ## ブランチ運用（2026-11-13・ユーザー指示）
 
 **通常の調査・選定・監査・更新の正本は `main` のみ。** 既存ブランチの成果はmainへ統合し、ユーザーから別途指示されない限り新しいブランチを作らない。旧資料の専用ブランチ名は歴史的な出典であり、新しい作業ブランチの作成命令ではない。
@@ -23,9 +27,9 @@
 
 [R72・135件ソース候補byte/revision全件結合](catalog/research/2026-11-15-r72-v32-135-candidate-scope-byte-revision-join.json)／[R73・以前revision未確認14件の配布元現在HEAD](catalog/research/2026-11-15-r73-14-upstream-head-observations.json)／[研究報告](docs/strategy/72-v32-135-candidate-source-byte-revision-closure-2026-11-15.md)／[手動オフライン検証](scripts/validate_v32_candidate_source_join.py)。有効135件の候補ソースbyteが揃った（v27由来126、R64の新規8、ZONOS参考1）。候補revision103件、正本観測と一致96件、候補のみ6件、双方欠損32件、RFD4主重みSHA同一・付属ファイルに版差1件。R73は32件中14件の**現行配布元HEADのみ**を確認、残り18件未照会。候補一次ソース容量約3.458TBは選定ファイルの最終容量でも、4TB HDDの空きでもない。**正本最終selected bytes/revisionの未完成133件、依存・ライセンス・本人Gated権限・実ディスク空き・取得承認0件は変更なし**。研究確認をもって許可やダウンロード準備完了と宣言しない。
 
-## モデルの現在構成（main／v32・2026-11-14）
+## 旧版モデル構成（main／v32・2026-11-14、履歴）
 
-**唯一の正本は `catalog/CURRENT.json` のv32、182資産・有効135件**。v31からDSpine-b16、Nemotron-3-Diarization、RFD4-Proteinaを独立後学習・専門学習成果として3件CONDITIONAL研究追加。[v32全件](catalog/effective-portfolio-2026-11-14-v32.json)、[非実行135件候補](queues/proposed-v32-2026-11-14.json)、[依存台帳](catalog/preparation/2026-11-14-insurance-bundles-v32.json)、[研究記録](docs/strategy/56-v32-small-specialist-selection-2026-11-14.md)。取得承認0、4TB計画と空き200GB別条件。旧版v31以下は履歴。
+**当時の旧版正本はv32、182資産・有効135件**。v31からDSpine-b16、Nemotron-3-Diarization、RFD4-Proteinaを独立後学習・専門学習成果として3件CONDITIONAL研究追加。[v32全件](catalog/effective-portfolio-2026-11-14-v32.json)、[非実行135件候補](queues/proposed-v32-2026-11-14.json)、[依存台帳](catalog/preparation/2026-11-14-insurance-bundles-v32.json)、[研究記録](docs/strategy/56-v32-small-specialist-selection-2026-11-14.md)。取得承認0、4TB計画と空き200GB別条件。旧版v31以下は履歴。
 
 ## 以前のモデル構成参照（v31スナップショット）
 
