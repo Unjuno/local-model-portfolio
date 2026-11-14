@@ -92,3 +92,42 @@ These are **research queue labels**, not changes to P0–PX preservation priorit
 **U:** No statistical uncertainty is assigned to this census. Dominant epistemic uncertainties are timestamp alignment, metadata normalization, and full governing license text.
 
 **Next question:** Does the Illustrious-XL `other` tag denote a real license change, or only a metadata representation change? The answer requires a pinned first-party commit and the actual license text.
+
+
+## 2026-11-15 correction: Illustrious license metadata representation resolved
+
+**Previous statement requiring correction:** The 2026-11-14 addendum called the differing values `sdxl-license` versus `other` a license metadata conflict and left a possible actual license change open. Direct examination of the publisher's **same** Hugging Face README front matter shows that both values are simultaneously present:
+
+```yaml
+license: other
+license_name: sdxl-license
+license_link: https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/LICENSE.md
+```
+
+**Evidence:** https://huggingface.co/OnomaAIResearch/Illustrious-XL-v1.1/blob/main/README.md?code=true and the pinned historical README https://huggingface.co/OnomaAIResearch/Illustrious-XL-v1.1/blob/0249df93e0c5ce3f11b60d0465e500380bb03120/README.md . The Hub model page renders the custom `license_name` as `sdxl-license`, while the repository-details connector exposes the canonical `license` field as `other`.
+
+**Revised finding: METADATA_NORMALIZATION_EXPLAINED; NO LICENSE_CHANGE_ESTABLISHED.** This corrects the earlier implication of a publisher license-change event. It **does not** resolve the legal applicability of the linked SDXL license, license version at the exact selected revision, the downstream model's own terms, or checkpoint dependency rights. Therefore `license_text_reviewed=false`, `UNVERIFIED_BLOCK_FINAL_LOCK`, and `download_approved=false` remain appropriate. The old observation is preserved above for audit traceability.
+
+**Additional source-specific evidence:** The publisher's file tree https://huggingface.co/OnomaAIResearch/Illustrious-XL-v1.1/tree/main lists one 6.94 GB safetensors checkpoint and a README; file size is **not** a tensor count or a proof that a complete inference dependency graph is self-contained.
+
+## 2026-11-15 Seed-VC scope clarification
+
+Publisher source https://github.com/Plachtaa/seed-vc documents **four distinct** voice conversion / singing variants and identifies different encoder/vocoder dependencies. Publisher inference code https://github.com/Plachtaa/seed-vc/blob/main/app_svc.py explicitly references external `funasr/campplus`, BigVGAN or alternative vocoders, and other speech modules depending on selected configuration.
+
+**Revised finding:** Do not sum all alternative Seed-VC variants into a single mandatory pipeline, and do not interpret a 25M/98M/200M/67M+90M model-core figure as the complete trained dependency total. First select an exact reproducible use case and checkpoint, then enumerate the distinct trained modules loaded by that configuration. The total parameter ceiling is an internal acquisition rule and the model remains blocked pending that census.
+
+## Remaining completion conditions
+
+The research and inventory-integrity documentation is complete as an **evidence-based audit**, but the acquisition-ready portfolio is **not complete**. Twelve model totals remain unverified, two are excluded, licenses/dependency rights remain unresolved, and no acquisition is approved. Do not label the entire project `PASS` or `DOWNLOAD_READY` based on metadata checks alone.
+
+**H:** A custom license label conflict can be explained by the model-card front matter rather than an actual rights change.
+
+**T:** Compare `license`, `license_name`, and `license_link` on the same publisher README and a pinned earlier revision; do not use only the display badge.
+
+**D:** PASS for metadata representation explanation; UNCERTAIN for actual legal rights and full model parameter totals.
+
+**C:** A later revision may modify linked license text or introduce additional downstream conditions, which must be checked at the intended exact revision.
+
+**U:** Dominant unmeasured errors are mutable license links, incomplete dependency graphs, and absent full trained-tensor counts; no numeric confidence interval is justified.
+
+**Question:** Should the model catalog store both raw `license` and `license_name` plus the exact revision and license-text digest to prevent future false-positive change alerts?
