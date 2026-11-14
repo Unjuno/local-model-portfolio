@@ -59,7 +59,7 @@ R73で135件すべての歴史的公開元ファイルscopeを参照できるが
 
 **H（反証可能仮説）**：66資産で全repo取得を禁止し固定選択パスだけに限定すると、観測範囲の約2.986TBに相当する**余分な選択を計画から除外**できる。実機節約量は別途実測する。
 
-**T（最小検証）**：126資産全数、選択ファイル61?ではなく**1,425ファイルの66対象ファイル**だけを完全allowlist化。全source revision SHA40文字、path traversalなし、ファイル別byte和と元primary byte合致を確認。ファイル未取得。停止条件66件処理完了または不一致発見。
+**T（最小検証）**：126資産全数、**66対象資産の選択1,425ファイル**を完全allowlist化。全source revision SHA40文字、path traversalなし、ファイル別byte和と元primary byte合致を確認。ファイル未取得。停止条件66件処理完了または不一致発見。
 
 **D（PASS/FAIL/UNCERTAIN）**：PASS＝66件/1,425件、差分2,985,522,750,447 byte一致、重複path0・悪性相対path0、`download_authorized=false`。FAIL＝いずれか相違。実機転送節約、権利・復元はUNCERTAIN。
 
