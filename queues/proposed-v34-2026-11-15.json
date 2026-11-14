@@ -4,7 +4,7 @@
   "generated_at": "2026-11-15",
   "approved": false,
   "download_enabled": false,
-  "description": "141 v34 research-only conditional/select assets; new QEC checkpoints gated and Kumo anomaly no code execution",
+  "description": "140 non-executable research candidates; v34 Kumo Tabular Large and Kumo Anomaly independently trained; no approvals",
   "candidates": [
     {
       "asset_kind": "model",
@@ -1304,42 +1304,37 @@
     },
     {
       "asset_kind": "model",
+      "repo_id": "nvidia/Kumo-Tabular",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "not_authorized": true,
+      "download_approved": false,
+      "approved_lock": false,
+      "research_only": true,
+      "can_enter_approved_queue": false,
+      "selected_file_bytes": null,
+      "selection_budget_cap_bytes": 2500000000,
+      "source_revision_sha": null,
+      "canonical_source_sha_verified_locally": false,
+      "requires_total_parameter_confirmation": false,
+      "runtime_execution_hold": false
+    },
+    {
+      "asset_kind": "model",
       "repo_id": "nvidia/Kumo-Anomaly",
       "selection": "conditional",
       "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
       "not_authorized": true,
       "download_approved": false,
+      "approved_lock": false,
       "research_only": true,
       "can_enter_approved_queue": false,
-      "requires_legal_basis_review": true,
-      "requires_personal_gated_access": false,
-      "requires_runtime_closure": true
-    },
-    {
-      "asset_kind": "model",
-      "repo_id": "nvidia/Ising-Decoder-ColorCode-1-Fast",
-      "selection": "conditional",
-      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
-      "not_authorized": true,
-      "download_approved": false,
-      "research_only": true,
-      "can_enter_approved_queue": false,
-      "requires_legal_basis_review": true,
-      "requires_personal_gated_access": true,
-      "requires_runtime_closure": true
-    },
-    {
-      "asset_kind": "model",
-      "repo_id": "nvidia/Ising-Decoder-SurfaceCode-1-Fast",
-      "selection": "conditional",
-      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
-      "not_authorized": true,
-      "download_approved": false,
-      "research_only": true,
-      "can_enter_approved_queue": false,
-      "requires_legal_basis_review": true,
-      "requires_personal_gated_access": true,
-      "requires_runtime_closure": true
+      "selected_file_bytes": null,
+      "selection_budget_cap_bytes": 500000000,
+      "source_revision_sha": "369ccba38a105736c6c9e4b5788a330c7e22112e",
+      "canonical_source_sha_verified_locally": false,
+      "requires_total_parameter_confirmation": true,
+      "runtime_execution_hold": true
     }
   ],
   "blocked_unknown_total_repo_ids": [

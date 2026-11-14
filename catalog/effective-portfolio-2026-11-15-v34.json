@@ -2,24 +2,24 @@
   "schema_version": 1,
   "revision_id": "v34-20261115",
   "generated_date": "2026-11-15",
-  "origin": "catalog/selected-portfolio-2026-10-30.json + v2 + v3 + v4 + catalog/revisions/v5-2026-11-03.json(priority_operations) + catalog/revisions/v6-2026-11-03.json(resource screens) + catalog/revisions/v7-2026-11-03.json(total-parameter hard cutoff) + catalog/revisions/v8-2026-11-03.json(150B hard total-parameter cap) + catalog/revisions/v9-2026-11-03.json(publisher model count evidence) + catalog/revisions/v28-2026-11-12.json + catalog/revisions/v29-2026-11-12.json + catalog/revisions/v30-2026-11-12.json + catalog/revisions/v31-2026-11-13.json + catalog/revisions/v33-2026-11-15.json + catalog/revisions/v34-2026-11-15.json",
+  "origin": "catalog/selected-portfolio-2026-10-30.json + v2 + v3 + v4 + catalog/revisions/v5-2026-11-03.json(priority_operations) + catalog/revisions/v6-2026-11-03.json(resource screens) + catalog/revisions/v7-2026-11-03.json(total-parameter hard cutoff) + catalog/revisions/v8-2026-11-03.json(150B hard total-parameter cap) + catalog/revisions/v9-2026-11-03.json(publisher model count evidence) + catalog/revisions/v28-2026-11-12.json + catalog/revisions/v29-2026-11-12.json + catalog/revisions/v30-2026-11-12.json + catalog/revisions/v31-2026-11-13.json + catalog/revisions/v33-2026-11-15.json + catalog/revisions/v33-2026-11-15.json + catalog/revisions/v34-2026-11-15.json",
   "read_only_derived": true,
-  "warning": "V34 appends 3 distinct science trained states to v33 without changing old 185; research only, rights, total parameters and all runtime deps remain gated.",
+  "warning": "V34 preserves v33 185 records, adds two conditional NVIDIA Kumo trained states; selected SHA/rights/runtime and HDD not complete; zero downloads.",
   "selection_and_legal_status_inherited_from": "v4-20261103",
   "primary_order": "forecast_priority.rank (hypothetical cascade regulation S1 => S2 => S3)",
   "counts": {
-    "tracked": 188,
-    "active": 141,
+    "tracked": 187,
+    "active": 140,
     "by_tier": {
       "R0": 14,
-      "R1": 94,
+      "R1": 93,
       "HOLD": 28,
       "BACKLOG": 13,
       "R2": 33,
       "EXCLUDED": 6
     },
     "by_decision": {
-      "conditional": 88,
+      "conditional": 87,
       "hold": 28,
       "select": 53,
       "deferred": 13,
@@ -31,7 +31,7 @@
         "inactive": 29
       },
       "S2": {
-        "active": 60,
+        "active": 59,
         "inactive": 7
       },
       "S3": {
@@ -40,32 +40,30 @@
       }
     },
     "parameter_gate": {
-      "PASS_TOTAL_PARAMS_LT_150B": 138,
+      "PASS_TOTAL_PARAMS_LT_150B": 137,
       "OVER_150B_QUANT_REVIEW_REQUIRED": 2,
       "UNVERIFIED_BLOCK_FINAL_LOCK": 22
     },
     "resource_screen": {
-      "tracked": 188,
-      "source_repo_bytes_unknown": 69,
-      "active_source_repo_bytes_unknown": 43,
+      "tracked": 187,
+      "source_repo_bytes_unknown": 71,
+      "active_source_repo_bytes_unknown": 45,
       "active_ge_100GB_repo_assets": 8
     },
-    "models": 162,
+    "models": 161,
     "datasets": 26
   },
   "budget": {
     "archive_limit_bytes": 4000000000000,
     "minimum_free_bytes": 200000000000,
-    "new_active_reservation_cap_bytes": 100000000,
+    "new_active_reservation_cap_bytes": 20500000000,
     "reservation_is_policy_cap_not_observed_bytes": true,
     "final_selected_total_bytes": null,
     "final_headroom_bytes": null,
     "physical_capacity_verified": false,
-    "unknown_final_selected_asset_count": 139,
+    "unknown_final_selected_asset_count": 136,
     "shared_parent_savings_verified": false,
-    "budget_status": "V34_SOURCE_METADATA_ONLY_ACTUAL_DISK_UNMEASURED",
-    "v33_historical_reservation_bytes": 20500000000,
-    "v34_publisher_candidate_source_bytes": 37372669
+    "budget_status": "V33_RESEARCH_ONLY_FULL_FILE_RIGHTS_AND_DEPENDENCIES_UNFINALIZED"
   },
   "items": [
     {
@@ -13477,7 +13475,8 @@
         "total_parameters": null,
         "evidence_kind": "Unknown; model .pt byte size not valid parameter count. n=both trained heads+framework remains unverified",
         "review_date": "2026-11-15",
-        "full_pipeline_tensor_count_not_locally_verified": true
+        "full_pipeline_tensor_count_not_locally_verified": true,
+        "research_screening_exception": "CONDITIONAL_RESEARCH_ONLY_NON_EXECUTABLE"
       },
       "research_only_unknown_total_allow_conditional": true,
       "forecast_priority": {
@@ -13521,349 +13520,170 @@
       "position": 185
     },
     {
-      "position": 186,
       "asset_kind": "model",
-      "repo_id": "nvidia/Kumo-Anomaly",
-      "url": "https://huggingface.co/nvidia/Kumo-Anomaly",
-      "group": "時系列予測と異なる拡散ベース異常再構成の独立学習済み重み。旧SDKの",
       "risk_tier": "R1",
       "portfolio_decision": "conditional",
-      "reason_selected": "時系列予測と異なる拡散ベース異常再構成の独立学習済み重み。旧SDKのpickle実行は不要で、発行者の別SDM実装が同一SHAのweights_onlyローダーを持つ。",
-      "quality_positive": "29,600,287 byteの別学習済み拡散重み、SCS/MACS異常検知。固定モデル2版でpublisher SHA同一。",
-      "quality_negative": "旧Kumo-TSのweights_only=Falseを実行しない。新版weights_only=True互換実測なし。公表8MとSDM2.44Mのパラメータ不一致。",
       "evidence_date": "2026-11-15",
-      "evidence_kind": "FROZEN_PUBLISHER_MODEL_PAYLOAD_SHA_AND_AUTHOR_CNN_OR_DIFFUSION_CODE",
-      "evidence_urls": [
-        "https://huggingface.co/api/models/nvidia/Kumo-Anomaly/revision/369ccba38a105736c6c9e4b5788a330c7e22112e?blobs=true",
-        "https://github.com/NVIDIA/structured-data-models/blob/46a6f20d20f1140912f7a9e6ecdda9a3cd3fda87/sdm/models/kumo/timeseries/anomaly/model.py"
-      ],
-      "observed_access": "public_HF_listing_not_authenticated_payload_or_permission",
-      "license_metadata": "apache-2.0",
+      "evidence_kind": "NVIDIA publisher model files + pinned official source code, no tensor payload read",
       "license_text_reviewed": false,
       "dependencies_reviewed": false,
       "download_approved": false,
       "selected_file_bytes": null,
       "fully_pinned_revision_sha": null,
+      "research_only_unknown_total_allow_conditional": true,
+      "download_ready": false,
+      "planning_cap_is_not_observed_bytes": true,
+      "observed_access": "public_model_listing_user_rights_not_verified",
+      "restriction_assessment": {
+        "observed": "Official public publisher listing, no personally verified entitlement",
+        "scenario": "Future distribution restrictions hypothetical",
+        "probability": null
+      },
+      "repo_id": "nvidia/Kumo-Tabular",
+      "url": "https://huggingface.co/nvidia/Kumo-Tabular",
+      "group": "表分類・回帰の独立学習済みICL",
+      "position": 186,
+      "license_metadata": "openmdw-1.1",
+      "reason_selected": "Large分類器と回帰器は別学習チェックポイント。単一表の数値/カテゴリ列のFourierセル埋込み、行列attention、ラベル文脈推論で予測。v33 Kumo-Relationalは複数表の関係GNN、Chronos/TTMは時系列予測であり非同一。Large二重量のみ、Small/Medium同種別サイズは重複保存しない。",
+      "quality_positive": "NVIDIA公式 Largeのclassifier 213.67M parametersとregressor 215.68M、24-layer ICL 1024 channels。固定公式コードは large/classifier.pt と large/regressor.pt を torch.load(weights_only=True) で読込。Hugging Face tree上855MBと863MB（丸め表示）。",
+      "quality_negative": "固定40桁のTabular重みrepo revision、選択2ファイル完全SHA256と正確byte・実データでの優位性・全ソフト依存ABI・許諾全文・所有者ディスク容量未確定。SDMは初回自動Hub downloadのため隔離とoffline pin必須。",
+      "evidence_urls": [
+        "https://docs.nvidia.com/sdgm/structured-data-models/models/kumo-tabular",
+        "https://huggingface.co/nvidia/Kumo-Tabular/blob/main/config.json",
+        "https://huggingface.co/nvidia/Kumo-Tabular/tree/main/large",
+        "https://github.com/NVIDIA/structured-data-models/blob/46a6f20d20f1140912f7a9e6ecdda9a3cd3fda87/sdm/models/kumo/tabular/model.py"
+      ],
+      "upstream_revision_sha_observed": null,
+      "upstream_model_file": {
+        "paths": [
+          "large/classifier.pt",
+          "large/regressor.pt"
+        ],
+        "sha256": null,
+        "bytes_exact": null,
+        "rounded_public_display_bytes": [
+          855000000,
+          863000000
+        ],
+        "publisher_only": true
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 429350000,
+        "evidence_kind": "publisher approximation 213.67M classifier plus 215.68M regressor; complete tensors not locally counted",
+        "review_date": "2026-11-15",
+        "full_pipeline_tensor_count_not_locally_verified": true
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 168,
+        "category": "unique_tabular_foundation_model",
+        "scenario_status": "stress_test_only"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Single table classification/regression two original Large checkpoint states",
+        "must_preserve": [
+          "large/classifier.pt and large/regressor.pt at frozen full revision and per-file SHA",
+          "config.json/LICENSE/README and template",
+          "NVIDIA structured-data-models pinned commit and Python/PyTorch ABI"
+        ],
+        "excluded_or_optional": [
+          "small/medium same-purpose checkpoints",
+          "unbounded full HF repository"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "publisher_rounded_selected_weights_bytes": 1718000000,
+        "selected_file_bytes_final": null,
+        "hw_tested_on_user_machine": false
+      },
+      "falsification_condition": "Actual weights duplicate existing distinct model, license/access denied, full source hash/ABI invalid, or single table performance does not justify extra storage",
+      "selection_budget_cap_bytes": 2500000000
+    },
+    {
+      "asset_kind": "model",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "evidence_date": "2026-11-15",
+      "evidence_kind": "NVIDIA publisher model files + pinned official source code, no tensor payload read",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "research_only_unknown_total_allow_conditional": true,
+      "download_ready": false,
+      "planning_cap_is_not_observed_bytes": true,
+      "observed_access": "public_model_listing_user_rights_not_verified",
+      "restriction_assessment": {
+        "observed": "Official public publisher listing, no personally verified entitlement",
+        "scenario": "Future distribution restrictions hypothetical",
+        "probability": null
+      },
+      "repo_id": "nvidia/Kumo-Anomaly",
+      "url": "https://huggingface.co/nvidia/Kumo-Anomaly",
+      "group": "多変量時系列拡散異常検知・未実行",
+      "position": 187,
+      "license_metadata": "apache-2.0",
+      "reason_selected": "拡散補完の再構成誤差から無ラベル異常を判定する別学習済みモデル。Chronos/TTMの予測とは学習目的と出力が異なる。旧版と現行版で重み同一SHAなので一重みだけ研究選定。runtime実行は停止。",
+      "quality_positive": "NVIDIA固定版final_model.pth 29,600,287 bytes SHA256 e7c2c06ac290d5ad42c8528caaefea3e6e0cb3d77227d2eca79f81ee427811a5。別公式SDMコードで同一チェックポイントのweights_only=True+remap_ckpt経路を確認。",
+      "quality_negative": "旧Kumo-TSのweights_only=Falseはpickle実行リスク。修正版PyTorch・サンドボックス・ABI未確認。作者カード約8MとAPI 2.44Mが不一致、総数ゲート未確認、本人許諾とruntimeの安全未確認。",
+      "evidence_urls": [
+        "https://huggingface.co/nvidia/Kumo-Anomaly/blob/369ccba38a105736c6c9e4b5788a330c7e22112e/README.md",
+        "https://github.com/NVIDIA/structured-data-models/blob/46a6f20d20f1140912f7a9e6ecdda9a3cd3fda87/sdm/models/kumo/timeseries/anomaly/model.py",
+        "https://docs.nvidia.com/sdgm/structured-data-models/models/kumo-anomaly",
+        "https://github.com/NVIDIA/Kumo-TS"
+      ],
       "upstream_revision_sha_observed": "369ccba38a105736c6c9e4b5788a330c7e22112e",
-      "upstream_all_files_bytes_observed": 31773644,
-      "upstream_weights_bytes_observed": 29600287,
-      "upstream_file_count_observed": 4,
-      "upstream_lfs_sha256_count": 1,
       "upstream_model_file": {
         "path": "final_model.pth",
         "sha256": "e7c2c06ac290d5ad42c8528caaefea3e6e0cb3d77227d2eca79f81ee427811a5",
         "bytes_exact": 29600287,
-        "source_metadata_not_downloaded": true
+        "publisher_only": true
       },
-      "candidate_selected_source_files": [
-        {
-          "path": ".gitattributes",
-          "bytes": 1699,
-          "sha256": null,
-          "git_blob_sha1": "6202ffa17dc392610667408ac3324b63a874c9c4",
-          "local_sha_verified": false
-        },
-        {
-          "path": "README.md",
-          "bytes": 7369,
-          "sha256": null,
-          "git_blob_sha1": "4ee09427f30193e3d74026b709f3262173f8baef",
-          "local_sha_verified": false
-        },
-        {
-          "path": "curriculum_medium.yaml",
-          "bytes": 2796,
-          "sha256": null,
-          "git_blob_sha1": "f07a4ba137e567a385f04687edbbd81819ef6e1a",
-          "local_sha_verified": false
-        },
-        {
-          "path": "final_model.pth",
-          "bytes": 29600287,
-          "sha256": "e7c2c06ac290d5ad42c8528caaefea3e6e0cb3d77227d2eca79f81ee427811a5",
-          "git_blob_sha1": "f445258ada14438a856999b8c8773cb166179e55",
-          "local_sha_verified": false
-        }
-      ],
-      "candidate_selected_source_bytes": 29612151,
       "parameter_gate": {
         "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
         "total_parameters": null,
+        "evidence_kind": "Conflicting NVIDIA author ~8M and separate SDK 2.44M model count",
         "review_date": "2026-11-15",
-        "evidence_kind": "DISAGREEMENT_8M_VS_2_44M_REQUIRES_TENSOR_CENSUS",
-        "full_learned_pipeline_count_locally_verified": false
+        "full_pipeline_tensor_count_not_locally_verified": true
       },
       "forecast_priority": {
         "wave": "S2",
-        "rank": 186,
-        "category": "separate_trained_scientific_state",
-        "scenario_status": "hypothetical only; no confirmed takedown"
+        "rank": 169,
+        "category": "unique_diffusion_anomaly_detector",
+        "scenario_status": "stress_test_only"
       },
       "preservation_bundle": {
-        "learned_outcome": "時系列予測と異なる拡散ベース異常再構成の独立学習済み重み。旧SDKのpickle実行は不要で、発行者の別SDM実装が同一SHAのweights_onlyローダーを持つ。",
+        "learned_outcome": "Conditional diffusion multivariate time series reconstruction anomaly scoring and adaptive SCS/MACS thresholds",
         "must_preserve": [
-          ".gitattributes",
-          "README.md",
-          "curriculum_medium.yaml",
-          "final_model.pth",
-          "publisher original checkpoint hash, license and notice",
-          "corresponding exact inference source and ABI"
+          "final_model.pth LFS SHA256",
+          "curriculum_medium.yaml/LICENSE/README and fixed publisher revision",
+          "official patched SDM weights_only loader and isolated security-checked runtime"
         ],
-        "external_learned_and_software_dependencies": [
-          "Kumo-TS original code provenance",
-          "NVIDIA structured-data-models 46a6f20d20f1140912f7a9e6ecdda9a3cd3fda87",
-          "isolated patched PyTorch weights_only=True, no network"
-        ],
-        "excluded_duplicate_or_optional_formats": [
-          "ordinary quantized/deployment variants with same learned state"
+        "excluded_or_optional": [
+          "old and new revision same checkpoint SHA",
+          "legacy Kumo-TS weights_only=False execution"
         ],
         "fixed_manifest_complete": false,
         "all_components_verified": false,
-        "scope_reference_only_no_download_manifest": true
+        "scope_reference_only_no_download_manifest": true,
+        "runtime_execution_hold": true
       },
       "resource_screen": {
-        "source_all_repo_bytes": 31773644,
+        "source_all_repo_bytes": null,
         "source_bytes_are_not_selected_bytes": true,
+        "publisher_selected_subset_bytes": 29612151,
         "selected_file_bytes_final": null,
         "hw_tested_on_user_machine": false
       },
-      "can_enter_approved_queue": false,
-      "download_ready": false,
-      "research_only_nonexecutable": true,
-      "personal_access_verified": false,
-      "model_payload_fetched": false,
-      "execution_safety": {
-        "old_sdk_unsafe_pickle": true,
-        "alternative_publisher_weights_only_true_static": true,
-        "patched_pytorch_and_no_network_required": true,
-        "execution_approved": false
-      }
-    },
-    {
-      "position": 187,
-      "asset_kind": "model",
-      "repo_id": "nvidia/Ising-Decoder-ColorCode-1-Fast",
-      "url": "https://huggingface.co/nvidia/Ising-Decoder-ColorCode-1-Fast",
-      "group": "三角色符号のシンドロームを3D CNN残差ボトルネック6ブロックで疎",
-      "risk_tier": "R1",
-      "portfolio_decision": "conditional",
-      "reason_selected": "三角色符号のシンドロームを3D CNN残差ボトルネック6ブロックで疎化する、SurfaceCodeと独立の学習成果。",
-      "quality_positive": "d=T=13、受容野13、2,936,580モデルパラメータ、FP16重量5,899,248 byte。モデルBとして公式レジストリ内で指定。",
-      "quality_negative": "Gated 401で匿名から重み内部直接確認不能。個人の取得権限とChromobius／雑音条件一致、実機推論未確認。",
-      "evidence_date": "2026-11-15",
-      "evidence_kind": "FROZEN_PUBLISHER_MODEL_PAYLOAD_SHA_AND_AUTHOR_CNN_OR_DIFFUSION_CODE",
-      "evidence_urls": [
-        "https://huggingface.co/api/models/nvidia/Ising-Decoder-ColorCode-1-Fast/revision/c5775431d0ebb06ffecc3836935708b787db51ee?blobs=true",
-        "https://github.com/NVIDIA/Ising-Decoding/blob/12bbeb13c5cfc1a064171ac91b07aea61f2eaae8/code/model/registry.py"
-      ],
-      "observed_access": "Gated auto (anonymous checkpoint 401, owner access unverified)",
-      "license_metadata": "openmdw-1.1",
-      "license_text_reviewed": false,
-      "dependencies_reviewed": false,
-      "download_approved": false,
-      "selected_file_bytes": null,
-      "fully_pinned_revision_sha": null,
-      "upstream_revision_sha_observed": "c5775431d0ebb06ffecc3836935708b787db51ee",
-      "upstream_all_files_bytes_observed": 6158225,
-      "upstream_weights_bytes_observed": 5899248,
-      "upstream_file_count_observed": 5,
-      "upstream_lfs_sha256_count": 1,
-      "upstream_model_file": {
-        "path": "ising_decoder_color_code_1_fast_r13_v1.0.400_fp16.safetensors",
-        "sha256": "ca17d20ebf40d32360f9b60648b47e03de71d4e4d3c3eea33d311dcf1b2510c9",
-        "bytes_exact": 5899248,
-        "source_metadata_not_downloaded": true
-      },
-      "candidate_selected_source_files": [
-        {
-          "path": "License.md",
-          "bytes": 2714,
-          "sha256": null,
-          "git_blob_sha1": "3b3df81090187505df9a416af6e29d329403c34b",
-          "local_sha_verified": false
-        },
-        {
-          "path": "README.md",
-          "bytes": 17474,
-          "sha256": null,
-          "git_blob_sha1": "1fb414bd59d466952fc77a1069f8ccaf66409e1f",
-          "local_sha_verified": false
-        },
-        {
-          "path": "config.json",
-          "bytes": 661,
-          "sha256": null,
-          "git_blob_sha1": "b0f32c9c8af05fc0ad932f70d6692da4ba5dd87e",
-          "local_sha_verified": false
-        },
-        {
-          "path": "ising_decoder_color_code_1_fast_r13_v1.0.400_fp16.safetensors",
-          "bytes": 5899248,
-          "sha256": "ca17d20ebf40d32360f9b60648b47e03de71d4e4d3c3eea33d311dcf1b2510c9",
-          "git_blob_sha1": "18bddd0bda84396e77233450a74748d72771cf7c",
-          "local_sha_verified": false
-        },
-        {
-          "path": "safety_security_subcard.md",
-          "bytes": 866,
-          "sha256": null,
-          "git_blob_sha1": "1d3d9910fa9999694e56b30b5c45acf936b7df17",
-          "local_sha_verified": false
-        }
-      ],
-      "candidate_selected_source_bytes": 5920963,
-      "parameter_gate": {
-        "status": "PASS_TOTAL_PARAMS_LT_150B",
-        "total_parameters": 2936580,
-        "review_date": "2026-11-15",
-        "evidence_kind": "AUTHOR_MODEL_CARD_CODE_SAME_ARCHITECTURE",
-        "full_learned_pipeline_count_locally_verified": false
-      },
-      "forecast_priority": {
-        "wave": "S2",
-        "rank": 187,
-        "category": "separate_trained_scientific_state",
-        "scenario_status": "hypothetical only; no confirmed takedown"
-      },
-      "preservation_bundle": {
-        "learned_outcome": "三角色符号のシンドロームを3D CNN残差ボトルネック6ブロックで疎化する、SurfaceCodeと独立の学習成果。",
-        "must_preserve": [
-          "License.md",
-          "README.md",
-          "config.json",
-          "ising_decoder_color_code_1_fast_r13_v1.0.400_fp16.safetensors",
-          "safety_security_subcard.md",
-          "publisher original checkpoint hash, license and notice",
-          "corresponding exact inference source and ABI"
-        ],
-        "external_learned_and_software_dependencies": [
-          "NVIDIA/Ising-Decoding 12bbeb13c5cfc1a064171ac91b07aea61f2eaae8",
-          "matching Chromobius global decoder",
-          "triangle color syndrome and noise mapping"
-        ],
-        "excluded_duplicate_or_optional_formats": [
-          "ordinary quantized/deployment variants with same learned state"
-        ],
-        "fixed_manifest_complete": false,
-        "all_components_verified": false,
-        "scope_reference_only_no_download_manifest": true
-      },
-      "resource_screen": {
-        "source_all_repo_bytes": 6158225,
-        "source_bytes_are_not_selected_bytes": true,
-        "selected_file_bytes_final": null,
-        "hw_tested_on_user_machine": false
-      },
-      "can_enter_approved_queue": false,
-      "download_ready": false,
-      "research_only_nonexecutable": true,
-      "personal_access_verified": false,
-      "model_payload_fetched": false
-    },
-    {
-      "position": 188,
-      "asset_kind": "model",
-      "repo_id": "nvidia/Ising-Decoder-SurfaceCode-1-Fast",
-      "url": "https://huggingface.co/nvidia/Ising-Decoder-SurfaceCode-1-Fast",
-      "group": "回転表面符号の4層3D Conv、異なる学習済みチェックポイント。量",
-      "risk_tier": "R1",
-      "portfolio_decision": "conditional",
-      "reason_selected": "回転表面符号の4層3D Conv、異なる学習済みチェックポイント。量子化違いでもColorCodeと同一学習状態でもない。",
-      "quality_positive": "channels 4→128→128→128→4、kernel3、受容野9。4畳み込みバイアス込み912,772 paramsと公表~913kが整合。",
-      "quality_negative": "Gated 401で実テンソルを匿名では検査不可。licenseタグotherと作者NVIDIA Open Model Licenseを区別。PyMatching/実機未検証。",
-      "evidence_date": "2026-11-15",
-      "evidence_kind": "FROZEN_PUBLISHER_MODEL_PAYLOAD_SHA_AND_AUTHOR_CNN_OR_DIFFUSION_CODE",
-      "evidence_urls": [
-        "https://huggingface.co/api/models/nvidia/Ising-Decoder-SurfaceCode-1-Fast/revision/77b3a3f444612afe838fa0ece526b4c588541576?blobs=true",
-        "https://github.com/NVIDIA/Ising-Decoding/blob/12bbeb13c5cfc1a064171ac91b07aea61f2eaae8/code/model/predecoder.py"
-      ],
-      "observed_access": "Gated auto (anonymous checkpoint 401, owner access unverified)",
-      "license_metadata": "other; publisher card NVIDIA Open Model License",
-      "license_text_reviewed": false,
-      "dependencies_reviewed": false,
-      "download_approved": false,
-      "selected_file_bytes": null,
-      "fully_pinned_revision_sha": null,
-      "upstream_revision_sha_observed": "77b3a3f444612afe838fa0ece526b4c588541576",
-      "upstream_all_files_bytes_observed": 2143603,
-      "upstream_weights_bytes_observed": 1826360,
-      "upstream_file_count_observed": 3,
-      "upstream_lfs_sha256_count": 1,
-      "upstream_model_file": {
-        "path": "ising_decoder_surface_code_1_fast_r9_v1.0.77_fp16.safetensors",
-        "sha256": "22db7ad25b584d7588493d6ef815381c8d1263cfb29f212391a591b285ad0a05",
-        "bytes_exact": 1826360,
-        "source_metadata_not_downloaded": true
-      },
-      "candidate_selected_source_files": [
-        {
-          "path": "README.md",
-          "bytes": 12297,
-          "sha256": null,
-          "git_blob_sha1": "df111e1440234926bd0d914ad7307f117d9cce8c",
-          "local_sha_verified": false
-        },
-        {
-          "path": "ising_decoder_surface_code_1_fast_r9_v1.0.77_fp16.safetensors",
-          "bytes": 1826360,
-          "sha256": "22db7ad25b584d7588493d6ef815381c8d1263cfb29f212391a591b285ad0a05",
-          "git_blob_sha1": "bae50525966f5bd8a634ba44e5f9b30d2321827a",
-          "local_sha_verified": false
-        },
-        {
-          "path": "safety_and_security.md",
-          "bytes": 898,
-          "sha256": null,
-          "git_blob_sha1": "c6a08d00721a95eb809f663118f19149bb949e35",
-          "local_sha_verified": false
-        }
-      ],
-      "candidate_selected_source_bytes": 1839555,
-      "parameter_gate": {
-        "status": "PASS_TOTAL_PARAMS_LT_150B",
-        "total_parameters": 912772,
-        "review_date": "2026-11-15",
-        "evidence_kind": "CODE_DERIVED_FOUR_CONV_WITH_BIAS_PUBLISHER_APPROX",
-        "full_learned_pipeline_count_locally_verified": false
-      },
-      "forecast_priority": {
-        "wave": "S2",
-        "rank": 188,
-        "category": "separate_trained_scientific_state",
-        "scenario_status": "hypothetical only; no confirmed takedown"
-      },
-      "preservation_bundle": {
-        "learned_outcome": "回転表面符号の4層3D Conv、異なる学習済みチェックポイント。量子化違いでもColorCodeと同一学習状態でもない。",
-        "must_preserve": [
-          "README.md",
-          "ising_decoder_surface_code_1_fast_r9_v1.0.77_fp16.safetensors",
-          "safety_and_security.md",
-          "publisher original checkpoint hash, license and notice",
-          "corresponding exact inference source and ABI"
-        ],
-        "external_learned_and_software_dependencies": [
-          "NVIDIA/Ising-Decoding 12bbeb13c5cfc1a064171ac91b07aea61f2eaae8",
-          "matching PyMatching global decoder",
-          "surface syndrome and noise mapping"
-        ],
-        "excluded_duplicate_or_optional_formats": [
-          "ordinary quantized/deployment variants with same learned state"
-        ],
-        "fixed_manifest_complete": false,
-        "all_components_verified": false,
-        "scope_reference_only_no_download_manifest": true
-      },
-      "resource_screen": {
-        "source_all_repo_bytes": 2143603,
-        "source_bytes_are_not_selected_bytes": true,
-        "selected_file_bytes_final": null,
-        "hw_tested_on_user_machine": false
-      },
-      "can_enter_approved_queue": false,
-      "download_ready": false,
-      "research_only_nonexecutable": true,
-      "personal_access_verified": false,
-      "model_payload_fetched": false
+      "falsification_condition": "SHA doesn't match publisher, deserialization is unsafe, legality/ABI fails or anomaly evaluation shows no unique value",
+      "selection_budget_cap_bytes": 500000000
     }
   ],
   "screening_status": {
@@ -14125,7 +13945,5 @@
     "selected_shard_legal_deps_actual_bytes": null,
     "physical_spare_bytes": null,
     "budget_status": "UNFINALIZED_MUSIC_XL_PLUS_SELECT_SHARED_NOT_AN_EXECUTABLE_BUNDLE"
-  },
-  "v34_overlay": "catalog/revisions/v34-2026-11-15.json",
-  "v34_report": "docs/strategy/81-v34-added-diffusion-anomaly-and-two-qec-specialists.md"
+  }
 }

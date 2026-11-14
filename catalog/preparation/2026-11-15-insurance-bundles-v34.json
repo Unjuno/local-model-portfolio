@@ -3,7 +3,7 @@
   "source_revision": "v34-20261115",
   "policy_path": "policies/archival-insurance.json",
   "download_enabled": false,
-  "scope": "141 active research-only v34 insurance bundles",
+  "scope": "140 research-only active, v33 three and v34 two distinct trained outcomes",
   "critical_dependencies_travel_with_parent": true,
   "shared_dependency_hash_reuse_verified": false,
   "stage_meaning": {
@@ -2975,95 +2975,50 @@
     },
     {
       "asset_kind": "model",
+      "repo_id": "nvidia/Kumo-Tabular",
+      "stage": 2,
+      "is_new_v34": true,
+      "next_action": "FIRST_PARTY_SHA_RIGHTS_DEPENDENCY_AND_SECURE_RESTORE_AUDIT",
+      "preservation_bundle": {
+        "learned_outcome": "Single table classification/regression two original Large checkpoint states",
+        "must_preserve": [
+          "large/classifier.pt and large/regressor.pt at frozen full revision and per-file SHA",
+          "config.json/LICENSE/README and template",
+          "NVIDIA structured-data-models pinned commit and Python/PyTorch ABI"
+        ],
+        "excluded_or_optional": [
+          "small/medium same-purpose checkpoints",
+          "unbounded full HF repository"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "selected_bytes": null,
+      "download_approved": false,
+      "not_authorized": true
+    },
+    {
+      "asset_kind": "model",
       "repo_id": "nvidia/Kumo-Anomaly",
       "stage": 2,
       "is_new_v34": true,
-      "next_action": "VERIFY_SAFE_CHECKPOINT_TENSOR_COUNT_AND_RUNTIME",
+      "next_action": "FIRST_PARTY_SHA_RIGHTS_DEPENDENCY_AND_SECURE_RESTORE_AUDIT",
       "preservation_bundle": {
-        "learned_outcome": "時系列予測と異なる拡散ベース異常再構成の独立学習済み重み。旧SDKのpickle実行は不要で、発行者の別SDM実装が同一SHAのweights_onlyローダーを持つ。",
+        "learned_outcome": "Conditional diffusion multivariate time series reconstruction anomaly scoring and adaptive SCS/MACS thresholds",
         "must_preserve": [
-          ".gitattributes",
-          "README.md",
-          "curriculum_medium.yaml",
-          "final_model.pth",
-          "publisher original checkpoint hash, license and notice",
-          "corresponding exact inference source and ABI"
+          "final_model.pth LFS SHA256",
+          "curriculum_medium.yaml/LICENSE/README and fixed publisher revision",
+          "official patched SDM weights_only loader and isolated security-checked runtime"
         ],
-        "external_learned_and_software_dependencies": [
-          "Kumo-TS original code provenance",
-          "NVIDIA structured-data-models 46a6f20d20f1140912f7a9e6ecdda9a3cd3fda87",
-          "isolated patched PyTorch weights_only=True, no network"
-        ],
-        "excluded_duplicate_or_optional_formats": [
-          "ordinary quantized/deployment variants with same learned state"
+        "excluded_or_optional": [
+          "old and new revision same checkpoint SHA",
+          "legacy Kumo-TS weights_only=False execution"
         ],
         "fixed_manifest_complete": false,
         "all_components_verified": false,
-        "scope_reference_only_no_download_manifest": true
-      },
-      "selected_bytes": null,
-      "download_approved": false,
-      "not_authorized": true
-    },
-    {
-      "asset_kind": "model",
-      "repo_id": "nvidia/Ising-Decoder-ColorCode-1-Fast",
-      "stage": 2,
-      "is_new_v34": true,
-      "next_action": "VERIFY_HF_USER_GATE_RIGHTS",
-      "preservation_bundle": {
-        "learned_outcome": "三角色符号のシンドロームを3D CNN残差ボトルネック6ブロックで疎化する、SurfaceCodeと独立の学習成果。",
-        "must_preserve": [
-          "License.md",
-          "README.md",
-          "config.json",
-          "ising_decoder_color_code_1_fast_r13_v1.0.400_fp16.safetensors",
-          "safety_security_subcard.md",
-          "publisher original checkpoint hash, license and notice",
-          "corresponding exact inference source and ABI"
-        ],
-        "external_learned_and_software_dependencies": [
-          "NVIDIA/Ising-Decoding 12bbeb13c5cfc1a064171ac91b07aea61f2eaae8",
-          "matching Chromobius global decoder",
-          "triangle color syndrome and noise mapping"
-        ],
-        "excluded_duplicate_or_optional_formats": [
-          "ordinary quantized/deployment variants with same learned state"
-        ],
-        "fixed_manifest_complete": false,
-        "all_components_verified": false,
-        "scope_reference_only_no_download_manifest": true
-      },
-      "selected_bytes": null,
-      "download_approved": false,
-      "not_authorized": true
-    },
-    {
-      "asset_kind": "model",
-      "repo_id": "nvidia/Ising-Decoder-SurfaceCode-1-Fast",
-      "stage": 2,
-      "is_new_v34": true,
-      "next_action": "VERIFY_HF_USER_GATE_RIGHTS",
-      "preservation_bundle": {
-        "learned_outcome": "回転表面符号の4層3D Conv、異なる学習済みチェックポイント。量子化違いでもColorCodeと同一学習状態でもない。",
-        "must_preserve": [
-          "README.md",
-          "ising_decoder_surface_code_1_fast_r9_v1.0.77_fp16.safetensors",
-          "safety_and_security.md",
-          "publisher original checkpoint hash, license and notice",
-          "corresponding exact inference source and ABI"
-        ],
-        "external_learned_and_software_dependencies": [
-          "NVIDIA/Ising-Decoding 12bbeb13c5cfc1a064171ac91b07aea61f2eaae8",
-          "matching PyMatching global decoder",
-          "surface syndrome and noise mapping"
-        ],
-        "excluded_duplicate_or_optional_formats": [
-          "ordinary quantized/deployment variants with same learned state"
-        ],
-        "fixed_manifest_complete": false,
-        "all_components_verified": false,
-        "scope_reference_only_no_download_manifest": true
+        "scope_reference_only_no_download_manifest": true,
+        "runtime_execution_hold": true
       },
       "selected_bytes": null,
       "download_approved": false,

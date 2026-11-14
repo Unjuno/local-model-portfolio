@@ -9,6 +9,10 @@
 **通常の調査・選定・監査・更新の正本は `main` のみ。** 既存ブランチの成果はmainへ統合し、ユーザーから別途指示されない限り新しいブランチを作らない。旧資料の専用ブランチ名は歴史的な出典であり、新しい作業ブランチの作成命令ではない。
 
 
+## 最新v34（2026-11-15）
+
+[正本v34](catalog/CURRENT.json)は187件／有効140件、v33の185件を保持しKumo-Tabular／Kumo-Anomalyを別学習済み成果として条件付き追加。[調査と停止条件](docs/strategy/79-v34-kumo-trained-state-selection-2026-11-15.md)。Kumo-Anomalyのunsafe pickle旧runtimeは実行停止。全取得承認0、実HDDは未検査。旧v33/v32節は履歴。
+
 ## 2026-11-15・R77/R78：原本の静的保全と安全実行を分離
 
 [R77 Kumo-Anomaly同一重み・別公式ローダー調査](catalog/research/2026-11-15-r77-kumo-anomaly-publisher-safe-loader-and-revision-equality.json)では旧Kumo-TSの`weights_only=False`に対し、`NVIDIA/structured-data-models`の`weights_only=True`経路が**同じ公開SHAの学習済み重量**を使用すると確認。研究用静的保存をCONDITIONAL候補に修正したが、**モデル本体取得・Python実行は未承認**。PyTorch 2.9.1以前と2.14.xにはweights_only脆弱性の報告があり、公式修正版・隔離・再現ABIを別検証。第三者pickleを実行しない。

@@ -26,16 +26,15 @@ class CurrentPortfolioIntegrity(unittest.TestCase):
         cls.prep = read(cls.current["insurance_preparation_worklist_path"])
         cls.access = read(cls.current["latest_conditional_access_audit"]["path"])
 
-    def test_materialized_v32_matches_current(self):
+    def test_materialized_matches_current(self):
         items = self.catalog["items"]
-        self.assertEqual(self.current["revision_id"], "v32-20261114")
+        self.assertEqual(self.current["revision_id"], "v34-20261115")
         self.assertEqual(self.catalog["revision_id"], self.current["revision_id"])
-        self.assertEqual(len(items), 182)
-        self.assertEqual(len({identity(item) for item in items}), 182)
-        self.assertEqual(sum(item["asset_kind"] == "model" for item in items), 156)
-        self.assertEqual(sum(item["asset_kind"] == "dataset" for item in items), 26)
-        for decision, count in {"select": 53, "conditional": 82,
-                                "hold": 28, "deferred": 13, "excluded": 6}.items():
+        self.assertEqual(len(items), self.current["expected"]["tracked"])
+        self.assertEqual(len({identity(item) for item in items}), self.current["expected"]["tracked"])
+        self.assertEqual(sum(item["asset_kind"] == "model" for item in items), self.current["expected"]["models"])
+        self.assertEqual(sum(item["asset_kind"] == "dataset" for item in items), self.current["expected"]["datasets"])
+        for decision, count in self.current["expected"]["by_decision"].items():
             self.assertEqual(sum(item["portfolio_decision"] == decision
                                  for item in items), count)
         self.assertTrue(all(not item["download_approved"] for item in items))
@@ -48,16 +47,16 @@ class CurrentPortfolioIntegrity(unittest.TestCase):
             self.assertIn(identity(item), present)
             self.assertEqual(item["portfolio_decision"],
                              present[identity(item)]["portfolio_decision"])
-        self.assertEqual(len(present) - len(before["items"]), 32)
+        self.assertEqual(len(present) - len(before["items"]), self.current["expected"]["tracked"] - 150)
 
-    def test_candidate_queue_and_dependencies_are_same_135(self):
+    def test_candidate_queue_and_dependencies_match_current(self):
         active = {identity(item) for item in self.catalog["items"]
                   if item["portfolio_decision"] in ("select", "conditional")}
         proposed = [identity(item) for item in self.queue["candidates"]]
         prepared = [identity(item) for item in self.prep["items"]]
-        self.assertEqual(len(active), 135)
-        self.assertEqual(len(proposed), 135)
-        self.assertEqual(len(prepared), 135)
+        self.assertEqual(len(active), self.current["expected"]["active"])
+        self.assertEqual(len(proposed), self.current["expected"]["active"])
+        self.assertEqual(len(prepared), self.current["expected"]["active"])
         self.assertEqual(set(proposed), active)
         self.assertEqual(set(prepared), active)
         self.assertEqual(self.queue["source_revision"], self.current["revision_id"])
@@ -75,9 +74,9 @@ class CurrentPortfolioIntegrity(unittest.TestCase):
         entries = self.access["entries"]
         self.assertEqual(self.access["source_revision"], self.current["revision_id"])
         self.assertTrue(self.access["fail_closed_if_missing"])
-        self.assertEqual(len(entries), 82)
+        self.assertEqual(len(entries), self.current["expected"]["by_decision"]["conditional"])
         self.assertEqual({identity(row) for row in entries}, cond)
-        self.assertEqual(sum(row["hub_gated"] for row in entries), 17)
+        self.assertEqual(sum(bool(row["hub_gated"]) for row in entries), self.access["gated_count"])
         self.assertTrue(next(row["hub_gated"] for row in entries
                              if row["repo_id"] == "gradium/phonon-40m-multilingual"))
         self.assertTrue(all(row["owner_access_permission"] == "unknown"
@@ -91,7 +90,7 @@ class CurrentPortfolioIntegrity(unittest.TestCase):
                    if item["portfolio_decision"] in ("select", "conditional")
                    and item["asset_kind"] == "model"
                    and item["parameter_gate"]["status"] == "UNVERIFIED_BLOCK_FINAL_LOCK"}
-        self.assertEqual(len(unknown), 7)
+        self.assertEqual(len(unknown), self.current["expected"]["parameter_evidence_review"]["remaining_active_unknown"])
         candidates = {identity(row): row for row in self.queue["candidates"]}
         self.assertTrue(all(candidates[key]["research_only"]
                             and not candidates[key]["can_enter_approved_queue"]

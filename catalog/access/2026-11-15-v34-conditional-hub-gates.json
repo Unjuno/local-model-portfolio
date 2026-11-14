@@ -2,9 +2,9 @@
   "schema_version": 1,
   "source_revision": "v34-20261115",
   "reviewed_on": "2026-11-15",
-  "scope": "82 earlier conditional sources plus 3 v33 plus 3 v34; Gated count19, separate private flag",
-  "source": "catalog/proposals/05-v31-conditional-selection-review.json plus official model card and files for 3 v32 additions",
-  "gated_count": 19,
+  "scope": "v32 82 historical conditional entries plus 3 v33 and 2 v34 metadata-only checks",
+  "source": "NVIDIA and publisher model cards; owner permissions not inferred",
+  "gated_count": 17,
   "owner_authorizations_verified": 0,
   "fail_closed_if_missing": true,
   "download_authorized": false,
@@ -834,7 +834,7 @@
       "asset_kind": "model",
       "repo_id": "ibm-granite/granite-4.1-3b-llmon-preview",
       "hub_gated": false,
-      "publisher_private_flag": false,
+      "access_uncertainty": "publisher_public_listing_only",
       "license_tag": "apache-2.0",
       "reviewed_on": "2026-11-15",
       "source_url": "https://huggingface.co/ibm-granite/granite-4.1-3b-llmon-preview",
@@ -844,8 +844,8 @@
     {
       "asset_kind": "model",
       "repo_id": "perplexity-ai/pplx-decider-flash-v1.3",
-      "hub_gated": false,
-      "publisher_private_flag": false,
+      "hub_gated": null,
+      "access_uncertainty": "release_manifest_private_true_no_owner_entitlement",
       "license_tag": "apache-2.0",
       "reviewed_on": "2026-11-15",
       "source_url": "https://huggingface.co/perplexity-ai/pplx-decider-flash-v1.3",
@@ -856,10 +856,20 @@
       "asset_kind": "model",
       "repo_id": "nvidia/Kumo-Relational",
       "hub_gated": false,
-      "publisher_private_flag": false,
+      "access_uncertainty": "publisher_public_listing_only",
       "license_tag": "openmdw-1.1",
       "reviewed_on": "2026-11-15",
       "source_url": "https://huggingface.co/nvidia/Kumo-Relational",
+      "owner_access_permission": "unknown",
+      "download_authorized": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/Kumo-Tabular",
+      "hub_gated": false,
+      "license_tag": "openmdw-1.1",
+      "reviewed_on": "2026-11-15",
+      "source_url": "https://huggingface.co/nvidia/Kumo-Tabular",
       "owner_access_permission": "unknown",
       "download_authorized": false
     },
@@ -872,27 +882,8 @@
       "source_url": "https://huggingface.co/nvidia/Kumo-Anomaly",
       "owner_access_permission": "unknown",
       "download_authorized": false
-    },
-    {
-      "asset_kind": "model",
-      "repo_id": "nvidia/Ising-Decoder-ColorCode-1-Fast",
-      "hub_gated": true,
-      "license_tag": "openmdw-1.1",
-      "reviewed_on": "2026-11-15",
-      "source_url": "https://huggingface.co/nvidia/Ising-Decoder-ColorCode-1-Fast",
-      "owner_access_permission": "unknown",
-      "download_authorized": false
-    },
-    {
-      "asset_kind": "model",
-      "repo_id": "nvidia/Ising-Decoder-SurfaceCode-1-Fast",
-      "hub_gated": true,
-      "license_tag": "other; publisher card NVIDIA Open Model License",
-      "reviewed_on": "2026-11-15",
-      "source_url": "https://huggingface.co/nvidia/Ising-Decoder-SurfaceCode-1-Fast",
-      "owner_access_permission": "unknown",
-      "download_authorized": false
     }
   ],
-  "tracked_conditional": 88
+  "tracked_conditional": 87,
+  "unverified_hub_gate_count": 1
 }
