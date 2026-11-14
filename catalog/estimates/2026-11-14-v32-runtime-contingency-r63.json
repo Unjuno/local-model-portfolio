@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-14",
+  "type": "STOCK_ACE_XL_MAIN_CHECK_RUNTIME_GAP",
+  "catalog_revision": "v32-20261114",
+  "source_commit": "beecd66d1243ffe6f21e04348cbdeba55c71b690",
+  "publisher_repo": "ACE-Step/Ace-Step1.5",
+  "pinned_publisher_revision": "19671f406d603126926c1b7e2adc169acbcade22",
+  "files": [
+    {
+      "path": "acestep-v15-turbo/config.json",
+      "bytes": 1968,
+      "identifier_type": "GIT_BLOB_SHA1",
+      "identifier": "6a0b5c09a654614302947fd1d7041f7ed0764d8c",
+      "reused_from_R62": "root/config.json"
+    },
+    {
+      "path": "acestep-v15-turbo/configuration_acestep_v15.py",
+      "bytes": 13130,
+      "identifier_type": "GIT_BLOB_SHA1",
+      "identifier": "965a1b73afb1c89d0959c7d80691e487fdfde505",
+      "reused_from_R62": null
+    },
+    {
+      "path": "acestep-v15-turbo/model.safetensors",
+      "bytes": 4787825604,
+      "identifier_type": "LFS_SHA256",
+      "identifier": "3f6e0797fad420a39bd33979eb6e840e30989e34a3794e843d23b60ec6e422d7",
+      "reused_from_R62": null
+    },
+    {
+      "path": "acestep-v15-turbo/modeling_acestep_v15_turbo.py",
+      "bytes": 96036,
+      "identifier_type": "GIT_BLOB_SHA1",
+      "identifier": "fa1162a5a01cc45c7959f3c531e2a8272ca05104",
+      "reused_from_R62": null
+    },
+    {
+      "path": "acestep-v15-turbo/silence_latent.pt",
+      "bytes": 3841215,
+      "identifier_type": "LFS_SHA256",
+      "identifier": "a778e9dd942f5e8b2c09c55370782d318834432b03dabbcdf70e6ed49ad6358b",
+      "reused_from_R62": "XL/silence_latent.pt"
+    }
+  ],
+  "official_code_commit": "ca1e85fe9430179831e6bc6be790c332190a3866",
+  "official_code_url": "https://github.com/ace-step/ACE-Step-1.5/tree/ca1e85fe9430179831e6bc6be790c332190a3866",
+  "static_code_facts": {
+    "main_requires_four": [
+      "acestep-v15-turbo",
+      "vae",
+      "Qwen3-Embedding-0.6B",
+      "acestep-5Hz-lm-1.7B"
+    ],
+    "main_checked_before_specific_XL": true,
+    "auto_snapshot_download_if_missing": true,
+    "auto_snapshot_has_no_revision_or_allow_patterns": true,
+    "modelscope_fallback": true,
+    "python": ">=3.11,<3.13",
+    "linux_torch": "2.10.0+cu128",
+    "windows_torch": "2.7.1+cu128",
+    "transformers": ">=4.51.0,<4.58.0",
+    "diffusers": ">=0.37.0",
+    "uv_lock_blob_sha1": "87c2442e7a852af1c19da39e0ee2008fb6e17b41",
+    "wheelhouse_bytes": null
+  },
+  "capacity_bytes": {
+    "prior_R62": 3466070232173,
+    "gross_2B": 4791777953,
+    "reused": 3843183,
+    "new_2B": 4787934770,
+    "stock": 3470858166943,
+    "margin": 329141833057
+  },
+  "hypothetical_3p8TB_200GB_margin": 129141833057,
+  "physical_real_HDD_free_bytes": null,
+  "complete_offline_runtime_bytes": null,
+  "selection_modified": false,
+  "downloads_approved": 0,
+  "model_downloaded": false,
+  "model_executed": false
+}
