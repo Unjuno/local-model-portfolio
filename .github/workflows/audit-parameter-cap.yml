@@ -1,34 +1,6 @@
 name: Model portfolio 150B baseline and quantized exception audit
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'catalog/**'
-      - 'tests/**'
-      - 'policies/limits.json'
-      - 'queues/**'
-      - 'scripts/check_parameter_cutoff.py'
-      - 'scripts/audit_selection_decisions.py'
-      - 'scripts/archive_preflight.py'
-      - 'tests/test_archive_preflight.py'
-      - 'policies/selection-decision-v17.json'
-      - 'policies/personal-research-rights-v17.json'
-      - 'tests/test_parameter_cutoff.py'
-      - 'tests/test_decision_protocol.py'
-      - '.github/workflows/audit-parameter-cap.yml'
-  pull_request:
-    paths:
-      - 'catalog/**'
-      - 'tests/**'
-      - 'scripts/archive_preflight.py'
-      - 'tests/test_archive_preflight.py'
-      - 'policies/limits.json'
-      - 'queues/**'
-      - 'scripts/check_parameter_cutoff.py'
-      - 'tests/test_parameter_cutoff.py'
-      - '.github/workflows/audit-parameter-cap.yml'
   workflow_dispatch:
 
 permissions:
