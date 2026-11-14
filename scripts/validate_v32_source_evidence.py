@@ -145,8 +145,64 @@ def main() -> None:
     )
     assert scenario["source_only_not_strict_upper_or_lower_bound"] is True
 
+    # Publisher OID evidence for the RFD4 revision difference, without payload downloads.
+    r71 = load("catalog/research/2026-11-15-r71-rfd4-revision-file-identity.json")
+    identity = report["source_identity_followup_2026_11_15"]
+    assert r71["repo_id"] == "nvidia/RFD4-Proteina"
+    assert r71["approved"] is False and r71["download_enabled"] is False
+    assert r71["payload_downloaded"] is False and r71["local_hash_verified"] is False
+    assert identity["verified_evidence"] == "catalog/research/2026-11-15-r71-rfd4-revision-file-identity.json"
+    assert r71["statistics"]["selected_files"] == 7
+    assert r71["statistics"]["identical_files"] == 3
+    assert r71["statistics"]["changed_support_files"] == 4
+    root = next(x for x in r71["files"] if x["path"] == "model.safetensors")
+    assert root["content_identical"] is True
+    assert root["old"]["lfs_sha256"] == root["new"]["lfs_sha256"]
+    assert root["new"]["lfs_sha256"] == r71["statistics"]["root_model_payload_sha256"]
+    assert root["new"]["bytes"] == 1742660596
+    r64_rfd4 = sources["nvidia/RFD4-Proteina"]
+    assert r64_rfd4["revision"] == r71["source_revision_candidate"]
+    assert r71["source_revision_old"] == now[("model", "nvidia/RFD4-Proteina")]["upstream_revision_sha_observed"]
+    for entry in r71["files"]:
+        candidate = next(f for f in r64_rfd4["files"] if f["path"] == entry["path"])
+        assert entry["new"]["bytes"] == candidate["bytes"]
+        assert entry["new"]["git_blob_oid"] == candidate["git_blob_sha1"]
+        if candidate["source_sha256"]:
+            assert entry["new"]["lfs_sha256"] == candidate["source_sha256"]
+    assert sum(x["old"]["bytes"] for x in r71["files"]) == r71["statistics"]["old_selected_scope_bytes"]
+    assert sum(x["new"]["bytes"] for x in r71["files"]) == r71["statistics"]["new_selected_scope_bytes"]
+    assert r71["statistics"]["new_minus_old_selected_scope_bytes"] == 2233
+    assert sum(x["content_identical"] for x in r71["files"]) == 3
+    assert sorted(x["path"] for x in r71["files"] if not x["content_identical"]) == sorted(
+        ["README.md", "inference.yaml", "provenance.json", "release-checkpoints.json"]
+    )
+
+    # R64 internal dedup is NOT a claim of global v27+v32 dedup or HDD free space.
+    by_hash = {}
+    r64_file_rows = 0
+    for repo in sources.values():
+        for file in repo["files"]:
+            digest = ("sha256:" + file["source_sha256"] if file["source_sha256"]
+                      else "git_blob_sha1:" + file["git_blob_sha1"])
+            r64_file_rows += 1
+            if digest in by_hash:
+                assert by_hash[digest] == file["bytes"]
+            else:
+                by_hash[digest] = file["bytes"]
+    unique_bytes = sum(by_hash.values())
+    assert r64_file_rows == 91
+    assert source_sum - unique_bytes == identity["r64_internal_digest_deduplicated_bytes"] == 4451775
+    assert len(by_hash) == identity["r64_unique_git_blob_or_lfs_identity_entries"] == 87
+    assert identity["v27_plus_r64_internal_unique_plus_r48_scenario_bytes"] == (
+        capacity["known_scope_content_union_bytes"] + unique_bytes + profile["known_scope_bytes"]
+    )
+    assert report["hard_gates"]["rfd4_model_payload_revision_difference_unverified"] is False
+    assert report["hard_gates"]["rfd4_supporting_material_and_selected_revision_still_need_final_lock"] is True
+
     print(json.dumps({
         "result": "PASS_SOURCE_METADATA_JOIN_ONLY",
+        "rfd4_root_model_oid_equivalent": True,
+        "r64_verified_internal_duplicate_reference_bytes": 4451775,
         "revision": current["revision_id"],
         "active": len(now),
         "v27_historical": counts["historical"],
