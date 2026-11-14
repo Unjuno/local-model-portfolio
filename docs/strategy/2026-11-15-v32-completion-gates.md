@@ -190,3 +190,70 @@ The arithmetic-only source scenario is `B27 + BR64 - DR64 + BZ`; dimensions are 
 **Interdisciplinary links:** ML tensor provenance; software supply-chain commit and blob identity; long-term digital archiving and content-addressed deduplication; license and authorization governance.
 
 **Next question:** Should the archive preserve the older RFD4 README/inference recipe as historical documentation alongside the newer selected seven-file source set, while storing the main trained weight file only once? The hashes support this as a research option; rights and runtime verification remain independent.
+
+## 2026-11-15 R72/R73: source-file byte provenance bridge and nine historical revision reconciliations
+
+New machine-readable proof: [R72 all 135 asset-level source-byte bridge](../../catalog/research/2026-11-15-r72-v32-active135-selected-source-byte-bridge.json); [R73 all nine historical/current source revision differences](../../catalog/research/2026-11-15-r73-nine-v27-v32-revision-payload-identity.json). Offline **manual** standard-library validator: [`scripts/validate_v32_selected_source_bridge.py`](../../scripts/validate_v32_selected_source_bridge.py). Python validator execution on the full user repository was **not performed** here; the same numeric invariants and 135-ID coverage were checked while compiling the GitHub artifact. No extra GitHub Actions trigger was enabled.
+
+### Essential correction: full repository sizes are not chosen file sizes
+
+The **v27 capacity file ledger was independently re-read in full** (21,383,329 characters in the API response). All 126 historical selected assets have an explicit list of their chosen files; **59,938 named file references**, each carrying a Git blob SHA1 and 50,314 also carrying a publisher SHA256 field. These references are not owner-local checksum attestations. The ledger also flags 762 masked/unknown payload identity occurrences, which cannot be silently marked verified.
+
+| Historical v27 / 126 retained active IDs | Value | What this actually means |
+| --- | ---: | --- |
+| `source_scope_bytes` summed | 6,399,135,485,511 B | Wider publisher repository scopes, **not selected payload** |
+| Sum of `primary_file_bytes` | **3,413,612,735,064 B** | Exactly the sum of the explicitly named selected file references |
+| Parent-inclusive `package_bytes` sum | 3,569,207,077,684 B | Parent references and alternative package context; **not** final physical bytes |
+| Assets where source scope differs from selected bytes | **66 / 126** | A 6.399TB full-repo plan would be incorrect |
+| Broad scope less exact selected files | 2,985,522,750,447 B | Difference between unlike source scopes, **not a physically verified space saving** |
+
+Example: `0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF` has historical `source_scope_bytes=1,645,270,647,302`, while its selected `primary_file_bytes=16,560,392,734`; do **not** archive all redundant quantizations and GSQ shard variants just because they exist upstream.
+
+### Nine v27→v32 revision SHA mismatches now have publisher file-level evidence
+
+Nine differences in observed Git commit SHAs were checked using the official Hugging Face immutable [repository-tree API](https://huggingface.co/docs/hub/api). Each previously selected file path was compared at the two revisions, checking its publisher Git blob OID and byte size; the historical file metadata also matched the old publisher tree.
+
+| Evidence | Actual result |
+| --- | ---: |
+| Repositories with different commit IDs | 9 |
+| Historical selected files compared | **233** |
+| Selected trained weight blobs found changed | **0** |
+| Selected files with unchanged identities | 221 |
+| Support/configuration files changed, still present | 8 |
+| Old evaluation YAML no longer at new revision | 4 |
+| Old-publisher source file metadata disagreements | 0 |
+
+Of the eight changed support files, seven are README files and one is `ibm-granite/granite-speech-5.0-2b/tokenizer_config.json`. The four absent evaluation files are `.eval_results/*.yaml` in `LiquidAI/LFM2.5-24B-A2B`; they are not trained weights. **The nine model-weight payloads can be treated as identical for the previously selected file sets, but full inference equivalence is NOT established**, especially where tokenizer configuration changed. The R73 record includes exact commit IDs, official immutable API URLs, named changed files and relevant old/new Git blob IDs. Any newly added, previously unselected model variant is outside this nine-repo comparison.
+
+The historical 126 v27 records join the current v32 inventory as **85 matching observed revisions, 32 current catalog observed-revision blanks, and nine source-commit differences with unchanged selected weight blobs**. The blanks are missing *catalog linkage*, not proof that the publisher source was unavailable.
+
+### Nine post-v27 assets, exact known source scopes versus final rights
+
+The eight R64 asset-specific pinned candidate source profiles total **33,219,541,806 B**. R64 also references `ACE-Step/Ace-Step1.5` as a **distinct external dependency source** of 5,300,324,640 B; it is not a tenth new selected asset. The ninth new active asset `Zyphra/ZONOS3-Mini` has a 14-file native **reference** profile of 11,076,560,635 B, not a proven minimal, fully licensed or reproducible final configuration.
+
+Adding the v27 historical primary selected files plus the eight R64 active candidates and the ZONOS reference gives **3,457,908,837,505 B** as a **source-file arithmetic scenario**. Adding only the specifically R64-listed external ACE dependency gives 3,463,209,162,145 B, still with other unknown dependencies. The separate R70/R71 source union scenario counts different kinds of historically deduplicated/source and dependent bytes; **do not add those two scenarios or treat either as owner disk free space**.
+
+### Variables and dimensional check
+
+| Symbol | Meaning (日本語) | SI unit | Definition | Domain / premise | Type |
+| --- | --- | --- | --- | --- | --- |
+| `P_{old}` | v27の選定一次ファイル容量 | byte | 3,413,612,735,064 | 履歴上の選定126件、許諾未完了 | 非負整数スカラー |
+| `P_{R64}` | R64の新規8資産の選定ソース容量 | byte | 33,219,541,806 | 外部ACE共有repoは別勘定 | 非負整数スカラー |
+| `P_Z` | ZONOS固定参考構成の容量 | byte | 11,076,560,635 | 最小実行集合を未証明 | 非負整数スカラー |
+| `P_A` | ACE共有外部ソースの容量 | byte | 5,300,324,640 | 他の依存と重複の可能性 | 非負整数スカラー |
+| `C` | 名目保存上限 | byte | 4,000,000,000,000 | 実HDD容量を未測定 | 非負整数スカラー |
+| `F` | 必須空き容量の下限 | byte | 200,000,000,000 | 物理実測が必要 | 非負整数スカラー |
+
+**Derivation:** Historical selected files `P_{old}` + eight new asset source profiles `P_{R64}` + ZONOS reference `P_Z` = 3,457,908,837,505 byte. A hypothetical empty, **truly 4,000,000,000,000-byte usable drive** would have the arithmetic difference `C - F - P_{old} - P_{R64} - P_Z = 342,091,162,495 byte`. This **is not measured free space**, a guaranteed maximum additional model budget, nor proof of archive fit because actual learned dependencies, runtime, staging, cache and disk occupancy are unknown. All terms and the result have byte dimension; model-parameter counts are dimensionless and cannot be substituted for byte counts.
+
+### Completion conditions / falsification / errors
+
+**H:** Source evidence for each of the 135 active IDs can be linked to a historical or pinned candidate file scope; all nine historical Git SHA differences can be resolved as no change to previously selected trained weight content.  
+**T:** Census of 135 active IDs, 126 v27 exact selected-file source profiles and nine new selected IDs; immutable two-revision comparison for the 233 paths across the nine mismatched older repos; stop if any old file OID or byte mismatches the publisher's historical snapshot.  
+**D:** PASS for source *evidence linking* and zero changed selected weight blobs in the nine checked pairs; **UNCERTAIN** for final file manifest, full rights, selected dependencies, runtime and physical space; zero acquisition approvals.  
+**C:** Newer revisions may introduce optional learned components or alter inference configuration; a prior file set need not be the newly selected optimal file set. A Git blob SHA alone does not attest to a locally stored large weight.  
+**U:** Time-varying Hub terms, missing local SHA measurements, implicit trained components, restricted individual Gated permissions and staging peak are dominant sources; no calibrated `u_c` and coverage factor `k` can be computed.
+
+**ERROR CHECK:** 182 tracked; 135 active; 126 old+8 R64+1 ZONOS=135; 59,938 historical file references; 233 selected cross-revision checks; 0 changed selected trained-weight blobs in the nine pairs; v32 final selected bytes still absent 133, final revision absent 133; 0 downloads, 0 new approvals.
+
+**Next question:** The historical SHA matches can remove nine *weight-identity* uncertainties, but the practical next bottleneck is **32 missing canonical revision links, 133 unfinished final manifests and unreviewed runtime/licensing**. Which externally required trained dependencies can be proven identical to already selected weights by SHA, rather than archived twice?
