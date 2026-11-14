@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "artifact": "R71_NVIDIA_RFD4_PINNED_SEVEN_FILE_DIGEST_COMPARISON",
+  "date": "2026-11-15",
+  "repo_id": "nvidia/RFD4-Proteina",
+  "purpose": "Reconcile canonical observed revision and R64 candidate revision without changing canonical selection; full root model weight identical, but supporting files and optional component tree differ.",
+  "source_manifest": "manifests/drafts/r64-eight-source-scopes.candidate.json",
+  "source_metadata_api_urls": {
+    "old": "https://huggingface.co/api/models/nvidia/RFD4-Proteina/tree/cf31b93509df5af854c7f6ad704f5c83c77c0698?recursive=false",
+    "new": "https://huggingface.co/api/models/nvidia/RFD4-Proteina/tree/a06e2509c7033b010fc43614e9fd840303588502?recursive=false"
+  },
+  "source_revision_old": "cf31b93509df5af854c7f6ad704f5c83c77c0698",
+  "source_revision_candidate": "a06e2509c7033b010fc43614e9fd840303588502",
+  "verification_scope": "Seven selected root source files only, official immutable HF tree API: bytes, Git blob OID and model LFS SHA. This is publisher metadata not locally hashed payload.",
+  "statistics": {
+    "selected_files": 7,
+    "identical_files": 3,
+    "changed_support_files": 4,
+    "old_selected_scope_bytes": 1742695830,
+    "new_selected_scope_bytes": 1742698063,
+    "new_minus_old_selected_scope_bytes": 2233,
+    "root_model_payload_identical_by_publisher_sha": true,
+    "root_model_payload_sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0",
+    "root_model_payload_bytes": 1742660596,
+    "changed_support_paths": [
+      "README.md",
+      "inference.yaml",
+      "provenance.json",
+      "release-checkpoints.json"
+    ],
+    "identical_paths": [
+      "LICENSE",
+      "config.json",
+      "model.safetensors"
+    ]
+  },
+  "files": [
+    {
+      "path": "LICENSE",
+      "catalog_committed_candidate_bytes": 1533,
+      "old": {
+        "bytes": 1533,
+        "git_blob_oid": "db22701893d09ea1d7126b68cc7262695278551f",
+        "lfs_sha256": null
+      },
+      "new": {
+        "bytes": 1533,
+        "git_blob_oid": "db22701893d09ea1d7126b68cc7262695278551f",
+        "lfs_sha256": null
+      },
+      "content_identical": true
+    },
+    {
+      "path": "README.md",
+      "catalog_committed_candidate_bytes": 18756,
+      "old": {
+        "bytes": 19387,
+        "git_blob_oid": "38973b88f8f0d9db49d063cdb44686443774faa1",
+        "lfs_sha256": null
+      },
+      "new": {
+        "bytes": 18756,
+        "git_blob_oid": "a48b4228e25c94d43faa033f8bb8fc7b8bc350af",
+        "lfs_sha256": null
+      },
+      "content_identical": false
+    },
+    {
+      "path": "config.json",
+      "catalog_committed_candidate_bytes": 7270,
+      "old": {
+        "bytes": 7270,
+        "git_blob_oid": "6e12704f9b16392d9d3b5fedda1638f3b7759b6a",
+        "lfs_sha256": null
+      },
+      "new": {
+        "bytes": 7270,
+        "git_blob_oid": "6e12704f9b16392d9d3b5fedda1638f3b7759b6a",
+        "lfs_sha256": null
+      },
+      "content_identical": true
+    },
+    {
+      "path": "inference.yaml",
+      "catalog_committed_candidate_bytes": 3673,
+      "old": {
+        "bytes": 2891,
+        "git_blob_oid": "e96774540c1b691d86a25b353546bfaf32dd324e",
+        "lfs_sha256": null
+      },
+      "new": {
+        "bytes": 3673,
+        "git_blob_oid": "72df987c63f545c2ea1af3bf342b7bfa26ffad46",
+        "lfs_sha256": null
+      },
+      "content_identical": false
+    },
+    {
+      "path": "model.safetensors",
+      "catalog_committed_candidate_bytes": 1742660596,
+      "old": {
+        "bytes": 1742660596,
+        "git_blob_oid": "3a6858ef2ee0cdf80a432f433b29915537629a50",
+        "lfs_sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0"
+      },
+      "new": {
+        "bytes": 1742660596,
+        "git_blob_oid": "3a6858ef2ee0cdf80a432f433b29915537629a50",
+        "lfs_sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0"
+      },
+      "content_identical": true
+    },
+    {
+      "path": "provenance.json",
+      "catalog_committed_candidate_bytes": 2480,
+      "old": {
+        "bytes": 1893,
+        "git_blob_oid": "c2bac271158df33bfe872c581a172ae604122726",
+        "lfs_sha256": null
+      },
+      "new": {
+        "bytes": 2480,
+        "git_blob_oid": "ef6ee26800b16e51369cb12f0d544b9c3c94b6fe",
+        "lfs_sha256": null
+      },
+      "content_identical": false
+    },
+    {
+      "path": "release-checkpoints.json",
+      "catalog_committed_candidate_bytes": 3755,
+      "old": {
+        "bytes": 2260,
+        "git_blob_oid": "b13be959d51a86a3e932dfed67149552eb9ee868",
+        "lfs_sha256": null
+      },
+      "new": {
+        "bytes": 3755,
+        "git_blob_oid": "3ede0e399ba496fe3e852f0e776d98f943f01d44",
+        "lfs_sha256": null
+      },
+      "content_identical": false
+    }
+  ],
+  "additional_context": {
+    "old_release_checkpoints_metadata_recorded_bundle_sha": "5f00cdcd4df57b121ad8edcbe7f2d16b9f2ffa1f878056e23b97a2eaf978f4cc",
+    "new_release_checkpoints_metadata_recorded_bundle_sha": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0",
+    "old_release_manifest_stored_parameters": 435622721,
+    "new_release_manifest_stored_parameters": 435622465,
+    "old_manifest_is_stale_relative_to_actual_old_root_model": true,
+    "evidence_manifest_old": "https://huggingface.co/nvidia/RFD4-Proteina/blob/cf31b93509df5af854c7f6ad704f5c83c77c0698/release-checkpoints.json",
+    "evidence_manifest_new": "https://huggingface.co/nvidia/RFD4-Proteina/blob/a06e2509c7033b010fc43614e9fd840303588502/release-checkpoints.json",
+    "note": "The old manifest describes an earlier bundle, yet the actual old revision's model.safetensors already has the new SHA. Compare actual file OIDs rather than treating referenced manifest SHA as the checkpoint bytes at that commit. Extra base/adapter trees appear in candidate revision; this 7-file profile does not cover them."
+  },
+  "decision": "MAIN_MODEL_SAME_PAYLOAD_SUPPORT_FILES_DIFFER; USE_CANDIDATE_VERSIONED_COMPLETE_SOURCE_PROFILE_IF_RIGHTS_AND_DEPS_LATER_ALLOW. NO FINAL_LOCK_OR_ACQUISITION_APPROVAL",
+  "approved": false,
+  "download_enabled": false,
+  "payload_downloaded": false,
+  "local_hash_verified": false,
+  "license_and_dependency_clearance": false
+}
