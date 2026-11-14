@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-11-15",
+  "scope": "RESEARCH_PROPOSALS_NO_MODEL_DOWNLOAD_NOT_FORMAL_V33",
+  "catalog_revision": "v32-20261114",
+  "canonical_baseline_assets": 182,
+  "canonical_baseline_active": 135,
+  "selection_state_unchanged": true,
+  "proposal_policy": "Rank by independent trained state, irreproducible science and legal availability rather than parameter size; do not treat ordinary quantization or optional backend drafts as distinct models. Nominate adoption only after exact legal/runtime/dependency checks.",
+  "candidate_count": 5,
+  "potential_new_select_without_owner_approval": 0,
+  "source_file_subsets": {
+    "selected_selected_scope_bytes_by_candidate": {
+      "kumo_relational": 243656960,
+      "kumo_anomaly": 29612151,
+      "ising_color_meta": 5899248,
+      "ising_surface_meta": 1826360,
+      "nemotron_parse_incomplete": 2524008942
+    },
+    "note": "Bytes are selected source references, not final dependency-complete bytes or authorized acquisition."
+  },
+  "preserve_hard_stops": [
+    "Gated conditions and user-specific access",
+    "Publisher license and all parent notices",
+    "No pickle execution to inspect weights",
+    "Runtime and pretrained dependency closure and exact local hardware ABI",
+    "Physical 4TB budget and 200GB real free floor",
+    "Manifest owner approval and local SHA verification"
+  ],
+  "candidates": [
+    {
+      "repo_id": "nvidia/Kumo-Relational",
+      "source_url": "https://huggingface.co/nvidia/Kumo-Relational",
+      "source_api": "https://huggingface.co/api/models/nvidia/Kumo-Relational?blobs=true",
+      "source_revision": "efdbb110daea5aae123447864a64612e8a3dc6be",
+      "publisher_last_modified": "2026-10-14T17:14:23.000Z",
+      "anonymous_access_state": "public_ungated_metadata",
+      "license_card_tag": "openmdw-1.1",
+      "observed_repo_file_count": 7,
+      "scope_kind": "RESEARCH_CANDIDATE_ONLY_NOT_CLOSED_BUNDLE",
+      "candidate_selected_file_count": 7,
+      "candidate_selected_source_bytes": 243656960,
+      "proposed_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "publisher_git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "publisher_lfs_sha256": null,
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 2693,
+          "publisher_git_blob_sha1": "161a8f01c0e68899bf4175a5c641c5fa0e9b11db",
+          "publisher_lfs_sha256": null,
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 1294,
+          "publisher_git_blob_sha1": "54b830a9415bf4d578e5d5af7940134940fc35c1",
+          "publisher_lfs_sha256": null,
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "THIRD-PARTY-NOTICES.txt",
+          "bytes": 1883,
+          "publisher_git_blob_sha1": "28215aee453d02bec3fc22ac534197b7665bc7f2",
+          "publisher_lfs_sha256": null,
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 139,
+          "publisher_git_blob_sha1": "5aa62853e46843ea417d3c8dd930c3e7bf976b8f",
+          "publisher_lfs_sha256": null,
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "classifier.pt",
+          "bytes": 119862733,
+          "publisher_git_blob_sha1": "44e3bd06093e653692946db1769c7f1a3251cd0e",
+          "publisher_lfs_sha256": "0c2e35cc18303f0d3ddeaf04e9cab6ca3a8bd6ea17195ac0e42d47af4bcb2a2d",
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "regressor.pt",
+          "bytes": 123786699,
+          "publisher_git_blob_sha1": "58486790b41ab108d4e1c28016ed05c56a557797",
+          "publisher_lfs_sha256": "f863b3632f738e1444fb83a8cea5746f298889b5c96953a000c4720d202ae4cf",
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        }
+      ],
+      "model_reason": "Two independent classification/regression finetunes of TabICLv2 for relational tabular in-context learning; distinct from existing time-series forecast and OCR models.",
+      "decision": "RECOMMEND_CONDITIONAL_FOR_NEXT_FORMAL_REVIEW",
+      "investigation_priority": "P1_DISTINCT_TRAINED_STATE",
+      "unresolved": [
+        "Torch .pt serialization/pickle: no deserialization during metadata audit",
+        "Freeze NVIDIA structured-data-models runtime plus transitive wheel hashes",
+        "OpenMDW-1.1 text + BSD-3-Clause TabICL attribution obligations",
+        "Parent tabicl architecture is a runtime dependency to audit; parent checkpoint may not be required by fully materialized finetune"
+      ],
+      "existing_v32_asset": false,
+      "formal_catalog_change_approved": false,
+      "download_authorized": false,
+      "whole_repo_download_prohibited_by_default": true,
+      "anonymous_metadata_not_user_entitlement": true
+    },
+    {
+      "repo_id": "nvidia/Kumo-Anomaly",
+      "source_url": "https://huggingface.co/nvidia/Kumo-Anomaly",
+      "source_api": "https://huggingface.co/api/models/nvidia/Kumo-Anomaly?blobs=true",
+      "source_revision": "369ccba38a105736c6c9e4b5788a330c7e22112e",
+      "publisher_last_modified": "2026-10-27T21:00:07.000Z",
+      "anonymous_access_state": "public_ungated_metadata",
+      "license_card_tag": "apache-2.0",
+      "observed_repo_file_count": 8,
+      "scope_kind": "RESEARCH_CANDIDATE_ONLY_NOT_CLOSED_BUNDLE",
+      "candidate_selected_file_count": 4,
+      "candidate_selected_source_bytes": 29612151,
+      "proposed_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1699,
+          "publisher_git_blob_sha1": "6202ffa17dc392610667408ac3324b63a874c9c4",
+          "publisher_lfs_sha256": null,
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 7369,
+          "publisher_git_blob_sha1": "4ee09427f30193e3d74026b709f3262173f8baef",
+          "publisher_lfs_sha256": null,
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "curriculum_medium.yaml",
+          "bytes": 2796,
+          "publisher_git_blob_sha1": "f07a4ba137e567a385f04687edbbd81819ef6e1a",
+          "publisher_lfs_sha256": null,
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "final_model.pth",
+          "bytes": 29600287,
+          "publisher_git_blob_sha1": "f445258ada14438a856999b8c8773cb166179e55",
+          "publisher_lfs_sha256": "e7c2c06ac290d5ad42c8528caaefea3e6e0cb3d77227d2eca79f81ee427811a5",
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        }
+      ],
+      "model_reason": "Independent ~8M-parameter diffusion trained state for multivariate time-series anomaly detection; not interchangeable with forecasting TTM-R3.",
+      "decision": "RECOMMEND_CONDITIONAL_FOR_NEXT_FORMAL_REVIEW",
+      "investigation_priority": "P1_DISTINCT_TRAINED_STATE",
+      "unresolved": [
+        ".pth may use Python pickle; inspect structurally without unpickling",
+        "Freeze NVIDIA Kumo-TS code and suppress automatic hub download in offline runtime",
+        "Model card Apache-2.0; separate code dependencies and third-party notices unreviewed",
+        "Verify signed/pinned source and anomaly threshold ABI"
+      ],
+      "existing_v32_asset": false,
+      "formal_catalog_change_approved": false,
+      "download_authorized": false,
+      "whole_repo_download_prohibited_by_default": true,
+      "anonymous_metadata_not_user_entitlement": true
+    },
+    {
+      "repo_id": "nvidia/Ising-Decoder-ColorCode-1-Fast",
+      "source_url": "https://huggingface.co/nvidia/Ising-Decoder-ColorCode-1-Fast",
+      "source_api": "https://huggingface.co/api/models/nvidia/Ising-Decoder-ColorCode-1-Fast?blobs=true",
+      "source_revision": "c5775431d0ebb06ffecc3836935708b787db51ee",
+      "publisher_last_modified": "2026-09-08T22:53:18.000Z",
+      "anonymous_access_state": "gated_auto_metadata",
+      "license_card_tag": "openmdw-1.1",
+      "observed_repo_file_count": 11,
+      "scope_kind": "RESEARCH_CANDIDATE_ONLY_NOT_CLOSED_BUNDLE",
+      "candidate_selected_file_count": 1,
+      "candidate_selected_source_bytes": 5899248,
+      "proposed_source_files": [
+        {
+          "path": "ising_decoder_color_code_1_fast_r13_v1.0.400_fp16.safetensors",
+          "bytes": 5899248,
+          "publisher_git_blob_sha1": "18bddd0bda84396e77233450a74748d72771cf7c",
+          "publisher_lfs_sha256": "ca17d20ebf40d32360f9b60648b47e03de71d4e4d3c3eea33d311dcf1b2510c9",
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        }
+      ],
+      "model_reason": "Distinct trained 3D CNN predecoder for triangular quantum color codes, publisher states 2,936,580 parameters and ~6.7B generated training samples, not a surface code decoder.",
+      "decision": "P0_RESEARCH_PERSONAL_GATED_ENTITLEMENT_FIRST",
+      "investigation_priority": "P0_GATED_UNIQUE_SCIENTIFIC_WEIGHTS",
+      "unresolved": [
+        "Hugging Face gated auto; owner account approval not observed; no file payload access attempted",
+        "OpenMDW-1.1 governing text and code obligations to review",
+        "Pinned NVIDIA/Ising-Decoding+Chromobius runtime/noise geometry dependencies",
+        "Synthetic physics-distribution benchmark is publisher claim; no independent user HW validation"
+      ],
+      "existing_v32_asset": false,
+      "formal_catalog_change_approved": false,
+      "download_authorized": false,
+      "whole_repo_download_prohibited_by_default": true,
+      "anonymous_metadata_not_user_entitlement": true
+    },
+    {
+      "repo_id": "nvidia/Ising-Decoder-SurfaceCode-1-Fast",
+      "source_url": "https://huggingface.co/nvidia/Ising-Decoder-SurfaceCode-1-Fast",
+      "source_api": "https://huggingface.co/api/models/nvidia/Ising-Decoder-SurfaceCode-1-Fast?blobs=true",
+      "source_revision": "77b3a3f444612afe838fa0ece526b4c588541576",
+      "publisher_last_modified": "2026-09-08T22:51:02.000Z",
+      "anonymous_access_state": "gated_auto_metadata",
+      "license_card_tag": "other",
+      "observed_repo_file_count": 10,
+      "scope_kind": "RESEARCH_CANDIDATE_ONLY_NOT_CLOSED_BUNDLE",
+      "candidate_selected_file_count": 1,
+      "candidate_selected_source_bytes": 1826360,
+      "proposed_source_files": [
+        {
+          "path": "ising_decoder_surface_code_1_fast_r9_v1.0.77_fp16.safetensors",
+          "bytes": 1826360,
+          "publisher_git_blob_sha1": "bae50525966f5bd8a634ba44e5f9b30d2321827a",
+          "publisher_lfs_sha256": "22db7ad25b584d7588493d6ef815381c8d1263cfb29f212391a591b285ad0a05",
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        }
+      ],
+      "model_reason": "Distinct rotated surface-code decoder; different syndrome/circuit geometry from triangular color-code CNN; publisher estimates ~913k parameters.",
+      "decision": "P0_RESEARCH_PERSONAL_GATED_ENTITLEMENT_FIRST",
+      "investigation_priority": "P0_GATED_UNIQUE_SCIENTIFIC_WEIGHTS",
+      "unresolved": [
+        "Hugging Face gated auto; owner account approval not observed",
+        "Publisher card NVIDIA Open Model License, HF tag license:other; require exact governing text not label assumption",
+        "Pinned NVIDIA/Ising-Decoding+PyMatching runner/noise distribution closure",
+        "No evidence of equivalent quality to accurate variant or generalized physical noise"
+      ],
+      "existing_v32_asset": false,
+      "formal_catalog_change_approved": false,
+      "download_authorized": false,
+      "whole_repo_download_prohibited_by_default": true,
+      "anonymous_metadata_not_user_entitlement": true
+    },
+    {
+      "repo_id": "nvidia/Nemotron-3.5-Parse",
+      "source_url": "https://huggingface.co/nvidia/Nemotron-3.5-Parse",
+      "source_api": "https://huggingface.co/api/models/nvidia/Nemotron-3.5-Parse?blobs=true",
+      "source_revision": "ea2e1fe486bea3e7d0d505df9bafa4ad562407a0",
+      "publisher_last_modified": "2026-11-14T04:33:01.000Z",
+      "anonymous_access_state": "public_ungated_metadata",
+      "license_card_tag": "openmdw-1.1",
+      "observed_repo_file_count": 217,
+      "scope_kind": "RESEARCH_CANDIDATE_ONLY_NOT_CLOSED_BUNDLE",
+      "candidate_selected_file_count": 6,
+      "candidate_selected_source_bytes": 2524008942,
+      "proposed_source_files": [
+        {
+          "path": "model.safetensors",
+          "bytes": 2523266640,
+          "publisher_git_blob_sha1": "f903a57460c34497770ff95bc592fabb9a912f23",
+          "publisher_lfs_sha256": "81dd7609c589f3694ce75520c25af5010953231358de6aec4d03e8c6aac787e9",
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 5735,
+          "publisher_git_blob_sha1": "dbba9c73cf3cf8569e4767c7a6d80b81152f5867",
+          "publisher_lfs_sha256": null,
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 3051,
+          "publisher_git_blob_sha1": "3618e26f595c524d2aee87535e8ed4257cfd1adb",
+          "publisher_lfs_sha256": null,
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "THIRD_PARTY_NOTICES.md",
+          "bytes": 730187,
+          "publisher_git_blob_sha1": "86918c75fe51d4a8cf5d17fa070efa2f6de21f1a",
+          "publisher_lfs_sha256": null,
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "TOKENIZER_ATTRIBUTION.md",
+          "bytes": 1963,
+          "publisher_git_blob_sha1": "24bb6a07c43cc7ce5bcd0afa1f64e03be72114bd",
+          "publisher_lfs_sha256": null,
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "pyproject.toml",
+          "bytes": 1366,
+          "publisher_git_blob_sha1": "db007f764073127035b53cd4def7ed8c7abdce9d",
+          "publisher_lfs_sha256": null,
+          "file_payload_fetched": false,
+          "owner_local_sha_verified": false
+        }
+      ],
+      "model_reason": "Dedicated ~630.8M parameter document parser with its own optical page layout and structure, but incumbent LightOnOCR-3-0.8B and PaddleOCR-VL-1.5 already active; requires differential quality evidence.",
+      "decision": "HOLD_PENDING_OCR_DISTINCTNESS_AND_RUNTIME_COMPARISON",
+      "investigation_priority": "P2_OVERLAP_WITH_EXISTING_OCR",
+      "unresolved": [
+        "217-file source repo and many custom-code components; shortlist is NOT complete runnable bundle",
+        "Pinned 2026-11-14 snapshot contains new eval-only update; keep checksum and matched custom code/runtime",
+        "Optional dflash2/model.safetensors is separate trained draft speed module, do not include without proved need",
+        "OpenMDW-1.1/large third-party notices and model wheel ABI independent review",
+        "No head-to-head comparison on same document datasets, GPU backend, batch and context"
+      ],
+      "existing_v32_asset": false,
+      "formal_catalog_change_approved": false,
+      "download_authorized": false,
+      "whole_repo_download_prohibited_by_default": true,
+      "anonymous_metadata_not_user_entitlement": true
+    }
+  ]
+}
