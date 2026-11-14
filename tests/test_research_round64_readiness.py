@@ -50,7 +50,7 @@ class R64(unittest.TestCase):
   self.assertEqual(r["specialized_source_research"]["stored_elements"],49635347496)
   self.assertTrue(r["specialized_source_research"]["not_unique_trainable_count"])
  def test_current_summary_link(self):
-  self.assertEqual(self.current["revision_id"],"v35-20261115")
-  self.assertEqual(self.current["latest_active_readiness_audit"]["summary_path"],"catalog/readiness/v35-2026-11-15-r82-all142-gates.json")
+  self.assertEqual(self.current["revision_id"],"v36-20261115")
+  self.assertEqual(self.current["latest_active_readiness_audit"]["summary_path"],"catalog/readiness/v36-2026-11-15-r83-all144-gates.json")
   self.assertEqual(self.current["latest_active_readiness_audit"]["ready_to_approve"],0)
 if __name__=="__main__":unittest.main()

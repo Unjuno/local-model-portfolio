@@ -33,7 +33,7 @@ class R60(unittest.TestCase):
   self.assertTrue(x["rights"]["two_different_model_products_not_evidence_of_retroactive_license_change"])
  def test_main_unchanged(self):
   c=read("catalog/CURRENT.json")
-  self.assertEqual((c["revision_id"],c["expected"]["tracked"],c["expected"]["active"]),("v34-20261115",188,141))
+  self.assertEqual((c["revision_id"],c["expected"]["tracked"],c["expected"]["active"]),("v36-20261115",191,144))
   self.assertEqual(c["latest_image_license_overlap_audit"]["path"],"catalog/research/2026-11-14-r60-pruna-minimax-h3-licensing-format.json")
   self.assertEqual(read("queues/approved.json")["entries"],[])
   self.assertFalse(self.r["no_actions"]["download_approved"])

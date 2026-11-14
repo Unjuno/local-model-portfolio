@@ -18,16 +18,16 @@ class CurrentPortfolioIntegrity(unittest.TestCase):
   cls.access=read(cls.current["latest_conditional_access_audit"]["path"])
  def test_latest_revision_and_exact_counts(self):
   c=self.current;v=self.view
-  self.assertEqual(c["revision_id"],"v35-20261115")
+  self.assertEqual(c["revision_id"],"v36-20261115")
   self.assertEqual(v["revision_id"],c["revision_id"])
-  self.assertEqual(len(v["items"]),189)
-  self.assertEqual(len({identity(x) for x in v["items"]}),189)
+  self.assertEqual(len(v["items"]),191)
+  self.assertEqual(len({identity(x) for x in v["items"]}),191)
   self.assertEqual(v["counts"]["tracked"],c["expected"]["tracked"])
   self.assertEqual(v["counts"]["active"],c["expected"]["active"])
-  self.assertEqual(sum(x["asset_kind"]=="model" for x in v["items"]),163)
+  self.assertEqual(sum(x["asset_kind"]=="model" for x in v["items"]),165)
   self.assertEqual(sum(x["asset_kind"]=="dataset" for x in v["items"]),26)
-  self.assertEqual({d:sum(x["portfolio_decision"]==d for x in v["items"]) for d in ("select","conditional","hold","deferred","excluded")},{"select":53,"conditional":89,"hold":28,"deferred":13,"excluded":6})
-  self.assertEqual(c["ordered_overlays"][-1],"catalog/revisions/v35-2026-11-15.json")
+  self.assertEqual({d:sum(x["portfolio_decision"]==d for x in v["items"]) for d in ("select","conditional","hold","deferred","excluded")},{"select":53,"conditional":91,"hold":28,"deferred":13,"excluded":6})
+  self.assertEqual(c["ordered_overlays"][-1],"catalog/revisions/v36-2026-11-15.json")
   self.assertTrue(all(x["download_approved"] is False for x in v["items"]))
  def test_preserve_old_150_assets(self):
   old=read("catalog/effective-portfolio-2026-11-06-v19.json")
@@ -36,17 +36,17 @@ class CurrentPortfolioIntegrity(unittest.TestCase):
   for x in old["items"]:
    self.assertIn(identity(x),records)
    self.assertEqual(records[identity(x)]["portfolio_decision"],x["portfolio_decision"])
-  self.assertEqual(len(records)-len(old["items"]),39)
+  self.assertEqual(len(records)-len(old["items"]),41)
  def test_queue_dependency_and_access_id_join(self):
   v=self.view
   active={identity(x) for x in v["items"] if x["portfolio_decision"] in ACTIVE}
   conditional={identity(x) for x in v["items"] if x["portfolio_decision"]=="conditional"}
-  self.assertEqual(len(active),142)
+  self.assertEqual(len(active),144)
   self.assertEqual(active,{identity(x) for x in self.queue["candidates"]})
   self.assertEqual(active,{identity(x) for x in self.prep["items"]})
   self.assertEqual(conditional,{identity(x) for x in self.access["entries"]})
-  self.assertEqual(len(self.access["entries"]),89)
-  self.assertEqual(sum(x["hub_gated"] for x in self.access["entries"]),17)
+  self.assertEqual(len(self.access["entries"]),91)
+  self.assertEqual(sum(x["hub_gated"] for x in self.access["entries"]),19)
   self.assertTrue(self.access["fail_closed_if_missing"])
   self.assertTrue(all(x["owner_access_permission"]=="unknown" and not x["download_authorized"] for x in self.access["entries"]))
   self.assertEqual(self.queue["source_revision"],self.current["revision_id"])
@@ -63,6 +63,6 @@ class CurrentPortfolioIntegrity(unittest.TestCase):
   q={identity(x):x for x in self.queue["candidates"]}
   self.assertTrue(all(q[k]["research_only"] and not q[k]["can_enter_approved_queue"] for k in unknown))
   r=read(self.current["latest_active_readiness_audit"]["summary_path"])
-  self.assertEqual(len(r["records"]),142)
+  self.assertEqual(len(r["records"]),144)
   self.assertEqual(r["summary"]["ready_to_approve"],0)
 if __name__=="__main__":unittest.main()
