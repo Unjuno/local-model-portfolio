@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "kind": "R75_R74_SOURCE_ALLOWLIST_STRUCTURAL_VERIFICATION_AND_TEST_HARDENING",
+  "date_jst": "2026-11-15",
+  "portfolio_version": "v32-20261114",
+  "verification_method": "Independent JavaScript read-only structural check of current GitHub JSON; Python regression suite committed but NOT executed in this session",
+  "status": "PASS_PUBLISHED_METADATA_STRUCTURAL_ONLY",
+  "input_paths": [
+    "manifests/drafts/r74-66-source-overfetch-allowlists.candidate.json",
+    "catalog/readiness/v32-2026-11-15-r73-135-publisher-file-identity-coverage.json",
+    "queues/approved.json"
+  ],
+  "input_git_blob_sha": {
+    "manifests/drafts/r74-66-source-overfetch-allowlists.candidate.json": "583019a986e79be9b2521be6bbd86babdc12d746",
+    "catalog/readiness/v32-2026-11-15-r73-135-publisher-file-identity-coverage.json": "b14c3ad0c5d67a784c70696d5585eb3185827f40",
+    "queues/approved.json": "df0e369abda4b765533e0af3921c54a5cb164787",
+    "scripts/verify_v32_overfetch_scope.py": "8caf8b314a4ae1ddf24597df8e1304de9fe2e9b5",
+    "tests/test_verify_v32_overfetch_scope.py": "9650a92bd3ec4b0b926b6b4b01850f833f368587",
+    "scripts/verify_v32_primary_source_capacity.py": "36800f49fd320d53fe22d8f0b0636dd46854cbba"
+  },
+  "summary": {
+    "repos": 66,
+    "selected_file_refs": 1425,
+    "selected_file_bytes": 1782172555461,
+    "observed_repo_scope_extra_bytes": 2985522750447,
+    "masked_payload_sha256_refs": 80,
+    "identity_kinds": {
+      "git_blob_sha1": 854,
+      "lfs_payload_sha256": 491,
+      "unverifiable_payload_hash": 80
+    },
+    "source_zero_byte_git_blobs": 3,
+    "unexplained_profile_scope_delta_count": 1,
+    "approved_entries": 0,
+    "owner_HDD_checked": false,
+    "local_sha_verified": false,
+    "model_runtime_executed": false,
+    "download_executed": false,
+    "source_scope_full_offline_archive_verified": false
+  },
+  "zero_length_git_blob_references": [
+    {
+      "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "path": "samples/nul"
+    },
+    {
+      "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "path": "workflow_examples/nul"
+    },
+    {
+      "repo_id": "KlingTeam/LivePortrait",
+      "path": ".gitkeep"
+    }
+  ],
+  "findings": [
+    {
+      "repo_id": "Qwen/Qwen-Image-2.1",
+      "observed_scope_delta_bytes": 3333149,
+      "recorded_excluded_file_count": 0,
+      "status": "UNEXPLAINED_METADATA_SCOPE_DIFFERENCE"
+    }
+  ],
+  "code_changes": [
+    {
+      "path": "scripts/verify_v32_primary_source_capacity.py",
+      "reason": "Previous regression test passed a report-root argument to a no-argument verify(); verifier now accepts the report-root argument."
+    },
+    {
+      "path": "scripts/verify_v32_overfetch_scope.py",
+      "reason": "Fail closed on wildcard and unsafe paths, duplicated paths, wrong revisions, invalid Git pointers/LFS hashes, false confirmed masks, approvals, bytes and source identity."
+    },
+    {
+      "path": "tests/test_verify_v32_overfetch_scope.py",
+      "reason": "Regression cases for safety checks and authentic empty blobs, tests pending execution."
+    }
+  ],
+  "method_limitations": [
+    "No local Python test execution or GitHub CI evidence produced in this session.",
+    "Original 21MB v27 historical publisher raw file was not independently rehashed in this check; source linkage uses GitHub blob identity cross-reference.",
+    "Publisher-sha strings are validated for format but not independently cryptographically recomputed from payload bytes.",
+    "A source list for 66 repositories is not a legal download authorization or complete dependency closure.",
+    "Observed repo scope delta may include metadata/snapshot scope differences, not necessarily excluded file content."
+  ]
+}
