@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "kind": "R63_READ_ONLY_MAYA2_OFFLINE_VERIFIER_IMPLEMENTATION",
+  "date": "2026-11-14",
+  "catalog_revision": "v32-20261114",
+  "git_branch": "main",
+  "finding": "The publisher MayaResearch/maya2-native maya3/hub.py resolve(model_revision=...) passes revision=None separately to kyutai/mimi and SpeechBrain ECAPA; cached snapshots or remote latest can be selected and are not proven identical to R59 pinned source components.",
+  "publisher_implementation": {
+    "repo": "MayaResearch/maya2-native",
+    "revision": "c6b376868e268551d065c4206193e96257bef4a1",
+    "source_file": "maya3/hub.py",
+    "source_url": "https://github.com/MayaResearch/maya2-native/blob/c6b376868e268551d065c4206193e96257bef4a1/maya3/hub.py",
+    "lines": {
+      "resolve_mimi": 136,
+      "resolve_ecapa": 137
+    },
+    "reason": "Mimi and ECAPA are not pinned by the parent model revision parameter; use explicitly local verified directories at runtime."
+  },
+  "pinned_source_scopes": [
+    {
+      "repo_id": "maya-research/maya2-native",
+      "revision": "87a83efdd6551e038246b6b37836a6264713eec3",
+      "selected_source_files": 13,
+      "selected_source_bytes": 5021109670
+    },
+    {
+      "repo_id": "kyutai/mimi",
+      "revision": "89091b3e466eb6a9d11e537bf26b144f194978f7",
+      "selected_source_files": 4,
+      "selected_source_bytes": 384655536
+    },
+    {
+      "repo_id": "speechbrain/spkrec-ecapa-voxceleb",
+      "revision": "0f99f2d0ebe89ac095bcc5903c4dd8f72b367286",
+      "selected_source_files": 7,
+      "selected_source_bytes": 88988901
+    }
+  ],
+  "source_metadata_manifest": "catalog/research/2026-11-14-r59-maya2-drama3-cross-repo-components.json",
+  "source_file_references_total": 24,
+  "selected_source_bytes_total": 5494754107,
+  "checker_path": "scripts/verify_maya2_local_bundle.py",
+  "regression_test_path": "tests/test_verify_maya2_local_bundle.py",
+  "verification_environment": {
+    "python": "3.10+ (CI Python 3.12)",
+    "hashes": "streaming stdlib SHA256 on LFS and Git blob SHA1 on ordinary files",
+    "chunk_bytes": 4194304,
+    "os": "cross-platform regular files; symlinks fail closed",
+    "backend": "no model backend used"
+  },
+  "scope_boundaries": {
+    "publisher_metadata_is_locally_verified_weights": false,
+    "tool_does_not_download_or_execute": true,
+    "source_file_verification_is_not_runtime_proof": true,
+    "hub_revision_locked_only_by_manifest_and_verified_content": true,
+    "licensed_user_action_verified": false,
+    "physical_disk_measured": false,
+    "still_UNVERIFIED_BLOCK_FINAL_LOCK": true,
+    "requires_explicit_owner_download_authorization": true
+  },
+  "runtime_research": {
+    "publisher_engine_requires": "NVIDIA GPU Linux CUDA 12.8, torch 2.8.0+cu128, Transformers 5.6.2, SpeechBrain 1.1.2, Triton 3.4.0",
+    "source_python_abi": "3.10-3.12",
+    "gpu_memory_measured_on_owner": false,
+    "ecapa_is_required_for_reference_speaker_modes_not_all_named_voices": true
+  },
+  "security_decision": "Fail closed on missing, mismatched, symlink or traversal. Only manually provisioned roots. Never pass .ckpt to torch.load/unpickle or Maya3 engine in acquisition verification.",
+  "next_action": "After explicit lawful acquisition and offline file materialization, run read-only verifier; separately pin runtime wheel hashes, confirm ABI and owner hardware; no approved queue changes."
+}
