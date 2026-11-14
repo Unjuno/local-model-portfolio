@@ -9,9 +9,10 @@ ROOT = Path(__file__).resolve().parents[1]
 def j(path):
     return json.loads((ROOT / path).read_text(encoding="utf-8"))
 
-def verify():
+def verify(report_root: Path | None = None):
+    """Verify immutable source arithmetic; optionally override historical report root in tests."""
     v27 = j('catalog/capacity/2026-11-07/v27/capacity-summary.json')
-    old_markdown = (ROOT / 'catalog/capacity/2026-11-07/v27/capacity-report.md').read_text(encoding='utf-8')
+    old_markdown = ((ROOT if report_root is None else Path(report_root)) / 'catalog/capacity/2026-11-07/v27/capacity-report.md').read_text(encoding='utf-8')
     old = {}
     for line in old_markdown.splitlines():
         m = re.fullmatch(r'\|\s*([^|]+/[^|]+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|', line.strip())
