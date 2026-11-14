@@ -1,6 +1,5 @@
 """R74: fail-closed regression tests for the read-only v32 source-capacity verifier."""
 import copy
-import json
 from pathlib import Path
 import tempfile
 import unittest
@@ -21,8 +20,7 @@ class V32PrimaryCapacityTests(unittest.TestCase):
         self.assertFalse(result["download_approved"])
 
     def test_duplicate_v27_repo_refuses_unsafe_reconciliation(self):
-        report = (audit.ROOT / audit.j.__globals__.get("ROOT", audit.ROOT) / "catalog/capacity/2026-11-07/v27/capacity-report.md") if False else (
-            audit.ROOT / "catalog/capacity/2026-11-07/v27/capacity-report.md")
+        report = audit.ROOT / "catalog/capacity/2026-11-07/v27/capacity-report.md"
         data = report.read_text(encoding="utf-8")
         source_line = next(x for x in data.splitlines() if x.startswith("| orcarouter/"))
         with tempfile.TemporaryDirectory() as td:
