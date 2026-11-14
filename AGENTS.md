@@ -1,6 +1,10 @@
 # エージェント作業規約
 
-## 現行モデル選定（main・v33・2026-11-15）
+## 現行v36（2026-11-15）
+
+**唯一の選定正本は `catalog/CURRENT.json`→v36、191登録／144有効（SELECT53／CONDITIONAL91）**。[選定差分](catalog/revisions/v36-2026-11-15.json)でColorCodeとSurfaceCodeの別3D CNN・別学習済み原本2件を条件付き追加、v35/34/33の内容を保持。[一次技術報告](docs/strategy/83-v36-original-ising-qec-source-selection-2026-11-15.md)。原本は両方Gatedで匿名401、**個人の取得権限未確認、モデル実体未取得・実行なし**。4TB計画・最低空き200GB・150B例外、承認0は変更なし。下記旧v35以下は履歴であり現行選定を上書きしない。mainのみ使用。
+
+## 旧v33モデル選定（main・2026-11-15）
 
 **唯一の正式選定正本は`catalog/CURRENT.json`のv33、[185資産（モデル159・データ26）](catalog/effective-portfolio-2026-11-15-v33.json)／有効138件（SELECT53・CONDITIONAL85）**。[差分v33](catalog/revisions/v33-2026-11-15.json)ではIBM Granite 4.1 3B LLMON、Perplexity Decider Flash v1.3、NVIDIA Kumo-Relationalの実際の学習済み中身を確認し3件CONDITIONAL追加。[理由・比較・非採用](docs/strategy/77-v33-weight-content-selection-and-alternatives-2026-11-15.md)。同族8B/26B、依存未確定のDuoや比較利益未確定のAreteは追加しない。旧182件は削除なし。[有効138研究候補](queues/proposed-v33-2026-11-15.json)、[138依存準備](catalog/preparation/2026-11-15-insurance-bundles-v33.json)。**新規Kumo総数不明は最終取得ロック停止**、Perplexity公開manifestのprivateフラグは本人権限未確定、取得承認0。以下のv32節は履歴であり現行正本と解釈しない。
 
@@ -9,7 +13,7 @@
 **通常の調査・選定・監査・更新の正本は `main` のみ。** 既存ブランチの成果はmainへ統合し、ユーザーから別途指示されない限り新しいブランチを作らない。旧資料の専用ブランチ名は歴史的な出典であり、新しい作業ブランチの作成命令ではない。
 
 
-## 最新v34（2026-11-15）
+## 旧v34（2026-11-15）
 
 [正本v34](catalog/CURRENT.json)は187件／有効140件、v33の185件を保持しKumo-Tabular／Kumo-Anomalyを別学習済み成果として条件付き追加。[調査と停止条件](docs/strategy/79-v34-kumo-trained-state-selection-2026-11-15.md)。Kumo-Anomalyのunsafe pickle旧runtimeは実行停止。全取得承認0、実HDDは未検査。旧v33/v32節は履歴。
 
