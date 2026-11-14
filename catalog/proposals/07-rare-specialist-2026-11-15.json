@@ -105,13 +105,30 @@
         "Torch .pt serialization/pickle: no deserialization during metadata audit",
         "Freeze NVIDIA structured-data-models runtime plus transitive wheel hashes",
         "OpenMDW-1.1 text + BSD-3-Clause TabICL attribution obligations",
-        "Parent tabicl architecture is a runtime dependency to audit; parent checkpoint may not be required by fully materialized finetune"
+        "Parent tabicl architecture is a runtime dependency to audit; parent checkpoint may not be required by fully materialized finetune",
+        "Official frozen source code loads checkpoint through tag v1.0.1 and attempts a Hub fetch if cache misses; pin fully local verified files and prevent network fallback"
       ],
       "existing_v32_asset": false,
       "formal_catalog_change_approved": false,
       "download_authorized": false,
       "whole_repo_download_prohibited_by_default": true,
-      "anonymous_metadata_not_user_entitlement": true
+      "anonymous_metadata_not_user_entitlement": true,
+      "publisher_tag_compatibility": {
+        "official_code_repo": "NVIDIA/structured-data-models",
+        "pinned_code_commit": "46a6f20d20f1140912f7a9e6ecdda9a3cd3fda87",
+        "code_file": "sdm/models/kumo/relational/model.py",
+        "code_url": "https://github.com/NVIDIA/structured-data-models/blob/46a6f20d20f1140912f7a9e6ecdda9a3cd3fda87/sdm/models/kumo/relational/model.py",
+        "source_reading_method": "GitHub pinned file direct inspection",
+        "trained_checkpoint_loader_hf_revision": "v1.0.1",
+        "revision_alias_observed_resolves_to": "2bd603d3d8f25f67a7aaa8579908595e20567e22",
+        "source_selected_revision_current": "efdbb110daea5aae123447864a64612e8a3dc6be",
+        "checkpoint_payload_sha256_same_for_tag_and_selected_revision": true,
+        "torch_load_weights_only": true,
+        "requires_patched_offline_local_root_or_preverified_cache": true,
+        "will_download_missing_config_or_checkpoint_by_default": true,
+        "code_runtime_requires": "python>=3.11, torch>=2.7; exact transitive wheel hashes/driver/CPU-GPU runtime unknown",
+        "not_offline_tested": true
+      }
     },
     {
       "repo_id": "nvidia/Kumo-Anomaly",
@@ -160,9 +177,10 @@
         }
       ],
       "model_reason": "Independent ~8M-parameter diffusion trained state for multivariate time-series anomaly detection; not interchangeable with forecasting TTM-R3.",
-      "decision": "RECOMMEND_CONDITIONAL_FOR_NEXT_FORMAL_REVIEW",
+      "decision": "HOLD_UNTIL_SECURE_PICKLE_DESERIALIZATION_AND_OFFLINE_RUNTIME",
       "investigation_priority": "P1_DISTINCT_TRAINED_STATE",
       "unresolved": [
+        "Publisher's pinned Kumo-TS inference_ad.py (3 call sites) and inference_worker.py invoke torch.load(weights_only=False): untrusted pickle code execution risk. HOLD runtime and formal adoption pending secure path.",
         ".pth may use Python pickle; inspect structurally without unpickling",
         "Freeze NVIDIA Kumo-TS code and suppress automatic hub download in offline runtime",
         "Model card Apache-2.0; separate code dependencies and third-party notices unreviewed",
@@ -172,7 +190,23 @@
       "formal_catalog_change_approved": false,
       "download_authorized": false,
       "whole_repo_download_prohibited_by_default": true,
-      "anonymous_metadata_not_user_entitlement": true
+      "anonymous_metadata_not_user_entitlement": true,
+      "security_and_code_evidence": {
+        "official_code_repo": "NVIDIA/Kumo-TS",
+        "pinned_code_commit": "ad459475d1302fc8365e7117e39837a8ecb6a7e3",
+        "code_file": "Kumo-Anomaly/sdk/inference_ad.py",
+        "code_url": "https://github.com/NVIDIA/Kumo-TS/blob/ad459475d1302fc8365e7117e39837a8ecb6a7e3/Kumo-Anomaly/sdk/inference_ad.py",
+        "worker_file": "Kumo-Anomaly/sdk/inference_worker.py",
+        "worker_url": "https://github.com/NVIDIA/Kumo-TS/blob/ad459475d1302fc8365e7117e39837a8ecb6a7e3/Kumo-Anomaly/sdk/inference_worker.py",
+        "unsafe_pickle_calls_observed_in_inference_ad": 3,
+        "unsafe_pickle_in_worker": true,
+        "pytorch_flag": "torch.load(...,weights_only=False)",
+        "implicit_hf_snapshot_download_when_local_files_missing": true,
+        "project_python": ">=3.12",
+        "project_torch": ">=2.7.0",
+        "security_gate": "DO_NOT_RUN_ON_UNTRUSTED_PICKLE_WEIGHTS_OR_REMOTE_CODE; investigate weights_only=True compatibility with offline isolated static converter and SHA verification",
+        "vendor_code_never_executed": true
+      }
     },
     {
       "repo_id": "nvidia/Ising-Decoder-ColorCode-1-Fast",
@@ -209,7 +243,9 @@
       "formal_catalog_change_approved": false,
       "download_authorized": false,
       "whole_repo_download_prohibited_by_default": true,
-      "anonymous_metadata_not_user_entitlement": true
+      "anonymous_metadata_not_user_entitlement": true,
+      "official_runtime_code_pin": "12bbeb13c5cfc1a064171ac91b07aea61f2eaae8",
+      "official_runtime_code_url": "https://github.com/NVIDIA/Ising-Decoding/tree/12bbeb13c5cfc1a064171ac91b07aea61f2eaae8"
     },
     {
       "repo_id": "nvidia/Ising-Decoder-SurfaceCode-1-Fast",
@@ -246,7 +282,9 @@
       "formal_catalog_change_approved": false,
       "download_authorized": false,
       "whole_repo_download_prohibited_by_default": true,
-      "anonymous_metadata_not_user_entitlement": true
+      "anonymous_metadata_not_user_entitlement": true,
+      "official_runtime_code_pin": "12bbeb13c5cfc1a064171ac91b07aea61f2eaae8",
+      "official_runtime_code_url": "https://github.com/NVIDIA/Ising-Decoding/tree/12bbeb13c5cfc1a064171ac91b07aea61f2eaae8"
     },
     {
       "repo_id": "nvidia/Nemotron-3.5-Parse",
@@ -325,6 +363,27 @@
       "download_authorized": false,
       "whole_repo_download_prohibited_by_default": true,
       "anonymous_metadata_not_user_entitlement": true
+    }
+  ],
+  "research_update_date": "2026-11-15",
+  "security_review_note": "Secondary fixed-code inspection found unsafe pickle deserialization in Kumo Anomaly. It is HOLD until isolated safe conversion/weights-only loading is proven. Kumo Relational uses weights_only=True but can implicitly download from hub; offline version must disable network and match official v1.0.1 tag resolved SHA.",
+  "candidate_decision_counts": {
+    "recommended_conditional_next_formal_review": 1,
+    "hold_security_or_overlap": 2,
+    "gated_entitlement_only": 2
+  },
+  "code_pins": [
+    {
+      "repo_id": "NVIDIA/structured-data-models",
+      "commit": "46a6f20d20f1140912f7a9e6ecdda9a3cd3fda87"
+    },
+    {
+      "repo_id": "NVIDIA/Kumo-TS",
+      "commit": "ad459475d1302fc8365e7117e39837a8ecb6a7e3"
+    },
+    {
+      "repo_id": "NVIDIA/Ising-Decoding",
+      "commit": "12bbeb13c5cfc1a064171ac91b07aea61f2eaae8"
     }
   ]
 }
