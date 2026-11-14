@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_review": "R73",
+  "last_review": "R75",
   "date_jst": "2026-11-15",
   "catalog_revision": "v32-20261114",
   "tracked_assets": 182,
@@ -17,7 +17,7 @@
   "owner_HDD_verified": false,
   "complete_offline_restore_count": 0,
   "full_license_signoff_count": 0,
-  "next_action": "Use R73 identity coverage and R74 source-capacity verifier to isolate 17 Gated source SHA masks. Check owner entitlements and existing local file hashes; close all learned dependencies, legal text, wheelhouse ABI, 4TB/200GB physical capacity, then explicitly authorize any acquisition.",
+  "next_action": "R75: resolve Qwen Image 2.1 observed 3,333,149-byte unmatched scope and review 80 masked file hashes among 66 allowlists; close owner legal entitlements, runtime/learned dependencies, local SHA and HDD capacity before any download.",
   "latest_parameter_review": "R66",
   "latest_parameter_review_path": "catalog/readiness/2026-11-15-r66-seven-unknown-source-bound-review.json",
   "latest_parameter_report_path": "docs/strategy/66-seven-parameter-unknowns-source-bound-audit.md",
@@ -63,5 +63,12 @@
   "publisher_metadata_is_not_local_full_SHA_verified": true,
   "final_ready_assets_count": 0,
   "full_offline_restore_pass_count": 0,
-  "completion_status": "SOURCE_METADATA_RECONCILED_BUT_RIGHTS_DEPENDENCIES_PHYSICAL_DISK_AND_OFFLINE_RESTORE_UNVERIFIED"
+  "completion_status": "SOURCE_METADATA_RECONCILED_BUT_RIGHTS_DEPENDENCIES_PHYSICAL_DISK_AND_OFFLINE_RESTORE_UNVERIFIED",
+  "latest_overfetch_allowlist_verifier": "scripts/verify_r74_overfetch_allowlists.py",
+  "latest_overfetch_allowlist_regression_tests": "tests/test_verify_r74_overfetch_allowlists.py",
+  "latest_overfetch_allowlist_verification_report": "docs/strategy/75-v32-overfetch-allowlist-verification-2026-11-15.md",
+  "r75_independent_metadata_crosscheck": "PASS_METADATA_CROSSCHECK_ONLY",
+  "r75_overfetch_unattributed_excess_repo": "Qwen/Qwen-Image-2.1",
+  "r75_overfetch_unattributed_excess_bytes": 3333149,
+  "r75_verifier_python_tests_executed_in_this_session": false
 }
