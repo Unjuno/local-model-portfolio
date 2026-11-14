@@ -1,5 +1,7 @@
 # Local Model Portfolio
 
+**R75 allowlist検証（11月15日）**：[全66配布元・1,425ファイルのSHA種別/固定revision/容量/権限フラグをR73と機械照合](docs/strategy/75-v32-overfetch-allowlist-verification-2026-11-15.md)（[読取専用検証スクリプト](scripts/verify_r74_overfetch_allowlists.py)／[回帰テスト](tests/test_verify_r74_overfetch_allowlists.py)）。メタデータ整合性はPASS、Qwen Image 2.1の観測差3,333,149byteはファイル数で説明できず再調査。**実HDD・本人権限・復元・取得承認は未完了**。
+
 **R74保存容量安全策（11月15日）**：v27原本全59,938ファイルを再検査し、[全135資産の公開元revision・SHAカバレッジ（R73）](docs/strategy/73-v32-135-publisher-file-identity-audit.md)を確定。Gated17資産・762ペイロードファイル・約785GBは配布元SHA未確定。さらに[66配布元・1,425ファイルの完全選択allowlist（R74）](manifests/drafts/r74-66-source-overfetch-allowlists.candidate.json)を作り、不要なrepo全量取得につながる観測差分約2.986TBを分離（[判断と容量比較](docs/strategy/74-v32-66-overfetch-prevention-2026-11-15.md)）。**研究・非実行であり、権利/依存/実機/取得承認は未完了**。
 
 **R69固定runtime監査（11月15日）**：[IBM TTM R3の公式モデルSHA一致・公式granite-tsfmコードcommit・Python/PyTorch依存の具体的な範囲・不足しているimport経路](docs/strategy/69-ibm-ttm-r3-offline-runtime-evidence.md)／[機械可読証拠](catalog/research/2026-11-15-r69-ibm-ttm-r3-publisher-runtime-pin.json)。R68で有効135件の先頭調査ゲートを一意に整理（[監査結果](docs/strategy/68-v32-135-next-gate-triage-2026-11-15.md)／[全件JSON](catalog/readiness/v32-2026-11-15-r68-135-actionable-triage.json)）。**保存・実行・承認は未実施**。
