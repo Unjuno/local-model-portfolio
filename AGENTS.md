@@ -11,6 +11,10 @@
 
 
 
+## 2026-11-15：R72–R73候補ソースの全件調査（正本v32不変更）
+
+[R72・135件ソース候補byte/revision全件結合](catalog/research/2026-11-15-r72-v32-135-candidate-scope-byte-revision-join.json)／[R73・以前revision未確認14件の配布元現在HEAD](catalog/research/2026-11-15-r73-14-upstream-head-observations.json)／[研究報告](docs/strategy/72-v32-135-candidate-source-byte-revision-closure-2026-11-15.md)／[手動オフライン検証](scripts/validate_v32_candidate_source_join.py)。有効135件の候補ソースbyteが揃った（v27由来126、R64の新規8、ZONOS参考1）。候補revision103件、正本観測と一致96件、候補のみ6件、双方欠損32件、RFD4主重みSHA同一・付属ファイルに版差1件。R73は32件中14件の**現行配布元HEADのみ**を確認、残り18件未照会。候補一次ソース容量約3.458TBは選定ファイルの最終容量でも、4TB HDDの空きでもない。**正本最終selected bytes/revisionの未完成133件、依存・ライセンス・本人Gated権限・実ディスク空き・取得承認0件は変更なし**。研究確認をもって許可やダウンロード準備完了と宣言しない。
+
 ## モデルの現在構成（main／v32・2026-11-14）
 
 **唯一の正本は `catalog/CURRENT.json` のv32、182資産・有効135件**。v31からDSpine-b16、Nemotron-3-Diarization、RFD4-Proteinaを独立後学習・専門学習成果として3件CONDITIONAL研究追加。[v32全件](catalog/effective-portfolio-2026-11-14-v32.json)、[非実行135件候補](queues/proposed-v32-2026-11-14.json)、[依存台帳](catalog/preparation/2026-11-14-insurance-bundles-v32.json)、[研究記録](docs/strategy/56-v32-small-specialist-selection-2026-11-14.md)。取得承認0、4TB計画と空き200GB別条件。旧版v31以下は履歴。
