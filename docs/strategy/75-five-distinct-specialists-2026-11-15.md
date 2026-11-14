@@ -7,7 +7,7 @@
 | 対象モデル | 公開元の参考選択ファイル | 判断 |
 |---|---:|---|
 | [Kumo-Relational](https://huggingface.co/nvidia/Kumo-Relational) | 243,656,960 byte／7ファイル | 次期CONDITIONAL候補。異なる学習済み分類器（119,862,733 byte）と回帰器（123,786,699 byte） |
-| [Kumo-Anomaly](https://huggingface.co/nvidia/Kumo-Anomaly) | 29,612,151 byte／4ファイル | **HOLD（安全ゲート）**。約8M parametersの時系列異常検知だが、公式推論コードのpickle非安全読込が残る |
+| [Kumo-Anomaly](https://huggingface.co/nvidia/Kumo-Anomaly) | 29,612,151 byte／4ファイル | **条件付き・静的保存研究候補（実行STOP）**。旧SDKには危険なpickle読込があるが、別のNVIDIA公式実装に同一SHAのweights_only経路を発見 |
 | [Ising ColorCode Fast](https://huggingface.co/nvidia/Ising-Decoder-ColorCode-1-Fast) | 5,899,248 byte／重み1本 | P0：Gated個人権利を先に確認。三角色符号predecoder、公開元は2,936,580 parametersと主張 |
 | [Ising SurfaceCode Fast](https://huggingface.co/nvidia/Ising-Decoder-SurfaceCode-1-Fast) | 1,826,360 byte／重み1本 | P0：Gated個人権利を先に確認。回転表面符号向け、約913k parameters。ColorCodeとは異なる |
 | [Nemotron 3.5 Parse](https://huggingface.co/nvidia/Nemotron-3.5-Parse) | 2,524,008,942 byte／不完全な6ファイル | HOLD：既存LightOnOCR-3-0.8BとPaddleOCR-VL-1.5への相対的な新規性と実行環境を先に比較 |
@@ -16,7 +16,7 @@
 
 **Kumo Relational**：[固定版モデルカード](https://huggingface.co/nvidia/Kumo-Relational/blob/efdbb110daea5aae123447864a64612e8a3dc6be/README.md)にはTabICLv2の関係表向け後学習を明記。[OpenMDW-1.1ライセンス本文](https://huggingface.co/nvidia/Kumo-Relational/blob/efdbb110daea5aae123447864a64612e8a3dc6be/LICENSE)と[TabICLv2のBSD-3-Clause第三者告知](https://huggingface.co/nvidia/Kumo-Relational/blob/efdbb110daea5aae123447864a64612e8a3dc6be/THIRD-PARTY-NOTICES.txt)を確認。学習済み重みはPython .pt形式だが、固定公式コードは安全寄りの torch.load(weights_only=True) を採用。公式コードのv1.0.1タグはモデルsnapshot 2bd603d3…を参照し、現在のefdbb110… snapshotと重みのLFS SHAが一致。一方、ローカルキャッシュ不在時にHubから暗黙に取得するため、オフライン固定と依存ABIは未閉包。
 
-**Kumo Anomaly**：[固定版モデルカード](https://huggingface.co/nvidia/Kumo-Anomaly/blob/369ccba38a105736c6c9e4b5788a330c7e22112e/README.md)はモデルのApache-2.0、約8M parametersと拡散異常検知の用途を明示。[NV-Tesseract-AD原論文](https://arxiv.org/abs/2610.12754)の能力と独立。単一final_model.pthはPyTorch pickleリスクあり。公式Kumo-TSの固定inference_ad.pyは3箇所、inference_worker.pyも torch.load(weights_only=False) を使用する。信頼できないpickleをロードすると任意コード実行のおそれがあるため、**安全なweights-only読込または隔離下の静的変換が実証されるまで正式採用をHOLD**。暗黙のHub取得無効化と第三者ライセンス確認も未完。
+**Kumo Anomaly**：[固定版モデルカード](https://huggingface.co/nvidia/Kumo-Anomaly/blob/369ccba38a105736c6c9e4b5788a330c7e22112e/README.md)はモデルのApache-2.0、約8M parametersと拡散異常検知の用途を明示。[NV-Tesseract-AD原論文](https://arxiv.org/abs/2610.12754)の能力と独立。単一final_model.pthはPyTorch pickleリスクあり。旧Kumo-TS公式SDKのinference_ad.pyは3箇所、workerにも torch.load(weights_only=False) がある。一方、[別のNVIDIA公式KumoAnomalyローダー](https://github.com/NVIDIA/structured-data-models/blob/46a6f20d20f1140912f7a9e6ecdda9a3cd3fda87/sdm/models/kumo/timeseries/anomaly/model.py)は torch.load(weights_only=True) と remap_ckpt を使用する。両コードが参照する [固定旧重量rev](https://huggingface.co/nvidia/Kumo-Anomaly/tree/226c5003b0582adc1cac433123f47324bfae39f2) と [本研究の保存候補rev](https://huggingface.co/nvidia/Kumo-Anomaly/tree/369ccba38a105736c6c9e4b5788a330c7e22112e) の final_model.pth は、公開SHA-256 e7c2c06ac290d5ad42c8528caaefea3e6e0cb3d77227d2eca79f81ee427811a5 と 29,600,287 byte が一致。よって**無害なデータとしての保存選定は条件付き研究へ昇格**できる一方、安全な復元実行は未検証でSTOPする。[詳細証拠](../../catalog/research/2026-11-15-r77-kumo-anomaly-publisher-safe-loader-and-revision-equality.json)。
 
 **Ising 2件**：公開APIは双方ともGated auto。公開元ハッシュが見えても個別アカウントによる取得承認を意味しない。ColorCodeはOpenMDW-1.1、SurfaceCodeはライセンスタグotherでモデルカードがNVIDIA Open Model Licenseを指定しており、同一条件とみなしてはならない。[ColorCode論文](https://arxiv.org/abs/2607.10058)と[SurfaceCode論文](https://arxiv.org/abs/2604.12841)は各々異なるノイズモデルと符号の結果であり、報告の誤り率改善は作者環境に限定。P0は合法的なアクセス調査順位であって、回避DLの推奨ではない。
 
@@ -24,7 +24,11 @@
 
 ## 2.〈応用・転用例〉採用ゲート
 
-Kumo-Relationalのみ次期CONDITIONAL検討とし、Kumo-AnomalyはセキュリティHOLD。両モデルについて、公開元の全必須重み・ライセンス/NOTICE・依存コード・Python/torch/driver/ABI・セキュリティ・owner HDDと将来のオフライン復元条件を検査。Ising 2件は本人Gated許諾が得られない限り研究記録だけに留める。Parseは既存2つのSELECT OCRと同一文書・同一CPU/GPU・同一batch・同一precisionで比較し、利点がなければ追加しない。
+Kumo-RelationalとKumo-Anomalyはそれぞれ独立した学習成果として次期CONDITIONAL研究候補。ただしKumo-Anomalyは**実行STOP**であり、本人の取得承認と実行承認のどちらも得られていない。両モデルについて、公開元の全必須重み・ライセンス/NOTICE・依存コード・Python/torch/driver/ABI・セキュリティ・owner HDDと将来のオフライン復元条件を検査。Ising 2件は本人Gated許諾が得られない限り研究記録だけに留める。Parseは既存2つのSELECT OCRと同一文書・同一CPU/GPU・同一batch・同一precisionで比較し、利点がなければ追加しない。
+
+### PyTorchセキュリティ更新（2026-11-15時点）
+
+**weights_only=Trueは完全な安全証明ではない。** [PyTorch GHSA-63cw-57p8-fm3p](https://github.com/pytorch/pytorch/security/advisories/GHSA-63cw-57p8-fm3p)は2.9.1以前のweights-onlyデシリアライズにRCEを報告し、2.10.0以上で修正。[GHSA-v32g-mr63-3j83](https://github.com/pytorch/pytorch/security/advisories/GHSA-v32g-mr63-3j83)は2.14.0/2.14.1のweights-onlyで機密ファイル読込が可能と報告し、2.15.0を修正版と明記。したがって次の隔離検証では、**修正版（例：2.15.0）の実バイナリ版・ハッシュ、CPU/GPU ABI、外部ネットワーク停止、資格情報なしの実行環境**を独立に確認する。ただしNVIDIA runtimeとPyTorch2.15の互換性は未実測。元カードの「約8M」と新ローダーのパラメータ表示「2.44M」は異なり、完全集計はUNVERIFIEDのまま。
 
 ### 公式ソースの固定と動作上の落とし穴
 
@@ -47,7 +51,7 @@ Kumo-Relationalのみ次期CONDITIONAL検討とし、Kumo-Anomalyはセキュリ
 
 H：汎用LLMだけでは代替できない独立学習済み専門タスクが少容量で存在する。
 T：5repoの固定publisher API、公開ハッシュ、Gated、ライセンス表示、既存v32とのID非重複を全数確認（n_min=5）。
-D：5件のrevision・file bytes・公開元SHAの形式、未取得・未承認はPASS。Kumo-Anomalyの公式コードは安全ゲートFAIL（weights_only=Falseが複数）。正式採用・権利・依存閉包・ハードウェア実行はUNCERTAIN。
+D：5件のrevision・file bytes・公開元SHAの形式、未取得・未承認はPASS。Kumo-Anomaly旧SDKの安全ゲートはFAIL（weights_only=False）、新しい公式weights_only=True経路は静的証拠のみPASS、実行はUNCERTAIN/STOP。正式採用・権利・依存閉包・ハードウェア実行はUNCERTAIN。
 C：後学習でなく単純コピー、必要な外部学習済み親重み欠損、作者のベンチマーク条件から別ノイズへ転移不可、文書解析で独自性不足。
 U：本人の権限、pickle安全性、runtimeとCUDA ABI、現物SHA、実HDDが未測定。合成標準不確かさu_c・包含係数kは確率分布未定義のため数値化不可。
 
