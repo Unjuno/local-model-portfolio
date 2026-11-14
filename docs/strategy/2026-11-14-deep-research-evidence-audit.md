@@ -66,3 +66,49 @@ Priority must not be treated as permission. Keep the existing proposal's `approv
 **Cross-disciplinary dependencies:** AI policy and export controls (legal scope); software supply-chain provenance (revision/license integrity); digital preservation (reproducibility, storage and substitute diversity).
 
 **Question to resolve:** Which scarce model capability is genuinely non-substitutable after checking alternative first-party releases, rather than merely unusual by name?
+
+
+## 2026-11-14 follow-up: executable-equivalent full inventory comparison
+
+**Method:** Read the complete current `catalog/effective-portfolio-2026-11-03-v9.json` and `catalog/proposals/01-regulation-priority.json` from GitHub `main`, parse both as JSON, compare exact `repo_id` sets and duplicate IDs, count `priority.band` and `parameter_limit.status` for every proposal record, and check `priority.download_approved` and `priority.legally_cleared_for_acquisition` across all 132 records. This is an observed repository-data audit, not an independent upstream model-card validation.
+
+| Integrity / decision check | Measured result | Decision |
+| --- | ---: | --- |
+| v9 inventory IDs | 132 | baseline |
+| proposal IDs | 132 | PASS |
+| missing / extra / duplicated IDs | 0 / 0 / 0 | PASS |
+| priority P0 / P1 / P2 / P3 / PX | 22 / 59 / 37 / 12 / 2 | PASS; actual JSON, not illustrative percentages |
+| model total-parameter PASS (<150B) | 95 | metadata eligibility only |
+| model total-parameter UNVERIFIED | 12 | BLOCK |
+| model total-parameter EXCLUDED (>=150B) | 2 | EXCLUDE |
+| datasets, parameter threshold not applicable | 23 | other rights gates still apply |
+| asset-level `download_approved=true` or `legally_cleared_for_acquisition=true` | 0 | PASS |
+| proposal-level `approved` / `download_enabled` | false / false | PASS |
+
+**Excluded (do not acquire):** `orcarouter/Qwen3.8-Flash-Next-Uncensored` (180B total recorded); `mistralai/Mistral-Large-4-1T-A52B` (1.05T total recorded). These totals are catalog assertions and were not independently remeasured in this pass.
+
+**Twelve total-parameter verification blockers:**
+
+1. `Plachta/Seed-VC`
+2. `InstantX/InstantID`
+3. `SWivid/F5-TTS`
+4. `coqui/XTTS-v2`
+5. `onnx-community/higgs-audio-v3-tts-4b`
+6. `ByteDance/InfiniteYou`
+7. `fishaudio/fish-speech-1.5`
+8. `TencentARC/PhotoMaker`
+9. `ACERobotics/Puffin-World`
+10. `bytedance-research/Lance`
+11. `microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224`
+12. `OnomaAIResearch/Illustrious-XL-v1.1`
+
+**Primary-source recheck, performed through public web search on 2026-11-14:**
+
+- European Commission AI Act Service Desk, Article 53: https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-53 — provider obligations and conditional open-source exemption; no general prohibition on public model weights is stated.
+- European Commission AI Act Service Desk, open-source FAQ: https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/how-does-ai-act-apply-general-purpose-ai-models-released-open-source — exemptions do not waive copyright policy/training-data-summary obligations, nor cover systemic-risk GPAI models.
+- European Commission AI Act Service Desk, systemic-risk FAQ: https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-general-purpose-ai-model-one-systemic-risk — capability or Commission designation matters; total parameter count is not itself a legal systemic-risk determination.
+- US BIS official May 13 2025 statement: https://www.bis.gov/press-release/department-commerce-announces-rescission-biden-era-artificial-intelligence-diffusion-rule-strengthens — describes announced non-enforcement and planned rescission; **does not independently establish the full current 2026 export-control status**.
+
+**Interpretation:** The hard 150B cutoff is this portfolio's internal acquisition policy, not the EU AI Act systemic-risk threshold. A passing parameter gate is neither a license clearance nor a download authorization. The current catalog has no approved acquisitions.
+
+**H/T/D/C/U result:** H = exact 132-ID equality and no unauthorized flags; T = census of all 132 records; D = PASS for ID/flag integrity, UNCERTAIN for upstream factual freshness; C = stale model cards, hidden MoE experts, dependency parameters, changed hosting/license, or misidentified repo; U = no calibrated numeric uncertainty without upstream validation and physical capacity measurement. No model weights or datasets were downloaded in this audit.
