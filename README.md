@@ -1,9 +1,11 @@
 # Local Model Portfolio
 
-**v34（2026年11月15日）** [Kumo-Tabular／Kumo-Anomalyを別学習済み原本として2件CONDITIONAL追加](docs/strategy/79-v34-kumo-trained-state-selection-2026-11-15.md)。[正本187件／有効140件](catalog/effective-portfolio-2026-11-15-v34.json)／[非実行140件キュー](queues/proposed-v34-2026-11-15.json)。既存v33の185件は変更せず、Kumo-Relationalは重複登録しない。**重みDL0・承認0**。
+**現行v35（2026年11月15日）**：公式config・safetensors索引・SHA・利用規約を調査し、[Muse Glimmer原本と別学習5層DFlashの2成果をCONDITIONAL追加](docs/strategy/82-v35-muse-original-and-dflash-formal-selection-2026-11-15.md)。[全189資産（モデル163・データ26）](catalog/effective-portfolio-2026-11-15-v35.json)／[有効142件キュー](queues/proposed-v35-2026-11-15.json)／[全142件の取得前ゲート](catalog/readiness/v35-2026-11-15-r82-all142-gates.json)。同じ重みのGGUF複製は不採用。**重みダウンロード0、実機検証0、承認0**。4TBと200GB空きの実物理適合は未確定。
+
+**旧版v34（2026年11月15日）** [Kumo-Tabular／Kumo-Anomalyを別学習済み原本として2件CONDITIONAL追加](docs/strategy/79-v34-kumo-trained-state-selection-2026-11-15.md)。[正本187件／有効140件](catalog/effective-portfolio-2026-11-15-v34.json)／[非実行140件キュー](queues/proposed-v34-2026-11-15.json)。既存v33の185件は変更せず、Kumo-Relationalは重複登録しない。**重みDL0・承認0**。
 
 
-**現行v33（11月15日・正式選定）**：[185資産（モデル159・データ26）、有効138件・新規3専門モデル](catalog/effective-portfolio-2026-11-15-v33.json)／[選定の重み・能力比較](docs/strategy/77-v33-weight-content-selection-and-alternatives-2026-11-15.md)／[新3モデルの固定44ファイル・SHA・配布元フラグの矛盾](docs/strategy/79-v33-three-model-original-files-and-readiness-2026-11-15.md)／[全138件の保存準備台帳](catalog/readiness/v33-2026-11-15-r79-all138-selection-gates.json)。IBM LLMON3B、Perplexity Decider Flash、NVIDIA Kumoの独立学習成果だけ追加。大型同族や通常量子化の二重採用なし。**重み取得・実機復元・承認0件**。以下v32以下の件数と容量は履歴。
+**旧版v33（11月15日・正式選定）**：[185資産（モデル159・データ26）、有効138件・新規3専門モデル](catalog/effective-portfolio-2026-11-15-v33.json)／[選定の重み・能力比較](docs/strategy/77-v33-weight-content-selection-and-alternatives-2026-11-15.md)／[新3モデルの固定44ファイル・SHA・配布元フラグの矛盾](docs/strategy/79-v33-three-model-original-files-and-readiness-2026-11-15.md)／[全138件の保存準備台帳](catalog/readiness/v33-2026-11-15-r79-all138-selection-gates.json)。IBM LLMON3B、Perplexity Decider Flash、NVIDIA Kumoの独立学習成果だけ追加。大型同族や通常量子化の二重採用なし。**重み取得・実機復元・承認0件**。以下v32以下の件数と容量は履歴。
 
 **R76 Qwen固定原本照合（11月15日）**：[Qwen-Image-2.1の公式API 28ファイルと選択27ファイルをGit blob SHA/byteで照合](docs/strategy/76-qwen-image-2.1-fixed-source-scope-and-rights-2026-11-15.md)（[一次証拠JSON](catalog/research/2026-11-15-r76-qwen-image-2.1-fixed-source-overfetch-resolution.json)）。R75未説明の3,333,149 byteは**除外済みWeChat QR画像3,332,800 byte＋過去集計差349 byte**と分離。Qwen Research Licenseは研究・評価に限定、商用別契約。**実HDD・全依存・取得承認未完了**。
 
