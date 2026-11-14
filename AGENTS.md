@@ -7,7 +7,7 @@
 
 ## 2026-11-15 追加研究：5専門モデルの現行v32未採用・安全ゲート
 
-[一次スナップショット・採否](catalog/proposals/07-rare-specialist-2026-11-15.json)／[研究報告](docs/strategy/75-five-distinct-specialists-2026-11-15.md)／[検証コード](scripts/validate_rare_specialist_proposal.py)。5件は**正式v32の182件に含めない**。分類/回帰の別後学習原本 Kumo-Relational 7ファイル243,656,960byteは次期CONDITIONAL研究候補。ただし公式runtimeは weight-only load でもモデルタグv1.0.1とネットワーク自動取得に注意。異常検知Kumo-Anomaly 4ファイル29,612,151byteは、公式SDKで `torch.load(weights_only=False)` を複数箇所確認したため**HOLD、危険なpickleコードを実行しない**。Ising ColorCode/SurfaceCode 2件はそれぞれGated、モデルSHAが公開されていても本人権限未検証で**取得STOP・P0合法的権利調査のみ**。Nemotron-3.5-Parseは既存OCRとの重複・runtime比較未完でHOLD。モデル本体・課金・自動取得・承認済みキュー変更はしない。
+[一次スナップショット・採否](catalog/proposals/07-rare-specialist-2026-11-15.json)／[研究報告](docs/strategy/75-five-distinct-specialists-2026-11-15.md)／[検証コード](scripts/validate_rare_specialist_proposal.py)。5件は**正式v32の182件に含めない**。分類/回帰の別後学習原本 Kumo-Relational 7ファイル243,656,960byteは次期CONDITIONAL研究候補。ただし公式runtimeは weight-only load でもモデルタグv1.0.1とネットワーク自動取得に注意。異常検知Kumo-Anomaly 4ファイル29,612,151byteは、旧公式SDKでは `torch.load(weights_only=False)` を複数箇所使うが、[R77固定原本一致監査](catalog/research/2026-11-15-r77-kumo-anomaly-publisher-safe-loader-and-revision-equality.json)で別のNVIDIA公式 `weights_only=True` ローダーが同一SHAの重みを参照すると確認。**静的保存は次期CONDITIONAL研究候補、実行・取得はSTOP**。PyTorch2.14.xと2.9.1以前のweights_only脆弱性があるため、修正版・隔離環境・ABIの検証が必要。Ising ColorCode/SurfaceCode 2件はそれぞれGated、モデルSHAが公開されていても本人権限未検証で**取得STOP・P0合法的権利調査のみ**。Nemotron-3.5-Parseは既存OCRとの重複・runtime比較未完でHOLD。モデル本体・課金・自動取得・承認済みキュー変更はしない。
 
 
 
