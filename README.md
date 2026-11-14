@@ -1,5 +1,7 @@
 # Local Model Portfolio
 
+**現行v33・2026年11月15日**：公式の重み・config・専用学習ヘッド・依存を実際に調べ、[3件の独立学習成果を正式選定](docs/strategy/77-v33-weight-content-selection-and-alternatives-2026-11-15.md)。[全185資産（モデル159・データ26）](catalog/effective-portfolio-2026-11-15-v33.json)／[追加3件の採否](catalog/revisions/v33-2026-11-15.json)／[有効138件の非実行候補](queues/proposed-v33-2026-11-15.json)／[依存準備138件](catalog/preparation/2026-11-15-insurance-bundles-v33.json)／[取得前ゲート138件](catalog/readiness/v33-2026-11-15-r77-all138-gates.json)。LLMON 3B、Perplexity Decider Flash、NVIDIA Kumo-RelationalをCONDITIONAL追加。より大きい同系統や単純量子化を増やさず、旧182件は削除しない。**Kumo総数未確定・Perplexity本人アクセス未確認、承認済み取得0。運用正本はmainのcatalog/CURRENT.json。**
+
 **R76 Qwen固定原本照合（11月15日）**：[Qwen-Image-2.1の公式API 28ファイルと選択27ファイルをGit blob SHA/byteで照合](docs/strategy/76-qwen-image-2.1-fixed-source-scope-and-rights-2026-11-15.md)（[一次証拠JSON](catalog/research/2026-11-15-r76-qwen-image-2.1-fixed-source-overfetch-resolution.json)）。R75未説明の3,333,149 byteは**除外済みWeChat QR画像3,332,800 byte＋過去集計差349 byte**と分離。Qwen Research Licenseは研究・評価に限定、商用別契約。**実HDD・全依存・取得承認未完了**。
 
 **R75 allowlist検証（11月15日）**：[全66配布元・1,425ファイルのSHA種別/固定revision/容量/権限フラグをR73と機械照合](docs/strategy/75-v32-overfetch-allowlist-verification-2026-11-15.md)（[読取専用検証スクリプト](scripts/verify_r74_overfetch_allowlists.py)／[回帰テスト](tests/test_verify_r74_overfetch_allowlists.py)）。メタデータ整合性はPASS、Qwen Image 2.1の観測差3,333,149byteはファイル数で説明できず再調査。**実HDD・本人権限・復元・取得承認は未完了**。
