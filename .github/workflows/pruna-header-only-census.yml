@@ -1,12 +1,7 @@
 name: Pruna header-only tensor census
 on:
-  push:
-    branches: [main]
-    paths:
-      - scripts/safetensors_header_census.py
-      - tests/test_safetensors_header_census.py
-      - .github/workflows/pruna-header-only-census.yml
   workflow_dispatch:
+
 permissions:
   contents: read
 jobs:
