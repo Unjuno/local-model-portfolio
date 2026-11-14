@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "revision_id": "v35-20261115",
+  "previous_revision_id": "v34-20261115",
+  "decision_date": "2026-11-15",
+  "target_branch": "main",
+  "source_basis": "catalog/research/2026-11-15-r81-muse-glimmer-original-and-assistant.json",
+  "status": "TWO_SEPARATELY_TRAINED_MULTIMODAL_TARGET_AND_DFLASH_ASSISTANT_CONDITIONAL_RESEARCH_ONLY",
+  "archive_target_bytes": 4000000000000,
+  "minimum_free_bytes": 200000000000,
+  "planning_reservation_cap_bytes": 71000000000,
+  "planning_cap_is_not_full_manifest_or_measured_owner_disk": true,
+  "append_only": true,
+  "additions": [
+    {
+      "position": 188,
+      "asset_kind": "model",
+      "repo_id": "meta-models/Muse-Glimmer-30B",
+      "url": "https://huggingface.co/meta-models/Muse-Glimmer-30B",
+      "group": "画像・テキスト統合／原本蒸留学習済み重み",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Muse Glimmer 30Bは29.7766BパラメータのMeta原本蒸留・画像統合重み。52層sliding/full混在と50層vision towerを含む独立アーキテクチャ、同一系列のGGUFコピーではない。",
+      "quality_positive": "公式safetensors indexは2シャード・29,776,626,688格納パラメータ・59,553,253,376byte tensor payloadを示し、configの52+50層を確認。",
+      "quality_negative": "通常の27B前後VLMに対する同条件品質改善は未実証。USAGE_POLICY.mdとLICENSEが別個に存在し、publisher tensor-sizeは実ファイル/依存込みの最終容量ではない。",
+      "observed_access": "public_ungated_repo_metadata_not_authenticated_owner_permission",
+      "evidence_date": "2026-11-15",
+      "evidence_kind": "primary_publisher_config_weight_index_and_Xet_pointer",
+      "evidence_urls": [
+        "https://huggingface.co/meta-models/Muse-Glimmer-30B/blob/main/config.json",
+        "https://huggingface.co/meta-models/Muse-Glimmer-30B/blob/main/model.safetensors.index.json",
+        "https://huggingface.co/meta-models/Muse-Glimmer-30B/blob/main/USAGE_POLICY.md",
+        "https://arxiv.org/abs/2610.24628"
+      ],
+      "license_metadata": "apache-2.0",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "download_ready": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "f84ecc3a0ea984a4c04542a84269e3d065350a6e",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 29776626688,
+        "exclusive_max_total_parameters": 150000000000,
+        "evidence_urls": [
+          "https://huggingface.co/meta-models/Muse-Glimmer-30B/blob/main/model.safetensors.index.json"
+        ],
+        "evidence_kind": "publisher_exact_stored_tensors_index",
+        "review_date": "2026-11-15",
+        "known_before_download": true,
+        "note": "Publisher index counts model and integrated vision tower tensors; complete external processor/software/rights remain separate."
+      },
+      "upstream_source_weights": {
+        "index_path": "model.safetensors.index.json",
+        "source_stored_parameter_count": 29776626688,
+        "source_index_tensor_payload_bytes": 59553253376,
+        "source_shard_count": 2,
+        "shards": [
+          {
+            "path": "model-00001-of-00002.safetensors",
+            "publisher_pointer_sha256": "8eef61530e1283642c77ce2e6721feb5c6f348fa055c00e90f2844a136372694",
+            "file_bytes_exact": null
+          },
+          {
+            "path": "model-00002-of-00002.safetensors",
+            "publisher_pointer_sha256": "b58cc2144ba1ba1af4420f67f4ca3ced7f09298510b80464cc75018a0be14381",
+            "file_bytes_exact": null
+          }
+        ],
+        "source_index_tensor_bytes_are_not_complete_file_bytes": true,
+        "local_hash_verified": false
+      },
+      "selection_budget_cap_bytes": 65000000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 188,
+        "category": "independent_multimodal_trained_checkpoint",
+        "rationale": "Unique trained state, not ordinary conversion; priority is scenario, not removal probability",
+        "scenario_status": "hypothetical_no_model_specific_takedown"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Genuine multimodal original-distilled trained state with self-contained image tower; not another GGUF quantization of existing v33 assets.",
+        "must_preserve": [
+          "two publisher SHA256-matched original BF16 safetensors shards at same immutable revision",
+          "model.safetensors.index.json; config, tokenizer, processor, generation/chat template",
+          "LICENSE+USAGE_POLICY.md, model card and paper"
+        ],
+        "external_learned_and_software_dependencies": [
+          "Transformers muse_glimmer 5.15.dev0 ABI, vision processor; freeze code/wheels"
+        ],
+        "excluded_duplicate_or_optional_formats": [
+          "meta-models/Muse-Glimmer-30B-GGUF as ordinary quantization copy"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "publisher_original_tensor_bytes": 59553253376,
+        "source_bytes_are_not_selected_bytes": true,
+        "selected_file_bytes_final": null,
+        "hw_tested_on_user_machine": false,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "artifact_kind": "official_original_muse_multimodal",
+      "download_candidate_only": true,
+      "research_provenance_path": "catalog/research/2026-11-15-r81-muse-glimmer-original-and-assistant.json"
+    },
+    {
+      "position": 189,
+      "asset_kind": "model",
+      "repo_id": "meta-models/Muse-Glimmer-30B-assistant",
+      "url": "https://huggingface.co/meta-models/Muse-Glimmer-30B-assistant",
+      "group": "別学習DFlash投機デコード／Muse専用ドラフター",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Muse Glimmerと別学習された5層・16-token blockのDFlash assistant。主モデルの単純量子化ではなく、元targetと対で保存する独立学習済み高速化重み。",
+      "quality_positive": "配布元公開configに5層/16-token block/target_layer_ids=[1,13,25,37,49]を確認。5.11GB重みのXet SHA256を公開。",
+      "quality_negative": "約2.556BはHub概数でテンソル完全再計数ではない。対象主モデルの完全revision・DFlash backend ABI・受入率と本人HWでの速度は不明。",
+      "observed_access": "public_ungated_repo_metadata_not_authenticated_owner_permission",
+      "evidence_date": "2026-11-15",
+      "evidence_kind": "primary_publisher_assistant_config_and_Xet_pointer",
+      "evidence_urls": [
+        "https://huggingface.co/meta-models/Muse-Glimmer-30B-assistant/blob/main/config.json",
+        "https://huggingface.co/meta-models/Muse-Glimmer-30B-assistant/blob/main/model.safetensors",
+        "https://arxiv.org/abs/2610.24628"
+      ],
+      "license_metadata": "apache-2.0",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "download_ready": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "2c86316d689027b91123638739743fef1d425233",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 2556000000,
+        "exclusive_max_total_parameters": 150000000000,
+        "evidence_urls": [
+          "https://huggingface.co/meta-models/Muse-Glimmer-30B-assistant"
+        ],
+        "evidence_kind": "publisher_hub_approximate_main_model_count",
+        "review_date": "2026-11-15",
+        "known_before_download": true,
+        "note": "Hub approximate parameter count safely below 150B; exact stored tensor total and external target counted separately for full pipeline."
+      },
+      "upstream_source_weights": {
+        "path": "model.safetensors",
+        "publisher_pointer_sha256": "fd88d337eb84f8d0e6ba33a7684d7efa6722d4460ba4d6badca9699418392a84",
+        "publisher_display_bytes_approx": 5110000000,
+        "hub_summary_parameters_rounded": 2556000000,
+        "source_exact_file_bytes": null,
+        "local_hash_verified": false
+      },
+      "selection_budget_cap_bytes": 6000000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 189,
+        "category": "independent_speculative_draft",
+        "rationale": "Unique trained state, not ordinary conversion; priority is scenario, not removal probability",
+        "scenario_status": "hypothetical_no_model_specific_takedown"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Separately trained DFlash/speculative-decoding assistant with five layers, not a format conversion. Preserve as an independent learned draft but never count it as standalone general LLM.",
+        "must_preserve": [
+          "original 5-layer model.safetensors and same-commit config, Xet SHA256",
+          "LICENSE+USAGE_POLICY.md, README",
+          "matched target model revision, shared tokenizer and DFlash implementation"
+        ],
+        "external_learned_and_software_dependencies": [
+          "meta-models/Muse-Glimmer-30B (same compatible revision), shared tokenizer",
+          "DFlash-compatible Transformers/SGLang target backend and version"
+        ],
+        "excluded_duplicate_or_optional_formats": [
+          "GGUF conversion of identical assistant, standalone generic LLM claim"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "publisher_original_tensor_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "selected_file_bytes_final": null,
+        "hw_tested_on_user_machine": false,
+        "requires_backend_kv_ram_speed_test": true
+      },
+      "artifact_kind": "publisher_distinct_trained_dflash_draft",
+      "download_candidate_only": true,
+      "research_provenance_path": "catalog/research/2026-11-15-r81-muse-glimmer-original-and-assistant.json"
+    }
+  ],
+  "not_adopted": [
+    {
+      "repo_id": "meta-models/Muse-Glimmer-30B-GGUF",
+      "decision": "NOT_ADOPTED_ORDINARY_QUANTIZATION",
+      "why": "Derived weights of same learned original; avoid duplication pending distinct runtime need."
+    }
+  ],
+  "download_authorizations_created": 0,
+  "model_weights_downloaded": 0,
+  "owner_rights_verified": false
+}
