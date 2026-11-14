@@ -5,6 +5,12 @@
 **通常の調査・選定・監査・更新の正本は `main` のみ。** 既存ブランチの成果はmainへ統合し、ユーザーから別途指示されない限り新しいブランチを作らない。旧資料の専用ブランチ名は歴史的な出典であり、新しい作業ブランチの作成命令ではない。
 
 
+## 2026-11-15 追加研究：5専門モデルの現行v32未採用・安全ゲート
+
+[一次スナップショット・採否](catalog/proposals/07-rare-specialist-2026-11-15.json)／[研究報告](docs/strategy/75-five-distinct-specialists-2026-11-15.md)／[検証コード](scripts/validate_rare_specialist_proposal.py)。5件は**正式v32の182件に含めない**。分類/回帰の別後学習原本 Kumo-Relational 7ファイル243,656,960byteは次期CONDITIONAL研究候補。ただし公式runtimeは weight-only load でもモデルタグv1.0.1とネットワーク自動取得に注意。異常検知Kumo-Anomaly 4ファイル29,612,151byteは、公式SDKで `torch.load(weights_only=False)` を複数箇所確認したため**HOLD、危険なpickleコードを実行しない**。Ising ColorCode/SurfaceCode 2件はそれぞれGated、モデルSHAが公開されていても本人権限未検証で**取得STOP・P0合法的権利調査のみ**。Nemotron-3.5-Parseは既存OCRとの重複・runtime比較未完でHOLD。モデル本体・課金・自動取得・承認済みキュー変更はしない。
+
+
+
 ## モデルの現在構成（main／v32・2026-11-14）
 
 **唯一の正本は `catalog/CURRENT.json` のv32、182資産・有効135件**。v31からDSpine-b16、Nemotron-3-Diarization、RFD4-Proteinaを独立後学習・専門学習成果として3件CONDITIONAL研究追加。[v32全件](catalog/effective-portfolio-2026-11-14-v32.json)、[非実行135件候補](queues/proposed-v32-2026-11-14.json)、[依存台帳](catalog/preparation/2026-11-14-insurance-bundles-v32.json)、[研究記録](docs/strategy/56-v32-small-specialist-selection-2026-11-14.md)。取得承認0、4TB計画と空き200GB別条件。旧版v31以下は履歴。
