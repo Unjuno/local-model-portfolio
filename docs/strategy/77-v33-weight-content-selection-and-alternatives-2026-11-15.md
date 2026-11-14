@@ -26,7 +26,7 @@
 
 ### C. NVIDIA Kumo-Relational — CONDITIONAL研究追加（取得停止）
 
-- [NVIDIA公式repo](https://huggingface.co/nvidia/Kumo-Relational)、[別々のclassifier/regressorの原本SHAを含む既存の一次調査](../..//catalog/proposals/07-rare-specialist-2026-11-15.json)、[NVIDIA公式コード固定版](https://github.com/NVIDIA/structured-data-models/blob/46a6f20d20f1140912f7a9e6ecdda9a3cd3fda87/sdm/models/kumo/relational/model.py)。
+- [NVIDIA公式repo](https://huggingface.co/nvidia/Kumo-Relational)、[別々のclassifier/regressorの原本SHAを含む既存の一次調査](../../catalog/proposals/07-rare-specialist-2026-11-15.json)、[NVIDIA公式コード固定版](https://github.com/NVIDIA/structured-data-models/blob/46a6f20d20f1140912f7a9e6ecdda9a3cd3fda87/sdm/models/kumo/relational/model.py)。
 - 固定revision`efdbb110daea5aae123447864a64612e8a3dc6be`。公式repo7ファイル合計 **243,656,960 byte**。独立した`classifier.pt` **119,862,733 byte**（SHA`0c2e35cc18303f0d3ddeaf04e9cab6ca3a8bd6ea17195ac0e42d47af4bcb2a2d`）と`regressor.pt` **123,786,699 byte**（SHA`f863b3632f738e1444fb83a8cea5746f298889b5c96953a000c4720d202ae4cf`）。**時系列予測モデルTTM/Chronosとも、OCRとも異なる関係表のクラス判定・数値予測**。両者を別repoモデル2件と数えるような増加はしない。
 - **総学習済みパラメータ数は公開元メタデータで確定しなかったため`UNVERIFIED_BLOCK_FINAL_LOCK`を維持**。`.pt`重み本体をデシリアライズ・実行していない。実装コードは原本がないとHFから自動取得する可能性があり、未監査のネットワークfallbackを防ぐこと。ライセンスOpenMDW1.1/第三者NOTICE、親TabICLv2の依存ABIは未確定。研究選定は最終取得の許可ではない。
 
