@@ -48,8 +48,21 @@ def validate(proposal: dict, catalog: dict, approved: dict) -> dict:
         require(bool(HEX40.fullmatch(item["source_revision"])), f"missing 40hex pin: {ident}")
         require(item["download_authorized"] is False and
                 item["formal_catalog_change_approved"] is False and
-                item["anonymous_metadata_not_user_entitlement"] is True,
+                item["anonymous_metadata_not_user_entitlement"] is True and
+                item["final_lock_eligible"] is False and
+                item["legal_entitlement_verified"] is False and
+                item["local_file_hash_verified"] is False and
+                item["runtime_bundle_verified"] is False and
+                item["actual_HDD_fit_verified"] is False,
                 f"approval or entitlement improperly asserted: {ident}")
+        status = item["parameter_screening"]["status"]
+        require(status in (
+            "UNVERIFIED_BLOCK_FINAL_LOCK", "PUBLISHER_APPROXIMATE_NO_FINAL_LOCK",
+            "PUBLISHER_MODEL_COUNT_SCREENING_ONLY", "MAIN_MODEL_COUNT_SCREENING_ONLY"
+        ), f"invalid parameter screening status: {ident}")
+        if ident == "nvidia/Kumo-Relational":
+            require(item["parameter_screening"]["observed_model_parameters"] is None,
+                    "Kumo relational full count not proved")
         files = item["proposed_source_files"]
         require(isinstance(files, list) and files, f"empty file scope: {ident}")
         require(len(files) == item["candidate_selected_file_count"],
