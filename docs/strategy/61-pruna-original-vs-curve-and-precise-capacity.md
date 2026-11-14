@@ -40,7 +40,7 @@ Comfy開発元のピークGPUメモリ目安は8MP、batch1のBF16 core約56GB�
 
 **結論：今は元Pruna Diffusersの44ファイルを1つの保存候補として維持し、Comfy形式を追加の独立資産にしない。** Comfy版しか動かないPCで利用したい場合に限り、1種類の表現を別途実行用に選ぶ。価値判断は保存目的（高精度元trained state）と実用目的（小容量・高速化）で分ける。
 
-取得STOP：MiniMax H3 Community Licenseの地域/用途/Noticeと第三者Qwen componentの原文確認、Diffusers 0.42.0.dev0ソースとtokenizer/processor/Comfy runtime固定、上流ファイルを利用者が合法的に取得できること、物理HDD空き200GBと実容量上限、ユーザーの承認。現在の138資産?? **現行は182／有効135で変更なし**。他134有効資産の完成度は別で、本R61だけで全体の容量収束を宣言しない。
+取得STOP：MiniMax H3 Community Licenseの地域/用途/Noticeと第三者Qwen componentの原文確認、Diffusers 0.42.0.dev0ソースとtokenizer/processor/Comfy runtime固定、上流ファイルを利用者が合法的に取得できること、物理HDD空き200GBと実容量上限、ユーザーの承認。**現行は182資産／有効135件で変更なし**。他134有効資産の完成度は別で、本R61だけで全体の容量収束を宣言しない。
 
 ## 5. H/T/D/C/U・単位とERROR CHECK
 
