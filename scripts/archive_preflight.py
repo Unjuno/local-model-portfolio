@@ -109,7 +109,14 @@ def _safe_target(srcroot: Path, rel: str) -> Path:
     if not _safe_relative_path(rel):
         raise ValueError("unsafe path")
     root = srcroot.resolve(strict=True)
-    p = root.joinpath(*rel.split("/")).resolve(strict=False)
+    candidate = root
+    for component in rel.split("/"):
+        candidate = candidate / component
+        # Reject symlinks even when the target remains inside the archive:
+        # checking only .resolve().is_relative_to(root) silently followed them.
+        if candidate.is_symlink():
+            raise ValueError("symlink within source file path")
+    p = candidate.resolve(strict=False)
     if not p.is_relative_to(root):
         raise ValueError("symlink/junction escaped source root")
     return p
