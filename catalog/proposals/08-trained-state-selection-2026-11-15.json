@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-15",
+  "baseline": "v32-20261114",
+  "baseline_assets": 182,
+  "baseline_active": 135,
+  "purpose": "Model-internals-based selection decisions, not generic regulation forecast; two independently trained candidates and one withheld OCR candidate.",
+  "formal_catalog_revision_created": false,
+  "download_approved": false,
+  "method": "Official model cards + pinned source file inventories in R75; differentiate trained state from quantization and optional runtime acceleration; do not execute checkpoints.",
+  "decisions": [
+    {
+      "repo_id": "nvidia/Kumo-Relational",
+      "decision": "PROMOTE_TO_NEXT_REVISION_CONDITIONAL_RESEARCH",
+      "kind": "model",
+      "source_revision": "efdbb110daea5aae123447864a64612e8a3dc6be",
+      "source_url": "https://huggingface.co/nvidia/Kumo-Relational",
+      "model_internals": "Relational row embeddings, per-table column/row attention, graph message passing and cross-sample attention; separate classifier.pt and regressor.pt trained checkpoints. Fine-tuned from TabICLv2, not generic time-series model.",
+      "trained_states": [
+        "classifier.pt",
+        "regressor.pt"
+      ],
+      "known_publisher_file_bytes": 243656960,
+      "comparison": "Existing chronos-2 and IBM TTM R3 forecast numeric sequences, not relational primary-key/foreign-key in-context classification and regression. No functional equivalence assumed.",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "rights": "OpenMDW-1.1 for model, TabICLv2 BSD-3-Clause attribution. Full legal review pending.",
+      "runtime": "NVIDIA structured-data-models fixed source code; torch .pt weights_only loader evidence, offline cache and ABI not verified.",
+      "reason": "Independent learned representation and task, two trained states; include as one asset with two essential checkpoint files, not two duplicated model entries.",
+      "unresolved": [
+        "Full tensor parameter count",
+        "Offline-safe fixed runtime and transitive dependencies",
+        "Rights and user-approved immutable manifest"
+      ],
+      "download_approved": false
+    },
+    {
+      "repo_id": "nvidia/Kumo-Anomaly",
+      "decision": "PROMOTE_TO_NEXT_REVISION_CONDITIONAL_RESEARCH_EXECUTION_STOP",
+      "kind": "model",
+      "source_revision": "369ccba38a105736c6c9e4b5788a330c7e22112e",
+      "source_url": "https://huggingface.co/nvidia/Kumo-Anomaly",
+      "model_internals": "Diffusion-based multivariate time-series imputation and anomaly detection with curriculum and adaptive SCS/MACS thresholds; not interchangeable with time-series forecasting.",
+      "trained_states": [
+        "final_model.pth"
+      ],
+      "known_publisher_file_bytes": 29612151,
+      "comparison": "Existing IBM TTM R3 and chronos-2 forecast time-series; an anomaly detector is a distinct learned objective.",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "rights": "Publisher model card Apache-2.0; transitive code rights unverified.",
+      "runtime": "Legacy NVIDIA Kumo-TS loader has torch.load(weights_only=False), unsafe for untrusted pickle. Official NVIDIA structured-data-models has weights_only=True path for same source checkpoint SHA, but compatibility/security/ABI not independently verified. Do not run.",
+      "reason": "Unique small trained checkpoint with separate objective; preserve only one fixed weight version, not both identical-SHA revisions.",
+      "unresolved": [
+        "8M vs 2.44M model parameter scope discrepancy",
+        "Static tensor census without executing pickle",
+        "Patched PyTorch and offline isolated runtime validation",
+        "Rights and explicit user manifest approval"
+      ],
+      "download_approved": false
+    },
+    {
+      "repo_id": "nvidia/Nemotron-3.5-Parse",
+      "decision": "HOLD_COMPARATIVE_EVALUATION_NO_DUPLICATE_ADD",
+      "kind": "model",
+      "source_url": "https://huggingface.co/nvidia/Nemotron-3.5-Parse",
+      "model_internals": "C-RADIOv4-SO400M vision encoder + 10-layer mBART decoder, NaViT preprocessing, trained MTP head; 630800496 parameters reported for model, optional DFlash2 89.3M separate trained drafter.",
+      "comparison": "Existing LightOnOCR-3-0.8B, PaddleOCR-VL-1.5 and DeepSeek-OCR-2 already cover OCR. Publisher ParseBench/IndicVisionBench are not head-to-head same-hardware comparisons against all three.",
+      "reason": "Different architecture, but incremental archive value unproven until document-layout/chart/table evaluation and dependencies are compared; avoid optional drafter duplication.",
+      "rights": "OpenMDW-1.1 model, MIT tokenizer, third-party runtime notices; no full clearance.",
+      "unresolved": [
+        "Identical evaluation dataset and accuracy/latency conditions",
+        "Custom code security, optional drafter necessity, complete file scope",
+        "Actual hardware and storage budget"
+      ],
+      "download_approved": false
+    },
+    {
+      "repo_id": "nvidia/Ising-Decoder-ColorCode-1-Fast",
+      "decision": "HOLD_GATED_ACCESS_AND_LICENSE",
+      "kind": "model",
+      "source_url": "https://huggingface.co/nvidia/Ising-Decoder-ColorCode-1-Fast",
+      "reason": "Independent color-code decoder distinct from surface-code model; gated personal access not verified.",
+      "download_approved": false
+    },
+    {
+      "repo_id": "nvidia/Ising-Decoder-SurfaceCode-1-Fast",
+      "decision": "HOLD_GATED_ACCESS_AND_LICENSE",
+      "kind": "model",
+      "source_url": "https://huggingface.co/nvidia/Ising-Decoder-SurfaceCode-1-Fast",
+      "reason": "Independent rotated surface-code decoder; Gated and license tag other; no inferred approval.",
+      "download_approved": false
+    }
+  ],
+  "sources": [
+    "https://huggingface.co/nvidia/Kumo-Relational/blob/efdbb110daea5aae123447864a64612e8a3dc6be/README.md",
+    "https://huggingface.co/nvidia/Kumo-Anomaly/blob/369ccba38a105736c6c9e4b5788a330c7e22112e/README.md",
+    "https://huggingface.co/nvidia/Nemotron-3.5-Parse",
+    "https://github.com/NVIDIA/structured-data-models/blob/46a6f20d20f1140912f7a9e6ecdda9a3cd3fda87/sdm/models/kumo/timeseries/anomaly/model.py",
+    "https://github.com/pytorch/pytorch/security/advisories/GHSA-63cw-57p8-fm3p",
+    "https://github.com/pytorch/pytorch/security/advisories/GHSA-v32g-mr63-3j83"
+  ],
+  "verification": {
+    "unique_candidates": 5,
+    "new_research_adoption_recommendations": 2,
+    "formal_adoptions": 0,
+    "weight_downloads": 0,
+    "model_executions": 0,
+    "source_file_bytes_not_dependency_complete": true,
+    "existing_v32_unchanged": true
+  }
+}
