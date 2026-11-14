@@ -52,3 +52,24 @@
 ## 4.〈次に考える問い〉
 
 RFD4の2つのrevisionで重みSHAが一致した場合、同じ重みを二重保存する代わりに、どのrevisionのLICENSE・README・コードを正本として保全すべきか？
+
+
+## R71追補：RFD4の重み同一性を一次配布元APIで解決（2026-11-15）
+
+[旧コミットのHugging Face API](https://huggingface.co/api/models/nvidia/RFD4-Proteina/revision/cf31b93509df5af854c7f6ad704f5c83c77c0698?blobs=true)と[候補コミットのHugging Face API](https://huggingface.co/api/models/nvidia/RFD4-Proteina/revision/a06e2509c7033b010fc43614e9fd840303588502?blobs=true)を同一の `siblings[].rfilename / size / blobId / lfs.sha256` キーで照合した。比較対象はR64の選定7ファイル。追加取得・実行・ライセンス同意は行っていない。
+
+| 区分 | 件数 | 結果 |
+| --- | ---: | --- |
+| 選定対象ファイル | 7 | 両revの同名ファイルを比較 |
+| 同一bytes・同一blob | 3 | `LICENSE`, `config.json`, `model.safetensors` |
+| 内容の異なるファイル | 4 | `README.md`, `inference.yaml`, `provenance.json`, `release-checkpoints.json` |
+
+重み `model.safetensors` は両revとも **1,742,660,596 byte**、発行元のLFS SHA256が **`5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0`** で一致。**RFD4の主重みについては同一性PASS**。ただし推論設定と来歴・チェックポイント一覧は異なるため、`revision`全体の同一性・完全な復元はFAIL/UNCERTAINであり、片方のコミットを無条件に置換してはいけない。
+
+[全7ファイルの比較JSON](../../catalog/research/2026-11-15-r71-rfd4-two-revision-source-diff.json)を正本証拠として参照。これは上記「差分未解決」という**過去時点の状態を限定・更新**する追補であり、履歴を抹消しない。主重みの重複取得は不要と考えられる一方、ライセンス本文・異なる推論設定・依存関係・ローカルSHA実測・所有者承認は継続して未確定。
+
+**H/T/D/C/U:** H＝RFD4選定主重みは2revisionで同一、T＝2固定revision×7パスの一次API比較、D＝主重みSHA256・byte一致PASS、全ファイル一致FAIL、実機復元UNCERTAIN、C＝選定外の別checkpointや旧推論設定が動作を変える、U＝依存・環境・実体未取得につき統計的合成不確かさは算出しない。
+
+**ERROR CHECK:** 3件一致＋4件相違＝7件、両rev主重みサイズ一致、ダウンロード承認0。
+
+**次に考える問い:** 主重みが同一でも推論設定が異なる場合、両revの設定を保存し個別に再現試験することを、単一重量ファイル保存の必須条件にするべきか。
