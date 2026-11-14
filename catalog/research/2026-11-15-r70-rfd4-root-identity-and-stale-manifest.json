@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-15",
+  "round": "R70",
+  "asset_kind": "model",
+  "repo_id": "nvidia/RFD4-Proteina",
+  "formal_portfolio_revision": "v32-20261114",
+  "source_catalog": "catalog/effective-portfolio-2026-11-14-v32.json",
+  "source_manifest": "manifests/drafts/r64-eight-source-scopes.candidate.json",
+  "prior_revision_conflict_audit": "catalog/research/2026-11-15-r69-r64-v32-source-join.json",
+  "finding": "R69 revision inequality does not imply different root model weight; both pinned revisions expose identical root model.safetensors SHA256, but the older revision has a stale release-checkpoints.json with previous bundle_sha256.",
+  "observations": [
+    {
+      "revision": "cf31b93509df5af854c7f6ad704f5c83c77c0698",
+      "role": "V32_HISTORICAL_OBSERVED_NONRECOMMENDED_BUNDLE",
+      "root_weights_sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0",
+      "config_weights_sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0",
+      "release_checkpoints_bundle_sha256": "5f00cdcd4df57b121ad8edcbe7f2d16b9f2ffa1f878056e23b97a2eaf978f4cc",
+      "release_checkpoints_stored_parameters": 435622721,
+      "release_manifest_matches_root": false,
+      "evidence_urls": [
+        "https://huggingface.co/nvidia/RFD4-Proteina/blob/cf31b93509df5af854c7f6ad704f5c83c77c0698/model.safetensors",
+        "https://huggingface.co/nvidia/RFD4-Proteina/blob/cf31b93509df5af854c7f6ad704f5c83c77c0698/config.json",
+        "https://huggingface.co/nvidia/RFD4-Proteina/blob/cf31b93509df5af854c7f6ad704f5c83c77c0698/release-checkpoints.json"
+      ]
+    },
+    {
+      "revision": "a06e2509c7033b010fc43614e9fd840303588502",
+      "role": "AUTHOR_RUNTIME_RECOMMENDED_R64_SOURCE",
+      "root_weights_sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0",
+      "config_weights_sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0",
+      "release_checkpoints_bundle_sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0",
+      "release_checkpoints_stored_parameters": 435622465,
+      "release_manifest_matches_root": true,
+      "selected_source_file_count": 7,
+      "selected_source_bytes": 1742698063,
+      "evidence_urls": [
+        "https://huggingface.co/nvidia/RFD4-Proteina/blob/a06e2509c7033b010fc43614e9fd840303588502/model.safetensors",
+        "https://huggingface.co/nvidia/RFD4-Proteina/blob/a06e2509c7033b010fc43614e9fd840303588502/release-checkpoints.json",
+        "https://huggingface.co/nvidia/RFD4-Proteina/blob/a06e2509c7033b010fc43614e9fd840303588502/config.json"
+      ]
+    }
+  ],
+  "earlier_release_checkpoint_sha256": "5f00cdcd4df57b121ad8edcbe7f2d16b9f2ffa1f878056e23b97a2eaf978f4cc",
+  "what_is_proved": "Publisher-displayed root checkpoint SHA256 matches across exactly these two revisions; at cf31 the release manifest does not match the root weights; at a06e it matches.",
+  "what_is_not_proved": [
+    "All seven selected files bitwise equal between revisions",
+    "Local ownership or local file SHA verification",
+    "All Flow/AE/runtime code dependencies closed and runnable",
+    "Optional upstream OpenFold3/other oracles permissions",
+    "User authorization or source scope complete for offline restoration"
+  ],
+  "decision": {
+    "select_pinned_source_revision": "a06e2509c7033b010fc43614e9fd840303588502",
+    "need_second_root_weight_copy": false,
+    "keep_historical_commit_evidence": true,
+    "do_not_delete_previous_release_archives_without_review": true,
+    "final_bundle_locked": false,
+    "download_approved": false
+  },
+  "independent_source_observation": "Publisher Hugging Face pinned file blob pointer SHA and pinned release manifests; no model payload download or execution.",
+  "status": "PUBLISHER_ROOT_HASH_MATCH_AND_OLD_MANIFEST_INCONSISTENCY_EXPLAINED_FINAL_LOCK_BLOCKED"
+}
