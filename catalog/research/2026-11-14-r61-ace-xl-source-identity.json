@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "report_date_jst": "2026-11-14",
+  "kind": "R61_READ_ONLY_PUBLISHER_SOURCE_ACE_XL_DEPENDENCY_SCOPE_AND_DUPLICATE_EVIDENCE",
+  "repository": "Unjuno/local-model-portfolio",
+  "branch": "main",
+  "baseline_commit": "cc47e8b29f4fe53db954ebfb4c8966809bc7eb8d",
+  "revision": "v32-20261114",
+  "portfolio_assets": 182,
+  "portfolio_active": 135,
+  "narrative": "Research only. Scope arithmetic uses rounded public folder-display sizes except one exact already selected Qwen weight. It is NOT a final selected-file SHA union, bound, physical HDD free or user acquisition authorization.",
+  "methodological_constraints": {
+    "exact_file_bytes_required_for_final_lock": true,
+    "local_sha_verified": false,
+    "public_repo_weights_not_downloaded": true,
+    "actual_HDD_free_bytes": null,
+    "fully_licensed_offline_runtime": false,
+    "selection_unchanged": true,
+    "download_authorizations_created": 0,
+    "fully_fixed_LM_VAE_dependency_set": false
+  },
+  "evidence_components": [
+    {
+      "repo_id": "ACE-Step/acestep-v15-xl-turbo",
+      "revision": "d4a0b288b83ebb7e25a8c0b32c573c22e134e8ee",
+      "component": "XL_DI_TURBO_8_STEPS_F32",
+      "public_folder_display_approx_bytes": 20000000000,
+      "public_weight_index_total_size_bytes": 19949242904,
+      "public_weight_index_total_parameters": 4987310726,
+      "shards": [
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "sha256": "e54a8413c981797312f53d512dec9944023d03f42f0740cbe86f62582cc27bdc",
+          "bytes_exact": null,
+          "display_size": "4.99 GB (UI-rounded)",
+          "publisher_sha256_unverified_locally": true
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "sha256": "b45f788b6dc9f15957cfa3d9b403f25f3f64c5211ecaf18dda45b67ea6470664",
+          "bytes_exact": null,
+          "display_size": "4.99 GB (UI-rounded)",
+          "publisher_sha256_unverified_locally": true
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "sha256": "a4f6bd572eab79cf5f3e4678796f904c6d6c33680a3e6ed09034d6de7cabea4d",
+          "bytes_exact": null,
+          "display_size": "4.99 GB (UI-rounded)",
+          "publisher_sha256_unverified_locally": true
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "sha256": "a868b05493c73808408f58b33a903371bb2846b53c8b19bd7476991bc8837259",
+          "bytes_exact": null,
+          "display_size": "4.99 GB (UI-rounded)",
+          "publisher_sha256_unverified_locally": true
+        }
+      ],
+      "other_required_source_files": [
+        "model.safetensors.index.json",
+        "config.json",
+        "configuration_acestep_v15.py",
+        "modeling_acestep_v15_xl_turbo.py",
+        "silence_latent.pt"
+      ],
+      "pickle_execution_guard": "silence_latent.pt has pickle imports, never torch.load as part of acquisition",
+      "rights_scope": "MIT publisher metadata, third-party/voice rights separate",
+      "source": "https://huggingface.co/ACE-Step/acestep-v15-xl-turbo/tree/d4a0b288b83ebb7e25a8c0b32c573c22e134e8ee"
+    },
+    {
+      "repo_id": "ACE-Step/Ace-Step1.5",
+      "revision": "19671f406d603126926c1b7e2adc169acbcade22",
+      "component": "LM_1P7B",
+      "path_prefix": "acestep-5Hz-lm-1.7B",
+      "folder_display_approx_bytes": 3760000000,
+      "core_sha256": "f161689da73e5ecefa28ff780d51c2d92a00f056d021d7933c779ed5c6cd7db8",
+      "core_file_exact_bytes": null,
+      "additional_metadata_tokenizer_required": true,
+      "source": "https://huggingface.co/ACE-Step/Ace-Step1.5/tree/19671f406d603126926c1b7e2adc169acbcade22/acestep-5Hz-lm-1.7B"
+    },
+    {
+      "repo_id": "ACE-Step/Ace-Step1.5",
+      "revision": "19671f406d603126926c1b7e2adc169acbcade22",
+      "component": "QWEN3_EMBED_0P6B",
+      "path_prefix": "Qwen3-Embedding-0.6B",
+      "folder_display_approx_bytes": 1210000000,
+      "core_sha256": "0437e45c94563b09e13cb7a64478fc406947a93cb34a7e05870fc8dcd48e23fd",
+      "core_file_exact_bytes": 1191586416,
+      "source": "https://huggingface.co/ACE-Step/Ace-Step1.5/tree/19671f406d603126926c1b7e2adc169acbcade22/Qwen3-Embedding-0.6B",
+      "reuse_verified_against": {
+        "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+        "revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+        "publisher_sha256_matches": true,
+        "already_counted_in_v27_source_union": true,
+        "local_file_present_unknown": true
+      },
+      "other_files_reuse_not_verified": true
+    },
+    {
+      "repo_id": "ACE-Step/Ace-Step1.5",
+      "revision": "19671f406d603126926c1b7e2adc169acbcade22",
+      "component": "VAE_AUDIO",
+      "path_prefix": "vae",
+      "folder_display_approx_bytes": 337000000,
+      "core_sha256": "da17edb604c40deaf09e9b24974e590d1ca83a374070e5d0884cfa4bed9a99b0",
+      "core_file_exact_bytes": null,
+      "source": "https://huggingface.co/ACE-Step/Ace-Step1.5/tree/main/vae"
+    }
+  ],
+  "public_index_metadata": {
+    "repo_id": "ACE-Step/acestep-v15-xl-turbo",
+    "index_metadata_total_parameters": 4987310726,
+    "index_metadata_total_tensor_payload_bytes": 19949242904,
+    "not_shard_file_sum": true,
+    "do_not_treat_as_full_disk_total": true,
+    "source": "https://huggingface.co/ACE-Step/acestep-v15-xl-turbo/blob/d4a0b288b83ebb7e25a8c0b32c573c22e134e8ee/model.safetensors.index.json"
+  },
+  "matching_existing_content": {
+    "old_repo_id": "Qwen/Qwen3-Embedding-0.6B",
+    "old_fixed_revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+    "old_model_weight_bytes": 1191586416,
+    "old_model_weight_sha256": "0437e45c94563b09e13cb7a64478fc406947a93cb34a7e05870fc8dcd48e23fd",
+    "new_repo_id": "ACE-Step/Ace-Step1.5",
+    "new_fixed_revision": "19671f406d603126926c1b7e2adc169acbcade22",
+    "new_path": "Qwen3-Embedding-0.6B/model.safetensors",
+    "source_level_proven_identity": true,
+    "local_disk_reuse_unconfirmed": true,
+    "additional_shared_tokenizer_and_configs_not_proven_identical": true,
+    "original_v27_selected_source_scope_includes_qwen_model": true,
+    "source_urls": [
+      "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/blob/main/model.safetensors",
+      "https://huggingface.co/ACE-Step/Ace-Step1.5/blob/19671f406d603126926c1b7e2adc169acbcade22/Qwen3-Embedding-0.6B/model.safetensors",
+      "https://github.com/Unjuno/local-model-portfolio/blob/cc47e8b29f4fe53db954ebfb4c8966809bc7eb8d/catalog/capacity/2026-11-06/sources/model--Qwen--Qwen3-Embedding-0.6B.json"
+    ]
+  },
+  "publisher_runtime_dependency_evidence": {
+    "main_model_contains": [
+      "acestep-v15-turbo (OPTIONAL/REPLACED_BY_SELECTED_XL)",
+      "vae",
+      "Qwen3-Embedding-0.6B",
+      "acestep-5Hz-lm-1.7B"
+    ],
+    "XL_replaces_v15_turbo_backbone_for_XL_run": true,
+    "default_lm": "acestep-5Hz-lm-1.7B",
+    "optional_lm_4B": "NOT_INCLUDED",
+    "optional_2B_DiT": "NOT_INCLUDED",
+    "source_urls": [
+      "https://github.com/ace-step/ACE-Step-1.5/blob/main/acestep/model_downloader.py",
+      "https://github.com/ace-step/ACE-Step-1.5/blob/main/docs/en/INSTALL.md"
+    ]
+  },
+  "revised_budget_scenario": {
+    "prior_v27_plus_eight_known_source_scopes_bytes": 3442028436758,
+    "selected_ACE_XL_repo_display_proxy_bytes": 20000000000,
+    "required_shared_subdirectory_display_proxy_bytes": {
+      "LM": 3760000000,
+      "EMBED": 1210000000,
+      "VAE": 337000000,
+      "approx_total": 5307000000
+    },
+    "duplicated_existing_Qwen_weight_exact_bytes": 1191586416,
+    "approximate_ACE_increment_after_matched_weight_reuse_bytes": 24115413584,
+    "illustrative_scope_arithmetic_bytes": 3466143850342,
+    "empty_four_TB_with_two_hundred_GB_floor_illustrative_margin_bytes": 333856149658,
+    "empty_three_point_eight_TB_with_two_hundred_GB_floor_illustrative_margin_bytes": 133856149658,
+    "replaced_prior_full_shared_repo_display_proxy_bytes": 10100000000,
+    "old_full_shared_repo_scenario_bytes": 3472128436758,
+    "old_to_new_arithmetic_display_difference_bytes": 5984586416,
+    "provenance": "Cross-repo same SHA exact and subdirectory displays rounded; cannot attribute precision of 1 byte to output estimated sum. Algebra is integer arithmetic over approximate inputs.",
+    "exact_final_v32_unique_bytes": null,
+    "software_environment_and_staging_bytes": null,
+    "user_disk_real_free_bytes": null,
+    "confidence_interval": null
+  },
+  "Kumo_relational_additional_static_note": {
+    "status": "UNSELECTED_RESEARCH_ONLY",
+    "repo_id": "nvidia/Kumo-Relational",
+    "model_source_code_calls_revision": "v1.0.1",
+    "model_source_code_uses_torch_load_weights_only": true,
+    "classifier_publisher_sha256": "0c2e35cc18303f0d3ddeaf04e9cab6ca3a8bd6ea17195ac0e42d47af4bcb2a2d",
+    "regressor_publisher_sha256": "f863b3632f738e1444fb83a8cea5746f298889b5c96953a000c4720d202ae4cf",
+    "display_sizes_only": {
+      "classifier_MB": 120,
+      "regressor_MB": 124
+    },
+    "tag_sha_resolved": false,
+    "model_files_not_downloaded": true,
+    "sources": [
+      "https://github.com/NVIDIA/structured-data-models/blob/main/sdm/models/kumo/relational/model.py",
+      "https://huggingface.co/nvidia/Kumo-Relational/blob/3d5176e4e713d734b71c2846fc9cd19e49e4c7d1/classifier.pt",
+      "https://huggingface.co/nvidia/Kumo-Relational/blob/main/regressor.pt"
+    ]
+  },
+  "next_checks": [
+    "Freeze exact four XL shard bytes and index plus matching model/code/serializer and source notices",
+    "Freeze subdir LM, Qwen encoder, VAE and auxiliary tokenizer/config exact bytes and SHA for one fixed repo commit",
+    "Check remaining Qwen tokenizer/config SHA before claiming more than the single exact weight reuse",
+    "Confirm ACE model loader with XL + selected 1.7B LM configuration; no local run/benchmark authorized",
+    "Confirm required code/env package/backend/ABI and licenses, plus whole 4TB real HDD 200GB physical free floor/staging",
+    "Check Kumo Relational official tag v1.0.1 resolves to compatible checkpoint fixed SHA; keep as outside v32"
+  ],
+  "validation": {
+    "four_XL_shard_SHA_64chars": true,
+    "matched_qwen_source_sha": "0437e45c94563b09e13cb7a64478fc406947a93cb34a7e05870fc8dcd48e23fd",
+    "matched_qwen_source_bytes": 1191586416,
+    "source_dedup_v27_included": true,
+    "unchanged_catalog": true,
+    "approved_queue_empty": true,
+    "model_downloads": 0,
+    "owner_HDD_verified": false
+  }
+}
