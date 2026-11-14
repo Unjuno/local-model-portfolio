@@ -1,0 +1,38 @@
+name: Pruna header-only tensor census
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/safetensors_header_census.py
+      - tests/test_safetensors_header_census.py
+      - .github/workflows/pruna-header-only-census.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline parser and HTTP safety tests
+        run: python -m unittest discover -s tests -p 'test_safetensors_header_census.py' -v
+      - name: Inspect only public bounded header ranges (no tensors or credentials)
+        run: >-
+          python scripts/safetensors_header_census.py
+          --source catalog/research/2026-11-14-r61-pruna-source-curve-capacity.json
+          --output research-output/pruna-header-census.json
+          --live
+      - name: Preserve research evidence including a blocked result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pruna-header-census-${{ github.sha }}
+          path: research-output/pruna-header-census.json
+          if-no-files-found: warn
+          retention-days: 14
