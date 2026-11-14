@@ -1,5 +1,7 @@
 # Local Model Portfolio
 
+**R64完成準備（11月15日）**：[全135件の取得ゲート台帳](catalog/readiness/v32-2026-11-15-r64-all-active.json)／[8資産91ファイルの取得前マニフェスト](manifests/drafts/r64-eight-source-scopes.candidate.json)／[実HDD読み取り専用監査手順](docs/strategy/65-v32-owner-offline-preflight.md)。保存完了を示すものではなく、承認済みダウンロード0件。
+
 将来もAIをローカルで利用・比較・解析・追加学習できるよう、モデル、データ、実行環境を選び、保存するためのポートフォリオです。
 
 **目的は、リポジトリをHDDに配置し、エージェントが承認済みの取得指示に従って保存・検証できる状態を作ることです。** 人気ランキングでも、重みをGitHubへ再配布する場所でもありません。
