@@ -116,6 +116,27 @@ class ArchivePreflightTests(unittest.TestCase):
                               staging_reserve_bytes=0,existing_archive_bytes=0,free_floor_bytes=0)
             self.assertEqual(x['source_roots']['qwen-image-base']['status'],'UNSAFE_PATH')
             self.assertEqual(x['capacity']['confirmed_reused_bytes'],0)
+    def test_symlink_inside_archive_is_rejected(self):
+        # Even an internal redirect must not be counted as an independent
+        # regular checkpoint payload: it could be retargeted during hashing.
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            plan, base, _ = fixture(root)
+            target = base / 'backing-file.bin'
+            (base / 'w.bin').rename(target)
+            try:
+                os.symlink(str(target), str(base / 'w.bin'))
+            except (OSError, NotImplementedError):
+                self.skipTest('symlinks unavailable')
+            result = inspect_archive(
+                plan, root, {'qwen-image-base': base}, hash_existing=True,
+                staging_reserve_bytes=0, existing_archive_bytes=0, free_floor_bytes=0
+            )
+            self.assertEqual(
+                result['source_roots']['qwen-image-base']['status'], 'UNSAFE_PATH'
+            )
+            self.assertEqual(result['capacity']['confirmed_reused_bytes'], 0)
+
     def test_excess_staging_reserve_must_fail(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);p,_,_=fixture(root)
