@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-11-14",
+  "baseline_catalog_revision": "v32-20261114",
+  "source_git_head": "3bc471f3c43dacb8f167646c67fa998ca1ac3a90",
+  "research_file": "catalog/research/2026-11-14-r62-ace-exact-source-scope-and-kumo-tag.json",
+  "scope": "Exact HF source sizes, v27 original Qwen SHA-aware dedup, not complete all-135 restore",
+  "inputs": {
+    "existing_v27_plus_8_reference_scope_bytes": 3442028436758,
+    "ace_xl_11_file_bytes": 19953378268,
+    "ace_shared_23_file_bytes": 5300324640,
+    "six_matching_Qwen_occurrences_bytes": 1211907493,
+    "planning_cap_bytes": 4000000000000,
+    "minimum_physical_free_floor_bytes": 200000000000
+  },
+  "calculated": {
+    "raw_ace_selected_source_bytes": 25253702908,
+    "new_ace_increment_content_bytes": 24041795415,
+    "illustrative_v32_source_scope_arithmetic_bytes": 3466070232173,
+    "empty_4tb_with_200gb_floor_margin_bytes": 333929767827,
+    "empty_3p8tb_with_200gb_floor_margin_bytes": 133929767827,
+    "previous_R61_estimate_bytes": 3466143850342,
+    "change_from_R61_bytes": -73618169
+  },
+  "gates": {
+    "final_hash_union_complete": false,
+    "license_and_runtime_closure_complete": false,
+    "actual_hdd_bytes_measured": false,
+    "downloads_authorized": false
+  },
+  "Kumo_unselected": {
+    "repo_id": "nvidia/Kumo-Relational",
+    "tag_sha": "2bd603d3d8f25f67a7aaa8579908595e20567e22",
+    "source_files": 7,
+    "source_bytes": 243656960,
+    "not_added_to_active_budget": true
+  }
+}
