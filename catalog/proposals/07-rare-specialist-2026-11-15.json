@@ -128,7 +128,18 @@
         "will_download_missing_config_or_checkpoint_by_default": true,
         "code_runtime_requires": "python>=3.11, torch>=2.7; exact transitive wheel hashes/driver/CPU-GPU runtime unknown",
         "not_offline_tested": true
-      }
+      },
+      "parameter_screening": {
+        "observed_model_parameters": null,
+        "evidence_kind": "NOT_PUBLISHED_FULL_COUNT",
+        "count_scope": "Both pretrained classification and regression learned models; raw .pt size is NOT parameter proof",
+        "status": "UNVERIFIED_BLOCK_FINAL_LOCK"
+      },
+      "final_lock_eligible": false,
+      "legal_entitlement_verified": false,
+      "local_file_hash_verified": false,
+      "runtime_bundle_verified": false,
+      "actual_HDD_fit_verified": false
     },
     {
       "repo_id": "nvidia/Kumo-Anomaly",
@@ -206,7 +217,18 @@
         "project_torch": ">=2.7.0",
         "security_gate": "DO_NOT_RUN_ON_UNTRUSTED_PICKLE_WEIGHTS_OR_REMOTE_CODE; investigate weights_only=True compatibility with offline isolated static converter and SHA verification",
         "vendor_code_never_executed": true
-      }
+      },
+      "parameter_screening": {
+        "observed_model_parameters": 8000000,
+        "evidence_kind": "PUBLISHER_APPROXIMATE",
+        "count_scope": "Main diffusion anomaly model only, excludes any external learned preprocessing",
+        "status": "PUBLISHER_APPROXIMATE_NO_FINAL_LOCK"
+      },
+      "final_lock_eligible": false,
+      "legal_entitlement_verified": false,
+      "local_file_hash_verified": false,
+      "runtime_bundle_verified": false,
+      "actual_HDD_fit_verified": false
     },
     {
       "repo_id": "nvidia/Ising-Decoder-ColorCode-1-Fast",
@@ -245,7 +267,18 @@
       "whole_repo_download_prohibited_by_default": true,
       "anonymous_metadata_not_user_entitlement": true,
       "official_runtime_code_pin": "12bbeb13c5cfc1a064171ac91b07aea61f2eaae8",
-      "official_runtime_code_url": "https://github.com/NVIDIA/Ising-Decoding/tree/12bbeb13c5cfc1a064171ac91b07aea61f2eaae8"
+      "official_runtime_code_url": "https://github.com/NVIDIA/Ising-Decoding/tree/12bbeb13c5cfc1a064171ac91b07aea61f2eaae8",
+      "parameter_screening": {
+        "observed_model_parameters": 2936580,
+        "evidence_kind": "PUBLISHER_CARD",
+        "count_scope": "Individual 3D CNN predecoder; global error correction decoder is a separate software dependency",
+        "status": "PUBLISHER_MODEL_COUNT_SCREENING_ONLY"
+      },
+      "final_lock_eligible": false,
+      "legal_entitlement_verified": false,
+      "local_file_hash_verified": false,
+      "runtime_bundle_verified": false,
+      "actual_HDD_fit_verified": false
     },
     {
       "repo_id": "nvidia/Ising-Decoder-SurfaceCode-1-Fast",
@@ -284,7 +317,18 @@
       "whole_repo_download_prohibited_by_default": true,
       "anonymous_metadata_not_user_entitlement": true,
       "official_runtime_code_pin": "12bbeb13c5cfc1a064171ac91b07aea61f2eaae8",
-      "official_runtime_code_url": "https://github.com/NVIDIA/Ising-Decoding/tree/12bbeb13c5cfc1a064171ac91b07aea61f2eaae8"
+      "official_runtime_code_url": "https://github.com/NVIDIA/Ising-Decoding/tree/12bbeb13c5cfc1a064171ac91b07aea61f2eaae8",
+      "parameter_screening": {
+        "observed_model_parameters": 913000,
+        "evidence_kind": "PUBLISHER_APPROXIMATE",
+        "count_scope": "Individual R9 fast CNN predecoder; external global decoder separate",
+        "status": "PUBLISHER_MODEL_COUNT_SCREENING_ONLY"
+      },
+      "final_lock_eligible": false,
+      "legal_entitlement_verified": false,
+      "local_file_hash_verified": false,
+      "runtime_bundle_verified": false,
+      "actual_HDD_fit_verified": false
     },
     {
       "repo_id": "nvidia/Nemotron-3.5-Parse",
@@ -362,7 +406,18 @@
       "formal_catalog_change_approved": false,
       "download_authorized": false,
       "whole_repo_download_prohibited_by_default": true,
-      "anonymous_metadata_not_user_entitlement": true
+      "anonymous_metadata_not_user_entitlement": true,
+      "parameter_screening": {
+        "observed_model_parameters": 630800000,
+        "evidence_kind": "HUGGING_FACE_HUB_MODEL_SUMMARY",
+        "count_scope": "Main model only; optional dflash2 distinct learned module not included",
+        "status": "MAIN_MODEL_COUNT_SCREENING_ONLY"
+      },
+      "final_lock_eligible": false,
+      "legal_entitlement_verified": false,
+      "local_file_hash_verified": false,
+      "runtime_bundle_verified": false,
+      "actual_HDD_fit_verified": false
     }
   ],
   "research_update_date": "2026-11-15",
@@ -385,5 +440,6 @@
       "repo_id": "NVIDIA/Ising-Decoding",
       "commit": "12bbeb13c5cfc1a064171ac91b07aea61f2eaae8"
     }
-  ]
+  ],
+  "parameter_scope_notice": "Publisher headline counts are not full dependency-inclusive trained-parameter census; do not change v32 or approve acquisition based on sizes and headline values."
 }
