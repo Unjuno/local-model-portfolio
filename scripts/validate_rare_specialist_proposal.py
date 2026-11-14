@@ -16,7 +16,7 @@ HEX40 = re.compile(r"^[0-9a-f]{40}$")
 HEX64 = re.compile(r"^[0-9a-f]{64}$")
 EXPECTED = {
     "nvidia/Kumo-Relational": "RECOMMEND_CONDITIONAL_FOR_NEXT_FORMAL_REVIEW",
-    "nvidia/Kumo-Anomaly": "HOLD_UNTIL_SECURE_PICKLE_DESERIALIZATION_AND_OFFLINE_RUNTIME",
+    "nvidia/Kumo-Anomaly": "RECOMMEND_CONDITIONAL_SOURCE_PRESERVATION_EXECUTION_BLOCKED",
     "nvidia/Ising-Decoder-ColorCode-1-Fast": "P0_RESEARCH_PERSONAL_GATED_ENTITLEMENT_FIRST",
     "nvidia/Ising-Decoder-SurfaceCode-1-Fast": "P0_RESEARCH_PERSONAL_GATED_ENTITLEMENT_FIRST",
     "nvidia/Nemotron-3.5-Parse": "HOLD_PENDING_OCR_DISTINCTNESS_AND_RUNTIME_COMPARISON",
@@ -102,6 +102,21 @@ def validate(proposal: dict, catalog: dict, approved: dict) -> dict:
             anomaly["unsafe_pickle_calls_observed_in_inference_ad"] >= 1 and
             anomaly["unsafe_pickle_in_worker"] is True,
             "Kumo Anomaly unsafe-loader stop not recorded")
+    anom = byid["nvidia/Kumo-Anomaly"]
+    alt = anom["official_safe_alternative"]
+    require(anom["runtime_execution_hold"] is True and
+            anom["research_only_nonexecutable"] is True and
+            alt["weights_only_true"] is True and
+            alt["same_lfs_sha256_as_candidate"] is True and
+            alt["checkpoint_deserialized"] is False and
+            alt["offline_runtime_verified"] is False and
+            alt["sha256"] == next(
+                f["publisher_lfs_sha256"] for f in anom["proposed_source_files"]
+                if f["path"] == "final_model.pth"
+            ),
+            "Kumo Anomaly insecure or unverified runtime was promoted")
+    require(anom["parameter_screening"]["status"] == "UNVERIFIED_BLOCK_FINAL_LOCK",
+            "Kumo Anomaly disputed parameters cannot be promoted")
     require(byid["nvidia/Nemotron-3.5-Parse"]["candidate_selected_file_count"] == 6,
             "Nemotron deliberately incomplete source set changed")
     require(totals == 2_805_003_661, "unexpected source reference scope sum")
