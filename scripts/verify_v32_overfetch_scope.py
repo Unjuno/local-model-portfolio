@@ -124,8 +124,12 @@ def validate(allowlist: dict, identities: dict, approved: dict) -> dict:
                 _fail("duplicate literal file path: " + key[1] + " " + path)
             seen_paths.add(path)
             n = f.get("bytes")
-            if type(n) is not int or n <= 0:
+            if type(n) is not int or n < 0:
                 _fail("invalid file byte size: " + key[1] + " " + path)
+            if n == 0 and (f.get("identity_kind") != "git_blob_sha1"
+                           or f.get("git_blob_sha1_reference")
+                              != "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"):
+                _fail("empty file must be an exact Git empty blob: " + key[1] + " " + path)
             row_bytes += n
             sha = f.get("publisher_payload_sha256")
             git_blob = f.get("git_blob_sha1_reference")
