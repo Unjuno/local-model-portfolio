@@ -5,6 +5,14 @@
 **通常の調査・選定・監査・更新の正本は `main` のみ。** 既存ブランチの成果はmainへ統合し、ユーザーから別途指示されない限り新しいブランチを作らない。旧資料の専用ブランチ名は歴史的な出典であり、新しい作業ブランチの作成命令ではない。
 
 
+## 2026-11-15・R77/R78：原本の静的保全と安全実行を分離
+
+[R77 Kumo-Anomaly同一重み・別公式ローダー調査](catalog/research/2026-11-15-r77-kumo-anomaly-publisher-safe-loader-and-revision-equality.json)では旧Kumo-TSの`weights_only=False`に対し、`NVIDIA/structured-data-models`の`weights_only=True`経路が**同じ公開SHAの学習済み重量**を使用すると確認。研究用静的保存をCONDITIONAL候補に修正したが、**モデル本体取得・Python実行は未承認**。PyTorch 2.9.1以前と2.14.xにはweights_only脆弱性の報告があり、公式修正版・隔離・再現ABIを別検証。第三者pickleを実行しない。
+
+[R78 135資産の既存HDDファイル検査](docs/strategy/78-v32-owner-135-asset-local-sha-preflight.md)／[読み取り専用実装](scripts/audit_owner_v32_files.py)はv32 source参照60,020件（追加ACE共有外部23件は別audit）を個別asset IDごとに照合する。内部symlinkの拒否も[既存preflight](scripts/archive_preflight.py)に追加。合成fixture6条件PASS、**所有者HDD未検査・135実レコードの全ソフトウェア回帰未実行・取得承認0**を維持する。
+
+
+
 ## 2026-11-15 追加研究：5専門モデルの現行v32未採用・安全ゲート
 
 [一次スナップショット・採否](catalog/proposals/07-rare-specialist-2026-11-15.json)／[研究報告](docs/strategy/75-five-distinct-specialists-2026-11-15.md)／[検証コード](scripts/validate_rare_specialist_proposal.py)。5件は**正式v32の182件に含めない**。分類/回帰の別後学習原本 Kumo-Relational 7ファイル243,656,960byteは次期CONDITIONAL研究候補。ただし公式runtimeは weight-only load でもモデルタグv1.0.1とネットワーク自動取得に注意。異常検知Kumo-Anomaly 4ファイル29,612,151byteは、旧公式SDKでは `torch.load(weights_only=False)` を複数箇所使うが、[R77固定原本一致監査](catalog/research/2026-11-15-r77-kumo-anomaly-publisher-safe-loader-and-revision-equality.json)で別のNVIDIA公式 `weights_only=True` ローダーが同一SHAの重みを参照すると確認。**静的保存は次期CONDITIONAL研究候補、実行・取得はSTOP**。PyTorch2.14.xと2.9.1以前のweights_only脆弱性があるため、修正版・隔離環境・ABIの検証が必要。Ising ColorCode/SurfaceCode 2件はそれぞれGated、モデルSHAが公開されていても本人権限未検証で**取得STOP・P0合法的権利調査のみ**。Nemotron-3.5-Parseは既存OCRとの重複・runtime比較未完でHOLD。モデル本体・課金・自動取得・承認済みキュー変更はしない。
