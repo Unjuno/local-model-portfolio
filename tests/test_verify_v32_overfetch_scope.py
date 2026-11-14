@@ -87,6 +87,27 @@ class OverfetchScopeTests(unittest.TestCase):
             x["records"][0]["observed_publisher_repo_scope_bytes"] += 1
         self._bad(change, "R73 immutable source identity mismatch")
 
+    def test_exact_empty_git_blobs_are_allowed(self):
+        empties = [
+            (row["repo_id"], f["path"])
+            for row in self.allowlist["records"]
+            for f in row["files"] if f["bytes"] == 0
+        ]
+        self.assertEqual(
+            [("ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8", "samples/nul"),
+             ("ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8", "workflow_examples/nul"),
+             ("KlingTeam/LivePortrait", ".gitkeep")],
+            empties,
+        )
+
+    def test_reject_unexpected_zero_byte_git_identity(self):
+        def change(x):
+            row = next(r for r in x["records"]
+                       if r["repo_id"] == "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8")
+            f = next(f for f in row["files"] if f["path"] == "samples/nul")
+            f["git_blob_sha1_reference"] = "a" * 40
+        self._bad(change, "empty file must be an exact Git empty blob")
+
     def test_reject_source_blob_mismatch(self):
         self._bad(lambda x: x.update(historical_source_blob_sha="a" * 40),
                   "historical publisher source reference mismatch")
