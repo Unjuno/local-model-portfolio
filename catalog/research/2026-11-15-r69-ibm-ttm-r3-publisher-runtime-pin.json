@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "kind": "R69_IBM_TTM_R3_PUBLISHED_SOURCE_AND_RUNTIME_CODE_PIN",
+  "date_jst": "2026-11-15",
+  "effective_portfolio_revision": "v32-20261114",
+  "selection_unchanged": true,
+  "source_evidence_classification": "PUBLISHER_METADATA_AND_CODE_REVIEW_NOT_LOCAL_HASH",
+  "prior_manifest_path": "manifests/drafts/r64-eight-source-scopes.candidate.json",
+  "prior_manifest_blob_sha": "0b6ea3d49564a8c53b55a23f397a0ce33565599b",
+  "model": {
+    "repo_id": "ibm-granite/granite-timeseries-ttm-r3",
+    "revision": "ea17cfd2e3edcaea21eb8dcecd18bf88971482fa",
+    "source_url": "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r3/tree/ea17cfd2e3edcaea21eb8dcecd18bf88971482fa",
+    "selected_file_count": 6,
+    "selected_source_bytes": 6126375,
+    "files": [
+      {
+        "path": ".gitattributes",
+        "bytes": 1570,
+        "source_sha256": null,
+        "source_git_blob_sha1": "8b76d9ddf713ef3a3a82e98dafb962e0b67b753b",
+        "role": "support"
+      },
+      {
+        "path": "README.md",
+        "bytes": 6389,
+        "source_sha256": null,
+        "source_git_blob_sha1": "20c3fa57fbc63e881998a9b8134bdce03ab8d68b",
+        "role": "support"
+      },
+      {
+        "path": "config.json",
+        "bytes": 2668,
+        "source_sha256": null,
+        "source_git_blob_sha1": "bb274aa67c6d5c5d65ecc233564aa40ff97e6454",
+        "role": "support"
+      },
+      {
+        "path": "model.safetensors",
+        "bytes": 5729424,
+        "source_sha256": "8ec0509a18a38f65b02f046fc28298ab3acf5d54eecb0a0df959b9fa001bc9fb",
+        "source_git_blob_sha1": "08f60ea96ab2ad70286c7953b7bde6e03de88b22",
+        "role": "weight"
+      },
+      {
+        "path": "model.sig",
+        "bytes": 8912,
+        "source_sha256": null,
+        "source_git_blob_sha1": "7252e4c5f2706a2774faa66ba00de1ed0b30ce45",
+        "role": "support"
+      },
+      {
+        "path": "ttm_image.webp",
+        "bytes": 377412,
+        "source_sha256": "ec63340da31707b78e94252177bc57e1c7d27713734f8e4aa393ca826375d5d9",
+        "source_git_blob_sha1": "647e4576669f51f60f3fe6264e9c958ab966c154",
+        "role": "support"
+      }
+    ],
+    "published_weight_sha256_independently_rechecked": true,
+    "published_weight_sha256_at_source": "8ec0509a18a38f65b02f046fc28298ab3acf5d54eecb0a0df959b9fa001bc9fb",
+    "published_weight_sha256_url": "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r3/blob/ea17cfd2e3edcaea21eb8dcecd18bf88971482fa/model.safetensors",
+    "actual_local_weight_sha256_verified": false,
+    "hub_license_tag": "apache-2.0",
+    "model_repository_contains_canonical_license_file": false,
+    "model_legal_rights_cleared": false,
+    "model_hub_parameters_approx": 1400000,
+    "model_config": {
+      "context_length": 512,
+      "prediction_length": 30,
+      "num_input_channels": 1,
+      "distribution_output": "student_t",
+      "model_type": "tinytimemixer"
+    }
+  },
+  "upstream_runtime_code": {
+    "repo_id": "ibm-granite/granite-tsfm",
+    "commit": "31fa2f01573341f17e9997280f61481de18ce28c",
+    "commit_url": "https://github.com/ibm-granite/granite-tsfm/tree/31fa2f01573341f17e9997280f61481de18ce28c",
+    "code_file_pointers": [
+      {
+        "path": "pyproject.toml",
+        "git_blob_sha1": "8988b123928de4319e88e3f985933439945f415a",
+        "source_url": "https://github.com/ibm-granite/granite-tsfm/blob/31fa2f01573341f17e9997280f61481de18ce28c/pyproject.toml"
+      },
+      {
+        "path": "LICENSE",
+        "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+        "source_url": "https://github.com/ibm-granite/granite-tsfm/blob/31fa2f01573341f17e9997280f61481de18ce28c/LICENSE"
+      },
+      {
+        "path": "README.md",
+        "git_blob_sha1": "b805bb352cd3540afedf147770b390b5287ae2d2",
+        "source_url": "https://github.com/ibm-granite/granite-tsfm/blob/31fa2f01573341f17e9997280f61481de18ce28c/README.md"
+      },
+      {
+        "path": "tsfm_public/models/tinytimemixer/modeling_tinytimemixer.py",
+        "git_blob_sha1": "86290a69faf498b324f90d91296006fc244e4849",
+        "source_url": "https://github.com/ibm-granite/granite-tsfm/blob/31fa2f01573341f17e9997280f61481de18ce28c/tsfm_public/models/tinytimemixer/modeling_tinytimemixer.py"
+      },
+      {
+        "path": "tsfm_public/models/tinytimemixer/configuration_tinytimemixer.py",
+        "git_blob_sha1": "1e792796ef869b3195c3a4decf64638181794499",
+        "source_url": "https://github.com/ibm-granite/granite-tsfm/blob/31fa2f01573341f17e9997280f61481de18ce28c/tsfm_public/models/tinytimemixer/configuration_tinytimemixer.py"
+      },
+      {
+        "path": "tsfm_public/models/tinytimemixer/__init__.py",
+        "git_blob_sha1": "4f12b61ff0251f294759beca9c2109864f50c6f3",
+        "source_url": "https://github.com/ibm-granite/granite-tsfm/blob/31fa2f01573341f17e9997280f61481de18ce28c/tsfm_public/models/tinytimemixer/__init__.py"
+      },
+      {
+        "path": "tsfm_public/toolkit/get_model.py",
+        "git_blob_sha1": "6b5d495d5d0c1e7f3670d3fc5bffb7a0df071e9b",
+        "source_url": "https://github.com/ibm-granite/granite-tsfm/blob/31fa2f01573341f17e9997280f61481de18ce28c/tsfm_public/toolkit/get_model.py"
+      },
+      {
+        "path": "tsfm_public/__init__.py",
+        "git_blob_sha1": "a10f89df3afa857b7be02afc5e6918410c0d611a",
+        "source_url": "https://github.com/ibm-granite/granite-tsfm/blob/31fa2f01573341f17e9997280f61481de18ce28c/tsfm_public/__init__.py"
+      }
+    ],
+    "license_code_repo": "Apache-2.0",
+    "code_repo_license_text_verified": true,
+    "model_license_text_verified": false,
+    "packaging_source": "pyproject.toml",
+    "requirements_at_commit": {
+      "python": ">=3.11,<3.15",
+      "torch": "torch>=2.10,<2.12",
+      "transformers": "transformers[torch]>=4.57.6,<6",
+      "numpy": "numpy<3",
+      "scikit_learn": "scikit-learn<1.8",
+      "pandas": "pandas>=2.3.3,<4",
+      "filelock": "filelock>=3.20.3",
+      "einops": "einops>=0.7",
+      "build_system": [
+        "setuptools>=78.1.1",
+        "Cython",
+        "setuptools-scm>=8.0"
+      ]
+    },
+    "readme_python_supported": "3.10, 3.11, 3.12, 3.13",
+    "python_readme_vs_package_conflict": true,
+    "optional_export_references_missing_module": "tsfm_public/models/tinytimemixer/utils_tinytimemixer.py",
+    "missing_module_at_pinned_commit_confirmed_github_contents_404": true,
+    "missing_module_impact": "UNCERTAIN; lazy module import paths may make selected inference unaffected, untested"
+  },
+  "completed_evidence": [
+    "MODEL_REVISION_FIXED",
+    "MODEL_SOURCE_FILE_SCOPE_6_PUBLISHED",
+    "PUBLISHED_WEIGHT_SHA256_MATCHED_WITH_R64",
+    "OFFICIAL_RUNTIME_GIT_COMMIT_PINNED",
+    "OFFICIAL_RUNTIME_LICENSE_TEXT_LOCATED",
+    "PUBLISHED_DEPENDENCY_VERSION_BOUNDS_EXTRACTED"
+  ],
+  "remaining_gates": [
+    "MODEL_LICENSE_ACTION_RIGHTS_SIGNOFF",
+    "PIN_PYTHON_TRANSITIVE_WHEELHOUSE_AND_PLATFORM_ABI",
+    "VERIFY_ALL_RUNTIME_CODE_IMPORT_PATHS",
+    "LOCAL_CHECKSUM_AND_HDD_SPACE",
+    "OWNER_EXPLICIT_DOWNLOAD_APPROVAL",
+    "OFFLINE_CPU_RESTORE_AND_NUMERIC_TEST"
+  ],
+  "file_payload_downloaded": false,
+  "code_executed": false,
+  "local_checkpoint_verified": false,
+  "full_offline_dependency_closure_verified": false,
+  "offline_restore_passed": false,
+  "approved_acquisition": false
+}
