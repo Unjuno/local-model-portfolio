@@ -1,5 +1,7 @@
 # R58 — v32の4TB容量見積書更新・NVIDIA特殊資産の追加調査（2026-11-14）
 
+> **現行R62見積り（2026-11-14）**：[ACE XL固定34ファイル／重複QwenとNVIDIA Kumo確認](62-v32-ace-exact-file-census-and-kumo-tag.md)。R58・R61の丸め値は歴史的な参考試算。今回確定したACE source 増分は **24,041,795,415 byte**、全体の部分ソース算術合計は **3,466,070,232,173 byte**。最終オフライン容量・現実のHDD空きは未確認。
+
 > **R61 ACE dependency refinement (2026-11-14)**: [ACE-Step XLの共有部品・既存Qwen SHA重複精査](61-v32-ace-xl-dependency-dedup-and-budget.md)。R58の10.1GB共有元全量は取得必須容量ではない。約5.307GBの対象3フォルダと既選定Qwen重み1,191,586,416byteのSHA一致を確認。**新しいR61値は公称丸めを含む参考計算で、最終保存byteを保証しない。**
 
 **現行はmain/v32**（本更新前HEAD: `cf2dbe8d3774442652c59674a7a73a6eae25a704`）。研究ブランチ`strategy/2026-11-03-01-risk`は現時点で存在せず、v31資料を残したままmainの新規ファイルのみ追加する。**CURRENT、選定判定、取得承認キュー、本体ファイル、実HDDには変更なし。**
