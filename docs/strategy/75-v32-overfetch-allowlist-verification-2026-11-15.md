@@ -26,6 +26,14 @@
 
 このケースを`unattributed_excess`として**レビュー待ちの警告**に分離し、誤って「除外済みファイル数ゼロだから全repo取得可能」と解釈しない。取得候補は従来どおり選択27ファイルに厳密限定する。R74選定やユーザーの許諾状態は変えない。
 
+### R75検証コードの集約とR76追跡（11月15日追補）
+
+検証スクリプトをこの文書の正本 `scripts/verify_r74_overfetch_allowlists.py` に一本化。旧R75の単純な `bytes > 0` は**Gitの正当な空blobを誤検知**するため修正し、`ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8` の `samples/nul` と `workflow_examples/nul`、`KlingTeam/LivePortrait` の `.gitkeep` の3件だけをGit空blob SHA1 `e69de29bb2d1d6434b8b29ae775ad8c2e48c5391` と照合。これらを実ペイロードSHA256と混同しない。加えて、R74とR73が参照する**履歴原本blob SHAの一致**、Windowsのドライブ区切り文字もチェックする。回帰テストは拡充済みだが実機上のPython試験結果は未取得。
+
+上段のQwen3,333,149 byteの「未説明」は**R74時点の暫定評価**であり、[後続R76の一次ファイル照合](76-qwen-image-2.1-fixed-source-scope-and-rights-2026-11-15.md)で内訳が確定した。固定revisionの公式28ファイル中、選択27ファイルと一致し、選択外はWeChatのQR画像 `assets/qr.png` **3,332,800 byte**。残り**349 byte**は旧観測の集計差であり、追加ファイルとは認定しない。取得候補27ファイル、Qwen Research Licenseの非商用研究・評価制約、明示的取得承認0は不変。
+
+[追加静的照合JSON](../../catalog/audits/2026-11-15-r75-overfetch-allowlist-hardening.json)はR75当時の差分を残す歴史証拠として扱い、Qwenの最新結論にはR76を使用する。
+
 ## 2.〈応用・転用例〉— 保存前の検証と停止条件
 
 コードはPython 3.10以上、標準ライブラリのみ。Hugging Face、GitHub、モデルコード、外部コマンド、OSのネットワーク機能は呼ばず、権利情報の受諾も行わない。
