@@ -51,6 +51,11 @@ def validate(allowlist: dict, identities: dict, approved: dict) -> dict:
         _fail("unexpected catalog revision")
     if identities.get("portfolio_revision") != "v32-20261114":
         _fail("unexpected identity-ledger revision")
+    if (allowlist.get("historical_source_blob_sha")
+            != identities.get("input_blob_sha", {}).get("historical")
+            or allowlist.get("historical_source_path")
+                != identities.get("input_paths", {}).get("historical")):
+        _fail("historical publisher source reference mismatch")
 
     source_rows = identities.get("records")
     rows = allowlist.get("records")
