@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "kind": "R81_MUSE_GLIMMER_ORIGINAL_AND_SEPARATELY_TRAINED_DFLASH_ASSISTANT_PRIMARY_SOURCE_INSPECTION",
+  "as_of_jst": "2026-11-15",
+  "catalog_version_seen": "v33-20261115",
+  "source_kind": "publisher_hf_config_and_weight_index_plus_xet_pointer_metadata",
+  "primary_references": [
+    "https://huggingface.co/meta-models/Muse-Glimmer-30B/blob/main/config.json",
+    "https://huggingface.co/meta-models/Muse-Glimmer-30B/blob/main/model.safetensors.index.json",
+    "https://huggingface.co/meta-models/Muse-Glimmer-30B/blob/main/USAGE_POLICY.md",
+    "https://huggingface.co/meta-models/Muse-Glimmer-30B-assistant/blob/main/config.json",
+    "https://huggingface.co/meta-models/Muse-Glimmer-30B-assistant/blob/main/model.safetensors",
+    "https://arxiv.org/abs/2610.24628"
+  ],
+  "records": [
+    {
+      "asset_kind": "model",
+      "repo_id": "meta-models/Muse-Glimmer-30B",
+      "publisher_revision_seen": "f84ecc3a0ea984a4c04542a84269e3d065350a6e",
+      "latest_revision_exact_selected_file_identity_reverified": false,
+      "license_tag": "apache-2.0",
+      "publisher_has_usage_policy": true,
+      "config": {
+        "architectures": [
+          "MuseGlimmerForConditionalGeneration"
+        ],
+        "text_num_hidden_layers": 52,
+        "text_sliding_window": 2048,
+        "text_KV_heads": 2,
+        "layer_attention_pattern": [
+          "sliding_attention",
+          "sliding_attention",
+          "sliding_attention",
+          "full_attention"
+        ],
+        "vision_hidden_size": 1536,
+        "vision_num_hidden_layers": 50,
+        "transformers_version_in_config": "5.15.0.dev0",
+        "weight_dtype": "bfloat16"
+      },
+      "weights": {
+        "index_path": "model.safetensors.index.json",
+        "source_stored_parameter_count": 29776626688,
+        "source_index_tensor_payload_bytes": 59553253376,
+        "source_shard_count": 2,
+        "shards": [
+          {
+            "path": "model-00001-of-00002.safetensors",
+            "publisher_pointer_sha256": "8eef61530e1283642c77ce2e6721feb5c6f348fa055c00e90f2844a136372694",
+            "file_bytes_exact": null
+          },
+          {
+            "path": "model-00002-of-00002.safetensors",
+            "publisher_pointer_sha256": "b58cc2144ba1ba1af4420f67f4ca3ced7f09298510b80464cc75018a0be14381",
+            "file_bytes_exact": null
+          }
+        ],
+        "source_index_tensor_bytes_are_not_complete_file_bytes": true,
+        "local_hash_verified": false
+      },
+      "selection_reason": "Genuine multimodal original-distilled trained state with self-contained image tower; not another GGUF quantization of existing v33 assets.",
+      "proposed_decision": "CONDITIONAL_RESEARCH_ONLY",
+      "proposed_planning_reservation_cap_bytes": 65000000000,
+      "missing": [
+        "Check immutable 40-character revision and all support files against one publisher snapshot",
+        "LICENSE and USAGE_POLICY full owner-use review",
+        "Compatible Transformers wheel hashes and image processor model scope",
+        "Owner HDD measured peak staging; local SHA + offline restore",
+        "Compared task quality/latency not independently established"
+      ]
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "meta-models/Muse-Glimmer-30B-assistant",
+      "publisher_revision_seen": "2c86316d689027b91123638739743fef1d425233",
+      "latest_revision_exact_selected_file_identity_reverified": false,
+      "license_tag": "apache-2.0",
+      "publisher_has_usage_policy": true,
+      "config": {
+        "architectures": [
+          "MuseGlimmerAssistantModel"
+        ],
+        "num_hidden_layers": 5,
+        "block_size": 16,
+        "target_layer_ids": [
+          1,
+          13,
+          25,
+          37,
+          49
+        ],
+        "num_attention_heads": 32,
+        "num_key_value_heads": 8,
+        "hidden_size": 6656,
+        "weight_dtype": "bfloat16",
+        "transformers_version_in_config": "5.15.0.dev0"
+      },
+      "weights": {
+        "path": "model.safetensors",
+        "publisher_pointer_sha256": "fd88d337eb84f8d0e6ba33a7684d7efa6722d4460ba4d6badca9699418392a84",
+        "publisher_display_bytes_approx": 5110000000,
+        "hub_summary_parameters_rounded": 2556000000,
+        "source_exact_file_bytes": null,
+        "local_hash_verified": false
+      },
+      "trained_dependency": "meta-models/Muse-Glimmer-30B exact matching target and tokenizer",
+      "selection_reason": "Separately trained DFlash/speculative-decoding assistant with five layers, not a format conversion. Preserve as an independent learned draft but never count it as standalone general LLM.",
+      "proposed_decision": "CONDITIONAL_RESEARCH_ONLY",
+      "proposed_planning_reservation_cap_bytes": 6000000000,
+      "missing": [
+        "Same-revision weight and config compare; exact file byte count",
+        "Prove target revision compatibility and block acceptance behavior",
+        "ABI/runtime and upstream policy/permissions",
+        "No independent owner-hardware measured speed or quality"
+      ]
+    }
+  ],
+  "decisions": {
+    "adopt_if_model_ids_still_missing": true,
+    "publisher_source_weight_hash_is_not_local_sha": true,
+    "excluded_duplicate_formats": [
+      "meta-models/Muse-Glimmer-30B-GGUF",
+      "other plain quantization copies of the same learned state"
+    ],
+    "no_automatic_download": true,
+    "rights_and_hardware_unknown": true,
+    "budget_scenario_only": true,
+    "prospective_incremental_planning_cap_bytes": 71000000000,
+    "completed_full_pipeline_manifest": false,
+    "authorisation_issued_count": 0
+  },
+  "source_limitations": [
+    "HF public file pages and model index were read; no tensorgeneric payload was downloaded, so actual tensor contents not locally inspected",
+    "Full pinned blob API unavailable in current external browser, do not claim an executable manifest",
+    "Publisher release page cache may show different revisions for README, config, shards; validate single immutable revision before acquisition"
+  ]
+}
