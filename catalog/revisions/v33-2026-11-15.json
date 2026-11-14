@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "revision_id": "v33-20261115",
+  "previous_revision_id": "v32-20261114",
+  "decision_date": "2026-11-15",
+  "source_basis": "Actual model config, published checkpoint manifests/tensor headers, code and first-party license tags",
+  "target_branch": "main",
+  "status": "THREE_UNIQUE_TRAINED_OUTCOMES_SELECTED_CONDITIONAL_RESEARCH_ONLY",
+  "archive_target_bytes": 4000000000000,
+  "minimum_free_bytes": 200000000000,
+  "planning_reservation_cap_bytes": 20500000000,
+  "not_measured_payload_or_ready": false,
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "ibm-granite/granite-4.1-3b-llmon-preview",
+      "url": "https://huggingface.co/ibm-granite/granite-4.1-3b-llmon-preview",
+      "group": "LLMON・命令／外部データの構造分離を学習した安全性特化後学習",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Granite4.1 3B Baseから命令とRAG・tool responseを区別するLLMONの予約トークン＋exec束縛をSFT・RL・DPOで学習した別重み。検閲判定器Galvanizeでは代替不能。8B同手法は原則重複のため採用しない。",
+      "quality_positive": "公式LLMON3B対Granite3BのMMLU 68.05対67.02、HumanEval 84.15対81.71、BFCLv3 60.71対60.80を報告。構造分離のプロンプト注入耐性が目的で、標準能力の一方的向上ではない。固定checkpoint 40層/hidden2560/BF16/約7.32GB、公開元SHA256あり。",
+      "quality_negative": "LLMONフォーマットでない通常chatは分布外。作者の固定攻撃評価は適応型多ターン攻撃を証明しない。モデルrepoのLICENSE正文・依存ツールkit/独立評価・推論実機・正確な全ソースbytes未確定。",
+      "evidence_date": "2026-11-15",
+      "evidence_kind": "primary_publisher_model_config_weight_metadata_and_source_runtime",
+      "evidence_urls": [
+        "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+        "https://huggingface.co/ibm-granite/granite-4.1-3b-llmon-preview/blob/55a14cac002854bb64c7f465c30da29209b170c8/config.json",
+        "https://huggingface.co/ibm-granite/granite-4.1-3b-llmon-preview/blob/55a14cac002854bb64c7f465c30da29209b170c8/model.safetensors",
+        "https://arxiv.org/abs/2610.38120"
+      ],
+      "observed_access": "Official public HF page and immutable source blob view; authenticated payload/owner permission not checked.",
+      "license_metadata": "apache-2.0",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "55a14cac002854bb64c7f465c30da29209b170c8",
+      "upstream_model_file": {
+        "path": "model.safetensors",
+        "sha256": "1b3bca7852237cd0d23d0b71c3e809231568425f66ce4005b3cdad1e992af3dc",
+        "bytes_exact": 7320000000,
+        "source_identity_provenance": "publisher_Xet_OR_OFFICIAL_CHECKPOINT_NOT_LOCAL_HASH"
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 3659700000,
+        "evidence_kind": "Hub published 3659.7M; frozen config GraniteForCausalLM, 40×2560, attention40, KV8, MLP8192",
+        "review_date": "2026-11-15",
+        "full_pipeline_tensor_count_not_locally_verified": true
+      },
+      "research_only_unknown_total_allow_conditional": false,
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 183,
+        "category": "genuine_distinct_posttrain_or_specialist",
+        "scenario_status": "hypothetical_no_model_specific_takedown"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Granite4.1 3B Baseから命令とRAG・tool responseを区別するLLMONの予約トークン＋exec束縛をSFT・RL・DPOで学習した別重み。検閲判定器Galvanizeでは代替不能。8B同手法は原則重複のため採用しない。",
+        "must_preserve": [
+          "model.safetensors BF16 + publisher SHA256",
+          "config.json; tokenizer.json; tokenizer_config.json; chat_template.jinja; generation_config.json; README",
+          "LLMON delimiters/exec-block formatter + official toolkit source revision",
+          "Apache 2.0 rights, code dependencies and offline prompt test"
+        ],
+        "external_learned_and_software_dependencies": [
+          "LLMON delimiters/exec-block formatter + official toolkit source revision",
+          "Apache 2.0 rights, code dependencies and offline prompt test"
+        ],
+        "excluded_duplicate_or_optional_formats": [
+          "8B LLMON preview is same method at another scale; defer unless independently superior on matched task",
+          "generic Granite3B prompt conversions without learned LLMON weights"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "publisher_rounded_full_repo_bytes": 7320000000,
+        "source_bytes_are_not_selected_bytes": true,
+        "selected_file_bytes_final": null,
+        "hw_tested_on_user_machine": false
+      },
+      "falsification_condition": "Independent trained state or licensing is refuted, recorded source hashes mismatch, learned dependency closure unavailable, or same-task quality/capacity dominance by existing selected model is established.",
+      "selection_budget_cap_bytes": 8500000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "download_ready": false,
+      "position": 183
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "perplexity-ai/pplx-decider-flash-v1.3",
+      "url": "https://huggingface.co/perplexity-ai/pplx-decider-flash-v1.3",
+      "group": "非生成型・非因果Attention・多質問確率判断と原文span抽出",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Qwen3.5 4Bから蒸留したv1.3独立判断checkpoint。causal LLM-headではなくnoncausal full-attention+255行BF16 readoutとlocate-span Adapterが必要。Kananaのchoice/noul/scoreと部分重複するが、多質問同時評価と原文span抽出、固有推論ABIが追加された独立学習成果。27B同族は重複避け採用しない。",
+      "quality_positive": "配布元release-manifestにBF16 backbone2 shards正確SHA256、readout255x2560、Locate Adapter/head別ファイルのSHA256とQwen parent revisionを明記。公式作者のfast-path検証では条件付きでseparate 1.7–1.9倍/isolated 9–18倍を報告（比較HW/絶対速度は未記載、独立検証でない）。",
+      "quality_negative": "作者READMEとrelease-manifestにprivate:true記録あり、公開ページ閲覧で本人の重みアクセス権を確定しない。Python3.12+/CUDA/約8.5GiB BF16＋余剰、Transformers5.17とcustom source。noncausal headを通常AutoModelForCausalLMで使うのは不正。Locate別Adapter 526MBを必須考慮。",
+      "evidence_date": "2026-11-15",
+      "evidence_kind": "primary_publisher_model_config_weight_metadata_and_source_runtime",
+      "evidence_urls": [
+        "https://huggingface.co/perplexity-ai/pplx-decider-flash-v1.3/blob/d06fb3f2d97e0a52325a0d463c450cf0338f44fe/release-manifest.json",
+        "https://huggingface.co/perplexity-ai/pplx-decider-flash-v1.3/blob/d06fb3f2d97e0a52325a0d463c450cf0338f44fe/readout.safetensors",
+        "https://huggingface.co/perplexity-ai/pplx-decider-flash-v1.3/blob/d06fb3f2d97e0a52325a0d463c450cf0338f44fe/config.json",
+        "https://www.perplexity.ai/hub/blog/perplexity-decider"
+      ],
+      "observed_access": "Public model card/tree, but publisher release-manifest private:true; owner-specific Hub entitlement UNVERIFIED.",
+      "license_metadata": "apache-2.0",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "d06fb3f2d97e0a52325a0d463c450cf0338f44fe",
+      "upstream_model_file": {
+        "path": "model-00001-of-00002.safetensors",
+        "sha256": "0048d1ddf2c5754fc05540fccdbc4ac50407e5cf14a35326be01cac0756b4de6",
+        "bytes_exact": 4972946624,
+        "source_identity_provenance": "publisher_Xet_OR_OFFICIAL_CHECKPOINT_NOT_LOCAL_HASH"
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 4539300000,
+        "evidence_kind": "Hub published 4539.3M, fixed config Qwen3_5Model 32 layers, hidden 2560 and vision 24 blocks; dedicated BF16 readout 652800 params",
+        "review_date": "2026-11-15",
+        "full_pipeline_tensor_count_not_locally_verified": true
+      },
+      "research_only_unknown_total_allow_conditional": false,
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 184,
+        "category": "genuine_distinct_posttrain_or_specialist",
+        "scenario_status": "hypothetical_no_model_specific_takedown"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Qwen3.5 4Bから蒸留したv1.3独立判断checkpoint。causal LLM-headではなくnoncausal full-attention+255行BF16 readoutとlocate-span Adapterが必要。Kananaのchoice/noul/scoreと部分重複するが、多質問同時評価と原文span抽出、固有推論ABIが追加された独立学習成果。27B同族は重複避け採用しない。",
+        "must_preserve": [
+          "two model shards both source SHA256",
+          "readout.safetensors 255x2560, decision_config, joint_config",
+          "locate-span/adapter.safetensors and locate-span/head.safetensors + locate_config",
+          "source/src/pplx_decider custom implementation + requirements + noncausal attention",
+          "NOTICE/LICENSE and verified owner HF permission"
+        ],
+        "external_learned_and_software_dependencies": [
+          "source/src/pplx_decider custom implementation + requirements + noncausal attention",
+          "NOTICE/LICENSE and verified owner HF permission"
+        ],
+        "excluded_duplicate_or_optional_formats": [
+          "Perplexity 26B Decider v1.3 same protocol larger checkpoint: no second copy without quality/cost test",
+          "earlier Decider v1.2 variants and generic Qwen3.5 backbone duplicate"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "publisher_rounded_full_repo_bytes": 4972946624,
+        "source_bytes_are_not_selected_bytes": true,
+        "selected_file_bytes_final": null,
+        "hw_tested_on_user_machine": false
+      },
+      "falsification_condition": "Independent trained state or licensing is refuted, recorded source hashes mismatch, learned dependency closure unavailable, or same-task quality/capacity dominance by existing selected model is established.",
+      "selection_budget_cap_bytes": 11500000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "download_ready": false,
+      "position": 184
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/Kumo-Relational",
+      "url": "https://huggingface.co/nvidia/Kumo-Relational",
+      "group": "関係表の分類・回帰：TabICLv2独立教師学習済み専門重み",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "NVIDIA公式relational tabular in-context学習成果。classifier.pt/regressor.ptは別々のTabICLv2後学習済み重みで、現行Chronos/TTMの時系列予測やOCRで代替できない。二つは同能力の量子化複製ではなく異なる予測タスク。",
+      "quality_positive": "公式repo固定7ファイル計243656960byte。classifier119862733byte SHA0c2e...、regressor123786699byte SHAf863...を公開。コードNVIDIA/structured-data-modelsの固定commitとweights_only loader確認。",
+      "quality_negative": "総パラメータ数未公表・torch .ptを安全に非実行countできず最終取得ロック停止。runtimeがHubを暗黙取得するコードあり。TabICL原点、OpenMDW-1.1と第三者BSDの権利・wheelhouse/実機推論を未確認。",
+      "evidence_date": "2026-11-15",
+      "evidence_kind": "primary_publisher_model_config_weight_metadata_and_source_runtime",
+      "evidence_urls": [
+        "https://huggingface.co/nvidia/Kumo-Relational",
+        "https://github.com/NVIDIA/structured-data-models/blob/46a6f20d20f1140912f7a9e6ecdda9a3cd3fda87/sdm/models/kumo/relational/model.py",
+        "https://huggingface.co/nvidia/Kumo-Relational/blob/efdbb110daea5aae123447864a64612e8a3dc6be/LICENSE"
+      ],
+      "observed_access": "Public model listing; account-specific entitlement and runtime rights not verified.",
+      "license_metadata": "openmdw-1.1",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "efdbb110daea5aae123447864a64612e8a3dc6be",
+      "upstream_model_file": {
+        "path": "classifier.pt",
+        "sha256": "0c2e35cc18303f0d3ddeaf04e9cab6ca3a8bd6ea17195ac0e42d47af4bcb2a2d",
+        "bytes_exact": 119862733,
+        "source_identity_provenance": "publisher_Xet_OR_OFFICIAL_CHECKPOINT_NOT_LOCAL_HASH"
+      },
+      "parameter_gate": {
+        "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+        "total_parameters": null,
+        "evidence_kind": "Unknown; model .pt byte size not valid parameter count. n=both trained heads+framework remains unverified",
+        "review_date": "2026-11-15",
+        "full_pipeline_tensor_count_not_locally_verified": true
+      },
+      "research_only_unknown_total_allow_conditional": true,
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 185,
+        "category": "genuine_distinct_posttrain_or_specialist",
+        "scenario_status": "hypothetical_no_model_specific_takedown"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "NVIDIA公式relational tabular in-context学習成果。classifier.pt/regressor.ptは別々のTabICLv2後学習済み重みで、現行Chronos/TTMの時系列予測やOCRで代替できない。二つは同能力の量子化複製ではなく異なる予測タスク。",
+        "must_preserve": [
+          "classifier.pt SHA0c2e... + regressor.pt SHAf863...",
+          "config LICENSE THIRD-PARTY-NOTICES README",
+          "structured-data-models pinned official code commit 46a6f20...",
+          "TabICLv2 runtime/architecture; static .pt safety review",
+          "No implicit HF auto-download; legal rights and total tensor count"
+        ],
+        "external_learned_and_software_dependencies": [
+          "TabICLv2 runtime/architecture; static .pt safety review",
+          "No implicit HF auto-download; legal rights and total tensor count"
+        ],
+        "excluded_duplicate_or_optional_formats": [
+          "separate duplicate models for classifier/regressor repo aliases; preserve one combined trained source bundle",
+          "ordinary 8bit or lower representations without independently learned data"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "publisher_rounded_full_repo_bytes": 243656960,
+        "source_bytes_are_not_selected_bytes": true,
+        "selected_file_bytes_final": null,
+        "hw_tested_on_user_machine": false
+      },
+      "falsification_condition": "Independent trained state or licensing is refuted, recorded source hashes mismatch, learned dependency closure unavailable, or same-task quality/capacity dominance by existing selected model is established.",
+      "selection_budget_cap_bytes": 500000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "download_ready": false,
+      "position": 185
+    }
+  ],
+  "not_adopted": [
+    {
+      "id": "ibm-granite/granite-4.1-8b-llmon-preview",
+      "reason": "Same LLMON training method as 3B; independent matched-task increase not yet established versus added storage."
+    },
+    {
+      "id": "perplexity-ai/pplx-decider-v1.3",
+      "reason": "Same protocol and trained family as Flash, 26B source and latency; preserve smaller distilled unique task first."
+    },
+    {
+      "id": "inclusionAI/Duo-1.0-distill",
+      "reason": "Full-duplex AV unique but published repo is realization overlay requiring causal-base intent/speech/codec and MiniMax H3 license. Full parameters and exact lawful package bytes incomplete."
+    },
+    {
+      "id": "NousResearch/Arete-27B",
+      "reason": "Qwen3.8 27B values-oriented SFT tested by publisher; overlaps several chosen selective alignment edits, no like-for-like immutable additional storage/quality evidence."
+    }
+  ],
+  "decision_safety": "No payload download, access agreement, runtime execution, irreversible deletion or owner approval.",
+  "download_authorizations_created": 0
+}
