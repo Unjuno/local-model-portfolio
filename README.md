@@ -1,5 +1,7 @@
 # Local Model Portfolio
 
+**R76 Qwen固定原本照合（11月15日）**：[Qwen-Image-2.1の公式API 28ファイルと選択27ファイルをGit blob SHA/byteで照合](docs/strategy/76-qwen-image-2.1-fixed-source-scope-and-rights-2026-11-15.md)（[一次証拠JSON](catalog/research/2026-11-15-r76-qwen-image-2.1-fixed-source-overfetch-resolution.json)）。R75未説明の3,333,149 byteは**除外済みWeChat QR画像3,332,800 byte＋過去集計差349 byte**と分離。Qwen Research Licenseは研究・評価に限定、商用別契約。**実HDD・全依存・取得承認未完了**。
+
 **R75 allowlist検証（11月15日）**：[全66配布元・1,425ファイルのSHA種別/固定revision/容量/権限フラグをR73と機械照合](docs/strategy/75-v32-overfetch-allowlist-verification-2026-11-15.md)（[読取専用検証スクリプト](scripts/verify_r74_overfetch_allowlists.py)／[回帰テスト](tests/test_verify_r74_overfetch_allowlists.py)）。メタデータ整合性はPASS、Qwen Image 2.1の観測差3,333,149byteはファイル数で説明できず再調査。**実HDD・本人権限・復元・取得承認は未完了**。
 
 **R74保存容量安全策（11月15日）**：v27原本全59,938ファイルを再検査し、[全135資産の公開元revision・SHAカバレッジ（R73）](docs/strategy/73-v32-135-publisher-file-identity-audit.md)を確定。Gated17資産・762ペイロードファイル・約785GBは配布元SHA未確定。さらに[66配布元・1,425ファイルの完全選択allowlist（R74）](manifests/drafts/r74-66-source-overfetch-allowlists.candidate.json)を作り、不要なrepo全量取得につながる観測差分約2.986TBを分離（[判断と容量比較](docs/strategy/74-v32-66-overfetch-prevention-2026-11-15.md)）。**研究・非実行であり、権利/依存/実機/取得承認は未完了**。
