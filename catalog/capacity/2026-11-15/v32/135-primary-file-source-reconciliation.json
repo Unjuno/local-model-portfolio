@@ -11,9 +11,10 @@
     "r64_source_candidates": "manifests/drafts/r64-eight-source-scopes.candidate.json",
     "r48_zonos_profile": "catalog/research/2026-11-12-r48-pinned-scopes.json",
     "r72_readiness": "catalog/readiness/v32-2026-11-15-r72-consolidated-135-cross-evidence.json",
-    "prior_estimate": "catalog/estimates/CURRENT.json"
+    "prior_estimate": "catalog/estimates/CURRENT.json",
+    "exact_qwen_reuse_audit": "catalog/research/2026-11-14-r62-ace-exact-source-scope-and-kumo-tag.json"
   },
-  "method": "Parse the 126 v27 per-asset byte values from the historical capacity report and assert exact equality to the v27 summary; identify nine new active IDs by set difference against v32; use 8 R64 fixed subsets and 1 R48 ZONOS native keep2 *reference* subset; retain dependency extra ACE-Step1.5 separately. The additive source-only scenario is a planning thought experiment, neither complete nor a bound on final storage.",
+  "method": "Parse the 126 v27 per-asset byte values from the historical capacity report and assert exact equality to the v27 summary; identify nine new active IDs by set difference against v32; use 8 R64 fixed subsets and 1 R48 ZONOS native keep2 *reference* subset; retain dependency extra ACE-Step1.5 separately. The additive source-only scenario is a planning thought experiment, neither complete nor a bound on final storage. Then apply R62's six exact publisher hash-identical repeated ACE Qwen files (cross-verified against R64) to reconcile the hash-aware R63 source scenario; preserve both the raw additive and SHA-adjusted planning scenarios, neither is disk measurement.",
   "summary": {
     "tracked": 182,
     "active": 135,
@@ -39,7 +40,13 @@
     "owner_physical_disk_free_bytes": null,
     "complete_offline_package_bytes": null,
     "actual_incremental_acquisition_bytes": null,
-    "approved_downloads": 0
+    "approved_downloads": 0,
+    "R62_publisher_SHA_identical_Qwen_file_occurrences": 6,
+    "R62_publisher_SHA_reused_bytes": 1211907493,
+    "v32_publisher_SHA_adjusted_source_only_scenario_bytes": 3466070232173,
+    "v32_publisher_SHA_adjusted_arithmetic_gap_after_floor_bytes": 333929767827,
+    "R62_and_R63_scope_arithmetic_reconciled": true,
+    "note_about_scenarios": "Raw additive 3.467282TB counts six repeated Qwen file occurrences; SHA-aware 3.466070TB subtracts 1.211907493GB of reuse. Neither covers all dependencies, nor measured actual owner HDD availability."
   },
   "non_compensatory_hard_gates": [
     "No physical disk free space or current downloads measured",
@@ -2886,5 +2893,56 @@
       "all_component_parameters_known": true,
       "download_approved": false
     }
-  ]
+  ],
+  "publisher_file_identity_reuse_note": {
+    "origin": "catalog/research/2026-11-14-r62-ace-exact-source-scope-and-kumo-tag.json",
+    "publisher_Qwen_original_repo": "Qwen/Qwen3-Embedding-0.6B",
+    "original_Qwen_revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+    "ACE_repository_revision": "19671f406d603126926c1b7e2adc169acbcade22",
+    "occurrences": [
+      {
+        "path": "Qwen3-Embedding-0.6B/merges.txt",
+        "bytes": 1671853,
+        "source_sha256": null,
+        "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7"
+      },
+      {
+        "path": "Qwen3-Embedding-0.6B/model.safetensors",
+        "bytes": 1191586416,
+        "source_sha256": "0437e45c94563b09e13cb7a64478fc406947a93cb34a7e05870fc8dcd48e23fd",
+        "git_blob_sha1": "9116264a405846ebfe4e95556b63b1ca07c892a0"
+      },
+      {
+        "path": "Qwen3-Embedding-0.6B/tokenizer.json",
+        "bytes": 11423705,
+        "source_sha256": "def76fb086971c7867b829c23a26261e38d9d74e02139253b38aeb9df8b4b50a",
+        "git_blob_sha1": "18a4abbf4a408dc534006a455544dcc195f356d2"
+      },
+      {
+        "path": "Qwen3-Embedding-0.6B/vocab.json",
+        "bytes": 2776833,
+        "source_sha256": null,
+        "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569"
+      },
+      {
+        "path": "acestep-5Hz-lm-1.7B/merges.txt",
+        "bytes": 1671853,
+        "source_sha256": null,
+        "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7"
+      },
+      {
+        "path": "acestep-5Hz-lm-1.7B/vocab.json",
+        "bytes": 2776833,
+        "source_sha256": null,
+        "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569"
+      }
+    ],
+    "reconciled_repeated_reference_bytes": 1211907493,
+    "scope_limitations": [
+      "Reuse based on publisher LFS SHA256 and ordinary Git blob SHA1, not local payload verification",
+      "Six occurrences include two repeated merges and two repeated vocab files; do not describe these as six unique models",
+      "Assumes previous v27 source hash union includes the matching original Qwen files; R62 provides earlier comparison",
+      "R63 and R73 adjusted scenario agree but neither bounds final offline storage/physical staging"
+    ]
+  }
 }
