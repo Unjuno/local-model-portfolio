@@ -92,5 +92,40 @@ class R74AllowlistTests(unittest.TestCase):
             audit.validate(draft, source, approvals)
 
 
+    def test_historical_source_blob_provenance_required(self):
+        draft, source, approvals = self.data()
+        draft["historical_source_blob_sha"] = "0" * 40
+        with self.assertRaisesRegex(ValueError, "historical source blob provenance mismatch"):
+            audit.validate(draft, source, approvals)
+
+    def test_three_legitimate_zero_byte_git_blobs(self):
+        draft, source, approvals = self.data()
+        blanks = [(r["repo_id"], f["path"]) for r in draft["records"]
+                  for f in r["files"] if f["bytes"] == 0]
+        self.assertEqual(
+            [("ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8", "samples/nul"),
+             ("ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8", "workflow_examples/nul"),
+             ("KlingTeam/LivePortrait", ".gitkeep")],
+            blanks,
+        )
+        self.assertEqual("PASS_METADATA_CROSSCHECK_ONLY",
+                         audit.validate(draft, source, approvals)["status"])
+
+    def test_empty_file_requires_exact_git_empty_blob(self):
+        draft, source, approvals = self.data()
+        row = next(r for r in draft["records"] if r["repo_id"] ==
+                   "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8")
+        file = next(f for f in row["files"] if f["path"] == "samples/nul")
+        file["git_blob_sha1_reference"] = "a" * 40
+        with self.assertRaisesRegex(ValueError, "invalid zero-byte Git blob identity"):
+            audit.validate(draft, source, approvals)
+
+    def test_windows_colon_filename_refused(self):
+        draft, source, approvals = self.data()
+        draft["records"][0]["files"][0]["path"] = "C:weights.safetensors"
+        with self.assertRaisesRegex(ValueError, "unsafe filename"):
+            audit.validate(draft, source, approvals)
+
+
 if __name__ == "__main__":
     unittest.main()
