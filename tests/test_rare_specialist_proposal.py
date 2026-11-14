@@ -51,6 +51,19 @@ class RareSpecialistSourceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "payload claimed verified"):
             validate(x, self.catalog, self.approvals)
 
+    def test_parameter_unsupported_promotion_is_rejected(self):
+        x = copy.deepcopy(self.proposal)
+        item = next(r for r in x["candidates"] if r["repo_id"] == "nvidia/Kumo-Relational")
+        item["parameter_screening"]["observed_model_parameters"] = 123456
+        with self.assertRaisesRegex(ValueError, "full count not proved"):
+            validate(x, self.catalog, self.approvals)
+
+    def test_final_lock_cannot_be_inferred_from_metadata(self):
+        x = copy.deepcopy(self.proposal)
+        x["candidates"][0]["final_lock_eligible"] = True
+        with self.assertRaisesRegex(ValueError, "approval or entitlement improperly asserted"):
+            validate(x, self.catalog, self.approvals)
+
     def test_owner_approval_queue_must_remain_empty(self):
         with self.assertRaisesRegex(ValueError, "acquisition queue"):
             validate(self.proposal, self.catalog, {"entries": [{"unapproved": True}]})
