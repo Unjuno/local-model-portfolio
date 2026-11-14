@@ -1,5 +1,7 @@
 # Local Model Portfolio
 
+**R74保存容量安全策（11月15日）**：v27原本全59,938ファイルを再検査し、[全135資産の公開元revision・SHAカバレッジ（R73）](docs/strategy/73-v32-135-publisher-file-identity-audit.md)を確定。Gated17資産・762ペイロードファイル・約785GBは配布元SHA未確定。さらに[66配布元・1,425ファイルの完全選択allowlist（R74）](manifests/drafts/r74-66-source-overfetch-allowlists.candidate.json)を作り、不要なrepo全量取得につながる観測差分約2.986TBを分離（[判断と容量比較](docs/strategy/74-v32-66-overfetch-prevention-2026-11-15.md)）。**研究・非実行であり、権利/依存/実機/取得承認は未完了**。
+
 **R69固定runtime監査（11月15日）**：[IBM TTM R3の公式モデルSHA一致・公式granite-tsfmコードcommit・Python/PyTorch依存の具体的な範囲・不足しているimport経路](docs/strategy/69-ibm-ttm-r3-offline-runtime-evidence.md)／[機械可読証拠](catalog/research/2026-11-15-r69-ibm-ttm-r3-publisher-runtime-pin.json)。R68で有効135件の先頭調査ゲートを一意に整理（[監査結果](docs/strategy/68-v32-135-next-gate-triage-2026-11-15.md)／[全件JSON](catalog/readiness/v32-2026-11-15-r68-135-actionable-triage.json)）。**保存・実行・承認は未実施**。
 
 **R64完成準備（11月15日）**：[全135件の取得ゲート台帳](catalog/readiness/v32-2026-11-15-r64-all-active.json)／[8資産91ファイルの取得前マニフェスト](manifests/drafts/r64-eight-source-scopes.candidate.json)／[実HDD読み取り専用監査手順](docs/strategy/65-v32-owner-offline-preflight.md)。保存完了を示すものではなく、承認済みダウンロード0件。
