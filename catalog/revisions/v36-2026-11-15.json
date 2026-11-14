@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "revision_id": "v36-20261115",
+  "previous_revision_id": "v35-20261115",
+  "decision_date": "2026-11-15",
+  "target_branch": "main",
+  "status": "TWO_DISTINCT_GATED_QUANTUM_PREDECODER_TRAINED_OUTCOMES_CONDITIONAL_NO_DOWNLOAD",
+  "source_basis": "catalog/research/2026-11-15-r80-three-specialist-actual-source-scope.json",
+  "decision_reason": "Separate author-confirmed QEC code geometries and fixed weight checksums. Gated blocks acquisition, not research listing.",
+  "previous_not_adopted_correction": "V34 research non-adoption due to owner Gated remains a download hard stop; V36 promotes only non-executable research selection after distinct architecture/source review.",
+  "archive_target_bytes": 4000000000000,
+  "minimum_free_bytes": 200000000000,
+  "selected_publisher_source_candidate_bytes": 7760518,
+  "planning_reservation_cap_bytes": 20000000,
+  "download_authorizations_created": 0,
+  "nonselected_overlapping_OCR": "nvidia/Nemotron-3.5-Parse",
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/Ising-Decoder-ColorCode-1-Fast",
+      "url": "https://huggingface.co/nvidia/Ising-Decoder-ColorCode-1-Fast",
+      "position": 190,
+      "group": "三角色符号・量子誤り訂正3D CNN",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "6残差ボトルネックの三角色符号専用predecoder学習済み重み。SurfaceCodeとは回路・訓練シンドローム・アーキテクチャが別で、量子化違いではない。",
+      "quality_positive": "作者論文arXiv:2607.10058。実装registryのModel B、d=T=13、受容野13、モデル約2,936,580 params。原本LFS SHA付きFP16重み。",
+      "quality_negative": "Gated auto 401で匿名状態ではcheckpoint tensorを直接閲覧不可。アカウント権限とOpenMDW本文、Chromobius・雑音設定・実行ABI未検証。",
+      "evidence_date": "2026-11-15",
+      "evidence_kind": "AUTHOR_CNN_ARCHITECTURE_AND_PINNED_PUBLISHER_LFS_SHA",
+      "evidence_urls": [
+        "https://huggingface.co/api/models/nvidia/Ising-Decoder-ColorCode-1-Fast/revision/c5775431d0ebb06ffecc3836935708b787db51ee?blobs=true",
+        "https://github.com/NVIDIA/Ising-Decoding/blob/12bbeb13c5cfc1a064171ac91b07aea61f2eaae8/code/model/registry.py"
+      ],
+      "observed_access": "Gated auto (anonymous checkpoint HTTP401, user access unknown)",
+      "license_metadata": "openmdw-1.1",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "c5775431d0ebb06ffecc3836935708b787db51ee",
+      "upstream_all_files_bytes_observed": 6158225,
+      "upstream_weights_bytes_observed": 5899248,
+      "upstream_file_count_observed": 5,
+      "upstream_lfs_sha256_count": 1,
+      "upstream_model_file": {
+        "path": "ising_decoder_color_code_1_fast_r13_v1.0.400_fp16.safetensors",
+        "sha256": "ca17d20ebf40d32360f9b60648b47e03de71d4e4d3c3eea33d311dcf1b2510c9",
+        "bytes_exact": 5899248,
+        "source_publisher_only_not_local_sha": true
+      },
+      "candidate_selected_source_files": [
+        {
+          "path": "License.md",
+          "bytes": 2714,
+          "sha256": null,
+          "git_blob_sha1": "3b3df81090187505df9a416af6e29d329403c34b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 17474,
+          "sha256": null,
+          "git_blob_sha1": "1fb414bd59d466952fc77a1069f8ccaf66409e1f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 661,
+          "sha256": null,
+          "git_blob_sha1": "b0f32c9c8af05fc0ad932f70d6692da4ba5dd87e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "ising_decoder_color_code_1_fast_r13_v1.0.400_fp16.safetensors",
+          "bytes": 5899248,
+          "sha256": "ca17d20ebf40d32360f9b60648b47e03de71d4e4d3c3eea33d311dcf1b2510c9",
+          "git_blob_sha1": "18bddd0bda84396e77233450a74748d72771cf7c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "safety_security_subcard.md",
+          "bytes": 866,
+          "sha256": null,
+          "git_blob_sha1": "1d3d9910fa9999694e56b30b5c45acf936b7df17",
+          "local_sha_verified": false
+        }
+      ],
+      "candidate_selected_file_count": 5,
+      "candidate_selected_file_bytes": 5920963,
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 2936580,
+        "evidence_kind": "AUTHOR_MODEL_CARD_EXACT_AND_OFFICIAL_REGISTRY",
+        "review_date": "2026-11-15",
+        "checkpoint_tensor_header_access": false,
+        "full_learned_dependency_scope_not_verified": true
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 190,
+        "category": "independent_gated_scientific_trained_outcome",
+        "scenario_status": "Hypothetical future restrictions; current Gated is observed"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "6残差ボトルネックの三角色符号専用predecoder学習済み重み。SurfaceCodeとは回路・訓練シンドローム・アーキテクチャが別で、量子化違いではない。",
+        "must_preserve": [
+          "License.md",
+          "README.md",
+          "config.json",
+          "ising_decoder_color_code_1_fast_r13_v1.0.400_fp16.safetensors",
+          "safety_security_subcard.md",
+          "NVIDIA/Ising-Decoding at commit 12bbeb13c5cfc1a064171ac91b07aea61f2eaae8",
+          "matched license text, circuits and global decoder"
+        ],
+        "external_learned_and_software_dependencies": [
+          "NVIDIA/Ising-Decoding original code",
+          "Chromobius or PyMatching matched post-decoder",
+          "circuit-level noise model and compiler/driver ABI"
+        ],
+        "excluded_duplicate_or_optional_formats": [
+          "Ordinary INT8/FP8 conversion of exact same weights"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 6158225,
+        "source_bytes_are_not_selected_bytes": true,
+        "selected_file_bytes_final": null,
+        "hw_tested_on_user_machine": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/Ising-Decoder-SurfaceCode-1-Fast",
+      "url": "https://huggingface.co/nvidia/Ising-Decoder-SurfaceCode-1-Fast",
+      "position": 191,
+      "group": "回転表面符号・量子誤り訂正3D CNN",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "4層3D CNNの回転表面符号シンドローム予測。ColorCodeの学習済みモデルとノイズ／幾何構造が異なり非代替。",
+      "quality_positive": "作者論文arXiv:2604.12841。実装Conv3D 4→128→128→128→4各k=3、受容野9。バイアス含むコード計算912,772、HF概数約913kと整合。",
+      "quality_negative": "Gated auto 401で本体テンソルヘッダ未確認。元カードNVIDIA Open Model Licenseに対しHubタグother。PyMatching/global decoder、本人認証、ノイズとABI未検証。",
+      "evidence_date": "2026-11-15",
+      "evidence_kind": "AUTHOR_CNN_ARCHITECTURE_AND_PINNED_PUBLISHER_LFS_SHA",
+      "evidence_urls": [
+        "https://huggingface.co/api/models/nvidia/Ising-Decoder-SurfaceCode-1-Fast/revision/77b3a3f444612afe838fa0ece526b4c588541576?blobs=true",
+        "https://github.com/NVIDIA/Ising-Decoding/blob/12bbeb13c5cfc1a064171ac91b07aea61f2eaae8/code/model/predecoder.py"
+      ],
+      "observed_access": "Gated auto (anonymous checkpoint HTTP401, user access unknown)",
+      "license_metadata": "other; publisher card NVIDIA Open Model License",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "77b3a3f444612afe838fa0ece526b4c588541576",
+      "upstream_all_files_bytes_observed": 2143603,
+      "upstream_weights_bytes_observed": 1826360,
+      "upstream_file_count_observed": 3,
+      "upstream_lfs_sha256_count": 1,
+      "upstream_model_file": {
+        "path": "ising_decoder_surface_code_1_fast_r9_v1.0.77_fp16.safetensors",
+        "sha256": "22db7ad25b584d7588493d6ef815381c8d1263cfb29f212391a591b285ad0a05",
+        "bytes_exact": 1826360,
+        "source_publisher_only_not_local_sha": true
+      },
+      "candidate_selected_source_files": [
+        {
+          "path": "README.md",
+          "bytes": 12297,
+          "sha256": null,
+          "git_blob_sha1": "df111e1440234926bd0d914ad7307f117d9cce8c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "ising_decoder_surface_code_1_fast_r9_v1.0.77_fp16.safetensors",
+          "bytes": 1826360,
+          "sha256": "22db7ad25b584d7588493d6ef815381c8d1263cfb29f212391a591b285ad0a05",
+          "git_blob_sha1": "bae50525966f5bd8a634ba44e5f9b30d2321827a",
+          "local_sha_verified": false
+        },
+        {
+          "path": "safety_and_security.md",
+          "bytes": 898,
+          "sha256": null,
+          "git_blob_sha1": "c6a08d00721a95eb809f663118f19149bb949e35",
+          "local_sha_verified": false
+        }
+      ],
+      "candidate_selected_file_count": 3,
+      "candidate_selected_file_bytes": 1839555,
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 912772,
+        "evidence_kind": "OFFICIAL_SOURCE_FOUR_CONV_WITH_BIAS_DERIVED_AND_AUTHOR_APPROX",
+        "review_date": "2026-11-15",
+        "checkpoint_tensor_header_access": false,
+        "full_learned_dependency_scope_not_verified": true
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 191,
+        "category": "independent_gated_scientific_trained_outcome",
+        "scenario_status": "Hypothetical future restrictions; current Gated is observed"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "4層3D CNNの回転表面符号シンドローム予測。ColorCodeの学習済みモデルとノイズ／幾何構造が異なり非代替。",
+        "must_preserve": [
+          "README.md",
+          "ising_decoder_surface_code_1_fast_r9_v1.0.77_fp16.safetensors",
+          "safety_and_security.md",
+          "NVIDIA/Ising-Decoding at commit 12bbeb13c5cfc1a064171ac91b07aea61f2eaae8",
+          "matched license text, circuits and global decoder"
+        ],
+        "external_learned_and_software_dependencies": [
+          "NVIDIA/Ising-Decoding original code",
+          "Chromobius or PyMatching matched post-decoder",
+          "circuit-level noise model and compiler/driver ABI"
+        ],
+        "excluded_duplicate_or_optional_formats": [
+          "Ordinary INT8/FP8 conversion of exact same weights"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 2143603,
+        "source_bytes_are_not_selected_bytes": true,
+        "selected_file_bytes_final": null,
+        "hw_tested_on_user_machine": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    }
+  ]
+}
