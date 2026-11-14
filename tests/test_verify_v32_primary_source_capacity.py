@@ -28,8 +28,15 @@ class V32PrimaryCapacityTests(unittest.TestCase):
             target = root / "catalog/capacity/2026-11-07/v27/capacity-report.md"
             target.parent.mkdir(parents=True)
             target.write_text(data + source_line + "\n", encoding="utf-8")
-            with self.assertRaisesRegex(ValueError, "duplicate old ID"):
-                audit.verify(root)
+            # verify() reads ROOT; stage its first JSON dependency before the
+            # intentionally malformed Markdown makes validation stop.
+            summary = root / "catalog/capacity/2026-11-07/v27/capacity-summary.json"
+            summary.write_bytes(
+                (audit.ROOT / "catalog/capacity/2026-11-07/v27/capacity-summary.json").read_bytes()
+            )
+            with patch.object(audit, "ROOT", root):
+                with self.assertRaisesRegex(ValueError, "duplicate old ID"):
+                    audit.verify()
 
     def test_source_sha_mismatch_refuses_dedup(self):
         real_j = audit.j
