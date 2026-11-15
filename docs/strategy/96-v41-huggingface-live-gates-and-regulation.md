@@ -39,6 +39,7 @@
 
 | 既存CONDITIONALのモデル | HFが表示したパラメータ | HFライセンスタグ | 現時点のGated表示 |
 |---|---:|---|---|
+| [`WhissleAI/steer-tts`](https://huggingface.co/WhissleAI/steer-tts) | 9.6M | `cc-by-nc-4.0` | Gated |
 | [`ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8`](https://huggingface.co/ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8) | —（Hub単体数なし） | `unknown` | Gated表示なし |
 | [`Stuubs/Stubelius_Remix_Ltx2.5`](https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5) | —（Hub単体数なし） | `other` | Gated表示なし |
 | [`maya-research/maya2-native`](https://huggingface.co/maya-research/maya2-native) | 2502.4M | `apache-2.0` | Gated表示なし |
