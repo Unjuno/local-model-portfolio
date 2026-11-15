@@ -1,6 +1,11 @@
 # 資産台帳
 
-## 現行正本（main・v38／2026-11-15）
+## 現行正本（main・v40／2026-11-15）
+
+[CURRENT](CURRENT.json)→[全195登録（169モデル・26データ）／有効148](effective-portfolio-2026-11-15-v40.json)、SELECT53／CONDITIONAL95、HOLD28、DEFERRED13、EXCLUDED6。[v40の差分](revisions/v40-2026-11-15.json)／[学習済み原本の採否](../docs/strategy/90-v40-groundingpi-original-decision.md)／[28ファイルsource](../manifests/drafts/v39-groundingpi-source28.candidate.json)／[148件研究キュー](../queues/proposed-v40-2026-11-15.json)／[148依存](preparation/2026-11-15-insurance-bundles-v40.json)／[95アクセス](access/2026-11-15-v40-conditional-hub-gates.json)／[148停止ゲート](readiness/v40-2026-11-15-r90-all148-gates.json)。取得承認0、HDD/localSHA/実行未確認。旧v39の194件はそのまま保持。
+
+
+## 旧版v38（履歴・2026-11-15）
 
 [CURRENT](CURRENT.json)→[全193資産：167モデル・26データセット](effective-portfolio-2026-11-15-v38.json)、**SELECT53・CONDITIONAL93・HOLD28・DEFERRED13・EXCLUDED6／有効146件**。[v38追加2件の正式差分](revisions/v38-2026-11-15.json)／[一次重み原本と役割比較](../docs/strategy/86-v38-risk-aware-original-model-selection-2026-11-15.md)／[非実行146件の候補](../queues/proposed-v38-2026-11-15.json)／[依存準備146件](preparation/2026-11-15-insurance-bundles-v38.json)／[全146件停止条件](readiness/v38-2026-11-15-r86-all146-selection-gates.json)。Haru original BF16とGated Praxis DROID（全17 BF16 shard）をそれぞれ1モデルとして保存研究選定。Qwen3.5-2BはPraxisの外部依存、Wan2.2 VAEは既存資産の共有ファイル。実取得・HDD/本人権利・復元未確認、承認0。
 

@@ -1,11 +1,14 @@
 # Local Model Portfolio
 
+**現行v40・2026年11月15日**：[195登録（169モデル＋26データ）／有効148件](catalog/effective-portfolio-2026-11-15-v40.json)。[独立学習済みGroundingPI原本1件をCONDITIONAL追加、Thinker-WM研究HOLD](docs/strategy/90-v40-groundingpi-original-decision.md)。[候補148件](queues/proposed-v40-2026-11-15.json)／[取得前停止148件](catalog/readiness/v40-2026-11-15-r90-all148-gates.json)。最終選定byte、権利本人確認、全依存、物理HDD実測、実重みSHA、復元は未完了で**取得承認・本体DL0**。以下v39以前は履歴。
+
+
 **R90／v39原本保全の前進（2026-11-15）**：[Xiaomi UNIS-4B＋必須VisionTokenizerの固定18ファイル非実行allowlist](docs/strategy/90-v39-unis4b-source-allowlist-runtime-gates.md)を作成。[candidate manifest](manifests/drafts/v39-unis4b-and-vq-source.candidate.json)で2repo・11,991,440,188byteのpublisher参照sourceを固定し、[静的整合チェック](scripts/verify_v39_unis_source_draft.py)と[負例テスト](tests/test_verify_v39_unis_source_draft.py)を追加。作者VQロード経路にはtorch.loadとtrust_remote_code=Trueがあり、**保存ファイル固定≠実行安全・ライセンス適合・所有者HDD実測**。ダウンロード・取得承認0件。
 
 
 **R90・v39の保存余白と権限監査（2026年11月15日）**：[全147有効資産の優先調査・モデル採否・容量台帳](catalog/research/2026-11-15-r90-v39-147-access-and-capacity-triage.json)。CONDITIONAL94件でGated20、SELECT53件は専用アクセス台帳で未確認。新たにXiaomi U0＋BAAI Emu3.5 VQ 18原本ファイル約11.99GBの公開元参照を追加。4TB上限と200GB空き床の**仮説的な予約余白約143.41GB**。完全依存・キャッシュ・実HDDは未測定。追加取得承認0。
 
-**現行v39・2026年11月15日：** [194資産（168モデル・26データ）／有効147件](catalog/effective-portfolio-2026-11-15-v39.json)、[Xiaomi UNIS-4B原本＋学習済みVisionTokenizerの独立保存理由](docs/strategy/89-v39-xiaomi-unis-original-and-safety.md)、[固定2repo・18ファイルの一次SHA/byte台帳](catalog/research/2026-11-15-r89-xiaomi-u0-4b-immutable-selected-source.json)、[有効147件の取得前ゲート](catalog/readiness/v39-2026-11-15-r89-all147-gates.json)。v38以前の193件採否は維持。形式違いVQ ckptや34B/38Bを多重保存せず、完全なライセンス・実機・コード安全確認は未完了。**ダウンロード／実行／取得承認0**。
+**旧v39・2026年11月15日（履歴）：** [194資産（168モデル・26データ）／有効147件](catalog/effective-portfolio-2026-11-15-v39.json)、[Xiaomi UNIS-4B原本＋学習済みVisionTokenizerの独立保存理由](docs/strategy/89-v39-xiaomi-unis-original-and-safety.md)、[固定2repo・18ファイルの一次SHA/byte台帳](catalog/research/2026-11-15-r89-xiaomi-u0-4b-immutable-selected-source.json)、[有効147件の取得前ゲート](catalog/readiness/v39-2026-11-15-r89-all147-gates.json)。v38以前の193件採否は維持。形式違いVQ ckptや34B/38Bを多重保存せず、完全なライセンス・実機・コード安全確認は未完了。**ダウンロード／実行／取得承認0**。
 
 
 **R88（2026年11月15日）・v38の内容監査を更新**：[全146有効資産の規制・アクセス・容量再判定](docs/strategy/88-v38-146-model-access-decision-and-capacity-2026-11-15.md)／[機械可読146件](catalog/research/2026-11-15-r88-v38-146-access-risk-and-capacity-triage.json)／[CONDITIONAL93件の本人アクセス確認台帳（Gated20件）](catalog/access/2026-11-15-v38-conditional-hub-gates.json)。旧v37の91件アクセス参照を修正し、選定変更なし。Underdog Saluki／Nemotron-Parse／超150B GLMの新規追加は根拠不足で不採用。v38を含む4TB仮説予約余白は**約159.41GB**だが実HDD・全runtime・staging未測定、重み取得/承認0。以下のv38モデル選定は維持。
