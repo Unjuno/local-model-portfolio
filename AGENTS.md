@@ -1,5 +1,18 @@
 # エージェント作業規約
 
+## R91：規制根拠と取得停止ゲートの現行方針（2026-11-15）
+
+現行選定正本は main / catalog/CURRENT.json → **v40、195資産・148有効（SELECT53、CONDITIONAL95）**。必ず正本を再読み込みし、古いv9や他ブランチの件数・採否で上書きしない。[一次政策証拠・全148件の初回停止ゲート](docs/strategy/91-v40-regulation-primary-source-and-148-blocker-audit.md)と[148行JSON](catalog/research/2026-11-15-r91-v40-148-policy-and-insurance-triage.json)を参照。
+
+- 150B以上は現行 limits.json で**量子化例外を厳しく審査するHOLD対象**。従来の絶対除外ルールへ巻き戻さない。inactiveを含むMoE全expertの総数、同一HW/backend/context/batchにおける150B未満選定モデル以下の実測完全ピークRAM、512GB未満、品質/実用速度・権利・ユーザー承認を全て要求。未検証なら取得不可。
+- **すべての資産がApache2.0という認識は禁止**。特にGroundingPIにはKimi K3由来の条件、Prunaに地域制限等、WhissleAIにCC BY-NC、unknownな派生もある。配布元メタタグとライセンス正文の行為別権利を別検査する。
+- GroundingPIの旧R88研究JSONの model_gated:true は出版社の固定版とv40アクセス監査のfalseに合わせて**誤記訂正済み**。研究データには履歴を残してあり、非Gatedを本人ライセンス承認の証拠としない。
+- 148件の最初の停止要因は source118、Gated本人権限19、総数9、HDD2。ただし**複数ゲートは同時にブロックし得る**。CONDITIONAL95件のGated観測20件とSELECT53件が専用アクセス台帳未確認であることを混同しない。
+- EU AI ActのGPAI監督・Article53(2)部分免除、中国MOFCOMの輸出管理案、米国2026-06-02大統領令の任意枠組みは各々法的対象が異なる。将来の全公開重み禁止は予測・ストレス試験に留め、モデル個別の規制確率や削除予定を創作しない。
+- 取得承認・重み本体のローカルSHA・オフライン復元実証は0。非実行選定と本人が承認した合法的な取得を混同しない。実HDDの物理空き・cache/stagingの測定を省略しない。
+
+
+
 ## 現行v40（2026-11-15）
 
 **唯一の選定正本は [CURRENT](catalog/CURRENT.json)→v40、195登録／148有効（SELECT53＋CONDITIONAL95）**。[R90 GroundingPI原本1件の選定](docs/strategy/90-v40-groundingpi-original-decision.md)。Qwen＋Kimi由来の4.843664384B BF16座標定位原本28ファイル9,704,102,624byteをpublisher SHAとライセンス区分付きでCONDITIONAL追加。旧v39の194資産を全件そのまま保持。Thinker-WMはpickle安全性/CC BY-NC-SA、Praxis/Cosmosとの独立増分/物理HDD未確認につき研究HOLD。**Gated20件、総数未確認の有効9、本人の重み取得承認0、local SHA/HDD/実行/復元未検証**。mainのみ、以下v39以前は履歴。
