@@ -38,18 +38,19 @@ def unique_index(rows):
 
 def verify()->dict:
     c=load("catalog/CURRENT.json")
-    assert c["revision_id"]==RID
-    assert c["latest_conditional_access_audit"]["path"]==ACCESS
-    v=load(c["materialized_catalog_path"])
-    q=load(c["priority_worklist_path"])
-    p=load(c["insurance_preparation_worklist_path"])
+    assert "catalog/revisions/v38-2026-11-15.json" in c["ordered_overlays"], "Missing historical v38"
+    if c["revision_id"]==RID:
+        assert c["latest_conditional_access_audit"]["path"]==ACCESS
+    v=load("catalog/effective-portfolio-2026-11-15-v38.json")
+    q=load("queues/proposed-v38-2026-11-15.json")
+    p=load("catalog/preparation/2026-11-15-insurance-bundles-v38.json")
     a=load(ACCESS);r=load(GATES); t=load(TRIAGE);m=load(SOURCE)
     assert v["revision_id"]==RID
     all_items=unique_index(v["items"])
     active=unique_index([x for x in v["items"] if x["portfolio_decision"] in ACTIVE])
     cond={k:x for k,x in active.items() if x["portfolio_decision"]=="conditional"}
-    assert len(all_items)==c["expected"]["tracked"]==193
-    assert len(active)==c["expected"]["active"]==146 and len(cond)==93
+    assert len(all_items)==193
+    assert len(active)==146 and len(cond)==93
     assert len([x for x in active.values() if x["asset_kind"]=="model"])==128
     assert len([x for x in active.values() if x["asset_kind"]=="dataset"])==18
     assert set(unique_index(q["candidates"]))==set(active)
