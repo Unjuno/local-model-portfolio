@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "kind": "V40_NINE_ACTIVE_UNVERIFIED_MODEL_PARAMETER_AND_RIGHTS_RESEARCH",
+  "date_jst": "2026-11-15",
+  "canonical_revision": "v40-20261115",
+  "scope_total": 9,
+  "canonical_parameter_status_changes": 0,
+  "selected_models_added": 0,
+  "original_model_downloaded": false,
+  "approved_queue_entries_added": 0,
+  "nine": [
+    {
+      "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "decision": "RETAIN_CONDITIONAL_RESEARCH",
+      "canonical_parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "finding": "Retain CONDITIONAL; multimodal LTX DiT+Gemma4 text/VAE/audio total and source donor rights unknown; distinguish trained merge from normal FP8 copy"
+    },
+    {
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "decision": "RETAIN_CONDITIONAL_RESEARCH",
+      "canonical_parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "finding": "Retain CONDITIONAL; trained v1 merges versus beta/distilled quant variants; no new format duplicates; full learned component count unknown"
+    },
+    {
+      "repo_id": "WhissleAI/steer-tts",
+      "decision": "RETAIN_CONDITIONAL_RESEARCH",
+      "canonical_parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "finding": "Retain CONDITIONAL Gated CC BY-NC; main 9,585,639 parameters excludes Vocos, WavLM, MiniLM, flow/refiner; owner gate unknown"
+    },
+    {
+      "repo_id": "maya-research/maya2-native",
+      "decision": "RETAIN_CONDITIONAL_RESEARCH",
+      "canonical_parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "finding": "Retain CONDITIONAL; 2,502,398,656 main + 96,151,393 Mimi but ECAPA exact tensor total unverified; three source repos 24 files 5,494,754,107 publisher bytes; hub.py external revision=None"
+    },
+    {
+      "repo_id": "fishaudio/drama-3",
+      "decision": "RETAIN_CONDITIONAL_RESEARCH",
+      "canonical_parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "finding": "Retain CONDITIONAL; main 35,899,643,008 excludes codec.pth 1,871,099,728 bytes; codec tensor total, rights and safe loading unresolved"
+    },
+    {
+      "repo_id": "ausboss/Qwen-Image-2.1-Consistency-LoRA",
+      "decision": "RETAIN_CONDITIONAL_RESEARCH",
+      "canonical_parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "finding": "Retain CONDITIONAL; source pinned to step1500 original 159,436,496 weight bytes and selected 5 files 159,544,753; parent already selected, Qwen Research NONCOMMERCIAL; full pipeline count unknown"
+    },
+    {
+      "repo_id": "PrunaAI/P-H3-Image",
+      "decision": "RETAIN_CONDITIONAL_RESEARCH",
+      "canonical_parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "finding": "Retain CONDITIONAL; known tensor components main33,122,992,896 + prompt9,409,813,744 + text4,437,815,808; VAE and connector remain uncounted; MiniMax H3 excluded territories EU,UK,South Korea,USA"
+    },
+    {
+      "repo_id": "nvidia/Kumo-Relational",
+      "decision": "RETAIN_CONDITIONAL_RESEARCH",
+      "canonical_parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "finding": "Retain CONDITIONAL; NVIDIA doc each classifier/regressor 29.93M-30.94M, combined upper bound 61.88M only; 7 source files 243,656,960 bytes, tensor census unfinished"
+    },
+    {
+      "repo_id": "nvidia/Kumo-Anomaly",
+      "decision": "RETAIN_CONDITIONAL_RESEARCH",
+      "canonical_parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "finding": "Retain CONDITIONAL; NVIDIA 2.44M and 8M conflicting, same SHA checkpoint across old unsafe torch.load and patched weights_only loader; full tensor count unknown"
+    }
+  ],
+  "primary_facts": {
+    "ausboss_source_revision": "58897a02f4f60f88376eab5676738dd45e5ed1a2",
+    "ausboss_preferred_weight_sha256": "4f44ada1be2189cc23b3d010f9603543403f48454e2f76842a3d30109b20bd63",
+    "ausboss_selected_5_files_bytes": 159544753,
+    "ausboss_excluded_2000_step_weight_bytes": 159436496,
+    "parent_qwen_already_active": true,
+    "qwen_license": "Qwen Research License September 20 2026; noncommercial research/evaluation, separate commercial grant and attribution, termination on breach",
+    "pruna_minimax_excluded_territories": [
+      "European Union",
+      "United Kingdom",
+      "Republic of Korea",
+      "United States of America"
+    ],
+    "pruna_license_usage": "MiniMax H3 derived uses limited to applicable territory; output restriction on training unrelated models; separate commercial contract if specified revenue threshold; NOTICE compliance",
+    "pruna_notice_parts": {
+      "minimax": [
+        "transformer",
+        "vae",
+        "text_connector",
+        "text_encoder"
+      ],
+      "apache2": [
+        "prompt_upsampler"
+      ]
+    },
+    "pruna_three_known_component_parameters": [
+      33122992896,
+      9409813744,
+      4437815808
+    ],
+    "pruna_three_known_component_total": 46970622448,
+    "pruna_unknown_component_parameters": [
+      "vae",
+      "text_connector"
+    ],
+    "pruna_selected_source_files": 44,
+    "pruna_selected_publisher_bytes": 99840428064,
+    "pruna_modular_pipeline_nested_revisions_are_null": true,
+    "legal_status_of_weight_holding": "Not assessed for owner's specific usage and territorial circumstances; no bypass of agreements or gated conditions"
+  },
+  "source_urls": [
+    "https://huggingface.co/api/models/ausboss/Qwen-Image-2.1-Consistency-LoRA/revision/58897a02f4f60f88376eab5676738dd45e5ed1a2?blobs=true",
+    "https://huggingface.co/ausboss/Qwen-Image-2.1-Consistency-LoRA/blob/58897a02f4f60f88376eab5676738dd45e5ed1a2/README.md",
+    "https://huggingface.co/Qwen/Qwen-Image-2.1/raw/d26bb61231c349cf6b7896fa83353113880e1ba3/LICENSE",
+    "https://huggingface.co/PrunaAI/P-H3-Image/raw/7f98acef503cf2bcfba821a78cb1cf1a9928b2df/LICENSE",
+    "https://huggingface.co/PrunaAI/P-H3-Image/raw/7f98acef503cf2bcfba821a78cb1cf1a9928b2df/NOTICE",
+    "https://huggingface.co/PrunaAI/P-H3-Image/raw/7f98acef503cf2bcfba821a78cb1cf1a9928b2df/modular_model_index.json",
+    "https://huggingface.co/docs/hub/models-gated",
+    "https://digital-strategy.ec.europa.eu/en/policies/enforcement-ai-act",
+    "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/"
+  ],
+  "safety": {
+    "owner_approval": false,
+    "payloads_fetched": false,
+    "code_executed": false,
+    "physical_HDD_verified": false,
+    "local_SHA_verified": false,
+    "full_pipeline_restores_verified": false
+  }
+}

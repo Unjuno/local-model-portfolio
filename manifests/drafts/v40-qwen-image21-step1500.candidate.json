@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "kind": "QWEN_IMAGE21_CONSISTENCY_SINGLE_ORIGINAL_STEP1500_SOURCE",
+  "date_jst": "2026-11-15",
+  "repo_id": "ausboss/Qwen-Image-2.1-Consistency-LoRA",
+  "source_revision": "58897a02f4f60f88376eab5676738dd45e5ed1a2",
+  "publisher_source_url": "https://huggingface.co/api/models/ausboss/Qwen-Image-2.1-Consistency-LoRA/revision/58897a02f4f60f88376eab5676738dd45e5ed1a2?blobs=true",
+  "parent_repo_id": "Qwen/Qwen-Image-2.1",
+  "parent_in_active_portfolio": true,
+  "parent_revision_observed": "d26bb61231c349cf6b7896fa83353113880e1ba3",
+  "physical_parent_byte_reuse_verified": false,
+  "selected_source_files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 1815,
+      "git_sha1": "ccc58c1548c3096577a21908979e51eba445f58d",
+      "sha256": null,
+      "local_sha256_verified": false,
+      "downloaded": false
+    },
+    {
+      "path": "README.md",
+      "bytes": 9027,
+      "git_sha1": "094b9f93965019df1a86a34cc8ff88f7f495c40a",
+      "sha256": null,
+      "local_sha256_verified": false,
+      "downloaded": false
+    },
+    {
+      "path": "qwen-image-2.1-consistency.safetensors",
+      "bytes": 159436496,
+      "git_sha1": "91f93c2d6a1227d94173558956103dfe941091cd",
+      "sha256": "4f44ada1be2189cc23b3d010f9603543403f48454e2f76842a3d30109b20bd63",
+      "local_sha256_verified": false,
+      "downloaded": false
+    },
+    {
+      "path": "workflows/qwen-image-2.1-edit-consistency.json",
+      "bytes": 26096,
+      "git_sha1": "c7d305781981b541d774b1872af269e7867e839b",
+      "sha256": null,
+      "local_sha256_verified": false,
+      "downloaded": false
+    },
+    {
+      "path": "workflows/qwen-image-2.1-edit-realign.json",
+      "bytes": 71319,
+      "git_sha1": "024371ab3be182a2a62941af91a509724badde44",
+      "sha256": null,
+      "local_sha256_verified": false,
+      "downloaded": false
+    }
+  ],
+  "excluded_source_files": [
+    {
+      "path": "qwen-image-2.1-consistency-2000.safetensors",
+      "bytes": 159436496,
+      "sha256": "a0bf043edc4695b1661a0e768e49a7fdff9a656b7d4313203d590e0262b64beb",
+      "git_sha1": "c66c8df7bd9516fd44835c76c7fa1e08e29af586"
+    },
+    {
+      "path": "consistency_demo.mp4",
+      "bytes": 4653967,
+      "sha256": "32ababd44da4d42ac882c8d3972b855d99ba83ade3e39a7fdec38bd460238cff"
+    },
+    {
+      "path": "drift_crt_watercolor.jpg",
+      "bytes": 1377194,
+      "sha256": "f83f906df016554376dc64203d8543557e979f759c590c057d5662cc6dbedbe0"
+    },
+    {
+      "path": "drift_road_comic.jpg",
+      "bytes": 812337,
+      "sha256": "835ae1481700ba530493be290a265a7f98873316f54344b0d9e528a61a921751"
+    },
+    {
+      "path": "drift_street_cardigan.jpg",
+      "bytes": 1118719,
+      "sha256": "730f90c0afc8d48e147d758fab65a9c883b273a7178737f1f81755039a2059f3"
+    },
+    {
+      "path": "drift_street_comic.jpg",
+      "bytes": 1672734,
+      "sha256": "475f1eda7b93f2d3f9c05a1df20bc85097b0008f70bd153aba48aad3abf38514"
+    }
+  ],
+  "selected_source_file_count": 5,
+  "selected_publisher_source_bytes": 159544753,
+  "excluded_count": 6,
+  "excluded_source_bytes": 169071447,
+  "weight_path": "qwen-image-2.1-consistency.safetensors",
+  "weight_publisher_sha256": "4f44ada1be2189cc23b3d010f9603543403f48454e2f76842a3d30109b20bd63",
+  "weight_bytes": 159436496,
+  "exclude_step2000_reason": "Separate later trained state is acknowledged; author's start-here step1500 better preserves color. Step2000 0.9px median worst corner vs step1500 1.6px on 36 restyles but had worse style color distance 10.9 vs 6.3 on 15 cases. Same training task, not compelling to archive both before independent trial.",
+  "benchmarks": {
+    "owner_published_only": true,
+    "restyle_n": 36,
+    "color_n": 15,
+    "local_edit_n": 18,
+    "backend": "ComfyUI Comfy-Org INT8",
+    "inference_steps": 25,
+    "cfg": 1,
+    "sampler": "Euler/simple",
+    "target_hardware_peak_RAM_measured": false,
+    "batch": "one source image as author reference",
+    "training_rank": 32
+  },
+  "rights": {
+    "license": "Qwen Research License noncommercial research/evaluation only",
+    "parent_license_url": "https://huggingface.co/Qwen/Qwen-Image-2.1/raw/d26bb61231c349cf6b7896fa83353113880e1ba3/LICENSE",
+    "commercial_requires_separate_grant": true,
+    "public_ungated_is_not_rights_approval": true
+  },
+  "safety": {
+    "manifest_is_candidate": true,
+    "download_approved": false,
+    "local_sha_verified": false,
+    "owner_hdd_measured": false,
+    "all_dependencies_closed": false,
+    "run_code": false,
+    "auto_download": false
+  }
+}
