@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "kind": "R93_HF_LTX_FAMILY_DEPENDENCY_GATE_CHINA_INTERIM_EXPORT_REGISTRATION",
+  "date_jst": "2026-11-15",
+  "selection_revision_on_observation": "v41-20261115",
+  "task": "Verify actual upstream source access and restoration/legal dependencies for selected original learned states without fetching model payloads.",
+  "observation_scope": [
+    {
+      "repo_id": "Lightricks/LTX-2.5",
+      "portfolio_status": "CONDITIONAL_ALREADY_SELECTED",
+      "hub_gated": true,
+      "license_tag": "other",
+      "main_backbone_parameters_approx": 22000000000,
+      "backbone_less_than_150b": true,
+      "full_pipeline_parameter_sum_verified": false,
+      "external_components": [
+        "Gemma4-12B with LTX projections and compatible tokenization",
+        "video VAE (DiffVAE or alternate ConvVAE chosen by workflow)",
+        "audio VAE/vocoder",
+        "distillation LoRA only if chosen development workflow",
+        "optional duration head and latent upscalers; don't treat as universal mandatory"
+      ],
+      "source_revision_pinned": false,
+      "owner_permission_verified": false
+    },
+    {
+      "repo_id": "Lightricks/LTX-2.5-Pre-Trained",
+      "portfolio_status": "RESEARCH_HOLD_NOT_NEW_ASSET",
+      "hub_gated": true,
+      "license_tag": "other",
+      "training_lineage": "22B DiT before supervised fine-tuning/post-training; includes video VAE, audio VAE, vocoder and duration head bundled; separate matching Gemma4-12B text encoder required",
+      "conclusion": "Distinct training-stage learned checkpoint but not add another 43GiB+encoder without independent research restoration value and licensed access; not equivalent to general-purpose post-trained model"
+    },
+    {
+      "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "portfolio_status": "CONDITIONAL_ALREADY_SELECTED",
+      "hub_gated": false,
+      "license_tag": "unknown",
+      "creator_claimed_trained_state": "Five baked-in fine-tune changes plus author-specific altered Gemma4 text encoder/audio and video VAEs",
+      "creator_card_components": [
+        "split/diffusion_models/ltx25_uncensored_v1.1-fp8_scaled.safetensors",
+        "split/text_encoders/gemma4_12b_ltx25_uncensored-int8.safetensors",
+        "split/vae/ltx25_uncensored_audio_vae.safetensors",
+        "split/vae/ltx25_uncensored_video_vae.safetensors"
+      ],
+      "creator_stated_approx_sizes_gb": [
+        21.5,
+        13.2,
+        0.365,
+        1.47
+      ],
+      "source_revision_pinned": false,
+      "original_donor_rights_verified": false,
+      "owner_permission_verified": false,
+      "source_note": "Child is public; this does not imply a free right to any parent gated source file or waive the derivative licensing. The child appears to ship alternative codec/encoder files; verify them before assuming gated parent access necessary."
+    },
+    {
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "portfolio_status": "CONDITIONAL_ALREADY_SELECTED",
+      "hub_gated": false,
+      "license_tag": "other",
+      "creator_claimed_trained_state": "v1: Sulphur2/10Eros task vectors, baked-in distillation and OmniNFT RL LoRA; BF16 original separate from INT8, NVFP4, Q4 experimental variants",
+      "preferred_long_term_original": "ltx2.5-Stubelius_remix_v1_bf16.safetensors",
+      "preferred_original_publisher_sha256": "6e0ff9c9d8a1d0747579f1f50d10a9c3822a9a8f265322a5edd476044b0fbf4f",
+      "preferred_original_exact_bytes": null,
+      "preferred_original_fixed_revision": null,
+      "author_runtime_choice": "v1 INT8 ComfyUI; different from BF16 preservation provenance",
+      "external_components": [
+        "gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors (Lightricks official)",
+        "ltx-2.5-video-vae-bf16.safetensors",
+        "ltx-2.5-audio-vae-bf16.safetensors"
+      ],
+      "parent_access_permission_verified": false,
+      "donor_notices_verified": false,
+      "required_preregistered_licence": false,
+      "source_note": "Do not mix quant/pretrained and added donor versions; parent Gated listing is independent of child Gated state and access to any needed independent learned file."
+    }
+  ],
+  "cross_repo_access_facts": {
+    "gated": [
+      "Lightricks/LTX-2.5",
+      "Lightricks/LTX-2.5-Pre-Trained"
+    ],
+    "public_metadata_ungated": [
+      "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "Stuubs/Stubelius_Remix_Ltx2.5"
+    ],
+    "model_specific_gated_authorizations_verified": 0,
+    "model_files_not_downloaded": true,
+    "connected_HF_authenticated_but_not_per_repo_entitlement_proof": true
+  },
+  "source_rights": {
+    "publisher_code_repo": "Lightricks/LTX-2",
+    "code_revision": "f0f2f8607189c78a72420b2b63cb1975b5eca179",
+    "file": "LICENSE-2_x",
+    "git_blob_sha": "08670f73e5ad7a7e914ce877b946f9a4a795c650",
+    "license_date": "2026-08-11",
+    "amended": "2026-10-29",
+    "applies_to_derivatives": true,
+    "commercial_licence_rule": "Under published section 2.1, entities with annual revenue >=USD10M require a paid license for most commercial uses; qualifying non-commercial purposes may be excepted. Source code licensed under Apache scope is distinct from licensed model weights.",
+    "individual_legal_entity_revenue_and_use_not_verified": true,
+    "donor_and_changed_component_rights_not_reconciled": true
+  },
+  "future_unique_large_model_hold": {
+    "repo_id": "moonshotai/Kimi-K3.1-Pro",
+    "status": "RESEARCH_HOLD_NOT_ADDED",
+    "hub_gated_observed": false,
+    "total_params_publisher_approx": 2800000000000,
+    "active_params_publisher_approx": 104000000000,
+    "mxfp4_weights_mxfp8_activations": true,
+    "vision_encoder_publisher_params": 401000000,
+    "distinct_mechanisms": [
+      "KDA with gated sparse attention",
+      "Post-trained multimodal long-context QAT agent"
+    ],
+    "license": "Kimi K3.1 Pro license, verify service/branding conditions separately",
+    "repository_model_code_trust_remote_code_expected": true,
+    "baseline_150b_exception_requires_user_measured_runtime": true,
+    "runtime_memory_verified": false,
+    "selected_files_and_source_bytes_verified": false,
+    "decision_basis": "2.8T TOTAL not 104B activated; no matched <150B reference trial, RAM/SSD streaming, full archive budget and owner licensing. Neither discard originality nor make it acquisition-ready.",
+    "status_is_not_an_actual_legal_prohibition": true
+  },
+  "china_ann48": {
+    "authority": "Ministry of Commerce and Ministry of Science and Technology of PRC",
+    "announcement_date": "2026-10-16",
+    "announcement_no": 48,
+    "official_announcement": "https://www.mofcom.gov.cn/zwgk/zcfb/art/2026/art_0a31a3c9ac404f7a9b0e917ce3412997.html%EF%BC%89",
+    "official_accessible_copy": "https://www.mofcom.gov.cn/zfxxgk/fdzdgknr/ztfl/blgg/art/2026/art_718071a95e6948cdb652e2f08f422673.html",
+    "official_explanation": "https://english.mofcom.gov.cn/News/SpokesmansRemarks/art/2026/art_74bf283f105a4b19a11f7430df3671ae.html",
+    "comment_window": "2026-10-16 through 2026-11-15",
+    "proposal_status": "DRAFT_OF_FINAL_CATALOGUE_NOT_ENACTED_BY_PUBLISHING_THIS_ANNOUNCEMENT",
+    "current_effect": "TEMPORARY_PRE_EXPORT_REGISTRATION_INTRODUCED_WHILE_FINAL_CATALOG_PENDING",
+    "proposed_technologies": 40,
+    "proposed_AI_technologies": 23,
+    "registration_only_for_in_scope_export_transactions": [
+      "transfer of technological ownership from mainland China abroad",
+      "license covered technology for use abroad",
+      "change of actual owner/controller to overseas entity",
+      "other expressly designated MOFCOM cases"
+    ],
+    "public_domain_scope": "Published open-source or published-research technologies are described in the announcement as not falling within the proposed regulation scope; case-specific classification still needed",
+    "not_a_blanket_ban_on_model_downloads": true,
+    "not_current_license_approval_for_user": true,
+    "interpretation_warning": "Do not flatten interim administrative registration into prohibitions proposed for a future revised catalogue; nor assume every HF repo listed by China-origin provider is a newly regulated restricted export."
+  },
+  "eu_context": {
+    "official_article53": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-53",
+    "official_start": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-enforcement-start",
+    "commission_enforcement_since": "2026-08-02",
+    "open_source_partial_exception_not_general_ownership_ban": true
+  },
+  "readiness": {
+    "applicable_active_repos": [
+      "Lightricks/LTX-2.5",
+      "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "Stuubs/Stubelius_Remix_Ltx2.5"
+    ],
+    "new_gate": "LTX_REQUIRED_LEARNED_DEPENDENCIES_AND_DERIVATIVE_LICENSE",
+    "new_gate_assets": 3,
+    "requires_hf_owner_access_if_gated_files_are_needed": true,
+    "conditional_selection_unchanged": true,
+    "source_revision_and_selected_bytes_finalized": 0,
+    "user_download_authorizations_added": 0
+  },
+  "uncertainty": {
+    "historical_license_applies_to_old_publication_not_automatically_resolved": true,
+    "no_pinned_full_hf_rev_for_all_subcomponent_sources": true,
+    "original_publisher_quality_independent": false,
+    "calibrated_probability_of_regulatory_removal": null,
+    "u_c": null,
+    "k": null
+  }
+}
