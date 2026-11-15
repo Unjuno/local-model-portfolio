@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "kind": "NON_CANONICAL_RESEARCH_HOLD_ORIGINAL_PRETRAINING_MODEL",
+  "date_jst": "2026-11-15",
+  "research_id": "R93_LTX25_PRETRAINED_GATED",
+  "canonical_at_recording": "v42-20261115",
+  "source_view": "catalog/effective-portfolio-2026-11-15-v42.json",
+  "number_of_formally_tracked_assets_unchanged": 195,
+  "number_of_active_assets_unchanged": 148,
+  "source_research": "catalog/research/2026-11-15-r93-ltx25-pretrained-original-and-merge-lineage.json",
+  "source_report": "docs/strategy/93-ltx25-pretrained-original-gated-research-hold-2026-11-15.md",
+  "candidate": [
+    {
+      "asset_kind": "model",
+      "repo_id": "Lightricks/LTX-2.5-Pre-Trained",
+      "proposed_decision": "HOLD_RESEARCH_ONLY",
+      "in_current_canonical_catalog": false,
+      "active": false,
+      "learned_state": "Publisher original LTX-2.5 22B pretraining checkpoint before main LTX-2.5 supervised fine-tuning and other post-training",
+      "not_ordinary_quantization": true,
+      "publisher_url": "https://huggingface.co/Lightricks/LTX-2.5-Pre-Trained",
+      "publisher_gated": true,
+      "owner_entitlement_verified": false,
+      "candidate_main_weight_file": "ltx-2.5-22b-pt-bf16.safetensors",
+      "published_rounded_weight_bytes_approx": 46200000000,
+      "exact_weight_bytes": null,
+      "publisher_lfs_sha256": null,
+      "revision_commit_sha40": null,
+      "required_trained_dependency": "ltx-2.5-22b-gemma4-12b/ matching gemma4-12b-ltx-v1",
+      "dependency_file_set_bytes": null,
+      "bundled_trained_components": [
+        "22B DiT",
+        "video VAE",
+        "audio VAE",
+        "vocoder",
+        "duration head",
+        "text embedding projections"
+      ],
+      "rights": "LTX-2.x Community License Agreement amended 2026-10-29, Gated personal assent and model repo terms require review; code Apache license is separate",
+      "planned_incremental_active_byte_cap": 0,
+      "owner_disk_fit_verified": false,
+      "promotion_gates": [
+        "verify legal Hugging Face Gated access for owner's account without bypass",
+        "freeze source commit SHA and LFS SHA and byte count of exact original plus Gemma4 12B encoder",
+        "compare SHA of existing selected LTX-2.5 posttrained Gemma4 vs pretrained Gemma4 to safely deduplicate",
+        "review model's own license terms, donor notices and rights to private archive/use",
+        "benchmark offline runtime and verify physical disk free/staging at least 200GB floor",
+        "obtain explicit download approval"
+      ],
+      "download_authorized": false,
+      "model_weights_downloaded": false,
+      "model_code_executed": false
+    }
+  ],
+  "non_selected_model_formats": [
+    "already-selected Lightricks/LTX-2.5 dev and distilled posttrain",
+    "Stuubs v1 BF16 distinct trained merge already conditional, do not add same-model Q4/NVFP4/INT8",
+    "ChrisColeTech FP8 merged adapters already conditional, unknown full donor-license chain"
+  ],
+  "handoff": "Canonical decision is unchanged. Promotion to formal HOLD or CONDITIONAL is a separate versioned selection revision with all sidecars and user-specific rights verified; never overwrite an existing revision while other main writers may be active."
+}
