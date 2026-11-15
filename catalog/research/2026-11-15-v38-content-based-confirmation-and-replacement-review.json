@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-15",
+  "base_revision": "v38-20261115",
+  "base_blob_sha": "76adb678bdcde565632f0ebff80be8e718e94c6d",
+  "scope": "CONTENT_BASED_CONFIRMED_AND_DEFERRED_DECISIONS",
+  "goal": "Maximize legally reproducible independent trained weight coverage per selected byte, while maintaining readiness for plausible future restrictions without asserting a blanket ban.",
+  "evaluated": [
+    {
+      "repo_id": "higurashi-ai/Haru-4B",
+      "already_in_active": true,
+      "id": "higurashi-ai/Haru-4B",
+      "decision": "CONFIRM_CONDITIONAL_KEEP",
+      "total": 5270000000,
+      "license": "apache-2.0",
+      "gated": false,
+      "unique": "Full duplex 9-language audio-to-audio trained state; distinct from ASR/TTS",
+      "condition": "Complete offline code/dependency and local SHA verification",
+      "source": "https://huggingface.co/higurashi-ai/Haru-4B",
+      "acquisition_authorized": false
+    },
+    {
+      "repo_id": "runwayml/praxis-1-droid",
+      "already_in_active": true,
+      "id": "runwayml/praxis-1-droid",
+      "decision": "CONFIRM_CONDITIONAL_KEEP_ACCESS_BLOCK",
+      "total": 27202400000,
+      "license": "apache-2.0",
+      "gated": true,
+      "unique": "Joint robot action + future video DROID checkpoint; distinct from Cosmos3 bimanual-only and Alpamayo driving",
+      "condition": "User's individual gated authorization, external Qwen encoder, VAE, ABI and runtime",
+      "source": "https://huggingface.co/runwayml/praxis-1-droid",
+      "acquisition_authorized": false
+    },
+    {
+      "repo_id": "XiaomiRobotics/Xiaomi-Robotics-U0-4B",
+      "already_in_active": false,
+      "id": "XiaomiRobotics/Xiaomi-Robotics-U0-4B",
+      "decision": "DEFER_FROM_ACTIVE_UNTIL_DIFFERENTIAL",
+      "total": 5082100000,
+      "license": "apache-2.0",
+      "gated": false,
+      "unique": "UNIS embodied scene generation may be independent; not yet proven marginal after Praxis/Cosmos3",
+      "condition": "Compare learned objectives and pretrained lineage to Cosmos3 and Praxis; pinned file bytes, full license",
+      "source": "https://huggingface.co/XiaomiRobotics/Xiaomi-Robotics-U0-4B",
+      "acquisition_authorized": false
+    },
+    {
+      "repo_id": "ByteDance-Seed/Cola2",
+      "already_in_active": false,
+      "id": "ByteDance-Seed/Cola2",
+      "decision": "HOLD_LICENSE",
+      "total": 8768000000,
+      "license": null,
+      "gated": false,
+      "unique": "Continuous latent diffusion language model, unusual representation",
+      "condition": "Publisher license text and required code / decoder / actual checkpoint",
+      "source": "https://huggingface.co/ByteDance-Seed/Cola2",
+      "acquisition_authorized": false
+    },
+    {
+      "repo_id": "domyn/Domyn-Edge-Base",
+      "already_in_active": false,
+      "id": "domyn/Domyn-Edge-Base",
+      "decision": "HOLD_REDUNDANCY",
+      "total": 3928800000,
+      "license": "apache-2.0",
+      "gated": false,
+      "unique": "Pretrained small multilingual base and training mix provenance",
+      "condition": "Demonstrate irreplaceable training data and quality vs existing small bases",
+      "source": "https://huggingface.co/domyn/Domyn-Edge-Base",
+      "acquisition_authorized": false
+    }
+  ],
+  "decision_summary": {
+    "confirmed_existing": 2,
+    "newly_promoted": 0,
+    "held_outside_active": 3,
+    "demoted": 0,
+    "reason": "No verified evidence to justify swapping out an existing asset; Xiaomi overlaps partially with already-selected embodied world models. Avoid speculative additions."
+  },
+  "policy": "Gated access requires own authorization; no model is approved for acquisition; complete MoE parameter totals include all experts; unknown full pipeline blocks final lock.",
+  "limitations": [
+    "Hub structured metadata and existing source manifests examined, not downloaded tensor content",
+    "No new hardware benchmark",
+    "Physical archive capacity and SHA of local files unknown"
+  ],
+  "next_action": "For all 146 active, build a per-file SHA deduplicated storage union; prioritize 9 unknown pipeline total counts; inspect exact original model tensors where legally accessible."
+}
