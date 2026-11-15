@@ -1,0 +1,362 @@
+{
+  "schema_version": 1,
+  "artifact_type": "NON_EXECUTABLE_PRIMARY_SOURCE_CANDIDATE_COMPARISON",
+  "as_of_jst": "2026-11-15",
+  "repository": "Unjuno/local-model-portfolio",
+  "branch": "main",
+  "base_selection": "v42-20261115",
+  "base_current_blob_sha": "46c9e2727b8c7987c88900149d82398b9df797c7",
+  "base_effective_blob_sha": "12a1603c4ad80332235a40997f1275b7602ff83a",
+  "canonical_selection_unchanged": true,
+  "existing_assets": 195,
+  "existing_active": 148,
+  "approved_entries": 0,
+  "per_model_dowload_or_gated_access_authorization_given": false,
+  "objective": "Preserve unique original trained architectures under strict license, provenance, parameter, immutable source, physical media and runtime closure before any acquisition.",
+  "discovery_limitations": [
+    "Hugging Face connected hub_repo_details succeeded for named models but model_search and paper_search returned Tool not found. New-release discovery used search-engine results followed by author-specific Hub verification; it is not exhaustive.",
+    "The source file tree is a third-party web-rendered snapshot inspected under source commit f7f5b7f5...; only one weight SHA256 was read directly. Do not call this a complete SHA lock.",
+    "No 51.7GB payload was retrieved, no local parameters counted, no owner disk measured, no benchmark run."
+  ],
+  "model_selection_comparisons": [
+    {
+      "repo_id": "google/diffusiongemma-26B-A4B-it",
+      "decision": "P1_RESEARCH_ONLY_PROPOSE_CONDITIONAL_AFTER_BUDGET_AND_SOURCE_LOCK",
+      "canonical_decision_status": "NOT_IN_V42",
+      "model_kind": "UNIQUE_BLOCK_AUTOREGRESSIVE_DISCRETE_DIFFUSION_MOE_MULTIMODAL",
+      "type": "official_original_instruct_checkpoint",
+      "same_trained_weight_as_existing_portfolio": false,
+      "same_sha_comparison_executed": false,
+      "existing_technical_comparators": [
+        "GSAI-ML/iLLaDA-8B-Base",
+        "google/gemma-4-31B"
+      ],
+      "specific_irreplaceability": "Google's separate learned Gemma 4 sparse MoE diffusion checkpoint, causal encoder and bidirectional diffusion decoder, 256-token canvas, 128 all experts/8 routed. iLLaDA is a different learned diffusion model; ordinary causal Gemma 4 is not the same decoding architecture.",
+      "observed_hf_metadata": {
+        "status": "NO_GATED_MARKER_IN_HF_CONNECTED_SUMMARY",
+        "license_metadata": "apache-2.0",
+        "display_total_parameters": 25823800000,
+        "architecture": "diffusion_gemma",
+        "display_repo_size_decimal_gb_rounded": 51.7,
+        "display_frozen_snapshot_sha": "f7f5b7f5fa82ffc52addd066915886d497f5517b"
+      },
+      "publisher_model_card_size": {
+        "source": "https://ai.google.dev/gemma/docs/diffusiongemma/model_card",
+        "publisher_backbone_total_parameters_rounded": 25200000000,
+        "publisher_active_rounded": 3800000000,
+        "publisher_vision_encoder_rounded": 550000000,
+        "note": "Publisher's 25.2B backbone/report and HF 25.8238B whole repo metadata use different reporting scope/precision; no exact tensor census completed."
+      },
+      "config": {
+        "source": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/config.json",
+        "total_experts_per_moe_layer": 128,
+        "top_k_experts": 8,
+        "layer_count": 30,
+        "canvas_length_tokens": 256,
+        "vision_layers": 27,
+        "vision_hidden_size": 1152,
+        "vision_patch_size": 16,
+        "dtype": "bfloat16",
+        "config_transformers_version": "5.8.0.dev0"
+      },
+      "safetensors_shards": 11,
+      "static_source_files_expected": 22,
+      "static_source_file_scope": [
+        {
+          "path": ".gitattributes",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/.gitattributes",
+          "was_weight_downloaded": false,
+          "source_role": "CONFIG_PROVENANCE"
+        },
+        {
+          "path": "README.md",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/README.md",
+          "was_weight_downloaded": false,
+          "source_role": "CONFIG_PROVENANCE"
+        },
+        {
+          "path": "chat_template.jinja",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/chat_template.jinja",
+          "was_weight_downloaded": false,
+          "source_role": "TOKENIZER_PROCESSOR_CHAT"
+        },
+        {
+          "path": "config.json",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/config.json",
+          "was_weight_downloaded": false,
+          "source_role": "CONFIG_PROVENANCE"
+        },
+        {
+          "path": "generation_config.json",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/generation_config.json",
+          "was_weight_downloaded": false,
+          "source_role": "CONFIG_PROVENANCE"
+        },
+        {
+          "path": "model-00001-of-00011.safetensors",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": "3efe137998af7d2bde4e3ab04ab3524823699a4ac3130adace5003ef40cceeb6",
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/model-00001-of-00011.safetensors",
+          "was_weight_downloaded": false,
+          "source_role": "WEIGHT_SHARD"
+        },
+        {
+          "path": "model-00002-of-00011.safetensors",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/model-00002-of-00011.safetensors",
+          "was_weight_downloaded": false,
+          "source_role": "WEIGHT_SHARD"
+        },
+        {
+          "path": "model-00003-of-00011.safetensors",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/model-00003-of-00011.safetensors",
+          "was_weight_downloaded": false,
+          "source_role": "WEIGHT_SHARD"
+        },
+        {
+          "path": "model-00004-of-00011.safetensors",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/model-00004-of-00011.safetensors",
+          "was_weight_downloaded": false,
+          "source_role": "WEIGHT_SHARD"
+        },
+        {
+          "path": "model-00005-of-00011.safetensors",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/model-00005-of-00011.safetensors",
+          "was_weight_downloaded": false,
+          "source_role": "WEIGHT_SHARD"
+        },
+        {
+          "path": "model-00006-of-00011.safetensors",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/model-00006-of-00011.safetensors",
+          "was_weight_downloaded": false,
+          "source_role": "WEIGHT_SHARD"
+        },
+        {
+          "path": "model-00007-of-00011.safetensors",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/model-00007-of-00011.safetensors",
+          "was_weight_downloaded": false,
+          "source_role": "WEIGHT_SHARD"
+        },
+        {
+          "path": "model-00008-of-00011.safetensors",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/model-00008-of-00011.safetensors",
+          "was_weight_downloaded": false,
+          "source_role": "WEIGHT_SHARD"
+        },
+        {
+          "path": "model-00009-of-00011.safetensors",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/model-00009-of-00011.safetensors",
+          "was_weight_downloaded": false,
+          "source_role": "WEIGHT_SHARD"
+        },
+        {
+          "path": "model-00010-of-00011.safetensors",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/model-00010-of-00011.safetensors",
+          "was_weight_downloaded": false,
+          "source_role": "WEIGHT_SHARD"
+        },
+        {
+          "path": "model-00011-of-00011.safetensors",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/model-00011-of-00011.safetensors",
+          "was_weight_downloaded": false,
+          "source_role": "WEIGHT_SHARD"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/model.safetensors.index.json",
+          "was_weight_downloaded": false,
+          "source_role": "CONFIG_PROVENANCE"
+        },
+        {
+          "path": "model_index.json",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/model_index.json",
+          "was_weight_downloaded": false,
+          "source_role": "CONFIG_PROVENANCE"
+        },
+        {
+          "path": "processor_config.json",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/processor_config.json",
+          "was_weight_downloaded": false,
+          "source_role": "TOKENIZER_PROCESSOR_CHAT"
+        },
+        {
+          "path": "tokenizer.json",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/tokenizer.json",
+          "was_weight_downloaded": false,
+          "source_role": "TOKENIZER_PROCESSOR_CHAT"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/tokenizer_config.json",
+          "was_weight_downloaded": false,
+          "source_role": "TOKENIZER_PROCESSOR_CHAT"
+        },
+        {
+          "path": "scheduler/scheduler_config.json",
+          "exact_bytes": null,
+          "sha256_path_content_publisher": null,
+          "source_fixed_revision_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/blob/f7f5b7f5fa82ffc52addd066915886d497f5517b/scheduler/scheduler_config.json",
+          "was_weight_downloaded": false,
+          "source_role": "DIFFUSION_SCHEDULER"
+        }
+      ],
+      "publisher_verified_sha256_count": 1,
+      "all_sha256_and_exact_file_bytes_verified": false,
+      "training_quality_status": "GOOGLE_PUBLISHER_BENCHMARK_ONLY_NOT_USER_REPRODUCED",
+      "publisher_reported_scores": {
+        "source": "https://ai.google.dev/gemma/docs/diffusiongemma/model_card",
+        "MMLU_Pro_model_percent": 77.6,
+        "causal_Gemma4_26B_A4B_percent": 73.8,
+        "AIME2026_model_percent": 69.1,
+        "MMMU_Pro_model_percent": 54.3
+      },
+      "operational_runtime": {
+        "source": "https://ai.google.dev/gemma/docs/diffusiongemma/inference-diffusiongemma-with-hf",
+        "minimum_transformers_version": "5.11.0",
+        "required_packages": [
+          "torch",
+          "accelerate",
+          "transformers>=5.11.0",
+          "diffusers (BlockRefinementScheduler, compatible version unpinned)"
+        ],
+        "google_bf16_notebook_gpu_memory": "MORE_THAN_60GB_GPU",
+        "local_gpu_tested": false,
+        "zero_point_quant_backend_verified": false,
+        "hardware_clock_batch_benchmark_user_tested": false,
+        "offline_wheelhouse_closed": false
+      },
+      "storage": {
+        "publisher_listed_total_repo_size_rounded_bytes": 51700000000,
+        "final_selected_bundle_bytes_exact": null,
+        "final_delta_after_dedup_exact": null,
+        "historical_v40_virtual_headroom_bytes": 129409767827,
+        "hypothetical_remaining_headroom_using_rounded_full_repo_bytes": 77709767827,
+        "actual_hdd_measured": false,
+        "staging_and_cache_included": false,
+        "source_url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/tree/f7f5b7f5fa82ffc52addd066915886d497f5517b"
+      },
+      "license": {
+        "claim": "Original model card and Hub list Apache-2.0",
+        "source": "https://ai.google.dev/gemma/docs/diffusiongemma/model_card",
+        "exact_repository_license_text_at_revision_reviewed": false,
+        "personal_use_rights_approved": false
+      },
+      "future_distribution_risk": {
+        "model_specific_removal_notice_found": false,
+        "probability": null,
+        "classification": "LOW_OBSERVED_ACCESS_FRICTION_NOT_QUANTIFIED_LOSS_RISK",
+        "hypotheses": [
+          "Broad future distribution squeeze is a stress scenario, not a current legal ban",
+          "Independent nonreconstructible posttraining outcome may still be valuable if source later disappears"
+        ]
+      },
+      "falsification": "If full source learned states duplicate an existing enrolled checkpoint or independent task tests prove no benefit from the block-diffusion architecture relative to iLLaDA on relevant formatting/infill tasks, downgrade P1. If actual HDD headroom/staging inadequate or original model use rights conflict, HOLD without acquiring."
+    },
+    {
+      "repo_id": "NousResearch/Arete-27B",
+      "decision": "P2_HOLD_COMPARE_FIRST",
+      "canonical_decision_status": "NOT_IN_V42",
+      "original_training": "SFT of Qwen3.8-27B ~52.8M tokens, 1202 steps, text-only data, vision frozen, MTP disabled; value-framing focus, not a new architecture.",
+      "source": "https://huggingface.co/NousResearch/Arete-27B",
+      "source_readme": "https://huggingface.co/NousResearch/Arete-27B/blob/main/README.md",
+      "hf_metadata_total_parameters_display": 27356700000,
+      "license_metadata": "apache-2.0",
+      "dependency": "Qwen/Qwen3.8-27B ALREADY IN_V42",
+      "existing_overlapping_modified_derived_models": [
+        "orcarouter/Qwen3.8-27B-Uncensored",
+        "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+        "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+        "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU"
+      ],
+      "not_claimed_same_weights": true,
+      "rationale": "New SFT outcome plausibly distinct, but compared with multiple Qwen value/guardrail derivatives already chosen; no independent behavior-and-fact-accuracy parity evaluation or final source byte budget. Do not add another full 27B merely because its value label differs.",
+      "upgrade_criteria": "Publisher exact revision/SHA source, license and user rights, 50 prompts across values and factual correctness with baseline and two existing edits, independent deltas, actual incremental cost."
+    },
+    {
+      "repo_id": "ricursiveAI/Ripple-65B-Preview",
+      "decision": "P2_HOLD_STORAGE_AND_CUSTOM_CODE",
+      "canonical_decision_status": "NOT_IN_V42",
+      "original_training": "From-scratch dense 65B ~12T tokens; 80-layer thin/deep gated-attention and NoPE/activation clipping and value residuals. Not a Qwen posttraining clone.",
+      "source": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "hf_metadata_original_total_params_display": 64782700000,
+      "license_metadata": "apache-2.0",
+      "publisher_full_bf16_repo_size_rounded_bytes": 130000000000,
+      "relation_to_budget": "BF16 full repo ~130GB is already larger than 129.409GB historical *virtual* remaining plan headroom before external dependencies/staging.",
+      "model_custom_code_metadata": true,
+      "publisher_benchmarks_independent": false,
+      "alternative_owned_quantization": "ricursiveAI/Ripple-65B-Preview-NVFP4",
+      "quantization_hub_params_display": 39616900000,
+      "mismatch_notice": "NVFP4 Hub summary reports 39.6169B compared with BF16 model 64.7827B; publisher calls NVFP4 a quantization of the same BF16 training. Therefore do not use the number in the quantized summary as total trained params. Do not claim weight count actually shrank.",
+      "need_for_upgrade": "One legal publisher revision, custom code audit, original-vs-quant identity validation, measured owner headroom, independent code-agent task quality, compatible backend/ABI. Keep original outcome separate from regular quantization format."
+    }
+  ],
+  "guardrail_note": "Model weight quantization changes dtype/packed tensor representation, not necessarily the original trained architecture parameter count. Use pretrained full count for all >=150B exception decisions, including total MoE experts and learned external components.",
+  "proposed_actions": [
+    {
+      "action": "VERIFY_11_SHARDS_EXACT_PUBLISHER_SHA256_AND_BYTES_AND_RUNTIME_ABI",
+      "id": "google/diffusiongemma-26B-A4B-it",
+      "acquisition_enabled": false
+    },
+    {
+      "action": "INDEPENDENT_DEDUP_AND_POLITICAL_FACTUALITY_EVAL_BEFORE_ANY_ADD",
+      "id": "NousResearch/Arete-27B",
+      "acquisition_enabled": false
+    },
+    {
+      "action": "PUBLISHER_FULL_PARAMETERS_FOR_NVFP4_AND_RESOURCE_GATES_NO_DUPLICATE_FORMAT_ACQUISITION",
+      "id": "ricursiveAI/Ripple-65B-Preview",
+      "acquisition_enabled": false
+    }
+  ],
+  "static_audit": {
+    "source_repo_count": 3,
+    "known_v42_candidate_repo_collision": 0,
+    "shards": 11,
+    "source_scope_count": 22,
+    "weight_sha256_verified_on_publisher": 1,
+    "all_licence_rights_and_dependencies_done": false,
+    "approved_queue_unchanged": true,
+    "source_bytes_unrounded_verified": false,
+    "no_canonical_selection_change": true,
+    "no_download_or_weights_read": true
+  }
+}
