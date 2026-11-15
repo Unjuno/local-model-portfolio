@@ -1,5 +1,7 @@
 # Local Model Portfolio
 
+**R98・v42独立生成アーキテクチャ候補比較（2026-11-15）**：[DiffusionGemma 26Bのブロック拡散原本P1／Arete 27B・Ripple 65Bを容量・重複でP2保留](docs/strategy/98-v42-discrete-diffusion-and-november-originals.md)／[3候補一次情報＋DiffusionGemma固定22ファイル候補JSON](catalog/proposals/2026-11-15-r98-diffusiongemma-arete-ripple-original-selection.json)。DiffusionGemma公式BF16は約51.7GB、11 shard・固定repo commit・publisher SHA取得1件で残り未固定、本人HDD・実行ABI・権利未認可。**Ripple NVFP4のHub表示39.6Bは原本65Bの真の学習済み総数ではない**ため量子化モデルの全総数判定を必ずsource modelで検証。正式v42の195/148、取得承認0、重量DL0は変更なし。
+
 **現行v42・2026年11月15日**：[195登録／148有効](catalog/effective-portfolio-2026-11-15-v42.json)（SELECT53＋CONDITIONAL95）。[R94 LTX2.5のGated親・ライセンス必須依存、中国の現行輸出前登録と草案の区別](docs/strategy/94-v42-ltx-parent-gates-interim-export-policy.md)を3既存モデルの取得前ゲートへ反映。新規資産・選定変化0。[148件停止](catalog/readiness/v42-2026-11-15-r94-all148-gates.json)。本人HDD/権限/local SHA/復元・取得承認0。以下過去版。
 
 
