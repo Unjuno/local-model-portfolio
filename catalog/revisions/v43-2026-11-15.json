@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "revision_id": "v43-20261115",
+  "previous_revision_id": "v42-20261115",
+  "decision_date": "2026-11-15",
+  "target_branch": "main",
+  "change_kind": "SINGLE_PRIOR_UNKNOWN_MODEL_LICENSE_CORRECTION_NO_NEW_SELECTION",
+  "goal": "Record N1.6 noncommercial pinned weight license rather than invent a license from absent HF tag; preserve unique Eagle trained original while treating new N1.7 as HOLD for incomplete rights and full dependency closure",
+  "evidence_artifact": "catalog/research/2026-11-15-r100-gr00t-n16-n17-license-and-architecture.json",
+  "source_report": "docs/strategy/100-gr00t-n16-n17-license-and-replacement-audit-2026-11-15.md",
+  "changes": [
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/GR00T-N1.6-3B",
+      "expected_old_license_metadata": "unknown",
+      "new_license_metadata": "other: NVIDIA License Section 3.3 non-commercial research/evaluation only",
+      "license_pinned_revision": "d0814e7ecb19202e7c8468b46098b0b7ef3a6d61",
+      "license_original_url": "https://huggingface.co/nvidia/GR00T-N1.6-3B/blob/d0814e7ecb19202e7c8468b46098b0b7ef3a6d61/LICENSE",
+      "portfolio_decision_before": "conditional",
+      "portfolio_decision_after": "conditional",
+      "full_legal_signoff": false
+    }
+  ],
+  "non_selected_replacement": {
+    "repo_id": "nvidia/GR00T-N1.7-3B",
+    "decision": "RESEARCH_HOLD_NO_ASSET_ADDED",
+    "evidence": "NVIDIA maintainer Nov10 and NVIDIA forum Nov11 confirm corrected Open Model License; new trained Cosmos-Reason2-VLM and relative EEF 132 states, horizon40; immutable sha/notice/rights/runtime and matched comparison unresolved",
+    "hub_main_license_fix_commit_verified": false,
+    "full_pipeline_externally_gated_component": "nvidia/Cosmos-Reason2-2B",
+    "separate_download_mandatory_unverified": true
+  },
+  "selection_added": 0,
+  "removed": 0,
+  "demoted": 0,
+  "tracked": 195,
+  "active": 148,
+  "download_approved": false,
+  "model_weights_downloaded": false
+}
