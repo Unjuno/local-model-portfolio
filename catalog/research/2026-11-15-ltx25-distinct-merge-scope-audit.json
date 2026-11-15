@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-15",
+  "mode": "PUBLISHER_RESEARCH_ONLY_NON_EXECUTABLE",
+  "baseline_revision": "v38-20261115",
+  "repository": "Unjuno/local-model-portfolio",
+  "branch": "main",
+  "inference_or_payload_fetch": false,
+  "purpose": "Select original, unique learned transformations over duplicate quantized encodings; do not equate access restrictions with future law.",
+  "candidate_repos": [
+    {
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "current_portfolio_decision": "conditional",
+      "decision": "KEEP_RESEARCH_SELECTION_AND_PREPARE_EXACT_SINGLE_PRIMARY_SOURCE_CANDIDATE",
+      "primary_file": {
+        "path": "ltx2.5-Stubelius_remix_v1_bf16.safetensors",
+        "publisher_display_size_gb_approx": 42,
+        "publisher_xet_sha256": "6e0ff9c9d8a1d0747579f1f50d10a9c3822a9a8f265322a5edd476044b0fbf4f",
+        "file_url": "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5/blob/main/ltx2.5-Stubelius_remix_v1_bf16.safetensors",
+        "exact_bytes": null,
+        "final_revision": null,
+        "source_local_sha_verified": false
+      },
+      "independently_declared_learned_modifications": [
+        "2026-09 beta1: task-vector delta extracted from Sulphur 2 and 10Eros LTX-2.3 donors and injected into LTX 2.5 with block-dependent weights",
+        "2026-09 beta2: additional 10Eros late-block weighting + LTX2.5 distilled LoRA",
+        "2026-10 v1: OmniNFT RL-LoRA integrated at author-reported trained strength"
+      ],
+      "claim_quality_results": {
+        "blind_ai_judged_v1_vs_beta2": {
+          "v1_wins": 29,
+          "beta2_wins": 9,
+          "ties": 10
+        },
+        "publisher_only": true
+      },
+      "source_repo_display_gb_approx": 196,
+      "unselected_alternative_files": [
+        {
+          "path": "ltx2.5-Stubelius_remix_v1_int8_convrot.safetensors",
+          "size_gb_approx": 21.5,
+          "reason": "alternative quantization, not independent posttraining"
+        },
+        {
+          "path": "ltx2.5-Stubelius_remix_v1_nvfp4.safetensors",
+          "size_gb_approx": 14.4,
+          "reason": "experimental alternative quantization"
+        },
+        {
+          "path": "ltx2.5-Stubelius_remix_v1_Q4_K_S.gguf",
+          "size_gb_approx": 12.5,
+          "reason": "experimental Q4 encoding; publisher corrected 2026-11-08 tensor dtype mismatch"
+        },
+        {
+          "path": "ltx2.5-Stubelius_remix_beta2_int8_convrot.safetensors",
+          "size_gb_approx": 21.5,
+          "reason": "older trained stage, not default current v1"
+        },
+        {
+          "path": "ltx2.5-Stubelius_remix_beta2_bf16.safetensors",
+          "size_gb_approx": 42,
+          "reason": "older trained stage, separate preservation decision required"
+        },
+        {
+          "path": "ltx2.5-Stubelius_remix_beta1.safetensors",
+          "size_gb_approx": 42,
+          "reason": "older trained stage, separate preservation decision required"
+        }
+      ],
+      "publisher_card_version_commit_for_notice": "febb0f007e53b87e0859a2709eb044bec35b1e44",
+      "dependencies": [
+        "Lightricks LTX-2.5 Gemma4-12B text encoder with LTX projections; publisher warns older copy incompatible",
+        "LTX-2.5 video VAE",
+        "LTX-2.5 audio VAE",
+        "ComfyUI compatible code, no auto-installs",
+        "LTX-2.x current licence and historical donor licences, NOTICE provenance"
+      ],
+      "unresolved": [
+        "Pin same full HF revision for BF16 file, README and all licences and record full original bytes",
+        "Review derivative licence and donor grants as of exact commit",
+        "Prove proper source identity and local SHA and shared VAE exact hash",
+        "Full pipeline total params and owner CPU/GPU RAM/driver/backend compatibility",
+        "Independent quality vs other selected model",
+        "Owner explicit acquisition approval"
+      ],
+      "download_approved": false
+    },
+    {
+      "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "current_portfolio_decision": "conditional",
+      "decision": "KEEP_RESEARCH_SELECTION_BUT_SCOPE_STOP_UNTIL_IMMUTABLE_FILES_AND_LICENSE",
+      "creator_model_metadata_license": "unknown",
+      "author_card_claim": "Five baked-in fine-tunes plus uncensored Gemma4 12B text encoder, separately quantized transformer and AV VAE; original model publisher card available through first-party clones",
+      "source_primary_publisher_repo": "https://huggingface.co/ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "transformer_sample": "split/diffusion_models/ltx25_uncensored_v1.1-fp8_scaled.safetensors",
+      "text_encoder_sample": "split/text_encoders/gemma4_12b_ltx25_uncensored-int8.safetensors",
+      "vae_samples": [
+        "split/vae/ltx25_uncensored_audio_vae.safetensors",
+        "split/vae/ltx25_uncensored_video_vae.safetensors"
+      ],
+      "modeled_dependencies": [
+        "LTX-2.5 base terms",
+        "Eros10 LoRA",
+        "distilled LoRA",
+        "LTX video IC-LoRA",
+        "IC-LoRA detailer",
+        "Gemma4 modified text encoder"
+      ],
+      "risk_findings": [
+        "Exact upstream legal terms of donor changes unverified, 'unknown' HF metadata does not waive base model licence",
+        "No immutable 40-char revision and per-file source SHA census completed",
+        "Several FP8/int8/GGUF representations should not be independently preserved as unique learned states",
+        "Audio/video VAE checksum identity against official Lightricks must be demonstrated before dedup"
+      ],
+      "selected_source_candidate_files_unverified": true,
+      "download_approved": false
+    }
+  ],
+  "publisher_license": {
+    "official_repo": "https://github.com/Lightricks/LTX-2",
+    "path": "LICENSE-2_x",
+    "content_blob_sha": "08670f73e5ad7a7e914ce877b946f9a4a795c650",
+    "as_amended": "2026-10-29",
+    "summary": "LTX-2.x Community License, derivatives included; legal use restrictions and license for companies with >=USD10M annual revenue except specified qualifying non-commercial cases",
+    "access_gates_separate": true,
+    "read_full_text": true,
+    "older_edition_also_in_stuubs_repo": true,
+    "conflict_resolution": "Check applicable revision and all donor terms individually, not assume Apache2.0 or unrestricted by model card"
+  },
+  "source_evidence": [
+    "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5/blob/main/README.md?code=true",
+    "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5/blob/main/ltx2.5-Stubelius_remix_v1_bf16.safetensors",
+    "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5/commit/febb0f007e53b87e0859a2709eb044bec35b1e44",
+    "https://huggingface.co/ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+    "https://github.com/Lightricks/LTX-2/blob/main/LICENSE-2_x",
+    "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5/tree/main"
+  ],
+  "method": {
+    "H": "Two variants have author-claimed distinct merged/delta-trained states; duplicate representations are not distinct weights.",
+    "T": "n_min=2 publisher repos plus 1 official license, static README, file listings and recorded SHA; model payload untouched.",
+    "D": "PASS origin/variant descriptions and public BF16 SHA; UNCERTAIN source repo locked identity and cross-lineage tensor differences, donor rights; FAIL if any unauthorized acquisition/duplicate as separate trained model.",
+    "C": "The two checkpoints can share trained states or later licence/weight revisions may change provenance; immutable tensor comparison may overturn decision.",
+    "U": "Unknown file-selected exact bytes, legal interpretation, lack of independent A/B; calibrated u_c and k unavailable."
+  },
+  "selection_operation": {
+    "add": 0,
+    "remove": 0,
+    "promote": 0,
+    "replace": 0,
+    "approved_downloads": 0,
+    "change_catalog_current": false
+  },
+  "publisher_repo_size_is_not_actual_saving": true
+}
