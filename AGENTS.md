@@ -1,10 +1,15 @@
 # エージェント作業規約
 
+## 現行v42（2026-11-15）
+
+**唯一の正本 [CURRENT](catalog/CURRENT.json) → v42、195登録／148有効（SELECT53／CONDITIONAL95）**。[LTX3件の学習済み必須Gemma4/VAE/ライセンス停止ゲートと中国の有効な暫定輸出前登録・未成立の最終目録を区別](docs/strategy/94-v42-ltx-parent-gates-interim-export-policy.md)。旧v41と全195件の採否不変。LTX本家/Pre-TrainedはGated、ChrisColeTech/Stuubsの公開派生の権限は別。Kimi K3.1 Pro 2.8T/MXFP4は150B超の実測例外未充足で研究HOLD。**Gated20・未知総数active9・本体DL/owner HDD/local SHA/復元/承認0**。mainのみ。以下v41以前は履歴。
+
+
 ## R93：Hugging Face v41現行メタデータと個別LICENSE（2026-11-15）
 
 [148件一次照合と4件の契約差異裁定](docs/strategy/93-v41-hf-148-live-metadata-and-rights-decisions-2026-11-15.md)／[機械可読148行](catalog/research/2026-11-15-r93-v41-hf148-live-repo-metadata.json)。有効148件（モデル130・データ18）のHub listingを全件再照合、Gated20件は歴史的20件と一致（ただし**本人のGated承認や重みアクセス権は不明**）。NVIDIA GR00T-N1.6-3BはHFのライセンスタグ空欄でも**出版社LICENSE §3.3に非商用研究・評価に限定**と明記。NVIDIAのOpenMDW採用発表で個別modelの旧LICENSEを上書きしない。Granaryの複数license文字列やNemotronの`other`表示は改定の証明ではない。**148件の新規取得許可・重量DL・実行・復元0**。現行v41の選定は変更しない。正式な権利・原本・HDD検証まで取得停止。
 
-## 現行v41（2026-11-15）
+## 旧v41（2026-11-15・履歴）
 
 唯一の正本[CURRENT](catalog/CURRENT.json)→**195登録／148有効**。[既存2件のsource/license訂正](docs/strategy/92-v41-source-and-license-corrections.md)。Qwen Image 2.1 Consistency LoRAは作者推奨step1500原本5ファイルに限定、親Qwenは既存資産として共有研究。PrunaはMiniMax原文のEU/英国/韓国/米国除外と3部46.97B＋VAE/connector未計数を明記。**有効総数不明9・Gated20・重み取得/本人承認/owner HDD/オフライン復元0**。資産の新規追加0、mainのみ。以下v40以前は履歴。
 

@@ -4,7 +4,7 @@
   "generated_at": "2026-11-15",
   "approved": false,
   "download_enabled": false,
-  "description": "v42 148 unchanged active research candidates; separately tracked original Gated pre-training checkpoint Lightricks/LTX-2.5-Pre-Trained added as HOLD only, excluded from the proposed acquisition queue.",
+  "description": "148 non-executable candidate selected assets, including GroundingPI original v41 two publisher evidence clarifications, still not authorized v42 LTX learned dependency/source licence gates for three pre-existing assets only",
   "candidates": [
     {
       "asset_kind": "model",
@@ -200,7 +200,12 @@
       "selection": "conditional",
       "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
       "not_authorized": true,
-      "download_approved": false
+      "download_approved": false,
+      "requires_ltx_parent_dependency_and_licence_census": true,
+      "parent_repo_id": "Lightricks/LTX-2.5",
+      "parent_hub_gated_observed": true,
+      "research_only": true,
+      "can_enter_approved_queue": false
     },
     {
       "asset_kind": "model",
@@ -212,7 +217,10 @@
       "research_only": true,
       "requires_total_parameter_confirmation": true,
       "can_enter_approved_queue": false,
-      "requires_legal_basis_review": true
+      "requires_legal_basis_review": true,
+      "requires_ltx_parent_dependency_and_licence_census": true,
+      "parent_repo_id": "Lightricks/LTX-2.5",
+      "parent_hub_gated_observed": true
     },
     {
       "asset_kind": "model",
@@ -224,7 +232,10 @@
       "research_only": true,
       "requires_total_parameter_confirmation": true,
       "can_enter_approved_queue": false,
-      "requires_legal_basis_review": true
+      "requires_legal_basis_review": true,
+      "requires_ltx_parent_dependency_and_licence_census": true,
+      "parent_repo_id": "Lightricks/LTX-2.5",
+      "parent_hub_gated_observed": true
     },
     {
       "asset_kind": "model",
@@ -1479,8 +1490,7 @@
     "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
     "ACERobotics/Puffin-World",
     "nvidia/Kumo-Relational",
-    "nvidia/Kumo-Anomaly",
-    "Lightricks/LTX-2.5-Pre-Trained"
+    "nvidia/Kumo-Anomaly"
   ],
   "hard_excluded_repo_ids": [],
   "required_checks": [
@@ -1517,8 +1527,7 @@
     "v35: Muse DFlash assistant is target-bound separately trained checkpoint; verify exact target revision, 16-token acceptance, Transformers5.15 ABI and matched task gain; do not add GGUF copies.",
     "v38: Haru is a research base, use consented reference audio; verify full duplex 7.5Hz+audio codec integrated and pin Haru runtime.",
     "v38: Praxis DROID original 17BF16 shards Gated auto; require owner's authorised access, Qwen3.5-2B code/source, existing Wan2.2 VAE exact SHA reuse, CUDA13 PyTorch2.13/Transformers5.2/80GB; no default full-repo fetch.",
-    "v38: No duplicate YAM/Base/NVFP4 without matched performance and separate trained-value justification. GLM-5.3-Flash is 320B total, 18B active; total size not active for default 150B boundary.",
-    "v42 Gated LTX-2.5 Pre-Trained original is HOLD only. Authenticate owner license assent, same-commit LFS SHA for original 22B+bundled codecs and matching Gemma4 12B encoder; no weight download until all gates pass."
+    "v38: No duplicate YAM/Base/NVFP4 without matched performance and separate trained-value justification. GLM-5.3-Flash is 320B total, 18B active; total size not active for default 150B boundary."
   ],
   "over_baseline_quantized_research": [
     {

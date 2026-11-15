@@ -3,7 +3,7 @@
   "source_revision": "v42-20261115",
   "policy_path": "policies/archival-insurance.json",
   "download_enabled": false,
-  "scope": "148 selected or conditional active trained outcomes unchanged from v41; v42 adds one non-executable Gated LTX pre-training model to research HOLD outside current active preparation.",
+  "scope": "148 unchanged active research-only preservation plans; 3 LTX parent/child source rights corrections",
   "critical_dependencies_travel_with_parent": true,
   "shared_dependency_hash_reuse_verified": false,
   "stage_meaning": {
@@ -478,16 +478,31 @@
       "repo_id": "Lightricks/LTX-2.5",
       "stage": 1,
       "is_new_v27": false,
-      "next_action": "RIGHTS_REVISION_AND_DEPENDENCY_INVENTORY",
+      "next_action": "PIN_LTX_GEMMA4_VAE_AND_DERIVATIVE_NOTICES_WITH_OWNER_RIGHTS_AND_SHA",
       "preservation_bundle": {
         "must_preserve": [
-          "selected learned/data artifacts",
-          "configuration and applicable tokenizer/processor",
-          "necessary learned dependencies",
-          "source/license notices",
-          "compatible runtime metadata"
+          "pin all LTX-compatible Gemma4 12B, video VAE and audio VAE/vocoder learned components to immutable revisions and hashes",
+          "keep original LTX-2.x license and donor derivative NOTICE obligations",
+          "record compatible ComfyUI+custom node PyTorch/CUDA backend and avoid implicit network asset fetches"
         ],
-        "fixed_manifest_complete": false
+        "fixed_manifest_complete": false,
+        "external_learned_and_software_dependencies": [
+          {
+            "role": "learned_text_encoder",
+            "source": "official LTX2.5 Gemma4 12B with LTX projection; choose exact BF16/int8 compatible variant",
+            "sha_reuse_verified": false
+          },
+          {
+            "role": "learned_video_decoder",
+            "source": "LTX2.5 video VAE or model-specific replacement if author states custom changes",
+            "sha_reuse_verified": false
+          },
+          {
+            "role": "learned_audio_decoder",
+            "source": "LTX2.5 audio VAE/vocoder or validated model-specific replacement",
+            "sha_reuse_verified": false
+          }
+        ]
       },
       "selected_bytes": null,
       "download_approved": false,
@@ -498,16 +513,31 @@
       "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
       "stage": 1,
       "is_new_v27": false,
-      "next_action": "PUBLIC_METADATA_PARAMETER_CENSUS_ONLY",
+      "next_action": "PIN_LTX_GEMMA4_VAE_AND_DERIVATIVE_NOTICES_WITH_OWNER_RIGHTS_AND_SHA",
       "preservation_bundle": {
         "must_preserve": [
-          "selected learned/data artifacts",
-          "configuration and applicable tokenizer/processor",
-          "necessary learned dependencies",
-          "source/license notices",
-          "compatible runtime metadata"
+          "pin all LTX-compatible Gemma4 12B, video VAE and audio VAE/vocoder learned components to immutable revisions and hashes",
+          "keep original LTX-2.x license and donor derivative NOTICE obligations",
+          "record compatible ComfyUI+custom node PyTorch/CUDA backend and avoid implicit network asset fetches"
         ],
-        "fixed_manifest_complete": false
+        "fixed_manifest_complete": false,
+        "external_learned_and_software_dependencies": [
+          {
+            "role": "learned_text_encoder",
+            "source": "official LTX2.5 Gemma4 12B with LTX projection; choose exact BF16/int8 compatible variant",
+            "sha_reuse_verified": false
+          },
+          {
+            "role": "learned_video_decoder",
+            "source": "LTX2.5 video VAE or model-specific replacement if author states custom changes",
+            "sha_reuse_verified": false
+          },
+          {
+            "role": "learned_audio_decoder",
+            "source": "LTX2.5 audio VAE/vocoder or validated model-specific replacement",
+            "sha_reuse_verified": false
+          }
+        ]
       },
       "selected_bytes": null,
       "download_approved": false,
@@ -518,16 +548,31 @@
       "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
       "stage": 1,
       "is_new_v27": false,
-      "next_action": "PUBLIC_METADATA_PARAMETER_CENSUS_ONLY",
+      "next_action": "PIN_LTX_GEMMA4_VAE_AND_DERIVATIVE_NOTICES_WITH_OWNER_RIGHTS_AND_SHA",
       "preservation_bundle": {
         "must_preserve": [
-          "selected learned/data artifacts",
-          "configuration and applicable tokenizer/processor",
-          "necessary learned dependencies",
-          "source/license notices",
-          "compatible runtime metadata"
+          "pin all LTX-compatible Gemma4 12B, video VAE and audio VAE/vocoder learned components to immutable revisions and hashes",
+          "keep original LTX-2.x license and donor derivative NOTICE obligations",
+          "record compatible ComfyUI+custom node PyTorch/CUDA backend and avoid implicit network asset fetches"
         ],
-        "fixed_manifest_complete": false
+        "fixed_manifest_complete": false,
+        "external_learned_and_software_dependencies": [
+          {
+            "role": "learned_text_encoder",
+            "source": "official LTX2.5 Gemma4 12B with LTX projection; choose exact BF16/int8 compatible variant",
+            "sha_reuse_verified": false
+          },
+          {
+            "role": "learned_video_decoder",
+            "source": "LTX2.5 video VAE or model-specific replacement if author states custom changes",
+            "sha_reuse_verified": false
+          },
+          {
+            "role": "learned_audio_decoder",
+            "source": "LTX2.5 audio VAE/vocoder or validated model-specific replacement",
+            "sha_reuse_verified": false
+          }
+        ]
       },
       "selected_bytes": null,
       "download_approved": false,

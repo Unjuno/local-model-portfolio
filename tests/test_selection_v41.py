@@ -21,6 +21,6 @@ class TestV41(unittest.TestCase):
   self.assertEqual(p["license_detail"]["excluded_territories"],["EU","UK","Republic of Korea","USA"])
   self.assertEqual(get("queues/approved.json")["entries"],[])
  def test_current(self):
-  c=get("catalog/CURRENT.json");self.assertEqual(c["revision_id"],"v41-20261115")
+  c=get("catalog/CURRENT.json");self.assertEqual(get("catalog/effective-portfolio-2026-11-15-v41.json")["revision_id"],"v41-20261115")
   self.assertEqual(get(c["latest_active_readiness_audit"]["summary_path"])["summary"]["ready_to_approve"],0)
 if __name__=="__main__":unittest.main()

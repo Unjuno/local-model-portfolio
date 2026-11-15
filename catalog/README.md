@@ -1,6 +1,11 @@
 # 資産台帳
 
-## 現行正本（main・v41／2026-11-15）
+## 現行正本（main・v42／2026-11-15）
+
+[CURRENT](CURRENT.json)→[全195資産・有効148](effective-portfolio-2026-11-15-v42.json)（SELECT53／CONDITIONAL95）。[正式v42の停止条件](../docs/strategy/94-v42-ltx-parent-gates-interim-export-policy.md)／[追加の一次証拠](research/2026-11-15-r93-hf-ltx-parent-gated-china-interim-kimi-review.json)／[148件キュー](../queues/proposed-v42-2026-11-15.json)／[95件アクセス](access/2026-11-15-v42-conditional-hub-gates.json)／[148件停止](readiness/v42-2026-11-15-r94-all148-gates.json)。3件LTX原本・権利監査の追記のみ、承認0。
+
+
+## 旧v41（履歴・2026-11-15）
 
 [CURRENT](CURRENT.json)→[195件／148有効](effective-portfolio-2026-11-15-v41.json)、SELECT53／CONDITIONAL95。[v41二訂正](../docs/strategy/92-v41-source-and-license-corrections.md)／[5ファイルLoRA](../manifests/drafts/v40-qwen-image21-step1500.candidate.json)／[148候補](../queues/proposed-v41-2026-11-15.json)／[95アクセス](access/2026-11-15-v41-conditional-hub-gates.json)／[148停止](readiness/v41-2026-11-15-r92-all148-gates.json)。承認0、全件採否変化なし。
 

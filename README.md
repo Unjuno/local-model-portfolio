@@ -1,5 +1,8 @@
 # Local Model Portfolio
 
+**現行v42・2026年11月15日**：[195登録／148有効](catalog/effective-portfolio-2026-11-15-v42.json)（SELECT53＋CONDITIONAL95）。[R94 LTX2.5のGated親・ライセンス必須依存、中国の現行輸出前登録と草案の区別](docs/strategy/94-v42-ltx-parent-gates-interim-export-policy.md)を3既存モデルの取得前ゲートへ反映。新規資産・選定変化0。[148件停止](catalog/readiness/v42-2026-11-15-r94-all148-gates.json)。本人HDD/権限/local SHA/復元・取得承認0。以下過去版。
+
+
 **R96／Hugging Face実配布再監査（2026年11月15日）**：既存v41の[20件Gated全数＋総数未確認9件＋SELECT対照10件＝重複除去38件](docs/strategy/96-v41-huggingface-live-gates-and-regulation.md)をHubモデル／データセット種別に従って再照会。**Gated 20/20一致・ライセンスタグ直接矛盾0件**。個別の本人許諾・実ファイル取得・リポジトリ固定SHA・完全依存・ローカル復元は未検証。[観測JSON](catalog/access/2026-11-15-r96-v41-live-hf38-sample.json)／[静的回帰テスト](tests/test_r96_v41_hf_access_snapshot.py)。**モデル入替0・取得承認0**。
 
 

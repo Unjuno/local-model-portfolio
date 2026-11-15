@@ -2,13 +2,13 @@
   "schema_version": 1,
   "source_revision": "v42-20261115",
   "reviewed_on": "2026-11-15",
-  "scope": "95 v42 conditional access records unchanged from v41, observed 20 gated; 1 additional Gated HOLD Pre-Trained original not in active sidecar",
+  "scope": "95 conditional live Hub observations; LTX parent gated does not change child gating",
   "source": "inherited v37 publisher access evidence + v38 immutable publisher/API observations; Hugging Face connected repository-details rechecked",
   "gated_count": 20,
   "owner_authorizations_verified": 0,
   "fail_closed_if_missing": true,
   "download_authorized": false,
-  "notes": "20 metadata-Gated among 93 conditional; Perplexity old private manifest vs current public listing remains UNKNOWN and is not counted as confirmed Gated. Gated is not evidence of legal prohibition nor owner permission. SELECT 53 have no direct sidecar check. Download approvals 0. v42 research-only HOLD Lightricks/LTX-2.5-Pre-Trained is Gated, but HOLD items intentionally excluded from 95 active CONDITIONAL access entries; owner permission unknown.",
+  "notes": "20 metadata-Gated among 93 conditional; Perplexity old private manifest vs current public listing remains UNKNOWN and is not counted as confirmed Gated. Gated is not evidence of legal prohibition nor owner permission. SELECT 53 have no direct sidecar check. Download approvals 0.",
   "entries": [
     {
       "asset_kind": "model",
@@ -138,7 +138,13 @@
       "reviewed_on": "2026-11-13",
       "source_url": "https://huggingface.co/Lightricks/LTX-2.5",
       "owner_access_permission": "unknown",
-      "download_authorized": false
+      "download_authorized": false,
+      "last_rechecked": "2026-11-15",
+      "underlying_parent_repo_id": "Lightricks/LTX-2.5",
+      "underlying_parent_hub_gated": true,
+      "underlying_parent_owner_permission_verified": false,
+      "child_hub_public_must_not_imply_upstream_file_access": true,
+      "derivative_licence_text_review_pending": true
     },
     {
       "asset_kind": "model",
@@ -148,7 +154,13 @@
       "reviewed_on": "2026-11-13",
       "source_url": "https://huggingface.co/ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
       "owner_access_permission": "unknown",
-      "download_authorized": false
+      "download_authorized": false,
+      "last_rechecked": "2026-11-15",
+      "underlying_parent_repo_id": "Lightricks/LTX-2.5",
+      "underlying_parent_hub_gated": true,
+      "underlying_parent_owner_permission_verified": false,
+      "child_hub_public_must_not_imply_upstream_file_access": true,
+      "derivative_licence_text_review_pending": true
     },
     {
       "asset_kind": "model",
@@ -158,7 +170,13 @@
       "reviewed_on": "2026-11-13",
       "source_url": "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5",
       "owner_access_permission": "unknown",
-      "download_authorized": false
+      "download_authorized": false,
+      "last_rechecked": "2026-11-15",
+      "underlying_parent_repo_id": "Lightricks/LTX-2.5",
+      "underlying_parent_hub_gated": true,
+      "underlying_parent_owner_permission_verified": false,
+      "child_hub_public_must_not_imply_upstream_file_access": true,
+      "derivative_licence_text_review_pending": true
     },
     {
       "asset_kind": "model",
@@ -995,13 +1013,5 @@
     }
   ],
   "tracked_conditional": 95,
-  "unverified_hub_gate_count": 0,
-  "hold_gated_research_only_assets": [
-    {
-      "repo_id": "Lightricks/LTX-2.5-Pre-Trained",
-      "owner_access_permission": "unknown",
-      "download_authorized": false,
-      "source_evidence_path": "catalog/research/2026-11-15-r93-ltx25-pretrained-original-and-merge-lineage.json"
-    }
-  ]
+  "unverified_hub_gate_count": 0
 }

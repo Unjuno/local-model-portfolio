@@ -4,153 +4,49 @@
   "previous_revision_id": "v41-20261115",
   "decision_date": "2026-11-15",
   "target_branch": "main",
-  "kind": "ONE_INDEPENDENT_PRETRAINING_STAGE_HOLD_WITH_GATED_SOURCE_AND_LICENSE_BLOCK",
-  "basis": "catalog/research/2026-11-15-r93-ltx25-pretrained-original-and-merge-lineage.json",
-  "baseline_tracked": 195,
-  "baseline_active": 148,
-  "additions": [
-    {
-      "asset_kind": "model",
-      "repo_id": "Lightricks/LTX-2.5-Pre-Trained",
-      "url": "https://huggingface.co/Lightricks/LTX-2.5-Pre-Trained",
-      "position": 196,
-      "group": "Pre-SFT independent audio-video 22B foundation pretraining stage / full codec bundle",
-      "risk_tier": "HOLD",
-      "portfolio_decision": "hold",
-      "reason_selected": "First-party pre-training stage before LTX-2.5 supervised fine-tuning and post-training, an independent learned state not recoverable by quantizing or copying the existing posttrained LTX2.5 dev/distilled model. Distinct original unified 22B DiT + video/audio VAE/vocoder/duration head, requires separate matched Gemma4 text encoder.",
-      "quality_positive": "Official Lightricks model card identifies pre-training checkpoint and full learned integrated module scope: ltx-2.5-22b-pt-bf16.safetensors (published rounded 43 GiB / public tree 46.2 GB) plus required ltx-2.5-22b-gemma4-12b/ folder. Separate from v41 selected Lightricks/LTX-2.5 posttrained dev/distilled weights, and Stuubs/ChrisCole trained donor merges.",
-      "quality_negative": "HF publisher source is Gated; user's authenticated account entitlement is not proven; weight and Gemma4 exact SHA and full 40-digit source revision not obtained. LTX-2.x Community License (2026-10-29 amended), derivative conditions and original repo rights require review. Complete offline package and physical HDD/staging unknown. Do not count rounded 46.2GB as exact selected bytes or assume same Gemma4 as posttrained LTX2.5.",
-      "observed_access": "publisher_Gated_HF_2026-11-15_owner_entitlement_unknown",
-      "license_metadata": "other:ltx-2.x-community-license-agreement",
-      "evidence_date": "2026-11-15",
-      "evidence_kind": "first_party_Lightricks_model_card_training_stage_and_community_license_source_review",
-      "evidence_urls": [
-        "https://huggingface.co/Lightricks/LTX-2.5-Pre-Trained",
-        "https://huggingface.co/Lightricks/LTX-2.5-Pre-Trained/tree/main",
-        "https://huggingface.co/Lightricks/LTX-2.5-Pre-Trained/blob/main/README.md",
-        "https://huggingface.co/Lightricks/LTX-2.5/blob/main/README.md",
-        "https://github.com/Lightricks/LTX-2/blob/main/LICENSE-2_x",
-        "https://github.com/Lightricks/LTX-2/blob/main/packages/ltx-trainer/README.md",
-        "https://arxiv.org/abs/2601.03233"
-      ],
-      "source_evidence_path": "catalog/research/2026-11-15-r93-ltx25-pretrained-original-and-merge-lineage.json",
-      "selected_file_bytes": null,
-      "fully_pinned_revision_sha": null,
-      "upstream_revision_sha_observed": null,
-      "upstream_model_file": {
-        "path": "ltx-2.5-22b-pt-bf16.safetensors",
-        "sha256": null,
-        "bytes_exact": null,
-        "publisher_rounded_GiB": 43,
-        "publisher_display_decimal_GB": 46.2,
-        "publisher_metadata_only_not_accessed": true
-      },
-      "parent_training_relation": {
-        "posttrained_repo_id": "Lightricks/LTX-2.5",
-        "source_stage": "pretraining_before_SFT",
-        "same_trained_weights_as_posttrained": false,
-        "direct_tensor_hash_difference_not_checked": true
-      },
-      "additional_learned_dependencies": [
-        {
-          "repo_id": "Lightricks/LTX-2.5-Pre-Trained",
-          "subdirectory": "ltx-2.5-22b-gemma4-12b/",
-          "model": "Gemma4 12B text encoder",
-          "required_gemma_version": "gemma4-12b-ltx-v1",
-          "revision": null,
-          "sha": null,
-          "source_bytes": null,
-          "shared_hash_reuse_verified": false
-        }
-      ],
-      "parameter_gate": {
-        "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
-        "total_parameters": null,
-        "reported_main_dit_parameters_approx": 22000000000,
-        "reported_text_encoder_parameters_approx": 12000000000,
-        "evidence_kind": "publisher_rounded_main_plus_external_trained_encoder_and_unverified_codec_components",
-        "review_date": "2026-11-15",
-        "known_before_download": false,
-        "note": "Approximate 22B+12B is not a complete exact tensor census; final lock blocked. HOLD research, not a candidate for active download."
-      },
-      "research_only_unknown_total_allow_conditional": false,
-      "forecast_priority": {
-        "wave": "S2",
-        "rank": 196,
-        "category": "independent_pretraining_original_stage_with_gated_access",
-        "scenario_status": "hypothetical_restriction_cascade_not_ban_probability",
-        "current_observed_access": "gated",
-        "owner_entitlement_unknown": true,
-        "selection_eligibility": "HOLD_NONEXECUTABLE_SOURCE_RESEARCH_ONLY"
-      },
-      "resource_screen": {
-        "source_all_repo_bytes": null,
-        "source_bytes_are_not_selected_bytes": true,
-        "source_model_file_publisher_rounded_GB": 46.2,
-        "external_trained_text_encoder_bytes": null,
-        "selected_file_bytes_final": null,
-        "hw_tested_on_user_machine": false,
-        "cost_status": "GATED_NO_SOURCE_SHA_OR_FULL_DEPENDENCY_CENSUS"
-      },
-      "selection_budget_cap_bytes": null,
-      "active_reservation_increment_bytes": 0,
-      "planning_activate_future_only": false,
-      "preservation_bundle": {
-        "learned_outcome": "Original pre-SFT training-stage unified 22B audio-video foundation checkpoint with codecs, distinct from posttrained LTX2.5 and merged special versions",
-        "must_preserve": [
-          "Lightricks/LTX-2.5-Pre-Trained exact 40-hex revision and ltx-2.5-22b-pt-bf16.safetensors complete SHA256",
-          "ltx-2.5-22b-gemma4-12b/ exact matching pretrained text encoder all safetensors/config/tokenizer/LICENSE files and SHA",
-          "original model card and all LTX-2.x model LICENSE, NOTICE and Gated assent conditions",
-          "Lightricks/LTX-2 pinned ltx-core/ltx-trainer runtime source plus Python/PyTorch/CUDA/ABI and no implicit hub fetch"
-        ],
-        "external_learned_and_software_dependencies": [
-          "LTX-2.5 matching Gemma4 12B pretrained text encoder; existing posttrained projection encoder not assumed identical",
-          "Trainer/inference software version, tokenizer, processor and codecs (video/audio VAE, vocoder and duration head already bundled in model original)"
-        ],
-        "excluded_duplicate_or_optional_formats": [
-          "same-trained-state INT8/FP8/GGUF/NVFP4 conversions",
-          "LTX-2.5 standard dev/distilled weights; posttrained models remain independently selected, not automatic dependencies",
-          "unverified re-download of already hash-equal encoder"
-        ],
-        "fixed_manifest_complete": false,
-        "all_components_verified": false,
-        "scope_reference_only_no_download_manifest": true
-      },
-      "personal_access_verified": false,
-      "download_approved": false,
-      "download_ready": false,
-      "model_payload_fetched": false,
-      "model_code_executed": false,
-      "can_enter_approved_queue": false
-    }
-  ],
-  "replacements": [],
-  "selection_added_active": 0,
+  "kind": "THREE_EXISTING_LTX_PARENT_LEARNED_DEPENDENCY_RIGHTS_EVIDENCE_CORRECTIONS",
+  "source_audit": "catalog/research/2026-11-15-r93-hf-ltx-parent-gated-china-interim-kimi-review.json",
+  "source_report": "docs/strategy/94-v42-ltx-parent-gates-interim-export-policy.md",
+  "selection_added": 0,
   "selection_removed": 0,
-  "new_active_reservation_cap_bytes": 0,
-  "planning_cap_requires_owner_measurement": true,
-  "no_model_weights_downloaded": true,
-  "download_authorizations_created": 0,
-  "required_preconditions_to_promote": [
-    "Authenticated owner must review and separately accept original pre-trained repo conditions; no automated gated bypass",
-    "Record one actual 40-digit Hugging Face commit ID and publisher LFS SHA-256 for every file in the pretraining checkpoint and matching Gemma4 encoder",
-    "Review model repo LICENSE, LTX-2.x Community Agreement, donor/third-party notices, training-data restrictions and allowed archive acts",
-    "Verify any already-selected Gemma4 encoder local reuse by identical SHA, not shared model name",
-    "Budget full source+offline runtime+temporary download staging and actual formatted disk free bytes with 200GB floor",
-    "Safe offline restore using pinned LTX Trainer code/backend and user hardware with no implicit network fetch"
-  ],
-  "not_adopted_as_new_assets": [
+  "decision_status_changes": 0,
+  "original_count": 195,
+  "active_count": 148,
+  "rights_new_gate": "LTX_TRAINED_SHARED_COMPONENTS_AND_DERIVATIVE_LICENCE_UNRESOLVED",
+  "rights_gate_asset_count": 3,
+  "observations": [
     {
       "repo_id": "Lightricks/LTX-2.5",
-      "reason": "Already selected v41 conditional posttraining stage; retain."
-    },
-    {
-      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
-      "reason": "Already selected v41 conditional merged distinct learned outcome, no extra format/older-beta slots."
+      "hub_gated": true,
+      "backbone_parameter_count_main_only": 22000000000,
+      "full_pipeline_count_verified": false
     },
     {
       "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
-      "reason": "Already selected v41 conditional five-LoRA trained merge, donor/license remains unresolved."
+      "hub_gated": false,
+      "parent_hub_gated": true,
+      "exact_source_files_not_verified": true
+    },
+    {
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "hub_gated": false,
+      "parent_hub_gated": true,
+      "publisher_primary_BF16_SHA256": "6e0ff9c9d8a1d0747579f1f50d10a9c3822a9a8f265322a5edd476044b0fbf4f",
+      "exact_revision_and_bytes_null": true
     }
-  ]
+  ],
+  "not_adopted": [
+    {
+      "repo_id": "Lightricks/LTX-2.5-Pre-Trained",
+      "decision": "HOLD_DISTINCT_PRETRAIN_STAGE_BUT_GATED_AND_UNMEASURED_PRESERVATION_MARGIN"
+    },
+    {
+      "repo_id": "moonshotai/Kimi-K3.1-Pro",
+      "decision": "HOLD_OVER150B_QUANT_EXCEPTION_UNVERIFIED_2POINT8T_TOTAL_MXFP4_QAT"
+    }
+  ],
+  "official_current_regulatory_fact": "China MOFCOM/MOST Announcement48 published 2026-10-16 imposes temporary pre-export registration for certain in-scope technology transfers; final revised export catalogue still draft at observation, public domain exceptions; no blanket private download prohibition",
+  "download_approved": 0,
+  "payloads_fetched": 0,
+  "owner_rights_verified": false
 }
