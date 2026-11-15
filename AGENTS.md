@@ -1,12 +1,21 @@
 # エージェント作業規約
 
+## 現行v43（2026-11-15）
+
+唯一の正本は[CURRENT](catalog/CURRENT.json)→v43、**195登録・有効148（SELECT53／CONDITIONAL95）**。v42から選定追加・降格・削除はゼロ。[GR00T N1.6元重みの固定LICENSE第3.3条](https://huggingface.co/nvidia/GR00T-N1.6-3B/blob/d0814e7ecb19202e7c8468b46098b0b7ef3a6d61/LICENSE)は研究・評価の非商用利用に限定されるため、旧`license_metadata=unknown`を正式に訂正（[原本・後継比較](docs/strategy/100-gr00t-n16-n17-license-and-replacement-audit-2026-11-15.md)／[v43差分](catalog/revisions/v43-2026-11-15.json)）。**`license_text_reviewed=false`は正しい**：本文3.3条の確認は、使用者に適用される全行為・親依存・再配布の許可を意味しない。
+
+GR00T N1.7はNVIDIAが2026-11-10に新しいOpen Model Licenseの適用を公表し、11-11にHF旧非商用LICENSEの訂正を報告した。ただし現行HF HEADと選ぶ重みrevisionのLICENSE・NOTICE・全SHA/bytesを同じ不変IDで検証するまでは**新規HOLD研究**であり、正式追加しない。N1.6の旧Eagle・N1.7のCosmos-Reason2 VLM、相対EEF、action horizonの違いを評価するが、後者の外部Cosmos repoはGatedのため必要ファイルの閉包と本人権限を別検証。正常なGated申請以外で取得せず、量子化や同族DROID/LIBEROの自動追加も禁止。
+
+リポジトリはmain一本で維持。**有効9件は完全総数未確定、Gated20件、オーナーHDD・ライセンス行為別審査・実体SHA・完全復元未完了、approved0件**。R100で新しく通したのはN1.6のLICENSE一次根拠の照合だけであり、モデル重みの取得・実行は行わない。
+
+
 ## R98：量子化表示パラメータと独立原本の選定注意（2026-11-15）
 
-[原本選定とsourceファイル調査](docs/strategy/98-v42-discrete-diffusion-and-november-originals.md)／[3候補研究JSON](catalog/proposals/2026-11-15-r98-diffusiongemma-arete-ripple-original-selection.json)。現行選定は`CURRENT.json`のv42、195登録/148有効。**HFの量子化チェックポイント表示パラメータ数を、MoE全expertとMTP等を含む原学習済みモデル総数に代用してはならない。** Ricursive Ripple BF16の64.7827B表示と同一学習成果NVFP4の39.6169B表示が不一致。型・pack方法の原因は未検証だが、量子化で元の全学習済みパラメータが消失したとは扱わない。通常150B上限／検証付き量子化例外は[limits](policies/limits.json)の方針が唯一の正式条件。
+[原本選定とsourceファイル調査](docs/strategy/98-v42-discrete-diffusion-and-november-originals.md)／[3候補研究JSON](catalog/proposals/2026-11-15-r98-diffusiongemma-arete-ripple-original-selection.json)。R98作成当時の選定は`CURRENT.json`のv42、195登録/148有効。**HFの量子化チェックポイント表示パラメータ数を、MoE全expertとMTP等を含む原学習済みモデル総数に代用してはならない。** Ricursive Ripple BF16の64.7827B表示と同一学習成果NVFP4の39.6169B表示が不一致。型・pack方法の原因は未検証だが、量子化で元の全学習済みパラメータが消失したとは扱わない。通常150B上限／検証付き量子化例外は[limits](policies/limits.json)の方針が唯一の正式条件。
 
 Google DiffusionGemmaの11BF16 shardとscheduler等を含む22ファイルは**研究用source候補**、publisher SHAが確認済みなのは1重量のみ、実取得・localSHA・最終byte・off-line runtime・本人HDD実測0。独立拡散アーキテクチャのP1研究提案は**正式CONDITIONALではない**。Arete政治的価値SFT、Ripple独立pretrainingは比較・容量・安全性の独立ゲートが残るP2 HOLD。権限不明のモデル自動取得、別量子化同重みの二重アーカイブ、ユーザー同意なしのapproved queue変更は禁止。
 
-## 現行v42（2026-11-15）
+## 旧v42（2026-11-15）
 
 **唯一の正本 [CURRENT](catalog/CURRENT.json) → v42、195登録／148有効（SELECT53／CONDITIONAL95）**。[LTX3件の学習済み必須Gemma4/VAE/ライセンス停止ゲートと中国の有効な暫定輸出前登録・未成立の最終目録を区別](docs/strategy/94-v42-ltx-parent-gates-interim-export-policy.md)。旧v41と全195件の採否不変。LTX本家/Pre-TrainedはGated、ChrisColeTech/Stuubsの公開派生の権限は別。Kimi K3.1 Pro 2.8T/MXFP4は150B超の実測例外未充足で研究HOLD。**Gated20・未知総数active9・本体DL/owner HDD/local SHA/復元/承認0**。mainのみ。以下v41以前は履歴。
 
