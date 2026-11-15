@@ -1,0 +1,308 @@
+{
+  "schema_version": 1,
+  "revision_id": "v40-20261115",
+  "previous_revision_id": "v39-20261115",
+  "decision_date": "2026-11-15",
+  "target_branch": "main",
+  "change_kind": "ADD_SINGLE_INDEPENDENT_VISUAL_GROUNDING_TRAINED_ORIGINAL_WITH_NO_DOWNLOAD",
+  "source_evidence": "catalog/research/2026-11-15-r88-groundingpi-thinker-original-license-comparison.json",
+  "source_manifest": "manifests/drafts/v39-groundingpi-source28.candidate.json",
+  "added_publisher_source_files": 28,
+  "publisher_candidate_bytes": 9704102624,
+  "weight_bytes": 9687403168,
+  "reservation_cap_not_actual_bytes": 14000000000,
+  "prior_assets_unchanged": 194,
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "GroundingPI/GroundingPI",
+      "position": 195,
+      "url": "https://huggingface.co/GroundingPI/GroundingPI",
+      "group": "独立学習済み視覚点・座標/矩形予測",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Integrated original retraining of Qwen3 36-layer 4B language and Kimi-derived 27-layer vision into a dedicated 0..999 point/bbox coordinate-token grounding model, distinct from SAM3 masks, OCR and robotics action models; not a quantization duplicate.",
+      "quality_positive": "Public ungated immutable HF source with 4,843,664,384 BF16 stored parameters, 2 publisher SHA256 original shards and 28 selected source files 9,704,102,624 bytes. Public index payload verifies BF16 parameter total.",
+      "quality_negative": "Separate Kimi-K3 conditions for derivative components, patched Transformers fork5.7/vLLM0.18, user-specific rights and execution/hardware/storage and local SHA unverified. No independent model quality evidence.",
+      "evidence_date": "2026-11-15",
+      "evidence_kind": "IMMUTABLE_PUBLISHER_SAFETENSORS_LFS_SHA_CONFIG_AND_LICENSE",
+      "evidence_urls": [
+        "https://huggingface.co/api/models/GroundingPI/GroundingPI/revision/afe658ba07cc47168371d69cc66b40ae9dcede7c?blobs=true",
+        "https://huggingface.co/GroundingPI/GroundingPI/raw/afe658ba07cc47168371d69cc66b40ae9dcede7c/LICENSE-Kimi-K3",
+        "https://arxiv.org/abs/2609.39601"
+      ],
+      "observed_access": "public, gated:false, private:false (publisher pinned HF API)",
+      "license_metadata": "other: original Apache2.0 + Kimi-K3 derivative conditions",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "afe658ba07cc47168371d69cc66b40ae9dcede7c",
+      "upstream_all_files_bytes_observed": 9805907792,
+      "upstream_weights_bytes_observed": 9687403168,
+      "upstream_file_count_observed": 37,
+      "upstream_model_file": {
+        "path": "model-00001-of-00002.safetensors",
+        "bytes_exact": 4995018360,
+        "sha256": "2ff67831e10766e557311324b3ed5b31864baeb8363a5aef07e876c69afa6de1",
+        "source_publisher_only_not_local_sha": true
+      },
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2005,
+          "sha256": null,
+          "git_blob_sha1": "394836278bd63a0a08e72b6f767f4899b17cae3b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 1014,
+          "sha256": null,
+          "git_blob_sha1": "de58d8b266a629f2591dcf7dac50deddc4af06ec",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE-Apache-2.0",
+          "bytes": 11358,
+          "sha256": null,
+          "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE-Kimi-K3",
+          "bytes": 3065,
+          "sha256": null,
+          "git_blob_sha1": "97c0111bba229b0981b1d74e34bacef723ca8f7b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 29350,
+          "sha256": null,
+          "git_blob_sha1": "047a32c65570c79e96bdcc33ca71b9b1e02b5825",
+          "local_sha_verified": false
+        },
+        {
+          "path": "added_tokens.json",
+          "bytes": 19615,
+          "sha256": null,
+          "git_blob_sha1": "e1a99aee7fab2149ca02e88e062b753d75c29bf8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 1017,
+          "sha256": null,
+          "git_blob_sha1": "6c226632394ae7474b0d4b13e15793eac2e21ee9",
+          "local_sha_verified": false
+        },
+        {
+          "path": "checksums.sha256",
+          "bytes": 2731,
+          "sha256": null,
+          "git_blob_sha1": "41d3541e3320d559bfef9f63208341163c7c7190",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 3882,
+          "sha256": null,
+          "git_blob_sha1": "bf5af5318af53d17d29b825ba7fe555ba0571d4d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "configuration_groundingpi.py",
+          "bytes": 7572,
+          "sha256": null,
+          "git_blob_sha1": "e2116b644841b5dcd82daba91c889539ad227d2e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "configuration_groundingpi_vision.py",
+          "bytes": 11500,
+          "sha256": null,
+          "git_blob_sha1": "7da6a5be20021b4251de860ac8a5ab04528d0388",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 226,
+          "sha256": null,
+          "git_blob_sha1": "c427089686480a110c92692944c1dfcad7ad6ef2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "image_processing_groundingpi.py",
+          "bytes": 8091,
+          "sha256": null,
+          "git_blob_sha1": "ecccaf53b2e9f0272e85c01a417f4ae94477c0cf",
+          "local_sha_verified": false
+        },
+        {
+          "path": "media_utils.py",
+          "bytes": 13844,
+          "sha256": null,
+          "git_blob_sha1": "e8b2ae127e254e364e6b568b1093a7e12ac576e0",
+          "local_sha_verified": false
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 1671853,
+          "sha256": null,
+          "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "bytes": 4995018360,
+          "sha256": "2ff67831e10766e557311324b3ed5b31864baeb8363a5aef07e876c69afa6de1",
+          "git_blob_sha1": "d5266a6fb4a61091db6e52108723b20491305993",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "bytes": 4692384808,
+          "sha256": "08137c2be794e4932acfca2adac89e290f5ec0b3bb60d63ee7fb1ddc6a9501d2",
+          "git_blob_sha1": "d1842c60e3267be4d848ff84d57b12dfc6c74ae2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 55711,
+          "sha256": null,
+          "git_blob_sha1": "b66eb74263c30110e71df010384f816cd5458aca",
+          "local_sha_verified": false
+        },
+        {
+          "path": "modeling_groundingpi.py",
+          "bytes": 76484,
+          "sha256": null,
+          "git_blob_sha1": "788adc52a6b28d3520b0657472a50f4904ce4911",
+          "local_sha_verified": false
+        },
+        {
+          "path": "modeling_groundingpi_vision.py",
+          "bytes": 54539,
+          "sha256": null,
+          "git_blob_sha1": "f139f1e6e35bc3c49e6ee076d85795bfd39bbbbd",
+          "local_sha_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 944,
+          "sha256": null,
+          "git_blob_sha1": "2f675044439d4564f80ec990ce900416b844ebe6",
+          "local_sha_verified": false
+        },
+        {
+          "path": "processing_groundingpi.py",
+          "bytes": 5227,
+          "sha256": null,
+          "git_blob_sha1": "2880acb0281273d365f100e4ca07fc6d235e6f4a",
+          "local_sha_verified": false
+        },
+        {
+          "path": "requirements.txt",
+          "bytes": 75,
+          "sha256": null,
+          "git_blob_sha1": "ddf4c29b6b5aa0083d16ec4f0290a0cbe8d96bf4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 141279,
+          "sha256": null,
+          "git_blob_sha1": "0980b88ffa996dfbafe3eb9e457eae5e892637db",
+          "local_sha_verified": false
+        },
+        {
+          "path": "streammind_gate.py",
+          "bytes": 5102,
+          "sha256": null,
+          "git_blob_sha1": "75dcbd63d0367f23aee474c6323d9840fabde3b8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 11604725,
+          "sha256": "1a45e3949a652ba4fa8e65017b134404adee1146e1c61fa05e55cdcfa1279e01",
+          "git_blob_sha1": "c68c657e91a21484ae13deb8af33c453e5bda136",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 191414,
+          "sha256": null,
+          "git_blob_sha1": "41d8a4535bff97569ccb9da1b7bfe2dfb2830f66",
+          "local_sha_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 2776833,
+          "sha256": null,
+          "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+          "local_sha_verified": false
+        }
+      ],
+      "candidate_selected_file_count": 28,
+      "candidate_selected_file_bytes": 9704102624,
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 4843664384,
+        "evidence_kind": "PUBLISHER_OFFICIAL_SAFETENSORS_INDEX",
+        "review_date": "2026-11-15",
+        "local_tensor_header_verified": false
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 195,
+        "category": "distinct_visual_grounding_original",
+        "scenario_status": "hypothetical future constraints, not model-specific prediction"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Unique BF16 integrated spatial grounding model, not Qwen/Kimi base copy",
+        "must_preserve": [
+          "2 BF16 weight shards/index in one immutable revision",
+          "HF config, tokenizer, processor and custom modeling Python",
+          "README, checksum table and LICENSE/Licence Apache/Kimi",
+          "Author GitHub GroundingPI code at 98641f0b8ed94a091f1457e0e624c49c0ebf3876"
+        ],
+        "external_learned_and_software_dependencies": [
+          "Kimi and Qwen pretrained content in checkpoint already; no extra parent copies",
+          "bundled transformed Transformers 5.7.0 fork, vLLM 0.18.x, suitable Torch/CUDA and Python3.12 environment"
+        ],
+        "excluded_duplicate_or_optional_formats": [
+          "9 publisher demos/images 101,805,168 bytes",
+          "quantized GGUF/ONNX identical learned weights"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "source_scope_reference_only_no_download_manifest": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 9805907792,
+        "source_bytes_are_not_selected_bytes": true,
+        "selected_file_bytes_final": null,
+        "publisher_source_candidate_bytes": 9704102624,
+        "hw_tested_on_user_machine": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    }
+  ],
+  "nonadopted": [
+    {
+      "repo_id": "UBTECH-Robotics/Thinker-WM",
+      "decision": "HOLD",
+      "reason": "RGB+depth+action independent outcome but unverified incremental value over Praxis/Cosmos, unsafe pickle checkpoint 25.02GB, CC BY-NC-SA terms and physical RAM/HDD limitations; Wan VAE source SHA is already in existing portfolio."
+    }
+  ],
+  "download_approved": false,
+  "weights_downloaded": 0,
+  "code_executed": 0
+}
