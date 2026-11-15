@@ -1,5 +1,7 @@
 # Local Model Portfolio
 
+**R93・v41全148資産のHugging Face現行照合（2026-11-15）**：[配布元ライブメタデータ148/148・Gated20・原著者のライセンス原文と採否判断](docs/strategy/93-v41-hf-148-live-metadata-and-rights-decisions-2026-11-15.md)／[機械可読148行・ライセンス一次裁定4件](catalog/research/2026-11-15-r93-v41-hf148-live-repo-metadata.json)。旧Gated20と現在Gated20は一致、3件のタグ表記差異と1件のLICENSE表示欠損を確認。**NVIDIA GR00T-N1.6-3Bの個別LICENSE §3.3は非商用研究・評価のみ**でありOpenMDW採用発表はこれを遡及変更しない。総数不明9、本人の取得承認0、原本・権利・実HDD・復元未完了、v41選定変更なし。
+
 **現行v41・2026年11月15日**：[195登録／148有効](catalog/effective-portfolio-2026-11-15-v41.json)、[原本・権利2件の訂正](docs/strategy/92-v41-source-and-license-corrections.md)。Qwen LoRAのstep1500一原本とPrunaの地理的ライセンス・依存未閉包を確定。新規採用0、承認/取得0。[全148件停止ゲート](catalog/readiness/v41-2026-11-15-r92-all148-gates.json)。以下は履歴。
 
 
