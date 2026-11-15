@@ -18,7 +18,7 @@ store等の相対名はvault_rootに対して解決し、portfolioの外側か�
 
 ## 1. 選ぶ
 
-**現行は[CURRENT.json](../catalog/CURRENT.json)が指定するv33**。[全185件](../catalog/effective-portfolio-2026-11-15-v33.json)の採否と[有効138件の非実行取得候補](../queues/proposed-v33-2026-11-15.json)、[依存準備138件](../catalog/preparation/2026-11-15-insurance-bundles-v33.json)、[採用・非採用根拠](../docs/strategy/77-v33-weight-content-selection-and-alternatives-2026-11-15.md)を照合する。先行制限の想定は[3段階シナリオ](../policies/capability-access-risk.md)を参考にする：S1 高度な悪用/声・顔/合成/権利関連→S2 高性能一般/科学/世界モデル→S3 公開ウェイト・データと実行環境全体。これは想定シナリオで、現行法の規制予告ではない。
+**現行は[CURRENT.json](../catalog/CURRENT.json)が指定するv38**。[全193件](../catalog/effective-portfolio-2026-11-15-v38.json)の採否と[有効146件の非実行取得候補](../queues/proposed-v38-2026-11-15.json)、[依存準備146件](../catalog/preparation/2026-11-15-insurance-bundles-v38.json)、[採用・非採用根拠](../docs/strategy/86-v38-risk-aware-original-model-selection-2026-11-15.md)を照合する。先行制限の想定は[3段階シナリオ](../policies/capability-access-risk.md)を参考にする：S1 高度な悪用/声・顔/合成/権利関連→S2 高性能一般/科学/世界モデル→S3 公開ウェイト・データと実行環境全体。これは想定シナリオで、現行法の規制予告ではない。
 
 [v33候補キュー](../queues/proposed-v33-2026-11-15.json)は有効138件の非実行調査表。保留・延期モデルも調査は継続するが、取得資格を自動的に変更しない。**小型3件の先行取得案はダウンローダーの安全試験候補**であり、この予測上の保存順位に取って代わらない。
 
