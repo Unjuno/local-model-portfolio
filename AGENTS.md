@@ -1,5 +1,10 @@
 # エージェント作業規約
 
+## R90 Xiaomi UNIS4B／VisionTokenizer：非実行原本計画と危険ロード経路（2026-11-15）
+
+[固定18ファイルのマニフェスト候補](manifests/drafts/v39-unis4b-and-vq-source.candidate.json)と[一次メタデータ照合](scripts/verify_v39_unis_source_draft.py)を使い、元の12ファイルと必須BAAI VQの6ファイルだけを研究する。固定publisher SHAがある3個のsafetensors原本を選び、VQのmodel.ckpt・config.yamlの別形式は未承認で取得対象に混ぜない。**正規ロックや承認済みキューではない**。Xiaomi公式固定vision_tokenizer builderにはtorch.load（weights_only指定なし）分岐とAutoModel.from_pretrained(trust_remote_code=True)分岐がある。どちらも第三者コード・pickleを勝手に実行してはならない。安全なランタイム・オフライン再現・LICENSE正文・本人HDD空き/キャッシュ余裕・ユーザー承認は独立ゲート。出版社byte11,991,440,188は実際の保存総量ではない。[根拠・停止条件](docs/strategy/90-v39-unis4b-source-allowlist-runtime-gates.md)。
+
+
 ## 現行v39（2026-11-15）
 
 選定正本は[CURRENT.json](catalog/CURRENT.json)→v39、**194登録／147有効**。[固定原本と別学習済みVQ dependencyを1資産としてCONDITIONAL採用](docs/strategy/89-v39-xiaomi-unis-original-and-safety.md)。v38の193資産は採否変更なし。Xiaomi4BとEmuVQの18原本ソースファイルは[固定publisher SHA/byte台帳](catalog/research/2026-11-15-r89-xiaomi-u0-4b-immutable-selected-source.json)で確認。VQ model.ckptの暗黙torch.loadは危険、model.safetensors fallbackも実機未検証。プライベート権利・4TB/200GB実HDD・ローカルSHA・復元0。ダウンロード承認0。mainのみ。
