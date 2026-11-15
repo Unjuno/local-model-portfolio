@@ -31,7 +31,12 @@
     "license_metadata_text_differences": 3,
     "missing_hub_license": 1,
     "confirmed_personal_permissions": 0,
-    "acquisition_approved": 0
+    "acquisition_approved": 0,
+    "license_metadata_differences_adjudicated_non_takedown": 3,
+    "license_tag_absence_with_official_noncommercial_text_verified": 1,
+    "publisher_license_adjudications": 4,
+    "license_changes_dated_and_proven_by_this_audit": 0,
+    "legal_clearances_added": 0
   },
   "live_missing": [],
   "access_differences": [],
@@ -1764,7 +1769,18 @@
       "canonical_total_parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
       "provenance_and_rights_pending": true,
       "ready_to_download": false,
-      "rights_and_conditions_verified_for_individual": false
+      "rights_and_conditions_verified_for_individual": false,
+      "publisher_license_primary_adjudication": {
+        "repo_id": "nvidia/GR00T-N1.6-3B",
+        "resolution": "MISSING_HUB_TAG_BUT_EXPLICIT_PUBLISHER_LICENSE_CONTAINS_NONCOMMERCIAL_LIMIT",
+        "reason": "Author repo LICENSE titled NVIDIA License. Section 3.3 limits Work and derivatives to noncommercial research or evaluation only; redistribution conditions in section 3.1 require including license and retention of notices. Do not infer OpenMDW terms from a 2026 general adoption announcement.",
+        "primary_source": "https://huggingface.co/nvidia/GR00T-N1.6-3B/blame/main/LICENSE",
+        "legal_governance": "NONCOMMERCIAL_RESEARCH_EVALUATION_ONLY_UNTIL_AUTHOR_UPDATED_LICENSE_OR_SEPARATE_GRANT_VERIFIED",
+        "selection_action": "RETAIN_CONDITIONAL_PRESERVATION_RESEARCH_NO_APPROVED_ACQUISITION_NO_COMMERCIAL_USE",
+        "verified_on_jst": "2026-11-15",
+        "interpretation_scope": "Public author evidence, not user-specific legal approval",
+        "individual_use_or_download_approved": false
+      }
     },
     {
       "repo_id": "speridlabs/idol",
@@ -1983,7 +1999,18 @@
       "canonical_total_parameter_gate": "NOT_APPLICABLE_TO_DATASET",
       "provenance_and_rights_pending": true,
       "ready_to_download": false,
-      "rights_and_conditions_verified_for_individual": false
+      "rights_and_conditions_verified_for_individual": false,
+      "publisher_license_primary_adjudication": {
+        "repo_id": "nvidia/Granary-v2",
+        "resolution": "STRUCTURAL_REPRESENTATION_ONLY_NO_LICENSE_CHANGE_PROVEN",
+        "reason": "Catalog stores both license identifiers as array; official Hub returns the same two as comma-separated text. Neither implies universal single license for all underlying audio segments.",
+        "primary_source": "https://huggingface.co/datasets/nvidia/Granary-v2",
+        "legal_governance": "PER_COMPONENT_AND_ORIGINAL_DATASET_TERMS_REVIEW_REQUIRED",
+        "selection_action": "KEEP_CONDITIONAL_RESEARCH_STATUS_DO_NOT_DOWNLOAD",
+        "verified_on_jst": "2026-11-15",
+        "interpretation_scope": "Public author evidence, not user-specific legal approval",
+        "individual_use_or_download_approved": false
+      }
     },
     {
       "repo_id": "nvidia/OpenCodeInstruct",
@@ -2928,7 +2955,18 @@
       "canonical_total_parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
       "provenance_and_rights_pending": true,
       "ready_to_download": false,
-      "rights_and_conditions_verified_for_individual": false
+      "rights_and_conditions_verified_for_individual": false,
+      "publisher_license_primary_adjudication": {
+        "repo_id": "nvidia/Nemotron-Cascade-2-30B-A3B",
+        "resolution": "GENERIC_HF_METADATA_VS_SPECIFIC_AUTHOR_MODEL_CARD",
+        "reason": "Connected HF summary reports other, while NVIDIA author card explicitly says NVIDIA Open Model License, matching existing catalog's descriptive code. This is no evidence that the license changed.",
+        "primary_source": "https://huggingface.co/nvidia/Nemotron-Cascade-2-30B-A3B",
+        "legal_governance": "VERIFY_GOVERNING_NVIDIA_OPEN_MODEL_LICENSE_VERSION_AND_MODEL_SPECIFIC_TERMS",
+        "selection_action": "KEEP_CONDITIONAL_RESEARCH_STATUS_DO_NOT_DOWNLOAD",
+        "verified_on_jst": "2026-11-15",
+        "interpretation_scope": "Public author evidence, not user-specific legal approval",
+        "individual_use_or_download_approved": false
+      }
     },
     {
       "repo_id": "nvidia/Nemotron-Cascade-2-RL-data",
@@ -2982,7 +3020,18 @@
       "canonical_total_parameter_gate": "NOT_APPLICABLE_TO_DATASET",
       "provenance_and_rights_pending": true,
       "ready_to_download": false,
-      "rights_and_conditions_verified_for_individual": false
+      "rights_and_conditions_verified_for_individual": false,
+      "publisher_license_primary_adjudication": {
+        "repo_id": "nvidia/Nemotron-Cascade-2-SFT-Data",
+        "resolution": "GENERIC_HF_METADATA_VS_SPECIFIC_AUTHOR_DATASET_CARD",
+        "reason": "Connected HF summary reports other while publisher dataset card explicitly identifies NVIDIA Open Model License; dataset includes multiple upstream prompt/response origins so provenance and downstream rights must still be audited.",
+        "primary_source": "https://huggingface.co/datasets/nvidia/Nemotron-Cascade-2-SFT-Data",
+        "legal_governance": "VERIFY_DATA_RIGHTS_ORIGIN_ATTRIBUTION_AND_TERMS_NOT_ONLY_TAG",
+        "selection_action": "KEEP_CONDITIONAL_RESEARCH_STATUS_DO_NOT_DOWNLOAD",
+        "verified_on_jst": "2026-11-15",
+        "interpretation_scope": "Public author evidence, not user-specific legal approval",
+        "individual_use_or_download_approved": false
+      }
     },
     {
       "repo_id": "Hcompany/Holo4-27B",
@@ -4072,5 +4121,56 @@
     "all_readiness_joined": true,
     "zero_payload_operations": true,
     "all_preserve_current_selection": true
+  },
+  "license_adjudications": [
+    {
+      "repo_id": "nvidia/Granary-v2",
+      "resolution": "STRUCTURAL_REPRESENTATION_ONLY_NO_LICENSE_CHANGE_PROVEN",
+      "reason": "Catalog stores both license identifiers as array; official Hub returns the same two as comma-separated text. Neither implies universal single license for all underlying audio segments.",
+      "primary_source": "https://huggingface.co/datasets/nvidia/Granary-v2",
+      "legal_governance": "PER_COMPONENT_AND_ORIGINAL_DATASET_TERMS_REVIEW_REQUIRED",
+      "selection_action": "KEEP_CONDITIONAL_RESEARCH_STATUS_DO_NOT_DOWNLOAD",
+      "verified_on_jst": "2026-11-15",
+      "individual_rights_verified": false
+    },
+    {
+      "repo_id": "nvidia/Nemotron-Cascade-2-30B-A3B",
+      "resolution": "GENERIC_HF_METADATA_VS_SPECIFIC_AUTHOR_MODEL_CARD",
+      "reason": "Connected HF summary reports other, while NVIDIA author card explicitly says NVIDIA Open Model License, matching existing catalog's descriptive code. This is no evidence that the license changed.",
+      "primary_source": "https://huggingface.co/nvidia/Nemotron-Cascade-2-30B-A3B",
+      "legal_governance": "VERIFY_GOVERNING_NVIDIA_OPEN_MODEL_LICENSE_VERSION_AND_MODEL_SPECIFIC_TERMS",
+      "selection_action": "KEEP_CONDITIONAL_RESEARCH_STATUS_DO_NOT_DOWNLOAD",
+      "verified_on_jst": "2026-11-15",
+      "individual_rights_verified": false
+    },
+    {
+      "repo_id": "nvidia/Nemotron-Cascade-2-SFT-Data",
+      "resolution": "GENERIC_HF_METADATA_VS_SPECIFIC_AUTHOR_DATASET_CARD",
+      "reason": "Connected HF summary reports other while publisher dataset card explicitly identifies NVIDIA Open Model License; dataset includes multiple upstream prompt/response origins so provenance and downstream rights must still be audited.",
+      "primary_source": "https://huggingface.co/datasets/nvidia/Nemotron-Cascade-2-SFT-Data",
+      "legal_governance": "VERIFY_DATA_RIGHTS_ORIGIN_ATTRIBUTION_AND_TERMS_NOT_ONLY_TAG",
+      "selection_action": "KEEP_CONDITIONAL_RESEARCH_STATUS_DO_NOT_DOWNLOAD",
+      "verified_on_jst": "2026-11-15",
+      "individual_rights_verified": false
+    },
+    {
+      "repo_id": "nvidia/GR00T-N1.6-3B",
+      "resolution": "MISSING_HUB_TAG_BUT_EXPLICIT_PUBLISHER_LICENSE_CONTAINS_NONCOMMERCIAL_LIMIT",
+      "reason": "Author repo LICENSE titled NVIDIA License. Section 3.3 limits Work and derivatives to noncommercial research or evaluation only; redistribution conditions in section 3.1 require including license and retention of notices. Do not infer OpenMDW terms from a 2026 general adoption announcement.",
+      "primary_source": "https://huggingface.co/nvidia/GR00T-N1.6-3B/blame/main/LICENSE",
+      "legal_governance": "NONCOMMERCIAL_RESEARCH_EVALUATION_ONLY_UNTIL_AUTHOR_UPDATED_LICENSE_OR_SEPARATE_GRANT_VERIFIED",
+      "selection_action": "RETAIN_CONDITIONAL_PRESERVATION_RESEARCH_NO_APPROVED_ACQUISITION_NO_COMMERCIAL_USE",
+      "verified_on_jst": "2026-11-15",
+      "individual_rights_verified": false
+    }
+  ],
+  "policy_license_correction": {
+    "nvidia_openmdw_announcement": "https://www.linuxfoundation.org/press/linux-foundation-releases-openmdw-1.1-nvidia-adopts-openmdw-for-cosmos-isaac-gr00t-ising-and-nemotron-ai-model-families",
+    "effect": "A corporate adoption intention is not proof that every earlier or current model is issued under OpenMDW. Check each pinned LICENSE and terms.",
+    "nvidia_gr00t_specific_primary": "https://huggingface.co/nvidia/GR00T-N1.6-3B/blame/main/LICENSE",
+    "consumer_account_entitlement": "Not inferred from OAuth read-repos",
+    "same_licence_text_at_requested_model_revision": "NOT_IMMUTABLY_HASH_PINNED_BY_THIS_AUDIT",
+    "regional_rights": "Needs separate jurisdiction-specific review",
+    "derived_author_policy": "No modification to canonical selection, no purchase/download/license acceptance"
   }
 }
