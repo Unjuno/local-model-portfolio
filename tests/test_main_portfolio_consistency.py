@@ -67,4 +67,26 @@ class CurrentPortfolioIntegrity(unittest.TestCase):
   self.assertTrue(all(q[k]["research_only"] and not q[k]["can_enter_approved_queue"] for k in unknown))
   self.assertEqual(self.readiness["summary"]["active"],len(q))
   self.assertEqual(self.readiness["summary"]["ready_to_approve"],0)
+ def test_current_status_ledgers_never_lag_canonical(self):
+  """Catch stale readiness/estimate pointers even when the main selection is sound."""
+  c=self.current
+  readiness_status=read("catalog/readiness/CURRENT.json")
+  estimates_status=read("catalog/estimates/CURRENT.json")
+  self.assertEqual(readiness_status["catalog_revision"],c["revision_id"])
+  self.assertEqual(estimates_status["portfolio_revision"],c["revision_id"])
+  self.assertEqual(readiness_status["tracked_assets"],c["expected"]["tracked"])
+  self.assertEqual(readiness_status["active_assets"],c["expected"]["active"])
+  self.assertEqual(estimates_status["tracked_assets"],c["expected"]["tracked"])
+  self.assertEqual(estimates_status["active_assets"],c["expected"]["active"])
+  self.assertEqual(readiness_status["source_ledger"],c["latest_active_readiness_audit"]["summary_path"])
+  self.assertFalse(readiness_status["owner_HDD_verified"])
+  self.assertFalse(estimates_status["physical_HDD_capacity_verified"])
+  self.assertFalse(readiness_status["download_approved"])
+  self.assertEqual(estimates_status["approved_download_queue_entries"],0)
+  if c["revision_id"]=="v40-20261115":
+   b=estimates_status["v40_budget_scenario"]
+   self.assertEqual(b["nominal_plan_total_bytes"] if "nominal_plan_total_bytes" in b else b["nominal_plan_total_bytes_v40"] if "nominal_plan_total_bytes_v40" in b else b["nominal_plan_total_bytes"],3670590232173)
+   self.assertEqual(b["nominal_plan_margin_after_minimum_free_bytes"],129409767827)
+   self.assertIsNone(b["physical_owner_disk_free_bytes"] if "physical_owner_disk_free_bytes" in b else b["physical_owner_formatted_capacity_bytes"])
+   self.assertFalse(b["owner_HDD_verified"])
 if __name__=="__main__":unittest.main()
