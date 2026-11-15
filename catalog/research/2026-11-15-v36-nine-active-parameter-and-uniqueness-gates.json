@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-15",
+  "scope": "MAIN_V36_ACTIVE_MODEL_CONTENT_AND_FINAL_LOCK_REVIEW",
+  "base_revision": "v36-20261115",
+  "base_effective_path": "catalog/effective-portfolio-2026-11-15-v36.json",
+  "base_effective_blob_sha": "9a03bbf14c4e44441081840d5f3d6383bd952ee4",
+  "objective": "Preserve hard-to-reconstruct independently trained weights against uncertain future distribution restrictions, without mistaking speculative regulation for current law; minimize redundant files and preserve license, code and dependencies.",
+  "method": "All active records with parameter_gate.status UNVERIFIED_BLOCK_FINAL_LOCK; inspect model identity, publisher metadata, existing parameter evidence, learned components and overlap. No tensor checkpoint downloaded/executed.",
+  "audit": {
+    "tracked": 191,
+    "active": 144,
+    "unresolved_active": 9,
+    "unresolved_ids": [
+      "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "Stuubs/Stubelius_Remix_Ltx2.5",
+      "WhissleAI/steer-tts",
+      "maya-research/maya2-native",
+      "fishaudio/drama-3",
+      "ausboss/Qwen-Image-2.1-Consistency-LoRA",
+      "PrunaAI/P-H3-Image",
+      "nvidia/Kumo-Relational",
+      "nvidia/Kumo-Anomaly"
+    ],
+    "review_coverage": 9,
+    "immediate_approved_downloads": 0
+  },
+  "dispositions": [
+    {
+      "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "current_decision": "conditional",
+      "existing_parameter_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "recommended_action": "HOLD_FINAL_ACQUISITION",
+      "reason": "Retain research candidate for distinct fine-tuned video/audio weights; must census all DiT+text+VAE+audio dependencies; compare Stuubs and base; avoid three near-duplicates.",
+      "publisher_url": "https://huggingface.co/ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "change_to_active_selection": false,
+      "acquisition_authorized": false
+    },
+    {
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "current_decision": "conditional",
+      "existing_parameter_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "recommended_action": "HOLD_FINAL_ACQUISITION",
+      "reason": "Separate fine-tune provenance; verify OmniNFT merge lineage and video/audio objective vs ChrisColeTech; choose only if unique measurable behavior.",
+      "publisher_url": "https://huggingface.co/Stuubs/Stubelius_Remix_Ltx2.5",
+      "change_to_active_selection": false,
+      "acquisition_authorized": false
+    },
+    {
+      "repo_id": "WhissleAI/steer-tts",
+      "current_decision": "conditional",
+      "existing_parameter_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "recommended_action": "HIGH_PRIORITY_METADATA_CENSUS",
+      "reason": "Distinct twelve-control acoustic style is a unique axis; publisher 9.6M is only main model; enumerate vocoder/refiner/flow/WavLM/MiniLM; gated NC rights.",
+      "publisher_url": "https://huggingface.co/WhissleAI/steer-tts",
+      "change_to_active_selection": false,
+      "acquisition_authorized": false
+    },
+    {
+      "repo_id": "maya-research/maya2-native",
+      "current_decision": "conditional",
+      "existing_parameter_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "recommended_action": "HIGH_PRIORITY_METADATA_CENSUS",
+      "reason": "Distinct Indic-language TTS; 2.5024B main does not count Mimi/ECAPA; verify separate learned components and licenses.",
+      "publisher_url": "https://huggingface.co/maya-research/maya2-native",
+      "change_to_active_selection": false,
+      "acquisition_authorized": false
+    },
+    {
+      "repo_id": "fishaudio/drama-3",
+      "current_decision": "conditional",
+      "existing_parameter_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "recommended_action": "HOLD_FINAL_ACQUISITION",
+      "reason": "35.8996B main only; FP8+BF16 original and all codec/MTP dependencies required; no misleading inference from INT4 duplicate.",
+      "publisher_url": "https://huggingface.co/fishaudio/drama-3",
+      "change_to_active_selection": false,
+      "acquisition_authorized": false
+    },
+    {
+      "repo_id": "ausboss/Qwen-Image-2.1-Consistency-LoRA",
+      "current_decision": "conditional",
+      "existing_parameter_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "recommended_action": "HIGH_PRIORITY_SHARED_BASE_CHECK",
+      "reason": "Small trained adapter and potentially unique editing objective; exact immutable Qwen-Image-2.1 base, tokenizer/text encoder/VAE must be mapped and shared not double-counted.",
+      "publisher_url": "https://huggingface.co/ausboss/Qwen-Image-2.1-Consistency-LoRA",
+      "change_to_active_selection": false,
+      "acquisition_authorized": false
+    },
+    {
+      "repo_id": "PrunaAI/P-H3-Image",
+      "current_decision": "conditional",
+      "existing_parameter_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "recommended_action": "HIGH_PRIORITY_FULL_PIPELINE_CENSUS",
+      "reason": "33.123B transformer alone; learned 4B text encoder, prompt upsampler and decoder; license other; no acquisition without complete components and terms.",
+      "publisher_url": "https://huggingface.co/PrunaAI/P-H3-Image",
+      "change_to_active_selection": false,
+      "acquisition_authorized": false
+    },
+    {
+      "repo_id": "nvidia/Kumo-Relational",
+      "current_decision": "conditional",
+      "existing_parameter_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "recommended_action": "HIGH_PRIORITY_TENSOR_CENSUS",
+      "reason": "Two separately trained classifier/regressor .pt heads; bytes are not parameter counts. Check source .pt shapes and parent TabICL dependence, avoid saving same parent twice.",
+      "publisher_url": "https://huggingface.co/nvidia/Kumo-Relational",
+      "change_to_active_selection": false,
+      "acquisition_authorized": false
+    },
+    {
+      "repo_id": "nvidia/Kumo-Anomaly",
+      "current_decision": "conditional",
+      "existing_parameter_status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "recommended_action": "HIGH_PRIORITY_TENSOR_CENSUS",
+      "reason": "Publisher ~8M and SDK 2.44M disagree; inspect checkpoint tensor keys/shapes and dependencies, pin one immutable weight when same SHA.",
+      "publisher_url": "https://huggingface.co/nvidia/Kumo-Anomaly",
+      "change_to_active_selection": false,
+      "acquisition_authorized": false
+    }
+  ],
+  "priorities": {
+    "first": "Resolve 9 active pipeline parameter gates, especially small adapter and independent specialized TTS / Kumo",
+    "second": "Pin source revisions, selected tensor files and SHA256, codec/encoder/VAE dependencies and licenses for all 144 active",
+    "third": "Use actual disk inventory and deduplicated content-addressed byte union to decide replacement; do not use repo display bytes as selected scope",
+    "fourth": "Consider XiaomiRobotics/Xiaomi-Robotics-U0-4B only after compare to Cosmos3/Wan learned objectives and selected bytes; previous seven-candidate proposal remains non-executable"
+  },
+  "legal_forecast_separation": {
+    "fact": "Hugging Face gated models and license restrictions are current repository properties; present-day universal open-weight ban not established here.",
+    "scenario": "Broadening restrictions on high-capability and/or open-weight models is a stress-test assumption, not a measured probability.",
+    "operational_rule": "No circumvention of gated authorization, license terms, or distribution rights."
+  },
+  "limitations": [
+    "Hub publisher metadata is not a full tensor census",
+    "No physical storage or runtime validation",
+    "Exa unavailable with HTTP 402 credit exhaustion",
+    "No final selection transition performed without evidence"
+  ],
+  "completion": "RESEARCH_AUDIT_COMPLETE_FINAL_ACQUISITION_NOT_READY"
+}
