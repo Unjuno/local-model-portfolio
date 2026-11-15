@@ -27,7 +27,7 @@ class CurrentPortfolioIntegrity(unittest.TestCase):
   self.assertEqual(sum(x["asset_kind"]=="model" for x in v["items"]),165)
   self.assertEqual(sum(x["asset_kind"]=="dataset" for x in v["items"]),26)
   self.assertEqual({d:sum(x["portfolio_decision"]==d for x in v["items"]) for d in ("select","conditional","hold","deferred","excluded")},{"select":53,"conditional":91,"hold":28,"deferred":13,"excluded":6})
-  self.assertEqual(c["ordered_overlays"][-1],"catalog/revisions/v36-2026-11-15.json")
+  self.assertEqual(c["ordered_overlays"][-1],"catalog/revisions/v37-2026-11-15.json")
   self.assertTrue(all(x["download_approved"] is False for x in v["items"]))
  def test_preserve_old_150_assets(self):
   old=read("catalog/effective-portfolio-2026-11-06-v19.json")
