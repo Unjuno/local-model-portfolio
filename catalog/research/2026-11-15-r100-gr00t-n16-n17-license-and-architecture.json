@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "kind": "R100_GR00T_N16_TO_N17_PUBLISHER_LICENSE_AND_ARCHITECTURE_DIFF",
+  "observed_date_jst": "2026-11-15",
+  "catalog_revision_at_start": "v42-20261115",
+  "purpose": "Preserve independently trained robotic control capabilities with binding original license/NOTICE and actual learned runtime, not model-name or quantization duplication",
+  "facts": [
+    {
+      "kind": "N16_PINNED_LICENSE",
+      "repo_id": "nvidia/GR00T-N1.6-3B",
+      "pinned_revision": "d0814e7ecb19202e7c8468b46098b0b7ef3a6d61",
+      "source": "https://huggingface.co/nvidia/GR00T-N1.6-3B/blob/d0814e7ecb19202e7c8468b46098b0b7ef3a6d61/LICENSE",
+      "license_text_title": "NVIDIA License",
+      "section": "3.3",
+      "restriction": "Non-commercial research/evaluation use only, except NVIDIA and its affiliates",
+      "publisher_hf_license_tag": null,
+      "source_kind": "PRIMARY_DISTRIBUTION_FILE_AT_CATALOG_PINNED_REVISION"
+    },
+    {
+      "kind": "N17_AUTHOR_MODEL",
+      "repo_id": "nvidia/GR00T-N1.7-3B",
+      "license_metadata_from_connected_hf": "other",
+      "model_parameters_hf_published": 3144000000,
+      "metadata_gated": false,
+      "source": "https://huggingface.co/nvidia/GR00T-N1.7-3B",
+      "source_kind": "PUBLISHER_HF_METADATA",
+      "no_weight_payload_read": true
+    },
+    {
+      "kind": "N17_AUTHOR_LICENSE_CLARIFICATION",
+      "source": "https://github.com/NVIDIA/Isaac-GR00T/issues/803",
+      "issuer_reply_date": "2026-11-10",
+      "issuer_reply_author": "jiajingc-nv",
+      "author_statement": "GR00T N1.7 model weights use NVIDIA Open Model License commercially usable, code Apache 2.0; issue closed",
+      "source_kind": "OFFICIAL_NVIDIA_MAINTAINER_ISSUE_RESPONSE"
+    },
+    {
+      "kind": "N17_PUBLISHER_FIX_CONFIRMATION",
+      "source": "https://forums.developer.nvidia.com/t/gr00t-n1-7-license-clarification-model-card-says-commercial-use-but-license-file-in-hf-repo-says-non-commercial/387959",
+      "author_reply_date": "2026-11-11",
+      "author_statement": "Original HF LICENSE was outdated noncommercial; publisher says corrected base and Bridge, Fractal, DROID, LIBERO variants",
+      "source_kind": "OFFICIAL_NVIDIA_DEVELOPER_FORUM_RESEARCH_FINDING",
+      "individual_fixed_hf_license_commit_unverified": true
+    },
+    {
+      "kind": "N17_HF_LICENSE_PATCH_DESCRIPTION",
+      "source": "https://huggingface.co/nvidia/GR00T-N1.7-3B/discussions/5",
+      "author_org": "NVIDIA",
+      "patch_intent": "Replace prior noncommercial LICENSE with NVIDIA Open Model License 2025-10-24; add NOTICE and Built on NVIDIA Cosmos",
+      "source_kind": "AUTHOR_ORG_REPO_PR",
+      "merge_status_and_resulting_commit_not_independently_verified": true
+    },
+    {
+      "kind": "NVIDIA_OPEN_MODEL_LICENSE_TEXT",
+      "source": "https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/",
+      "version_date": "2025-10-24",
+      "condition_summary": "Commercial use permitted only subject to license; safety guardrail restrictions; NVIDIA Cosmos attribution; LICENSE/NOTICE; separate components; trade/export compliance",
+      "source_kind": "PRIMARY_LICENSE"
+    }
+  ],
+  "architectural_delta": {
+    "n16": {
+      "main_hf_parameter_count_approx": 3286600000,
+      "model_class": "Gr00tN1d6",
+      "vision_backbone": "Eagle-Block2A-2B-v2",
+      "action_space": "absolute EEF and older state action interface",
+      "action_dimension": 29,
+      "action_horizon": 16,
+      "diffusion_head_layers": 32,
+      "reference_transformers": "4.51.3",
+      "original_commit_recorded_by_catalog": "d0814e7ecb19202e7c8468b46098b0b7ef3a6d61",
+      "original_source_all_repo_bytes_recorded": 6573788038
+    },
+    "n17": {
+      "main_hf_parameter_count_approx": 3144000000,
+      "model_class": "Gr00tN1d7",
+      "vision_backbone": "Cosmos-Reason2-2B (Qwen3-VL family)",
+      "action_space": "relative end-effector shared across robot and human embodiments",
+      "action_dimension": 132,
+      "action_horizon": 40,
+      "diffusion_head_layers": 16,
+      "author_pretraining": "20k hours EgoScale human video alongside robotics",
+      "reference_transformers": "4.57.3",
+      "minimum_publisher_inference_gpu_vram_bytes_approx": 16000000000,
+      "repo_source_byte_size_hf_ui_approx": 6930000000,
+      "upstream_immutable_sha": null,
+      "all_files_sha256_and_bytes_pinned": false
+    },
+    "code_source": "https://github.com/NVIDIA/Isaac-GR00T/blob/3b49067943eb1ab2eb2203b93d461c4390c78da3/README.md",
+    "code_source_commit": "3b49067943eb1ab2eb2203b93d461c4390c78da3",
+    "performance_scope": "Author-reported ~40 Hz RTX PRO 6000 Blackwell Server / ~28 Hz Jetson AGX Thor at batch 1 LIBERO; not compared with N1.6 under user hardware/backend/context/batch; no meaningful numeric cross-model benchmark",
+    "external_learned_component": {
+      "repo_id": "nvidia/Cosmos-Reason2-2B",
+      "status": "HF Gated in 2026-11-15 repo metadata",
+      "source": "https://huggingface.co/nvidia/Cosmos-Reason2-2B",
+      "hub_model_parameters_approx": 2438700000,
+      "required_as_separate_download_for_selected_n17_pipeline": "UNVERIFIED",
+      "owner_permission_verified": false
+    },
+    "near_family_variants": [
+      "nvidia/GR00T-N1.7-DROID",
+      "nvidia/GR00T-N1.7-LIBERO",
+      "nvidia/GR00T-N1.7-SimplerEnv-Bridge",
+      "nvidia/GR00T-N1.7-SimplerEnv-Fractal"
+    ]
+  },
+  "decisions": {
+    "existing_n16": "KEEP_CONDITIONAL_WITH_LICENSE_METADATA_CORRECTION_NONCOMMERCIAL_RESEARCH_ONLY_NOT_READY_TO_ACQUIRE",
+    "proposed_n17": "RESEARCH_HOLD_NOT_ADDED_TO_ACTIVE_PORTFOLIO",
+    "no_exchange_now": true,
+    "reason": "N1.7 genuinely separate learned backbone/representational training, but complete license file at frozen source revision, author model artifacts, Gated Cosmos closure, and matched marginal quality/replacement advantage are not independently verified. N1.6 historical Eagle outcome cannot be assumed reproduced by N1.7.",
+    "forbidden_auto_additions": [
+      "N1.7 DROID variant as duplicate without measured incremental task gain",
+      "N1.7 LIBERO variant as duplicate without evaluation",
+      "Cosmos-Reason2-Gated checkpoint without normal user entitlement",
+      "normal GGUF/quantized variant as independent trained model"
+    ],
+    "priority_next": "FIRST_PARTY_IMMUTABLE_MODEL_SOURCE_AND_LICENSE_NOTICE_CENSUS_BEFORE_N17_CONDITIONAL_PROMOTION"
+  },
+  "gates": {
+    "no_approved_downloads": true,
+    "no_model_payloads_downloaded": true,
+    "no_training_code_executed": true,
+    "license_full_text_activity_signoff": false,
+    "owner_HF_entitlement_checked": false,
+    "fully_immutable_n17_source_verified": false,
+    "n17_weight_file_sha256_verified": false,
+    "full_trained_pipeline_components_pinned": false,
+    "offline_runtime_abi_verified": false,
+    "owner_drive_capacity_and_free_bytes_verified": false,
+    "independent_quality_and_runtime_benchmark_verified": false
+  },
+  "falsifiers": [
+    "If N1.7 pinned license after 2026-11-11 does not match published Open Model License and NOTICE rights, retain HOLD until author fixes.",
+    "If same-hardware, same-task N1.7 materially dominates N1.6 without unique legacy value, consider replacing N1.6 only after explicit rights and user archiving goals review.",
+    "If N1.7 requires an inaccessible separately Gated Cosmos pretrained weight, no acquisition readiness even if its own repository is public.",
+    "If current N1.6 fixed-revision license differs from section 3.3, revert metadata correction."
+  ]
+}
