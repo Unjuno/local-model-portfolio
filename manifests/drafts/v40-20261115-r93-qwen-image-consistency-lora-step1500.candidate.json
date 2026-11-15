@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-15",
+  "base_revision": "v40-20261115",
+  "asset_kind": "model",
+  "repo_id": "ausboss/Qwen-Image-2.1-Consistency-LoRA",
+  "first_party_repo_sha": "58897a02f4f60f88376eab5676738dd45e5ed1a2",
+  "repo_url": "https://huggingface.co/ausboss/Qwen-Image-2.1-Consistency-LoRA",
+  "source_index_url": "https://huggingface.co/api/models/ausboss/Qwen-Image-2.1-Consistency-LoRA/revision/58897a02f4f60f88376eab5676738dd45e5ed1a2?blobs=true",
+  "decision": "CONFIRM_STEP1500_ONLY_RETAIN_RESEARCH_CONDITIONAL",
+  "source_scope": {
+    "selected_file_count": 4,
+    "selected_file_bytes_reference_only": 159542938,
+    "source_repo_bytes": 328616200,
+    "source_files": [
+      {
+        "path": "qwen-image-2.1-consistency.safetensors",
+        "bytes": 159436496,
+        "lfs_sha256": "4f44ada1be2189cc23b3d010f9603543403f48454e2f76842a3d30109b20bd63",
+        "purpose": "SELECT step1500 trained rank32"
+      },
+      {
+        "path": "README.md",
+        "bytes": 9027,
+        "lfs_sha256": null,
+        "purpose": "First party training and held-out evaluation limitations"
+      },
+      {
+        "path": "workflows/qwen-image-2.1-edit-consistency.json",
+        "bytes": 26096,
+        "lfs_sha256": null,
+        "purpose": "ComfyUI runtime recipe"
+      },
+      {
+        "path": "workflows/qwen-image-2.1-edit-realign.json",
+        "bytes": 71319,
+        "lfs_sha256": null,
+        "purpose": "alternative workflow for pose/position changes"
+      }
+    ],
+    "excluded_same_training_series_weight": {
+      "path": "qwen-image-2.1-consistency-2000.safetensors",
+      "bytes": 159436496,
+      "lfs_sha256": "a0bf043edc4695b1661a0e768e49a7fdff9a656b7d4313203d590e0262b64beb",
+      "reason": "Step 2000 is a further checkpoint of same fine-tune; tighter median corner displacement but degraded style similarity according to creator; neither binary is simple quantization of the other."
+    },
+    "source_other_bytes_not_selected": 169073262,
+    "source_locked_manifest": false,
+    "payload_downloaded": false,
+    "local_hash_verified": false
+  },
+  "first_party_comparison": {
+    "author_reported_n_heldout_restyles": 36,
+    "metrics": {
+      "worst_corner_median_px": {
+        "base": 24.3,
+        "step1500": 1.6,
+        "step2000": 0.9
+      },
+      "restyles_under_3px_percent": {
+        "base": 3,
+        "step1500": 75,
+        "step2000": 97
+      },
+      "look_distance_lower_better": {
+        "base": 7,
+        "step1500": 6.3,
+        "step2000": 10.9
+      }
+    },
+    "evidence": "https://huggingface.co/ausboss/Qwen-Image-2.1-Consistency-LoRA",
+    "evaluation_caveat": "Publisher-only, no independent matched test. 1500 better original style, 2000 better strict alignment; both are trained snapshots of same task."
+  },
+  "provenance": {
+    "training_rank": 32,
+    "training_alpha": 32,
+    "optimizer": "AdamW8bit",
+    "training_pairs_reported": 950,
+    "training_pictures_reported": 257,
+    "conditions": "H100 one GPU, batch1, 1408 pixels nominal, 25 inference steps, CFG1, Euler/simple creator benchmark",
+    "runtime": "ComfyUI compatible Qwen Image2.1 loader, model-only LoRA, strength 1.0, compatible AusBoss nodes >=2.3.0 for saved workflow; not executed by us"
+  },
+  "parent": {
+    "repo_id": "Qwen/Qwen-Image-2.1",
+    "already_in_current_portfolio": true,
+    "base_revision_and_sha_match_verified": false,
+    "external_code_and_weights_source_required": true,
+    "never_store_parent_weights_a_second_time": true,
+    "all_learned_pipeline_parameters_verified": false,
+    "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK"
+  },
+  "rights": {
+    "hub_license_metadata": "other",
+    "publisher_description": "qwen-research-license inherited from Qwen Image2.1",
+    "full_license_text_verified": false,
+    "commercial_or_redistribution_rights": "NOT_VERIFIED",
+    "authorization": "NO_DOWNLOAD_APPROVAL"
+  },
+  "preservation_decision": "Preserve unique step1500 trained delta, not redundant step2000 snapshot, and record two workflows with publisher SHA. Do not acquire or use until parent license and exact file manifests are verified.",
+  "loss_prevention_scope": "Retain upstream training evidence, and immutable repo and adapter hashes. Reproduction from parent is not feasible without 950 training pairs and training pipeline.",
+  "status": "NON_EXECUTABLE_SOURCE_RESEARCH_ONLY"
+}
