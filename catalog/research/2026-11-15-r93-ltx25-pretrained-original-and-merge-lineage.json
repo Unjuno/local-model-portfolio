@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "kind": "R93_LTX25_PRETRAINED_ORIGINAL_AND_MERGE_LINEAGE_FIRST_PARTY_SOURCE_REVIEW",
+  "reviewed_on_jst": "2026-11-15",
+  "canonical_observed_revision": "v41-20261115",
+  "action": "ADD_GATED_UNVERIFIED_PRETRAINED_STAGE_AS_HOLD_ONLY_DO_NOT_AUTO_PROMOTE",
+  "model_id": "Lightricks/LTX-2.5-Pre-Trained",
+  "publisher_original_urls": [
+    "https://huggingface.co/Lightricks/LTX-2.5-Pre-Trained",
+    "https://huggingface.co/Lightricks/LTX-2.5-Pre-Trained/tree/main",
+    "https://huggingface.co/Lightricks/LTX-2.5-Pre-Trained/blob/main/README.md",
+    "https://huggingface.co/Lightricks/LTX-2.5/blob/main/README.md",
+    "https://github.com/Lightricks/LTX-2/blob/main/LICENSE-2_x",
+    "https://github.com/Lightricks/LTX-2/blob/main/packages/ltx-trainer/README.md",
+    "https://arxiv.org/abs/2601.03233"
+  ],
+  "identity": {
+    "repo_type": "model",
+    "source_verified_listing": true,
+    "user_access_entitlement_verified": false,
+    "public_gated_status": "gated_hub_metadata_2026-11-15",
+    "source_commit_sha40": null,
+    "selected_weight_sha256": null,
+    "local_checkpoint_content_inspected": false,
+    "publisher_independent_training_stage": "pretraining_before_SFT_and_posttraining",
+    "training_relation_to_current": "Lightricks/LTX-2.5 main repo is later/posttrained and is currently CONDITIONAL",
+    "source_distinctness": "distinct trained state from post-trained LTX-2.5 dev/distilled not a quantization conversion",
+    "main_original_file": {
+      "path": "ltx-2.5-22b-pt-bf16.safetensors",
+      "publisher_display_decimal_GB_rounded": 46.2,
+      "publisher_card_size_GiB_rounded": 43,
+      "full_file_bytes_exact": null,
+      "publisher_sha256": null,
+      "checkpoint_tensor_header_inspected": false,
+      "checkpoint_format": "safetensors",
+      "publisher_repo_gated": true
+    },
+    "internal_learned_components_publisher_declared": [
+      "22B DiT (publisher approximate)",
+      "video VAE",
+      "audio VAE",
+      "vocoder",
+      "duration head",
+      "text-embedding projections"
+    ],
+    "external_required_learned_dependency": {
+      "path_prefix": "ltx-2.5-22b-gemma4-12b/",
+      "purpose": "matching Gemma4 12B text encoder pretraining",
+      "required_gemma_version": "gemma4-12b-ltx-v1",
+      "present_in_repo_tree": true,
+      "publisher_selected_exact_file_byte_total": null,
+      "revision_sha40": null,
+      "per_file_sha256": null,
+      "deduplicated_with_LTX25_main_encoder": false,
+      "why_not_dedup": "Main post-training repository uses distinct Gemma4 text_encoders/gemma4-12b-with-proj-ltx-2.5-bf16.safetensors; immutable hash equality not established"
+    },
+    "runtime_code": {
+      "repository": "Lightricks/LTX-2",
+      "training_subdir": "packages/ltx-trainer",
+      "runtime_version_pinned": false,
+      "python_backend_driver_abi_verified": false
+    }
+  },
+  "model_comparators": [
+    {
+      "repo_id": "Lightricks/LTX-2.5",
+      "portfolio_v41_decision": "conditional",
+      "publisher_training_stage": "dev / posttrained and distilled",
+      "publisher_model_layout": "split Comfy-aligned components rather than original pretraining unified file",
+      "do_not_replace": true
+    },
+    {
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "portfolio_v41_decision": "conditional",
+      "publisher_claimed_distinct_training": "OmniNFT RL fine-tune merged with Sulphur/10Eros edits and distilled LoRA",
+      "publisher_v1_bf16_file": {
+        "path": "ltx2.5-Stubelius_remix_v1_bf16.safetensors",
+        "publisher_display_size_GB_rounded": 42,
+        "public_Xet_SHA256": "6e0ff9c9d8a1d0747579f1f50d10a9c3822a9a8f265322a5edd476044b0fbf4f",
+        "source_revision_sha40": null,
+        "local_hash_verified": false
+      },
+      "author_original_version_variants": [
+        "v1 BF16 candidate preservation original",
+        "v1 int8 convrot derived conversion",
+        "v1 Q4 GGUF derived conversion (author fixed 2026-11-08)",
+        "v1 NVFP4 derived conversion",
+        "beta1 and beta2 prior edits not default preservation"
+      ],
+      "legal_context": "LTX-2.x Community License and donor model attribution; downstream rights unverified",
+      "do_not_downgrade_without_comparator": true,
+      "reason": "Full BF16 v1 is a distinct learned merge; ordinary quantizations of this v1 do not count as independent learned states"
+    },
+    {
+      "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "portfolio_v41_decision": "conditional",
+      "publisher_claimed_distinct_training": "five LoRA merges into LTX-2.5: Eros10, DMD distill, IC-LoRA, IC-LoRA Detailer, Img2Vid",
+      "hub_license_tag": "unknown",
+      "hub_base_model_tag": "quantized:Lightricks/LTX-2.5",
+      "not_proved_ordinary_quant_only": true,
+      "public_gating": "sensitive-content interstitial, not equivalent to Gated entitlement",
+      "separate_text_encoder_and_VAEs_publisher_reported": true,
+      "full_unquantized_original_identified": false,
+      "source_sha40": null,
+      "source_weights_sha256": null,
+      "do_not_downgrade_without_donor_and_license_comparison": true
+    }
+  ],
+  "license_facts": {
+    "publisher_code_file": "https://github.com/Lightricks/LTX-2/blob/main/LICENSE-2_x",
+    "license_file_git_blob_sha1": "08670f73e5ad7a7e914ce877b946f9a4a795c650",
+    "license_title": "LTX-2.x Community License Agreement",
+    "effective_date": "2026-08-11",
+    "amended_date": "2026-10-29",
+    "publisher_trained_model_weights_under_Apache2": false,
+    "code_and_model_terms_separated": true,
+    "gross_annual_entity_revenue_license_threshold_USD": 10000000,
+    "derivative_training_and_distribution_restrictions_present": true,
+    "user_specific_assent_required_or_access_gate": true,
+    "latest_license_vs_model_revision_compatible_verified": false,
+    "allowed_owner_use_license_cleared": false
+  },
+  "budget": {
+    "owner_archive_policy_limit_bytes": 4000000000000,
+    "owner_minimum_floor_bytes": 200000000000,
+    "model_file_publisher_approx_GB": 46.2,
+    "converted_43_GiB_reference_bytes": 46170898432,
+    "exact_model_file_bytes": null,
+    "exact_external_gemma_encoder_bytes": null,
+    "additional_runtime_and_staging_bytes": null,
+    "activate_reservation_cap_bytes": null,
+    "active_budget_increment_bytes": 0,
+    "actual_owner_available_bytes": null,
+    "current_v41_existing_plan_proxy_margin_bytes": 129409767827,
+    "model_and_dependency_fit_test": "UNCERTAIN_NOT_DONE",
+    "why_hold": "Gated acceptance, lack same-revision payload SHA, unknown complete Gemma4 dependency and HDD staging, license owner-use terms unresolved"
+  },
+  "no_bypass": {
+    "download_approved": false,
+    "owner_HF_pretrained_entitlement_verified": false,
+    "model_file_payload_downloaded": false,
+    "unsafe_code_executed": false,
+    "model_inference_run": false,
+    "local_weight_SHA256_verified": false,
+    "full_offline_restore_passed": false
+  },
+  "external_research_limitations": [
+    "Connected Hugging Face repository details and public first-party model card were inspected; no gated source payload bytes/head downloaded",
+    "Public 46.2GB is rounded browser display and publisher 43GiB is rounded card figure; neither exact file size",
+    "GitHub official LICENSE-2_x text inspected, but target Gated model repo license payload and user's use rights not independently cleared",
+    "Actual archive storage count should be measured from immutable full source file list plus tokenizer, Gemma4 weights and wheels, not from 22B model name or rounded file sizes"
+  ],
+  "work_required_to_promote": [
+    "Authenticated owner must review and separately accept original pre-trained repo conditions; no automated gated bypass",
+    "Record one actual 40-digit Hugging Face commit ID and publisher LFS SHA-256 for every file in the pretraining checkpoint and matching Gemma4 encoder",
+    "Review model repo LICENSE, LTX-2.x Community Agreement, donor/third-party notices, training-data restrictions and allowed archive acts",
+    "Verify any already-selected Gemma4 encoder local reuse by identical SHA, not shared model name",
+    "Budget full source+offline runtime+temporary download staging and actual formatted disk free bytes with 200GB floor",
+    "Safe offline restore using pinned LTX Trainer code/backend and user hardware with no implicit network fetch"
+  ]
+}
