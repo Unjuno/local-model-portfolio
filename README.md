@@ -1,8 +1,11 @@
 # Local Model Portfolio
 
+**現行v43（2026-11-15）**：[195登録／148有効の正本](catalog/effective-portfolio-2026-11-15-v43.json)。[GR00T N1.6固定原本LICENSE §3.3の非商用研究・評価制限を正式台帳へ訂正](docs/strategy/100-gr00t-n16-n17-license-and-replacement-audit-2026-11-15.md)（[v43差分](catalog/revisions/v43-2026-11-15.json)）。N1.7はCosmos-Reason2系の別学習済みVLAだが、修正版LICENSE・NOTICEの同一commit、Gatedな外部依存、実機比較が未確定につき研究HOLDであり、削除・重み取得はしない。正規の取得許諾、実HDD、ローカルSHA・完全オフライン復元と**承認済みDL0件**は変更なし。
+
+
 **R98・v42独立生成アーキテクチャ候補比較（2026-11-15）**：[DiffusionGemma 26Bのブロック拡散原本P1／Arete 27B・Ripple 65Bを容量・重複でP2保留](docs/strategy/98-v42-discrete-diffusion-and-november-originals.md)／[3候補一次情報＋DiffusionGemma固定22ファイル候補JSON](catalog/proposals/2026-11-15-r98-diffusiongemma-arete-ripple-original-selection.json)。DiffusionGemma公式BF16は約51.7GB、11 shard・固定repo commit・publisher SHA取得1件で残り未固定、本人HDD・実行ABI・権利未認可。**Ripple NVFP4のHub表示39.6Bは原本65Bの真の学習済み総数ではない**ため量子化モデルの全総数判定を必ずsource modelで検証。正式v42の195/148、取得承認0、重量DL0は変更なし。
 
-**現行v42・2026年11月15日**：[195登録／148有効](catalog/effective-portfolio-2026-11-15-v42.json)（SELECT53＋CONDITIONAL95）。[R94 LTX2.5のGated親・ライセンス必須依存、中国の現行輸出前登録と草案の区別](docs/strategy/94-v42-ltx-parent-gates-interim-export-policy.md)を3既存モデルの取得前ゲートへ反映。新規資産・選定変化0。[148件停止](catalog/readiness/v42-2026-11-15-r94-all148-gates.json)。本人HDD/権限/local SHA/復元・取得承認0。以下過去版。
+**旧v42・2026年11月15日**：[195登録／148有効](catalog/effective-portfolio-2026-11-15-v42.json)（SELECT53＋CONDITIONAL95）。[R94 LTX2.5のGated親・ライセンス必須依存、中国の現行輸出前登録と草案の区別](docs/strategy/94-v42-ltx-parent-gates-interim-export-policy.md)を3既存モデルの取得前ゲートへ反映。新規資産・選定変化0。[148件停止](catalog/readiness/v42-2026-11-15-r94-all148-gates.json)。本人HDD/権限/local SHA/復元・取得承認0。以下過去版。
 
 
 **R96／Hugging Face実配布再監査（2026年11月15日）**：既存v41の[20件Gated全数＋総数未確認9件＋SELECT対照10件＝重複除去38件](docs/strategy/96-v41-huggingface-live-gates-and-regulation.md)をHubモデル／データセット種別に従って再照会。**Gated 20/20一致・ライセンスタグ直接矛盾0件**。個別の本人許諾・実ファイル取得・リポジトリ固定SHA・完全依存・ローカル復元は未検証。[観測JSON](catalog/access/2026-11-15-r96-v41-live-hf38-sample.json)／[静的回帰テスト](tests/test_r96_v41_hf_access_snapshot.py)。**モデル入替0・取得承認0**。
