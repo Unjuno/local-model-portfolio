@@ -1,0 +1,718 @@
+{
+  "schema_version": 1,
+  "manifest_id": "R91_WHISSLE_FP32_RESEARCH_SOURCE",
+  "review_date": "2026-11-15",
+  "current_revision_at_review": "v40-20261115",
+  "asset_kind": "model",
+  "repo_id": "WhissleAI/steer-tts",
+  "selection": "CONDITIONAL_KEEP_ORIGINAL_FP32_FULL_CAPABILITY",
+  "non_executable": true,
+  "acquisition_authorized": false,
+  "source": {
+    "hf_revision": "65ec6a637f4bd9d868064846c69ed85e37d302a0",
+    "hf_api_url": "https://huggingface.co/api/models/WhissleAI/steer-tts/revision/65ec6a637f4bd9d868064846c69ed85e37d302a0?blobs=true",
+    "observed_gated": "auto",
+    "publisher_license": "cc-by-nc-4.0 + Whissle terms (noncommercial, explicit consent)",
+    "model_main_safetensors_parameters": 9585639,
+    "source_all_files": 79,
+    "source_all_files_bytes": 973512551,
+    "publisher_github_code_repo": "WhissleAI/steer-tts",
+    "github_code_pinned_candidate_sha": "5008f8e032f69266c3f37788825cfda3112eab55",
+    "github_license_blob_sha": "a23107815cdf5bb6a54929d68e4ded82084ba27f",
+    "github_dependency_docs": "https://github.com/WhissleAI/steer-tts/blob/5008f8e032f69266c3f37788825cfda3112eab55/docs/c.md",
+    "local_payload_access_verified": false
+  },
+  "scope": {
+    "selected_file_count": 57,
+    "selected_publisher_file_bytes": 767327370,
+    "selected_safetensors_file_count": 9,
+    "selected_safetensors_with_lfs_sha256": 9,
+    "omitted_file_count": 22,
+    "omitted_bytes": 206185181,
+    "included_original_fp32": true,
+    "excluded_int8_quantized_redundant_formats": true,
+    "external_github_code_archive_bytes": null,
+    "local_hdd_capacity_verified": false,
+    "selection_status": "PUBLISHER_FROZEN_FILE_REFERENCE_ONLY_NOT_APPROVED_ACQUISITION",
+    "selected_files": [
+      {
+        "path": ".gitattributes",
+        "bytes": 1519,
+        "hub_blob_sha": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "config.json",
+        "bytes": 111274,
+        "hub_blob_sha": "bf4b1fd3ecd7004c469778b1f6d7129db4df0a59",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "control_stats.json",
+        "bytes": 637845,
+        "hub_blob_sha": "faa59f674248bab5c13c483b0bb8e0f5a39699e1",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "events.safetensors",
+        "bytes": 1495008,
+        "hub_blob_sha": "7cfa6139ec23f1bc9278a91629ec2ecad75d44aa",
+        "publisher_lfs_sha256": "41efbdb102c3033efbf0973b7f5fde6b2991df6e9a7dde9cad674ae549e5ad43",
+        "publisher_lfs_bytes": 1495008,
+        "local_sha_verified": false
+      },
+      {
+        "path": "flow.safetensors",
+        "bytes": 70580400,
+        "hub_blob_sha": "c9db57b0f4f5fc99b152e508dcee4d3190a8c11c",
+        "publisher_lfs_sha256": "585ff2c931811c30d0ec953a947dc23ffb305979471f5be5133a1f2b708c1e90",
+        "publisher_lfs_bytes": 70580400,
+        "local_sha_verified": false
+      },
+      {
+        "path": "inference.py",
+        "bytes": 3692,
+        "hub_blob_sha": "f8f3f6949b4792bc5aa00213d90fd0ac4d892870",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "LICENSE.md",
+        "bytes": 22276,
+        "hub_blob_sha": "c7128f12ff7ae6f6bcdc4b1223a1b4a1971d66a5",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "model.safetensors",
+        "bytes": 38395692,
+        "hub_blob_sha": "c03ae0f35aa1845ccaa8950ccdfb1d7b3f6573fc",
+        "publisher_lfs_sha256": "b67b27763d6f19136d69651b344dffbb819dc38e1a2294ca12e0e285a6830e31",
+        "publisher_lfs_bytes": 38395692,
+        "local_sha_verified": false
+      },
+      {
+        "path": "native/front/gru.bin",
+        "bytes": 741772,
+        "hub_blob_sha": "16da06bb369e2c4e81ee9ffbbd44bbf29df60a8a",
+        "publisher_lfs_sha256": "0cd8b8c3baf1a5000680190e8db4d1a2d3e092377182c41876b106a85a52aa49",
+        "publisher_lfs_bytes": 741772,
+        "local_sha_verified": false
+      },
+      {
+        "path": "native/front/hetero.tsv",
+        "bytes": 69007,
+        "hub_blob_sha": "5d58ff546af8a365245fddb6e0f280415ab31dd8",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "native/front/lexicon.bin",
+        "bytes": 1709144,
+        "hub_blob_sha": "490991bf35510a38049654e8a46fd206f17ceb78",
+        "publisher_lfs_sha256": "7a493737376cfc027622cc611380762ed544a11d83eaf222924b54ffbc742d6a",
+        "publisher_lfs_bytes": 1709144,
+        "local_sha_verified": false
+      },
+      {
+        "path": "native/front/oov.bin",
+        "bytes": 27885,
+        "hub_blob_sha": "619222a5daf6467a710f98297582bc564571ae89",
+        "publisher_lfs_sha256": "3165504f8c154690b2ade69e7ff26489a95cfa7449809d826c6411b83051b317",
+        "publisher_lfs_bytes": 27885,
+        "local_sha_verified": false
+      },
+      {
+        "path": "native/front/SYMBOLS.txt",
+        "bytes": 637,
+        "hub_blob_sha": "8528c621af99e4a7fb29a223cfd593ad12ea6f8d",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "native/front/unicode.bin",
+        "bytes": 10166,
+        "hub_blob_sha": "496897eeea024a5d707474c8fb8e0beef68a6970",
+        "publisher_lfs_sha256": "11ebc8a63194e71576e7cf199d81b2d12474bbdf8c62a07b31c79cd4f6a0e48b",
+        "publisher_lfs_bytes": 10166,
+        "local_sha_verified": false
+      },
+      {
+        "path": "native/minilm_vocab.txt",
+        "bytes": 231508,
+        "hub_blob_sha": "fb140275c155a9c7c5a3b3e0e77a9e839594a938",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "native/minilm.safetensors",
+        "bytes": 90864224,
+        "hub_blob_sha": "8a180857bb7852fd6748f422390b92f440639e71",
+        "publisher_lfs_sha256": "31b0d0d0dd78d718c9e2f332e759c0f06fa141acd82e34618ec0eb670d81eb2e",
+        "publisher_lfs_bytes": 90864224,
+        "local_sha_verified": false
+      },
+      {
+        "path": "native/NOTICE",
+        "bytes": 1561,
+        "hub_blob_sha": "dd72dae955760d11f605cad1d74c9fd5c6c76f0e",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "native/vocos.safetensors",
+        "bytes": 54134728,
+        "hub_blob_sha": "230ddac02c7a8d3705991bc812efc0ef46456bd1",
+        "publisher_lfs_sha256": "e0570b20982ce81c8d02f55a6bc9e8836a8d5f30be176d0dd0576d22e1c4379f",
+        "publisher_lfs_bytes": 54134728,
+        "local_sha_verified": false
+      },
+      {
+        "path": "native/wavlm_sv.safetensors",
+        "bytes": 400945676,
+        "hub_blob_sha": "25554e46ba63214ca757b4328f08dee23453d139",
+        "publisher_lfs_sha256": "6071eea607575d9fea46c50a6c6a60712925a3d2f27692dc1e5b644a07a260e3",
+        "publisher_lfs_bytes": 400945676,
+        "local_sha_verified": false
+      },
+      {
+        "path": "NOTICE",
+        "bytes": 842,
+        "hub_blob_sha": "c8e5d8b6a0fa51d2684b6f3fd6639f8e301fe291",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "pflow.safetensors",
+        "bytes": 98711656,
+        "hub_blob_sha": "06ada5872f0faf1d7b3282b5cf03caaeecd9f480",
+        "publisher_lfs_sha256": "877f81523dfaba5061823f6e6543b83edd88c72a3df724666ce3ee74de259327",
+        "publisher_lfs_bytes": 98711656,
+        "local_sha_verified": false
+      },
+      {
+        "path": "prompt_adapter.safetensors",
+        "bytes": 1993780,
+        "hub_blob_sha": "5623b56e71653914e257af0416cc7ad016650ee5",
+        "publisher_lfs_sha256": "aca34bf753456e469bae22f59217512f8cbe8efb326bfbede1529eeb9e817727",
+        "publisher_lfs_bytes": 1993780,
+        "local_sha_verified": false
+      },
+      {
+        "path": "pyproject.toml",
+        "bytes": 1635,
+        "hub_blob_sha": "13b1d927329f74a2c5c43f79f33ce5eb3e2afe50",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "README.md",
+        "bytes": 33212,
+        "hub_blob_sha": "d9ceafb3e3dd3c93fdf90e8e29c8ac926b62dc62",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "request.schema.json",
+        "bytes": 10410,
+        "hub_blob_sha": "14612c080f89789144edcc6f7d05d9b61530cd5a",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "speaker_vectors.safetensors",
+        "bytes": 5785680,
+        "hub_blob_sha": "7ec64466d35c57f6864bde6a2b896798e792642d",
+        "publisher_lfs_sha256": "edcabfd02dd4a5203309e9b1d6d6adb84d31a18285916238541cf93a0764d4ae",
+        "publisher_lfs_bytes": 5785680,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/__init__.py",
+        "bytes": 598,
+        "hub_blob_sha": "40c267ddfec6fc81c98d289474105d61cc42f131",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/__main__.py",
+        "bytes": 30,
+        "hub_blob_sha": "4e28416e104515e90fca4b69cc60d0c61fd15d61",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/audio.py",
+        "bytes": 1046,
+        "hub_blob_sha": "0a9490c766c5e2f822217acdc4000316fb58d3df",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/cli.py",
+        "bytes": 8991,
+        "hub_blob_sha": "d5c96a778ca22b0e016cf10b3d25cd8fb98f49d3",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/config.py",
+        "bytes": 1678,
+        "hub_blob_sha": "4d95474cb31d77dbc849121c3f1f45c1a346db9a",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/defaults.py",
+        "bytes": 3026,
+        "hub_blob_sha": "ff57cee0cb62fc6481bafadc1a371a19d1f7c914",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/events.py",
+        "bytes": 6523,
+        "hub_blob_sha": "143cf1ec6aa8206ac96ed37d2be6a6cacadbfa2c",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/flow.py",
+        "bytes": 14000,
+        "hub_blob_sha": "949f6c60e91a9301669192d7adac2fdd95a93603",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/markup.py",
+        "bytes": 11118,
+        "hub_blob_sha": "16372970dda465d5628e02ab680cec4bdd26a1d9",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/measure.py",
+        "bytes": 7041,
+        "hub_blob_sha": "6888d43d54fec2600c4bc800d9a7719e88aea8ea",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/model.py",
+        "bytes": 10608,
+        "hub_blob_sha": "67049afe466ee3fdb32f2eb883ce18bbece0035f",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/output.py",
+        "bytes": 11350,
+        "hub_blob_sha": "a6d98b10cb0b4260a529983f047d85f4ddfefe79",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/pipeline.py",
+        "bytes": 18682,
+        "hub_blob_sha": "3169e459e8e40578bbbce65cbb7d1f7245f6d99e",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/player.py",
+        "bytes": 2383,
+        "hub_blob_sha": "17f2ff0ae1ae1211531d96a1ca19e7b7a0c8dd46",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/prompt.py",
+        "bytes": 2937,
+        "hub_blob_sha": "308ff705b927363855d8b32f75781cc9da8ef824",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/quant.py",
+        "bytes": 2622,
+        "hub_blob_sha": "600df5db76f189c39391359bdbef4b870b2531db",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/request.py",
+        "bytes": 5159,
+        "hub_blob_sha": "7d2e69e0cde76e8f1be3b3cf26cbca7956522f56",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/request.schema.json",
+        "bytes": 10410,
+        "hub_blob_sha": "14612c080f89789144edcc6f7d05d9b61530cd5a",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/seqmix.py",
+        "bytes": 5906,
+        "hub_blob_sha": "28cd1890f20c59799b3bbe5afa2cfcad080bc183",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/speaker.py",
+        "bytes": 1175,
+        "hub_blob_sha": "81995d6c21871167ea57960f74c278a27bb7cc44",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "steertts/text.py",
+        "bytes": 12641,
+        "hub_blob_sha": "32b034916f393bf3eb2748670cf06b30b45a8bd5",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "TEST_LOG.md",
+        "bytes": 6949,
+        "hub_blob_sha": "8303fd85d6f186932423c0ccf411bfa006f59271",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "tests/conftest.py",
+        "bytes": 664,
+        "hub_blob_sha": "52b39e006490b3dcac4e09765038193b82e495a6",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "tests/test_defaults.py",
+        "bytes": 3150,
+        "hub_blob_sha": "6c4ba8287e92380a5ab1db6c919526bb719d5369",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "tests/test_events.py",
+        "bytes": 3178,
+        "hub_blob_sha": "86c32abd619d3bed354e4c704fd0093a9ad80782",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "tests/test_int8.py",
+        "bytes": 1972,
+        "hub_blob_sha": "4a708c63778bcc3678a89d64673195dc1f562c6c",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "tests/test_output.py",
+        "bytes": 3302,
+        "hub_blob_sha": "27d6e3c6f1aedb5814ba0ba2770864de5c2253ab",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "tests/test_seqmix.py",
+        "bytes": 1961,
+        "hub_blob_sha": "1e20ce9a38a7916016e9aa45833f8b904d855c72",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "tests/test_synthesis.py",
+        "bytes": 2369,
+        "hub_blob_sha": "21d0f24e9c3890633378c5754a9ac352753b3a8a",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "tests/test_text_request.py",
+        "bytes": 2510,
+        "hub_blob_sha": "46b8d569e433fdbb9f2d179a7f2be8903de76921",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "voices.json",
+        "bytes": 642162,
+        "hub_blob_sha": "7fb7e0c9d8aefb26f8a168230f3589a93403b78f",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      }
+    ],
+    "omitted_files": [
+      {
+        "path": "int8/flow.safetensors",
+        "bytes": 17785248,
+        "hub_blob_sha": "84d7bc20d3c27447f6d5497099784271f6fd4675",
+        "publisher_lfs_sha256": "c54a362bc3de279e1209ba9ae5fab96e430ec2ae1433de91f56f9665f8494a6d",
+        "publisher_lfs_bytes": 17785248,
+        "local_sha_verified": false
+      },
+      {
+        "path": "int8/model.safetensors",
+        "bytes": 9848280,
+        "hub_blob_sha": "49aafafc71bd9f32dd7e6995de95c0a1fbc7ec50",
+        "publisher_lfs_sha256": "67d1469b0751b6ae193894ce1612c9ec91f57f9a0b2151771eabc53a8eae714c",
+        "publisher_lfs_bytes": 9848280,
+        "local_sha_verified": false
+      },
+      {
+        "path": "int8/pflow.safetensors",
+        "bytes": 24878040,
+        "hub_blob_sha": "0ef1519757c80c0fdf814202a0320602a4d2fb99",
+        "publisher_lfs_sha256": "83c419128d9fa0e4fb03ecbc110e2caaed47fa1e51c05367dba3e0fc8b47fc71",
+        "publisher_lfs_bytes": 24878040,
+        "local_sha_verified": false
+      },
+      {
+        "path": "int8/prompt_adapter.safetensors",
+        "bytes": 503356,
+        "hub_blob_sha": "e337e845a3d5b44f5405eed527614125a3629a21",
+        "publisher_lfs_sha256": "b09f25b15e5017925f7a4c52e241a45b753a3c34098c4b8584afe62c475b6885",
+        "publisher_lfs_bytes": 503356,
+        "local_sha_verified": false
+      },
+      {
+        "path": "int8/speaker_vectors.safetensors",
+        "bytes": 1452330,
+        "hub_blob_sha": "3e843044c3f549115d5c5c748ff057226c6d0c00",
+        "publisher_lfs_sha256": "1e5a8de163dc2b38dc392169842c2c6008f4d6d636d8a9b36df19b13ea3f8236",
+        "publisher_lfs_bytes": 1452330,
+        "local_sha_verified": false
+      },
+      {
+        "path": "leaderboard/steertts/Dockerfile",
+        "bytes": 961,
+        "hub_blob_sha": "d69deb6d909a416fcbf274a3f1acacc784a729b6",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "leaderboard/steertts/run_eval.py",
+        "bytes": 6989,
+        "hub_blob_sha": "33c328838f16f7cb3dcdeabde6b0dc6bb4110e96",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "leaderboard/steertts/submit_jobs.sh",
+        "bytes": 1500,
+        "hub_blob_sha": "23df8f750141db44593f34ef77541a5ccd807ec3",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "native/int8/minilm.safetensors",
+        "bytes": 22873628,
+        "hub_blob_sha": "a2221b4711b745fa8039fcf33ea0eb511f11569e",
+        "publisher_lfs_sha256": "66fc95f4a342caf90492f420b89dd4375bad96f2d6a96eb5fbbfb922382e3c95",
+        "publisher_lfs_bytes": 22873628,
+        "local_sha_verified": false
+      },
+      {
+        "path": "native/int8/vocos.safetensors",
+        "bytes": 13628584,
+        "hub_blob_sha": "724ce7373db68a2dbf385fe8fa2ad2d812c98747",
+        "publisher_lfs_sha256": "9fcdd375e866c4c40f19d24aaf2e585e6aee78eeda0452ef4733ec70a11a7d7f",
+        "publisher_lfs_bytes": 13628584,
+        "local_sha_verified": false
+      },
+      {
+        "path": "native/int8/wavlm_sv.safetensors",
+        "bytes": 114770602,
+        "hub_blob_sha": "41fa900b2e3a2a5795ab4cd12778a10522f73b19",
+        "publisher_lfs_sha256": "0612a92a566a2eda6cb563ef28b6c4f0518fcb0f2377928a96a91708330019a9",
+        "publisher_lfs_bytes": 114770602,
+        "local_sha_verified": false
+      },
+      {
+        "path": "samples/cmp_intro_voice_1361.mp3",
+        "bytes": 50733,
+        "hub_blob_sha": "dd1e4daf82b5a00c0f53dddb7f5612a5bc582eb3",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "samples/cmp_intro_voice_1688.mp3",
+        "bytes": 56205,
+        "hub_blob_sha": "b886ab87bc1e0b5fa60769fa1a180180343e2f24",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "samples/cmp_story_voice_1361.mp3",
+        "bytes": 51597,
+        "hub_blob_sha": "3b635a9e072e3d89b24fb8cdf620a0170d4673dd",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "samples/cmp_story_voice_1688.mp3",
+        "bytes": 52749,
+        "hub_blob_sha": "fbb267bb72a766c77bd35747d21b80a0699bd0e0",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "samples/steer_markup.mp3",
+        "bytes": 61965,
+        "hub_blob_sha": "2394b9f011a8840d2698b73ad2e66e8292519310",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "samples/steer_plain.mp3",
+        "bytes": 21357,
+        "hub_blob_sha": "ab8bafa1d14eed6c4fb715c0d0e5a4bda2614dc2",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "samples/steer_prompt.mp3",
+        "bytes": 27405,
+        "hub_blob_sha": "9a3f8ea54f1892596b86924588e03ce2546ccaea",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "samples/steer_question_rise.mp3",
+        "bytes": 21645,
+        "hub_blob_sha": "07f28f80556be8a57690b69401f98c5665640858",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "samples/steer_sad_tag.mp3",
+        "bytes": 27981,
+        "hub_blob_sha": "1ed0285a9b8b2f181937949fd0c199d91a1fdac7",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "samples/steer_slow_soft.mp3",
+        "bytes": 34893,
+        "hub_blob_sha": "ee2177f064f899f4cc52b8bb903b20afdf6afdaf",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      },
+      {
+        "path": "samples/steer_whisper_tag.mp3",
+        "bytes": 29133,
+        "hub_blob_sha": "c6ee3fbb22b947ca92b1a6a347d059569d6196a0",
+        "publisher_lfs_sha256": null,
+        "publisher_lfs_bytes": null,
+        "local_sha_verified": false
+      }
+    ]
+  },
+  "parameter_screen": {
+    "main_safetensors_exact_hf_metadata": 9585639,
+    "publisher_component_estimates_millions": {
+      "acoustic": 9.59,
+      "vocos": 13.53,
+      "flow_refiner": 17.64,
+      "prompted_flow": 24.67,
+      "miniLM": 22.7,
+      "wavlm": 101,
+      "prompt_adapter": 0.5,
+      "speaker_vectors": 1.45
+    },
+    "nominal_sum_all_named_component_millions": 191.08,
+    "remark": "Illustrative sum of all documented named models including mutually exclusive paths; NOT a certified upper bound or full safetensors tensor census. Publisher main 9,585,639 is not the full inference pipeline.",
+    "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK"
+  },
+  "rights": {
+    "status": "GATED_AND_NONCOMMERCIAL",
+    "individual_entitlement_verified": false,
+    "terms_acceptance_verified": false,
+    "full_license_hf_url": "https://huggingface.co/WhissleAI/steer-tts/blob/65ec6a637f4bd9d868064846c69ed85e37d302a0/LICENSE.md",
+    "full_license_git_url": "https://github.com/WhissleAI/steer-tts/blob/5008f8e032f69266c3f37788825cfda3112eab55/LICENSE",
+    "separate_event_bank_terms": "event recordings CC BY-SA 4.0 and CC0 per publisher NOTICE; review distribution and attribution",
+    "reproduction_and_voice_consent_required": true,
+    "code_license_current": "Whissle's current GitHub LICENSE and HF pinned LICENSE.md both state code + weights + voices non-commercial; earlier cached HF README text describing MIT is stale/conflicting, not basis for commercial rights"
+  },
+  "reproducibility": {
+    "runtime": "C11 native library or Python/PyTorch; PUBLISHER NOT OWNER BENCHMARKS",
+    "backend": "C11 CPU for offline original fp32; Python torch/vocos/transformers alternative",
+    "clock": null,
+    "batch": null,
+    "tested_on_owner_hardware": false,
+    "extra_code_archive_required": true,
+    "required_native_helpers": [
+      "native/vocos.safetensors",
+      "native/minilm.safetensors",
+      "native/wavlm_sv.safetensors",
+      "native/minilm_vocab.txt",
+      "native/front/"
+    ],
+    "full_offline_restore_verified": false
+  },
+  "decision": "Continue conditional insurance research, DO NOT add ordinary quantizations, DO NOT approve acquisition until entitlement/license/ABI and owner storage verified.",
+  "notes": "Model package 79 files includes redundant int8 and sample/reference media. Preserve original FP32 plus native helper weights and license/NOTICE; C runtime code is separate and not counted in HF publisher byte total."
+}
