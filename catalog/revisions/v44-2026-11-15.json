@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "revision_id": "v44-20261115",
+  "previous_revision_id": "v43-20261115",
+  "decision_date": "2026-11-15",
+  "target_branch": "main",
+  "kind": "ONE_NONREDUNDANT_DISTINCT_TRAINED_ACTION_WORLD_MODEL_CONDITIONAL_SELECTION",
+  "previous_asset_count": 195,
+  "previous_active_count": 148,
+  "pinned_publisher_manifest": "manifests/drafts/v43-2026-11-15-pan2-original-source.candidate.json",
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "IFM/PAN2",
+      "url": "https://huggingface.co/IFM/PAN2",
+      "position": 196,
+      "group": "汎用・時間/行動条件付き世界状態シミュレータ原本",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "行動・カメラ・時間付き世界状態記述を条件とする29.202B双流MMDiTを独立事前学習して未来動画を生成する汎用世界モデル。既存Wan2.2一般動画、Cosmos3車両/双腕シミュレーション、Praxis DROID行動制御と異なる学習済み目的・重みを保全する。既存量子化複製ではない。",
+      "quality_positive": "IFM公式の52ファイル86,174,243,428byteからデモ17ファイル92,149,370byteを除外し、35ファイル86,082,094,058byteを特定。独立原本transformer14 shards、Qwen3.5-9B frozen text encoder4、Wan VAE1の計19 LFS SHA256を固定。作者が300単一動作・200複数計画プロンプト・140人間評価を公表。Apache2.0原文・第三者NOTICEあり。",
+      "quality_negative": "独立測定未実施。概念reasoner LLMは可換な外部サービス/モデルであり同一HF repoには含まれない。推奨pan2 guardrailも別repo。所有者の容量・依存実行環境・計算機能力・本人物理ファイル/ハッシュ・正当な利用行為未検証。86GBは実際に取得した重量ではない。",
+      "evidence_date": "2026-11-15",
+      "evidence_kind": "FIRST_PARTY_PINNED_35_SOURCE_FILES_19_LFS_SHA_AUTHOR_CODE_THIRD_PARTY_LICENSES",
+      "evidence_urls": [
+        "https://huggingface.co/api/models/IFM/PAN2/revision/82f54c6cea3e20a9c451b61d7360016e5970503d?blobs=true",
+        "https://huggingface.co/IFM/PAN2/blob/82f54c6cea3e20a9c451b61d7360016e5970503d/THIRD_PARTY_LICENSES",
+        "https://github.com/ifm-ai/PAN2/blob/0fb907b6e16a82ead6d691d1de2eef6299c71e9a/README.md",
+        "https://arxiv.org/abs/2507.05169"
+      ],
+      "observed_access": "public, gated:false, anonymous first-party publisher API",
+      "license_metadata": "Apache-2.0 PAN2; Apache-2.0 Wan2.2/Qwen3.5; third-party NOTICE",
+      "license_text_reviewed": true,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "82f54c6cea3e20a9c451b61d7360016e5970503d",
+      "upstream_all_files_bytes_observed": 86174243428,
+      "upstream_weights_bytes_observed": 86061842504,
+      "upstream_file_count_observed": 52,
+      "upstream_lfs_sha256_count": 19,
+      "candidate_selected_source_file_count": 35,
+      "candidate_selected_source_file_bytes": 86082094058,
+      "source_manifest_path": "manifests/drafts/v43-2026-11-15-pan2-original-source.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 29201996992,
+        "evidence_kind": "Publisher main safetensors count; 9.65B frozen Qwen3.5 text encoder and BF16 WanVAE included in one repo, less than150B total screen. Exact complete learned tensor census not locally verified.",
+        "main_only_count": true,
+        "exact_pipeline_total_verified": false,
+        "research_screen_only": true,
+        "review_date": "2026-11-15",
+        "quantized_exception_requested": false
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 196,
+        "category": "action_conditioned_general_world_simulation",
+        "scenario_status": "Future distribution restrictions hypothetical, no actual PAN2 model-specific restriction verified"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Original action-conditioned general world model, trained 29.2B visual diffusion checkpoint",
+        "must_preserve": [
+          "14 original BF16 transformer weight shards and index",
+          "4 Qwen3.5-9B frozen text encoder shard set and tokenizer",
+          "Wan2.2 BF16 VAE and scheduler",
+          "Apache LICENSE / third party NOTICE and source config",
+          "ifm-ai/PAN2 code fixed at 0fb907b6e16a82ead6d691d1de2eef6299c71e9a"
+        ],
+        "external_learned_and_software_dependencies": [
+          "Optional compatible conceptual reasoner LLM reused only after offline test",
+          "Recommended Qwen3Guard-Gen-4B and Q16 video classifier not present in source 35",
+          "Pinned torch2.12/CUDA13.2/ModularDiffusers or source native runtime; license/code dependency audit pending"
+        ],
+        "reuse_vae_publisher_sha256": "62cd18f19438e35b32ac63020e2852f566e9b02f46b6cdbd87972a356e3c6f4b",
+        "reuse_existing_user_archive_sha_verified": false,
+        "excluded_duplicate_or_optional_formats": [
+          "17 demo assets 92.149MB",
+          "No Wan2.2 native .pth dedup by name, its SHA differs",
+          "No extra quant or second 29B format"
+        ],
+        "fixed_manifest_complete": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 86174243428,
+        "source_bytes_are_not_selected_bytes": true,
+        "source_candidate_selected_bytes": 86082094058,
+        "hw_tested_on_user_machine": false,
+        "owner_actual_disk_measured": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    }
+  ],
+  "not_adopted": [
+    {
+      "repo_id": "Edge0/Edge0-145B-q3k",
+      "decision": "HOLD_RUNTIME_LICENSE_AND_CAPACITY",
+      "reason": "145B independently retrained latentMoE is distinct but ~105GB repository incl learned PLE and custom Edge0+Qwen terms; CUDA13 owner system and total full learned components unverified; do not auto-copy same-family 120B/NVFP4."
+    },
+    {
+      "repo_id": "MiniMaxAI/MiniMax-H3-Image",
+      "decision": "HOLD_ORIGINAL_LICENSE_DEDUP_STORAGE",
+      "reason": "204GB repository includes 12-shard two representations of transformer, 27B image prompt enhancer and custom territorial AUP; separately selected Pruna P-H3 99GB. Assess independently trained value and owner free space before active selection."
+    }
+  ],
+  "selection_exchanges": [],
+  "prior_assets_removed": 0,
+  "download_authorizations_created": 0,
+  "model_payload_downloads": 0,
+  "unsafe_code_executed": false
+}
