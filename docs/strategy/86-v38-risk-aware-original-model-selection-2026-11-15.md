@@ -23,7 +23,7 @@ Praxisの一次計算構造は[Runway技術報告](https://runway.com/research/p
 
 Praxisの必須外部学習済み依存は以下のとおり。
 - [Wan-AI/Wan2.2-TI2V-5B](https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B) の`Wan2.2_VAE.pth`：旧ポートフォリオで選択済み。公開元固定rev`921dbaf3f1674a56f47e83fb80a34bac8a8f203e`、**2,818,839,170 byte**、SHA256 `20eb789667fa5e60e7516bf509512f6cb61f01b0aa0695eadaea930c13892b36`。現時点では同じ公開元ファイルとして**追加source計上しない**。実HDDに同一物があることは未検証。
-- [Qwen/Qwen3.5-2B](https://huggingface.co/Qwen/Qwen3.5-2B)：学習済みテキストencoderの**追加依存**。固定rev`15852e8c16360a2fea060d615a32b45270f8a8fc`、**13ファイル・4,571,274,023 byte**。**ポートフォリオの独立148番目の有効資産として数えず**、Praxisに紐づく必須依存として固定。選択対象とモデル評価を混同しない。
+- [Qwen/Qwen3.5-2B](https://huggingface.co/Qwen/Qwen3.5-2B)：学習済みテキストencoderの**追加依存**。固定rev`15852e8c16360a2fea060d615a32b45270f8a8fc`、**13ファイル・4,571,274,023 byte**。**ポートフォリオの独立有効資産として数えず**、Praxisに紐づく必須依存として固定。選択対象とモデル評価を混同しない。
 
 ### 重複・入替の判断
 
@@ -58,7 +58,7 @@ Praxisの必須外部学習済み依存は以下のとおり。
 
 ## 4. H / T / D / C / U と ERROR CHECK
 
-- **H**：Haruの全二重会話とPraxisの動画＋ロボット動作共同生成は、既存141?種類の汎用モデルだけでは重み同一性・タスクが再現できない独自学習成果である。
+- **H**：Haruの全二重会話とPraxisの動画＋ロボット動作共同生成は、既存の汎用モデルだけでは重み同一性・タスクが再現できない独自学習成果である。
 - **T**：HF固定revisionで**2原本30ファイル＋Qwen依存13ファイルの全43件**を全数検査、公式GitHubコード2 commit、他に既存Wan VAEのSHA照合。最小`n_min=43`。出典・権利・パラメータ・依存が確定しなければ取得停止。
 - **D**：非実行の原本source scope・distinct task研究選定はPASS。HDD・ローカルhash・個別Gated許諾・実機復元はUNCERTAIN（全件承認0）。保存不可の法的条件やSHA不一致はFAIL/STOP。
 - **C**：Haruの全二重特性が既存Qwen Omniと独立評価で同等、Praxisの学習済みactionが既存のロボットVLAを上回らず保存価値不足、必要依存が欠ける。
