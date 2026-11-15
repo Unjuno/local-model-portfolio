@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "revision_id": "v39-20261115",
+  "previous_revision_id": "v38-20261115",
+  "decision_date": "2026-11-15",
+  "target_branch": "main",
+  "status": "ONE_NONREDUNDANT_WORLD_MODEL_RESEARCH_CONDITIONAL",
+  "source_basis": "HF publisher metadata, author fixed GitHub, arXiv:2607.11643",
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "XiaomiRobotics/Xiaomi-Robotics-U0-4B",
+      "url": "https://huggingface.co/XiaomiRobotics/Xiaomi-Robotics-U0-4B",
+      "position": 194,
+      "group": "多視点ロボット世界生成・UNIS自己回帰4B原本",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "XiaomiのUNIS 4Bはロボット多視点Scene Gen/TransferとT2I/X2Iを単一自己回帰トークン体系で学習した独立原本。既存Wan2.2 TI2VやCosmos Video2Worldとは学習目的・重み・入出力が同一でない。4Bのみ研究採用、Sequence/34B/FlashARは重複回避で保留。",
+      "risk_and_alternative_assessment": "2026-11-15 HF公開掲載、UNIS、5,082.1M主モデル、Apache2.0メタ。作者固定GitHub commit e722003980958f242203af265718ee980b834debに4B eager ARと外部BAAI VisionTokenizer依存。公式ModelScope配布は同一revision・SHA未照合。規制予定は未確認。",
+      "quality_positive": "原論文arXiv:2607.11643、作者固定推論コードでScene Gen/Transferと独立学習目標を確認。必須VQは別学習済み455.3M。",
+      "quality_negative": "固定モデルrevision・全シャードSHA/選択byte・全学習済み総数・コード/モデル/LICENSEの整合・実機性能/ABI/本人HDDは未確認。H20上の38B FlashAR高速化結果を4Bに転用しない。",
+      "evidence_date": "2026-11-15",
+      "evidence_kind": "HF_PUBLISHER_MODEL_METADATA_PINNED_AUTHOR_GITHUB_AND_PRIMARY_PAPER",
+      "evidence_urls": [
+        "https://huggingface.co/XiaomiRobotics/Xiaomi-Robotics-U0-4B",
+        "https://huggingface.co/BAAI/Emu3.5-VisionTokenizer",
+        "https://github.com/XiaomiRobotics/Xiaomi-Robotics-U0/blob/e722003980958f242203af265718ee980b834deb/README.md",
+        "https://github.com/XiaomiRobotics/Xiaomi-Robotics-U0/blob/e722003980958f242203af265718ee980b834deb/inference/README.md",
+        "https://arxiv.org/abs/2607.11643"
+      ],
+      "observed_access": "public_listed_not_user_entitlement_or_file_access_verified",
+      "license_metadata": "apache-2.0",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": null,
+      "upstream_all_files_bytes_observed": null,
+      "upstream_weights_bytes_observed": null,
+      "upstream_file_count_observed": null,
+      "modelscope_official_alternate": "https://modelscope.cn/models/XiaomiRobotics/Xiaomi-Robotics-U0-4B",
+      "modelscope_same_revision_sha_verified": false,
+      "parameter_gate": {
+        "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+        "total_parameters": null,
+        "reported_main": 5082100000,
+        "reported_required_vq": 455300000,
+        "known_two_component_sum": 5537400000,
+        "evidence_kind": "HF metadata on two major pretrained components only, full learned pipeline unknown",
+        "evidence_urls": [
+          "https://huggingface.co/XiaomiRobotics/Xiaomi-Robotics-U0-4B",
+          "https://huggingface.co/BAAI/Emu3.5-VisionTokenizer"
+        ],
+        "review_date": "2026-11-15",
+        "note": "No model download/lock until same fixed source revision full tensor and external learned dependencies counted."
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 194,
+        "category": "embodied_multiview_unis",
+        "scenario_status": "future model-weight restriction is a hypothetical stress scenario, not a confirmed ban",
+        "current_access_evidence_date": "2026-11-15",
+        "rights_gate": "model_license_and_VQ_rights_unverified",
+        "selection_eligibility": "RESEARCH_ONLY_BLOCK_FINAL_LOCK"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "4B UNIS autoregressive embodied multi-view Scene Gen/Transfer original",
+        "must_preserve": [
+          "Xiaomi 4B exact original model all shards+immutable hashes",
+          "BAAI/Emu3.5-VisionTokenizer exact learned VQ and config/tokenizer",
+          "XiaomiRobotics/Xiaomi-Robotics-U0 code commit e722003980958f242203af265718ee980b834deb",
+          "all original LICENSE and third party notices; model/processor/task configs"
+        ],
+        "external_learned_and_software_dependencies": [
+          "BAAI/Emu3.5-VisionTokenizer publisher 455.3M; revision/rights unknown",
+          "Python3.10 eager AR; third-party runtime versions/ABI unknown",
+          "Depth Anything 3 only optional for RGB Transfer input"
+        ],
+        "excluded_duplicate_or_optional_formats": [
+          "XiaomiRobotics/Xiaomi-Robotics-U0-4B-Sequence",
+          "XiaomiRobotics/Xiaomi-Robotics-U0 (34B sibling)",
+          "XiaomiRobotics/Xiaomi-Robotics-U0-FlashAR (38B)"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "source_bytes_are_not_selected_bytes": true,
+        "selected_file_bytes_final": null,
+        "hw_tested_on_user_machine": false,
+        "baseline_gpu_8gb_feasibility": "NOT_MEASURED",
+        "estimated_complete_peak_ram_bytes": null
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    }
+  ],
+  "not_adopted": [
+    {
+      "repo_id": "XiaomiRobotics/Xiaomi-Robotics-U0-4B-Sequence",
+      "reason": "Distinct sequential trained model, incremental uniqueness not yet demonstrated"
+    },
+    {
+      "repo_id": "XiaomiRobotics/Xiaomi-Robotics-U0",
+      "reason": "34B same family, no measured gain vs compact original"
+    },
+    {
+      "repo_id": "XiaomiRobotics/Xiaomi-Robotics-U0-FlashAR",
+      "reason": "38B accelerated sibling; publisher H20 speed is not 4B benchmark"
+    }
+  ],
+  "existing_asset_changes": 0,
+  "new_total_learnt_parameter_count_verified": false,
+  "new_selected_bytes_verified": false,
+  "archive_target_bytes": 4000000000000,
+  "minimum_free_bytes": 200000000000,
+  "download_authorizations_created": 0
+}
