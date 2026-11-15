@@ -1,0 +1,471 @@
+{
+  "schema_version": 1,
+  "round": "R88",
+  "observed_date_jst": "2026-11-15",
+  "repo": "Unjuno/local-model-portfolio",
+  "basis": "LIVE_HUB_IMMUTABLE_METADATA_AND_AUTHOR_LICENCES_NON_EXECUTABLE",
+  "scope": [
+    "GroundingPI/GroundingPI",
+    "UBTECH-Robotics/Thinker-WM"
+  ],
+  "author_sources_read": true,
+  "weight_payload_fetched": false,
+  "local_sha_verified": false,
+  "user_rights_verified": false,
+  "authorizations_added": 0,
+  "decisions": [
+    {
+      "repo_id": "GroundingPI/GroundingPI",
+      "status": "PROMOTE_FROM_RESEARCH_HOLD_TO_CONDITIONAL_PORTFOLIO_CANDIDATE",
+      "reason": "Distinct pretrained 4.843664384B visual-grounding learned representation with explicit point/box coordinate token outputs, separate from segmenters, OCR-only and robot-action models. Full official BF16 original and code 28-file scope available with original SHA.",
+      "revision": "afe658ba07cc47168371d69cc66b40ae9dcede7c",
+      "observed_ungated": true,
+      "original_weights_sha256": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "2ff67831e10766e557311324b3ed5b31864baeb8363a5aef07e876c69afa6de1",
+          "bytes": 4995018360
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "08137c2be794e4932acfca2adac89e290f5ec0b3bb60d63ee7fb1ddc6a9501d2",
+          "bytes": 4692384808
+        }
+      ],
+      "publisher_license_scope": "Apache-2.0 original contributions + Kimi K3 upstream and derived-work commercial-service/attribution conditions",
+      "license_not_full_cleared": true,
+      "expected_added_repo_source_bytes": 9704102624,
+      "expected_original_weight_file_bytes": 9687403168,
+      "model_total_params_from_hf_safetensors": 4843664384,
+      "code_revision": "98641f0b8ed94a091f1457e0e624c49c0ebf3876",
+      "extra_software_dependencies": [
+        "GroundingPI repo embedded HF custom model code; developer copy also available at GitHub fixed code commit",
+        "bundled patched transformers 5.7 and third_party manifest patches",
+        "vLLM 0.18.x and validated PyTorch backend with correct accelerator kernel",
+        "MoonViT-V2 Kimi-derived vision code license text",
+        "tokenizer and coordinate vocabulary"
+      ]
+    },
+    {
+      "repo_id": "UBTECH-Robotics/Thinker-WM",
+      "status": "RETAIN_RESEARCH_HOLD_NOT_PORTFOLIO_ADDED",
+      "reason": "Unique joint RGB-depth-action output but overlaps existing Praxis DROID and Cosmos multi-modal work; safe static archival of Python .bin and CC BY-NC-SA conditions plus full code/CPU-GPU and independent headroom not yet validated.",
+      "revision": "daaa41944a9486e3f7be04cae353120b0f7f6e3c",
+      "observed_ungated": true,
+      "source_repo_files": 18,
+      "source_repo_visible_bytes": 27854456741,
+      "checkpoint": {
+        "path": "model_weights/checkpoint/pytorch_model_0.bin",
+        "bytes": 25022451471,
+        "lfs_sha256": "a9c377f8c4aee9b55d494d31a447ecfcbf95b39e485e7863920397ff136f30b5"
+      },
+      "reused_existing_VAE": {
+        "path": "model_weights/wan/Wan2.2_VAE.pth",
+        "bytes": 2818839170,
+        "lfs_sha256": "20eb789667fa5e60e7516bf509512f6cb61f01b0aa0695eadaea930c13892b36",
+        "existing_asset": "Wan-AI/Wan2.2-TI2V-5B",
+        "local_file_reuse_verified": false
+      },
+      "rights": "CC BY-NC-SA 4.0 as announced by publisher, legal permissions not signed off",
+      "critical_nonweight_dep": "Qwen3-VL configs and tokenizer; model main checkpoint includes VLM weights, no redundant full Qwen3-VL checkpoint",
+      "code_revision": "44cdb519d73c16bb63738e5dd66f84ede21dae12",
+      "runtime": "Python>=3.10, torch>=2.4, transformers>=4.57, flash-attn>=2.6 CUDA; no code executed"
+    }
+  ],
+  "ground": {
+    "revision": "afe658ba07cc47168371d69cc66b40ae9dcede7c",
+    "license_tag": "other",
+    "license_name": "apache-2.0-with-upstream-kimi-k3",
+    "model_public": true,
+    "model_gated": true,
+    "observed_source_file_count": 37,
+    "source_files_excluding_nonessential_demo_assets": 28,
+    "selected_candidate_bytes": 9704102624,
+    "all_source_current_files_bytes": 9805907792,
+    "not_selected_demo_asset_bytes": 101805168,
+    "weight_metadata": {
+      "index_parameters": 4843664384,
+      "index_tensor_payload_bytes": 9687328768,
+      "weights_file_bytes": 9687403168,
+      "headers_overhead_bytes": 74400,
+      "dtype": "BF16",
+      "source_shards": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "bytes": 4995018360,
+          "sha256": "2ff67831e10766e557311324b3ed5b31864baeb8363a5aef07e876c69afa6de1"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "bytes": 4692384808,
+          "sha256": "08137c2be794e4932acfca2adac89e290f5ec0b3bb60d63ee7fb1ddc6a9501d2"
+        }
+      ]
+    },
+    "files": [
+      {
+        "path": ".gitattributes",
+        "bytes": 2005,
+        "git_blob_sha1": "394836278bd63a0a08e72b6f767f4899b17cae3b",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "LICENSE",
+        "bytes": 1014,
+        "git_blob_sha1": "de58d8b266a629f2591dcf7dac50deddc4af06ec",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "LICENSE-Apache-2.0",
+        "bytes": 11358,
+        "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "LICENSE-Kimi-K3",
+        "bytes": 3065,
+        "git_blob_sha1": "97c0111bba229b0981b1d74e34bacef723ca8f7b",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "README.md",
+        "bytes": 29350,
+        "git_blob_sha1": "047a32c65570c79e96bdcc33ca71b9b1e02b5825",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "added_tokens.json",
+        "bytes": 19615,
+        "git_blob_sha1": "e1a99aee7fab2149ca02e88e062b753d75c29bf8",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "chat_template.jinja",
+        "bytes": 1017,
+        "git_blob_sha1": "6c226632394ae7474b0d4b13e15793eac2e21ee9",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "checksums.sha256",
+        "bytes": 2731,
+        "git_blob_sha1": "41d3541e3320d559bfef9f63208341163c7c7190",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "config.json",
+        "bytes": 3882,
+        "git_blob_sha1": "bf5af5318af53d17d29b825ba7fe555ba0571d4d",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "configuration_groundingpi.py",
+        "bytes": 7572,
+        "git_blob_sha1": "e2116b644841b5dcd82daba91c889539ad227d2e",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "configuration_groundingpi_vision.py",
+        "bytes": 11500,
+        "git_blob_sha1": "7da6a5be20021b4251de860ac8a5ab04528d0388",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "generation_config.json",
+        "bytes": 226,
+        "git_blob_sha1": "c427089686480a110c92692944c1dfcad7ad6ef2",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "image_processing_groundingpi.py",
+        "bytes": 8091,
+        "git_blob_sha1": "ecccaf53b2e9f0272e85c01a417f4ae94477c0cf",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "media_utils.py",
+        "bytes": 13844,
+        "git_blob_sha1": "e8b2ae127e254e364e6b568b1093a7e12ac576e0",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "merges.txt",
+        "bytes": 1671853,
+        "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "model-00001-of-00002.safetensors",
+        "bytes": 4995018360,
+        "git_blob_sha1": "d5266a6fb4a61091db6e52108723b20491305993",
+        "publisher_lfs_sha256": "2ff67831e10766e557311324b3ed5b31864baeb8363a5aef07e876c69afa6de1",
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "model-00002-of-00002.safetensors",
+        "bytes": 4692384808,
+        "git_blob_sha1": "d1842c60e3267be4d848ff84d57b12dfc6c74ae2",
+        "publisher_lfs_sha256": "08137c2be794e4932acfca2adac89e290f5ec0b3bb60d63ee7fb1ddc6a9501d2",
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "model.safetensors.index.json",
+        "bytes": 55711,
+        "git_blob_sha1": "b66eb74263c30110e71df010384f816cd5458aca",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "modeling_groundingpi.py",
+        "bytes": 76484,
+        "git_blob_sha1": "788adc52a6b28d3520b0657472a50f4904ce4911",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "modeling_groundingpi_vision.py",
+        "bytes": 54539,
+        "git_blob_sha1": "f139f1e6e35bc3c49e6ee076d85795bfd39bbbbd",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "preprocessor_config.json",
+        "bytes": 944,
+        "git_blob_sha1": "2f675044439d4564f80ec990ce900416b844ebe6",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "processing_groundingpi.py",
+        "bytes": 5227,
+        "git_blob_sha1": "2880acb0281273d365f100e4ca07fc6d235e6f4a",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "requirements.txt",
+        "bytes": 75,
+        "git_blob_sha1": "ddf4c29b6b5aa0083d16ec4f0290a0cbe8d96bf4",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "special_tokens_map.json",
+        "bytes": 141279,
+        "git_blob_sha1": "0980b88ffa996dfbafe3eb9e457eae5e892637db",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "streammind_gate.py",
+        "bytes": 5102,
+        "git_blob_sha1": "75dcbd63d0367f23aee474c6323d9840fabde3b8",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "tokenizer.json",
+        "bytes": 11604725,
+        "git_blob_sha1": "c68c657e91a21484ae13deb8af33c453e5bda136",
+        "publisher_lfs_sha256": "1a45e3949a652ba4fa8e65017b134404adee1146e1c61fa05e55cdcfa1279e01",
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "tokenizer_config.json",
+        "bytes": 191414,
+        "git_blob_sha1": "41d8a4535bff97569ccb9da1b7bfe2dfb2830f66",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "vocab.json",
+        "bytes": 2776833,
+        "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+        "publisher_lfs_sha256": null,
+        "downloaded": false,
+        "local_sha_verified": false
+      }
+    ],
+    "publisher_sources": [
+      "https://huggingface.co/api/models/GroundingPI/GroundingPI/revision/afe658ba07cc47168371d69cc66b40ae9dcede7c?blobs=true",
+      "https://huggingface.co/GroundingPI/GroundingPI/raw/afe658ba07cc47168371d69cc66b40ae9dcede7c/LICENSE",
+      "https://huggingface.co/GroundingPI/GroundingPI/raw/afe658ba07cc47168371d69cc66b40ae9dcede7c/LICENSE-Kimi-K3",
+      "https://huggingface.co/GroundingPI/GroundingPI/raw/afe658ba07cc47168371d69cc66b40ae9dcede7c/model.safetensors.index.json",
+      "https://github.com/groundingpi/GroundingPI/tree/98641f0b8ed94a091f1457e0e624c49c0ebf3876",
+      "https://arxiv.org/abs/2609.39601"
+    ],
+    "legal_text_read": true,
+    "kimi_conditions": "Preserve notice; Model-as-a-Service companies and affiliates above USD20M revenue over any consecutive 12 months require separate commercial agreement, large products must display Kimi K3 under specified thresholds, internal use exception for sections 2/3; not an unconditional Apache-only grant.",
+    "full_independent_runtime_verified": false,
+    "license_and_notice_full_chain_finalized": false,
+    "author_perf_only": true
+  },
+  "thinker": {
+    "revision": "daaa41944a9486e3f7be04cae353120b0f7f6e3c",
+    "license_tag": "attribution-noncommercial-sharealike-4.0-international",
+    "model_public": true,
+    "model_gated": false,
+    "observed_source_file_count": 18,
+    "current_repo_file_bytes": 27854456741,
+    "files": [
+      {
+        "path": ".gitattributes",
+        "bytes": 1572,
+        "lfs_sha256": null
+      },
+      {
+        "path": "LICENSE",
+        "bytes": 20912,
+        "lfs_sha256": null
+      },
+      {
+        "path": "README.md",
+        "bytes": 8007,
+        "lfs_sha256": null
+      },
+      {
+        "path": "assets/logo1.png",
+        "bytes": 1618609,
+        "lfs_sha256": "68f25ea3d839b1db7d2d63c828f394828199037763d617fbb025793e9697a416"
+      },
+      {
+        "path": "model_weights/action_stats.json",
+        "bytes": 9619,
+        "lfs_sha256": null
+      },
+      {
+        "path": "model_weights/checkpoint/pytorch_model_0.bin",
+        "bytes": 25022451471,
+        "lfs_sha256": "a9c377f8c4aee9b55d494d31a447ecfcbf95b39e485e7863920397ff136f30b5"
+      },
+      {
+        "path": "model_weights/qwen3_vl/README.md",
+        "bytes": 7136,
+        "lfs_sha256": null
+      },
+      {
+        "path": "model_weights/qwen3_vl/chat_template.json",
+        "bytes": 5502,
+        "lfs_sha256": null
+      },
+      {
+        "path": "model_weights/qwen3_vl/config.json",
+        "bytes": 1505,
+        "lfs_sha256": null
+      },
+      {
+        "path": "model_weights/qwen3_vl/generation_config.json",
+        "bytes": 269,
+        "lfs_sha256": null
+      },
+      {
+        "path": "model_weights/qwen3_vl/merges.txt",
+        "bytes": 1671839,
+        "lfs_sha256": null
+      },
+      {
+        "path": "model_weights/qwen3_vl/preprocessor_config.json",
+        "bytes": 390,
+        "lfs_sha256": null
+      },
+      {
+        "path": "model_weights/qwen3_vl/tokenizer.json",
+        "bytes": 7032403,
+        "lfs_sha256": null
+      },
+      {
+        "path": "model_weights/qwen3_vl/tokenizer_config.json",
+        "bytes": 10868,
+        "lfs_sha256": null
+      },
+      {
+        "path": "model_weights/qwen3_vl/video_preprocessor_config.json",
+        "bytes": 385,
+        "lfs_sha256": null
+      },
+      {
+        "path": "model_weights/qwen3_vl/vocab.json",
+        "bytes": 2776833,
+        "lfs_sha256": null
+      },
+      {
+        "path": "model_weights/wan/Wan2.2_VAE.pth",
+        "bytes": 2818839170,
+        "lfs_sha256": "20eb789667fa5e60e7516bf509512f6cb61f01b0aa0695eadaea930c13892b36"
+      },
+      {
+        "path": "model_weights/wan/config.json",
+        "bytes": 251,
+        "lfs_sha256": null
+      }
+    ],
+    "critical_source_sha256s": [
+      {
+        "file": "model_weights/checkpoint/pytorch_model_0.bin",
+        "sha": "a9c377f8c4aee9b55d494d31a447ecfcbf95b39e485e7863920397ff136f30b5"
+      },
+      {
+        "file": "model_weights/wan/Wan2.2_VAE.pth",
+        "sha": "20eb789667fa5e60e7516bf509512f6cb61f01b0aa0695eadaea930c13892b36"
+      }
+    ],
+    "runtime_risk": "pytorch_model_0.bin untrusted pickle format; archive without torch.load execution; weights_only and safe runtime need separate validation.",
+    "paper": "https://arxiv.org/abs/2610.18447"
+  },
+  "checks": {
+    "not_selected_weight_copy_count": 0,
+    "one_original_archival_record_per_model": true,
+    "source_sha_not_local_sha": true,
+    "owner_hdd_measured": false,
+    "download_approved": false,
+    "approved_queue_change": false
+  },
+  "uncertainty": {
+    "policy_probabilities": null,
+    "calibrated_u_c": null,
+    "k": null,
+    "reason": "Lack of comparable model performance, owner access and hard drive physical measurements; no statistical distribution."
+  }
+}
