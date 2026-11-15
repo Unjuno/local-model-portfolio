@@ -77,7 +77,7 @@
     "license_tag": "other",
     "license_name": "apache-2.0-with-upstream-kimi-k3",
     "model_public": true,
-    "model_gated": true,
+    "model_gated": false,
     "observed_source_file_count": 37,
     "source_files_excluding_nonessential_demo_assets": 28,
     "selected_candidate_bytes": 9704102624,
@@ -340,7 +340,17 @@
     "kimi_conditions": "Preserve notice; Model-as-a-Service companies and affiliates above USD20M revenue over any consecutive 12 months require separate commercial agreement, large products must display Kimi K3 under specified thresholds, internal use exception for sections 2/3; not an unconditional Apache-only grant.",
     "full_independent_runtime_verified": false,
     "license_and_notice_full_chain_finalized": false,
-    "author_perf_only": true
+    "author_perf_only": true,
+    "model_gated_correction": {
+      "corrected_on": "2026-11-15",
+      "old_value": true,
+      "observed_metadata": "gated:false; private:false",
+      "basis": [
+        "https://huggingface.co/api/models/GroundingPI/GroundingPI/revision/afe658ba07cc47168371d69cc66b40ae9dcede7c?blobs=true",
+        "catalog/access/2026-11-15-v40-conditional-hub-gates.json"
+      ],
+      "note": "Earlier R88 field incorrectly marked gated=true despite publisher public metadata; owner legal rights and consent remain independently unknown. Corrected access metadata only, without granting acquisition permission."
+    }
   },
   "thinker": {
     "revision": "daaa41944a9486e3f7be04cae353120b0f7f6e3c",
