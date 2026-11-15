@@ -1,5 +1,7 @@
 # Local Model Portfolio
 
+**R88（2026年11月15日）・v38の内容監査を更新**：[全146有効資産の規制・アクセス・容量再判定](docs/strategy/88-v38-146-model-access-decision-and-capacity-2026-11-15.md)／[機械可読146件](catalog/research/2026-11-15-r88-v38-146-access-risk-and-capacity-triage.json)／[CONDITIONAL93件の本人アクセス確認台帳（Gated20件）](catalog/access/2026-11-15-v38-conditional-hub-gates.json)。旧v37の91件アクセス参照を修正し、選定変更なし。Underdog Saluki／Nemotron-Parse／超150B GLMの新規追加は根拠不足で不採用。v38を含む4TB仮説予約余白は**約159.41GB**だが実HDD・全runtime・staging未測定、重み取得/承認0。以下のv38モデル選定は維持。
+
 **現行v38・2026年11月15日**：正式正本 [193資産（167モデル・26データ）／有効146件](catalog/effective-portfolio-2026-11-15-v38.json)、[v38のHaru全二重音声＋Runway Praxis DROID Gatedロボット動画行動の独立学習原本追加](docs/strategy/86-v38-risk-aware-original-model-selection-2026-11-15.md)、[43原本・外部テキストencoderファイルを固定](manifests/drafts/v38-haru-praxis-original-selected-source.candidate.json)、[有効146件の取得前ゲート](catalog/readiness/v38-2026-11-15-r86-all146-selection-gates.json)。同族Base／YAM／NVFP4の重複採用なし。既存Wan2.2 VAEは配布元SHA一致で重複source計上せず。**Gated20件、総数未確定9件、重量取得・実HDD検証・承認0件**。以下v37以前の記述は履歴。
 
 **R86・現行v37の保存目的監査（2026-11-15）**：[全144有効資産を実Gated状態・権利・構成未確定により再優先付け](docs/strategy/86-v37-regulation-access-first-144-and-budget.md)（[144件機械可読台帳](catalog/research/2026-11-15-r86-v37-144-access-regulation-first-triage.json)）。Gated19件、過去privateフラグ不整合1件、最終原本revision/byte未確定142件を優先。NVIDIA Kumo-Relationalの分類/回帰2重みは[固定コードから合計6,188万以下の保守上限を検証](docs/strategy/84-kumo-relational-published-upper-bound-and-retention.md)したが**正本の全tensor確定ゲートは未解除**。4TB・実空き200GB基準で新規計画枠を足した仮想余白は約239.4GB（**物理実測ではない**）。新規採用/削除0・取得承認0。
