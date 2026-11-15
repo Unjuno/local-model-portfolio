@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "kind": "R91_V40_SOURCE_BUDGET_AND_RESEARCH_CLAIMS_CORRECTION",
+  "date_jst": "2026-11-15",
+  "canonical_revision": "v40-20261115",
+  "canonical_catalog_path": "catalog/effective-portfolio-2026-11-15-v40.json",
+  "previous_estimate_current_revision": "v39-20261115",
+  "correction_kind": "ESTIMATOR_LINK_AND_CALCULATION_ONLY_DO_NOT_CHANGE_SELECTION",
+  "tracked": 195,
+  "active": 148,
+  "by_decision": {
+    "conditional": 95,
+    "hold": 28,
+    "select": 53,
+    "deferred": 13,
+    "excluded": 6
+  },
+  "source_baseline_path": "catalog/estimates/2026-11-14-v32-runtime-contingency-r63.json",
+  "source_baseline_bytes": 3466070232173,
+  "source_baseline_scope": "V32_PUBLISHER_SELECTED_SOURCE_SCENARIO_NOT_COMPLETE_FULL_ARCHIVE",
+  "planning_incremental_revisions": [
+    {
+      "revision": "v33-20261115",
+      "path": "catalog/revisions/v33-2026-11-15.json",
+      "field": "planning_reservation_cap_bytes",
+      "planning_cap_bytes": 20500000000,
+      "added_model_count": 3,
+      "observed_not_local": true
+    },
+    {
+      "revision": "v34-20261115",
+      "path": "catalog/revisions/v34-2026-11-15.json",
+      "field": "planning_cap_bytes",
+      "planning_cap_bytes": 3000000000,
+      "added_model_count": 2,
+      "observed_not_local": true
+    },
+    {
+      "revision": "v35-20261115",
+      "path": "catalog/revisions/v35-2026-11-15.json",
+      "field": "planning_reservation_cap_bytes",
+      "planning_cap_bytes": 71000000000,
+      "added_model_count": 2,
+      "observed_not_local": true
+    },
+    {
+      "revision": "v36-20261115",
+      "path": "catalog/revisions/v36-2026-11-15.json",
+      "field": "planning_reservation_cap_bytes",
+      "planning_cap_bytes": 20000000,
+      "added_model_count": 2,
+      "observed_not_local": true
+    },
+    {
+      "revision": "v37-20261115",
+      "path": "catalog/revisions/v37-2026-11-15.json",
+      "field": null,
+      "planning_cap_bytes": 0,
+      "added_model_count": 0,
+      "observed_not_local": true
+    },
+    {
+      "revision": "v38-20261115",
+      "path": "catalog/revisions/v38-2026-11-15.json",
+      "field": "planning_reservation_cap_bytes",
+      "planning_cap_bytes": 80000000000,
+      "added_model_count": 2,
+      "observed_not_local": true
+    },
+    {
+      "revision": "v39-20261115",
+      "path": "catalog/revisions/v39-2026-11-15.json",
+      "field": "planned_new_budget_bytes",
+      "planning_cap_bytes": 16000000000,
+      "added_model_count": 1,
+      "observed_not_local": true
+    },
+    {
+      "revision": "v40-20261115",
+      "path": "catalog/revisions/v40-2026-11-15.json",
+      "field": "reservation_cap_not_actual_bytes",
+      "planning_cap_bytes": 14000000000,
+      "added_model_count": 1,
+      "observed_not_local": true
+    }
+  ],
+  "math": {
+    "archive_limit_bytes": 4000000000000,
+    "minimum_free_bytes": 200000000000,
+    "sum_post_v32_planning_reservations_bytes": 204520000000,
+    "nominal_plan_total_bytes": 3670590232173,
+    "nominal_plan_margin_after_minimum_free_bytes": 129409767827,
+    "nominal_model_only_source_components": {
+      "v32_historical_source_only_reference_bytes": 3466070232173,
+      "v33_through_v36_mixed_planning_caps_bytes": 94520000000,
+      "v38_publisher_model_plus_qwen_source_reference_bytes": 69536354285,
+      "v39_publisher_model_plus_vq_source_reference_bytes": 11991440188,
+      "v40_publisher_selected_groundingpi_scope_bytes": 9704102624
+    },
+    "nominal_mixed_source_scenario_total_bytes": 3651822129270,
+    "nominal_mixed_source_scenario_margin_after_minimum_free_bytes": 148177870730,
+    "physical_owner_disk_free_bytes": null,
+    "physical_owner_formatted_capacity_bytes": null,
+    "complete_pretrained_dependency_bytes": null,
+    "all_runtime_wheelhouse_and_driver_bytes": null,
+    "temporary_staging_peak_bytes": null,
+    "known_cas_verified_local_dedup_bytes": null,
+    "full_archive_real_bytes": null,
+    "full_artifact_headroom_bytes": null
+  },
+  "external_dependencies_not_double_counted_without_local_SHA": [
+    "runwayml/praxis-1-droid/Wan2.2 VAE existing portfolio selected source SHA (publisher reference only, not owner stored)",
+    "GroundingPI internal Kimi/Qwen visual/text learned weights are integrated; no separate Kimi-K3 full parent weight as required unless verified runtime",
+    "Xiaomi U0 includes separate BAAI Emu3.5 VisionTokenizer explicitly in v39 publisher source bytes"
+  ],
+  "risk_status": {
+    "gated_conditional_observed": 20,
+    "active_total_parameter_gate_unverified": 9,
+    "all_active_acquisition_ready": 0,
+    "all_license_rights_verified": false,
+    "all_repos_immutable_final_manifest_verified": false,
+    "download_approved": false,
+    "model_payloads_downloaded": 0,
+    "owner_hdd_measured": false,
+    "offline_restore_verified": false
+  },
+  "source_quality_caveats": [
+    "V32 old source reference may include masked Gated blob hashes and exclude complete runtime dependencies",
+    "v33-v36 increments are planning caps, v38-v40 displayed source bytes are publisher metadata; combined scenarios are neither physical filesystem totals nor proof of source-level dedup closure",
+    "Base reference can double count some dependencies; true content-addressable union requires immutable SHA for every selected file",
+    "A positive provisional planning margin does NOT prove disk fit, because wheels/code/caches/staging and owner HDD existing content remain unknown",
+    "Permission and license-tag lookups never authorize downloads"
+  ],
+  "legal_primary_evidence": [
+    {
+      "jurisdiction": "US",
+      "classification": "CURRENT_PRIMARY",
+      "date": "2026-06-02",
+      "source": "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/",
+      "finding": "Executive Order 14409 Sec3(b) voluntary early access, Sec3(c) expressly does not grant authority for mandatory model release preclearance"
+    },
+    {
+      "jurisdiction": "US",
+      "classification": "REVOKED_HISTORICAL_PRIMARY",
+      "date": "2025-01-20",
+      "source": "https://www.govinfo.gov/content/pkg/CDOC-119hdoc28/html/CDOC-119hdoc28.htm",
+      "finding": "EO 14110 (2023) was revoked by EO14148; do not report it as 2026 binding policy"
+    },
+    {
+      "jurisdiction": "EU",
+      "classification": "CURRENT_PRIMARY",
+      "source": "https://eur-lex.europa.eu/eli/reg/2024/1689",
+      "finding": "AI Act Article 51 uses cumulative training FLOP classification and Article53/55 provider obligations, not catalog's <150B independent screening limit"
+    },
+    {
+      "jurisdiction": "JP",
+      "classification": "CURRENT_PRIMARY",
+      "source": "https://www8.cao.go.jp/cstp/ai/ai_hou_gaiyou_en.pdf",
+      "finding": "AI Act No53/2025 government guidance and support does not make personal weight archives universally allowed; other IP/privacy/contract provisions still apply"
+    }
+  ],
+  "previous_deep_research_claims_rejected": [
+    {
+      "claim": "4TB approximately 4096GB",
+      "reason": "Decimal archival policy 4TB=4000GB exactly; 4096GiB or 4TiB must not be conflated"
+    },
+    {
+      "claim": "2023 EO14110 current US governance basis",
+      "reason": "Official revocation January 20 2025"
+    },
+    {
+      "claim": "newly add Muse Glimmer",
+      "reason": "Already member since v35; current v40 includes both original and trained assistant"
+    },
+    {
+      "claim": "current portfolio includes Llama2/GPT-J/StableDiffusion sample set",
+      "reason": "Exact v40 model IDs do not include those named examples; examples were not selection results"
+    },
+    {
+      "claim": "3.8TB actual total, safe to archive",
+      "reason": "Only source/reference proxies, physical disk/missing closure/peak staging unknown"
+    }
+  ],
+  "decision": {
+    "new_model_additions": 0,
+    "new_selection_downgrades": 0,
+    "reason": "No matched independent experimental evidence of dominance, source-only budget margin narrow, and unverified final dependency/hardware/rights; next work must close verification rather than invent candidates",
+    "continue_selection_without_download_authorization": true
+  },
+  "validation_basis": "Full current-v40 195 asset ID/metadata counts and exact per-revision caps; publisher source references only",
+  "error_model": {
+    "type": "DETERMINISTIC_ARITHMETIC_WITH_UNBOUNDED_EXTERNAL_MISSING_COMPONENTS",
+    "combined_standard_uncertainty_u_c": null,
+    "coverage_factor_k": null
+  }
+}
