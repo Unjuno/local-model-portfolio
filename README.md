@@ -1,5 +1,8 @@
 # Local Model Portfolio
 
+**R91｜v40の規制一次資料と148件の非実行監査（2026-11-15）**：[調査報告](docs/strategy/91-v40-regulation-primary-source-and-148-blocker-audit.md)／[全件JSON](catalog/research/2026-11-15-r91-v40-148-policy-and-insurance-triage.json)／[回帰テスト](tests/test_r91_v40_policy_provenance.py)。初回停止要因は不変source118・Gated本人権限19・学習済み総数9・本人HDD2。旧GroundingPI研究のGated誤記を訂正。EU/中国/米国の政策事実と将来仮説を分離し、150B超の**現行量子化例外条件**を維持。**選定v40の195/148件は変更せず、ダウンロード承認0件**。
+
+
 **現行v40・2026年11月15日**：[195登録（169モデル＋26データ）／有効148件](catalog/effective-portfolio-2026-11-15-v40.json)。[独立学習済みGroundingPI原本1件をCONDITIONAL追加、Thinker-WM研究HOLD](docs/strategy/90-v40-groundingpi-original-decision.md)。[候補148件](queues/proposed-v40-2026-11-15.json)／[取得前停止148件](catalog/readiness/v40-2026-11-15-r90-all148-gates.json)。最終選定byte、権利本人確認、全依存、物理HDD実測、実重みSHA、復元は未完了で**取得承認・本体DL0**。以下v39以前は履歴。
 
 
