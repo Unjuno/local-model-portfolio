@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "kind": "R91_V40_SOURCE_BACKED_BUDGET_CORRECTION_AND_SELECTION_RETENTION",
+  "date_jst": "2026-11-15",
+  "canonical_revision": "v40-20261115",
+  "canonical_current_path": "catalog/CURRENT.json",
+  "canonical_current_blob_sha_at_review": "e997556b1d1f5f6389ceb1245f0fc7a21fad589a",
+  "count_census": {
+    "tracked": 195,
+    "model": 169,
+    "dataset": 26,
+    "active": 148,
+    "selected": 53,
+    "conditional": 95,
+    "held": 28,
+    "observed_conditional_gated": 20,
+    "active_unknown_total": 9
+  },
+  "frozen_publisher_research": {
+    "id": "GroundingPI/GroundingPI",
+    "source_revision": "afe658ba07cc47168371d69cc66b40ae9dcede7c",
+    "original_shard_count": 2,
+    "original_shard_bytes": 9687403168,
+    "indexed_parameters": 4843664384,
+    "BF16_payload_bytes": 9687328768,
+    "selected_file_count": 28,
+    "selected_file_bytes": 9704102624,
+    "full_publisher_repo_bytes": 9805907792,
+    "excluded_demo_bytes": 101805168,
+    "source_sha256": [
+      {
+        "path": "model-00001-of-00002.safetensors",
+        "publisher_SHA256": "2ff67831e10766e557311324b3ed5b31864baeb8363a5aef07e876c69afa6de1",
+        "bytes": 4995018360
+      },
+      {
+        "path": "model-00002-of-00002.safetensors",
+        "publisher_SHA256": "08137c2be794e4932acfca2adac89e290f5ec0b3bb60d63ee7fb1ddc6a9501d2",
+        "bytes": 4692384808
+      }
+    ],
+    "source_status": "FROZEN_SOURCE_METADATA_AND_FILE_SCOPE_NOT_DOWNLOADED",
+    "license_scope": "AUTHOR_APACHE_WITH_KIMI_K3_DERIVATIVE_NOTICE_NOT_OWNER_CONFIRMED",
+    "extra_kimi_k3_2p8T_weights_needed_for_this_integrated_state": "NO_ADDITIONAL_ORIGINAL_PARENT_CHECKPOINT_IDENTIFIED",
+    "runtime_unverified": [
+      "GroundingPI Transformers fork",
+      "vLLM custom runtime",
+      "Python3.12 accelerated backend",
+      "license terms for derivative",
+      "target owner GPU and CUDA"
+    ],
+    "ordinary_quantization_duplicate_added": false,
+    "historical_conflict": {
+      "path": "catalog/research/2026-11-15-r88-groundingpi-thinker-original-license-comparison.json",
+      "field": "ground.model_gated",
+      "historical_value": true,
+      "simultaneous_field": "ground.model_public=true",
+      "current_observed_canonical_access": {
+        "path": "catalog/access/2026-11-15-v40-conditional-hub-gates.json",
+        "hub_gated": false,
+        "owner_access_permission": "unknown"
+      },
+      "resolution": "Treat historical Gated=true as internally inconsistent; current v40 publisher fixed listing and selected sidecar prevail for research only. Do not infer owner entitlement."
+    }
+  },
+  "budget": {
+    "unit": "byte_decimal",
+    "budget_ceiling": 4000000000000,
+    "minimum_free_floor": 200000000000,
+    "nominal_available_for_archives_without_staging": 3800000000000,
+    "previous_v39_plan_reference_bytes": 3656590232173,
+    "v40_new_policy_reservation_cap_bytes": 14000000000,
+    "v40_nominal_plan_bytes": 3670590232173,
+    "v40_nominal_after_floor_margin_bytes": 129409767827,
+    "previous_v39_publisher_source_reference_bytes": 3642118026646,
+    "v40_new_publisher_selected_source_bytes": 9704102624,
+    "v40_nominal_publisher_source_bytes": 3651822129270,
+    "v40_nominal_source_after_floor_margin_bytes": 148177870730,
+    "actual_HDD_free_bytes": null,
+    "full_selected_offline_dependency_bytes": null,
+    "staging_peak_bytes": null,
+    "physical_fit_claim": "UNCERTAIN_NOT_VERIFIED",
+    "bandwidth_or_latency_benchmark_claims": false,
+    "note": "Do not confuse 4.0 decimal TB with 4 TiB or with 4096 GB; source-reference arithmetic and policy cap differ. No claim of actual 4 TB fit."
+  },
+  "decisions": [
+    {
+      "repo_id": "GroundingPI/GroundingPI",
+      "result": "RETAIN_CONDITIONAL_RESEARCH",
+      "reason": "Independent trained coordinate-token visual grounding BF16; exact publisher two-shard path and licenses known but full user runtime/rights unverified.",
+      "no_download_approval": true
+    },
+    {
+      "repo_id": "UBTECH-Robotics/Thinker-WM",
+      "result": "DO_NOT_ADD_RESEARCH_HOLD",
+      "reason": "Different RGB depth+action learned state but original pickle .bin 25GB, CC-BY-NC-SA and Praxis/Cosmos overlap, untested local safety/capacity.",
+      "no_download_approval": true
+    },
+    {
+      "repo_id": "GroundingPI/GroundingPI-GGUF",
+      "result": "DO_NOT_ADD_FORMAT_DUPLICATE",
+      "reason": "No separately trained quality/ABI advantage demonstrated; research original BF16 before conversion.",
+      "no_download_approval": true
+    }
+  ],
+  "legal_sources": [
+    {
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/how-does-ai-act-apply-general-purpose-ai-models-released-open-source",
+      "verified_statement": "certain open source GPAI documentation exceptions but not for systemic risk; Article53 copyright and training summaries apply"
+    },
+    {
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/",
+      "verified_statement": "June 2 EO 14409 section 3 is voluntary; section 3(c) does not authorize mandatory model-release preclearance"
+    },
+    {
+      "url": "https://www.cac.gov.cn/2026-04/30/c_1779289298718765.htm",
+      "verified_statement": "2026-04-30 community safety initiative targets inadequate review/removal of severely risky open-source models and datasets; not blanket ban"
+    },
+    {
+      "url": "https://huggingface.co/GroundingPI/GroundingPI",
+      "verified_statement": "author model card specifies original Apache with separate Kimi K3 applicable derivative terms; claimed 73.68% vendor result not independent benchmark"
+    }
+  ],
+  "caveat": [
+    "User physical archive size/free/temporary staging unknown",
+    "External runtime deps and wheelhouse bytes unknown",
+    "Some publisher SHA identical sources not verified on user's actual disk",
+    "Publisher BF16 weights not downloaded and actual SHA never locally verified",
+    "20 gated conditional assets lack personal entitlement evidence; SELECT53 separately unaudited for public access",
+    "Evidence is first-party publisher metadata, not executable offline restore or a measurement"
+  ],
+  "checks": {
+    "canonical_v40_unique": true,
+    "source_28_exact_sum": true,
+    "source_weight_shards_bytes_agree": true,
+    "license_released_not_user_signoff": true,
+    "research_selection_count_changed": 0,
+    "downloads_approved": 0
+  },
+  "derived_scope": "RESEARCH_ONLY_NO_MODEL_PAYLOAD_DOWNLOAD_OR_EXECUTION"
+}
