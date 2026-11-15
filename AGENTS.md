@@ -1,6 +1,10 @@
 # エージェント作業規約
 
-## 現行v37（2026-11-15）
+## 現行v38（2026-11-15）
+
+**唯一の選定正本**は[CURRENT](catalog/CURRENT.json)→[193資産／146有効](catalog/effective-portfolio-2026-11-15-v38.json)。[採用理由・非採用・規制事実の分離](docs/strategy/86-v38-risk-aware-original-model-selection-2026-11-15.md)に基づきHaru-4B（音声入力・発話を並列処理する別学習済み原本）とPraxis-1 DROID（Gated、17枚BF16 shard、動画＋ロボット行動共同生成）を各1件追加。元の191件は削除・降格なし。取得前[全146件停止条件](catalog/readiness/v38-2026-11-15-r86-all146-selection-gates.json)、Praxis必須Qwen3.5-2Bは独立資産に数えず、Wan2.2 VAEは既存source SHA一致を用いて重複保管を避ける。**Gated20件、未確定総数9件、利用権限/ローカルSHA/80GB GPU/HDD空き未実証。重みDL、コード実行、承認0件。mainのみ。** 以下v37以下は履歴。
+
+## 旧v37（2026-11-15、履歴）
 
 191登録・144有効は**変更なし**。Kumo Tabularの固定publisher revisionと6ファイル原本SHA/bytesを確定、不要Small/Medium4重みをsource候補から排除。PPLX DeciderのHub API `private:false,gated:false`を確認するが内部manifest `private:true` と区別し、本人権限は未確認。規制事実と仮説を分ける。[調査・選定保全](docs/strategy/85-v37-original-weight-source-lock-and-regulation-facts.md)。`selected_file_bytes`、最終bundle、権利・HDD・実行は未完了、承認0。
 
