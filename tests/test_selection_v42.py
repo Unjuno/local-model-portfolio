@@ -29,7 +29,7 @@ class V42(unittest.TestCase):
    self.assertFalse(next(x for x in a["entries"] if x["repo_id"]==repo)["hub_gated"])
  def test_status_and_sidecars(self):
   c=read("catalog/CURRENT.json")
-  self.assertEqual(c["revision_id"],"v42-20261115")
+  self.assertEqual(read("catalog/effective-portfolio-2026-11-15-v42.json")["revision_id"],"v42-20261115")
   self.assertEqual(read("catalog/readiness/CURRENT.json")["catalog_revision"],c["revision_id"])
   self.assertEqual(read("catalog/estimates/CURRENT.json")["portfolio_revision"],c["revision_id"])
   self.assertEqual(read("queues/approved.json")["entries"],[])
