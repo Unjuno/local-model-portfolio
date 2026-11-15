@@ -1,5 +1,7 @@
 # Local Model Portfolio
 
+**R91・v40整合性と実容量の訂正（2026年11月15日）**：[全148有効ID・95件の条件付きアクセス台帳と容量の正本整合](docs/strategy/91-v40-deep-research-factual-correction-and-budget.md)を再検査し、[R91一次証拠](catalog/research/2026-11-15-r91-v40-budget-and-publisher-evidence-correction.json)を追加。旧R88のGroundingPI公開状態に矛盾があるため、現行publisher固定記録の`gated:false`と本人権限未確認を区別。v40暫定計画枠では4TB・200GB空き床後の**仮想余白129.41GB**だが、実HDD・全依存・一時stage未計測。取得承認・重量DL0、新規モデル採否変更0。最新`catalog/readiness/CURRENT.json`と`catalog/estimates/CURRENT.json`をv40へ統一。
+
 **R91｜v40の規制一次資料と148件の非実行監査（2026-11-15）**：[調査報告](docs/strategy/91-v40-regulation-primary-source-and-148-blocker-audit.md)／[全件JSON](catalog/research/2026-11-15-r91-v40-148-policy-and-insurance-triage.json)／[回帰テスト](tests/test_r91_v40_policy_provenance.py)。初回停止要因は不変source118・Gated本人権限19・学習済み総数9・本人HDD2。旧GroundingPI研究のGated誤記を訂正。EU/中国/米国の政策事実と将来仮説を分離し、150B超の**現行量子化例外条件**を維持。**選定v40の195/148件は変更せず、ダウンロード承認0件**。
 
 
