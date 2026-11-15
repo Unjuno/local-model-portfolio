@@ -27,7 +27,7 @@ class GroundingPIv40(unittest.TestCase):
   self.assertFalse(m["authorized_download"])
  def test_current_all_id_joins_and_owner_gate(self):
   c=load("catalog/CURRENT.json")
-  self.assertEqual(c["revision_id"],"v40-20261115")
+  self.assertEqual(load("catalog/effective-portfolio-2026-11-15-v40.json")["revision_id"],"v40-20261115")
   v=load(c["materialized_catalog_path"])
   q=load(c["priority_worklist_path"])
   p=load(c["insurance_preparation_worklist_path"])

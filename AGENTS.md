@@ -1,5 +1,10 @@
 # エージェント作業規約
 
+## 現行v41（2026-11-15）
+
+唯一の正本[CURRENT](catalog/CURRENT.json)→**195登録／148有効**。[既存2件のsource/license訂正](docs/strategy/92-v41-source-and-license-corrections.md)。Qwen Image 2.1 Consistency LoRAは作者推奨step1500原本5ファイルに限定、親Qwenは既存資産として共有研究。PrunaはMiniMax原文のEU/英国/韓国/米国除外と3部46.97B＋VAE/connector未計数を明記。**有効総数不明9・Gated20・重み取得/本人承認/owner HDD/オフライン復元0**。資産の新規追加0、mainのみ。以下v40以前は履歴。
+
+
 ## R91：規制根拠と取得停止ゲートの現行方針（2026-11-15）
 
 現行選定正本は main / catalog/CURRENT.json → **v40、195資産・148有効（SELECT53、CONDITIONAL95）**。必ず正本を再読み込みし、古いv9や他ブランチの件数・採否で上書きしない。[一次政策証拠・全148件の初回停止ゲート](docs/strategy/91-v40-regulation-primary-source-and-148-blocker-audit.md)と[148行JSON](catalog/research/2026-11-15-r91-v40-148-policy-and-insurance-triage.json)を参照。
@@ -13,7 +18,7 @@
 
 
 
-## 現行v40（2026-11-15）
+## 旧v40（2026-11-15・履歴）
 
 **唯一の選定正本は [CURRENT](catalog/CURRENT.json)→v40、195登録／148有効（SELECT53＋CONDITIONAL95）**。[R90 GroundingPI原本1件の選定](docs/strategy/90-v40-groundingpi-original-decision.md)。Qwen＋Kimi由来の4.843664384B BF16座標定位原本28ファイル9,704,102,624byteをpublisher SHAとライセンス区分付きでCONDITIONAL追加。旧v39の194資産を全件そのまま保持。Thinker-WMはpickle安全性/CC BY-NC-SA、Praxis/Cosmosとの独立増分/物理HDD未確認につき研究HOLD。**Gated20件、総数未確認の有効9、本人の重み取得承認0、local SHA/HDD/実行/復元未検証**。mainのみ、以下v39以前は履歴。
 
