@@ -1,5 +1,7 @@
 # Local Model Portfolio
 
+**R90・v39の保存余白と権限監査（2026年11月15日）**：[全147有効資産の優先調査・モデル採否・容量台帳](catalog/research/2026-11-15-r90-v39-147-access-and-capacity-triage.json)。CONDITIONAL94件でGated20、SELECT53件は専用アクセス台帳で未確認。新たにXiaomi U0＋BAAI Emu3.5 VQ 18原本ファイル約11.99GBの公開元参照を追加。4TB上限と200GB空き床の**仮説的な予約余白約143.41GB**。完全依存・キャッシュ・実HDDは未測定。追加取得承認0。
+
 **現行v39・2026年11月15日：** [194資産（168モデル・26データ）／有効147件](catalog/effective-portfolio-2026-11-15-v39.json)、[Xiaomi UNIS-4B原本＋学習済みVisionTokenizerの独立保存理由](docs/strategy/89-v39-xiaomi-unis-original-and-safety.md)、[固定2repo・18ファイルの一次SHA/byte台帳](catalog/research/2026-11-15-r89-xiaomi-u0-4b-immutable-selected-source.json)、[有効147件の取得前ゲート](catalog/readiness/v39-2026-11-15-r89-all147-gates.json)。v38以前の193件採否は維持。形式違いVQ ckptや34B/38Bを多重保存せず、完全なライセンス・実機・コード安全確認は未完了。**ダウンロード／実行／取得承認0**。
 
 
