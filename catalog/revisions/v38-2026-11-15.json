@@ -1,0 +1,444 @@
+{
+  "schema_version": 1,
+  "revision_id": "v38-20261115",
+  "previous_revision_id": "v37-20261115",
+  "decision_date": "2026-11-15",
+  "target_branch": "main",
+  "status": "ADD_TWO_NONREDUNDANT_CAPABILITY_ARCHIVES_CONDITIONAL_SOURCE_ONLY",
+  "source_basis": "Hugging Face fixed blob API incl. source LFS sha, source code pinned GitHub, Runway paper, Haru research blog, existing parent SHA",
+  "goal": "Preserve irreplaceable learned local abilities against changes in repository availability without assuming a blanket future ban",
+  "archive_target_bytes": 4000000000000,
+  "minimum_free_bytes": 200000000000,
+  "new_model_original_source_bytes": 64965080262,
+  "external_qwen_source_dependency_bytes": 4571274023,
+  "reused_existing_selected_vae_publisher_bytes": 2818839170,
+  "reused_vae_already_local_hash_verified": false,
+  "planned_source_only_reference_bytes": 69536354285,
+  "planning_reservation_cap_bytes": 80000000000,
+  "planning_cap_not_verified_full_archive_bytes": true,
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "higurashi-ai/Haru-4B",
+      "url": "https://huggingface.co/higurashi-ai/Haru-4B",
+      "position": 192,
+      "group": "非信頼音声と同時発話を扱う全二重S2S・9言語の独立学習済み基盤",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Haru-4BはQwen3.5-4B系32層を9言語の全二重speech-to-speechへ再学習。入力音声・出力音声・テキストを7.5Hzで同一トークン位置に統合し、64次元潜在をMeanFlow 1-step生成。TTS/ASRや既存Qwen Omniと異なる同時割り込み・相づち学習成果を保持。",
+      "quality_positive": "公開元BF16 model.safetensors10,540,113,510byteと2ファイルのLFS SHA256を確認。codec音声学習重みが同じ本体に内包、追加VibeVoice重み不要。コードApache2.0全文と第三者NOTICEをGitHub固定commitで確認。",
+      "quality_negative": "研究用事前学習モデルで一般指示応答精度保証はない。音声の権利とマイク録音同意、Python/PyTorch/Transformers ABI、実機RTT/音声品質未評価。別モデルrepo LICENSE正文は未読。",
+      "evidence_date": "2026-11-15",
+      "evidence_kind": "FIRST_PARTY_IMMUTABLE_HF_FILE_SIZES_SHA_AND_AUTHOR_FIXED_SOURCE_CODE",
+      "evidence_urls": [
+        "https://huggingface.co/api/models/higurashi-ai/Haru-4B/revision/8d6e83bcd3701a76fc27a764965665da1df7da78?blobs=true",
+        "https://huggingface.co/higurashi-ai/Haru-4B/blob/8d6e83bcd3701a76fc27a764965665da1df7da78/config.json",
+        "https://github.com/higurashi-ai/Haru/blob/7fe6b7665f8bf035998f401f8cb779fbe53f2751/THIRD_PARTY_NOTICES.md",
+        "https://blog.higurashi.ai/melte/haru4b-ja/"
+      ],
+      "observed_access": "public_ungated_HF_API_2026-11-15",
+      "license_metadata": "apache-2.0",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "8d6e83bcd3701a76fc27a764965665da1df7da78",
+      "upstream_all_files_bytes_observed": 10560190159,
+      "upstream_weights_bytes_observed": 10540113510,
+      "upstream_file_count_observed": 7,
+      "upstream_lfs_sha256_count": 2,
+      "upstream_model_file": {
+        "path": "model.safetensors",
+        "sha256": "ad2c3534ef6bd88525e22e5da3ac4fb739368406bf3b1c852cbafbade647c0fa",
+        "bytes_exact": 10540113510,
+        "source_publisher_only_not_local_sha": true
+      },
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "sha256": null,
+          "git_blob_sha1": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 4113,
+          "sha256": null,
+          "git_blob_sha1": "3dd000f4dbb27682aa99ece1076521c15a16cfc8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/architecture.svg",
+          "bytes": 78410,
+          "sha256": null,
+          "git_blob_sha1": "b7f9d8e95531e577162159690bce4a40f428c989",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 2735,
+          "sha256": null,
+          "git_blob_sha1": "cb2815b7faddf150c93045ad3e76d6da8e22885c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 10540113510,
+          "sha256": "ad2c3534ef6bd88525e22e5da3ac4fb739368406bf3b1c852cbafbade647c0fa",
+          "git_blob_sha1": "591d52a5bac3890870c90d4c316f49dce9a027f6",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 19989325,
+          "sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+          "git_blob_sha1": "5520bfd2dd834ce386c1312c410fa71af56db5ad",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 496,
+          "sha256": null,
+          "git_blob_sha1": "edca4d87e923f0500ec8d21999aec0ae3221f201",
+          "local_sha_verified": false
+        }
+      ],
+      "candidate_selected_file_count": 7,
+      "candidate_selected_file_bytes": 10560190159,
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 5270000000,
+        "evidence_kind": "HF total 5,270M, official model config includes Qwen3.5-4B, learned codec, audio projection and MeanFlow",
+        "review_date": "2026-11-15",
+        "all_moe_experts_included": false,
+        "complete_required_pipeline_tensor_count_not_locally_verified": true
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 192,
+        "category": "novel_full_duplex_voice_trained",
+        "scenario_status": "Voice access restrictions only hypothesis; currently publicly ungated"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Haru-4BはQwen3.5-4B系32層を9言語の全二重speech-to-speechへ再学習。入力音声・出力音声・テキストを7.5Hzで同一トークン位置に統合し、64次元潜在をMeanFlow 1-step生成。TTS/ASRや既存Qwen Omniと異なる同時割り込み・相づち学習成果を保持。",
+        "must_preserve": [
+          "Single BF16 checkpoint and exact SHA",
+          "config/tokenizer/README and source original notices",
+          "higurashi-ai/Haru@7fe6b7665f8bf035998f401f8cb779fbe53f2751 full offline code",
+          "voice consent and privacy controls"
+        ],
+        "external_learned_and_software_dependencies": [
+          "No extra VibeVoice learned weight, codec already embedded",
+          "torch>=2.6, transformers>=5.16, tokenizers>=0.21, soundfile/sphn ABI"
+        ],
+        "excluded_duplicate_or_optional_formats": [
+          "ordinary quantization formats of same Haru weights",
+          "extra standalone VibeVoice pretrained model absent demonstrated need"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 10560190159,
+        "source_bytes_are_not_selected_bytes": true,
+        "selected_file_bytes_final": null,
+        "hw_tested_on_user_machine": false,
+        "external_trained_dependency_bytes_not_in_primary": 0
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "runwayml/praxis-1-droid",
+      "url": "https://huggingface.co/runwayml/praxis-1-droid",
+      "position": 193,
+      "group": "実体動作と動画未来予測を同時に学習したDROIDロボットMoE",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Praxis-1 DROIDは27.2B MoE総数（非活性expert含む）とaction expertでchunk-causal未来映像と15Hzロボット行動を同時に推定するDROID専用独立学習checkpoint。既存Cosmos Sim-Bimanualの動画予測やAlpamayo運転予測、GR00T一般VLAと行動・映像の共同目的が異なる。過去R47保留理由を実ファイルと依存まで調査し研究選定へ昇格。",
+      "quality_positive": "Runway公式の23ファイル中、17 BF16重み分割とSHA256SUMSを公開APIで固定。作者RoboLab-120では1,200 episodeの成功率46.2%（同条件とされるCosmos3 Nano36.8%）。Wan2.2 VAEは既存選定原本とSHA一致し重複計上回避。",
+      "quality_negative": "HFはGated autoかつ匿名のconfig閲覧401、本人権限未確認。作者ベンチであり第三者独立でない。外部Qwen3.5-2Bテキストencoder(4.571GB)、Wan VAE、固定コード、Python3.12/CUDA13/80GB GPU/wheelhouseと安全な実機条件が未解決。",
+      "evidence_date": "2026-11-15",
+      "evidence_kind": "FIRST_PARTY_IMMUTABLE_HF_FILE_SIZES_SHA_AND_AUTHOR_FIXED_SOURCE_CODE",
+      "evidence_urls": [
+        "https://huggingface.co/api/models/runwayml/praxis-1-droid/revision/6bb70750663e53592cc38f46e531a5a01a12d291?blobs=true",
+        "https://runway.com/research/praxis-1-video-pretraining-to-robot-control",
+        "https://github.com/runwayml/praxis-1-oss/blob/afef2e18a0af22b2e9926e9f743dc4694ab8b6b5/pyproject.toml",
+        "https://runway.com/news/company-news/praxis-1-is-now-available"
+      ],
+      "observed_access": "Gated auto; anonymous config HTTP401; only normal owner entitlement permitted",
+      "license_metadata": "apache-2.0",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "6bb70750663e53592cc38f46e531a5a01a12d291",
+      "upstream_all_files_bytes_observed": 54404890103,
+      "upstream_weights_bytes_observed": 54404815648,
+      "upstream_file_count_observed": 23,
+      "upstream_lfs_sha256_count": 17,
+      "upstream_model_file": {
+        "path": "model-00001-of-00017.safetensors",
+        "sha256": "1873b62baa72f584267ea44e278d8c8d837fe43be179df87079d663f8b72462d",
+        "bytes_exact": 4992987260,
+        "source_publisher_only_not_local_sha": true
+      },
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": null,
+          "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11357,
+          "sha256": null,
+          "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 2838,
+          "sha256": null,
+          "git_blob_sha1": "952eab7ef7fad84835e395b095d0b07d3c78c9dd",
+          "local_sha_verified": false
+        },
+        {
+          "path": "SHA256SUMS",
+          "bytes": 1856,
+          "sha256": null,
+          "git_blob_sha1": "aad035b8599792105d957615426ba79624fdd4e4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 6591,
+          "sha256": null,
+          "git_blob_sha1": "105e18e6aae19c1b52f72dc6f8be96eab8c07532",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00001-of-00017.safetensors",
+          "bytes": 4992987260,
+          "sha256": "1873b62baa72f584267ea44e278d8c8d837fe43be179df87079d663f8b72462d",
+          "git_blob_sha1": "1566a905c4dfcfc6cdf83515fa52ae4012a6b02d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00002-of-00017.safetensors",
+          "bytes": 3094778978,
+          "sha256": "d45dc9dd7ca9112a51361999f42c8a4d0ea3e764cadb44c2a48828f443c79ddb",
+          "git_blob_sha1": "44c1ec278e6c5187ed6ca5708450b01c4167c040",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00003-of-00017.safetensors",
+          "bytes": 3094778978,
+          "sha256": "1ebf27b39c0acf41f3172982a5ffb794d7d3fc0c1d9560045c728e813fd5cd79",
+          "git_blob_sha1": "8ac2234006bbf7952690e4d9fc1f4a7903cb0ff2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00004-of-00017.safetensors",
+          "bytes": 3094778978,
+          "sha256": "27bc1e9b1721368df83f71e3edf95ab0807a8dab86a094a149dec3cc96cc9bf9",
+          "git_blob_sha1": "daa31907da8392277d5f0b001f6075934cc7eaa3",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00005-of-00017.safetensors",
+          "bytes": 3849233038,
+          "sha256": "0a3cbdec3c08903b442e59084dca430f7e230b60b76acac9a0076dcb79930616",
+          "git_blob_sha1": "92af130eaec5c1d1f5b49538e6a4f85a14755b7b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00006-of-00017.safetensors",
+          "bytes": 3094778978,
+          "sha256": "8c4f526b69d2b585a2045bbd39060e9b3a8d4da897db09146d9afc7f3183580d",
+          "git_blob_sha1": "11712c58b6c0f14233cd47d68e0e188a7ec42bdf",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00007-of-00017.safetensors",
+          "bytes": 3094778978,
+          "sha256": "765fadef2e2796c37bd97a3336dd4027de3d8e156e687d6f9534fab59705ca8c",
+          "git_blob_sha1": "75b0686ccdb814049d2efebf39ab238e9b8ac08d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00008-of-00017.safetensors",
+          "bytes": 3094778978,
+          "sha256": "4ca703e208f0ce782a73a660e88212625af970d8f8a57dfb9862ba95397efbde",
+          "git_blob_sha1": "6993f18b805e401012d954fef11930ce4df1d3c0",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00009-of-00017.safetensors",
+          "bytes": 3094778978,
+          "sha256": "d631a46adc5021ea0296ff8ea431826615a5f9a37b5be8d45448d5a7aaffb317",
+          "git_blob_sha1": "b7e32b80930c4eb688cf30711d970bbc339505ac",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00010-of-00017.safetensors",
+          "bytes": 3094778978,
+          "sha256": "5ac529a753ce1bb663a64045516f56e4c3b1b79d93933755320b79d0b791c3a1",
+          "git_blob_sha1": "2f3becddc548a4deee45eb36d2bc13e44fe1f5a4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00011-of-00017.safetensors",
+          "bytes": 3094778978,
+          "sha256": "63bdbc5fc23f7b23259c0be6b925a985c2511b23cfa45b7a8fa918243ef5b822",
+          "git_blob_sha1": "667f37fb31f3936b8f8b48b5198ec3debf6002d9",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00012-of-00017.safetensors",
+          "bytes": 3094778978,
+          "sha256": "e90d2cb72b088eb22ef0466de36d27d2c3990e27901f9fa24a90425c047aec6e",
+          "git_blob_sha1": "770a333c85fe601bc89f4171720833333d57d249",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00013-of-00017.safetensors",
+          "bytes": 3094778978,
+          "sha256": "b8e43d0cb501bbae5ff36db1fad226dd0317ea2c5101333cea9fefae761fcdcd",
+          "git_blob_sha1": "59309f87f3583f30ec1f20ffe49fbe0807f908a9",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00014-of-00017.safetensors",
+          "bytes": 3094778994,
+          "sha256": "d62cc02dd50f3b266a91f5f36210bbe014f3e999fa31e2c28c9099b801a37c42",
+          "git_blob_sha1": "e2dd462b56654995a30640f109304226897d3469",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00015-of-00017.safetensors",
+          "bytes": 3094778994,
+          "sha256": "ae6535f0fa785d7910add12e8450be5e49d49408ccb84db7c2c259ab6237093e",
+          "git_blob_sha1": "a56d297e6755e2c576c7ab9c468546931c564632",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00016-of-00017.safetensors",
+          "bytes": 3094778994,
+          "sha256": "c48c8f34b7371815543b68392566ae02e3b07865af6ec38d75def98457515f41",
+          "git_blob_sha1": "ef02b5272f35f85f5497f829088f0dd7071c8fb5",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00017-of-00017.safetensors",
+          "bytes": 2235689610,
+          "sha256": "635bc143d7b207a1e28844d5a8c7ae969285bdedc60243302cf07f5b0b27c3e3",
+          "git_blob_sha1": "3302704a044c27b229965269f94c3e275f3779b2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 50294,
+          "sha256": null,
+          "git_blob_sha1": "8f3f66897bc7f83bd02394c9894c98331667cb08",
+          "local_sha_verified": false
+        }
+      ],
+      "candidate_selected_file_count": 23,
+      "candidate_selected_file_bytes": 54404890103,
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 27202400000,
+        "evidence_kind": "HF publisher 27,202.4M total and Runway MoE 26.9B video trunk plus ~0.3B action",
+        "review_date": "2026-11-15",
+        "all_moe_experts_included": true,
+        "complete_required_pipeline_tensor_count_not_locally_verified": true
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 193,
+        "category": "actual_gated_robot_world_action_trained",
+        "scenario_status": "Gated is current fact; any broader government weight restriction is hypothetical"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Praxis-1 DROIDは27.2B MoE総数（非活性expert含む）とaction expertでchunk-causal未来映像と15Hzロボット行動を同時に推定するDROID専用独立学習checkpoint。既存Cosmos Sim-Bimanualの動画予測やAlpamayo運転予測、GR00T一般VLAと行動・映像の共同目的が異なる。過去R47保留理由を実ファイルと依存まで調査し研究選定へ昇格。",
+        "must_preserve": [
+          "17 original BF16 weight shards, config, index, SHA256SUMS, model LICENSE",
+          "runwayml/praxis-1-oss@afef2e18a0af22b2e9926e9f743dc4694ab8b6b5, serve_droid yaml",
+          "Qwen/Qwen3.5-2B pinned revision 15852e8c16360a2fea060d615a32b45270f8a8fc (separate runtime dependency)",
+          "reuse Wan2.2 VAE publisher SHA 20eb789667fa5e60e7516bf509512f6cb61f01b0aa0695eadaea930c13892b36 from existing selected Wan asset if actual local hash matches",
+          "owner Gated authorisation and hardware/runtime simulation preflight"
+        ],
+        "external_learned_and_software_dependencies": [
+          "Wan2.2_VAE.pth original publisher version already selected, physical bytes not verified",
+          "Qwen/Qwen3.5-2B pretrained original model and tokenizer 13 files",
+          "torch>=2.13, transformers==5.2.0, CUDA13, optional kernel versions, 80GB GPU for running"
+        ],
+        "excluded_duplicate_or_optional_formats": [
+          "runwayml/praxis-1-base with no embodiment heads",
+          "runwayml/praxis-1-yam independent different embodiment 54GB deferred not auto-added",
+          "DROID NVFP4 QAT and conventional quant copies pending matched benchmark/ABI"
+        ],
+        "fixed_manifest_complete": false,
+        "all_components_verified": false,
+        "scope_reference_only_no_download_manifest": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 54404890103,
+        "source_bytes_are_not_selected_bytes": true,
+        "selected_file_bytes_final": null,
+        "hw_tested_on_user_machine": false,
+        "external_trained_dependency_bytes_not_in_primary": 4571274023
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    }
+  ],
+  "prior_hold_reconsidered": {
+    "repo_id": "runwayml/praxis-1-droid",
+    "previous": "catalog/research/2026-11-12-r47-new-open-weight-triage.json",
+    "previous_decision": "HOLD_COMPARE_ROBOTICS_VS_COSMOS_FIRST",
+    "new_decision": "CONDITIONAL_RESEARCH_GATED",
+    "basis": "Actual source 17 shards and special action+video structure plus dependency and same-task publisher benchmark rather than name alone"
+  },
+  "nonadopted": [
+    {
+      "id": "runwayml/praxis-1-yam",
+      "reason": "Different robot embodiment and independently trained action heads but near-identical 54.4GB capacity; defer second representation pending measured marginal value"
+    },
+    {
+      "id": "runwayml/praxis-1-base",
+      "reason": "No embodiment action head; DROID trained policy includes same backbone family; preserve operational checkpoint first"
+    },
+    {
+      "id": "runwayml/praxis-1-droid-nvfp4",
+      "reason": "QAT converted same embodied task; no independent matched quality/ABI evidence to replace BF16 original"
+    },
+    {
+      "id": "ConwayResearch/Underdog-Woof",
+      "reason": "38.24M two-voice TTS with noncommercial restriction; current phonon/ZONOS3/other TTS already covers basic TTS; lacks sufficient distinct capability to add new disk commitment"
+    },
+    {
+      "id": "zai-org/GLM-5.3-Flash",
+      "reason": "320B total despite 18B activated; fails default <150B preferred total, quantized matched RAM/quality exception unverified"
+    }
+  ],
+  "selection_exchanges": [],
+  "reason_for_no_demotions": "Every potential incumbent has distinct trained task representation; no verified same-task dominated incumbent or lower-cost equivalent. Do not falsely economize by dropping unique outcomes.",
+  "download_authorizations_created": 0,
+  "model_payloads_downloaded": 0,
+  "unsafe_code_executed": 0
+}
