@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "kind": "R84_KUMO_RELATIONAL_PUBLISHED_TRACED_TWO_TASK_PARAMETER_UPPER_BOUND",
+  "date_jst": "2026-11-15",
+  "repo_id": "nvidia/Kumo-Relational",
+  "selection_revision": "v36-20261115",
+  "decision": "KEEP_CONDITIONAL_RESEARCH_AND_CONFIRM_DISTINCT_FROM_KUMO_TABULAR",
+  "publisher_code": {
+    "repo": "NVIDIA/structured-data-models",
+    "immutable_commit": "46a6f20d20f1140912f7a9e6ecdda9a3cd3fda87",
+    "paths": [
+      {
+        "path": "sdm/models/kumo/relational/model.py",
+        "git_blob_sha1": "72ae261462eb3201530169b5a5894cf7fe3cadd5",
+        "source_line_parameter_range": 166,
+        "source_line_weights_only": 228,
+        "source_line_checkpoints": 222,
+        "source_line_state_dict": 229
+      },
+      {
+        "path": "sdm/models/tabiclv2/row_embedding.py",
+        "git_blob_sha1": "caf0ab3a4b51eb1870c278ae852c59dd97ff6685"
+      },
+      {
+        "path": "sdm/models/tabiclv2/icl.py",
+        "git_blob_sha1": "d1903354d1b16bda96ce7d72c3bc61affda138b1"
+      },
+      {
+        "path": "sdm/models/kumo/relational/invariant_gnn.py",
+        "git_blob_sha1": "dde8da99233936051d26d5c6db340d02fc20d2f4"
+      },
+      {
+        "path": "sdm/models/_huggingface.py",
+        "git_blob_sha1": "468b8740de3fc6373a22fc0d667ca75ce6a6c6d5"
+      }
+    ],
+    "reader_url": "https://github.com/NVIDIA/structured-data-models/blob/46a6f20d20f1140912f7a9e6ecdda9a3cd3fda87/sdm/models/kumo/relational/model.py",
+    "frozen_code_parameter_count_range_each_model_str": "29.93M-30.94M",
+    "trained_task_types": [
+      "classification",
+      "regression"
+    ],
+    "loader_filename_for_task": {
+      "classification": "classifier.pt",
+      "regression": "regressor.pt"
+    },
+    "loader_hf_revision_alias": "v1.0.1",
+    "restricted_deserialization": "torch.load(path,map_location=device,weights_only=True)",
+    "state_assignment": "model.load_state_dict(ckpt, assign=True) (default strict=True)",
+    "separate_parent_pretrained_checkpoint_load_observed_in_this_class": false,
+    "implicit_network_on_missing_cache": true,
+    "architecture_components_not_external_pretrained": [
+      "RowEmbedding",
+      "InvariantGNN",
+      "ICLBlock"
+    ],
+    "frontend_expected_python": ">=3.11",
+    "runtime_cpu_gpu_abi_and_wheel_hashes_verified": false,
+    "checkpoint_contents_locally_read": false
+  },
+  "publisher_sources": [
+    "https://docs.nvidia.com/sdgm/structured-data-models/models/kumo-relational",
+    "https://nvidia.github.io/structured-data-models/api/generated/sdm.models.KumoRelational",
+    "https://huggingface.co/nvidia/Kumo-Relational",
+    "https://openmdw.ai/license/1-1/",
+    "https://github.com/NVIDIA/structured-data-models/blob/46a6f20d20f1140912f7a9e6ecdda9a3cd3fda87/sdm/models/kumo/relational/model.py"
+  ],
+  "selected_publisher_source": {
+    "source_commit": "efdbb110daea5aae123447864a64612e8a3dc6be",
+    "classifier_path": "classifier.pt",
+    "classifier_bytes": 119862733,
+    "classifier_source_sha256": "0c2e35cc18303f0d3ddeaf04e9cab6ca3a8bd6ea17195ac0e42d47af4bcb2a2d",
+    "regressor_path": "regressor.pt",
+    "regressor_bytes": 123786699,
+    "regressor_source_sha256": "f863b3632f738e1444fb83a8cea5746f298889b5c96953a000c4720d202ae4cf",
+    "weights_sum_bytes": 243649432,
+    "pinned_full_source_count": 7,
+    "pinned_full_source_bytes": 243656960,
+    "exact_source_snapshot_from_previous_audit": "catalog/proposals/07-rare-specialist-2026-11-15.json",
+    "owner_SHA_verification_completed": false
+  },
+  "parameter_screening": {
+    "publisher_each_model_parameters_min_estimate": 29930000,
+    "publisher_each_model_parameters_max_estimate": 30940000,
+    "two_distinct_task_max_sum_bound_parameters": 61880000,
+    "comparison_local_threshold_parameters": 150000000000,
+    "upper_bound_below_threshold": true,
+    "bound_is_not_exact_tensor_census": true,
+    "safe_when_parent_finetune_lineage_not_separate_weight_dependency": true,
+    "provenance_kind": "PUBLISHER_DOCUMENTED_MODEL_PARAMETER_RANGE_PLUS_FROZEN_LOADER_TWO_STATE_DICTS",
+    "proposed_nonblocking_research_screen_status": "PASS_PUBLISHER_TWO_CHECKPOINT_UPPER_BOUND_LT_150B",
+    "canonical_parameter_status_preserved": "UNVERIFIED_BLOCK_FINAL_LOCK",
+    "reason_final_lock_not_unblocked": "No local full tensor enumeration or full immutable offline package, rights and runtime accepted",
+    "publisher_metadata_vs_actual_tensor_delta_unknown": true
+  },
+  "capability_difference": {
+    "nvidia_kumo_tabular": "one-table row/column attention class/regress separate Large learned weights; publisher source different model class",
+    "nvidia_kumo_relational": "multi-table key/foreign-key graph message passing plus row embeddings and ICL; two small learned heads",
+    "nvidia_kumo_anomaly": "multivariate anomaly detection via diffusion and error threshold, no supervised labels; execution restricted until secure runtime",
+    "nvidia_kumo_forecast": "forecasting function overlaps existing Chronos-2 and IBM TinyTimeMixer R3, lacks matched incremental benefit",
+    "decision": "KEEP both Tabular and Relational; do not treat these as same model or ordinary formats; Kumo Forecast not selected"
+  },
+  "rights": {
+    "weights_license_metadata": "openmdw-1.1",
+    "upstream_parent_notice": "BSD-3-Clause TabICLv2",
+    "source_code_license": "Apache-2.0",
+    "openmdw_official_text_read": true,
+    "model_repository_specific_license_text_hash_verified": false,
+    "owner_specific_permission_verified": false,
+    "obligations_to_record": [
+      "retain OpenMDW 1.1 license",
+      "retain original copyright and origin notices",
+      "preserve third-party BSD-3-Clause notice",
+      "ensure downstream rights and applicable laws"
+    ],
+    "model_rights_final_signoff": false
+  },
+  "gates": {
+    "model_weight_downloaded": false,
+    "pickle_executed": false,
+    "runtime_tested": false,
+    "original_user_HDD_capacity_verified": false,
+    "all_required_sources_fixed_and_sha_verified_locally": false,
+    "license_full_review_completed": false,
+    "user_acquisition_authorization": false
+  }
+}
