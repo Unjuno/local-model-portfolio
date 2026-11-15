@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-15",
+  "kind": "PUBLISHER_SOURCE_LICENSE_CONFLICT_AND_DUPLICATE_TRAINED_STATE_TRIAGE",
+  "source_revision_of_portfolio": "v37-20261115",
+  "model_family": "WhissleAI/SteerTTS",
+  "weight_files_downloaded": false,
+  "model_executed": false,
+  "owner_hf_entitlement_checked": false,
+  "acquisition_approved": false,
+  "objective": "Preserve independent hard-to-reconstruct trained acoustic capabilities without duplicate quantization or noncompliant access; keep future restriction scenario distinct from factual gated/license observations.",
+  "publisher_code": {
+    "repo": "WhissleAI/steer-tts",
+    "pinned_git_commit": "5008f8e032f69266c3f37788825cfda3112eab55",
+    "first_public_git_commit_checked": "989b6ce6006f",
+    "current_license_git_blob_sha": "ed3a683cabd0a740cc2ae5e21896946caccdae1a",
+    "initial_license_git_blob_sha": "040769771d3ec398c9cd84e5723cd1aed3f04a3b",
+    "current_readme_blob_sha": "a23107815cdf5bb6a54929d68e4ded82084ba27f",
+    "current_models_doc_blob_sha": "1e2b778a9a8dedf8f36bea9b9866f7f44cb0e5d0",
+    "current_pyproject_blob_sha": "13b1d927329f74a2c5c43f79f33ce5eb3e2afe50",
+    "source_license": "CC BY-NC 4.0 plus Whissle additional terms for code, model, voice",
+    "original_checked_code_license": "same restrictive family in the first available commit",
+    "evidence": [
+      "https://github.com/WhissleAI/steer-tts/blob/5008f8e032f69266c3f37788825cfda3112eab55/LICENSE",
+      "https://github.com/WhissleAI/steer-tts/blob/5008f8e032f69266c3f37788825cfda3112eab55/pyproject.toml",
+      "https://github.com/WhissleAI/steer-tts/blob/5008f8e032f69266c3f37788825cfda3112eab55/docs/models.md",
+      "https://github.com/WhissleAI/steer-tts/blob/989b6ce6006f/LICENSE"
+    ]
+  },
+  "host_publication_conflict": {
+    "model_card_url": "https://huggingface.co/WhissleAI/steer-tts",
+    "card_stated_code_license": "MIT",
+    "card_stated_weights_license": "CC BY-NC 4.0",
+    "github_stated_code_license": "CC BY-NC 4.0 plus additional publisher terms",
+    "conclusion": "CONFLICT_UNRESOLVED_NO_ASSUMED_MIT_CODE_RIGHTS",
+    "model_card_commit_pinned": false,
+    "weight_license_text_at_same_hf_commit_verified": false,
+    "evidence_limit": "Read indexed publisher model card but not a pinned HF license file; do not assert a temporal license change from this inconsistency."
+  },
+  "models": [
+    {
+      "repo_id": "WhissleAI/steer-tts",
+      "repo_gated_by_hf_connector": true,
+      "portfolio_status": "CONDITIONAL_KEEP",
+      "independent_ability": "12 speaker-relative numeric acoustic controls; 2825 voices; optional flow refiner and voice cloning",
+      "publisher_component_parameter_million_estimates": {
+        "acoustic": 9.59,
+        "vocos": 13.53,
+        "flow_refiner": 17.64,
+        "prompted_clone_flow": 24.67,
+        "wavlm_speaker_encoder": 101,
+        "minilm_prompt_encoder": 22.7,
+        "prompt_adapter": 0.5
+      },
+      "arithmetic_sum_of_named_components_millions": 189.63,
+      "speaker_vectors_entry_estimate": {
+        "count": 2825,
+        "dimension": 512,
+        "elements": 1446400,
+        "not_counted_as_trainable_model_parameters": true
+      },
+      "other_learned_and_data_dependencies": [
+        "neural g2p front end: exact learned tensor census missing",
+        "events.safetensors has separate recorded audio source licenses",
+        "vocoder external license and native copies require source identity"
+      ],
+      "complete_tensor_and_dependency_census_verified": false,
+      "final_parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "rights_gate": "GATED_OWNER_ENTITLEMENT_AND_CROSS_HOST_LICENSE_UNRESOLVED",
+      "action": "KEEP_RESEARCH_ONLY_STOP_FINAL_SOURCE_LOCK"
+    },
+    {
+      "repo_id": "WhissleAI/steer-tts-edge",
+      "repo_gated_by_hf_connector": true,
+      "portfolio_status": "RESEARCH_HOLD_NOT_ADDED",
+      "publisher_architecture": "v2 separately trained acoustic state claimed in code docs, int4 acoustic + Vocos-style int4 vocoder; no full refiner",
+      "acoustic_parameters_millions_approx": 9.25,
+      "vocoder_parameters_millions_approx": 6.2,
+      "device_payload_bytes_approx": 12600000,
+      "card_base_model_tags": [
+        "base_model:WhissleAI/steer-tts",
+        "base_model:quantized:WhissleAI/steer-tts"
+      ],
+      "trained_state_distinct_from_v1_not_tensor_verified": true,
+      "reason": "Publisher v2 learned-state claim contradicts simplistic quant-only metadata; do not auto-dismiss or double count; require pinned upstream checkpoint and corresponding component tensor identities, independent preservation value and rights before promoting."
+    },
+    {
+      "repo_id": "WhissleAI/steer-tts-nano",
+      "repo_gated_by_hf_connector": true,
+      "portfolio_status": "RESEARCH_HOLD_NOT_ADDED",
+      "publisher_description": "ESP32-S3 no PSRAM embedded TTS, 2 voices, int8 main approx 2.97MB plus 1.8MB frontend, 122KB inference RAM claimed by publisher",
+      "card_base_model_tags": [
+        "base_model:WhissleAI/steer-tts",
+        "base_model:finetune:WhissleAI/steer-tts"
+      ],
+      "reason": "Possible separately trained/fine-tuned constrained-device outcome but unconfirmed nonredundant learned difference, code ABI, permissions and pinned source identity."
+    }
+  ],
+  "publisher_benchmarks": {
+    "source": "https://github.com/WhissleAI/steer-tts/blob/5008f8e032f69266c3f37788825cfda3112eab55/docs/models.md",
+    "edge2_wer_pct_seedtss_eval": 0.93,
+    "edge2_wer_pct_cv3_eval": 2.44,
+    "dataset_sentences_seed": 1088,
+    "dataset_sentences_cv3": 500,
+    "independent_reproduction": false,
+    "hardware_owner_measured": false,
+    "note": "Author benchmark only; no same-platform >30-run uncertainty assessment or user-hardware throughput evidence."
+  },
+  "decisions": {
+    "keep_existing": "WhissleAI/steer-tts conditional",
+    "no_new_active_assets": true,
+    "new_hard_exclusions": 0,
+    "no_evidence_to_claim_weight_ban": true,
+    "highest_next_priority": "Publisher statement reconciling HuggingFace code MIT card with pinned GitHub CC BY-NC code LICENSE, personal gated entitlement and immutable HF licensing/weight files",
+    "secondary": "Quantized edge vs new v2 acoustic and Nano fine-tune must be tensor-identical or trained-state-distinct on pinned checkpoints before adding another asset",
+    "fail_closed": "No payload downloads or runtime evaluation without user approval; do not treat repo tags and MB as an exact complete trained parameter census."
+  },
+  "official_regulation": {
+    "eu_gpai_provider_obligations_start": "2025-08-02",
+    "eu_gpai_commission_enforcement": "2026-08-02",
+    "targeted_new_content_prohibition_date": "2026-12-02",
+    "general_open_weight_download_ban_observed": false,
+    "sources": [
+      "https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers",
+      "https://digital-strategy.ec.europa.eu/en/policies/enforcement-ai-act",
+      "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/how-does-ai-act-apply-general-purpose-ai-models-released-open-source"
+    ]
+  },
+  "hypothesis_testing": {
+    "H": "Current cross-host licensing mismatch causes an unresolved legal gate even when publisher provides model-card task capabilities; edge/nano should not be admitted as independent trained artifacts without checkpoint differential.",
+    "T": "Static review of 3 first-party model pages and pinned publisher code+licenses, n_min=3 variants; for admission require 2 immutable checkpoint source sets with SHA+tensor structure and separate owner entitlement.",
+    "D": {
+      "PASS": "First-party divergent licence claims observed, independent trained variants not yet proved",
+      "FAIL": "Do not accept MIT code authority or add derivative duplicate from tags alone",
+      "UNCERTAIN": "Actual gated checkpoint, owner rights, exact aggregate parameters and code compatibility"
+    },
+    "C": "A publisher later harmonizes license terms or demonstrates independent fine-tune/codec training and a unique embedded task; decision can change.",
+    "U": "Cached HF card version not pinned, access rights private to user, publisher benchmark non-independent; no calibrated uncertainty distribution, u_c and k not calculable."
+  }
+}
