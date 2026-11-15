@@ -4,7 +4,7 @@
   "generated_at": "2026-11-15",
   "approved": false,
   "download_enabled": false,
-  "description": "147 select/conditional nonexecuting research candidates: Xiaomi UNIS4B and mandatory VQ unpinned. No downloads.",
+  "description": "147 independent learned archive candidates; one U0-4B with separately pinned mandatory VQ learned dependency; nothing downloadable approved",
   "candidates": [
     {
       "asset_kind": "model",
@@ -1429,14 +1429,19 @@
       "asset_kind": "model",
       "repo_id": "XiaomiRobotics/Xiaomi-Robotics-U0-4B",
       "selection": "conditional",
-      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
       "not_authorized": true,
       "download_approved": false,
+      "approved_lock": false,
       "research_only": true,
       "can_enter_approved_queue": false,
-      "requires_legal_basis_review": true,
-      "requires_personal_gated_access": false,
-      "source_file_scope_only": null
+      "source_repo_revision_sha": "c1a4e9c9c3cf52dd3617d3c9c974e16e6e88b3cd",
+      "required_external_vq_revision_sha": "a5c45bdb8084763048e094ae124778bfeca7d5ee",
+      "publisher_reference_selected_file_bytes": 11991440188,
+      "selected_file_bytes": null,
+      "license_and_runtime_verified": false,
+      "owner_local_sha_verified": false,
+      "selection_budget_cap_bytes": 16000000000
     }
   ],
   "blocked_unknown_total_repo_ids": [
@@ -1455,8 +1460,7 @@
     "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
     "ACERobotics/Puffin-World",
     "nvidia/Kumo-Relational",
-    "nvidia/Kumo-Anomaly",
-    "XiaomiRobotics/Xiaomi-Robotics-U0-4B"
+    "nvidia/Kumo-Anomaly"
   ],
   "hard_excluded_repo_ids": [],
   "required_checks": [
@@ -1493,8 +1497,7 @@
     "v35: Muse DFlash assistant is target-bound separately trained checkpoint; verify exact target revision, 16-token acceptance, Transformers5.15 ABI and matched task gain; do not add GGUF copies.",
     "v38: Haru is a research base, use consented reference audio; verify full duplex 7.5Hz+audio codec integrated and pin Haru runtime.",
     "v38: Praxis DROID original 17BF16 shards Gated auto; require owner's authorised access, Qwen3.5-2B code/source, existing Wan2.2 VAE exact SHA reuse, CUDA13 PyTorch2.13/Transformers5.2/80GB; no default full-repo fetch.",
-    "v38: No duplicate YAM/Base/NVFP4 without matched performance and separate trained-value justification. GLM-5.3-Flash is 320B total, 18B active; total size not active for default 150B boundary.",
-    "v39 Xiaomi 4B/VQ exact source total and source rights pending; 34B/38B publisher speed NOT applicable to 4B."
+    "v38: No duplicate YAM/Base/NVFP4 without matched performance and separate trained-value justification. GLM-5.3-Flash is 320B total, 18B active; total size not active for default 150B boundary."
   ],
   "over_baseline_quantized_research": [
     {

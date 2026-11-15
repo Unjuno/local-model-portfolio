@@ -4,121 +4,154 @@
   "previous_revision_id": "v38-20261115",
   "decision_date": "2026-11-15",
   "target_branch": "main",
-  "status": "ONE_NONREDUNDANT_WORLD_MODEL_RESEARCH_CONDITIONAL",
-  "source_basis": "HF publisher metadata, author fixed GitHub, arXiv:2607.11643",
+  "status": "ONE_INDEPENDENT_XIAOMI_UNIS_4B_CONDITIONAL_WITH_PINNED_VQ_DEPENDENCY_RESEARCH_ONLY",
+  "purpose": "Preserve independently learned embodied Scene Gen/Transfer, legally and reproducibly, without archive format duplication",
+  "original_selection_unchanged_count": 193,
   "additions": [
     {
       "asset_kind": "model",
       "repo_id": "XiaomiRobotics/Xiaomi-Robotics-U0-4B",
       "url": "https://huggingface.co/XiaomiRobotics/Xiaomi-Robotics-U0-4B",
+      "group": "Embodied multi-view Scene Gen and Transfer: Xiaomi UNIS 4B autoregressive original",
       "position": 194,
-      "group": "多視点ロボット世界生成・UNIS自己回帰4B原本",
       "risk_tier": "R1",
       "portfolio_decision": "conditional",
-      "reason_selected": "XiaomiのUNIS 4Bはロボット多視点Scene Gen/TransferとT2I/X2Iを単一自己回帰トークン体系で学習した独立原本。既存Wan2.2 TI2VやCosmos Video2Worldとは学習目的・重み・入出力が同一でない。4Bのみ研究採用、Sequence/34B/FlashARは重複回避で保留。",
-      "risk_and_alternative_assessment": "2026-11-15 HF公開掲載、UNIS、5,082.1M主モデル、Apache2.0メタ。作者固定GitHub commit e722003980958f242203af265718ee980b834debに4B eager ARと外部BAAI VisionTokenizer依存。公式ModelScope配布は同一revision・SHA未照合。規制予定は未確認。",
-      "quality_positive": "原論文arXiv:2607.11643、作者固定推論コードでScene Gen/Transferと独立学習目標を確認。必須VQは別学習済み455.3M。",
-      "quality_negative": "固定モデルrevision・全シャードSHA/選択byte・全学習済み総数・コード/モデル/LICENSEの整合・実機性能/ABI/本人HDDは未確認。H20上の38B FlashAR高速化結果を4Bに転用しない。",
+      "reason_selected": "Separate posttrained UNIS image-token AR world model for robot-view-consistent Scene Gen and embodied Transfer. Existing Wan/Cosmos/Praxis model objectives and learned states differ. Save one 4B original only, along with Emu3.5 separately trained IBQ visual tokenizer; do not add 4B-Sequence/34B/38B siblings without distinct measured evidence.",
+      "quality_positive": "Publisher revision c1a4e9c9c3cf52dd3617d3c9c974e16e6e88b3cd has 2 BF16 original weights, exact LFS SHA256 and bytes, 5.0821B main model reported. External BAAI VQ 455.3M learned model pinned to 40-char revision and 1 safetensors SHA/byte; official pinned code documents 4B AR eager scene/transfer inference.",
+      "quality_negative": "External VQ model.ckpt auto-loader executes torch.load if paired with config.yaml; chosen safetensors needs custom AutoModel fallback trust_remote_code=True not verified safe or compatible offline. No standalone model repository LICENSE file, Apache2.0 tag is metadata not owner legal approval; vendor H20 FlashAR 34B/38B speed cannot describe this 4B. User HDD/cache/staging and same-HW quality untested.",
       "evidence_date": "2026-11-15",
-      "evidence_kind": "HF_PUBLISHER_MODEL_METADATA_PINNED_AUTHOR_GITHUB_AND_PRIMARY_PAPER",
+      "evidence_kind": "first_party_hf_pinned_model_and_external_vq_file_inventory_plus_pinned_publisher_code",
       "evidence_urls": [
-        "https://huggingface.co/XiaomiRobotics/Xiaomi-Robotics-U0-4B",
-        "https://huggingface.co/BAAI/Emu3.5-VisionTokenizer",
-        "https://github.com/XiaomiRobotics/Xiaomi-Robotics-U0/blob/e722003980958f242203af265718ee980b834deb/README.md",
-        "https://github.com/XiaomiRobotics/Xiaomi-Robotics-U0/blob/e722003980958f242203af265718ee980b834deb/inference/README.md",
+        "https://huggingface.co/api/models/XiaomiRobotics/Xiaomi-Robotics-U0-4B/revision/c1a4e9c9c3cf52dd3617d3c9c974e16e6e88b3cd?blobs=true",
+        "https://huggingface.co/api/models/BAAI/Emu3.5-VisionTokenizer/revision/a5c45bdb8084763048e094ae124778bfeca7d5ee?blobs=true",
+        "https://github.com/XiaomiRobotics/Xiaomi-Robotics-U0/blob/e722003980958f242203af265718ee980b834deb/inference/xr_u0_ar/vision_tokenizer/__init__.py",
         "https://arxiv.org/abs/2607.11643"
       ],
-      "observed_access": "public_listed_not_user_entitlement_or_file_access_verified",
+      "observed_access": "Publisher API private:false and gated:false for both original and VQ; owner-specific rights and allowed acts not verified",
       "license_metadata": "apache-2.0",
       "license_text_reviewed": false,
       "dependencies_reviewed": false,
       "download_approved": false,
       "selected_file_bytes": null,
       "fully_pinned_revision_sha": null,
-      "upstream_revision_sha_observed": null,
-      "upstream_all_files_bytes_observed": null,
-      "upstream_weights_bytes_observed": null,
-      "upstream_file_count_observed": null,
-      "modelscope_official_alternate": "https://modelscope.cn/models/XiaomiRobotics/Xiaomi-Robotics-U0-4B",
-      "modelscope_same_revision_sha_verified": false,
-      "parameter_gate": {
-        "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
-        "total_parameters": null,
-        "reported_main": 5082100000,
-        "reported_required_vq": 455300000,
-        "known_two_component_sum": 5537400000,
-        "evidence_kind": "HF metadata on two major pretrained components only, full learned pipeline unknown",
-        "evidence_urls": [
-          "https://huggingface.co/XiaomiRobotics/Xiaomi-Robotics-U0-4B",
-          "https://huggingface.co/BAAI/Emu3.5-VisionTokenizer"
+      "download_ready": false,
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "upstream_revision_sha_observed": "c1a4e9c9c3cf52dd3617d3c9c974e16e6e88b3cd",
+      "upstream_all_files_bytes_observed": 10175265596,
+      "upstream_weights_bytes_observed": 10164232160,
+      "upstream_file_count_observed": 14,
+      "upstream_model_file": {
+        "paths": [
+          "model-00001-of-00002.safetensors",
+          "model-00002-of-00002.safetensors"
         ],
+        "sha256": [
+          "9a3de25c306885abc90ca97c26fe836c59af5074ceefb3ec6db9ce25637a365f",
+          "c40f111a09e4946335a6096d108fc975e88055306d07aa22b03354198850f37b"
+        ],
+        "bytes_exact": [
+          5336406336,
+          4827825824
+        ],
+        "published_hash_only_not_locally_verified": true
+      },
+      "source_scope": {
+        "evidence_json_path": "catalog/research/2026-11-15-r89-xiaomi-u0-4b-immutable-selected-source.json",
+        "selected_reference_bytes": 11991440188,
+        "selected_reference_file_count": 18,
+        "original_selected_file_count": 12,
+        "mandatory_external_vq_selected_file_count": 6,
+        "mandatory_external_vq_repo_id": "BAAI/Emu3.5-VisionTokenizer",
+        "external_vq_revision_sha": "a5c45bdb8084763048e094ae124778bfeca7d5ee",
+        "source_ids_pinned": true,
+        "final_manifest_approved": false
+      },
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 5082100000,
+        "evidence_kind": "HuggingFace model parameter summary 5.0821B plus BAAI external VQ 455.3M, 5.5374B known components; full inference total not locally verified",
         "review_date": "2026-11-15",
-        "note": "No model download/lock until same fixed source revision full tensor and external learned dependencies counted."
+        "full_pipeline_tensor_count_not_locally_verified": true
       },
       "forecast_priority": {
         "wave": "S2",
-        "rank": 194,
-        "category": "embodied_multiview_unis",
-        "scenario_status": "future model-weight restriction is a hypothetical stress scenario, not a confirmed ban",
-        "current_access_evidence_date": "2026-11-15",
-        "rights_gate": "model_license_and_VQ_rights_unverified",
-        "selection_eligibility": "RESEARCH_ONLY_BLOCK_FINAL_LOCK"
+        "rank": 172,
+        "category": "unique_embodied_scene_transfer_learned_original",
+        "scenario_status": "speculative_distribution_restriction_not_model_specific_predicted_event"
+      },
+      "restriction_assessment": {
+        "observed": "Public ungated publisher listing, no takedown notice; APA license label. Model owner rights not authenticated",
+        "scenario": "Future access and export restrictions possible, not confirmed as a blanket open-weight ban",
+        "probability": null
       },
       "preservation_bundle": {
-        "learned_outcome": "4B UNIS autoregressive embodied multi-view Scene Gen/Transfer original",
+        "learned_outcome": "Multiview robot Scene Gen/Transfer with discrete vision-token AR learned state",
         "must_preserve": [
-          "Xiaomi 4B exact original model all shards+immutable hashes",
-          "BAAI/Emu3.5-VisionTokenizer exact learned VQ and config/tokenizer",
-          "XiaomiRobotics/Xiaomi-Robotics-U0 code commit e722003980958f242203af265718ee980b834deb",
-          "all original LICENSE and third party notices; model/processor/task configs"
+          "original 2 sharded safetensors SHA/byte at fixed source commit",
+          "config/tokenizer custom code and token vocab",
+          "BAAI external learned Emu3.5 VisionTokenizer safetensors fixed commit and custom code",
+          "Xiaomi official source code commit and license notices plus ABI"
         ],
         "external_learned_and_software_dependencies": [
-          "BAAI/Emu3.5-VisionTokenizer publisher 455.3M; revision/rights unknown",
-          "Python3.10 eager AR; third-party runtime versions/ABI unknown",
-          "Depth Anything 3 only optional for RGB Transfer input"
+          {
+            "repo_id": "BAAI/Emu3.5-VisionTokenizer",
+            "source_revision": "a5c45bdb8084763048e094ae124778bfeca7d5ee",
+            "scope_bytes": 1821439140,
+            "required": true,
+            "local_sha_verified": false
+          }
         ],
         "excluded_duplicate_or_optional_formats": [
-          "XiaomiRobotics/Xiaomi-Robotics-U0-4B-Sequence",
-          "XiaomiRobotics/Xiaomi-Robotics-U0 (34B sibling)",
-          "XiaomiRobotics/Xiaomi-Robotics-U0-FlashAR (38B)"
+          "U0-4B Sequence distinct but unsupported incremental value",
+          "U0 original 34B/38B alternative sizes/accelerator",
+          "VQ alternative model.ckpt plus config.yaml unsafe implicit torch.load path",
+          "nonessential two source PNG",
+          "Depth Anything 3 conditional RGB transfer helper, not mandatory T2I"
         ],
         "fixed_manifest_complete": false,
         "all_components_verified": false,
-        "scope_reference_only_no_download_manifest": true
+        "scope_reference_only_no_download_manifest": true,
+        "offline_restore_verified": false
       },
       "resource_screen": {
-        "source_all_repo_bytes": null,
+        "source_all_repo_bytes": 10175265596,
         "source_bytes_are_not_selected_bytes": true,
+        "source_selected_main_plus_external_vq_publisher_bytes": 11991440188,
         "selected_file_bytes_final": null,
         "hw_tested_on_user_machine": false,
-        "baseline_gpu_8gb_feasibility": "NOT_MEASURED",
-        "estimated_complete_peak_ram_bytes": null
+        "owner_hdd_measured": false
       },
-      "research_only_nonexecutable": true,
-      "can_enter_approved_queue": false,
-      "download_ready": false,
-      "model_payload_fetched": false,
-      "personal_access_verified": false
+      "selection_budget_cap_bytes": 16000000000,
+      "planning_cap_is_not_observed_bytes": true,
+      "falsification_condition": "If existing selected models replicate robot multisensor/multiview scene transfer without new trained original, or the safe VQ code cannot restore without harmful deserialization, or rights/quality/capacity gates fail, downgrade or replace."
     }
   ],
   "not_adopted": [
     {
       "repo_id": "XiaomiRobotics/Xiaomi-Robotics-U0-4B-Sequence",
-      "reason": "Distinct sequential trained model, incremental uniqueness not yet demonstrated"
+      "decision": "HOLD_UNMEASURED_OTHER_TRAINED_STATE",
+      "reason": "Different LFS SHA but unique sequential video benefit unverified"
     },
     {
       "repo_id": "XiaomiRobotics/Xiaomi-Robotics-U0",
-      "reason": "34B same family, no measured gain vs compact original"
+      "decision": "NOT_ADOPTED_34B_SAME_FAMILY"
     },
     {
       "repo_id": "XiaomiRobotics/Xiaomi-Robotics-U0-FlashAR",
-      "reason": "38B accelerated sibling; publisher H20 speed is not 4B benchmark"
+      "decision": "NOT_ADOPTED_38B_UNMATCHED_SPEED"
+    },
+    {
+      "repo_id": "BAAI/Emu3.5-VisionTokenizer",
+      "decision": "REQUIRED_DEPENDENCY_ONLY_NOT_STANDALONE_ASSET"
     }
   ],
-  "existing_asset_changes": 0,
-  "new_total_learnt_parameter_count_verified": false,
-  "new_selected_bytes_verified": false,
-  "archive_target_bytes": 4000000000000,
-  "minimum_free_bytes": 200000000000,
-  "download_authorizations_created": 0
+  "prior_selected_assets_removed": 0,
+  "planned_new_budget_bytes": 16000000000,
+  "publisher_source_references_bytes": 11991440188,
+  "source_repo_total_not_selected_bytes": true,
+  "licenses_approved": false,
+  "weight_downloads_approved": false,
+  "model_weights_downloaded": false,
+  "model_executions": 0
 }

@@ -3,7 +3,7 @@
   "source_revision": "v39-20261115",
   "policy_path": "policies/archival-insurance.json",
   "download_enabled": false,
-  "scope": "147 active research-only preparation bundles; Xiaomi UNIS4B VQ dependency NOT pinned",
+  "scope": "147 research-only active independent trained outcomes with one new U0 SceneGen/Transfer and external EmuVQ learned dependency",
   "critical_dependencies_travel_with_parent": true,
   "shared_dependency_hash_reuse_verified": false,
   "stage_meaning": {
@@ -3218,28 +3218,35 @@
       "repo_id": "XiaomiRobotics/Xiaomi-Robotics-U0-4B",
       "stage": 2,
       "is_new_v39": true,
-      "next_action": "STATIC_COUNT_FULL_TRAINED_UNIS4B_VISIONTOKENIZER_NO_DOWNLOAD",
+      "next_action": "FREEZE_SOURCE_LICENSE_EXTERNAL_VQ_SAFE_FROM_PRETRAINED_NO_PICKLE_OWNER_HDD_AND_RUNTIME",
       "preservation_bundle": {
-        "learned_outcome": "4B UNIS autoregressive embodied multi-view Scene Gen/Transfer original",
+        "learned_outcome": "Multiview robot Scene Gen/Transfer with discrete vision-token AR learned state",
         "must_preserve": [
-          "Xiaomi 4B exact original model all shards+immutable hashes",
-          "BAAI/Emu3.5-VisionTokenizer exact learned VQ and config/tokenizer",
-          "XiaomiRobotics/Xiaomi-Robotics-U0 code commit e722003980958f242203af265718ee980b834deb",
-          "all original LICENSE and third party notices; model/processor/task configs"
+          "original 2 sharded safetensors SHA/byte at fixed source commit",
+          "config/tokenizer custom code and token vocab",
+          "BAAI external learned Emu3.5 VisionTokenizer safetensors fixed commit and custom code",
+          "Xiaomi official source code commit and license notices plus ABI"
         ],
         "external_learned_and_software_dependencies": [
-          "BAAI/Emu3.5-VisionTokenizer publisher 455.3M; revision/rights unknown",
-          "Python3.10 eager AR; third-party runtime versions/ABI unknown",
-          "Depth Anything 3 only optional for RGB Transfer input"
+          {
+            "repo_id": "BAAI/Emu3.5-VisionTokenizer",
+            "source_revision": "a5c45bdb8084763048e094ae124778bfeca7d5ee",
+            "scope_bytes": 1821439140,
+            "required": true,
+            "local_sha_verified": false
+          }
         ],
         "excluded_duplicate_or_optional_formats": [
-          "XiaomiRobotics/Xiaomi-Robotics-U0-4B-Sequence",
-          "XiaomiRobotics/Xiaomi-Robotics-U0 (34B sibling)",
-          "XiaomiRobotics/Xiaomi-Robotics-U0-FlashAR (38B)"
+          "U0-4B Sequence distinct but unsupported incremental value",
+          "U0 original 34B/38B alternative sizes/accelerator",
+          "VQ alternative model.ckpt plus config.yaml unsafe implicit torch.load path",
+          "nonessential two source PNG",
+          "Depth Anything 3 conditional RGB transfer helper, not mandatory T2I"
         ],
         "fixed_manifest_complete": false,
         "all_components_verified": false,
-        "scope_reference_only_no_download_manifest": true
+        "scope_reference_only_no_download_manifest": true,
+        "offline_restore_verified": false
       },
       "selected_bytes": null,
       "download_approved": false,

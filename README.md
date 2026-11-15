@@ -1,5 +1,8 @@
 # Local Model Portfolio
 
+**現行v39・2026年11月15日：** [194資産（168モデル・26データ）／有効147件](catalog/effective-portfolio-2026-11-15-v39.json)、[Xiaomi UNIS-4B原本＋学習済みVisionTokenizerの独立保存理由](docs/strategy/89-v39-xiaomi-unis-original-and-safety.md)、[固定2repo・18ファイルの一次SHA/byte台帳](catalog/research/2026-11-15-r89-xiaomi-u0-4b-immutable-selected-source.json)、[有効147件の取得前ゲート](catalog/readiness/v39-2026-11-15-r89-all147-gates.json)。v38以前の193件採否は維持。形式違いVQ ckptや34B/38Bを多重保存せず、完全なライセンス・実機・コード安全確認は未完了。**ダウンロード／実行／取得承認0**。
+
+
 **R88（2026年11月15日）・v38の内容監査を更新**：[全146有効資産の規制・アクセス・容量再判定](docs/strategy/88-v38-146-model-access-decision-and-capacity-2026-11-15.md)／[機械可読146件](catalog/research/2026-11-15-r88-v38-146-access-risk-and-capacity-triage.json)／[CONDITIONAL93件の本人アクセス確認台帳（Gated20件）](catalog/access/2026-11-15-v38-conditional-hub-gates.json)。旧v37の91件アクセス参照を修正し、選定変更なし。Underdog Saluki／Nemotron-Parse／超150B GLMの新規追加は根拠不足で不採用。v38を含む4TB仮説予約余白は**約159.41GB**だが実HDD・全runtime・staging未測定、重み取得/承認0。以下のv38モデル選定は維持。
 
 **現行v38・2026年11月15日**：正式正本 [193資産（167モデル・26データ）／有効146件](catalog/effective-portfolio-2026-11-15-v38.json)、[v38のHaru全二重音声＋Runway Praxis DROID Gatedロボット動画行動の独立学習原本追加](docs/strategy/86-v38-risk-aware-original-model-selection-2026-11-15.md)、[43原本・外部テキストencoderファイルを固定](manifests/drafts/v38-haru-praxis-original-selected-source.candidate.json)、[有効146件の取得前ゲート](catalog/readiness/v38-2026-11-15-r86-all146-selection-gates.json)。同族Base／YAM／NVFP4の重複採用なし。既存Wan2.2 VAEは配布元SHA一致で重複source計上せず。**Gated20件、総数未確定9件、重量取得・実HDD検証・承認0件**。以下v37以前の記述は履歴。

@@ -1,6 +1,10 @@
 # エージェント作業規約
 
-## 現行v38（2026-11-15）
+## 現行v39（2026-11-15）
+
+選定正本は[CURRENT.json](catalog/CURRENT.json)→v39、**194登録／147有効**。[固定原本と別学習済みVQ dependencyを1資産としてCONDITIONAL採用](docs/strategy/89-v39-xiaomi-unis-original-and-safety.md)。v38の193資産は採否変更なし。Xiaomi4BとEmuVQの18原本ソースファイルは[固定publisher SHA/byte台帳](catalog/research/2026-11-15-r89-xiaomi-u0-4b-immutable-selected-source.json)で確認。VQ model.ckptの暗黙torch.loadは危険、model.safetensors fallbackも実機未検証。プライベート権利・4TB/200GB実HDD・ローカルSHA・復元0。ダウンロード承認0。mainのみ。
+
+## 旧v38（2026-11-15）
 
 **唯一の選定正本**は[CURRENT](catalog/CURRENT.json)→[193資産／146有効](catalog/effective-portfolio-2026-11-15-v38.json)。[採用理由・非採用・規制事実の分離](docs/strategy/86-v38-risk-aware-original-model-selection-2026-11-15.md)に基づきHaru-4B（音声入力・発話を並列処理する別学習済み原本）とPraxis-1 DROID（Gated、17枚BF16 shard、動画＋ロボット行動共同生成）を各1件追加。元の191件は削除・降格なし。取得前[全146件停止条件](catalog/readiness/v38-2026-11-15-r86-all146-selection-gates.json)、Praxis必須Qwen3.5-2Bは独立資産に数えず、Wan2.2 VAEは既存source SHA一致を用いて重複保管を避ける。**Gated20件、未確定総数9件、利用権限/ローカルSHA/80GB GPU/HDD空き未実証。重みDL、コード実行、承認0件。mainのみ。** 以下v37以下は履歴。
 
