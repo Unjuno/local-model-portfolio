@@ -18,7 +18,7 @@ class CurrentPortfolioIntegrity(unittest.TestCase):
   cls.access=read(cls.current["latest_conditional_access_audit"]["path"])
  def test_latest_revision_and_exact_counts(self):
   c=self.current;v=self.view
-  self.assertEqual(c["revision_id"],"v36-20261115")
+  self.assertEqual(c["revision_id"],"v37-20261115")
   self.assertEqual(v["revision_id"],c["revision_id"])
   self.assertEqual(len(v["items"]),191)
   self.assertEqual(len({identity(x) for x in v["items"]}),191)

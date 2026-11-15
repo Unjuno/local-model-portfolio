@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-15",
+  "kind": "R85_V37_PUBLISHER_SOURCE_SCOPE_AND_POLICY_CORRECTION_METADATA_ONLY",
+  "selection_revision": "v37-20261115",
+  "asset_kind": "model",
+  "repo_id": "nvidia/Kumo-Tabular",
+  "revision": "c5893d418e162b9f841ae179dc767afefff73831",
+  "publisher_api": "https://huggingface.co/api/models/nvidia/Kumo-Tabular/revision/c5893d418e162b9f841ae179dc767afefff73831?blobs=true",
+  "publisher_observation": {
+    "source_kind": "official HF API revision blobs",
+    "gated": false,
+    "private": false,
+    "source_repo_file_count": 10,
+    "source_all_file_bytes": 2437933362,
+    "license_metadata": "openmdw-1.1",
+    "license_url": "https://huggingface.co/nvidia/Kumo-Tabular/blob/c5893d418e162b9f841ae179dc767afefff73831/LICENSE",
+    "license_text_read_at_pinned_revision": true,
+    "model_usage_license_assessed_as": "OpenMDW1.1 free dealing with notice preservation and patent/copyright litigation termination; other-party rights separately require clearance",
+    "owner_personal_entitlement_verified": false
+  },
+  "source_file_manifest": {
+    "selected_source_files": [
+      {
+        "path": ".gitattributes",
+        "bytes": 1519,
+        "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+        "selected": true,
+        "payload_fetched": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "LICENSE",
+        "bytes": 2693,
+        "git_blob_sha1": "161a8f01c0e68899bf4175a5c641c5fa0e9b11db",
+        "selected": true,
+        "payload_fetched": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "README.md",
+        "bytes": 1342,
+        "git_blob_sha1": "e18af94a30ac82f4dbb5a65e9f35800854e7bdee",
+        "selected": true,
+        "payload_fetched": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "config.json",
+        "bytes": 423,
+        "git_blob_sha1": "35e256c46c4d4facc8383dce5f4b8c2351998b7b",
+        "selected": true,
+        "payload_fetched": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "large/classifier.pt",
+        "bytes": 854850034,
+        "git_blob_sha1": "d99fcc1d6f90de494a3d8c97796fb0342e8cbc88",
+        "lfs_sha256": "cc21484316949641cc3d65a7bb6c36cdea854cc569435755ff23b850018ec613",
+        "selected": true,
+        "payload_fetched": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "large/regressor.pt",
+        "bytes": 862909259,
+        "git_blob_sha1": "8b54fcb25abca1182fe6af1362fef26693480348",
+        "lfs_sha256": "745e0e5d97e4256d8a24cb61c2eecbd1128da6c83938c196b7589ea6f62e7421",
+        "selected": true,
+        "payload_fetched": false,
+        "local_sha_verified": false
+      }
+    ],
+    "excluded_alternative_size_files": [
+      {
+        "path": "medium/classifier.pt",
+        "bytes": 246117940,
+        "git_blob_sha1": "7e82b856989fce14b945d73b3e53e29b83a57977",
+        "lfs_sha256": "70d6aee8fd13416300afead71a5145a40edb790952e2417d87f27b3f7e57793d",
+        "selected": false,
+        "payload_fetched": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "medium/regressor.pt",
+        "bytes": 250144651,
+        "git_blob_sha1": "f4455a93f4c6828aa9ff99da218270f46f1a34ac",
+        "lfs_sha256": "daa6a17420b5aed231007e5d2f9c712abe093b4f94b3e1189b178947a95fb725",
+        "selected": false,
+        "payload_fetched": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "small/classifier.pt",
+        "bytes": 109936978,
+        "git_blob_sha1": "269b270c56ae4f4a1f5c4852f8e3baa3f7acf210",
+        "lfs_sha256": "1ff91f484e19021aaf7d9eff6cc07e6d95a60b4aaad473e83e2ab2c3bfd2b617",
+        "selected": false,
+        "payload_fetched": false,
+        "local_sha_verified": false
+      },
+      {
+        "path": "small/regressor.pt",
+        "bytes": 113968523,
+        "git_blob_sha1": "9bcb579ab17bf00e5c462712879d4e2113e0665c",
+        "lfs_sha256": "fc672f536501d64356036050ac2acea7e46927f7b9ad38366abe048f88e7d423",
+        "selected": false,
+        "payload_fetched": false,
+        "local_sha_verified": false
+      }
+    ],
+    "selected_file_count": 6,
+    "selected_publisher_source_bytes": 1717765270,
+    "selected_trained_weight_bytes": 1717759293,
+    "excluded_four_alternate_same_task_size_bytes": 720168092
+  },
+  "model_configuration_observed": {
+    "model_type": "kumo_tabular",
+    "default_size": "large",
+    "classification_checkpoint": "large/classifier.pt",
+    "regression_checkpoint": "large/regressor.pt",
+    "publisher_approx_total_trained_state_parameters": 429350000,
+    "official_runtime_repo": "NVIDIA/structured-data-models",
+    "pinned_runtime_code": "46a6f20d20f1140912f7a9e6ecdda9a3cd3fda87",
+    "checkpoint_deserialization": "torch.load(weights_only=True)",
+    "full_tensor_count_locally_verified": false
+  },
+  "separation_of_gates": {
+    "publisher_file_manifest_complete_for_selected_hf_repo": true,
+    "full_learned_and_software_dependencies_closed": false,
+    "archive_owner_disk_verified": false,
+    "personal_rights_verified": false,
+    "payload_downloaded": false,
+    "local_sha256_verified": false,
+    "offline_runtime_verified": false,
+    "security_patched_pytorch_abi_verified": false,
+    "final_selected_file_bytes_approved": null,
+    "fully_pinned_offline_bundle_revision": null,
+    "download_authorized": false
+  },
+  "second_correction": {
+    "repo_id": "perplexity-ai/pplx-decider-flash-v1.3",
+    "fixed_revision": "d06fb3f2d97e0a52325a0d463c450cf0338f44fe",
+    "source_url": "https://huggingface.co/api/models/perplexity-ai/pplx-decider-flash-v1.3/revision/d06fb3f2d97e0a52325a0d463c450cf0338f44fe?blobs=true",
+    "observed_hf_api_private": false,
+    "observed_hf_api_gated": false,
+    "conflicting_publisher_file": "release-manifest.json records private:true",
+    "interpretation": "Publisher release manifest may be stale; live immutable-revision Hub access metadata is not Gated. Owner usage entitlement and actual future file access remain unverified.",
+    "personal_entitlement_verified": false,
+    "download_authorized": false
+  },
+  "relevant_policy_primary_sources": {
+    "EU_AI_Act": "https://eur-lex.europa.eu/eli/reg/2024/1689/2026-07-27/eng",
+    "EU_GPAI_Guideline": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers",
+    "US_BIS_May_2025": "https://www.bis.gov/press-release/department-commerce-announces-rescission-biden-era-artificial-intelligence-diffusion-rule-strengthens",
+    "US_GAO_2026": "https://www.gao.gov/products/b-337935",
+    "China_MOFCom_2026_10_16": "https://www.mofcom.gov.cn/zwgk/zcfb/art/2026/art_0a31a3c9ac404f7a9b0e917ce3412997.html",
+    "Japan_AI_Law": "https://laws.e-gov.go.jp/law/507AC0000000053"
+  }
+}

@@ -1,6 +1,10 @@
 # エージェント作業規約
 
-## 現行v36（2026-11-15）
+## 現行v37（2026-11-15）
+
+191登録・144有効は**変更なし**。Kumo Tabularの固定publisher revisionと6ファイル原本SHA/bytesを確定、不要Small/Medium4重みをsource候補から排除。PPLX DeciderのHub API `private:false,gated:false`を確認するが内部manifest `private:true` と区別し、本人権限は未確認。規制事実と仮説を分ける。[調査・選定保全](docs/strategy/85-v37-original-weight-source-lock-and-regulation-facts.md)。`selected_file_bytes`、最終bundle、権利・HDD・実行は未完了、承認0。
+
+## 旧v36（2026-11-15）
 
 **唯一の選定正本は `catalog/CURRENT.json`→v36、191登録／144有効（SELECT53／CONDITIONAL91）**。[選定差分](catalog/revisions/v36-2026-11-15.json)でColorCodeとSurfaceCodeの別3D CNN・別学習済み原本2件を条件付き追加、v35/34/33の内容を保持。[一次技術報告](docs/strategy/83-v36-original-ising-qec-source-selection-2026-11-15.md)。原本は両方Gatedで匿名401、**個人の取得権限未確認、モデル実体未取得・実行なし**。4TB計画・最低空き200GB・150B例外、承認0は変更なし。下記旧v35以下は履歴であり現行選定を上書きしない。mainのみ使用。
 

@@ -52,8 +52,8 @@ class V35(unittest.TestCase):
   self.assertFalse(p["download_enabled"]);self.assertFalse(a["download_authorized"])
   self.assertEqual(read("queues/approved.json")["entries"],[])
  def test_active_pointer_only_after_complete_set(self):
-  c=read("catalog/CURRENT.json")
-  n=read(c["materialized_catalog_path"])
+  c={"revision_id":"v35-20261115","expected":{"tracked":189,"active":142},"priority_worklist_path":"queues/proposed-v35-2026-11-15.json","insurance_preparation_worklist_path":"catalog/preparation/2026-11-15-insurance-bundles-v35.json"}
+  n=read("catalog/effective-portfolio-2026-11-15-v35.json")
   self.assertEqual(c["revision_id"],"v35-20261115")
   self.assertEqual(n["revision_id"],c["revision_id"])
   self.assertEqual(c["expected"]["tracked"],len(n["items"]))

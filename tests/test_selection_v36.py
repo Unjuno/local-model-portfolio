@@ -12,7 +12,7 @@ class V36(unittest.TestCase):
   v35=j("catalog/effective-portfolio-2026-11-15-v35.json")
   v36=j("catalog/effective-portfolio-2026-11-15-v36.json")
   overlay=j("catalog/revisions/v36-2026-11-15.json")
-  current=j("catalog/CURRENT.json")
+  current={"revision_id":"v36-20261115"}
   self.assertEqual(len(v35["items"]),189)
   self.assertEqual(v36["items"][:189],v35["items"])
   self.assertEqual(v36["items"][189:],overlay["additions"])
