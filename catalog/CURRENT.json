@@ -338,5 +338,28 @@
     "offline_restore_verified": false,
     "download_approved": false
   },
-  "latest_groundingpi_thinker_original_study": "catalog/research/2026-11-15-r88-groundingpi-thinker-original-license-comparison.json"
+  "latest_groundingpi_thinker_original_study": "catalog/research/2026-11-15-r88-groundingpi-thinker-original-license-comparison.json",
+  "latest_policy_primary_source_risk_audit": {
+    "date": "2026-11-15",
+    "scope_revision": "v40-20261115",
+    "source": "catalog/research/2026-11-15-r91-v40-148-policy-and-insurance-triage.json",
+    "report": "docs/strategy/91-v40-regulation-primary-source-and-148-blocker-audit.md",
+    "test": "tests/test_r91_v40_policy_provenance.py",
+    "coverage_active": 148,
+    "selected": 53,
+    "conditional": 95,
+    "observed_conditional_gated": 20,
+    "select_access_audit_uncovered": 53,
+    "first_blocker_counts": {
+      "OWNER_SPECIFIC_GATED_ENTITLEMENT": 19,
+      "OWNER_HDD_ACTUAL_CAPACITY_AND_STAGING": 2,
+      "SINGLE_IMMUTABLE_SOURCE_FILE_SET": 118,
+      "COMPLETE_TRAINED_TOTAL_PARAMETERS": 9
+    },
+    "corrects_groundingpi_historical_gated_flag": true,
+    "total_150b_policy": "CURRENT_BASELINE_WITH_QUANTIZED_RUNTIME_EXCEPTION_NOT_V9_ABSOLUTE",
+    "no_selection_change": true,
+    "no_download_authorization": true,
+    "owner_drive_verified": false
+  }
 }
