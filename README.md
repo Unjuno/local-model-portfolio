@@ -1,9 +1,11 @@
 # Local Model Portfolio
 
+**R86・現行v37の保存目的監査（2026-11-15）**：[全144有効資産を実Gated状態・権利・構成未確定により再優先付け](docs/strategy/86-v37-regulation-access-first-144-and-budget.md)（[144件機械可読台帳](catalog/research/2026-11-15-r86-v37-144-access-regulation-first-triage.json)）。Gated19件、過去privateフラグ不整合1件、最終原本revision/byte未確定142件を優先。NVIDIA Kumo-Relationalの分類/回帰2重みは[固定コードから合計6,188万以下の保守上限を検証](docs/strategy/84-kumo-relational-published-upper-bound-and-retention.md)したが**正本の全tensor確定ゲートは未解除**。4TB・実空き200GB基準で新規計画枠を足した仮想余白は約239.4GB（**物理実測ではない**）。新規採用/削除0・取得承認0。
+
 **v37・11月15日（新規追加なし）**：[Kumo Tabular Largeを配布元40桁revision・6ファイル・正確なSHA/byteで固定し、Small/Medium4ファイル約720MBを選択から除外](docs/strategy/85-v37-original-weight-source-lock-and-regulation-facts.md)。[正本191件／有効144](catalog/effective-portfolio-2026-11-15-v37.json)、取得承認0。Perplexity公開元Hub APIのprivate/gated=falseを旧内部manifestと分離。EU/米国/中国/日本の実際の規制と将来予測を区別。[証拠JSON](catalog/research/2026-11-15-r85-v37-kumo-tabular-source-and-policy-facts.json)。
 
 
-**現行v36（2026-11-15）**：[191資産・有効144件](catalog/effective-portfolio-2026-11-15-v36.json)。[Ising ColorCode／SurfaceCodeという異なる量子誤り訂正の学習済み原本2件](docs/strategy/83-v36-original-ising-qec-source-selection-2026-11-15.md)をCONDITIONAL研究追加、[非実行144件キュー](queues/proposed-v36-2026-11-15.json)。v35 Muse/Glimmer原本＋別学習済みDFlash、v34 Kumo-Tabular/Anomaly、v33 Granite LLMON／PPLX Decider／Kumo-Relationalは保持。新規Ising2件はGated、実モデル本文への匿名アクセス不可、本人権限未検証。**重みDL・取得承認・オフライン復元0件**。以下は歴史的な版情報。
+**旧版v36（2026-11-15）**：[191資産・有効144件](catalog/effective-portfolio-2026-11-15-v36.json)。[Ising ColorCode／SurfaceCodeという異なる量子誤り訂正の学習済み原本2件](docs/strategy/83-v36-original-ising-qec-source-selection-2026-11-15.md)をCONDITIONAL研究追加、[非実行144件キュー](queues/proposed-v36-2026-11-15.json)。v35 Muse/Glimmer原本＋別学習済みDFlash、v34 Kumo-Tabular/Anomaly、v33 Granite LLMON／PPLX Decider／Kumo-Relationalは保持。新規Ising2件はGated、実モデル本文への匿名アクセス不可、本人権限未検証。**重みDL・取得承認・オフライン復元0件**。以下は歴史的な版情報。
 
 **旧v35（2026年11月15日）**：公式config・safetensors索引・SHA・利用規約を調査し、[Muse Glimmer原本と別学習5層DFlashの2成果をCONDITIONAL追加](docs/strategy/82-v35-muse-original-and-dflash-formal-selection-2026-11-15.md)。[全189資産（モデル163・データ26）](catalog/effective-portfolio-2026-11-15-v35.json)／[有効142件キュー](queues/proposed-v35-2026-11-15.json)／[全142件の取得前ゲート](catalog/readiness/v35-2026-11-15-r82-all142-gates.json)。同じ重みのGGUF複製は不採用。**重みダウンロード0、実機検証0、承認0**。4TBと200GB空きの実物理適合は未確定。
 
