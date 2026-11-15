@@ -31,7 +31,7 @@ Stuubs配布元には旧beta1、旧beta2、最新版v1、INT8、NVFP4、GGUFが�
 
 **H**：2つの合成checkpointは少なくとも作者の説明上は異なる統合学習状態で、各repoの通常量子化形式は別学習成果ではない。  
 **T**：n_min=2モデル・Lightricks原文license・Stuubs固定NOTICEとBF16公開SHAを検証。将来の昇格では同一版の全tensor/40桁commit/権利/依存と品質を測定する。  
-**D**：Stuuubsのv1 BF16公開SHAと複数形式の重複は**PASS（配布元の公開メタデータ）**、別モデル間のtensor非同一・利用権と最終manifestは**UNCERTAIN**、認可なくGatedや第三者配布を迂回するのは**FAIL**。  
+**D**：Stuubsのv1 BF16公開SHAと複数形式の重複は**PASS（配布元の公開メタデータ）**、別モデル間のtensor非同一・利用権と最終manifestは**UNCERTAIN**、認可なくGatedや第三者配布を迂回するのは**FAIL**。  
 **C**：両モデルが同一改変を共有する、非デフォルトbetaの独立研究価値が判明する、該当版licenseが異なる場合は方針を再評価。  
 **U**：公開元のblob versionや表示GB丸め、直接tensor未閲覧、独立実機測定欠如、法的適用の未確定。分布がないため`u_c`・`k`は定量不可。
 
