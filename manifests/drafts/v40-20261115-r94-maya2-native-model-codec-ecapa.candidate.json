@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-15",
+  "base_catalog_revision": "v40-20261115",
+  "original_model": "maya-research/maya2-native",
+  "decision": "KEEP_CONDITIONAL_PRESERVE_ORIGINAL_AND_THREE_PUBLISHER_REVISIONS",
+  "purpose": "Preserve independently post-trained streaming TTS across 11 Indic languages and English, while avoiding duplicate Qwen3 base weights",
+  "model_internals": {
+    "main_trained_parameters_from_hf": 2502398656,
+    "main_shards": 2,
+    "depth_decoder_parameters_publisher_approx": 555000000,
+    "depth_decoder_already_part_of_main_shards": true,
+    "required_codec": "Kyutai Mimi 96.2M published HF model-safetensors params",
+    "required_speaker_encoder": "SpeechBrain ECAPA-TDNN .ckpt; exact parameter count not verified",
+    "codec_codebooks": 32,
+    "codec_frame_hz": 12.5,
+    "codebook_size": 2048,
+    "complete_pipeline_param_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+    "parent_qwen3_1_7b_weight_files_required": false
+  },
+  "source": {
+    "source_type": "LIVE_HF_API_PUBLISHER_METADATA_READONLY_NOT_DOWNLOADED",
+    "publication_date": "2026-11-15",
+    "pinned_code_repo": "https://github.com/MayaResearch/maya2-native/tree/c6b376868e268551d065c4206193e96257bef4a1",
+    "code_repo_sha": "c6b376868e268551d065c4206193e96257bef4a1",
+    "source_revisions": [
+      {
+        "repo_id": "maya-research/maya2-native",
+        "sha": "87a83efdd6551e038246b6b37836a6264713eec3",
+        "files": 30,
+        "all_repo_bytes": 5056388035,
+        "license": "apache-2.0",
+        "gated": false,
+        "immutable_weight_files": [
+          {
+            "path": "model-00001-of-00002.safetensors",
+            "bytes": 5000017272,
+            "publisher_sha256": "a6f3488abb925ec758a3e6908ffa105f4b2db93662e1471be6819111196c7f8c"
+          },
+          {
+            "path": "model-00002-of-00002.safetensors",
+            "bytes": 4862496,
+            "publisher_sha256": "5e3bfab00767a3035a93f527c6021e7ab01988d63ddf137ccbf1edb13e4d75d2"
+          },
+          {
+            "path": "backbone/tokenizer.json",
+            "bytes": 16103051,
+            "publisher_sha256": "26c51f9b772f9084ed6bdeabc44b7c15397c12966bfa3e1c09b025e82f4fdbaf"
+          }
+        ]
+      },
+      {
+        "repo_id": "kyutai/mimi",
+        "sha": "89091b3e466eb6a9d11e537bf26b144f194978f7",
+        "files": 5,
+        "all_repo_bytes": 384657055,
+        "license": "cc-by-4.0",
+        "gated": false,
+        "immutable_weight_files": [
+          {
+            "path": "model.safetensors",
+            "bytes": 384649828,
+            "publisher_sha256": "bac7e85083dcded655d24eaadde7e6eea34c0da1b35fa2d284e641bd2b942a5e"
+          }
+        ]
+      },
+      {
+        "repo_id": "speechbrain/spkrec-ecapa-voxceleb",
+        "sha": "0f99f2d0ebe89ac095bcc5903c4dd8f72b367286",
+        "files": 10,
+        "all_repo_bytes": 89133738,
+        "license": "apache-2.0",
+        "gated": false,
+        "immutable_weight_files": [
+          {
+            "path": "embedding_model.ckpt",
+            "bytes": 83316686,
+            "publisher_sha256": "0575cb64845e6b9a10db9cb74d5ac32b326b8dc90352671d345e2ee3d0126a2"
+          },
+          {
+            "path": "classifier.ckpt",
+            "bytes": 5534328,
+            "publisher_sha256": "fd9e3634fe68bd0a427c95e354c0c677374f62b3f434e45b78599950d860d535"
+          },
+          {
+            "path": "mean_var_norm_emb.ckpt",
+            "bytes": 1921,
+            "publisher_sha256": null
+          },
+          {
+            "path": "hyperparams.yaml",
+            "bytes": 1919,
+            "publisher_sha256": null
+          }
+        ]
+      }
+    ],
+    "three_repo_full_snapshot_bytes_reference": 5530178828,
+    "model_plus_dependencies_publisher_bytes_known": true,
+    "actual_final_selected_bytes": null,
+    "exemplar_audio_and_unneeded_files_pending_exclusion": true,
+    "source_code_binary_size_not_counted": true,
+    "model_file_list_complete_for_main": false,
+    "final_file_set_locked": false
+  },
+  "dedup": {
+    "parent": "Qwen/Qwen3-1.7B-Base",
+    "reuse_parent_weights": false,
+    "reason": "Maya checkpoint includes fine-tuned Qwen backbone weights; code uses only config and tokenizer from backbone/ as first-party README specifies",
+    "repeated_quantized_formats_selected": 0
+  },
+  "license": {
+    "model": "apache-2.0",
+    "mimi": "cc-by-4.0",
+    "ecapa": "apache-2.0",
+    "attribution_notices_pending": true,
+    "individual_gated_entitlement_required": false,
+    "training_data_restrictions_still_need_review": true
+  },
+  "runtime": {
+    "author_test_only": true,
+    "hardware": "NVIDIA Linux CUDA 12.8, 8GB minimum GPU claimed; 1x H100 NVL measured",
+    "batch": "H100 B=1/8/16/32; no owner benchmark",
+    "clock": null,
+    "python": "3.10-3.12",
+    "torch": "2.8.0",
+    "torchaudio": "2.8.0",
+    "transformers": "5.6.2",
+    "triton": "3.4.0",
+    "speechbrain": "1.1.2",
+    "offline": "Requires pinned engine code/wheels and cached Mimi+ECAPA",
+    "pickle_ckpt_safety": "Do not unpickle untrusted .ckpt; inspect under safe loader/isolation",
+    "tested": false
+  },
+  "risk_evidence": {
+    "observed": "Public ungated original weights and public codec/ECAPA",
+    "scenario": "Voice impersonation and access-condition tightening possible but not verified for this model",
+    "model_specific_ban_verified": false
+  },
+  "validation": {
+    "H": "Offline original+Mimi+ECAPA checkpoint loaded in pinned code with no network calls and one sentence per 12 languages",
+    "T": "PIN official SHA files and inspect license, module list, tests in isolated Linux NVIDIA CUDA environment with explicit owner approval",
+    "D": "PASS only if executable offline, all hashes and license rights verified, full trained totals <150B, owner disk free >=200GB after staging; otherwise FAIL/UNCERTAIN",
+    "C": "Qwen parent weight unexpectedly required or incompatible Mimi version, missing trained components, unsafe checkpoint loading or no licensed voices",
+    "U": "Unknown ECAPA exact count, missing complete code/runtime byte union, license full texts and owner disk measurement; combined numerical uncertainty cannot be quantified"
+  },
+  "approved_download": false,
+  "weights_downloaded": false,
+  "code_executed": false,
+  "final_archive_complete": false
+}
