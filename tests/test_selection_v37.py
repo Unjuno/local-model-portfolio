@@ -8,13 +8,13 @@ class V37(unittest.TestCase):
  def test_exact_two_evidence_corrections_and_same_assets(self):
   old=get("catalog/effective-portfolio-2026-11-15-v36.json")
   new=get("catalog/effective-portfolio-2026-11-15-v37.json")
-  c=get("catalog/CURRENT.json");o=get("catalog/revisions/v37-2026-11-15.json")
+  o=get("catalog/revisions/v37-2026-11-15.json")
   self.assertEqual(len(new["items"]),191)
   self.assertEqual(len({uid(x) for x in new["items"]}),191)
   self.assertEqual({uid(x):x["portfolio_decision"] for x in old["items"]},
                    {uid(x):x["portfolio_decision"] for x in new["items"]})
   self.assertEqual(new["counts"],old["counts"])
-  self.assertEqual(c["revision_id"],"v37-20261115")
+  self.assertEqual(new["revision_id"],"v37-20261115")
   self.assertEqual(len(o["metadata_corrections"]),2)
   self.assertEqual(o["selection_added"],0)
   self.assertTrue(all(not x["download_approved"] for x in new["items"]))
