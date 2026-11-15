@@ -1,0 +1,484 @@
+{
+  "schema_version": 1,
+  "kind": "NON_EXECUTABLE_IMMUTABLE_HF_SOURCE_CANDIDATE",
+  "review_date": "2026-11-15",
+  "review_base_revision": "v42-20261115",
+  "asset_kind": "model",
+  "repo_id": "IFM/PAN2",
+  "publisher": "Institute of Foundation Models / MBZUAI",
+  "source_commit": "82f54c6cea3e20a9c451b61d7360016e5970503d",
+  "publisher_modified_utc": "2026-11-12T10:41:23.000Z",
+  "source_model_url": "https://huggingface.co/IFM/PAN2",
+  "publisher_api_url": "https://huggingface.co/api/models/IFM/PAN2/revision/82f54c6cea3e20a9c451b61d7360016e5970503d?blobs=true",
+  "observed_public_ungated": true,
+  "model_license": "Apache-2.0",
+  "third_party_licenses_source": "https://huggingface.co/IFM/PAN2/blob/82f54c6cea3e20a9c451b61d7360016e5970503d/THIRD_PARTY_LICENSES",
+  "source_identity": {
+    "model_shown_total_parameters": 29201996992,
+    "hub_model_safetensors_scope_only": true,
+    "architecture": "dual-stream 44-block 29.2B PAN2 MMDiT visual simulator",
+    "training_origin": "author states trained from scratch on action/state-conditioned videos",
+    "text_conditioning": "Qwen3.5-9B frozen pretrained text encoder included as 4 sharded safetensors",
+    "visual_codec": "Wan 2.2 VAE pretrained frozen included as 1 safetensors",
+    "reasoner": "conceptual text-plan rewriter: optional interchangeable local LLM, not embedded in PAN2 weights",
+    "safety": "Qwen3Guard 4B and Q16 classifier separate recommended external learned guard components"
+  },
+  "preservation_selection": {
+    "decision": "CONDITIONAL_RESEARCH_ONLY_DISTINCT_WORLD_MODEL",
+    "archival_origin_precision": "BF16 pretrained original",
+    "select_all_non_asset_files": true,
+    "original_repository_file_count": 52,
+    "original_repository_bytes": 86174243428,
+    "selected_file_count": 35,
+    "selected_source_bytes": 86082094058,
+    "omitted_visual_demo_file_count": 17,
+    "omitted_visual_demo_bytes": 92149370,
+    "selected_trained_weight_count": 19,
+    "trained_components": [
+      {
+        "component": "transformer",
+        "files": 14,
+        "bytes": 67369648792,
+        "lfs_count": 14
+      },
+      {
+        "component": "text_encoder",
+        "files": 4,
+        "bytes": 15873415904,
+        "lfs_count": 4
+      },
+      {
+        "component": "vae",
+        "files": 1,
+        "bytes": 2818777808,
+        "lfs_count": 1
+      }
+    ],
+    "files": [
+      {
+        "path": ".gitattributes",
+        "bytes": 2670,
+        "sha256_publisher_lfs": null,
+        "oid_git_blob_sha1": "fb809a32501965edf5b0cfea32cb497a355d88c9",
+        "local_sha_verified": false
+      },
+      {
+        "path": "LICENSE",
+        "bytes": 11395,
+        "sha256_publisher_lfs": null,
+        "oid_git_blob_sha1": "de1f097226d3ec9b0c8c8602c96992c6041362d4",
+        "local_sha_verified": false
+      },
+      {
+        "path": "NOTICE",
+        "bytes": 807,
+        "sha256_publisher_lfs": null,
+        "oid_git_blob_sha1": "40d6223b030ed696b337c21d4fd6291b934f0b62",
+        "local_sha_verified": false
+      },
+      {
+        "path": "README.md",
+        "bytes": 16747,
+        "sha256_publisher_lfs": null,
+        "oid_git_blob_sha1": "9d1b311a1de9c17f17b681bdc0d9f60b286de50f",
+        "local_sha_verified": false
+      },
+      {
+        "path": "THIRD_PARTY_LICENSES",
+        "bytes": 35622,
+        "sha256_publisher_lfs": null,
+        "oid_git_blob_sha1": "671a78f67690876a2471fd254118f9d3c8840b01",
+        "local_sha_verified": false
+      },
+      {
+        "path": "modular_model_index.json",
+        "bytes": 1872,
+        "sha256_publisher_lfs": null,
+        "oid_git_blob_sha1": "9385838325bebd704d46e521ef2a90ff7620c424",
+        "local_sha_verified": false
+      },
+      {
+        "path": "safety_checker/config.json",
+        "bytes": 127,
+        "sha256_publisher_lfs": null,
+        "oid_git_blob_sha1": "ff60cfd081e870e741b0e87335118b27c4a62215",
+        "local_sha_verified": false
+      },
+      {
+        "path": "scheduler/scheduler_config.json",
+        "bytes": 487,
+        "sha256_publisher_lfs": null,
+        "oid_git_blob_sha1": "4c1bf6c1894728406e1b4077e74a21b6814a0c09",
+        "local_sha_verified": false
+      },
+      {
+        "path": "text_encoder/config.json",
+        "bytes": 1979,
+        "sha256_publisher_lfs": null,
+        "oid_git_blob_sha1": "80a019c28833fd1663838f65b31c570443dd4405",
+        "local_sha_verified": false
+      },
+      {
+        "path": "text_encoder/model-00001-of-00004.safetensors",
+        "bytes": 4973901040,
+        "sha256_publisher_lfs": "74f209d5299e87bbcc7de2c12e3a4b49cb56a06cd0bed6ae9a60fd5432dd6c67",
+        "oid_git_blob_sha1": "3ad30b164d60e82da53461edf4d9defa91dccefa",
+        "local_sha_verified": false
+      },
+      {
+        "path": "text_encoder/model-00002-of-00004.safetensors",
+        "bytes": 4988361936,
+        "sha256_publisher_lfs": "365021e5a60c859a936e23b879695f4c7bce2cc008541afe173efdbde0500bab",
+        "oid_git_blob_sha1": "8b93c07c812fd032620dc95820b5ed92930c82a0",
+        "local_sha_verified": false
+      },
+      {
+        "path": "text_encoder/model-00003-of-00004.safetensors",
+        "bytes": 4954199896,
+        "sha256_publisher_lfs": "91a8bd6ee80a0f126925c278c4e01ef2ffa8410490a369c3d619e6d350757d0e",
+        "oid_git_blob_sha1": "ee88e6bbe2bdf14f192af566a8044e92bc92008f",
+        "local_sha_verified": false
+      },
+      {
+        "path": "text_encoder/model-00004-of-00004.safetensors",
+        "bytes": 956953032,
+        "sha256_publisher_lfs": "45d65389f300e39d4f56840c480ad791d9c6c49d3fc044962d83785b388b7192",
+        "oid_git_blob_sha1": "beac58a120f126e0a2234b0aedb9937343b22794",
+        "local_sha_verified": false
+      },
+      {
+        "path": "text_encoder/model.safetensors.index.json",
+        "bytes": 33048,
+        "sha256_publisher_lfs": null,
+        "oid_git_blob_sha1": "e75aab8b6dfe6254a27124b392a5a72346905725",
+        "local_sha_verified": false
+      },
+      {
+        "path": "tokenizer/chat_template.jinja",
+        "bytes": 7756,
+        "sha256_publisher_lfs": null,
+        "oid_git_blob_sha1": "a585dec894e63da457d9440ec6aa7caa16d20860",
+        "local_sha_verified": false
+      },
+      {
+        "path": "tokenizer/tokenizer.json",
+        "bytes": 19989339,
+        "sha256_publisher_lfs": "a5cd9732badce41de57e6efce8302930ded1c1188c5f81feb2bd6c24c4a1941f",
+        "oid_git_blob_sha1": "a200a8dd650a52c17957673398767ac34b96dbeb",
+        "local_sha_verified": false
+      },
+      {
+        "path": "tokenizer/tokenizer_config.json",
+        "bytes": 1464,
+        "sha256_publisher_lfs": null,
+        "oid_git_blob_sha1": "725da7ca3fd35a6c1bd15d412c3aeab4c30f9c37",
+        "local_sha_verified": false
+      },
+      {
+        "path": "transformer/config.json",
+        "bytes": 495,
+        "sha256_publisher_lfs": null,
+        "oid_git_blob_sha1": "5721d4a1c152e44418ac43cd13b6e6b7108291d4",
+        "local_sha_verified": false
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model-00001-of-00014.safetensors",
+        "bytes": 4940734352,
+        "sha256_publisher_lfs": "8738b02827609e260992ff4d61b28f4794b849e9a7e728cf7052a4d4edf03da8",
+        "oid_git_blob_sha1": "a3b687a87c9b84aabb200aaf4b239a40e2d8f9f0",
+        "local_sha_verified": false
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model-00002-of-00014.safetensors",
+        "bytes": 4698904784,
+        "sha256_publisher_lfs": "2cdf7d2461bba6a56d81b38a536d7696aae796956ab73b275b4cb9762e779a07",
+        "oid_git_blob_sha1": "21efb5668cdeb74a1b3957de790ebfda4c4f8b95",
+        "local_sha_verified": false
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model-00003-of-00014.safetensors",
+        "bytes": 4967333320,
+        "sha256_publisher_lfs": "ef0b058d1936791187662d1f1160d942529b35ca4c26d2666d0f7e7d9e670eaf",
+        "oid_git_blob_sha1": "06b0c714974f5f0a8cf0d08663f006def1608f13",
+        "local_sha_verified": false
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model-00004-of-00014.safetensors",
+        "bytes": 4833082928,
+        "sha256_publisher_lfs": "f2b875b3aff19f83153ecb0901cebbcf73003b0ee0477d769e6b3a59557f4d13",
+        "oid_git_blob_sha1": "5e157a7720a8e4f394ef876051f944afffb857af",
+        "local_sha_verified": false
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model-00005-of-00014.safetensors",
+        "bytes": 4967348760,
+        "sha256_publisher_lfs": "3ceebe0ef17fcf2e0ef2e012b9e8994df571cea23d26d3c26d8301f0b7833412",
+        "oid_git_blob_sha1": "8ea80c85dd8fb3a60922397f7bbd1b7226498774",
+        "local_sha_verified": false
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model-00006-of-00014.safetensors",
+        "bytes": 4967333424,
+        "sha256_publisher_lfs": "9c047d21312f1dc986daddff49f3fb8e112738e22f911880381243a9a8a70d9e",
+        "oid_git_blob_sha1": "a653df8ac86ab8e5e926bbbbdd200df3db42a68c",
+        "local_sha_verified": false
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model-00007-of-00014.safetensors",
+        "bytes": 4833082976,
+        "sha256_publisher_lfs": "9684e8fde9c4370c5705d1777593281b9f77fadd0ba6403ba2289cf1377ec581",
+        "oid_git_blob_sha1": "b386b35158923de69888f4418f5f8b2330d0797b",
+        "local_sha_verified": false
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model-00008-of-00014.safetensors",
+        "bytes": 4967348760,
+        "sha256_publisher_lfs": "4dc09ad83b933de66fd73a67abf59eb8c0b6c009c98637d07cce9d6098405e76",
+        "oid_git_blob_sha1": "aa139f950341c11a78b8ea578de19736b3ef4ec9",
+        "local_sha_verified": false
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model-00009-of-00014.safetensors",
+        "bytes": 4967333424,
+        "sha256_publisher_lfs": "8ade00b40e0b0c5de581281bd7e1bd1daf642d57058a4f008b3aca646a07cf2c",
+        "oid_git_blob_sha1": "3f81b2f6d7c9241b34307b0d8f6643b7ac14c705",
+        "local_sha_verified": false
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model-00010-of-00014.safetensors",
+        "bytes": 4833082976,
+        "sha256_publisher_lfs": "9142716e0ae6b60d6c6f68807ca2345df89d89db102cf406d7d607732d39c0d4",
+        "oid_git_blob_sha1": "981c75f0636815fcee8aa1723649c3827489fff6",
+        "local_sha_verified": false
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model-00011-of-00014.safetensors",
+        "bytes": 4967348760,
+        "sha256_publisher_lfs": "dc81fdbaf9dc91421a9209d34e2bdd9779ac94793a244dde6197b45f1542fb79",
+        "oid_git_blob_sha1": "2c740fcc0d853a6c0dbad87e56cf75f942ba0668",
+        "local_sha_verified": false
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model-00012-of-00014.safetensors",
+        "bytes": 4967333424,
+        "sha256_publisher_lfs": "2e7fa833fbb80f15c306fed80e7fff23dc2cd1751a444dfb00b61f2ad1b46772",
+        "oid_git_blob_sha1": "3c4b7239a6cfdccfa0a0247e52a2597a5d36285f",
+        "local_sha_verified": false
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model-00013-of-00014.safetensors",
+        "bytes": 4833082976,
+        "sha256_publisher_lfs": "53eb3cede5a5398f5d08c6e48401c48cf126d67792e3c0e8c48f5ab72d8b4b6a",
+        "oid_git_blob_sha1": "1a8206fad47c74b6694c5b3deea0387f0672b497",
+        "local_sha_verified": false
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model-00014-of-00014.safetensors",
+        "bytes": 3626297928,
+        "sha256_publisher_lfs": "b43305eabf267ec14006583bca996888ccd9a05ad0d28ec1b144235451c2645a",
+        "oid_git_blob_sha1": "2eac576877c9e42e81c9650a6451fc1ceb78b9fd",
+        "local_sha_verified": false
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+        "bytes": 145991,
+        "sha256_publisher_lfs": null,
+        "oid_git_blob_sha1": "68b1bcbf56f42dd17440106351dcc5408444b1ce",
+        "local_sha_verified": false
+      },
+      {
+        "path": "vae/config.json",
+        "bytes": 1755,
+        "sha256_publisher_lfs": null,
+        "oid_git_blob_sha1": "edeac5c89322ddea84372224605f98ded403884f",
+        "local_sha_verified": false
+      },
+      {
+        "path": "vae/diffusion_pytorch_model.safetensors",
+        "bytes": 2818777808,
+        "sha256_publisher_lfs": "62cd18f19438e35b32ac63020e2852f566e9b02f46b6cdbd87972a356e3c6f4b",
+        "oid_git_blob_sha1": "ce286de5e77fb7878058355c6dcee7be8308a83c",
+        "local_sha_verified": false
+      }
+    ],
+    "omitted_optional_demo_files": [
+      {
+        "path": "assets/pan2-logo-dark.png",
+        "bytes": 19716,
+        "sha256_publisher_lfs": null,
+        "oid_git_blob_sha1": "fcd70aaa78c5fb10694b79af3bfb404910720739",
+        "local_sha_verified": false
+      },
+      {
+        "path": "assets/pan2-logo-light.png",
+        "bytes": 35913,
+        "sha256_publisher_lfs": null,
+        "oid_git_blob_sha1": "87477443773b5344157f1c1c5d7463731f3c7909",
+        "local_sha_verified": false
+      },
+      {
+        "path": "assets/report/architecture.png",
+        "bytes": 607923,
+        "sha256_publisher_lfs": "c3624602b0a40ebdfde8f9a306c0ff4c909204d49b211a2213e596249cbb850b",
+        "oid_git_blob_sha1": "3d57b72298327dbb867a06b88a5acc90a1dbd2ba",
+        "local_sha_verified": false
+      },
+      {
+        "path": "assets/report/captioning_pipeline.png",
+        "bytes": 256571,
+        "sha256_publisher_lfs": "c75380f542d6ee165b96f53b26ab105cd68db8bd08410ab98549a9782f2d09ea",
+        "oid_git_blob_sha1": "9d90175b337aeca8b61f5ed699acecc0e03a9922",
+        "local_sha_verified": false
+      },
+      {
+        "path": "assets/report/data_taxonomy.png",
+        "bytes": 620127,
+        "sha256_publisher_lfs": "1b2c638bddc2fbc2a278d1fb94115f000581dd0fe3f07db286813e59a9631a5c",
+        "oid_git_blob_sha1": "f6b8816bea62e6251f107e9955636e176902c97b",
+        "local_sha_verified": false
+      },
+      {
+        "path": "assets/report/results_benchmarks_dark.png",
+        "bytes": 151861,
+        "sha256_publisher_lfs": "f8a578dab24ab428a61ffcf894e242daf45a894aa8e58df712745947d5c30bf2",
+        "oid_git_blob_sha1": "58dbbe6db65bc9eec5b63bd25a3e9b479a30c248",
+        "local_sha_verified": false
+      },
+      {
+        "path": "assets/report/results_benchmarks_light.png",
+        "bytes": 151729,
+        "sha256_publisher_lfs": "9e994eadadabfb36deb00042ac6c0c9dcf029394372135aadaaadcc16de88d18",
+        "oid_git_blob_sha1": "0ca7527df39900985f87b6cf1b6e7fce23779ecb",
+        "local_sha_verified": false
+      },
+      {
+        "path": "assets/report/results_capabilities_dark.png",
+        "bytes": 192760,
+        "sha256_publisher_lfs": "c1be87ff5bb4dc9093d499317ab4a9c7cbabfe497455e302a496e39f7d3843e1",
+        "oid_git_blob_sha1": "24f66c9f1ddf477bb1b57beb40252ac92c3f9935",
+        "local_sha_verified": false
+      },
+      {
+        "path": "assets/report/results_capabilities_light.png",
+        "bytes": 193847,
+        "sha256_publisher_lfs": "1700aaa82b1707b697bd972ef44bd5088627c01cbd47ba5ea62ea0c23fe679b2",
+        "oid_git_blob_sha1": "7ef835e22b16b7cf07d9a6b13a7814084001cdd6",
+        "local_sha_verified": false
+      },
+      {
+        "path": "assets/report/results_human_dark.png",
+        "bytes": 113277,
+        "sha256_publisher_lfs": "100c7534caf552ab5a6789ae1a43ebae07cb980f6455942b0efeccd343718989",
+        "oid_git_blob_sha1": "bbd0f81c59149eccbef22a3c23094d06b34fac83",
+        "local_sha_verified": false
+      },
+      {
+        "path": "assets/report/results_human_light.png",
+        "bytes": 103605,
+        "sha256_publisher_lfs": "cc9cb4f78bd424db3c6feca722ded548a9a8290193a57fe85de4567193a9f518",
+        "oid_git_blob_sha1": "daf8284ac8a157cdce5d06be47ca0a0891dd37c2",
+        "local_sha_verified": false
+      },
+      {
+        "path": "assets/report/simulative_reasoning_puzzle.jpg",
+        "bytes": 278222,
+        "sha256_publisher_lfs": "9f35fff98f7935da25c298a46473c466d0adf579090d92a6404ecd31f641242d",
+        "oid_git_blob_sha1": "b13a6c710156c5a78fd82b4dcd553cc9afd417d8",
+        "local_sha_verified": false
+      },
+      {
+        "path": "assets/report/simulative_reasoning_surfing.jpg",
+        "bytes": 239507,
+        "sha256_publisher_lfs": "488605139b02ed6e9b7ed8048bdcf909d5a5d19cff923d068a6e8f8e66e2a1fd",
+        "oid_git_blob_sha1": "3bc24efbc3298e6e85a9c283b499c5ca4b9b3d09",
+        "local_sha_verified": false
+      },
+      {
+        "path": "assets/report/tier1_capabilities.png",
+        "bytes": 444658,
+        "sha256_publisher_lfs": "609aa4da066e83de4f387c9d5c871e5d5b3c43d893c0b7d75a3db541f83106eb",
+        "oid_git_blob_sha1": "b050fb1504c906b56a2f5b0f4cd0921549b4c659",
+        "local_sha_verified": false
+      },
+      {
+        "path": "assets/report/tier2_tsr.png",
+        "bytes": 568381,
+        "sha256_publisher_lfs": "0690e403a876c300fb7f582841bd441fdb4df2d47e6f344931374571cad5215b",
+        "oid_git_blob_sha1": "1bd375048361fe70de0cf50b98b0fc5d3b112232",
+        "local_sha_verified": false
+      },
+      {
+        "path": "assets/video.mp4",
+        "bytes": 79741832,
+        "sha256_publisher_lfs": "538786a8efcf4a71bff8f0cf405b6daae1bba7d16b8753bf922d073c2c0d9cab",
+        "oid_git_blob_sha1": "1261fb9b3ee2e5d8671d88ed28881a9d9a3f5212",
+        "local_sha_verified": false
+      },
+      {
+        "path": "assets/video_preview.gif",
+        "bytes": 8429441,
+        "sha256_publisher_lfs": "6c47afa2e7bb8b6d6d4fbb37677136244036e41ed181d0a9b7db490ae5000109",
+        "oid_git_blob_sha1": "7490b6eb56ee099cea0b51add614b5917d188259",
+        "local_sha_verified": false
+      }
+    ],
+    "selected_byte_scope_frozen_at_publisher_source": true,
+    "actual_hdd_reserved": false,
+    "actual_file_payload_downloaded": false,
+    "local_sha_verified": false,
+    "complete_runnable_offline_bundle_verified": false
+  },
+  "architecture_review": {
+    "total_main_parameters": 29201996992,
+    "all_parameter_count_exact_including_frozen_text_and_vae": null,
+    "nominal_hf_text_encoder_parameters": 9653100000,
+    "full_learned_pipeline_below150b_reason": "29.2B main + published Qwen3.5-9B and Wan 2.2 VAE, all learned weights represented as noncompressed BF16/F32 safetensors in an 86.17GB source; does not count optional conceptual rewriter or separate recommended guards as part of native PAN2 checkpoint",
+    "parameter_final_lock": "MAIN_PASS_SCREEN_COMPLETE_EXTERNAL_COMPONENT_TENSOR_CENSUS_PENDING"
+  },
+  "reuse_review": {
+    "upstream_vae_repository": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+    "upstream_vae_sha256_exact": "62cd18f19438e35b32ac63020e2852f566e9b02f46b6cdbd87972a356e3c6f4b",
+    "upstream_vae_revision": "b8fff7315c768468a5333511427288870b2e9635",
+    "upstream_vae_bytes": 2818777808,
+    "sha_equals_official_wan_diffusers_vae": true,
+    "do_not_assume_current_portfolio_Wan_native_pth_identical": true,
+    "existing_user_archive_dedup_verified": false,
+    "exclude_duplicate_lora_quant_or_sibling_models": true
+  },
+  "code_and_dependencies": {
+    "github_repo": "ifm-ai/PAN2",
+    "code_sha": "0fb907b6e16a82ead6d691d1de2eef6299c71e9a",
+    "license_code": "Apache-2.0",
+    "license_checked_url": "https://github.com/ifm-ai/PAN2/blob/0fb907b6e16a82ead6d691d1de2eef6299c71e9a/LICENSE",
+    "third_party_notice_checked_url": "https://github.com/ifm-ai/PAN2/blob/0fb907b6e16a82ead6d691d1de2eef6299c71e9a/THIRD_PARTY_LICENSES",
+    "runtime": "PAN2 native conversion or Modular Diffusers, modern CUDA/PyTorch; owner hardware not measured",
+    "prompt_rewriter": "PIN included prompts/skills and use already-owned legal local LLM with compatible input; don't count API-hosted frontier as an offline dependency",
+    "guardrail": "Research separate PAN2 guard components, no unreviewed auto-download"
+  },
+  "differential": {
+    "wan22": "Wan2.2-5B T2V/I2V is generic video generation, PAN2 trains action-conditioned structured world-state forecasting with 29.2B distinct MMDiT",
+    "cosmos3": "Cosmos3 Sim-Auto/Bimanual target vehicle/bimanual sensor physics, PAN2 general text/action state simulation",
+    "praxis1": "Praxis1 DROID learns robot action plus video in a robotic embodiment, PAN2 is general-purpose visual next-state simulator and has no trained robotic control expert",
+    "quality": "Publisher evaluation includes 300 single actions, 200 multi-step prompts, and 140-prompt human evaluation; no owner independent benchmarking, physics failures and safety remain open",
+    "uniqueness_grade": "B_PUBLISHER_MECHANISM_NOT_PEER_REPRODUCED"
+  },
+  "policy": {
+    "archive_limit_bytes": 4000000000000,
+    "minimum_free_bytes": 200000000000,
+    "source_bytes_are_not_final_owner_storage_bytes": true,
+    "user_actual_free_space_verified": false,
+    "license_personal_use_verification_pending": true,
+    "user_explicit_acquisition_approval": false,
+    "model_payload_fetched": false,
+    "unsafe_code_executed": false,
+    "quantity_claims_from_publisher_only": true
+  },
+  "next_gates": [
+    "SHA check after a separately approved lawful model acquisition",
+    "Inspect exact parameter shapes for transformer/Qwen text/Wan VAE; keep optional external conceptual model separate",
+    "Verify distinct VAE already in owner archive by actual SHA, never infer duplicate savings by model name",
+    "Pin code wheels/versions and selected safeguard models",
+    "Actual HDD free-space and staging capacity before approval",
+    "Offline test 20+ controlled prompts and safety screening; record hardware/clock/backend/batch/context"
+  ]
+}
