@@ -1,5 +1,14 @@
 # 規制連鎖シナリオを主軸にした保存優先度と安全審査（v5・2026-11-03）
 
+## 2026-11-15追補（main／現行v37）
+
+- **歴史と現行の分離**：この文書のS1/S2/S3はv5時点からの*仮説的な保全順序*であり、実際に成立した禁止の順序ではない。唯一の正式選定正本は`catalog/CURRENT.json`。現行の150B以上は量子化後の同一条件実測・RAM・品質・権利等の非補償ゲートを満たす場合に限り個別審査を許し、v8の歴史的な絶対除外を現在の規則へ持ち込まない。
+- **確認済み制度**：[EU AI Act Article 53](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)と[欧州委員会のGPAIガイドライン](https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers)は提供者への義務と条件付きのopen-source例外を定める。**一般の公開ウェイト保有・ローカル保存が一律禁止されたことを示す規定ではない**。Gated、ライセンス、提供者義務、用途禁止、将来の配布停止予測を別々に記録する。
+- **モデル別の現在の事実**：`WhissleAI/steer-tts`の[HF作者カード](https://huggingface.co/WhissleAI/steer-tts)がコードMIT／重みCC BY-NCと述べる一方、発行元[固定GitHub LICENSE](https://github.com/WhissleAI/steer-tts/blob/5008f8e032f69266c3f37788825cfda3112eab55/LICENSE)はコード・重み・音声ともCC BY-NC 4.0＋Whissle独自条件。古いGitHub LICENSEにも同条件があり、**変更日時の確証ではなく配布元間の矛盾**として扱う。保守的な取得権利判断ではコードMITを推定しない。3モデルrepoのGated本人権限は不明。
+- **同一学習成果の重複防止**：SteerTTS originalは既存CONDITIONAL研究選定を保持。Edgeは作者が別v2音響学習を主張するがHF量子化タグもあり、Nanoは微調整タグがある。両者の新規登録は同一revisionの重み/テンソル差・独自能力・ライセンスが確定するまで**研究HOLD**。通常のint8/int4形式違い、ONNX/C/PyTorch実装差は新しい学習済み資産としない。
+- **安全条件**：[全3版の一次ソース調査](../docs/strategy/2026-11-15-steertts-source-license-and-duplicate-weights-decision.md)と[機械可読根拠](../catalog/research/2026-11-15-steertts-3build-source-license-risks.json)。本人Gated許可、全構成の総数、固定40文字revisionとSHA、必須依存、ライセンス本文、実HDD空き、明示的取得承認が揃うまでは本体取得・実行・承認済みキュー投入をしない。本追補によるSELECT/CONDITIONALの変更・ダウンロード権限の追加は0。
+
+
 ## 予測主導の目的
 
 保全の第一の判断軸は、ユーザーの「悪用されやすい能力が先に制限され、その後強力なAI一般、最後に公開ウェイト全体へ制限が波及する」という**3段階の仮説**である。これは現在のGatedリストを機械的に先に取得する方針ではない。将来の規制日程・発生確率を観測できていないため、モデル単位の「禁止予定」は表明しない。
