@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-11-15",
+  "status": "IMMUTABLE_PUBLISHER_METADATA_RESEARCH_ONLY_NOT_DOWNLOAD",
+  "current_portfolio_seen": "v38-20261115",
+  "review_goal": "Preserve irreproducible embodied scene generation trained state and one mandatory visual-tokenizer dependency without format or same-family duplication.",
+  "source_code_fixed": {
+    "repo": "XiaomiRobotics/Xiaomi-Robotics-U0",
+    "commit": "e722003980958f242203af265718ee980b834deb",
+    "reference": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-U0/blob/e722003980958f242203af265718ee980b834deb/inference/xr_u0_ar/vision_tokenizer/__init__.py",
+    "runtime_note": "Python3.10 eager 4B only; AutoTokenizer trust_remote_code=True. VQ loader config.yaml+model.ckpt path invokes torch.load; use safetensors AutoModel fallback only pending isolated offline test and static code audit."
+  },
+  "repos": [
+    {
+      "repo_id": "XiaomiRobotics/Xiaomi-Robotics-U0-4B",
+      "repo_type": "model",
+      "revision": "c1a4e9c9c3cf52dd3617d3c9c974e16e6e88b3cd",
+      "publisher_api_url": "https://huggingface.co/api/models/XiaomiRobotics/Xiaomi-Robotics-U0-4B/revision/c1a4e9c9c3cf52dd3617d3c9c974e16e6e88b3cd?blobs=true",
+      "gated": false,
+      "private": false,
+      "license_tag": "apache-2.0",
+      "whole_repo_file_count": 14,
+      "whole_repo_bytes": 10175265596,
+      "selected_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 253,
+          "publisher_git_blob_sha1": "195715d9298328061882f17b8749e0cbc2f544f9",
+          "publisher_lfs_sha256": null,
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 6970,
+          "publisher_git_blob_sha1": "a8e321e47942c0b794b44195639f90ab8336b768",
+          "publisher_lfs_sha256": null,
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 889,
+          "publisher_git_blob_sha1": "8c5ac421ec5906341cf0a17b9ad6662d53352740",
+          "publisher_lfs_sha256": null,
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "configuration_unis.py",
+          "bytes": 10605,
+          "publisher_git_blob_sha1": "3f2bf54a37bc55e965cb2d1aa631fc42addcff72",
+          "publisher_lfs_sha256": null,
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 147,
+          "publisher_git_blob_sha1": "60ac89a240d885bead725be6b730616100361219",
+          "publisher_lfs_sha256": null,
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "bytes": 5336406336,
+          "publisher_git_blob_sha1": "259f1fb23b63f4ba35d67347f2ce8d0ceb8a60bd",
+          "publisher_lfs_sha256": "9a3de25c306885abc90ca97c26fe836c59af5074ceefb3ec6db9ce25637a365f",
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "bytes": 4827825824,
+          "publisher_git_blob_sha1": "548ce0cf376c3c51ce9171c1807038f77484aa56",
+          "publisher_lfs_sha256": "c40f111a09e4946335a6096d108fc975e88055306d07aa22b03354198850f37b",
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 32878,
+          "publisher_git_blob_sha1": "f21d48e0b187004a7a38f89445f195ca0b2f2b12",
+          "publisher_lfs_sha256": null,
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "tokenization_unis.py",
+          "bytes": 9968,
+          "publisher_git_blob_sha1": "54af6adfc507c166c12c42567add4c64fcdbde55",
+          "publisher_lfs_sha256": null,
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 186,
+          "publisher_git_blob_sha1": "d072f3ddea83be04b270fbdc8a25b165d20f5e9c",
+          "publisher_lfs_sha256": null,
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "unis.tiktoken",
+          "bytes": 2561218,
+          "publisher_git_blob_sha1": "9b9b0e0416d84d7c88333eb261c77e5fe2d7f7be",
+          "publisher_lfs_sha256": null,
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "unis_vision_tokens.txt",
+          "bytes": 3145774,
+          "publisher_git_blob_sha1": "52054a53fc42d2b72b03e42e063ded",
+          "publisher_lfs_sha256": null,
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        }
+      ],
+      "selected_bytes": 10170001048,
+      "unselected": [
+        {
+          "path": "assets/architecture.png",
+          "bytes": 387029,
+          "why": "only illustration"
+        },
+        {
+          "path": "assets/illustrate.png",
+          "bytes": 4877519,
+          "why": "only illustration"
+        }
+      ]
+    },
+    {
+      "repo_id": "BAAI/Emu3.5-VisionTokenizer",
+      "role": "mandatory separately trained IBQ codec, not new standalone portfolio asset",
+      "revision": "a5c45bdb8084763048e094ae124778bfeca7d5ee",
+      "publisher_api_url": "https://huggingface.co/api/models/BAAI/Emu3.5-VisionTokenizer/revision/a5c45bdb8084763048e094ae124778bfeca7d5ee?blobs=true",
+      "gated": false,
+      "private": false,
+      "license_tag": "apache-2.0",
+      "whole_repo_file_count": 8,
+      "whole_repo_bytes": 3642920368,
+      "selected_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "publisher_git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "publisher_lfs_sha256": null,
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 12515,
+          "publisher_git_blob_sha1": "36ccd6461475141153481bce95706e3b5c827a1b",
+          "publisher_lfs_sha256": null,
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 597,
+          "publisher_git_blob_sha1": "5d9a9d8124c6c8c940c51e4f2d672bfababc55ce",
+          "publisher_lfs_sha256": null,
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "configuration_emu3p5visionvq.py",
+          "bytes": 4183,
+          "publisher_git_blob_sha1": "825b644f40b00930157472d25fb3710cabe515fe",
+          "publisher_lfs_sha256": null,
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 1821405084,
+          "publisher_git_blob_sha1": "e25d38423bddbcef3a4ab264240bb89e174c417a",
+          "publisher_lfs_sha256": "a808dc617e489c37be7f51a63a0e7cb77a97a54ceb59f674255d2e7bc7b2c080",
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "modeling_emu3p5visionvq.py",
+          "bytes": 15242,
+          "publisher_git_blob_sha1": "a5c068f01b45f6f0d36846cb5abe537adbbb0fcd",
+          "publisher_lfs_sha256": null,
+          "weight_payload_fetched": false,
+          "owner_local_sha_verified": false
+        }
+      ],
+      "selected_bytes": 1821439140,
+      "unselected": [
+        {
+          "path": "model.ckpt",
+          "bytes": 1821481006,
+          "why": "alternate unsafe torch.load path; not byte-identical representation proof"
+        },
+        {
+          "path": "config.yaml",
+          "bytes": 222,
+          "why": "legacy ckpt loader branch - explicitly exclude from safetensors candidate"
+        }
+      ]
+    }
+  ],
+  "total_source_selected_file_count": 18,
+  "total_source_selected_bytes": 11991440188,
+  "source_model_hub_parameters_approx": 5082100000,
+  "external_vq_hub_parameters_approx": 455300000,
+  "source_main_checkpoint_shards": 2,
+  "external_vq_safetensors_weights": 1,
+  "not_selected_family": [
+    {
+      "id": "XiaomiRobotics/Xiaomi-Robotics-U0-4B-Sequence",
+      "revision": "9b437406e3d99bef4521da4a2675664f20e7ac85",
+      "trained_weights_differ_sha": true,
+      "decision": "HOLD_SEPARATE_INTERLEAVED_VIDEO_UNMEASURED"
+    },
+    {
+      "id": "XiaomiRobotics/Xiaomi-Robotics-U0",
+      "decision": "NO_34B_ORIGINAL_SIZE_DUPLICATION"
+    },
+    {
+      "id": "XiaomiRobotics/Xiaomi-Robotics-U0-FlashAR",
+      "decision": "NO_38B_FLASHAR_UNMATCHED_RUNTIME_BENCHMARK"
+    }
+  ],
+  "source_metadata_proves_not_local_payload": true,
+  "model_code_executed": false,
+  "model_weights_downloaded": false,
+  "license_full_text_action_specific_reviewed": false,
+  "personal_license_and_gated_entitlement_verified": false,
+  "owner_hdd_measured": false,
+  "offline_restoration_verified": false,
+  "download_authorized": false
+}
