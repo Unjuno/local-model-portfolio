@@ -90,7 +90,7 @@
         "reported_speed_ratio": 14.5,
         "hardware": "Apple M5 Max 1 CPU thread; 6 sentences x median 3 rounds"
       },
-      "unique_reason": "40.5MB・日本語Misa/Mikasa二声・numpy+Open JTalk/pyopenjtalk-plus。数・日付・助数詞・住所読みの特殊後学習原本で日本語CPU TTSに独立価値。",
+      "unique_reason": "40.5MB・日本語Misa/Mikasa二声・numpy+Open JTalk/pyopenjtalk-plus。数・日付・助数詞・住所読みの日本語特化原本（英語版との重み差分は未監査）で日本語CPU TTSに独立価値。",
       "comparators": [
         "Zyphra/ZONOS3-Mini",
         "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice"
@@ -255,7 +255,7 @@
         ],
         "license_tag": "apache-2.0"
       },
-      "unique_reason": "日英?ではなく英中の全二重any-to-any。vllm-omni依存、既存Haru-4B同時音声対話と重複し得る。",
+      "unique_reason": "英語・中国語向け全二重any-to-any。vllm-omni依存、既存Haru-4B同時音声対話と重複し得る。",
       "comparators": [
         "higurashi-ai/Haru-4B",
         "LiquidAI/LFM3-Omni-2B"
