@@ -1,5 +1,8 @@
 # Local Model Portfolio
 
+**現行v45／追加監査R106（2026-11-18）**：正本は[198登録／151有効](catalog/effective-portfolio-2026-11-18-v45.json)を保持。[v45の候補・依存ポインタ修復、Pruna／Drama／Maya／Whissle4原本の独立停止理由](docs/strategy/106-v45-unknown-source-and-canonical-pointer-repair.md)。[公式HF固定原本調査](catalog/research/2026-11-18-r106-four-unknown-model-static-scope.json)、[有効151件取得前停止ゲート](catalog/readiness/v45-2026-11-18-r106-all151-gates.json)。4TB計画／最低空き200GB、Gated20件／総パラメータ未確定9件は維持、取得承認0。以下旧R105等は履歴。
+
+
 **現行v45・2026年11月18日**：[198登録／151有効・SELECT53＋CONDITIONAL98](catalog/effective-portfolio-2026-11-18-v45.json)。[Raon-1 nano／Simons-297Mの学習済み原本2件を研究段階CONDITIONAL追加](docs/strategy/105-v45-raon-simons-original-preservation-2026-11-18.md)。Hugging Face固定publisher原本[23候補ファイル8,371,078,617byte・6 SHA](manifests/drafts/v45-2026-11-18-raon-simons-original.candidate.json)、[全151件取得前STOP](catalog/readiness/v45-2026-11-18-r105-all151-gates.json)、[98件Gated・公開元状態](catalog/access/2026-11-18-v45-conditional-hub-gates.json)、[非実行候補151](queues/proposed-v45-2026-11-18.json)、[依存準備151](catalog/preparation/2026-11-18-insurance-bundles-v45.json)を同一正本に統合。Gated20・完全総数未確定9・本人取得承認0・実重みDL0。4TB/200GB空きの**実機測定は未完了**で仮想余白27.41GBを取得可能と混同しない。以下のv44以前は履歴。
 
 **R106・v45第1保全トランシェ／2026-11-18**：[10既存学習済み原本の優先順位・権利・規制監査](docs/strategy/106-v45-first10-source-checksum-and-regulatory-readiness-2026-11-18.md)、[Hugging Face固定10repo・107原本候補パス・18,016,810,996byte・同一ハッシュ6群のsource台帳](manifests/drafts/v45-2026-11-18-r106-first10-publisher-source.candidate.json)、[機械可読重複/優先調査台帳](catalog/research/2026-11-18-r106-small-first10-source-and-dedup-audit.json)を追加。10repoは現在非Gated表示だが本人の利用権利や重み取得許可ではない。GatedのNVIDIA Ising Decoder 2件は正規の個別権限確認を先行。*v45の選定件数・全151取得停止・承認0は不変*。キャッシュ／HDD／最終bundleが未測定なので18.02GBを新たに仮想余白から二重控除しない。

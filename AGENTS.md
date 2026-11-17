@@ -1,5 +1,10 @@
 # エージェント作業規約
 
+## v45・R106 現行：151件ポインタ修復と4モデルの学習済み原本scope監査
+
+[正本v45 198登録/151有効](catalog/CURRENT.json)、[非実行キュー151](queues/proposed-v45-2026-11-18.json)、[依存151](catalog/preparation/2026-11-18-insurance-bundles-v45.json)、[条件付きアクセス98](catalog/access/2026-11-18-r106-v45-conditional-hub-gates.json)、[151件停止台帳](catalog/readiness/v45-2026-11-18-r106-all151-gates.json)へ修復。Pruna/Drama/Maya/Whissleの4件は[原本一次SHA/構成と異なる停止理由](catalog/research/2026-11-18-r106-four-unknown-model-static-scope.json)を記録し、既存9未確定総数を早計にPASSへ昇格させない。[判断根拠](docs/strategy/106-v45-unknown-source-and-canonical-pointer-repair.md)。ダウンロード承認・ユーザー実HDD照合・GPU／ABI復元・重み実行はいずれも0。mainのみ。以下旧R105以前は履歴。
+
+
 ## 現行v45・2026-11-18：小型独立学習済み原本2件の選定と全取得停止ゲート
 
 唯一の正本は[CURRENT](catalog/CURRENT.json)→**v45・198登録／151有効（SELECT53・CONDITIONAL98）**。旧v44の196件を削除・降格せず、[KRAFTON Raon-1 nanoとabel-lab Simons-297MをCONDITIONAL研究追加](docs/strategy/105-v45-raon-simons-original-preservation-2026-11-18.md)。原本固定Publisherメタデータ[23選択ファイル／計8,371,078,617byte／LFS SHA256 6件](manifests/drafts/v45-2026-11-18-raon-simons-original.candidate.json)は**本人の実HDD SHA・復元の証拠ではない**。[151件readiness](catalog/readiness/v45-2026-11-18-r105-all151-gates.json)、[条件付き98件の配布元アクセス](catalog/access/2026-11-18-v45-conditional-hub-gates.json)、[依存準備151件](catalog/preparation/2026-11-18-insurance-bundles-v45.json)、[非実行キュー151件](queues/proposed-v45-2026-11-18.json)を常に最新参照とする。**Gated20件・完全学習済み総数未確定9件・本人の取得権限／実HDD／最終SHA／offline runtime検証0、承認・本体DL0**。RaonのHF serialized 3.5299Bと著者「3.2B」は不一致で、MTP別学習重みとtied headの計数を解消するまで正確な全学習済み総数を主張しない。SimonsモデルOpenMDW-1.1を元訓練データのODbL・CC BY-SA等へ拡張しない。untrusted `trust_remote_code`／pickleを勝手に実行しない。150B以上は現行policies/limits.jsonの個別量子化実測例外を満たさない限りHOLD、ディスク計画4TB＋200GB残床は実測前はUNCERTAIN。**mainのみ**。以下旧v44以前の記述は履歴。
