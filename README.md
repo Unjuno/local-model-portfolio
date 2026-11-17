@@ -1,5 +1,8 @@
 # Local Model Portfolio
 
+**R107｜先に保存すべき8資産を選定（2026-11-18、未承認）**：[無検閲2系統・小型/専門6系統、候補選択ファイル計48,397,620,081byte](docs/strategy/107-v45-eight-download-targets-and-hold-decisions.md)／[選定・交換保留の非実行JSON](catalog/decisions/2026-11-18-r107-download-selection.json)。8件はいずれも既存v45の内数。完全復元に必要なLICENSE/本人許諾/実HDD/SHAは未完了、取得承認0。
+
+
 **R106｜Hugging Face新モデル・規制実態の再監査（2026年11月18日、v45選定変更なし）**：[ARLoop-1.2Bを優先、Kitten Miniを次点、制限付きUnderdog/Bielik・高容量SOVは保留](docs/strategy/106-v45-hf-november-originals-and-policy.md)／[8候補の一次根拠と未解決事項](catalog/research/2026-11-18-r106-hf-originals-license-and-policy.json)。中国2026年第48号公告は意見募集段階の改訂案と既に規定された臨時の輸出前登録を区別。モデル新規正式採用0・重み取得承認0・実HDD/権限/全シャード未確認。
 
 
