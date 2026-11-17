@@ -5,7 +5,7 @@
   "catalog_source_path": "catalog/effective-portfolio-2026-11-18-v45.json",
   "catalog_blob_sha": "5c39181d6001aee56d5a8a0c3ec0be2a15175bae",
   "catalog_revision": "v45-20261118",
-  "scope": "12 active model primary repositories; exact file-set based archival decision, NOT user download authorization",
+  "scope": "12 existing active model primary repositories: exact original source files, including correction of the stale nonexistent 0bserverx chat_template.jinja proposal. No asset additions or authorizations.",
   "selection_goals": [
     "Different trained refusal-suppression and posttraining mechanisms rather than same model quantization copies",
     "Very small high-value independent agent/detector/forecasting/tactile original checkpoints",
@@ -334,7 +334,7 @@
       "asset_kind": "model",
       "existing_decision": "conditional",
       "existing_risk_tier": "R1",
-      "originality": "Latest double-refined ARA RVN multilingual Q4 (legacy Heretic Q4 specifically superseded by author); include optional vision projector",
+      "originality": "Double-refined ARA RVN multilingual Q4 trained state (already proposed in v45), plus optional vision projector; no standalone chat_template.jinja exists because author embeds the template in GGUF. Legacy Heretic Q4 is a separately listed older file, not the current chosen variant.",
       "source_url": "https://huggingface.co/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
       "source_api": "https://huggingface.co/api/models/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF/revision/ab8d7bd81d03117501e4da60cccdff4c80f0eea0?blobs=true",
       "immutable_revision": "ab8d7bd81d03117501e4da60cccdff4c80f0eea0",
@@ -343,7 +343,7 @@
       "main_safetensors_total_parameters": null,
       "full_trained_pipeline_total_not_locally_censused": true,
       "file_scope_status": "ARCHIVE_ORIGINAL_FILE_SET_PUBLISHER_FROZEN_NOT_DOWNLOADED",
-      "blocking_flag": "SOURCE_REPLACEMENT_LEGACY_Q4_TO_RVN",
+      "blocking_flag": "SOURCE_SCOPE_CORRECT_RVN_WITH_EMBEDDED_TEMPLATE",
       "publisher_repo_all_files": 182,
       "publisher_repo_total_bytes": 1645270647302,
       "selected_file_count": 4,
@@ -1310,6 +1310,8 @@
     "galvanizeOnlySafe": true,
     "gatedOrca": true,
     "allNoApproval": true,
-    "allWeightsSHA": true
+    "allWeightsSHA": true,
+    "rvnAlreadyProposedInExistingCatalog": true,
+    "invalidOldProposedChatTemplateJinjaExcluded": true
   }
 }
