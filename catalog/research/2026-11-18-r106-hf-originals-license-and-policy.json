@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "id": "R106",
+  "kind": "NONEXECUTABLE_PUBLISHER_SOURCE_SELECTION_TRIAGE",
+  "review_date": "2026-11-18",
+  "source_revision": "v45-20261118",
+  "source_catalog": "catalog/effective-portfolio-2026-11-18-v45.json",
+  "counts": {
+    "original_tracked": 198,
+    "original_active": 151,
+    "candidates": 8,
+    "promote_after_source_audit": 2,
+    "formal_additions_now": 0,
+    "download_approved": 0
+  },
+  "objective": "Lawfully retain distinct learned open-weight originals, not merely forecast bans",
+  "methodology": "First exact already selected identity and rights; independent learned capability; MoE total count; noncompensatory legality+source+runtime+4TB budget. Never assign made-up prohibition probabilities.",
+  "existing_repo_ids_checked": [
+    "higurashi-ai/Haru-4B",
+    "IFM/PAN2",
+    "runwayml/praxis-1-droid",
+    "Zyphra/ZONOS3-Mini",
+    "KRAFTON/Raon-1-nano",
+    "abel-lab/Simons-297M"
+  ],
+  "candidates": [
+    {
+      "repo_id": "osunlp/ARLoop-1.2B",
+      "hub_url": "https://huggingface.co/osunlp/ARLoop-1.2B",
+      "reviewed_on": "2026-11-18",
+      "hf_parameters_reported": 1208700000,
+      "license_tag": "apache-2.0",
+      "hf_gated": false,
+      "decision": "PROMOTE_AFTER_FIXED_SOURCE_AUDIT",
+      "uniqueness_hypothesis": "独立事前学習500B tokenのAttention Residual反復Transformer。24物理層・3反復、既存RWKV/Mamba/Raonと別の学習済み構造。",
+      "stop_conditions": [
+        "モデルカードのApacheタグとGitHubコードMITは別個。trust_remote_code=Trueを自動実行しない",
+        "Python>=3.11、PyTorch/vLLM/CUDA/Flash Linear AttentionのABIと実機再現性が未知",
+        "全ファイルSHA40、LFS SHA256、selected bytes未固定",
+        "本人HDD空き200GBと取得承認は未確認"
+      ],
+      "primary_urls": [
+        "https://github.com/OSU-NLP-Group/ARLoop",
+        "https://arxiv.org/abs/2611.05234",
+        "https://huggingface.co/osunlp/ARLoop-1.2B"
+      ],
+      "exists_in_v45": false,
+      "selected_weight_bytes": null,
+      "immutable_revision_sha": null,
+      "exact_source_sha256_count": null,
+      "user_personal_permission_verified": false,
+      "license_full_signed_off": false,
+      "learned_dependencies_verified": false,
+      "download_approved": false,
+      "forecast_regulation_probability": null,
+      "lawful_identical_mirror_verified": false,
+      "falsification": "If original source is a duplicate of a pinned v45 trained checkpoint, source license disallows intended archival use, or publisher's architecture or count differs from recorded source, retract promotion and re-evaluate."
+    },
+    {
+      "repo_id": "KittenML/kitten-tts-2-mini",
+      "hub_url": "https://huggingface.co/KittenML/kitten-tts-2-mini",
+      "reviewed_on": "2026-11-18",
+      "hf_parameters_reported": 82000000,
+      "license_tag": "apache-2.0",
+      "hf_gated": false,
+      "decision": "PROMOTE_AFTER_ONNX_DEPENDENCY_LOCK",
+      "uniqueness_hypothesis": "作者記載の16言語・118音声、82M学習済み多言語TTS、日本語含む。CPU用int8 ONNX単体82.7MB。元重みと声資産の独自性が期待される。",
+      "stop_conditions": [
+        "Hub約478MBはリポジトリ全量表示で、INT8 ONNXと声packs/G2Pを含む選択bundleのbyteとは異なる",
+        "日本語音質・既存TTSとの優位性は未測定",
+        "ONNX Runtime、声辞書とNOTICEの固定版未審査",
+        "固定commit/SHA256/個人承認なし"
+      ],
+      "primary_urls": [
+        "https://huggingface.co/KittenML/kitten-tts-2-mini"
+      ],
+      "exists_in_v45": false,
+      "selected_weight_bytes": null,
+      "immutable_revision_sha": null,
+      "exact_source_sha256_count": null,
+      "user_personal_permission_verified": false,
+      "license_full_signed_off": false,
+      "learned_dependencies_verified": false,
+      "download_approved": false,
+      "forecast_regulation_probability": null,
+      "lawful_identical_mirror_verified": false,
+      "falsification": "If original source is a duplicate of a pinned v45 trained checkpoint, source license disallows intended archival use, or publisher's architecture or count differs from recorded source, retract promotion and re-evaluate."
+    },
+    {
+      "repo_id": "ConwayResearch/Underdog-Woof",
+      "hub_url": "https://huggingface.co/ConwayResearch/Underdog-Woof",
+      "reviewed_on": "2026-11-18",
+      "hf_parameters_reported": 38240000,
+      "license_tag": "underdog-non-commercial-1.0",
+      "hf_gated": false,
+      "decision": "HOLD_NONCOMMERCIAL_NO_SPEECH_TRAINING",
+      "uniqueness_hypothesis": "音声本体22.95M＋Mimi派生decoder15.3M＝38.24M。メーカーのCPU/numpy原本は40.6MBで小型ローカルTTSとして独自。",
+      "stop_conditions": [
+        "独自非商用LICENSEは表示義務、商用ライセンス別途、モデル及び生成音声を用いた音声AI追加学習・蒸留禁止",
+        "Kyutai Mimi/LibriTTS-R/Emilia-YODASのNOTICEと権利を検証",
+        "作者速度13.8倍real-timeはApple M5 Max 1CPUスレッドJuno、独立再計測ではない",
+        "固定ファイルSHAと使用目的の契約整合未確認"
+      ],
+      "primary_urls": [
+        "https://huggingface.co/ConwayResearch/Underdog-Woof",
+        "https://huggingface.co/ConwayResearch/Underdog-Woof/blob/main/NOTICE"
+      ],
+      "exists_in_v45": false,
+      "selected_weight_bytes": null,
+      "immutable_revision_sha": null,
+      "exact_source_sha256_count": null,
+      "user_personal_permission_verified": false,
+      "license_full_signed_off": false,
+      "learned_dependencies_verified": false,
+      "download_approved": false,
+      "forecast_regulation_probability": null,
+      "lawful_identical_mirror_verified": false,
+      "falsification": "If original source is a duplicate of a pinned v45 trained checkpoint, source license disallows intended archival use, or publisher's architecture or count differs from recorded source, retract promotion and re-evaluate."
+    },
+    {
+      "repo_id": "speakleash/Bielik-11B-v3.1-Instruct",
+      "hub_url": "https://huggingface.co/speakleash/Bielik-11B-v3.1-Instruct",
+      "reviewed_on": "2026-11-18",
+      "hf_parameters_reported": 11168800000,
+      "license_tag": "apache-2.0",
+      "hf_gated": true,
+      "decision": "HOLD_GATED_AND_STORAGE_PRESSURE",
+      "uniqueness_hypothesis": "ポーランド語/欧州語中心56言語、作者独自追加学習とSFT/RL成果。特化多言語の復元困難な学習原本。",
+      "stop_conditions": [
+        "HF gatedで個人の実アクセス許可不明",
+        "約22GBのrepo表示とv45仮想余白約27.409GBの機会費用",
+        "モデルカードでmoderation未実装と記載、規制予定や危険能力の証明ではない",
+        "選択シャード、ライセンス正文、依存と実HDD未確認"
+      ],
+      "primary_urls": [
+        "https://huggingface.co/speakleash/Bielik-11B-v3.1-Instruct"
+      ],
+      "exists_in_v45": false,
+      "selected_weight_bytes": null,
+      "immutable_revision_sha": null,
+      "exact_source_sha256_count": null,
+      "user_personal_permission_verified": false,
+      "license_full_signed_off": false,
+      "learned_dependencies_verified": false,
+      "download_approved": false,
+      "forecast_regulation_probability": null,
+      "lawful_identical_mirror_verified": false,
+      "falsification": "If original source is a duplicate of a pinned v45 trained checkpoint, source license disallows intended archival use, or publisher's architecture or count differs from recorded source, retract promotion and re-evaluate."
+    },
+    {
+      "repo_id": "salesforce-sovereign-intelligence/SOV-Transcribe-1",
+      "hub_url": "https://huggingface.co/salesforce-sovereign-intelligence/SOV-Transcribe-1",
+      "reviewed_on": "2026-11-18",
+      "hf_parameters_reported": 26630700000,
+      "license_tag": "apache-2.0",
+      "hf_gated": false,
+      "decision": "KEEP_R105_HOLD_NO_DUPLICATE",
+      "uniqueness_hypothesis": "Whisper-large-v3 encoder＋Gemma4 MoE由来の音声表記制御と固有名詞のcontext biasing。学習済み総数26.63B（活性約4.6Bとは異なる）。",
+      "stop_conditions": [
+        "v45 R105に同モデルの研究HOLD既存、二重登録禁止",
+        "既存調査に上流repo53,317,410,780byte、仮想余白27.409GBを超える",
+        "作者のWER・entity accuracyと既存Whisper/Qwen/Graniteの独立同条件評価が未実施",
+        "DFlash/親依存重複、選択byte、権利を固定"
+      ],
+      "primary_urls": [
+        "https://huggingface.co/salesforce-sovereign-intelligence/SOV-Transcribe-1",
+        "https://huggingface.co/blog/salesforce-sovereign-intelligence/sov-transcribe-1"
+      ],
+      "exists_in_v45": false,
+      "selected_weight_bytes": null,
+      "immutable_revision_sha": null,
+      "exact_source_sha256_count": null,
+      "user_personal_permission_verified": false,
+      "license_full_signed_off": false,
+      "learned_dependencies_verified": false,
+      "download_approved": false,
+      "forecast_regulation_probability": null,
+      "lawful_identical_mirror_verified": false,
+      "falsification": "If original source is a duplicate of a pinned v45 trained checkpoint, source license disallows intended archival use, or publisher's architecture or count differs from recorded source, retract promotion and re-evaluate."
+    },
+    {
+      "repo_id": "osunlp/ARLoop-0.6B",
+      "hub_url": "https://huggingface.co/osunlp/ARLoop-0.6B",
+      "reviewed_on": "2026-11-18",
+      "hf_parameters_reported": 583100000,
+      "license_tag": "apache-2.0",
+      "hf_gated": false,
+      "decision": "DEFER_SAME_ARCHITECTURE_REDUndancy",
+      "uniqueness_hypothesis": "同作者の180B-token独立学習の小型Attention Residual反復版。1.2Bの構造と強く重なる。",
+      "stop_conditions": [
+        "1.2B版で代替できない比較実験目的が未立証",
+        "最小容量の差より同じ構造を二重保存する機会費用"
+      ],
+      "primary_urls": [
+        "https://huggingface.co/osunlp/ARLoop-0.6B",
+        "https://arxiv.org/abs/2611.05234"
+      ],
+      "exists_in_v45": false,
+      "selected_weight_bytes": null,
+      "immutable_revision_sha": null,
+      "exact_source_sha256_count": null,
+      "user_personal_permission_verified": false,
+      "license_full_signed_off": false,
+      "learned_dependencies_verified": false,
+      "download_approved": false,
+      "forecast_regulation_probability": null,
+      "lawful_identical_mirror_verified": false,
+      "falsification": "If original source is a duplicate of a pinned v45 trained checkpoint, source license disallows intended archival use, or publisher's architecture or count differs from recorded source, retract promotion and re-evaluate."
+    },
+    {
+      "repo_id": "osunlp/PreNormLoop-0.6B",
+      "hub_url": "https://huggingface.co/osunlp/PreNormLoop-0.6B",
+      "reviewed_on": "2026-11-18",
+      "hf_parameters_reported": 582800000,
+      "license_tag": "apache-2.0",
+      "hf_gated": false,
+      "decision": "DEFER_PAPER_CONTROL_ONLY",
+      "uniqueness_hypothesis": "ARLoop論文の対照recurrent-depth PreNorm学習重み。論文再現での価値はあるが保存先の独立能力は限定的。",
+      "stop_conditions": [
+        "研究の比較実験を必須目標とするときのみ再審査",
+        "作者READMEの旧リンク名と現HF repo名が異なるためIDを正確に扱う"
+      ],
+      "primary_urls": [
+        "https://huggingface.co/osunlp/PreNormLoop-0.6B",
+        "https://github.com/OSU-NLP-Group/ARLoop"
+      ],
+      "exists_in_v45": false,
+      "selected_weight_bytes": null,
+      "immutable_revision_sha": null,
+      "exact_source_sha256_count": null,
+      "user_personal_permission_verified": false,
+      "license_full_signed_off": false,
+      "learned_dependencies_verified": false,
+      "download_approved": false,
+      "forecast_regulation_probability": null,
+      "lawful_identical_mirror_verified": false,
+      "falsification": "If original source is a duplicate of a pinned v45 trained checkpoint, source license disallows intended archival use, or publisher's architecture or count differs from recorded source, retract promotion and re-evaluate."
+    },
+    {
+      "repo_id": "n4ze3m/tiny-voca",
+      "hub_url": "https://huggingface.co/n4ze3m/tiny-voca",
+      "reviewed_on": "2026-11-18",
+      "hf_parameters_reported": null,
+      "license_tag": "apache-2.0",
+      "hf_gated": false,
+      "decision": "HOLD_TOTAL_UNKNOWN_AND_TTS_REDUNDANCY",
+      "uniqueness_hypothesis": "英語向け小型TTS。ONNX/GGUF表示、原本trained-totalについて今回のHub照会は数値を返していない。",
+      "stop_conditions": [
+        "総パラメータ不明なので重みlock準備停止",
+        "Kitten/Underdogと用途重複、品質未測定",
+        "公式完全SHA/選択bytesなし"
+      ],
+      "primary_urls": [
+        "https://huggingface.co/n4ze3m/tiny-voca"
+      ],
+      "exists_in_v45": false,
+      "selected_weight_bytes": null,
+      "immutable_revision_sha": null,
+      "exact_source_sha256_count": null,
+      "user_personal_permission_verified": false,
+      "license_full_signed_off": false,
+      "learned_dependencies_verified": false,
+      "download_approved": false,
+      "forecast_regulation_probability": null,
+      "lawful_identical_mirror_verified": false,
+      "falsification": "If original source is a duplicate of a pinned v45 trained checkpoint, source license disallows intended archival use, or publisher's architecture or count differs from recorded source, retract promotion and re-evaluate."
+    }
+  ],
+  "evidence": {
+    "hf_access": "Hugging Face connected repo metadata read-only; per-user model entitlement unverified.",
+    "arloop_code_license": "MIT https://github.com/OSU-NLP-Group/ARLoop/blob/main/LICENSE",
+    "china_announcement": "https://www.mofcom.gov.cn/zfxxgk/gkml/art/2026/art_ccd0391072a94c809ae7e820abe2536b.html-322",
+    "china_status": "2026-10-16 export catalog revision consultative draft with comments to Nov15; separately interim pre-export registration for specified technology transfers effective from announcement. Final revised catalog status as of Nov18 NOT verified.",
+    "eu_primary": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/how-does-ai-act-apply-general-purpose-ai-models-released-open-source",
+    "us_primary": "https://www.gao.gov/products/b-337935"
+  },
+  "existing_policy": {
+    "size_baseline_total_parameters": 150000000000,
+    "quantized_over_baseline_exception": "Only evidence-backed pinned quantized model with matched reference on same HW/backend/context/batch and >=30 trials, not automatically approved",
+    "moe_all_experts_count": true,
+    "unknown_parameter_total_blocks_lock": true
+  },
+  "capacity": {
+    "max_archive_bytes": 4000000000000,
+    "min_free_bytes": 200000000000,
+    "v45_provisional_source_scenario_margin_bytes_approx": 27409000000,
+    "measured_HDD_bytes": null,
+    "new_selected_increment_bytes": null
+  },
+  "all_download_approvals_unchanged": true,
+  "tests": {
+    "H": "ARLoop 1.2B and Kitten 2 Mini might add unique legally preservable trained state within limited bytes",
+    "T": "Confirm fixed repo revision and per-file SHA, license text, dependencies, comparisons, owner HDD and entitlement; stop at any missing field",
+    "D": "PASS if independent learned state and eligible complete offline bundle within actual resources; FAIL if exact duplicate or disallowed rights; UNCERTAIN at present",
+    "C": "Different legal mirror may exist or smaller existing model covers same task",
+    "U": "Publisher counts rounded, no independent performance/HDD test; u_c and k not quantifiable, no probability"
+  }
+}
