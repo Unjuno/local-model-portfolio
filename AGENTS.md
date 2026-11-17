@@ -4,6 +4,14 @@
 
 唯一の正本は[CURRENT](catalog/CURRENT.json)→**v45・198登録／151有効（SELECT53・CONDITIONAL98）**。旧v44の196件を削除・降格せず、[KRAFTON Raon-1 nanoとabel-lab Simons-297MをCONDITIONAL研究追加](docs/strategy/105-v45-raon-simons-original-preservation-2026-11-18.md)。原本固定Publisherメタデータ[23選択ファイル／計8,371,078,617byte／LFS SHA256 6件](manifests/drafts/v45-2026-11-18-raon-simons-original.candidate.json)は**本人の実HDD SHA・復元の証拠ではない**。[151件readiness](catalog/readiness/v45-2026-11-18-r105-all151-gates.json)、[条件付き98件の配布元アクセス](catalog/access/2026-11-18-v45-conditional-hub-gates.json)、[依存準備151件](catalog/preparation/2026-11-18-insurance-bundles-v45.json)、[非実行キュー151件](queues/proposed-v45-2026-11-18.json)を常に最新参照とする。**Gated20件・完全学習済み総数未確定9件・本人の取得権限／実HDD／最終SHA／offline runtime検証0、承認・本体DL0**。RaonのHF serialized 3.5299Bと著者「3.2B」は不一致で、MTP別学習重みとtied headの計数を解消するまで正確な全学習済み総数を主張しない。SimonsモデルOpenMDW-1.1を元訓練データのODbL・CC BY-SA等へ拡張しない。untrusted `trust_remote_code`／pickleを勝手に実行しない。150B以上は現行policies/limits.jsonの個別量子化実測例外を満たさない限りHOLD、ディスク計画4TB＋200GB残床は実測前はUNCERTAIN。**mainのみ**。以下旧v44以前の記述は履歴。
 
+## R106：現行v45の初期10件・Hugging Face公開元ハッシュと重複排除
+
+[事実・採否・H/T/D/C/U](docs/strategy/106-v45-first10-source-checksum-and-regulatory-readiness-2026-11-18.md)／[固定10repo source manifest](manifests/drafts/v45-2026-11-18-r106-first10-publisher-source.candidate.json)／[優先調査R106](catalog/research/2026-11-18-r106-small-first10-source-and-dedup-audit.json)。既存v45の151有効から低容量・別機能の10原本を**非実行の事前調査**として固定。出版社source候補10モデル／107論理ファイル／18,016,810,996byte・SHA等の同内容ファイル6群、論理重複4,463,691byte。**ローカルSHAや物理空き実測、runtime/依存閉包、個人LICENSE権限は未検証で取得承認0。**
+
+source同一ハッシュなら物理保存の内容重複を避けても、**restore時の論理ファイルパスは全て残す**。特にSmolVLAのnormalizer/unnormalizerの同じ640byte SHAを理由に前処理後処理のどちらかを省略しない。Qwen embeddingとrerankerは同一メタファイルでも学習済み重みSHAが異なり両原本を保持。SHA1 Git blobとSHA256 LFSを区別し、モデルのバイナリや第三者コードの無許可取得・実行をしない。
+
+規制の一次根拠は米BIS 2026-11-15 remote compute access規則、EU AI Act GPAI義務、豪ASD 2026-11-05サプライチェーン安全ガイドであり、全公開重み私有禁止の成立を意味しない。Gated20件のうちNVIDIA Ising Color/Surface2件は**権利確認P0**で、勝手にGatedを回避せず、権利確定前に重みを取得しない。研究R106に基づく出荷・取得キュー昇格、v46選定追加、ダウンロードは禁止。現在のv45=198登録/151有効/98 CONDITIONAL、`queues/approved.json`0件を守る。
+
 ## 旧v44・2026-11-18業務台帳修復（履歴）
 
 正本は[CURRENT](catalog/CURRENT.json)→v44、196登録/149有効、96 CONDITIONAL。v44自体の選定・重み・原本53件は変更せず、古いv43(148/148/95)参照ポインタを[v44 149キュー](queues/proposed-v44-2026-11-18.json)、[v44 149依存準備](catalog/preparation/2026-11-18-insurance-bundles-v44.json)、[v44 96アクセス](catalog/access/2026-11-18-v44-conditional-hub-gates.json)に直した。[R102報告](docs/strategy/102-v44-canonical-ledger-repair-sov-asr-hold-2026-11-18.md)。新SOV-Transcribe-1とDFlashは独立学習済みだが53GB以上の増分が実証されず、[publisher固定SHA/bytes](catalog/research/2026-11-18-r102-sov-transcribe-original-and-dflash.json)研究HOLDのみ。**本人権利、owner HDD空き、完全ランタイム、重み現物ハッシュとオフライン復元未確認。取得承認0。mainのみ。**
