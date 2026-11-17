@@ -1,5 +1,13 @@
 # エージェント作業規約
 
+## R107・現行v45：原本ファイル14資産の研究選定と無検閲別系統の優先審査（2026-11-18）
+
+[作業報告](docs/strategy/107-v45-download-selection-originals-uncensored-specialists-2026-11-18.md)／[有効151資産の機械可読取得候補判定](catalog/decisions/2026-11-18-r107-v45-final-source-selection-and-download-gates.json)／[特殊4資産の固定Publisher SHA/source](manifests/drafts/v45-2026-11-18-r107-uncensored-and-small-specialist-source.candidate.json)。**正式CURRENTはv45=198管理・151有効、SELECT53/CONDITIONAL98。** ダウンロード対象として選択した14原本sourceは重みや権限を実取得・承認したわけではない。現行`queues/proposed-v45-2026-11-18.json`の14件には`r107_original_source_selection`を追記し、**`approved=false`、`download_enabled=false`を維持**、`queues/approved.json`は0件。
+
+無検閲：0bserverxの`RVN-Q4_K_M-multilingual.gguf`と旧`Qwen3.8-27B-Heretic-Q4_K_M.gguf`は別学習成果。2pass ARA後の**最新版RVNだけ**をまず1 Q4形式で保存候補にする。visionならmmproj Q8を追加（重みファイルと同版SHA固定）。Interpreticは中国語政治回答制御編集で別独立能力だが、Q4の汎用品質は未証明。OrcaRouter BF16はGatedで本人権限P0、全repoを無許可で取得しない。DavidAU作者の大幅性能向上やknovelengの低拒否を**独立品質合格と誤認しない**。Galvanize-3は原本`model.safetensors`と`thresholds.json`を保持し、学習成果同じONNX重複は初期対象から除外。ChatR Labs LoRAは親Qwen Image 2.1の条件を継承し**非商用研究／評価**でのみ権利検討する。
+
+強制STOP：本人の行為別ライセンス承認、Gated個人権限、全trained component/ABI、物理HDD残床200GBとcache/staging、モデル/コード不変sourceとlocal SHA、本人別の明示的取得承認まで**重み取得・コード実行0**。2026-11-18のExaはsearch/fetch共402 quotaを報告、外部検索網羅済みと称してはならない。v45の既存151資産中19件が権限先行・9件が学習済み総数不明・14件がsource候補済み・109件その他source未閉包という排他的調査順序を維持。将来の全面規制はあくまでストレス仮説。
+
 ## v45・R106 現行：151件ポインタ修復と4モデルの学習済み原本scope監査
 
 [正本v45 198登録/151有効](catalog/CURRENT.json)、[非実行キュー151](queues/proposed-v45-2026-11-18.json)、[依存151](catalog/preparation/2026-11-18-insurance-bundles-v45.json)、[条件付きアクセス98](catalog/access/2026-11-18-r106-v45-conditional-hub-gates.json)、[151件停止台帳](catalog/readiness/v45-2026-11-18-r106-all151-gates.json)へ修復。Pruna/Drama/Maya/Whissleの4件は[原本一次SHA/構成と異なる停止理由](catalog/research/2026-11-18-r106-four-unknown-model-static-scope.json)を記録し、既存9未確定総数を早計にPASSへ昇格させない。[判断根拠](docs/strategy/106-v45-unknown-source-and-canonical-pointer-repair.md)。ダウンロード承認・ユーザー実HDD照合・GPU／ABI復元・重み実行はいずれも0。mainのみ。以下旧R105以前は履歴。
