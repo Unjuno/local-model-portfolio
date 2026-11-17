@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "kind": "v45_ORIGINAL_TRAINED_MODEL_PRIMARY_COMPARISON",
+  "created_jst": "2026-11-18",
+  "base_revision": "v44-20261115",
+  "repo": "Unjuno/local-model-portfolio",
+  "scope": "New model research against 196 registered and 149 active v44 assets",
+  "publisher_manifest_path": "manifests/drafts/v45-2026-11-18-raon-simons-original.candidate.json",
+  "decisions": [
+    {
+      "id": "KRAFTON/Raon-1-nano",
+      "verdict": "ADD_CONDITIONAL_RESEARCH_ONLY",
+      "source_revision": "39f897a1f835c723ec633c6c905dca7312bd9fd7",
+      "source_files": 17,
+      "publisher_candidate_bytes": 7182126657,
+      "license": "Apache-2.0 publisher weight/code disclosure",
+      "independent_learned_capability": "MoE-to-dense distilled + additionally pretrained hybrid Raon Delta Attention/MLA 18/6 layers, per-layer 256-dimensional embeddings and raon-mHC; Korean-English instruction-following and local long context. Not a quantization of any selected checkpoint.",
+      "existing_comparators": [
+        "LiquidAI/LFM3-1.7B",
+        "LiquidAI/LFM3-1.7B-Base",
+        "RWKV/RWKV7-7.2B-20260805",
+        "Qwen/Qwen3.5-0.8B"
+      ],
+      "main_index_total_tensor_bytes": 7059897536,
+      "main_hub_safetensors_total_elements": 3529911376,
+      "author_rounded_main_count": "~3.1B plus optional MTP ~55M; differs from published index/HF main count 3.5299B; detailed exact census is not asserted",
+      "observed_mtp_separate_file": "mtp/model.safetensors",
+      "source_repo_train_data_access": "Undistributed training data excluded from model Apache license",
+      "quality_evidence": "Publisher-only KMMLU/IFBench and others, no user hardware matched reproduction",
+      "api_no_gate": true,
+      "final_lock_unverified": true
+    },
+    {
+      "id": "abel-lab/Simons-297M",
+      "verdict": "ADD_CONDITIONAL_RESEARCH_ONLY",
+      "source_revision": "335dc22e4ce26ca0a8bc567de9e93dbb1bd2ce3a",
+      "source_files": 6,
+      "publisher_candidate_bytes": 1188951960,
+      "license": "OpenMDW-1.1 model materials; NOTICE.md training data sub-licenses are separate",
+      "independent_learned_capability": "297.230368M float32 causal 32-step patch transformer with cross-variate attention and 9 quantiles, stage-3/WiSE-FT training; independent from Chronos-2, Granite TTM R3, Kumo Anomaly",
+      "existing_comparators": [
+        "autogluon/chronos-2",
+        "ibm-granite/granite-timeseries-ttm-r3",
+        "nvidia/Kumo-Anomaly"
+      ],
+      "code_source": "https://github.com/Abel-ai-lab/Simons/commit/0d0042f8da45140172bd36980be08654c0017d8b",
+      "training_dataset": "abel-lab/Simons-Pretrain",
+      "training_dataset_download_not_authorized": true,
+      "third_party_dataset_rights_not_automatically_cleared": true,
+      "quality_evidence": "Publisher leaderboard, unverified by us",
+      "api_no_gate": true,
+      "final_lock_unverified": true
+    }
+  ],
+  "not_adopted": [
+    {
+      "id": "salesforce-sovereign-intelligence/SOV-Transcribe-1",
+      "verdict": "HOLD_RESOURCE_AND_QUALITY_COMPARISON",
+      "publisher_revision": "505d8fae243924c0d8acdc622f7f0abab344eba3",
+      "publisher_repo_bytes": 53317410780,
+      "reason": "Novel spoken instruction and context-controlled ASR but current ASR baseline Whisper/Qwen3-ASR/Granite and 53.3GB uncompressed repo; current virtual v44 margin only ~39.41GB; requires asset exchange, exact independent evaluation."
+    },
+    {
+      "id": "meituan-longcat/LongCat-Video-Avatar-1.6",
+      "verdict": "HOLD_SHARED_BASE_AND_LICENSE",
+      "observed_repo_size_rounded_bytes": 77600000000,
+      "reason": "Dedicated 1.6 audio-video avatar LoRAs, but repo 77.6GB with optional INT8 duplicate and separate foundation base; LivePortrait/Wan/LTX coverage; preserve LoRA only if exact dependency and independent value proven."
+    },
+    {
+      "id": "ContinuousIntelligence/ci-proto",
+      "verdict": "HOLD_CUSTOM_LICENSE_AND_CHECKPOINT_RUNTIME",
+      "publisher_parameters": 167000000,
+      "reason": "Distinct 2M+ context claims but independent verification missing; ci-proto custom Code and Model License (not Apache/OpenMDW), ckpt loading security and data rights need scrutiny."
+    },
+    {
+      "id": "internlm/Sage-S2.1-Flash",
+      "verdict": "HOLD_ABOVE150B_BASELINE",
+      "publisher_metadata_total_parameters": 321323000000,
+      "reason": "Specialist science multimodal with diverse modality projectors but 321B all-expert total; cannot enter baseline and no measured quantized exception on user's hardware."
+    },
+    {
+      "id": "Qwen/Qwen4-Max",
+      "verdict": "EXCLUDE_NO_PUBLISHED_WEIGHTS_AND_TOO_LARGE",
+      "reason": "November 16 API-only, 2.4T total parameters; promised smaller models are not downloadable snapshots yet."
+    },
+    {
+      "id": "openpangu/CloudRobo-WM1.2",
+      "verdict": "RESEARCH_UNVERIFIED_EXACT_REPO_ID",
+      "reason": "November 16 publisher world-model announcement reported, exact HF repo_id lookup not confirmed; no fake source SHA or weight access record."
+    }
+  ],
+  "rights_policy": [
+    "Existing v44 150B baseline allows *only* individually measured quantized exceptions; unknown total never passes final lock.",
+    "Publisher HF listing private:false,gated:false is observation, not user-specific authorized download, nor patent or training data clearance.",
+    "Simons 297M model file is licensed OpenMDW-1.1; training dataset contains ODbL, CC BY-SA, CC BY, ERA5 etc individual rights; do not conflate.",
+    "Raon model card says 3.2B incl MTP, Hub main safetensors count 3.529911376B; do not claim exact total or omit tied-head source file.",
+    "Both candidates are conditionally researched and cannot enter approved queue until complete source/runner, physical drive, license acts, and owner signoff."
+  ],
+  "source_data": [
+    {
+      "repo_id": "KRAFTON/Raon-1-nano",
+      "sha": "39f897a1f835c723ec633c6c905dca7312bd9fd7",
+      "source_bytes": 7182126657,
+      "source_file_count": 17,
+      "sha_verified_publisher": 5,
+      "full_repo_bytes": 7182768857,
+      "full_repo_count": 23
+    },
+    {
+      "repo_id": "abel-lab/Simons-297M",
+      "sha": "335dc22e4ce26ca0a8bc567de9e93dbb1bd2ce3a",
+      "source_bytes": 1188951960,
+      "source_file_count": 6,
+      "sha_verified_publisher": 1,
+      "full_repo_bytes": 1189519836,
+      "full_repo_count": 12
+    }
+  ],
+  "policy_budget": {
+    "archive_target_bytes": 4000000000000,
+    "required_remaining_floor_bytes": 200000000000,
+    "prior_v40_virtual_headroom_bytes": 129409767827,
+    "prior_v44_pan2_reservation_cap_bytes": 90000000000,
+    "prior_v44_virtual_margin_bytes": 39409767827,
+    "new_v45_reservation_cap_bytes": 12000000000,
+    "new_v45_virtual_margin_bytes": 27409767827,
+    "source_files_total_bytes": 8371078617,
+    "actual_HDD_free_bytes": null,
+    "offline_all_dependency_bytes": null,
+    "never_claim_actual_capacity_fit": true
+  },
+  "status": {
+    "baseline_selection_changed_by_research": false,
+    "user_approved_file_lock": false,
+    "all_model_payloads_downloaded": 0,
+    "licensed_owner_access_consented": 0,
+    "local_hash_checks": 0,
+    "sandbox_execution": 0
+  }
+}
