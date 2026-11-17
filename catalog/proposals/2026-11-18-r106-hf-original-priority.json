@@ -16,6 +16,16 @@
   "metadata_validity": "Only named HF repo details checked 2026-11-18. Other 198 distribution entries are inherited v45 observations and not guaranteed live. Personal Hub access and rights unverified.",
   "policy_facts": [
     {
+      "date": "2026-10-16",
+      "url": "https://www.mofcom.gov.cn/xwfb/xwfyrth/art/2026/art_d7661dbf62794345a221404f82a25959.html",
+      "fact": "Ministry press Q&A says open-source access and exchange should remain supported, public-domain technologies are excluded from proposed management, and API/SaaS/non-transfer light edge use distinguished from technology export."
+    },
+    {
+      "date": "2026-10-16",
+      "url": "https://www.mofcom.gov.cn/zfxxgk/fdzdgknr/ztfl/blgg/art/2026/art_718071a95e6948cdb652e2f08f422673.html",
+      "fact": "PRC Commerce and Science Ministries Announcement 48: 23 AI technologies in a PROPOSED export control catalog; explicitly excludes technology already entered public domain via open source/publication, but temporary PRE-EXPORT registration applies to listed covered transfers of technology ownership/licences before final revision. Legal territorial and transactional scope must be reviewed; not global bans on weight possession."
+    },
+    {
       "date": "2026-11-10",
       "url": "https://www.uscc.gov/trade-bulletins/china-bulletin-november-10-2026",
       "fact": "Oct16 China frontier model registration requirements and proposed CLOSED-weight export control; source is USCC summary, original Chinese regulation still needs per-provision checks."
@@ -75,7 +85,7 @@
   "candidates": [
     {
       "repo_id": "ConwayResearch/Underdog-Woof-Japanese",
-      "decision": "RECOMMEND_CONDITIONAL_AFTER_SOURCE_LICENSE_LOCK",
+      "decision": "HOLD_NC_LICENSE_JAPANESE_ORIGINAL_PENDING_REVIEW",
       "asset_kind": "model",
       "primary_url": "https://huggingface.co/ConwayResearch/Underdog-Woof-Japanese",
       "check_date": "2026-11-18",
@@ -90,20 +100,25 @@
         "reported_speed_ratio": 14.5,
         "hardware": "Apple M5 Max 1 CPU thread; 6 sentences x median 3 rounds"
       },
-      "unique_reason": "40.5MB・日本語Misa/Mikasa二声・numpy+Open JTalk/pyopenjtalk-plus。数・日付・助数詞・住所読みの日本語特化原本（英語版との重み差分は未監査）で日本語CPU TTSに独立価値。",
+      "unique_reason": "40.5MB・日本語Misa/Mikasa二声・numpy+Open JTalk/pyopenjtalk-plus。数・日付・助数詞・住所読みの日本語特化原本（英語版との重み差分は未監査）で日本語CPU TTSの差別化余地。",
       "comparators": [
         "Zyphra/ZONOS3-Mini",
         "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice"
       ],
       "rights_and_source_stops": [
-        "原本40桁SHA/整数byte/全tensor総数/Underdog NC LICENSEとNOTICE/辞書権利/日本語音声第三者評価"
+        "日本語版 LICENSE 正文と NOTICE の別規定確認（英語版は非商用・音声学習禁止を明記）",
+        "英語版・Mimi由来との重み差分と日本語訓練成果",
+        "原本40桁SHA・整数バイト・全学習済みtensor総数",
+        "辞書およびcodecの第三者ライセンス",
+        "ユーザーの保存利用目的と条項の両立",
+        "同条件の日本語TTSベンチ"
       ],
       "is_current_selection": false,
       "proposed_registration_only": false,
       "download_approved": false,
       "immutable_revision": null,
       "selected_file_bytes": null,
-      "falsification_condition": "配布者の固定版・合法な利用/保存許諾・全学習済み総数・同条件の独自能力/重複差を一次証拠で立証した場合のみ再選定"
+      "falsification_condition": "日本語版の固定LICENSE/NOTICEと独立学習済みcheckpoint/辞書の正当な保存許諾が一次資料で確認され、既存ZONOS3/Kittenにない合法的保全価値が立証された場合だけCONDITIONAL再審査。禁止された音声学習・商用使用を提案しない。"
     },
     {
       "repo_id": "ConwayResearch/Underdog-Woof",
@@ -8217,5 +8232,38 @@
     },
     "C": "Business product changes, opt-out/privacy corrections and open-license liberalization need not follow S1→S2→S3",
     "U": "No calibrated probability sample; uc and k not numerically applicable"
+  },
+  "parallel_main_r106_reconciliation": {
+    "checked_on": "2026-11-18",
+    "canonical_revision": "v45-20261118",
+    "main_current_blob_at_reconciliation": "f83f9c74a1485c90697b3699348970a3c38f6404",
+    "main_r106_research_primary": "catalog/research/2026-11-18-r106-hf-originals-license-and-policy.json",
+    "main_r106_research_report": "docs/strategy/106-v45-hf-november-originals-and-policy.md",
+    "current_latest_readiness": "catalog/readiness/v45-2026-11-18-r106-all151-gates.json",
+    "latest_readiness_blob_at_reconciliation": "1ee562f76c4e34edfb3a09b43786099c16190694",
+    "latest_readiness_active": 151,
+    "latest_readiness_unknown_total_active": 9,
+    "latest_readiness_downloads_approved": 0,
+    "already_reviewed_main_candidates": [
+      {
+        "repo_id": "osunlp/ARLoop-1.2B",
+        "main_decision": "PROMOTE_AFTER_FIXED_SOURCE_AUDIT",
+        "action": "Do not duplicate into formal catalog, reconcile immutable trained original source first"
+      },
+      {
+        "repo_id": "KittenML/kitten-tts-2-mini",
+        "main_decision": "PROMOTE_AFTER_ONNX_DEPENDENCY_LOCK",
+        "action": "Compare before Japanese Woof selection; distinct permissive model tag versus Woof noncommercial terms"
+      },
+      {
+        "repo_id": "ConwayResearch/Underdog-Woof",
+        "main_decision": "CONTRACT_RESTRICTION_HOLD",
+        "action": "Acknowledge confirmed English version noncommercial and no audio-model training; cannot automatically assume exact same LICENSE for Japanese variant without fixed revision"
+      }
+    ],
+    "branch_is_research_only": true,
+    "formal_portfolio_unchanged": true,
+    "allowed_downloads_created": 0,
+    "caveat": "This branch was based on main earlier in the day and is not necessarily up to date with concurrent commits. Do not force-update main or silently merge."
   }
 }
