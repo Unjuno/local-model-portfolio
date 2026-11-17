@@ -1,6 +1,9 @@
 # Local Model Portfolio
 
-**現行v43（2026-11-15）**：[195登録／148有効の正本](catalog/effective-portfolio-2026-11-15-v43.json)。[GR00T N1.6固定原本LICENSE §3.3の非商用研究・評価制限を正式台帳へ訂正](docs/strategy/100-gr00t-n16-n17-license-and-replacement-audit-2026-11-15.md)（[v43差分](catalog/revisions/v43-2026-11-15.json)）。N1.7はCosmos-Reason2系の別学習済みVLAだが、修正版LICENSE・NOTICEの同一commit、Gatedな外部依存、実機比較が未確定につき研究HOLDであり、削除・重み取得はしない。正規の取得許諾、実HDD、ローカルSHA・完全オフライン復元と**承認済みDL0件**は変更なし。
+**現行v44・2026年11月18日整合性修復:** [196登録／149有効（SELECT53＋CONDITIONAL96）](catalog/effective-portfolio-2026-11-15-v44.json)、[v44正本ポインタ修正とSOV新ASR不採用理由](docs/strategy/102-v44-canonical-ledger-repair-sov-asr-hold-2026-11-18.md)。[研究キュー149](queues/proposed-v44-2026-11-18.json)／[依存準備149](catalog/preparation/2026-11-18-insurance-bundles-v44.json)／[アクセス条件96](catalog/access/2026-11-18-v44-conditional-hub-gates.json)の参照先を同一v44に修復。IFM/PAN2は既存CONDITIONALを維持、新規SOV-Transcribe-1 53.316GB・別学習DFlashは既存ASRへの増分品質/容量と権利の未確定から研究HOLD、正式追加なし。物理保存／権限／コード実行／承認0。以下のv43以前の説明は履歴。
+
+
+**旧v43（2026-11-15、履歴）**：[195登録／148有効の正本](catalog/effective-portfolio-2026-11-15-v43.json)。[GR00T N1.6固定原本LICENSE §3.3の非商用研究・評価制限を正式台帳へ訂正](docs/strategy/100-gr00t-n16-n17-license-and-replacement-audit-2026-11-15.md)（[v43差分](catalog/revisions/v43-2026-11-15.json)）。N1.7はCosmos-Reason2系の別学習済みVLAだが、修正版LICENSE・NOTICEの同一commit、Gatedな外部依存、実機比較が未確定につき研究HOLDであり、削除・重み取得はしない。正規の取得許諾、実HDD、ローカルSHA・完全オフライン復元と**承認済みDL0件**は変更なし。
 
 
 **R98・v42独立生成アーキテクチャ候補比較（2026-11-15）**：[DiffusionGemma 26Bのブロック拡散原本P1／Arete 27B・Ripple 65Bを容量・重複でP2保留](docs/strategy/98-v42-discrete-diffusion-and-november-originals.md)／[3候補一次情報＋DiffusionGemma固定22ファイル候補JSON](catalog/proposals/2026-11-15-r98-diffusiongemma-arete-ripple-original-selection.json)。DiffusionGemma公式BF16は約51.7GB、11 shard・固定repo commit・publisher SHA取得1件で残り未固定、本人HDD・実行ABI・権利未認可。**Ripple NVFP4のHub表示39.6Bは原本65Bの真の学習済み総数ではない**ため量子化モデルの全総数判定を必ずsource modelで検証。正式v42の195/148、取得承認0、重量DL0は変更なし。

@@ -1,6 +1,11 @@
 # エージェント作業規約
 
-## 現行v43（2026-11-15）
+## 現行v44・2026-11-18業務台帳修復
+
+正本は[CURRENT](catalog/CURRENT.json)→v44、196登録/149有効、96 CONDITIONAL。v44自体の選定・重み・原本53件は変更せず、古いv43(148/148/95)参照ポインタを[v44 149キュー](queues/proposed-v44-2026-11-18.json)、[v44 149依存準備](catalog/preparation/2026-11-18-insurance-bundles-v44.json)、[v44 96アクセス](catalog/access/2026-11-18-v44-conditional-hub-gates.json)に直した。[R102報告](docs/strategy/102-v44-canonical-ledger-repair-sov-asr-hold-2026-11-18.md)。新SOV-Transcribe-1とDFlashは独立学習済みだが53GB以上の増分が実証されず、[publisher固定SHA/bytes](catalog/research/2026-11-18-r102-sov-transcribe-original-and-dflash.json)研究HOLDのみ。**本人権利、owner HDD空き、完全ランタイム、重み現物ハッシュとオフライン復元未確認。取得承認0。mainのみ。**
+
+
+## 旧v43（2026-11-15、履歴）
 
 唯一の正本は[CURRENT](catalog/CURRENT.json)→v43、**195登録・有効148（SELECT53／CONDITIONAL95）**。v42から選定追加・降格・削除はゼロ。[GR00T N1.6元重みの固定LICENSE第3.3条](https://huggingface.co/nvidia/GR00T-N1.6-3B/blob/d0814e7ecb19202e7c8468b46098b0b7ef3a6d61/LICENSE)は研究・評価の非商用利用に限定されるため、旧`license_metadata=unknown`を正式に訂正（[原本・後継比較](docs/strategy/100-gr00t-n16-n17-license-and-replacement-audit-2026-11-15.md)／[v43差分](catalog/revisions/v43-2026-11-15.json)）。**`license_text_reviewed=false`は正しい**：本文3.3条の確認は、使用者に適用される全行為・親依存・再配布の許可を意味しない。
 
