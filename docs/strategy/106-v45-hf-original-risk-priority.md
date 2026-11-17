@@ -39,17 +39,17 @@
 
 | # | 新候補の一次URL | 非実行の判断 | 独自性と選定価値 | 既存比較対象 | 取得前の未解決条件 |
 |---:|---|---|---|---|---|
-| 1 | [`ConwayResearch/Underdog-Woof-Japanese`](https://huggingface.co/ConwayResearch/Underdog-Woof-Japanese) | 条件を満たせば条件付き追加を提案（未採用） | 40.5MB・日本語Misa/Mikasa二声・numpy+Open JTalk/pyopenjtalk-plus。数・日付・助数詞・住所読みの特殊後学習原本で日本語CPU TTSに独立価値。 | Zyphra/ZONOS3-Mini、Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice | 原本40桁SHA/整数byte/全tensor総数/Underdog NC LICENSEとNOTICE/辞書権利/日本語音声第三者評価 |
+| 1 | [`ConwayResearch/Underdog-Woof-Japanese`](https://huggingface.co/ConwayResearch/Underdog-Woof-Japanese) | 条件を満たせば条件付き追加を提案（未採用） | 40.5MB・日本語Misa/Mikasa二声・numpy+Open JTalk/pyopenjtalk-plus。数・日付・助数詞・住所読みの日本語特化原本（英語版との重み差分は未監査）で日本語CPU TTSに独立価値。 | Zyphra/ZONOS3-Mini、Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice | 原本40桁SHA/整数byte/全tensor総数/Underdog NC LICENSEとNOTICE/辞書権利/日本語音声第三者評価 |
 | 2 | [`ConwayResearch/Underdog-Woof`](https://huggingface.co/ConwayResearch/Underdog-Woof) | 英語TTS重複で延期 | 英語38.24Mモデル＋decoder・40.6MB; 英語Phonon既選定。WER1.42%は著者自身による比較で独立測定なし。 | gradium/phonon-31m-en、Zyphra/ZONOS3-Mini | 原本SHA、LICENSE/NOTICE、同条件Phonon比較 |
 | 3 | [`Edge0/Edge0-120B-NVFP4`](https://huggingface.co/Edge0/Edge0-120B-NVFP4) | 同族1候補に絞り研究HOLD | 48層のlatent MoE expert置換＋ネイティブ4bit後学習を配布者が説明。単純再量子化ではない可能性があるが、HF base_model:quantizedタグとの由来整合・全expert/PLE/MTP総数未確認。 | Qwen/Qwen3-Coder-Next、Edge0/Edge0-145B-NVFP4 | 著者の120Bの全tensor計数、上流Qwen条件、Edge0独自制限、専用CUDA13実行、publisher SHA、実HDD予算 |
 | 4 | [`Edge0/Edge0-145B-NVFP4`](https://huggingface.co/Edge0/Edge0-145B-NVFP4) | 145Bは暫定不採用 | 同系145Bは作者公表の丸めで上限に近く、47.79GiBの重みはv45計画残余を圧迫。120Bとの同条件品質・SHAの差を未計測。 | Edge0/Edge0-120B-NVFP4 | MTP/PLE含む正確な全総数、matched perf/quality/bytes、権利正文 |
 | 5 | [`ContinuousIntelligence/ci-proto`](https://huggingface.co/ContinuousIntelligence/ci-proto) | v45既存保留を維持 | 167M、2M+長期コンテキスト、2種類の.ckptとtta.json。独自性はあるがv45時点の保留理由（独自ライセンス・pickle/実行条件・競合比較）が依然未解消。 | abel-lab/Simons-297M、autogluon/chronos-2、ibm-granite/granite-timeseries-ttm-r3 | ci-proto Code and Model Licence全文、2版の安全メタデータ、同条件予測性能 |
-| 6 | [`adventists-ai/Sophon-Realtime-4B-Flash`](https://huggingface.co/adventists-ai/Sophon-Realtime-4B-Flash) | 全二重重複と依存不明のためHOLD | 日英?ではなく英中の全二重any-to-any。vllm-omni依存、既存Haru-4B同時音声対話と重複し得る。 | higurashi-ai/Haru-4B、LiquidAI/LFM3-Omni-2B | 全音声Codec重み総数、runtime ABI、話者割込実測、ライセンス正文 |
+| 6 | [`adventists-ai/Sophon-Realtime-4B-Flash`](https://huggingface.co/adventists-ai/Sophon-Realtime-4B-Flash) | 全二重重複と依存不明のためHOLD | 英語・中国語向け全二重any-to-any。vllm-omni依存、既存Haru-4B同時音声対話と重複し得る。 | higurashi-ai/Haru-4B、LiquidAI/LFM3-Omni-2B | 全音声Codec重み総数、runtime ABI、話者割込実測、ライセンス正文 |
 | 7 | [`nvidia/GR00T-N1.7-3B`](https://huggingface.co/nvidia/GR00T-N1.7-3B) | 固有の権利・依存の照合までHOLD | N1.6とは異なるCosmos-Reason2系VLA学習で置換可能性あるが、N1.6 §3.3非商用条件やN1.7訂正通知を別revisionの権利へ拡張しない。 | nvidia/GR00T-N1.6-3B | N1.7 LICENSE/NOTICE固定hash、依存Cosmos-Reason2、有効な実機比較、安全性 |
 
 ### 3.1 最も明確な追加候補：Underdog Woof Japanese
 
-[公式配布者 `ConwayResearch/Underdog-Woof-Japanese`](https://huggingface.co/ConwayResearch/Underdog-Woof-Japanese) は日本語の数字・日時・郵便番号・住所・助数詞などの読みを正規化し、**MisaとMikasaの日本語二声**を提供する。英語版の再量子化ではなく、日本語音声・フロントエンド辞書・声という別学習済み結果である。作者提示の重み約40.5MBは、通常の数十GBの生成モデルと比べて保全の増分が小さい。**ただし精確な固定revision・重み整数byte・依存辞書・LICENSE/NOTICEの完全審査がないため、正式v45への追加を実行していない。**
+[公式配布者 `ConwayResearch/Underdog-Woof-Japanese`](https://huggingface.co/ConwayResearch/Underdog-Woof-Japanese) は日本語の数字・日時・郵便番号・住所・助数詞などの読みを正規化し、**MisaとMikasaの日本語二声**を提供する。英語版とは別の日本語音声・辞書・2声を配布しており独自用途がある。ただし両版の重み差分と再学習の正確な範囲はまだ照合できていない。作者提示の重み約40.5MBは、通常の数十GBの生成モデルと比べて保全の増分が小さい。**ただし精確な固定revision・重み整数byte・依存辞書・LICENSE/NOTICEの完全審査がないため、正式v45への追加を実行していない。**
 
 作者速度報告：**Apple M5 MaxのCPU1スレッド、日常日本語文6文×3ラウンドの中央値で実時間の約14.5倍、ピーク約437MB**。他のOS/ABI/JTalk辞書・一般的なAMD/NVIDIA CPUで同速度が再現するとは主張できない。作者の日本語文字読み誤りは独立ベンチマークではない。特に[Woof独自非商用ライセンス](https://huggingface.co/ConwayResearch/Underdog-Woof/blob/main/LICENSE)は商用利用やモデルからの音声学習に追加制約があるので、「公開」と「自由再利用」を区別する。
 
