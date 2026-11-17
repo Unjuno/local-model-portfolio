@@ -1,5 +1,8 @@
 # Local Model Portfolio
 
+**R106｜Hugging Face新モデル・規制実態の再監査（2026年11月18日、v45選定変更なし）**：[ARLoop-1.2Bを優先、Kitten Miniを次点、制限付きUnderdog/Bielik・高容量SOVは保留](docs/strategy/106-v45-hf-november-originals-and-policy.md)／[8候補の一次根拠と未解決事項](catalog/research/2026-11-18-r106-hf-originals-license-and-policy.json)。中国2026年第48号公告は意見募集段階の改訂案と既に規定された臨時の輸出前登録を区別。モデル新規正式採用0・重み取得承認0・実HDD/権限/全シャード未確認。
+
+
 **現行v45／追加監査R106（2026-11-18）**：正本は[198登録／151有効](catalog/effective-portfolio-2026-11-18-v45.json)を保持。[v45の候補・依存ポインタ修復、Pruna／Drama／Maya／Whissle4原本の独立停止理由](docs/strategy/106-v45-unknown-source-and-canonical-pointer-repair.md)。[公式HF固定原本調査](catalog/research/2026-11-18-r106-four-unknown-model-static-scope.json)、[有効151件取得前停止ゲート](catalog/readiness/v45-2026-11-18-r106-all151-gates.json)。4TB計画／最低空き200GB、Gated20件／総パラメータ未確定9件は維持、取得承認0。以下旧R105等は履歴。
 
 
