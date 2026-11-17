@@ -39,7 +39,7 @@
 
 | # | 新候補の一次URL | 非実行の判断 | 独自性と選定価値 | 既存比較対象 | 取得前の未解決条件 |
 |---:|---|---|---|---|---|
-| 1 | [`ConwayResearch/Underdog-Woof-Japanese`](https://huggingface.co/ConwayResearch/Underdog-Woof-Japanese) | 条件を満たせば条件付き追加を提案（未採用） | 40.5MB・日本語Misa/Mikasa二声・numpy+Open JTalk/pyopenjtalk-plus。数・日付・助数詞・住所読みの日本語特化原本（英語版との重み差分は未監査）で日本語CPU TTSに独立価値。 | Zyphra/ZONOS3-Mini、Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice | 原本40桁SHA/整数byte/全tensor総数/Underdog NC LICENSEとNOTICE/辞書権利/日本語音声第三者評価 |
+| 1 | [`ConwayResearch/Underdog-Woof-Japanese`](https://huggingface.co/ConwayResearch/Underdog-Woof-Japanese) | 非商用・生成音声学習禁止の条件を審査するまで研究HOLD | 40.5MB・日本語Misa/Mikasa二声・numpy+Open JTalk/pyopenjtalk-plus。数・日付・助数詞・住所読みの日本語特化原本（英語版との重み差分は未監査）で日本語CPU TTSに独立価値。 | Zyphra/ZONOS3-Mini、Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice | 原本40桁SHA/整数byte/全tensor総数/Underdog NC LICENSEとNOTICE/辞書権利/日本語音声第三者評価 |
 | 2 | [`ConwayResearch/Underdog-Woof`](https://huggingface.co/ConwayResearch/Underdog-Woof) | 英語TTS重複で延期 | 英語38.24Mモデル＋decoder・40.6MB; 英語Phonon既選定。WER1.42%は著者自身による比較で独立測定なし。 | gradium/phonon-31m-en、Zyphra/ZONOS3-Mini | 原本SHA、LICENSE/NOTICE、同条件Phonon比較 |
 | 3 | [`Edge0/Edge0-120B-NVFP4`](https://huggingface.co/Edge0/Edge0-120B-NVFP4) | 同族1候補に絞り研究HOLD | 48層のlatent MoE expert置換＋ネイティブ4bit後学習を配布者が説明。単純再量子化ではない可能性があるが、HF base_model:quantizedタグとの由来整合・全expert/PLE/MTP総数未確認。 | Qwen/Qwen3-Coder-Next、Edge0/Edge0-145B-NVFP4 | 著者の120Bの全tensor計数、上流Qwen条件、Edge0独自制限、専用CUDA13実行、publisher SHA、実HDD予算 |
 | 4 | [`Edge0/Edge0-145B-NVFP4`](https://huggingface.co/Edge0/Edge0-145B-NVFP4) | 145Bは暫定不採用 | 同系145Bは作者公表の丸めで上限に近く、47.79GiBの重みはv45計画残余を圧迫。120Bとの同条件品質・SHAの差を未計測。 | Edge0/Edge0-120B-NVFP4 | MTP/PLE含む正確な全総数、matched perf/quality/bytes、権利正文 |
@@ -49,7 +49,7 @@
 
 ### 3.1 最も明確な追加候補：Underdog Woof Japanese
 
-[公式配布者 `ConwayResearch/Underdog-Woof-Japanese`](https://huggingface.co/ConwayResearch/Underdog-Woof-Japanese) は日本語の数字・日時・郵便番号・住所・助数詞などの読みを正規化し、**MisaとMikasaの日本語二声**を提供する。英語版とは別の日本語音声・辞書・2声を配布しており独自用途がある。ただし両版の重み差分と再学習の正確な範囲はまだ照合できていない。作者提示の重み約40.5MBは、通常の数十GBの生成モデルと比べて保全の増分が小さい。**ただし精確な固定revision・重み整数byte・依存辞書・LICENSE/NOTICEの完全審査がないため、正式v45への追加を実行していない。**
+[公式配布者 `ConwayResearch/Underdog-Woof-Japanese`](https://huggingface.co/ConwayResearch/Underdog-Woof-Japanese) は日本語の数字・日時・郵便番号・住所・助数詞などの読みを正規化し、**MisaとMikasaの日本語二声**を提供する。英語版とは別の日本語音声・辞書・2声を配布しており独自用途がある。ただし両版の重み差分と再学習の正確な範囲はまだ照合できていない。作者提示の重み約40.5MBは、通常の数十GBの生成モデルと比べて保全の増分が小さい。**英語版WoofのLICENSEは非商用・他の音声モデルへの学習／蒸留禁止を明記する。日本語版の同一固定revisionに適用される条項・原重み差分は未照合であり、これらを勝手に推定して条件を満たしたとは扱わない。ライセンス・重み・辞書・追加学習目的の両立が確認できるまで研究HOLDとし、正式v45への追加は実行しない。**
 
 作者速度報告：**Apple M5 MaxのCPU1スレッド、日常日本語文6文×3ラウンドの中央値で実時間の約14.5倍、ピーク約437MB**。他のOS/ABI/JTalk辞書・一般的なAMD/NVIDIA CPUで同速度が再現するとは主張できない。作者の日本語文字読み誤りは独立ベンチマークではない。特に[Woof独自非商用ライセンス](https://huggingface.co/ConwayResearch/Underdog-Woof/blob/main/LICENSE)は商用利用やモデルからの音声学習に追加制約があるので、「公開」と「自由再利用」を区別する。
 
@@ -79,6 +79,20 @@
 | `PX_EXCLUDED` | 6 |
 
 `P0_ACCESS_RIGHTS`19件と `P0_COUNT_STOP`9件などは**優先して権利や総数を調べる**という意味であり、重みの取得順でも「将来消える順」でもない。v45条件付き全98件中20件がGatedで、総数未知とGatedの両方に該当する1件はP0_COUNTへ排他的に分類した。
+
+## 4.1 並行して進んだmainのR106選定研究との整合（2026-11-18）
+
+最新の`main`は引き続き **v45（198登録・151有効）** だが、同日並行した追加調査として [R106独立モデル比較](../../docs/strategy/106-v45-hf-november-originals-and-policy.md) と [8件の正式ID判定](../../catalog/research/2026-11-18-r106-hf-originals-license-and-policy.json) が存在する。これにより本提案の新規候補を重複昇格させない。
+
+- `osunlp/ARLoop-1.2B` は独立事前学習済み反復深さモデルとしてmain側が優先調査。公開カードのライセンスとコード、重み版、`trust_remote_code`安全性の審査が未完了なので正式v45登録なし。
+- `KittenML/kitten-tts-2-mini` は日本語を含む多言語・ONNX版の小型TTSとして次点調査。配布モデルのApache表示と依存音声パック・辞書・実際の配布内容は別審査。
+- 英語`ConwayResearch/Underdog-Woof`はその独立R106が**作者LICENSE原文の非商用制約と生成音声を使う他モデルの学習禁止**を確認して研究HOLDとした。今回の日本語Woofも、独立した固定LICENSE正文・NOTICE・Mimi由来の学習済み重み差分を確かめない限り**HOLD**とし、直ちにCONDITIONALへ追加する提案を撤回する。
+
+[現行151件の最新取得前停止台帳](../../catalog/readiness/v45-2026-11-18-r106-all151-gates.json)はPruna、Drama、Maya、Steer-TTSの異なる停止原因を追記したR106改訂版。依然として151件は取得準備を完了せず、全学習済み総数不明9件と本人取得承認0件が残る。本資料はR105版を原資料として生成した198行の監査ビューであり、**最新R106の停止ゲートを上書きしたり、本人に取得資格があると認定したりしない**。
+
+### 中国規制の一次原文による補正
+
+[中国商務部・科学技術部2026年第48号公告（2026-10-16）](https://www.mofcom.gov.cn/zfxxgk/fdzdgknr/ztfl/blgg/art/2026/art_718071a95e6948cdb652e2f08f422673.html)の規制目録は**意見募集段階の改訂案**であり、既にオープンソースや論文として公有領域に入った技術を対象外と明記する。一方、対象技術の所有権・許諾の海外移転等には、最終改訂前でも**暫定の輸出前登録**を要求している。[商務部の公式質疑応答](https://www.mofcom.gov.cn/xwfb/xwfyrth/art/2026/art_d7661dbf62794345a221404f82a25959.html)はモデルのAPI提供・SaaS・軽量な端末サービスを技術そのものの海外移転と区別する。ゆえに「中国でopen weightの全面禁止が既に発効」も「提案段階なので何の義務もない」も誤り。モデルの所在、主体、権利移転行為の法的条件を別々に調べる。
 
 ## 5. 全198件の個別監査表
 
