@@ -1,0 +1,687 @@
+{
+  "schema_version": 1,
+  "ledger_id": "2026-11-19-v48-execution",
+  "generated_at": "2026-11-18T20:17:17.843366+00:00",
+  "canonical_revision": "v48-20261118",
+  "source_plan": "queues/proposed-v48-r113-source-pinned-15.json",
+  "policy": {
+    "pinned_revision_only": true,
+    "publisher_hash_verification": true,
+    "dedupe_by_hash": true,
+    "resume_partial_downloads": true,
+    "model_code_executed": false,
+    "gated_without_entitlement": "HOLD",
+    "unclear_license": "HOLD"
+  },
+  "summary": {
+    "models_total": 18,
+    "models_verified": 17,
+    "models_partial": 0,
+    "models_failed": 0,
+    "models_held": 1,
+    "files_verified_total": 197,
+    "bytes_verified_total": 161567247246,
+    "minimum_free_bytes_observed": 2819530194944,
+    "minimum_free_floor_bytes": 200000000000,
+    "free_floor_maintained": true
+  },
+  "models": [
+    {
+      "repo_id": "n4ze3m/tiny-voca",
+      "revision_sha": "d94d2a0338fd1e0eab7dd896ec0ad23d8cdf7c14",
+      "source_manifest": "manifests/drafts/v48-2026-11-18-tiny-voca-immutable-source.candidate.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 14,
+      "files_verified": 14,
+      "source_bytes": 23626858,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "DEDUP_VERIFIED": 14
+      },
+      "weight_files_sha256": [
+        {
+          "path": "tiny-voca.pt",
+          "sha256": "ebb22871524c5732520fb1652e6aefcec708a7452e83bdd00adcf6181db5ef70"
+        },
+        {
+          "path": "phonemizer/g2p.npz",
+          "sha256": "eb3fd519ff00e72d850928d2fccb968adc36134bca2f3bda09de7e794c2ed01b"
+        }
+      ],
+      "started_at": "2026-11-18T15:49:12.973831+00:00",
+      "finished_at": "2026-11-18T15:49:13.761653+00:00",
+      "free_bytes_after": 2981074751488
+    },
+    {
+      "repo_id": "ibm-granite/granite-timeseries-ttm-r3",
+      "revision_sha": "ea17cfd2e3edcaea21eb8dcecd18bf88971482fa",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_SMALL_SPECIAL",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 5748963,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "8ec0509a18a38f65b02f046fc28298ab3acf5d54eecb0a0df959b9fa001bc9fb"
+        }
+      ],
+      "started_at": "2026-11-18T15:49:26.531299+00:00",
+      "finished_at": "2026-11-18T15:49:31.913256+00:00",
+      "free_bytes_after": 2981068988416
+    },
+    {
+      "repo_id": "robbyant/lingbot-touch-tiny",
+      "revision_sha": "f23969ccd4b6bba2163e69cc05a577455a075fe9",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_TACTILE_SAFE_PT",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 21873479,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "encoder.pt",
+          "sha256": "ddb8b435963348fff5b8a83bb48f995978dc8841d82f87be007c775bf5a88055"
+        }
+      ],
+      "started_at": "2026-11-18T15:49:31.964549+00:00",
+      "finished_at": "2026-11-18T15:49:37.942995+00:00",
+      "free_bytes_after": 2981047107584
+    },
+    {
+      "repo_id": "nvidia/Nemotron-3-Diarization",
+      "revision_sha": "52a432672732425e4c19765b9fec9b5810e6f4ba",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_AUDIO_OPENMDW",
+      "status": "VERIFIED",
+      "license": "openmdw-1.1",
+      "files_total": 11,
+      "files_verified": 11,
+      "source_bytes": 397030277,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 11
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "c074d86335b3b794f8fa5edc25594558f128bdb3914d27806a3a5a2e44963cb6"
+        }
+      ],
+      "started_at": "2026-11-18T15:49:38.008044+00:00",
+      "finished_at": "2026-11-18T15:50:09.719204+00:00",
+      "free_bytes_after": 2980650061824
+    },
+    {
+      "repo_id": "KittenML/kitten-tts-2-mini",
+      "revision_sha": "c01797caec3967b400da457656e011eb81f530a4",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "R110_SMALL_INDEPENDENT_TRAINED_ORIGINAL",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 27,
+      "files_verified": 27,
+      "source_bytes": 477936075,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 8,
+        "sha256-vs-publisher": 19
+      },
+      "file_status_counts": {
+        "VERIFIED": 27
+      },
+      "weight_files_sha256": [
+        {
+          "path": "g2p/g2p_bart_en_us/model.safetensors",
+          "sha256": "dc4a02e62d4fcb4bb4097ecf00db89b8e1a12a549a52ab6adfbba220b80a55c5"
+        },
+        {
+          "path": "kitten_tts_2_mini.onnx",
+          "sha256": "fa821c1cdd8f7fbfdbd5d1cae0a767673871d62696b85af7db059a9bd26b42d2"
+        },
+        {
+          "path": "kitten_tts_2_mini.safetensors",
+          "sha256": "b4cbca44add074c66bf0d36e335c55d0a213cd3e69200856617d0d7ed8e1e23e"
+        },
+        {
+          "path": "voices_da.npz",
+          "sha256": "a4d191e87175519bab110aed747ccdb48586455b9c4896aa74c2d269766d8eef"
+        },
+        {
+          "path": "voices_de.npz",
+          "sha256": "b33f8c44a7f3968ed53aca31666bed9110d5ab0023a75dc69125f3e3218e9a9d"
+        },
+        {
+          "path": "voices_en.npz",
+          "sha256": "5c18573d075f53f6f218c2056dfc84ad10e976e81e23d55e5a7a6adc6e9135a4"
+        },
+        {
+          "path": "voices_es.npz",
+          "sha256": "3de943ddab5eeced04a42c732d39152802df01fd94f194181a7bc5bd60d52c3b"
+        },
+        {
+          "path": "voices_fi.npz",
+          "sha256": "7764dec2e1e21cae23d623e9b9ccb5d15122f1fbbc582e40fbd57c53e3ce2c73"
+        },
+        {
+          "path": "voices_fr.npz",
+          "sha256": "df2f679a9b3b73b6b3cf14003a782804db1a22985f68f3912859598249dcd79e"
+        },
+        {
+          "path": "voices_hi.npz",
+          "sha256": "ce6d14445f10b16347daa9385f411d87f8cc73d989f5467c0fd975abdf906329"
+        },
+        {
+          "path": "voices_it.npz",
+          "sha256": "1c9d98962dd50e240450d5316a1ad80f32d67f9b2919c9419422359d1c4333d6"
+        },
+        {
+          "path": "voices_ja.npz",
+          "sha256": "17293773d30660c39120541586451aa66c0a8e8b58590e38381e22dc1bf6d271"
+        },
+        {
+          "path": "voices_ko.npz",
+          "sha256": "d3d5295000153ad90f7a321769cd4647b8db42612feaf6e3d6e765f1c35b9daf"
+        },
+        {
+          "path": "voices_nl.npz",
+          "sha256": "d1862bfe3554d1c47d22dc44ed943335ba695cbbe6d5324a129365fadf22238d"
+        },
+        {
+          "path": "voices_pt.npz",
+          "sha256": "83dc34bca3e2c454548d8d63cda7830aa22748cc1a0643fa5bdac445fe8f4f57"
+        },
+        {
+          "path": "voices_ru.npz",
+          "sha256": "f998f1fce7b19a0714c47b99aaaa06c8ab94be13e1dfb3acf8a6a6c2b97a05f2"
+        },
+        {
+          "path": "voices_sv.npz",
+          "sha256": "73c6b92a0be1c970bd0334b0099a57354057930c40911d17c6dfc0347c6b1cba"
+        },
+        {
+          "path": "voices_sw.npz",
+          "sha256": "809450b8dc88cae0e042ad935c1e5751b9a2448a2251c51f29285cc6d3f46e09"
+        },
+        {
+          "path": "voices_tr.npz",
+          "sha256": "d2af4c7636381c26ad3252002021cbacef130b401e45ed5d4ee079f901b61920"
+        }
+      ],
+      "started_at": "2026-11-18T15:50:09.798180+00:00",
+      "finished_at": "2026-11-18T15:51:14.162741+00:00",
+      "free_bytes_after": 2980172066816
+    },
+    {
+      "repo_id": "usezn/Galvanize-3",
+      "revision_sha": "597237be3b0fabbf5d70ff16ce95fad14a591f20",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_SMALL_SPECIAL",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 9,
+      "files_verified": 9,
+      "source_bytes": 597001839,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 7,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 9
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "a17273035cf5f52b6363d3420695c8809be33913ef6ece4bd72927bf93741305"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "8ab59b95e06d1d289dba953ef1ab95044067692bf5877f49236ebd1d8a24dcdf"
+        }
+      ],
+      "started_at": "2026-11-18T15:51:14.244608+00:00",
+      "finished_at": "2026-11-18T15:51:58.791241+00:00",
+      "free_bytes_after": 2979575046144
+    },
+    {
+      "repo_id": "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1",
+      "revision_sha": "aa213272180d6ad0d03f5fb3d597f0f0322647c5",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "A_RESEARCH_LICENSE",
+      "status": "VERIFIED",
+      "license": "other",
+      "files_total": 8,
+      "files_verified": 8,
+      "source_bytes": 671173375,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 7,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 8
+      },
+      "weight_files_sha256": [
+        {
+          "path": "chatrlabs-omni-lora-v0.1-bf16.safetensors",
+          "sha256": "5991a9845bc5251240febf944f653505a00966515b77073f2c639c4dfcba672a"
+        }
+      ],
+      "started_at": "2026-11-18T15:51:58.879030+00:00",
+      "finished_at": "2026-11-18T15:52:45.824165+00:00",
+      "free_bytes_after": 2978774708224
+    },
+    {
+      "repo_id": "qvac/BotPsy-0.8B",
+      "revision_sha": "24561e9681643eaf807fc28b0875210cb17f89c1",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_SMALL_AGENT",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 11,
+      "files_verified": 11,
+      "source_bytes": 1726201481,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 11
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "9a52e9fb1552e8592542e3de8104af9040b56c60644f5a9c2c270621a3b0ab48"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523"
+        }
+      ],
+      "started_at": "2026-11-18T15:52:46.052354+00:00",
+      "finished_at": "2026-11-18T15:57:13.718786+00:00",
+      "free_bytes_after": 2974811705344
+    },
+    {
+      "repo_id": "tencent/Qwen3.8-27B-DSpine-b16",
+      "revision_sha": "260a6c23070ca873ff1a5f33b7119ac3f6a245ee",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_DRAFT_TARGET_DEP",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 4051857976,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "ac90f1df842ea66b23e4224f3e86624add547526f689ffe9e9c6b7a5937116b1"
+        }
+      ],
+      "started_at": "2026-11-18T15:57:13.895009+00:00",
+      "finished_at": "2026-11-18T16:07:02.074883+00:00",
+      "free_bytes_after": 2967994912768
+    },
+    {
+      "repo_id": "osunlp/ARLoop-1.2B",
+      "revision_sha": "a29f310ac46646edf5c462425dc546b2ce7ea985",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "R110_SMALL_INDEPENDENT_TRAINED_ORIGINAL",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 15,
+      "files_verified": 15,
+      "source_bytes": 4838079760,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 15
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00003.safetensors",
+          "sha256": "f63b6dc22428c92a8ab8fad1150546745e542df1870cd03cc6503ae1a62a521d"
+        },
+        {
+          "path": "model-00002-of-00003.safetensors",
+          "sha256": "cfee1065c0fa1ca1f61b33191cc326148c7609847198ae7a44342947b06c8826"
+        },
+        {
+          "path": "model-00003-of-00003.safetensors",
+          "sha256": "e21d16b37eae586a58f2df1107e05fe6c88e81aa3814d12e7f46af9342702359"
+        }
+      ],
+      "started_at": "2026-11-18T16:07:02.129395+00:00",
+      "finished_at": "2026-11-18T16:11:52.632192+00:00",
+      "free_bytes_after": 2963156799488
+    },
+    {
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "revision_sha": "ab8d7bd81d03117501e4da60cccdff4c80f0eea0",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "A_UNCENSORED",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 4,
+      "files_verified": 4,
+      "source_bytes": 17176692278,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 2,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 4
+      },
+      "weight_files_sha256": [
+        {
+          "path": "mmproj-Qwen3.8-27B-Q8_0.gguf",
+          "sha256": "2e968a6af97ce35d8971890b257b9b7edabf20ad91450501fa53162a19ee33eb"
+        },
+        {
+          "path": "RVN-Q4_K_M-multilingual.gguf",
+          "sha256": "9ed40ccc8b8432f38b9a85d0ca67928167f5719e8c10bd299e56d34facaf6e61"
+        }
+      ],
+      "started_at": "2026-11-18T16:11:52.686963+00:00",
+      "finished_at": "2026-11-18T16:41:12.723344+00:00",
+      "free_bytes_after": 2945980100608
+    },
+    {
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "revision_sha": "e6924b3a08765341e01546308ccf2683d43e880b",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "A_UNCENSORED",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 17738327225,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "mmproj-Qwen3.8-27B-Uncensored-v2-F16.gguf",
+          "sha256": "0b296c3155e945290000aa4eb62edec4a5d2d183aae52feca3df39798095a9db"
+        },
+        {
+          "path": "Qwen3.8-27B-Uncensored-v2-Q4_K_M.gguf",
+          "sha256": "2a76f31d17e879589f2527bb4f657526ce0f4719aa352adc944e13f9f7365972"
+        }
+      ],
+      "started_at": "2026-11-18T16:41:12.797982+00:00",
+      "finished_at": "2026-11-18T17:11:22.621782+00:00",
+      "free_bytes_after": 2928241762304
+    },
+    {
+      "repo_id": "Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2",
+      "revision_sha": "6af1278a92223c717ccea671e4571a5cc135f5d8",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "C_LARGE_SFT_REVIEW",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 53121584389,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 8,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "25b9bbda873b017f3aef54234542e4daf322f7117d7ebafa90dce405ea50f547"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "eb7eaf504f060ecd157ef4e03b1a174ed62f23c8a119d620f63138c1e1396183"
+        },
+        {
+          "path": "Pantheon-Reasoning.jpg",
+          "sha256": "04ce599b4249fd1c989e8f86ce598e84a77a90a658f87c0bdbd0bd3ff1ce434a"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+        }
+      ],
+      "started_at": "2026-11-18T17:11:22.680466+00:00",
+      "finished_at": "2026-11-18T18:46:19.214572+00:00",
+      "free_bytes_after": 2875120144384
+    },
+    {
+      "repo_id": "orcarouter/Qwen3.8-27B-Uncensored",
+      "revision_sha": "0f639a9bde23fe229a7b064b40a5153c5bec0b48",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "D_GATED_OWNER_PERMISSION",
+      "status": "HOLD_GATED_OR_PRIVATE",
+      "license": null,
+      "files_total": null,
+      "files_verified": null,
+      "source_bytes": null,
+      "verification_methods": {},
+      "file_status_counts": {},
+      "weight_files_sha256": [],
+      "started_at": "2026-11-18T18:46:19.259611+00:00",
+      "finished_at": null,
+      "free_bytes_after": null
+    },
+    {
+      "repo_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU",
+      "revision_sha": "079b2b268c637b77f2fb4ab6a5ca1edc47d462a5",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "C_LARGE_SFT_REVIEW",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 25,
+      "files_verified": 25,
+      "source_bytes": 55589894917,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 14
+      },
+      "file_status_counts": {
+        "VERIFIED": 25
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00012.safetensors",
+          "sha256": "b5df896d93260f64913e8e09892c9f3724e92e4bfb7f4708238880fb50833f98"
+        },
+        {
+          "path": "model-00002-of-00012.safetensors",
+          "sha256": "feacdeb20032f0a1bd7315f80f991885add3e31da43ea65aebde67786b740746"
+        },
+        {
+          "path": "model-00003-of-00012.safetensors",
+          "sha256": "42845ce58e2b023b13df6fdfbacf637cfbf6f0fa764dca7b163b355bd5844aab"
+        },
+        {
+          "path": "model-00004-of-00012.safetensors",
+          "sha256": "a2d24cb46efbb0a75df8becd0d5d3bcea30ddc636273065f8a1b199cf5139cde"
+        },
+        {
+          "path": "model-00005-of-00012.safetensors",
+          "sha256": "3aadc678e631cd4d30213cb15007bedd0e41d77301f17b0ed978c743c7387264"
+        },
+        {
+          "path": "model-00006-of-00012.safetensors",
+          "sha256": "bb1024157fb4f4b6ec734c0a0d75902ecaa2406311bf065db495ede3878d2c37"
+        },
+        {
+          "path": "model-00007-of-00012.safetensors",
+          "sha256": "a590217a8c876cb2b489f6d3e890001fa1d923d07b10b3c09fb552238c86a68f"
+        },
+        {
+          "path": "model-00008-of-00012.safetensors",
+          "sha256": "ba25c6b10abf3b31c43e92906f10e37b10d09b18f6535d1e6a826803a8f077bd"
+        },
+        {
+          "path": "model-00009-of-00012.safetensors",
+          "sha256": "0c5254879f08b62212362fc6c0caf0b3cd36117a2de35075a6b363f3cace4df4"
+        },
+        {
+          "path": "model-00010-of-00012.safetensors",
+          "sha256": "064a6765b5bd47eb82955e23c4d0f6b945aa4871fc29db645f24043acf73a41c"
+        },
+        {
+          "path": "model-00011-of-00012.safetensors",
+          "sha256": "4cbbbf4c89d0cb69755011a686279f6707df6f70ed2f9df344ed7b4467a4794e"
+        },
+        {
+          "path": "model-00012-of-00012.safetensors",
+          "sha256": "1007f875318e6cecadde4d5f56696b8e89d9fe30b71e8ed4aa26b387aac9d304"
+        },
+        {
+          "path": "model-mtp-restored.safetensors",
+          "sha256": "fbea25865ec18d0fcc2ba235d7c32a39d5dfad15531b39498796ef8ae9998d25"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4"
+        }
+      ],
+      "started_at": "2026-11-18T18:46:19.702371+00:00",
+      "finished_at": "2026-11-18T20:16:42.208629+00:00",
+      "free_bytes_after": 2819530194944
+    },
+    {
+      "repo_id": "Qwen/Qwen3.5-0.8B",
+      "revision_sha": "2fc06364715b967f1860aea9cf38778875588b17",
+      "source_manifest": "manifests/drafts/qwen3.5-0.8b-2026-10-30.candidate.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 13,
+      "files_verified": 13,
+      "source_bytes": 1769980465,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 13
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors-00001-of-00001.safetensors",
+          "sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+        }
+      ],
+      "started_at": "2026-11-18T15:52:21.762034+00:00",
+      "finished_at": "2026-11-18T15:56:08.918161+00:00",
+      "free_bytes_after": 2975427137536
+    },
+    {
+      "repo_id": "lightonai/LightOnOCR-3-0.8B",
+      "revision_sha": "36d8636925327c671bd8e479c517a004f7566bd9",
+      "source_manifest": "manifests/drafts/lightonocr-3-0.8b-2026-10-30.candidate.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 15,
+      "files_verified": 15,
+      "source_bytes": 1737771835,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 15
+      },
+      "weight_files_sha256": [
+        {
+          "path": "lightonocr3_logo.png",
+          "sha256": "768eee79d378518cfea9ed8d81ba3a53a0cff17ccf4b12c22a9e5ebedde32bcf"
+        },
+        {
+          "path": "model.safetensors",
+          "sha256": "ae46aa6fd7136d57297ac006ed9ec345b7a2083feb2e99501bedcb014ca3efdf"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523"
+        }
+      ],
+      "started_at": "2026-11-18T15:56:09.455857+00:00",
+      "finished_at": "2026-11-18T16:02:32.190084+00:00",
+      "free_bytes_after": 2969617440768
+    },
+    {
+      "repo_id": "openai/whisper-large-v3-turbo",
+      "revision_sha": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+      "source_manifest": "manifests/drafts/whisper-large-v3-turbo-2026-10-30.candidate.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 13,
+      "files_verified": 13,
+      "source_bytes": 1622466054,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 13
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "542566a422ae4f3fd23f1ba11add198fca01bbf82e66e6a2857b3f608b1eb9d1"
+        }
+      ],
+      "started_at": "2026-11-18T16:02:32.883618+00:00",
+      "finished_at": "2026-11-18T16:06:25.334491+00:00",
+      "free_bytes_after": 2967994941440
+    }
+  ],
+  "notes": [
+    "Local absolute paths, usernames and credentials are intentionally omitted.",
+    "A HOLD entry means no payload was acquired for that model.",
+    "Publisher LFS SHA-256 compared for weight files; ordinary Git blobs compared by Git blob SHA-1; 'size-only' means no publisher hash existed."
+  ]
+}
