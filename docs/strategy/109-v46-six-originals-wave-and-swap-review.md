@@ -1,5 +1,7 @@
 # R109｜v46ダウンロード対象の再確定：小型5原本＋無検閲RVNと容量を伴う交換案
 
+**2026-11-18 訂正**：BotPsy-0.8Bはツール利用を後学習したエージェント原本であり「安全専門・行動リスク分類器」とした旧記述を訂正。現行正本はv47なので、最新の[原本14件容量・役割監査](112-v47-owner-capacity-and-source-role-finalization-2026-11-18.md)を優先参照。
+
 2026-11-18 JST。GitHub `Unjuno/local-model-portfolio`、現行正本 `v46-20261118`（198登録／有効151）。本記録は既存カタログの**取得対象の研究上の確定**であり、権利・実HDD・モデル実行・SHA実測・本人の取得承認を確定するものではない。正本変更0件、`queues/approved.json`変更0件、モデル本体取得0件。
 
 一次資料を保持する[全45ファイル・候補別判定JSON](../../catalog/proposals/2026-11-18-r109-six-originals-wave-and-swaps.json)／ベースとなる[出版社の12モデル131ファイル原本台帳](../../manifests/drafts/r107-v45-12-original-sources-file-freeze.candidate.json)／[v46の151件グローバル最適化](../../docs/strategy/108-v46-global-portfolio-optimization.md)。
@@ -16,7 +18,7 @@
 - **触覚**：`robbyant/lingbot-touch-tiny`は約21.9MB。タッチセンサの独自学習特徴。学習済み`encoder.pt`は安全性未確認のPyTorchシリアライズとして扱い、未監査の`torch.load`をしない。
 - **話者分離**：`nvidia/Nemotron-3-Diarization`は約397MB、OpenMDW系のライセンスタグ。ASRやTTSとは異なる音声タスクであり、関連コード・wheel・実行ABIとライセンス正文は未確定。
 - **プロンプト注入分類**：`usezn/Galvanize-3`は約597MB、ModernBERTの別後学習済み分類原本。量子化ONNXなどの同じ学習済み成果を無条件に二重保管せず、元重みと閾値設定を保持する。
-- **エージェント安全専門**：`qvac/BotPsy-0.8B`は約1.726GB。大型無検閲チャットモデルと競合する汎用言語能力ではなく、エージェントの専門監査・行動判定の別学習成果として保全する。
+- **小型ツール呼び出しエージェント**：`qvac/BotPsy-0.8B`は約1.726GB。Qwen系のSFT・教師蒸留・RLによりツール利用を後学習した原本で、エージェントの危険性分類器ではない。安全分類器はGalvanize-3であり両者の用途を混同しない。
 
 ### Phase B：無検閲モデルは1つの代表成果から
 
