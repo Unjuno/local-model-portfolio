@@ -451,8 +451,8 @@
         "selected_publisher_bytes": 1726201481,
         "publisher_sha256_files": 2,
         "source_only_not_any_loaded_code": true,
-        "role": "AGENT_BEHAVIOR_SECURITY",
-        "research_selection_reason": "Dedicated specialist for agent risk; preserves distinct supervision relative to large uncensored LLM; not proof of future legal bans",
+        "role": "SMALL_AGENT_TOOL_CALLING_POSTTRAINED",
+        "research_selection_reason": "Distinct SFT, multiple-teacher distillation and RL on-device tool-use agent weights; not an agent-risk classifier. Galvanize-3 is the prompt-injection classification asset.",
         "required_runtime_to_reproduce": "Original model config, tokenizer, attribution, backend; no automatic custom code execution",
         "first_falsifiable_gate": "ATTRIBUTION_AND_RUNTIME",
         "personal_use_contract_signed_off": false,
@@ -707,5 +707,15 @@
     },
     "C": "Published author weights can be incomplete/trust_remote_code or include dependent pickle; apparently small model may need large external teacher; two different 27B outcomes may prove equivalent.",
     "U": "Unknown personal access, software ABI, required external trained assets and source metadata freshness; no calibrated probability or sample errors, u_c and k unavailable."
+  },
+  "role_erratum_2026_11_18": {
+    "corrected_repo_id": "qvac/BotPsy-0.8B",
+    "old_role": "AGENT_BEHAVIOR_SECURITY",
+    "correct_role": "SMALL_AGENT_TOOL_CALLING_POSTTRAINED",
+    "primary_model_card": "https://huggingface.co/qvac/BotPsy-0.8B",
+    "evidence_from_v47_canonical": "catalog/effective-portfolio-2026-11-18-v47.json",
+    "superseding_audit": "catalog/decisions/2026-11-18-r112-v47-source-role-and-owner-capacity-gates.json",
+    "does_not_change_original_source_files": true,
+    "download_approved": 0
   }
 }
