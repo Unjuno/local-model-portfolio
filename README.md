@@ -1,5 +1,8 @@
 # Local Model Portfolio
 
+**R108｜全体最適化（2026-11-18）**：[v46全198資産・151有効を対象に取得・交換・重複容量を統合評価](docs/strategy/108-v46-global-portfolio-optimization.md)／[151件の全件機械可読監査](catalog/decisions/2026-11-18-r108-global-portfolio-optimization.json)。旧R107初回8件は部分集合であり全体の採用判断ではない。12件のsource固定、139件は同監査で新規固定なし。実HDD・本人権利・最終SHA/復元未完了、取得承認0。
+
+
 **R107｜2026-11-18・ダウンロードすべき原本の一次選定確定**：[v45有効151件すべての保存順位・取得停止と、14資産の具体的ファイル選択](docs/strategy/107-v45-download-selection-originals-uncensored-specialists-2026-11-18.md)、[151件機械可読判定](catalog/decisions/2026-11-18-r107-v45-final-source-selection-and-download-gates.json)、[無検閲27B別学習2系統＋Galvanize＋非商用画像LoRAの単一source候補](manifests/drafts/v45-2026-11-18-r107-uncensored-and-small-specialist-source.candidate.json)。原本候補14モデルのpublisher file bytes合計は**54,200,027,212byte（論理source、実増分でない）**。0bserverx RVNは配布全repo約1.645TBでなく最新版`RVN-Q4_K_M-multilingual.gguf`+任意vision projectorの選択候補17.1767GBに限定。Interpretic政治回答編集v2は別学習成果、OrcaRouter27Bは**Gated本人権限確認P0**、小型knoveleng9Bはperplexity悪化につきHOLD。**本人の権利／実HDD・ABI／local SHA／復元未検証、approved0・重量DL0。** Exaの利用枠402で追加外部検索は未完了。v45の198登録・151有効は変更せず、以下は既存調査記録。
 
 **R107｜先に保存すべき8資産を選定（2026-11-18、未承認）**：[無検閲2系統・小型/専門6系統、候補選択ファイル計48,397,620,081byte](docs/strategy/107-v45-eight-download-targets-and-hold-decisions.md)／[選定・交換保留の非実行JSON](catalog/decisions/2026-11-18-r107-download-selection.json)。8件はいずれも既存v45の内数。完全復元に必要なLICENSE/本人許諾/実HDD/SHAは未完了、取得承認0。
