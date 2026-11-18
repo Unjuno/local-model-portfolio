@@ -1,5 +1,7 @@
 # Local Model Portfolio
 
+**現行v47・R110（2026-11-18）**：[200登録／153有効、SELECT53・CONDITIONAL100](catalog/effective-portfolio-2026-11-18-v47.json)に更新。独立した事前学習[ARLoop 1.2B](https://huggingface.co/osunlp/ARLoop-1.2B)と、日本語を含む16言語・118声の[Kitten TTS 2 Mini](https://huggingface.co/KittenML/kitten-tts-2-mini)を研究CONDITIONAL追加。[判断根拠と誤記訂正](docs/strategy/110-v47-arloop-kitten-original-selection-and-rvn-correction-2026-11-18.md)／[Publisher固定source42ファイル・5,316,015,835byte・22 LFS SHA](manifests/drafts/v46-2026-11-18-r110-arloop-kitten-fixed-source.candidate.json)／[153件取得前ゲート](catalog/readiness/v47-2026-11-18-r110-all153-gates.json)／[条件付きアクセス100件](catalog/access/2026-11-18-v47-conditional-hub-gates.json)／[提案キュー153](queues/proposed-v47-2026-11-18.json)／[固定出版社原本14件のsource-only queue](queues/proposed-v47-r110-source-pinned-14.json)を統合。旧v46のRVN`chat_template.jinja`を「存在しない」とした説明を訂正。**20 Gated、9件の学習済み総数不明、本人の合法取得・4TB HDD・全依存/ローカルSHA/復元未検証、承認/重量DL0**。以下旧R109以前は履歴。
+
 **R109｜取得実行への移行・実測停止要因の確定（2026-11-18）**：[v46固定12モデル131ファイル・50 publisher SHA-256参照を照合、9/9テストPASS](docs/strategy/109-v46-twelve-source-download-preflight-tested.md)／[実HDD・SHA検証用の読取専用Python](scripts/verify_v46_download_preflight.py)。接続Linuxは約50.88GB容量／約29.52GB空きで200GB最低空き条件FAIL、4TB媒体は未接続。v46 198/151維持、approved0、モデル取得0。
 
 
