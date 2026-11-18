@@ -14,6 +14,7 @@ from pathlib import Path
 LOCAL = Path("D:/AI_VAULT/state/ledger/acquisition-ledger.json")
 LOCAL_WAVE2 = Path("D:/AI_VAULT/state/ledger/wave2-ledger.json")
 OUT = Path("catalog/execution/2026-11-19-acquisition-ledger.json")
+MD = Path("docs/strategy/114-v48-execution-acquisition-results-2026-11-19.md")
 
 
 def main():
@@ -92,19 +93,21 @@ def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     md = [
-        "# v48 取得実行実績（2026-11-19）",
+        "# v48 Acquisition Execution Results (2026-11-19)",
         "",
-        "正本 `catalog/CURRENT.json` (v48-20261118) の統一ソース計画 "
-        "`queues/proposed-v48-r113-source-pinned-15.json` に基づく実行結果。",
+        "Results of executing the unified pinned-source plan "
+        "`queues/proposed-v48-r113-source-pinned-15.json` from canonical "
+        "`catalog/CURRENT.json` (v48-20261118).",
         "",
-        f"- モデル数: {summary['models_total']}（検証済み {summary['models_verified']}、"
-        f"部分 {summary['models_partial']}、失敗 {summary['models_failed']}、保留 {summary['models_held']}）",
-        f"- 検証済みファイル: {summary['files_verified_total']}",
-        f"- 検証済みソースバイト: {summary['bytes_verified_total']}",
-        f"- 観測された最小空き: {summary['minimum_free_bytes_observed']} byte"
-        f"（200GB床維持: {summary['free_floor_maintained']}）",
+        f"- Models: {summary['models_total']} "
+        f"(verified {summary['models_verified']}, partial {summary['models_partial']}, "
+        f"failed {summary['models_failed']}, held {summary['models_held']})",
+        f"- Verified files: {summary['files_verified_total']}",
+        f"- Verified source bytes: {summary['bytes_verified_total']}",
+        f"- Minimum observed free bytes: {summary['minimum_free_bytes_observed']} "
+        f"(200 GB floor maintained: {summary['free_floor_maintained']})",
         "",
-        "| repo_id | revision | 状態 | 検証ファイル | ライセンス |",
+        "| repo_id | revision | status | verified files | license |",
         "| --- | --- | --- | --- | --- |",
     ]
     for e in entries:
@@ -112,15 +115,16 @@ def main():
                   f"{e['files_verified']}/{e['files_total']} | {e['license']} |")
     md += [
         "",
-        "重みファイルは出版社 LFS SHA-256 と照合し、通常 Git blob は Git blob SHA-1 で照合した。",
-        "Gated で本人権限が確認できないモデルは HOLD とし、ペイロードを取得していない。",
-        "モデルコードの import / pickle / 推論は一切実行していない。",
-        "ローカル絶対パス・ユーザー名・認証情報は公開リポジトリへ書き出していない。",
+        "Weight files were compared against publisher LFS SHA-256; ordinary Git blobs "
+        "were compared by Git blob SHA-1. 'size-only' means no publisher hash existed.",
+        "Gated models without verified owner entitlement were recorded as HOLD and no "
+        "payload was acquired for them.",
+        "No model code, pickle payload or weights were imported or executed.",
+        "Local absolute paths, usernames and credentials are not exported to the repo.",
         "",
     ]
-    MD = Path("docs/strategy/114-v48-execution-acquisition-results-2026-11-19.md")
     MD.parent.mkdir(parents=True, exist_ok=True)
-    MD.write_text("\n".join(md), encoding="utf-8")
+    MD.write_text("\n".join(md) + "\n", encoding="utf-8")
     print(f"wrote {OUT} and {MD}: {summary}")
 
 

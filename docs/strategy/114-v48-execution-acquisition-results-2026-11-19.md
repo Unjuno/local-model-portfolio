@@ -1,13 +1,13 @@
-# v48 取得実行実績（2026-11-19）
+# v48 Acquisition Execution Results (2026-11-19)
 
-正本 `catalog/CURRENT.json` (v48-20261118) の統一ソース計画 `queues/proposed-v48-r113-source-pinned-15.json` に基づく実行結果。
+Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- モデル数: 18（検証済み 17、部分 0、失敗 0、保留 1）
-- 検証済みファイル: 197
-- 検証済みソースバイト: 161567247246
-- 観測された最小空き: 2819530194944 byte（200GB床維持: True）
+- Models: 18 (verified 17, partial 0, failed 0, held 1)
+- Verified files: 197
+- Verified source bytes: 161567247246
+- Minimum observed free bytes: 2819530194944 (200 GB floor maintained: True)
 
-| repo_id | revision | 状態 | 検証ファイル | ライセンス |
+| repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
 | `n4ze3m/tiny-voca` | `d94d2a0338fd1e0eab7dd896ec0ad23d8cdf7c14` | VERIFIED | 14/14 | apache-2.0 |
 | `ibm-granite/granite-timeseries-ttm-r3` | `ea17cfd2e3edcaea21eb8dcecd18bf88971482fa` | VERIFIED | 5/5 | apache-2.0 |
@@ -28,7 +28,8 @@
 | `lightonai/LightOnOCR-3-0.8B` | `36d8636925327c671bd8e479c517a004f7566bd9` | VERIFIED | 15/15 | apache-2.0 |
 | `openai/whisper-large-v3-turbo` | `41f01f3fe87f28c78e2fbf8b568835947dd65ed9` | VERIFIED | 13/13 | mit |
 
-重みファイルは出版社 LFS SHA-256 と照合し、通常 Git blob は Git blob SHA-1 で照合した。
-Gated で本人権限が確認できないモデルは HOLD とし、ペイロードを取得していない。
-モデルコードの import / pickle / 推論は一切実行していない。
-ローカル絶対パス・ユーザー名・認証情報は公開リポジトリへ書き出していない。
+Weight files were compared against publisher LFS SHA-256; ordinary Git blobs were compared by Git blob SHA-1. 'size-only' means no publisher hash existed.
+Gated models without verified owner entitlement were recorded as HOLD and no payload was acquired for them.
+No model code, pickle payload or weights were imported or executed.
+Local absolute paths, usernames and credentials are not exported to the repo.
+
