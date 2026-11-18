@@ -1,5 +1,13 @@
 # エージェント作業規約
 
+## 現行v47・R110：小型独立学習済み原本の正式な選定と取得STOP
+
+唯一の正本[CURRENT](catalog/CURRENT.json)→**200登録・153有効（SELECT53/CONDITIONAL100）**。[R110判断とエラー訂正](docs/strategy/110-v47-arloop-kitten-original-selection-and-rvn-correction-2026-11-18.md)／[新原本42ファイルの固定Publisher SHA](manifests/drafts/v46-2026-11-18-r110-arloop-kitten-fixed-source.candidate.json)／[153 readiness](catalog/readiness/v47-2026-11-18-r110-all153-gates.json)／[100条件付きアクセス](catalog/access/2026-11-18-v47-conditional-hub-gates.json)／[153非実行候補](queues/proposed-v47-2026-11-18.json)／[出版社原本14 source-only queue](queues/proposed-v47-r110-source-pinned-14.json)。旧v46 198件の採否を変更せず、ARLoopとKittenを新しく研究段階CONDITIONAL追加。
+
+ARLoopは24物理層×3ループの学習済みFP32原本で`trust_remote_code`を実行していない。KittenはF32原本、言語別voice packs 16、学習済みG2P、実用INT8 ONNXを**一つのモデル資産内で保全**（通常量子化の別登録はしない）。`npz`を安全に読み（allow_pickle=False）、日本語G2PとONNX Runtime/Transformers/PyTorchのABI固定前に実行しない。作者のApache2表示は固定ライセンス正文・使用者の行為別許可を代替しない。旧R108報告の「0bserverx `chat_template.jinja`は存在しない」は**誤り**で、固定revisionに8952byteで存在、GGUF内蔵テンプレートにより独立保存は任意である。
+
+**v47の必須停止ゲート**：Gated20件の本人権限、モデル合計学習済み数未確定9件、151＋2の全ファイル集合、各モデル利用権利・親依存、実4TB保存媒体の容量と200GB最低空き・ステージング、GPU/CPU ABI・custom code監査、取得後の実local SHA・完全offline復元、別途ユーザーの明示的ダウンロード承認。いずれも未完了。承認キュー0件、本体重量取得0、mainのみ。Exaは2026-11-18時点でHTTP402枯渇しているため、Exa検索済みと偽称しない。以下旧R109以前は履歴。
+
 ## R107・現行v45：原本ファイル14資産の研究選定と無検閲別系統の優先審査（2026-11-18）
 
 [作業報告](docs/strategy/107-v45-download-selection-originals-uncensored-specialists-2026-11-18.md)／[有効151資産の機械可読取得候補判定](catalog/decisions/2026-11-18-r107-v45-final-source-selection-and-download-gates.json)／[特殊4資産の固定Publisher SHA/source](manifests/drafts/v45-2026-11-18-r107-uncensored-and-small-specialist-source.candidate.json)。**正式CURRENTはv45=198管理・151有効、SELECT53/CONDITIONAL98。** ダウンロード対象として選択した14原本sourceは重みや権限を実取得・承認したわけではない。現行`queues/proposed-v45-2026-11-18.json`の14件には`r107_original_source_selection`を追記し、**`approved=false`、`download_enabled=false`を維持**、`queues/approved.json`は0件。
