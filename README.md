@@ -1,5 +1,8 @@
 # Local Model Portfolio
 
+**R109｜取得実行への移行・実測停止要因の確定（2026-11-18）**：[v46固定12モデル131ファイル・50 publisher SHA-256参照を照合、9/9テストPASS](docs/strategy/109-v46-twelve-source-download-preflight-tested.md)／[実HDD・SHA検証用の読取専用Python](scripts/verify_v46_download_preflight.py)。接続Linuxは約50.88GB容量／約29.52GB空きで200GB最低空き条件FAIL、4TB媒体は未接続。v46 198/151維持、approved0、モデル取得0。
+
+
 **R108｜全体最適化（2026-11-18）**：[v46全198資産・151有効を対象に取得・交換・重複容量を統合評価](docs/strategy/108-v46-global-portfolio-optimization.md)／[151件の全件機械可読監査](catalog/decisions/2026-11-18-r108-global-portfolio-optimization.json)。旧R107初回8件は部分集合であり全体の採用判断ではない。12件のsource固定、139件は同監査で新規固定なし。実HDD・本人権利・最終SHA/復元未完了、取得承認0。
 
 
