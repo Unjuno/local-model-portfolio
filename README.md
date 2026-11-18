@@ -1,5 +1,7 @@
 # Local Model Portfolio
 
+**R113｜無検閲27B原本の取得優先見直し（2026-11-19）**：[2系統のFP16系Safetensors原本・109.397GBの公開元固定ファイル](manifests/drafts/r113-v48-two-uncensored-original-fp16-parents.candidate.json)／[原本優先とGGUF重複保留の根拠](docs/strategy/113-v48-uncensored-original-parent-replacement-review-2026-11-19.md)。InterpreticAIと0bserverxの元の学習済み原本を確認したため、既存GGUFだけを保全マスターとする方針を修正。既存v48 **201登録・154有効は不変更**。Dドライブ実空き・本人の権利・依存/復元・ローカルSHA未確認、取得承認0。
+
 **R113｜現行v48の15原本を一つの取得候補表に統合（2026-11-19）**：[15モデル・187選択ファイル・publisher SHA74件の単一未承認sourceキュー](queues/proposed-v48-r113-source-pinned-15.json)／[A11・B1・C2・D1の選定、重複量子化除外と容量照合](docs/strategy/113-v48-unified-15-source-selection.md)。v47旧14原本を変更せずtiny-vocaのFP32原本14ファイルだけ統合。合計212,023,095,122byteはv48選定の内数。承認0・実モデルDL0。
 
 
