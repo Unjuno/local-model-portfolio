@@ -1,0 +1,555 @@
+{
+  "schema_version": 1,
+  "kind": "R114_V48_UNCENSORED_PROVENANCE_CAPACITY_AUDIT_NO_DOWNLOAD",
+  "reviewed_jst": "2026-11-19",
+  "canonical_revision": "v48-20261118",
+  "owner_repo": "Unjuno/local-model-portfolio",
+  "target_branch": "strategy/2026-11-03-01-risk",
+  "baseline_counts": {
+    "assets": 201,
+    "active": 154,
+    "models": 175,
+    "datasets": 26,
+    "existing_approved_queue_entries": 0,
+    "pinned15_original_model_records": 15,
+    "source_files_pinned_current": 187,
+    "current_pinned_source_bytes": 212023095122
+  },
+  "source_files": {
+    "current": "catalog/CURRENT.json",
+    "catalog": "catalog/effective-portfolio-2026-11-18-v48.json",
+    "originals": "manifests/drafts/r113-v48-two-uncensored-original-fp16-parents.candidate.json",
+    "queue15": "queues/proposed-v48-r113-source-pinned-15.json",
+    "approved": "queues/approved.json"
+  },
+  "source_blob_sha": {
+    "catalog/CURRENT.json": "4d7e91865d8807c466577f0a20784abd31cdcf96",
+    "catalog/effective-portfolio-2026-11-18-v48.json": "79a2cfcb7e1659bedb53b08d21c54b2f0109b81e",
+    "manifests/drafts/r113-v48-two-uncensored-original-fp16-parents.candidate.json": "72009b387a3ebc64295d6cbad973083744a0da8e",
+    "queues/proposed-v48-r113-source-pinned-15.json": "0a166e46fd8f593d890887caa89feb8b51df4e77",
+    "queues/approved.json": "df0e369abda4b765533e0af3921c54a5cb164787"
+  },
+  "model_pairs": [
+    {
+      "original_repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+      "original_url": "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+      "original_revision": "84ab13688128c19d5ef10be430bc5de649b7823f",
+      "original_root_files": 32,
+      "original_bytes": 55586056799,
+      "original_main_safetensors_shards": 18,
+      "original_source_sha_count": 19,
+      "original_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1622,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "8c4a34c2c87cf08af0299c7f3d392b064f8db548"
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11544,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "f938136e3adacfd92be087f6e113b5d6d97f678f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 6896,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "4e039c274c962f585cb9af0356d47f38383e2d0b"
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 8952,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "c0c686f9c38d70d179fb7b5f5aa7530bc913dda3"
+        },
+        {
+          "path": "config.json",
+          "bytes": 4312,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "706cebd746c4b6f2b1d1f892630867acfdfd3df8"
+        },
+        {
+          "path": "crc32.txt",
+          "bytes": 238,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "e84b7b0d0ba6d54d7fbab27c99591032746602c7"
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 202,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "023756cfadf88e5bf69eefeee3e172f38c448d64"
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 3353259,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "a494e019ca1502219fd0128658b979e5f05ae8e8"
+        },
+        {
+          "path": "model-00001-of-00018.safetensors",
+          "bytes": 3966730552,
+          "publisher_sha256": "ba0ce20aae489ad196733da5064bcdf159a1fe84f53336648196e1ebb7751b1c",
+          "publisher_git_blob_sha1": "79b73cdd69afeca931d181f5d1e21ad2d73bb7b7"
+        },
+        {
+          "path": "model-00002-of-00018.safetensors",
+          "bytes": 3043080328,
+          "publisher_sha256": "06a148c01bfbe3faa14a5f184a7ff29a706f7ae1c8b2705d2058e26d17a001fb",
+          "publisher_git_blob_sha1": "81cf43545884a227a01351942dfbc72577812316"
+        },
+        {
+          "path": "model-00003-of-00018.safetensors",
+          "bytes": 2542796952,
+          "publisher_sha256": "2e1bf62cbcd406eaa64b60d10353e1f0ef4039d0976e56f05cabe953454f9968",
+          "publisher_git_blob_sha1": "a2da5e6cd6307a6cae13d04820ab0d31b47b48bd"
+        },
+        {
+          "path": "model-00004-of-00018.safetensors",
+          "bytes": 3988973152,
+          "publisher_sha256": "b4f60aff22eec4dd10e86a9355776e5426f43623db3b8a78e88c5399b3571db2",
+          "publisher_git_blob_sha1": "ed3a83278f541640b6f8f5117db4bc30a9e0f9bc"
+        },
+        {
+          "path": "model-00005-of-00018.safetensors",
+          "bytes": 2099339864,
+          "publisher_sha256": "992c8dde678dcd258d44c732a78132d8974195c7c2cacdec48aeced7c13d872b",
+          "publisher_git_blob_sha1": "f1350f53c6007f7def36403c64eb9f0dee981c27"
+        },
+        {
+          "path": "model-00006-of-00018.safetensors",
+          "bytes": 3979553696,
+          "publisher_sha256": "088f4127e6ec002917a0f12447c52dd9579ce6c1a8eafe4b5786c16a17f65406",
+          "publisher_git_blob_sha1": "1ba74c97d32b4d7e83486817ea40241adbc536be"
+        },
+        {
+          "path": "model-00007-of-00018.safetensors",
+          "bytes": 2108759344,
+          "publisher_sha256": "9387699d8991e132cd047b2cd444e177b7f172348fa44fc437e3c17310d1a218",
+          "publisher_git_blob_sha1": "8c28f05d1e11c2c161794195bf25faf74dd42102"
+        },
+        {
+          "path": "model-00008-of-00018.safetensors",
+          "bytes": 3979553696,
+          "publisher_sha256": "060b6b7e19e917797ecbbd4ac159cd707db0259207153958d29f8dab0c55ab24",
+          "publisher_git_blob_sha1": "eaba1c30e7932f2092cac6b40a3139e6fef1e73a"
+        },
+        {
+          "path": "model-00009-of-00018.safetensors",
+          "bytes": 2108759344,
+          "publisher_sha256": "aa172c0dc82eea68cf428bd490b2d54a4661e39deae3794e335fb486a5500f33",
+          "publisher_git_blob_sha1": "085addf3db396d7ec5d40544c69307d00f609e4c"
+        },
+        {
+          "path": "model-00010-of-00018.safetensors",
+          "bytes": 3979553696,
+          "publisher_sha256": "f0ad52f79dcb82f0530b8b7969e7395cc07b5d7d5ffadd1ad177119ad9c56c6e",
+          "publisher_git_blob_sha1": "519e757c992939d72d93be8f648d9136b3017355"
+        },
+        {
+          "path": "model-00011-of-00018.safetensors",
+          "bytes": 2108759344,
+          "publisher_sha256": "d362ca987820a2b099eeac16c1cb000a91164e230b1ccdc1dbe7360a1172002f",
+          "publisher_git_blob_sha1": "f4bdb9020227ef48dcb336318d76ee416256dca6"
+        },
+        {
+          "path": "model-00012-of-00018.safetensors",
+          "bytes": 3979553696,
+          "publisher_sha256": "be01bb9bdc8edbdb93672084f55d5f55bc40b1e1bdf7bbf9a43100913ff19455",
+          "publisher_git_blob_sha1": "27bb4a54e81fa30cc65da8f40499bd96420c4964"
+        },
+        {
+          "path": "model-00013-of-00018.safetensors",
+          "bytes": 2108759344,
+          "publisher_sha256": "c252646cae5977270066780f87abc2be48c924b0dbdef7fabc64946b5c6aeceb",
+          "publisher_git_blob_sha1": "32ef18fa9988b6cda38749013c4199b3eec3dd39"
+        },
+        {
+          "path": "model-00014-of-00018.safetensors",
+          "bytes": 3979553696,
+          "publisher_sha256": "bbf4a112e30f8e208d10d632bd5e2ed0cc1ba6174144dc281657e5d3a92a418f",
+          "publisher_git_blob_sha1": "c132ebb18d871d08178ad862d7583b88039e7b9b"
+        },
+        {
+          "path": "model-00015-of-00018.safetensors",
+          "bytes": 2108759344,
+          "publisher_sha256": "91fded046e1da206ee9fc2f1c87783fab2548dde6f9e4d3f06ae14084d2726de",
+          "publisher_git_blob_sha1": "eee3cb64a94270d1daf67cef2912493afab68298"
+        },
+        {
+          "path": "model-00016-of-00018.safetensors",
+          "bytes": 3979564040,
+          "publisher_sha256": "c41f426d252f8a58ad1e2999e784ec0856b18c49651a0a5cc3be7ca07f6f8c8f",
+          "publisher_git_blob_sha1": "5b4c55a19556fa23f047834d728b292a30f0d9df"
+        },
+        {
+          "path": "model-00017-of-00018.safetensors",
+          "bytes": 2108759344,
+          "publisher_sha256": "97eb5c809db9d2b984ed702b285bb3d256d3827217a9f64e9e7676b5082dedd6",
+          "publisher_git_blob_sha1": "f8ac4566737ec8ca012c209849311022c26b8451"
+        },
+        {
+          "path": "model-00018-of-00018.safetensors",
+          "bytes": 3392197344,
+          "publisher_sha256": "1d3479509e21494658f9b64d317f5ea8e55c4025d28c702d6c4d0b356ce8ea06",
+          "publisher_git_blob_sha1": "a92b4073fc6a58ffc9334ac63360fc8d9cc50d33"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 112216,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "da35e3c564457dface7d138f0b6cac284ff8958c"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 390,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64"
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 12809320,
+          "publisher_sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3",
+          "publisher_git_blob_sha1": "9328ce9c41e80f6dd7bc2c66d8ae1fc93bf87440"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 17928,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "5de744b3fca2129d7186979ae47c06be33903243"
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 385,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe"
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 6722759,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "0aa0ce0658d60ac4a5d609f4eadb0e8e43514176"
+        }
+      ],
+      "existing_gguf_repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "existing_gguf_url": "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "existing_gguf_revision": "e6924b3a08765341e01546308ccf2683d43e880b",
+      "gguf_file_count": 5,
+      "gguf_bytes": 17738327225,
+      "gguf_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1900,
+          "publisher_sha256": null
+        },
+        {
+          "path": "mmproj-Qwen3.8-27B-Uncensored-v2-F16.gguf",
+          "bytes": 927606944,
+          "publisher_sha256": "0b296c3155e945290000aa4eb62edec4a5d2d183aae52feca3df39798095a9db"
+        },
+        {
+          "path": "Qwen3.8-27B-Uncensored-v2-Q4_K_M.gguf",
+          "bytes": 16810714592,
+          "publisher_sha256": "2a76f31d17e879589f2527bb4f657526ce0f4719aa352adc944e13f9f7365972"
+        },
+        {
+          "path": "README.md",
+          "bytes": 3577,
+          "publisher_sha256": null
+        },
+        {
+          "path": "SHA256SUMS",
+          "bytes": 212,
+          "publisher_sha256": null
+        }
+      ],
+      "gguf_still_selected": true,
+      "original_not_in_catalog": true,
+      "source_card_base_model_annotation": "Qwen/Qwen3.8-27B",
+      "gguf_card_base_model_annotation": "InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+      "model_card_architecture": "qwen3_5",
+      "source_card_model_parameters": 27781400000,
+      "source_to_gguf_delta_bytes": 37847729574,
+      "evidence_kind": "HUGGING_FACE_FIRST_PARTY_MODEL_CARD_TAGS_PLUS_PUBLISHER_PINNED_SOURCE_METADATA",
+      "verified_binary_quantization_equivalence": false,
+      "has_runtime_multimodal_dependency_certification": false,
+      "status": "P1_SAFETENSORS_MASTER_CANDIDATE_NO_REPLACEMENT_BEFORE_RIGHTS_CAPACITY_CONVERSION_PROOF",
+      "critical_uncertainty": "Publisher metadata identifies GGUF as quantization of this Safetensors root, but exact checkpoint and multimodal components are not verified",
+      "access_rights_verification": "NO_OWNER_APPROVAL_OR_INTENDED_USE_RIGHTS_PROVEN",
+      "selected_master_download_approved": false,
+      "existing_gguf_deleted": false
+    },
+    {
+      "original_repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored",
+      "original_url": "https://huggingface.co/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored",
+      "original_revision": "c2cb2cfb239f2964595bee87fcfda55ad5fe33dd",
+      "original_root_files": 26,
+      "original_bytes": 53810927493,
+      "original_main_safetensors_shards": 13,
+      "original_source_sha_count": 14,
+      "original_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "52373fe24473b1aa44333d318f578ae6bf04b49b"
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11358,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+        },
+        {
+          "path": "README.md",
+          "bytes": 9795,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "3b90f25132131d64d4e118773075500f069fcefb"
+        },
+        {
+          "path": "SHA256SUMS",
+          "bytes": 1890,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "5784fad806d8223d21a972923906676d62446a5e"
+        },
+        {
+          "path": "artifact-manifest.json",
+          "bytes": 12235,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "df6d303335a3eaeee62a0b93f2471d9d101bc3be"
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 8952,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "c0c686f9c38d70d179fb7b5f5aa7530bc913dda3"
+        },
+        {
+          "path": "config.json",
+          "bytes": 2663,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "2dc93784957e81645c6d02230cd64eec664ee939"
+        },
+        {
+          "path": "export-receipt.json",
+          "bytes": 587391,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "3b352b80d400c483946092a0b5c511ff01d61894"
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 202,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "023756cfadf88e5bf69eefeee3e172f38c448d64"
+        },
+        {
+          "path": "model-00001-of-00013.safetensors",
+          "bytes": 2542796928,
+          "publisher_sha256": "e1bb097e7fc5efcde32f07e24012cfc217b50135033fc04405913cb31109807f",
+          "publisher_git_blob_sha1": "b6aa30ba14395a7d4c2820fcdfe39d771e7c3ab9"
+        },
+        {
+          "path": "model-00002-of-00013.safetensors",
+          "bytes": 4486212616,
+          "publisher_sha256": "239925638842d96a72c648956b91c16f8599d46648826aa506a5711f55f23ef9",
+          "publisher_git_blob_sha1": "ac503b5732457f1e3984c46586405d16967bff5a"
+        },
+        {
+          "path": "model-00003-of-00013.safetensors",
+          "bytes": 4377411536,
+          "publisher_sha256": "a3070e24f9b56b557c0cfc39f63c3e02e3f97bfb63fa8ba689ddd2fba5fded92",
+          "publisher_git_blob_sha1": "4033d05a2aa2d81fd548007176e102b2949766d3"
+        },
+        {
+          "path": "model-00004-of-00013.safetensors",
+          "bytes": 4451957176,
+          "publisher_sha256": "927a3cdc5ab672e6e6b8852d912def6f3ac77184923340006609220916c15a93",
+          "publisher_git_blob_sha1": "4e883ece1822839e25a05f1574e20e2582bcf7d5"
+        },
+        {
+          "path": "model-00005-of-00013.safetensors",
+          "bytes": 4471781616,
+          "publisher_sha256": "268f6148efabca98754c0d20e9917493fb1b0adda16d90bc3ccb512c263b6b5d",
+          "publisher_git_blob_sha1": "f8e24462e190a46c0b3eb27dff346d2a615f2e6b"
+        },
+        {
+          "path": "model-00006-of-00013.safetensors",
+          "bytes": 4397216264,
+          "publisher_sha256": "02e0b97c06314b2958ac1118a66834069cf394f6a01e8852cf675aa0a60651d5",
+          "publisher_git_blob_sha1": "f3ef18173e18a15341f688ff4aa9e6d713cd46be"
+        },
+        {
+          "path": "model-00007-of-00013.safetensors",
+          "bytes": 4357565616,
+          "publisher_sha256": "40aff566fbb3f75e8f3ca99341971276b8b530c651dd2edd08cb2c59351351dc",
+          "publisher_git_blob_sha1": "9f3efa988b4e702bd63de6c37de26dcff0b892d5"
+        },
+        {
+          "path": "model-00008-of-00013.safetensors",
+          "bytes": 4399529120,
+          "publisher_sha256": "bd4c91d7d931613180b51b28f048a549da84f41ac69feedf5bb6d40f090219d1",
+          "publisher_git_blob_sha1": "15657ef60a84ed757a2bada0676c90971e75459b"
+        },
+        {
+          "path": "model-00009-of-00013.safetensors",
+          "bytes": 4492754888,
+          "publisher_sha256": "6e6fe321fd41916d6acf32b2ba991c60aefa39b7340d4a77e5db63ed922134d3",
+          "publisher_git_blob_sha1": "096618bd131f8a054d66a256bdd6145381c9d134"
+        },
+        {
+          "path": "model-00010-of-00013.safetensors",
+          "bytes": 4410014128,
+          "publisher_sha256": "22f7b95d9e66b7994f76d071c9acf266e348dc52067af48c9dd8271b99ec71db",
+          "publisher_git_blob_sha1": "c63373f55765f0ed5c3fd798e39036439e27d3e1"
+        },
+        {
+          "path": "model-00011-of-00013.safetensors",
+          "bytes": 4398340136,
+          "publisher_sha256": "048fae2fa41a3b4bec548ab65a4e9f62171443d52c4ceeb24e56d93747e5afb8",
+          "publisher_git_blob_sha1": "45d877f1840b5814d238272ac27656c778fa7f12"
+        },
+        {
+          "path": "model-00012-of-00013.safetensors",
+          "bytes": 4345951624,
+          "publisher_sha256": "a40c8d1e32e9f3466d147696079244d434ebff7750251d323bee56cdd05d9d5a",
+          "publisher_git_blob_sha1": "3513dd7d18a5f1c4a35afebbc752cfc79bbcb817"
+        },
+        {
+          "path": "model-00013-of-00013.safetensors",
+          "bytes": 2665851848,
+          "publisher_sha256": "319fe47974c94654bbe047e1edd6104a35b6704417f016ca6b933bb0ad22bbb1",
+          "publisher_git_blob_sha1": "5d48281c284d76ec8020a2db102a9e290f078c8a"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 71122,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "ebf446e6f4823a5c3442325c59aa8505297f8547"
+        },
+        {
+          "path": "publication-manifest.json",
+          "bytes": 9571,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "bcadc84a3d9b0531c9125f2445597eda01f545f8"
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 12809320,
+          "publisher_sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3",
+          "publisher_git_blob_sha1": "9328ce9c41e80f6dd7bc2c66d8ae1fc93bf87440"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 17928,
+          "publisher_sha256": null,
+          "publisher_git_blob_sha1": "5de744b3fca2129d7186979ae47c06be33903243"
+        }
+      ],
+      "existing_gguf_repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "existing_gguf_url": "https://huggingface.co/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "existing_gguf_revision": "ab8d7bd81d03117501e4da60cccdff4c80f0eea0",
+      "gguf_file_count": 4,
+      "gguf_bytes": 17176692278,
+      "gguf_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 9879,
+          "publisher_sha256": null
+        },
+        {
+          "path": "mmproj-Qwen3.8-27B-Q8_0.gguf",
+          "bytes": 629247008,
+          "publisher_sha256": "2e968a6af97ce35d8971890b257b9b7edabf20ad91450501fa53162a19ee33eb"
+        },
+        {
+          "path": "README.md",
+          "bytes": 35167,
+          "publisher_sha256": null
+        },
+        {
+          "path": "RVN-Q4_K_M-multilingual.gguf",
+          "bytes": 16547400224,
+          "publisher_sha256": "9ed40ccc8b8432f38b9a85d0ca67928167f5719e8c10bd299e56d34facaf6e61"
+        }
+      ],
+      "gguf_still_selected": true,
+      "original_not_in_catalog": true,
+      "source_card_base_model_annotation": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "gguf_card_base_model_annotation": "Qwen/Qwen3.8-27B",
+      "model_card_architecture": "qwen3_5_text",
+      "source_card_model_parameters": 26896000000,
+      "source_to_gguf_delta_bytes": 36634235215,
+      "evidence_kind": "HUGGING_FACE_FIRST_PARTY_MODEL_CARD_TAGS_PLUS_PUBLISHER_PINNED_SOURCE_METADATA",
+      "verified_binary_quantization_equivalence": false,
+      "has_runtime_multimodal_dependency_certification": false,
+      "status": "P0_LINEAGE_REVERSED_HOLD_KEEP_CURRENT_RVN_GGUF",
+      "critical_uncertainty": "Safetensors metadata cites GGUF as finetune base; RVN GGUF may not match Safetensors root trained outcome, text-only root vs GGUF with vision projector",
+      "access_rights_verification": "NO_OWNER_APPROVAL_OR_INTENDED_USE_RIGHTS_PROVEN",
+      "selected_master_download_approved": false,
+      "existing_gguf_deleted": false
+    }
+  ],
+  "trained_weight_shard_comparison": {
+    "original_files_total": 58,
+    "original_lfs_objects_total": 33,
+    "unique_original_lfs_sha256": 32,
+    "publisher_lfs_overlap": [
+      {
+        "sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3",
+        "ref_a": "InterpreticAI/Qwen3.8-27B-Uncensored-v2/tokenizer.json",
+        "ref_b": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored/tokenizer.json",
+        "bytes": 12809320,
+        "apparent_meaning": "SAME_PUBLISHER_LFS_OBJECT_NOT_IDENTICAL_MODELS"
+      }
+    ],
+    "duplicated_publisher_content_bytes_if_content_addressed": 12809320,
+    "only_identical_file": "tokenizer.json",
+    "no_identical_learned_weight_shards_verified": true,
+    "identical_tokenizer_does_not_prove_same_trained_weights": true
+  },
+  "mutually_exclusive_capacity_scenarios": {
+    "current15_pinned_source_bytes": 212023095122,
+    "two_gguf_source_bytes": 34915019503,
+    "two_safetensors_root_source_bytes": 109396984292,
+    "net_increase_if_both_replaced": 74481964789,
+    "replace_interpretic_only": 249870824696,
+    "replace_observerx_only": 248657330337,
+    "replace_both_sources_not_current_recommendation": 286505059911,
+    "retain_both_gguf_and_both_sources": 321420079414,
+    "source_total_of_both_originals_if_content_hash_dedup_applied_not_verified": 109384174972,
+    "two_deferred_big_selected_source_bytes_not_realized_free_space": 108711479306,
+    "sensitivity_swap_both_and_hypothetically_remove_two_large": 177793580605,
+    "all_values_publisher_source_not_completed_offline_archives": true,
+    "user_actual_disk_free_bytes": null,
+    "source_dependency_cache_bytes": null,
+    "staging_peak_bytes": null
+  },
+  "conclusions": {
+    "interpretic": "ONE possible replacement original; current GGUF still the chosen operational Q4 until licensed owner storage and source-to-GGUF lineage verified",
+    "observerx": "BLOCK destructive or catalogue replacement. Reverse card metadata and text-only vs RVN+vision differences block treating source as true master. Keep RVN Q4 source intact.",
+    "direct_download_enabled": false,
+    "legal_access_verified": false,
+    "current_catalog_and_status_unchanged": true,
+    "current_approved_queue_unchanged": true,
+    "source_verification_does_not_authorize_mirrors_or_gated_bypass": true
+  },
+  "model_policy": {
+    "moe_all_expert_total_not_active": true,
+    "unknown_total_stops_acquisition": true,
+    "over_150b_exception_requires_measured_matching_hardware_under_current_policy": true,
+    "quantization_bytes_are_not_parameter_count": true
+  },
+  "H_T_D_C_U": {
+    "H": "FP16 master improves future ability to re-quantize a model only if source weights are the actual ancestor of the specific edited GGUF; 0bserverx relationship is not proven.",
+    "T": "Inspect publisher card & pinned 2 original roots (58 files, 33 SHA entries) vs 2 GGUF references, record every SHA collision. On permission and owner disk, independent 32 matched input cases per pair with tensor or reproducible conversion lineage checks; stop on discrepancy.",
+    "D": {
+      "PASS": "Documented source conversion and bytes/rights/runtime verified",
+      "FAIL": "An asserted master proves different trained result or owners cannot lawfully acquire",
+      "UNCERTAIN": "Today both source-to-GGUF binary mappings; 0bserverx reversed parent annotation is explicit uncertainty"
+    },
+    "C": "Original may be reconstructed from a GGUF or represent older/non-RVN text-only training; shared tokenizer has no implication for model weight equivalence.",
+    "U": "Publisher metadata may be erroneous; actual quantization and owner disks/rights unmeasured, no statistical u_c or coverage k can be calculated."
+  },
+  "note_exa": "Exa reported 402 credit exhausted, primary first party HF and connected GitHub used; no Exa latest model facts asserted."
+}
