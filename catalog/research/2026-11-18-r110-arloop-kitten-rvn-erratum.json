@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "kind": "R110_NEW_ORIGINAL_SELECTION_RESEARCH_AND_FALSE_MISSING_FILE_CORRECTION",
+  "date_jst": "2026-11-18",
+  "baseline_revision": "v46-20261118",
+  "immutable_source_manifest": "manifests/drafts/v46-2026-11-18-r110-arloop-kitten-fixed-source.candidate.json",
+  "recommendations": [
+    {
+      "repo_id": "osunlp/ARLoop-1.2B",
+      "decision": "CONDITIONAL_PROMOTION_RECOMMENDED",
+      "existing_internal_comparators": [
+        "KRAFTON/Raon-1-nano",
+        "RWKV/RWKV7-7.2B-20260805",
+        "LiquidAI/LFM3-1.7B-Base"
+      ],
+      "learned_distinction": "Recurrent-depth attention-residual looped transformer; original 500B-token pretraining, 24 physical layers repeated3 (72 effective); different trained outcome, not conventional quantization",
+      "license": "Apache-2.0 publisher card only",
+      "full_legal_clearance": false,
+      "custom_code_and_cpu_gpu_abi_not_reviewed": true,
+      "quality_uncertain": "Base pretrained, not measured as instruct model",
+      "selection_status": "HOLD_TO_CONDITIONAL_ONLY_IF_PINNED_SOURCE_AND_POLICY_PASS"
+    },
+    {
+      "repo_id": "KittenML/kitten-tts-2-mini",
+      "decision": "CONDITIONAL_PROMOTION_RECOMMENDED",
+      "existing_internal_comparators": [
+        "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+        "gradium/phonon-31m-en",
+        "gradium/phonon-40m-multilingual"
+      ],
+      "learned_distinction": "Tiny 82M original TTS 16 languages and 118 voice packs including Japanese; ONNX int8 CPU graph is operational variant of SAME original F32 training",
+      "original_model_and_cpu_onnx_same_asset": true,
+      "license": "Apache-2.0 author card (without LICENSE file in immutable repo)",
+      "training_voice_and_g2p_terms_not_fully_audited": true,
+      "quality_uncertain": "Japanese audio clarity, CPU median latency and phonemizer offline restoration not independently tested"
+    }
+  ],
+  "rvn_erratum": {
+    "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+    "revision": "ab8d7bd81d03117501e4da60cccdff4c80f0eea0",
+    "claim_in_v46_report": "chat_template.jinja does not exist in 182 files",
+    "actual": "File exists under that exact revision; GGUF embeds chat template so separate path may be optional",
+    "path": "chat_template.jinja",
+    "bytes": 8952,
+    "git_blob_sha1": "c0c686f9c38d70d179fb7b5f5aa7530bc913dda3",
+    "publisher_primary": "https://huggingface.co/api/models/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF/revision/ab8d7bd81d03117501e4da60cccdff4c80f0eea0?blobs=true",
+    "source_scope_change_required": false
+  },
+  "exclusions": [
+    "osunlp/ARLoop-0.6B and osunlp/PreNormLoop-0.6B are same-paper research controls, no proven new independent needed runtime capability",
+    "Kitten ordinary GGUF/third-party reuploads not included",
+    "New models not declared legally authorized for weights download"
+  ],
+  "budget": {
+    "v46_existing_historical_proxy_margin_bytes": 27409767827,
+    "v47_research_additional_reservation_cap_bytes": 7000000000,
+    "v47_hypothetical_margin_only_bytes": 20409767827,
+    "source_selected_bytes": 5316015835,
+    "actual_HDD_measurement": null
+  },
+  "stats": {
+    "new_originals_proposed": 2,
+    "source_file_refs": 42,
+    "source_publisher_hash_file_count": 22,
+    "physical_owner_hdd_measured": false,
+    "weights_downloaded": 0
+  },
+  "exa_error": "HTTP 402 credit limit exhausted; Exa did not provide independent research results"
+}
