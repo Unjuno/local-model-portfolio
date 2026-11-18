@@ -1,5 +1,7 @@
 # R108 — v46原本選定・無検閲モデル・小型専門モデルのファイル確定（2026-11-18）
 
+**R110一次資料訂正（2026-11-18）**：本書の「0bserverx/RVNに`chat_template.jinja`が存在しない」は誤記。配布元[同一固定commit](https://huggingface.co/api/models/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF/revision/ab8d7bd81d03117501e4da60cccdff4c80f0eea0?blobs=true)の全182ファイル一覧に、`chat_template.jinja` **8,952 byte**・Git blob SHA-1 `c0c686f9c38d70d179fb7b5f5aa7530bc913dda3`が実在します。**現行RVN GGUF自体がテンプレートを内包するため追加ファイルとしては任意**であり、R108のmain GGUFとmmprojの選定はそのままでよい。ファイルがないとの表現のみ撤回。詳しくは[原本一次監査](../../catalog/research/2026-11-18-r110-arloop-kitten-rvn-erratum.json)。
+
 ## 1.〈本論〉
 v45の198資産/151 active（53 SELECT, 98 CONDITIONAL）は、独自学習済み成果の保全という目的に合致するため**1件も根拠なく降格・入替・削除しない**。今回のv46は、Hugging Face第一配布元から**12件の不変リビジョンと選択ファイルSHA**を照合し、現行正本の記録を修正する「**保存対象ファイル内容の確定**」である。所有者のアクセス権限・HDD・オフライン復元が未確定なので、**実ダウンロード承認は0件**。
 
