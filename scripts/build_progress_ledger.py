@@ -14,7 +14,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-OUT = Path("state/execution/2026-11-19-progress.json")
+OUT = Path("catalog/execution/2026-11-19-progress.json")
 START = re.compile(r"=== (\S+) @ (\S+) :: (\d+) files \[([^\]]*)\] ===")
 RESULT = re.compile(r"RESULT (\S+) (\d+)/(\d+) free=(\d+)")
 HOLD = re.compile(r"HOLD: gated|HOLD license|HOLD: no pinned")

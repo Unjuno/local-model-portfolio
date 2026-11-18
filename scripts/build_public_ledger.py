@@ -13,7 +13,7 @@ from pathlib import Path
 
 LOCAL = Path("D:/AI_VAULT/state/ledger/acquisition-ledger.json")
 LOCAL_WAVE2 = Path("D:/AI_VAULT/state/ledger/wave2-ledger.json")
-OUT = Path("state/execution/2026-11-19-acquisition-ledger.json")
+OUT = Path("catalog/execution/2026-11-19-acquisition-ledger.json")
 
 
 def main():
