@@ -1,0 +1,1172 @@
+{
+  "schema_version": 1,
+  "id": "R111_PRESERVATION_SOURCE_AND_REPLACEMENT_TRIAGE",
+  "date": "2026-11-18",
+  "branch": "main",
+  "catalog_revision": "v47-20261118",
+  "source_catalog": "catalog/effective-portfolio-2026-11-18-v47.json",
+  "source_selection_queue": "queues/proposed-v47-r110-source-pinned-14.json",
+  "kind": "NONEXECUTABLE_RESEARCH_DECISION_NO_CURRENT_CHANGE",
+  "v47_counts": {
+    "tracked": 200,
+    "active": 153,
+    "select": 53,
+    "conditional": 100
+  },
+  "existing_selected_originals": 14,
+  "source_file_scope_sum_bytes": 211999468264,
+  "source_file_scope_sum_is_not_net_new_hdd_bytes": true,
+  "lanes": {
+    "A": "10 source-preservation candidates, still no download rights",
+    "B": "1 adapter requiring parent and license closure",
+    "C": "2 large fine-tunes held until incremental quality measured",
+    "D": "1 gated original, owner grant required"
+  },
+  "groups": {
+    "A": [
+      "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "ibm-granite/granite-timeseries-ttm-r3",
+      "usezn/Galvanize-3",
+      "qvac/BotPsy-0.8B",
+      "nvidia/Nemotron-3-Diarization",
+      "robbyant/lingbot-touch-tiny",
+      "tencent/Qwen3.8-27B-DSpine-b16",
+      "osunlp/ARLoop-1.2B",
+      "KittenML/kitten-tts-2-mini"
+    ],
+    "B": [
+      "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1"
+    ],
+    "C": [
+      "Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2",
+      "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU"
+    ],
+    "D": [
+      "orcarouter/Qwen3.8-27B-Uncensored"
+    ]
+  },
+  "group_source_bytes": {
+    "A": 47030749353,
+    "B": 671173375,
+    "C": 108711479306,
+    "D": 55586066230
+  },
+  "source_assets": [
+    {
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "group": "A",
+      "selected_publisher_bytes": 17738327225,
+      "selected_file_count": 5,
+      "publisher_revision": "e6924b3a08765341e01546308ccf2683d43e880b",
+      "sha256_publisher_count": 2,
+      "source_file_records": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1900,
+          "sha256": null
+        },
+        {
+          "path": "mmproj-Qwen3.8-27B-Uncensored-v2-F16.gguf",
+          "bytes": 927606944,
+          "sha256": "0b296c3155e945290000aa4eb62edec4a5d2d183aae52feca3df39798095a9db"
+        },
+        {
+          "path": "Qwen3.8-27B-Uncensored-v2-Q4_K_M.gguf",
+          "bytes": 16810714592,
+          "sha256": "2a76f31d17e879589f2527bb4f657526ce0f4719aa352adc944e13f9f7365972"
+        },
+        {
+          "path": "README.md",
+          "bytes": 3577,
+          "sha256": null
+        },
+        {
+          "path": "SHA256SUMS",
+          "bytes": 212,
+          "sha256": null
+        }
+      ],
+      "prior_first_blocker": "OWNER_HDD_ACTUAL_CAPACITY_AND_STAGING",
+      "download_approved": false,
+      "full_dependency_and_legal_clearance": false
+    },
+    {
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "group": "A",
+      "selected_publisher_bytes": 17176692278,
+      "selected_file_count": 4,
+      "publisher_revision": "ab8d7bd81d03117501e4da60cccdff4c80f0eea0",
+      "sha256_publisher_count": 2,
+      "source_file_records": [
+        {
+          "path": ".gitattributes",
+          "bytes": 9879,
+          "sha256": null
+        },
+        {
+          "path": "mmproj-Qwen3.8-27B-Q8_0.gguf",
+          "bytes": 629247008,
+          "sha256": "2e968a6af97ce35d8971890b257b9b7edabf20ad91450501fa53162a19ee33eb"
+        },
+        {
+          "path": "README.md",
+          "bytes": 35167,
+          "sha256": null
+        },
+        {
+          "path": "RVN-Q4_K_M-multilingual.gguf",
+          "bytes": 16547400224,
+          "sha256": "9ed40ccc8b8432f38b9a85d0ca67928167f5719e8c10bd299e56d34facaf6e61"
+        }
+      ],
+      "prior_first_blocker": "SINGLE_IMMUTABLE_SOURCE_FILE_SET",
+      "download_approved": false,
+      "full_dependency_and_legal_clearance": false
+    },
+    {
+      "repo_id": "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1",
+      "group": "B",
+      "selected_publisher_bytes": 671173375,
+      "selected_file_count": 8,
+      "publisher_revision": "aa213272180d6ad0d03f5fb3d597f0f0322647c5",
+      "sha256_publisher_count": 1,
+      "source_file_records": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1641,
+          "sha256": null
+        },
+        {
+          "path": "chatrlabs-omni-lora-v0.1-bf16.safetensors",
+          "bytes": 671151136,
+          "sha256": "5991a9845bc5251240febf944f653505a00966515b77073f2c639c4dfcba672a"
+        },
+        {
+          "path": "inference.py",
+          "bytes": 2492,
+          "sha256": null
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 7831,
+          "sha256": null
+        },
+        {
+          "path": "Notice",
+          "bytes": 640,
+          "sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 8876,
+          "sha256": null
+        },
+        {
+          "path": "requirements.txt",
+          "bytes": 266,
+          "sha256": null
+        },
+        {
+          "path": "SHA256SUMS",
+          "bytes": 493,
+          "sha256": null
+        }
+      ],
+      "prior_first_blocker": "OWNER_HDD_ACTUAL_CAPACITY_AND_STAGING",
+      "download_approved": false,
+      "full_dependency_and_legal_clearance": false
+    },
+    {
+      "repo_id": "ibm-granite/granite-timeseries-ttm-r3",
+      "group": "A",
+      "selected_publisher_bytes": 5748963,
+      "selected_file_count": 5,
+      "publisher_revision": "ea17cfd2e3edcaea21eb8dcecd18bf88971482fa",
+      "sha256_publisher_count": 1,
+      "source_file_records": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 2668,
+          "sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 5729424,
+          "sha256": "8ec0509a18a38f65b02f046fc28298ab3acf5d54eecb0a0df959b9fa001bc9fb"
+        },
+        {
+          "path": "model.sig",
+          "bytes": 8912,
+          "sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 6389,
+          "sha256": null
+        }
+      ],
+      "prior_first_blocker": "SINGLE_IMMUTABLE_SOURCE_FILE_SET",
+      "download_approved": false,
+      "full_dependency_and_legal_clearance": false
+    },
+    {
+      "repo_id": "usezn/Galvanize-3",
+      "group": "A",
+      "selected_publisher_bytes": 597001839,
+      "selected_file_count": 9,
+      "publisher_revision": "597237be3b0fabbf5d70ff16ce95fad14a591f20",
+      "sha256_publisher_count": 2,
+      "source_file_records": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1636,
+          "sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 2031,
+          "sha256": null
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11358,
+          "sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 562583392,
+          "sha256": "a17273035cf5f52b6363d3420695c8809be33913ef6ece4bd72927bf93741305"
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 572,
+          "sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 14114,
+          "sha256": null
+        },
+        {
+          "path": "thresholds.json",
+          "bytes": 333,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 682,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 34387721,
+          "sha256": "8ab59b95e06d1d289dba953ef1ab95044067692bf5877f49236ebd1d8a24dcdf"
+        }
+      ],
+      "prior_first_blocker": "SINGLE_IMMUTABLE_SOURCE_FILE_SET",
+      "download_approved": false,
+      "full_dependency_and_legal_clearance": false
+    },
+    {
+      "repo_id": "qvac/BotPsy-0.8B",
+      "group": "A",
+      "selected_publisher_bytes": 1726201481,
+      "selected_file_count": 11,
+      "publisher_revision": "24561e9681643eaf807fc28b0875210cb17f89c1",
+      "sha256_publisher_count": 2,
+      "source_file_records": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "sha256": null
+        },
+        {
+          "path": "ATTRIBUTIONS.md",
+          "bytes": 120449,
+          "sha256": null
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 7791,
+          "sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 2701,
+          "sha256": null
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 208,
+          "sha256": null
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11357,
+          "sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 1706030528,
+          "sha256": "9a52e9fb1552e8592542e3de8104af9040b56c60644f5a9c2c270621a3b0ab48"
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 1191,
+          "sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 35273,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1088,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 19989325,
+          "sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523"
+        }
+      ],
+      "prior_first_blocker": "SINGLE_IMMUTABLE_SOURCE_FILE_SET",
+      "download_approved": false,
+      "full_dependency_and_legal_clearance": false
+    },
+    {
+      "repo_id": "nvidia/Nemotron-3-Diarization",
+      "group": "A",
+      "selected_publisher_bytes": 397030277,
+      "selected_file_count": 11,
+      "publisher_revision": "52a432672732425e4c19765b9fec9b5810e6f4ba",
+      "sha256_publisher_count": 1,
+      "source_file_records": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1896,
+          "sha256": null
+        },
+        {
+          "path": "ASR_INTEGRATION_GUIDE.md",
+          "bytes": 16331,
+          "sha256": null
+        },
+        {
+          "path": "bias.md",
+          "bytes": 296,
+          "sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 1458,
+          "sha256": null
+        },
+        {
+          "path": "diarization_evaluation.md",
+          "bytes": 6898,
+          "sha256": null
+        },
+        {
+          "path": "explainability.md",
+          "bytes": 2330,
+          "sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 396954592,
+          "sha256": "c074d86335b3b794f8fa5edc25594558f128bdb3914d27806a3a5a2e44963cb6"
+        },
+        {
+          "path": "privacy.md",
+          "bytes": 1283,
+          "sha256": null
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 623,
+          "sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 44081,
+          "sha256": null
+        },
+        {
+          "path": "safety.md",
+          "bytes": 489,
+          "sha256": null
+        }
+      ],
+      "prior_first_blocker": "SINGLE_IMMUTABLE_SOURCE_FILE_SET",
+      "download_approved": false,
+      "full_dependency_and_legal_clearance": false
+    },
+    {
+      "repo_id": "robbyant/lingbot-touch-tiny",
+      "group": "A",
+      "selected_publisher_bytes": 21873479,
+      "selected_file_count": 5,
+      "publisher_revision": "f23969ccd4b6bba2163e69cc05a577455a075fe9",
+      "sha256_publisher_count": 1,
+      "source_file_records": [
+        {
+          "path": ".gitattributes",
+          "bytes": 41,
+          "sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 518,
+          "sha256": null
+        },
+        {
+          "path": "encoder.pt",
+          "bytes": 21859018,
+          "sha256": "ddb8b435963348fff5b8a83bb48f995978dc8841d82f87be007c775bf5a88055"
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11358,
+          "sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 2544,
+          "sha256": null
+        }
+      ],
+      "prior_first_blocker": "SINGLE_IMMUTABLE_SOURCE_FILE_SET",
+      "download_approved": false,
+      "full_dependency_and_legal_clearance": false
+    },
+    {
+      "repo_id": "tencent/Qwen3.8-27B-DSpine-b16",
+      "group": "A",
+      "selected_publisher_bytes": 4051857976,
+      "selected_file_count": 5,
+      "publisher_revision": "260a6c23070ca873ff1a5f33b7119ac3f6a245ee",
+      "sha256_publisher_count": 1,
+      "source_file_records": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 2302,
+          "sha256": null
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11544,
+          "sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 4051831880,
+          "sha256": "ac90f1df842ea66b23e4224f3e86624add547526f689ffe9e9c6b7a5937116b1"
+        },
+        {
+          "path": "README.md",
+          "bytes": 10731,
+          "sha256": null
+        }
+      ],
+      "prior_first_blocker": "SINGLE_IMMUTABLE_SOURCE_FILE_SET",
+      "download_approved": false,
+      "full_dependency_and_legal_clearance": false
+    },
+    {
+      "repo_id": "Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2",
+      "group": "C",
+      "selected_publisher_bytes": 53121584389,
+      "selected_file_count": 12,
+      "publisher_revision": "6af1278a92223c717ccea671e4571a5cc135f5d8",
+      "sha256_publisher_count": 4,
+      "source_file_records": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1629,
+          "sha256": null
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 16448,
+          "sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 4214,
+          "sha256": null
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 204,
+          "sha256": null
+        },
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "bytes": 49171536480,
+          "sha256": "25b9bbda873b017f3aef54234542e4daf322f7117d7ebafa90dce405ea50f547"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "bytes": 3916867964,
+          "sha256": "eb7eaf504f060ecd157ef4e03b1a174ed62f23c8a119d620f63138c1e1396183"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 103254,
+          "sha256": null
+        },
+        {
+          "path": "Pantheon-Reasoning.jpg",
+          "bytes": 872989,
+          "sha256": "04ce599b4249fd1c989e8f86ce598e84a77a90a658f87c0bdbd0bd3ff1ce434a"
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 1689,
+          "sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 7173,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 2719,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 32169626,
+          "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+        }
+      ],
+      "prior_first_blocker": "SINGLE_IMMUTABLE_SOURCE_FILE_SET",
+      "download_approved": false,
+      "full_dependency_and_legal_clearance": false
+    },
+    {
+      "repo_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU",
+      "group": "C",
+      "selected_publisher_bytes": 55589894917,
+      "selected_file_count": 25,
+      "publisher_revision": "079b2b268c637b77f2fb4ab6a5ca1edc47d462a5",
+      "sha256_publisher_count": 14,
+      "source_file_records": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1630,
+          "sha256": null
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 8953,
+          "sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 4529,
+          "sha256": null
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 213,
+          "sha256": null
+        },
+        {
+          "path": "model-00001-of-00012.safetensors",
+          "bytes": 2542796928,
+          "sha256": "b5df896d93260f64913e8e09892c9f3724e92e4bfb7f4708238880fb50833f98"
+        },
+        {
+          "path": "model-00002-of-00012.safetensors",
+          "bytes": 4842451936,
+          "sha256": "feacdeb20032f0a1bd7315f80f991885add3e31da43ea65aebde67786b740746"
+        },
+        {
+          "path": "model-00003-of-00012.safetensors",
+          "bytes": 4965228032,
+          "sha256": "42845ce58e2b023b13df6fdfbacf637cfbf6f0fa764dca7b163b355bd5844aab"
+        },
+        {
+          "path": "model-00004-of-00012.safetensors",
+          "bytes": 4933789808,
+          "sha256": "a2d24cb46efbb0a75df8becd0d5d3bcea30ddc636273065f8a1b199cf5139cde"
+        },
+        {
+          "path": "model-00005-of-00012.safetensors",
+          "bytes": 4965228032,
+          "sha256": "3aadc678e631cd4d30213cb15007bedd0e41d77301f17b0ed978c743c7387264"
+        },
+        {
+          "path": "model-00006-of-00012.safetensors",
+          "bytes": 4911753512,
+          "sha256": "bb1024157fb4f4b6ec734c0a0d75902ecaa2406311bf065db495ede3878d2c37"
+        },
+        {
+          "path": "model-00007-of-00012.safetensors",
+          "bytes": 4965228016,
+          "sha256": "a590217a8c876cb2b489f6d3e890001fa1d923d07b10b3c09fb552238c86a68f"
+        },
+        {
+          "path": "model-00008-of-00012.safetensors",
+          "bytes": 4933789824,
+          "sha256": "ba25c6b10abf3b31c43e92906f10e37b10d09b18f6535d1e6a826803a8f077bd"
+        },
+        {
+          "path": "model-00009-of-00012.safetensors",
+          "bytes": 4965228016,
+          "sha256": "0c5254879f08b62212362fc6c0caf0b3cd36117a2de35075a6b363f3cace4df4"
+        },
+        {
+          "path": "model-00010-of-00012.safetensors",
+          "bytes": 4933789824,
+          "sha256": "064a6765b5bd47eb82955e23c4d0f6b945aa4871fc29db645f24043acf73a41c"
+        },
+        {
+          "path": "model-00011-of-00012.safetensors",
+          "bytes": 4911732744,
+          "sha256": "4cbbbf4c89d0cb69755011a686279f6707df6f70ed2f9df344ed7b4467a4794e"
+        },
+        {
+          "path": "model-00012-of-00012.safetensors",
+          "bytes": 3587132840,
+          "sha256": "1007f875318e6cecadde4d5f56696b8e89d9fe30b71e8ed4aa26b387aac9d304"
+        },
+        {
+          "path": "model-mtp-restored.safetensors",
+          "bytes": 104857696,
+          "sha256": "fbea25865ec18d0fcc2ba235d7c32a39d5dfad15531b39498796ef8ae9998d25"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 113450,
+          "sha256": null
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 390,
+          "sha256": null
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 1191,
+          "sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 28437,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 16429,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 19989343,
+          "sha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4"
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 385,
+          "sha256": null
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 6722759,
+          "sha256": null
+        }
+      ],
+      "prior_first_blocker": "SINGLE_IMMUTABLE_SOURCE_FILE_SET",
+      "download_approved": false,
+      "full_dependency_and_legal_clearance": false
+    },
+    {
+      "repo_id": "orcarouter/Qwen3.8-27B-Uncensored",
+      "group": "D",
+      "selected_publisher_bytes": 55586066230,
+      "selected_file_count": 31,
+      "publisher_revision": "0f639a9bde23fe229a7b064b40a5153c5bec0b48",
+      "sha256_publisher_count": 19,
+      "source_file_records": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "sha256": null
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 8952,
+          "sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 4312,
+          "sha256": null
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 202,
+          "sha256": null
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11544,
+          "sha256": null
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 3353259,
+          "sha256": null
+        },
+        {
+          "path": "model-00001-of-00018.safetensors",
+          "bytes": 3966730552,
+          "sha256": "258eb303556d580b260cc59aa49a20e34c9a0a8b2151b0525922ba55bf2b6630"
+        },
+        {
+          "path": "model-00002-of-00018.safetensors",
+          "bytes": 3043080328,
+          "sha256": "81f94db6acd6c73a9582da794b9386e75bc396a1601799c818011c3fc0826230"
+        },
+        {
+          "path": "model-00003-of-00018.safetensors",
+          "bytes": 2542796952,
+          "sha256": "e6fc252b227825136d8dd0ceb0d911c19baef00a0da9feaa73d803ee741090ac"
+        },
+        {
+          "path": "model-00004-of-00018.safetensors",
+          "bytes": 3988973152,
+          "sha256": "0578d17913d6f130efffebf37c125c0fc8b22889fae47085b54c4c2b3cc1a184"
+        },
+        {
+          "path": "model-00005-of-00018.safetensors",
+          "bytes": 2099339864,
+          "sha256": "4ed3d9263aec3d57a487c404b34971cbebfcba22ae214ad3bbc4b3ed821d6939"
+        },
+        {
+          "path": "model-00006-of-00018.safetensors",
+          "bytes": 3979553696,
+          "sha256": "ceedcd425452defd286bc09d0113f3797fc7c4611454251df48fdd908836233b"
+        },
+        {
+          "path": "model-00007-of-00018.safetensors",
+          "bytes": 2108759344,
+          "sha256": "524b4bd1ece923563206edb1ba6c47fe4ee4d97a9984151675bcff61a412cc41"
+        },
+        {
+          "path": "model-00008-of-00018.safetensors",
+          "bytes": 3979553696,
+          "sha256": "2d57298776d5f394d2a30543432bee028bbf01087140e5c916a5e8fc1340fe55"
+        },
+        {
+          "path": "model-00009-of-00018.safetensors",
+          "bytes": 2108759344,
+          "sha256": "b7f43e5157c0b0a584f9a49aef6267589eabac765e6263668c3c40dbcc1ac641"
+        },
+        {
+          "path": "model-00010-of-00018.safetensors",
+          "bytes": 3979553696,
+          "sha256": "5c2b7b611cd8abeeeb940c74e132f0a1cb20ede1bb215caf68743dcb507b311f"
+        },
+        {
+          "path": "model-00011-of-00018.safetensors",
+          "bytes": 2108759344,
+          "sha256": "5f23f5fab54ecce47bd439717eceff9946cb0047cee33be3a76fdd65a2e8c764"
+        },
+        {
+          "path": "model-00012-of-00018.safetensors",
+          "bytes": 3979553696,
+          "sha256": "fc2fde9e4981e72fa1a777e7115877e00ffa13b4a1891716fc9942124909bfe1"
+        },
+        {
+          "path": "model-00013-of-00018.safetensors",
+          "bytes": 2108759344,
+          "sha256": "854aaea00727d55ac7d468dba75e7fd3b81f5045dbd85e59893ba412c28addfc"
+        },
+        {
+          "path": "model-00014-of-00018.safetensors",
+          "bytes": 3979553696,
+          "sha256": "8ec571a59ccf7d63267e6e267c96f8ce68db33b30eb0ddc5f28dc4c63a8f4359"
+        },
+        {
+          "path": "model-00015-of-00018.safetensors",
+          "bytes": 2108759344,
+          "sha256": "f4aca2fa7d06dcdf0a7282679ce8ceb39ffa754bf674a3f2482eaf52d6f3e90d"
+        },
+        {
+          "path": "model-00016-of-00018.safetensors",
+          "bytes": 3979564040,
+          "sha256": "afb1cd5f14e4d657538e08bb4880163c32335d135d9e46f3e7eaa5645af573cf"
+        },
+        {
+          "path": "model-00017-of-00018.safetensors",
+          "bytes": 2108759344,
+          "sha256": "1f4186a71f98889b7d2a35f5c71a420f2666fb1af252f4a3af183f2f64c2740e"
+        },
+        {
+          "path": "model-00018-of-00018.safetensors",
+          "bytes": 3392197344,
+          "sha256": "1ac226c56138dd814cd3040f1ea581c4fa4be6cd954896669f0641831667a7d6"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 112216,
+          "sha256": null
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 390,
+          "sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 16617,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 17928,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 12809320,
+          "sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3"
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 385,
+          "sha256": null
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 6722759,
+          "sha256": null
+        }
+      ],
+      "prior_first_blocker": "OWNER_SPECIFIC_GATED_ENTITLEMENT",
+      "download_approved": false,
+      "full_dependency_and_legal_clearance": false
+    },
+    {
+      "repo_id": "osunlp/ARLoop-1.2B",
+      "group": "A",
+      "selected_publisher_bytes": 4838079760,
+      "selected_file_count": 15,
+      "publisher_revision": "a29f310ac46646edf5c462425dc546b2ce7ea985",
+      "sha256_publisher_count": 0,
+      "source_file_records": [
+        {
+          "path": ".gitattributes",
+          "bytes": 105,
+          "sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 5541,
+          "sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 871,
+          "sha256": null
+        },
+        {
+          "path": "configuration_arloop.py",
+          "bytes": 2128,
+          "sha256": null
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 145,
+          "sha256": null
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 466391,
+          "sha256": null
+        },
+        {
+          "path": "model-00001-of-00003.safetensors",
+          "bytes": 1981057120,
+          "sha256": null
+        },
+        {
+          "path": "model-00002-of-00003.safetensors",
+          "bytes": 1984099240,
+          "sha256": null
+        },
+        {
+          "path": "model-00003-of-00003.safetensors",
+          "bytes": 869500312,
+          "sha256": null
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 25669,
+          "sha256": null
+        },
+        {
+          "path": "modeling_arloop.py",
+          "bytes": 12327,
+          "sha256": null
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 977,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 2104556,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 3716,
+          "sha256": null
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 800662,
+          "sha256": null
+        }
+      ],
+      "prior_first_blocker": "SINGLE_IMMUTABLE_SOURCE_FILE_SET",
+      "download_approved": false,
+      "full_dependency_and_legal_clearance": false
+    },
+    {
+      "repo_id": "KittenML/kitten-tts-2-mini",
+      "group": "A",
+      "selected_publisher_bytes": 477936075,
+      "selected_file_count": 27,
+      "publisher_revision": "c01797caec3967b400da457656e011eb81f530a4",
+      "sha256_publisher_count": 0,
+      "source_file_records": [
+        {
+          "path": ".gitattributes",
+          "bytes": 194,
+          "sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 6773,
+          "sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 16329,
+          "sha256": null
+        },
+        {
+          "path": "g2p/cmu_misaki_us.json",
+          "bytes": 3418388,
+          "sha256": null
+        },
+        {
+          "path": "g2p/g2p_bart_en_us/README.md",
+          "bytes": 31,
+          "sha256": null
+        },
+        {
+          "path": "g2p/g2p_bart_en_us/config.json",
+          "bytes": 1257,
+          "sha256": null
+        },
+        {
+          "path": "g2p/g2p_bart_en_us/generation_config.json",
+          "bytes": 191,
+          "sha256": null
+        },
+        {
+          "path": "g2p/g2p_bart_en_us/model.safetensors",
+          "bytes": 3011692,
+          "sha256": null
+        },
+        {
+          "path": "kitten_tts_2_mini.onnx",
+          "bytes": 82711386,
+          "sha256": null
+        },
+        {
+          "path": "kitten_tts_2_mini.safetensors",
+          "bytes": 327115192,
+          "sha256": null
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 1324,
+          "sha256": null
+        },
+        {
+          "path": "voices_da.npz",
+          "bytes": 1567468,
+          "sha256": null
+        },
+        {
+          "path": "voices_de.npz",
+          "bytes": 6792294,
+          "sha256": null
+        },
+        {
+          "path": "voices_en.npz",
+          "bytes": 5747328,
+          "sha256": null
+        },
+        {
+          "path": "voices_es.npz",
+          "bytes": 6792300,
+          "sha256": null
+        },
+        {
+          "path": "voices_fi.npz",
+          "bytes": 2612426,
+          "sha256": null
+        },
+        {
+          "path": "voices_fr.npz",
+          "bytes": 4179894,
+          "sha256": null
+        },
+        {
+          "path": "voices_hi.npz",
+          "bytes": 2089954,
+          "sha256": null
+        },
+        {
+          "path": "voices_it.npz",
+          "bytes": 6792298,
+          "sha256": null
+        },
+        {
+          "path": "voices_ja.npz",
+          "bytes": 2612432,
+          "sha256": null
+        },
+        {
+          "path": "voices_ko.npz",
+          "bytes": 1567476,
+          "sha256": null
+        },
+        {
+          "path": "voices_nl.npz",
+          "bytes": 2612428,
+          "sha256": null
+        },
+        {
+          "path": "voices_pt.npz",
+          "bytes": 6792306,
+          "sha256": null
+        },
+        {
+          "path": "voices_ru.npz",
+          "bytes": 6792308,
+          "sha256": null
+        },
+        {
+          "path": "voices_sv.npz",
+          "bytes": 1567468,
+          "sha256": null
+        },
+        {
+          "path": "voices_sw.npz",
+          "bytes": 2089952,
+          "sha256": null
+        },
+        {
+          "path": "voices_tr.npz",
+          "bytes": 1044986,
+          "sha256": null
+        }
+      ],
+      "prior_first_blocker": "SINGLE_IMMUTABLE_SOURCE_FILE_SET",
+      "download_approved": false,
+      "full_dependency_and_legal_clearance": false
+    }
+  ],
+  "new_candidate": {
+    "repo_id": "n4ze3m/tiny-voca",
+    "source_url": "https://huggingface.co/n4ze3m/tiny-voca",
+    "publisher_code": "https://github.com/n4ze3m/tiny-voca",
+    "publisher_dataset": "https://huggingface.co/datasets/n4ze3m/tiny-voca",
+    "research_status": "PROPOSE_CONDITIONAL_NOT_FORMALLY_ADDED",
+    "total_parameter_count_publisher": 4537291,
+    "count_scope": "Includes full source-filter waveform head",
+    "verified_publisher_weight_sha256": "ebb22871524c5732520fb1652e6aefcec708a7452e83bdd00adcf6181db5ef70",
+    "verified_publisher_onnx_sha256": "fe6d918791a15b82e37465981d7f27a070e46b46635e5a3482fc8dff87a1ae46",
+    "reported_size_not_exact_bytes": {
+      "pytorch": "18.2 MB",
+      "onnx": "21.4 MB",
+      "phonemizer": "5.4 MB"
+    },
+    "license_metadata": "apache-2.0",
+    "phonemizer_licenses": [
+      "phonemizer/LICENSE.cmudict",
+      "phonemizer/LICENSE.homograph-data"
+    ],
+    "feature": "Independent 4.5M from-scratch English two-voice source-filter TTS with no learned pretrained weights",
+    "tradeoffs": [
+      "English only",
+      "two fixed voices",
+      "no voice cloning",
+      "no streaming",
+      "synthetic teacher Qwen3-TTS data",
+      "70x CPU claim not independently measured",
+      "small training budget makes regeneration less costly than large originals"
+    ],
+    "comparators": [
+      "gradium/phonon-31m-en",
+      "gradium/phonon-40m-multilingual",
+      "KittenML/kitten-tts-2-mini"
+    ],
+    "missing": [
+      "immutable 40-character revision",
+      "full file integer bytes and hashes",
+      "phonemizer rights audit",
+      "pickle/ONNX safe handling",
+      "matched quality and CPU hardware testing",
+      "actual owner HDD"
+    ],
+    "authorized": false
+  },
+  "unchanged_approved_queue": true,
+  "actual_owner_4tb_hdd_verified": false,
+  "minimum_free_floor_bytes": 200000000000,
+  "active_unknown_total_count": 9,
+  "owner_specific_gated_verified": 0,
+  "download_approved": 0,
+  "weights_downloaded": 0,
+  "regulation_forecast_probability": null,
+  "exa_current_round": "CREDIT_LIMIT_402_NO_SEARCH_RESULTS",
+  "verified_government_primary": {
+    "url": "https://media.bis.gov/sites/default/files/documents/BIS%20Issues%20Rule%20Addressing%20Remote%20Access%20to%20American%20Super%20Intelligence%20Technology.pdf",
+    "event_date": "2026-11-15",
+    "scope": "remote access to chips/servers; cannot call open weight blanket download ban"
+  },
+  "requirements_before_download": [
+    "individual Gated right and contracts",
+    "complete learned weight total all MoE experts",
+    "full immutable selected source sha and integers",
+    "all parent learned encoders and runtime ABI",
+    "available user HDD incl staging and 200GB floor",
+    "per-manifest user authorization",
+    "local SHA and offline restore"
+  ]
+}
