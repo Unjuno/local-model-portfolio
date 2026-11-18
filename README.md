@@ -1,5 +1,7 @@
 # Local Model Portfolio
 
+**現行v48・R112（2026-11-18）**：[201登録／154有効、SELECT53・CONDITIONAL101](catalog/effective-portfolio-2026-11-18-v48.json)。独立学習済み極小英語TTS [tiny-voca](https://huggingface.co/n4ze3m/tiny-voca)（4,537,291コアパラメータ）をR2/CONDITIONALで正式選定。[固定publisher原本14ファイル・23,626,858bytes・2 LFS SHAの候補](manifests/drafts/v48-2026-11-18-tiny-voca-immutable-source.candidate.json)／[新たな採否と不利益・安全条件](docs/strategy/112-v48-tiny-voca-source-closure-and-portability.md)／[154件取得停止ゲート](catalog/readiness/v48-2026-11-18-r112-all154-gates.json)／[条件付きアクセス101件](catalog/access/2026-11-18-v48-conditional-hub-gates.json)／[研究キュー154](queues/proposed-v48-2026-11-18.json)／[依存準備154](catalog/preparation/2026-11-18-insurance-bundles-v48.json)。同モデルのGGUF四形式・ONNX変換版は重複別資産として追加せず、FP32原本と辞書のみ保存候補に固定。**20 Gated、学習済み総数不明の有効9、本人の使用権・4TB HDD実容量・コード/ABI/G2P総数・ローカルSHA/完全オフライン復元は未確認。承認・重み取得0。** 旧R111以前は履歴。
+
 **R112｜14原本の取得前チェックを実測検証（2026-11-18）**：[v47の14モデル173ファイル・上流SHA72件、11件のテスト全PASS](docs/strategy/112-v47-source-preflight-results.md)／[読取専用の容量・既存ファイルSHA監査器](scripts/verify_v47_download_preflight.py)。接続Linux空き約29.27GBは最低空き200GBに不足、4TB保存先は未確認。新規選定0、実モデルDL0、承認0。
 
 
