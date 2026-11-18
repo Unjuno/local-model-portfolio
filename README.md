@@ -1,5 +1,8 @@
 # Local Model Portfolio
 
+**R112｜14原本の取得前チェックを実測検証（2026-11-18）**：[v47の14モデル173ファイル・上流SHA72件、11件のテスト全PASS](docs/strategy/112-v47-source-preflight-results.md)／[読取専用の容量・既存ファイルSHA監査器](scripts/verify_v47_download_preflight.py)。接続Linux空き約29.27GBは最低空き200GBに不足、4TB保存先は未確認。新規選定0、実モデルDL0、承認0。
+
+
 **R111｜v47・保存原本の取得準備順位を再確定（2026-11-18）**：[研究判断と14モデル全件表](docs/strategy/111-v47-preservation-tranche-tiny-voca-and-licensing-review.md)／[173選択ファイル・publisher SHA72件の機械可読監査](catalog/decisions/2026-11-18-r111-preservation-tranche-and-swap-audit.json)。既存14原本を**先行10件47.031GB／依存1件0.671GB／大型品質差保留2件108.711GB／Gated許諾先行1件55.586GB**へ分け、公開者の新規4.5M学習済み極小TTS tiny-vocaは追加調査とした。v47 **200登録・153有効は不変更**、本人権利・実4TB HDD・完全offline依存・取得承認は未解決、モデル本体取得0。以下R110以前は履歴。
 
 **現行v47・R110（2026-11-18）**：[200登録／153有効、SELECT53・CONDITIONAL100](catalog/effective-portfolio-2026-11-18-v47.json)に更新。独立した事前学習[ARLoop 1.2B](https://huggingface.co/osunlp/ARLoop-1.2B)と、日本語を含む16言語・118声の[Kitten TTS 2 Mini](https://huggingface.co/KittenML/kitten-tts-2-mini)を研究CONDITIONAL追加。[判断根拠と誤記訂正](docs/strategy/110-v47-arloop-kitten-original-selection-and-rvn-correction-2026-11-18.md)／[Publisher固定source42ファイル・5,316,015,835byte・22 LFS SHA](manifests/drafts/v46-2026-11-18-r110-arloop-kitten-fixed-source.candidate.json)／[153件取得前ゲート](catalog/readiness/v47-2026-11-18-r110-all153-gates.json)／[条件付きアクセス100件](catalog/access/2026-11-18-v47-conditional-hub-gates.json)／[提案キュー153](queues/proposed-v47-2026-11-18.json)／[固定出版社原本14件のsource-only queue](queues/proposed-v47-r110-source-pinned-14.json)を統合。旧v46のRVN`chat_template.jinja`を「存在しない」とした説明を訂正。**20 Gated、9件の学習済み総数不明、本人の合法取得・4TB HDD・全依存/ローカルSHA/復元未検証、承認/重量DL0**。以下旧R109以前は履歴。
