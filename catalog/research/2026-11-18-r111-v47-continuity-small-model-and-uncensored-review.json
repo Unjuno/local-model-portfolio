@@ -1,0 +1,437 @@
+{
+  "schema_version": 1,
+  "kind": "R111_V47_SELECTION_CONTINUITY_AND_NEW_CANDIDATE_REVIEW",
+  "audit_date": "2026-11-18",
+  "baseline": {
+    "catalog": "catalog/effective-portfolio-2026-11-18-v47.json",
+    "revision": "v47-20261118",
+    "registered": 200,
+    "active": 153,
+    "select": 53,
+    "conditional": 100,
+    "blocked": 153,
+    "ready": 0,
+    "gated_owner_rights_pending": 20,
+    "active_unknown_full_trained_parameter_total": 9,
+    "approved_downloads": 0
+  },
+  "research_status": {
+    "exaresearch_attempts": 4,
+    "exa_result": "HTTP_402_CREDITS_EXCEEDED",
+    "exa_successes": 0,
+    "hugging_face_app": "read_only_hub_model_details",
+    "web_read": "published_first_party_model_cards_and_perplexity_original_blog",
+    "model_weights_downloaded": 0,
+    "model_code_executed": 0,
+    "owner_hdd_verified": false
+  },
+  "existing_models_checked": [
+    {
+      "repo_id": "perplexity-ai/pplx-decider-flash-v1.3",
+      "decision": "conditional",
+      "source_revision_immutable": "d06fb3f2d97e0a52325a0d463c450cf0338f44fe",
+      "selected_files_locked": false,
+      "acquisition_approved": false
+    },
+    {
+      "repo_id": "kakaocorp/kanana-2-v-decide-3b-2611",
+      "decision": "conditional",
+      "source_revision_immutable": "1489062def4145ae3a0a9261fbac4f4d88a8c6d1",
+      "selected_files_locked": false,
+      "acquisition_approved": false
+    },
+    {
+      "repo_id": "pfnet/plamo-3-translate-0.8b",
+      "decision": "conditional",
+      "source_revision_immutable": "cc8e88169807d5a272e8ff06db12eb0129b67f81",
+      "selected_files_locked": false,
+      "acquisition_approved": false
+    },
+    {
+      "repo_id": "KittenML/kitten-tts-2-mini",
+      "decision": "conditional",
+      "source_revision_immutable": "c01797caec3967b400da457656e011eb81f530a4",
+      "selected_files_locked": false,
+      "acquisition_approved": false
+    },
+    {
+      "repo_id": "LiquidAI/d1-omni-600M",
+      "decision": "conditional",
+      "source_revision_immutable": "02b55d7076f15129e59ab3f94783f32c4b088674",
+      "selected_files_locked": false,
+      "acquisition_approved": false
+    }
+  ],
+  "incremental_candidates": [
+    {
+      "repo_id": "perplexity-ai/pplx-decider-v1.3",
+      "decision": "HOLD_NO_NEW_ASSET",
+      "reported_hub_parameters": 26085300000,
+      "first_party_urls": [
+        "https://huggingface.co/perplexity-ai/pplx-decider-v1.3",
+        "https://www.perplexity.ai/hub/blog/perplexity-decider"
+      ],
+      "uniqueness": "Independent larger v1.3 finetuned decision checkpoint; lower observed publisher zero-shot task error than Flash on selected tests",
+      "counterevidence": "Same v1.3 protocol and same task scope as the already selected 4.5393B Flash; quality gap relative to 26B source, 4B Flash and existing Kanana has not been benchmarked on the owner workload, cost not fixed",
+      "required_before_promotion": [
+        "Fixed 40-character SHA and all required original learned components incl locate-span and readout",
+        "Complete publisher bytes, legal rights, dependency ABI, and parent model provenance",
+        "At least 30 independently matched cases for core tasks; full hardware/clock/context/batch plus median or range",
+        "A demonstrable novel non-overlapping capability that justifies more HDD bytes"
+      ],
+      "acquisition_approved": false
+    },
+    {
+      "repo_id": "ConwayResearch/Underdog-Woof",
+      "decision": "HOLD_NO_NEW_ASSET",
+      "reported_hub_parameters": null,
+      "publisher_claimed_total_parameters": 38240000,
+      "first_party_urls": [
+        "https://huggingface.co/ConwayResearch/Underdog-Woof"
+      ],
+      "uniqueness": "38.24M total publisher reported speech and adapted decoder, two English voices, CPU NumPy inference and approximately 40.6 MB publisher file-size assertion",
+      "counterevidence": "Existing Kitten TTS 2 Mini is a selected 82M multilingual trained original with Japanese; Woof is English only and proprietary noncommercial terms restrict reuse/training; CPU 13.8x realtime and WER 1.42% are author-only, not matched owner tests.",
+      "required_before_promotion": [
+        "Original weights, codec decoder, 40 character SHA, dependency and NOTICE identity",
+        "Full Underdog Non-Commercial License 1.0 review for user's intended archive and legal acts",
+        "Same CPU model/clock, OS, runtime, single-thread batch=1, 30+ matched English evaluation sentences; compare word error, RTF, quality, RSS median and uncertainty against Kitten",
+        "Store separately only if unique legal and practical CPU TTS capability survives comparison"
+      ],
+      "acquisition_approved": false
+    }
+  ],
+  "model_to_formally_add_now": [],
+  "model_to_delete_now": [],
+  "model_to_replace_now": [],
+  "incumbent_verified_selection": "perplexity-ai/pplx-decider-flash-v1.3 already in v47 CONDITIONAL and should not be duplicated",
+  "publisher_frozen_source": {
+    "worklist": "queues/proposed-v47-r110-source-pinned-14.json",
+    "model_count": 14,
+    "source_file_count": 173,
+    "total_publisher_source_bytes": 211999468264,
+    "source_sha256_entries": 72,
+    "entries": [
+      {
+        "rank": 1,
+        "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+        "source_bytes": 17738327225,
+        "source_file_count": 5,
+        "source_revision": "e6924b3a08765341e01546308ccf2683d43e880b",
+        "gated": false,
+        "publisher_sha256_entries": 2,
+        "original_source_scope_only": true
+      },
+      {
+        "rank": 2,
+        "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+        "source_bytes": 17176692278,
+        "source_file_count": 4,
+        "source_revision": "ab8d7bd81d03117501e4da60cccdff4c80f0eea0",
+        "gated": false,
+        "publisher_sha256_entries": 2,
+        "original_source_scope_only": true
+      },
+      {
+        "rank": 3,
+        "repo_id": "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1",
+        "source_bytes": 671173375,
+        "source_file_count": 8,
+        "source_revision": "aa213272180d6ad0d03f5fb3d597f0f0322647c5",
+        "gated": false,
+        "publisher_sha256_entries": 1,
+        "original_source_scope_only": true
+      },
+      {
+        "rank": 4,
+        "repo_id": "ibm-granite/granite-timeseries-ttm-r3",
+        "source_bytes": 5748963,
+        "source_file_count": 5,
+        "source_revision": "ea17cfd2e3edcaea21eb8dcecd18bf88971482fa",
+        "gated": false,
+        "publisher_sha256_entries": 1,
+        "original_source_scope_only": true
+      },
+      {
+        "rank": 5,
+        "repo_id": "usezn/Galvanize-3",
+        "source_bytes": 597001839,
+        "source_file_count": 9,
+        "source_revision": "597237be3b0fabbf5d70ff16ce95fad14a591f20",
+        "gated": false,
+        "publisher_sha256_entries": 2,
+        "original_source_scope_only": true
+      },
+      {
+        "rank": 6,
+        "repo_id": "qvac/BotPsy-0.8B",
+        "source_bytes": 1726201481,
+        "source_file_count": 11,
+        "source_revision": "24561e9681643eaf807fc28b0875210cb17f89c1",
+        "gated": false,
+        "publisher_sha256_entries": 2,
+        "original_source_scope_only": true
+      },
+      {
+        "rank": 7,
+        "repo_id": "nvidia/Nemotron-3-Diarization",
+        "source_bytes": 397030277,
+        "source_file_count": 11,
+        "source_revision": "52a432672732425e4c19765b9fec9b5810e6f4ba",
+        "gated": false,
+        "publisher_sha256_entries": 1,
+        "original_source_scope_only": true
+      },
+      {
+        "rank": 8,
+        "repo_id": "robbyant/lingbot-touch-tiny",
+        "source_bytes": 21873479,
+        "source_file_count": 5,
+        "source_revision": "f23969ccd4b6bba2163e69cc05a577455a075fe9",
+        "gated": false,
+        "publisher_sha256_entries": 1,
+        "original_source_scope_only": true
+      },
+      {
+        "rank": 9,
+        "repo_id": "tencent/Qwen3.8-27B-DSpine-b16",
+        "source_bytes": 4051857976,
+        "source_file_count": 5,
+        "source_revision": "260a6c23070ca873ff1a5f33b7119ac3f6a245ee",
+        "gated": false,
+        "publisher_sha256_entries": 1,
+        "original_source_scope_only": true
+      },
+      {
+        "rank": 10,
+        "repo_id": "Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2",
+        "source_bytes": 53121584389,
+        "source_file_count": 12,
+        "source_revision": "6af1278a92223c717ccea671e4571a5cc135f5d8",
+        "gated": false,
+        "publisher_sha256_entries": 4,
+        "original_source_scope_only": true
+      },
+      {
+        "rank": 11,
+        "repo_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU",
+        "source_bytes": 55589894917,
+        "source_file_count": 25,
+        "source_revision": "079b2b268c637b77f2fb4ab6a5ca1edc47d462a5",
+        "gated": false,
+        "publisher_sha256_entries": 14,
+        "original_source_scope_only": true
+      },
+      {
+        "rank": 12,
+        "repo_id": "orcarouter/Qwen3.8-27B-Uncensored",
+        "source_bytes": 55586066230,
+        "source_file_count": 31,
+        "source_revision": "0f639a9bde23fe229a7b064b40a5153c5bec0b48",
+        "gated": "auto",
+        "publisher_sha256_entries": 19,
+        "original_source_scope_only": true
+      },
+      {
+        "rank": 13,
+        "repo_id": "osunlp/ARLoop-1.2B",
+        "source_bytes": 4838079760,
+        "source_file_count": 15,
+        "source_revision": "a29f310ac46646edf5c462425dc546b2ce7ea985",
+        "gated": false,
+        "publisher_sha256_entries": 0,
+        "original_source_scope_only": true
+      },
+      {
+        "rank": 14,
+        "repo_id": "KittenML/kitten-tts-2-mini",
+        "source_bytes": 477936075,
+        "source_file_count": 27,
+        "source_revision": "c01797caec3967b400da457656e011eb81f530a4",
+        "gated": false,
+        "publisher_sha256_entries": 0,
+        "original_source_scope_only": true
+      }
+    ],
+    "selected_byte_sum_status": "PUBLISHER_SOURCE_FILE_SCOPE_ONLY_NOT_OWNER_PHYSICAL_BUNDLE",
+    "official_risk": "Source-only is not license approval, validated manifest, owner HDD test or offline restoration."
+  },
+  "prioritization": {
+    "phase_a": {
+      "decision": "MAINTAIN_EXISTING_HIGH_VALUE_ORIGINALS",
+      "model_selection": "Prefer distinct 0bserverx RVN plus Interpretic political edit as separate outcomes; retain only one selected GGUF quantization per trained state",
+      "file_research_sources": [
+        {
+          "rank": 1,
+          "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+          "source_bytes": 17738327225,
+          "source_file_count": 5,
+          "source_revision": "e6924b3a08765341e01546308ccf2683d43e880b",
+          "gated": false,
+          "publisher_sha256_entries": 2,
+          "original_source_scope_only": true
+        },
+        {
+          "rank": 2,
+          "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+          "source_bytes": 17176692278,
+          "source_file_count": 4,
+          "source_revision": "ab8d7bd81d03117501e4da60cccdff4c80f0eea0",
+          "gated": false,
+          "publisher_sha256_entries": 2,
+          "original_source_scope_only": true
+        },
+        {
+          "rank": 3,
+          "repo_id": "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1",
+          "source_bytes": 671173375,
+          "source_file_count": 8,
+          "source_revision": "aa213272180d6ad0d03f5fb3d597f0f0322647c5",
+          "gated": false,
+          "publisher_sha256_entries": 1,
+          "original_source_scope_only": true
+        }
+      ],
+      "notes": "Separate capabilities justify research, not automatic download."
+    },
+    "phase_b": {
+      "decision": "FIRST_OFFLINE_RESTORATION_HARNESS_RESEARCH",
+      "file_research_sources": [
+        {
+          "rank": 4,
+          "repo_id": "ibm-granite/granite-timeseries-ttm-r3",
+          "source_bytes": 5748963,
+          "source_file_count": 5,
+          "source_revision": "ea17cfd2e3edcaea21eb8dcecd18bf88971482fa",
+          "gated": false,
+          "publisher_sha256_entries": 1,
+          "original_source_scope_only": true
+        },
+        {
+          "rank": 5,
+          "repo_id": "usezn/Galvanize-3",
+          "source_bytes": 597001839,
+          "source_file_count": 9,
+          "source_revision": "597237be3b0fabbf5d70ff16ce95fad14a591f20",
+          "gated": false,
+          "publisher_sha256_entries": 2,
+          "original_source_scope_only": true
+        },
+        {
+          "rank": 6,
+          "repo_id": "qvac/BotPsy-0.8B",
+          "source_bytes": 1726201481,
+          "source_file_count": 11,
+          "source_revision": "24561e9681643eaf807fc28b0875210cb17f89c1",
+          "gated": false,
+          "publisher_sha256_entries": 2,
+          "original_source_scope_only": true
+        },
+        {
+          "rank": 7,
+          "repo_id": "nvidia/Nemotron-3-Diarization",
+          "source_bytes": 397030277,
+          "source_file_count": 11,
+          "source_revision": "52a432672732425e4c19765b9fec9b5810e6f4ba",
+          "gated": false,
+          "publisher_sha256_entries": 1,
+          "original_source_scope_only": true
+        },
+        {
+          "rank": 8,
+          "repo_id": "robbyant/lingbot-touch-tiny",
+          "source_bytes": 21873479,
+          "source_file_count": 5,
+          "source_revision": "f23969ccd4b6bba2163e69cc05a577455a075fe9",
+          "gated": false,
+          "publisher_sha256_entries": 1,
+          "original_source_scope_only": true
+        },
+        {
+          "rank": 13,
+          "repo_id": "osunlp/ARLoop-1.2B",
+          "source_bytes": 4838079760,
+          "source_file_count": 15,
+          "source_revision": "a29f310ac46646edf5c462425dc546b2ce7ea985",
+          "gated": false,
+          "publisher_sha256_entries": 0,
+          "original_source_scope_only": true
+        },
+        {
+          "rank": 14,
+          "repo_id": "KittenML/kitten-tts-2-mini",
+          "source_bytes": 477936075,
+          "source_file_count": 27,
+          "source_revision": "c01797caec3967b400da457656e011eb81f530a4",
+          "gated": false,
+          "publisher_sha256_entries": 0,
+          "original_source_scope_only": true
+        }
+      ],
+      "notes": "small independent specialties and new originals; prioritize rights/ABI and disk preflight"
+    },
+    "phase_c": {
+      "decision": "DEFER_LARGE_OVERLAPS_AND_GATED",
+      "file_research_sources": [
+        {
+          "rank": 9,
+          "repo_id": "tencent/Qwen3.8-27B-DSpine-b16",
+          "source_bytes": 4051857976,
+          "source_file_count": 5,
+          "source_revision": "260a6c23070ca873ff1a5f33b7119ac3f6a245ee",
+          "gated": false,
+          "publisher_sha256_entries": 1,
+          "original_source_scope_only": true
+        },
+        {
+          "rank": 10,
+          "repo_id": "Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2",
+          "source_bytes": 53121584389,
+          "source_file_count": 12,
+          "source_revision": "6af1278a92223c717ccea671e4571a5cc135f5d8",
+          "gated": false,
+          "publisher_sha256_entries": 4,
+          "original_source_scope_only": true
+        },
+        {
+          "rank": 11,
+          "repo_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU",
+          "source_bytes": 55589894917,
+          "source_file_count": 25,
+          "source_revision": "079b2b268c637b77f2fb4ab6a5ca1edc47d462a5",
+          "gated": false,
+          "publisher_sha256_entries": 14,
+          "original_source_scope_only": true
+        },
+        {
+          "rank": 12,
+          "repo_id": "orcarouter/Qwen3.8-27B-Uncensored",
+          "source_bytes": 55586066230,
+          "source_file_count": 31,
+          "source_revision": "0f639a9bde23fe229a7b064b40a5153c5bec0b48",
+          "gated": "auto",
+          "publisher_sha256_entries": 19,
+          "original_source_scope_only": true
+        }
+      ],
+      "notes": "larger reference originals, potential memory/hardware and parent rights; do not bulk archive"
+    }
+  },
+  "policy": {
+    "main_only": true,
+    "do_not_write_approved_queue": true,
+    "do_not_edit_CURRENT_v47": true,
+    "do_not_change_150b_quantized_exception_policy": true,
+    "do_not_infer_weight_bans": true,
+    "model_rights_and_source_sha_before_lock": true,
+    "unknown_total_blocks_acquisition": true,
+    "offline_hash_and_owner_hdd_required": true,
+    "owner_requires_explicit_manifest_approval": true
+  },
+  "falsifiability": {
+    "H": "The selected v47 small trained originals offer more distinct reproducible capabilities per legally cleared byte than additional same-family large versions; no immediate new candidate is necessary.",
+    "T": "Check 14 publisher source inventories and two new candidates, static author source/config/license/rights; compare per-task measured quality only after explicit consent, on same hardware backend and >=30 tasks; stop if permission or checksum mismatch.",
+    "D": "PASS: 14 incumbent identities preserved, no duplicate selection, all added outside-catalog candidates HOLD, all 153 active blocked pending legal/hardware gates. FAIL: duplicate selected asset introduced or unverified authorization promoted. UNCERTAIN: runtime superiority, license texts, offline restores and actual disk.",
+    "C": "A larger decider achieves independent non-overlapping capability and restores reliably, or Woof proves dramatically faster high-quality CPU TTS under acceptable license.",
+    "U": "Source metadata vs real fixed learned tensor totals, legal texts and user-specific rights, unpublished benchmarks, instrument/clock/backend; combined u_c and k unavailable."
+  }
+}
