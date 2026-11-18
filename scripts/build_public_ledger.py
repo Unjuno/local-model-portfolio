@@ -91,7 +91,37 @@ def main():
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"wrote {OUT}: {summary}")
+    md = [
+        "# v48 取得実行実績（2026-11-19）",
+        "",
+        "正本 `catalog/CURRENT.json` (v48-20261118) の統一ソース計画 "
+        "`queues/proposed-v48-r113-source-pinned-15.json` に基づく実行結果。",
+        "",
+        f"- モデル数: {summary['models_total']}（検証済み {summary['models_verified']}、"
+        f"部分 {summary['models_partial']}、失敗 {summary['models_failed']}、保留 {summary['models_held']}）",
+        f"- 検証済みファイル: {summary['files_verified_total']}",
+        f"- 検証済みソースバイト: {summary['bytes_verified_total']}",
+        f"- 観測された最小空き: {summary['minimum_free_bytes_observed']} byte"
+        f"（200GB床維持: {summary['free_floor_maintained']}）",
+        "",
+        "| repo_id | revision | 状態 | 検証ファイル | ライセンス |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    for e in entries:
+        md.append(f"| `{e['repo_id']}` | `{e['revision_sha']}` | {e['status']} | "
+                  f"{e['files_verified']}/{e['files_total']} | {e['license']} |")
+    md += [
+        "",
+        "重みファイルは出版社 LFS SHA-256 と照合し、通常 Git blob は Git blob SHA-1 で照合した。",
+        "Gated で本人権限が確認できないモデルは HOLD とし、ペイロードを取得していない。",
+        "モデルコードの import / pickle / 推論は一切実行していない。",
+        "ローカル絶対パス・ユーザー名・認証情報は公開リポジトリへ書き出していない。",
+        "",
+    ]
+    MD = Path("docs/strategy/114-v48-execution-acquisition-results-2026-11-19.md")
+    MD.parent.mkdir(parents=True, exist_ok=True)
+    MD.write_text("\n".join(md), encoding="utf-8")
+    print(f"wrote {OUT} and {MD}: {summary}")
 
 
 if __name__ == "__main__":
