@@ -28,8 +28,8 @@
 | A | [nvidia/Nemotron-3-Diarization](https://huggingface.co/nvidia/Nemotron-3-Diarization) | 397,030,277 | 52a432672732425e4c19765b9fec9b5810e6f4ba | 1/11 |
 | A | [robbyant/lingbot-touch-tiny](https://huggingface.co/robbyant/lingbot-touch-tiny) | 21,873,479 | f23969ccd4b6bba2163e69cc05a577455a075fe9 | 1/5 |
 | A | [tencent/Qwen3.8-27B-DSpine-b16](https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16) | 4,051,857,976 | 260a6c23070ca873ff1a5f33b7119ac3f6a245ee | 1/5 |
-| A | [osunlp/ARLoop-1.2B](https://huggingface.co/osunlp/ARLoop-1.2B) | 4,838,079,760 | a29f310ac46646edf5c462425dc546b2ce7ea985 | 0/15 |
-| A | [KittenML/kitten-tts-2-mini](https://huggingface.co/KittenML/kitten-tts-2-mini) | 477,936,075 | c01797caec3967b400da457656e011eb81f530a4 | 0/27 |
+| A | [osunlp/ARLoop-1.2B](https://huggingface.co/osunlp/ARLoop-1.2B) | 4,838,079,760 | a29f310ac46646edf5c462425dc546b2ce7ea985 | 3/15 |
+| A | [KittenML/kitten-tts-2-mini](https://huggingface.co/KittenML/kitten-tts-2-mini) | 477,936,075 | c01797caec3967b400da457656e011eb81f530a4 | 19/27 |
 | B | [chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1) | 671,173,375 | aa213272180d6ad0d03f5fb3d597f0f0322647c5 | 1/8 |
 | C | [Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2](https://huggingface.co/Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2) | 53,121,584,389 | 6af1278a92223c717ccea671e4571a5cc135f5d8 | 4/12 |
 | C | [DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU](https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU) | 55,589,894,917 | 079b2b268c637b77f2fb4ab6a5ca1edc47d462a5 | 14/25 |
@@ -61,7 +61,7 @@
 
 ### ERROR CHECK
 
-固定14モデルをA10+B1+C2+D1に排他的に分割した。source総量47,030,749,353＋671,173,375＋108,711,479,306＋55,586,066,230＝211,999,468,264byte。現在の200登録/153有効は不変更。承認0・取得0・モデル実行0。提案ファイル以外の選定ポリシーとqueues/approved.jsonは変更しない。
+固定14モデルをA10+B1+C2+D1に排他的に分割した。173選択ファイルのうちpublisher SHA-256は72件（従来のsha256 50件とARLoop/Kittenのpublisher_lfs_sha256 22件）である。source総量47,030,749,353＋671,173,375＋108,711,479,306＋55,586,066,230＝211,999,468,264byte。現在の200登録/153有効は不変更。承認0・取得0・モデル実行0。提案ファイル以外の選定ポリシーとqueues/approved.jsonは変更しない。
 
 ## 5.〈次に考える問い〉
 
