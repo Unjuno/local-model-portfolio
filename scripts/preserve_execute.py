@@ -152,7 +152,8 @@ def extract_tasks(m):
     for k in ("models", "repositories", "entries"):
         if isinstance(m.get(k), list):
             reps.extend(x for x in m[k] if isinstance(x, dict))
-    if not reps and (m.get("repo_id") or m.get("repo")):
+    if not reps and (m.get("repo_id") or m.get("repo") or
+                     (m.get("source") or {}).get("repo_id")):
         reps.append(m)
     tasks = []
     for x in reps:
@@ -284,18 +285,19 @@ def process_task(task, source, dry=False):
     return res
 
 
-def append_ledger(results):
-    LEDGER.parent.mkdir(parents=True, exist_ok=True)
+def append_ledger(results, ledger_path=None):
+    ledger_path = Path(ledger_path) if ledger_path else LEDGER
+    ledger_path.parent.mkdir(parents=True, exist_ok=True)
     data = {"schema_version": 1, "updated_at": now(), "entries": []}
-    if LEDGER.exists():
+    if ledger_path.exists():
         try:
-            with open(LEDGER, encoding="utf-8") as f:
+            with open(ledger_path, encoding="utf-8") as f:
                 data = json.load(f)
         except Exception:
             pass
     data.setdefault("entries", []).extend(r for r in results if not r.get("dry_run"))
     data["updated_at"] = now()
-    with open(LEDGER, "w", encoding="utf-8") as f:
+    with open(ledger_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
@@ -305,6 +307,7 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--small-first", action="store_true",
                     help="process smallest models first (small model validation wave)")
+    ap.add_argument("--ledger", default=None, help="override local ledger path")
     args = ap.parse_args()
     results = []
     for mp in args.manifests:
@@ -323,7 +326,7 @@ def main():
             log(f"FATAL {mp}: {type(e).__name__}: {e}")
             results.append({"source": mp, "status": "FATAL", "error": str(e)})
     if results:
-        append_ledger(results)
+        append_ledger(results, args.ledger)
     summary = {r.get("repo_id", r.get("source")): r.get("status") for r in results}
     log("SUMMARY " + json.dumps(summary, ensure_ascii=False))
     return 0
