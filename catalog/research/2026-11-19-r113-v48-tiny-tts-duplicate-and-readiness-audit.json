@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "kind": "R113_V48_TINY_TTS_NONREDUNDANCY_AND_DOWNLOAD_READINESS",
+  "date": "2026-11-19",
+  "baseline": "v48-20261118",
+  "catalog": "catalog/effective-portfolio-2026-11-18-v48.json",
+  "counts": {
+    "registered": 201,
+    "active": 154,
+    "approved": 0,
+    "blocked": 154,
+    "unknown_active_total": 9,
+    "gated_pending": 20
+  },
+  "source_selection": {
+    "previous_source_pinned_models": 14,
+    "previous_source_bytes": 211999468264,
+    "new_tiny_voca_source_files": 14,
+    "new_tiny_voca_publisher_source_bytes": 23626858,
+    "source_sets_are_not_download_authorizations": true
+  },
+  "hf_live_metadata_checked": [
+    "n4ze3m/tiny-voca",
+    "ConwayResearch/Underdog-Woof",
+    "KittenML/kitten-tts-2-mini"
+  ],
+  "decision": {
+    "maintain": "n4ze3m/tiny-voca CONDITIONAL as distinct 4.537M learned core, with G2P count/ABI unresolved",
+    "do_not_add": "ConwayResearch/Underdog-Woof until its noncommercial terms and matched quality/CPU performance justify separate 38.24M-class English TTS against Kitten and tiny-voca",
+    "do_not_replace": "KittenML/kitten-tts-2-mini; preserves Japanese and 16-language capabilities not covered by English-only alternatives",
+    "do_not_duplicate": "Additional GGUF/ONNX exports of the same tiny-voca learned checkpoint are not new assets",
+    "other_uncensored": "Maintain two independent Qwen3.8 edit outcomes in v47 14-source queue; never infer government takedown date"
+  },
+  "comparison": [
+    {
+      "repo_id": "n4ze3m/tiny-voca",
+      "current": "CONDITIONAL",
+      "source": "https://huggingface.co/n4ze3m/tiny-voca",
+      "core_parameter_count": 4537291,
+      "language": "en",
+      "reported_license_tag": "apache-2.0",
+      "observed_selected_publisher_bytes": 23626858,
+      "open_issues": [
+        "G2P NPZ learned total",
+        "torch .pt pickle safety",
+        "dizione pinned code ABI",
+        "actual owner's disk",
+        "full licensed act permissions"
+      ]
+    },
+    {
+      "repo_id": "ConwayResearch/Underdog-Woof",
+      "current": "NOT_IN_CANONICAL_HOLD_RESEARCH",
+      "source": "https://huggingface.co/ConwayResearch/Underdog-Woof",
+      "core_parameter_count": null,
+      "language": "en",
+      "reported_license_tag": "other",
+      "observed_selected_publisher_bytes": null,
+      "open_issues": [
+        "full parameter census and audio decoder lineage",
+        "noncommercial licensing",
+        "source bytes and SHA",
+        "matched benchmark vs Kitten/tiny-voca"
+      ]
+    },
+    {
+      "repo_id": "KittenML/kitten-tts-2-mini",
+      "current": "CONDITIONAL",
+      "source": "https://huggingface.co/KittenML/kitten-tts-2-mini",
+      "core_parameter_count": 82000000,
+      "language": "16 languages incl ja",
+      "reported_license_tag": "apache-2.0",
+      "observed_selected_publisher_bytes": 477936075,
+      "open_issues": [
+        "G2P/ONNX ABI and complete rights",
+        "owner disk and restore"
+      ]
+    }
+  ],
+  "exa": {
+    "status": "HTTP_402_CREDITS_EXCEEDED",
+    "search_results_validated": 0
+  },
+  "next_action": "Static rights and source identity closure of tiny-voca G2P and 14 publisher originals; no owner disk access, download, code execution or approved queue changes.",
+  "H": "Tiny-voca and Kitten preserve different trained outcome and language coverage; Woof requires new value evidence before addition.",
+  "T": "Use current v48 manifest and Hub metadata; future same CPU model/clock/OS/backend/batch=1 and at least 30 utterances per supported language, report median RTF/WER/peak RSS, blind naturalness ratings.",
+  "D": "PASS if 201 unique assets and 154 active, no duplicate addition and zero approvals; FAIL if unauthorized downloads or missing dependency counted as complete; UNCERTAIN until rights, owner HDD and actual quality confirmed.",
+  "C": "Woof may outperform both in permitted CPU use with non-overlapping acoustic quality or licensing may prevent preservation.",
+  "U": "Author benchmarks lack matched hardware, dependency counts unverified, rights unreviewed; u_c/k cannot be computed without trials."
+}
