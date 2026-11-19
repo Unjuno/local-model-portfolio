@@ -16,7 +16,11 @@ from pathlib import Path
 import shutil
 import sys
 
-from download_r115_windows import validate_manifest, source_fingerprint
+try:
+    from scripts.download_r115_windows import validate_manifest, source_fingerprint
+except ModuleNotFoundError:
+    # Direct launch: python scripts/prepare_owner_scope_approval.py
+    from download_r115_windows import validate_manifest, source_fingerprint
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MANIFEST = ROOT / "queues/proposed-v54-r128-first-four-delta-source.json"
