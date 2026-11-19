@@ -10,6 +10,8 @@ Usage:
   py -3 scripts/download_r115_windows.py --manifest queues/proposed-v49-r119-next7-public-source-entries.json --execute --approval-file "owner-approved-r119.json"
   py -3 scripts/download_r115_windows.py --manifest queues/proposed-v50-r122-deduplicated-next15-sources.json --dry-run
   py -3 scripts/download_r115_windows.py --manifest queues/proposed-v50-r122-deduplicated-next15-sources.json --execute --approval-file "owner-approved-r122.json"
+  py -3 scripts/download_r115_windows.py --manifest queues/proposed-v52-r125-ledger61-delta-next15.json --dry-run
+  py -3 scripts/download_r115_windows.py --manifest queues/proposed-v52-r125-ledger61-delta-next15.json --execute --approval-file "owner-approved-r125.json"
   py -3 scripts/download_r115_windows.py --execute --recover-prior
 
 Transfers require BOTH an explicit --execute invocation on the owner's Windows
@@ -71,6 +73,8 @@ def validate_manifest(manifest: dict) -> list[dict]:
             (7, 7, {"apache-2.0", "mit"}),
         "R122_V50_DEDUPLICATED_NEXT_WAVE_15_UNAPPROVED_SOURCE_SCOPES":
             (15, 15, {"apache-2.0", "mit", "cc-by-sa-4.0"}),
+        "R125_V52_LEDGER61_DELTA_15_SOURCES_NO_AUTO_DOWNLOAD":
+            (15, 15, {"apache-2.0", "mit", "cc-by-sa-4.0"}),
     }
     if manifest.get("kind") not in profiles:
         raise ValueError("Unsupported fixed-publisher source manifest")
@@ -86,9 +90,11 @@ def validate_manifest(manifest: dict) -> list[dict]:
         repo_type = model.get("repository_type", "model")
         if repo_type not in ("model", "dataset"):
             raise ValueError(f"Invalid HF repo type: {source}: {repo_type}")
-        if (manifest.get("kind") == "R122_V50_DEDUPLICATED_NEXT_WAVE_15_UNAPPROVED_SOURCE_SCOPES"
-                and "repository_type" not in model):
-            raise ValueError(f"R122 missing explicit repository_type: {source}")
+        if manifest.get("kind") in (
+            "R122_V50_DEDUPLICATED_NEXT_WAVE_15_UNAPPROVED_SOURCE_SCOPES",
+            "R125_V52_LEDGER61_DELTA_15_SOURCES_NO_AUTO_DOWNLOAD"
+        ) and "repository_type" not in model:
+            raise ValueError(f"Next-wave source missing explicit repository_type: {source}")
         if not isinstance(source, str) or not REPO_PATTERN.fullmatch(source):
             raise ValueError("Invalid repo ID")
         if not isinstance(revision, str) or not REV_PATTERN.fullmatch(revision):
@@ -158,6 +164,51 @@ def validate_manifest(manifest: dict) -> list[dict]:
         datasets = [x["source_repo_id"] for x in output if x.get("repository_type") == "dataset"]
         if set(datasets) != {"elyza/ELYZA-tasks-100", "CohereLabs/aya_dataset"}:
             raise ValueError("R122 exact dataset scope changed")
+    if manifest["kind"] == "R125_V52_LEDGER61_DELTA_15_SOURCES_NO_AUTO_DOWNLOAD":
+        nfiles = sum(len(x["files"]) for x in output)
+        nshas = sum(sum(f.get("sha256") is not None for f in x["files"]) for x in output)
+        nbytes = sum(x["source_bytes"] for x in output)
+        if (nfiles, nshas, nbytes) != (287, 118, 327_549_073_014):
+            raise ValueError("R125 static source totals drift")
+        if (manifest.get("file_count"), manifest.get("publisher_sha256_file_count"),
+                manifest.get("total_candidate_source_bytes")) != (nfiles, nshas, nbytes):
+            raise ValueError("R125 header/source identity mismatch")
+        supplements = {
+            "RWKV/RWKV7-7.2B-20260805": (7, 337813, 3),
+            "GSAI-ML/iLLaDA-8B-Base": (4, 28506, 5),
+            "microsoft/TRELLIS.2-4B": (1, 1519, 9),
+        }
+        observed = set()
+        for model in output:
+            repo = model["source_repo_id"]
+            req = model.get("prerequisite_weight_files", [])
+            supplement = model.get("source_mode") == "INFERRED_MISSING_SIDECARS_WEIGHT_SHA_PRECHECK_REQUIRED"
+            if supplement:
+                observed.add(repo)
+                if repo not in supplements:
+                    raise ValueError("Unexpected R125 supplementary source")
+                n, nbytes_expected, npr = supplements[repo]
+                if (len(model["files"]), model["source_bytes"], len(req)) != (n, nbytes_expected, npr):
+                    raise ValueError("R125 supplement scope drift")
+                if model.get("prior_reported_scope", {}).get("source_revision") != model["source_revision"]:
+                    raise ValueError("R125 prerequisite source revision mismatch")
+                if (not req or len({f.get("path") for f in req}) != len(req)
+                        or set(f.get("path") for f in req) & set(f["path"] for f in model["files"])):
+                    raise ValueError("R125 prerequisite paths must be unique and disjoint")
+                for file in req:
+                    validate_relpath(file.get("path"))
+                    if (type(file.get("bytes")) is not int or file["bytes"] < 1
+                            or not isinstance(file.get("sha256"), str)
+                            or not SHA256_PATTERN.fullmatch(file["sha256"])):
+                        raise ValueError("R125 existing-weight prerequisite must have full publisher SHA256")
+            elif req or model.get("source_mode") != "FULL_SOURCE_UNREPORTED_OR_DISTINCT_PRECISION_SCOPE":
+                raise ValueError("R125 full source has unexpected prerequisites or source mode")
+        if observed != set(supplements):
+            raise ValueError("R125 missing exactly three nonredundant supplementary scopes")
+        dataset_ids = {x["source_repo_id"] for x in output
+                       if x.get("repository_type") == "dataset"}
+        if dataset_ids != {"elyza/ELYZA-tasks-100", "CohereLabs/aya_dataset"}:
+            raise ValueError("R125 exact dataset scope mismatch")
     return sorted(output, key=lambda item: item["order"])
 
 
@@ -282,6 +333,13 @@ def source_fingerprint(model: dict) -> str:
     }
     if model.get("repository_type", "model") == "dataset":
         selected["repository_type"] = "dataset"  # Prevent model/dataset namespace approval collision.
+    if model.get("prerequisite_weight_files"):
+        # Protect prerequisite weight identities under the same explicit user approval.
+        selected["source_mode"] = model.get("source_mode")
+        selected["prerequisite_weight_files"] = sorted(({
+            "path": item["path"], "bytes": item["bytes"],
+            "sha256": item["sha256"], "git_blob_sha1": item.get("git_blob_sha1"),
+        } for item in model["prerequisite_weight_files"]), key=lambda item: item["path"])
     canonical = json.dumps(selected, sort_keys=True, separators=(",", ":")).encode("utf-8")
     return hashlib.sha256(canonical).hexdigest()
 
@@ -404,9 +462,28 @@ def main() -> int:
     for model in selected:
         repo = model["source_repo_id"]
         revision = model["source_revision"]
-        destination = select_existing_destination(root, repo, model["files"],
+        prereqs = model.get("prerequisite_weight_files", [])
+        destination = select_existing_destination(root, repo, model["files"] + prereqs,
                                                   model.get("repository_type", "model"))
         check_destination(root, destination)
+        if prereqs:
+            invalid = []
+            for spec in prereqs:
+                expected = destination.joinpath(*validate_relpath(spec["path"]))
+                check_destination(root, expected)
+                ok, reason, digest = verify_file(expected, spec)
+                if not ok:
+                    invalid.append((spec["path"], reason))
+            if invalid:
+                print("SKIP_PREREQUISITE_SHA", repo, len(invalid), "weight(s) not verified")
+                append_log(log_path, dict(repo=repo, revision=revision,
+                                          status="supplement_prerequisite_unverified",
+                                          failures=invalid[:10], action="no_transfer"))
+                failed += 1
+                continue
+            append_log(log_path, dict(repo=repo, revision=revision,
+                                      status="supplement_prerequisite_weight_sha_verified",
+                                      files=len(prereqs)))
         file_state = []
         collision = False
         for spec in model["files"]:
@@ -433,9 +510,10 @@ def main() -> int:
         pending = [spec for spec, ok in file_state if not ok]
         if not pending:
             completed += 1
-            print("VERIFIED_ALREADY", repo)
+            print("SUPPLEMENT_ALREADY_VERIFIED" if prereqs else "VERIFIED_ALREADY", repo)
             append_log(log_path, dict(repo=repo, revision=revision,
-                                      status="model_verified", files=len(model["files"])))
+                                      status=("supplement_verified" if prereqs else "model_verified"),
+                                      files=len(model["files"])))
             continue
         # The GitHub execution ledger claims some scopes have already been
         # verified. Do not re-download those automatically if their physical
@@ -507,9 +585,9 @@ def main() -> int:
         else:
             completed += 1
             append_log(log_path, dict(repo=repo, revision=revision,
-                                      status="model_verified", files=len(model["files"]),
-                                      bytes=model["source_bytes"]))
-            print("MODEL_VERIFIED", repo, model["source_bytes"])
+                                      status=("supplement_verified" if prereqs else "model_verified"),
+                                      files=len(model["files"]), bytes=model["source_bytes"]))
+            print("SUPPLEMENT_VERIFIED" if prereqs else "MODEL_VERIFIED", repo, model["source_bytes"])
     print("DONE", "verified_models", completed, "incomplete_or_skipped", failed,
           "free_bytes", get_free_bytes(root), "ledger", log_path)
     return 0 if not failed else 2
