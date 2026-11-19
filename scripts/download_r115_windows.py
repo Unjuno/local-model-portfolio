@@ -8,6 +8,8 @@ Usage:
   py -3 scripts/download_r115_windows.py --execute --max-models 1 --approval-file "owner-approved.json"
   py -3 scripts/download_r115_windows.py --manifest queues/proposed-v49-r119-next7-public-source-entries.json --dry-run
   py -3 scripts/download_r115_windows.py --manifest queues/proposed-v49-r119-next7-public-source-entries.json --execute --approval-file "owner-approved-r119.json"
+  py -3 scripts/download_r115_windows.py --manifest queues/proposed-v50-r122-deduplicated-next15-sources.json --dry-run
+  py -3 scripts/download_r115_windows.py --manifest queues/proposed-v50-r122-deduplicated-next15-sources.json --execute --approval-file "owner-approved-r122.json"
   py -3 scripts/download_r115_windows.py --execute --recover-prior
 
 Transfers require BOTH an explicit --execute invocation on the owner's Windows
@@ -63,6 +65,8 @@ def validate_manifest(manifest: dict) -> list[dict]:
             (16, 10, {"apache-2.0"}),
         "R119_CONSOLIDATED_CORRECTED_UNREPORTED_FIRST_WAVE":
             (7, 7, {"apache-2.0", "mit"}),
+        "R122_V50_DEDUPLICATED_NEXT_WAVE_15_UNAPPROVED_SOURCE_SCOPES":
+            (15, 15, {"apache-2.0", "mit", "cc-by-sa-4.0"}),
     }
     if manifest.get("kind") not in profiles:
         raise ValueError("Unsupported fixed-publisher source manifest")
@@ -75,6 +79,12 @@ def validate_manifest(manifest: dict) -> list[dict]:
     for model in items:
         source = model.get("source_repo_id")
         revision = model.get("source_revision")
+        repo_type = model.get("repository_type", "model")
+        if repo_type not in ("model", "dataset"):
+            raise ValueError(f"Invalid HF repo type: {source}: {repo_type}")
+        if (manifest.get("kind") == "R122_V50_DEDUPLICATED_NEXT_WAVE_15_UNAPPROVED_SOURCE_SCOPES"
+                and "repository_type" not in model):
+            raise ValueError(f"R122 missing explicit repository_type: {source}")
         if not isinstance(source, str) or not REPO_PATTERN.fullmatch(source):
             raise ValueError("Invalid repo ID")
         if not isinstance(revision, str) or not REV_PATTERN.fullmatch(revision):
@@ -117,6 +127,18 @@ def validate_manifest(manifest: dict) -> list[dict]:
             output.append(model)
     if len(output) != expected_eligible:
         raise ValueError(f"Expected exactly {expected_eligible} locally-preflighted candidates")
+    if manifest["kind"] == "R122_V50_DEDUPLICATED_NEXT_WAVE_15_UNAPPROVED_SOURCE_SCOPES":
+        file_count = sum(len(item["files"]) for item in output)
+        lfs_count = sum(sum(f.get("sha256") is not None for f in item["files"]) for item in output)
+        all_bytes = sum(item["source_bytes"] for item in output)
+        if (file_count, lfs_count, all_bytes) != (333, 135, 374_701_290_840):
+            raise ValueError("R122 immutable publisher source totals changed")
+        if (manifest.get("file_count"), manifest.get("publisher_sha256_file_count"),
+                manifest.get("total_candidate_source_bytes")) != (file_count, lfs_count, all_bytes):
+            raise ValueError("R122 proposed queue header differs from actual source files")
+        datasets = [x["source_repo_id"] for x in output if x.get("repository_type") == "dataset"]
+        if set(datasets) != {"elyza/ELYZA-tasks-100", "CohereLabs/aya_dataset"}:
+            raise ValueError("R122 exact dataset scope changed")
     return sorted(output, key=lambda item: item["order"])
 
 
@@ -192,16 +214,22 @@ def conservative_staging_bytes(largest_file_bytes: int) -> int:
     return max(2_000_000_000, 2 * largest_file_bytes)
 
 
-def select_existing_destination(root: Path, repo: str, files: list[dict]) -> Path:
-    """Prefer previously saved publisher content in common archive layouts."""
+def select_existing_destination(root: Path, repo: str, files: list[dict],
+                                repository_type: str = "model") -> Path:
+    """Prefer previously saved publisher content. Keep datasets out of the model namespace."""
     author, name = repo.split("/", 1)
-    candidates = [
-        root / "models" / author / name,
-        root / author / name,
-        root / "downloads" / author / name,
-        root / "models" / name,
-        root / name,
-    ]
+    if repository_type == "dataset":
+        candidates = [root / "datasets" / author / name,
+                      root / "downloads" / "datasets" / author / name,
+                      root / "dataset" / author / name]
+    elif repository_type == "model":
+        candidates = [root / "models" / author / name,
+                      root / author / name,
+                      root / "downloads" / author / name,
+                      root / "models" / name,
+                      root / name]
+    else:
+        raise ValueError("Invalid repository_type for destination selection")
     best = candidates[0]
     best_matches = 0
     for candidate in candidates:
@@ -233,8 +261,20 @@ def source_fingerprint(model: dict) -> str:
             "git_blob_sha1": item.get("git_blob_sha1"),
         } for item in model["files"]), key=lambda item: item["path"]),
     }
+    if model.get("repository_type", "model") == "dataset":
+        selected["repository_type"] = "dataset"  # Prevent model/dataset namespace approval collision.
     canonical = json.dumps(selected, sort_keys=True, separators=(",", ":")).encode("utf-8")
     return hashlib.sha256(canonical).hexdigest()
+
+
+def hub_download_selected(hub_download, model: dict, filename: str, destination: Path):
+    """Download a single pinned file, keeping dataset and model Hub namespaces distinct."""
+    repository_type = model.get("repository_type", "model")
+    if repository_type not in ("model", "dataset"):
+        raise ValueError("Invalid Hub source repository type")
+    return hub_download(repo_id=model["source_repo_id"], filename=filename,
+                        revision=model["source_revision"], local_dir=str(destination),
+                        repo_type=repository_type)
 
 
 def assert_explicit_approved_sources(models: list[dict], approval_file: Path) -> None:
@@ -345,7 +385,8 @@ def main() -> int:
     for model in selected:
         repo = model["source_repo_id"]
         revision = model["source_revision"]
-        destination = select_existing_destination(root, repo, model["files"])
+        destination = select_existing_destination(root, repo, model["files"],
+                                                  model.get("repository_type", "model"))
         check_destination(root, destination)
         file_state = []
         collision = False
@@ -414,8 +455,7 @@ def main() -> int:
             last_error = ""
             for attempt in range(args.retries):
                 try:
-                    hf_hub_download(repo_id=repo, filename=relpath,
-                                    revision=revision, local_dir=str(destination))
+                    hub_download_selected(hf_hub_download, model, relpath, destination)
                     ok, verified_how, digest = verify_file(path, spec)
                     if not ok:
                         last_error = f"hash verification failed: {verified_how}"
