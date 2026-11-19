@@ -1,5 +1,7 @@
 # Local Model Portfolio
 
+**R116｜取得履歴を照合してWindows Dドライブの次の3原本を確定（2026-11-19）**：[22件・227ファイル／162.326GBの取得報告と新原本124.740GBを分離した実行手順](docs/strategy/116-v48-r115-windows-d-unattended-acquisition-and-reconciliation.md)／[R115:16件・237ファイルの固定sourceキュー（10件GO・6件HOLD）](queues/proposed-v48-r115-master-sources-16.json)／[Windows DドライブのSHA検証・容量床・再開に対応する実行器](scripts/download_r115_windows.py)／[無通信のユニットテスト](tests/test_r115_download_manifest.py)。既存台帳で7件は同一source scopeのVERIFIED**報告**があり、物理ドライブで未発見なら再取得しない。新3件はZONOS3-Mini original+codec 15.346GB、Interpretic v2 BF16 55.586GB、RVN-F16 GGUF 53.808GB。既存モデル削除0、Gated回避0、v48の201/154不変更。**現在のDドライブをこの調査環境から独立に再ハッシュしたわけではない。**
+
 **R115｜保存原本の形式・容量・規制リスクを統合決定（2026-11-19）**：[無検閲2系統の元checkpoint選定、2026-11-19米BISのモデル重み規制撤廃予定を一次資料で検証](docs/strategy/115-v48-regulatory-correction-and-master-selection-budget.md)／[15資産・212ファイルの原本保全優先別案](queues/proposed-v48-r115-archival-master-alternative-15.json)／[根拠と容量差・新候補v3保留](catalog/decisions/2026-11-19-r115-original-master-capacity-and-bis-policy.json)。既存容量優先212.023GBに対し原本優先286.420GB（+74.397GB）。Kitten重複ONNX除外、RVN F16と再構成Safetensorsの二重保存保留。歴史的仮想余白は条件付き-53.987GB、実4TB未測定。v48 201/154・承認0維持。
 
 
