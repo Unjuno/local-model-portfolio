@@ -52,7 +52,11 @@ def validate_relpath(name: str) -> tuple[str, ...]:
         raise ValueError(f"Unsafe repository path: {name!r}")
     posix = PurePosixPath(name)
     parts = posix.parts
-    if posix.is_absolute() or not parts or any(part in (".", "..") for part in parts):
+    windows_forbidden = re.compile(r'[<>:"\\|?*\x00-\x1f]')
+    windows_reserved = re.compile(r"^(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\.|$)", re.I)
+    if (posix.is_absolute() or not parts
+            or any(part in (".", "..") or windows_forbidden.search(part)
+                   or windows_reserved.search(part) or part.endswith((".", " ")) for part in parts)):
         raise ValueError(f"Unsafe repository path: {name!r}")
     if name != str(posix):
         raise ValueError(f"Non-canonical repository path: {name!r}")
@@ -96,13 +100,15 @@ def validate_manifest(manifest: dict) -> list[dict]:
         if not isinstance(files, list) or not files:
             raise ValueError(f"Empty file scope: {source}")
         seen_files = set()
+        casefolded_files = set()
         size_sum = 0
         for item in files:
             path = item["path"]
             validate_relpath(path)
-            if path in seen_files:
-                raise ValueError(f"Duplicate source path: {source}/{path}")
+            if path in seen_files or path.casefold() in casefolded_files:
+                raise ValueError(f"Duplicate or casefold-colliding source path: {source}/{path}")
             seen_files.add(path)
+            casefolded_files.add(path.casefold())
             size = item.get("bytes")
             if type(size) is not int or size < 0:
                 raise ValueError(f"Invalid expected size: {source}/{path}")
@@ -131,7 +137,7 @@ def validate_manifest(manifest: dict) -> list[dict]:
         file_count = sum(len(item["files"]) for item in output)
         lfs_count = sum(sum(f.get("sha256") is not None for f in item["files"]) for item in output)
         all_bytes = sum(item["source_bytes"] for item in output)
-        if (file_count, lfs_count, all_bytes) != (333, 135, 374_701_290_840):
+        if (file_count, lfs_count, all_bytes) != (332, 135, 374_701_109_177):
             raise ValueError("R122 immutable publisher source totals changed")
         if (manifest.get("file_count"), manifest.get("publisher_sha256_file_count"),
                 manifest.get("total_candidate_source_bytes")) != (file_count, lfs_count, all_bytes):
