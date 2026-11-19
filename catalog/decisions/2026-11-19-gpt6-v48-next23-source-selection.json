@@ -30,7 +30,8 @@
     "stage_A2_bytes": 368396117962,
     "deferred_compare_count": 13,
     "deferred_compare_bytes": 895849858080,
-    "new_downloads_approved": 0
+    "new_downloads_approved": 0,
+    "sensenova_official_public_variant_discovered": true
   },
   "source_context": {
     "original_discovery_generated_at": "2026-11-19T05:59:37.355957+00:00",
@@ -802,12 +803,30 @@
     },
     {
       "repo_id": "sensenova/SenseNova-Loop-9B",
-      "decision": "GATED_OWNER_RIGHTS_HOLD",
+      "decision": "GATED_ORIGINAL_HOLD_OFFICIAL_PUBLIC_GGUF_SEPARATE_RESEARCH",
       "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B",
       "huggingface_gated": "gated",
       "hub_parameters_approx": 9413000000,
-      "reason": "Unique loop+multimodal architecture but gated entitlement and custom code unknown",
-      "download_approved": false
+      "reason": "Gated original cannot be implicitly accessed through a public variant. Publisher's own public GGUF offers a separate legal/technical review lane; compare revision, trained tensors and mmproj rather than treating availability as bypass or identity.",
+      "download_approved": false,
+      "alternative_official_source": {
+        "repo_id": "sensenova/SenseNova-Loop-9B-GGUF",
+        "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-GGUF",
+        "same_publisher": true,
+        "hub_gated_badge": "NOT_SHOWN_PUBLIC_LISTING",
+        "hub_license_metadata": "apache-2.0",
+        "model_variant": "GGUF",
+        "all_weight_identity_with_gated_safetensors": "UNVERIFIED",
+        "complete_training_checkpoint_equivalence": "UNVERIFIED",
+        "permission_to_acquire": "NOT_GRANTED_BY_THIS_RESEARCH",
+        "comparison_only": true
+      },
+      "separate_preview": {
+        "repo_id": "sensenova/SenseNova-Loop-9B-Preview",
+        "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview",
+        "hub_parameters_observed_approx": 9656300000,
+        "observation": "distinct published parameter count from main gated 9413.0M; not an identical-checkpoint replacement"
+      }
     },
     {
       "repo_id": "nvidia/Nemotron-Labs-Sigma-distill-spec-3B",
@@ -857,7 +876,8 @@
   "independent_research_limits": {
     "exa": "HTTP402 exceeded credits on 2026-11-19, no successful Exa call",
     "hugging_face": "connected HF metadata rechecked for 10 priority and four new candidates",
-    "metrics": "publisher reported only"
+    "metrics": "publisher reported only",
+    "sensenova_2026_11_19": "Official publisher GGUF public-listing metadata and Preview inspected, exact source identity / personal legal rights / full trained-state parity unverified"
   },
   "H_T_D_C_U": {
     "H": "Select nonredundant trained originals before second generic models",

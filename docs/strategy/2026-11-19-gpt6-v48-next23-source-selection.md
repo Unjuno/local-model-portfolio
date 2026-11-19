@@ -60,7 +60,7 @@ B群でも、既存にない学習済み構造・公開停止の具体的予告�
 | モデル | 2026-11-19の一次資料・事実 | 研究上の判断 |
 | --- | --- | --- |
 | [Reson8/Rumble-2-Flash](https://huggingface.co/Reson8/Rumble-2-Flash) | 2026-11-18公開、Hub約508.6M、Apache-2.0表示。配布者の[Open ASR報告](https://huggingface.co/blog/rumble-2-flash)はH200/vLLMで英語WER6.60%、多言語平均6.96%、フルバッチ>7000RTFxを報告 | **CONDITIONAL採用提案**。auxiliary CTC headの学習済み総数、固定ファイル全SHA、日本語実測・権利が未完了のためダウンロード準備は停止 |
-| [sensenova/SenseNova-Loop-9B](https://huggingface.co/sensenova/SenseNova-Loop-9B) | Hub約9.413B・Gated表示、ループ型マルチモーダル。既存ARLoopと同一設計とは断定できない | **HOLD／正規の本人Gated権限調査を先行**。許諾を回避しない |
+| [sensenova/SenseNova-Loop-9B](https://huggingface.co/sensenova/SenseNova-Loop-9B) | 元SafetensorsはGated、Hub約9.413B。一方、同じ出版社の[GGUF](https://huggingface.co/sensenova/SenseNova-Loop-9B-GGUF)は公開表示、Previewは約9.656Bと規模も異なる | **元Safetensorsは権限確認HOLD**。GGUFは別の正規公開sourceとして同一性・mmproj・licenseを比較し、Gatedへの無許可アクセス経路とみなさない |
 | [nvidia/Nemotron-Labs-Sigma-distill-spec-3B](https://huggingface.co/nvidia/Nemotron-Labs-Sigma-distill-spec-3B) | Hub約4.237B・license tag`other`・custom codeを含む | **HOLD／ライセンス正文とcustom code静的検査**。iLLaDAと別の推論機構だが比較品質は未実証 |
 | `Empero/Quark-150M-128K-Zero` | 二次情報に掲載されるが、正確なHub repo IDの照合では未発見 | **取得対象外**。出版社の正確なURL・コミット・学習済み原本を一次確認するまで追加しない |
 
