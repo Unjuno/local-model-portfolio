@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "kind": "R114_PUBLISHER_LINEAGE_CORRECTION_AND_ARCHIVAL_MASTER_DECISION",
+  "base_revision": "v48-20261118",
+  "source_manifest": "manifests/drafts/r113-v48-two-uncensored-original-fp16-parents.candidate.json",
+  "correction_of": "docs/strategy/113-v48-uncensored-original-parent-replacement-review-2026-11-19.md",
+  "original_claim_rejected": "Both FP16/BF16 safetensors repositories are upstream original trained checkpoints and should supersede GGUF as archival masters.",
+  "independent_author_evidence": [
+    {
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+      "revision": "84ab13688128c19d5ef10be430bc5de649b7823f",
+      "source": "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+      "publisher_statement": "Full BF16 checkpoint including MTP head, same Qwen3.8-27B architecture, video/vision preprocessing metadata. Q4 GGUF is derivative.",
+      "decision": "PREFER_FULL_BF16_CHECKPOINT_AS_ARCHIVAL_MASTER",
+      "root_source_bytes": 55586056799,
+      "root_source_file_count": 32,
+      "required_followups": [
+        "Confirm tokenizer/preprocessor completeness and full MTP/vision tensor inventory",
+        "Preserve original license and Qwen attribution",
+        "Check exact weight hashes locally and legal rights",
+        "Do not duplicate GGUF Q4 unless tested runtime need"
+      ]
+    },
+    {
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored",
+      "revision": "c2cb2cfb239f2964595bee87fcfda55ad5fe33dd",
+      "source": "https://huggingface.co/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored",
+      "publisher_statement": "13 Safetensors shards reconstructed from RVN-F16.gguf, NOT original upstream BF16 checkpoint; mixed 498 F16 and 353 F32 tensors, 851 text tensors, text only, no vision encoder or MTP head.",
+      "decision": "PREFER_PUBLISHER_RVN_F16_GGUF_AS_EARLIEST_AVAILABLE_MASTER; SAFETENSORS_RECONSTRUCTION_ONLY_AS_OPTIONAL_SERVING_FORMAT",
+      "root_source_bytes": 53810927493,
+      "root_source_file_count": 26,
+      "required_followups": [
+        "Identify exact RVN-F16.gguf fixed revision, SHA256 and bytes",
+        "Do not download all 65 GSQ-3bit quantized shards",
+        "Compare RVN F16 GGUF vs reconstructed Safetensors and existing Q4 on matched prompts",
+        "Avoid counting F16 GGUF and Safetensors as independent trained models"
+      ]
+    }
+  ],
+  "separate_uncensored_coverage": {
+    "InterpreticAI": "Political selective refusal edit; publisher reports Chinese political battery 4/113 censored; retains 95/100 harmful prompt refusals. This is NOT globally unrestricted.",
+    "RVN": "Publisher describes RVN abliterated uncensored text-only derivative, model does not include vision or MTP. Different objective and modality from InterpreticAI."
+  },
+  "original_manifest_bytes_not_download_plan": 109396984292,
+  "correction_policy": "DO_NOT_SUPERSEDE_RVN_F16_GGUF_WITH_RECONSTRUCTED_FP16_ONLY; KEEP_EXISTING_Q4_RESEARCH_UNTIL_F16_FIXED_AND_USER_DISK_CHECKED",
+  "formal_asset_changes": 0,
+  "download_approved": false,
+  "owner_D_drive_verified": false,
+  "local_hash_verified": false,
+  "weights_downloaded": false
+}
