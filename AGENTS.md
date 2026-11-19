@@ -1,6 +1,18 @@
 # エージェント作業規約
 
-## 現行v47・R110：小型独立学習済み原本の正式な選定と取得STOP
+## 現行v48・R115（2026-11-19）：取得実行報告を正式な承認と混同せず高精度保存原本を確定
+
+**唯一の正式選定正本**：[CURRENT](catalog/CURRENT.json)→**v48・201登録／154有効（SELECT53／CONDITIONAL101）**。現在の[15原本source候補](queues/proposed-v48-r113-source-pinned-15.json)は**187ファイル・74 publisher SHA参照・212,023,095,122 byte**。[R115判断と現状](docs/strategy/115-v48-reconcile-acquired-and-select-uncensored-masters-2026-11-19.md)／[監査JSON](catalog/decisions/2026-11-19-r115-post-acquisition-master-selection.json)／[R114物理取得報告ledger](catalog/execution/2026-11-19-acquisition-ledger.json)。
+
+**重要な取得状況訂正**：2026-11-19の別作業が**22モデル／227ファイル／162,325,501,646 byte VERIFIED**、**OrcaRouter 1件Gated HOLD**を報告した。旧文書の「すべてモデル重量DL0」は**現時点の報告とは不整合**。ただしR115自身は**所有者の物理ドライブ・保存ファイルを独立再ハッシュしていない**。ledgerを事実以上の本人権利・offline restore証明として使うな。[承認キュー](queues/approved.json)はなお**空**であり、過去の実行と承認フローの不一致は解消していない。今後の新規ダウンロードは、個別固定ファイル・利用許諾・本人権限・容量／cache／staging・200GB残床・明示承認なしに実行しない。既存ファイルは勝手に削除しない。
+
+**無検閲学習成果の保全判断**：既存取得報告のInterpretic v2 GGUF Q4と0bserverx RVN Q4を保持したまま、**InterpreticAI v2 の発行者BF16原本32ファイル／55,586,056,799 byte**、**同RVNの公開元`RVN-F16.gguf` 53,808,281,888 byte・固定SHA256**を**新たな高精度マスターの取得仕様候補**とする。両者の追加source合計**109,394,338,687 byte**、**取得未承認**。RVNの13 safetensors shardsは作者がF16 GGUFから再構成した形式であって、pre-GGUF元学習BF16を復元した証拠ではない。両形式を独立学習済みモデル2件として二重登録しない。Interpretic v3はArete由来で独立だが、追加容量の比較品質が未証明につき**HOLD研究**、正式v48資産変更0。
+
+法規制は[米BIS 2026-11-16 remote-compute規則](https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology)とopen-weight保管・配布を混同しない。Hugging Faceのgated、法律、LICENSE正文、本人行為別許可を別の停止ゲートとして守る。実行コード、pickle、第三者custom codeを自動実行せず、形式を理由に一般的Q4/Q5/Q6/Q8を多重保存しない。**mainのみ運用**。
+
+以下は歴史的な旧リビジョンの規約であり、v47の「現行」表示と未取得0の記述はR115で上書きされる。
+
+## 旧v47・R110（履歴）：小型独立学習済み原本の正式な選定と取得STOP
 
 唯一の正本[CURRENT](catalog/CURRENT.json)→**200登録・153有効（SELECT53/CONDITIONAL100）**。[R110判断とエラー訂正](docs/strategy/110-v47-arloop-kitten-original-selection-and-rvn-correction-2026-11-18.md)／[新原本42ファイルの固定Publisher SHA](manifests/drafts/v46-2026-11-18-r110-arloop-kitten-fixed-source.candidate.json)／[153 readiness](catalog/readiness/v47-2026-11-18-r110-all153-gates.json)／[100条件付きアクセス](catalog/access/2026-11-18-v47-conditional-hub-gates.json)／[153非実行候補](queues/proposed-v47-2026-11-18.json)／[出版社原本14 source-only queue](queues/proposed-v47-r110-source-pinned-14.json)。旧v46 198件の採否を変更せず、ARLoopとKittenを新しく研究段階CONDITIONAL追加。
 
