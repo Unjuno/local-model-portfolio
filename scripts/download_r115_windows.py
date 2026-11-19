@@ -8,10 +8,12 @@ Usage:
   py -3 scripts/download_r115_windows.py --execute --max-models 1
   py -3 scripts/download_r115_windows.py --execute --recover-prior
 
-Transfers require an explicit --execute invocation on the owner's Windows
-system, a fixed R115 public Apache-2.0 publisher source manifest, and local
-capacity, hash, and rights preflight. Optional --approval-file activates an
-additional exact file-scope approval check. No per-model prompt is generated.
+Transfers require BOTH an explicit --execute invocation on the owner's Windows
+system AND --approval-file containing separately approved exact source scopes.
+A general chat/download-intent flag does NOT replace the repository's
+require_user_approved_manifest policy. No unapproved model transfer is made.
+Each file must have publisher integrity evidence, and local capacity/rights
+preflight must pass. No interactive per-model prompt is generated.
 
 The script never loads model files, executes publisher code, deletes files,
 accepts gated terms, or publishes artifacts. Previously reported exact scopes
@@ -168,6 +170,19 @@ def get_free_bytes(root: Path) -> int:
     return shutil.disk_usage(root).free
 
 
+def conservative_staging_bytes(largest_file_bytes: int) -> int:
+    """Reserve cache/temp copies in addition to final destination file bytes.
+
+    Hugging Face may stage a full LFS object or another complete copy, even
+    when the final file is written into local_dir. This is deliberately stricter
+    than the old largest_file_bytes // 4 approximation and remains only a
+    planning bound, not proof that actual disk/codec/runtime staging fits.
+    """
+    if type(largest_file_bytes) is not int or largest_file_bytes < 0:
+        raise ValueError("Invalid largest publisher file size")
+    return max(2_000_000_000, 2 * largest_file_bytes)
+
+
 def select_existing_destination(root: Path, repo: str, files: list[dict]) -> Path:
     """Prefer previously saved publisher content in common archive layouts."""
     author, name = repo.split("/", 1)
@@ -253,7 +268,7 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="Explicit read-only planning mode")
     parser.add_argument("--execute", action="store_true", help="Download frozen eligible public sources after owner D-drive preflight")
     parser.add_argument("--approval-file", default=None,
-                        help="Optional stricter exact-scope approval JSON to enforce")
+                        help="Required with --execute: exact source-scope, rights-checked owner approval JSON")
     parser.add_argument("--recover-prior", action="store_true",
                         help="Allow reacquisition of a previously VERIFIED-reported scope if missing locally")
     parser.add_argument("--max-models", type=int, default=0,
@@ -274,8 +289,12 @@ def main() -> int:
         if not (manifest.get("user_general_download_intent_recorded") is True and
                 manifest.get("all_go_files_have_publisher_hash") is True):
             parser.error("Publisher-fixed source or user download intent missing")
-        if args.approval_file is not None:
+        if args.approval_file is None:
+            parser.error("--execute requires --approval-file with owner-approved exact source scopes")
+        try:
             assert_explicit_approved_sources(selected, Path(args.approval_file))
+        except (OSError, ValueError, json.JSONDecodeError) as exc:
+            parser.error("Execution not authorized: " + str(exc))
 
     root = Path(args.root)
     if os.name == "nt" and root.drive.upper() != "D:":
@@ -363,7 +382,7 @@ def main() -> int:
         remaining_bytes = sum(x["bytes"] for x in pending)
         largest = max(x["bytes"] for x in pending)
         # Conservative headroom for concurrent temporary file and FS metadata.
-        overhead_bytes = max(2_000_000_000, largest // 4)
+        overhead_bytes = conservative_staging_bytes(largest)
         if get_free_bytes(root) < floor + remaining_bytes + overhead_bytes:
             print("SKIP_CAPACITY", repo, "required_bytes",
                   floor + remaining_bytes + overhead_bytes)
