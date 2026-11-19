@@ -13,6 +13,7 @@ Usage:
   py -3 scripts/download_r115_windows.py --manifest queues/proposed-v52-r125-ledger61-delta-next15.json --dry-run
   py -3 scripts/download_r115_windows.py --manifest queues/proposed-v52-r125-ledger61-delta-next15.json --execute --approval-file "owner-approved-r125.json"
   py -3 scripts/download_r115_windows.py --execute --recover-prior
+  py -3 scripts/download_r115_windows.py --manifest queues/proposed-v53-r126-aion-bf16-first-public-source.json --dry-run
 
 Transfers require BOTH an explicit --execute invocation on the owner's Windows
 system AND --approval-file containing separately approved exact source scopes.
@@ -75,6 +76,8 @@ def validate_manifest(manifest: dict) -> list[dict]:
             (15, 15, {"apache-2.0", "mit", "cc-by-sa-4.0"}),
         "R125_V52_LEDGER61_DELTA_15_SOURCES_NO_AUTO_DOWNLOAD":
             (15, 15, {"apache-2.0", "mit", "cc-by-sa-4.0"}),
+        "R126_V53_MICROSOFT_AION_ONE_ORIGINAL_SOURCE_NO_AUTO_DOWNLOAD":
+            (1, 1, {"mit"}),
     }
     if manifest.get("kind") not in profiles:
         raise ValueError("Unsupported fixed-publisher source manifest")
@@ -209,6 +212,17 @@ def validate_manifest(manifest: dict) -> list[dict]:
                        if x.get("repository_type") == "dataset"}
         if dataset_ids != {"elyza/ELYZA-tasks-100", "CohereLabs/aya_dataset"}:
             raise ValueError("R125 exact dataset scope mismatch")
+    if manifest["kind"] == "R126_V53_MICROSOFT_AION_ONE_ORIGINAL_SOURCE_NO_AUTO_DOWNLOAD":
+        model = output[0]
+        if (model["source_repo_id"] != "microsoft/Aion-1.0-Instruct-2.3B"
+                or model["source_revision"] != "28902cbfd9f4e0347d6c853aa1301f5d559b2fc0"
+                or model["source_bytes"] != 4_593_276_272
+                or len(model["files"]) != 11
+                or sum(f.get("sha256") is not None for f in model["files"]) != 2
+                or manifest.get("total_candidate_source_bytes") != 4_593_276_272
+                or manifest.get("file_count") != 11
+                or manifest.get("publisher_sha256_file_count") != 2):
+            raise ValueError("R126 Aion source exact publisher manifest drift")
     return sorted(output, key=lambda item: item["order"])
 
 
