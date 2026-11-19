@@ -14,6 +14,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import shutil
 import sys
 import time
@@ -26,16 +27,86 @@ STATE = Path("D:/AI_VAULT/state")
 LEDGER = STATE / "ledger" / "acquisition-ledger.json"
 LOG = STATE / "logs" / "preserve_execute.log"
 MIN_FREE = 200_000_000_000
-PERMISSIVE = {
-    "apache-2.0", "mit", "bsd-2-clause", "bsd-3-clause", "cc0-1.0",
-    "cc-by-4.0", "cc-by-sa-4.0", "openrail", "openrail++", "bigcode-openrail-m",
-    "openmdw-1.1", "other",
-}
+# Tags are only initial screens; any transfer requires an explicit approved manifest.
+# Nonstandard, source-available and restricted licenses require an individual act review.
+PERMISSIVE = {"apache-2.0", "mit", "bsd-2-clause", "bsd-3-clause", "cc0-1.0"}
 CHUNK = 1024 * 1024
 REV_KEYS = ("repo_revision_sha", "source_revision_sha", "revision_sha",
             "source_revision", "immutable_revision", "first_party_repo_sha",
             "source_commit", "revision")
 
+
+
+APPROVED_QUEUE = Path(__file__).resolve().parents[1] / "queues" / "approved.json"
+
+
+def approval_for(task, approval_path=None):
+    """Find a human-approved exact pinned model+file scope. Fail closed.
+
+    This gate is administrative, not cryptographic proof of who gave consent.
+    An external user authorization process must update queues/approved.json.
+    """
+    repo, rev = task.get("repo_id", ""), task.get("rev", "")
+    if not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", repo):
+        return None
+    if not re.fullmatch(r"[0-9a-f]{40}", rev):
+        return None
+    paths = []
+    for f in task.get("files", []):
+        p = f.get("path") or f.get("rfilename")
+        size = f.get("bytes") or f.get("size_bytes") or f.get("size")
+        if not isinstance(p, str) or not p or p.startswith("/") or "\\" in p:
+            return None
+        if any(x in ("", ".", "..") for x in p.split("/")):
+            return None
+        try:
+            n = int(size)
+        except (TypeError, ValueError):
+            return None
+        if n <= 0:
+            return None
+        paths.append((p, n))
+    if not paths or len(set(paths)) != len(paths):
+        return None
+    try:
+        with open(approval_path or APPROVED_QUEUE, encoding="utf-8") as stream:
+            approved = json.load(stream)
+    except (OSError, json.JSONDecodeError):
+        return None
+    for entry in approved.get("entries", []):
+        if not isinstance(entry, dict):
+            continue
+        if entry.get("repo_id") != repo or entry.get("revision_sha") != rev:
+            continue
+        if not all(entry.get(k) is True for k in (
+                "approved", "download_enabled", "approved_by_user",
+                "license_text_reviewed", "parent_dependency_rights_reviewed")):
+            continue
+        if not isinstance(entry.get("approval_ref"), str) or not entry["approval_ref"].strip():
+            continue
+        allowed = entry.get("files")
+        if not isinstance(allowed, list) or len(allowed) != len(paths):
+            continue
+        seen = []
+        for f in allowed:
+            if not isinstance(f, dict):
+                break
+            p = f.get("path")
+            try:
+                n = int(f.get("bytes"))
+            except (ValueError, TypeError):
+                break
+            sha = f.get("sha256") or f.get("publisher_lfs_sha256")
+            blob = f.get("git_blob_sha1") or f.get("publisher_git_blob_sha1")
+            # A size-only or wildcard approval is never sufficient.
+            if not ((isinstance(sha, str) and re.fullmatch(r"[0-9a-f]{64}", sha))
+                    or (isinstance(blob, str) and re.fullmatch(r"[0-9a-f]{40}", blob))):
+                break
+            seen.append((p, n))
+        if len(seen) != len(paths) or sorted(seen) != sorted(paths):
+            continue
+        return entry
+    return None
 
 def now():
     return datetime.now(timezone.utc).isoformat()
@@ -197,8 +268,7 @@ def verify_file(path, rec):
     if rec.get("sha1"):
         got = git_blob_sha1_file(path)
         return (got == rec["sha1"], "git-blob-sha1-vs-publisher", rec["sha1"])
-    return ((rec["bytes"] == 0 or path.stat().st_size == rec["bytes"]),
-            "size-only-no-publisher-hash", rec["bytes"])
+    return (False, "NO_PUBLISHER_HASH", None)
 
 
 def process_task(task, source, dry=False):
@@ -207,8 +277,13 @@ def process_task(task, source, dry=False):
     res = {"repo_id": repo, "revision_sha": rev, "source": source,
            "group": task["group"], "started_at": now(), "files": [],
            "dry_run": bool(dry)}
-    if not rev:
+    if not re.fullmatch(r"[0-9a-f]{40}", rev):
         res["status"] = "HOLD_NO_PINNED_REVISION"
+        return res
+    approved = approval_for(task)
+    if not dry and approved is None:
+        res["status"] = "HOLD_NO_EXPLICIT_APPROVED_MANIFEST"
+        log("  HOLD: not in exact user-approved immutable file queue")
         return res
     try:
         meta = api_model(repo, rev)
@@ -222,10 +297,10 @@ def process_task(task, source, dry=False):
         log(f"  HOLD: gated={meta.get('gated')} private={meta.get('private')}")
         return res
     lic = ((meta.get("cardData") or {}).get("license") or task["license"] or "").lower()
-    has_license = any("license" in (f.get("path") or "").lower() for f in task["files"])
-    if lic and lic not in PERMISSIVE and not has_license:
-        res["status"] = f"HOLD_LICENSE_{lic}"
-        log(f"  HOLD license={lic}")
+    if (not lic or (lic not in PERMISSIVE
+            and not (approved and approved.get("nonstandard_license_permission_verified") is True))):
+        res["status"] = "HOLD_LICENSE_REVIEW_REQUIRED"
+        log(f"  HOLD: publisher license {lic!r} requires explicit reviewed rights")
         return res
     res["license"] = lic or "unspecified"
 
@@ -235,6 +310,9 @@ def process_task(task, source, dry=False):
         if rp:
             siblings[rp] = s
     recs = [file_record(f, siblings) for f in task["files"]]
+    if any(r["bytes"] <= 0 or not (r.get("sha256") or r.get("sha1")) for r in recs):
+        res["status"] = "HOLD_INCOMPLETE_SOURCE_SIZE_OR_HASH"
+        return res
     need = sum(r["bytes"] for r in recs)
     free = free_bytes(STORE)
     if not dry and free - need < MIN_FREE:
@@ -246,7 +324,7 @@ def process_task(task, source, dry=False):
     for r in recs:
         rel = r["path"]
         target = (base / rel).resolve()
-        if not str(target).startswith(str(base.resolve())):
+        if not target.is_relative_to(base.resolve()):
             res["files"].append({"path": rel, "status": "SKIP_UNSAFE_PATH"})
             continue
         out = {"path": rel, "bytes": r["bytes"]}
