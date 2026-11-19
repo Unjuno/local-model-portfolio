@@ -29,7 +29,10 @@ class TestReadOnlyAudit(unittest.TestCase):
         with tempfile.TemporaryDirectory() as td, tempfile.TemporaryDirectory() as out:
             root=Path(td); other=Path(out); (other/'model.safetensors').write_bytes(b'data')
             prefix=root/'models/abc';prefix.mkdir(parents=True)
-            (prefix/'model').symlink_to(other, target_is_directory=True)
+            try:
+                (prefix/'model').symlink_to(other, target_is_directory=True)
+            except (OSError, NotImplementedError):
+                self.skipTest('Symlink creation unavailable on this platform')
             self.assertEqual(p.audit(self.source(hashlib.sha256(b'data').hexdigest()),root)['status_counts']['CONFLICT'],1)
     def test_path_rejections(self):
         for s in ['../x', 'C:/x', 'dir\\x', 'CON.txt', 'file:x','x/../b','a//b','x.']:
