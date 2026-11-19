@@ -102,3 +102,14 @@ Exaは今回の検索で**HTTP 402（利用枠超過）**となったため、�
 ## 9.〈次に考える問い〉
 
 **保存済みと報告された61モデルのうち、原本・親checkpoint・tokenizer・実行時コードを揃えて実際にオフライン復元できる割合は何％か。** 次の段階では新規モデル数ではなく、独立再ハッシュで復元可能と確認された学習済み状態の数を成果指標にすべきである。
+
+## 10. 【2026-11-20追補】main v56への同時採択と二重登録防止
+
+調査・専用ブランチへの記録中に**mainの正本がv55（209/162）からv56（211登録・164有効）へ更新**された。新規に登録された `FrostWolfAI/LFM3-1.7B-abliterated` と `PhalaCloud/Qwen3.8-27B-Uncensored-LoRA` は両方とも研究上の **CONDITIONAL**。前節「v55に未登録」「今後の正式追加候補」は**v55観測時点に限った履歴**であり、**2026-11-20最終のv56では登録済み**。他ブランチに追加コミットせず、[v56差分](../../catalog/revisions/v56-2026-11-20.json)と[正式v56ビュー](../../catalog/effective-portfolio-2026-11-20-v56.json)の採否を尊重し重複計上しない。
+
+- mainの[先行固定source](../../manifests/drafts/r130-2026-11-20-frostwolf-and-phala-originals-fixed.candidate.json) と、今回の[本ブランチ固定source](../../manifests/drafts/2026-11-20-frostwolf-phala-immutable-source.candidate.json)を全20ファイルで照合。**2つのrepo ID、各40桁revision、ファイルpath、bytes、非null Git blob SHA-1とLFS SHA-256に不一致0**。両者は同じsourceを別の監査様式で記述しており、追加で3.4887GBを二重に予約しない。
+- FrostWolf：v56で**正式CONDITIONAL採択済み**、研究第5候補として原本BF16を維持。権利適用・コード・owner D容量・ローカルハッシュに未完了があるため**取得承認ではない**。
+- Phala：v56で**正式CONDITIONAL採択済み**、ただし13MB Adapterの**単体モデル性・親互換性・Alpaca由来データの使用権は未証明**。本報告のHOLDは**取得準備／offline-restore readinessに対する保留**であり、v56の採用判断を差し戻す意味ではない。
+- v56の[CURRENT](../../catalog/CURRENT.json)は211件のうち有効164件、モデル185件／データセット26件を記録。既存[承認キュー](../../queues/approved.json)は0件。今回の追加取得/モデル実行/所有者媒体のre-hashも0。
+
+**誤りの防止**：正式選定を研究候補として何度も「新規追加」しない。v55スナップショットとv56の確定済み意思決定、固定sourceと物理保存、CONDITIONAL選定と取得許可を混ぜない。
