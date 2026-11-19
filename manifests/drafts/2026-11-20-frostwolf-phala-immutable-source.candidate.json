@@ -1,0 +1,255 @@
+{
+  "schema_version": 1,
+  "kind": "NON_EXECUTABLE_IMMUTABLE_PUBLIC_MODEL_SOURCE_DRAFT",
+  "prepared_on": "2026-11-20",
+  "repository": "Unjuno/local-model-portfolio",
+  "work_branch": "strategy/2026-11-03-01-risk",
+  "comparison_canonical_revision": "v55-20261120",
+  "comparison_current_pointer_blob_sha": "744d19724e9ad61e7014b1fe7c07326b2de0c224",
+  "comparison_effective_portfolio_blob_sha": "60b4c02a4a4eebd6e7c3c9c7d5a0fc8d912c0cca",
+  "comparison_registered_assets": 209,
+  "already_in_canonical": {
+    "FrostWolfAI/LFM3-1.7B-abliterated": false,
+    "PhalaCloud/Qwen3.8-27B-Uncensored-LoRA": false
+  },
+  "source_evidence": "Read-only HF public metadata and immutable tree APIs. Weights not downloaded or hashed locally.",
+  "entries": [
+    {
+      "repo_id": "FrostWolfAI/LFM3-1.7B-abliterated",
+      "source_url": "https://huggingface.co/FrostWolfAI/LFM3-1.7B-abliterated",
+      "tree_url": "https://huggingface.co/FrostWolfAI/LFM3-1.7B-abliterated/tree/fc0f808655210ef891515bad9b5195b03d89f11b",
+      "pinned_revision_sha": "fc0f808655210ef891515bad9b5195b03d89f11b",
+      "access_observed": "public_ungated_API_METADATA",
+      "license_tag": "other",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "git_blob_sha1": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+          "publisher_lfs_sha256": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 10574,
+          "git_blob_sha1": "25e731c697c4fe4c52ee654cedf7106a827748d2",
+          "publisher_lfs_sha256": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 3735,
+          "git_blob_sha1": "bfcae66f7428099fa16e2a1c9dcca5b3ed333aad",
+          "publisher_lfs_sha256": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 12129,
+          "git_blob_sha1": "d0747b8b5fc99eaecfe02a04eefcff75eb181334",
+          "publisher_lfs_sha256": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 1552,
+          "git_blob_sha1": "f628859affad141921734e6bf0f5b39505711f66",
+          "publisher_lfs_sha256": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "configuration_lfm3.py",
+          "bytes": 6113,
+          "git_blob_sha1": "a3cc0e726e8f4656f8468df5c8445f26e6dc8464",
+          "publisher_lfs_sha256": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 328,
+          "git_blob_sha1": "828e9a1ac7789d8b38af0dfe573ab6362598745b",
+          "publisher_lfs_sha256": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "lfm3_conv.py",
+          "bytes": 8532,
+          "git_blob_sha1": "a1b67afdb605452f5a99751862863d5460a1fa69",
+          "publisher_lfs_sha256": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 3457635448,
+          "git_blob_sha1": "340a09b34dd47d6f03fea4f04588c81bcf49e473",
+          "publisher_lfs_sha256": "4064371dcfed8660f03d688dd7688aad48cce630fd3117ec30572a976352f165",
+          "local_hash_verified": false
+        },
+        {
+          "path": "modeling_lfm3.py",
+          "bytes": 42359,
+          "git_blob_sha1": "0ccffc7ed179c2e3aaa19ab93bba735abb1d124d",
+          "publisher_lfs_sha256": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "reproduce/reproduce.json",
+          "bytes": 4008,
+          "git_blob_sha1": "d2e0f2ae2c9ad6d6d0bef8e33788f3202ed260af",
+          "publisher_lfs_sha256": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 17908795,
+          "git_blob_sha1": "3d1e9312d2f778db5b29fae49da0bba3cf2ed18c",
+          "publisher_lfs_sha256": "8f7ed4182b60c4ade9645e2f98b8f2141961bfd71c783e15daaa89e95ae66338",
+          "local_hash_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1923,
+          "git_blob_sha1": "a6324b2d92e91d34b719235ab874732119a6e5e3",
+          "publisher_lfs_sha256": null,
+          "local_hash_verified": false
+        }
+      ],
+      "file_count": 13,
+      "selected_source_bytes": 3475637066,
+      "publisher_lfs_sha256_count": 2,
+      "parameter_screen": {
+        "total_parameters_publisher": 1728800000,
+        "under_150B": true,
+        "exact_tensor_census": false
+      },
+      "provenance": {
+        "learning_result": "FrostWolf ARA-edited full BF16 weights, distinct from Orca LFM3",
+        "parent": "LiquidAI/LFM3-1.7B",
+        "custom_code_files": [
+          "configuration_lfm3.py",
+          "lfm3_conv.py",
+          "modeling_lfm3.py"
+        ],
+        "author_published_reproduce_params": true,
+        "custom_code_execution_approved": false
+      },
+      "rights": {
+        "license": "LFM Open License 1.0",
+        "source_url": "https://huggingface.co/FrostWolfAI/LFM3-1.7B-abliterated/blob/fc0f808655210ef891515bad9b5195b03d89f11b/LICENSE",
+        "commercial_entity_revenue_threshold_usd_annual": 10000000,
+        "owner_specific_use_verified": false
+      },
+      "recommendation": "PREFER_CONDITIONAL_SELECTION_AFTER_OWNER_RIGHTS_AND_CODE_AUDIT",
+      "owner_approved": false,
+      "download_approved": false,
+      "executable": false
+    },
+    {
+      "repo_id": "PhalaCloud/Qwen3.8-27B-Uncensored-LoRA",
+      "source_url": "https://huggingface.co/PhalaCloud/Qwen3.8-27B-Uncensored-LoRA",
+      "tree_url": "https://huggingface.co/PhalaCloud/Qwen3.8-27B-Uncensored-LoRA/tree/588752bc181b999247f0e7df578bbc55d2b920e9",
+      "pinned_revision_sha": "588752bc181b999247f0e7df578bbc55d2b920e9",
+      "access_observed": "public_ungated_API_METADATA",
+      "license_tag": "apache-2.0",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "publisher_lfs_sha256": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11358,
+          "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+          "publisher_lfs_sha256": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 747,
+          "git_blob_sha1": "66eb8f2843e4ecedebcb68718dab3c53c3f5a014",
+          "publisher_lfs_sha256": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 5657,
+          "git_blob_sha1": "fca74d03bb7613fff0bf7ca91630e02f2a3189ab",
+          "publisher_lfs_sha256": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "SHA256SUMS",
+          "bytes": 178,
+          "git_blob_sha1": "45a010c8a65bee3a64fea938c024427f3055c478",
+          "publisher_lfs_sha256": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "adapter_config.json",
+          "bytes": 1148,
+          "git_blob_sha1": "256fb82e697527730f88fe2be1497e592e823e75",
+          "publisher_lfs_sha256": null,
+          "local_hash_verified": false
+        },
+        {
+          "path": "adapter_model.safetensors",
+          "bytes": 13014120,
+          "git_blob_sha1": "118f0c3a2537d306cd344ec6e9146dcc3f1374ec",
+          "publisher_lfs_sha256": "1abf13b2191c9973a4dc4d978448512d3ce2efabfd1e671edd5956b6aebfa5ac",
+          "local_hash_verified": false
+        }
+      ],
+      "file_count": 7,
+      "selected_source_bytes": 13034727,
+      "publisher_lfs_sha256_count": 1,
+      "parameter_screen": {
+        "parent_total_publisher": 27781400000,
+        "adapter_exact_trainable_parameters": null,
+        "complete_parent_compatibility_unverified": true
+      },
+      "provenance": {
+        "learning_result": "Phala rank-3 LoRA adapter, not standalone",
+        "parent": "Qwen/Qwen3.8-27B",
+        "adapter_config_parent_revision": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
+        "publisher_eval_serving_parent_repo": "Qwen/Qwen3.8-27B-FP8",
+        "publisher_eval_serving_parent_revision": "017b9c7af6b5689d5dd426a76e0bc077eb5ca20a",
+        "parent_revision_pair_compatibility_proven": false,
+        "training_data_rights": "Stanford Alpaca-derived CC BY-NC 4.0; adapter Apache-2.0 does not grant underlying dataset rights",
+        "offline_restore_proven": false
+      },
+      "rights": {
+        "license": "Apache-2.0 adapter",
+        "source_url": "https://huggingface.co/PhalaCloud/Qwen3.8-27B-Uncensored-LoRA/blob/588752bc181b999247f0e7df578bbc55d2b920e9/LICENSE",
+        "dataset_use_rights_verified": false
+      },
+      "recommendation": "HOLD_UNTIL_PARENT_HASH_RUNTIME_AND_UPSTREAM_DATASET_RIGHTS",
+      "owner_approved": false,
+      "download_approved": false,
+      "executable": false
+    }
+  ],
+  "source_file_count": 20,
+  "publisher_source_bytes": 3488671793,
+  "publisher_lfs_sha256_count": 3,
+  "existing_r128_first_four": {
+    "queue_path": "queues/proposed-v54-r128-first-four-delta-source.json",
+    "file_count": 101,
+    "source_bytes": 6127042272,
+    "verified_against_immutable_HF_metadata_on": "2026-11-20",
+    "not_duplicated_in_new_source_entries": true
+  },
+  "gates": {
+    "model_weight_bytes_transferred": false,
+    "local_file_SHA256_checked": false,
+    "owner_HDD_verified": false,
+    "license_user_specific_approved": false,
+    "owner_Gated_rights_checked": false,
+    "untrusted_model_code_executed": false,
+    "offline_restore_tested": false,
+    "explicit_user_source_scope_approved": false,
+    "download_approved": false
+  }
+}
