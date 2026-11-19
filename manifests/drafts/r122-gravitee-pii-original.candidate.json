@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "artifact_type": "CANDIDATE_NONEXECUTABLE_STATIC_PUBLISHER_SOURCE_SCOPE",
+  "curation_date": "2026-11-19",
+  "source_repo_id": "gravitee-io/bert-small-pii-detection",
+  "source_revision": "f8c27a85c51c0168f07b9dcf00265bf0a4097939",
+  "primary_url": "https://huggingface.co/gravitee-io/bert-small-pii-detection",
+  "first_party_tree_url": "https://huggingface.co/gravitee-io/bert-small-pii-detection/tree/f8c27a85c51c0168f07b9dcf00265bf0a4097939",
+  "license_metadata": "apache-2.0",
+  "license_full_text_reviewed": false,
+  "access_status": "PUBLIC_LISTING_NO_PER_USER_RIGHTS_TEST",
+  "model_parameters_hf_metadata_rounded": 28500000,
+  "model_total_parameters_local_census": null,
+  "parameter_ceiling_exclusive": 150000000000,
+  "parameter_hard_stop": "unknown total count or external learned dependencies => NO ACQUISITION PREPARATION",
+  "label_set_source": "https://huggingface.co/gravitee-io/bert-small-pii-detection",
+  "language": [
+    "en"
+  ],
+  "trained_base": "prajjwal1/bert-small",
+  "trained_dataset": "gravitee-io/pii-detection-dataset",
+  "fixed_files": [
+    {
+      "path": ".gitattributes",
+      "include": false,
+      "bytes": null,
+      "publisher_sha256": null,
+      "optional": true,
+      "reason": "Repository metadata not necessary to recover runtime"
+    },
+    {
+      "path": "README.md",
+      "include": true,
+      "bytes": null,
+      "publisher_git_blob_sha1": null,
+      "role": "attribution/card"
+    },
+    {
+      "path": "config.json",
+      "include": true,
+      "bytes": null,
+      "publisher_git_blob_sha1": null,
+      "role": "full id2label architecture"
+    },
+    {
+      "path": "model.safetensors",
+      "include": true,
+      "bytes": 114116788,
+      "publisher_sha256": "a6319abf8718ec15956b241e8800b0ff4b6b8be5c6b5aa2a43aef765c6e20de3",
+      "sha_evidence_url": "https://huggingface.co/gravitee-io/bert-small-pii-detection/raw/main/model.safetensors",
+      "sha_scope": "PUBLISHER_XET_LFS_POINTER_NOT_LOCALLY_VERIFIED",
+      "role": "original FP32 trained checkpoint"
+    },
+    {
+      "path": "special_tokens_map.json",
+      "include": true,
+      "bytes": null,
+      "publisher_git_blob_sha1": null,
+      "role": "tokenizer"
+    },
+    {
+      "path": "tokenizer.json",
+      "include": true,
+      "bytes": null,
+      "publisher_git_blob_sha1": null,
+      "role": "tokenizer"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "include": true,
+      "bytes": null,
+      "publisher_git_blob_sha1": null,
+      "role": "tokenizer"
+    },
+    {
+      "path": "vocab.txt",
+      "include": true,
+      "bytes": null,
+      "publisher_git_blob_sha1": null,
+      "role": "tokenizer"
+    },
+    {
+      "path": "model.onnx",
+      "include": false,
+      "bytes": null,
+      "publisher_sha256": null,
+      "reason": "same learned model exported to ONNX; serving format only"
+    },
+    {
+      "path": "model.quant.onnx",
+      "include": false,
+      "bytes": null,
+      "publisher_sha256": null,
+      "reason": "same learned model quantized ONNX; optional runtime only"
+    }
+  ],
+  "selected_learned_weight_only_bytes": 114116788,
+  "selected_complete_package_bytes": null,
+  "complete_file_hash_coverage": false,
+  "complete_files_bitwise_identity_verified": false,
+  "physical_HDD_verified": false,
+  "off_line_restoration_verified": false,
+  "owner_acquisition_authorized": false,
+  "download_approved": false,
+  "model_payload_downloaded": false,
+  "executed_python_code": false,
+  "first_party_full_sha_immutable_pin_verified_at_repo_revision": false,
+  "additional_gates": [
+    "retrieve git blob SHA for all selected small files from fixed commit",
+    "verify official LICENSE text not only HF tag",
+    "review parent rights and dataset attribution",
+    "build local measured sha256 ledger before accepting archive",
+    "check language/PII false positives and runtime on owner hardware",
+    "exact full scalar tensor census or a justified conservative bound including all learned dependencies",
+    "derive fixed bytes and free floor/staging before approving local acquisition"
+  ],
+  "false_inference_prevention": [
+    "public repo is not per-user license clearance",
+    "model file 114.116788MB is not total package size",
+    "ONNX and ONNX quant are not independent pretrained models"
+  ]
+}
