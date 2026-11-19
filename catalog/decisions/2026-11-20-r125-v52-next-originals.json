@@ -1,0 +1,1622 @@
+{
+  "schema_version": 1,
+  "kind": "R125_V52_NONEXECUTABLE_ACQUISITION_RESEARCH",
+  "date": "2026-11-20",
+  "baseline_commit": "64013428c7b4eb607faf46930134b6e4a8f401db",
+  "canonical_revision": "v52-20261119",
+  "counts": {
+    "tracked": 205,
+    "active": 158,
+    "models": 179,
+    "datasets": 26,
+    "reported_verified_models": 61,
+    "reported_verified_files": 708,
+    "reported_verified_bytes": 409835119252,
+    "source_candidates": 15,
+    "source_exact_match": 0,
+    "source_same_repo_different_scope": 5,
+    "source_unreported": 10,
+    "approved": 0
+  },
+  "shortlist": [
+    {
+      "id": "Reson8/Rumble-2-Flash",
+      "priority": 1,
+      "decision": "SELECTED_CONDITIONAL_SOURCE_PINNED_NO_DOWNLOAD",
+      "reason": "Compact multilingual ASR+trained CTC",
+      "source_bytes": 1385998807,
+      "official_url": "https://huggingface.co/Reson8/Rumble-2-Flash",
+      "already_canonical": true,
+      "owner_permission_verified": false,
+      "download_approved": false
+    },
+    {
+      "id": "harness-hub/Qwen3.8-27B-pi-adapted",
+      "priority": 2,
+      "decision": "SELECTED_CONDITIONAL_PARENT_REVISION_BLOCK",
+      "reason": "Distinct RL agent LoRA, parent revision and tokenizer unresolved",
+      "source_bytes": 657633248,
+      "official_url": "https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted",
+      "already_canonical": true,
+      "owner_permission_verified": false,
+      "download_approved": false
+    },
+    {
+      "id": "RadixArk/DaisyRose-27B",
+      "priority": 3,
+      "decision": "SELECTED_CONDITIONAL_BF16_SOURCE_PINNED_NO_DOWNLOAD",
+      "reason": "27B independent RL trained 18 different weight shards",
+      "source_bytes": 55586309473,
+      "official_url": "https://huggingface.co/RadixArk/DaisyRose-27B",
+      "already_canonical": true,
+      "owner_permission_verified": false,
+      "download_approved": false
+    },
+    {
+      "id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+      "priority": 4,
+      "decision": "BF16_ORIGINAL_SOURCE_RESEARCH_ONLY",
+      "reason": "Edited BF16 original, not previously acquired Q4",
+      "source_bytes": 55586056799,
+      "official_url": "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+      "already_canonical": false,
+      "owner_permission_verified": false,
+      "download_approved": false
+    },
+    {
+      "id": "orcarouter/LFM3-1.7B-abliterated",
+      "priority": 5,
+      "decision": "NEW_RESEARCH_HOLD_GATED_LICENSE",
+      "reason": "Small 1.7288B edited original, gated custom license",
+      "source_bytes": null,
+      "official_url": "https://huggingface.co/orcarouter/LFM3-1.7B-abliterated",
+      "already_canonical": false,
+      "owner_permission_verified": false,
+      "download_approved": false
+    },
+    {
+      "id": "orcarouter/Nex-N2.5-mini-Uncensored",
+      "priority": 6,
+      "decision": "NEW_RESEARCH_HOLD_GATED",
+      "reason": "35.1072B MoE multimodal edited checkpoint, owner permission absent",
+      "source_bytes": null,
+      "official_url": "https://huggingface.co/orcarouter/Nex-N2.5-mini-Uncensored",
+      "already_canonical": false,
+      "owner_permission_verified": false,
+      "download_approved": false
+    }
+  ],
+  "source_comparison": [
+    {
+      "repo_id": "elyza/ELYZA-tasks-100",
+      "revision": "240fc800c4695d86ce0f32a713e199cd2ba66ab6",
+      "files": 65,
+      "bytes": 7606817,
+      "ledger_status": null,
+      "ledger_bytes": null,
+      "ledger_files": null,
+      "same_source_scope": false,
+      "action": "RIGHTS_AND_OWNER_PREFLIGHT_NO_DOWNLOAD"
+    },
+    {
+      "repo_id": "CohereLabs/aya_dataset",
+      "revision": "f9ea04583f02a8f86404ff6c58bf75fe637df8a2",
+      "files": 6,
+      "bytes": 140160376,
+      "ledger_status": null,
+      "ledger_bytes": null,
+      "ledger_files": null,
+      "same_source_scope": false,
+      "action": "RIGHTS_AND_OWNER_PREFLIGHT_NO_DOWNLOAD"
+    },
+    {
+      "repo_id": "Reson8/Rumble-2-Flash",
+      "revision": "a0c34287229103b706c670d70791683e34379732",
+      "files": 19,
+      "bytes": 1385998807,
+      "ledger_status": null,
+      "ledger_bytes": null,
+      "ledger_files": null,
+      "same_source_scope": false,
+      "action": "RIGHTS_AND_OWNER_PREFLIGHT_NO_DOWNLOAD"
+    },
+    {
+      "repo_id": "RWKV/RWKV7-7.2B-20260805",
+      "revision": "9e47155004fe9df0f2a8015efa9152595c9065be",
+      "files": 19,
+      "bytes": 14402000339,
+      "ledger_status": "VERIFIED",
+      "ledger_bytes": 14401662526,
+      "ledger_files": 12,
+      "same_source_scope": false,
+      "action": "COMPARE_SOURCE_FILES_NOT_AUTOMATICALLY_SKIP"
+    },
+    {
+      "repo_id": "GSAI-ML/iLLaDA-8B-Base",
+      "revision": "a1b5b5f8a31a3854a46205ee584178c04b45ec9a",
+      "files": 16,
+      "bytes": 16512918618,
+      "ledger_status": "VERIFIED",
+      "ledger_bytes": 16512890112,
+      "ledger_files": 12,
+      "same_source_scope": false,
+      "action": "COMPARE_SOURCE_FILES_NOT_AUTOMATICALLY_SKIP"
+    },
+    {
+      "repo_id": "microsoft/TRELLIS.2-4B",
+      "revision": "af44b45f2e35a493886929c6d786e563ec68364d",
+      "files": 22,
+      "bytes": 16237485044,
+      "ledger_status": "VERIFIED",
+      "ledger_bytes": 16237483525,
+      "ledger_files": 21,
+      "same_source_scope": false,
+      "action": "COMPARE_SOURCE_FILES_NOT_AUTOMATICALLY_SKIP"
+    },
+    {
+      "repo_id": "sensenova/SenseNova-Loop-9B-GGUF",
+      "revision": "11c121055062d33647348cf236a8c543138b282e",
+      "files": 6,
+      "bytes": 19338124279,
+      "ledger_status": null,
+      "ledger_bytes": null,
+      "ledger_files": null,
+      "same_source_scope": false,
+      "action": "RIGHTS_AND_OWNER_PREFLIGHT_NO_DOWNLOAD"
+    },
+    {
+      "repo_id": "sensenova/SenseNova-Loop-9B-Preview",
+      "revision": "89d7970926e215f8da61726700cd026ccffbb6cb",
+      "files": 2,
+      "bytes": 26724,
+      "ledger_status": null,
+      "ledger_bytes": null,
+      "ledger_files": null,
+      "same_source_scope": false,
+      "action": "RIGHTS_AND_OWNER_PREFLIGHT_NO_DOWNLOAD"
+    },
+    {
+      "repo_id": "Zyphra/ZONOS3-Mini",
+      "revision": "2921b8821772b0bd10a04456863d21abf9d2f283",
+      "files": 24,
+      "bytes": 15345816226,
+      "ledger_status": "VERIFIED",
+      "ledger_bytes": 775728152,
+      "ledger_files": 66,
+      "same_source_scope": false,
+      "action": "COMPARE_SOURCE_FILES_NOT_AUTOMATICALLY_SKIP"
+    },
+    {
+      "repo_id": "Tongyi-MAI/Z-Image-Turbo",
+      "revision": "f332072aa78be7aecdf3ee76d5c247082da564a6",
+      "files": 21,
+      "bytes": 32848321404,
+      "ledger_status": null,
+      "ledger_bytes": null,
+      "ledger_files": null,
+      "same_source_scope": false,
+      "action": "RIGHTS_AND_OWNER_PREFLIGHT_NO_DOWNLOAD"
+    },
+    {
+      "repo_id": "Wan-AI/Wan2.2-TI2V-5B",
+      "revision": "921dbaf3f1674a56f47e83fb80a34bac8a8f203e",
+      "files": 16,
+      "bytes": 34201539556,
+      "ledger_status": null,
+      "ledger_bytes": null,
+      "ledger_files": null,
+      "same_source_scope": false,
+      "action": "RIGHTS_AND_OWNER_PREFLIGHT_NO_DOWNLOAD"
+    },
+    {
+      "repo_id": "microsoft/Fara1.5-27B",
+      "revision": "299c8406a6c6256d45ec200d1ac12b34c5599d9b",
+      "files": 22,
+      "bytes": 54743814229,
+      "ledger_status": null,
+      "ledger_bytes": null,
+      "ledger_files": null,
+      "same_source_scope": false,
+      "action": "RIGHTS_AND_OWNER_PREFLIGHT_NO_DOWNLOAD"
+    },
+    {
+      "repo_id": "tencent/Hy-Memory-30B-A3B",
+      "revision": "64a460a94d5498b7316fb02395c72d01c47a7347",
+      "files": 59,
+      "bytes": 60142913025,
+      "ledger_status": null,
+      "ledger_bytes": null,
+      "ledger_files": null,
+      "same_source_scope": false,
+      "action": "RIGHTS_AND_OWNER_PREFLIGHT_NO_DOWNLOAD"
+    },
+    {
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+      "revision": "84ab13688128c19d5ef10be430bc5de649b7823f",
+      "files": 32,
+      "bytes": 55586056799,
+      "ledger_status": null,
+      "ledger_bytes": null,
+      "ledger_files": null,
+      "same_source_scope": false,
+      "action": "RIGHTS_AND_OWNER_PREFLIGHT_NO_DOWNLOAD"
+    },
+    {
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "revision": "ab8d7bd81d03117501e4da60cccdff4c80f0eea0",
+      "files": 3,
+      "bytes": 53808326934,
+      "ledger_status": "VERIFIED",
+      "ledger_bytes": 17176692278,
+      "ledger_files": 4,
+      "same_source_scope": false,
+      "action": "COMPARE_SOURCE_FILES_NOT_AUTOMATICALLY_SKIP"
+    }
+  ],
+  "active_audit": [
+    {
+      "id": "orcarouter/Qwen3.8-27B-Uncensored",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "HOLD_GATED_OR_PRIVATE",
+      "approved": false
+    },
+    {
+      "id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "LiquidAI/LFM2.5-24B-A2B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "usezn/Galvanize-3",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "microsoft/Fara1.5-27B",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "Qwen/Qwen3-Coder-Next",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "tencent/Hy-Memory-30B-A3B",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "LiquidAI/LFM3-1.7B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "KlingTeam/LivePortrait",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "microsoft/VibeVoice-1.5B",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "OpenMOSS-Team/MOSS-TTS-v1.5",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "ResembleAI/chatterbox",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "Edge0/Audio8-TTS-Realistic-Air",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "black-forest-labs/flux-3-image-klein-base",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "black-forest-labs/FLUX.2-dev",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "briaai/Fibo-2.0-dev",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "ideogram-ai/ideogram-4-nf4",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "Lightricks/LTX-2.5",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "kandinskylab/Kandinsky-6.0-Lite-distill-5s-Diffusers",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "Qwen/Qwen-Image-2.1",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "Tongyi-MAI/Z-Image-Turbo",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "Wan-AI/Wan2.2-TI2V-5B",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "StephaneBah/AfroRadVoice-FR",
+      "kind": "dataset",
+      "selection": "conditional",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "CohereLabs/aya-vision-32b",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "meta-llama/Llama-4-Scout-17B-16E",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "allenai/Olmo-3-1125-32B",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "IFM/K2-Horizon-0.9B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "google/gemma-4-31B",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "ibm-granite/granite-switch-4.1-30b",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "LiquidAI/LFM3-Omni-2B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "mistralai/Mistral-Small-4-119B-2603",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "Nanbeige/Nanbeige4.3-33B",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "LiquidAI/LFM2.5-VL-3B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "LiquidAI/LFM2.5-VL-3B-DSpark",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "openai/gpt-oss-120b",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "Qwen/Qwen3.5-35B-A3B-Base",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "Qwen/Qwen3.8-27B",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "udgamlabs/Lilavati",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "udgamlabs/Lilavati-Checker",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "EPFLiGHT/Meditron3-70B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "google/medgemma-4b-it",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "boltz-community/boltz-2",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "EPFLiGHT/fully-open-meditron",
+      "kind": "dataset",
+      "selection": "select",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "EPFLiGHT/OLMo-2-32B-MeditronFO",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "facebook/esm2_t33_650M_UR50D",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "HuggingFaceBio/Carbon-X",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "IFM/SFT-Reasoning",
+      "kind": "dataset",
+      "selection": "conditional",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "OctoMed/OctoMed-32B",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "nvidia/Cosmos-Predict2-2B-Video2World",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "lerobot/pi0_base",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "lerobot/smolvla_base",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "microsoft/TRELLIS.2-4B",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "nvidia/GR00T-N1.6-3B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "speridlabs/idol",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "tencent/Hunyuan3D-2.1",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "laion/emotional-roleplay-finetuning-dataset",
+      "kind": "dataset",
+      "selection": "conditional",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "m-a-p/MERT-v2-FullSong",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "m-a-p/SheetSage2",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "m-a-p/YuE2-3B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "m-a-p/YuE2-Vae",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "nvidia/Granary-v2",
+      "kind": "dataset",
+      "selection": "conditional",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "nvidia/OpenCodeInstruct",
+      "kind": "dataset",
+      "selection": "select",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "nvidia/OpenMathInstruct-2",
+      "kind": "dataset",
+      "selection": "select",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "facebook/dinov3-vit7b16-pretrain-lvd1689m",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "facebook/dinov3-vith16plus-pretrain-lvd1689m",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "facebook/sam3",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "allenai/pixmo-cap",
+      "kind": "dataset",
+      "selection": "conditional",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "allenai/tulu-3-sft-mixture",
+      "kind": "dataset",
+      "selection": "conditional",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "answerdotai/ModernBERT-large",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "autogluon/chronos-2",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "BAAI/bge-m3",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "CohereLabs/aya_dataset",
+      "kind": "dataset",
+      "selection": "select",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-OCR-2",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "elyza/ELYZA-tasks-100",
+      "kind": "dataset",
+      "selection": "select",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "facebook/vjepa2-vitg-fpc64-384",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "google/siglip2-base-patch16-224",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "GSAI-ML/iLLaDA-8B-Base",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "HuggingFaceFW/fineweb-edu",
+      "kind": "dataset",
+      "selection": "conditional",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "HuggingFaceH4/ultrafeedback_binarized",
+      "kind": "dataset",
+      "selection": "select",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "ibm-granite/granite-speech-5.0-2b",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "ibm-granite/granite-speech-5.0-470m-turboctc",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "lerobot/aloha_sim_insertion_human",
+      "kind": "dataset",
+      "selection": "select",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "lightonai/LightOnOCR-3-0.8B",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "LiquidAI/d1-omni-600M",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "LiquidAI/LFM3-1.7B-Base",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "llm-jp/magpie-sft-v1.0",
+      "kind": "dataset",
+      "selection": "select",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "openai/whisper-large-v3-turbo",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "PaddlePaddle/PaddleOCR-VL-1.5",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "Qwen/Qwen3-ASR-1.7B",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "Qwen/Qwen3-Embedding-0.6B",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "Qwen/Qwen3-Reranker-0.6B",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "Qwen/Qwen3-VL-2B-Instruct",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "Qwen/Qwen3.5-0.8B",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "RWKV/RWKV7-7.2B-20260805",
+      "kind": "model",
+      "selection": "select",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "tencent/Hy-SimulMT-30B-A3B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "nvidia/Nemotron-Cascade-2-30B-A3B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "nvidia/Nemotron-Cascade-2-RL-data",
+      "kind": "dataset",
+      "selection": "conditional",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "nvidia/Nemotron-Cascade-2-SFT-Data",
+      "kind": "dataset",
+      "selection": "conditional",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "Hcompany/Holo4-27B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "WhissleAI/steer-tts",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "maya-research/maya2-native",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "Hcompany/trajectories",
+      "kind": "dataset",
+      "selection": "conditional",
+      "parameter_gate": "NOT_APPLICABLE_TO_DATASET",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "fishaudio/drama-3",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "PrentisAI/GroundGUI-8B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "ausboss/Qwen-Image-2.1-Consistency-LoRA",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "Hcompany/Holotron4-30B-A3B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "LiquidAI/LFM2.5-24B-A2B-DSpark",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "pfnet/plamo-3-translate-31b",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "pfnet/plamo-3-translate-0.8b",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "nvidia/Cosmos3-Nano-Sim-Bimanual",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "PrunaAI/P-H3-Image",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "nvidia/Cosmos3-Nano-Sim-Auto",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "gradium/phonon-31m-en",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "gradium/phonon-40m-multilingual",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "kakaocorp/kanana-2-v-decide-3b-2611",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "qvac/BotPsy-0.8B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "ibm-granite/granite-timeseries-ttm-r3",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "Zyphra/ZONOS3-Mini",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "robbyant/lingbot-touch-tiny",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "nvidia/Alpamayo2-Edge",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "ACE-Step/acestep-v15-xl-turbo",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "tencent/Qwen3.8-27B-DSpine-b16",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "nvidia/Nemotron-3-Diarization",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "nvidia/RFD4-Proteina",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "ibm-granite/granite-4.1-3b-llmon-preview",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "perplexity-ai/pplx-decider-flash-v1.3",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "nvidia/Kumo-Relational",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "nvidia/Kumo-Tabular",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "nvidia/Kumo-Anomaly",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "meta-models/Muse-Glimmer-30B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "meta-models/Muse-Glimmer-30B-assistant",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "nvidia/Ising-Decoder-ColorCode-1-Fast",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "nvidia/Ising-Decoder-SurfaceCode-1-Fast",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "higurashi-ai/Haru-4B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "runwayml/praxis-1-droid",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "XiaomiRobotics/Xiaomi-Robotics-U0-4B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "GroundingPI/GroundingPI",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "IFM/PAN2",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "KRAFTON/Raon-1-nano",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "abel-lab/Simons-297M",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "osunlp/ARLoop-1.2B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "KittenML/kitten-tts-2-mini",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "n4ze3m/tiny-voca",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": "VERIFIED",
+      "approved": false
+    },
+    {
+      "id": "sensenova/SenseNova-Loop-9B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "Reson8/Rumble-2-Flash",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "RadixArk/DaisyRose-27B",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    },
+    {
+      "id": "harness-hub/Qwen3.8-27B-pi-adapted",
+      "kind": "model",
+      "selection": "conditional",
+      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "reported_acquisition": null,
+      "approved": false
+    }
+  ],
+  "new_orca_research_from_prior": [
+    {
+      "id": "orcarouter/LFM3-1.7B-abliterated",
+      "priority": "P0_RIGHTS_AND_CHECKPOINT_AUDIT",
+      "access": "GATED",
+      "reported_total_parameters": 1728800000,
+      "source": "https://huggingface.co/orcarouter/LFM3-1.7B-abliterated",
+      "independent_rights_verified": false
+    },
+    {
+      "id": "orcarouter/Nex-N2.5-mini-Uncensored",
+      "priority": "P1_SOURCE_RIGHTS_AND_QUALITY_AUDIT",
+      "access": "GATED",
+      "reported_total_parameters": 35100000000,
+      "source": "https://huggingface.co/orcarouter/Nex-N2.5-mini-Uncensored",
+      "independent_rights_verified": false
+    },
+    {
+      "id": "orcarouter/Flint-abliterated-GGUF",
+      "priority": "P2_UNIQUE_LEARNING_VERIFICATION",
+      "access": "GATED",
+      "reported_total_parameters": 39785300000,
+      "source": "https://huggingface.co/orcarouter/Flint-abliterated-GGUF",
+      "independent_rights_verified": false
+    },
+    {
+      "id": "orcarouter/OrcaCyber-Nano-1.0",
+      "priority": "HOLD_TOTAL_AND_DISTINCT_TRAINING_UNVERIFIED",
+      "access": "GATED",
+      "reported_total_parameters": null,
+      "source": "https://huggingface.co/orcarouter/OrcaCyber-Nano-1.0",
+      "independent_rights_verified": false
+    },
+    {
+      "id": "orcarouter/Ripple-65B-abliterated-GGUF",
+      "priority": "P3_BF16_AND_COST_HOLD",
+      "access": "GATED",
+      "reported_total_parameters": 65000000000,
+      "source": "https://huggingface.co/orcarouter/Ripple-65B-abliterated-GGUF",
+      "independent_rights_verified": false
+    },
+    {
+      "id": "orcarouter/Gemma-4-26B-A4B-it-Uncensored-FP8",
+      "priority": "P2_PARENT_LICENSE_HOLD",
+      "access": "GATED",
+      "reported_total_parameters": 25805900000,
+      "source": "https://huggingface.co/orcarouter/Gemma-4-26B-A4B-it-Uncensored-FP8",
+      "independent_rights_verified": false
+    },
+    {
+      "id": "orcarouter/OrcaSAQ-2-Cyber-27B-Uncensored-GGUF",
+      "priority": "DUPLICATE_TRAINING_DO_NOT_ADD_AS_MODEL",
+      "access": "GATED",
+      "reported_total_parameters": 27781400000,
+      "source": "https://huggingface.co/orcarouter/OrcaSAQ-2-Cyber-27B-Uncensored-GGUF",
+      "independent_rights_verified": false
+    },
+    {
+      "id": "orcarouter/LFM3-1.7B-abliterated-GGUF",
+      "priority": "DUPLICATE_TRAINING_DO_NOT_ADD_AS_MODEL",
+      "access": "GATED",
+      "reported_total_parameters": 1728800000,
+      "source": "https://huggingface.co/orcarouter/LFM3-1.7B-abliterated-GGUF",
+      "independent_rights_verified": false
+    },
+    {
+      "id": "orcarouter/DeepSeek-V4.1-Flash-1017-abliterated-GGUF",
+      "priority": "HOLD_150B_EXCEPTION_UNVERIFIED",
+      "access": "GATED",
+      "reported_total_parameters": 748000000000,
+      "source": "https://huggingface.co/orcarouter/DeepSeek-V4.1-Flash-1017-abliterated-GGUF",
+      "independent_rights_verified": false
+    },
+    {
+      "id": "orcarouter/Qwen3.8-Flash-Next-Uncensored-GGUF",
+      "priority": "HOLD_150B_EXCEPTION_UNVERIFIED",
+      "access": "GATED",
+      "reported_total_parameters": 180000000000,
+      "source": "https://huggingface.co/orcarouter/Qwen3.8-Flash-Next-Uncensored-GGUF",
+      "independent_rights_verified": false
+    },
+    {
+      "id": "orcarouter/orcacyber-hy4",
+      "priority": "MONITOR_NO_WEIGHT_MANIFEST",
+      "access": "CLOUD_RESEARCH_TIER",
+      "reported_total_parameters": null,
+      "source": "https://www.orcarouter.ai/models/orca/orcacyber-hy4",
+      "independent_rights_verified": false
+    }
+  ],
+  "caveats": [
+    "Existing 61 VERIFIED are execution-ledger reports, not independent D-drive rehash or offline restoration",
+    "Current 15-source proposal is historical v50 and does not include v51/v52 additions",
+    "Exa returned HTTP402, cannot claim comprehensive Exa coverage",
+    "150B policy is current quantified RAM equivalence exception, not unconditional permission",
+    "Gated authorization and per-act license remain unresolved",
+    "Approved queue remains empty; no model weights downloaded by this research"
+  ],
+  "approved": false,
+  "download_enabled": false
+}
