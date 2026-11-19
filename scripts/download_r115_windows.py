@@ -13,6 +13,8 @@ Usage:
   py -3 scripts/download_r115_windows.py --manifest queues/proposed-v52-r125-ledger61-delta-next15.json --dry-run
   py -3 scripts/download_r115_windows.py --manifest queues/proposed-v52-r125-ledger61-delta-next15.json --execute --approval-file "owner-approved-r125.json"
   py -3 scripts/download_r115_windows.py --execute --recover-prior
+  py -3 scripts/download_r115_windows.py --manifest queues/proposed-v54-r128-first-four-delta-source.json --dry-run
+  py -3 scripts/download_r115_windows.py --manifest queues/proposed-v54-r128-first-four-delta-source.json --execute --approval-file owner-approved-r128.json
   py -3 scripts/download_r115_windows.py --manifest queues/proposed-v53-r126-aion-bf16-first-public-source.json --dry-run
 
 Transfers require BOTH an explicit --execute invocation on the owner's Windows
@@ -78,6 +80,8 @@ def validate_manifest(manifest: dict) -> list[dict]:
             (15, 15, {"apache-2.0", "mit", "cc-by-sa-4.0"}),
         "R126_V53_MICROSOFT_AION_ONE_ORIGINAL_SOURCE_NO_AUTO_DOWNLOAD":
             (1, 1, {"mit"}),
+        "R128_V54_P0_FIRST_FOUR_UNAPPROVED_PUBLISHER_SOURCES":
+            (4, 4, {"cc-by-sa-4.0", "apache-2.0", "mit"}),
     }
     if manifest.get("kind") not in profiles:
         raise ValueError("Unsupported fixed-publisher source manifest")
@@ -223,6 +227,27 @@ def validate_manifest(manifest: dict) -> list[dict]:
                 or manifest.get("file_count") != 11
                 or manifest.get("publisher_sha256_file_count") != 2):
             raise ValueError("R126 Aion source exact publisher manifest drift")
+    if manifest["kind"] == "R128_V54_P0_FIRST_FOUR_UNAPPROVED_PUBLISHER_SOURCES":
+        expected_ids = (
+            "elyza/ELYZA-tasks-100", "CohereLabs/aya_dataset",
+            "Reson8/Rumble-2-Flash", "microsoft/Aion-1.0-Instruct-2.3B"
+        )
+        records = sorted(output, key=lambda item: item["order"])
+        if tuple(x["source_repo_id"] for x in records) != expected_ids:
+            raise ValueError("R128 source identities or ordered priority drift")
+        if tuple(x.get("repository_type") for x in records) != (
+                "dataset", "dataset", "model", "model"):
+            raise ValueError("R128 model/dataset Hub namespace drift")
+        nfiles = sum(len(x["files"]) for x in output)
+        nshas = sum(sum(f.get("sha256") is not None for f in x["files"]) for x in output)
+        nbytes = sum(x["source_bytes"] for x in output)
+        if (nfiles, nshas, nbytes) != (101, 9, 6_127_042_272):
+            raise ValueError("R128 immutable first four source totals drift")
+        if (manifest.get("file_count"),
+            manifest.get("publisher_sha256_file_count"),
+            manifest.get("total_candidate_source_bytes")) != (nfiles, nshas, nbytes):
+            raise ValueError("R128 manifest header/file set mismatch")
+
     return sorted(output, key=lambda item: item["order"])
 
 
