@@ -65,8 +65,16 @@ def approval_for(task, approval_path=None):
             return None
         if n <= 0:
             return None
-        paths.append((p, n))
-    if not paths or len(set(paths)) != len(paths):
+        sha = f.get("sha256") or f.get("publisher_lfs_sha256") or f.get("publisher_sha256") or f.get("source_sha256") or f.get("lfs_sha256")
+        blob = f.get("git_blob_sha1") or f.get("publisher_git_blob_sha1") or f.get("git_blob_id") or f.get("blobId") or f.get("sha1")
+        if isinstance(sha, str) and re.fullmatch(r"[0-9a-f]{64}", sha):
+            fingerprint = ("sha256", sha)
+        elif isinstance(blob, str) and re.fullmatch(r"[0-9a-f]{40}", blob):
+            fingerprint = ("git-blob-sha1", blob)
+        else:
+            return None
+        paths.append((p, n, fingerprint))
+    if not paths or len({p for p, _, _ in paths}) != len(paths):
         return None
     try:
         with open(approval_path or APPROVED_QUEUE, encoding="utf-8") as stream:
@@ -102,7 +110,13 @@ def approval_for(task, approval_path=None):
             if not ((isinstance(sha, str) and re.fullmatch(r"[0-9a-f]{64}", sha))
                     or (isinstance(blob, str) and re.fullmatch(r"[0-9a-f]{40}", blob))):
                 break
-            seen.append((p, n))
+            if isinstance(sha, str) and re.fullmatch(r"[0-9a-f]{64}", sha):
+                fingerprint = ("sha256", sha)
+            elif isinstance(blob, str) and re.fullmatch(r"[0-9a-f]{40}", blob):
+                fingerprint = ("git-blob-sha1", blob)
+            else:
+                break
+            seen.append((p, n, fingerprint))
         if len(seen) != len(paths) or sorted(seen) != sorted(paths):
             continue
         return entry
