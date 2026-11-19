@@ -1,5 +1,14 @@
 # エージェント作業規約
 
+## R117 現行v48・所有者Dドライブの取得前STOPと既存原本の重複回避
+
+**唯一の正本は `main` の `catalog/CURRENT.json` → v48（201登録・154有効）**。最新[統合判断](docs/strategy/117-v48-ledger-aware-priority-and-acquisition-policy-2026-11-19.md)／[全154件機械可読台帳](catalog/decisions/2026-11-19-r117-v48-reported-acquisition-and-next-originals.json)。2026-11-19の[取得実行台帳](catalog/execution/2026-11-19-acquisition-ledger.json)には53モデル／579ファイル／270,835,576,267byteがPublisherハッシュ一致として**報告**されている（同日のR116冒頭22件は旧台帳の履歴値）。ただし**この場で所有者Windows Dの現物ハッシュ・完全オフライン推論を再検証していない**。過去ログによるVERIFIEDは、本人の行為別ライセンス審査と正式`queues/approved.json`承認の代わりにはならない。承認キューは引き続き0件。
+
+R115の16原本候補のうち10件が取得前GO研究対象。その10件中7件は過去取得ログと**原本repo・40桁revision・ファイル数・byte全一致**であり、まず現物を再ハッシュし**再ダウンロードを回避**。別版の未完了3件は**ZONOS3-Mini原本とCodec 15.346GB／Interpretic BF16原本55.586GB／0bserverx RVN-F16 GGUF53.808GB**（合計124.740GB）。旧ZONOS3の小型ソース、Interpretic Q4、RVN Q4をこれらの高精度sourceの実取得と混同しない。旧重みは破壊・削除しない。R115の保留6件も有効選定のまま。次の候補は[Raon-1-nano+Simons-297Mの原本固定](manifests/drafts/v45-2026-11-18-raon-simons-original.candidate.json)23files／8,371,078,617byteで、本人の権利・モデルコード/学習済み依存・D現物容量が未完了。
+
+**安全性修正**：[Windows取得器](scripts/download_r115_windows.py)の`--execute`は`--approval-file`が**必須**。このファイルの個別`source_scope_sha256`と明示的な本人承認、権利全文、Dドライブ確認が一致しない場合は通信前に拒否する。`policies/limits.json`の`require_user_approved_manifest=true`を緩和しない。一般的なチャットの取得意欲や出版社`license:apache-2.0`タグだけで承認済みにしない。最大ファイルの一時領域を2コピー相当（最低2GB）に拡大したが、外部Codec/推論runtimeを含む実容量保証ではない。テストは追加済み・このセッションでの実行結果は未取得。Windows所有者環境の現物・権利・ネットワーク実行はここから行わない。原本・派生形式・規制ストレス仮説と実際に確認された法制度を混同しない。**調査とリポジトリ更新はmainのみ、新たな研究ブランチ不要**。
+
+
 ## 現行v48・R115（2026-11-19）：取得実行報告を正式な承認と混同せず高精度保存原本を確定
 
 **唯一の正式選定正本**：[CURRENT](catalog/CURRENT.json)→**v48・201登録／154有効（SELECT53／CONDITIONAL101）**。最新の[R115 16原本source提案](queues/proposed-v48-r115-master-sources-16.json)は**237ファイル・102 publisher SHA参照・301,848,275,578 byte**（metadata GO10・HOLD6。ただしGOはダウンロード承認ではない）。[旧R113 15原本source候補](queues/proposed-v48-r113-source-pinned-15.json)は履歴として保持。[R115判断と現状](docs/strategy/115-v48-reconcile-acquired-and-select-uncensored-masters-2026-11-19.md)／[監査JSON](catalog/decisions/2026-11-19-r115-post-acquisition-master-selection.json)／[R114物理取得報告ledger](catalog/execution/2026-11-19-acquisition-ledger.json)。
