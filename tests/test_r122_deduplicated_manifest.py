@@ -37,9 +37,9 @@ class R122Tests(unittest.TestCase):
         self.assertEqual(len(result), 15)
         self.assertEqual(len({x["source_repo_id"] for x in result}), 15)
         self.assertEqual(len([x for x in result if x["repository_type"] == "dataset"]), 2)
-        self.assertEqual(sum(len(x["files"]) for x in result), 333)
+        self.assertEqual(sum(len(x["files"]) for x in result), 332)
         self.assertEqual(sum(sum(f.get("sha256") is not None for f in x["files"]) for x in result), 135)
-        self.assertEqual(sum(x["source_bytes"] for x in result), 374701290840)
+        self.assertEqual(sum(x["source_bytes"] for x in result), 374701109177)
 
     def test_four_exact_duplicate_scopes_removed(self):
         removed = self.d["source_deduplication_evidence"]
@@ -129,6 +129,23 @@ class R122Tests(unittest.TestCase):
         wrong["entries"][0]["license_metadata"] = "unknown"
         with self.assertRaises(ValueError):
             module.validate_manifest(wrong)
+
+    def test_ntfs_incompatible_source_file_excluded_but_core_preserved(self):
+        elyza = next(x for x in self.d["entries"] if x["source_repo_id"] == "elyza/ELYZA-tasks-100")
+        filenames = {x["path"] for x in elyza["files"]}
+        self.assertIn("test.csv", filenames)
+        self.assertNotIn("baseline/preds/anthropic.claude-v2:1.csv", filenames)
+        self.assertEqual(len(self.d["nonportable_source_exclusions"]), 1)
+        self.assertEqual(self.d["nonportable_source_exclusions"][0]["bytes"], 181663)
+        self.assertEqual(self.d["source_union"]["windows_unrepresentable_publisher_file_bytes"], 181663)
+        with self.assertRaises(ValueError):
+            module.validate_relpath("baseline/preds/anthropic.claude-v2:1.csv")
+        with self.assertRaises(ValueError):
+            module.validate_relpath("unsafe/CON.txt")
+        with self.assertRaises(ValueError):
+            module.validate_relpath("bad/trailing.")
+        with self.assertRaises(ValueError):
+            module.validate_relpath("bad/path?.txt")
 
     def test_no_dangerous_acquisition_approval(self):
         self.assertFalse(self.d["authorizations"]["user_exact_manifest_approved"])
