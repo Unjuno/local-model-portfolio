@@ -82,6 +82,22 @@ class SourceGateTests(unittest.TestCase):
         a["files"][0].pop("sha256")
         self.assertIsNone(self._approve(t, a))
 
+    def test_approval_hash_mismatch_rejected(self):
+        t = task()
+        a = approval(t)
+        a["files"][0]["sha256"] = "c" * 64
+        self.assertIsNone(self._approve(t, a))
+
+    def test_candidate_missing_publisher_hash_rejected(self):
+        t = task()
+        t["files"][0].pop("sha256")
+        self.assertIsNone(self._approve(t, approval(t)))
+
+    def test_duplicate_file_path_rejected(self):
+        t = task()
+        t["files"].append(dict(t["files"][0]))
+        self.assertIsNone(self._approve(t, approval(t)))
+
     def test_path_traversal_rejected(self):
         t = task("../private/secret")
         self.assertIsNone(self._approve(t, approval(t)))
