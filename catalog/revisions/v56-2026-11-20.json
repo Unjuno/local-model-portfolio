@@ -1,0 +1,333 @@
+{
+  "schema_version": 1,
+  "revision_id": "v56-20261120",
+  "previous_revision_id": "v55-20261120",
+  "decision_date": "2026-11-20",
+  "target_branch": "main",
+  "kind": "ADD_TWO_ORIGINAL_DISTINCT_UNCENSORED_TRAINED_OUTCOMES_CONDITIONAL_ONLY",
+  "previous_asset_count": 209,
+  "previous_active_count": 162,
+  "additions": [
+    {
+      "position": 210,
+      "asset_kind": "model",
+      "repo_id": "FrostWolfAI/LFM3-1.7B-abliterated",
+      "url": "https://huggingface.co/FrostWolfAI/LFM3-1.7B-abliterated",
+      "group": "小型LFM3・ARA無検閲独立BF16原本",
+      "risk_tier": "R0",
+      "portfolio_decision": "conditional",
+      "reason_selected": "LFM3 1.7288B BF16のHeretic v2 ARA方向編集済み原本。親重みと同じbyte長でもSHA256が異なり、既存Liquid親モデルとの比較可能性を保存。",
+      "quality_positive": "13ファイル3,475,637,066byte／2公開LFS SHA。作者はreproduce.jsonに重みSHA、環境、検索seedを明示。",
+      "quality_negative": "拒否率1/100は出版社選別trialの数値。custom code/Windows ABI未評価。LFM Open License v1.0商用年商>=10M USD制限、本人権利未確認。",
+      "risk_and_alternative_assessment": "Preserve this distinct learned posttrained outcome only once at publisher original precision. Future publisher restriction is a scenario, no model-specific probability. No acquisition approval.",
+      "evidence_date": "2026-11-20",
+      "evidence_kind": "FIRST_PARTY_PINNED_HF_ALL_FILES_SHA256_AND_GIT_BLOB_PARENT_COMPARISON",
+      "evidence_urls": [
+        "https://huggingface.co/FrostWolfAI/LFM3-1.7B-abliterated",
+        "https://huggingface.co/api/models/FrostWolfAI/LFM3-1.7B-abliterated/tree/fc0f808655210ef891515bad9b5195b03d89f11b?recursive=true"
+      ],
+      "observed_access": "Public, gated:false, personal rights and local HDD not verified",
+      "license_metadata": "LFM Open License v1.0 §5 (other; user-specific commercial rights not verified)",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "fc0f808655210ef891515bad9b5195b03d89f11b",
+      "upstream_all_files_bytes_observed": 3475637066,
+      "upstream_file_count_observed": 13,
+      "upstream_lfs_sha256_count_observed": 2,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 13,
+      "candidate_selected_source_file_bytes": 3475637066,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "sha256": null,
+          "git_blob_sha1": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 12129,
+          "sha256": null,
+          "git_blob_sha1": "d0747b8b5fc99eaecfe02a04eefcff75eb181334",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 1552,
+          "sha256": null,
+          "git_blob_sha1": "f628859affad141921734e6bf0f5b39505711f66",
+          "local_sha_verified": false
+        },
+        {
+          "path": "configuration_lfm3.py",
+          "bytes": 6113,
+          "sha256": null,
+          "git_blob_sha1": "a3cc0e726e8f4656f8468df5c8445f26e6dc8464",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 328,
+          "sha256": null,
+          "git_blob_sha1": "828e9a1ac7789d8b38af0dfe573ab6362598745b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "lfm3_conv.py",
+          "bytes": 8532,
+          "sha256": null,
+          "git_blob_sha1": "a1b67afdb605452f5a99751862863d5460a1fa69",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 10574,
+          "sha256": null,
+          "git_blob_sha1": "25e731c697c4fe4c52ee654cedf7106a827748d2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 3457635448,
+          "sha256": "4064371dcfed8660f03d688dd7688aad48cce630fd3117ec30572a976352f165",
+          "git_blob_sha1": "340a09b34dd47d6f03fea4f04588c81bcf49e473",
+          "local_sha_verified": false
+        },
+        {
+          "path": "modeling_lfm3.py",
+          "bytes": 42359,
+          "sha256": null,
+          "git_blob_sha1": "0ccffc7ed179c2e3aaa19ab93bba735abb1d124d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 3735,
+          "sha256": null,
+          "git_blob_sha1": "bfcae66f7428099fa16e2a1c9dcca5b3ed333aad",
+          "local_sha_verified": false
+        },
+        {
+          "path": "reproduce/reproduce.json",
+          "bytes": 4008,
+          "sha256": null,
+          "git_blob_sha1": "d2e0f2ae2c9ad6d6d0bef8e33788f3202ed260af",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1923,
+          "sha256": null,
+          "git_blob_sha1": "a6324b2d92e91d34b719235ab874732119a6e5e3",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 17908795,
+          "sha256": "8f7ed4182b60c4ade9645e2f98b8f2141961bfd71c783e15daaa89e95ae66338",
+          "git_blob_sha1": "3d1e9312d2f778db5b29fae49da0bba3cf2ed18c",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r130-2026-11-20-frostwolf-and-phala-originals-fixed.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 1728801536,
+        "evidence_kind": "OFFICIAL_HF_BF16_SAFETENSORS_TOTAL",
+        "review_date": "2026-11-20",
+        "fully_licensed": false
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 210,
+        "category": "PUBLIC_DISTINCT_SAFETY_CONTROL_EDITED_TRAINED_STATE",
+        "scenario_status": "HYPOTHETICAL_UNQUANTIFIED"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "chat_template.jinja",
+          "config.json",
+          "configuration_lfm3.py",
+          "generation_config.json",
+          "lfm3_conv.py",
+          "LICENSE",
+          "model.safetensors",
+          "modeling_lfm3.py",
+          "README.md",
+          "reproduce/reproduce.json",
+          "tokenizer_config.json",
+          "tokenizer.json"
+        ],
+        "trained_origin": "Heretic v2 ARA edited standalone full LFM3 checkpoint",
+        "weight_sha256": "4064371dcfed8660f03d688dd7688aad48cce630fd3117ec30572a976352f165",
+        "original_parent": "LiquidAI/LFM3-1.7B",
+        "original_parent_revision": "1da06bec6a819da10b54c67e5c90972b46d81871",
+        "original_parent_weight_sha256": "135922caef64e81e52af88ede8b7c3ddaa9d6da220a9737fb3065275dbfb4330",
+        "custom_code_untrusted": true,
+        "source_repo_id": "FrostWolfAI/LFM3-1.7B-abliterated",
+        "owner_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 3475637066,
+        "source_candidate_selected_bytes": 3475637066,
+        "owner_hdd_verified": false,
+        "actual_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "position": 211,
+      "asset_kind": "model",
+      "repo_id": "PhalaCloud/Qwen3.8-27B-Uncensored-LoRA",
+      "url": "https://huggingface.co/PhalaCloud/Qwen3.8-27B-Uncensored-LoRA",
+      "group": "小容量Qwen3.8-27B用無検閲rank3 LoRA原本",
+      "risk_tier": "R0",
+      "portfolio_decision": "conditional",
+      "reason_selected": "出版社独自rank3 PEFT編集Adapter。adapter_configの親Qwen SHAは現行カタログ参照の375618...と一致。巨大なフルマージの重複保存を避ける。",
+      "quality_positive": "7ファイル13,034,727byte／LFS SHA1件。作者のSHA256SUMS確認。H200 FP8基盤での公開比較。",
+      "quality_negative": "親Qwen重量は61件取得台帳外。BF16親での実行適合性未測定、datasetにStanford Alpaca由来CC BY-NC制限、再配布/商用は個別確認。",
+      "risk_and_alternative_assessment": "Preserve this distinct learned posttrained outcome only once at publisher original precision. Future publisher restriction is a scenario, no model-specific probability. No acquisition approval.",
+      "evidence_date": "2026-11-20",
+      "evidence_kind": "FIRST_PARTY_PINNED_HF_ALL_FILES_SHA256_AND_GIT_BLOB_PARENT_COMPARISON",
+      "evidence_urls": [
+        "https://huggingface.co/PhalaCloud/Qwen3.8-27B-Uncensored-LoRA",
+        "https://huggingface.co/api/models/PhalaCloud/Qwen3.8-27B-Uncensored-LoRA/tree/588752bc181b999247f0e7df578bbc55d2b920e9?recursive=true"
+      ],
+      "observed_access": "Public, gated:false, personal rights and local HDD not verified",
+      "license_metadata": "Apache-2.0 adapter only; upstream harmless_alpaca CC BY-NC 4.0 rights not presumed",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "588752bc181b999247f0e7df578bbc55d2b920e9",
+      "upstream_all_files_bytes_observed": 13034727,
+      "upstream_file_count_observed": 7,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 7,
+      "candidate_selected_source_file_bytes": 13034727,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": null,
+          "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "adapter_config.json",
+          "bytes": 1148,
+          "sha256": null,
+          "git_blob_sha1": "256fb82e697527730f88fe2be1497e592e823e75",
+          "local_sha_verified": false
+        },
+        {
+          "path": "adapter_model.safetensors",
+          "bytes": 13014120,
+          "sha256": "1abf13b2191c9973a4dc4d978448512d3ce2efabfd1e671edd5956b6aebfa5ac",
+          "git_blob_sha1": "118f0c3a2537d306cd344ec6e9146dcc3f1374ec",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11358,
+          "sha256": null,
+          "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 747,
+          "sha256": null,
+          "git_blob_sha1": "66eb8f2843e4ecedebcb68718dab3c53c3f5a014",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 5657,
+          "sha256": null,
+          "git_blob_sha1": "fca74d03bb7613fff0bf7ca91630e02f2a3189ab",
+          "local_sha_verified": false
+        },
+        {
+          "path": "SHA256SUMS",
+          "bytes": 178,
+          "sha256": null,
+          "git_blob_sha1": "45a010c8a65bee3a64fea938c024427f3055c478",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r130-2026-11-20-frostwolf-and-phala-originals-fixed.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": null,
+        "parent_serialized_elements": 27781427952,
+        "adapter_parameters_exact": null,
+        "conservative_parent_plus_adapter_upper": 27885540912,
+        "upper_bound_based_on_min_1bit_per_weight": true,
+        "parent_revision_explicit": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
+        "evidence_kind": "OFFICIAL_PARENT_COUNT_AND_ADAPTER_FILE_BYTE_BOUND",
+        "review_date": "2026-11-20",
+        "fully_licensed": false
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 211,
+        "category": "PUBLIC_DISTINCT_SAFETY_CONTROL_EDITED_TRAINED_STATE",
+        "scenario_status": "HYPOTHETICAL_UNQUANTIFIED"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "adapter_config.json",
+          "adapter_model.safetensors",
+          "LICENSE",
+          "NOTICE",
+          "README.md",
+          "SHA256SUMS"
+        ],
+        "trained_origin": "Heretic v1.3 BF16 PEFT adapter",
+        "model_weight_sha256": "1abf13b2191c9973a4dc4d978448512d3ce2efabfd1e671edd5956b6aebfa5ac",
+        "parent_repo": "Qwen/Qwen3.8-27B",
+        "training_parent_revision": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
+        "publisher_benchmark_parent_fp8_revision": "017b9c7af6b5689d5dd426a76e0bc077eb5ca20a",
+        "parent_local_files_verified": false,
+        "peft_runtime_unverified": true,
+        "upstream_dataset_legal_acts_unverified": true,
+        "source_repo_id": "PhalaCloud/Qwen3.8-27B-Uncensored-LoRA",
+        "owner_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 13034727,
+        "source_candidate_selected_bytes": 13034727,
+        "owner_hdd_verified": false,
+        "actual_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    }
+  ],
+  "added_assets": 2,
+  "removed_assets": 0,
+  "changed_prior_decisions": 0,
+  "source_manifest": "manifests/drafts/r130-2026-11-20-frostwolf-and-phala-originals-fixed.candidate.json",
+  "publisher_source_files": 20,
+  "publisher_source_bytes": 3488671793,
+  "lfs_sha256_count": 3,
+  "download_authorizations_added": 0,
+  "weights_acquired": 0,
+  "owner_act_rights_unverified": true
+}
