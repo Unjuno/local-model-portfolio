@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "decision_id": "R115-V48-2026-11-19",
+  "review_date_jst": "2026-11-19",
+  "kind": "POST_ACQUISITION_RECONCILIATION_AND_NEXT_ARCHIVAL_MASTERS_NONEXECUTABLE",
+  "status": "RESEARCH_DECISION_ONLY_NO_NEW_ACQUISITION_APPROVAL",
+  "baseline": {
+    "catalog_revision": "v48-20261118",
+    "catalog_path": "catalog/effective-portfolio-2026-11-18-v48.json",
+    "registered": 201,
+    "active": 154,
+    "select": 53,
+    "conditional": 101,
+    "approved_queue_path": "queues/approved.json",
+    "approved_queue_entries": 0
+  },
+  "claim_scope": {
+    "publisher_metadata": "Direct publisher model card, fixed source file lists and immutable revisions",
+    "local_acquisition": "An existing GitHub repository ledger reporting file verification; not an independently re-read disk inventory",
+    "actual_device_mountpoint_and_ownership_verified_in_this_review": false,
+    "current_usable_free_space_verified_in_this_review": false,
+    "offline_runtime_verified_in_this_review": false
+  },
+  "observed_report": {
+    "path": "catalog/execution/2026-11-19-acquisition-ledger.json",
+    "report": "docs/strategy/114-v48-execution-acquisition-results-2026-11-19.md",
+    "generated_at_utc": "2026-11-19T06:01:37.127262+00:00",
+    "models_recorded": 23,
+    "models_reported_verified": 22,
+    "models_reported_held": 1,
+    "files_reported_verified": 227,
+    "source_bytes_reported_verified": 162325501646,
+    "min_reported_free_bytes": 2818771451904,
+    "minimum_required_free_bytes": 200000000000,
+    "recorded_hash_comparisons": {
+      "sha256_lfs": 68,
+      "git_blob_sha1": 159,
+      "size_only": 0
+    },
+    "selected_15_queue": {
+      "path": "queues/proposed-v48-r113-source-pinned-15.json",
+      "models": 15,
+      "logical_files": 187,
+      "publisher_source_bytes": 212023095122,
+      "reported_verified_models": 14,
+      "reported_verified_source_bytes": 156437028892,
+      "gated_held_models": [
+        "orcarouter/Qwen3.8-27B-Uncensored"
+      ]
+    },
+    "additional_8_outside_queue": {
+      "models": 8,
+      "bytes": 5888472754,
+      "items": [
+        {
+          "repo_id": "Qwen/Qwen3.5-0.8B",
+          "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+          "reported_verified_files": 13,
+          "reported_source_bytes": 1769980465,
+          "license_label": "apache-2.0",
+          "reported_verification_methods": {
+            "git-blob-sha1-vs-publisher": 11,
+            "sha256-vs-publisher": 2
+          }
+        },
+        {
+          "repo_id": "lightonai/LightOnOCR-3-0.8B",
+          "revision": "36d8636925327c671bd8e479c517a004f7566bd9",
+          "reported_verified_files": 15,
+          "reported_source_bytes": 1737771835,
+          "license_label": "apache-2.0",
+          "reported_verification_methods": {
+            "git-blob-sha1-vs-publisher": 12,
+            "sha256-vs-publisher": 3
+          }
+        },
+        {
+          "repo_id": "openai/whisper-large-v3-turbo",
+          "revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+          "reported_verified_files": 13,
+          "reported_source_bytes": 1622466054,
+          "license_label": "mit",
+          "reported_verification_methods": {
+            "git-blob-sha1-vs-publisher": 12,
+            "sha256-vs-publisher": 1
+          }
+        },
+        {
+          "repo_id": "nvidia/Kumo-Anomaly",
+          "revision": "369ccba38a105736c6c9e4b5788a330c7e22112e",
+          "reported_verified_files": 2,
+          "reported_source_bytes": 29607656,
+          "license_label": "apache-2.0",
+          "reported_verification_methods": {
+            "git-blob-sha1-vs-publisher": 1,
+            "sha256-vs-publisher": 1
+          }
+        },
+        {
+          "repo_id": "gradium/phonon-31m-en",
+          "revision": "8f7a37c94a4c58b04c8287300c53f11d2e208eae",
+          "reported_verified_files": 11,
+          "reported_source_bytes": 103690426,
+          "license_label": "apache-2.0",
+          "reported_verification_methods": {
+            "git-blob-sha1-vs-publisher": 9,
+            "sha256-vs-publisher": 2
+          }
+        },
+        {
+          "repo_id": "udgamlabs/Lilavati-Checker",
+          "revision": "7edaac6de4cfe7127f973d8641335c4cb2f84b08",
+          "reported_verified_files": 6,
+          "reported_source_bytes": 190647761,
+          "license_label": "apache-2.0",
+          "reported_verification_methods": {
+            "git-blob-sha1-vs-publisher": 5,
+            "sha256-vs-publisher": 1
+          }
+        },
+        {
+          "repo_id": "udgamlabs/Lilavati",
+          "revision": "5aef8c4b79fa6b8aaf5d63a1e8dd05ca572fe25d",
+          "reported_verified_files": 6,
+          "reported_source_bytes": 190654999,
+          "license_label": "apache-2.0",
+          "reported_verification_methods": {
+            "git-blob-sha1-vs-publisher": 5,
+            "sha256-vs-publisher": 1
+          }
+        },
+        {
+          "repo_id": "nvidia/Kumo-Relational",
+          "revision": "efdbb110daea5aae123447864a64612e8a3dc6be",
+          "reported_verified_files": 5,
+          "reported_source_bytes": 243653558,
+          "license_label": "openmdw-1.1",
+          "reported_verification_methods": {
+            "git-blob-sha1-vs-publisher": 3,
+            "sha256-vs-publisher": 2
+          }
+        }
+      ]
+    },
+    "inconsistencies_to_reconcile": [
+      "Approved queue is empty despite local-acquisition execution report; do not automatically equate recorded transfer with explicitly user-approved manifest.",
+      "Ledger omits private absolute local paths for privacy, and is not sufficient by itself for independent remount+full SHA256 audit.",
+      "Current readiness v48 is static pre-download gate, not updated evidence of successfully completed offline restore or license rights.",
+      "Gated model remains HOLD and must not be bypassed."
+    ]
+  },
+  "archival_master_decisions": [
+    {
+      "trained_lineage": "InterpreticAI v2 selective Chinese political editing; does NOT eliminate all harmful-request refusals",
+      "archive_repo": "InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+      "source_type": "BF16_FULL_PUBLISHER_TRAINED_CHECKPOINT",
+      "source_revision": "84ab13688128c19d5ef10be430bc5de649b7823f",
+      "source_files": 32,
+      "publisher_source_bytes": 55586056799,
+      "publisher_lfs_sha256_refs": 19,
+      "source_manifest": "manifests/drafts/r113-v48-two-uncensored-original-fp16-parents.candidate.json",
+      "goal": "FUTURE_REQUANTIZATION_AND_MTP_ORIGINAL_COMPONENT_PRESERVATION",
+      "status": "NEXT_ARCHIVAL_MASTER_PROPOSAL_ONLY",
+      "already_reported_gguf": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "old_gguf_policy": "KEEP_EXISTING_REPORTED_DOWNLOADED_Q4_FOR_SERVING; NO_AUTO_DELETE",
+      "complete_offline_dependency_and_rights_validated": false,
+      "download_approved": false
+    },
+    {
+      "trained_lineage": "0bserverx RVN abliterated text-only; author states safetensors were reconstructed from RVN-F16 GGUF; earliest evidenced source, NOT original pre-GGUF BF16 training checkpoint",
+      "archive_repo": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "source_type": "PUBLISHER_RVN_F16_GGUF_EARLIEST_EVIDENCED_ARTIFACT",
+      "source_revision": "ab8d7bd81d03117501e4da60cccdff4c80f0eea0",
+      "source_path": "RVN-F16.gguf",
+      "source_bytes": 53808281888,
+      "publisher_sha256": "f20c72c23a6564211c5e44af35ea1277d697c009ce8a25ab28d100447e0f155a",
+      "source_manifest": "catalog/decisions/2026-11-19-r114-uncensored-lineage-correction.json",
+      "goal": "LOW_LOSS_PRESERVATION_OF_SAME_RVN_TRAINED_STATE",
+      "status": "NEXT_ARCHIVAL_MASTER_PROPOSAL_ONLY",
+      "already_reported_gguf": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "old_gguf_policy": "KEEP_EXISTING_REPORTED_DOWNLOADED_Q4_FOR_SERVING; NO_AUTO_DELETE",
+      "do_not_count_as_new_model_asset": true,
+      "do_not_add_reconstructed_13_shard_as_independent_trained_asset": true,
+      "complete_offline_dependency_and_rights_validated": false,
+      "download_approved": false
+    }
+  ],
+  "delta_capacity": {
+    "publisher_primary_payload_new_candidate_bytes": 109394338687,
+    "scope": "32 Interpretic BF16 root files plus one RVN F16 GGUF; extra runtime dependencies, staging and dedup not included",
+    "observed_hdd_free_from_prior_ledger_only": 2818771451904,
+    "owner_physical_volume_authenticated_now": false,
+    "archive_limit_bytes": 4000000000000,
+    "minimum_free_bytes": 200000000000,
+    "do_not_book_until_current_volume_and_staging_check": true
+  },
+  "outside_catalog_candidates": [
+    {
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v3",
+      "training_source": "NousResearch/Arete-27B",
+      "hf_displayed_parameters_approx": 27356700000,
+      "license_hf_label": "apache-2.0",
+      "author_reported_censorship_rate_v3_percent": 2.6,
+      "author_reported_censorship_rate_v2_percent": 3.5,
+      "reported_difference_points": 0.9,
+      "mtp_retained": false,
+      "decision": "HOLD_NOT_IN_CANONICAL",
+      "rationale": "Distinct learned parent but one reported Chinese political question improvement and loss of MTP do not justify another ~55GB without matched evaluation and immutable source/rights audit",
+      "source": "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v3"
+    }
+  ],
+  "fact_vs_scenario": {
+    "current_known_government_evidence": [
+      {
+        "date": "2026-11-16",
+        "url": "https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology",
+        "scope": "Remote access to sensitive compute infrastructure; NOT blanket ban on downloading all local LLM weights"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689",
+        "scope": "EU AI Act general purpose model and provider obligations; not proof all private open weight possession prohibited"
+      }
+    ],
+    "hypothesis": "Future gated/removal/license restrictions could reduce access, model-specific probability UNKNOWN",
+    "no_fake_future_takedown_dates": true
+  },
+  "test_and_falsification": {
+    "H": "If model-specific posttraining or converted original content differs, adding BF16 Interpretic and earliest-evidenced F16 RVN preserves future transformation options while retaining already reported Q4 runtime access.",
+    "T": "First reproduce file inventory/publisher SHA and model lineage; then authorize a manifest on actual target disk, run local SHA256 verification and compare matched prompts on same backend/hardware/context/batch >=30; stop on changed revision, rights, hash or storage violation.",
+    "D": "Metadata PASS only when source revisions, file bytes and hash evidence match; runtime and rights remain UNCERTAIN. Download PASS requires user-approved manifest, verified owner disk, license, and immutable closure. FAIL on wrong model lineage, entitlement or hash mismatch.",
+    "C": "RVN F16 may not preserve unavailable BF16 training checkpoint; v3 may outperform v2 on new domain tasks enough to justify separately; partial adapter dependencies may invalidate offline restoration.",
+    "U": "Source-ledger evidentiary gap, publisher-reported benchmark selection bias, incomplete runtime ABI and missing local recheck; no sample variance, so numerical combined standard uncertainty u_c and k not calculable."
+  },
+  "safeguards": {
+    "no_new_weights_downloaded_by_this_review": true,
+    "local_path_never_exposed": true,
+    "do_not_change_approved_queue": true,
+    "do_not_drop_reported_existing_files": true,
+    "do_not_bypass_gated": true,
+    "no_auto_delete": true,
+    "do_not_change_formal_asset_decisions": true
+  }
+}
