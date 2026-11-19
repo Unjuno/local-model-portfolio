@@ -18,6 +18,16 @@ OUT = Path("catalog/execution/2026-11-19-acquisition-ledger.json")
 MD = Path("docs/strategy/114-v48-execution-acquisition-results-2026-11-19.md")
 
 
+def sanitize_source(value):
+    """Never export local absolute paths into the public repository."""
+    if not value:
+        return None
+    s = str(value).replace("\\", "/")
+    if "AI_VAULT" in s or s.lower().startswith("d:/"):
+        return "local-discovered/" + s.rsplit("/", 1)[-1]
+    return s
+
+
 def main():
     all_entries = []
     for p in (LOCAL, LOCAL_WAVE2, LOCAL_CONT):
@@ -32,7 +42,7 @@ def main():
         entries.append({
             "repo_id": e.get("repo_id"),
             "revision_sha": e.get("revision_sha"),
-            "source_manifest": e.get("source"),
+            "source_manifest": sanitize_source(e.get("source")),
             "priority_group": e.get("group"),
             "status": e.get("status"),
             "license": e.get("license"),

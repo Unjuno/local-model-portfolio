@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 21 (verified 20, partial 0, failed 0, held 1)
-- Verified files: 216
-- Verified source bytes: 161891193089
-- Minimum observed free bytes: 2819205787648 (200 GB floor maintained: True)
+- Models: 23 (verified 22, partial 0, failed 0, held 1)
+- Verified files: 227
+- Verified source bytes: 162325501646
+- Minimum observed free bytes: 2818771451904 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -30,6 +30,8 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `nvidia/Kumo-Anomaly` | `369ccba38a105736c6c9e4b5788a330c7e22112e` | VERIFIED | 2/2 | apache-2.0 |
 | `gradium/phonon-31m-en` | `8f7a37c94a4c58b04c8287300c53f11d2e208eae` | VERIFIED | 11/11 | apache-2.0 |
 | `udgamlabs/Lilavati-Checker` | `7edaac6de4cfe7127f973d8641335c4cb2f84b08` | VERIFIED | 6/6 | apache-2.0 |
+| `udgamlabs/Lilavati` | `5aef8c4b79fa6b8aaf5d63a1e8dd05ca572fe25d` | VERIFIED | 6/6 | apache-2.0 |
+| `nvidia/Kumo-Relational` | `efdbb110daea5aae123447864a64612e8a3dc6be` | VERIFIED | 5/5 | openmdw-1.1 |
 
 Weight files were compared against publisher LFS SHA-256; ordinary Git blobs were compared by Git blob SHA-1. 'size-only' means no publisher hash existed.
 Gated models without verified owner entitlement were recorded as HOLD and no payload was acquired for them.

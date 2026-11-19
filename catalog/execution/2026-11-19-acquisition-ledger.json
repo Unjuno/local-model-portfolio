@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "ledger_id": "2026-11-19-v48-execution",
-  "generated_at": "2026-11-19T06:01:02.784714+00:00",
+  "generated_at": "2026-11-19T06:01:37.127262+00:00",
   "canonical_revision": "v48-20261118",
   "source_plan": "queues/proposed-v48-r113-source-pinned-15.json",
   "policy": {
@@ -14,14 +14,14 @@
     "unclear_license": "HOLD"
   },
   "summary": {
-    "models_total": 21,
-    "models_verified": 20,
+    "models_total": 23,
+    "models_verified": 22,
     "models_partial": 0,
     "models_failed": 0,
     "models_held": 1,
-    "files_verified_total": 216,
-    "bytes_verified_total": 161891193089,
-    "minimum_free_bytes_observed": 2819205787648,
+    "files_verified_total": 227,
+    "bytes_verified_total": 162325501646,
+    "minimum_free_bytes_observed": 2818771451904,
     "minimum_free_floor_bytes": 200000000000,
     "free_floor_maintained": true
   },
@@ -681,7 +681,7 @@
     {
       "repo_id": "nvidia/Kumo-Anomaly",
       "revision_sha": "369ccba38a105736c6c9e4b5788a330c7e22112e",
-      "source_manifest": "D:\\AI_VAULT\\state\\discovered\\nvidia__Kumo-Anomaly.json",
+      "source_manifest": "local-discovered/nvidia__Kumo-Anomaly.json",
       "priority_group": "",
       "status": "VERIFIED",
       "license": "apache-2.0",
@@ -708,7 +708,7 @@
     {
       "repo_id": "gradium/phonon-31m-en",
       "revision_sha": "8f7a37c94a4c58b04c8287300c53f11d2e208eae",
-      "source_manifest": "D:\\AI_VAULT\\state\\discovered\\gradium__phonon-31m-en.json",
+      "source_manifest": "local-discovered/gradium__phonon-31m-en.json",
       "priority_group": "",
       "status": "VERIFIED",
       "license": "apache-2.0",
@@ -739,7 +739,7 @@
     {
       "repo_id": "udgamlabs/Lilavati-Checker",
       "revision_sha": "7edaac6de4cfe7127f973d8641335c4cb2f84b08",
-      "source_manifest": "D:\\AI_VAULT\\state\\discovered\\udgamlabs__Lilavati-Checker.json",
+      "source_manifest": "local-discovered/udgamlabs__Lilavati-Checker.json",
       "priority_group": "",
       "status": "VERIFIED",
       "license": "apache-2.0",
@@ -762,6 +762,64 @@
       "started_at": "2026-11-19T06:00:29.869899+00:00",
       "finished_at": "2026-11-19T06:00:50.969302+00:00",
       "free_bytes_after": 2819205787648
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati",
+      "revision_sha": "5aef8c4b79fa6b8aaf5d63a1e8dd05ca572fe25d",
+      "source_manifest": "local-discovered/udgamlabs__Lilavati.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 190654999,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 5,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "24c02955743f5b918dff4e8709075ac7d9a05255739545ce1543ae10e72c8349"
+        }
+      ],
+      "started_at": "2026-11-19T06:00:51.063726+00:00",
+      "finished_at": "2026-11-19T06:01:13.325472+00:00",
+      "free_bytes_after": 2819015122944
+    },
+    {
+      "repo_id": "nvidia/Kumo-Relational",
+      "revision_sha": "efdbb110daea5aae123447864a64612e8a3dc6be",
+      "source_manifest": "local-discovered/nvidia__Kumo-Relational.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "openmdw-1.1",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 243653558,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "classifier.pt",
+          "sha256": "0c2e35cc18303f0d3ddeaf04e9cab6ca3a8bd6ea17195ac0e42d47af4bcb2a2d"
+        },
+        {
+          "path": "regressor.pt",
+          "sha256": "f863b3632f738e1444fb83a8cea5746f298889b5c96953a000c4720d202ae4cf"
+        }
+      ],
+      "started_at": "2026-11-19T06:01:13.428285+00:00",
+      "finished_at": "2026-11-19T06:01:34.295420+00:00",
+      "free_bytes_after": 2818771451904
     }
   ],
   "notes": [
