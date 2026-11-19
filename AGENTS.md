@@ -1,3 +1,17 @@
+# 現行v54（2026-11-20）— 正式選定207資産・160有効／取得承認0
+
+**唯一の現行正本**：[`catalog/CURRENT.json`](catalog/CURRENT.json) → **v54-20261120、207登録・160有効（SELECT53／CONDITIONAL107）**。最新派生ファイル：[`v54`](catalog/effective-portfolio-2026-11-20-v54.json)。過去v53以前の「現行」表記は履歴であり、この項の正本に優先しない。
+
+**新規独立学習成果**：REMORY 2B、凍結Qwen3.8-27Bの履歴を要約テキストと別のsoft residual memoryへ圧縮するFP32原本。[R127採否](docs/strategy/127-v54-remory-original-and-parent-delta-2026-11-20.md)、[20ファイル全hashと親3ファイル差分](manifests/drafts/r127-2026-11-20-remory-20file-online250-and-parent-delta.candidate.json)。8,023,113,280byte source、Publisher latest online250の論文ベンチマーク独立再評価は無し。Qwen訓練親の18重量シャードは比較版とSHA一致、異なるのは`README.md`/`chat_template.jinja`/`tokenizer_config.json`の3メタデータ。ユーザー現物の親原本SHA、実機SGLang/CUDA ABI・LICENSE/個別許可、4TB/200GB残床と一時容量、完全offline restoreは未検証。
+
+**取得台帳**：2026-11-19記録では**61モデルVERIFIED報告／708ファイル／409,835,119,252byte**、1件Gated HOLD。ただし研究環境が所有者Windows Dドライブを独立再ハッシュした証拠ではない。[`queues/approved.json`](queues/approved.json)は**空**。自動ダウンロード・Gated回避・未審査コード実行・既存重み削除を禁止。実行には本人の正確なファイル集合・固定rev・Publisher SHA、利用権、実HDD/最低空きと明示承認が必要。**mainのみ運用**。
+
+**現行規制の訂正**：米BIS 2026-11-19施行の[91 FR 74970（§IV.A）](https://www.govinfo.gov/content/pkg/FR-2026-11-19/pdf/2026-23529.pdf)は旧AI Diffusion Ruleのモデルウェイト ECCN 4E091 を撤廃。他の半導体・遠隔計算・仕向け/最終用途管理および個別の配布者LICENSEは別である。**全open weightsのローカル所持が一律禁止された/近日禁止されるとは証拠なし**。各モデルGated/ライセンス変更のストレス仮説と規則の現行事実を分離する。
+
+---
+
+以下は過去の選定履歴・開発報告であり、必ず上記のv54正本と最新取得実行台帳を優先する。
+
 # R125 正本v52・2026-11-20：61取得報告のファイル部分集合差分を解明（過去の53は履歴）
 
 唯一の正本は[CURRENT](catalog/CURRENT.json)→**v52、205登録・158有効（SELECT53/CONDITIONAL105）**。[研究用R125 6repo差分manifest](queues/proposed-v52-r125-post61-gap66plus-2026-11-20.json)／[技術選定と反証](docs/strategy/125-v52-acquisition61-restore-gaps-and-two-originals-2026-11-20.md)／[オフライン検証](tests/test_r125_post61_source_gaps.py)。2026-11-19実行台帳のblob `5a5de85e8e0fdc1ac2bbb7f61b369df005e63b79`では**61モデル・708ファイル・409,835,119,252byte VERIFIED報告**、1 Gated HOLD。これはOwner Dの今回の独立実測ではない。旧53は履歴。
