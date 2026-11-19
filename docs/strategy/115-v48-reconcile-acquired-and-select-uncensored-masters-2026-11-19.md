@@ -75,3 +75,20 @@
 ## 6.〈次に考える問い〉
 
 過去の取得報告の内容を実HDDで独立に照合できない状況では、次の110GBの新規マスターを保存することと、既存162GBの完全オフライン復元を実証することのどちらを先に行うべきか。**答えは後者を先に検証し、前者を確定ファイル候補として保持すること。**
+
+## 7. 追補：並行して公開されたR115 16原本source計画と安全な実行契約
+
+現行の[機械可読source提案](../../queues/proposed-v48-r115-master-sources-16.json)は、**16原本、237論理ファイル、102 publisher LFS SHA256、301,848,275,578 byte**。そのうち**10件・132,430,668,414 byteはメタデータ上の`GO_AFTER_LOCAL_PREFLIGHT`**、**6件・169,417,607,164 byteはHOLD**。前のR113 15件／212GBは**履歴**として残る。主な差はInterpretic BF16、RVN F16、Zyphra/ZONOS3-Miniのcodecを含む原本など。**16候補はv48の新しい正式選定資産16件ではない**。
+
+このsource提案が列挙する`GO`という表記は実行承認を意味しない。R115時点で承認キューは空であり、[Windowsスクリプト](../../scripts/download_r115_windows.py)は**通常実行・`--dry-run`とも読み取り専用PLAN**へ訂正した。新たな転送は`--execute`と明示的に承認された正確なsourceファイル集合を必要とする。[後戻り防止テスト](../../tests/test_download_r115_authorization.py)には空の承認キュー、誤revision、fingerprint mismatch、権利・所有者ボリューム未確認で実行を止める7検証例を追加（今回のGitHub編集ツールからテストは**未実行**）。過去の22件報告を新たな10件への無条件承認へ読み替えてはならない。
+
+さらに[新規2原本source候補](../../manifests/drafts/r115-v48-rumble2-flash-and-nemotron-sigma-original.candidate.json)は**正式v48登録に追加していない**：
+
+| 新候補 | 固定publisher sourceの規模 | 判断 |
+|---|---:|---|
+| [`Reson8/Rumble-2-Flash`](https://huggingface.co/Reson8/Rumble-2-Flash) | 19ファイル／1,385,998,807 byte、2 LFS SHA、40桁revision `a0c34287229103b706c670d70791683e34379732` | **次の小型ASR研究優先**。0.5B級・45言語／CTC専用headを含む独立学習済み成果。既存Whisper / Qwen3 ASRとの差を同条件で比較してから正式追加。作者のOpen ASR Leaderboard英語WER6.60%はH200/vLLMであり利用者実機性能ではない |
+| [`nvidia/Nemotron-Labs-Sigma-distill-spec-3B`](https://huggingface.co/nvidia/Nemotron-Labs-Sigma-distill-spec-3B) | 18ファイル／8,494,971,346 byte、3 LFS SHA、40桁revision `9769b2d388000e0ff61736d26359074efbf0dc9d` | **HOLD**。自己推測型continuous diffusionとAR verificationの独自学習済み二head。NVIDIA独自ライセンス、`trust_remote_code`、GPU BF16・custom backend依存のため権利・ABI・独自性が未閉包 |
+
+発行元一次資料：[Rumble-2-Flash技術発表（2026-11-18）](https://huggingface.co/blog/rumble-2-flash)、[Sigma作者カード（2026-11-12公開）](https://huggingface.co/nvidia/Nemotron-Labs-Sigma-distill-spec-3B)。**新候補を追加する理由は、新しい学習結果・必要componentと将来の復元に価値があるかであって、最新版やモデル名の特殊性そのものではない**。
+
+**追補ERROR CHECK**：現行source 16=GO10+HOLD6、237ファイル、102 LFS hash、301,848,275,578 byteで各ファイルbyte和・一意IDを静的検査。現行`CURRENT.json`のsource pointerはR115を参照し、v48の201登録・154有効という正式選定は変更していない。取得の新規承認0、今回の重量ダウンロード0。
