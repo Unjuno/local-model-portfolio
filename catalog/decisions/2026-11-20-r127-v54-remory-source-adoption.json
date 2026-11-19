@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "R127_V54_REMORY_ORIGINAL_TRN_MEMORY",
+  "review_date": "2026-11-20",
+  "formal_new_models": 1,
+  "prior_catalog_unchanged": 206,
+  "source_manifest": "manifests/drafts/r127-2026-11-20-remory-20file-online250-and-parent-delta.candidate.json",
+  "selected": {
+    "id": "fudan-generative-ai/Qwen3.8-27B-REMORY-1.9B",
+    "rev": "5ada60e61d5425012b92a7c2b2796fc0b0f29241",
+    "decision": "conditional",
+    "risk_tier": "R1",
+    "source_files": 20,
+    "source_bytes": 8023113280,
+    "publisher_weight_sha256": "59d36bcec81c44bb314b63afea4dae79d8cda53a8918a5364143d8ecb2a499e5",
+    "total_own_trained_elements": 2005757188,
+    "root_parent_total": 27781427952,
+    "conditional_sum_serialized_elements": 29787185140,
+    "stage": "online250",
+    "exact_training_parent_rev": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "original_parent_metadata_delta_bytes": 91892,
+    "parent_weight_shards_same_between_revision": true,
+    "paper_stage2_results_not_independent_online250_bench": true,
+    "author_hardware": "80GB GPU x2 suggested; user device untested",
+    "owner_download_approved": false
+  },
+  "alternatives": [
+    {
+      "id": "mocoV3/Qwen3.8-27B-REMORY-1.9B",
+      "decision": "ALIAS_NO_NEW_ASSET",
+      "reason": "HF returns same canonical repo and immutable source revision"
+    },
+    {
+      "id": "fudan-generative-ai/Qwen3.8-27B-REMORY-1.9B@f24de2ac3996da36678cd5d196a7dc0dbbc3aa34",
+      "decision": "HISTORICAL_TRAINED_STAGE_REFERENCE",
+      "reason": "stageII checkpoint differs in weights from online250; no automatic 2 copies"
+    },
+    {
+      "id": "tencent/Hy-Memory-30B-A3B",
+      "decision": "MAINTAIN_PREVIOUS_SELECT",
+      "reason": "diff task long-term memory writing/management, not latent soft compression"
+    },
+    {
+      "id": "harness-hub/Qwen3.8-27B-pi-adapted",
+      "decision": "MAINTAIN_PREVIOUS_CONDITIONAL",
+      "reason": "coding agent RL policy different trained output"
+    }
+  ],
+  "prior_61_reported_acquisitions_are_not_owner_disk_verification": true,
+  "access": "PUBLIC_UNGATED_METADATA_ONLY",
+  "license": "MIT metadata, third-party notices and parent rights pending",
+  "excluded": "Gated bypass or other mirrored weights without license",
+  "capacity": {
+    "owner_disk_capacity_verified": false,
+    "archive_target_bytes": 4000000000000,
+    "min_free_floor_bytes": 200000000000,
+    "stage_and_cache_measured": false,
+    "approved_queue_count": 0
+  },
+  "test": {
+    "H": "trained residual memory improves held-out long session tasks vs text-only summary at same token budget",
+    "T": "minimum 30 paired sessions on pinned original Qwen parent and SGLang ABI, fixed hardware/clock/context/batch; verify all actual local hashes and restore",
+    "D": "PASS only if independent task benefit and rights, owner HDD, source hash, offline restore complete; FAIL on mismatch/unauthorized action; UNCERTAIN otherwise",
+    "C": "online250 paper generalization unknown, 2x80GB hardware absent, parent template or ABI mismatch",
+    "U": "no owner runtime distribution, u_c and k numerical unavailable"
+  },
+  "new_downloads_this_work": 0
+}

@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "revision_id": "v54-20261120",
+  "previous_revision_id": "v53-20261120",
+  "decision_date": "2026-11-20",
+  "target_branch": "main",
+  "kind": "ADD_ONE_DISTINCT_FUDAN_REMORY_SOFT_MEMORY_FP32_ORIGINAL_CONDITIONAL_RESEARCH",
+  "previous_asset_count": 206,
+  "previous_active_count": 159,
+  "additions": [
+    {
+      "position": 207,
+      "asset_kind": "model",
+      "repo_id": "fudan-generative-ai/Qwen3.8-27B-REMORY-1.9B",
+      "url": "https://huggingface.co/fudan-generative-ai/Qwen3.8-27B-REMORY-1.9B",
+      "group": "長期エージェント履歴の学習済み残差soft-memory原本",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "凍結Qwen3.8-27Bに別学習済み2.006B残差soft-memory圧縮器を組み合わせる独立トレーニング成果。既存Hy-Memory30Bのメモリ書込モデルやpi coding agent LoRA、GGUF量子化とは異なる。8.023GBの原本に対し、親の18重量shardはcatalog参考版と完全同一SHAなので余計な親重み重複を避け、元訓練時の異なるchat template/tokenizer configを保存する。",
+      "quality_positive": "Publisher原本固定20ファイル8,023,113,280 byte、FP32 117テンソル、正確な追加メモリ学習済み要素数2,005,757,188。原本Publisher SHA256照合済み、小型の原本構成19ファイルを実際に再ハッシュ。HF親1d4bf...と既存Qwen参考375618...の32sourceファイル比較で29一致、違いは3メタデータのみ。",
+      "quality_negative": "online250 checkpointは論文Stage II版とは重みSHAが異なり、論文ベンチマークにて再評価されていない。作者の参考推論は少なくとも80GB GPU×2、SGLang非標準hook/CUDA ABIを必要とし実ユーザー機器未測定。元親の実保存、利用許諾、LICENSE/third-party notice、完全オフライン復元未検証。",
+      "risk_and_alternative_assessment": "2026-11-20 publisher非Gated・MITタグ。将来のGated化や配布停止は未確定仮説、規制確率は不明。mocoV3旧別名は正規fudan repoへ同一コミットでリダイレクトし別学習成果として登録しない。Stage II旧版を独立モデルとして増殖せず復元来歴として参照。",
+      "evidence_date": "2026-11-20",
+      "evidence_kind": "OFFICIAL_HF_PINNED_20_FILES_RELEASE_CONFIG_SHA256SUMS_AND_PARENT_REVISION_COMPARE",
+      "evidence_urls": [
+        "https://huggingface.co/fudan-generative-ai/Qwen3.8-27B-REMORY-1.9B/tree/5ada60e61d5425012b92a7c2b2796fc0b0f29241",
+        "https://huggingface.co/fudan-generative-ai/Qwen3.8-27B-REMORY-1.9B/blob/5ada60e61d5425012b92a7c2b2796fc0b0f29241/release.json",
+        "https://huggingface.co/fudan-generative-ai/Qwen3.8-27B-REMORY-1.9B/blob/5ada60e61d5425012b92a7c2b2796fc0b0f29241/config.json",
+        "https://huggingface.co/api/models/fudan-generative-ai/Qwen3.8-27B-REMORY-1.9B/revision/5ada60e61d5425012b92a7c2b2796fc0b0f29241?blobs=true",
+        "https://huggingface.co/api/models/Qwen/Qwen3.8-27B/revision/1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0?blobs=true",
+        "https://github.com/fudan-generative-vision/Remory",
+        "https://arxiv.org/abs/2610.11287"
+      ],
+      "observed_access": "Hub publisher API public private:false gated:false; no owner-specific permissions or local bytes verified",
+      "license_metadata": "MIT Hub tag, bundled 3 MIT third-party notices, user action rights unverified",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "5ada60e61d5425012b92a7c2b2796fc0b0f29241",
+      "upstream_all_files_bytes_observed": 8023113280,
+      "upstream_file_count_observed": 20,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 20,
+      "candidate_selected_source_file_bytes": 8023113280,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 285,
+          "sha256": null,
+          "git_blob_sha1": "48364751ce03f7ccd92ce7dc2e1e8130ce9fe8dc",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSES/DFlash-MIT.txt",
+          "bytes": 1062,
+          "sha256": null,
+          "git_blob_sha1": "b934ad81806abbd40b1d7f0f089411dc3d750cf7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSES/Recursive-Memory-MIT.txt",
+          "bytes": 1086,
+          "sha256": null,
+          "git_blob_sha1": "f0064e10a9e9d61da30ee53015ec40b6af45de02",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSES/SpecForge-MIT.txt",
+          "bytes": 1068,
+          "sha256": null,
+          "git_blob_sha1": "909b8ff34ce3ff391ec5ecd1d2388d0c5b1cd4b3",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 1534,
+          "sha256": null,
+          "git_blob_sha1": "b1b73d91f3d16f50012dcb8e131a0250166d62f2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "SHA256SUMS",
+          "bytes": 1655,
+          "sha256": null,
+          "git_blob_sha1": "93d3631a797630bd05fdf3be84b9261ad2398231",
+          "local_sha_verified": false
+        },
+        {
+          "path": "THIRD_PARTY_NOTICES.md",
+          "bytes": 463,
+          "sha256": null,
+          "git_blob_sha1": "8416ff68539fe683f565ff4cb9a07f9c9e3c7fb2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 7128,
+          "sha256": null,
+          "git_blob_sha1": "36531c3d9ca18980540db81641fc59f6bbc545b0",
+          "local_sha_verified": false
+        },
+        {
+          "path": "example.py",
+          "bytes": 1217,
+          "sha256": null,
+          "git_blob_sha1": "14de183e6edb87aeb013936d0668a18e12557c3c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "manifest.json",
+          "bytes": 386,
+          "sha256": null,
+          "git_blob_sha1": "7b963786df406ad092c000e7dd0db6f0b1baaa12",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 8023041444,
+          "sha256": "59d36bcec81c44bb314b63afea4dae79d8cda53a8918a5364143d8ecb2a499e5",
+          "git_blob_sha1": "07cd96739f48965f3c14ed04b4f4bd123c4e77f4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "release.json",
+          "bytes": 959,
+          "sha256": null,
+          "git_blob_sha1": "21ced8cb3ad3d95b5591038673ec8bfe0cb507a5",
+          "local_sha_verified": false
+        },
+        {
+          "path": "remory.py",
+          "bytes": 352,
+          "sha256": null,
+          "git_blob_sha1": "cc14d8f8d117aafdc49d15600957fbaa6a217ea0",
+          "local_sha_verified": false
+        },
+        {
+          "path": "remory_inference/__init__.py",
+          "bytes": 30,
+          "sha256": null,
+          "git_blob_sha1": "43071bd0092e7015179cf9138e9aaf4e474bfd6b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "remory_inference/compressor.py",
+          "bytes": 10125,
+          "sha256": null,
+          "git_blob_sha1": "a0a5f23671ddfda5410ea833d7e85eccebe20097",
+          "local_sha_verified": false
+        },
+        {
+          "path": "remory_inference/dflash2.py",
+          "bytes": 7549,
+          "sha256": null,
+          "git_blob_sha1": "6d4cfcd6a239e86bb927db7862e195a8d016f5d2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "remory_inference/grouped_conv.py",
+          "bytes": 4109,
+          "sha256": null,
+          "git_blob_sha1": "68d33f65ff7f1294a485338aa18a486108c4cd7f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "remory_inference/layers.py",
+          "bytes": 26855,
+          "sha256": null,
+          "git_blob_sha1": "49219708274e84814dcf9066df60f5caf5ca4c75",
+          "local_sha_verified": false
+        },
+        {
+          "path": "remory_inference/load.py",
+          "bytes": 5897,
+          "sha256": null,
+          "git_blob_sha1": "ec65c6c7adc018e931bf6ca2bd191047bfc8a6ff",
+          "local_sha_verified": false
+        },
+        {
+          "path": "requirements.txt",
+          "bytes": 76,
+          "sha256": null,
+          "git_blob_sha1": "02493fd32683a4eb72c2fcf290f2ff32197445d3",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r127-2026-11-20-remory-20file-online250-and-parent-delta.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 29787185140,
+        "root_parent_publisher_serialized_elements": 27781427952,
+        "independent_trained_memory_serialized_elements": 2005757188,
+        "evidence_kind": "PUBLISHER_EXACT_SAFETENSORS_ELEMENTS_SUM_PARENT_AND_MEMORY",
+        "additional_learned_external_components_unverified": true,
+        "exact_full_pipeline_total_locally_verified": false,
+        "research_screen_only": true,
+        "review_date": "2026-11-20",
+        "no_download_waiver": true
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 207,
+        "category": "NON_REPRODUCIBLE_TRAINED_RESIDUAL_MEMORY",
+        "scenario_status": "Hypothetical future publisher access change not quantified"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "online step250 trained soft residual memory",
+        "must_preserve": [
+          ".gitattributes",
+          "LICENSES/DFlash-MIT.txt",
+          "LICENSES/Recursive-Memory-MIT.txt",
+          "LICENSES/SpecForge-MIT.txt",
+          "README.md",
+          "SHA256SUMS",
+          "THIRD_PARTY_NOTICES.md",
+          "config.json",
+          "example.py",
+          "manifest.json",
+          "model.safetensors",
+          "release.json",
+          "remory.py",
+          "remory_inference/__init__.py",
+          "remory_inference/compressor.py",
+          "remory_inference/dflash2.py",
+          "remory_inference/grouped_conv.py",
+          "remory_inference/layers.py",
+          "remory_inference/load.py",
+          "requirements.txt"
+        ],
+        "original_trained_memory_sha256": "59d36bcec81c44bb314b63afea4dae79d8cda53a8918a5364143d8ecb2a499e5",
+        "base_repo_id": "Qwen/Qwen3.8-27B",
+        "base_training_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+        "catalog_parent_reference_revision": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
+        "parent_all_weight_shards_same_SHA_between_revisions": true,
+        "parent_differing_small_files": [
+          {
+            "path": "README.md",
+            "bytes": 65012,
+            "source_git_blob_sha1": "bc8aa0e396cd029c21cd773cca21830d0ded28ec",
+            "catalog_ref_git_blob_sha1": "4d43b0e391581a8857be5d29f7a2ba527781ba78"
+          },
+          {
+            "path": "chat_template.jinja",
+            "bytes": 8952,
+            "source_git_blob_sha1": "c0c686f9c38d70d179fb7b5f5aa7530bc913dda3",
+            "catalog_ref_git_blob_sha1": "9bd39df8984ba783a0b32cf2ebcd2117136e79ff"
+          },
+          {
+            "path": "tokenizer_config.json",
+            "bytes": 17928,
+            "source_git_blob_sha1": "5de744b3fca2129d7186979ae47c06be33903243",
+            "catalog_ref_git_blob_sha1": "35b5ec3afea617e41060511a1e5b49946e0a2a76"
+          }
+        ],
+        "official_code_repo": "https://github.com/fudan-generative-vision/Remory",
+        "official_code_pinned_commit": "683b7ba648fe91fa063291380cd107c1d836cd6c",
+        "code_reviewed": false,
+        "owner_runtime_verified": false,
+        "author_hw_requirements": "at least 2 GPUs of 80GB each for Qwen3.8-27B + REMORY SGLang",
+        "upstream_paper_results_do_not_apply_without_online250_rebenchmark": true,
+        "full_licensing_and_dependency_closure": false,
+        "source_reference_only_no_download": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 8023113280,
+        "source_candidate_selected_bytes": 8023113280,
+        "extra_parent_source_reference_bytes": 91892,
+        "owner_parent_weights_verified": false,
+        "owner_actual_disk_measured": false,
+        "full_offline_restore_bytes_verified": null,
+        "hw_tested_on_user_machine": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    }
+  ],
+  "added_assets": 1,
+  "removed_assets": 0,
+  "changed_prior_decisions": 0,
+  "source_manifest": "manifests/drafts/r127-2026-11-20-remory-20file-online250-and-parent-delta.candidate.json",
+  "publisher_source_count": 20,
+  "publisher_source_bytes": 8023113280,
+  "publisher_weight_sha256": "59d36bcec81c44bb314b63afea4dae79d8cda53a8918a5364143d8ecb2a499e5",
+  "original_parent_training_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "reference_parent_weight_sha_unchanged": true,
+  "original_parent_metadata_differing_files": 3,
+  "approved_downloads_added": 0,
+  "model_weights_acquired": 0,
+  "custom_code_executed": false
+}
