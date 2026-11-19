@@ -1025,5 +1025,34 @@
     "access": "catalog/access/2026-11-20-v54-conditional-hub-gates.json",
     "dependency_preparation": "catalog/preparation/2026-11-20-insurance-bundles-v54.json",
     "readiness": "catalog/readiness/v54-2026-11-20-r127-all160-gates.json"
+  },
+  "latest_r128_small_four_owner_approval_and_parent_gate": {
+    "date_jst": "2026-11-20",
+    "catalog_revision": "v54-20261120",
+    "selected_source": "queues/proposed-v54-r128-first-four-delta-source.json",
+    "all_active_ledger_reconciliation": "catalog/decisions/2026-11-20-r128-v54-live-ledger61-and-parent-gap.json",
+    "report": "docs/strategy/128-v54-first-four-source-owner-approval-and-remory-parent.md",
+    "download_script": "scripts/download_r115_windows.py",
+    "owner_review_helper": "scripts/prepare_owner_scope_approval.py",
+    "tests": [
+      "tests/test_r128_v54_first_four.py",
+      "tests/test_prepare_owner_scope_approval.py"
+    ],
+    "unique_models": 2,
+    "unique_datasets": 2,
+    "selected_files": 101,
+    "publisher_sha256_refs": 9,
+    "selected_source_bytes": 6127042272,
+    "offline_regression_tests_passed": 71,
+    "reported_models_verified": 61,
+    "reported_gated_hold": 1,
+    "not_reported_active_assets": 98,
+    "remory_training_parent_in_report": false,
+    "remory_parent_physical_hash_verified": false,
+    "R128_source_is_subset_of_previous_R125_and_R126": true,
+    "owner_D_live_volume_verified": false,
+    "local_weights_downloaded_in_r128": false,
+    "user_source_scope_approvals_created": false,
+    "approved_queue_entries": 0
   }
 }
