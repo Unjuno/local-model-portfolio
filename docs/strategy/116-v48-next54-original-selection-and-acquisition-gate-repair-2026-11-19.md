@@ -10,9 +10,9 @@
 
 [2026-11-19に生成した次波59件](../../catalog/execution/2026-11-19-discovered-next-waves.json)をledgerと完全ID照合すると、Kumo-Anomaly、Phonon-31M、Lilavati、Lilavati-Checker、Kumo-Relationalの5件が**既にVERIFIED報告と重複**。再取得候補から外し、残り**54件・1,495,443,610,521byte**が未保存の可能性をもつ調査候補になった。これはsource-sizeの総和であり、すべてが合法・復元可能・4TBに収まると確定した数値ではない。
 
-### 次に原本ファイルの閉包を完成させる10件
+### 次に原本ファイルの閉包を完成させる9件
 
-いずれも既にv48の正式有効選定に存在する。ソースrevisionと発行元側ファイル**件数・総バイト**までが次波台帳で観測済み。ただし*全ファイルのハッシュ・親権利と依存*はこの10件について最終lockされておらず、**今すぐダウンロード可という判定ではない**。
+いずれも既にv48の正式有効選定に存在する。ソースrevisionと発行元側ファイル**件数・総バイト**までが次波台帳で観測済み。ただし*全ファイルのハッシュ・親権利と依存*はこの9件について最終lockされておらず、**今すぐダウンロード可という判定ではない**。
 
 | repo ID | Publisher source GB（10進） | 学習成果と重複判断 |
 |---|---:|---|
@@ -22,12 +22,14 @@
 | [`Qwen/Qwen3-Reranker-0.6B`](https://huggingface.co/Qwen/Qwen3-Reranker-0.6B) | 1.207 | 検索候補の再ランキング用に別学習 |
 | [`Qwen/Qwen3-Embedding-0.6B`](https://huggingface.co/Qwen/Qwen3-Embedding-0.6B) | 1.207 | 文書・問い合わせ埋め込み。Rerankerと別重み |
 | [`PaddlePaddle/PaddleOCR-VL-1.5`](https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.5) | 1.929 | 書類OCRとレイアウト。LightOnOCRと実測比較 |
-| [`IFM/K2-Horizon-0.9B`](https://huggingface.co/IFM/K2-Horizon-0.9B) | 2.162 | 小規模な世界・動画モデルの原本。codec依存未閉包 |
+
 | [`facebook/vjepa2-vitg-fpc64-384`](https://huggingface.co/facebook/vjepa2-vitg-fpc64-384) | 4.138 | JEPA動画表現。生成動画モデルとは異なる学習成果 |
 | [`boltz-community/boltz-2`](https://huggingface.co/boltz-community/boltz-2) | 4.349 | 分子構造・相互作用の科学モデル |
 | [`nvidia/RFD4-Proteina`](https://huggingface.co/nvidia/RFD4-Proteina) | 5.236 | タンパク質特化原本。依存・利用条件を別検査 |
 
-**上記10件合計 22,561,484,383byte（約22.56GB）**。これは前処理/親ウェイト/codec/学習済み追加依存や新規staging容量を含む完全オフライン復元費用ではない。優先基準は「同量子化ファミリーを何種類か保存する」より独立学習済み成果を多用途に残すこと。Qwen EmbeddingとRerankerは名前が似ていても別の学習済み機能なので保持する。一方LightOnOCR取得済み報告とPaddleOCRの重複は同条件文書ベンチで否定可能とする。
+**上記9件合計 20,399,781,485byte（約20.40GB）**。これは前処理/親ウェイト/codec/学習済み追加依存や新規staging容量を含む完全オフライン復元費用ではない。優先基準は「同量子化ファミリーを何種類か保存する」より独立学習済み成果を多用途に残すこと。Qwen EmbeddingとRerankerは名前が似ていても別の学習済み機能なので保持する。一方LightOnOCR取得済み報告とPaddleOCRの重複は同条件文書ベンチで否定可能とする。
+
+**訂正（2026-11-19）**：`IFM/K2-Horizon-0.9B`はHugging Face公式では`text-generation`、`k2_horizon`、推論用知識蒸留系と記載される。過去の「小型動画・世界モデル」は誤分類だったので、原本優先9件から外し、汎用小型推論モデルの比較群P2へ移す。選定自体はv48のCONDITIONALとして維持し、Qwen3.5-0.8Bなどとの独自性能比較前には追加転送しない。
 
 ### 権利・総数が先行する4件
 
@@ -73,7 +75,7 @@
 ## 5. H/T/D/C/U・単位検査・ERROR CHECK
 
 ### H（反証可能な仮説）
-一度取得済みと報告された22件の再転送を防ぎ、小型の学習済み異質原本10件と新ASR Rumbleを先に完全なsource/rights/hashesで固定する方が、同容量に複数の同一重み量子化を保存するより多くの独立能力を保全する。
+一度取得済みと報告された22件の再転送を防ぎ、小型の学習済み異質原本9件と新ASR Rumbleを先に完全なsource/rights/hashesで固定する方が、同容量に複数の同一重み量子化を保存するより多くの独立能力を保全する。
 
 ### T（最小検証）
 v48の201 IDと取得報告23 IDを連結し、次波59 IDから22検証報告済みの重複5件を除外。正式取得前には全ファイルSHAと元コード・学習済み補助部品・LICENCEを確認する。RumbleとWhisper/Qwen ASRの品質は、同一HW/clock/backend/context/batch、最低30の独立した日英音声でWER/CERとピークRAM、中央値レイテンシの両側区間を出す。事前登録閾値未設定のため品質順位はまだ**UNCERTAIN**。
@@ -107,4 +109,4 @@ v48の201 IDと取得報告23 IDを連結し、次波59 IDから22検証報告�
 
 ## 6.〈次に考える問い〉
 
-取得済みとの報告がある162GBをもう一度ダウンロードするより、現物を再ハッシュして完全offline復元を実証し、その結果を次の10原本・新ASRの取得条件に反映する方が保存失敗の再発を減らせるのではないか。
+取得済みとの報告がある162GBをもう一度ダウンロードするより、現物を再ハッシュして完全offline復元を実証し、その結果を次の9原本・新ASRの取得条件に反映する方が保存失敗の再発を減らせるのではないか。
