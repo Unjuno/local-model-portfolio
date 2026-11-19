@@ -1,3 +1,11 @@
+# 現行v55 / R128 (2026-11-20): OVH Olala small hybridの独立原本2件採用
+
+唯一の正本 [CURRENT](catalog/CURRENT.json) はv55、209登録/162有効（SELECT53、CONDITIONAL109）。[正式採否](docs/strategy/128-v55-olala-final-adoption-2026-11-20.md)、[2モデルの33 Publisher固定source files](manifests/drafts/r128-2026-11-20-olala-mini-final-and-base-originals.candidate.json)、[v55差分overlay](catalog/revisions/v55-2026-11-20.json)、[全162件worklist](queues/proposed-v55-2026-11-20.json)、[readiness](catalog/readiness/v55-2026-11-20-r128-all162-gates.json)、[109件access](catalog/access/2026-11-20-v55-conditional-hub-gates.json)、[dependency preparation](catalog/preparation/2026-11-20-insurance-bundles-v55.json)を参照。事前学習Baseと最終SFT+RLは重量SHAが異なる。SFT中間版は独立だが増分価値未確認で研究保留、GGUF/MLXは同一学習成果の形式変換で新資産なし。Baseが無検閲という実測証拠はない。
+
+旧v54 CURRENT.expected PASS=158はmaterialized v54 actual PASS=157と矛盾。v55で新2件を足しPASS=159に訂正。旧207件の採否は不変。Publisher専用カスタム実装（標準vLLM/llama.cpp/Ollamaは未対応）、ユーザーのD実空きと200GB安全床、LICENSE/NOTICEの本人行為許可、SHAとoffline restore、明示された個別source承認がそろうまでは、モデル重量の追加ダウンロード・未審査コード実行・既存削除0。61件/708fileの取得一致は過去の実行台帳報告であり本作業の独立現物再ハッシュではない。mainのみ。
+
+---
+
 # 現行v54（2026-11-20）— 正式選定207資産・160有効／取得承認0
 
 **唯一の現行正本**：[`catalog/CURRENT.json`](catalog/CURRENT.json) → **v54-20261120、207登録・160有効（SELECT53／CONDITIONAL107）**。最新派生ファイル：[`v54`](catalog/effective-portfolio-2026-11-20-v54.json)。過去v53以前の「現行」表記は履歴であり、この項の正本に優先しない。
