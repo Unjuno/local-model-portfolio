@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "revision_id": "v50-20261119",
+  "previous_revision_id": "v49-20261119",
+  "decision_date": "2026-11-19",
+  "target_branch": "main",
+  "kind": "ADD_ONE_INDEPENDENT_MULTILINGUAL_ASR_ORIGINAL_NONEXECUTABLE",
+  "previous_asset_count": 202,
+  "previous_active_count": 155,
+  "additions": [
+    {
+      "position": 203,
+      "asset_kind": "model",
+      "repo_id": "Reson8/Rumble-2-Flash",
+      "url": "https://huggingface.co/Reson8/Rumble-2-Flash",
+      "group": "45言語・独立CTC学習済みhead付き小型ASR",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "出版社が新規訓練した45言語0.5B級ASR原本と別学習済みCTC headの19ソース。既存Whisper・Qwen3-ASRとは重みが異なり、通常量子化を別資産には数えない。",
+      "quality_positive": "出版社公式2026-11-18公開。Publisher H200/vLLM Open ASR 英語WER6.60%・多言語9評価言語平均6.96%。全19ファイル1,385,998,807 byte、重量2ファイルSHA-256固定。",
+      "quality_negative": "出版社が報告する大バッチ最大7000倍実時間を個人端末batch1の速度とみなせない。日本語CER/雑音英語WERの旧ASR対比・全学習済みCTC tensor数・実行backend/processor ABI、LICENSE全依存・owner HDD・完全off-line復元未実証。",
+      "risk_and_alternative_assessment": "2026-11-19 publisherメタデータはpublic ungated Apache-2.0。個別の法的禁止・近日中の削除は確認されていない。将来配布停止はシナリオ、現行の独立訓練成果と公開中重み原本を条件付き保全。",
+      "evidence_date": "2026-11-19",
+      "evidence_kind": "FIRST_PARTY_OFFICIAL_RELEASE_AND_IMMUTABLE_PUBLISHER_FULL_19_FILE_SOURCE",
+      "evidence_urls": [
+        "https://huggingface.co/api/models/Reson8/Rumble-2-Flash/revision/a0c34287229103b706c670d70791683e34379732?blobs=true",
+        "https://huggingface.co/blog/rumble-2-flash",
+        "https://huggingface.co/Reson8/Rumble-2-Flash"
+      ],
+      "observed_access": "Public ungated per publisher, personal act permissions not verified",
+      "license_metadata": "apache-2.0 LICENSE and publisher model tag",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "a0c34287229103b706c670d70791683e34379732",
+      "upstream_all_files_bytes_observed": 1385998807,
+      "upstream_file_count_observed": 19,
+      "upstream_lfs_sha256_count_observed": 2,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 19,
+      "candidate_selected_source_file_bytes": 1385998807,
+      "source_manifest_path": "manifests/drafts/r115-v48-rumble2-flash-and-nemotron-sigma-original.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 508631552,
+        "evidence_kind": "HUB_MAIN_SAFETENSORS_ELEMENTS_AND_FIXED_CTC_FILE_CONSERVATIVE_UPPER_BOUND",
+        "ctc_head_source_bytes": 357476284,
+        "conservative_total_element_bound": 3368441824,
+        "exact_full_pipeline_total_locally_verified": false,
+        "research_screen_only": true,
+        "review_date": "2026-11-19",
+        "extra_learned_components": [
+          "ctc/ctc_head.safetensors; exact tensor count unverified"
+        ]
+      },
+      "forecast_priority": {
+        "wave": "S3",
+        "rank": 203,
+        "category": "INDEPENDENT_SMALL_MULTILINGUAL_ASR",
+        "scenario_status": "Future distribution restriction hypothesis; no verified model-specific ban"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Trained ASR weights and additional separately trained CTC auxiliary head with tokenizer/processor controls",
+        "must_preserve": [
+          ".gitattributes",
+          "LICENSE",
+          "README.md",
+          "added_tokens.json",
+          "chat_template.jinja",
+          "chat_template.json",
+          "config.json",
+          "ctc/ctc_head.safetensors",
+          "ctc/ctc_vocab.json",
+          "ctc_head.py",
+          "generation_config.json",
+          "merges.txt",
+          "model.safetensors",
+          "preprocessor_config.json",
+          "processor_config.json",
+          "special_tokens_map.json",
+          "tokenizer.json",
+          "tokenizer_config.json",
+          "vocab.json"
+        ],
+        "unverified_runtime": [
+          "Transformers/vLLM/PyTorch exact versions",
+          "CTC code ctc_head.py static safety review",
+          "Audio preprocessor/processor/tokenizer/CTC vocab ABI",
+          "Japanese/noisy English comparison same hardware and full offline restore"
+        ],
+        "full_licensing_and_dependency_closure": false,
+        "same_weights_alternate_format_is_not_new_asset": true,
+        "source_reference_only_no_download": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 1385998807,
+        "source_candidate_selected_bytes": 1385998807,
+        "owner_actual_disk_measured": false,
+        "hw_tested_on_user_machine": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    }
+  ],
+  "added_assets": 1,
+  "removed_assets": 0,
+  "changed_prior_decisions": 0,
+  "publisher_source_manifest": "manifests/drafts/r115-v48-rumble2-flash-and-nemotron-sigma-original.candidate.json",
+  "publisher_file_count": 19,
+  "publisher_bytes": 1385998807,
+  "lfs_sha256_count": 2,
+  "download_authorizations_added": 0,
+  "model_weights_acquired_in_this_revision": 0,
+  "untrusted_code_executed": false
+}
