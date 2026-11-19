@@ -1,0 +1,501 @@
+{
+  "schema_version": 1,
+  "kind": "R121_V49_STRICT150B_LEDGER_AWARE_NEXT_DOWNLOAD_SOURCE_SELECTION",
+  "reviewed_at_jst": "2026-11-19",
+  "workstream_branch": "strategy/2026-11-03-01-risk",
+  "write_scope": "strategy branch only; main not changed",
+  "main_snapshot": {
+    "path": "catalog/effective-portfolio-2026-11-19-v49.json",
+    "file_sha": "9c7b8dd941375c61bff07d02cb51ceae52f0157f",
+    "current_pointer_file_sha": "8c6d7e3aa3f40a4a4d8c001830124380fd803e53",
+    "tracked": 202,
+    "active": 155,
+    "select": 53,
+    "conditional": 102
+  },
+  "branch_current_is_historical": {
+    "revision": "v48-20261118",
+    "pointer_sha": "4d0061ac87838a31be7ab0d48f2bba95b6f93cb9",
+    "warning": "Do not substitute v48 branch CURRENT for v49 main in selections. This is a proposal overlay, not a v50 canonical catalog."
+  },
+  "reported_acquisition": {
+    "ledger_path": "catalog/execution/2026-11-19-acquisition-ledger.json",
+    "source_revision": "v48-20261118",
+    "reported_models_verified": 53,
+    "reported_files_verified": 579,
+    "reported_bytes": 270835576267,
+    "owner_D_visited_or_rehashed_here": false,
+    "approved_queue_entries": 0
+  },
+  "selection_decision": "SOURCE_SCOPE_RESEARCH_FINALIZED_NO_DOWNLOAD_APPROVAL",
+  "main_R119_source_refs": 7,
+  "main_R119_unique_trained_outcomes": 6,
+  "additional_R121_recommended_new_unique_outcomes": 1,
+  "prior_R120_decision_revision": "a0c34287229103b706c670d70791683e34379732",
+  "recommended_sources": [
+    {
+      "repo_id": "Reson8/Rumble-2-Flash",
+      "asset_kind": "model",
+      "checked_on": "2026-11-19",
+      "first_party_url": "https://huggingface.co/Reson8/Rumble-2-Flash",
+      "supporting_release_url": "https://huggingface.co/blog/rumble-2-flash",
+      "source_revision": "a0c34287229103b706c670d70791683e34379732",
+      "publisher_source_files": 19,
+      "publisher_source_bytes": 1385998807,
+      "source_sha_is_publisher_metadata_only": true,
+      "license_tag": "apache-2.0",
+      "full_license_and_acts_verified": false,
+      "observed_access": "public listing",
+      "parent_access_exception": null,
+      "model_total_parameters_used_for_cap": 508631552,
+      "parameter_count_scope": "main only; independent CTC exact tensor count not measured",
+      "conservative_upper_total_elements": 3368441824,
+      "parameter_gate": "PASS_PRELIMINARY_CHECK_DEPENDENCIES",
+      "unique_outcome_role": "SMALL_INDEPENDENT_ASR",
+      "reason": "独立に学習したASR本体とCTC head。Whisper/Qwen ASRとの比較価値があり、全ファイル約1.386GB。",
+      "existing_v49_decision": "NOT_REGISTERED",
+      "new_priority_rank": 1,
+      "proposed_action": "PROPOSE_FORMAL_ADDITION_NEXT_REVISION",
+      "independent_same_weight_duplicate_of_ledger53": false,
+      "substitute_for_existing_ledger_payload": "MASTER_UPGRADE_OR_NEW_TRAINING_OUTCOME_NO_PREVIOUS_DELETION",
+      "future_restriction_scenario": "POSSIBLE_PROVIDER_GATE_OR_RIGHTS_REVISION_NOT_PREDICTED",
+      "model_specific_future_ban_probability": null,
+      "falsification_condition": "独立CTC headが実は既存Rumbleモデルの単なる変換、または日本語/英語同条件CER/WERで既存モデルと同等か劣り、新能力/保存費差が示せない場合は優先度を再評価",
+      "mandatory_dependencies": [
+        "ctc/ctc_head.safetensors",
+        "processor/tokenizer/config and Python dependencies"
+      ],
+      "unresolved": [
+        "CTC headの正確なtensor census",
+        "全19ファイルの本人ディスク上のSHA検証",
+        "full LICENSE行為別確認",
+        "同一HW, backend, batch=1での日本語CER・英語WER",
+        "offline restoreと本人保存先の実容量"
+      ],
+      "rights_and_owner_disk_ready": false,
+      "download_approved": false,
+      "downloads_executed_in_this_review": 0
+    },
+    {
+      "repo_id": "Zyphra/ZONOS3-Mini",
+      "asset_kind": "model",
+      "checked_on": "2026-11-19",
+      "first_party_url": "https://huggingface.co/Zyphra/ZONOS3-Mini",
+      "supporting_release_url": null,
+      "source_revision": "2921b8821772b0bd10a04456863d21abf9d2f283",
+      "publisher_source_files": 24,
+      "publisher_source_bytes": 15345816226,
+      "source_sha_is_publisher_metadata_only": true,
+      "license_tag": "apache-2.0",
+      "full_license_and_acts_verified": false,
+      "observed_access": "public listing",
+      "parent_access_exception": null,
+      "model_total_parameters_used_for_cap": 886000000,
+      "parameter_count_scope": "official Zyphra model page and technical report; far below 150B; exact full binary census not performed",
+      "conservative_upper_total_elements": null,
+      "parameter_gate": "PASS_PRELIMINARY_CHECK_DEPENDENCIES",
+      "unique_outcome_role": "TTS_LEARNED_DEPENDENCIES",
+      "reason": "実行台帳に載る775,728,152B軽量scopeは、15.346GBの学習済み本体・音声codec・speaker等原本を保全済みとはいえない。",
+      "existing_v49_decision": "conditional",
+      "new_priority_rank": 2,
+      "proposed_action": "KEEP_EXISTING_CONDITIONAL_FINISH_ORIGINAL_PACKAGE",
+      "independent_same_weight_duplicate_of_ledger53": false,
+      "substitute_for_existing_ledger_payload": "MASTER_UPGRADE_OR_NEW_TRAINING_OUTCOME_NO_PREVIOUS_DELETION",
+      "future_restriction_scenario": "POSSIBLE_PROVIDER_GATE_OR_RIGHTS_REVISION_NOT_PREDICTED",
+      "model_specific_future_ban_probability": null,
+      "falsification_condition": "所有者保存先に同一revision+全source SHAの15.346GBが既に存在するなら再取得不要",
+      "mandatory_dependencies": [
+        "LM",
+        "audio codec",
+        "speaker encoder"
+      ],
+      "unresolved": [
+        "親/外部codec license全文と必要性",
+        "実D保存先の全file checksum",
+        "復元runtime/voice consent",
+        "依存の重複計数"
+      ],
+      "rights_and_owner_disk_ready": false,
+      "download_approved": false,
+      "downloads_executed_in_this_review": 0
+    },
+    {
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+      "asset_kind": "model",
+      "checked_on": "2026-11-19",
+      "first_party_url": "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+      "supporting_release_url": null,
+      "source_revision": "84ab13688128c19d5ef10be430bc5de649b7823f",
+      "publisher_source_files": 32,
+      "publisher_source_bytes": 55586056799,
+      "source_sha_is_publisher_metadata_only": true,
+      "license_tag": "apache-2.0",
+      "full_license_and_acts_verified": false,
+      "observed_access": "public listing",
+      "parent_access_exception": null,
+      "model_total_parameters_used_for_cap": 27781427952,
+      "parameter_count_scope": "R22 GGUF full scalar census: 27,320,697,856 language + 460,730,096 vision including both selected weights; matches serialized source BF16 scalar count",
+      "conservative_upper_total_elements": null,
+      "parameter_gate": "PASS_PRELIMINARY_CHECK_DEPENDENCIES",
+      "unique_outcome_role": "UNCENSORED_HIGH_PRECISION_ORIGINAL",
+      "reason": "既存Q4の実行報告と異なり、編集済みBF16原本とMTP headを保存。中国政治設問の出版社評価を第三者評価と混同しない。",
+      "existing_v49_decision": "conditional",
+      "new_priority_rank": 3,
+      "proposed_action": "KEEP_DISTINCT_MASTER_SCOPE_REPLACE_REDUNDANT_QUANT_COPIES",
+      "independent_same_weight_duplicate_of_ledger53": false,
+      "substitute_for_existing_ledger_payload": "MASTER_UPGRADE_OR_NEW_TRAINING_OUTCOME_NO_PREVIOUS_DELETION",
+      "future_restriction_scenario": "POSSIBLE_PROVIDER_GATE_OR_RIGHTS_REVISION_NOT_PREDICTED",
+      "model_specific_future_ban_probability": null,
+      "falsification_condition": "作者提供SHA/重み同一性により既存所蔵から全BF16元バイトが完全復元可能と実証された場合は取得の限界価値を減じる",
+      "mandatory_dependencies": [
+        "MTP head",
+        "vision tower",
+        "tokenizer and processor"
+      ],
+      "unresolved": [
+        "モデルとMTP全file SHAのローカル照合",
+        "元Qwen attributionとLICENSE全文",
+        "テストセット再現",
+        "Vision/MTPのoffline load"
+      ],
+      "rights_and_owner_disk_ready": false,
+      "download_approved": false,
+      "downloads_executed_in_this_review": 0
+    },
+    {
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "asset_kind": "model",
+      "checked_on": "2026-11-19",
+      "first_party_url": "https://huggingface.co/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "supporting_release_url": null,
+      "source_revision": "ab8d7bd81d03117501e4da60cccdff4c80f0eea0",
+      "publisher_source_files": 3,
+      "publisher_source_bytes": 53808326934,
+      "source_sha_is_publisher_metadata_only": true,
+      "license_tag": "apache-2.0",
+      "full_license_and_acts_verified": false,
+      "observed_access": "public listing",
+      "parent_access_exception": null,
+      "model_total_parameters_used_for_cap": 27781400000,
+      "parameter_count_scope": "first-party parent Hugging Face metadata 27,781.4M, derivative declares base Qwen3.8-27B; full GGUF per-file tensor census not conducted",
+      "conservative_upper_total_elements": null,
+      "parameter_gate": "PASS_PRELIMINARY_CHECK_DEPENDENCIES",
+      "unique_outcome_role": "ALTERNATE_EDITED_TEXT_ONLY_OUTCOME",
+      "reason": "RVN-F16 GGUFは後発Safetensors再構成の元。F16を保存基準とし同一派生の複数量子化は別資産として追加しない。text-only, vision/MTPは別物。",
+      "existing_v49_decision": "conditional",
+      "new_priority_rank": 4,
+      "proposed_action": "KEEP_DISTINCT_MASTER_SCOPE_REPLACE_RECONSTRUCTED_COPY",
+      "independent_same_weight_duplicate_of_ledger53": false,
+      "substitute_for_existing_ledger_payload": "MASTER_UPGRADE_OR_NEW_TRAINING_OUTCOME_NO_PREVIOUS_DELETION",
+      "future_restriction_scenario": "POSSIBLE_PROVIDER_GATE_OR_RIGHTS_REVISION_NOT_PREDICTED",
+      "model_specific_future_ban_probability": null,
+      "falsification_condition": "独立チェックポイントの同一訓練成果が本F16より上流から合法に同一ハッシュで入手でき、同じ学習成果をより完全に保全可能と証明された場合は改訂",
+      "mandatory_dependencies": [
+        "GGUF compatible tokenizer",
+        "offline inference backend"
+      ],
+      "unresolved": [
+        "RVN-F16単独fileを同一publisher SHAでローカル照合",
+        "起源が元の訓練BF16ではないことの表示",
+        "vision/MTP非同梱の受容",
+        "通常Q4との差分"
+      ],
+      "rights_and_owner_disk_ready": false,
+      "download_approved": false,
+      "downloads_executed_in_this_review": 0
+    },
+    {
+      "repo_id": "sensenova/SenseNova-Loop-9B-GGUF",
+      "asset_kind": "model",
+      "checked_on": "2026-11-19",
+      "first_party_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-GGUF",
+      "supporting_release_url": null,
+      "source_revision": "11c121055062d33647348cf236a8c543138b282e",
+      "publisher_source_files": 6,
+      "publisher_source_bytes": 19338124279,
+      "source_sha_is_publisher_metadata_only": true,
+      "license_tag": "apache-2.0",
+      "full_license_and_acts_verified": false,
+      "observed_access": "public listing",
+      "parent_access_exception": "official full safetensors is gated:auto; do not bypass",
+      "model_total_parameters_used_for_cap": 9413000000,
+      "parameter_count_scope": "PUBLISHER_HF_MODEL_INDEX_RESEARCH_SCREEN_UNDER150B_NOT_INDEPENDENT_FULL_PIPELINE_CENSUS",
+      "conservative_upper_total_elements": null,
+      "parameter_gate": "PASS_PRELIMINARY_CHECK_DEPENDENCIES",
+      "unique_outcome_role": "OFFICIAL_PUBLIC_FALLBACK_FROM_GATED",
+      "reason": "同一publisherの原本sensenova/SenseNova-Loop-9BはGated。公式公開GGUFは正常な別配布形式だがMTPを含む原checkpoint完全代替と断定できない。",
+      "existing_v49_decision": "conditional",
+      "new_priority_rank": 5,
+      "proposed_action": "PRESERVE_PUBLISHER_PUBLIC_VARIANT_CONDITIONALLY",
+      "independent_same_weight_duplicate_of_ledger53": false,
+      "substitute_for_existing_ledger_payload": "MASTER_UPGRADE_OR_NEW_TRAINING_OUTCOME_NO_PREVIOUS_DELETION",
+      "future_restriction_scenario": "POSSIBLE_PROVIDER_GATE_OR_RIGHTS_REVISION_NOT_PREDICTED",
+      "model_specific_future_ban_probability": null,
+      "falsification_condition": "Gated本体の本人許諾とfull source checksum/依存が揃い原本を合法に保存可能になれば公開GGUFを単独マスターとして扱わない",
+      "mandatory_dependencies": [
+        "mmproj",
+        "modeling code fixed by author",
+        "tokenizer and MTP if applicable"
+      ],
+      "unresolved": [
+        "本人の元Gated repo個人アクセス",
+        "MTP/visionの原本対GGUFのTensor対応",
+        "custom runtime ABI",
+        "本人保存先における全file SHA",
+        "ライセンス全文"
+      ],
+      "rights_and_owner_disk_ready": false,
+      "download_approved": false,
+      "downloads_executed_in_this_review": 0
+    },
+    {
+      "repo_id": "microsoft/Fara1.5-27B",
+      "asset_kind": "model",
+      "checked_on": "2026-11-19",
+      "first_party_url": "https://huggingface.co/microsoft/Fara1.5-27B",
+      "supporting_release_url": null,
+      "source_revision": "299c8406a6c6256d45ec200d1ac12b34c5599d9b",
+      "publisher_source_files": 22,
+      "publisher_source_bytes": 54743814229,
+      "source_sha_is_publisher_metadata_only": true,
+      "license_tag": "mit",
+      "full_license_and_acts_verified": false,
+      "observed_access": "public listing",
+      "parent_access_exception": null,
+      "model_total_parameters_used_for_cap": 27356700000,
+      "parameter_count_scope": "huggingface_hub_model_metadata",
+      "conservative_upper_total_elements": null,
+      "parameter_gate": "PASS_PRELIMINARY_CHECK_DEPENDENCIES",
+      "unique_outcome_role": "COMPUTER_USE_SPECIALIST",
+      "reason": "Qwen基盤の一般チャットでは再現できないブラウザー操作後学習済みモデル。推論/実行は隔離と人の承認が必要。",
+      "existing_v49_decision": "select",
+      "new_priority_rank": 6,
+      "proposed_action": "KEEP_SELECTED_SOURCE_SECOND_WAVE",
+      "independent_same_weight_duplicate_of_ledger53": false,
+      "substitute_for_existing_ledger_payload": "MASTER_UPGRADE_OR_NEW_TRAINING_OUTCOME_NO_PREVIOUS_DELETION",
+      "future_restriction_scenario": "POSSIBLE_PROVIDER_GATE_OR_RIGHTS_REVISION_NOT_PREDICTED",
+      "model_specific_future_ban_probability": null,
+      "falsification_condition": "同一実行環境のタスク比較で既存軽量エージェントが実質同等以上かつcheckpointの学習価値に追加意義がないと示された場合は延期",
+      "mandatory_dependencies": [
+        "sandbox browser",
+        "tokenizer/config"
+      ],
+      "unresolved": [
+        "全依存/ブラウザー操作サンドボックス",
+        "モデル規約/LICENSE",
+        "source SHAとD容量",
+        "同一HWタスク成功率"
+      ],
+      "rights_and_owner_disk_ready": false,
+      "download_approved": false,
+      "downloads_executed_in_this_review": 0
+    },
+    {
+      "repo_id": "tencent/Hy-Memory-30B-A3B",
+      "asset_kind": "model",
+      "checked_on": "2026-11-19",
+      "first_party_url": "https://huggingface.co/tencent/Hy-Memory-30B-A3B",
+      "supporting_release_url": null,
+      "source_revision": "64a460a94d5498b7316fb02395c72d01c47a7347",
+      "publisher_source_files": 59,
+      "publisher_source_bytes": 60142913025,
+      "source_sha_is_publisher_metadata_only": true,
+      "license_tag": "apache-2.0",
+      "full_license_and_acts_verified": false,
+      "observed_access": "public listing",
+      "parent_access_exception": null,
+      "model_total_parameters_used_for_cap": 30064700000,
+      "parameter_count_scope": "huggingface_hub_model_metadata",
+      "conservative_upper_total_elements": null,
+      "parameter_gate": "PASS_PRELIMINARY_CHECK_DEPENDENCIES",
+      "unique_outcome_role": "EXTERNAL_LONG_TERM_MEMORY_SPECIALIST",
+      "reason": "長期メモリー書き込み専用学習成果。MoEの活性3Bではなく総30.0647Bで判定。",
+      "existing_v49_decision": "select",
+      "new_priority_rank": 7,
+      "proposed_action": "KEEP_SELECTED_SOURCE_SECOND_WAVE",
+      "independent_same_weight_duplicate_of_ledger53": false,
+      "substitute_for_existing_ledger_payload": "MASTER_UPGRADE_OR_NEW_TRAINING_OUTCOME_NO_PREVIOUS_DELETION",
+      "future_restriction_scenario": "POSSIBLE_PROVIDER_GATE_OR_RIGHTS_REVISION_NOT_PREDICTED",
+      "model_specific_future_ban_probability": null,
+      "falsification_condition": "既存の非学習系memory管理と同条件の遅延・書込正確性で差が出ず復元困難性が低いと検証された場合は順位を下げる",
+      "mandatory_dependencies": [
+        "memory controller instructions",
+        "tokenizer/config"
+      ],
+      "unresolved": [
+        "非活性expertを含むsource全Tensor数の最終照合",
+        "専用メモリー評価",
+        "source SHAとD容量",
+        "codec/tokenizerとLICENSE"
+      ],
+      "rights_and_owner_disk_ready": false,
+      "download_approved": false,
+      "downloads_executed_in_this_review": 0
+    }
+  ],
+  "non_outcome_supporting_source": {
+    "repo_id": "sensenova/SenseNova-Loop-9B-Preview",
+    "revision": "89d7970926e215f8da61726700cd026ccffbb6cb",
+    "source_bytes": 26724,
+    "purpose": "Same-publisher identical code only, not separate trained model",
+    "download_approved": false
+  },
+  "total_file_source_bytes_reference": 260351077023,
+  "total_is_additional_storage_reservation": false,
+  "total_is_not_offline_installed_size": true,
+  "staging_extra_bytes": null,
+  "owner_current_D_free_bytes": null,
+  "archive_budget_bytes": 4000000000000,
+  "minimum_free_floor_bytes": 200000000000,
+  "unknown_main_active_selected_file_bytes": 148,
+  "absolute_ceiling_total_params": 150000000000,
+  "strict_hard_exclusions": [
+    {
+      "repo_id": "orcarouter/Qwen3.8-Flash-Next-Uncensored",
+      "total_params": 180000000000,
+      "current_v49_decision": "hold",
+      "override": "ABSOLUTE_EXCLUDE_GE_150B_NO_QUANT_EXCEPTION"
+    },
+    {
+      "repo_id": "mistralai/Mistral-Large-4-1T-A52B",
+      "total_params": 1050000000000,
+      "current_v49_decision": "hold",
+      "override": "ABSOLUTE_EXCLUDE_GE_150B_NO_QUANT_EXCEPTION"
+    }
+  ],
+  "parameter_unknown_models": [
+    {
+      "repo_id": "InstantX/InstantID",
+      "active": false,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "Plachta/Seed-VC",
+      "active": false,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "SWivid/F5-TTS",
+      "active": false,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "ByteDance/InfiniteYou",
+      "active": false,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "coqui/XTTS-v2",
+      "active": false,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "fishaudio/fish-speech-1.5",
+      "active": false,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "onnx-community/higgs-audio-v3-tts-4b",
+      "active": false,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "TencentARC/PhotoMaker",
+      "active": false,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "bytedance-research/Lance",
+      "active": false,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "active": true,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "active": true,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "OnomaAIResearch/Illustrious-XL-v1.1",
+      "active": false,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+      "active": false,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "ACERobotics/Puffin-World",
+      "active": false,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "WhissleAI/steer-tts",
+      "active": true,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "maya-research/maya2-native",
+      "active": true,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "Louis0324/StyleStream",
+      "active": false,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "fishaudio/drama-3",
+      "active": true,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "ausboss/Qwen-Image-2.1-Consistency-LoRA",
+      "active": true,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "PrunaAI/P-H3-Image",
+      "active": true,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "nvidia/Kumo-Relational",
+      "active": true,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    },
+    {
+      "repo_id": "nvidia/Kumo-Anomaly",
+      "active": true,
+      "stop": "NO_ACQUISITION_PREPARATION_UNTIL_FULL_TRAINED_TOTAL_COUNT"
+    }
+  ],
+  "unapproved_source_access_must_not_be_bypassed": true,
+  "model_specific_regulatory_probabilities_estimated": false,
+  "primary_policy_sources": [
+    "https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology",
+    "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/how-does-ai-act-apply-general-purpose-ai-models-released-open-source",
+    "https://huggingface.co/docs/hub/models-gated",
+    "https://huggingface.co/blog/rumble-2-flash"
+  ],
+  "research_limits": [
+    "Exa search returned HTTP 402 credits exhausted; HF connected app and first-party website used instead",
+    "No actual new weight files downloaded, no local hash recomputed, no owner volume measured",
+    "No model benchmark performed; publisher results not reproduced",
+    "Existing v49 selected decisions not overwritten on stale v48 branch"
+  ],
+  "diff_vs_main_v49": {
+    "formal_additions": 0,
+    "formal_removals": 0,
+    "proposed_new_candidate": "Reson8/Rumble-2-Flash",
+    "strict_exclusions_from_exceptions": 2,
+    "stop_unknown_models_total": 22,
+    "stop_unknown_models_active": 9,
+    "approve_downloads": 0
+  }
+}
