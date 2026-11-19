@@ -582,15 +582,17 @@
     "ready_to_download_now": 0
   },
   "latest_prepared_source_download_queue": {
-    "round": "R113",
+    "round": "R115",
     "date": "2026-11-19",
-    "path": "queues/proposed-v48-r113-source-pinned-15.json",
-    "models": 15,
-    "files": 187,
-    "publisher_sha256_entries": 74,
-    "selected_publisher_bytes": 212023095122,
+    "path": "queues/proposed-v48-r115-master-sources-16.json",
+    "models": 16,
+    "files": 237,
+    "publisher_sha256_entries": 102,
+    "selected_publisher_bytes": 301848275578,
+    "metadata_go_after_local_preflight": 10,
+    "metadata_hold": 6,
     "approved_downloads": 0,
-    "status": "CURRENT_V48_PUBLISHER_SOURCE_ONLY_NOT_EXECUTABLE; 2026-11-19 execution ledger is separate historical evidence"
+    "status": "PROPOSED_SOURCE_SCOPES_ONLY; GO_AFTER_LOCAL_PREFLIGHT IS NOT USER APPROVAL; R115 downloader defaults to read-only and requires exact approved.json scope to execute"
   },
   "latest_r109_download_preflight": {
     "date_jst": "2026-11-18",
@@ -723,5 +725,23 @@
     "new_assets": 0,
     "authorized_downloads": 0,
     "physical_archive_fit_verified": false
+  },
+  "latest_r115_consolidated_archival_source_and_guard": {
+    "date": "2026-11-19",
+    "source_queue": "queues/proposed-v48-r115-master-sources-16.json",
+    "historical_r113_source_queue": "queues/proposed-v48-r113-source-pinned-15.json",
+    "source_model_count": 16,
+    "source_file_count": 237,
+    "publisher_sha256_file_count": 102,
+    "source_bytes": 301848275578,
+    "source_preflight_research_eligible": 10,
+    "source_held": 6,
+    "download_script": "scripts/download_r115_windows.py",
+    "authorization_tests": "tests/test_download_r115_authorization.py",
+    "default_script_behavior": "READ_ONLY_PLAN",
+    "execution_requires": "--execute AND queues/approved.json exact user consent, license/parent rights review, owner volume check and source fingerprint",
+    "approved_queue_count": 0,
+    "physical_archive_reverified_by_this_change": false,
+    "selection_decision": "catalog/decisions/2026-11-19-r115-post-acquisition-master-selection.json"
   }
 }
