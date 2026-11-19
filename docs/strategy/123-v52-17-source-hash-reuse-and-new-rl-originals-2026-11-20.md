@@ -1,5 +1,21 @@
 # R123｜v52（205資産/158有効）の保存対象決定とDドライブ再取得回避
 
+**R123 v53追補（2026-11-20）**：並行更新で現行正本は **v53（206登録／159有効）**に移行し、Microsoft Aion-1.0-Instruct-2.3BのMIT/BF16独立原本が追加された。本R123は**v52当時の17sourceの保全比較・歴史的ハッシュ照合資料**であり、最新の実行候補キューではない。現在の初回取得計画は[R125差分15配布元327.549GB](../../queues/proposed-v52-r125-ledger61-delta-next15.json)と[R126 Aion BF16 4.593GB](../../queues/proposed-v53-r126-aion-bf16-first-public-source.json)を優先参照する（異なるsource集合を合計・二重取得しない）。R123が含むDaisyRose 55.586GBおよびpi-adapted LoRA 0.658GBは、R125/R126の追加取得承認を意味しない。R123で見つけた47.956GBの過去SHA一致には、R125の高容量学習済み重量ファイルに加え、ZONOS3のteacher重みと別repo一致の小ファイルも含まれる。**ファイルが実Dにあるかは別検査**。
+
+### 読取専用の現物SHA再監査（新規実装、非ダウンロード）
+
+[Windows/Linux保存先の読取専用検証器](../../scripts/audit_r123_owner_readonly.py)はR123の17sourceから、過去履歴に同SHAがある**20ファイルだけ**を既定で確認する。5つの無通信テストはローカルPython環境で実行して全PASS（ファイル不在・破損・symlink・非互換パス・Git blob）。本ツールはroot配下の標準配置を参照するが、知らない別ディレクトリまで総当たりしない。未発見はUNLOCATED_IN_KNOWN_LAYOUTSであり全ドライブ上の物理不存在ではない。見つかったファイルでもサイズ・Publisher SHA256/Git blob SHA1を再計算して一致した場合のみVERIFIED_ON_OWNER_VOLUMEとする。Source scopeの法的取得承認、全runtime復元、モデル動作試験は行わない。結果にはローカルパスを含むため、公開GitHubに無加工でpushしない。
+
+PowerShellでリポジトリのルートから次を実行する。通信・転送・書き込みは発生しない。
+
+    py -3 -m unittest discover -s tests -p "test_audit_r123_owner_readonly.py"
+    py -3 scripts/audit_r123_owner_readonly.py --root "D:\AI-Models"
+
+特定モデルの選択された全ファイルを検証する場合は次のとおり。
+
+    py -3 scripts/audit_r123_owner_readonly.py --root "D:\AI-Models" --check-all --repo-id "Zyphra/ZONOS3-Mini"
+
+
 2026-11-20 JST。対象は`Unjuno/local-model-portfolio`の唯一の正本`main`。`CURRENT.json`は**v52・205資産／158有効（SELECT53＋CONDITIONAL105）**。R122の15固定配布元とv51の[DaisyRose-27B BF16](https://huggingface.co/RadixArk/DaisyRose-27B)、v52の[piエージェントRL adapter](https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted)を統合し、**17 source／正本16資産／373固定files／Publisher LFS SHA157参照／430,945,051,898 bytes**を全件検算した。
 
 [機械可読R123全158資産・373ファイル・ハッシュ重複台帳](../../catalog/decisions/2026-11-20-r123-v52-delta-aware-17-source-preservation.json)。正本`catalog/CURRENT.json`、`queues/approved.json`、既存ソースと現物重みは変更していない。今回Windows Dドライブは未マウント・実ハッシュ未測定。**記録上61モデル708ファイル409.835GBのPublisherハッシュ検証済み報告**と、**現時点の完全オフライン復元完了**を同一視しない。
