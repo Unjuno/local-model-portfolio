@@ -13,13 +13,14 @@ from pathlib import Path
 
 LOCAL = Path("D:/AI_VAULT/state/ledger/acquisition-ledger.json")
 LOCAL_WAVE2 = Path("D:/AI_VAULT/state/ledger/wave2-ledger.json")
+LOCAL_CONT = Path("D:/AI_VAULT/state/ledger/waves3plus-ledger.json")
 OUT = Path("catalog/execution/2026-11-19-acquisition-ledger.json")
 MD = Path("docs/strategy/114-v48-execution-acquisition-results-2026-11-19.md")
 
 
 def main():
     all_entries = []
-    for p in (LOCAL, LOCAL_WAVE2):
+    for p in (LOCAL, LOCAL_WAVE2, LOCAL_CONT):
         if p.exists():
             d = json.loads(p.read_text(encoding="utf-8"))
             all_entries.extend(d.get("entries", []))
