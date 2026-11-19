@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "id": "R130_V56_SMALL_PUBLIC_UNCENSORED_ADOPTION_AND_SOURCE_LOCK",
+  "date": "2026-11-20",
+  "baseline_catalog": "v55-20261120",
+  "adopted_catalog": "v56-20261120",
+  "previous_unique_assets": 209,
+  "previous_active": 162,
+  "new_trained_assets": 2,
+  "tracked": 211,
+  "active": 164,
+  "conditional": 111,
+  "select": 53,
+  "source_manifest": "manifests/drafts/r130-2026-11-20-frostwolf-and-phala-originals-fixed.candidate.json",
+  "overlay": "catalog/revisions/v56-2026-11-20.json",
+  "materialized_catalog": "catalog/effective-portfolio-2026-11-20-v56.json",
+  "readiness": "catalog/readiness/v56-2026-11-20-r130-all164-gates.json",
+  "nonexecutable_queue": "queues/proposed-v56-2026-11-20.json",
+  "conditional_access": "catalog/access/2026-11-20-v56-conditional-hub-gates.json",
+  "dependency_preparation": "catalog/preparation/2026-11-20-insurance-bundles-v56.json",
+  "model_decisions": [
+    {
+      "id": "FrostWolfAI/LFM3-1.7B-abliterated",
+      "decision": "CONDITIONAL_R0_S1_SOURCE_PINNED",
+      "reason": "Independent LFM3 Heretic ARA edited BF16 original with distinct weight SHA from official LFM3 parent",
+      "source_revision": "fc0f808655210ef891515bad9b5195b03d89f11b",
+      "public": true,
+      "gated": false,
+      "trained_parameters": 1728801536,
+      "publisher_source_files": 13,
+      "publisher_selected_bytes": 3475637066,
+      "large_weight_sha256": "4064371dcfed8660f03d688dd7688aad48cce630fd3117ec30572a976352f165",
+      "original_parent_sha256": "135922caef64e81e52af88ede8b7c3ddaa9d6da220a9737fb3065275dbfb4330",
+      "reason_not_executable": "LFM license owner-specific acts and code safety/ABI/HDD SHA not verified",
+      "do_not_save_secondary_format": "FrostWolf GGUF not separate trained model"
+    },
+    {
+      "id": "PhalaCloud/Qwen3.8-27B-Uncensored-LoRA",
+      "decision": "CONDITIONAL_R0_S1_PARENT_DEPENDENT_SOURCE_PINNED",
+      "reason": "Independent 13MB rank3 PEFT edited policy, parent Qwen 27B reference revision explicit in adapter_config and equal to catalog Qwen parent",
+      "source_revision": "588752bc181b999247f0e7df578bbc55d2b920e9",
+      "public": true,
+      "gated": false,
+      "publisher_source_files": 7,
+      "publisher_selected_bytes": 13034727,
+      "adapter_weight_sha256": "1abf13b2191c9973a4dc4d978448512d3ce2efabfd1e671edd5956b6aebfa5ac",
+      "parent_repo": "Qwen/Qwen3.8-27B",
+      "parent_reference_sha": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
+      "tested_fp8_parent_sha": "017b9c7af6b5689d5dd426a76e0bc077eb5ca20a",
+      "owner_parent_file_sha_verified": false,
+      "upstream_dataset_rights_review_needed": true,
+      "reason_not_executable": "No physically verified parent weights; CC BY-NC 4.0 source dataset rights and PEFT/SGLang ABI not cleared"
+    }
+  ],
+  "corrections_to_r129": [
+    "R129 stated neither model had exact 40hex revision; R130 has both publisher revisions and complete 20 file manifests.",
+    "R129 flagged Phala model-training parent revision unverified; its adapter_config explicitly pins Qwen/Qwen3.8-27B@37561816e66b5b9153b1b64c10968c18c1e6f4a0. That does NOT confirm owner disk or H200 FP8 benchmark runtime equality.",
+    "FrostWolf publisher relation is cardData quantized, but actual learned BF16 model weight SHA differs from Liquid parent at same byte length; avoid classifying as ordinary identical-weight quantization.",
+    "OrcaRouter edited LFM3 gated repo not the same edited checkpoint as FrostWolf; never substitute or bypass gated entitlement."
+  ],
+  "quality_limits": {
+    "frost_publisher_refusal": "1/100 on trial chosen from 120 Optuna runs, independent generalization not measured",
+    "phala_publisher_validation": "NVIDIA H200 SGLang pinned, Qwen-FP8 parent; StrongREJECT 0/60 primary, second judge differs; GSM8K and IFEval published but not user hw",
+    "owner_real_world_quality_measured": false
+  },
+  "licensing": {
+    "frost": "LFM Open License v1.0 §5; legal entity revenue >= USD 10m not licensed for commercial use under standard license",
+    "phala": "Apache2 applies to adapter weights only; NOTICE documents CC BY-NC 4.0 Stanford Alpaca-derived dataset and AdvBench MIT data attribution",
+    "individual_owner_acts_approved": false
+  },
+  "fail_closed": {
+    "parameter_gate": "Frost 1,728,801,536 exact; Phala BF16 parent 27,781,427,952 plus <=104,112,960 adapter bound, both below 150B screening only",
+    "gated_bypass": false,
+    "custom_code_execution": false,
+    "weights_acquired": false,
+    "owner_archive_independent_sha": false,
+    "user_approved_queue_entries": 0,
+    "physical_storage_4tb_and_floor_verified": false,
+    "offline_full_restore_verified": false
+  },
+  "sources": [
+    "https://huggingface.co/FrostWolfAI/LFM3-1.7B-abliterated/tree/fc0f808655210ef891515bad9b5195b03d89f11b",
+    "https://huggingface.co/PhalaCloud/Qwen3.8-27B-Uncensored-LoRA/tree/588752bc181b999247f0e7df578bbc55d2b920e9",
+    "https://huggingface.co/FrostWolfAI/LFM3-1.7B-abliterated/blob/fc0f808655210ef891515bad9b5195b03d89f11b/LICENSE",
+    "https://huggingface.co/PhalaCloud/Qwen3.8-27B-Uncensored-LoRA/blob/588752bc181b999247f0e7df578bbc55d2b920e9/NOTICE",
+    "https://www.govinfo.gov/content/pkg/FR-2026-11-19/pdf/2026-23529.pdf"
+  ]
+}
