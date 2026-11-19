@@ -3,7 +3,7 @@ import hashlib
 import tempfile
 from pathlib import Path
 import unittest
-spec = importlib.util.spec_from_file_location('audit', '/mnt/data/audit_r123_owner_readonly.py')
+spec = importlib.util.spec_from_file_location('audit', Path(__file__).resolve().parents[1] / 'scripts' / 'audit_r123_owner_readonly.py')
 p = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(p)
 
