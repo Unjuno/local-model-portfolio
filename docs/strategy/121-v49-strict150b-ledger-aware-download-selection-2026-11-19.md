@@ -1,13 +1,16 @@
 # R121｜v49の実取得報告を踏まえた次期保存原本の確定調査（2026-11-19）
 
-> **書込み先**：`strategy/2026-11-03-01-risk` 限定。現行正本は別ブランチ `main` の `catalog/CURRENT.json` → `v49-20261119`。この文書はv49の**非破壊的な選定提案**であり、古い当ブランチのv48ポインタを正本として上書きしない。モデル追加・正式ダウンロード承認・新規実取得は0。
+
+**2026-11-19再照合（重要）**：調査開始時の正本は`main` v49（202登録/155有効）だったが、その後`main`に[v50正式追加の原文](https://github.com/Unjuno/local-model-portfolio/blob/main/docs/strategy/121-v50-rumble-original-selection-and-acquisition-order-2026-11-19.md)が反映され、**203登録/156有効、RumbleはR2/conditionalで正式追加済み**と確認した。本R121の7学習成果は**取得対象sourceの比較**であり、Rumbleを二重登録しない。承認・取得権限は増えていない。元v49に対する比較/差分として以下の表を保持する。
+
+> **書込み先**：`strategy/2026-11-03-01-risk` 限定。調査開始時の比較元は別ブランチ `main` の `catalog/CURRENT.json` → `v49-20261119`。現在はv50正式採用まで追認。この文書はv49の**非破壊的な選定提案**であり、古い当ブランチのv48ポインタを正本として上書きしない。モデル追加・正式ダウンロード承認・新規実取得は0。
 
 ## 1.〈本論〉目的／事実／方針を分離
 
 目的は単なる「危険そうなものを急いで確保」ではなく、**正規に再取得可能なうちに、再学習が難しい独立学習成果を少ない重複と容量で保全し、後から実際に復元可能にすること**。パラメータ、精度・量子化、法律・Gated、配布元固定版、実ディスク、依存重みを別ゲートで扱う。
 
-- **2026-11-19現在の事実**：`main` v49は202資産（モデル176・データ26）、有効155件（`select` 53件〔モデル45・データ8〕、`conditional` 102件）。別の`catalog/execution/2026-11-19-acquisition-ledger.json`は53モデル／579ファイル／270,835,576,267 byteが`VERIFIED`と**過去の実行で報告**。今回、所有者Dドライブの再ハッシュも復元テストも実施していない。かつ`queues/approved.json`は空。
-- **意思決定**：この台帳の既取得と報告される軽量版・Q4を高精度原本の実取得と混同しない。次の研究選定は下記7学習成果（配布sourceは8件）へ集中。うち**Rumble-2-Flashだけがv49に未登録の独立学習成果**で、次版登録候補として採用提案を確定。既存の正式カタログは未変更。
+- **2026-11-19調査開始時の事実**：`main` v49は202資産（モデル176・データ26）、有効155件（`select` 53件〔モデル45・データ8〕、`conditional` 102件）。別の`catalog/execution/2026-11-19-acquisition-ledger.json`は53モデル／579ファイル／270,835,576,267 byteが`VERIFIED`と**過去の実行で報告**。今回、所有者Dドライブの再ハッシュも復元テストも実施していない。かつ`queues/approved.json`は空。
+- **意思決定**：この台帳の既取得と報告される軽量版・Q4を高精度原本の実取得と混同しない。次の研究選定は下記7学習成果（配布sourceは8件）へ集中。うち**Rumble-2-Flashだけがv49には未登録の独立学習成果**だったが、その後のv50でR2/conditionalとして正式採用されたため本ブランチからは重複追加しない。
 - **厳格な150Bルール**：全MoE expertsと学習済み部品を含む総パラメータが150,000,000,000以上なら**量子化しても絶対除外**。v49に残る「量子化なら例外審査」という現行policyは、この専用調査のユーザー制約では無効。 `orcarouter/Qwen3.8-Flash-Next-Uncensored`（180B）と`mistralai/Mistral-Large-4-1T-A52B`（約1.05T）は取得準備禁止。総数不明22モデル（有効9件）は取得準備STOP。
 - **規制事実と仮説の分離**：Hugging Faceのgatingは個別repo作者によるアクセス制御（https://huggingface.co/docs/hub/models-gated）。EU GPAIオープンソースFAQは一部義務例外と著作権・訓練データ概要義務を説明するが、全ウェイト一律保管禁止ではない（https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/how-does-ai-act-apply-general-purpose-ai-models-released-open-source）。米BISの2026-11-16発表は高度計算資源への遠隔アクセス規制に関するもので、公開weightsの一般的所持禁止の確認ではない（https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology）。「能力制限→広範囲の規制」の連鎖はストレス仮説であって個別モデルの停止確率ではない。
 
@@ -17,7 +20,7 @@
 
 | 順位 | 正規repo ID・確認したsource | 固定revision（先頭12桁） | 提案source byte | 判定と独自性・重複回避 |
 | ---: | --- | --- | ---: | --- |
-| 1 | [Reson8/Rumble-2-Flash](https://huggingface.co/Reson8/Rumble-2-Flash) | `a0c342872291` | 1,385,998,807 | **次版新規正式候補を確定**。508.63M主ASR＋別学習CTC head、19ファイル。既存Whisper/Qwen ASRと比べる。 |
+| 1 | [Reson8/Rumble-2-Flash](https://huggingface.co/Reson8/Rumble-2-Flash) | `a0c342872291` | 1,385,998,807 | **v50正式条件付き採用を追認**。508.63M主ASR＋別学習CTC head、19ファイル。既存Whisper/Qwen ASRと比べる。 |
 | 2 | [Zyphra/ZONOS3-Mini](https://huggingface.co/Zyphra/ZONOS3-Mini) | `2921b8821772` | 15,345,816,226 | **軽量実行版から原本sourceにアップグレード**。台帳の775,728,152Bはcodec等を含む原本一式ではない。 |
 | 3 | [InterpreticAI/Qwen3.8-27B-Uncensored-v2](https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v2) | `84ab13688128` | 55,586,056,799 | 政治的応答抑制を編集したBF16/MTP完全版。既取得報告のQ4は別表現。出版社の拒否率は独立未評価。 |
 | 4 | [0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF](https://huggingface.co/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF) `RVN-F16.gguf` | `ab8d7bd81d03` | 53,808,326,934 | 別の拒否方向編集済み重み。後発SafetensorsはF16 GGUFから再構成であり追加原本には数えない。vision/MTP不在を明示。 |
@@ -71,7 +74,7 @@
 3. **ソフトウェア供給網**：未信頼コード/重みの静的検査、Python/CUDA/ABI、実機隔離と再現性。
 4. **情報法**：利用・保管・複製・再配布、gating同意、著作権・本人音声のプライバシー。
 
-**ERROR CHECK**：比較元はv49の202登録/155有効、別の実行台帳は53モデル/579ファイル（本回独立SHAなし）。厳格cap除外2件、パラメータ未確定22モデル（うち有効9）、新規正式追加0、main変更0、取得承認0、今回のモデル重量取得0。計画元source金額ではなく **260,351,077,023 byte** のファイル合計。Exaは本日HTTP402で利用できず、Hugging Face公式アプリと配布者一次ページ、公式公共機関資料で代替。実機性能、法的正文の行為別確認、保存先ドライブは未検証。
+**ERROR CHECK**：比較元はv49の202登録/155有効、現行確認はv50の203登録/156有効（Rumbleは追加済み・二重登録なし）、別の実行台帳は53モデル/579ファイル（本回独立SHAなし）。厳格cap除外2件、パラメータ未確定22モデル（うち有効9）、新規正式追加0、main変更0、取得承認0、今回のモデル重量取得0。計画元source金額ではなく **260,351,077,023 byte** のファイル合計。Exaは本日HTTP402で利用できず、Hugging Face公式アプリと配布者一次ページ、公式公共機関資料で代替。実機性能、法的正文の行為別確認、保存先ドライブは未検証。
 
 ## 6.〈次に考える問い〉
 
