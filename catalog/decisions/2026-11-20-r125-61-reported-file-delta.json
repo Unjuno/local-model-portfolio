@@ -1,0 +1,388 @@
+{
+  "schema_version": 1,
+  "decision_id": "R125_20261120_V52_REPORTED61_FIVE_ORIGINAL_SOURCE_DELTA",
+  "generated_date": "2026-11-20",
+  "source_revision_at_audit": "v52-20261119",
+  "repository": "Unjuno/local-model-portfolio",
+  "authoritative_sources": [
+    {
+      "path": "catalog/CURRENT.json",
+      "blob_sha": "4fd11541484cc725072266e524c179b56f061b24"
+    },
+    {
+      "path": "catalog/execution/2026-11-19-acquisition-ledger.json",
+      "blob_sha": "5a5de85e8e0fdc1ac2bbb7f61b369df005e63b79"
+    },
+    {
+      "path": "manifests/drafts/r122-v50-five-originals-and-dependency-sources.candidate.json",
+      "blob_sha": "35c32c0292ece2a718472fbac33883f24ac60567"
+    },
+    {
+      "path": "queues/proposed-v50-r122-deduplicated-next15-sources.json",
+      "blob_sha": "f4584a73d76d8009654d60d0145528294281c5d2"
+    }
+  ],
+  "purpose": "Avoid redownloading publisher-matched model weight shards; report only uniquely inferred missing source paths from historic ledger file-count/byte count compared with immutable first-party source manifest",
+  "state": "NON_EXECUTING_RESEARCH_AND_FILE_SCOPE_DELTA_ONLY",
+  "approval_or_download_changed": false,
+  "original_source_metadata_count": 5,
+  "counts": {
+    "current_catalog_assets": 205,
+    "current_active_assets": 158,
+    "verified_models_reported": 61,
+    "total_models_in_ledger": 62,
+    "ledger_verified_file_count": 708,
+    "ledger_verified_logical_bytes": 409835119252,
+    "five_full_original_source_files": 85,
+    "five_full_original_source_bytes": 84656032539,
+    "reported_five_file_count": 68,
+    "reported_five_bytes": 84651703351,
+    "five_publisher_weight_sha_matching_count": 23,
+    "missing_source_file_count": 17,
+    "missing_source_bytes": 4329188,
+    "content_address_distinct_missing_file_count": 15,
+    "content_address_distinct_missing_bytes": 4326099,
+    "owner_HDD_current_free_bytes": null
+  },
+  "observed_vs_inferred": {
+    "observed_from_record": "Latest GitHub ledger claims verified publisher payload hashes, but owner's current storage not mounted/rehashed in this chat.",
+    "inferred_missing_path": "Unique count+sum subset solution after ruling out exact SHA-matched payloads. Source files are potential additional archival content, NOT proven physically absent.",
+    "cannot_prove": "Full original archive complete, local files exist, functional runtime/ABI, permissions, exact legal rights or model performance."
+  },
+  "per_model_deltas": [
+    {
+      "repo_id": "RWKV/RWKV7-7.2B-20260805",
+      "source_revision": "9e47155004fe9df0f2a8015efa9152595c9065be",
+      "source_complete_files": 19,
+      "ledger_reported_files": 12,
+      "missing_in_report_file_count": 7,
+      "source_full_bytes": 14402000339,
+      "ledger_reported_bytes": 14401662526,
+      "missing_in_report_bytes": 337813,
+      "ledger_reported_exact_match_publisher_sha_count": 3,
+      "source_lfs_sha_count": 3,
+      "total_possible_subset_solutions": 1,
+      "exact_missing_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 137,
+          "publisher_hash_kind": "git_blob_sha1",
+          "publisher_hash": "2264b63ec1152a5e87f179de42a544379141372e",
+          "role": "PROVENANCE_METADATA",
+          "observed_missing_on_owner_disk": false,
+          "inference_basis": "UNIQUE_SUBSET_SUM_MISSING_FROM_REPORTED_SELECTION_METADATA_NOT_DEVICE_INSPECTION"
+        },
+        {
+          "path": "inference/generate.py",
+          "bytes": 7187,
+          "publisher_hash_kind": "git_blob_sha1",
+          "publisher_hash": "e05901d8bf53c02e474338a42a9fd754ba99afd5",
+          "role": "UNTRUSTED_SOURCE_CODE_DO_NOT_EXECUTE",
+          "observed_missing_on_owner_disk": false,
+          "inference_basis": "UNIQUE_SUBSET_SUM_MISSING_FROM_REPORTED_SELECTION_METADATA_NOT_DEVICE_INSPECTION"
+        },
+        {
+          "path": "inference/kernel.py",
+          "bytes": 165394,
+          "publisher_hash_kind": "git_blob_sha1",
+          "publisher_hash": "a6700d65c44f9f73d23bd11306f08b7057e0b952",
+          "role": "UNTRUSTED_SOURCE_CODE_DO_NOT_EXECUTE",
+          "observed_missing_on_owner_disk": false,
+          "inference_basis": "UNIQUE_SUBSET_SUM_MISSING_FROM_REPORTED_SELECTION_METADATA_NOT_DEVICE_INSPECTION"
+        },
+        {
+          "path": "inference/model_loader.py",
+          "bytes": 6630,
+          "publisher_hash_kind": "git_blob_sha1",
+          "publisher_hash": "cb910efbd26e4df2e2adf888f63260b2b378daab",
+          "role": "UNTRUSTED_SOURCE_CODE_DO_NOT_EXECUTE",
+          "observed_missing_on_owner_disk": false,
+          "inference_basis": "UNIQUE_SUBSET_SUM_MISSING_FROM_REPORTED_SELECTION_METADATA_NOT_DEVICE_INSPECTION"
+        },
+        {
+          "path": "inference/requirements.txt",
+          "bytes": 97,
+          "publisher_hash_kind": "git_blob_sha1",
+          "publisher_hash": "0e4afe5b1def57476d893251f81db49f4e9bef76",
+          "role": "RUNTIME_DEPENDENCY_DECLARATION",
+          "observed_missing_on_owner_disk": false,
+          "inference_basis": "UNIQUE_SUBSET_SUM_MISSING_FROM_REPORTED_SELECTION_METADATA_NOT_DEVICE_INSPECTION"
+        },
+        {
+          "path": "inference/runtime.py",
+          "bytes": 158229,
+          "publisher_hash_kind": "git_blob_sha1",
+          "publisher_hash": "53a67d5a4a6991a12c2a8a567d9141d6cfe7dc4a",
+          "role": "UNTRUSTED_SOURCE_CODE_DO_NOT_EXECUTE",
+          "observed_missing_on_owner_disk": false,
+          "inference_basis": "UNIQUE_SUBSET_SUM_MISSING_FROM_REPORTED_SELECTION_METADATA_NOT_DEVICE_INSPECTION"
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 139,
+          "publisher_hash_kind": "git_blob_sha1",
+          "publisher_hash": "af4bd448e551df66440802a2bb7c4ab7e20614f0",
+          "role": "PROVENANCE_METADATA",
+          "observed_missing_on_owner_disk": false,
+          "inference_basis": "UNIQUE_SUBSET_SUM_MISSING_FROM_REPORTED_SELECTION_METADATA_NOT_DEVICE_INSPECTION"
+        }
+      ],
+      "owner_disk_sha256_checked_now": false,
+      "root_large_shards_need_redownload": false,
+      "root_download_approved": false
+    },
+    {
+      "repo_id": "GSAI-ML/iLLaDA-8B-Base",
+      "source_revision": "a1b5b5f8a31a3854a46205ee584178c04b45ec9a",
+      "source_complete_files": 16,
+      "ledger_reported_files": 12,
+      "missing_in_report_file_count": 4,
+      "source_full_bytes": 16512918618,
+      "ledger_reported_bytes": 16512890112,
+      "missing_in_report_bytes": 28506,
+      "ledger_reported_exact_match_publisher_sha_count": 5,
+      "source_lfs_sha_count": 5,
+      "total_possible_subset_solutions": 1,
+      "exact_missing_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "publisher_hash_kind": "git_blob_sha1",
+          "publisher_hash": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+          "role": "PROVENANCE_METADATA",
+          "observed_missing_on_owner_disk": false,
+          "inference_basis": "UNIQUE_SUBSET_SUM_MISSING_FROM_REPORTED_SELECTION_METADATA_NOT_DEVICE_INSPECTION"
+        },
+        {
+          "path": "configuration_illada.py",
+          "bytes": 3003,
+          "publisher_hash_kind": "git_blob_sha1",
+          "publisher_hash": "bad6d42476a0b63ff422b3720eff7635c057dbe5",
+          "role": "UNTRUSTED_SOURCE_CODE_DO_NOT_EXECUTE",
+          "observed_missing_on_owner_disk": false,
+          "inference_basis": "UNIQUE_SUBSET_SUM_MISSING_FROM_REPORTED_SELECTION_METADATA_NOT_DEVICE_INSPECTION"
+        },
+        {
+          "path": "modeling_illada.py",
+          "bytes": 22286,
+          "publisher_hash_kind": "git_blob_sha1",
+          "publisher_hash": "b0c04b1d56731a9c6d67f96567fbcedbd57375e8",
+          "role": "UNTRUSTED_SOURCE_CODE_DO_NOT_EXECUTE",
+          "observed_missing_on_owner_disk": false,
+          "inference_basis": "UNIQUE_SUBSET_SUM_MISSING_FROM_REPORTED_SELECTION_METADATA_NOT_DEVICE_INSPECTION"
+        },
+        {
+          "path": "SECURITY.md",
+          "bytes": 1647,
+          "publisher_hash_kind": "git_blob_sha1",
+          "publisher_hash": "b0c3b12c2c95c44e8b23bac07a3e9b7cb19dd0ef",
+          "role": "MODEL_SOURCE_METADATA",
+          "observed_missing_on_owner_disk": false,
+          "inference_basis": "UNIQUE_SUBSET_SUM_MISSING_FROM_REPORTED_SELECTION_METADATA_NOT_DEVICE_INSPECTION"
+        }
+      ],
+      "owner_disk_sha256_checked_now": false,
+      "root_large_shards_need_redownload": false,
+      "root_download_approved": false
+    },
+    {
+      "repo_id": "PrentisAI/GroundGUI-8B",
+      "source_revision": "9db378189fddaabb5f6e347b9053858a392022ac",
+      "source_complete_files": 17,
+      "ledger_reported_files": 16,
+      "missing_in_report_file_count": 1,
+      "source_full_bytes": 17550250270,
+      "ledger_reported_bytes": 17550248700,
+      "missing_in_report_bytes": 1570,
+      "ledger_reported_exact_match_publisher_sha_count": 2,
+      "source_lfs_sha_count": 2,
+      "total_possible_subset_solutions": 1,
+      "exact_missing_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "publisher_hash_kind": "git_blob_sha1",
+          "publisher_hash": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+          "role": "PROVENANCE_METADATA",
+          "observed_missing_on_owner_disk": false,
+          "inference_basis": "UNIQUE_SUBSET_SUM_MISSING_FROM_REPORTED_SELECTION_METADATA_NOT_DEVICE_INSPECTION"
+        }
+      ],
+      "owner_disk_sha256_checked_now": false,
+      "root_large_shards_need_redownload": false,
+      "root_download_approved": false
+    },
+    {
+      "repo_id": "ACE-Step/acestep-v15-xl-turbo",
+      "source_revision": "d4a0b288b83ebb7e25a8c0b32c573c22e134e8ee",
+      "source_complete_files": 11,
+      "ledger_reported_files": 7,
+      "missing_in_report_file_count": 4,
+      "source_full_bytes": 19953378268,
+      "ledger_reported_bytes": 19949418488,
+      "missing_in_report_bytes": 3959780,
+      "ledger_reported_exact_match_publisher_sha_count": 4,
+      "source_lfs_sha_count": 5,
+      "total_possible_subset_solutions": 1,
+      "exact_missing_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "publisher_hash_kind": "git_blob_sha1",
+          "publisher_hash": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "role": "PROVENANCE_METADATA",
+          "observed_missing_on_owner_disk": false,
+          "inference_basis": "UNIQUE_SUBSET_SUM_MISSING_FROM_REPORTED_SELECTION_METADATA_NOT_DEVICE_INSPECTION"
+        },
+        {
+          "path": "configuration_acestep_v15.py",
+          "bytes": 13225,
+          "publisher_hash_kind": "git_blob_sha1",
+          "publisher_hash": "e54e1c82f004851d356a0589c8ea94227ed61274",
+          "role": "UNTRUSTED_SOURCE_CODE_DO_NOT_EXECUTE",
+          "observed_missing_on_owner_disk": false,
+          "inference_basis": "UNIQUE_SUBSET_SUM_MISSING_FROM_REPORTED_SELECTION_METADATA_NOT_DEVICE_INSPECTION"
+        },
+        {
+          "path": "modeling_acestep_v15_xl_turbo.py",
+          "bytes": 103821,
+          "publisher_hash_kind": "git_blob_sha1",
+          "publisher_hash": "0c1ae8cad0365849a99e894c483316ebf4760b1a",
+          "role": "UNTRUSTED_SOURCE_CODE_DO_NOT_EXECUTE",
+          "observed_missing_on_owner_disk": false,
+          "inference_basis": "UNIQUE_SUBSET_SUM_MISSING_FROM_REPORTED_SELECTION_METADATA_NOT_DEVICE_INSPECTION"
+        },
+        {
+          "path": "silence_latent.pt",
+          "bytes": 3841215,
+          "publisher_hash_kind": "sha256_content",
+          "publisher_hash": "a778e9dd942f5e8b2c09c55370782d318834432b03dabbcdf70e6ed49ad6358b",
+          "role": "LEARNED_TENSOR_TORCH_SERIALIZATION_DO_NOT_DESERIALIZE",
+          "observed_missing_on_owner_disk": false,
+          "inference_basis": "UNIQUE_SUBSET_SUM_MISSING_FROM_REPORTED_SELECTION_METADATA_NOT_DEVICE_INSPECTION"
+        }
+      ],
+      "owner_disk_sha256_checked_now": false,
+      "root_large_shards_need_redownload": false,
+      "root_download_approved": false
+    },
+    {
+      "repo_id": "microsoft/TRELLIS.2-4B",
+      "source_revision": "af44b45f2e35a493886929c6d786e563ec68364d",
+      "source_complete_files": 22,
+      "ledger_reported_files": 21,
+      "missing_in_report_file_count": 1,
+      "source_full_bytes": 16237485044,
+      "ledger_reported_bytes": 16237483525,
+      "missing_in_report_bytes": 1519,
+      "ledger_reported_exact_match_publisher_sha_count": 9,
+      "source_lfs_sha_count": 9,
+      "total_possible_subset_solutions": 1,
+      "exact_missing_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "publisher_hash_kind": "git_blob_sha1",
+          "publisher_hash": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "role": "PROVENANCE_METADATA",
+          "observed_missing_on_owner_disk": false,
+          "inference_basis": "UNIQUE_SUBSET_SUM_MISSING_FROM_REPORTED_SELECTION_METADATA_NOT_DEVICE_INSPECTION"
+        }
+      ],
+      "owner_disk_sha256_checked_now": false,
+      "root_large_shards_need_redownload": false,
+      "root_download_approved": false
+    }
+  ],
+  "cross_model_byte_identical_candidates": [
+    {
+      "hash_kind": "git_blob_sha1",
+      "hash": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+      "bytes": 1570,
+      "occurrences": [
+        {
+          "repo_id": "GSAI-ML/iLLaDA-8B-Base",
+          "path": ".gitattributes"
+        },
+        {
+          "repo_id": "PrentisAI/GroundGUI-8B",
+          "path": ".gitattributes"
+        }
+      ]
+    },
+    {
+      "hash_kind": "git_blob_sha1",
+      "hash": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "bytes": 1519,
+      "occurrences": [
+        {
+          "repo_id": "ACE-Step/acestep-v15-xl-turbo",
+          "path": ".gitattributes"
+        },
+        {
+          "repo_id": "microsoft/TRELLIS.2-4B",
+          "path": ".gitattributes"
+        }
+      ]
+    }
+  ],
+  "preexisting_go_source_scopes": [
+    {
+      "repo_id": "RWKV/RWKV7-7.2B-20260805",
+      "revision": "9e47155004fe9df0f2a8015efa9152595c9065be",
+      "files": 19,
+      "bytes": 14402000339,
+      "all_weight_payloads_are_in_ledger_reporting": true,
+      "partial_not_full_scope": true
+    },
+    {
+      "repo_id": "GSAI-ML/iLLaDA-8B-Base",
+      "revision": "a1b5b5f8a31a3854a46205ee584178c04b45ec9a",
+      "files": 16,
+      "bytes": 16512918618,
+      "all_weight_payloads_are_in_ledger_reporting": true,
+      "partial_not_full_scope": true
+    },
+    {
+      "repo_id": "microsoft/TRELLIS.2-4B",
+      "revision": "af44b45f2e35a493886929c6d786e563ec68364d",
+      "files": 22,
+      "bytes": 16237485044,
+      "all_weight_payloads_are_in_ledger_reporting": true,
+      "partial_not_full_scope": true
+    }
+  ],
+  "output_policy": {
+    "source_delta_only": true,
+    "exact_parent_sha_requirements_still_apply": true,
+    "no_model_weight_redownload_from_root_if_owner_sha_matches": true,
+    "no_retrieval_without_explicit_approved_manifest": true,
+    "source_code_and_torch_pt_not_executed": true,
+    "no_auto_migrate_or_delete_stored_files": true,
+    "all_legal_acts_and_gated_dependencies_still_must_be_cleared": true
+  },
+  "dependencies_still_unresolved": [
+    {
+      "model": "ACE-Step/acestep-v15-xl-turbo",
+      "external_repo": "ACE-Step/Ace-Step1.5",
+      "status": "5.300 GB logical selected source, same 1.203GB Qwen Embedding sha payload as history; user disk not confirmed."
+    },
+    {
+      "model": "microsoft/TRELLIS.2-4B",
+      "external_repo": "microsoft/TRELLIS-image-large",
+      "status": "Public sparse decoder selected 147.592MB, owner local not confirmed"
+    },
+    {
+      "model": "microsoft/TRELLIS.2-4B",
+      "external_repo": "facebook/dinov3-vitl16-pretrain-lvd1689m",
+      "status": "Manual Gated, user access rights unknown"
+    },
+    {
+      "model": "microsoft/TRELLIS.2-4B",
+      "external_repo": "briaai/RMBG-2.0",
+      "status": "Automatic Gated, user access rights unknown"
+    }
+  ],
+  "future_regulation_probabilities_not_computed": true,
+  "exact_model_policy": "150B main benchmark inclusive baseline; current separate quantized model exception requires measured matching runtime and approval, no exceptions cleared"
+}
