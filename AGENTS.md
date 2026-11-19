@@ -1,3 +1,11 @@
+# R125 正本v52・2026-11-20：61取得報告のファイル部分集合差分を解明（過去の53は履歴）
+
+唯一の正本は[CURRENT](catalog/CURRENT.json)→**v52、205登録・158有効（SELECT53/CONDITIONAL105）**。[研究用R125 6repo差分manifest](queues/proposed-v52-r125-post61-gap66plus-2026-11-20.json)／[技術選定と反証](docs/strategy/125-v52-acquisition61-restore-gaps-and-two-originals-2026-11-20.md)／[オフライン検証](tests/test_r125_post61_source_gaps.py)。2026-11-19実行台帳のblob `5a5de85e8e0fdc1ac2bbb7f61b369df005e63b79`では**61モデル・708ファイル・409,835,119,252byte VERIFIED報告**、1 Gated HOLD。これはOwner Dの今回の独立実測ではない。旧53は履歴。
+
+同一Publisher revisionの全ファイルscopeとの件数＋整数bytes差分からRWKV7 7file／iLLaDA4／TRELLIS1／ACE-Step4、計16の補完候補を一意推定。元重み約20GB等を無駄に再取得しない。Qwen/Qwen3.8-27BとHuggingFaceBio/Carbon-Xは61モデル台帳に対応する取得報告がなく、原本Source各32/19fileをまず研究固定。報告未掲載＝現物不存在ではない。Carbon custom tokenizer.py、ACE custom code/silence_latent.pt、音楽LM/VAE、TRELLIS CUDA/NVIDIAライセンスは独立停止ゲート。**承認キュー0、今回の重量ダウンロード0、既存削除0**。R122の15候補は履歴保持、mainのみ更新。
+
+---
+
 # R122 現行v51（2026-11-19）：独立RL後学習原本DaisyRoseを1件選定、承認STOP
 
 **唯一の正本は[CURRENT](catalog/CURRENT.json)→v51、204登録／157有効（SELECT53／CONDITIONAL104）**。[v51 overlay](catalog/revisions/v51-2026-11-19.json)、[原本34ファイル固定manifest](manifests/drafts/v51-2026-11-19-daisyrose-27b-bf16-original.candidate.json)、[選定根拠](docs/strategy/122-v51-daisyrose-27b-original-selection-and-supply-risk-2026-11-19.md)、[全157 readiness](catalog/readiness/v51-2026-11-19-r122-all157-gates.json)、[157非実行候補](queues/proposed-v51-2026-11-19.json)、[104 conditional access](catalog/access/2026-11-19-v51-conditional-hub-gates.json)、[157依存準備](catalog/preparation/2026-11-19-insurance-bundles-v51.json)。親Qwenから18/18 weight SHA差分があり別trained result。FP8/NVFP4は同一成果で別資産登録しない。旧203件は不変。**approved queue 0、実機Dドライブ・権利全文・ABI・実ファイルSHA・offline復元未検証、ダウンロード0**。既取得53件の報告はowner現物独立検査ではない。mainのみ、Gated回避・無断重量DL・既存削除・未審査コード実行禁止。
