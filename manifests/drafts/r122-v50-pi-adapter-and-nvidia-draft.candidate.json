@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "id": "R122_PUBLISHER_IMMUTABLE_SOURCE_METADATA_NON_EXECUTABLE",
+  "research_on": "2026-11-19",
+  "source_repositories_type": "model",
+  "canonical_revision": "v50-20261119",
+  "approved": false,
+  "download_enabled": false,
+  "owner_authorization": false,
+  "license_act_review_complete": false,
+  "owner_drive_identified": false,
+  "owner_free_bytes_verified": null,
+  "runtime_verified": false,
+  "source_identity_data_kind": "official_huggingface_model_api_blobs_true",
+  "source_candidates": [
+    {
+      "repo_id": "harness-hub/Qwen3.8-27B-pi-adapted",
+      "revision": "80d05c9051dfd2ae464e1daf4329cb15524caf60",
+      "primary_url": "https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted",
+      "model_card_license_tag": "apache-2.0",
+      "gated": false,
+      "source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1776,
+          "hash_kind": "git_blob_sha1",
+          "hash": "7dce5fee4125799e7c97b510e85a92a263e1b3e1"
+        },
+        {
+          "path": "README.md",
+          "bytes": 18848,
+          "hash_kind": "git_blob_sha1",
+          "hash": "417b13534b57199ff73ba68e71730da2bb010dcc"
+        },
+        {
+          "path": "adapter_config.json",
+          "bytes": 1171,
+          "hash_kind": "git_blob_sha1",
+          "hash": "cb1814360d6ee9549e6b34b532c5ad5c8856a237"
+        },
+        {
+          "path": "adapter_model.safetensors",
+          "bytes": 637610624,
+          "hash_kind": "publisher_lfs_sha256",
+          "hash": "869b2a089882c0dac4683993f11081bd70edc30b32c64a988c688d6ac26b792a"
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 9004,
+          "hash_kind": "git_blob_sha1",
+          "hash": "9bd39df8984ba783a0b32cf2ebcd2117136e79ff"
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 19989339,
+          "hash_kind": "publisher_lfs_sha256",
+          "hash": "a5cd9732badce41de57e6efce8302930ded1c1188c5f81feb2bd6c24c4a1941f"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 2486,
+          "hash_kind": "git_blob_sha1",
+          "hash": "c23583c51714d887cd67b3b996e128c469fa996e"
+        }
+      ],
+      "files": 7,
+      "selected_bytes": 657633248,
+      "selected_learning_result": "RL trained PEFT LoRA original",
+      "original_repo_file_count": 12,
+      "removed_only_decorative_files": [
+        "banner.png",
+        "card-pi.png",
+        "train-tool-calls.gif",
+        "trajectory.gif",
+        "trajectory.png"
+      ],
+      "trained_parent_repo": "Qwen/Qwen3.8-27B",
+      "frozen_parent_reference": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
+      "training_parent_revision_verified": false,
+      "qwen_parent_tokenizer_sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3",
+      "adapter_tokenizer_sha256": "a5cd9732badce41de57e6efce8302930ded1c1188c5f81feb2bd6c24c4a1941f",
+      "tokenizer_parent_identical": false,
+      "chat_template_parent_blob_identical": true,
+      "adapter_config": {
+        "peft_type": "LORA",
+        "rank": 32,
+        "alpha": 64,
+        "target_modules": [
+          "q_proj",
+          "k_proj",
+          "v_proj",
+          "o_proj",
+          "gate_proj",
+          "up_proj",
+          "down_proj"
+        ],
+        "base_model_name_or_path": "Qwen/Qwen3.8-27B",
+        "base_revision": null
+      },
+      "license_file_in_repo": false,
+      "decision": "P1_FREEZE_ARCHIVAL_TRAINED_ADAPTER_RESEARCH_ONLY",
+      "blockers": [
+        "Absent exact training parent immutable SHA",
+        "No separate source LICENSE file, legal text/acts not signed off",
+        "Correct adapted tokenizer differs from parent model",
+        "No owner hardware/pi backend speed and quality validation",
+        "No approved immutable file manifest"
+      ],
+      "download_approved": false
+    },
+    {
+      "repo_id": "nvidia/Qwen3.5-4B-Qwen3.8-27B-Draft",
+      "revision": "bc5ad93d03d96a9c1ef49748e00ec5130a7080de",
+      "primary_url": "https://huggingface.co/nvidia/Qwen3.5-4B-Qwen3.8-27B-Draft",
+      "model_card_license_tag": "other",
+      "publisher_governing_terms": "NVIDIA Open Model Agreement",
+      "gated": false,
+      "source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "hash_kind": "git_blob_sha1",
+          "hash": "52373fe24473b1aa44333d318f578ae6bf04b49b"
+        },
+        {
+          "path": "README.md",
+          "bytes": 20639,
+          "hash_kind": "git_blob_sha1",
+          "hash": "6c1aea2fc577fef359546a3c517d6e05ffb1104b"
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 7756,
+          "hash_kind": "git_blob_sha1",
+          "hash": "a585dec894e63da457d9440ec6aa7caa16d20860"
+        },
+        {
+          "path": "config.json",
+          "bytes": 1982,
+          "hash_kind": "git_blob_sha1",
+          "hash": "dd10c8861c78f375743329e693a48408db52e720"
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 164,
+          "hash_kind": "git_blob_sha1",
+          "hash": "6bc3495abf4617f1310ddce38eef88be858bafa5"
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 8411558400,
+          "hash_kind": "publisher_lfs_sha256",
+          "hash": "4838b4b88a345c7fdef6c7678617512e5ca5047647af45b15d3cf0531fadbe5a"
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 19989325,
+          "hash_kind": "publisher_lfs_sha256",
+          "hash": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1122,
+          "hash_kind": "git_blob_sha1",
+          "hash": "3fc4fc36a1708482b6d7fe329b964f0e4396b07f"
+        }
+      ],
+      "files": 8,
+      "selected_bytes": 8431580958,
+      "model_total_parameters": 4205751296,
+      "source_weight_bytes": 8411558400,
+      "source_weight_sha256": "4838b4b88a345c7fdef6c7678617512e5ca5047647af45b15d3cf0531fadbe5a",
+      "target_repo": "Qwen/Qwen3.8-27B",
+      "source_license_file_in_repo": false,
+      "decision": "P2_HOLD_INFERENCE_BENCHMARK_AND_LEGAL",
+      "blockers": [
+        "NVIDIA Open Model Agreement full license review",
+        "Existing Tencent DSpine and built-in MTP comparison not tested",
+        "No owner runtime complete peak/throughput measured",
+        "No approved manifest"
+      ],
+      "download_approved": false
+    }
+  ],
+  "alternative_harness_adapters": [
+    {
+      "repo_id": "harness-hub/Qwen3.8-27B-opencode-adapted",
+      "revision": "b4171c0069685320026d76eac96ccf716ca7e476",
+      "weight_path": "adapter_model.safetensors",
+      "weight_bytes": 637610624,
+      "weight_sha256": "668b9d7d4283d3d36622f0868c8d983a7299b4a37dbb393716d693dbb04f4582",
+      "tokenizer_matches_pi": true,
+      "weight_matches_pi": false,
+      "source_selected": false,
+      "decision": "P2_ONLY_AFTER_OPENCODE_HARNESS_ADOPTION"
+    },
+    {
+      "repo_id": "nvidia/Qwen3.5-0.8B-Qwen3.8-27B-Draft",
+      "revision": "6afca85a17ef55a7b89ec0be38cf62983f68d23b",
+      "total_parameters": 752393024,
+      "source_all_repo_bytes": 1524849984,
+      "weight_path": "model.safetensors",
+      "weight_sha256": "5dd80db55903c028c8cbd1e391d75786413934e115f95678e4e44e14a44b6d47",
+      "source_selected": false,
+      "decision": "P3_DEFER_BECAUSE_LONG_CONTEXT_ACCEPTANCE_WORSE_THAN_MTP"
+    },
+    {
+      "repo_id": "tencent/Qwen3.8-27B-DSpine-b16",
+      "revision": "260a6c23070ca873ff1a5f33b7119ac3f6a245ee",
+      "total_parameters": 2025912064,
+      "weight_sha256": "ac90f1df842ea66b23e4224f3e86624add547526f689ffe9e9c6b7a5937116b1",
+      "existing_verified_claim_in_git_ledger": true,
+      "decision": "RETAIN_AND_VERIFY_NO_REDUPLICATION"
+    }
+  ],
+  "identity_evidence": {
+    "pi_original_sha": "80d05c9051dfd2ae464e1daf4329cb15524caf60",
+    "pi_lora_weight_sha256": "869b2a089882c0dac4683993f11081bd70edc30b32c64a988c688d6ac26b792a",
+    "pi_and_opencode_weights_different": true,
+    "pi_and_opencode_tokenizer_identical": true,
+    "qwen_frozen_parent_template_git_blob_sha1": "9bd39df8984ba783a0b32cf2ebcd2117136e79ff",
+    "parent_vs_pi_tokenizer_identical": false,
+    "nvidia_sibling_tokenizer_sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+    "nvidia_tokenizer_differs_from_parent": true,
+    "hashes_are_publisher_not_owner_locally_verified": true
+  },
+  "download_policy": "NO_USER_APPROVED_QUEUE_UPDATE_NO_AUTOMATIC_ACQUISITION"
+}

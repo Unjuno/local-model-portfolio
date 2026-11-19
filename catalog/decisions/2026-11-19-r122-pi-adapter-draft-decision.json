@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "id": "R122_PI_LORA_AND_DRAFT_SELECTION_2026_11_19",
+  "baseline_revision": "v50-20261119",
+  "date": "2026-11-19",
+  "approved": false,
+  "download_enabled": false,
+  "new_formal_catalog_assets": 0,
+  "source_manifest": "manifests/drafts/r122-v50-pi-adapter-and-nvidia-draft.candidate.json",
+  "summary": "Select pi original trained RL LoRA source for P1 metadata-level preservation; retain OpenCode variant as alternate harness only; benchmark NVIDIA 4B before acceptance; defer 0.8B low long-context acceptance; retain existing DSpine",
+  "table": [
+    {
+      "id": "harness-hub/Qwen3.8-27B-pi-adapted",
+      "primary_url": "https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted",
+      "priority": "P1_SOURCE_LOCK",
+      "source_bytes": 657633248,
+      "revision": "80d05c9051dfd2ae464e1daf4329cb15524caf60",
+      "unique": "rank32 alpha64 AsyncGRPO RL trained adapter; new response/task policy, not another full 27B model",
+      "verified_limits": "public, no gated; Apache 2 metadata, no LICENSE file in repo; parent exact training SHA null",
+      "forecast": "Future publisher changes possible, not a known impending ban",
+      "falsification": "On held-out fixed pi harness tasks +5 points pass@1 threshold not met, or parent incompatible, demote",
+      "unresolved": [
+        "training parent SHA",
+        "LICENSE act rights",
+        "owner source hashes/runtime and quality"
+      ],
+      "selected_for_transfer": false
+    },
+    {
+      "id": "harness-hub/Qwen3.8-27B-opencode-adapted",
+      "primary_url": "https://huggingface.co/harness-hub/Qwen3.8-27B-opencode-adapted",
+      "priority": "P2_HOLD",
+      "source_bytes": 637610624,
+      "revision": "b4171c0069685320026d76eac96ccf716ca7e476",
+      "uniqueness": "different learned adaptation for OpenCode, not identical LoRA hashes",
+      "falsification": "OpenCode agent's performance independently improves over pi or existing base on its own harness",
+      "unresolved": [
+        "actual harness used by owner",
+        "source rights",
+        "performance"
+      ],
+      "selected_for_transfer": false
+    },
+    {
+      "id": "nvidia/Qwen3.5-4B-Qwen3.8-27B-Draft",
+      "primary_url": "https://huggingface.co/nvidia/Qwen3.5-4B-Qwen3.8-27B-Draft",
+      "priority": "P2_HOLD",
+      "source_bytes": 8431580958,
+      "revision": "bc5ad93d03d96a9c1ef49748e00ec5130a7080de",
+      "uniqueness": "4.21B independently trained full external speculative drafter, Qwen27B target",
+      "publisher_benchmark": {
+        "block": 16,
+        "qualitative_acceptance": 5.58,
+        "long_context_acceptance": 5.11,
+        "mtp_qualitative": 3.81,
+        "mtp_long": 3.86
+      },
+      "falsification": "No >10% median complete throughput gain over existing DSpine and MTP at same owner HW/driver/backend, demote",
+      "unresolved": [
+        "NVIDIA license full act review",
+        "owner runtime and throughput",
+        "parent/memory"
+      ],
+      "selected_for_transfer": false
+    },
+    {
+      "id": "nvidia/Qwen3.5-0.8B-Qwen3.8-27B-Draft",
+      "primary_url": "https://huggingface.co/nvidia/Qwen3.5-0.8B-Qwen3.8-27B-Draft",
+      "priority": "P3_DEFER",
+      "source_bytes": 1524849984,
+      "revision": "6afca85a17ef55a7b89ec0be38cf62983f68d23b",
+      "uniqueness": "0.752B separately trained external draft but function overlaps built-in MTP",
+      "publisher_benchmark": {
+        "block": 16,
+        "qualitative_acceptance": 3.92,
+        "long_context_acceptance": 3.6,
+        "mtp_qualitative": 3.81,
+        "mtp_long": 3.86
+      },
+      "falsification": "P1 promotion only with better complete user-device throughput or memory vs MTP",
+      "unresolved": [
+        "full backend speed and acceptance",
+        "license"
+      ],
+      "selected_for_transfer": false
+    },
+    {
+      "id": "tencent/Qwen3.8-27B-DSpine-b16",
+      "priority": "KEEP_REPORTED_EXISTING",
+      "source_bytes": 4051857976,
+      "verified_report_only": true,
+      "reason": "Already in GitHub local acquisition ledger; do not retransfer without disk inspection",
+      "selected_for_transfer": false
+    },
+    {
+      "id": "Reson8/Rumble-2-Flash",
+      "priority": "V50_CONDITIONAL_ALREADY_CATALOGUED",
+      "reason": "No duplicate formal addition",
+      "selected_for_transfer": false
+    }
+  ],
+  "legislation": {
+    "sources": [
+      "https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology",
+      "https://public-inspection.federalregister.gov/2026-23529.pdf"
+    ],
+    "observed_policy_is_not_general_local_open_weights_ban": true,
+    "model_specific_numeric_restriction_probability": null
+  },
+  "safeguards": {
+    "owner_hdd_free_bytes_verified": null,
+    "required_free_floor_bytes": 200000000000,
+    "max_archive_bytes": 4000000000000,
+    "user_specific_gated_permission": false,
+    "fully_licensed_for_individual_actions": false,
+    "full_offline_restore_passed": false,
+    "local_user_sha256_verified": false,
+    "download_authorizations_added": 0
+  },
+  "test_protocol": {
+    "H": "Pi adapter >=5 percentage points uplift on held-out coding tasks; NVIDIA 4B >10% full decode throughput versus own DSpine/MTP",
+    "T": "100 paired held-out tasks and 100 prompt repetitions, same GPU HW/clock/backend ABI/context/batch=1/quantization/zero-point, preregister thresholds and fixed stop; no sequential peeking",
+    "D": "PASS only positive paired statistical support + threshold + all rights and hashes; FAIL on significant regression/gate violations; UNCERTAIN otherwise",
+    "C": "pi step160 selection bias and wrong base revision; 4B drafter overhead may erase acceptance improvements",
+    "U": "owner HW, training parent identity, publisher benchmark variance, licence; u_c and k unestimated"
+  }
+}
