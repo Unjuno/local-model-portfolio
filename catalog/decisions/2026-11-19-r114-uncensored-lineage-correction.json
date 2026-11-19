@@ -31,11 +31,39 @@
       "root_source_bytes": 53810927493,
       "root_source_file_count": 26,
       "required_followups": [
-        "Identify exact RVN-F16.gguf fixed revision, SHA256 and bytes",
+        "RESOLVED: publisher RVN-F16.gguf fixed to ab8d7bd81d03117501e4da60cccdff4c80f0eea0, size 53,808,281,888 bytes, SHA256 f20c72c23a6564211c5e44af35ea1277d697c009ce8a25ab28d100447e0f155a",
         "Do not download all 65 GSQ-3bit quantized shards",
         "Compare RVN F16 GGUF vs reconstructed Safetensors and existing Q4 on matched prompts",
         "Avoid counting F16 GGUF and Safetensors as independent trained models"
-      ]
+      ],
+      "master_candidate": {
+        "source_repo": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+        "revision": "ab8d7bd81d03117501e4da60cccdff4c80f0eea0",
+        "path": "RVN-F16.gguf",
+        "bytes": 53808281888,
+        "sha256": "f20c72c23a6564211c5e44af35ea1277d697c009ce8a25ab28d100447e0f155a",
+        "publisher_source_url": "https://huggingface.co/api/models/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF/revision/ab8d7bd81d03117501e4da60cccdff4c80f0eea0?blobs=true",
+        "original_training_checkpoint": false,
+        "provenance": "Earliest currently evidenced publisher source for later Safetensors reconstruction, not proven original BF16 training output"
+      },
+      "other_source_variants": [
+        {
+          "path": "RVN-BF16.gguf",
+          "bytes": 53808281888,
+          "sha256": "461fa227cb3d0bb49a3e8e45ec2b650f9a2e593c51a92144d5ac819f0ee8f37d"
+        },
+        {
+          "path": "RVN-F16-mtp.gguf",
+          "bytes": 54259602656,
+          "sha256": "7b08c52b2168f104aeeef9aaf88f6148f14986ccf03d733e4ddb8bb6daa17784"
+        },
+        {
+          "path": "RVN-BF16-mtp.gguf",
+          "bytes": 54259602656,
+          "sha256": "10813b480bd630d8c1148ccdccc9faf70afbf72cb6d46b8cf865c99112bef88f"
+        }
+      ],
+      "caution": "Source repo also includes MTP-augmented GGUF variants; companion Safetensors is text-only with no MTP. Do not assume F16/BF16-MTP variants are original trained or share identical provenance without author records."
     }
   ],
   "separate_uncensored_coverage": {
