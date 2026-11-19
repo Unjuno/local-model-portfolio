@@ -11,6 +11,9 @@
 - [前回の重複排除済み15source候補](../../queues/proposed-v50-r122-deduplicated-next15-sources.json)は**332ファイル／374,701,109,177byte**。これを同一配布元repo・固定revision・ファイルパス・Publisher SHA-256で61件台帳と突合した。18個のSHA照合可能なファイルについて**47,924,439,388byte**のSHA一致が**台帳上で報告済み**。同じIDやrevisionだけでは重複としない。
 - その差として、**326,776,669,789byte**が未照合または未報告source候補。うち**326,719,118,903byte**はPublisher SHAがあるが同一ハッシュ報告がなく、**57,550,886byte**は照合できる既報告Git blob SHAが台帳にない小ファイル等。これは**台帳にある重みが所有者媒体に残っているという条件付き**の論理計画量であり、実Dドライブの追加書込み量の実測ではない。
 
+
+[**次の15source・未照合ファイルの非実行キュー**](../../queues/proposed-v52-r123-ledger61-delta-15-research-only.json) にsource別の未照合SHA、パス、byte、既報告一致分を一意に保存した。このファイルは実行不可の調査資料であり、`queues/approved.json`への投入や外部ダウンローダーへ直接渡すことを認めない。
+
 ### 同一repoでも保存原本が異なる例
 
 | 固定source repo ID | Source全体（B） | Publisher SHA既報告一致（B） | 未照合の候補（B） | 現在の判断 |
@@ -33,7 +36,7 @@
 | P0 | [sensenova/SenseNova-Loop-9B-GGUF](https://huggingface.co/sensenova/SenseNova-Loop-9B-GGUF) | 公式作者のpublic GGUFとmmproj約19.338GB。元Safetensors作者Gatedとの違いを記録し、許可される範囲のみ | 正式Gated権限/原本のMTP全構成を検証できたらマスター候補を再評価 |
 | P0 | [InterpreticAI BF16](https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v2)・[0bserverx RVN-F16](https://huggingface.co/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF) | 異なる編集済み成果を高精度原本で保存。同一Q4/量子化派生の多重保存を避ける。合計source約109.394GB | 親・権利・source全シャード・D実SHAが欠ける間は実取得停止。政治的抑制編集と全面的な無拒否を混同しない |
 | P1 | [Fara1.5-27B](https://huggingface.co/microsoft/Fara1.5-27B)・[Hy-Memory-30B-A3B](https://huggingface.co/tencent/Hy-Memory-30B-A3B) | 独立ブラウザ操作／長期記憶専門能力。両者で約114.887GBのsource、現在該当revisionの取得報告なし | Faraはsandbox実行、Hy-Memoryは3B activeではなく総30.0647B、権利と依存を審査 |
-| P2 | [Wan2.2-TI2V-5B](https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B)・[Z-Image-Turbo](https://huggingface.co/Tongyi-MAI/Z-Image-Turbo) | 映像・画像の元学習成果。総約67.05GB、codec/VAEの重複があれば個別SHAで差し引く | 全159?ではなく**現行158有効の予算**に基づき、必要学習済み依存が既取得か確かめる |
+| P2 | [Wan2.2-TI2V-5B](https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B)・[Z-Image-Turbo](https://huggingface.co/Tongyi-MAI/Z-Image-Turbo) | 映像・画像の元学習成果。総約67.05GB、codec/VAEの重複があれば個別SHAで差し引く | **現行158有効の予算**に基づき、必要学習済み依存が既取得か確かめる |
 | P3 | RWKV7／iLLaDA／TRELLIS.2 | 重量SHA一致済み報告のため**再DLではなく実Dの再ハッシュと復元**に転換 | 現物が欠損・別SHAなら元Publisher固定revisionで差分のみ再取得を検討 |
 
 **未登録小型モデルの検討**（新規正式追加はまだしない）：
@@ -78,7 +81,7 @@ Exa検索はHTTP 402（利用枠超過）で不能。Hugging Face作者原本、
 
 **T**：まず各publisher SHA・40桁revision・全file pathを本人Dの実物と比較し、既存61件reportedのうち同じ18SHAについて少なくとも一致/不一致を独立追試。未確認ファイルは部分範囲だけを補う。PIIは英語＋各対象言語でモデルごと最低200例の公開・合成例（データ使用権確認済み）を用意し、同じspan定義のprecision/recall/F1を比較。別モデルの作者F1を直接引き算しない。各環境のCPU/GPU、クロック、batch=1、max tokens、backend、precision・zero-point、OSとライブラリABIを固定して測定。疑わしいcustom codeは静的監査まで実行しない。
 
-**D**：`PASS_SOURCE_METADATA`＝ublisher固定SHAと同一ledger報告に矛盾ゼロ。`PASS_DOWNLOAD`＝本人SHA、利用許可、物理容量、依存、150B、明示approvalの全ゲートを満たす場合だけ。`UNCERTAIN_STOP`＝個人権限・SHA・総数・容量・外部重みのいずれかが未確認。`FAIL`＝150B以上、Gated回避、非承認実行。今回`PASS_DOWNLOAD=0`。
+**D**：`PASS_SOURCE_METADATA`＝Publisher固定SHAと同一ledger報告に矛盾ゼロ。`PASS_DOWNLOAD`＝本人SHA、利用許可、物理容量、依存、150B、明示approvalの全ゲートを満たす場合だけ。`UNCERTAIN_STOP`＝個人権限・SHA・総数・容量・外部重みのいずれかが未確認。`FAIL`＝150B以上、Gated回避、非承認実行。今回`PASS_DOWNLOAD=0`。
 
 **C**：61件台帳が古い/ファイルを失っている、量子化Q4からF16が再構成できるという誤認、モデルの派生先に独立学習が実はない、PIIの言語間性能が低い、BISの規則対象を混同する、ハッシュ一致の対象と選択ファイル名を取り違える等で仮説は破れる。
 
@@ -88,7 +91,7 @@ Exa検索はHTTP 402（利用枠超過）で不能。Hugging Face作者原本、
 
 **機械学習**＝MoE非活性expert・別学習LoRA/蒸留・公平な同条件ベンチ。**デジタル保存学**＝SHA・source revision・音声codec復元・メタデータ。**ソフトウェア供給網**＝custom codeとpickleの静的監査・ABI固定。**情報法**＝著作権・個人情報・Gated権限・輸出管理。
 
-**ERROR CHECK**：v52の205登録／158有効、61 VERFIED報告、15source／332ファイル、135 Publisher SHAファイル、18 SHA一致報告、矛盾SHAゼロ、総source374,701,109,177B、条件付き残326,776,669,789B、20日新規重みDL0・承認0・main変更0。150B超2モデルは絶対除外、総数不明22（有効9）は準備STOP。取得予定候補の数だけで規制されそうだと確定しない。
+**ERROR CHECK**：v52の205登録／158有効、61 VERIFIED報告、15source／332ファイル、135 Publisher SHAファイル、18 SHA一致報告、矛盾SHAゼロ、総source374,701,109,177B、条件付き残326,776,669,789B、20日新規重みDL0・承認0・main変更0。150B超2モデルは絶対除外、総数不明22（有効9）は準備STOP。取得予定候補の数だけで規制されそうだと確定しない。
 
 ## 6.〈次に考える問い〉
 
