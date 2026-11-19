@@ -320,6 +320,24 @@ def select_existing_destination(root: Path, repo: str, files: list[dict],
     return best
 
 
+def inspect_existing_weight_prerequisites(root: Path, destination: Path,
+                                          prerequisites: list[dict]) -> list[tuple[str, str]]:
+    """Read-only publisher-SHA check of already archived model weights.
+
+    The function never downloads or executes weight/pickle content. Rejection
+    requires no network call. Never convert a metadata-only claim into an
+    actual offline-restore verification.
+    """
+    invalid = []
+    for item in prerequisites:
+        path = destination.joinpath(*validate_relpath(item["path"]))
+        check_destination(root, path)
+        ok, reason, _ = verify_file(path, item)
+        if not ok:
+            invalid.append((item["path"], reason))
+    return invalid
+
+
 def source_fingerprint(model: dict) -> str:
     """Hash immutable source revision and the selected files/bytes/publisher hashes."""
     selected = {
@@ -467,13 +485,7 @@ def main() -> int:
                                                   model.get("repository_type", "model"))
         check_destination(root, destination)
         if prereqs:
-            invalid = []
-            for spec in prereqs:
-                expected = destination.joinpath(*validate_relpath(spec["path"]))
-                check_destination(root, expected)
-                ok, reason, digest = verify_file(expected, spec)
-                if not ok:
-                    invalid.append((spec["path"], reason))
+            invalid = inspect_existing_weight_prerequisites(root, destination, prereqs)
             if invalid:
                 print("SKIP_PREREQUISITE_SHA", repo, len(invalid), "weight(s) not verified")
                 append_log(log_path, dict(repo=repo, revision=revision,
