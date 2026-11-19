@@ -2,7 +2,7 @@
 
 ## 1.〈本論〉— いま何を取得対象として確定するか
 
-**正本**は`catalog/CURRENT.json`のv48、**201登録／154有効（SELECT53・CONDITIONAL101）**。新たな取得対象を安易に増殖させず、**既存アーカイブの現物照合→次の独立原本10件のハッシュ・権利閉包→2つの新規専門候補の個別採否**を優先する。監査機械可読本体は[こちら](../../catalog/decisions/2026-11-19-r116-next54-and-new-originals-selection.json)。新規2件の[完全Publisherファイル一覧](../../manifests/drafts/r115-v48-rumble2-flash-and-nemotron-sigma-original.candidate.json)は合計37ファイル／9,880,970,153byte、LFS SHA-256参照5件。
+**正本**は`catalog/CURRENT.json`のv48、**201登録／154有効（SELECT53・CONDITIONAL101）**。新たな取得対象を安易に増殖させず、**既存アーカイブの現物照合→次の独立原本9件のハッシュ・権利閉包→2つの新規専門候補の個別採否**を優先する。監査機械可読本体は[こちら](../../catalog/decisions/2026-11-19-r116-next54-and-new-originals-selection.json)。新規2件の[完全Publisherファイル一覧](../../manifests/drafts/r115-v48-rumble2-flash-and-nemotron-sigma-original.candidate.json)は合計37ファイル／9,880,970,153byte、LFS SHA-256参照5件。
 
 ### 取得済み「報告」と「現物保証」の違い
 
