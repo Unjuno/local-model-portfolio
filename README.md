@@ -1,5 +1,8 @@
 # Local Model Portfolio
 
+**R115｜保存原本の形式・容量・規制リスクを統合決定（2026-11-19）**：[無検閲2系統の元checkpoint選定、2026-11-19米BISのモデル重み規制撤廃予定を一次資料で検証](docs/strategy/115-v48-regulatory-correction-and-master-selection-budget.md)／[15資産・212ファイルの原本保全優先別案](queues/proposed-v48-r115-archival-master-alternative-15.json)／[根拠と容量差・新候補v3保留](catalog/decisions/2026-11-19-r115-original-master-capacity-and-bis-policy.json)。既存容量優先212.023GBに対し原本優先286.420GB（+74.397GB）。Kitten重複ONNX除外、RVN F16と再構成Safetensorsの二重保存保留。歴史的仮想余白は条件付き-53.987GB、実4TB未測定。v48 201/154・承認0維持。
+
+
 **R114｜R113の原本系譜を訂正（2026-11-19）**：[配布者一次資料・RVN F16 GGUF 53.808GBの固定SHAと正確な優先順位](docs/strategy/114-v48-uncensored-rvn-source-lineage-and-gguf-f16-pin-2026-11-19.md)／[機械可読の訂正](catalog/decisions/2026-11-19-r114-uncensored-lineage-correction.json)。**InterpreticAIはフルBF16を優先**。一方**0bserverxのSafetensorsはRVN-F16.ggufからの再構成物**であり、元の学習時BF16ではない。RVNはF16 GGUFを確認済み再構成元として優先し、GSQ-3bit・Q4・再構成Safetensorsの重複取得を保留。旧R113「2系統のSafetensorsをともに原本とする」判断は訂正済み。v48 201登録/154有効・承認0は不変更。
 
 **R114｜無検閲27B原本の誤交換防止（2026-11-19）**：[Interpretic原本と0bserverx RVNの同一性を区別した監査](docs/strategy/114-v48-uncensored-rvn-parent-provenance-correction.md)／[機械可読停止判定](catalog/decisions/2026-11-19-r114-uncensored-provenance-stop.json)。0bserverx RVN-Q4と別Safetensors 13 shardの厳密な変換元同一性は未立証。RVNを自動削除・交換しない。v48 201/154、承認0。
