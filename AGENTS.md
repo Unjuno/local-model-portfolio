@@ -1,3 +1,9 @@
+# R122 現行v51（2026-11-19）：独立RL後学習原本DaisyRoseを1件選定、承認STOP
+
+**唯一の正本は[CURRENT](catalog/CURRENT.json)→v51、204登録／157有効（SELECT53／CONDITIONAL104）**。[v51 overlay](catalog/revisions/v51-2026-11-19.json)、[原本34ファイル固定manifest](manifests/drafts/v51-2026-11-19-daisyrose-27b-bf16-original.candidate.json)、[選定根拠](docs/strategy/122-v51-daisyrose-27b-original-selection-and-supply-risk-2026-11-19.md)、[全157 readiness](catalog/readiness/v51-2026-11-19-r122-all157-gates.json)、[157非実行候補](queues/proposed-v51-2026-11-19.json)、[104 conditional access](catalog/access/2026-11-19-v51-conditional-hub-gates.json)、[157依存準備](catalog/preparation/2026-11-19-insurance-bundles-v51.json)。親Qwenから18/18 weight SHA差分があり別trained result。FP8/NVFP4は同一成果で別資産登録しない。旧203件は不変。**approved queue 0、実機Dドライブ・権利全文・ABI・実ファイルSHA・offline復元未検証、ダウンロード0**。既取得53件の報告はowner現物独立検査ではない。mainのみ、Gated回避・無断重量DL・既存削除・未審査コード実行禁止。
+
+---
+
 # 現行v50・R121（2026-11-19）：小型45言語ASR学習済みCTC原本を正式選定、取得承認はSTOP
 
 唯一の選定正本は[CURRENT](catalog/CURRENT.json)→**v50、203登録・156有効（SELECT53/CONDITIONAL103）**。v49のSenseNova Gated原本は維持し、[Rumble-2-Flashを独立原本として新規CONDITIONAL追加](docs/strategy/121-v50-rumble-original-selection-and-acquisition-order-2026-11-19.md)。原本選択は[Publisher固定19ファイル／1,385,998,807 byte／重量2 SHA256](manifests/drafts/r115-v48-rumble2-flash-and-nemotron-sigma-original.candidate.json)。通常量子化を複数モデルとして採用しない。全156 readinessは[2026-11-19 v50](catalog/readiness/v50-2026-11-19-r121-all156-gates.json)、全156非実行候補は[proposed v50](queues/proposed-v50-2026-11-19.json)、[条件付き103件のアクセス権監査](catalog/access/2026-11-19-v50-conditional-hub-gates.json)、[依存準備156件](catalog/preparation/2026-11-19-insurance-bundles-v50.json)を参照する。
