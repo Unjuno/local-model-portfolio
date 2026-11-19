@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "revision_id": "v52-20261119",
+  "previous_revision_id": "v51-20261119",
+  "decision_date": "2026-11-19",
+  "target_branch": "main",
+  "kind": "ADD_ONE_PINNED_PI_LORA_ON_TOP_OF_DAISYROSE_V51",
+  "previous_asset_count": 204,
+  "previous_active_count": 157,
+  "additions": [
+    {
+      "position": 205,
+      "asset_kind": "model",
+      "repo_id": "harness-hub/Qwen3.8-27B-pi-adapted",
+      "url": "https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted",
+      "group": "独立RL訓練済みcoding-agent LoRA",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "元Qwen3.8 27BにAsyncGRPOでpi agentの開発タスクを後学習したrank32/alpha64の独立adapter。通常量子化やフルモデルの複製でなく、0.638GBの学習済みLoRAと別tokenizerを保存選択肢に加える。",
+      "quality_positive": "発行者固定SHAの7ファイル657,633,248 bytes。pi同一ハーネス思考OFFでTerminal-Bench2.1 39.5→55.8%（86タスク）、SWE-bench Pro hard51 39.2→64.7%（51タスク）、作者評価のみ。",
+      "quality_negative": "訓練親revisionはadapter_configでnull。公式Qwen3.8親のtokenizer SHAとAdapter tokenizersは異なる。checkpoint160は評価課題を使って選択され、独立汎化保証なし。所有者HW・LICENSE本文・復元未検証。",
+      "risk_and_alternative_assessment": "Hub公開非Gated/Apache-2.0タグ、独立LICENSE無し。現在の停止予告はない。Opencode別LoRAは利用harness未証明、NVIDIA drafterは既保管DSpineとの比較が未実測で保留。個別将来規制確率は作らない。",
+      "evidence_date": "2026-11-19",
+      "evidence_kind": "OFFICIAL_HF_PINNED_BLOBS_AND_ADAPTER_CONFIG",
+      "evidence_urls": [
+        "https://huggingface.co/api/models/harness-hub/Qwen3.8-27B-pi-adapted/revision/80d05c9051dfd2ae464e1daf4329cb15524caf60?blobs=true",
+        "https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted/blob/80d05c9051dfd2ae464e1daf4329cb15524caf60/README.md"
+      ],
+      "observed_access": "public ungated publisher listing, personal legal authorization unverified",
+      "license_metadata": "apache-2.0 tag, standalone LICENSE absent",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "80d05c9051dfd2ae464e1daf4329cb15524caf60",
+      "upstream_all_files_bytes_observed": 659783003,
+      "upstream_file_count_observed": 12,
+      "upstream_lfs_sha256_count_observed": 5,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 7,
+      "candidate_selected_source_file_bytes": 657633248,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1776,
+          "sha256": null,
+          "git_blob_sha1": "7dce5fee4125799e7c97b510e85a92a263e1b3e1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 18848,
+          "sha256": null,
+          "git_blob_sha1": "417b13534b57199ff73ba68e71730da2bb010dcc",
+          "local_sha_verified": false
+        },
+        {
+          "path": "adapter_config.json",
+          "bytes": 1171,
+          "sha256": null,
+          "git_blob_sha1": "cb1814360d6ee9549e6b34b532c5ad5c8856a237",
+          "local_sha_verified": false
+        },
+        {
+          "path": "adapter_model.safetensors",
+          "bytes": 637610624,
+          "sha256": "869b2a089882c0dac4683993f11081bd70edc30b32c64a988c688d6ac26b792a",
+          "git_blob_sha1": null,
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 9004,
+          "sha256": null,
+          "git_blob_sha1": "9bd39df8984ba783a0b32cf2ebcd2117136e79ff",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 19989339,
+          "sha256": "a5cd9732badce41de57e6efce8302930ded1c1188c5f81feb2bd6c24c4a1941f",
+          "git_blob_sha1": null,
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 2486,
+          "sha256": null,
+          "git_blob_sha1": "c23583c51714d887cd67b3b996e128c469fa996e",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r122-v50-pi-adapter-and-nvidia-draft.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": null,
+        "screen_is_conservative_conditional_upper_bound_not_exact_total": true,
+        "parent_published_approx_params": 27781400000,
+        "parent_conservative_screen_cap": 28000000000,
+        "adapter_weight_bytes": 637610624,
+        "conservative_parent_plus_adapter_upper_bound": 33100884992,
+        "exact_parent_training_rev_verified": false,
+        "other_learned_external_components_verified": false,
+        "allow_final_lock": false,
+        "model_param_threshold": 150000000000,
+        "review_date": "2026-11-19",
+        "no_download_waiver": true
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 18.7,
+        "category": "INDEPENDENT_AGENT_RL_LORA",
+        "scenario_status": "Publisher gating and license future changes hypothetical, not observed ban"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "rank32 pi coding agent AsyncGRPO LoRA original with dedicated tokenizer",
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "adapter_config.json",
+          "adapter_model.safetensors",
+          "chat_template.jinja",
+          "tokenizer.json",
+          "tokenizer_config.json"
+        ],
+        "parent_repo_id": "Qwen/Qwen3.8-27B",
+        "parent_reference_sha": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
+        "training_parent_sha_verified": false,
+        "adapter_tokenizer_sha256": "a5cd9732badce41de57e6efce8302930ded1c1188c5f81feb2bd6c24c4a1941f",
+        "parent_reference_tokenizer_sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3",
+        "tokenizer_same_as_parent": false,
+        "code_runtime": [
+          "PEFT0.21.2",
+          "pi harness",
+          "Transformers/vLLM Qwen3.8"
+        ],
+        "full_licensing_and_dependency_closure": false,
+        "source_reference_only_no_download": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 659783003,
+        "source_candidate_selected_bytes": 657633248,
+        "source_bytes_are_not_complete_offline_bundle": true,
+        "owner_actual_disk_measured": false,
+        "hw_tested_on_user_machine": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    }
+  ],
+  "added_assets": 1,
+  "removed_assets": 0,
+  "changed_prior_decisions": 0,
+  "publisher_source_manifest": "manifests/drafts/r122-v50-pi-adapter-and-nvidia-draft.candidate.json",
+  "publisher_file_count": 7,
+  "publisher_selected_bytes": 657633248,
+  "trained_weight_sha256": "869b2a089882c0dac4683993f11081bd70edc30b32c64a988c688d6ac26b792a",
+  "exact_training_parent_revision_verified": false,
+  "owner_disk_verified": false,
+  "download_authorizations_added": 0,
+  "model_weights_acquired_this_revision": 0
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "id": "R124_V52_PI_ADAPTER_CONDITIONAL_SELECTION",
+  "date": "2026-11-19",
+  "base_commit": "58ebb1d5dcaf9447104b271f4cdd4a726b8b2cbe",
+  "canonical_revision": "v52-20261119",
+  "valid_new_model_count": 1,
+  "preexisting_204_unchanged": true,
+  "preexisting_v51_daisy": "RadixArk/DaisyRose-27B",
+  "selection": {
+    "repo_id": "harness-hub/Qwen3.8-27B-pi-adapted",
+    "decision": "conditional",
+    "source_manifest": "manifests/drafts/r122-v50-pi-adapter-and-nvidia-draft.candidate.json",
+    "publisher_revision": "80d05c9051dfd2ae464e1daf4329cb15524caf60",
+    "source_selected_bytes": 657633248,
+    "source_files": 7,
+    "weight_sha256": "869b2a089882c0dac4683993f11081bd70edc30b32c64a988c688d6ac26b792a",
+    "exact_training_parent_revision_verified": false,
+    "parent_reference": "Qwen/Qwen3.8-27B",
+    "separate_tokenizer_required": true,
+    "source_model_identifier": "harness-hub/Qwen3.8-27B-pi-adapted",
+    "new_model_weight_downloaded": false,
+    "approved": false
+  },
+  "near_duplicates": {
+    "other_agent_adapter": "harness-hub/Qwen3.8-27B-opencode-adapted HOLD until harness tested",
+    "nvidia_draft_4b": "HOLD because existing DSpine + MTP and no measured owner speed",
+    "nvidia_draft_08": "DEFER long context acceptance 3.60 < MTP 3.86",
+    "uncensored": "Retain existing Qwen uncensored originals; no new quantized duplicate",
+    "daisy": "Independent full RL fine-tuned Qwen original selected in v51 and not removed"
+  },
+  "operational": {
+    "source_file_sha_research_only": true,
+    "parent_original_full_weight_held_separate": true,
+    "owner_volume_verified": false,
+    "original_license_permitted_acts_verified": false,
+    "trained_tensor_complete_census": false,
+    "offline_restore": false,
+    "approved_queue_unchanged": true,
+    "download_authorization_added": 0
+  },
+  "falsifiable_test": {
+    "H": "pi adapter paired pass@1 gain >=5 points on 100 held-out software engineering tasks",
+    "T": "100 paired fixed hardware/backend, pi thinking-off, parent revision, PEFT, context/batch, no early peeking",
+    "D": "PASS only statistical improvement and all rights/parent/hash gates; FAIL if incompatibility or license breach; UNCERTAIN until measured",
+    "C": "Publisher checkpoint selection bias or parent/tokenizer mismatch",
+    "U": "No independent user runtime measurements, u_c and k not estimated"
+  }
+}
