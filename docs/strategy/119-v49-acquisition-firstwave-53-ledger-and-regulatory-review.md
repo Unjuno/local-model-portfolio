@@ -44,7 +44,17 @@ SenseNova公式Safetensors原本はPublisher APIで `gated:"auto"`、previewとp
 
 ## 4. Windows取得・検証と単位表
 
-この研究環境は所有者のDドライブを直接操作していない。主repoの[Windows原本取得器](../../scripts/download_r115_windows.py)は、少なくとも`--execute`と、現在のrepository policyでは**明示的な正本scope-承認ファイル**が必要。許可済みのファイルだけの一括処理にすれば「モデルごとの再確認質問」は不要。このR119の7sourceは既存scriptのR115 16source/schemaとは異なるので、そのままscriptで実行すると入力検証に失敗する。**新queue対応を実装・検証する前に実行済みと記録しない**。
+この研究環境は所有者のDドライブを直接操作していない。主repoの[Windows原本取得器](../../scripts/download_r115_windows.py)は、少なくとも`--execute`と、現在のrepository policyでは**明示的な正本scope-承認ファイル**が必要。許可済みのファイルだけの一括処理にすれば「モデルごとの再確認質問」は不要。現在の[Windows原本取得器](../../scripts/download_r115_windows.py)は **R115の16件ソースとR119の7件ソースを両方受け付けるよう更新済み**。既定では読み取り計画だけを表示し、実取得は固定sourceスコープの事前承認を記載した `--approval-file` と `--execute` を同時に指定する。承認ファイルは1回のバッチ実行単位で用意でき、モデルごとの対話確認を繰り返す必要はない。以前のREADMEの`--execute`だけのコマンドは現行の承認ゲートで失敗する。未承認ファイルやGated原本を自動取得しない。
+
+
+Windows PowerShellからの読み取り計画・取得コマンド（保存ルートは実際のDドライブ格納先に置き換える）：
+
+```powershell
+py -3 scripts/download_r115_windows.py --manifest "queues/proposed-v49-r119-next7-public-source-entries.json" --dry-run --root "D:\AI-Models"
+py -3 scripts/download_r115_windows.py --manifest "queues/proposed-v49-r119-next7-public-source-entries.json" --execute --approval-file "owner-approved-r119.json" --root "D:\AI-Models"
+```
+
+実行器は固定リビジョン、公開元SHA、200GB残容量床、既存ファイル競合回避を検証する。単体テストは[ R119無通信検証](../../tests/test_r119_public_firstwave.py)に記述済みだが、**Windows Dドライブ上の実行結果はこの調査では未取得**。
 
 | 記号 | 日本語の意味 | 単位（SI次元） | 定義 | 範囲／前提 | 型 |
 |---|---|---|---|---|---|
