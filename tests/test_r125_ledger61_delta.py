@@ -5,6 +5,7 @@ All tests are local and do not download weights or execute publisher code.
 from __future__ import annotations
 
 import copy
+import hashlib
 import importlib.util
 import json
 from pathlib import Path
@@ -124,6 +125,47 @@ class DifferentialScopeTests(unittest.TestCase):
         entry["files"].append(entry["prerequisite_weight_files"][0])
         with self.assertRaises(ValueError):
             app.validate_manifest(bad)
+
+    def test_existing_weights_sha_gate_blocks_missing_corruption(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            destination = root / "models" / "publisher" / "model"
+            destination.mkdir(parents=True)
+            weight = destination / "original.safetensors"
+            expected_bytes = b"verified-in-test"
+            expected = {
+                "path": "original.safetensors",
+                "bytes": len(expected_bytes),
+                "sha256": hashlib.sha256(expected_bytes).hexdigest(),
+                "git_blob_sha1": None,
+            }
+            # No file: no transfer may begin.
+            self.assertEqual(
+                app.inspect_existing_weight_prerequisites(root, destination, [expected]),
+                [("original.safetensors", "not_regular_file")])
+            weight.write_bytes(expected_bytes)
+            self.assertEqual(
+                app.inspect_existing_weight_prerequisites(root, destination, [expected]), [])
+            weight.write_bytes(b"corrupted-bytes!"[:len(expected_bytes)])
+            invalid = app.inspect_existing_weight_prerequisites(root, destination, [expected])
+            self.assertEqual(len(invalid), 1)
+            self.assertTrue(invalid[0][1] in ("sha256_mismatch", "size_mismatch"))
+
+    def test_weight_gate_refuses_symlink_even_on_matching_bytes(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            destination = root / "models" / "author" / "name"
+            destination.mkdir(parents=True)
+            outside = root / "outside-weight"
+            outside.write_bytes(b"abc")
+            link = destination / "linked.safetensors"
+            link.symlink_to(outside)
+            with self.assertRaises(ValueError):
+                app.inspect_existing_weight_prerequisites(
+                    root, destination,
+                    [{"path": "linked.safetensors", "bytes": 3,
+                      "sha256": hashlib.sha256(b"abc").hexdigest(),
+                      "git_blob_sha1": None}])
 
     def test_empty_approval_does_not_enable_any_transfer(self):
         with tempfile.TemporaryDirectory() as td:
