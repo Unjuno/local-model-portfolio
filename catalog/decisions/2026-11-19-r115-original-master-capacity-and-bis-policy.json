@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-11-19",
+  "kind": "PUBLISHER_AND_GOVERNMENT_PRIMARY_EVIDENCE_ARCHIVAL_SOURCE_SELECTION",
+  "catalog_revision": "v48-20261118",
+  "decision_profile": "queues/proposed-v48-r115-archival-master-alternative-15.json",
+  "evidence": [
+    {
+      "kind": "publisher_model_card",
+      "url": "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+      "observation": "Full BF16 finetuned checkpoint, MTP retained; Q4 format derived. Author-reported 4/113 censored on Chinese political battery and 95/100 harmful prompts refused; not independent matched-hardware reproduction."
+    },
+    {
+      "kind": "publisher_model_card",
+      "url": "https://huggingface.co/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored",
+      "observation": "13 Safetensors shards reconstructed from RVN-F16.gguf; no upstream training BF16 recovery. 851 text tensors 498 F16 +353 F32, no vision or MTP."
+    },
+    {
+      "kind": "publisher_model_card",
+      "url": "https://huggingface.co/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "observation": "RVN-F16.gguf 53,808,281,888 byte and source SHA2 f20c72c23a6564211c5e44af35ea1277d697c009ce8a25ab28d100447e0f155a at fixed publisher revision; Q4 multilingual intended as compact-serving option; separate vision mmproj not required for text-only."
+    },
+    {
+      "kind": "publisher_model_card",
+      "url": "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v3",
+      "observation": "Independent subsequent finetune of NousResearch/Arete-27B BF16, no MTP. Author 3/115 politically censored replies; cannot compare 3/115 directly with v2 4/113 in another evaluation, no full external quality and dependency scope."
+    },
+    {
+      "kind": "official_US_government_public_inspection",
+      "url": "https://public-inspection.federalregister.gov/2026-23529.pdf",
+      "document_id": "2026-23529",
+      "scheduled_Federal_Register_publication": "2026-11-19",
+      "observation": "BIS Addressing Remote Access to Advanced Semiconductors interim final rule rescinds AI Diffusion model weights controls, including ECCN 4E091; retains or changes separate semiconductor export/end-use controls. Public-inspection PDF effective-date field refers to publication date and should not be conflated with a verified final CFR consolidation."
+    },
+    {
+      "kind": "HF_official_gated_policy",
+      "url": "https://huggingface.co/docs/hub/models-gated",
+      "observation": "Gated author/user authorization is independent from government rules; do not bypass."
+    }
+  ],
+  "policy_analysis": {
+    "facts": [
+      "Document 2026-23529 states AI Diffusion Rule model-weight controls are revoked and ECCN 4E091 removed",
+      "Hardware/data-center restrictions are a different object from open model weight downloads",
+      "Author/publisher Gated and licenses may change independently"
+    ],
+    "forecasts": [
+      "Future model-distribution restriction scenario is plausible but no per-model likelihood is established",
+      "Do not assign deletion probability from downloads, model name, performance or nationality alone"
+    ],
+    "recommendation": "Rank on distinct trained outcome, legally accessible fixed revision, source fidelity, total storage and offline reproducibility; do not score all published open weights as imminently outlawed",
+    "user_policy_parameter_150B_is_not_4E091": "Local trained-parameter policy threshold is independent of US export training-operations control and cannot be equated"
+  },
+  "source_choices": {
+    "interpretic_v2": "PREFER_FULL_BF16_ARCHIVAL_MASTER_ONLY_CONDITIONAL_TO_ACTUAL_4TB_STORAGE",
+    "observerx_rvn": "PREFER_RVN_F16_GGUF_AS_EARLIEST_PUBLISHED_RECONSTRUCTION_SOURCE_NOT_LOST_PRE_GGUF_TRAINING_BF16",
+    "kitten_tts_mini": "ARCHIVE_SAFETENSORS_PLUS_VOICES_AND_G2P_EXCLUDE_DERIVED_ONNX_INITIAL_MASTER",
+    "other_12_models": "DO_NOT_CHANGE_OTHER_PUBLISHER_PINNED_SOURCE_SCOPES",
+    "v3_interpretic_candidate": "RESEARCH_HOLD_NOT_ADDED_MORE_TRAINED_OUTCOME_BUT_UNPROVEN_NET_UTILITY_AND_4TB_MARGIN",
+    "download_first": "IBM Granite TTM R3 small original source only after rights/real-volume checks",
+    "avoid_double_download": [
+      "Both uncensored Q4 GGUF and master F16/BF16",
+      "RVN F16 and reconstructed Safetensors",
+      "Kitten original Safetensors and derived ONNX in master tier",
+      "All RVN quant siblings and all GSQ-3bit variants"
+    ]
+  },
+  "storage_reconciliation": {
+    "plan_max_bytes": 4000000000000,
+    "minimum_free_bytes": 200000000000,
+    "compact_15_source_bytes": 212023095122,
+    "master_15_source_bytes": 286419747966,
+    "incremental_master_vs_compact_bytes": 74396652844,
+    "A_compact_source_bytes": 47054376211,
+    "A_master_source_bytes": 121451029055,
+    "historical_v47_hypothetical_margin_bytes": 20409767827,
+    "scenario_margin_if_same_base_estimate_and_compact_scope": -53986885017,
+    "scenario_condition": "Only if prior hypothetical v47 margin includes both compact Q4 source scopes exactly, with no other changes. Not measured owner disk, not complete 154 offline bundle.",
+    "publisher_sha256_references": 89,
+    "distinct_sha256_values": 88,
+    "one_known_repeated_sha256": {
+      "sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3",
+      "bytes": 12809320,
+      "model_a": "InterpreticAI/Qwen3.8-27B-Uncensored-v2/tokenizer.json",
+      "model_b": "orcarouter/Qwen3.8-27B-Uncensored/tokenizer.json",
+      "provenance": "Publisher source bytes; theoretical reuse if both legal files are actually stored, no measured physical saving"
+    },
+    "owner_disk_free_bytes": null,
+    "full_dependency_bytes": null,
+    "verified_4tb_fit": false
+  },
+  "testing": {
+    "static_source_manifest_integrity": "PASS_15_ASSET_212_FILE_89_SHA_REFERENCE",
+    "runtime_performance_tested": false,
+    "local_weights_downloaded": false,
+    "approved_entries": 0
+  },
+  "next_actions": [
+    "Measure actual owner's 4TB D:/archive free, stage and existing content hashes before formal source replacement",
+    "Resolve all 154 active dependencies and rights; do not misclassify noncommercial or gated",
+    "Preserve compact alternative while master budget lacks verified room; prioritize small originals in order",
+    "Evaluate v3 on held-out cross-lingual factual accuracy, Chinese political set and broad refusal alongside v2 with same hardware/clock/batch and fixed random seed; cannot claim author single-eval one-answer improvement as general superiority"
+  ],
+  "status": "RESEARCH_DECISION_NOT_AUTHORIZED_DOWNLOAD"
+}
