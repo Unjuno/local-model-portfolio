@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "decision_id": "R129_PUBLIC_UNCENSORED_SMALL_AND_TINY_LORA_SOURCE_FIRST",
+  "date_jst": "2026-11-20",
+  "catalog_snapshot": {
+    "revision": "v54-20261120",
+    "tracked": 207,
+    "active": 160,
+    "current_blob_sha": "ad3b71ec161558452c2849ce1dca080eb9517211"
+  },
+  "ledger_snapshot": {
+    "file": "catalog/execution/2026-11-19-acquisition-ledger.json",
+    "blob_sha": "5a5de85e8e0fdc1ac2bbb7f61b369df005e63b79",
+    "reported_verified": 61,
+    "reported_files": 708,
+    "reported_bytes": 409835119252,
+    "local_device_independently_rehashed_this_round": false
+  },
+  "approval_snapshot": {
+    "file": "queues/approved.json",
+    "blob_sha": "df0e369abda4b765533e0af3921c54a5cb164787",
+    "entries": 0
+  },
+  "scope": "RESEARCH_SELECTION_ONLY_UNTIL_PINNED_SOURCE_HASH_AND_USER_RIGHTS_GATES",
+  "selected_for_source_freeze": [
+    {
+      "repo_id": "FrostWolfAI/LFM3-1.7B-abliterated",
+      "decision": "P0_FAVOR_FOR_CANONICAL_CONDITIONAL_AFTER_SOURCE_LOCK",
+      "origin": "Independent refusal-direction ARA modified full BF16 checkpoint based on LiquidAI/LFM3-1.7B",
+      "architecture": "lfm3 hybrid 24 physical layers: conv/attention; 1.7288B hub reported parameters",
+      "source_model": "LiquidAI/LFM3-1.7B",
+      "primary_url": "https://huggingface.co/FrostWolfAI/LFM3-1.7B-abliterated",
+      "first_party_tree": "https://huggingface.co/FrostWolfAI/LFM3-1.7B-abliterated/tree/main",
+      "observed_access": "PUBLIC_MODEL_LISTING_NOT_AUTHENTICATED_PAYLOAD_TEST",
+      "publisher_commit_prefix_only": "fc0f808",
+      "exact_publisher_revision_sha": null,
+      "publisher_full_repo_size_decimal_bytes": null,
+      "approximate_public_size_gb": 3.48,
+      "estimated_total_model_parameters": 1728800000,
+      "license_tag": "lfm1.0",
+      "parent_license": "LFM Open License v1.0",
+      "legal_rights_conclusion": "Non-commercial research and distribution rights described in full publisher license; commercial entity annual revenue >= $10M USD requires separately licensed terms, exact user act not verified",
+      "training_lineage_distinct_from": "orcarouter/LFM3-1.7B-abliterated",
+      "evidence_quality": "Publisher Heretic v2 ARA selected trial, 1/100 refusals on author-selected 100-prompt probe, KL 0.0555; not a matched independent benchmark",
+      "benchmark_conditions": {
+        "sample": 100,
+        "refusal_count": 1,
+        "hardware": "NOT_SPECIFIED_FOR_SELECTED_MODEL_MEASURE",
+        "clock": "UNKNOWN",
+        "batch": "UNKNOWN",
+        "seed": "2026110901 (optimizer seed)",
+        "algorithm": "Heretic v2.1.0 ARA, 120 trials"
+      },
+      "files_known_from_listing": [
+        "model.safetensors",
+        "tokenizer.json",
+        "LICENSE",
+        "README.md",
+        "chat_template.jinja",
+        "config.json",
+        "configuration_lfm3.py",
+        "generation_config.json",
+        "lfm3_conv.py",
+        "modeling_lfm3.py",
+        "tokenizer_config.json",
+        "reproduce/reproduce.json"
+      ],
+      "exact_source_sha256_model": null,
+      "source_files_complete_at_immutable_revision": false,
+      "needs_custom_code_security_review": true,
+      "active_catalog_existing": false,
+      "prior_61_reported_verified": false,
+      "provenance_risk": "Author-declared independent modification; no cryptographic equivalence with gated OrcaRouter allowed",
+      "next_action": "Freeze full 40hex revision, all exact publisher file bytes and SHA256; statically inspect custom code/reproduce manifest; review LFM 1.0 downstream rights; only then propose formal conditional catalog overlay",
+      "acquisition_status": "STOP_NO_IMMUTABLE_SOURCE_OR_OWNER_ACT_APPROVAL"
+    },
+    {
+      "repo_id": "PhalaCloud/Qwen3.8-27B-Uncensored-LoRA",
+      "decision": "P1_HIGH_UNIQUE_DELTA_ONLY_AFTER_RIGHTS_AND_PARENT_PROOF",
+      "origin": "Rank-3 PEFT refusal-direction adapter distinct from full BF16 Qwen edits; trained with Heretic v1.3.0",
+      "architecture": "Qwen3.8-27B + BF16 PEFT adapter, not standalone model",
+      "source_model": "Qwen/Qwen3.8-27B",
+      "exact_benchmark_parent_repo": "Qwen/Qwen3.8-27B-FP8",
+      "exact_benchmark_parent_revision": "017b9c7af6b5689d5dd426a76e0bc077eb5ca20a",
+      "catalog_parent_reference_repo": "Qwen/Qwen3.8-27B",
+      "catalog_parent_reference_revision": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
+      "primary_url": "https://huggingface.co/PhalaCloud/Qwen3.8-27B-Uncensored-LoRA",
+      "observed_access": "PUBLIC_MODEL_LISTING_NOT_AUTHENTICATED_PAYLOAD_TEST",
+      "exact_publisher_revision_sha": null,
+      "publisher_size_label": "~13 MB (publisher); independent third-party indexed listing ~12.4 MB; exact byte sum and full revision not verified",
+      "publisher_file_count_third_party_unverified": 7,
+      "publisher_sha256_adaptor_weight": "1abf13b2191c9973a4dc4d978448512d3ce2efabfd1e671edd5956b6aebfa5ac",
+      "publisher_sha256_adapter_config": "d716fa478316e84ed9d08875db621c84ec377145297bbb834a338ac5ae0de285",
+      "publisher_has_sha256sums": true,
+      "parent_reported_sha_present_on_owner_archive": false,
+      "parent_reported_verified_in_ledger": false,
+      "license_tag": "apache-2.0 adapter weights only",
+      "upstream_dataset_rights": [
+        "mlabonne/harmless_alpaca derives from Stanford Alpaca CC BY-NC 4.0 research-only guidance",
+        "mlabonne/harmful_behaviors AdvBench-derived author states MIT upstream"
+      ],
+      "license_risk": "Apache-2.0 adapter label does not waive source data rights. Whether and how CC BY-NC affects derived model acts requires separate review; do not assert legal inheritance automatically.",
+      "evidence_quality": "Publisher H200 SGLang test with pinned FP8 Qwen base; primary StrongREJECT judge 0/60 refusals, secondary 4/60 and 1/60; GSM8K +0.30 percentage point and IFEval -0.74 point vs base at fixed reported conditions; not independent/offline owner benchmark",
+      "benchmark_conditions": {
+        "hardware": "NVIDIA H200",
+        "backend": "Phala-pinned SGLang",
+        "gpu_clock": "UNREPORTED",
+        "batch": "UNREPORTED",
+        "quant": "Qwen FP8; FP8 KV; EAGLE",
+        "strongreject_primary_trials": 60,
+        "strongreject_primary_refusal_count": 0,
+        "gsm8k_n": 1319,
+        "ifeval_n": 541
+      },
+      "runtime_risk": "Publisher evaluation relies on specially pinned SGLang runtime and FP8 revision, not shown equivalent on catalog BF16 parent; PEFT adapter separately cannot run.",
+      "source_files_complete_at_immutable_revision": false,
+      "active_catalog_existing": false,
+      "prior_61_reported_verified": false,
+      "next_action": "Freeze full 40hex adapter revision, seven publisher files and source SHA; document dataset notice and personal research/commercial acts; confirm parent hash and SGLang/PEFT ABI before formal conditional source",
+      "acquisition_status": "STOP_PARENT_AND_LICENSE_ACT_AND_IMMUTABLE_REVISION_UNVERIFIED"
+    }
+  ],
+  "compare_alternatives": [
+    {
+      "repo_id": "orcarouter/LFM3-1.7B-abliterated",
+      "kind": "INDEPENDENT_MODIFIED_LFM3_CHECKPOINT",
+      "observed_gated": true,
+      "license_tag": "other, inherited LFM 1.0",
+      "decision": "HOLD_OWNER_GATED_RIGHTS; do not use unrelated public derivative as same source",
+      "evidence_url": "https://huggingface.co/orcarouter/LFM3-1.7B-abliterated"
+    },
+    {
+      "repo_id": "orcarouter/LFM3-1.7B-abliterated-GGUF",
+      "kind": "QUANTIZED_SAME_ORCAROUTER_EDIT",
+      "observed_gated": true,
+      "decision": "NO_NEW_LEARNED_ASSET_FROM_QUANTIZATION",
+      "evidence_url": "https://huggingface.co/orcarouter/LFM3-1.7B-abliterated-GGUF"
+    },
+    {
+      "repo_id": "FrostWolfAI/LFM3-1.7B-abliterated-GGUF",
+      "kind": "FORMATS_OF_FROSTWOLF_LEARNED_CHECKPOINT",
+      "observed_gated": false,
+      "decision": "DO_NOT_CREATE_SEPARATE_ARCHIVAL_ASSET_FOR_FORMAT_ONLY",
+      "evidence_url": "https://huggingface.co/FrostWolfAI/LFM3-1.7B-abliterated-GGUF"
+    },
+    {
+      "repo_id": "adolan/LFM3-1.7B-abliterated-GGUF",
+      "kind": "THIRD_PARTY_ORCAROUTER_WEIGHT_CONVERSION",
+      "decision": "NOT_INDEPENDENT_LEARNED_CHECKPOINT_NOT_A_RIGHTS_BYPASS",
+      "evidence_url": "https://huggingface.co/adolan/LFM3-1.7B-abliterated-GGUF"
+    },
+    {
+      "repo_id": "LiquidAI/LFM3-1.7B",
+      "kind": "PARENT_BASELINE",
+      "in_current_catalog": true,
+      "ledger_reported_verified": false,
+      "decision": "RETAIN_PARENT_AS_SEPARATE_LEARNED_OUTCOME_DO_NOT_COUNT_AS_FROSTWOLF_WEIGHTS",
+      "evidence_url": "https://huggingface.co/LiquidAI/LFM3-1.7B"
+    },
+    {
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+      "kind": "OTHER_FULL_MODEL_EDIT",
+      "decision": "RETAIN_ORIGINAL_BF16_MASTER_SCOPE; Phala LoRA is distinct and not proven superior or compatible",
+      "evidence_url": "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v2"
+    },
+    {
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "kind": "OTHER_FULL_MODEL_EDIT",
+      "decision": "RETAIN_RVN_F16_MASTER_SCOPE; no automatic replacement by 13MB LoRA",
+      "evidence_url": "https://huggingface.co/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF"
+    }
+  ],
+  "scientific_evidence_caveat": {
+    "benchmark_n_and_judge_comparison_not_cross_model_performance_proof": true,
+    "example_wilson95_if_trials_iid_and_no_selection_bias": {
+      "frostWolf_author_probe": {
+        "point": 0.01,
+        "lower": 0.0017673865655472645,
+        "upper": 0.0544875247609346
+      },
+      "phala_author_primary_one_setting": {
+        "point": 0,
+        "lower": 0,
+        "upper": 0.06017393047793289
+      }
+    },
+    "observed_test_design_not_iid_or_unselected": true,
+    "publisher_refusal_reduction_not_accuracy_or_safety_proof": true,
+    "local_independent_benchmark_run": false
+  },
+  "regulation": {
+    "observed": "BIS November 2026 rule removes ECCN 4E091 model weight category but separate compute controls persist",
+    "evidence_url": "https://www.bis.gov/media/documents/rin-0694-ak50.pdf",
+    "future_distribution_removal_probability": null
+  },
+  "legal_primary": [
+    "https://www.liquid.ai/lfm-license",
+    "https://github.com/tatsu-lab/stanford_alpaca",
+    "https://huggingface.co/PhalaCloud/Qwen3.8-27B-Uncensored-LoRA",
+    "https://huggingface.co/FrostWolfAI/LFM3-1.7B-abliterated"
+  ],
+  "no_formal_catalog_addition_this_research": true,
+  "no_model_download": true,
+  "no_code_execution": true,
+  "no_gated_bypass": true,
+  "no_user_approval_created": true,
+  "source_freeze_needed": [
+    "Exact 40hex commits and entire file list with Git blob SHA1 and LFS SHA256",
+    "Licenses at same fixed revisions and derivative/dataset rights",
+    "Base parent source and immutable hash evidence if adapter",
+    "Owner physical current archive free and local hash and 200GB floor",
+    "Offline restorable environment, model code static audit, 30+ paired tasks/hardware/clock/batch"
+  ],
+  "next_best_action": "FrostWolf original BF16 source SHA closure first, then Phala rank-3 adapter exact SHA+parent-license and benchmark compatibility. Do not transfer files or add duplicate GGUF."
+}
