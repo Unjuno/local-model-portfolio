@@ -8,10 +8,10 @@
   "candidate_count": 15,
   "go_after_local_preflight": 15,
   "hold_count": 0,
-  "file_count": 333,
+  "file_count": 332,
   "publisher_sha256_file_count": 135,
-  "total_candidate_source_bytes": 374701290840,
-  "go_scope_bytes": 374701290840,
+  "total_candidate_source_bytes": 374701109177,
+  "go_scope_bytes": 374701109177,
   "hold_scope_bytes": 0,
   "archive_limit_bytes": 4000000000000,
   "required_free_floor_bytes": 200000000000,
@@ -33,15 +33,18 @@
   "source_union": {
     "R121_pending_source_bytes": 126126198766,
     "R119_source_bytes": 258965078216,
-    "R117_source_bytes": 169094028046,
-    "gross_pre_dedupe_source_bytes": 554185305028,
+    "R117_source_bytes": 169093846383,
+    "gross_pre_dedupe_source_bytes": 554185123365,
     "exact_duplicate_scope_bytes": 179484014188,
-    "unique_selected_source_bytes": 374701290840,
+    "unique_selected_source_bytes": 374701109177,
     "excluded_prior_reported_exact_R121_go_scope_count": 7,
     "excluded_duplicate_scope_count": 4,
     "distinct_source_repos": 15,
     "dataset_repos": 2,
-    "model_source_repos": 13
+    "model_source_repos": 13,
+    "earlier_full_R117_source_bytes": 169094028046,
+    "original_gross_pre_ntfs_adjustment_bytes": 554185305028,
+    "windows_unrepresentable_publisher_file_bytes": 181663
   },
   "source_deduplication_evidence": [
     {
@@ -73,7 +76,7 @@
       "reason": "SAME_IMMUTABLE_REVISION_EXACT_FILE_SET"
     }
   ],
-  "documentation": "No new 156-asset catalog entries. Preserve all existing archival bytes, no deletes, no automatic code execution, no unverified approved models.",
+  "documentation": "No new 156-asset catalog entries. Preserve all existing archival bytes, no deletes, no automatic code execution, no unverified approved models. The ELYZA baseline CSV with a colon in filename is omitted from Windows first-wave scope; its upstream SHA1 and exact path are recorded under nonportable_source_exclusions. Core test.csv retained.",
   "authorizations": {
     "user_exact_manifest_approved": false,
     "user_intended_act_rights_reviewed": false,
@@ -88,8 +91,8 @@
       "repository_type": "dataset",
       "source_revision": "240fc800c4695d86ce0f32a713e199cd2ba66ab6",
       "license_metadata": "cc-by-sa-4.0",
-      "source_bytes": 7788480,
-      "source_file_count": 66,
+      "source_bytes": 7606817,
+      "source_file_count": 65,
       "files": [
         {
           "path": ".gitattributes",
@@ -156,12 +159,6 @@
           "bytes": 166675,
           "sha256": null,
           "git_blob_sha1": "523cef833f0a6a509d58827444b1773e6ae259ca"
-        },
-        {
-          "path": "baseline/preds/anthropic.claude-v2:1.csv",
-          "bytes": 181663,
-          "sha256": null,
-          "git_blob_sha1": "d359c52cf2f6810cbd2a016bc0d5178cb3c914dc"
         },
         {
           "path": "baseline/preds/chat-bison@001.csv",
@@ -2455,5 +2452,17 @@
       "order": 15,
       "priority_group": "G_UNCENSORED_HIGH_FIDELITY_UPGRADES"
     }
-  ]
+  ],
+  "nonportable_source_exclusions": [
+    {
+      "source_repo_id": "elyza/ELYZA-tasks-100",
+      "source_revision": "240fc800c4695d86ce0f32a713e199cd2ba66ab6",
+      "path": "baseline/preds/anthropic.claude-v2:1.csv",
+      "bytes": 181663,
+      "git_blob_sha1": "d359c52cf2f6810cbd2a016bc0d5178cb3c914dc",
+      "sha256": null,
+      "reason": "INVALID_WINDOWS_NTFS_COLON_IN_FILENAME; baseline prediction CSV, not core ELYZA test.csv; retain full source identity and restore with a reversible filename map only after storage format plan"
+    }
+  ],
+  "historical_r117_eligible_exclusion_recorded": true
 }
