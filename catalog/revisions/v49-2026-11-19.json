@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "revision_id": "v49-20261119",
+  "previous_revision_id": "v48-20261118",
+  "decision_date": "2026-11-19",
+  "target_branch": "main",
+  "kind": "ADD_ONE_NEW_SPECIALIZED_SENSENOVA_9B_OFFICIAL_GATED_PUBLIC_BF16_GGUF_FALLBACK_RESEARCH_CONDITIONAL",
+  "previous_asset_count": 201,
+  "previous_active_count": 154,
+  "additions": [
+    {
+      "position": 202,
+      "asset_kind": "model",
+      "repo_id": "sensenova/SenseNova-Loop-9B",
+      "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B",
+      "group": "重み共有Loop/mHC・9.4B 画像＋テキスト・長文推論",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "2026-11-17公式リリースの新規学習済み9B級マルチモーダルLoopモデル。異なる32層のうち24層を2回再利用して56層分の計算を行う。既存ARLoop-1.2Bと用途・スケール・マルチモーダル性が異なる。公式BF16はGated:autoだが、同じ公式リリースのBF16 GGUFと画像projectorが公開されているため、アーカイブ候補を固定。Q4/Q5/Q8の重複を取得対象から除外する。",
+      "quality_positive": "出版社metadata 9,413.0M model parameters, 512k advertised context; 2026-11-19 official full repo 33 files 19,361,077,082bytes; 公式GGUF非GatedのBF16+mmproj 19,338,075,520bytes（+4メタデータファイル）、2 publisher LFS SHA256固定。公式README掲載の独自mHC+Loopアーキテクチャ。Publisherがagent/data analysis性能を報告（独立再実測なし）。",
+      "quality_negative": "正式Safetensors gated:autoで本人権限未確認。公開GGUFから全MTP状態や元の学習時BF16 checkpointを完全に復元できる保証なし。出版社の演算量・性能・VRAM例は再測定していない。カスタムmodeling codeはuntrusted、Transformers5.18/Torch2.11/CUDA13をpublisherのPreview検証例として扱い、ユーザーWindows環境への適合未確認。",
+      "risk_and_alternative_assessment": "2026-11-19に公式Safetensorsがgated:auto、公式GGUF/旧Previewがpublicと実測。このモデル固有のアクセス条件差は事実だが将来の一律配布禁止を意味しない。旧Previewは別の学習済みcheckpointなので同一重みとして扱わない。公式GGUF Q4/Q5/Q8は同一成果の派生変換であり別資産として保存しない。",
+      "evidence_date": "2026-11-19",
+      "evidence_kind": "OFFICIAL_HUGGINGFACE_REVISION_API_SOURCE_FILE_IDENTITY_AND_PUBLISHER_CARD",
+      "evidence_urls": [
+        "https://huggingface.co/api/models/sensenova/SenseNova-Loop-9B/revision/4602ecf7e8b023ec081572f431560d8a698bf0cc?blobs=true",
+        "https://huggingface.co/api/models/sensenova/SenseNova-Loop-9B-GGUF/revision/11c121055062d33647348cf236a8c543138b282e?blobs=true",
+        "https://huggingface.co/sensenova/SenseNova-Loop-9B",
+        "https://www.sensetime.com/en/news/sensenova-loop-9b-release-20261118-1435"
+      ],
+      "observed_access": "official gated:auto, private:false; publisher GGUF gated:false; personal entitlement not verified",
+      "license_metadata": "apache-2.0 metadata both repos and LICENSE in GGUF; original use/redistribution and cross-source notices not owner-specific validated",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "4602ecf7e8b023ec081572f431560d8a698bf0cc",
+      "upstream_all_files_bytes_observed": 19361077082,
+      "upstream_file_count_observed": 33,
+      "upstream_lfs_sha256_count": 0,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 8,
+      "candidate_selected_source_file_bytes": 19338151003,
+      "source_manifest_path": "manifests/drafts/r117-2026-11-19-sensenova-loop9b-public-bf16-master-and-official-gated.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 9413000000,
+        "evidence_kind": "PUBLISHER_HF_MODEL_INDEX_RESEARCH_SCREEN_UNDER150B_NOT_INDEPENDENT_FULL_PIPELINE_CENSUS",
+        "exact_full_pipeline_total_locally_verified": false,
+        "research_screen_only": true,
+        "review_date": "2026-11-19",
+        "external_pretrained_or_frozen_learned_components": [
+          "mmproj-SenseNova-Loop-9B-F16.gguf; exact total with MTP and vision not independently tensor-censused"
+        ],
+        "no_download_waiver": true
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 1.9,
+        "category": "GATED_OFFICIAL_PUBLIC_RELEASE_GGUF_FALLBACK",
+        "scenario_status": "observed repository gate difference; no quantitative forecast of future regulation"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "2026-11-17 official 9B multimodal Loop-9B trained state with 2-stream manifold constrained connections and MTP separate publisher tensor",
+        "must_preserve": [
+          ".gitattributes",
+          "LICENSE",
+          "README.md",
+          "README_CN.md",
+          "SenseNova-Loop-9B-BF16.gguf",
+          "mmproj-SenseNova-Loop-9B-F16.gguf"
+        ],
+        "required_code": [
+          "sensenova/SenseNova-Loop-9B-Preview@89d7970926e215f8da61726700cd026ccffbb6cb modeling_sensenova_loop.py and chat_template.jinja identical blobs to official"
+        ],
+        "unverified_runtime": [
+          "Official BF16 safetensors requires legitimate personal gated entitlement; GGUF is public independent publisher repo",
+          "MTP component may be missing in GGUF/vision projector bundle; no false full pipeline claim",
+          "Publisher custom Python must not execute without audit",
+          "Preview config/index differ and MUST NOT be used for official checkpoint",
+          "Publisher preview uses Transformers5.18/Torch2.11/CUDA13, not validated on owner HW"
+        ],
+        "full_licensing_and_dependency_closure": false,
+        "source_reference_only_no_download": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 19361077082,
+        "source_candidate_selected_bytes": 19338151003,
+        "selected_file_bytes_final": null,
+        "source_bytes_are_not_owner_disk_bytes": true,
+        "owner_actual_disk_measured": false,
+        "hw_tested_on_user_machine": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    }
+  ],
+  "added_assets": 1,
+  "removed_assets": 0,
+  "changed_prior_decisions": 0,
+  "source_manifest": "manifests/drafts/r117-2026-11-19-sensenova-loop9b-public-bf16-master-and-official-gated.json",
+  "source_access_status": {
+    "official": "auto gated",
+    "public_gguf": "public ungated",
+    "owner_entitlement_verified": false
+  },
+  "publisher_original_weights_fully_downloadable_without_auth": false,
+  "public_fallback_selected_files": 6,
+  "public_fallback_selected_bytes": 19338124279,
+  "additional_verified_common_code_files": 2,
+  "source_candidate_bundle_bytes": 19338151003,
+  "quantized_duplicate_assets_added": 0,
+  "existing_models_replaced": 0,
+  "official_license_metadata": "apache-2.0",
+  "access_and_runtime_fully_cleared": false,
+  "download_authorizations_added": 0,
+  "model_weights_downloaded_by_this_revision": 0,
+  "previous_201_items_unchanged": true
+}
