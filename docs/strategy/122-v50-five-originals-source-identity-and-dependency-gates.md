@@ -51,7 +51,7 @@
 | [facebook/dinov3-vitl16-pretrain-lvd1689m](https://huggingface.co/facebook/dinov3-vitl16-pretrain-lvd1689m) | **manual Gated**、ライセンスタグother | 本人の正規承認・LICENSE正文未確認：**完全bundleの取得停止** |
 | [briaai/RMBG-2.0](https://huggingface.co/briaai/RMBG-2.0) | **auto Gated**、ライセンスタグother | 同じく正規条件が成立するまで停止 |
 
-モデルを保存しても、**完全オフライン動作や権利を証明しない**。TRELLISはLinux+CUDA専用コード、公式READMEではNVIDIA 24GB以上でテストと記載し、これはユーザーの機種での実測ではない。<escape><</escape>16GB VRAM等で確実に動くと主張しない。
+モデルを保存しても、**完全オフライン動作や権利を証明しない**。TRELLISはLinux+CUDA専用コード、公式READMEではNVIDIA 24GB以上でテストと記載し、これはユーザーの機種での実測ではない。16GB VRAMの環境等で確実に動くと主張しない。
 
 ### 容量の下限ではなく「source論理量」としての比較
 
