@@ -1,5 +1,8 @@
 # Local Model Portfolio
 
+**R125｜v52最新取得報告61モデルを反映、次期15配布元の重複再転送を縮約（2026-11-20）**：[61件報告＋Gated保留1＋未報告96件の全158有効資産監査](catalog/decisions/2026-11-20-r125-all158-ledger61-reconciliation.json)／[15配布元・287files・publisher SHA118件・327.549GBの差分候補](queues/proposed-v52-r125-ledger61-delta-next15.json)／[既存重みSHAを前提にRWKV7/iLLaDA/TRELLISの付属12ファイルのみ補完、48/48テストPASS](docs/strategy/125-v52-ledger61-next15-delta-preservation-2026-11-20.md)。旧R122から約47.152GBの再転送候補を除外。実Windows Dの現物は再ハッシュ未実施、承認0、新重量DL0。**現行v52 205登録／158有効**、DaisyRoseや親版不明pi LoRAは勝手に追加取得しない。
+
+
 **R122｜v51現行正本と整合した次期15配布元の重複排除・取得準備（2026-11-19）**：[R117/R119/R121の四つの完全重複sourceを統合し15repo・332ファイル・publisher SHA135件・374.701GBへ整理](queues/proposed-v50-r122-deduplicated-next15-sources.json)／[R122全件監査とNTFS非互換ELYZA CSVの初回除外、35/35テストPASS](docs/strategy/122-v50-deduplicated-15-source-acquisition-plan.md)／[Windows取得器のdataset repo_type・権利承認・hash・空き200GB保護](scripts/download_r115_windows.py)。重複179.484GB相当の二重要求を削除。15 sourceは**v51の204登録・157有効の内数**。v51で別途追加のDaisyRose 27Bは今回のsourceに混入させない。D実測未実施、承認0、新重量DL0。
 
 
