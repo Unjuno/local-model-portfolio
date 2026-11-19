@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 23 (verified 22, partial 0, failed 0, held 1)
-- Verified files: 227
-- Verified source bytes: 162325501646
-- Minimum observed free bytes: 2818771451904 (200 GB floor maintained: True)
+- Models: 54 (verified 53, partial 0, failed 0, held 1)
+- Verified files: 579
+- Verified source bytes: 270835576267
+- Minimum observed free bytes: 2710260613120 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -32,6 +32,37 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `udgamlabs/Lilavati-Checker` | `7edaac6de4cfe7127f973d8641335c4cb2f84b08` | VERIFIED | 6/6 | apache-2.0 |
 | `udgamlabs/Lilavati` | `5aef8c4b79fa6b8aaf5d63a1e8dd05ca572fe25d` | VERIFIED | 6/6 | apache-2.0 |
 | `nvidia/Kumo-Relational` | `efdbb110daea5aae123447864a64612e8a3dc6be` | VERIFIED | 5/5 | openmdw-1.1 |
+| `autogluon/chronos-2` | `60088152a34e242427b44c3100014473a0157d53` | VERIFIED | 3/3 | apache-2.0 |
+| `Zyphra/ZONOS3-Mini` | `2921b8821772b0bd10a04456863d21abf9d2f283` | VERIFIED | 66/66 | apache-2.0 |
+| `lerobot/smolvla_base` | `5e8d12a6e2975b0e5e5fce7c8caf47c371d257b6` | VERIFIED | 7/7 | apache-2.0 |
+| `ibm-granite/granite-speech-5.0-470m-turboctc` | `91dcb0605daf65f88dbb04fef015c423241d941d` | VERIFIED | 7/7 | apache-2.0 |
+| `Qwen/Qwen3-Reranker-0.6B` | `e61197ed45024b0ed8a2d74b80b4d909f1255473` | VERIFIED | 13/13 | apache-2.0 |
+| `Qwen/Qwen3-Embedding-0.6B` | `97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3` | VERIFIED | 11/11 | apache-2.0 |
+| `Edge0/Audio8-TTS-Realistic-Air` | `6bf7a980759d8022a66922ee975dab99229a2dd9` | VERIFIED | 14/14 | apache-2.0 |
+| `google/siglip2-base-patch16-224` | `75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2` | VERIFIED | 7/7 | apache-2.0 |
+| `answerdotai/ModernBERT-large` | `45bb4654a4d5aaff24dd11d4781fa46d39bf8c13` | VERIFIED | 6/6 | apache-2.0 |
+| `PaddlePaddle/PaddleOCR-VL-1.5` | `1e5216083435c7851caad5d691ef55aab81b5949` | VERIFIED | 12/12 | apache-2.0 |
+| `KlingTeam/LivePortrait` | `82a4fa6735ca58432b6ce39301b4b9ee066dea47` | VERIFIED | 16/16 | mit |
+| `IFM/K2-Horizon-0.9B` | `fc5c9dc7c13df2360acee789fca2cd55d439e644` | VERIFIED | 12/12 | apache-2.0 |
+| `BAAI/bge-m3` | `5617a9f61b028005a4858fdac845db406aefb181` | VERIFIED | 16/16 | mit |
+| `nvidia/Kumo-Tabular` | `c5893d418e162b9f841ae179dc767afefff73831` | VERIFIED | 9/9 | openmdw-1.1 |
+| `Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice` | `85e237c12c027371202489a0ec509ded67b5e4b5` | VERIFIED | 12/12 | apache-2.0 |
+| `speridlabs/idol` | `2731c2291fc65a797c5cb627a5e5526fc1490902` | VERIFIED | 6/6 | apache-2.0 |
+| `facebook/vjepa2-vitg-fpc64-384` | `12ca91694b230e0d4b5b0078af6f4ae1d51e933d` | VERIFIED | 4/4 | apache-2.0 |
+| `Qwen/Qwen3-VL-2B-Instruct` | `89644892e4d85e24eaac8bacfd4f463576704203` | VERIFIED | 11/11 | apache-2.0 |
+| `boltz-community/boltz-2` | `6fdef46d763fee7fbb83ca5501ccceff43b85607` | VERIFIED | 3/3 | mit |
+| `Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign` | `5ecdb67327fd37bb2e042aab12ff7391903235d3` | VERIFIED | 12/12 | apache-2.0 |
+| `Qwen/Qwen3-TTS-12Hz-1.7B-Base` | `fd4b254389122332181a7c3db7f27e918eec64e3` | VERIFIED | 12/12 | apache-2.0 |
+| `Qwen/Qwen3-ASR-1.7B` | `7278e1e70fe206f11671096ffdd38061171dd6e5` | VERIFIED | 11/11 | apache-2.0 |
+| `maya-research/maya2-native` | `87a83efdd6551e038246b6b37836a6264713eec3` | VERIFIED | 13/13 | apache-2.0 |
+| `ibm-granite/granite-speech-5.0-2b` | `ec49ca6b1a5e7e9176127e09cb303ab78cbacdf7` | VERIFIED | 14/14 | apache-2.0 |
+| `meta-models/Muse-Glimmer-30B-assistant` | `c676cce91658f9568aaf264a416211e2782735b7` | VERIFIED | 4/4 | apache-2.0 |
+| `facebook/esm2_t33_650M_UR50D` | `08e4846e537177426273712802403f7ba8261b6c` | VERIFIED | 6/6 | mit |
+| `nvidia/RFD4-Proteina` | `5ec66c399bf0b48727ab24e6b298dcf33864fa07` | VERIFIED | 17/17 | bsd-3-clause |
+| `microsoft/VibeVoice-1.5B` | `c00898d257e6b46004e3e2866a47534085fb685a` | VERIFIED | 7/7 | mit |
+| `deepseek-ai/DeepSeek-OCR-2` | `aaa02f3811945a91062062994c5c4a3f4c0af2b0` | VERIFIED | 9/9 | apache-2.0 |
+| `ibm-granite/granite-4.1-3b-llmon-preview` | `55a14cac002854bb64c7f465c30da29209b170c8` | VERIFIED | 7/7 | apache-2.0 |
+| `higurashi-ai/Haru-4B` | `8d6e83bcd3701a76fc27a764965665da1df7da78` | VERIFIED | 5/5 | apache-2.0 |
 
 Weight files were compared against publisher LFS SHA-256; ordinary Git blobs were compared by Git blob SHA-1. 'size-only' means no publisher hash existed.
 Gated models without verified owner entitlement were recorded as HOLD and no payload was acquired for them.
