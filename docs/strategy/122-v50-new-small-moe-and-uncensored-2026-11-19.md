@@ -2,6 +2,11 @@
 
 **書込み範囲**：この研究成果は`strategy/2026-11-03-01-risk`専用ブランチ。比較対象`main`の正本は`catalog/CURRENT.json` → **v50、203登録／156有効（SELECT53/CONDITIONAL103）**。このブランチの古いv48を現行正本へ戻さない。過去に[取得報告された53モデル／579ファイル・270,835,576,267B](../../catalog/execution/2026-11-19-acquisition-ledger.json)を無条件に再取得しない。今回所有者Dドライブを再ハッシュしたわけではなく、`queues/approved.json`は空。
 
+
+**同日正本更新の追認**：調査開始時の比較元`main`はv50（203登録/156有効）だったが、執筆中に`v51-20261119`（**204登録/157有効、CONDITIONAL104**）へ更新。[DaisyRose-27BのBF16原本は正式にR1/conditionalへ採用済み](https://github.com/Unjuno/local-model-portfolio/blob/main/docs/strategy/122-v51-daisyrose-27b-original-selection-and-supply-risk-2026-11-19.md)。固定40桁revision`293a7a2ab54aaea78098ee917c546390667521dc`、34ファイル・55,586,309,473B、親Qwenと異なる重みSHA18/18という資料を追加確認した。DaisyRoseを当ブランチから重複登録しない。引き続き同条件の実利と予算・本人の取得権を評価する。
+
+**取得準備キューとの照合**：さらに`main`の[15配布source重複排除キュー](https://github.com/Unjuno/local-model-portfolio/blob/main/queues/proposed-v50-r122-deduplicated-next15-sources.json)では**15 source repo／12独立学習結果＋データセット2＋コードのみ1／332ファイル／374,701,109,177B**を候補とし、同じ固定ソースの重複**179,484,014,188B**を除外した。これは`GO_AFTER_LOCAL_PREFLIGHT`のメタデータ分類であり、2026-11-19時点のD実容量・合法取得・本人承認ではない。新v51のDaisyRose BF16はこの15 source集合に含まれていないため、追加時には容量とsource identityを別途再計算する。
+
 ## 1.〈本論〉目的から逆算した追加・交換判定
 
 研究目的は**将来再構成が難しい独立学習結果・専門能力・元コードと依存を、正当な権利と実容量の範囲で保存すること**。単なる「無検閲」「新しい」「人気」「低bit化」を独自学習成果とみなさない。規制の仮説を法的取得権・緊急性に変換しない。
@@ -10,7 +15,7 @@
 | --- | --- | --- | --- | --- |
 | [gravitee-io/bert-small-pii-detection](https://huggingface.co/gravitee-io/bert-small-pii-detection) | [作者カード](https://huggingface.co/gravitee-io/bert-small-pii-detection)、[固定commit](https://huggingface.co/gravitee-io/bert-small-pii-detection/commit/f8c27a85c51c0168f07b9dcf00265bf0a4097939)、2026-11-19照合 | Public・license tag Apache-2.0。28.5M要素（HF概数）。`model.safetensors` **114,116,788B**、Publisher SHA-256=`a6319abf8718ec15956b241e8800b0ff4b6b8be5c6b5aa2a43aef765c6e20de3` | **P0・次版へのCONDITIONAL新規追加提案を確定**。英語25種類のPIIエンティティ検出に独立fine-tuned学習済み重み。3形式のうちFP32 Safetensors原本のみ保存基準、ONNXとINT8 ONNXは別モデル登録しない | 25ラベルのドメイン別F1、個人情報の誤検出/見逃し、全選択ファイルSHAと学習依存の確定。既存処理が同条件で代替可能なら優先度低下。正規LICENSE行為別確認前の取得不可 |
 | [maxwell-model/Maxwell-V1-Flash](https://huggingface.co/maxwell-model/Maxwell-V1-Flash) | [作者カード](https://huggingface.co/maxwell-model/Maxwell-V1-Flash)、[原本ファイル一覧](https://huggingface.co/maxwell-model/Maxwell-V1-Flash/tree/main)、2026-11-19 | Public、tag Apache-2.0、[固定commit](https://huggingface.co/maxwell-model/Maxwell-V1-Flash/commit/ca536c4380e0600d6aebdb808d2ce65ec724161b)。HF総36.8106B（非活性expert含むmeta値）／作者は埋込み除外35B全体・3B active。35 safetensors分割を含むrepo表示約**73.6GB** | **P1・独立事前学習MoEとして研究優先、容量HOLD**。学習済みMBSA、mHC、256 experts、MTPは既存Qwen系の通常量子化ではない | `config.json` は`rope_theta=20,000,000`／`max_position_embeddings=524,288`、作者仕様表はRoPE=10,000,000／sequence=262,144。意図的なconfig上限か設定差か要照会。custom Python/ABI、35分割SHA、正確な全MoE tensorと空き容量が未検証 |
-| [RadixArk/DaisyRose-27B](https://huggingface.co/RadixArk/DaisyRose-27B) | [作者2026-11-18発表](https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin) | Public・Apache2.0タグ、27.7814Bの親系譜。本人利用規約/固定hash未確認 | **P2・独立RL後学習成果としてHOLD**。作者Terminal Bench 4.1 pass@1 5.6→12.0、144×H200・18日・1,200 tasksという著者条件 | Qwen原本・既存Coding特化後学習との同条件比較を未実施。BF16/FP8/NVFP4を別学習成果として3重保管しない。正確なshard容量/SHAと原稿の第三者追試が必要 |
+| [RadixArk/DaisyRose-27B](https://huggingface.co/RadixArk/DaisyRose-27B) | [作者2026-11-18発表](https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin) | Public・Apache2.0タグ、27.7814Bの親系譜。本人利用規約/固定hash未確認 | **v51でR1/conditional正式採用済み、重複登録不要**。作者Terminal Bench 4.1 pass@1 5.6→12.0、144×H200・18日・1,200 tasksという著者条件 | v51で固定34files／55,586,309,473B／20 publisher LFS SHA、18シャードの親対応SHA一致0と記録。本人実機の独立再ハッシュと後学習効果の比較は未実施。BF16/FP8/NVFP4を3重登録しない |
 | [ConwayResearch/Underdog-Saluki-27B-1.0](https://huggingface.co/ConwayResearch/Underdog-Saluki-27B-1.0) | [原配布カード](https://huggingface.co/ConwayResearch/Underdog-Saluki-27B-1.0)、2026-11-19 | Public・**CC BY-NC-4.0**。作者称する約7.89GB/2bitのQwen3.8 GSQ-RCO派生 | **P2・小容量tool-calling実行用候補HOLD**。独立学習か単なる2bit serving派生か未証明。商用・別目的の権利確認が先 | 著者の120題比較は独立測定でない。同HW/RAM、llama.cpp、batch、quant zero-pointと親版をそろえて比較、明確な差がなければ追加しない |
 | [huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF](https://huggingface.co/huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF) | [patch全分割](https://huggingface.co/huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF/tree/main/patch-unsloth/patch-unsloth-all)・[静的patchスクリプト](https://huggingface.co/huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF/blob/main/patch-unsloth/patch-unsloth-Qwen3.8-27B-dec.py)、2026-11-19 | Public・Apache2.0 tag。patch-allは**約65.6GB・6 GGUF分割＋key**。最後の637MBだけでは全層差分を再構築できない | **P2・無検閲独立差分HOLD**。既存Interpretic/RVNとは編集元・形式が異なり得るが大容量。patch元の`unsloth`重みも同一revisionで確保する必要 | スクリプトはmissing tensorを黙ってコピーする経路があり部分patchを完全保全と誤認する危険。6 shardとkey、元重み、SHA、コードの安全性と既存2系統に対する実測差が揃うまで登録・取得しない |
 | [facebook/meta-encoder-v1](https://huggingface.co/facebook/meta-encoder-v1) | HF公式repoメタデータ、2026-11-19 | 28.4318B metadata、**LICENSE tagが確認できない** | **P1研究・HOLD権利確認先**。画像/文書/動画の検索embeddingは独立学習成果候補 | LICENSE正文、作者配布条件、必要重み・専用tokenizer、容量、既存埋込みとの検索指標で優位を確認 |
@@ -24,7 +29,7 @@
 
 - **確定する選定方針**：小型独立PII原本`gravitee-io/bert-small-pii-detection`を次版への**conditional候補**にする。重み原本1個114,116,788Bと設定/語彙類7ファイルの非実行[固定候補manifest](../../manifests/drafts/r122-gravitee-pii-original.candidate.json)を作成。ONNXとquant ONNXは後日必要に応じたservingフォーマットであり3つの別資産にしない。publisher全fileハッシュ・本人権利・学習済み総数の精密censusが未了なのでダウンロード可能な最終lockではない。
 - **大型原本の交換候補**：Maxwellは独自アーキテクチャの価値が高いが、既存Qwen3.5-35B-A3BやGranite MoEと比較してから一つの重複性の高い汎用checkpointと交換するか判断。既存保管ファイルを確認するまで削除しない。v45の古いsource proxy約3.732TBと3.8TB管理目安との差は約67.84GBだったが、そこへMaxwellの約73.6GBを無条件追加するのは**仮試算でも余裕を超える**。v50の本当の最終占有値は149資産分の選択容量が未確定であり、歴史的余裕を実空きと取り違えない。
-- **無検閲の代替**：現行保全方針のInterpretic高精度BF16/MTP原本と0bserverx RVN-F16を優先（[R121](121-v49-strict150b-ledger-aware-download-selection-2026-11-19.md)）。Huihuiのfull patchは元の`unsloth`重み＋6 shardが必要で、単体637MB追加を同等原本としてカウントできない。DaisyRoseは拒否抑制そのものではなくコード/agent RLが主題なので「無検閲枠」の代用品にしない。
+- **無検閲の代替**：現行保全方針のInterpretic高精度BF16/MTP原本と0bserverx RVN-F16を優先（[R121](121-v49-strict150b-ledger-aware-download-selection-2026-11-19.md)）。Huihuiのfull patchは元の`unsloth`重み＋6 shardが必要で、単体637MB追加を同等原本としてカウントできない。DaisyRoseはv51で正式条件付き選定されたが、拒否抑制そのものではなくコード/agent RLが主題なので「無検閲枠」の代用品にしない。
 - **150B以上絶対停止**：v50の`orcarouter/Qwen3.8-Flash-Next-Uncensored`約180Bと`mistralai/Mistral-Large-4-1T-A52B`約1.05Tは、quantized例外を認めず候補外。全パラメータ未確認モデル22件（うち有効9件）は非実行調査のみ。MoEの3B activeや量子化容量を総パラメータ数の代わりに使わない。
 
 ## 3. H/T/D/C/U：最小検証と不確かさ
@@ -65,7 +70,7 @@
 
 ## 5. ERROR CHECK
 
-関連JSONは[9件の個別根拠と反証条件](../../catalog/decisions/2026-11-19-r122-v50-small-specialists-moe-uncensored.json)、PIIの[選択7ファイル候補マニフェスト](../../manifests/drafts/r122-gravitee-pii-original.candidate.json)。主branchのv48現在値を触らず、`main` v50の203/156件も変更していない。選定として新たに確定したのは**次版条件付き追加の提案1件**のみ、Maxwell・Meta Encoderは権利/容量研究、Daisy・Huihui・Underdogは重複性能/原本差分HOLD。形式再包装2件と特定NPU1件と大Decider1件は新規追加不要。150B絶対除外2件と総数不明22件は維持。今回の重量ファイル転送0、モデル実行0、本人D直接確認0、承認0。Exaは使用枠超過で本回使えず、HF配布元・元コード・一次公開先を検査した。
+関連JSONは[9件の個別根拠と反証条件](../../catalog/decisions/2026-11-19-r122-v50-small-specialists-moe-uncensored.json)、PIIの[選択7ファイル候補マニフェスト](../../manifests/drafts/r122-gravitee-pii-original.candidate.json)。当作業ブランチの古いv48正本は変更せず、外部でv50→v51（204件・157有効）の正式追加を確認、DaisyRoseを二重登録していない。当ブランチが新たに提案したのは**次版PII条件付き追加の提案1件**のみ、Maxwell・Meta Encoderは権利/容量研究、Daisyはv51採用を追認し実効差を追試待ち、Huihui・Underdogは重複性能/原本差分HOLD。形式再包装2件と特定NPU1件と大Decider1件は新規追加不要。150B絶対除外2件と総数不明22件は維持。今回の重量ファイル転送0、モデル実行0、本人D直接確認0、承認0。Exaは使用枠超過で本回使えず、HF配布元・元コード・一次公開先を検査した。
 
 ## 6.〈次に考える問い〉
 
