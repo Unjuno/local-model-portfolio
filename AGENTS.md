@@ -2,7 +2,9 @@
 
 ## 現行v48・R115（2026-11-19）：取得実行報告を正式な承認と混同せず高精度保存原本を確定
 
-**唯一の正式選定正本**：[CURRENT](catalog/CURRENT.json)→**v48・201登録／154有効（SELECT53／CONDITIONAL101）**。現在の[15原本source候補](queues/proposed-v48-r113-source-pinned-15.json)は**187ファイル・74 publisher SHA参照・212,023,095,122 byte**。[R115判断と現状](docs/strategy/115-v48-reconcile-acquired-and-select-uncensored-masters-2026-11-19.md)／[監査JSON](catalog/decisions/2026-11-19-r115-post-acquisition-master-selection.json)／[R114物理取得報告ledger](catalog/execution/2026-11-19-acquisition-ledger.json)。
+**唯一の正式選定正本**：[CURRENT](catalog/CURRENT.json)→**v48・201登録／154有効（SELECT53／CONDITIONAL101）**。最新の[R115 16原本source提案](queues/proposed-v48-r115-master-sources-16.json)は**237ファイル・102 publisher SHA参照・301,848,275,578 byte**（metadata GO10・HOLD6。ただしGOはダウンロード承認ではない）。[旧R113 15原本source候補](queues/proposed-v48-r113-source-pinned-15.json)は履歴として保持。[R115判断と現状](docs/strategy/115-v48-reconcile-acquired-and-select-uncensored-masters-2026-11-19.md)／[監査JSON](catalog/decisions/2026-11-19-r115-post-acquisition-master-selection.json)／[R114物理取得報告ledger](catalog/execution/2026-11-19-acquisition-ledger.json)。
+
+**実行の安全ゲート**：[R115 Windows取得スクリプト](scripts/download_r115_windows.py)は**通常起動時は読み取り専用PLAN**へ変更。実際の転送には`--execute`に加えて、[approvedキュー](queues/approved.json)に対象repo ID・40桁revision・file source fingerprint・個別利用権利確認・使用者の明示承認・物理ボリューム確認を備えた項目が必要。[非ネットワークの退行テスト](tests/test_download_r115_authorization.py)も追加。古い取得実行報告の『VERIFIED』と、今後の追加取得許可を混同しない。
 
 **重要な取得状況訂正**：2026-11-19の別作業が**22モデル／227ファイル／162,325,501,646 byte VERIFIED**、**OrcaRouter 1件Gated HOLD**を報告した。旧文書の「すべてモデル重量DL0」は**現時点の報告とは不整合**。ただしR115自身は**所有者の物理ドライブ・保存ファイルを独立再ハッシュしていない**。ledgerを事実以上の本人権利・offline restore証明として使うな。[承認キュー](queues/approved.json)はなお**空**であり、過去の実行と承認フローの不一致は解消していない。今後の新規ダウンロードは、個別固定ファイル・利用許諾・本人権限・容量／cache／staging・200GB残床・明示承認なしに実行しない。既存ファイルは勝手に削除しない。
 
