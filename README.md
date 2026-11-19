@@ -1,5 +1,7 @@
 # Local Model Portfolio
 
+**R114｜R113の原本系譜を訂正（2026-11-19）**：[配布者一次資料・RVN F16 GGUF 53.808GBの固定SHAと正確な優先順位](docs/strategy/114-v48-uncensored-rvn-source-lineage-and-gguf-f16-pin-2026-11-19.md)／[機械可読の訂正](catalog/decisions/2026-11-19-r114-uncensored-lineage-correction.json)。**InterpreticAIはフルBF16を優先**。一方**0bserverxのSafetensorsはRVN-F16.ggufからの再構成物**であり、元の学習時BF16ではない。RVNはF16 GGUFを確認済み再構成元として優先し、GSQ-3bit・Q4・再構成Safetensorsの重複取得を保留。旧R113「2系統のSafetensorsをともに原本とする」判断は訂正済み。v48 201登録/154有効・承認0は不変更。
+
 **R114｜無検閲27B原本の誤交換防止（2026-11-19）**：[Interpretic原本と0bserverx RVNの同一性を区別した監査](docs/strategy/114-v48-uncensored-rvn-parent-provenance-correction.md)／[機械可読停止判定](catalog/decisions/2026-11-19-r114-uncensored-provenance-stop.json)。0bserverx RVN-Q4と別Safetensors 13 shardの厳密な変換元同一性は未立証。RVNを自動削除・交換しない。v48 201/154、承認0。
 
 
