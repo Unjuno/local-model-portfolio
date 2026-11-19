@@ -716,3 +716,18 @@ Meta公式元`model.safetensors`：3,362,432,800 byte、SHA-256 `3e1d4d18b9bfa9f
 **ERROR CHECK**：v9 132資産は不変更／最新`main` 202件は参照専用／次の研究候補は学習成果7件（source8、コード1は学習成果に数えない）／150B絶対除外2／パラメータ不明22（有効9）／本人承認0／今回の重み取得0。
 
 **R121同日追認**：`main`はv49から**v50（203登録/156有効）**へ更新され、`Reson8/Rumble-2-Flash`がR2/conditionalで正式採用済み。従って上記v49は不変の比較スナップショットであり、[R121](121-v49-strict150b-ledger-aware-download-selection-2026-11-19.md)は同一モデルの重複追加を行わず、残る取得前ゲートとsource順位を確定する。150B厳格絶対除外、未確認パラメータ停止、取得承認0は変わらない。
+
+
+## R123追補（2026-11-20）：v52・61件取得報告に基づく固定SHA差分保存と実際の規制訂正
+
+**主表132資産は歴史的v9のまま**。現在の比較正本は別ブランチ`main`の`v52-20261119`（205登録／158有効）。別の61件取得実行報告は所有者Dの現物再SHAではなく、`queues/approved.json`は0件。古いv9の優先順位をv52全205件の最新版として引用しない。
+
+**差分保全**：[R123の全15source/332file監査](../../catalog/decisions/2026-11-20-r123-v52-ledger61-source-delta.json)では、取得候補374,701,109,177byteのうち47,924,439,388byteについて同revision・同パス・同Publisher SHAの一致が**別実行台帳で報告**されている。残る条件付き未照合scopeは326,776,669,789byte。 [非実行のファイル別差分キュー](../../queues/proposed-v52-r123-ledger61-delta-15-research-only.json)と[選定報告](123-v52-ledger61-model-source-priority-2026-11-20.md)を参照。現在の実D容量と法的許諾を確認するまでこの候補キューから取得しない。
+
+**モデルの交換**：RWKV7、iLLaDA、TRELLIS.2は主重みの一致報告により新規重量転送の優先度を下げる。ZONOS3原本のcodec等とRVN-F16は、同repo名の小版／Q4を取得済みでも高精度原本の別SHAを理由に継続選定する。Rumble、SenseNova公式公開形式、Interpretic BF16、Fara、Hy-Memoryは配布元正規source/権利と依存を優先確認。gravitee英語PII原本114,116,788byteは小型独立専門能力として次版conditional候補を維持。fastino 7言語PII原本は主重みSHAを確認したが全パラメータ厳密数・権利とruntime確認待ち。Maxwell MoEは総数36.8106B未満と仮評価しつつ73.6GB/cuda13/custom-codeコストのため追加HOLD。これらを**既存の量子化別形式の独立学習成果とは数えない**。
+
+**最新の公的事実**：2026-11-19施行の[米国Federal Register、文書2026-23529](https://www.govinfo.gov/content/pkg/FR-2026-11-19/pdf/2026-23529.pdf) IV.Aは旧AI Diffusion RuleのECCN 4E091モデルweights規制の撤廃を明記。遠隔高度計算・半導体の最終用途/利用者規制は別に残る。これを**公開モデルweights一般のローカル保存禁止**と読み替えず、個別作者Gated・ライセンス・権利者削除要請は別の観測経路とする。現行禁止の一律化・今後の規制確率は裏付けなし。
+
+**厳格上限**：ユーザー要件は**総パラメータ150B以上を絶対除外**（MoE非活性expertを含む）。現在v52の150B以上2件について、mainに残る量子化例外審査は本研究では適用しない。総数不明22モデル（有効9）の取得準備を停止。実Dのハッシュ・200GB空き床・4TB最終占有・本人行為別許諾・選択原本の固定revisionを合格するまで重量の取得承認は0件。
+
+**ERROR CHECK**：参照v52 205/158、別台帳61VERIFIED報告/708ファイル/409,835,119,252byte、15source/332ファイル、SHA一致報告18ファイル/47,924,439,388byte、差分326,776,669,789byte、追加ライセンス認可0、重み転送0。ExaはHTTP402で使用不能、Hugging Faceの第一配布元、政府の一次公文書を代替参照。
