@@ -1,0 +1,831 @@
+{
+  "schema_version": 1,
+  "review_id": "R117_CURRENT_LEDGER_RECONCILIATION_20261119",
+  "date": "2026-11-19",
+  "original_repo": "Unjuno/local-model-portfolio",
+  "ref": "main",
+  "current_selection_revision": "v48-20261118",
+  "canonical_registered": 201,
+  "canonical_active": 154,
+  "changes_to_canonical_selection": 0,
+  "approved_queue_entries": 0,
+  "authorizes_download": false,
+  "source_snapshots": [
+    "catalog/execution/2026-11-19-acquisition-ledger.json",
+    "catalog/execution/2026-11-19-discovered-next-waves.json"
+  ],
+  "ledger_reported": {
+    "models": 54,
+    "verified": 53,
+    "held": 0,
+    "verified_files": 579,
+    "verified_bytes": 270835576267,
+    "independently_rehashed_owner_hdd": false
+  },
+  "discovery_comparison": {
+    "total": 59,
+    "already_verified_source_scope": 36,
+    "remaining_source_scope": 23,
+    "remaining_total_bytes": 1386933535900,
+    "by_band": {
+      "A": {
+        "models": 5,
+        "bytes": 84651703351
+      },
+      "B": {
+        "models": 13,
+        "bytes": 792905836417
+      },
+      "C": {
+        "models": 5,
+        "bytes": 509375996132
+      }
+    }
+  },
+  "avoid_redownload": [
+    {
+      "repo_id": "nvidia/Kumo-Anomaly",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "gradium/phonon-31m-en",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati-Checker",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "nvidia/Kumo-Relational",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "autogluon/chronos-2",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "Zyphra/ZONOS3-Mini",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "PARTIAL_TEACHER_SCOPE_NOT_FULL_CODEC"
+    },
+    {
+      "repo_id": "lerobot/smolvla_base",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "ibm-granite/granite-speech-5.0-470m-turboctc",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "Edge0/Audio8-TTS-Realistic-Air",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "google/siglip2-base-patch16-224",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "answerdotai/ModernBERT-large",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "PaddlePaddle/PaddleOCR-VL-1.5",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "KlingTeam/LivePortrait",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "IFM/K2-Horizon-0.9B",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "BAAI/bge-m3",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "nvidia/Kumo-Tabular",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "speridlabs/idol",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "facebook/vjepa2-vitg-fpc64-384",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "Qwen/Qwen3-VL-2B-Instruct",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "boltz-community/boltz-2",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "Qwen/Qwen3-ASR-1.7B",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "maya-research/maya2-native",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "ibm-granite/granite-speech-5.0-2b",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "meta-models/Muse-Glimmer-30B-assistant",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "facebook/esm2_t33_650M_UR50D",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "nvidia/RFD4-Proteina",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "microsoft/VibeVoice-1.5B",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "deepseek-ai/DeepSeek-OCR-2",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "ibm-granite/granite-4.1-3b-llmon-preview",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    },
+    {
+      "repo_id": "higurashi-ai/Haru-4B",
+      "reported_ledger_status": "VERIFIED",
+      "warning": "SOURCE_SCOPE_ONLY_NOT_OFFLINE_BUNDLE"
+    }
+  ],
+  "remaining_source_selection": [
+    {
+      "repo_id": "RWKV/RWKV7-7.2B-20260805",
+      "immutable_revision": "9e47155004fe9df0f2a8015efa9152595c9065be",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 12,
+      "source_bytes": 14401662526,
+      "band": "A",
+      "unique_value_reason": "recurrent RWKV7 architecture and independently learned original",
+      "decision": "SOURCE_FREEZE_FIRST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "microsoft/TRELLIS.2-4B",
+      "immutable_revision": "af44b45f2e35a493886929c6d786e563ec68364d",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 21,
+      "source_bytes": 16237483525,
+      "band": "A",
+      "unique_value_reason": "independent 3D geometry and texturing, different from Idol 3DGS",
+      "decision": "SOURCE_FREEZE_FIRST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "GSAI-ML/iLLaDA-8B-Base",
+      "immutable_revision": "a1b5b5f8a31a3854a46205ee584178c04b45ec9a",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 12,
+      "source_bytes": 16512890112,
+      "band": "A",
+      "unique_value_reason": "12T-token fully bidirectional masked diffusion independent original, unlike prior ARLoop",
+      "decision": "SOURCE_FREEZE_FIRST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "PrentisAI/GroundGUI-8B",
+      "immutable_revision": "9db378189fddaabb5f6e347b9053858a392022ac",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "conditional",
+      "file_count": 16,
+      "source_bytes": 17550248700,
+      "band": "A",
+      "unique_value_reason": "ScreenRef-derived precise GUI grounding, not equivalent to Fara full GUI agent",
+      "decision": "SOURCE_FREEZE_FIRST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "ACE-Step/acestep-v15-xl-turbo",
+      "immutable_revision": "d4a0b288b83ebb7e25a8c0b32c573c22e134e8ee",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "conditional",
+      "file_count": 7,
+      "source_bytes": 19949418488,
+      "band": "A",
+      "unique_value_reason": "original music generation, not an ASR/TTS quantized duplicate",
+      "decision": "SOURCE_FREEZE_FIRST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "ResembleAI/chatterbox",
+      "immutable_revision": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 12,
+      "source_bytes": 10681443628,
+      "band": "B",
+      "unique_value_reason": "distinct TTS pipeline but multiple variants/codec need file allowlist",
+      "decision": "RETAIN_SELECTION_REVIEW_DEDUP_AND_COST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "OpenMOSS-Team/MOSS-TTS-v1.5",
+      "immutable_revision": "cdd3b911b1585e3f2dbc7775ef10f9926f58850a",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 15,
+      "source_bytes": 16995674217,
+      "band": "B",
+      "unique_value_reason": "separate TTS trained lineage, inspect learned codec and variants",
+      "decision": "RETAIN_SELECTION_REVIEW_DEDUP_AND_COST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "kandinskylab/Kandinsky-6.0-Lite-distill-5s-Diffusers",
+      "immutable_revision": "4c487e8b4aeeb9059e5a77905aa2ddb59ec28f81",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "conditional",
+      "file_count": 34,
+      "source_bytes": 26670721789,
+      "band": "B",
+      "unique_value_reason": "Independent MIT-licensed 2026 synchronized 5-second video+44kHz audio generator, 3.178B Lite main DiT, distilled 10-step execution; distinct from Wan and LTX.",
+      "decision": "RETAIN_SELECTION_REVIEW_DEDUP_AND_COST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "HuggingFaceBio/Carbon-X",
+      "immutable_revision": "17de89165e25c49e7de4f845d0e5d464469de359",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 10,
+      "source_bytes": 29655632110,
+      "band": "B",
+      "unique_value_reason": "DNA配列と自然言語を共同学習した約14.8B特殊モデル。独自DNAトークナイザーと学習工程が必要で、Qwen3-14Bだけでは同じ重みを戻せない。",
+      "decision": "RETAIN_SELECTION_REVIEW_DEDUP_AND_COST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "microsoft/Fara1.5-27B",
+      "immutable_revision": "299c8406a6c6256d45ec200d1ac12b34c5599d9b",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 21,
+      "source_bytes": 54743812659,
+      "band": "B",
+      "unique_value_reason": "full GUI workflow agent, not replaceable one-to-one with GroundGUI click-only",
+      "decision": "RETAIN_SELECTION_REVIEW_DEDUP_AND_COST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "Qwen/Qwen3.8-27B",
+      "immutable_revision": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 30,
+      "source_bytes": 55586105207,
+      "band": "B",
+      "unique_value_reason": "original parent for comparing uncensored checkpoints; not identical to post-trained edits",
+      "decision": "RETAIN_SELECTION_REVIEW_DEDUP_AND_COST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "meta-models/Muse-Glimmer-30B",
+      "immutable_revision": "1297fd7dfeac4598948a5d15886968435c81c2b7",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "conditional",
+      "file_count": 11,
+      "source_bytes": 59581823419,
+      "band": "B",
+      "unique_value_reason": "Muse Glimmer 30Bは29.7766BパラメータのMeta原本蒸留・画像統合重み。52層sliding/full混在と50層vision towerを含む独立アーキテクチャ、同一系列のGGUFコピーではない。",
+      "decision": "RETAIN_SELECTION_REVIEW_DEDUP_AND_COST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "ibm-granite/granite-switch-4.1-30b",
+      "immutable_revision": "eb206725d03c0f1c409ce3aa512afe325fdf8731",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 25,
+      "source_bytes": 59991291739,
+      "band": "B",
+      "unique_value_reason": "4.1.1で改訂された約30Bのモジュラーモデル。Decision aLoRA・Guardian aLoRA・日本語含む7言語音声Encoderという独特の専門部品の組合せを保存する。",
+      "decision": "RETAIN_SELECTION_REVIEW_DEDUP_AND_COST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "tencent/Hy-Memory-30B-A3B",
+      "immutable_revision": "64a460a94d5498b7316fb02395c72d01c47a7347",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 58,
+      "source_bytes": 60142911383,
+      "band": "B",
+      "unique_value_reason": "約30B総数/約3Bアクティブの長期エージェント記憶書き込み専門MoE。メモリ更新方針を専門的な蒸留・強化学習で学んでいる。",
+      "decision": "RETAIN_SELECTION_REVIEW_DEDUP_AND_COST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "allenai/Olmo-3-1125-32B",
+      "immutable_revision": "c2b61dae89a1ad10e4ad5653d0e46b590902607b",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 23,
+      "source_bytes": 64476873186,
+      "band": "B",
+      "unique_value_reason": "AllenAIによる公開度の高い32B級系列。学習過程と検証可能性を別系統の比較対象として残す。",
+      "decision": "RETAIN_SELECTION_REVIEW_DEDUP_AND_COST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "EPFLiGHT/OLMo-2-32B-MeditronFO",
+      "immutable_revision": "04c6953977c3a9f913e3d08a6c23edaae6bd6459",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 23,
+      "source_bytes": 64477462899,
+      "band": "B",
+      "unique_value_reason": "臨床質問・ガイドライン用SFTを施した32B。公開されたMeditronコーパスとレシピを含めて再学習の検証に使える。",
+      "decision": "RETAIN_SELECTION_REVIEW_DEDUP_AND_COST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "openai/gpt-oss-120b",
+      "immutable_revision": "b5c939de8f754692c1647ca79fbf85e8c1e70f8a",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 34,
+      "source_bytes": 130525785270,
+      "band": "B",
+      "unique_value_reason": "native MXFP4 released weights, architecturally different MoE, large resource cost",
+      "decision": "RETAIN_SELECTION_REVIEW_DEDUP_AND_COST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Coder-Next",
+      "immutable_revision": "a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 49,
+      "source_bytes": 159376298911,
+      "band": "B",
+      "unique_value_reason": "80B total (not 3B active) coding-agent posttraining, resource-expensive specialist",
+      "decision": "RETAIN_SELECTION_REVIEW_DEDUP_AND_COST",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "google/gemma-4-31B",
+      "immutable_revision": "5bbc2fb1c1b2c611d06e3d9f23c170ba21659d89",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 9,
+      "source_bytes": 62578663313,
+      "band": "C",
+      "unique_value_reason": "general foundation baseline with large source, need distinct use-case evidence",
+      "decision": "DEFER_NEW_TRANSFER_UNTIL_UNIQUE_VALUE_PROVEN",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "Nanbeige/Nanbeige4.3-33B",
+      "immutable_revision": "df919e1e2cf077a22204c78b6c826bf3db18bc08",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 22,
+      "source_bytes": 66256520718,
+      "band": "C",
+      "unique_value_reason": "another ~33B general checkpoint, possible functional overlap",
+      "decision": "DEFER_NEW_TRANSFER_UNTIL_UNIQUE_VALUE_PROVEN",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "OctoMed/OctoMed-32B",
+      "immutable_revision": "7b480e62a0f59139aa504e67d62974b83e360200",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 10,
+      "source_bytes": 66726452272,
+      "band": "C",
+      "unique_value_reason": "medical posttraining may be useful but duplicates other biomedical portfolio missions",
+      "decision": "DEFER_NEW_TRANSFER_UNTIL_UNIQUE_VALUE_PROVEN",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "Qwen/Qwen3.5-35B-A3B-Base",
+      "immutable_revision": "0f0813072d2358973511097385626f21fcb6d422",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 24,
+      "source_bytes": 71926984835,
+      "band": "C",
+      "unique_value_reason": "same-family base source with overlapping Qwen coverage until learned delta proven",
+      "decision": "DEFER_NEW_TRANSFER_UNTIL_UNIQUE_VALUE_PROVEN",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    },
+    {
+      "repo_id": "mistralai/Mistral-Small-4-119B-2603",
+      "immutable_revision": "a11f36bebf709121056b1dbcc943d1c6afbe494d",
+      "observation": "GITHUB_DISCOVERY_SOURCE_ONLY",
+      "catalog_decision": "select",
+      "file_count": 21,
+      "source_bytes": 241887374994,
+      "band": "C",
+      "unique_value_reason": "~242GB generic 119B-class source, need measured uniqueness vs existing large models",
+      "decision": "DEFER_NEW_TRANSFER_UNTIL_UNIQUE_VALUE_PROVEN",
+      "full_publisher_file_hash_allowlist_closed": false,
+      "offline_restore_verified": false,
+      "owner_volume_verified": false,
+      "approved": false,
+      "download_enabled": false,
+      "unclosed": [
+        "pin publisher file list with checksums",
+        "verify exact license acts and dependencies",
+        "current owner HDD free and staging",
+        "explicit user approval"
+      ]
+    }
+  ],
+  "original_master_upgrade_queue": [
+    {
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+      "master_type": "PUBLISHER_BF16_FULL",
+      "bytes": 55586056799,
+      "source": "manifests/drafts/r113-v48-two-uncensored-original-fp16-parents.candidate.json",
+      "decision": "PRIORITIZE_ORIGINAL_AFTER_GATES",
+      "caution": "Retain reported Q4, avoid duplicate unrelated variants"
+    },
+    {
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "master_type": "F16_GGUF_KNOWN_RECONSTRUCTION_SOURCE_NOT_TRAIN_BF16",
+      "bytes": 53808326934,
+      "source": "catalog/decisions/2026-11-19-r114-uncensored-lineage-correction.json",
+      "decision": "PRIORITIZE_ONE_F16_AFTER_GATES",
+      "caution": "Do not double-save safetensors derived from this F16"
+    },
+    {
+      "repo_id": "Zyphra/ZONOS3-Mini",
+      "master_type": "FULL_LM_AND_CODEC_DEPENDENCIES",
+      "bytes": 15345816226,
+      "source": "manifests/drafts/r115-v48-zonos3-mini-original-source-with-codec.candidate.json",
+      "decision": "COMPLETE_PARTIAL_0_776GB_REPORTED_SCOPE_WITH_DEDUPE",
+      "caution": "Reported verified teacher only, not full speech pipeline; verify exact existing hashes before new transfer"
+    }
+  ],
+  "new_research_candidate": {
+    "repo_id": "Reson8/Rumble-2-Flash",
+    "decision": "CONDITIONAL_ADD_PROPOSED_ONLY_NOT_FORMALLY_IN_CATALOG",
+    "fixed_revision": "a0c34287229103b706c670d70791683e34379732",
+    "frozen_selected_file_count": 19,
+    "source_bytes": 1385998807,
+    "publisher_lfs_sha_count": 2,
+    "exact_publisher_files_source": "manifests/drafts/r115-v48-rumble2-flash-and-nemotron-sigma-original.candidate.json",
+    "main_model_parameters": 508631552,
+    "ctc_head_trained_parameter_count": null,
+    "total_pipeline_status": "HOLD_FINAL_LOCK_UNKNOWN_LEARNED_CTC_TOTAL",
+    "hub_license_metadata": "apache-2.0",
+    "hub_public": true,
+    "publisher_benchmarks": {
+      "hardware": "NVIDIA H200",
+      "backend": "vLLM",
+      "gpu_clock": "UNREPORTED",
+      "batch": "UNREPORTED; fastest RTFx on full batches",
+      "en_wer_percent": 6.6,
+      "multilingual_wer_percent": 6.96,
+      "throughput_rtf_x_lower_bound_publisher_claim": 7000,
+      "owner_japanese_eval": null
+    },
+    "rights_text_reviewed": false,
+    "user_approved": false,
+    "download_approved": false
+  },
+  "special_holds": [
+    {
+      "id": "sensenova/SenseNova-Loop-9B",
+      "reason": "Hugging Face gated; individual access and trained custom code not verified"
+    },
+    {
+      "id": "nvidia/Nemotron-Labs-Sigma-distill-spec-3B",
+      "reason": "license other, custom code and runtime ABI; do not promote on name alone"
+    }
+  ],
+  "current_policy_not_v9": {
+    "baseline_total_parameters": 150000000000,
+    "moe_inactive_experts_count": true,
+    "above_baseline_quant_runtime_exception_requires_measured_matched_reference": true,
+    "passed_exception_count": 0,
+    "unknown_total_stops_final_lock": true,
+    "maximum_archive_bytes": 4000000000000,
+    "physical_free_floor_bytes": 200000000000
+  },
+  "regulation_primary_fact": {
+    "document": "https://public-inspection.federalregister.gov/2026-23529.pdf",
+    "status": "2026-11-19 interim-final-rule public-inspection copy; check final publication date before legal application",
+    "observed": "Revokes AI Diffusion Rule model weight controls ECCN 4E091; establishes separate advanced semiconductors and remote compute controls",
+    "projection": "No evidence of blanket owner-local-open-weights ban; future publisher restrictions remain scenario not numerical probability"
+  },
+  "unit_policy": {
+    "bytes_are_decimal": true,
+    "all_source_bytes_are_candidate_not_actual_physical_increment": true,
+    "shard_metadata_not_approved_manifest": true
+  },
+  "static_tests": {
+    "unique_remaining": true,
+    "all_nonexecuting": true,
+    "no_approved_entries": true
+  },
+  "unresolved": [
+    "confirm owner D volume identity/free and prior verified files hashes",
+    "license and Gated permissions by account",
+    "file-level SHA manifest for 23 remaining",
+    "full codec and trained component closure",
+    "matched quality trials: hardware/backend/clock/batch/context >=30",
+    "approval remains empty"
+  ]
+}
