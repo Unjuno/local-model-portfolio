@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "review_id": "R128",
+  "date": "2026-11-20",
+  "write_branch": "strategy/2026-11-03-01-risk",
+  "compared_main_revision": "v54-20261120",
+  "main_current_blob_sha": "ad3b71ec161558452c2849ce1dca080eb9517211",
+  "main_materialized_path": "catalog/effective-portfolio-2026-11-20-v54.json",
+  "main_materialized_sha": "a18ac61d4d971b7b8be9ada61cfeacfb13292054",
+  "scope": {
+    "registered": 207,
+    "active": 160,
+    "models": 181,
+    "datasets": 26,
+    "select": 53,
+    "conditional": 107
+  },
+  "parameter_gate_inconsistency": {
+    "pointer_expected": {
+      "PASS_TOTAL_PARAMS_LT_150B": 158,
+      "OVER_150B_QUANT_REVIEW_REQUIRED": 2,
+      "UNVERIFIED_BLOCK_FINAL_LOCK": 22
+    },
+    "materialized_header": {
+      "PASS_TOTAL_PARAMS_LT_150B": 157,
+      "OVER_150B_QUANT_REVIEW_REQUIRED": 2,
+      "UNVERIFIED_BLOCK_FINAL_LOCK": 22
+    },
+    "actual_status_count": {
+      "PASS_TOTAL_PARAMS_LT_150B": 157,
+      "OVER_150B_QUANT_REVIEW_REQUIRED": 2,
+      "UNVERIFIED_BLOCK_FINAL_LOCK": 22
+    },
+    "incorrect_field": "catalog/CURRENT.json expected.parameter_gate.PASS_TOTAL_PARAMS_LT_150B",
+    "wrong_value": 158,
+    "correct_value": 157,
+    "safe_patch": "Only change 158 to 157 after verifying current main revision/sha; this branch does not write main"
+  },
+  "strict_150b": {
+    "threshold_total_params": 150000000000,
+    "ge_150b": [
+      {
+        "repo_id": "orcarouter/Qwen3.8-Flash-Next-Uncensored",
+        "total_params": 180000000000,
+        "strict_policy": "EXCLUDE_GE_150B_ALWAYS"
+      },
+      {
+        "repo_id": "mistralai/Mistral-Large-4-1T-A52B",
+        "total_params": 1050000000000,
+        "strict_policy": "EXCLUDE_GE_150B_ALWAYS"
+      }
+    ],
+    "unknown_total_models": 22,
+    "unknown_active_models": 9,
+    "nonactive_moe_experts_counted": true,
+    "quant_exception_over_150b_prohibited": true,
+    "unknown_blocks_acquisition_preparation": true
+  },
+  "ledger": {
+    "blob_sha": "5a5de85e8e0fdc1ac2bbb7f61b369df005e63b79",
+    "reported_models_verified": 61,
+    "reported_files": 708,
+    "reported_bytes": 409835119252,
+    "physically_rehashed_in_this_chat": false,
+    "approved_downloads": 0
+  },
+  "research_candidates": [
+    {
+      "repo_id": "Horizon-Labs/pii-redactor-small",
+      "priority_rank": 1,
+      "decision": "PRIMARY_NEXT_CONDITIONAL_CANDIDATE",
+      "uniqueness": "Small 140.7M multilingual PII/privacy/token-secret classifier, 37 languages including Japanese; independent ModernBERT trained state, 29 PII categories",
+      "confirmed_restriction": "PUBLIC_APACHE2_LICENSE_NOTICE_PRESENT",
+      "rationale": "New unique trained capability vs existing prompt-injection Galvanize, two large source files 597034468B",
+      "falsification": "If independent Japanese/English paired redaction eval and owner runtime shows no material benefit, defer",
+      "primary_url": "https://huggingface.co/Horizon-Labs/pii-redactor-small",
+      "checked_on": "2026-11-20",
+      "future_regulation_probability": null,
+      "license_act_reviewed": false,
+      "download_approved": false
+    },
+    {
+      "repo_id": "gravitee-io/bert-small-pii-detection",
+      "priority_rank": 2,
+      "decision": "DEMOTE_TO_COMPACT_ENGLISH_REFERENCE_ONLY",
+      "uniqueness": "28.5M original BERT PII English-only, 114116788B model.safetensors, genuine separate training result",
+      "confirmed_restriction": "PUBLIC_APACHE2_TAG_NO_SEPARATE_TOP_LEVEL_LICENSE_IN_VIEW",
+      "rationale": "Ultra-small fallback and baseline, but poorer coverage than Horizon",
+      "falsification": "If memory pressure makes 114MB decisive or English task scores higher on owned data, reconsider as active",
+      "primary_url": "https://huggingface.co/gravitee-io/bert-small-pii-detection",
+      "checked_on": "2026-11-20",
+      "future_regulation_probability": null,
+      "license_act_reviewed": false,
+      "download_approved": false
+    },
+    {
+      "repo_id": "OpenMed/privacy-filter-multilingual-v2",
+      "priority_rank": 3,
+      "decision": "HOLD_CUSTOM_CODE_AND_LABEL_UTILITY",
+      "uniqueness": "1.3996B total MoE Japanese and 15 other languages, 54 PII classes vs Horizon29",
+      "confirmed_restriction": "PUBLIC_APACHE2_TAG",
+      "rationale": "Larger and custom code trust_remote_code=True, needs code review and label-specific gain",
+      "falsification": "If independent 54-label recall advantage matters under accepted license and ABI, promote",
+      "primary_url": "https://huggingface.co/OpenMed/privacy-filter-multilingual-v2",
+      "checked_on": "2026-11-20",
+      "future_regulation_probability": null,
+      "license_act_reviewed": false,
+      "download_approved": false
+    },
+    {
+      "repo_id": "Horizon-Labs/pii-redactor-base",
+      "priority_rank": 4,
+      "decision": "HOLD_PUBLISHER_FAMILY_OVERLAP",
+      "uniqueness": "307.6M from same publisher; base v1.0, author measured four external corpus mean redaction F1 0.898 vs 0.883 small",
+      "confirmed_restriction": "PUBLIC_APACHE2_TAG",
+      "rationale": "No independent small-vs-base user benchmark, larger source",
+      "falsification": "Promote if Japanese matched error-rate tail materially improves",
+      "primary_url": "https://huggingface.co/Horizon-Labs/pii-redactor-base",
+      "checked_on": "2026-11-20",
+      "future_regulation_probability": null,
+      "license_act_reviewed": false,
+      "download_approved": false
+    },
+    {
+      "repo_id": "maxwell-model/Maxwell-V1-Flash",
+      "priority_rank": 5,
+      "decision": "HOLD_LARGE_MOE_CAPACITY_AND_CUSTOM_CODE",
+      "uniqueness": "36.8106B total MoE incl inactive experts, 3B activated, custom MBSA and routing",
+      "confirmed_restriction": "PUBLIC_APACHE2_TAG",
+      "rationale": "Approx 73.6GB repo plus runtime and source hash unknown; 4TB final fit unconfirmed",
+      "falsification": "Promote only after approved capacity swap, exact SHA and independent utility",
+      "primary_url": "https://huggingface.co/maxwell-model/Maxwell-V1-Flash",
+      "checked_on": "2026-11-20",
+      "future_regulation_probability": null,
+      "license_act_reviewed": false,
+      "download_approved": false
+    },
+    {
+      "repo_id": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
+      "priority_rank": 6,
+      "decision": "HOLD_UNCENSORED_PATCH_PARENT_CHAIN",
+      "uniqueness": "Different refusal-edit lineage; complete 6 patch shards roughly 65.6GB plus exact Unsloth parent",
+      "confirmed_restriction": "PUBLIC_APACHE2_TAG",
+      "rationale": "One 637MB shard not restorable; existing Interpretic BF16 + RVN F16 masters first",
+      "falsification": "Promote if source author proves complete smaller patch and unique measured behavior",
+      "primary_url": "https://huggingface.co/huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
+      "checked_on": "2026-11-20",
+      "future_regulation_probability": null,
+      "license_act_reviewed": false,
+      "download_approved": false
+    }
+  ],
+  "priority_exchange": "R122 previously favored Gravitee English-only 28.5M; R128 prioritizes Horizon multilingual 140.7M source with LICENSE/NOTICE and checksum while retaining Gravitee as compact reference",
+  "phases": {
+    "R0_READONLY_OWNER_INVENTORY": {
+      "scope": "61 models claimed verified, no network or new weights",
+      "bytes_to_download": 0
+    },
+    "R1_SMALL_UNIQUE": {
+      "preexisting_sidecar_delta": [
+        {
+          "repo_id": "RWKV/RWKV7-7.2B-20260805",
+          "bytes": 337813,
+          "revision": "9e47155004fe9df0f2a8015efa9152595c9065be",
+          "source_files": 7
+        },
+        {
+          "repo_id": "GSAI-ML/iLLaDA-8B-Base",
+          "bytes": 28506,
+          "revision": "a1b5b5f8a31a3854a46205ee584178c04b45ec9a",
+          "source_files": 4
+        },
+        {
+          "repo_id": "microsoft/TRELLIS.2-4B",
+          "bytes": 1519,
+          "revision": "af44b45f2e35a493886929c6d786e563ec68364d",
+          "source_files": 1
+        }
+      ],
+      "benchmark_datasets": [
+        {
+          "repo_id": "elyza/ELYZA-tasks-100",
+          "bytes": 7606817,
+          "revision": "240fc800c4695d86ce0f32a713e199cd2ba66ab6",
+          "source_files": 65
+        },
+        {
+          "repo_id": "CohereLabs/aya_dataset",
+          "bytes": 140160376,
+          "revision": "f9ea04583f02a8f86404ff6c58bf75fe637df8a2",
+          "source_files": 6
+        }
+      ],
+      "new_model": {
+        "repo_id": "Reson8/Rumble-2-Flash",
+        "bytes": 1385998807,
+        "revision": "a0c34287229103b706c670d70791683e34379732",
+        "source_files": 19
+      },
+      "proposed_new_model": {
+        "repo_id": "Horizon-Labs/pii-redactor-small",
+        "source_revision": "a20835db9e671267b21a2951f5bf2c76e4901708",
+        "fixed_model_and_tokenizer_bytes": 597034468,
+        "complete_selected_source_bytes": null,
+        "publisher_weight_sha256": "026ba83dfd0a7f656d92451fd19d3ce5dcc2c0b27f21fb72c23e4c3f6b37766e",
+        "publisher_tokenizer_sha256": "ac6fc8196d1db9ef82e68f6088e8d77d711b8c6f07589cec7d9d59c4adfc9a1e",
+        "source_manifest": "manifests/drafts/r128-2026-11-20-horizon-pii-v11-original.candidate.json",
+        "approved": false
+      },
+      "known_minimum_source_bytes": 2131168306,
+      "source_complete_bytes": null,
+      "approved": false
+    },
+    "R2_SPECIALIST_ORIGINALS": {
+      "repos": [
+        {
+          "repo_id": "Zyphra/ZONOS3-Mini",
+          "bytes": 15345816226,
+          "revision": "2921b8821772b0bd10a04456863d21abf9d2f283",
+          "source_files": 24
+        },
+        {
+          "repo_id": "sensenova/SenseNova-Loop-9B-GGUF",
+          "bytes": 19338124279,
+          "revision": "11c121055062d33647348cf236a8c543138b282e",
+          "source_files": 6
+        }
+      ],
+      "source_bytes": 34683940505
+    },
+    "R3_UNCENSORED_MASTERS": {
+      "repos": [
+        {
+          "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+          "bytes": 55586056799,
+          "revision": "84ab13688128c19d5ef10be430bc5de649b7823f",
+          "source_files": 32
+        },
+        {
+          "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+          "bytes": 53808326934,
+          "revision": "ab8d7bd81d03117501e4da60cccdff4c80f0eea0",
+          "source_files": 3
+        }
+      ],
+      "source_bytes": 109394383733,
+      "prior_quantized_files_not_identical": true
+    },
+    "R4_EXTRA_SPECIALISTS": {
+      "repos": [
+        {
+          "repo_id": "microsoft/Fara1.5-27B",
+          "bytes": 54743814229,
+          "revision": "299c8406a6c6256d45ec200d1ac12b34c5599d9b",
+          "source_files": 22
+        },
+        {
+          "repo_id": "tencent/Hy-Memory-30B-A3B",
+          "bytes": 60142913025,
+          "revision": "64a460a94d5498b7316fb02395c72d01c47a7347",
+          "source_files": 59
+        }
+      ]
+    },
+    "r125_all_15_source_bytes": 327549073014
+  },
+  "policy": {
+    "actual_regulation_facts": [
+      "2026-11-19 BIS IFR removes former 4E091 model-weights classification while separate semiconductor and targeted end-use restrictions exist",
+      "EU GPAI open-source exceptions do not imply blanket weight possession ban",
+      "Hugging Face gated personal authorization is enforced by publisher"
+    ],
+    "future_scenario": "individual model gate/license/removal or policy tightening possible; no numeric probability/date",
+    "sources": [
+      "https://www.govinfo.gov/content/pkg/FR-2026-11-19/pdf/2026-23529.pdf",
+      "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/how-does-ai-act-apply-general-purpose-ai-models-released-open-source",
+      "https://huggingface.co/docs/hub/models-gated"
+    ]
+  },
+  "research_only": true,
+  "formal_catalog_additions": 0,
+  "local_model_weights_downloaded": 0,
+  "main_mutated": false,
+  "approved_queue_modified": false,
+  "owner_disk_free_bytes": null,
+  "final_archive_fit_verified": false,
+  "unreviewed_custom_code_not_executed": true,
+  "exa": "HTTP402 no credits, primary sources verified via HF and official websites"
+}
