@@ -1,3 +1,13 @@
+# 現行v50・R121（2026-11-19）：小型45言語ASR学習済みCTC原本を正式選定、取得承認はSTOP
+
+唯一の選定正本は[CURRENT](catalog/CURRENT.json)→**v50、203登録・156有効（SELECT53/CONDITIONAL103）**。v49のSenseNova Gated原本は維持し、[Rumble-2-Flashを独立原本として新規CONDITIONAL追加](docs/strategy/121-v50-rumble-original-selection-and-acquisition-order-2026-11-19.md)。原本選択は[Publisher固定19ファイル／1,385,998,807 byte／重量2 SHA256](manifests/drafts/r115-v48-rumble2-flash-and-nemotron-sigma-original.candidate.json)。通常量子化を複数モデルとして採用しない。全156 readinessは[2026-11-19 v50](catalog/readiness/v50-2026-11-19-r121-all156-gates.json)、全156非実行候補は[proposed v50](queues/proposed-v50-2026-11-19.json)、[条件付き103件のアクセス権監査](catalog/access/2026-11-19-v50-conditional-hub-gates.json)、[依存準備156件](catalog/preparation/2026-11-19-insurance-bundles-v50.json)を参照する。
+
+[17原本・256論理ファイル・104 Publisher LFS SHA256・303,234,274,385 byteの**研究用**source案](queues/proposed-v50-r121-master-sources-17.json)は、11件のメタデータGO_AFTER_LOCAL_PREFLIGHTと6件のHOLDで構成。正式な[approved queue](queues/approved.json)は**空**で、ダウンロード許可や完全オフライン復元を意味しない。SenseNovaのGated本人権限、RumbleのCTCテンソル/ABI、各原本の本人行為別LICENSE、親と外部依存、実所有者4TB HDDの200GB残床/キャッシュ、完全ローカルSHA/復元、別途の**明示的なファイル単位取得承認**を保持する。本人に無断でGated回避・重量取得・custom code/torch pickle実行・既存ファイル削除をしない。
+
+[2026-11-19取得実行ledger](catalog/execution/2026-11-19-acquisition-ledger.json)の**53 VERIFIEDモデル・579ファイル・270,835,576,267 byte**は実行側の自己報告。今回のresearch/editor環境では所有者Dドライブを独立再ハッシュしていないため、完全復元や正規承認済みと宣言しない。報告済み原本の重複取得を避ける。ExaはHTTP402で調査不可。米BISの遠隔計算アクセス規制と一般的なopen-weight所持禁止を混同しない。**mainのみ運用**。
+
+---
+
 # 現行R119（2026-11-19）— 53報告済み原本を除外した次の研究優先度
 
 **唯一の正式選定正本は [CURRENT v48](catalog/CURRENT.json) の201件・154有効（SELECT53/CONDITIONAL101）。** 新しい[取得報告53モデルとの重複再照合](docs/strategy/119-v48-post-ledger53-model-source-selection.md)／[全23件の判断](catalog/decisions/2026-11-19-r119-post-ledger53-source-selection.json)／[23件の非実行研究キュー](queues/proposed-v48-r119-unreported23-research-only.json)を優先参照する。**最新実行台帳は53 VERIFIED/579ファイル/270,835,576,267 source byteと1 Gated HOLDを報告**。旧R115/R116の22 VERIFIED/次54件は旧時点の集計であり、現在の確認数ではない。
