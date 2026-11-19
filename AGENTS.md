@@ -1,3 +1,11 @@
+# 現行v56／R131（2026-11-20）：無検閲小型原本2件の独立publisher SHA照合と取得ゲート
+
+**唯一の正本は[CURRENT](catalog/CURRENT.json)→v56、211登録／164有効（SELECT53／CONDITIONAL111）**。[FrostWolf 1.7B BF16とPhala rank3 LoRAの正式選定](docs/strategy/130-v56-public-uncensored-selection-source-and-rights.md)、[v56全164候補](queues/proposed-v56-2026-11-20.json)、[全164 readiness](catalog/readiness/v56-2026-11-20-r130-all164-gates.json)、[条件付き111件 access](catalog/access/2026-11-20-v56-conditional-hub-gates.json)、[164件 dependency](catalog/preparation/2026-11-20-insurance-bundles-v56.json)。原本[正規固定source 20ファイル](manifests/drafts/r130-2026-11-20-frostwolf-and-phala-originals-fixed.candidate.json)と[独立HF APIファイル調査](manifests/drafts/r130-2026-11-20-frostwolf-and-phala-uncensored-originals.candidate.json)を全20件のpath/byte/LFS SHA/Git blobで照合し20件すべて一致。[R131調査／反証条件](docs/strategy/131-v56-uncensored-source-crosscheck-and-pointer-repair-2026-11-20.md)、[オフライン退行テスト](tests/test_r131_v56_source_and_latest_pointers.py)を参照。
+
+FrostWolfは現時点publicでも**LFM Open License v1.0の年商USD1000万以上の法人商用条件**あり。PhalaはAdapter Apache2と別に**Stanford Alpaca由来CC-BY-NC 4.0の学習データ権利**審査が必要、親Qwen固定rev・完全重量source/特定SGLang ABIが別途必要。R0は保存研究上の優先度で、法的な一律配布禁止/近日削除の観測ではない。Owner Dの重量SHA・現容量・依存/オフライン復元・個人の行為別許可・ファイル別承認が未確認。**approved queueは0件で新規重量転送0、Gated回避／未審査コード実行／既存ファイル削除は行わない。mainのみ。**
+
+---
+
 # 現行v56（2026-11-20）— 211資産／164有効・新しい小型無検閲2原本と全取得STOP
 
 **唯一の正本**：[`catalog/CURRENT.json`](catalog/CURRENT.json) → **v56-20261120、211登録／164有効（SELECT53／CONDITIONAL111）**。既存v55の209件のID・決定を全件保存し、FrostWolfAI LFM3-1.7B AbliteratedのBF16フル原本、PhalaCloud Qwen3.8-27B Uncensored LoRAを二つの異なる編集学習成果としてCONDITIONAL追加。[公式40桁revision・20ファイル3 SHA](manifests/drafts/r130-2026-11-20-frostwolf-and-phala-originals-fixed.candidate.json)／[調査判断](docs/strategy/130-v56-public-uncensored-selection-source-and-rights.md)／[全164停止ゲート](catalog/readiness/v56-2026-11-20-r130-all164-gates.json)／[164非実行source研究キュー](queues/proposed-v56-2026-11-20.json)。FrostはLFM Open License v1.0で商用年商10M USD制限、custom code未監査。PhalaはLoRA親Qwen固定版が明示済みだが親所有者SHA未検証、原データのCC BY-NC 4.0等の権利確認と異なるBF16/FP8実行ABI検証が必要。
