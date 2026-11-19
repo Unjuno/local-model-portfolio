@@ -42,7 +42,10 @@
       "RWKV/RWKV7-7.2B-20260805",
       "GSAI-ML/iLLaDA-8B-Base",
       "microsoft/TRELLIS.2-4B"
-    ]
+    ],
+    "trained_model_outcomes_in_15_source_queue": 12,
+    "supporting_code_only_repos": 1,
+    "model_repo_type_entries_include_code_only": true
   },
   "dedup_interpretation": "Only repository+full revision+identical publisher SHA-256 weight path can qualify for ledger-matched weight. Not proof owner still holds it. No SHA for small files cannot be trusted. No file transfers or permission grants.",
   "source_priority_entries": [
@@ -2380,6 +2383,12 @@
         "upstream license text and external learned components not reviewed",
         "benchmark comparison different datasets unreliable",
         "owner disk SHA and consent not verified"
+      ],
+      "parameter_discrepancy_explanation_hypothesis": "HF 307.1M total vs publisher 205M base may reflect base backbone versus full classifier; F32 1.23GB is broadly consistent with ~307M parameters. This is not tensor-census proof.",
+      "author_reported_generalization_limitations": [
+        "SPY exact span F1 0.477, avg across legal/medical vs alternatives; not comparable to Gravitee English dataset F1",
+        "Author notes precision ~0.35-0.37 and name over-predictions",
+        "7 European languages; Japanese performance untested"
       ]
     },
     {
@@ -2433,10 +2442,12 @@
   },
   "risk_facts_vs_hypotheses": {
     "us_bis_2026_11_19_ifr": {
-      "source": "https://www.bis.gov/media/documents/rin-0694-ak50.pdf",
-      "pages": "14-15",
-      "observed": "IFR states revocation of prior AI Diffusion Rule model-weight 4E091 controls, but addresses remote access to restricted semiconductors and end users; not a blanket ban on local open-weight possession",
-      "effective_date_requires_federal_register_crosscheck": true
+      "source": "https://www.govinfo.gov/content/pkg/FR-2026-11-19/pdf/2026-23529.pdf",
+      "publication": "Federal Register 91 FR 74970-74999, Document 2026-23529",
+      "effective_date": "2026-11-19",
+      "official_record_checked": "2026-11-20",
+      "verified_fact": "Section IV.A revokes prior AI Diffusion Rule model-weight controls including ECCN 4E091; different end-use/advanced-computing semiconductor controls remain",
+      "does_not_establish": "Local possession or all public model weights soon prohibited; distribution/rights still require independent review"
     },
     "source_rights": "Gated access and license terms remain individual/author-controlled; no circumvention permitted",
     "future_all_open_weight_prohibition_probability": null
