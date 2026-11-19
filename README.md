@@ -1,5 +1,8 @@
 # Local Model Portfolio
 
+**R128｜現行v54・取得を開始できる最小4資産に絞り込み（2026-11-20）**：[2学習済み原本＋2評価データ・101ファイル・6.127GBの不変source一覧](queues/proposed-v54-r128-first-four-delta-source.json)／[61取得報告・Gated1・未報告98の160全件監査とREMORYのQwen訓練親未保存を明示](catalog/decisions/2026-11-20-r128-v54-live-ledger61-and-parent-gap.json)／[取得優先順位・承認手順・71/71無通信テスト](docs/strategy/128-v54-first-four-source-owner-approval-and-remory-parent.md)／[Windows D向け取得器](scripts/download_r115_windows.py)・[未承認の一括レビュー用テンプレート生成器](scripts/prepare_owner_scope_approval.py)。v54 207登録/160有効は維持、親依存REMORYは現物Qwen親SHAまでoffline-readyでない。所有者Dドライブ未接続、正式承認0、今回の重み取得0。
+
+
 **R129｜小型無検閲原本の新規比較・v54時点で固定（2026-11-20）**：[FrostWolf LFM3-1.7B BF16（公開・非Gated）をP0原本source固定候補、PhalaのQwen3.8-27B rank3 LoRA（約13MB）を親・学習データ権利確認後P1候補とした](docs/strategy/129-v54-public-small-uncensored-vs-13mb-lora-2026-11-20.md)／[モデル固有の配布権・ベンチマーク条件・無検閲系譜の機械可読比較](catalog/decisions/2026-11-20-r129-small-public-uncensored-and-lora-source-priority.json)／[取得禁止のsource lock研究提案](catalog/proposals/2026-11-20-r129-uncensored-source-lock-pending.json)。OrcaRouter LFM3原本はGatedで、FrostWolfとは別重み。PhalaにはStanford Alpaca由来CC BY-NCの権利課題がある。**40桁revision・全source SHA・本人権利/実機ハッシュ未閉包、正式選定追加0、承認0、重量DL0。旧v52の205件に巻き戻さず、最新CURRENTを尊重。**
 
 
