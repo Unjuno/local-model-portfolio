@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "id": "R122_V50_PUBLISHER_MODEL_SOURCE_DECISIONS",
+  "date": "2026-11-19",
+  "base_catalog_revision": "v50-20261119",
+  "source_manifest": "manifests/drafts/r122-v50-five-originals-and-dependency-sources.candidate.json",
+  "approval": false,
+  "download_enabled": false,
+  "keep_v50_selection_unchanged": true,
+  "proposal_type": "STATIC_SOURCE_FREEZE_AND_DEPENDENCY_GATES",
+  "selected_models": [
+    {
+      "id": "RWKV/RWKV7-7.2B-20260805",
+      "rank": "A0",
+      "state": "SOURCE_PINNED_RIGHTS_RUNTIME_UNVERIFIED",
+      "unique": "公式RWKV-7の反復状態モデル。7,199,932,416要素BF16。旧来のTransformer系や量子化派生で代替不可。",
+      "next": "publisher release-manifest（個々のSHA256）とSOURCE SHA整合を検証し、runtime/kernel.pyのコード監査",
+      "publisher_revision": "9e47155004fe9df0f2a8015efa9152595c9065be",
+      "full_repo_bytes": 14402000339,
+      "full_repo_file_count": 19,
+      "publisher_lfs_sha_count": 3,
+      "download_approved": false
+    },
+    {
+      "id": "GSAI-ML/iLLaDA-8B-Base",
+      "rank": "A1",
+      "state": "SOURCE_PINNED_PARAMETER_AND_CODE_DISCREPANCY",
+      "unique": "12T tokens事前学習の双方向masked diffusion Base。ARLoop/RWKVとは生成機構が異なる。",
+      "next": "publisherカード7.62B対HF実serialized 8.250462208Bの計数範囲とLICENSE/remote codeを監査",
+      "publisher_revision": "a1b5b5f8a31a3854a46205ee584178c04b45ec9a",
+      "full_repo_bytes": 16512918618,
+      "full_repo_file_count": 16,
+      "publisher_lfs_sha_count": 5,
+      "download_approved": false
+    },
+    {
+      "id": "PrentisAI/GroundGUI-8B",
+      "rank": "A1",
+      "state": "SOURCE_PINNED_MODEL_DATA_RIGHTS_SEPARATE",
+      "unique": "Qwen3-VL-8BからScreenRefで学習したGUI指示→クリック座標特化フル重み。Faraの全操作agentとは違う。",
+      "next": "モデルApache2本文・元Qwenとの再配布権の一致とSYSTEM prompt/eval ABIを確認。ScreenRef画像は取得対象外",
+      "publisher_revision": "9db378189fddaabb5f6e347b9053858a392022ac",
+      "full_repo_bytes": 17550250270,
+      "full_repo_file_count": 17,
+      "publisher_lfs_sha_count": 2,
+      "download_approved": false
+    },
+    {
+      "id": "ACE-Step/acestep-v15-xl-turbo",
+      "rank": "H_DEP",
+      "state": "ROOT_PINNED_PUBLIC_DEPENDENCIES_SOURCE_ONLY",
+      "unique": "F32シリアライズ4,987,310,726要素の4B級音楽生成XL蒸留モデル。システム全体はVAE/LM/Embeddingの追加学習済み部品が必要。",
+      "next": "独立main repoのVAE/LM/Embeddingを固定。既存Qwen-Embedding同一SHAなら物理重複排除。torch pickle/ABI・ライセンスを確認",
+      "publisher_revision": "d4a0b288b83ebb7e25a8c0b32c573c22e134e8ee",
+      "full_repo_bytes": 19953378268,
+      "full_repo_file_count": 11,
+      "publisher_lfs_sha_count": 5,
+      "download_approved": false
+    },
+    {
+      "id": "microsoft/TRELLIS.2-4B",
+      "rank": "H_GATE",
+      "state": "ROOT_PINNED_GATED_DEPS_BLOCK_OFFLINE",
+      "unique": "形状とPBR材質を作る3D生成/1024 cascade。512・1024 checkpoint双方をpipeline.jsonが参照。",
+      "next": "外部公開sparse decoderを固定済み。DINOv3 vitl（manual）/RMBG2.0（auto）の本人許可・使用条件を先に確定",
+      "publisher_revision": "af44b45f2e35a493886929c6d786e563ec68364d",
+      "full_repo_bytes": 16237485044,
+      "full_repo_file_count": 22,
+      "publisher_lfs_sha_count": 9,
+      "download_approved": false
+    }
+  ],
+  "counts": {
+    "model_originals": 5,
+    "primary_files": 85,
+    "primary_sha256_files": 24,
+    "primary_bytes": 84656032539,
+    "prior_r117_five_bytes": 84651703351,
+    "scope_difference_bytes": 4329188,
+    "additional_public_source_dependency_logical_bytes": 5447916857,
+    "five_roots_plus_public_dependency_logical_bytes": 90103949396,
+    "potential_identical_payloads_to_existing_ledger_bytes": 1203010121,
+    "conditional_after_sha_dedup_logical_bytes": 88900939275,
+    "actual_owner_HDD_free_bytes_now": null,
+    "new_weight_downloads_this_round": 0,
+    "model_150B_gate_overrides": 0
+  },
+  "exact_source_scope_verdicts": {
+    "publisher_hf_trees_immutable_sha_bytes": "PASS_METADATA_5_OF_5",
+    "local_owner_model_file_sha256": "UNCERTAIN_NOT_OBSERVED",
+    "legal_rights_and_account_approval": "UNCERTAIN_NO_APPROVAL",
+    "complete_offline_restore": "FAIL_GATE_ACE_TRELLIS_DEPENDENCIES_UNRESOLVED",
+    "user_approval_to_acquire": "NOT_GRANTED",
+    "alternative_high_precision_same_learned_output": "USE_R119_UNCENSORED_BF16_F16_MASTERS_NO_EXTRA_GGUF_MULTIPLICATION"
+  },
+  "extra_dependencies": [
+    {
+      "repo_id": "ACE-Step/Ace-Step1.5",
+      "revision": "19671f406d603126926c1b7e2adc169acbcade22",
+      "selected_files": 23,
+      "bytes": 5300324640,
+      "excluded_unrelated_2b_turbo": 5,
+      "sha_same_as_reported_QwenEmbedding": 2
+    },
+    {
+      "repo_id": "microsoft/TRELLIS-image-large",
+      "revision": "25e0d31ffbebe4b5a97464dd851910efc3002d96",
+      "selected_files": 2,
+      "bytes": 147592217
+    },
+    {
+      "repo_id": "facebook/dinov3-vitl16-pretrain-lvd1689m",
+      "gated": "manual",
+      "download_approved": false,
+      "blocked": "GATED_ACCOUNT_PERMISSION_AND_RIGHTS"
+    },
+    {
+      "repo_id": "briaai/RMBG-2.0",
+      "gated": "auto",
+      "download_approved": false,
+      "blocked": "GATED_ACCOUNT_PERMISSION_AND_RIGHTS"
+    }
+  ],
+  "observed_distribution_change": "NONE_VERIFIED_SPECIFIC_TO_THE_FIVE; do not invent regulation odds",
+  "validation": {
+    "asset_count_5": true,
+    "sha_refs_24": true,
+    "model_current_active": "v50_snapshot_to_be_confirmed",
+    "all_nonexecuting": true,
+    "source_only": true,
+    "physical_volume_not_checked": true
+  }
+}
