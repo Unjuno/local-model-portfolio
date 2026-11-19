@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "kind": "PUBLISHER_FIXED_RESEARCH_ONLY_BF16_ORIGINAL_SOURCE",
+  "repo_id": "microsoft/Aion-1.0-Instruct-2.3B",
+  "revision": "28902cbfd9f4e0347d6c853aa1301f5d559b2fc0",
+  "gated": false,
+  "private": false,
+  "license_metadata": "mit",
+  "repository_url": "https://huggingface.co/microsoft/Aion-1.0-Instruct-2.3B",
+  "api_url": "https://huggingface.co/api/models/microsoft/Aion-1.0-Instruct-2.3B/revision/28902cbfd9f4e0347d6c853aa1301f5d559b2fc0?blobs=true",
+  "license_source": "https://huggingface.co/microsoft/Aion-1.0-Instruct-2.3B/raw/28902cbfd9f4e0347d6c853aa1301f5d559b2fc0/LICENSE",
+  "license_text_observed": "MIT License (Microsoft Corporation); include license on redistribution",
+  "source_file_count": 11,
+  "source_selected_bytes": 4593276272,
+  "publisher_sha256_count": 2,
+  "publisher_repo_total_bytes": 4594110734,
+  "selected_source_files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 1612,
+      "sha256": null,
+      "git_blob_sha1": "0d353d457ab65c089d47b9fb44aa48f1b5914f24"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1074,
+      "sha256": null,
+      "git_blob_sha1": "22aed37e650bbf933b6983cda9c2c5db65dcdd04"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9972,
+      "sha256": null,
+      "git_blob_sha1": "62653aa73849a3cba4e6e7535e46799343ac3b09"
+    },
+    {
+      "path": "chat_template.jinja",
+      "bytes": 4286,
+      "sha256": null,
+      "git_blob_sha1": "cf6215fdec06059fdeb0f20395c9cbc3dbd26e9a"
+    },
+    {
+      "path": "config.json",
+      "bytes": 1903,
+      "sha256": null,
+      "git_blob_sha1": "a50b0be4f12157118b91ba9abc44ac2880064323"
+    },
+    {
+      "path": "configuration_aion_instruct.py",
+      "bytes": 10226,
+      "sha256": null,
+      "git_blob_sha1": "1d3d37dd88376c83d2a828f9f30b951cc5e2453f"
+    },
+    {
+      "path": "generation_config.json",
+      "bytes": 252,
+      "sha256": null,
+      "git_blob_sha1": "964995024095b35fadbb9941f81b4b410867eb9d"
+    },
+    {
+      "path": "model.safetensors",
+      "bytes": 4577698688,
+      "sha256": "6c779881b539d9074f356964ad3089459e9e837da7649d6f271859135256984e",
+      "git_blob_sha1": "5a973409de60f6ab38bd2b6f9b76199da6bbac71"
+    },
+    {
+      "path": "modeling_aion_instruct.py",
+      "bytes": 23442,
+      "sha256": null,
+      "git_blob_sha1": "7d56cf148fdb7b86f0d0ab1c1964b77852a0603f"
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 15524476,
+      "sha256": "7ea8bdf68c3e7549a3fb4342523288ce628f6ab56a618f9a4dfb234a0b4d46a8",
+      "git_blob_sha1": "8655fee00020e3140fc51416dac7cb0b9a8e4c45"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 341,
+      "sha256": null,
+      "git_blob_sha1": "8651ebb2f8344ed9815f8366fd71ef7ba9c10c5a"
+    }
+  ],
+  "publisher_main_weight_sha256": "6c779881b539d9074f356964ad3089459e9e837da7649d6f271859135256984e",
+  "parameters_reported": 2288800000,
+  "original_weight_dtype": "bfloat16",
+  "tokenizer_vocab": 200029,
+  "context_tokens": 32768,
+  "architecture": {
+    "layers": 28,
+    "sliding_layers": 21,
+    "full_attention_layers": 7,
+    "sliding_window_tokens": 2048,
+    "attention_heads": 24,
+    "key_value_heads": 8,
+    "head_dim": 128,
+    "tied_input_output_embeddings": true,
+    "source_transformers_version": "5.9.0"
+  },
+  "archival_rationale": "Unique Microsoft Windows Aion SLM 2.3B instruction-tuned source checkpoint under MIT. November 2026 preview open weights precede planned January 2027 version paired with content moderation. No model-specific takedown prediction.",
+  "source_risks": [
+    "Custom modeling_aion_instruct.py and configuration_aion_instruct.py require trust_remote_code=True; never autoexecute",
+    "Publisher benchmarks not reproduced locally",
+    "Other alternate ONNX/int4 formats are same trained outcome; exclude",
+    "Current owner's Windows D: disk not connected; no offline model load or code audit"
+  ],
+  "download_approved": false,
+  "weights_downloaded_in_this_review": false
+}
