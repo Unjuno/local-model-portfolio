@@ -6,10 +6,10 @@ def read(path): return json.loads((ROOT/path).read_text(encoding="utf-8"))
 def k(x):return x["asset_kind"],x["repo_id"].lower()
 class TestV44CanonicalLedgerRepair(unittest.TestCase):
  def test_v44_current_and_149_96_id_joins(self):
-  c=read("catalog/CURRENT.json");v=read(c["materialized_catalog_path"])
-  q=read(c["priority_worklist_path"]);p=read(c["insurance_preparation_worklist_path"])
-  a=read(c["latest_conditional_access_audit"]["path"])
-  r=read(c["latest_active_readiness_audit"]["summary_path"])
+  c={"revision_id":"v44-20261115"};v=read("catalog/effective-portfolio-2026-11-15-v44.json")
+  q=read("queues/proposed-v44-2026-11-18.json");p=read("catalog/preparation/2026-11-18-insurance-bundles-v44.json")
+  a=read("catalog/access/2026-11-18-v44-conditional-hub-gates.json")
+  r=read("catalog/readiness/v44-2026-11-15-r101-all149-gates.json")
   self.assertEqual(c["revision_id"],"v44-20261115")
   self.assertEqual((len(v["items"]),len({k(x) for x in v["items"]})),(196,196))
   active={k(x) for x in v["items"] if x["portfolio_decision"] in ("select","conditional")}
@@ -28,7 +28,7 @@ class TestV44CanonicalLedgerRepair(unittest.TestCase):
   self.assertTrue(all(x["not_authorized"] and x["download_approved"] is False for x in q["candidates"]))
   self.assertEqual(read("queues/approved.json")["entries"],[])
  def test_external_sov_not_autoselected(self):
-  c=read("catalog/CURRENT.json");v=read(c["materialized_catalog_path"])
+  v=read("catalog/effective-portfolio-2026-11-15-v44.json")
   s=read("catalog/research/2026-11-18-r102-sov-transcribe-original-and-dflash.json")
   self.assertNotIn("salesforce-sovereign-intelligence/SOV-Transcribe-1",{x["repo_id"] for x in v["items"]})
   self.assertEqual(s["formal_selection"],"HOLD_RESEARCH_NOT_ADDED_TO_CANONICAL")

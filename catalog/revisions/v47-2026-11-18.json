@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "revision_id": "v47-20261118",
+  "previous_revision_id": "v46-20261118",
+  "decision_date": "2026-11-18",
+  "target_branch": "main",
+  "kind": "NEW_TWO_INDEPENDENT_SMALL_TRAINED_ORIGINALS_NONEXECUTABLE",
+  "previous_asset_count": 198,
+  "previous_active_count": 151,
+  "additions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "osunlp/ARLoop-1.2B",
+      "url": "https://huggingface.co/osunlp/ARLoop-1.2B",
+      "position": 199,
+      "group": "反復深度Attention Residual学習済み言語基盤",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "24物理Transformer層の重みを3ループで共有（実効72層）。500B-tokenの事前学習済みAttention Residual originalはRaon/RWKV/LFM通常構造とは異なる学習済み計算方式で、単なるGGUF変換ではない。",
+      "quality_positive": "Original author pretrained checkpoint, 3 FP32 LFS shards and configurable tokenization; author's study arXiv:2611.05234. Publisher source SHA and bytes pinned.",
+      "quality_negative": "Base pretrain not independently benchmarked as instruction follower. Transformers 5.12.1 trust_remote_code Python requires code audit; legal intended acts, CPU/GPU runtime and owner's HDD unverified.",
+      "risk_and_alternative_assessment": "Independent original trained outcome and small source scope justify conditional research. Future model bans, removals, or likely gating unverified; rights and physical restoration separate.",
+      "evidence_date": "2026-11-18",
+      "evidence_kind": "PUBLISHER_IMMUTABLE_HF_REPO_API_LICENSE_CARD_AND_LFS_SHA",
+      "evidence_urls": [
+        "https://huggingface.co/api/models/osunlp/ARLoop-1.2B/revision/a29f310ac46646edf5c462425dc546b2ce7ea985?blobs=true",
+        "https://huggingface.co/osunlp/ARLoop-1.2B/blob/a29f310ac46646edf5c462425dc546b2ce7ea985/README.md",
+        "https://arxiv.org/abs/2611.05234"
+      ],
+      "observed_access": "publisher API private:false gated:false; not a personal right to download",
+      "license_metadata": "apache-2.0 (publisher tag and README; standalone LICENSE absent)",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "a29f310ac46646edf5c462425dc546b2ce7ea985",
+      "upstream_all_files_bytes_observed": 4838414568,
+      "upstream_file_count_observed": 16,
+      "upstream_lfs_sha256_count": 3,
+      "candidate_selected_source_file_count": 15,
+      "candidate_selected_source_file_bytes": 4838079760,
+      "source_manifest_path": "manifests/drafts/v46-2026-11-18-r110-arloop-kitten-fixed-source.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 1208655360,
+        "evidence_kind": "HUGGING_FACE_SAFETENSORS_MAIN_STORED_ELEMENTS_RESEARCH_SCREEN",
+        "exact_full_pipeline_total_locally_verified": false,
+        "research_screen_only": true,
+        "license_and_approval_not_waived": true,
+        "review_date": "2026-11-18",
+        "extra_learned_components": []
+      },
+      "forecast_priority": {
+        "wave": "S3",
+        "rank": 199,
+        "category": "SMALL_INDEPENDENT_ORIGINAL",
+        "scenario_status": "Hypothetical future distribution restrictions, not prediction"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "24物理Transformer層の重みを3ループで共有（実効72層）。500B-tokenの事前学習済みAttention Residual originalはRaon/RWKV/LFM通常構造とは異なる学習済み計算方式で、単なるGGUF変換ではない。",
+        "must_preserve": [
+          "model-00001-of-00003.safetensors",
+          "model-00002-of-00003.safetensors",
+          "model-00003-of-00003.safetensors"
+        ],
+        "unverified_runtime": [
+          "Transformers==5.12.1",
+          "untrusted modeling_arloop.py inspect before executing",
+          "PyTorch and compatible CUDA or CPU wheelhouse"
+        ],
+        "full_licensing_and_dependency_closure": false,
+        "model_code_executed": false,
+        "same_weights_alternate_format_is_not_new_asset": true,
+        "source_reference_only_no_download": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 4838414568,
+        "source_candidate_selected_bytes": 4838079760,
+        "owner_actual_disk_measured": false,
+        "hw_tested_on_user_machine": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "KittenML/kitten-tts-2-mini",
+      "url": "https://huggingface.co/KittenML/kitten-tts-2-mini",
+      "position": 200,
+      "group": "極小多言語118声・音声合成CPU/日本語",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "約82M規模の独立学習済み16言語118音声・24kHz TTS。日本語のvoice pack・G2P learned sub-modelを含み、既存QwenTTS/Phononとは別重み。FP32原本とCPU INT8 ONNXを一つの資産として保全し通常量子化を別登録しない。",
+      "quality_positive": "All 16 voices_*.npz, fixed G2P safetensors, F32 canonical checkpoint and 82.7MB publisher INT8 ONNX. 27 publisher files with SHA and bytes, nonGated.",
+      "quality_negative": "No standalone LICENSE in fixed repo, author card only Apache2. Japanese phonemization, voice-pack npz safety, audio quality, Torch/ONNX ABI and owner's rights remain unverified.",
+      "risk_and_alternative_assessment": "Independent original trained outcome and small source scope justify conditional research. Future model bans, removals, or likely gating unverified; rights and physical restoration separate.",
+      "evidence_date": "2026-11-18",
+      "evidence_kind": "PUBLISHER_IMMUTABLE_HF_REPO_API_LICENSE_CARD_AND_LFS_SHA",
+      "evidence_urls": [
+        "https://huggingface.co/api/models/KittenML/kitten-tts-2-mini/revision/c01797caec3967b400da457656e011eb81f530a4?blobs=true",
+        "https://huggingface.co/KittenML/kitten-tts-2-mini/blob/c01797caec3967b400da457656e011eb81f530a4/README.md"
+      ],
+      "observed_access": "publisher API private:false gated:false; not a personal right to download",
+      "license_metadata": "apache-2.0 (publisher tag and README; standalone LICENSE absent)",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "c01797caec3967b400da457656e011eb81f530a4",
+      "upstream_all_files_bytes_observed": 477936075,
+      "upstream_file_count_observed": 27,
+      "upstream_lfs_sha256_count": 19,
+      "candidate_selected_source_file_count": 27,
+      "candidate_selected_source_file_bytes": 477936075,
+      "source_manifest_path": "manifests/drafts/v46-2026-11-18-r110-arloop-kitten-fixed-source.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 82000000,
+        "evidence_kind": "PUBLISHER_ROUNDED_CORE_82M_AND_ALL_DECLARED_COMPONENT_SOURCE_BYTES_FAR_LT150B_RESEARCH_SCREEN",
+        "exact_full_pipeline_total_locally_verified": false,
+        "research_screen_only": true,
+        "license_and_approval_not_waived": true,
+        "review_date": "2026-11-18",
+        "extra_learned_components": [
+          "g2p/g2p_bart_en_us/model.safetensors",
+          "voices_*.npz"
+        ]
+      },
+      "forecast_priority": {
+        "wave": "S3",
+        "rank": 200,
+        "category": "SMALL_INDEPENDENT_ORIGINAL",
+        "scenario_status": "Hypothetical future distribution restrictions, not prediction"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "約82M規模の独立学習済み16言語118音声・24kHz TTS。日本語のvoice pack・G2P learned sub-modelを含み、既存QwenTTS/Phononとは別重み。FP32原本とCPU INT8 ONNXを一つの資産として保全し通常量子化を別登録しない。",
+        "must_preserve": [
+          "g2p/g2p_bart_en_us/model.safetensors",
+          "kitten_tts_2_mini.onnx",
+          "kitten_tts_2_mini.safetensors",
+          "voices_da.npz",
+          "voices_de.npz",
+          "voices_en.npz",
+          "voices_es.npz",
+          "voices_fi.npz",
+          "voices_fr.npz",
+          "voices_hi.npz",
+          "voices_it.npz",
+          "voices_ja.npz",
+          "voices_ko.npz",
+          "voices_nl.npz",
+          "voices_pt.npz",
+          "voices_ru.npz",
+          "voices_sv.npz",
+          "voices_sw.npz",
+          "voices_tr.npz"
+        ],
+        "unverified_runtime": [
+          "ONNX Runtime exact build and CPU backend/quantization zero-point audit",
+          "torch FP32 for canonical original inference",
+          "KittenTTS package and voice pack safe loading allow_pickle=False"
+        ],
+        "full_licensing_and_dependency_closure": false,
+        "model_code_executed": false,
+        "same_weights_alternate_format_is_not_new_asset": true,
+        "source_reference_only_no_download": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 477936075,
+        "source_candidate_selected_bytes": 477936075,
+        "owner_actual_disk_measured": false,
+        "hw_tested_on_user_machine": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    }
+  ],
+  "added_assets": 2,
+  "removed_assets": 0,
+  "changed_prior_decisions": 0,
+  "original_source_manifest": "manifests/drafts/v46-2026-11-18-r110-arloop-kitten-fixed-source.candidate.json",
+  "source_research": "catalog/research/2026-11-18-r110-arloop-kitten-rvn-erratum.json",
+  "rvn_erratum_doc": "docs/strategy/108-v46-original-weights-uncensored-compact-source-finalization.md",
+  "publisher_source_bytes_added": 5316015835,
+  "planned_additional_reservation_cap_bytes": 7000000000,
+  "download_authorizations_added": 0,
+  "model_weights_downloaded": 0,
+  "unsafe_code_executed": false
+}

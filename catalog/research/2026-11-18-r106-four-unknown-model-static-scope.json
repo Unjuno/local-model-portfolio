@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-11-18",
+  "kind": "R106_V45_FOUR_UNKNOWN_ORIGINALS_HF_PRIMARY_STRUCTURAL_SCOPE",
+  "catalog_revision": "v45-20261118",
+  "method": "Read official immutable Hugging Face Hub model API file inventory, raw JSON config and safetensors indices. Compare with pre-existing R66 Pruna header census. No payload transfer or third-party import.",
+  "asset_count": 4,
+  "records": [
+    {
+      "repo_id": "PrunaAI/P-H3-Image",
+      "revision": "7f98acef503cf2bcfba821a78cb1cf1a9928b2df",
+      "file_count": 54,
+      "publisher_repo_bytes": 99845388933,
+      "official_immutable_api": "https://huggingface.co/api/models/PrunaAI/P-H3-Image/revision/7f98acef503cf2bcfba821a78cb1cf1a9928b2df?blobs=true",
+      "local_payload_hashed": false,
+      "local_model_executed": false,
+      "publisher_metadata_not_binary_model_header": true,
+      "detail": {
+        "architecture": "modular image pipeline",
+        "components": {
+          "transformer": 7,
+          "prompt_upsampler": 4,
+          "text_encoder": 2,
+          "text_connector": 1,
+          "vae": 1
+        },
+        "stored_elements_from_prior_r66": 49635347496,
+        "primary_prior_census_path": "catalog/readiness/2026-11-15-r66-seven-unknown-source-bound-review.json",
+        "new_static_evidence": "Immutable modular_model_index.json declares all pretrained_model_name_or_path to be PrunaAI/P-H3-Image; every declared component revision:null, so offline pinning is NOT automatic.",
+        "component_file_evidence": [
+          {
+            "p": "vae/diffusion_pytorch_model.safetensors",
+            "bytes": 5559055392,
+            "sha256": "264964208bea153ca6366570b66d793c75b0fc64716fb6515a41b54e3dce6bf1"
+          },
+          {
+            "p": "text_connector/diffusion_pytorch_model.safetensors",
+            "bytes": 262308352,
+            "sha256": "4c4ad8cbf37db8a2da22cdd9905e566e259cf3477ea242f6aee1cf3fb695f070"
+          }
+        ],
+        "runtime_full_dependency_closure": false
+      },
+      "blocking_gate": "PRUNA_MODULAR_SUBCOMPONENT_REVISION_NULL",
+      "portfolio_decision": "conditional",
+      "parameter_gate_after_research": "UNVERIFIED_BLOCK_FINAL_LOCK"
+    },
+    {
+      "repo_id": "fishaudio/drama-3",
+      "revision": "78e5ab79e49aa9a25abe8799eff2c4d73a1c3216",
+      "file_count": 25,
+      "publisher_repo_bytes": 41502571262,
+      "official_immutable_api": "https://huggingface.co/api/models/fishaudio/drama-3/revision/78e5ab79e49aa9a25abe8799eff2c4d73a1c3216?blobs=true",
+      "local_payload_hashed": false,
+      "local_model_executed": false,
+      "publisher_metadata_not_binary_model_header": true,
+      "detail": {
+        "architecture": "FishOmni model with audio decoder learned codec",
+        "main_shards": 15,
+        "main_index_tensor_names": 62245,
+        "main_index_payload_bytes": 39594895616,
+        "main_stored_elements_from_prior_r66": 35899643008,
+        "mandatory_codec": {
+          "path": "codec.pth",
+          "bytes": 1871099728,
+          "sha256": "74fc41c5a7151c6f350af8bd7e5d6e3accfcc7f3dfbfac23afd35af07052bb2f",
+          "serialization": "PyTorch pickle can contain arbitrary objects; do not execute or unpickle"
+        },
+        "codec_tensor_count": null,
+        "runtime_full_dependency_closure": false
+      },
+      "blocking_gate": "DRAMA3_UNTRUSTED_CODEC_PTH_AND_UNKNOWN_TENSOR_TOTAL",
+      "portfolio_decision": "conditional",
+      "parameter_gate_after_research": "UNVERIFIED_BLOCK_FINAL_LOCK"
+    },
+    {
+      "repo_id": "maya-research/maya2-native",
+      "revision": "87a83efdd6551e038246b6b37836a6264713eec3",
+      "file_count": 30,
+      "publisher_repo_bytes": 5056388035,
+      "official_immutable_api": "https://huggingface.co/api/models/maya-research/maya2-native/revision/87a83efdd6551e038246b6b37836a6264713eec3?blobs=true",
+      "local_payload_hashed": false,
+      "local_model_executed": false,
+      "publisher_metadata_not_binary_model_header": true,
+      "detail": {
+        "architecture": "Maya3 grouped autoregressive audio token generation",
+        "main_shards": 2,
+        "index_keys": 731,
+        "unique_main_stored_elements_from_publisher_config": 2502398656,
+        "main_weight_files": [
+          {
+            "p": "model-00001-of-00002.safetensors",
+            "bytes": 5000017272,
+            "sha256": "a6f3488abb925ec758a3e6908ffa105f4b2db93662e1471be6819111196c7f8c"
+          },
+          {
+            "p": "model-00002-of-00002.safetensors",
+            "bytes": 4862496,
+            "sha256": "5e3bfab00767a3035a93f527c6021e7ab01988d63ddf137ccbf1edb13e4d75d2"
+          }
+        ],
+        "external_trained_dependencies": [
+          "kyutai/mimi",
+          "speechbrain/spkrec-ecapa-voxceleb"
+        ],
+        "source_declared_from": "maya3_config.json",
+        "external_ECAPA_tensor_count": null,
+        "runtime_full_dependency_closure": false
+      },
+      "blocking_gate": "MAYA2_UNPINNED_EXTERNAL_MIMI_AND_ECAPA",
+      "portfolio_decision": "conditional",
+      "parameter_gate_after_research": "UNVERIFIED_BLOCK_FINAL_LOCK"
+    },
+    {
+      "repo_id": "WhissleAI/steer-tts",
+      "revision": "65ec6a637f4bd9d868064846c69ed85e37d302a0",
+      "file_count": 79,
+      "publisher_repo_bytes": 973512551,
+      "official_immutable_api": "https://huggingface.co/api/models/WhissleAI/steer-tts/revision/65ec6a637f4bd9d868064846c69ed85e37d302a0?blobs=true",
+      "local_payload_hashed": false,
+      "local_model_executed": false,
+      "publisher_metadata_not_binary_model_header": true,
+      "detail": {
+        "architecture": "modular prosody TTS acoustic/flow/vocoder/speaker",
+        "publisher_gated": "auto",
+        "anonymous_config_status": 401,
+        "listed_original_safetensors": 9,
+        "listed_alternative_int8_safetensors": 8,
+        "all_originals_versus_int8_need_sha_or_training_provenance_review": true,
+        "publisher_root_weight_samples": [
+          {
+            "path": "model.safetensors",
+            "bytes": 38395692,
+            "sha256": "b67b27763d6f19136d69651b344dffbb819dc38e1a2294ca12e0e285a6830e31"
+          },
+          {
+            "path": "native/wavlm_sv.safetensors",
+            "bytes": 400945676,
+            "sha256": "6071eea607575d9fea46c50a6c6a60712925a3d2f27692dc1e5b644a07a260e3"
+          }
+        ],
+        "owner_access_verified": false,
+        "runtime_full_dependency_closure": false
+      },
+      "blocking_gate": "STEER_TTS_GATED_ORIGINAL_INT8_AND_RIGHTS_UNVERIFIED",
+      "portfolio_decision": "conditional",
+      "parameter_gate_after_research": "UNVERIFIED_BLOCK_FINAL_LOCK"
+    }
+  ],
+  "license_and_distribution_scope_unreviewed": true,
+  "owner_actual_disk_bytes_measured": null,
+  "auto_execution": false,
+  "approved_downloads": 0,
+  "weight_payload_downloads": 0,
+  "model_selection_changed": false,
+  "total_unknown_models_before": 9,
+  "total_unknown_models_after": 9,
+  "gated_observed_v45": 20,
+  "warning": "Source repo byte total is NOT model parameter total, full safe runtime memory or owner's real archive capacity; current fixed source revision and model-index nested revision:null need offline closure."
+}

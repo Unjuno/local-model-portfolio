@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "id": "r117-sensenova-loop-9b-source",
+  "date": "2026-11-19",
+  "kind": "ALTERNATIVE_ACCESS_SAME_TRAINED_OUTCOME_DUAL_PROVENANCE_ARCHIVE_CANDIDATE",
+  "observed_official": {
+    "repo_id": "sensenova/SenseNova-Loop-9B",
+    "revision": "4602ecf7e8b023ec081572f431560d8a698bf0cc",
+    "gated": "auto",
+    "private": false,
+    "license_metadata": "apache-2.0",
+    "weight_files_in_repo": 12,
+    "publisher_model_size_total_bytes": 19361077082,
+    "hf_api": "https://huggingface.co/api/models/sensenova/SenseNova-Loop-9B/revision/4602ecf7e8b023ec081572f431560d8a698bf0cc?blobs=true",
+    "access_permission_personally_verified": false
+  },
+  "public_release_fallback": {
+    "repo_id": "sensenova/SenseNova-Loop-9B-GGUF",
+    "revision": "11c121055062d33647348cf236a8c543138b282e",
+    "gated": false,
+    "private": false,
+    "license_metadata": "apache-2.0",
+    "files": [
+      {
+        "path": ".gitattributes",
+        "bytes": 2367,
+        "publisher_sha256": null,
+        "publisher_git_blob_sha1": "a176ed99e3acc374a6194d9b3e2a8d85f2ed6f51"
+      },
+      {
+        "path": "LICENSE",
+        "bytes": 11357,
+        "publisher_sha256": null,
+        "publisher_git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+      },
+      {
+        "path": "README.md",
+        "bytes": 17814,
+        "publisher_sha256": null,
+        "publisher_git_blob_sha1": "f5f2baf45f32e3170998134c5c159f53272fad99"
+      },
+      {
+        "path": "README_CN.md",
+        "bytes": 17221,
+        "publisher_sha256": null,
+        "publisher_git_blob_sha1": "6108c4c6b827f7fd060e09135be6aed4d47cbc81"
+      },
+      {
+        "path": "SenseNova-Loop-9B-BF16.gguf",
+        "bytes": 18419909536,
+        "publisher_sha256": "489f1a439f9794a4cb3cf2eb27d82ebdce8ba3f5627f00c60dd2cca9cb6d81cd",
+        "publisher_git_blob_sha1": "d6022386c8173554bc259f49dbeb5e28741395c4"
+      },
+      {
+        "path": "mmproj-SenseNova-Loop-9B-F16.gguf",
+        "bytes": 918165984,
+        "publisher_sha256": "1bb6afd085020f555b3dca73b6d2139f3a7b28455228b0f07285d0f0ebc61481",
+        "publisher_git_blob_sha1": "0b37ddd1733c4995c0fa36a1f4dbc4284c677c25"
+      }
+    ],
+    "source_selected_bytes": 19338124279,
+    "publisher_sha256_count": 2
+  },
+  "cross_repo_publisher_code_support": {
+    "repo_id": "sensenova/SenseNova-Loop-9B-Preview",
+    "revision": "89d7970926e215f8da61726700cd026ccffbb6cb",
+    "gated": false,
+    "private": false,
+    "source_files": [
+      {
+        "repo_id": "sensenova/SenseNova-Loop-9B-Preview",
+        "revision": "89d7970926e215f8da61726700cd026ccffbb6cb",
+        "path": "modeling_sensenova_loop.py",
+        "bytes": 18968,
+        "publisher_git_blob_sha1": "b437a10fa8d157bcbde656b967015da7dc86ea94",
+        "official_publisher_git_blob_sha1": "b437a10fa8d157bcbde656b967015da7dc86ea94",
+        "identical_to_official_current": true
+      },
+      {
+        "repo_id": "sensenova/SenseNova-Loop-9B-Preview",
+        "revision": "89d7970926e215f8da61726700cd026ccffbb6cb",
+        "path": "chat_template.jinja",
+        "bytes": 7756,
+        "publisher_git_blob_sha1": "a585dec894e63da457d9440ec6aa7caa16d20860",
+        "official_publisher_git_blob_sha1": "a585dec894e63da457d9440ec6aa7caa16d20860",
+        "identical_to_official_current": true
+      }
+    ],
+    "dependency_bytes": 26724,
+    "model_code_must_not_be_executed_automatically": true,
+    "identical_source_code_to_official": true,
+    "preview_specific_files_excluded": [
+      {
+        "path": "config.json",
+        "reason": "Preview-specific config/index does NOT match official release metadata, do not mix with official checkpoint"
+      },
+      {
+        "path": "model.safetensors.index.json",
+        "reason": "Preview-specific config/index does NOT match official release metadata, do not mix with official checkpoint"
+      }
+    ]
+  },
+  "bundle_total_bytes": 19338151003,
+  "archival_model_identity": "sensenova/SenseNova-Loop-9B",
+  "why_unique": "New official trained 9B parameter looped multimodal model; 32 distinct decoder layers applied in 56 physical computations with 24 layer block repeated twice; not ordinary Qwen quant variant and not the separate Preview checkpoint.",
+  "exclude_conversions": [
+    "SenseNova-Loop-9B-Q4_K_M.gguf",
+    "SenseNova-Loop-9B-Q5_K_M.gguf",
+    "SenseNova-Loop-9B-Q8_0.gguf"
+  ],
+  "key_limitations": [
+    "public GGUF BF16+mmproj may omit official MTP learnable header; do not claim full official original BF16 restoration",
+    "official HF gated:auto needs legitimate per-user acceptance before original Safetensors retrieval; no bypass",
+    "untrusted publisher custom Python requires static review, exact runtime and dependency lock",
+    "no local GPU inference or user D-drive access checked",
+    "The official main config and checkpoint index differ from public Preview. Do not mix Preview config or index with official model weights; only code/chat_template are verified identical."
+  ],
+  "publication_disappearance_risk": "Observed owner-controlled auto Gated vs publicly accessible publisher GGUF; not proof of government model-weight ban",
+  "download_approved": false,
+  "weights_fetched_by_this_research": false
+}

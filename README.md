@@ -1,6 +1,49 @@
 # Local Model Portfolio
 
+**R116｜取得履歴を照合してWindows Dドライブの次の3原本を確定（2026-11-19）**：[22件・227ファイル／162.326GBの取得報告と新原本124.740GBを分離した実行手順](docs/strategy/116-v48-r115-windows-d-unattended-acquisition-and-reconciliation.md)／[R115:16件・237ファイルの固定sourceキュー（10件GO・6件HOLD）](queues/proposed-v48-r115-master-sources-16.json)／[Windows DドライブのSHA検証・容量床・再開に対応する実行器](scripts/download_r115_windows.py)／[無通信のユニットテスト](tests/test_r115_download_manifest.py)。既存台帳で7件は同一source scopeのVERIFIED**報告**があり、物理ドライブで未発見なら再取得しない。新3件はZONOS3-Mini original+codec 15.346GB、Interpretic v2 BF16 55.586GB、RVN-F16 GGUF 53.808GB。既存モデル削除0、Gated回避0、v48の201/154不変更。**現在のDドライブをこの調査環境から独立に再ハッシュしたわけではない。**
+
+**R115｜保存原本の形式・容量・規制リスクを統合決定（2026-11-19）**：[無検閲2系統の元checkpoint選定、2026-11-19米BISのモデル重み規制撤廃予定を一次資料で検証](docs/strategy/115-v48-regulatory-correction-and-master-selection-budget.md)／[15資産・212ファイルの原本保全優先別案](queues/proposed-v48-r115-archival-master-alternative-15.json)／[根拠と容量差・新候補v3保留](catalog/decisions/2026-11-19-r115-original-master-capacity-and-bis-policy.json)。既存容量優先212.023GBに対し原本優先286.420GB（+74.397GB）。Kitten重複ONNX除外、RVN F16と再構成Safetensorsの二重保存保留。歴史的仮想余白は条件付き-53.987GB、実4TB未測定。v48 201/154・承認0維持。
+
+
+**R114｜R113の原本系譜を訂正（2026-11-19）**：[配布者一次資料・RVN F16 GGUF 53.808GBの固定SHAと正確な優先順位](docs/strategy/114-v48-uncensored-rvn-source-lineage-and-gguf-f16-pin-2026-11-19.md)／[機械可読の訂正](catalog/decisions/2026-11-19-r114-uncensored-lineage-correction.json)。**InterpreticAIはフルBF16を優先**。一方**0bserverxのSafetensorsはRVN-F16.ggufからの再構成物**であり、元の学習時BF16ではない。RVNはF16 GGUFを確認済み再構成元として優先し、GSQ-3bit・Q4・再構成Safetensorsの重複取得を保留。旧R113「2系統のSafetensorsをともに原本とする」判断は訂正済み。v48 201登録/154有効・承認0は不変更。
+
+**R114｜無検閲27B原本の誤交換防止（2026-11-19）**：[Interpretic原本と0bserverx RVNの同一性を区別した監査](docs/strategy/114-v48-uncensored-rvn-parent-provenance-correction.md)／[機械可読停止判定](catalog/decisions/2026-11-19-r114-uncensored-provenance-stop.json)。0bserverx RVN-Q4と別Safetensors 13 shardの厳密な変換元同一性は未立証。RVNを自動削除・交換しない。v48 201/154、承認0。
+
+
+**R113｜無検閲27B原本の取得優先見直し（2026-11-19）**：[2系統のFP16系Safetensors原本・109.397GBの公開元固定ファイル](manifests/drafts/r113-v48-two-uncensored-original-fp16-parents.candidate.json)／[原本優先とGGUF重複保留の根拠](docs/strategy/113-v48-uncensored-original-parent-replacement-review-2026-11-19.md)。InterpreticAIと0bserverxの元の学習済み原本を確認したため、既存GGUFだけを保全マスターとする方針を修正。既存v48 **201登録・154有効は不変更**。Dドライブ実空き・本人の権利・依存/復元・ローカルSHA未確認、取得承認0。
+
+**R113｜現行v48の15原本を一つの取得候補表に統合（2026-11-19）**：[15モデル・187選択ファイル・publisher SHA74件の単一未承認sourceキュー](queues/proposed-v48-r113-source-pinned-15.json)／[A11・B1・C2・D1の選定、重複量子化除外と容量照合](docs/strategy/113-v48-unified-15-source-selection.md)。v47旧14原本を変更せずtiny-vocaのFP32原本14ファイルだけ統合。合計212,023,095,122byteはv48選定の内数。承認0・実モデルDL0。
+
+
+**現行v48・R112（2026-11-18）**：[201登録／154有効、SELECT53・CONDITIONAL101](catalog/effective-portfolio-2026-11-18-v48.json)。独立学習済み極小英語TTS [tiny-voca](https://huggingface.co/n4ze3m/tiny-voca)（4,537,291コアパラメータ）をR2/CONDITIONALで正式選定。[固定publisher原本14ファイル・23,626,858bytes・2 LFS SHAの候補](manifests/drafts/v48-2026-11-18-tiny-voca-immutable-source.candidate.json)／[新たな採否と不利益・安全条件](docs/strategy/112-v48-tiny-voca-source-closure-and-portability.md)／[154件取得停止ゲート](catalog/readiness/v48-2026-11-18-r112-all154-gates.json)／[条件付きアクセス101件](catalog/access/2026-11-18-v48-conditional-hub-gates.json)／[研究キュー154](queues/proposed-v48-2026-11-18.json)／[依存準備154](catalog/preparation/2026-11-18-insurance-bundles-v48.json)。同モデルのGGUF四形式・ONNX変換版は重複別資産として追加せず、FP32原本と辞書のみ保存候補に固定。**20 Gated、学習済み総数不明の有効9、本人の使用権・4TB HDD実容量・コード/ABI/G2P総数・ローカルSHA/完全オフライン復元は未確認。承認・重み取得0。** 旧R111以前は履歴。
+
+**R112｜14原本の取得前チェックを実測検証（2026-11-18）**：[v47の14モデル173ファイル・上流SHA72件、11件のテスト全PASS](docs/strategy/112-v47-source-preflight-results.md)／[読取専用の容量・既存ファイルSHA監査器](scripts/verify_v47_download_preflight.py)。接続Linux空き約29.27GBは最低空き200GBに不足、4TB保存先は未確認。新規選定0、実モデルDL0、承認0。
+
+
+**R111｜v47・保存原本の取得準備順位を再確定（2026-11-18）**：[研究判断と14モデル全件表](docs/strategy/111-v47-preservation-tranche-tiny-voca-and-licensing-review.md)／[173選択ファイル・publisher SHA72件の機械可読監査](catalog/decisions/2026-11-18-r111-preservation-tranche-and-swap-audit.json)。既存14原本を**先行10件47.031GB／依存1件0.671GB／大型品質差保留2件108.711GB／Gated許諾先行1件55.586GB**へ分け、公開者の新規4.5M学習済み極小TTS tiny-vocaは追加調査とした。v47 **200登録・153有効は不変更**、本人権利・実4TB HDD・完全offline依存・取得承認は未解決、モデル本体取得0。以下R110以前は履歴。
+
+**現行v47・R110（2026-11-18）**：[200登録／153有効、SELECT53・CONDITIONAL100](catalog/effective-portfolio-2026-11-18-v47.json)に更新。独立した事前学習[ARLoop 1.2B](https://huggingface.co/osunlp/ARLoop-1.2B)と、日本語を含む16言語・118声の[Kitten TTS 2 Mini](https://huggingface.co/KittenML/kitten-tts-2-mini)を研究CONDITIONAL追加。[判断根拠と誤記訂正](docs/strategy/110-v47-arloop-kitten-original-selection-and-rvn-correction-2026-11-18.md)／[Publisher固定source42ファイル・5,316,015,835byte・22 LFS SHA](manifests/drafts/v46-2026-11-18-r110-arloop-kitten-fixed-source.candidate.json)／[153件取得前ゲート](catalog/readiness/v47-2026-11-18-r110-all153-gates.json)／[条件付きアクセス100件](catalog/access/2026-11-18-v47-conditional-hub-gates.json)／[提案キュー153](queues/proposed-v47-2026-11-18.json)／[固定出版社原本14件のsource-only queue](queues/proposed-v47-r110-source-pinned-14.json)を統合。旧v46のRVN`chat_template.jinja`を「存在しない」とした説明を訂正。**20 Gated、9件の学習済み総数不明、本人の合法取得・4TB HDD・全依存/ローカルSHA/復元未検証、承認/重量DL0**。以下旧R109以前は履歴。
+
+**R109｜取得実行への移行・実測停止要因の確定（2026-11-18）**：[v46固定12モデル131ファイル・50 publisher SHA-256参照を照合、9/9テストPASS](docs/strategy/109-v46-twelve-source-download-preflight-tested.md)／[実HDD・SHA検証用の読取専用Python](scripts/verify_v46_download_preflight.py)。接続Linuxは約50.88GB容量／約29.52GB空きで200GB最低空き条件FAIL、4TB媒体は未接続。v46 198/151維持、approved0、モデル取得0。
+
+
+**R108｜全体最適化（2026-11-18）**：[v46全198資産・151有効を対象に取得・交換・重複容量を統合評価](docs/strategy/108-v46-global-portfolio-optimization.md)／[151件の全件機械可読監査](catalog/decisions/2026-11-18-r108-global-portfolio-optimization.json)。旧R107初回8件は部分集合であり全体の採用判断ではない。12件のsource固定、139件は同監査で新規固定なし。実HDD・本人権利・最終SHA/復元未完了、取得承認0。
+
+
+**R107｜2026-11-18・ダウンロードすべき原本の一次選定確定**：[v45有効151件すべての保存順位・取得停止と、14資産の具体的ファイル選択](docs/strategy/107-v45-download-selection-originals-uncensored-specialists-2026-11-18.md)、[151件機械可読判定](catalog/decisions/2026-11-18-r107-v45-final-source-selection-and-download-gates.json)、[無検閲27B別学習2系統＋Galvanize＋非商用画像LoRAの単一source候補](manifests/drafts/v45-2026-11-18-r107-uncensored-and-small-specialist-source.candidate.json)。原本候補14モデルのpublisher file bytes合計は**54,200,027,212byte（論理source、実増分でない）**。0bserverx RVNは配布全repo約1.645TBでなく最新版`RVN-Q4_K_M-multilingual.gguf`+任意vision projectorの選択候補17.1767GBに限定。Interpretic政治回答編集v2は別学習成果、OrcaRouter27Bは**Gated本人権限確認P0**、小型knoveleng9Bはperplexity悪化につきHOLD。**本人の権利／実HDD・ABI／local SHA／復元未検証、approved0・重量DL0。** Exaの利用枠402で追加外部検索は未完了。v45の198登録・151有効は変更せず、以下は既存調査記録。
+
+**R107｜先に保存すべき8資産を選定（2026-11-18、未承認）**：[無検閲2系統・小型/専門6系統、候補選択ファイル計48,397,620,081byte](docs/strategy/107-v45-eight-download-targets-and-hold-decisions.md)／[選定・交換保留の非実行JSON](catalog/decisions/2026-11-18-r107-download-selection.json)。8件はいずれも既存v45の内数。完全復元に必要なLICENSE/本人許諾/実HDD/SHAは未完了、取得承認0。
+
+
+**R106｜Hugging Face新モデル・規制実態の再監査（2026年11月18日、v45選定変更なし）**：[ARLoop-1.2Bを優先、Kitten Miniを次点、制限付きUnderdog/Bielik・高容量SOVは保留](docs/strategy/106-v45-hf-november-originals-and-policy.md)／[8候補の一次根拠と未解決事項](catalog/research/2026-11-18-r106-hf-originals-license-and-policy.json)。中国2026年第48号公告は意見募集段階の改訂案と既に規定された臨時の輸出前登録を区別。モデル新規正式採用0・重み取得承認0・実HDD/権限/全シャード未確認。
+
+
+**現行v45／追加監査R106（2026-11-18）**：正本は[198登録／151有効](catalog/effective-portfolio-2026-11-18-v45.json)を保持。[v45の候補・依存ポインタ修復、Pruna／Drama／Maya／Whissle4原本の独立停止理由](docs/strategy/106-v45-unknown-source-and-canonical-pointer-repair.md)。[公式HF固定原本調査](catalog/research/2026-11-18-r106-four-unknown-model-static-scope.json)、[有効151件取得前停止ゲート](catalog/readiness/v45-2026-11-18-r106-all151-gates.json)。4TB計画／最低空き200GB、Gated20件／総パラメータ未確定9件は維持、取得承認0。以下旧R105等は履歴。
+
+
 **現行v45・2026年11月18日**：[198登録／151有効・SELECT53＋CONDITIONAL98](catalog/effective-portfolio-2026-11-18-v45.json)。[Raon-1 nano／Simons-297Mの学習済み原本2件を研究段階CONDITIONAL追加](docs/strategy/105-v45-raon-simons-original-preservation-2026-11-18.md)。Hugging Face固定publisher原本[23候補ファイル8,371,078,617byte・6 SHA](manifests/drafts/v45-2026-11-18-raon-simons-original.candidate.json)、[全151件取得前STOP](catalog/readiness/v45-2026-11-18-r105-all151-gates.json)、[98件Gated・公開元状態](catalog/access/2026-11-18-v45-conditional-hub-gates.json)、[非実行候補151](queues/proposed-v45-2026-11-18.json)、[依存準備151](catalog/preparation/2026-11-18-insurance-bundles-v45.json)を同一正本に統合。Gated20・完全総数未確定9・本人取得承認0・実重みDL0。4TB/200GB空きの**実機測定は未完了**で仮想余白27.41GBを取得可能と混同しない。以下のv44以前は履歴。
+
+**R106・v45第1保全トランシェ／2026-11-18**：[10既存学習済み原本の優先順位・権利・規制監査](docs/strategy/106-v45-first10-source-checksum-and-regulatory-readiness-2026-11-18.md)、[Hugging Face固定10repo・107原本候補パス・18,016,810,996byte・同一ハッシュ6群のsource台帳](manifests/drafts/v45-2026-11-18-r106-first10-publisher-source.candidate.json)、[機械可読重複/優先調査台帳](catalog/research/2026-11-18-r106-small-first10-source-and-dedup-audit.json)を追加。10repoは現在非Gated表示だが本人の利用権利や重み取得許可ではない。GatedのNVIDIA Ising Decoder 2件は正規の個別権限確認を先行。*v45の選定件数・全151取得停止・承認0は不変*。キャッシュ／HDD／最終bundleが未測定なので18.02GBを新たに仮想余白から二重控除しない。
 
 **旧v44・2026年11月18日整合性修復（履歴）:** [196登録／149有効（SELECT53＋CONDITIONAL96）](catalog/effective-portfolio-2026-11-15-v44.json)、[v44正本ポインタ修正とSOV新ASR不採用理由](docs/strategy/102-v44-canonical-ledger-repair-sov-asr-hold-2026-11-18.md)。[研究キュー149](queues/proposed-v44-2026-11-18.json)／[依存準備149](catalog/preparation/2026-11-18-insurance-bundles-v44.json)／[アクセス条件96](catalog/access/2026-11-18-v44-conditional-hub-gates.json)の参照先を同一v44に修復。IFM/PAN2は既存CONDITIONALを維持、新規SOV-Transcribe-1 53.316GB・別学習DFlashは既存ASRへの増分品質/容量と権利の未確定から研究HOLD、正式追加なし。物理保存／権限／コード実行／承認0。以下のv43以前の説明は履歴。
 

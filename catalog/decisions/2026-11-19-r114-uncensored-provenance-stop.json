@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "catalog_revision": "v48-20261118",
+  "kind": "SOURCE_PROVENANCE_CORRECTION_NOT_ACQUISITION",
+  "reviewed_sources": [
+    {
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+      "evidence": "Official HF parent model metadata identifies Qwen/Qwen3.8-27B base and finetune",
+      "trained_params": 27781400000
+    },
+    {
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "evidence": "Official HF quantized base_model explicitly points to InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+      "relationship": "DIRECT_PARENT_ASSERTED_BY_PUBLISHER"
+    },
+    {
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored",
+      "evidence": "Official HF original safetensors metadata says base_model:0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF (reverse direction relative to normal quantization)",
+      "trained_params": 26896000000
+    },
+    {
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "evidence": "Official HF GGUF metadata says base_model:Qwen/Qwen3.8-27B, not explicitly the author's separate safetensors repo; GGUF contains RVN and legacy variants",
+      "relationship": "RVN_Q4_TO_SAFETENSORS_EQUIVALENCE_UNPROVEN"
+    }
+  ],
+  "decision": {
+    "interpretic": "PREFER_PUBLISHER_FP16_ORIGINAL_MASTER_AND_KEEP_GGUF_OPTIONAL_EXECUTION_CONVERSION_IF_VERIFIED",
+    "observerx": "DO_NOT_AUTOMATICALLY_REPLACE_RVN_Q4_WITH_SEPARATE_SAFETENSORS_CHECKPOINT",
+    "observerx_reason": "Different repo and reverse/inconsistent HF base_model declarations; absence of publisher RVN conversion manifest linking the exact selected RVN Q4 to the 13-shard safetensors tensor state.",
+    "observerx_archival_preference": "KEEP_RVN_Q4_SOURCE_PINNED_AS_DISTINCT_PROVENANCE_UNCERTAINTY; consider safetensors as an additional candidate only after identity verification; no automatic duplicate download.",
+    "formal_portfolio_selection_changed": false,
+    "downloads_authorized": false
+  },
+  "verification_to_resolve": [
+    "Read fixed author README/artifact-manifest/export-receipt and match RVN Q4 model architecture, tensor count, source sha or conversion command to original 13 shards",
+    "Compare GGUF metadata general.name, tokenizer and quantization provenance with original checkpoint model config",
+    "Use reproducible conversion plus per-tensor equivalence test on authorized machine, allowing declared quantization tolerance; don't infer identity from similar model names",
+    "Check legal rights and owner 4TB free space before any payload transfer"
+  ],
+  "limitations": [
+    "Publisher metadata supports family and broad provenance, not proof of exact trained tensor identity",
+    "No local model payload was downloaded or compared",
+    "No model-specific regulatory takedown probability assigned",
+    "No user 4TB volume or permission verified"
+  ],
+  "sources": [
+    "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v2",
+    "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+    "https://huggingface.co/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored",
+    "https://huggingface.co/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+    "manifests/drafts/r113-v48-two-uncensored-original-fp16-parents.candidate.json"
+  ],
+  "approved_queue_unchanged": true
+}

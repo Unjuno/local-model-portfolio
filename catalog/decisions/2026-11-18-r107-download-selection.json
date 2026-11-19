@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "id": "R107-2026-11-18",
+  "kind": "NON_EXECUTABLE_DOWNLOAD_TARGET_DECISIONS",
+  "baseline_revision": "v45-20261118",
+  "baseline_assets": 198,
+  "baseline_active": 151,
+  "objective": "Select unique trained uncensored, compact and specialist weights to eventually archive lawfully, not automatically download them",
+  "decision_level": "PRESERVE_SELECTED_WEIGHTS_SUBJECT_TO_ALL_RIGHTS_STORAGE_AND_HASH_GATES",
+  "first_wave": [
+    {
+      "rank_for_source_lock": 1,
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "source_scope_candidate_bytes": 17738357352,
+      "source_scope_file_count": 12,
+      "source_scope_evidence": "manifests/drafts/round21-pinned-preservation.candidate.json",
+      "preservation_reason": "Politically selective uncensor edit with Q4+vision projector; not interchangeable with general abliteration",
+      "specific_unresolved": "Current fixed-revision and model/projector checksums, llama.cpp quant/backend and right to archive",
+      "existing_v45_decision": "conditional",
+      "total_parameters_recorded": 27781427952,
+      "historical_pinned_revision": "e6924b3a08765341e01546308ccf2683d43e880b",
+      "download_should_be_preserved_after_approval": true,
+      "final_approved_lock_exists": false,
+      "personal_rights_verified": false,
+      "individual_download_approved": false,
+      "source_bundle_not_full_offline_environment": true
+    },
+    {
+      "rank_for_source_lock": 2,
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "source_scope_candidate_bytes": 16560392734,
+      "source_scope_file_count": 11,
+      "source_scope_evidence": "docs/strategy/2026-11-11-wave2-source-scope-and-v3.md",
+      "preservation_reason": "Multi-stage ARA edited RVN multilingual Q4; preserve one trained derivative rather than whole 1.645TB quant repo",
+      "specific_unresolved": "RVN-Q4_K_M-multilingual.gguf exact version and file hashes, llama.cpp template, rights",
+      "existing_v45_decision": "conditional",
+      "total_parameters_recorded": 27781400000,
+      "historical_pinned_revision": null,
+      "download_should_be_preserved_after_approval": true,
+      "final_approved_lock_exists": false,
+      "personal_rights_verified": false,
+      "individual_download_approved": false,
+      "source_bundle_not_full_offline_environment": true
+    },
+    {
+      "rank_for_source_lock": 3,
+      "repo_id": "Qwen/Qwen3.5-0.8B",
+      "source_scope_candidate_bytes": 1769980465,
+      "source_scope_file_count": 13,
+      "source_scope_evidence": "manifests/drafts/qwen3.5-0.8b-2026-10-30.candidate.json",
+      "preservation_reason": "Compact official posttrained model, not the separate pretrained Base",
+      "specific_unresolved": "Old snapshot needs live immutable source and license recheck",
+      "existing_v45_decision": "select",
+      "total_parameters_recorded": 873400000,
+      "historical_pinned_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+      "download_should_be_preserved_after_approval": true,
+      "final_approved_lock_exists": false,
+      "personal_rights_verified": false,
+      "individual_download_approved": false,
+      "source_bundle_not_full_offline_environment": true
+    },
+    {
+      "rank_for_source_lock": 4,
+      "repo_id": "lightonai/LightOnOCR-3-0.8B",
+      "source_scope_candidate_bytes": 1737771835,
+      "source_scope_file_count": 15,
+      "source_scope_evidence": "manifests/drafts/lightonocr-3-0.8b-2026-10-30.candidate.json",
+      "preservation_reason": "Small learned OCR, document tables and forms; independent specialized task",
+      "specific_unresolved": "Processor and all dependencies, frozen weights and actual doc quality",
+      "existing_v45_decision": "select",
+      "total_parameters_recorded": 853000000,
+      "historical_pinned_revision": "36d8636925327c671bd8e479c517a004f7566bd9",
+      "download_should_be_preserved_after_approval": true,
+      "final_approved_lock_exists": false,
+      "personal_rights_verified": false,
+      "individual_download_approved": false,
+      "source_bundle_not_full_offline_environment": true
+    },
+    {
+      "rank_for_source_lock": 5,
+      "repo_id": "openai/whisper-large-v3-turbo",
+      "source_scope_candidate_bytes": 1622466054,
+      "source_scope_file_count": 13,
+      "source_scope_evidence": "manifests/drafts/whisper-large-v3-turbo-2026-10-30.candidate.json",
+      "preservation_reason": "Multilingual ASR reference to assess new specialist models",
+      "specific_unresolved": "Current exact source files, runtime, local WER and rights",
+      "existing_v45_decision": "select",
+      "total_parameters_recorded": 808900000,
+      "historical_pinned_revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+      "download_should_be_preserved_after_approval": true,
+      "final_approved_lock_exists": false,
+      "personal_rights_verified": false,
+      "individual_download_approved": false,
+      "source_bundle_not_full_offline_environment": true
+    },
+    {
+      "rank_for_source_lock": 6,
+      "repo_id": "usezn/Galvanize-3",
+      "source_scope_candidate_bytes": 597573024,
+      "source_scope_file_count": 11,
+      "source_scope_evidence": "docs/strategy/2026-11-11-wave2-source-scope-and-v3.md",
+      "preservation_reason": "Distinct prompt-injection/jailbreak detector in compact ONNX, complementary to uncensored chat weights",
+      "specific_unresolved": "Frozen ONNX and tokenizer, opset, false-positive metrics",
+      "existing_v45_decision": "select",
+      "total_parameters_recorded": 140600000,
+      "historical_pinned_revision": null,
+      "download_should_be_preserved_after_approval": true,
+      "final_approved_lock_exists": false,
+      "personal_rights_verified": false,
+      "individual_download_approved": false,
+      "source_bundle_not_full_offline_environment": true
+    },
+    {
+      "rank_for_source_lock": 7,
+      "repo_id": "KRAFTON/Raon-1-nano",
+      "source_scope_candidate_bytes": 7182126657,
+      "source_scope_file_count": 17,
+      "source_scope_evidence": "manifests/drafts/v45-2026-11-18-raon-simons-original.candidate.json",
+      "preservation_reason": "Delta attention/MLA independent small hybrid with unique posttraining",
+      "specific_unresolved": "Remote custom code safety and ABI, conflicting rounded parameter count, separate MTP",
+      "existing_v45_decision": "conditional",
+      "total_parameters_recorded": 3529911376,
+      "historical_pinned_revision": "39f897a1f835c723ec633c6c905dca7312bd9fd7",
+      "download_should_be_preserved_after_approval": true,
+      "final_approved_lock_exists": false,
+      "personal_rights_verified": false,
+      "individual_download_approved": false,
+      "source_bundle_not_full_offline_environment": true
+    },
+    {
+      "rank_for_source_lock": 8,
+      "repo_id": "abel-lab/Simons-297M",
+      "source_scope_candidate_bytes": 1188951960,
+      "source_scope_file_count": 6,
+      "source_scope_evidence": "manifests/drafts/v45-2026-11-18-raon-simons-original.candidate.json",
+      "preservation_reason": "Probabilistic forecasting independent learned weights and covariate handling",
+      "specific_unresolved": "OpenMDW notices and training-data rights, frozen offline runtime",
+      "existing_v45_decision": "conditional",
+      "total_parameters_recorded": 297230368,
+      "historical_pinned_revision": "335dc22e4ce26ca0a8bc567de9e93dbb1bd2ce3a",
+      "download_should_be_preserved_after_approval": true,
+      "final_approved_lock_exists": false,
+      "personal_rights_verified": false,
+      "individual_download_approved": false,
+      "source_bundle_not_full_offline_environment": true
+    }
+  ],
+  "first_wave_count": 8,
+  "first_wave_historical_publisher_source_bytes": 48397620081,
+  "first_wave_is_already_part_of_v45_budget": true,
+  "rights_or_heavy_dependent_followups": [
+    {
+      "repo_id": "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1",
+      "decision": "KEEP_RESEARCH_ONLY_PARENT_LICENSE_FIRST",
+      "source_only_bytes": 671173375,
+      "why": "Unique unmerged rank128 adapter; non-commercial Qwen Research agreement and exact Qwen-Image-2.1 parent+encoder+VAE required"
+    },
+    {
+      "repo_id": "orcarouter/Qwen3.8-27B-Uncensored",
+      "decision": "KEEP_GATED_PERMISSION_FIRST",
+      "source_only_bytes": null,
+      "why": "Distinct BF16 refusal-edit origin; Gated user-specific permission required"
+    },
+    {
+      "repo_id": "microsoft/Fara1.5-27B",
+      "decision": "KEEP_SPECIALIZED_CAPACITY_REVIEW",
+      "source_only_bytes": null,
+      "why": "Distinct GUI agent policy, ~54.7GB source repository"
+    },
+    {
+      "repo_id": "IFM/PAN2",
+      "decision": "KEEP_WORLD_MODEL_SOURCE_REVIEW",
+      "source_only_bytes": 86082094058,
+      "why": "29.202B independent video world model; large 86.08GB fixed source candidate and dependencies"
+    },
+    {
+      "repo_id": "speridlabs/idol",
+      "decision": "KEEP_GATED_DEPENDENCIES_REVIEW",
+      "source_only_bytes": null,
+      "why": "3DGS requires separately gated DINOv3 and FLUX.2-VAE"
+    }
+  ],
+  "defer_without_catalog_removal": [
+    {
+      "repo_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU",
+      "reason": "Multiple 27B variants already selected; no independent quality-vs-byte gain established. Do not delete existing catalog entry; defer new manifest."
+    },
+    {
+      "repo_id": "ChrisColeTech/LTX-2.5-uncensored-v1.1-FP8",
+      "reason": "Complete learned parameter/codec pipeline and license unknown; block weight lock"
+    },
+    {
+      "repo_id": "Stuubs/Stubelius_Remix_Ltx2.5",
+      "reason": "Complete learned parameter/codec pipeline and rights unknown; block weight lock"
+    },
+    {
+      "repo_id": "ConwayResearch/Underdog-Woof",
+      "reason": "Noncommercial usage and no speech-model training/distillation; legal-use mismatch for part of portfolio"
+    },
+    {
+      "repo_id": "osunlp/ARLoop-0.6B",
+      "reason": "Same-family duplication of the 1.2B research original without independent target"
+    }
+  ],
+  "new_v46_research_candidates": [
+    {
+      "repo_id": "osunlp/ARLoop-1.2B",
+      "reason": "Distinct recurrent depth architecture and independent 500B-token pretraining; not registered v45",
+      "gate": "Fixed 40-character source revision, source file hashes and actual bytes, custom-code security, capacity"
+    },
+    {
+      "repo_id": "KittenML/kitten-tts-2-mini",
+      "reason": "82M compact multilingual CPU TTS including Japanese; not registered v45",
+      "gate": "Fixed ONNX/G2P/voice selection hashes, license and voice notices, Japanese quality, actual bytes"
+    }
+  ],
+  "policy": {
+    "max_archive_bytes": 4000000000000,
+    "min_free_bytes": 200000000000,
+    "base_total_parameters": 150000000000,
+    "over_base_quant_exception_requires_matched_30_trial_reference": true,
+    "unknown_total_stops_lock": true
+  },
+  "live_sources_and_limitations": {
+    "hugging_face_connector": "Public repo listing rechecked for selected uncensored and compact examples, but direct current payload access not established",
+    "web_sources": [
+      "https://huggingface.co/InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "https://huggingface.co/0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "https://huggingface.co/KittenML/kitten-tts-2-mini"
+    ],
+    "exa": "Service returned HTTP 402 credits exhausted; no Exa source verified in this round",
+    "current_stored_source_rev_is_not_live_download_proof": true,
+    "remaining_v45_all_active_blocked_for_acquisition": 151
+  },
+  "availability_and_authorization": {
+    "approved_download_entries": 0,
+    "complete_final_lock_count_for_this_wave": 0,
+    "owner_disk_verified": false,
+    "owner_licensing_verified": false,
+    "model_weights_downloaded": false,
+    "model_code_executed": false,
+    "automated_download_enabled": false
+  },
+  "hypothesis_test": {
+    "H": "Selected non-identical learned models cover multiple capabilities without duplicate quants; future distribution restriction is not presumed",
+    "T": "Audit all 8 historical fixed file scopes and 5 rights-heavy dependents, freeze exact revision/SHA256, measure owner's HDD and matched runtime conditions",
+    "D": "PASS only for an individually authorized immutable bundle with legal use and storage headroom; FAIL if original/rights/identity conflict; otherwise UNCERTAIN",
+    "C": "Publisher withdrawal may never occur, precise legal mirror may exist, selected model may fail independent task evaluation",
+    "U": "No calibrated takedown probabilities; source bytes partial; no quantitative u_c or k"
+  }
+}

@@ -52,6 +52,8 @@ class CurrentPortfolioIntegrity(unittest.TestCase):
   self.assertTrue(all(x["owner_access_permission"]=="unknown" and not x["download_authorized"] for x in self.access["entries"]))
   self.assertEqual(self.queue["source_revision"],self.current["revision_id"])
   self.assertEqual(self.prep["source_revision"],self.current["revision_id"])
+  self.assertEqual(self.access["source_revision"],self.current["revision_id"])
+  self.assertEqual(len(self.readiness["records"]),self.current["expected"]["active"])
   self.assertFalse(self.queue["approved"])
   self.assertFalse(self.queue["download_enabled"])
   self.assertFalse(self.prep["download_enabled"])

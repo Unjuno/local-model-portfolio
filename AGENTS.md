@@ -1,8 +1,51 @@
 # エージェント作業規約
 
+## 現行v48・R115（2026-11-19）：取得実行報告を正式な承認と混同せず高精度保存原本を確定
+
+**唯一の正式選定正本**：[CURRENT](catalog/CURRENT.json)→**v48・201登録／154有効（SELECT53／CONDITIONAL101）**。最新の[R115 16原本source提案](queues/proposed-v48-r115-master-sources-16.json)は**237ファイル・102 publisher SHA参照・301,848,275,578 byte**（metadata GO10・HOLD6。ただしGOはダウンロード承認ではない）。[旧R113 15原本source候補](queues/proposed-v48-r113-source-pinned-15.json)は履歴として保持。[R115判断と現状](docs/strategy/115-v48-reconcile-acquired-and-select-uncensored-masters-2026-11-19.md)／[監査JSON](catalog/decisions/2026-11-19-r115-post-acquisition-master-selection.json)／[R114物理取得報告ledger](catalog/execution/2026-11-19-acquisition-ledger.json)。
+
+**実行の安全ゲート**：[R115 Windows取得スクリプト](scripts/download_r115_windows.py)は**通常起動時は読み取り専用PLAN**へ変更。実際の転送には`--execute`に加えて、[approvedキュー](queues/approved.json)に対象repo ID・40桁revision・file source fingerprint・個別利用権利確認・使用者の明示承認・物理ボリューム確認を備えた項目が必要。[非ネットワークの退行テスト](tests/test_download_r115_authorization.py)も追加。古い取得実行報告の『VERIFIED』と、今後の追加取得許可を混同しない。
+
+**重要な取得状況訂正**：2026-11-19の別作業が**22モデル／227ファイル／162,325,501,646 byte VERIFIED**、**OrcaRouter 1件Gated HOLD**を報告した。旧文書の「すべてモデル重量DL0」は**現時点の報告とは不整合**。ただしR115自身は**所有者の物理ドライブ・保存ファイルを独立再ハッシュしていない**。ledgerを事実以上の本人権利・offline restore証明として使うな。[承認キュー](queues/approved.json)はなお**空**であり、過去の実行と承認フローの不一致は解消していない。今後の新規ダウンロードは、個別固定ファイル・利用許諾・本人権限・容量／cache／staging・200GB残床・明示承認なしに実行しない。既存ファイルは勝手に削除しない。
+
+**無検閲学習成果の保全判断**：既存取得報告のInterpretic v2 GGUF Q4と0bserverx RVN Q4を保持したまま、**InterpreticAI v2 の発行者BF16原本32ファイル／55,586,056,799 byte**、**同RVNの公開元`RVN-F16.gguf` 53,808,281,888 byte・固定SHA256**を**新たな高精度マスターの取得仕様候補**とする。両者の追加source合計**109,394,338,687 byte**、**取得未承認**。RVNの13 safetensors shardsは作者がF16 GGUFから再構成した形式であって、pre-GGUF元学習BF16を復元した証拠ではない。両形式を独立学習済みモデル2件として二重登録しない。Interpretic v3はArete由来で独立だが、追加容量の比較品質が未証明につき**HOLD研究**、正式v48資産変更0。
+
+法規制は[米BIS 2026-11-16 remote-compute規則](https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology)とopen-weight保管・配布を混同しない。Hugging Faceのgated、法律、LICENSE正文、本人行為別許可を別の停止ゲートとして守る。実行コード、pickle、第三者custom codeを自動実行せず、形式を理由に一般的Q4/Q5/Q6/Q8を多重保存しない。**mainのみ運用**。
+
+以下は歴史的な旧リビジョンの規約であり、v47の「現行」表示と未取得0の記述はR115で上書きされる。
+
+## 旧v47・R110（履歴）：小型独立学習済み原本の正式な選定と取得STOP
+
+唯一の正本[CURRENT](catalog/CURRENT.json)→**200登録・153有効（SELECT53/CONDITIONAL100）**。[R110判断とエラー訂正](docs/strategy/110-v47-arloop-kitten-original-selection-and-rvn-correction-2026-11-18.md)／[新原本42ファイルの固定Publisher SHA](manifests/drafts/v46-2026-11-18-r110-arloop-kitten-fixed-source.candidate.json)／[153 readiness](catalog/readiness/v47-2026-11-18-r110-all153-gates.json)／[100条件付きアクセス](catalog/access/2026-11-18-v47-conditional-hub-gates.json)／[153非実行候補](queues/proposed-v47-2026-11-18.json)／[出版社原本14 source-only queue](queues/proposed-v47-r110-source-pinned-14.json)。旧v46 198件の採否を変更せず、ARLoopとKittenを新しく研究段階CONDITIONAL追加。
+
+ARLoopは24物理層×3ループの学習済みFP32原本で`trust_remote_code`を実行していない。KittenはF32原本、言語別voice packs 16、学習済みG2P、実用INT8 ONNXを**一つのモデル資産内で保全**（通常量子化の別登録はしない）。`npz`を安全に読み（allow_pickle=False）、日本語G2PとONNX Runtime/Transformers/PyTorchのABI固定前に実行しない。作者のApache2表示は固定ライセンス正文・使用者の行為別許可を代替しない。旧R108報告の「0bserverx `chat_template.jinja`は存在しない」は**誤り**で、固定revisionに8952byteで存在、GGUF内蔵テンプレートにより独立保存は任意である。
+
+**v47の必須停止ゲート**：Gated20件の本人権限、モデル合計学習済み数未確定9件、151＋2の全ファイル集合、各モデル利用権利・親依存、実4TB保存媒体の容量と200GB最低空き・ステージング、GPU/CPU ABI・custom code監査、取得後の実local SHA・完全offline復元、別途ユーザーの明示的ダウンロード承認。いずれも未完了。承認キュー0件、本体重量取得0、mainのみ。Exaは2026-11-18時点でHTTP402枯渇しているため、Exa検索済みと偽称しない。以下旧R109以前は履歴。
+
+## R107・現行v45：原本ファイル14資産の研究選定と無検閲別系統の優先審査（2026-11-18）
+
+[作業報告](docs/strategy/107-v45-download-selection-originals-uncensored-specialists-2026-11-18.md)／[有効151資産の機械可読取得候補判定](catalog/decisions/2026-11-18-r107-v45-final-source-selection-and-download-gates.json)／[特殊4資産の固定Publisher SHA/source](manifests/drafts/v45-2026-11-18-r107-uncensored-and-small-specialist-source.candidate.json)。**正式CURRENTはv45=198管理・151有効、SELECT53/CONDITIONAL98。** ダウンロード対象として選択した14原本sourceは重みや権限を実取得・承認したわけではない。現行`queues/proposed-v45-2026-11-18.json`の14件には`r107_original_source_selection`を追記し、**`approved=false`、`download_enabled=false`を維持**、`queues/approved.json`は0件。
+
+無検閲：0bserverxの`RVN-Q4_K_M-multilingual.gguf`と旧`Qwen3.8-27B-Heretic-Q4_K_M.gguf`は別学習成果。2pass ARA後の**最新版RVNだけ**をまず1 Q4形式で保存候補にする。visionならmmproj Q8を追加（重みファイルと同版SHA固定）。Interpreticは中国語政治回答制御編集で別独立能力だが、Q4の汎用品質は未証明。OrcaRouter BF16はGatedで本人権限P0、全repoを無許可で取得しない。DavidAU作者の大幅性能向上やknovelengの低拒否を**独立品質合格と誤認しない**。Galvanize-3は原本`model.safetensors`と`thresholds.json`を保持し、学習成果同じONNX重複は初期対象から除外。ChatR Labs LoRAは親Qwen Image 2.1の条件を継承し**非商用研究／評価**でのみ権利検討する。
+
+強制STOP：本人の行為別ライセンス承認、Gated個人権限、全trained component/ABI、物理HDD残床200GBとcache/staging、モデル/コード不変sourceとlocal SHA、本人別の明示的取得承認まで**重み取得・コード実行0**。2026-11-18のExaはsearch/fetch共402 quotaを報告、外部検索網羅済みと称してはならない。v45の既存151資産中19件が権限先行・9件が学習済み総数不明・14件がsource候補済み・109件その他source未閉包という排他的調査順序を維持。将来の全面規制はあくまでストレス仮説。
+
+## v45・R106 現行：151件ポインタ修復と4モデルの学習済み原本scope監査
+
+[正本v45 198登録/151有効](catalog/CURRENT.json)、[非実行キュー151](queues/proposed-v45-2026-11-18.json)、[依存151](catalog/preparation/2026-11-18-insurance-bundles-v45.json)、[条件付きアクセス98](catalog/access/2026-11-18-r106-v45-conditional-hub-gates.json)、[151件停止台帳](catalog/readiness/v45-2026-11-18-r106-all151-gates.json)へ修復。Pruna/Drama/Maya/Whissleの4件は[原本一次SHA/構成と異なる停止理由](catalog/research/2026-11-18-r106-four-unknown-model-static-scope.json)を記録し、既存9未確定総数を早計にPASSへ昇格させない。[判断根拠](docs/strategy/106-v45-unknown-source-and-canonical-pointer-repair.md)。ダウンロード承認・ユーザー実HDD照合・GPU／ABI復元・重み実行はいずれも0。mainのみ。以下旧R105以前は履歴。
+
+
 ## 現行v45・2026-11-18：小型独立学習済み原本2件の選定と全取得停止ゲート
 
 唯一の正本は[CURRENT](catalog/CURRENT.json)→**v45・198登録／151有効（SELECT53・CONDITIONAL98）**。旧v44の196件を削除・降格せず、[KRAFTON Raon-1 nanoとabel-lab Simons-297MをCONDITIONAL研究追加](docs/strategy/105-v45-raon-simons-original-preservation-2026-11-18.md)。原本固定Publisherメタデータ[23選択ファイル／計8,371,078,617byte／LFS SHA256 6件](manifests/drafts/v45-2026-11-18-raon-simons-original.candidate.json)は**本人の実HDD SHA・復元の証拠ではない**。[151件readiness](catalog/readiness/v45-2026-11-18-r105-all151-gates.json)、[条件付き98件の配布元アクセス](catalog/access/2026-11-18-v45-conditional-hub-gates.json)、[依存準備151件](catalog/preparation/2026-11-18-insurance-bundles-v45.json)、[非実行キュー151件](queues/proposed-v45-2026-11-18.json)を常に最新参照とする。**Gated20件・完全学習済み総数未確定9件・本人の取得権限／実HDD／最終SHA／offline runtime検証0、承認・本体DL0**。RaonのHF serialized 3.5299Bと著者「3.2B」は不一致で、MTP別学習重みとtied headの計数を解消するまで正確な全学習済み総数を主張しない。SimonsモデルOpenMDW-1.1を元訓練データのODbL・CC BY-SA等へ拡張しない。untrusted `trust_remote_code`／pickleを勝手に実行しない。150B以上は現行policies/limits.jsonの個別量子化実測例外を満たさない限りHOLD、ディスク計画4TB＋200GB残床は実測前はUNCERTAIN。**mainのみ**。以下旧v44以前の記述は履歴。
+
+## R106：現行v45の初期10件・Hugging Face公開元ハッシュと重複排除
+
+[事実・採否・H/T/D/C/U](docs/strategy/106-v45-first10-source-checksum-and-regulatory-readiness-2026-11-18.md)／[固定10repo source manifest](manifests/drafts/v45-2026-11-18-r106-first10-publisher-source.candidate.json)／[優先調査R106](catalog/research/2026-11-18-r106-small-first10-source-and-dedup-audit.json)。既存v45の151有効から低容量・別機能の10原本を**非実行の事前調査**として固定。出版社source候補10モデル／107論理ファイル／18,016,810,996byte・SHA等の同内容ファイル6群、論理重複4,463,691byte。**ローカルSHAや物理空き実測、runtime/依存閉包、個人LICENSE権限は未検証で取得承認0。**
+
+source同一ハッシュなら物理保存の内容重複を避けても、**restore時の論理ファイルパスは全て残す**。特にSmolVLAのnormalizer/unnormalizerの同じ640byte SHAを理由に前処理後処理のどちらかを省略しない。Qwen embeddingとrerankerは同一メタファイルでも学習済み重みSHAが異なり両原本を保持。SHA1 Git blobとSHA256 LFSを区別し、モデルのバイナリや第三者コードの無許可取得・実行をしない。
+
+規制の一次根拠は米BIS 2026-11-15 remote compute access規則、EU AI Act GPAI義務、豪ASD 2026-11-05サプライチェーン安全ガイドであり、全公開重み私有禁止の成立を意味しない。Gated20件のうちNVIDIA Ising Color/Surface2件は**権利確認P0**で、勝手にGatedを回避せず、権利確定前に重みを取得しない。研究R106に基づく出荷・取得キュー昇格、v46選定追加、ダウンロードは禁止。現在のv45=198登録/151有効/98 CONDITIONAL、`queues/approved.json`0件を守る。
 
 ## 旧v44・2026-11-18業務台帳修復（履歴）
 

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "revision_id": "v46-20261118",
+  "previous_revision_id": "v45-20261118",
+  "decision_date": "2026-11-18",
+  "target_branch": "main",
+  "kind": "EVIDENCE_ONLY_EXACT_ORIGINAL_CHECKPOINT_FILE_LOCK_AND_SOURCE_CORRECTION",
+  "source_manifest": "manifests/drafts/r107-v45-12-original-sources-file-freeze.candidate.json",
+  "complete_active_decision_ledger": "catalog/decisions/2026-11-18-r107-151-asset-preservation-and-download-gates.json",
+  "previous_tracked": 198,
+  "previous_active": 151,
+  "added_assets": 0,
+  "removed_assets": 0,
+  "changed_model_decisions": 0,
+  "source_lock_record_count": 12,
+  "source_locked_asset_ids": [
+    "orcarouter/Qwen3.8-27B-Uncensored",
+    "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+    "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+    "Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2",
+    "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU",
+    "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1",
+    "usezn/Galvanize-3",
+    "qvac/BotPsy-0.8B",
+    "ibm-granite/granite-timeseries-ttm-r3",
+    "nvidia/Nemotron-3-Diarization",
+    "tencent/Qwen3.8-27B-DSpine-b16",
+    "robbyant/lingbot-touch-tiny"
+  ],
+  "original_source_publisher_bytes": 206683452429,
+  "source_file_count": 131,
+  "total_weight_files_sha_pinned": 44,
+  "file_scope_corrections": [
+    {
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "previous_proposed": [
+        "RVN-Q4_K_M-multilingual.gguf",
+        "chat_template.jinja"
+      ],
+      "current_proposed": [
+        "RVN-Q4_K_M-multilingual.gguf",
+        "mmproj-Qwen3.8-27B-Q8_0.gguf"
+      ],
+      "why": "Publisher repo has no standalone chat_template.jinja, GGUF embeds template; separate vision mmproj exists. Already selected RVN variant is not new trained model; no duplicate legacy Heretic copy."
+    }
+  ],
+  "download_approved": 0,
+  "weights_downloaded": 0,
+  "model_execution": false,
+  "user_specific_access_verified": false,
+  "owner_hdd_measured": false,
+  "added_licensing_authorization": false
+}

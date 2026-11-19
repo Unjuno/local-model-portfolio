@@ -1,0 +1,1859 @@
+{
+  "schema_version": 1,
+  "ledger_id": "2026-11-19-v48-execution",
+  "generated_at": "2026-11-19T08:54:46.408452+00:00",
+  "canonical_revision": "v48-20261118",
+  "source_plan": "queues/proposed-v48-r113-source-pinned-15.json",
+  "policy": {
+    "pinned_revision_only": true,
+    "publisher_hash_verification": true,
+    "dedupe_by_hash": true,
+    "resume_partial_downloads": true,
+    "model_code_executed": false,
+    "gated_without_entitlement": "HOLD",
+    "unclear_license": "HOLD"
+  },
+  "summary": {
+    "models_total": 54,
+    "models_verified": 53,
+    "models_partial": 0,
+    "models_failed": 0,
+    "models_held": 1,
+    "files_verified_total": 579,
+    "bytes_verified_total": 270835576267,
+    "minimum_free_bytes_observed": 2710260613120,
+    "minimum_free_floor_bytes": 200000000000,
+    "free_floor_maintained": true
+  },
+  "models": [
+    {
+      "repo_id": "n4ze3m/tiny-voca",
+      "revision_sha": "d94d2a0338fd1e0eab7dd896ec0ad23d8cdf7c14",
+      "source_manifest": "manifests/drafts/v48-2026-11-18-tiny-voca-immutable-source.candidate.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 14,
+      "files_verified": 14,
+      "source_bytes": 23626858,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "DEDUP_VERIFIED": 14
+      },
+      "weight_files_sha256": [
+        {
+          "path": "tiny-voca.pt",
+          "sha256": "ebb22871524c5732520fb1652e6aefcec708a7452e83bdd00adcf6181db5ef70"
+        },
+        {
+          "path": "phonemizer/g2p.npz",
+          "sha256": "eb3fd519ff00e72d850928d2fccb968adc36134bca2f3bda09de7e794c2ed01b"
+        }
+      ],
+      "started_at": "2026-11-18T15:49:12.973831+00:00",
+      "finished_at": "2026-11-18T15:49:13.761653+00:00",
+      "free_bytes_after": 2981074751488
+    },
+    {
+      "repo_id": "ibm-granite/granite-timeseries-ttm-r3",
+      "revision_sha": "ea17cfd2e3edcaea21eb8dcecd18bf88971482fa",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_SMALL_SPECIAL",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 5748963,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "8ec0509a18a38f65b02f046fc28298ab3acf5d54eecb0a0df959b9fa001bc9fb"
+        }
+      ],
+      "started_at": "2026-11-18T15:49:26.531299+00:00",
+      "finished_at": "2026-11-18T15:49:31.913256+00:00",
+      "free_bytes_after": 2981068988416
+    },
+    {
+      "repo_id": "robbyant/lingbot-touch-tiny",
+      "revision_sha": "f23969ccd4b6bba2163e69cc05a577455a075fe9",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_TACTILE_SAFE_PT",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 21873479,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "encoder.pt",
+          "sha256": "ddb8b435963348fff5b8a83bb48f995978dc8841d82f87be007c775bf5a88055"
+        }
+      ],
+      "started_at": "2026-11-18T15:49:31.964549+00:00",
+      "finished_at": "2026-11-18T15:49:37.942995+00:00",
+      "free_bytes_after": 2981047107584
+    },
+    {
+      "repo_id": "nvidia/Nemotron-3-Diarization",
+      "revision_sha": "52a432672732425e4c19765b9fec9b5810e6f4ba",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_AUDIO_OPENMDW",
+      "status": "VERIFIED",
+      "license": "openmdw-1.1",
+      "files_total": 11,
+      "files_verified": 11,
+      "source_bytes": 397030277,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 11
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "c074d86335b3b794f8fa5edc25594558f128bdb3914d27806a3a5a2e44963cb6"
+        }
+      ],
+      "started_at": "2026-11-18T15:49:38.008044+00:00",
+      "finished_at": "2026-11-18T15:50:09.719204+00:00",
+      "free_bytes_after": 2980650061824
+    },
+    {
+      "repo_id": "KittenML/kitten-tts-2-mini",
+      "revision_sha": "c01797caec3967b400da457656e011eb81f530a4",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "R110_SMALL_INDEPENDENT_TRAINED_ORIGINAL",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 27,
+      "files_verified": 27,
+      "source_bytes": 477936075,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 8,
+        "sha256-vs-publisher": 19
+      },
+      "file_status_counts": {
+        "VERIFIED": 27
+      },
+      "weight_files_sha256": [
+        {
+          "path": "g2p/g2p_bart_en_us/model.safetensors",
+          "sha256": "dc4a02e62d4fcb4bb4097ecf00db89b8e1a12a549a52ab6adfbba220b80a55c5"
+        },
+        {
+          "path": "kitten_tts_2_mini.onnx",
+          "sha256": "fa821c1cdd8f7fbfdbd5d1cae0a767673871d62696b85af7db059a9bd26b42d2"
+        },
+        {
+          "path": "kitten_tts_2_mini.safetensors",
+          "sha256": "b4cbca44add074c66bf0d36e335c55d0a213cd3e69200856617d0d7ed8e1e23e"
+        },
+        {
+          "path": "voices_da.npz",
+          "sha256": "a4d191e87175519bab110aed747ccdb48586455b9c4896aa74c2d269766d8eef"
+        },
+        {
+          "path": "voices_de.npz",
+          "sha256": "b33f8c44a7f3968ed53aca31666bed9110d5ab0023a75dc69125f3e3218e9a9d"
+        },
+        {
+          "path": "voices_en.npz",
+          "sha256": "5c18573d075f53f6f218c2056dfc84ad10e976e81e23d55e5a7a6adc6e9135a4"
+        },
+        {
+          "path": "voices_es.npz",
+          "sha256": "3de943ddab5eeced04a42c732d39152802df01fd94f194181a7bc5bd60d52c3b"
+        },
+        {
+          "path": "voices_fi.npz",
+          "sha256": "7764dec2e1e21cae23d623e9b9ccb5d15122f1fbbc582e40fbd57c53e3ce2c73"
+        },
+        {
+          "path": "voices_fr.npz",
+          "sha256": "df2f679a9b3b73b6b3cf14003a782804db1a22985f68f3912859598249dcd79e"
+        },
+        {
+          "path": "voices_hi.npz",
+          "sha256": "ce6d14445f10b16347daa9385f411d87f8cc73d989f5467c0fd975abdf906329"
+        },
+        {
+          "path": "voices_it.npz",
+          "sha256": "1c9d98962dd50e240450d5316a1ad80f32d67f9b2919c9419422359d1c4333d6"
+        },
+        {
+          "path": "voices_ja.npz",
+          "sha256": "17293773d30660c39120541586451aa66c0a8e8b58590e38381e22dc1bf6d271"
+        },
+        {
+          "path": "voices_ko.npz",
+          "sha256": "d3d5295000153ad90f7a321769cd4647b8db42612feaf6e3d6e765f1c35b9daf"
+        },
+        {
+          "path": "voices_nl.npz",
+          "sha256": "d1862bfe3554d1c47d22dc44ed943335ba695cbbe6d5324a129365fadf22238d"
+        },
+        {
+          "path": "voices_pt.npz",
+          "sha256": "83dc34bca3e2c454548d8d63cda7830aa22748cc1a0643fa5bdac445fe8f4f57"
+        },
+        {
+          "path": "voices_ru.npz",
+          "sha256": "f998f1fce7b19a0714c47b99aaaa06c8ab94be13e1dfb3acf8a6a6c2b97a05f2"
+        },
+        {
+          "path": "voices_sv.npz",
+          "sha256": "73c6b92a0be1c970bd0334b0099a57354057930c40911d17c6dfc0347c6b1cba"
+        },
+        {
+          "path": "voices_sw.npz",
+          "sha256": "809450b8dc88cae0e042ad935c1e5751b9a2448a2251c51f29285cc6d3f46e09"
+        },
+        {
+          "path": "voices_tr.npz",
+          "sha256": "d2af4c7636381c26ad3252002021cbacef130b401e45ed5d4ee079f901b61920"
+        }
+      ],
+      "started_at": "2026-11-18T15:50:09.798180+00:00",
+      "finished_at": "2026-11-18T15:51:14.162741+00:00",
+      "free_bytes_after": 2980172066816
+    },
+    {
+      "repo_id": "usezn/Galvanize-3",
+      "revision_sha": "597237be3b0fabbf5d70ff16ce95fad14a591f20",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_SMALL_SPECIAL",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 9,
+      "files_verified": 9,
+      "source_bytes": 597001839,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 7,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 9
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "a17273035cf5f52b6363d3420695c8809be33913ef6ece4bd72927bf93741305"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "8ab59b95e06d1d289dba953ef1ab95044067692bf5877f49236ebd1d8a24dcdf"
+        }
+      ],
+      "started_at": "2026-11-18T15:51:14.244608+00:00",
+      "finished_at": "2026-11-18T15:51:58.791241+00:00",
+      "free_bytes_after": 2979575046144
+    },
+    {
+      "repo_id": "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1",
+      "revision_sha": "aa213272180d6ad0d03f5fb3d597f0f0322647c5",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "A_RESEARCH_LICENSE",
+      "status": "VERIFIED",
+      "license": "other",
+      "files_total": 8,
+      "files_verified": 8,
+      "source_bytes": 671173375,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 7,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 8
+      },
+      "weight_files_sha256": [
+        {
+          "path": "chatrlabs-omni-lora-v0.1-bf16.safetensors",
+          "sha256": "5991a9845bc5251240febf944f653505a00966515b77073f2c639c4dfcba672a"
+        }
+      ],
+      "started_at": "2026-11-18T15:51:58.879030+00:00",
+      "finished_at": "2026-11-18T15:52:45.824165+00:00",
+      "free_bytes_after": 2978774708224
+    },
+    {
+      "repo_id": "qvac/BotPsy-0.8B",
+      "revision_sha": "24561e9681643eaf807fc28b0875210cb17f89c1",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_SMALL_AGENT",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 11,
+      "files_verified": 11,
+      "source_bytes": 1726201481,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 11
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "9a52e9fb1552e8592542e3de8104af9040b56c60644f5a9c2c270621a3b0ab48"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523"
+        }
+      ],
+      "started_at": "2026-11-18T15:52:46.052354+00:00",
+      "finished_at": "2026-11-18T15:57:13.718786+00:00",
+      "free_bytes_after": 2974811705344
+    },
+    {
+      "repo_id": "tencent/Qwen3.8-27B-DSpine-b16",
+      "revision_sha": "260a6c23070ca873ff1a5f33b7119ac3f6a245ee",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_DRAFT_TARGET_DEP",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 4051857976,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "ac90f1df842ea66b23e4224f3e86624add547526f689ffe9e9c6b7a5937116b1"
+        }
+      ],
+      "started_at": "2026-11-18T15:57:13.895009+00:00",
+      "finished_at": "2026-11-18T16:07:02.074883+00:00",
+      "free_bytes_after": 2967994912768
+    },
+    {
+      "repo_id": "osunlp/ARLoop-1.2B",
+      "revision_sha": "a29f310ac46646edf5c462425dc546b2ce7ea985",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "R110_SMALL_INDEPENDENT_TRAINED_ORIGINAL",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 15,
+      "files_verified": 15,
+      "source_bytes": 4838079760,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 15
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00003.safetensors",
+          "sha256": "f63b6dc22428c92a8ab8fad1150546745e542df1870cd03cc6503ae1a62a521d"
+        },
+        {
+          "path": "model-00002-of-00003.safetensors",
+          "sha256": "cfee1065c0fa1ca1f61b33191cc326148c7609847198ae7a44342947b06c8826"
+        },
+        {
+          "path": "model-00003-of-00003.safetensors",
+          "sha256": "e21d16b37eae586a58f2df1107e05fe6c88e81aa3814d12e7f46af9342702359"
+        }
+      ],
+      "started_at": "2026-11-18T16:07:02.129395+00:00",
+      "finished_at": "2026-11-18T16:11:52.632192+00:00",
+      "free_bytes_after": 2963156799488
+    },
+    {
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "revision_sha": "ab8d7bd81d03117501e4da60cccdff4c80f0eea0",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "A_UNCENSORED",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 4,
+      "files_verified": 4,
+      "source_bytes": 17176692278,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 2,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 4
+      },
+      "weight_files_sha256": [
+        {
+          "path": "mmproj-Qwen3.8-27B-Q8_0.gguf",
+          "sha256": "2e968a6af97ce35d8971890b257b9b7edabf20ad91450501fa53162a19ee33eb"
+        },
+        {
+          "path": "RVN-Q4_K_M-multilingual.gguf",
+          "sha256": "9ed40ccc8b8432f38b9a85d0ca67928167f5719e8c10bd299e56d34facaf6e61"
+        }
+      ],
+      "started_at": "2026-11-18T16:11:52.686963+00:00",
+      "finished_at": "2026-11-18T16:41:12.723344+00:00",
+      "free_bytes_after": 2945980100608
+    },
+    {
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "revision_sha": "e6924b3a08765341e01546308ccf2683d43e880b",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "A_UNCENSORED",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 17738327225,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "mmproj-Qwen3.8-27B-Uncensored-v2-F16.gguf",
+          "sha256": "0b296c3155e945290000aa4eb62edec4a5d2d183aae52feca3df39798095a9db"
+        },
+        {
+          "path": "Qwen3.8-27B-Uncensored-v2-Q4_K_M.gguf",
+          "sha256": "2a76f31d17e879589f2527bb4f657526ce0f4719aa352adc944e13f9f7365972"
+        }
+      ],
+      "started_at": "2026-11-18T16:41:12.797982+00:00",
+      "finished_at": "2026-11-18T17:11:22.621782+00:00",
+      "free_bytes_after": 2928241762304
+    },
+    {
+      "repo_id": "Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2",
+      "revision_sha": "6af1278a92223c717ccea671e4571a5cc135f5d8",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "C_LARGE_SFT_REVIEW",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 53121584389,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 8,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "25b9bbda873b017f3aef54234542e4daf322f7117d7ebafa90dce405ea50f547"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "eb7eaf504f060ecd157ef4e03b1a174ed62f23c8a119d620f63138c1e1396183"
+        },
+        {
+          "path": "Pantheon-Reasoning.jpg",
+          "sha256": "04ce599b4249fd1c989e8f86ce598e84a77a90a658f87c0bdbd0bd3ff1ce434a"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+        }
+      ],
+      "started_at": "2026-11-18T17:11:22.680466+00:00",
+      "finished_at": "2026-11-18T18:46:19.214572+00:00",
+      "free_bytes_after": 2875120144384
+    },
+    {
+      "repo_id": "orcarouter/Qwen3.8-27B-Uncensored",
+      "revision_sha": "0f639a9bde23fe229a7b064b40a5153c5bec0b48",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "D_GATED_OWNER_PERMISSION",
+      "status": "HOLD_GATED_OR_PRIVATE",
+      "license": null,
+      "files_total": null,
+      "files_verified": null,
+      "source_bytes": null,
+      "verification_methods": {},
+      "file_status_counts": {},
+      "weight_files_sha256": [],
+      "started_at": "2026-11-18T18:46:19.259611+00:00",
+      "finished_at": null,
+      "free_bytes_after": null
+    },
+    {
+      "repo_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU",
+      "revision_sha": "079b2b268c637b77f2fb4ab6a5ca1edc47d462a5",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "C_LARGE_SFT_REVIEW",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 25,
+      "files_verified": 25,
+      "source_bytes": 55589894917,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 14
+      },
+      "file_status_counts": {
+        "VERIFIED": 25
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00012.safetensors",
+          "sha256": "b5df896d93260f64913e8e09892c9f3724e92e4bfb7f4708238880fb50833f98"
+        },
+        {
+          "path": "model-00002-of-00012.safetensors",
+          "sha256": "feacdeb20032f0a1bd7315f80f991885add3e31da43ea65aebde67786b740746"
+        },
+        {
+          "path": "model-00003-of-00012.safetensors",
+          "sha256": "42845ce58e2b023b13df6fdfbacf637cfbf6f0fa764dca7b163b355bd5844aab"
+        },
+        {
+          "path": "model-00004-of-00012.safetensors",
+          "sha256": "a2d24cb46efbb0a75df8becd0d5d3bcea30ddc636273065f8a1b199cf5139cde"
+        },
+        {
+          "path": "model-00005-of-00012.safetensors",
+          "sha256": "3aadc678e631cd4d30213cb15007bedd0e41d77301f17b0ed978c743c7387264"
+        },
+        {
+          "path": "model-00006-of-00012.safetensors",
+          "sha256": "bb1024157fb4f4b6ec734c0a0d75902ecaa2406311bf065db495ede3878d2c37"
+        },
+        {
+          "path": "model-00007-of-00012.safetensors",
+          "sha256": "a590217a8c876cb2b489f6d3e890001fa1d923d07b10b3c09fb552238c86a68f"
+        },
+        {
+          "path": "model-00008-of-00012.safetensors",
+          "sha256": "ba25c6b10abf3b31c43e92906f10e37b10d09b18f6535d1e6a826803a8f077bd"
+        },
+        {
+          "path": "model-00009-of-00012.safetensors",
+          "sha256": "0c5254879f08b62212362fc6c0caf0b3cd36117a2de35075a6b363f3cace4df4"
+        },
+        {
+          "path": "model-00010-of-00012.safetensors",
+          "sha256": "064a6765b5bd47eb82955e23c4d0f6b945aa4871fc29db645f24043acf73a41c"
+        },
+        {
+          "path": "model-00011-of-00012.safetensors",
+          "sha256": "4cbbbf4c89d0cb69755011a686279f6707df6f70ed2f9df344ed7b4467a4794e"
+        },
+        {
+          "path": "model-00012-of-00012.safetensors",
+          "sha256": "1007f875318e6cecadde4d5f56696b8e89d9fe30b71e8ed4aa26b387aac9d304"
+        },
+        {
+          "path": "model-mtp-restored.safetensors",
+          "sha256": "fbea25865ec18d0fcc2ba235d7c32a39d5dfad15531b39498796ef8ae9998d25"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4"
+        }
+      ],
+      "started_at": "2026-11-18T18:46:19.702371+00:00",
+      "finished_at": "2026-11-18T20:16:42.208629+00:00",
+      "free_bytes_after": 2819530194944
+    },
+    {
+      "repo_id": "Qwen/Qwen3.5-0.8B",
+      "revision_sha": "2fc06364715b967f1860aea9cf38778875588b17",
+      "source_manifest": "manifests/drafts/qwen3.5-0.8b-2026-10-30.candidate.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 13,
+      "files_verified": 13,
+      "source_bytes": 1769980465,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 13
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors-00001-of-00001.safetensors",
+          "sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+        }
+      ],
+      "started_at": "2026-11-18T15:52:21.762034+00:00",
+      "finished_at": "2026-11-18T15:56:08.918161+00:00",
+      "free_bytes_after": 2975427137536
+    },
+    {
+      "repo_id": "lightonai/LightOnOCR-3-0.8B",
+      "revision_sha": "36d8636925327c671bd8e479c517a004f7566bd9",
+      "source_manifest": "manifests/drafts/lightonocr-3-0.8b-2026-10-30.candidate.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 15,
+      "files_verified": 15,
+      "source_bytes": 1737771835,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 15
+      },
+      "weight_files_sha256": [
+        {
+          "path": "lightonocr3_logo.png",
+          "sha256": "768eee79d378518cfea9ed8d81ba3a53a0cff17ccf4b12c22a9e5ebedde32bcf"
+        },
+        {
+          "path": "model.safetensors",
+          "sha256": "ae46aa6fd7136d57297ac006ed9ec345b7a2083feb2e99501bedcb014ca3efdf"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523"
+        }
+      ],
+      "started_at": "2026-11-18T15:56:09.455857+00:00",
+      "finished_at": "2026-11-18T16:02:32.190084+00:00",
+      "free_bytes_after": 2969617440768
+    },
+    {
+      "repo_id": "openai/whisper-large-v3-turbo",
+      "revision_sha": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+      "source_manifest": "manifests/drafts/whisper-large-v3-turbo-2026-10-30.candidate.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 13,
+      "files_verified": 13,
+      "source_bytes": 1622466054,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 13
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "542566a422ae4f3fd23f1ba11add198fca01bbf82e66e6a2857b3f608b1eb9d1"
+        }
+      ],
+      "started_at": "2026-11-18T16:02:32.883618+00:00",
+      "finished_at": "2026-11-18T16:06:25.334491+00:00",
+      "free_bytes_after": 2967994941440
+    },
+    {
+      "repo_id": "nvidia/Kumo-Anomaly",
+      "revision_sha": "369ccba38a105736c6c9e4b5788a330c7e22112e",
+      "source_manifest": "local-discovered/nvidia__Kumo-Anomaly.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 2,
+      "files_verified": 2,
+      "source_bytes": 29607656,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 1,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 2
+      },
+      "weight_files_sha256": [
+        {
+          "path": "final_model.pth",
+          "sha256": "e7c2c06ac290d5ad42c8528caaefea3e6e0cb3d77227d2eca79f81ee427811a5"
+        }
+      ],
+      "started_at": "2026-11-19T06:00:03.503347+00:00",
+      "finished_at": "2026-11-19T06:00:09.835883+00:00",
+      "free_bytes_after": 2819500167168
+    },
+    {
+      "repo_id": "gradium/phonon-31m-en",
+      "revision_sha": "8f7a37c94a4c58b04c8287300c53f11d2e208eae",
+      "source_manifest": "local-discovered/gradium__phonon-31m-en.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 11,
+      "files_verified": 11,
+      "source_bytes": 103690426,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 11
+      },
+      "weight_files_sha256": [
+        {
+          "path": "default-voice.safetensors",
+          "sha256": "dc537478eaadc1a5257fcda2e3501ab81e14c111a5d95a5838f350db2afd0f1a"
+        },
+        {
+          "path": "model.safetensors",
+          "sha256": "8a04cf833cfe69b67c2ec968b2d31244655b9accc84ade9c0ebcc176f2074607"
+        }
+      ],
+      "started_at": "2026-11-19T06:00:09.928900+00:00",
+      "finished_at": "2026-11-19T06:00:29.747922+00:00",
+      "free_bytes_after": 2819396452352
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati-Checker",
+      "revision_sha": "7edaac6de4cfe7127f973d8641335c4cb2f84b08",
+      "source_manifest": "local-discovered/udgamlabs__Lilavati-Checker.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 190647761,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 5,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "b537563da101acc99fd800ae8798ce1f287d469da29f43ba824ab49d36ed164a"
+        }
+      ],
+      "started_at": "2026-11-19T06:00:29.869899+00:00",
+      "finished_at": "2026-11-19T06:00:50.969302+00:00",
+      "free_bytes_after": 2819205787648
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati",
+      "revision_sha": "5aef8c4b79fa6b8aaf5d63a1e8dd05ca572fe25d",
+      "source_manifest": "local-discovered/udgamlabs__Lilavati.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 190654999,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 5,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "24c02955743f5b918dff4e8709075ac7d9a05255739545ce1543ae10e72c8349"
+        }
+      ],
+      "started_at": "2026-11-19T06:00:51.063726+00:00",
+      "finished_at": "2026-11-19T06:01:13.325472+00:00",
+      "free_bytes_after": 2819015122944
+    },
+    {
+      "repo_id": "nvidia/Kumo-Relational",
+      "revision_sha": "efdbb110daea5aae123447864a64612e8a3dc6be",
+      "source_manifest": "local-discovered/nvidia__Kumo-Relational.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "openmdw-1.1",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 243653558,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "classifier.pt",
+          "sha256": "0c2e35cc18303f0d3ddeaf04e9cab6ca3a8bd6ea17195ac0e42d47af4bcb2a2d"
+        },
+        {
+          "path": "regressor.pt",
+          "sha256": "f863b3632f738e1444fb83a8cea5746f298889b5c96953a000c4720d202ae4cf"
+        }
+      ],
+      "started_at": "2026-11-19T06:01:13.428285+00:00",
+      "finished_at": "2026-11-19T06:01:34.295420+00:00",
+      "free_bytes_after": 2818771451904
+    },
+    {
+      "repo_id": "autogluon/chronos-2",
+      "revision_sha": "60088152a34e242427b44c3100014473a0157d53",
+      "source_manifest": "local-discovered/autogluon__chronos-2.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 3,
+      "files_verified": 3,
+      "source_bytes": 477939313,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 2,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 3
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "ddcda3c7508bf2528087723e98a20707cc04b7f370ae275a9fd88078ddba4f42"
+        }
+      ],
+      "started_at": "2026-11-19T06:01:34.412924+00:00",
+      "finished_at": "2026-11-19T06:02:08.139803+00:00",
+      "free_bytes_after": 2818293506048
+    },
+    {
+      "repo_id": "Zyphra/ZONOS3-Mini",
+      "revision_sha": "2921b8821772b0bd10a04456863d21abf9d2f283",
+      "source_manifest": "local-discovered/Zyphra__ZONOS3-Mini.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 66,
+      "files_verified": 66,
+      "source_bytes": 775728152,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 65,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 66
+      },
+      "weight_files_sha256": [
+        {
+          "path": "autoencoder/teacher/model.safetensors",
+          "sha256": "a15182741d6ee3cd780b8b830f49fa6b7fcce383655d451970841b24114767a5"
+        }
+      ],
+      "started_at": "2026-11-19T06:02:08.268083+00:00",
+      "finished_at": "2026-11-19T06:03:56.563568+00:00",
+      "free_bytes_after": 2817517690880
+    },
+    {
+      "repo_id": "lerobot/smolvla_base",
+      "revision_sha": "5e8d12a6e2975b0e5e5fce7c8caf47c371d257b6",
+      "source_manifest": "local-discovered/lerobot__smolvla_base.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 7,
+      "files_verified": 7,
+      "source_bytes": 906723311,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 7
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "7cd549ac2351fb069c0ddb3c34ad2d09cfc92b56a15dccdfc2e41467aaca01eb"
+        },
+        {
+          "path": "policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+          "sha256": "490ab239d96e263687c0b2e386a0afbc235a2eceb9857c36ed32f2f162a3e7c8"
+        },
+        {
+          "path": "policy_preprocessor_step_5_normalizer_processor.safetensors",
+          "sha256": "490ab239d96e263687c0b2e386a0afbc235a2eceb9857c36ed32f2f162a3e7c8"
+        }
+      ],
+      "started_at": "2026-11-19T06:03:56.680051+00:00",
+      "finished_at": "2026-11-19T06:04:54.397212+00:00",
+      "free_bytes_after": 2816610926592
+    },
+    {
+      "repo_id": "ibm-granite/granite-speech-5.0-470m-turboctc",
+      "revision_sha": "91dcb0605daf65f88dbb04fef015c423241d941d",
+      "source_manifest": "local-discovered/ibm-granite__granite-speech-5.0-470m-turboctc.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 7,
+      "files_verified": 7,
+      "source_bytes": 948024305,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 6,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 7
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "5b569c3744c42a9172ac976881539926b66176d03fbaaa3c51b5d2960067f6fc"
+        }
+      ],
+      "started_at": "2026-11-19T06:04:54.515688+00:00",
+      "finished_at": "2026-11-19T06:05:53.629932+00:00",
+      "free_bytes_after": 2815662886912
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+      "revision_sha": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+      "source_manifest": "local-discovered/Qwen__Qwen3-Reranker-0.6B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 13,
+      "files_verified": 13,
+      "source_bytes": 1207486774,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 13
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "27cd75a405b9c1b46b59abfd88aaa209e6fed2a1972cde9b70e7659537c5e65b"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+        }
+      ],
+      "started_at": "2026-11-19T06:05:53.752407+00:00",
+      "finished_at": "2026-11-19T06:07:14.864020+00:00",
+      "free_bytes_after": 2814455377920
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "revision_sha": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+      "source_manifest": "local-discovered/Qwen__Qwen3-Embedding-0.6B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 11,
+      "files_verified": 11,
+      "source_bytes": 1207487471,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 11
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "0437e45c94563b09e13cb7a64478fc406947a93cb34a7e05870fc8dcd48e23fd"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "def76fb086971c7867b829c23a26261e38d9d74e02139253b38aeb9df8b4b50a"
+        }
+      ],
+      "started_at": "2026-11-19T06:07:14.980329+00:00",
+      "finished_at": "2026-11-19T06:08:34.788086+00:00",
+      "free_bytes_after": 2813247864832
+    },
+    {
+      "repo_id": "Edge0/Audio8-TTS-Realistic-Air",
+      "revision_sha": "6bf7a980759d8022a66922ee975dab99229a2dd9",
+      "source_manifest": "local-discovered/Edge0__Audio8-TTS-Realistic-Air.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 14,
+      "files_verified": 14,
+      "source_bytes": 1215781745,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 14
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "f590053e980a45ebcbb2e787cff4f2dead932b2b61e5cf54d05664d9764e12d8"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "f24e08099d45a8adf3f52f5f0b03276e433bb9d689bb15fcbcc48ce58744588b"
+        }
+      ],
+      "started_at": "2026-11-19T06:08:34.925312+00:00",
+      "finished_at": "2026-11-19T06:09:56.855316+00:00",
+      "free_bytes_after": 2812032057344
+    },
+    {
+      "repo_id": "google/siglip2-base-patch16-224",
+      "revision_sha": "75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2",
+      "source_manifest": "local-discovered/google__siglip2-base-patch16-224.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 7,
+      "files_verified": 7,
+      "source_bytes": 1535215765,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 5,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 7
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "612923381c76ec5a9bed335d1c48827e3f2e506ac31b044b63b2031fadee6a0b"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "cb9140fae3ac5122c972d37adf83e1248471a38147ad76f8215c8872c6fd8322"
+        }
+      ],
+      "started_at": "2026-11-19T06:09:56.992076+00:00",
+      "finished_at": "2026-11-19T06:11:34.033521+00:00",
+      "free_bytes_after": 2810496827392
+    },
+    {
+      "repo_id": "answerdotai/ModernBERT-large",
+      "revision_sha": "45bb4654a4d5aaff24dd11d4781fa46d39bf8c13",
+      "source_manifest": "local-discovered/answerdotai__ModernBERT-large.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 1585708932,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 5,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "44510fec5d3a81a1877f225637b869495f18e55f6f23a09abb9be0acc030295f"
+        }
+      ],
+      "started_at": "2026-11-19T06:11:34.189189+00:00",
+      "finished_at": "2026-11-19T06:13:33.966774+00:00",
+      "free_bytes_after": 2808911093760
+    },
+    {
+      "repo_id": "PaddlePaddle/PaddleOCR-VL-1.5",
+      "revision_sha": "1e5216083435c7851caad5d691ef55aab81b5949",
+      "source_manifest": "local-discovered/PaddlePaddle__PaddleOCR-VL-1.5.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 1928697282,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "d557c9d8997ae57ed3b1b33bdf347be878cc335687f32ca105341c16973f8958"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "c8a215a59183d0d0781adc33bacd3ce6162716f7fd568fb30234a74d69803a7d"
+        }
+      ],
+      "started_at": "2026-11-19T06:13:34.103923+00:00",
+      "finished_at": "2026-11-19T06:15:26.251804+00:00",
+      "free_bytes_after": 2806982369280
+    },
+    {
+      "repo_id": "KlingTeam/LivePortrait",
+      "revision_sha": "82a4fa6735ca58432b6ce39301b4b9ee066dea47",
+      "source_manifest": "local-discovered/KlingTeam__LivePortrait.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 16,
+      "files_verified": 16,
+      "source_bytes": 1999661089,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 1,
+        "sha256-vs-publisher": 15
+      },
+      "file_status_counts": {
+        "VERIFIED": 16
+      },
+      "weight_files_sha256": [
+        {
+          "path": "liveportrait/base_models/appearance_feature_extractor.pth",
+          "sha256": "5279bb8654293dbdf327030b397f107237dd9212fb11dd75b83dfb635211ceb5"
+        },
+        {
+          "path": "liveportrait/base_models/motion_extractor.pth",
+          "sha256": "251e6a94ad667a1d0c69526d292677165110ef7f0cf0f6d199f0e414e8aa0ca5"
+        },
+        {
+          "path": "liveportrait/base_models/spade_generator.pth",
+          "sha256": "4780afc7909a9f84e24c01d73b31a555ef651521a1fe3b2429bd04534d992aee"
+        },
+        {
+          "path": "liveportrait/base_models/warping_module.pth",
+          "sha256": "2f61a6f265fe344f14132364859a78bdbbc2068577170693da57fb96d636e282"
+        },
+        {
+          "path": "liveportrait/retargeting_models/stitching_retargeting_module.pth",
+          "sha256": "3652d5a3f95099141a56986aaddec92fadf0a73c87a20fac9a2c07c32b28b611"
+        },
+        {
+          "path": "liveportrait_animals/base_models/appearance_feature_extractor.pth",
+          "sha256": "e2cd1d5d67c0457229e9736d401d39225e096895b869f34234978082561af6de"
+        },
+        {
+          "path": "liveportrait_animals/base_models/motion_extractor.pth",
+          "sha256": "63c0d450099ef6ebece788ab711cb012509712e23fd1200b79fb65ef980adbb9"
+        },
+        {
+          "path": "liveportrait_animals/base_models/spade_generator.pth",
+          "sha256": "7fafa1e31c7c72c9384310d679e32af3fbf214e241fb657df8c3b18ad826f336"
+        },
+        {
+          "path": "liveportrait_animals/base_models/warping_module.pth",
+          "sha256": "c9719ea184ca9da059f4eee8a8c8c7c6bd46a2b1e40a241ea5490cc42ce6b79b"
+        },
+        {
+          "path": "liveportrait_animals/base_models_v1.1/appearance_feature_extractor.pth",
+          "sha256": "7e320d545579caa83c7b094cef8b7b43fe92a2e410c219ffa97b08be549f45bf"
+        },
+        {
+          "path": "liveportrait_animals/base_models_v1.1/motion_extractor.pth",
+          "sha256": "827d0ea4c56ff252dba50feece3bc62ced365ecae5edb86db07eb71b2f39a696"
+        },
+        {
+          "path": "liveportrait_animals/base_models_v1.1/spade_generator.pth",
+          "sha256": "6ac31a9b608f3920ec41a402b1c4e29d22007dafd79a855f204aae9307039445"
+        },
+        {
+          "path": "liveportrait_animals/base_models_v1.1/warping_module.pth",
+          "sha256": "7dfd251dc6b3a1baefebfc658f5bb2a2c565649cdb9aa75032591e824a0bfcee"
+        },
+        {
+          "path": "liveportrait_animals/retargeting_models/stitching_retargeting_module.pth",
+          "sha256": "3652d5a3f95099141a56986aaddec92fadf0a73c87a20fac9a2c07c32b28b611"
+        },
+        {
+          "path": "liveportrait_animals/xpose.pth",
+          "sha256": "bf58e5a3c4a3a017198edc69e33f89c9a37adc856fe6b1776059b2d4a524a7dd"
+        }
+      ],
+      "started_at": "2026-11-19T06:15:26.371362+00:00",
+      "finished_at": "2026-11-19T06:17:39.570977+00:00",
+      "free_bytes_after": 2804982669312
+    },
+    {
+      "repo_id": "IFM/K2-Horizon-0.9B",
+      "revision_sha": "fc5c9dc7c13df2360acee789fca2cd55d439e644",
+      "source_manifest": "local-discovered/IFM__K2-Horizon-0.9B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 2161702898,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00000-of-00001.safetensors",
+          "sha256": "6392cc67c8dcc7aef1575f94ecdf3c7113b7d0e8f4e7058c4c3c74d4d876c365"
+        }
+      ],
+      "started_at": "2026-11-19T06:17:39.746437+00:00",
+      "finished_at": "2026-11-19T06:19:41.875320+00:00",
+      "free_bytes_after": 2802820943872
+    },
+    {
+      "repo_id": "BAAI/bge-m3",
+      "revision_sha": "5617a9f61b028005a4858fdac845db406aefb181",
+      "source_manifest": "local-discovered/BAAI__bge-m3.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 16,
+      "files_verified": 16,
+      "source_bytes": 2307452418,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 5
+      },
+      "file_status_counts": {
+        "VERIFIED": 16
+      },
+      "weight_files_sha256": [
+        {
+          "path": "colbert_linear.pt",
+          "sha256": "19bfbae397c2b7524158c919d0e9b19393c5639d098f0a66932c91ed8f5f9abb"
+        },
+        {
+          "path": "onnx/tokenizer.json",
+          "sha256": "6710678b12670bc442b99edc952c4d996ae309a7020c1fa0096dd245c2faf790"
+        },
+        {
+          "path": "pytorch_model.bin",
+          "sha256": "b5e0ce3470abf5ef3831aa1bd5553b486803e83251590ab7ff35a117cf6aad38"
+        },
+        {
+          "path": "sparse_linear.pt",
+          "sha256": "45c93804d2142b8f6d7ec6914ae23a1eee9c6a1d27d83d908a20d2afb3595ad9"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "21106b6d7dab2952c1d496fb21d5dc9db75c28ed361a05f5020bbba27810dd08"
+        }
+      ],
+      "started_at": "2026-11-19T06:19:42.033298+00:00",
+      "finished_at": "2026-11-19T06:22:40.599494+00:00",
+      "free_bytes_after": 2800513466368
+    },
+    {
+      "repo_id": "nvidia/Kumo-Tabular",
+      "revision_sha": "c5893d418e162b9f841ae179dc767afefff73831",
+      "source_manifest": "local-discovered/nvidia__Kumo-Tabular.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "openmdw-1.1",
+      "files_total": 9,
+      "files_verified": 9,
+      "source_bytes": 2437931843,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 6
+      },
+      "file_status_counts": {
+        "VERIFIED": 9
+      },
+      "weight_files_sha256": [
+        {
+          "path": "large/classifier.pt",
+          "sha256": "cc21484316949641cc3d65a7bb6c36cdea854cc569435755ff23b850018ec613"
+        },
+        {
+          "path": "large/regressor.pt",
+          "sha256": "745e0e5d97e4256d8a24cb61c2eecbd1128da6c83938c196b7589ea6f62e7421"
+        },
+        {
+          "path": "medium/classifier.pt",
+          "sha256": "70d6aee8fd13416300afead71a5145a40edb790952e2417d87f27b3f7e57793d"
+        },
+        {
+          "path": "medium/regressor.pt",
+          "sha256": "daa6a17420b5aed231007e5d2f9c712abe093b4f94b3e1189b178947a95fb725"
+        },
+        {
+          "path": "small/classifier.pt",
+          "sha256": "1ff91f484e19021aaf7d9eff6cc07e6d95a60b4aaad473e83e2ab2c3bfd2b617"
+        },
+        {
+          "path": "small/regressor.pt",
+          "sha256": "fc672f536501d64356036050ac2acea7e46927f7b9ad38366abe048f88e7d423"
+        }
+      ],
+      "started_at": "2026-11-19T06:22:40.789429+00:00",
+      "finished_at": "2026-11-19T06:25:27.634234+00:00",
+      "free_bytes_after": 2798075510784
+    },
+    {
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+      "revision_sha": "85e237c12c027371202489a0ec509ded67b5e4b5",
+      "source_manifest": "local-discovered/Qwen__Qwen3-TTS-12Hz-0.6B-CustomVoice.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 2498386873,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "bc3c7e785eb961179c25450d1acff03f839e0002f2f3a5aeb67b5735c0fa2adb"
+        },
+        {
+          "path": "speech_tokenizer/model.safetensors",
+          "sha256": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258"
+        }
+      ],
+      "started_at": "2026-11-19T06:25:27.762520+00:00",
+      "finished_at": "2026-11-19T06:28:00.367710+00:00",
+      "free_bytes_after": 2795577102336
+    },
+    {
+      "repo_id": "speridlabs/idol",
+      "revision_sha": "2731c2291fc65a797c5cb627a5e5526fc1490902",
+      "source_manifest": "local-discovered/speridlabs__idol.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 3078988505,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 2,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "birefnet.safetensors",
+          "sha256": "44bbc97b041f879975d0d6d538b8e66a25eb04d1f49aab40697544cdd97eaa8e"
+        },
+        {
+          "path": "decoder.safetensors",
+          "sha256": "9da4d7676bfcadb1c3fdfbff796e6257dadf82d26ec05be7717c79b2b13a1c4e"
+        },
+        {
+          "path": "decoder_gs.safetensors",
+          "sha256": "3087eb8ee5763206a53e4078acf2a1bf382dab5147d407ec13a2cf39c04cc544"
+        },
+        {
+          "path": "denoiser.safetensors",
+          "sha256": "ded2cacf671bf3978ebc62729087abdbd318ef4752e6805b4c9fc8ffa51fe716"
+        }
+      ],
+      "started_at": "2026-11-19T06:28:00.512123+00:00",
+      "finished_at": "2026-11-19T06:31:04.065781+00:00",
+      "free_bytes_after": 2792498089984
+    },
+    {
+      "repo_id": "facebook/vjepa2-vitg-fpc64-384",
+      "revision_sha": "12ca91694b230e0d4b5b0078af6f4ae1d51e933d",
+      "source_manifest": "local-discovered/facebook__vjepa2-vitg-fpc64-384.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 4,
+      "files_verified": 4,
+      "source_bytes": 4138316896,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 4
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "861d9fafec3cf764f01f00ed26bf53bda531116cc6b67d7dbadd80e8be814e9b"
+        }
+      ],
+      "started_at": "2026-11-19T06:31:04.220482+00:00",
+      "finished_at": "2026-11-19T06:35:12.477618+00:00",
+      "free_bytes_after": 2788359761920
+    },
+    {
+      "repo_id": "Qwen/Qwen3-VL-2B-Instruct",
+      "revision_sha": "89644892e4d85e24eaac8bacfd4f463576704203",
+      "source_manifest": "local-discovered/Qwen__Qwen3-VL-2B-Instruct.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 11,
+      "files_verified": 11,
+      "source_bytes": 4266647442,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 11
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "7de1838c87a5349b016c26a1c3f7d2bc400a3d485f95ef39a7059ffd734977a0"
+        }
+      ],
+      "started_at": "2026-11-19T06:35:12.601393+00:00",
+      "finished_at": "2026-11-19T06:39:36.422112+00:00",
+      "free_bytes_after": 2784093097984
+    },
+    {
+      "repo_id": "boltz-community/boltz-2",
+      "revision_sha": "6fdef46d763fee7fbb83ca5501ccceff43b85607",
+      "source_manifest": "local-discovered/boltz-community__boltz-2.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 3,
+      "files_verified": 3,
+      "source_bytes": 4348700663,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 1,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 3
+      },
+      "weight_files_sha256": [
+        {
+          "path": "boltz2_aff.ckpt",
+          "sha256": "dcc5cd3722b1c9eaa34267e4ae32f55cbbf1963f4c19319381ccfa30fdd2ca9e"
+        },
+        {
+          "path": "boltz2_conf.ckpt",
+          "sha256": "090e82ac8c92f5e943fa1b39e7410a44027bea7243c0bbb3caa67a77fc1428e1"
+        }
+      ],
+      "started_at": "2026-11-19T06:39:36.572118+00:00",
+      "finished_at": "2026-11-19T06:45:32.113552+00:00",
+      "free_bytes_after": 2779744391168
+    },
+    {
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "revision_sha": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "source_manifest": "local-discovered/Qwen__Qwen3-TTS-12Hz-1.7B-VoiceDesign.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 4520162313,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "391e8db219f292c515297cdceeb43e4eae67cdde35fa57e79a6a8a532fca0522"
+        },
+        {
+          "path": "speech_tokenizer/model.safetensors",
+          "sha256": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258"
+        }
+      ],
+      "started_at": "2026-11-19T06:45:32.302186+00:00",
+      "finished_at": "2026-11-19T06:52:29.526530+00:00",
+      "free_bytes_after": 2775224201216
+    },
+    {
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+      "revision_sha": "fd4b254389122332181a7c3db7f27e918eec64e3",
+      "source_manifest": "local-discovered/Qwen__Qwen3-TTS-12Hz-1.7B-Base.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 4544228181,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "38fc7fc51c5e776e840414b6fd443962e9411b9654888fd7913e4da643cb857c"
+        },
+        {
+          "path": "speech_tokenizer/model.safetensors",
+          "sha256": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258"
+        }
+      ],
+      "started_at": "2026-11-19T06:52:29.635752+00:00",
+      "finished_at": "2026-11-19T06:59:13.812837+00:00",
+      "free_bytes_after": 2770679947264
+    },
+    {
+      "repo_id": "Qwen/Qwen3-ASR-1.7B",
+      "revision_sha": "7278e1e70fe206f11671096ffdd38061171dd6e5",
+      "source_manifest": "local-discovered/Qwen__Qwen3-ASR-1.7B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 11,
+      "files_verified": 11,
+      "source_bytes": 4703112789,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 11
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "a4cd1f1a04d90b757dc7f7dd26254e69a013b19e80efe590a83c6a3bde8608d6"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "6e0b9d9e09e2e0238e7ef3cc8a484ab387e91b90f1900bedf88bc92d7929ccfc"
+        }
+      ],
+      "started_at": "2026-11-19T06:59:13.992529+00:00",
+      "finished_at": "2026-11-19T07:05:27.039077+00:00",
+      "free_bytes_after": 2765976805376
+    },
+    {
+      "repo_id": "maya-research/maya2-native",
+      "revision_sha": "87a83efdd6551e038246b6b37836a6264713eec3",
+      "source_manifest": "local-discovered/maya-research__maya2-native.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 13,
+      "files_verified": 13,
+      "source_bytes": 5021109670,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 13
+      },
+      "weight_files_sha256": [
+        {
+          "path": "backbone/tokenizer.json",
+          "sha256": "26c51f9b772f9084ed6bdeabc44b7c15397c12966bfa3e1c09b025e82f4fdbaf"
+        },
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "a6f3488abb925ec758a3e6908ffa105f4b2db93662e1471be6819111196c7f8c"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "5e3bfab00767a3035a93f527c6021e7ab01988d63ddf137ccbf1edb13e4d75d2"
+        }
+      ],
+      "started_at": "2026-11-19T07:05:27.220227+00:00",
+      "finished_at": "2026-11-19T07:15:21.517364+00:00",
+      "free_bytes_after": 2760955666432
+    },
+    {
+      "repo_id": "ibm-granite/granite-speech-5.0-2b",
+      "revision_sha": "ec49ca6b1a5e7e9176127e09cb303ab78cbacdf7",
+      "source_manifest": "local-discovered/ibm-granite__granite-speech-5.0-2b.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 14,
+      "files_verified": 14,
+      "source_bytes": 5047707858,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 14
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "4151269881d2dd825d45ca75d6552b2a20e6e39d0934ed84c4db826af8bf6d88"
+        },
+        {
+          "path": "out_llm.safetensors",
+          "sha256": "a6b638a913b2dcf835dfbc621d9780d2557ac635a5c4718d1ffe64d39beb8ada"
+        }
+      ],
+      "started_at": "2026-11-19T07:15:21.686693+00:00",
+      "finished_at": "2026-11-19T07:25:10.305202+00:00",
+      "free_bytes_after": 2755907932160
+    },
+    {
+      "repo_id": "meta-models/Muse-Glimmer-30B-assistant",
+      "revision_sha": "c676cce91658f9568aaf264a416211e2782735b7",
+      "source_manifest": "local-discovered/meta-models__Muse-Glimmer-30B-assistant.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 4,
+      "files_verified": 4,
+      "source_bytes": 5112006576,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 4
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "fd88d337eb84f8d0e6ba33a7684d7efa6722d4460ba4d6badca9699418392a84"
+        }
+      ],
+      "started_at": "2026-11-19T07:25:10.491426+00:00",
+      "finished_at": "2026-11-19T07:36:19.776791+00:00",
+      "free_bytes_after": 2750795911168
+    },
+    {
+      "repo_id": "facebook/esm2_t33_650M_UR50D",
+      "revision_sha": "08e4846e537177426273712802403f7ba8261b6c",
+      "source_manifest": "local-discovered/facebook__esm2_t33_650M_UR50D.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 5214618801,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "a08adabb949fa67ad3c14b509d04fd60368b35007b0095e3358f81200c4f4db0"
+        },
+        {
+          "path": "tf_model.h5",
+          "sha256": "3110b0ee07a47362ff90dc4d780b12287e06f2a09f56c8e117c4aed089fc96b8"
+        }
+      ],
+      "started_at": "2026-11-19T07:36:19.958726+00:00",
+      "finished_at": "2026-11-19T07:43:34.532919+00:00",
+      "free_bytes_after": 2745581277184
+    },
+    {
+      "repo_id": "nvidia/RFD4-Proteina",
+      "revision_sha": "5ec66c399bf0b48727ab24e6b298dcf33864fa07",
+      "source_manifest": "local-discovered/nvidia__RFD4-Proteina.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "bsd-3-clause",
+      "files_total": 17,
+      "files_verified": 17,
+      "source_bytes": 5236405470,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 13,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 17
+      },
+      "weight_files_sha256": [
+        {
+          "path": "adapter/adapter_model.safetensors",
+          "sha256": "3b0762a73b543dfd88958267ba93a729fd91b31f2e18dba2d34c302260f50402"
+        },
+        {
+          "path": "base/model.safetensors",
+          "sha256": "10e90a76e3b09c94a700d2f67e89ed660af7f3018e3f2209b5d52f24d00fbd39"
+        },
+        {
+          "path": "model.safetensors",
+          "sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0"
+        },
+        {
+          "path": "transformers/model.safetensors",
+          "sha256": "e753bed3e506f5f907276c30e8bf711df6c74b05a1cadecd643973867d71cdb7"
+        }
+      ],
+      "started_at": "2026-11-19T07:43:34.751008+00:00",
+      "finished_at": "2026-11-19T07:50:23.878520+00:00",
+      "free_bytes_after": 2740344827904
+    },
+    {
+      "repo_id": "microsoft/VibeVoice-1.5B",
+      "revision_sha": "c00898d257e6b46004e3e2866a47534085fb685a",
+      "source_manifest": "local-discovered/microsoft__VibeVoice-1.5B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 7,
+      "files_verified": 7,
+      "source_bytes": 5408335462,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 7
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00003.safetensors",
+          "sha256": "c5f0a61ddeaeb028e3af540ba4dee7933ad30f9f30b6e1320dd9c875a2daa033"
+        },
+        {
+          "path": "model-00002-of-00003.safetensors",
+          "sha256": "81c3891f7b2493eb48a9eb6f5be0df48d4f1a4bfd952d84e21683ca6d0bf7969"
+        },
+        {
+          "path": "model-00003-of-00003.safetensors",
+          "sha256": "cb6e7e5e86b4a41fffbe1f3aaf445d0d50b5e21ed47574101b777f77d75fa196"
+        }
+      ],
+      "started_at": "2026-11-19T07:50:24.061756+00:00",
+      "finished_at": "2026-11-19T07:58:19.247319+00:00",
+      "free_bytes_after": 2734936473600
+    },
+    {
+      "repo_id": "deepseek-ai/DeepSeek-OCR-2",
+      "revision_sha": "aaa02f3811945a91062062994c5c4a3f4c0af2b0",
+      "source_manifest": "local-discovered/deepseek-ai__DeepSeek-OCR-2.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 9,
+      "files_verified": 9,
+      "source_bytes": 6788986097,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 8,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 9
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-000001.safetensors",
+          "sha256": "d8ff67a424ba6f4dd077885eb9d6a05d2537e76fe5491f0e2a9b712f8c8870fa"
+        }
+      ],
+      "started_at": "2026-11-19T07:58:19.429350+00:00",
+      "finished_at": "2026-11-19T08:11:13.066923+00:00",
+      "free_bytes_after": 2728147460096
+    },
+    {
+      "repo_id": "ibm-granite/granite-4.1-3b-llmon-preview",
+      "revision_sha": "55a14cac002854bb64c7f465c30da29209b170c8",
+      "source_manifest": "local-discovered/ibm-granite__granite-4.1-3b-llmon-preview.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 7,
+      "files_verified": 7,
+      "source_bytes": 7326709548,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 6,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 7
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "1b3bca7852237cd0d23d0b71c3e809231568425f66ce4005b3cdad1e992af3dc"
+        }
+      ],
+      "started_at": "2026-11-19T08:11:13.234321+00:00",
+      "finished_at": "2026-11-19T08:25:34.178625+00:00",
+      "free_bytes_after": 2720820736000
+    },
+    {
+      "repo_id": "higurashi-ai/Haru-4B",
+      "revision_sha": "8d6e83bcd3701a76fc27a764965665da1df7da78",
+      "source_manifest": "local-discovered/higurashi-ai__Haru-4B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 10560110179,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "ad2c3534ef6bd88525e22e5da3ac4fb739368406bf3b1c852cbafbade647c0fa"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523"
+        }
+      ],
+      "started_at": "2026-11-19T08:25:34.407192+00:00",
+      "finished_at": "2026-11-19T08:46:51.699502+00:00",
+      "free_bytes_after": 2710260613120
+    }
+  ],
+  "notes": [
+    "Local absolute paths, usernames and credentials are intentionally omitted.",
+    "A HOLD entry means no payload was acquired for that model.",
+    "Publisher LFS SHA-256 compared for weight files; ordinary Git blobs compared by Git blob SHA-1; 'size-only' means no publisher hash existed."
+  ]
+}
