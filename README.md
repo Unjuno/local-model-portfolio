@@ -1,5 +1,7 @@
 # Local Model Portfolio
 
+**R119｜現行v49、保存すべき新しい原本を確定（2026-11-19）**：正式[202/155（SELECT53・CONDITIONAL102）](catalog/effective-portfolio-2026-11-19-v49.json)、v48の201資産を全件不変更で[SenseNova-Loop-9Bの独立したLoop 9B学習成果1件](catalog/revisions/v49-2026-11-19.json)を条件付き追加（公式はauto Gated／作者の公開BF16 GGUFとmmprojは非Gated）。[R119最新調査・取得実績53件VERIFIED報告・選定交換と規制一次資料](docs/strategy/119-v49-acquisition-firstwave-53-ledger-and-regulatory-review.md)／[今後6学習結果・公開配布元7ソース・258.965GBの固定ファイル](queues/proposed-v49-r119-next7-public-source-entries.json)／[SenseNova配布元SHAと不一致のPreview設定除外](manifests/drafts/r117-2026-11-19-sensenova-loop9b-public-bf16-master-and-official-gated.json)／[R119 source対応Windows取得器](scripts/download_r115_windows.py)・[無通信テスト](tests/test_r119_public_firstwave.py)。LFM3の商用利用条件、MOSS codecの外部依存、推論コード実行は別ゲート。過去の53件/579ファイル/270.836GBは取得台帳報告であり今回のDドライブ再ハッシュではない。新規実重みDL0、Gated回避0、ownerのDを未検証、明示的なsource scope承認なしに実行不可。
+
 **R117｜取得実績を反映した次期保存8資産を確定（2026-11-19）**：[最新取得台帳の53モデル・579ファイル・270.836GBのVERIFIED報告と全154件の差分監査](catalog/decisions/2026-11-19-r117-all154-acquisition-gap-and-next-wave.json)／[未報告の6モデル＋2データセット、188ファイル・上流SHA48件・169.094GBの固定source](queues/proposed-v48-r117-next-wave-eight-source-pinned.json)／[選定順位・容量・10/10テスト・注意事項](docs/strategy/117-v48-154-acquisition-reconciliation-next-eight-originals.md)。取得報告53・Gated保留1・取得報告なし100。R116文書の22件は古い報告値。最優先は所有者Dドライブの再ハッシュとR115原本3スコープの差分確認であり、今回実重みDL0、承認キュー0。v48 201/154維持。
 
 
