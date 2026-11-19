@@ -1,5 +1,8 @@
 # Local Model Portfolio
 
+**現行v56・R130（2026-11-20）｜小型無検閲の独立原本2件を正式CONDITIONAL追加**：[v56 211登録・164有効（SELECT53・CONDITIONAL111）](catalog/effective-portfolio-2026-11-20-v56.json)／[FrostWolf LFM3-1.7B BF16 13ファイル3.476GBとPhala Qwen3.8 rank3 LoRA 7ファイル13.035MBの不変原本](manifests/drafts/r130-2026-11-20-frostwolf-and-phala-originals-fixed.candidate.json)／[v56選定・系譜・権利審査とR129訂正](docs/strategy/130-v56-public-uncensored-selection-source-and-rights.md)／[R130機械可読判断](catalog/decisions/2026-11-20-r130-v56-uncensored-original-selection.json)。旧209件不変更、親LFM元重みとFrostWolfはSHAが異なる編集済み原本。PhalaのLoRAはconfig内で親Qwen revisionを明示しているが、本人HDD上の親の存在・SGLang互換性は未検証。LFM Open License年商制限とAlpaca由来データの権利審査を維持。**取得承認0、Gated回避0、実モデルDL0、既存削除0。**
+
+
 **R128｜現行v54・取得を開始できる最小4資産に絞り込み（2026-11-20）**：[2学習済み原本＋2評価データ・101ファイル・6.127GBの不変source一覧](queues/proposed-v54-r128-first-four-delta-source.json)／[61取得報告・Gated1・未報告98の160全件監査とREMORYのQwen訓練親未保存を明示](catalog/decisions/2026-11-20-r128-v54-live-ledger61-and-parent-gap.json)／[取得優先順位・承認手順・71/71無通信テスト](docs/strategy/128-v54-first-four-source-owner-approval-and-remory-parent.md)／[Windows D向け取得器](scripts/download_r115_windows.py)・[未承認の一括レビュー用テンプレート生成器](scripts/prepare_owner_scope_approval.py)。v54 207登録/160有効は維持、親依存REMORYは現物Qwen親SHAまでoffline-readyでない。所有者Dドライブ未接続、正式承認0、今回の重み取得0。
 
 
