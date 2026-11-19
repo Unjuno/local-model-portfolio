@@ -5,7 +5,9 @@ Usage:
   py -3 -m pip install --upgrade huggingface_hub
   py -3 scripts/download_r115_windows.py                    # read-only PLAN
   py -3 scripts/download_r115_windows.py --dry-run          # read-only PLAN
-  py -3 scripts/download_r115_windows.py --execute --max-models 1
+  py -3 scripts/download_r115_windows.py --execute --max-models 1 --approval-file "owner-approved.json"
+  py -3 scripts/download_r115_windows.py --manifest queues/proposed-v49-r119-next7-public-source-entries.json --dry-run
+  py -3 scripts/download_r115_windows.py --manifest queues/proposed-v49-r119-next7-public-source-entries.json --execute --approval-file "owner-approved-r119.json"
   py -3 scripts/download_r115_windows.py --execute --recover-prior
 
 Transfers require BOTH an explicit --execute invocation on the owner's Windows
@@ -56,11 +58,18 @@ def validate_relpath(name: str) -> tuple[str, ...]:
 
 
 def validate_manifest(manifest: dict) -> list[dict]:
-    if manifest.get("kind") != "R115_CONSOLIDATED_CORRECTED_ARCHIVE_SOURCE_AND_UNATTENDED_PREFLIGHT":
-        raise ValueError("Not an R115 master-source manifest")
+    profiles = {
+        "R115_CONSOLIDATED_CORRECTED_ARCHIVE_SOURCE_AND_UNATTENDED_PREFLIGHT":
+            (16, 10, {"apache-2.0"}),
+        "R119_CONSOLIDATED_CORRECTED_UNREPORTED_FIRST_WAVE":
+            (7, 7, {"apache-2.0", "mit"}),
+    }
+    if manifest.get("kind") not in profiles:
+        raise ValueError("Unsupported fixed-publisher source manifest")
+    expected_entries, expected_eligible, accepted_licenses = profiles[manifest["kind"]]
     items = manifest.get("entries")
-    if not isinstance(items, list) or len(items) != 16:
-        raise ValueError("Expected 16 candidate entries")
+    if not isinstance(items, list) or len(items) != expected_entries:
+        raise ValueError(f"Expected {expected_entries} source entries")
     output = []
     seen_repos = set()
     for model in items:
@@ -101,13 +110,13 @@ def validate_manifest(manifest: dict) -> list[dict]:
         if size_sum != model.get("source_bytes"):
             raise ValueError(f"Publisher source size mismatch: {source}")
         if model.get("eligible_for_unattended_archive_after_local_preflight"):
-            if model.get("gated") or model.get("license_metadata") != "apache-2.0":
-                raise ValueError(f"Unexpected access/license for first-wave: {source}")
+            if model.get("gated") or model.get("license_metadata") not in accepted_licenses:
+                raise ValueError(f"Unexpected gated access or unsupported license: {source}")
             if model.get("acquisition_decision") != "GO_AFTER_LOCAL_PREFLIGHT":
                 raise ValueError(f"Unexpected first-wave decision: {source}")
             output.append(model)
-    if len(output) != 10:
-        raise ValueError("Expected exactly 10 locally-preflighted candidates")
+    if len(output) != expected_eligible:
+        raise ValueError(f"Expected exactly {expected_eligible} locally-preflighted candidates")
     return sorted(output, key=lambda item: item["order"])
 
 
