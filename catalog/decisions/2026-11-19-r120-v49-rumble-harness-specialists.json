@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "kind": "R120_V49_ARCHIVE_CANDIDATE_DECISIONS_AFTER_CONCURRENT_V49_REBASE",
+  "date": "2026-11-19",
+  "base_revision": "v49-20261119",
+  "base_asset_count": 202,
+  "base_active_count": 155,
+  "official_added_in_v49": "sensenova/SenseNova-Loop-9B",
+  "newly_formal_added_in_this_commit": 0,
+  "current_gated_active": 21,
+  "current_approved": 0,
+  "decisions": [
+    {
+      "repo_id": "Reson8/Rumble-2-Flash",
+      "decision": "FORMAL_NEXT_REVISION_CANDIDATE_SOURCE_FIXED",
+      "unique_capability": "45 language ASR ~508.63M main elements plus separately learned CTC head; independent publisher checkpoint",
+      "negative_evidence": "Publisher H200 vLLM WER is not owner hardware; exact CTC learned tensor census and ABI pending",
+      "source": "https://huggingface.co/blog/rumble-2-flash",
+      "approved_for_download": false,
+      "local_full_sha_verified_in_this_turn": false
+    },
+    {
+      "repo_id": "harness-hub/Qwen3.8-27B-pi-adapted",
+      "decision": "P1_FREEZE_ADAPTER_AND_BASE",
+      "unique_capability": "RL-trained pi coding agent LoRA for selected Qwen3.8-27B, author claims tool savings",
+      "negative_evidence": "No exact immutable adapter SHA/bytes or parent revision; README pi alias must be reconciled",
+      "source": "https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted",
+      "approved_for_download": false,
+      "local_full_sha_verified_in_this_turn": false
+    },
+    {
+      "repo_id": "sensenova/SenseNova-Loop-9B",
+      "decision": "ALREADY_SELECTED_V49_GATED_RIGHTS_P0",
+      "unique_capability": "2026-11-17 publisher 9B multi-modal looped 32/56 layers two-stream mHC; distinct from ARLoop",
+      "negative_evidence": "Current official base gated; access/required MTP vision full original and custom backend unverified",
+      "source": "https://huggingface.co/sensenova/SenseNova-Loop-9B",
+      "approved_for_download": false,
+      "local_full_sha_verified_in_this_turn": false
+    },
+    {
+      "repo_id": "nvidia/Nemotron-Labs-Sigma-distill-spec-3B",
+      "decision": "HOLD_LICENSE_ABI",
+      "unique_capability": "Continuous diffusion self-speculation plus autoregressive verifier 4.2367B; fixed 18 source files",
+      "negative_evidence": "Other license, custom code and GPU ABI unresolved",
+      "source": "https://huggingface.co/nvidia/Nemotron-Labs-Sigma-distill-spec-3B",
+      "approved_for_download": false,
+      "local_full_sha_verified_in_this_turn": false
+    },
+    {
+      "repo_id": "apple/FastFrames-S",
+      "decision": "HOLD_UPSTREAM_LICENSE",
+      "unique_capability": "1.3B fast video finetuned from Wan2.1",
+      "negative_evidence": "apple-amlr and upstream licensing; exact selected source and runtime missing",
+      "source": "https://huggingface.co/apple/FastFrames-S",
+      "approved_for_download": false,
+      "local_full_sha_verified_in_this_turn": false
+    },
+    {
+      "repo_id": "apple/FastFrames-L",
+      "decision": "HOLD_HIGH_BYTES_RESTRICTIONS",
+      "unique_capability": "14B fast video posttraining on Wan2.1",
+      "negative_evidence": "174GB publisher repo includes intermediate models; source minimality and quality delta lacking",
+      "source": "https://huggingface.co/apple/FastFrames-L",
+      "approved_for_download": false,
+      "local_full_sha_verified_in_this_turn": false
+    },
+    {
+      "repo_id": "meituan-longcat/LongCat-Video-Avatar-1.6",
+      "decision": "HOLD_PARENT_AND_LORA_CLOSURE",
+      "unique_capability": "Audio-driven video model with learned DMD and OPSD LoRAs",
+      "negative_evidence": "LongCat parent model, tokenizer/audio encoders, INT8 optional are not fully deduplicated",
+      "source": "https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.6",
+      "approved_for_download": false,
+      "local_full_sha_verified_in_this_turn": false
+    },
+    {
+      "repo_id": "perplexity-ai/pplx-decider-v1.3",
+      "decision": "HOLD_SAME_TASK_OVERLAP",
+      "unique_capability": "26B independently tuned decision classification relative to existing 4B Flash",
+      "negative_evidence": "Source and identical-task benefit vs Flash and Kanana unknown",
+      "source": "https://huggingface.co/perplexity-ai/pplx-decider-v1.3",
+      "approved_for_download": false,
+      "local_full_sha_verified_in_this_turn": false
+    }
+  ],
+  "source_lock_for_next": {
+    "repo_id": "Reson8/Rumble-2-Flash",
+    "publisher_revision_sha": "a0c34287229103b706c670d70791683e34379732",
+    "complete_source_file_count": 19,
+    "publisher_source_bytes": 1385998807,
+    "publisher_lfs_sha256_files": 2,
+    "source_manifest": "manifests/drafts/r115-v48-rumble2-flash-and-nemotron-sigma-original.candidate.json",
+    "model_weight_file": {
+      "path": "model.safetensors",
+      "bytes": 1017318776,
+      "sha256": "6dc35af40ad150e50767382a9d401eb9af9c3a1ad4e915c61fe05aecfa79a3e1"
+    },
+    "extra_ctc_learned_file": {
+      "path": "ctc/ctc_head.safetensors",
+      "bytes": 357476284,
+      "sha256": "c13befc1c60a8410185a730cdccefc825df12ac8af75d4411fdff8106291ede7"
+    },
+    "current_hf_main_elements": 508631552,
+    "external_learned_ctc_exact_total_verified": false,
+    "all_raw_files_have_publisher_git_blob_sha1": true,
+    "hypothetical_1bit_upper_bound_total": 3368441824,
+    "model_download_authorized": false
+  },
+  "existing_acquisition_ledger": {
+    "path": "catalog/execution/2026-11-19-acquisition-ledger.json",
+    "reported_verifications": 53,
+    "reported_file_count": 579,
+    "reported_source_bytes": 270835576267,
+    "independent_owner_disk_rehash_this_round": false
+  },
+  "current_priorities": {
+    "first": "Do not repeat acquisitions on 53 publisher hash-matched reported models without physical audit",
+    "second": "Fix SenseNova v49 individual gated rights and full dependency closure",
+    "third": "Rumble 19 source files 1.386GB as next distinct ASR formal promotion, with CTC head",
+    "fourth": "Freeze harness-hub LoRA exact adapter and base model revisions",
+    "fifth": "Review Apple/video/Sigma only if full rights, bytes and non-overlap clear"
+  },
+  "legal_sources": {
+    "us_bis": "https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology",
+    "eu_ai_act": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/how-does-ai-act-apply-general-purpose-ai-models-released-open-source",
+    "no_confirmed_general_local_weight_possession_ban": true,
+    "exa": "HTTP_402_CREDITS_EXHAUSTED"
+  },
+  "H": "Publisher independently trained ASR with an extra CTC head adds a new learned outcome per 1.386GB rather than merely duplicating quantization.",
+  "T": "Check all 19 pinned files and source hashes, then same hardware clock and batch1 30+ Japanese and English noisy utterances vs Whisper/Qwen ASR.",
+  "D": "PASS publisher source scope; UNCERTAIN complete learned tensor census, license owner permission and restored runtime; FAIL on unauthorized download or mismatch.",
+  "C": "Rumble may be practically dominated by a selected same-size ASR and custom CTC may break offline.",
+  "U": "H200 large batch publisher results, real hardware and legal scope unknown, no independent u_c/k estimate."
+}
