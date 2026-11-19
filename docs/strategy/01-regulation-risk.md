@@ -702,3 +702,15 @@ Meta公式元`model.safetensors`：3,362,432,800 byte、SHA-256 `3e1d4d18b9bfa9f
 ## 19.〈次に考える問い〉
 
 **今のP0で最小限必要なファイルセットを固定したとき、フルウェイト・蒸留重み・単なる量子化・同一Codec／Encoderをどこまで合法に共有でき、3.8TBの保存枠の内訳を確定できるか。** 次の監査では本体だけでなく、同一SHAの共有物・再現実行に必要なコードと契約の版まで束ねる。
+
+
+## R121追補（2026-11-19）：旧v9の132件から現行main v49の202件へ評価範囲を切り分ける
+
+**スコープ明確化**：この文書の主表は基準コミット`6e9389c97d24528df97e4b14a6bc772780141fd3`の**歴史的v9・132資産**に対する監査である。2026-11-19時点の`main`正本`catalog/CURRENT.json`は`v49-20261119`（202登録、155有効）。従って旧132件表の優先順位は**最新202件の完全再審査ではない**。後続差分と実際の原本source順位は[専用R121調査](121-v49-strict150b-ledger-aware-download-selection-2026-11-19.md)および[R121判定JSON](../../catalog/decisions/2026-11-19-r121-v49-strict150b-ledger-aware-selection.json)に分離して固定した（当ブランチだけの提案、main正本は無変更）。
+
+- **現在の台帳報告**：53モデル・579ファイル・270,835,576,267 byteの過去実行VERIFIED報告があるが、本調査で所有者Dの再ハッシュはしていない。正式承認キューは0件。既報告のZONOS3軽量版、Interpretic/RVN Q4を原本一式の取得済みと誤認しない。
+- **厳格150B制約と現行v49の衝突**：v49に残る量子化例外審査にかかわらず、`orcarouter/Qwen3.8-Flash-Next-Uncensored`約180Bと`mistralai/Mistral-Large-4-1T-A52B`約1.05Tは本調査で**絶対除外**。総数不明22モデル、うち有効9モデルは取得準備禁止。MoEはactivatedでなく全パラメータ。
+- **次の固定source候補**：Rumble-2-Flash新規候補1件＋既存v49で未完成の原本6学習成果。R119公開source7件258,965,078,216 byteとRumble1,385,998,807 byteの候補集合は**260,351,077,023 byte**。これは新たな容量予約ではない（v49で計上済みの形式・依存を含む）。実際のD空き・streaming cache・完全オフライン復元・本人権利未検証なので取得承認なし。
+- **一次政策動向**：米BISの2026-11-16遠隔高度計算利用規則（https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology）、欧州委員会のGPAI例外FAQ（https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/how-does-ai-act-apply-general-purpose-ai-models-released-open-source）、HFのGated機構（https://huggingface.co/docs/hub/models-gated）を参照。個別モデル規制の確率を作らず、権利者の停止と公法上の禁止を混同しない。Exa検索は同日HTTP402で利用枠超過、公式一次資料・接続HFアプリで代替した。
+
+**ERROR CHECK**：v9 132資産は不変更／最新`main` 202件は参照専用／次の研究候補は学習成果7件（source8、コード1は学習成果に数えない）／150B絶対除外2／パラメータ不明22（有効9）／本人承認0／今回の重み取得0。
