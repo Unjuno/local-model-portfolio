@@ -2,7 +2,7 @@
 
 ## 1.〈本論〉確定したのは取得元と保存範囲であり、ダウンロード許可ではない
 
-対象正本：`catalog/CURRENT.json` → **v50（203登録、156有効）**。旧R117で最優先A群に入れた5モデルについて、Hugging Face**完全40桁revision**の`/tree/{revision}?recursive=true`を再照合し、重み・索引・トークナイザー・パイプライン設定・配布者コード等のファイル名とbyte、LFS SHA256、非LFS Git blob SHA1を[全85ファイルの研究用候補](../../manifests/drafts/r122-v50-five-originals-and-dependency-sources.candidate.json)に記録した。
+**調査開始時の正本：v50（203登録、156有効）**。同日の後続更新で`catalog/CURRENT.json`は**v51（204登録、157有効）**へ進み、`RadixArk/DaisyRose-27B`が追加された。**このR122はv50固定原本のsource監査であり、現行ポインタをv50へ戻さない**。v51の既存5モデル選定（RWKV/iLLaDA/TRELLISはSELECT、GroundGUI/ACEはCONDITIONAL）は変わらない。旧R117で最優先A群に入れた5モデルについて、Hugging Face**完全40桁revision**の`/tree/{revision}?recursive=true`を再照合し、重み・索引・トークナイザー・パイプライン設定・配布者コード等のファイル名とbyte、LFS SHA256、非LFS Git blob SHA1を[全85ファイルの研究用候補](../../manifests/drafts/r122-v50-five-originals-and-dependency-sources.candidate.json)に記録した。
 
 | 保存対象原本 | publisher full source (byte) | ファイル／LFS SHA256件数 | source判断とSTOP |
 | --- | ---: | ---: | --- |
