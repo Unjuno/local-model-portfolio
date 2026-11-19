@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 54 (verified 53, partial 0, failed 0, held 1)
-- Verified files: 579
-- Verified source bytes: 270835576267
-- Minimum observed free bytes: 2710260613120 (200 GB floor maintained: True)
+- Models: 61 (verified 60, partial 0, failed 0, held 1)
+- Verified files: 674
+- Verified source bytes: 383164397463
+- Minimum observed free bytes: 2497939210240 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -63,6 +63,13 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `deepseek-ai/DeepSeek-OCR-2` | `aaa02f3811945a91062062994c5c4a3f4c0af2b0` | VERIFIED | 9/9 | apache-2.0 |
 | `ibm-granite/granite-4.1-3b-llmon-preview` | `55a14cac002854bb64c7f465c30da29209b170c8` | VERIFIED | 7/7 | apache-2.0 |
 | `higurashi-ai/Haru-4B` | `8d6e83bcd3701a76fc27a764965665da1df7da78` | VERIFIED | 5/5 | apache-2.0 |
+| `ResembleAI/chatterbox` | `5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18` | VERIFIED | 12/12 | mit |
+| `RWKV/RWKV7-7.2B-20260805` | `9e47155004fe9df0f2a8015efa9152595c9065be` | VERIFIED | 12/12 | apache-2.0 |
+| `microsoft/TRELLIS.2-4B` | `af44b45f2e35a493886929c6d786e563ec68364d` | VERIFIED | 21/21 | mit |
+| `GSAI-ML/iLLaDA-8B-Base` | `a1b5b5f8a31a3854a46205ee584178c04b45ec9a` | VERIFIED | 12/12 | apache-2.0 |
+| `OpenMOSS-Team/MOSS-TTS-v1.5` | `cdd3b911b1585e3f2dbc7775ef10f9926f58850a` | VERIFIED | 15/15 | apache-2.0 |
+| `PrentisAI/GroundGUI-8B` | `9db378189fddaabb5f6e347b9053858a392022ac` | VERIFIED | 16/16 | apache-2.0 |
+| `ACE-Step/acestep-v15-xl-turbo` | `d4a0b288b83ebb7e25a8c0b32c573c22e134e8ee` | VERIFIED | 7/7 | mit |
 
 Weight files were compared against publisher LFS SHA-256; ordinary Git blobs were compared by Git blob SHA-1. 'size-only' means no publisher hash existed.
 Gated models without verified owner entitlement were recorded as HOLD and no payload was acquired for them.

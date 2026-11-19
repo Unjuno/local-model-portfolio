@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "ledger_id": "2026-11-19-v48-execution",
-  "generated_at": "2026-11-19T08:54:46.408452+00:00",
+  "generated_at": "2026-11-19T16:39:46.466567+00:00",
   "canonical_revision": "v48-20261118",
   "source_plan": "queues/proposed-v48-r113-source-pinned-15.json",
   "policy": {
@@ -14,14 +14,14 @@
     "unclear_license": "HOLD"
   },
   "summary": {
-    "models_total": 54,
-    "models_verified": 53,
+    "models_total": 61,
+    "models_verified": 60,
     "models_partial": 0,
     "models_failed": 0,
     "models_held": 1,
-    "files_verified_total": 579,
-    "bytes_verified_total": 270835576267,
-    "minimum_free_bytes_observed": 2710260613120,
+    "files_verified_total": 674,
+    "bytes_verified_total": 383164397463,
+    "minimum_free_bytes_observed": 2497939210240,
     "minimum_free_floor_bytes": 200000000000,
     "free_floor_maintained": true
   },
@@ -1849,6 +1849,307 @@
       "started_at": "2026-11-19T08:25:34.407192+00:00",
       "finished_at": "2026-11-19T08:46:51.699502+00:00",
       "free_bytes_after": 2710260613120
+    },
+    {
+      "repo_id": "ResembleAI/chatterbox",
+      "revision_sha": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+      "source_manifest": "local-discovered/ResembleAI__chatterbox.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 10681443628,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 5,
+        "sha256-vs-publisher": 7
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "s3gen.safetensors",
+          "sha256": "2b78103c654207393955e4900aac14a12de8ef25f4b09424f1ef91941f161d4e"
+        },
+        {
+          "path": "s3gen_v3.safetensors",
+          "sha256": "4a46190f3dccc2230fbb3488a930bccc925862ee68f2662433dfcfe93ce6c2cb"
+        },
+        {
+          "path": "t3_23lang.safetensors",
+          "sha256": "5b2194350053f9fc01544e614d923f1e5c8cd785ba596acc142d3d1d8614908c"
+        },
+        {
+          "path": "t3_cfg.safetensors",
+          "sha256": "914cb1696f47527fe8852ca8f1fe1fa63cb34f76f9c715e84e067b744dd0da81"
+        },
+        {
+          "path": "t3_mtl23ls_v2.safetensors",
+          "sha256": "b1237586127ce98e7800a68e49938eb5092846862aabcb6e17b2fda7889a6c75"
+        },
+        {
+          "path": "t3_mtl23ls_v3.safetensors",
+          "sha256": "5abca8321ede76f8e61f1cc0d19aea6c946b28871017ce8726f8a69203f05953"
+        },
+        {
+          "path": "ve.safetensors",
+          "sha256": "f0921cab452fa278bc25cd23ffd59d36f816d7dc5181dd1bef9751a7fb61f63c"
+        }
+      ],
+      "started_at": "2026-11-19T08:46:51.904488+00:00",
+      "finished_at": "2026-11-19T09:09:52.913435+00:00",
+      "free_bytes_after": 2693740949504
+    },
+    {
+      "repo_id": "RWKV/RWKV7-7.2B-20260805",
+      "revision_sha": "9e47155004fe9df0f2a8015efa9152595c9065be",
+      "source_manifest": "local-discovered/RWKV__RWKV7-7.2B-20260805.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 14401662526,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00003.safetensors",
+          "sha256": "fff4b47785bf4628cff28dd4eedd98b541143bada5618a63c094146ebb044b29"
+        },
+        {
+          "path": "model-00002-of-00003.safetensors",
+          "sha256": "08b39a7e41fc8b2abc1a0c8e42686bf3da16fd076bcf64e9067fad402fd4012c"
+        },
+        {
+          "path": "model-00003-of-00003.safetensors",
+          "sha256": "afc3cf0d7fb5874f1cff0af595fb6402218d98aa0cb83f6605e54fa5a8fa3a7a"
+        }
+      ],
+      "started_at": "2026-11-19T09:09:53.449001+00:00",
+      "finished_at": "2026-11-19T10:06:36.952814+00:00",
+      "free_bytes_after": 2665176055808
+    },
+    {
+      "repo_id": "microsoft/TRELLIS.2-4B",
+      "revision_sha": "af44b45f2e35a493886929c6d786e563ec68364d",
+      "source_manifest": "local-discovered/microsoft__TRELLIS.2-4B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 21,
+      "files_verified": 21,
+      "source_bytes": 16237483525,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 9
+      },
+      "file_status_counts": {
+        "VERIFIED": 21
+      },
+      "weight_files_sha256": [
+        {
+          "path": "ckpts/shape_dec_next_dc_f16c32_fp16.safetensors",
+          "sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581"
+        },
+        {
+          "path": "ckpts/shape_enc_next_dc_f16c32_fp16.safetensors",
+          "sha256": "f37c5ff5b983b68e9946060000f09bc131f3e84318a2c8b7430a81e4b4636c41"
+        },
+        {
+          "path": "ckpts/slat_flow_img2shape_dit_1_3B_1024_bf16.safetensors",
+          "sha256": "07cd0596f634c5adc1890023d16023afc5eed02fb84b22bb23aff5bf0030fbbd"
+        },
+        {
+          "path": "ckpts/slat_flow_img2shape_dit_1_3B_512_bf16.safetensors",
+          "sha256": "ec5e0917ef9b7e25ad51dffc7d19687a42019871f94239f2fa7f86264c55b70f"
+        },
+        {
+          "path": "ckpts/slat_flow_imgshape2tex_dit_1_3B_1024_bf16.safetensors",
+          "sha256": "580401269059a339b8318ab9ced459a13ba63391721c83a6c383198c29e77686"
+        },
+        {
+          "path": "ckpts/slat_flow_imgshape2tex_dit_1_3B_512_bf16.safetensors",
+          "sha256": "8371aa1c5d13be79dcd5ddfd2cf3835e902e204dc34427169a1c702828e1a94d"
+        },
+        {
+          "path": "ckpts/ss_flow_img_dit_1_3B_64_bf16.safetensors",
+          "sha256": "ca01377c485bec418076d38ee80166d32dc776d744f2553b835cba1e97a7abf6"
+        },
+        {
+          "path": "ckpts/tex_dec_next_dc_f16c32_fp16.safetensors",
+          "sha256": "97ea69addea2ecd9312910f5f548234665eef51c088386180b7cd5b258645e3c"
+        },
+        {
+          "path": "ckpts/tex_enc_next_dc_f16c32_fp16.safetensors",
+          "sha256": "dd109f75f84b90fa411554ed6b0e4a87f430841163156fc0ebda2ebdc4752493"
+        }
+      ],
+      "started_at": "2026-11-19T10:06:37.905883+00:00",
+      "finished_at": "2026-11-19T10:57:31.007960+00:00",
+      "free_bytes_after": 2633702711296
+    },
+    {
+      "repo_id": "GSAI-ML/iLLaDA-8B-Base",
+      "revision_sha": "a1b5b5f8a31a3854a46205ee584178c04b45ec9a",
+      "source_manifest": "local-discovered/GSAI-ML__iLLaDA-8B-Base.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 16512890112,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 7,
+        "sha256-vs-publisher": 5
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "sha256": "c83160fce649d87fed6ffa4c543dc83bd87393e90ab93d4d4dcaea20af65b829"
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "sha256": "fe8eeca4cec7b85a05ded44b61044a25f8bb2f924fe85de082c42f2263e5e01a"
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "sha256": "8c08a73848b3046912ec5ea1de21f8ffb17518f6e2a563bf309ddc49cb142ba7"
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "sha256": "d15b88adf89bd0b59bd223ee44bc2b6b9cdabfd8d1b48e4efcab64cb204037a4"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "62dd8b84b725abc895c3c845fb2632e53d9ebaabfb49443f9c8a117dec8668c7"
+        }
+      ],
+      "started_at": "2026-11-19T10:57:31.359615+00:00",
+      "finished_at": "2026-11-19T11:58:08.382268+00:00",
+      "free_bytes_after": 2604564586496
+    },
+    {
+      "repo_id": "OpenMOSS-Team/MOSS-TTS-v1.5",
+      "revision_sha": "cdd3b911b1585e3f2dbc7775ef10f9926f58850a",
+      "source_manifest": "local-discovered/OpenMOSS-Team__MOSS-TTS-v1.5.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 15,
+      "files_verified": 15,
+      "source_bytes": 16995674217,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 5
+      },
+      "file_status_counts": {
+        "VERIFIED": 15
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "sha256": "749b82d07cebea77dd15af365e2efeb1dc0dd54537f7010795fdf42f520743a9"
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "sha256": "4d891c8adb8bf9c135e8a44cd9f003f1dbf8b09278ced48d5af1fe7d989efb39"
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "sha256": "111013e05174e67748443eafdd4d64c051292d0e5fce2cac23a16988b661eea1"
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "sha256": "951ee88cf85996ee5c39441ace6e50f52894adad5da42ad2314b9a9db7f940b8"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "cb3c8fa82993d515469c2800cc455bff4aaa3c4fed9da1f2b0c0668c304f335a"
+        }
+      ],
+      "started_at": "2026-11-19T11:58:08.816207+00:00",
+      "finished_at": "2026-11-19T12:58:08.416431+00:00",
+      "free_bytes_after": 2574110072832
+    },
+    {
+      "repo_id": "PrentisAI/GroundGUI-8B",
+      "revision_sha": "9db378189fddaabb5f6e347b9053858a392022ac",
+      "source_manifest": "local-discovered/PrentisAI__GroundGUI-8B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 16,
+      "files_verified": 16,
+      "source_bytes": 17550248700,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 14,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 16
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "fbaee7f2fd09150eb3b937732c803802974f5e45b2b6651fc1f101b4d190f265"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+        }
+      ],
+      "started_at": "2026-11-19T12:58:08.762029+00:00",
+      "finished_at": "2026-11-19T14:08:50.984410+00:00",
+      "free_bytes_after": 2537886396416
+    },
+    {
+      "repo_id": "ACE-Step/acestep-v15-xl-turbo",
+      "revision_sha": "d4a0b288b83ebb7e25a8c0b32c573c22e134e8ee",
+      "source_manifest": "local-discovered/ACE-Step__acestep-v15-xl-turbo.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 7,
+      "files_verified": 7,
+      "source_bytes": 19949418488,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 7
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "sha256": "e54a8413c981797312f53d512dec9944023d03f42f0740cbe86f62582cc27bdc"
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "sha256": "b45f788b6dc9f15957cfa3d9b403f25f3f64c5211ecaf18dda45b67ea6470664"
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "sha256": "a4f6bd572eab79cf5f3e4678796f904c6d6c33680a3e6ed09034d6de7cabea4d"
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "sha256": "a868b05493c73808408f58b33a903371bb2846b53c8b19bd7476991bc8837259"
+        }
+      ],
+      "started_at": "2026-11-19T14:08:51.707288+00:00",
+      "finished_at": "2026-11-19T15:22:18.851177+00:00",
+      "free_bytes_after": 2497939210240
     }
   ],
   "notes": [
