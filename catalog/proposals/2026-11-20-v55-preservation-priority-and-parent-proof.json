@@ -9,7 +9,8 @@
     "source_main_catalog_snapshot": "v55-20261120",
     "source_main_catalog_blob": "60b4c02a4a4eebd6e7c3c9c7d5a0fc8d912c0cca",
     "main_revision_when_last_checked": "v55-20261120",
-    "source_is_immutable_snapshot_not_automatic_latest": true
+    "source_is_immutable_snapshot_not_automatic_latest": true,
+    "current_v56_reconciliation_added": true
   },
   "baseline": {
     "registered_at_source_snapshot": 209,
@@ -97,7 +98,7 @@
       "source_files": 13,
       "source_bytes": 3475637066,
       "publisher_LFS_SHA256_files": 2,
-      "selection": "PROPOSE_ADOPT_CONDITIONAL_DISTINCT_PUBLIC_BF16_AFTER_OWNER_ACT_LICENSE_AND_CODE_REVIEW",
+      "selection": "ALREADY_ADOPTED_CONDITIONAL_MAIN_V56; PRIORITIZE_INDIVIDUAL_RIGHTS_AND_CODE_BEFORE_ACQUISITION",
       "reason": "Independent full BF16 ARA edited LFM3 checkpoint; no signed-in gated permission; 3.4756 GB is modest vs already staged models; not a conversion of Orca LFM3.",
       "rights": "LFM Open License 1.0 section 5 annual revenue threshold $10m for commercial legal entities. Exact user usage and custom runtime not approved.",
       "benchmark": "Author's 1/100 refusal after 120 selection trials is publisher-only and not general task quality or safety proof.",
@@ -115,7 +116,7 @@
       "revision": "588752bc181b999247f0e7df578bbc55d2b920e9",
       "source_files": 7,
       "source_bytes": 13034727,
-      "selection": "HOLD_RECONSTRUCTION_AND_ACT_RIGHTS",
+      "selection": "ALREADY_ADOPTED_CONDITIONAL_MAIN_V56; ACQUISITION_AND_OFFLINE_RESTORE_HOLD_FOR_PARENT_AND_DATASET_RIGHTS",
       "reason": "Distinct tiny rank-3 LoRA compared with already reported Q4 variants; no benefit in fetching a new merged 27B checkpoint without verified parent.",
       "adapter_config_parent_revision": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
       "publisher_reported_FP8_serving_revision": "017b9c7af6b5689d5dd426a76e0bc077eb5ca20a",
@@ -192,5 +193,36 @@
     "weights_newly_downloaded": false,
     "source_code_executed": false,
     "repo_main_mutated": false
+  },
+  "main_v56_reconciliation": {
+    "observed_on": "2026-11-20",
+    "canonical_revision_at_postcheck": "v56-20261120",
+    "registered": 211,
+    "active": 164,
+    "models": 185,
+    "datasets": 26,
+    "primary_revision_overlay_url": "https://github.com/Unjuno/local-model-portfolio/blob/main/catalog/revisions/v56-2026-11-20.json",
+    "already_formally_adopted": [
+      {
+        "repo_id": "FrostWolfAI/LFM3-1.7B-abliterated",
+        "decision": "CONDITIONAL",
+        "acquisition_permission": false
+      },
+      {
+        "repo_id": "PhalaCloud/Qwen3.8-27B-Uncensored-LoRA",
+        "decision": "CONDITIONAL",
+        "acquisition_permission": false,
+        "parent_and_training_dataset_rights_still_unverified": true
+      }
+    ],
+    "source_equivalence_with_canonical_v56": {
+      "main_source_path": "manifests/drafts/r130-2026-11-20-frostwolf-and-phala-originals-fixed.candidate.json",
+      "branch_source_path": "manifests/drafts/2026-11-20-frostwolf-phala-immutable-source.candidate.json",
+      "same_20_immutable_file_path_byte_and_all_nonnull_publisher_hashes": true,
+      "mismatches": 0,
+      "additional_reservation_bytes": 0
+    },
+    "supersession": "Prior v55's proposed canonical addition is now adopted on main v56. Do not create another addition; only close owner authorization, code and parent dependencies; no model download triggered.",
+    "approved_entries_currently": 0
   }
 }
