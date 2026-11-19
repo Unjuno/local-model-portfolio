@@ -79,36 +79,28 @@
       {
         "repo_id": "sensenova/SenseNova-Loop-9B-Preview",
         "revision": "89d7970926e215f8da61726700cd026ccffbb6cb",
-        "path": "config.json",
-        "bytes": 3619,
-        "publisher_git_blob_sha1": "e0930b4c88539ce58376c816ecb8dbb769f99f5b",
-        "official_publisher_git_blob_sha1": "f5c3a417c0b420931ce456574de47235ce604522",
-        "identical_to_official_current": false
-      },
-      {
-        "repo_id": "sensenova/SenseNova-Loop-9B-Preview",
-        "revision": "89d7970926e215f8da61726700cd026ccffbb6cb",
         "path": "chat_template.jinja",
         "bytes": 7756,
         "publisher_git_blob_sha1": "a585dec894e63da457d9440ec6aa7caa16d20860",
         "official_publisher_git_blob_sha1": "a585dec894e63da457d9440ec6aa7caa16d20860",
         "identical_to_official_current": true
-      },
-      {
-        "repo_id": "sensenova/SenseNova-Loop-9B-Preview",
-        "revision": "89d7970926e215f8da61726700cd026ccffbb6cb",
-        "path": "model.safetensors.index.json",
-        "bytes": 78575,
-        "publisher_git_blob_sha1": "03cd9a058efaecd695d53004e497a82a8b1db898",
-        "official_publisher_git_blob_sha1": "c9334922f51b95059ccd80c880b9ab3745a5962f",
-        "identical_to_official_current": false
       }
     ],
-    "dependency_bytes": 108918,
+    "dependency_bytes": 26724,
     "model_code_must_not_be_executed_automatically": true,
-    "identical_source_code_to_official": true
+    "identical_source_code_to_official": true,
+    "preview_specific_files_excluded": [
+      {
+        "path": "config.json",
+        "reason": "Preview-specific config/index does NOT match official release metadata, do not mix with official checkpoint"
+      },
+      {
+        "path": "model.safetensors.index.json",
+        "reason": "Preview-specific config/index does NOT match official release metadata, do not mix with official checkpoint"
+      }
+    ]
   },
-  "bundle_total_bytes": 19338233197,
+  "bundle_total_bytes": 19338151003,
   "archival_model_identity": "sensenova/SenseNova-Loop-9B",
   "why_unique": "New official trained 9B parameter looped multimodal model; 32 distinct decoder layers applied in 56 physical computations with 24 layer block repeated twice; not ordinary Qwen quant variant and not the separate Preview checkpoint.",
   "exclude_conversions": [
@@ -120,7 +112,8 @@
     "public GGUF BF16+mmproj may omit official MTP learnable header; do not claim full official original BF16 restoration",
     "official HF gated:auto needs legitimate per-user acceptance before original Safetensors retrieval; no bypass",
     "untrusted publisher custom Python requires static review, exact runtime and dependency lock",
-    "no local GPU inference or user D-drive access checked"
+    "no local GPU inference or user D-drive access checked",
+    "The official main config and checkpoint index differ from public Preview. Do not mix Preview config or index with official model weights; only code/chat_template are verified identical."
   ],
   "publication_disappearance_risk": "Observed owner-controlled auto Gated vs publicly accessible publisher GGUF; not proof of government model-weight ban",
   "download_approved": false,
