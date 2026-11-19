@@ -2,7 +2,7 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 66 (verified 53, partial 0, failed 0, held 13)
+- Models: 54 (verified 53, partial 0, failed 0, held 1)
 - Verified files: 579
 - Verified source bytes: 270835576267
 - Minimum observed free bytes: 2710260613120 (200 GB floor maintained: True)
@@ -63,18 +63,6 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `deepseek-ai/DeepSeek-OCR-2` | `aaa02f3811945a91062062994c5c4a3f4c0af2b0` | VERIFIED | 9/9 | apache-2.0 |
 | `ibm-granite/granite-4.1-3b-llmon-preview` | `55a14cac002854bb64c7f465c30da29209b170c8` | VERIFIED | 7/7 | apache-2.0 |
 | `higurashi-ai/Haru-4B` | `8d6e83bcd3701a76fc27a764965665da1df7da78` | VERIFIED | 5/5 | apache-2.0 |
-| `mistralai/Mistral-Small-4-119B-2603` | `a11f36bebf709121056b1dbcc943d1c6afbe494d` | HOLD_NO_EXPLICIT_APPROVED_MANIFEST | None/None | None |
-| `Qwen/Qwen3-Coder-Next` | `a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb` | HOLD_NO_EXPLICIT_APPROVED_MANIFEST | None/None | None |
-| `openai/gpt-oss-120b` | `b5c939de8f754692c1647ca79fbf85e8c1e70f8a` | HOLD_NO_EXPLICIT_APPROVED_MANIFEST | None/None | None |
-| `Qwen/Qwen3.5-35B-A3B-Base` | `0f0813072d2358973511097385626f21fcb6d422` | HOLD_NO_EXPLICIT_APPROVED_MANIFEST | None/None | None |
-| `OctoMed/OctoMed-32B` | `7b480e62a0f59139aa504e67d62974b83e360200` | HOLD_NO_EXPLICIT_APPROVED_MANIFEST | None/None | None |
-| `Nanbeige/Nanbeige4.3-33B` | `df919e1e2cf077a22204c78b6c826bf3db18bc08` | HOLD_NO_EXPLICIT_APPROVED_MANIFEST | None/None | None |
-| `EPFLiGHT/OLMo-2-32B-MeditronFO` | `04c6953977c3a9f913e3d08a6c23edaae6bd6459` | HOLD_NO_EXPLICIT_APPROVED_MANIFEST | None/None | None |
-| `allenai/Olmo-3-1125-32B` | `c2b61dae89a1ad10e4ad5653d0e46b590902607b` | HOLD_NO_EXPLICIT_APPROVED_MANIFEST | None/None | None |
-| `google/gemma-4-31B` | `5bbc2fb1c1b2c611d06e3d9f23c170ba21659d89` | HOLD_NO_EXPLICIT_APPROVED_MANIFEST | None/None | None |
-| `tencent/Hy-Memory-30B-A3B` | `64a460a94d5498b7316fb02395c72d01c47a7347` | HOLD_NO_EXPLICIT_APPROVED_MANIFEST | None/None | None |
-| `ibm-granite/granite-switch-4.1-30b` | `eb206725d03c0f1c409ce3aa512afe325fdf8731` | HOLD_NO_EXPLICIT_APPROVED_MANIFEST | None/None | None |
-| `meta-models/Muse-Glimmer-30B` | `1297fd7dfeac4598948a5d15886968435c81c2b7` | HOLD_NO_EXPLICIT_APPROVED_MANIFEST | None/None | None |
 
 Weight files were compared against publisher LFS SHA-256; ordinary Git blobs were compared by Git blob SHA-1. 'size-only' means no publisher hash existed.
 Gated models without verified owner entitlement were recorded as HOLD and no payload was acquired for them.
