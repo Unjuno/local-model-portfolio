@@ -3,9 +3,13 @@
 
 Usage:
   py -3 -m pip install --upgrade huggingface_hub
-  py -3 scripts/download_r115_windows.py
-  py -3 scripts/download_r115_windows.py --dry-run
-  py -3 scripts/download_r115_windows.py --max-models 1
+  py -3 scripts/download_r115_windows.py                    # read-only PLAN
+  py -3 scripts/download_r115_windows.py --dry-run          # read-only PLAN
+  py -3 scripts/download_r115_windows.py --execute --max-models 1
+
+Actual transfers require an exact user-approved file-scope record in
+queues/approved.json for each selected model. A public source queue, GO
+label or filesystem capacity check is NOT acquisition authorization.
 
 The script never loads model files, executes publisher code, deletes files,
 accepts gated terms, or publishes artifacts. A model is 'verified' only if
@@ -160,11 +164,61 @@ def get_free_bytes(root: Path) -> int:
     return shutil.disk_usage(root).free
 
 
+def source_fingerprint(model: dict) -> str:
+    """Hash immutable source revision and the selected files/bytes/publisher hashes."""
+    selected = {
+        "source_repo_id": model["source_repo_id"],
+        "source_revision": model["source_revision"],
+        "files": sorted(({
+            "path": item["path"], "bytes": item["bytes"],
+            "sha256": item.get("sha256"),
+            "git_blob_sha1": item.get("git_blob_sha1"),
+        } for item in model["files"]), key=lambda item: item["path"]),
+    }
+    canonical = json.dumps(selected, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    return hashlib.sha256(canonical).hexdigest()
+
+
+def assert_explicit_approved_sources(models: list[dict], approval_file: Path) -> None:
+    """Fail closed before creating directories/caches or contacting the Hub."""
+    if not approval_file.is_file():
+        raise ValueError(f"Approved queue not present: {approval_file}")
+    approvals = json.loads(approval_file.read_text(encoding="utf-8"))
+    if not isinstance(approvals, dict) or approvals.get("schema_version") != 1:
+        raise ValueError("Invalid approved queue schema")
+    entries = approvals.get("entries")
+    if not isinstance(entries, list) or not entries:
+        raise ValueError("No explicitly approved source manifests in queues/approved.json")
+    approved = {}
+    for item in entries:
+        if not isinstance(item, dict):
+            raise ValueError("Invalid approval record")
+        repo = item.get("source_repo_id")
+        if not isinstance(repo, str) or not REPO_PATTERN.fullmatch(repo) or repo in approved:
+            raise ValueError("Duplicate or invalid approved source repo")
+        approved[repo] = item
+    for model in models:
+        repo = model["source_repo_id"]
+        entry = approved.get(repo)
+        expected = source_fingerprint(model)
+        if not entry or any((
+            entry.get("approved") is not True,
+            entry.get("user_explicit_manifest_consent") is not True,
+            entry.get("license_and_parent_rights_reviewed") is not True,
+            entry.get("owner_archive_volume_verified") is not True,
+            entry.get("source_revision") != model["source_revision"],
+            entry.get("source_scope_sha256") != expected,
+        )):
+            raise ValueError(f"Missing exact, rights-checked user-approved manifest: {repo}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", default=DEFAULT_MANIFEST)
     parser.add_argument("--root", default=DEFAULT_ROOT)
-    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--dry-run", action="store_true", help="Explicit read-only planning mode")
+    parser.add_argument("--execute", action="store_true", help="Transfer only exact user-approved sources")
+    parser.add_argument("--approval-file", default="queues/approved.json")
     parser.add_argument("--max-models", type=int, default=0,
                         help="Process first N eligible models, 0 = all")
     parser.add_argument("--retries", type=int, default=3)
@@ -177,6 +231,11 @@ def main() -> int:
     selected = validate_manifest(manifest)
     if args.max_models:
         selected = selected[:args.max_models]
+    if args.execute and args.dry_run:
+        parser.error("--execute and --dry-run are mutually exclusive")
+    if args.execute:
+        # Verify an exact user-approved, source-hashed scope before any write.
+        assert_explicit_approved_sources(selected, Path(args.approval_file))
 
     root = Path(args.root)
     if os.name == "nt" and root.drive.upper() != "D:":
@@ -184,7 +243,7 @@ def main() -> int:
     if not root.anchor or not Path(root.anchor).is_dir():
         parser.error(f"Archive drive not mounted or accessible: {root.anchor}")
     if not root.is_dir():
-        if args.dry_run:
+        if not args.execute:
             print(f"[DRY RUN] Would create {root}")
         else:
             root.mkdir(parents=True, exist_ok=True)
@@ -193,10 +252,11 @@ def main() -> int:
     if floor < 200_000_000_000:
         raise ValueError("Archive safety floor below policy")
 
-    if args.dry_run:
+    if not args.execute:
         for model in selected:
             print("PLAN", model["source_repo_id"], model["source_revision"],
-                  model["source_bytes"], "bytes", len(model["files"]), "files")
+                  model["source_bytes"], "bytes", len(model["files"]), "files",
+                  "SOURCE_SCOPE_SHA256", source_fingerprint(model))
         print("FREE_BYTES", get_free_bytes(disk_probe), "FLOOR_BYTES", floor)
         return 0
 
