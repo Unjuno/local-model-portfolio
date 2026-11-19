@@ -35,6 +35,19 @@ def main():
         if p.exists():
             d = json.loads(p.read_text(encoding="utf-8"))
             all_entries.extend(d.get("entries", []))
+    # Deduplicate by exact publisher identity; a later VERIFIED receipt
+    # supersedes an earlier HOLD from a blocked attempt.
+    def rank(x):
+        return 0 if str(x.get("status")) == "VERIFIED" else 1
+
+    deduped = {}
+    for e in all_entries:
+        key = (e.get("repo_id"), e.get("revision_sha"))
+        old = deduped.get(key)
+        if old is None or rank(e) < rank(old):
+            deduped[key] = e
+    all_entries = list(deduped.values())
+
     entries = []
     for e in all_entries:
         files = e.get("files", [])
