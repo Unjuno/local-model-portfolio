@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 18 (verified 17, partial 0, failed 0, held 1)
-- Verified files: 197
-- Verified source bytes: 161567247246
-- Minimum observed free bytes: 2819530194944 (200 GB floor maintained: True)
+- Models: 21 (verified 20, partial 0, failed 0, held 1)
+- Verified files: 216
+- Verified source bytes: 161891193089
+- Minimum observed free bytes: 2819205787648 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -27,6 +27,9 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `Qwen/Qwen3.5-0.8B` | `2fc06364715b967f1860aea9cf38778875588b17` | VERIFIED | 13/13 | apache-2.0 |
 | `lightonai/LightOnOCR-3-0.8B` | `36d8636925327c671bd8e479c517a004f7566bd9` | VERIFIED | 15/15 | apache-2.0 |
 | `openai/whisper-large-v3-turbo` | `41f01f3fe87f28c78e2fbf8b568835947dd65ed9` | VERIFIED | 13/13 | mit |
+| `nvidia/Kumo-Anomaly` | `369ccba38a105736c6c9e4b5788a330c7e22112e` | VERIFIED | 2/2 | apache-2.0 |
+| `gradium/phonon-31m-en` | `8f7a37c94a4c58b04c8287300c53f11d2e208eae` | VERIFIED | 11/11 | apache-2.0 |
+| `udgamlabs/Lilavati-Checker` | `7edaac6de4cfe7127f973d8641335c4cb2f84b08` | VERIFIED | 6/6 | apache-2.0 |
 
 Weight files were compared against publisher LFS SHA-256; ordinary Git blobs were compared by Git blob SHA-1. 'size-only' means no publisher hash existed.
 Gated models without verified owner entitlement were recorded as HOLD and no payload was acquired for them.
