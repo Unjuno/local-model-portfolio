@@ -6,13 +6,17 @@ Usage:
   py -3 scripts/download_r115_windows.py                    # read-only PLAN
   py -3 scripts/download_r115_windows.py --dry-run          # read-only PLAN
   py -3 scripts/download_r115_windows.py --execute --max-models 1
+  py -3 scripts/download_r115_windows.py --execute --recover-prior
 
-Actual transfers require an exact user-approved file-scope record in
-queues/approved.json for each selected model. A public source queue, GO
-label or filesystem capacity check is NOT acquisition authorization.
+Transfers require an explicit --execute invocation on the owner's Windows
+system, a fixed R115 public Apache-2.0 publisher source manifest, and local
+capacity, hash, and rights preflight. Optional --approval-file activates an
+additional exact file-scope approval check. No per-model prompt is generated.
 
 The script never loads model files, executes publisher code, deletes files,
-accepts gated terms, or publishes artifacts. A model is 'verified' only if
+accepts gated terms, or publishes artifacts. Previously reported exact scopes
+are not re-downloaded if unlocated unless --recover-prior is set.
+A model is 'verified' only if
 every selected file matches its publisher hash and size.
 """
 from __future__ import annotations
@@ -164,6 +168,36 @@ def get_free_bytes(root: Path) -> int:
     return shutil.disk_usage(root).free
 
 
+def select_existing_destination(root: Path, repo: str, files: list[dict]) -> Path:
+    """Prefer previously saved publisher content in common archive layouts."""
+    author, name = repo.split("/", 1)
+    candidates = [
+        root / "models" / author / name,
+        root / author / name,
+        root / "downloads" / author / name,
+        root / "models" / name,
+        root / name,
+    ]
+    best = candidates[0]
+    best_matches = 0
+    for candidate in candidates:
+        try:
+            check_destination(root, candidate)
+        except ValueError:
+            continue
+        matches = 0
+        for spec in files:
+            fp = candidate.joinpath(*validate_relpath(spec["path"]))
+            try:
+                if fp.is_file() and not fp.is_symlink() and fp.stat().st_size == spec["bytes"]:
+                    matches += 1
+            except OSError:
+                pass
+        if matches > best_matches:
+            best, best_matches = candidate, matches
+    return best
+
+
 def source_fingerprint(model: dict) -> str:
     """Hash immutable source revision and the selected files/bytes/publisher hashes."""
     selected = {
@@ -217,8 +251,11 @@ def main() -> int:
     parser.add_argument("--manifest", default=DEFAULT_MANIFEST)
     parser.add_argument("--root", default=DEFAULT_ROOT)
     parser.add_argument("--dry-run", action="store_true", help="Explicit read-only planning mode")
-    parser.add_argument("--execute", action="store_true", help="Transfer only exact user-approved sources")
-    parser.add_argument("--approval-file", default="queues/approved.json")
+    parser.add_argument("--execute", action="store_true", help="Download frozen eligible public sources after owner D-drive preflight")
+    parser.add_argument("--approval-file", default=None,
+                        help="Optional stricter exact-scope approval JSON to enforce")
+    parser.add_argument("--recover-prior", action="store_true",
+                        help="Allow reacquisition of a previously VERIFIED-reported scope if missing locally")
     parser.add_argument("--max-models", type=int, default=0,
                         help="Process first N eligible models, 0 = all")
     parser.add_argument("--retries", type=int, default=3)
@@ -234,14 +271,19 @@ def main() -> int:
     if args.execute and args.dry_run:
         parser.error("--execute and --dry-run are mutually exclusive")
     if args.execute:
-        # Verify an exact user-approved, source-hashed scope before any write.
-        assert_explicit_approved_sources(selected, Path(args.approval_file))
+        if not (manifest.get("user_general_download_intent_recorded") is True and
+                manifest.get("all_go_files_have_publisher_hash") is True):
+            parser.error("Publisher-fixed source or user download intent missing")
+        if args.approval_file is not None:
+            assert_explicit_approved_sources(selected, Path(args.approval_file))
 
     root = Path(args.root)
     if os.name == "nt" and root.drive.upper() != "D:":
         parser.error("This manifest defaults to D:; pass an explicit D: archive root")
     if not root.anchor or not Path(root.anchor).is_dir():
         parser.error(f"Archive drive not mounted or accessible: {root.anchor}")
+    if root.is_symlink():
+        parser.error("Archive root cannot be a symlink")
     if not root.is_dir():
         if not args.execute:
             print(f"[DRY RUN] Would create {root}")
@@ -275,8 +317,7 @@ def main() -> int:
     for model in selected:
         repo = model["source_repo_id"]
         revision = model["source_revision"]
-        author, short_name = repo.split("/", 1)
-        destination = root / "models" / author / short_name
+        destination = select_existing_destination(root, repo, model["files"])
         check_destination(root, destination)
         file_state = []
         collision = False
@@ -307,6 +348,17 @@ def main() -> int:
             print("VERIFIED_ALREADY", repo)
             append_log(log_path, dict(repo=repo, revision=revision,
                                       status="model_verified", files=len(model["files"])))
+            continue
+        # The GitHub execution ledger claims some scopes have already been
+        # verified. Do not re-download those automatically if their physical
+        # files are not located below this archive root.
+        if model.get("prior_ledger", {}).get("reported_verified_scope_match") and not args.recover_prior:
+            print("SKIP_PRIOR_REPORTED_UNLOCATED", repo, len(pending), "file(s)")
+            append_log(log_path, dict(repo=repo, revision=revision,
+                                      status="prior_report_not_physically_reverified",
+                                      missing_file_count=len(pending),
+                                      action="skip_duplicate_new_download"))
+            failed += 1
             continue
         remaining_bytes = sum(x["bytes"] for x in pending)
         largest = max(x["bytes"] for x in pending)
