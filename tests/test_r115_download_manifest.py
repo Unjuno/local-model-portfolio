@@ -95,5 +95,54 @@ class R115ArchiveTest(unittest.TestCase):
                          module.source_fingerprint(reversed_model))
 
 
+    def test_execute_without_exact_approval_stops_before_network_or_disk(self):
+        # Verify the policy gate is reached before any D-drive or Hub access.
+        from unittest.mock import patch
+        with patch.object(module.sys, "argv", [
+                "r115_download", "--manifest", str(MANIFEST), "--execute"
+        ]):
+            with self.assertRaises(SystemExit) as caught:
+                module.main()
+            self.assertEqual(caught.exception.code, 2)
+
+    def test_exact_source_approval_is_required_and_scope_pinned(self):
+        valid = module.validate_manifest(self.data)
+        model = valid[0]
+        approved = {
+            "schema_version": 1,
+            "entries": [{
+                "source_repo_id": model["source_repo_id"],
+                "source_revision": model["source_revision"],
+                "source_scope_sha256": module.source_fingerprint(model),
+                "approved": True,
+                "user_explicit_manifest_consent": True,
+                "license_and_parent_rights_reviewed": True,
+                "owner_archive_volume_verified": True,
+            }],
+        }
+        with tempfile.TemporaryDirectory() as td:
+            src = Path(td) / "owner-approved.json"
+            src.write_text(json.dumps(approved), encoding="utf-8")
+            module.assert_explicit_approved_sources([model], src)
+            # A single changed file size or revision changes the scope fingerprint.
+            altered = {**model, "files": [
+                {**model["files"][0], "bytes": model["files"][0]["bytes"] + 1},
+                *model["files"][1:],
+            ]}
+            with self.assertRaises(ValueError):
+                module.assert_explicit_approved_sources([altered], src)
+            # Explicit consent and legal review are separate required booleans.
+            approved["entries"][0]["license_and_parent_rights_reviewed"] = False
+            src.write_text(json.dumps(approved), encoding="utf-8")
+            with self.assertRaises(ValueError):
+                module.assert_explicit_approved_sources([model], src)
+
+    def test_staging_reserves_full_weight_copies_not_quarter_file(self):
+        self.assertEqual(module.conservative_staging_bytes(1_000_000), 2_000_000_000)
+        self.assertEqual(module.conservative_staging_bytes(53_808_281_888), 107_616_563_776)
+        with self.assertRaises(ValueError):
+            module.conservative_staging_bytes(-1)
+
+
 if __name__ == "__main__":
     unittest.main()
