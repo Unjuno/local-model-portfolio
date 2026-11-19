@@ -1,3 +1,13 @@
+# 現行R119（2026-11-19）— 53報告済み原本を除外した次の研究優先度
+
+**唯一の正式選定正本は [CURRENT v48](catalog/CURRENT.json) の201件・154有効（SELECT53/CONDITIONAL101）。** 新しい[取得報告53モデルとの重複再照合](docs/strategy/119-v48-post-ledger53-model-source-selection.md)／[全23件の判断](catalog/decisions/2026-11-19-r119-post-ledger53-source-selection.json)／[23件の非実行研究キュー](queues/proposed-v48-r119-unreported23-research-only.json)を優先参照する。**最新実行台帳は53 VERIFIED/579ファイル/270,835,576,267 source byteと1 Gated HOLDを報告**。旧R115/R116の22 VERIFIED/次54件は旧時点の集計であり、現在の確認数ではない。
+
+旧次波59件から新報告台帳とID一致した36件を除外し、まだ報告のない23件を調査。先行6件（公式Qwen3.8 27B、RWKV7、iLLaDA、TRELLIS.2、ACE-Step XL、Carbon-X）をsourceの完全性・許可・依存を確認する順序として確定。**実モデルのダウンロード・承認・実機の完全offline復元を確定したわけではない。** 取得報告はユーザーの実HDDを本回独立再ハッシュした証明ではない。高精度の無検閲マスター候補はR115を引き継ぐが、同じ学習済み重みの複数量子化を別モデルと数えない。
+
+**`queues/approved.json`は空、本人の行為別許諾・Gated同意・ファイル単位SHA・実ドライブ空きと200GB安全床・runtime ABI・依存/学習部品・本人の明示承認がそろうまで実取得をしない。mainのみ運用。** 過去の実行器で承認ゲートに欠陥があったため、候補キューをダウンローダーに渡さない。Exaは本日HTTP402のため一次確認に利用できず、公式Hugging Faceアプリ/作者カード等で代替調査した。
+
+---
+
 # エージェント作業規約
 
 ## R117 現行v48・所有者Dドライブの取得前STOPと既存原本の重複回避
