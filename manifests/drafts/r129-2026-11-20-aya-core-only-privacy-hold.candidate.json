@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "kind": "R129_PRIVACY_FIRST_AYA_DATASET_CORE_ONLY_ALTERNATIVE_RESEARCH",
+  "created_at": "2026-11-20",
+  "baseline_commit": "31335040e785bacbff792a1b16029c4c849ad258",
+  "canonical_revision": "v54-20261120",
+  "source": "queues/proposed-v54-r128-first-four-delta-source.json",
+  "repo_id": "CohereLabs/aya_dataset",
+  "repo_type": "dataset",
+  "source_revision": "f9ea04583f02a8f86404ff6c58bf75fe637df8a2",
+  "license_metadata": "apache-2.0",
+  "full_scope_bytes": 140160376,
+  "full_scope_files": 6,
+  "excluded_demographics": {
+    "path": "demographics/train-00000-of-00001.parquet",
+    "bytes": 113702,
+    "sha256": "6468cc56f1c115458507368381fd2b9e74d7b7a5dc0228f6b550146e5320bc2d",
+    "git_blob_sha1": "a7d4a068c8dc8547e42f28c99cc5e3d5d3b6230a",
+    "reason": "Annotation demographics may contain sensitive participant attributes. Do not automatically collect this sidecar as part of an otherwise core-text pilot; assess source consent, identifiability and permitted archival acts first.",
+    "access": "public repo metadata, not a privacy or consent clearance"
+  },
+  "core_only": {
+    "files": [
+      {
+        "path": ".gitattributes",
+        "bytes": 2307,
+        "sha256": null,
+        "git_blob_sha1": "28df5f900b358436f0267334b3e3e9af33f917ba"
+      },
+      {
+        "path": "README.md",
+        "bytes": 13659,
+        "sha256": null,
+        "git_blob_sha1": "747dd0d82a799808c9b7369a58e96d5b6d2d163a"
+      },
+      {
+        "path": "aya_header.png",
+        "bytes": 1857391,
+        "sha256": "a6b6013a0dd85b50636b50a138841b2f6aee43109570334ace52f6152b8fc0de",
+        "git_blob_sha1": "d2220ee9d2041a85ccc2aa43e6d9b5a9675b6715"
+      },
+      {
+        "path": "data/test-00000-of-00001.parquet",
+        "bytes": 977517,
+        "sha256": "52bbb79461bff9887c9987a5737d9a06f5ec6c78c08d770828c37fc182ce2cca",
+        "git_blob_sha1": "b20d9288e69afec7fcb4ac24044e13bb6add9ee4"
+      },
+      {
+        "path": "data/train-00000-of-00001.parquet",
+        "bytes": 137195800,
+        "sha256": "51baa85043b569ba117f41516b32d1b0e4e2647fb203a08933f98a556fb1fb06",
+        "git_blob_sha1": "ef23eccdacbccf195fcaec6e49f741a4a0f57747"
+      }
+    ],
+    "source_file_count": 5,
+    "selected_bytes": 140046674,
+    "weight_files": 0,
+    "selected_publisher_sha256": 3,
+    "privacy_cleared": false,
+    "license_act_rights_verified": false,
+    "download_approved": false
+  },
+  "parent_manifest_unchanged": true,
+  "not_executable": true,
+  "not_approved": true,
+  "owner_disk_rehash": false,
+  "privacy_risk_scope": "Dataset text itself may also contain personal or sensitive content. Excluding demographic table is a narrower exposure, not a guarantee of anonymity or lawful processing.",
+  "further_checks": [
+    "Review dataset card and data provenance for annotation consent and personal information",
+    "Read rights text for actual intended use, not only Apache-2.0 tag",
+    "Check selected parquet schema/rows in isolated non-executing reader before any publication or sharing",
+    "Pin exact immutable revision and SHA256 of any authorized local files",
+    "Do not assume original 6-file scope is privacy-approved"
+  ],
+  "primary_sources": [
+    "https://huggingface.co/datasets/CohereLabs/aya_dataset",
+    "https://arxiv.org/abs/2402.06619"
+  ],
+  "status": "RESEARCH_HOLD_DEMOGRAPHICS_SOURCE_NO_APPROVAL"
+}
