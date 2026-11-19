@@ -1,3 +1,11 @@
+# 現行v56（2026-11-20）— 211資産／164有効・新しい小型無検閲2原本と全取得STOP
+
+**唯一の正本**：[`catalog/CURRENT.json`](catalog/CURRENT.json) → **v56-20261120、211登録／164有効（SELECT53／CONDITIONAL111）**。既存v55の209件のID・決定を全件保存し、FrostWolfAI LFM3-1.7B AbliteratedのBF16フル原本、PhalaCloud Qwen3.8-27B Uncensored LoRAを二つの異なる編集学習成果としてCONDITIONAL追加。[公式40桁revision・20ファイル3 SHA](manifests/drafts/r130-2026-11-20-frostwolf-and-phala-originals-fixed.candidate.json)／[調査判断](docs/strategy/130-v56-public-uncensored-selection-source-and-rights.md)／[全164停止ゲート](catalog/readiness/v56-2026-11-20-r130-all164-gates.json)／[164非実行source研究キュー](queues/proposed-v56-2026-11-20.json)。FrostはLFM Open License v1.0で商用年商10M USD制限、custom code未監査。PhalaはLoRA親Qwen固定版が明示済みだが親所有者SHA未検証、原データのCC BY-NC 4.0等の権利確認と異なるBF16/FP8実行ABI検証が必要。
+
+**強制STOP**：最新取得履歴61モデル・708ファイル・409,835,119,252byteは実行報告であって、本人のWindows Dドライブを今回直接ハッシュした証拠ではない。`queues/approved.json`は0件であり、正確な所有者利用権／Gatedアクセス／現物HDD空き・200GB残床／選択したPublisher sourceのSHAと依存／コード審査・offline restore／ユーザーの明示的なmanifest承認を完了せず、モデル重量取得・コード実行・既存ファイル削除を行わない。**mainのみ運用**。BIS2026-11-19でモデル重量の旧ECCN4E091が撤回された事実と、将来の全面禁止予測を混同しない。
+
+---
+
 # 現行v55 / R128 (2026-11-20): OVH Olala small hybridの独立原本2件採用
 
 唯一の正本 [CURRENT](catalog/CURRENT.json) はv55、209登録/162有効（SELECT53、CONDITIONAL109）。[正式採否](docs/strategy/128-v55-olala-final-adoption-2026-11-20.md)、[2モデルの33 Publisher固定source files](manifests/drafts/r128-2026-11-20-olala-mini-final-and-base-originals.candidate.json)、[v55差分overlay](catalog/revisions/v55-2026-11-20.json)、[全162件worklist](queues/proposed-v55-2026-11-20.json)、[readiness](catalog/readiness/v55-2026-11-20-r128-all162-gates.json)、[109件access](catalog/access/2026-11-20-v55-conditional-hub-gates.json)、[dependency preparation](catalog/preparation/2026-11-20-insurance-bundles-v55.json)を参照。事前学習Baseと最終SFT+RLは重量SHAが異なる。SFT中間版は独立だが増分価値未確認で研究保留、GGUF/MLXは同一学習成果の形式変換で新資産なし。Baseが無検閲という実測証拠はない。
