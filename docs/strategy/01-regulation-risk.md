@@ -714,3 +714,5 @@ Meta公式元`model.safetensors`：3,362,432,800 byte、SHA-256 `3e1d4d18b9bfa9f
 - **一次政策動向**：米BISの2026-11-16遠隔高度計算利用規則（https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology）、欧州委員会のGPAI例外FAQ（https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/how-does-ai-act-apply-general-purpose-ai-models-released-open-source）、HFのGated機構（https://huggingface.co/docs/hub/models-gated）を参照。個別モデル規制の確率を作らず、権利者の停止と公法上の禁止を混同しない。Exa検索は同日HTTP402で利用枠超過、公式一次資料・接続HFアプリで代替した。
 
 **ERROR CHECK**：v9 132資産は不変更／最新`main` 202件は参照専用／次の研究候補は学習成果7件（source8、コード1は学習成果に数えない）／150B絶対除外2／パラメータ不明22（有効9）／本人承認0／今回の重み取得0。
+
+**R121同日追認**：`main`はv49から**v50（203登録/156有効）**へ更新され、`Reson8/Rumble-2-Flash`がR2/conditionalで正式採用済み。従って上記v49は不変の比較スナップショットであり、[R121](121-v49-strict150b-ledger-aware-download-selection-2026-11-19.md)は同一モデルの重複追加を行わず、残る取得前ゲートとsource順位を確定する。150B厳格絶対除外、未確認パラメータ停止、取得承認0は変わらない。
