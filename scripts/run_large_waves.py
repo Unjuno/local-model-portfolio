@@ -11,7 +11,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import preserve_execute as pe
 
-PLAN = Path("D:/AI_VAULT/state/discovered/plan.json")
+PLAN = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("D:/AI_VAULT/state/discovered/plan.json")
 LEDGER = Path("D:/AI_VAULT/state/ledger/waves-large-ledger.json")
 TOP_N = 12
 

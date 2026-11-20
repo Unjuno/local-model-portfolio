@@ -11,11 +11,15 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import preserve_execute as pe
 
-PLAN = Path("D:/AI_VAULT/state/discovered/plan.json")
+PLAN = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("D:/AI_VAULT/state/discovered/plan.json")
 LEDGER = Path("D:/AI_VAULT/state/ledger/waves3plus-ledger.json")
 
 
 def main():
+    approval = Path("D:/AI_VAULT/state/approved-session.json")
+    if approval.exists():
+        pe.APPROVED_QUEUE = approval
+        pe.log(f"using local session approvals: {approval}")
     plan = json.loads(PLAN.read_text(encoding="utf-8"))
     cands = sorted(plan["candidates"], key=lambda c: c["bytes"])
     pe.log(f"CONTINUOUS RUN: {len(cands)} models, "

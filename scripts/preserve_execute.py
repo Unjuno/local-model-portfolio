@@ -157,8 +157,13 @@ def http_fetch(url, dest, expected_size):
     if have and expected_size and have > expected_size:
         part.unlink()
         have = 0
-    for attempt in range(5):
+    for attempt in range(8):
         try:
+            have = part.stat().st_size if part.exists() else 0
+            if have and expected_size and have >= expected_size:
+                # A partial at/over full size is unusable; restart cleanly.
+                part.unlink()
+                have = 0
             headers = {"User-Agent": "preserve-execute/1.0"}
             if have:
                 headers["Range"] = f"bytes={have}-"
@@ -181,8 +186,19 @@ def http_fetch(url, dest, expected_size):
             os.replace(part, dest)
             return
         except Exception as e:
-            log(f"  retry {attempt+1}/5: {type(e).__name__}: {e}")
-            time.sleep(2 ** attempt)
+            code = getattr(e, "code", None)
+            msg = str(e)
+            # Corrupt partial / unsatisfiable range: discard and restart from zero.
+            reset = code == 416 or "size mismatch" in msg or "Invalid argument" in msg
+            if reset:
+                try:
+                    if part.exists():
+                        part.unlink()
+                except Exception:
+                    pass
+                have = 0
+            log(f"  retry {attempt+1}/8 (reset={reset}): {type(e).__name__}: {e}")
+            time.sleep(min(2 ** attempt, 30))
     raise RuntimeError(f"download failed: {url}")
 
 
