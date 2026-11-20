@@ -1,0 +1,492 @@
+{
+  "schema_version": 1,
+  "revision_id": "v57-20261120",
+  "previous_revision_id": "v56-20261120",
+  "decision_date": "2026-11-20",
+  "target_branch": "main",
+  "kind": "TWO_PUBLIC_ABLITERATED_BF16_ORIGINALS_CONDITIONAL",
+  "previous_asset_count": 211,
+  "previous_active_count": 164,
+  "additions": [
+    {
+      "position": 212,
+      "asset_kind": "model",
+      "repo_id": "FrostWolfAI/Spark-X2.6-4B-abliterated",
+      "url": "https://huggingface.co/FrostWolfAI/Spark-X2.6-4B-abliterated",
+      "group": "小型Spark 4B ARA編集済み無検閲BF16原本",
+      "risk_tier": "R0",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Heretic v2 ARAがSpark-X2.6 layers9-19のattention/MLPへ施した出版社BF16原本。変換GGUF/MLXとは別の学習済み編集checkpoint。",
+      "quality_positive": "公開のHeretic再現記録（seed 2026102902, Heretic efb1be6）＋22全ファイル/8,239,173,287byte/2 weight SHA",
+      "quality_negative": "作者拒否2/100とKL0.0177は特定100問の作者評価。元親5重量shard、編集後2 shardのSHA差はTensor差の独立証明ではない。custom Python/ABI、所有者権利・現物未検証。",
+      "risk_and_alternative_assessment": "Current public/non-Gated is a fact; imminent regulation is unverified. Publisher source is not Owner HDD, rights or download approval.",
+      "evidence_date": "2026-11-20",
+      "evidence_kind": "PUBLISHER_IMMUTABLE_SOURCE_BF16_REPRO_AND_RESTORED_MTP",
+      "evidence_urls": [
+        "https://huggingface.co/FrostWolfAI/Spark-X2.6-4B-abliterated",
+        "https://huggingface.co/api/models/FrostWolfAI/Spark-X2.6-4B-abliterated/revision/505257b7969eb03a5a62d81f9afec6f88abd26e4?blobs=true"
+      ],
+      "observed_access": "public gated:false, individual rights unverified",
+      "license_metadata": "Apache-2.0 publisher LICENSE and parent Apache",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "505257b7969eb03a5a62d81f9afec6f88abd26e4",
+      "upstream_all_files_bytes_observed": 8239173287,
+      "upstream_file_count_observed": 22,
+      "upstream_lfs_sha256_count_observed": 2,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 22,
+      "candidate_selected_source_file_bytes": 8239173287,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": null,
+          "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11338,
+          "sha256": null,
+          "git_blob_sha1": "b7456707c547e5df6a88ee0255ad9c422ac52f9b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 11396,
+          "sha256": null,
+          "git_blob_sha1": "3b0640a1d20a1354036d8411a726e16352820be8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 5717,
+          "sha256": null,
+          "git_blob_sha1": "f0a835ddcab00f6a2cd0bbe977fe5123f451259a",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 2180,
+          "sha256": null,
+          "git_blob_sha1": "18c8384c47dffcb1f49121ac94f236543e886362",
+          "local_sha_verified": false
+        },
+        {
+          "path": "configuration_spark.py",
+          "bytes": 4329,
+          "sha256": null,
+          "git_blob_sha1": "cca611a0302679df685ca442d21c2756884aa47e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 281,
+          "sha256": null,
+          "git_blob_sha1": "d47d113162317c2d4338dd7f0727663b6aa9fb57",
+          "local_sha_verified": false
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 1567883,
+          "sha256": null,
+          "git_blob_sha1": "3f921c3aed6a693e3dcfd15b7171467fcade71b3",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "bytes": 4972117680,
+          "sha256": "618c7df2a8fdaf923069b85e6cce9125c99a929479fafb4424f9f1c38dcc2af3",
+          "git_blob_sha1": "633a358aa29516ad737b0e9ca7ff2f5a3eed9c6f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "bytes": 3252074848,
+          "sha256": "0d6674e83396f084f798f6eb630edbe8523a7815cc8b731207490637d55b561f",
+          "git_blob_sha1": "fc671354df1fcadd65e244eb56eb2158c5d1dc80",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 24432,
+          "sha256": null,
+          "git_blob_sha1": "fbb510471aa4e0868bd913c4b50d0a1db5b71957",
+          "local_sha_verified": false
+        },
+        {
+          "path": "modeling_spark.py",
+          "bytes": 20507,
+          "sha256": null,
+          "git_blob_sha1": "a0b8ef0c195de0d419b7c43ef554b8b3f9b24815",
+          "local_sha_verified": false
+        },
+        {
+          "path": "reproduce/README.md",
+          "bytes": 3513,
+          "sha256": null,
+          "git_blob_sha1": "8ba53abf562454a1a0c96ecd9d1eec2d7cbe8b8f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "reproduce/SHA256SUMS",
+          "bytes": 198,
+          "sha256": null,
+          "git_blob_sha1": "2467448379587ebfc573cfef5e3193cc377c1e5d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "reproduce/XHToken--Spark-X2.6-4B.jsonl",
+          "bytes": 165701,
+          "sha256": null,
+          "git_blob_sha1": "125b1fdb66ad98967ef31169343994f9f98bb5bc",
+          "local_sha_verified": false
+        },
+        {
+          "path": "reproduce/config.toml",
+          "bytes": 918,
+          "sha256": null,
+          "git_blob_sha1": "43dc0537974ceb5dd7bc24178bc18c42e0c14cb2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "reproduce/reproduce.json",
+          "bytes": 4309,
+          "sha256": null,
+          "git_blob_sha1": "3c19b90fd69c18fe18778c148a85ec6e81933dcf",
+          "local_sha_verified": false
+        },
+        {
+          "path": "reproduce/requirements.txt",
+          "bytes": 1795,
+          "sha256": null,
+          "git_blob_sha1": "3b6f5651eeae4a4c1871798e2954a9342a68beae",
+          "local_sha_verified": false
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 156,
+          "sha256": null,
+          "git_blob_sha1": "9a77af52dba6347730c06368baa133534a2ac129",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 10115951,
+          "sha256": null,
+          "git_blob_sha1": "f3ae6d33723e51b334a2046e1410e70904503779",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 5841,
+          "sha256": null,
+          "git_blob_sha1": "3744e6bd35bf786fb626752b2594dd483a7a4aa5",
+          "local_sha_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 3032795,
+          "sha256": null,
+          "git_blob_sha1": "9cca33b9d8dc48d4fe1ae44743b0b7c1df5bf0c1",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r133-2026-11-20-spark4b-and-heretic9b-bf16-mtp-originals.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 4112079360,
+        "evidence_kind": "HF_BF16_SERIALIZED_TOTAL_MTP_INCLUDED",
+        "review_date": "2026-11-20",
+        "fully_licensed": false
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 212,
+        "category": "PUBLIC_ABLITERATED_INDEPENDENT_ORIGINAL",
+        "scenario_status": "FUTURE_ACCESS_RISK_HYPOTHESIS"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "LICENSE",
+          "README.md",
+          "chat_template.jinja",
+          "config.json",
+          "configuration_spark.py",
+          "generation_config.json",
+          "merges.txt",
+          "model-00001-of-00002.safetensors",
+          "model-00002-of-00002.safetensors",
+          "model.safetensors.index.json",
+          "modeling_spark.py",
+          "reproduce/README.md",
+          "reproduce/SHA256SUMS",
+          "reproduce/XHToken--Spark-X2.6-4B.jsonl",
+          "reproduce/config.toml",
+          "reproduce/reproduce.json",
+          "reproduce/requirements.txt",
+          "special_tokens_map.json",
+          "tokenizer.json",
+          "tokenizer_config.json",
+          "vocab.json"
+        ],
+        "trained_origin": "Heretic ARA BF16 edited full checkpoint",
+        "original_parent": "XHToken/Spark-X2.6-4B",
+        "parent_reference_revision": "d1b5f26071101c27fcd07728e7a7770e428281f4",
+        "source_repo_id": "FrostWolfAI/Spark-X2.6-4B-abliterated",
+        "mtp_tensors": null,
+        "custom_code_untrusted": true,
+        "owner_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 8239173287,
+        "source_candidate_selected_bytes": 8239173287,
+        "owner_hdd_verified": false,
+        "actual_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "position": 213,
+      "asset_kind": "model",
+      "repo_id": "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+      "url": "https://huggingface.co/xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+      "group": "9B Qwen3.5蒸留・ARA編集済みBF16＋独立MTP原本",
+      "risk_tier": "R0",
+      "portfolio_decision": "conditional",
+      "reason_selected": "JackrongのDeepSeek蒸留Qwen3.5 9BをHeretic編集した現在のPublisher BF16を、復元MTP15テンソルとvision付きで一式選択。",
+      "quality_positive": "全19ファイル19,331,656,364byte/6 LFS SHA。main index 775テンソル（15を別MTPへ）、学習済み総数9,653,104,368。",
+      "quality_negative": "主indexの9,409,813,744はMTP除外。別MTPのABI/vision、元教師データ権利と具体的比較ベンチは未検証。単独LICENSEファイルなし。",
+      "risk_and_alternative_assessment": "Current public/non-Gated is a fact; imminent regulation is unverified. Publisher source is not Owner HDD, rights or download approval.",
+      "evidence_date": "2026-11-20",
+      "evidence_kind": "PUBLISHER_IMMUTABLE_SOURCE_BF16_REPRO_AND_RESTORED_MTP",
+      "evidence_urls": [
+        "https://huggingface.co/xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+        "https://huggingface.co/api/models/xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic/revision/fbccdc6adf70a1981e8f40e91a8370e428e4f998?blobs=true"
+      ],
+      "observed_access": "public gated:false, individual rights unverified",
+      "license_metadata": "Hub Apache-2.0, source LICENSE absent; derivative and training rights unknown",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "fbccdc6adf70a1981e8f40e91a8370e428e4f998",
+      "upstream_all_files_bytes_observed": 19331656364,
+      "upstream_file_count_observed": 19,
+      "upstream_lfs_sha256_count_observed": 6,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 19,
+      "candidate_selected_source_file_bytes": 19331656364,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "sha256": null,
+          "git_blob_sha1": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 38757,
+          "sha256": null,
+          "git_blob_sha1": "7876afadbc33fec1fe076f6789da6964cf031c08",
+          "local_sha_verified": false
+        },
+        {
+          "path": "added_tokens.json",
+          "bytes": 904,
+          "sha256": null,
+          "git_blob_sha1": "9955816d3da3e9560559861b82fc5a27cff5b364",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 8736,
+          "sha256": null,
+          "git_blob_sha1": "3318462a016af7fd26d338005af2cb3f89b3cb87",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 3042,
+          "sha256": null,
+          "git_blob_sha1": "ebb0337c0ccc823b54fd42f629ae3ece74d15472",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 142,
+          "sha256": null,
+          "git_blob_sha1": "79b5436ad0be270ef8c6694e5559066f40ea68e8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "bytes": 4942706120,
+          "sha256": "eff65295d35e6d20bf41850c7cc5b0a01cff80f360672c5a9d139a9d975d8f6a",
+          "git_blob_sha1": "3de5adaca4a974829b4faca83cfdde24a8bb58b3",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "bytes": 4987757928,
+          "sha256": "46aa75be1332340c83834e88a4fb1515548e4d740799bf46c7ca3d15c5f579a3",
+          "git_blob_sha1": "d1d96752577113d09b04381dca80a8dbdf5c3bce",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "bytes": 4954810240,
+          "sha256": "e27e41463bf0e3e56cd44b5cd9dd25abb61bfdecc1d261e18a53cdbac5384091",
+          "git_blob_sha1": "6cf627f5ce713e43dc13277b9d75e27cf70f06be",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "bytes": 3934446832,
+          "sha256": "13b5cea39a1cb3afe9509fee99791ef3151285bcff718c90017332e2a910c241",
+          "git_blob_sha1": "8696e39d4f870366f8f5bf0b54e82116461f90a4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-mtp.safetensors",
+          "bytes": 486583016,
+          "sha256": "5e0b04fcbff49f29114af4c453663871a625514fccca5a4efb34f495ebeca237",
+          "git_blob_sha1": "6621feff749830ce1c9bf1677bd43c12faae9408",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 70228,
+          "sha256": null,
+          "git_blob_sha1": "3fe542673e28de7ea8609fd8bd01591c125a0a52",
+          "local_sha_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 781,
+          "sha256": null,
+          "git_blob_sha1": "484b50c430e48aa6732a3ebb1b72f77cdaf8fc9e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 1325,
+          "sha256": null,
+          "git_blob_sha1": "a9804dd9789683a33fe72bd98bc0ccb71663afd1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 876,
+          "sha256": null,
+          "git_blob_sha1": "fca0ded4fda885a161deeda0547c114ddbc97093",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 19989339,
+          "sha256": "a5cd9732badce41de57e6efce8302930ded1c1188c5f81feb2bd6c24c4a1941f",
+          "git_blob_sha1": "a200a8dd650a52c17957673398767ac34b96dbeb",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1217,
+          "sha256": null,
+          "git_blob_sha1": "0bf8509edc202a6c885898778c000f2260919fe4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 817,
+          "sha256": null,
+          "git_blob_sha1": "e32b1d90356f74457edbfca27aa1e121dab7cdc7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 5234494,
+          "sha256": null,
+          "git_blob_sha1": "b94df23d650b0c60a2264d9de779cb3b7fb8570c",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r133-2026-11-20-spark4b-and-heretic9b-bf16-mtp-originals.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 9653104368,
+        "evidence_kind": "HF_BF16_SERIALIZED_TOTAL_MTP_INCLUDED",
+        "review_date": "2026-11-20",
+        "fully_licensed": false
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 213,
+        "category": "PUBLIC_ABLITERATED_INDEPENDENT_ORIGINAL",
+        "scenario_status": "FUTURE_ACCESS_RISK_HYPOTHESIS"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "added_tokens.json",
+          "chat_template.jinja",
+          "config.json",
+          "generation_config.json",
+          "model-00001-of-00004.safetensors",
+          "model-00002-of-00004.safetensors",
+          "model-00003-of-00004.safetensors",
+          "model-00004-of-00004.safetensors",
+          "model-mtp.safetensors",
+          "model.safetensors.index.json",
+          "preprocessor_config.json",
+          "processor_config.json",
+          "special_tokens_map.json",
+          "tokenizer.json",
+          "tokenizer_config.json",
+          "video_preprocessor_config.json",
+          "vocab.json"
+        ],
+        "trained_origin": "Heretic ARA BF16 edited full checkpoint",
+        "original_parent": "Jackrong/DeepSeek-V4-Pro-Qwen3.5-9B",
+        "parent_reference_revision": "7d7edca1b1e820d89127f9c8ac4b035e0f27652e",
+        "source_repo_id": "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+        "mtp_tensors": 15,
+        "custom_code_untrusted": false,
+        "owner_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 19331656364,
+        "source_candidate_selected_bytes": 19331656364,
+        "owner_hdd_verified": false,
+        "actual_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    }
+  ],
+  "added_assets": 2,
+  "removed_assets": 0,
+  "changed_prior_decisions": 0,
+  "source_manifest": "manifests/drafts/r133-2026-11-20-spark4b-and-heretic9b-bf16-mtp-originals.candidate.json",
+  "publisher_source_files": 41,
+  "publisher_source_bytes": 27570829651,
+  "lfs_sha256_count": 8,
+  "complete_mtp_tensors": 15,
+  "download_authorizations_added": 0,
+  "weights_acquired": 0
+}
