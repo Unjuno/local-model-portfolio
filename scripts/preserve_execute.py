@@ -189,7 +189,9 @@ def http_fetch(url, dest, expected_size):
             code = getattr(e, "code", None)
             msg = str(e)
             # Corrupt partial / unsatisfiable range: discard and restart from zero.
-            reset = code == 416 or "size mismatch" in msg or "Invalid argument" in msg
+            # Transient Errno 22 / Permission denied on the external drive must
+            # NOT discard an otherwise valid partial download.
+            reset = code == 416 or "size mismatch" in msg
             if reset:
                 try:
                     if part.exists():

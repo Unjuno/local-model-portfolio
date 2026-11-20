@@ -6,6 +6,7 @@ progress is always observable, even if the process is interrupted.
 """
 import json
 import sys
+import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -25,13 +26,16 @@ def main():
     pe.log(f"CONTINUOUS RUN: {len(cands)} models, "
            f"{sum(c['bytes'] for c in cands)} bytes planned")
     for c in cands:
-        try:
-            m = json.loads(Path(c["manifest"]).read_text(encoding="utf-8"))
-            for task in pe.extract_tasks(m):
-                res = [pe.process_task(task, c["manifest"], False)]
-                pe.append_ledger(res, str(LEDGER))
-        except Exception as e:
-            pe.log(f"FATAL {c['repo_id']}: {type(e).__name__}: {e}")
+        for attempt in range(12):
+            try:
+                m = json.loads(Path(c["manifest"]).read_text(encoding="utf-8"))
+                for task in pe.extract_tasks(m):
+                    res = [pe.process_task(task, c["manifest"], False)]
+                    pe.append_ledger(res, str(LEDGER))
+                break
+            except Exception as e:
+                pe.log(f"retry {c['repo_id']} {attempt+1}/12: {type(e).__name__}: {e}")
+                time.sleep(45)
     pe.log("CONTINUOUS RUN COMPLETE")
 
 
