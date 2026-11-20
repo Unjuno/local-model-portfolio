@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 71 (verified 70, partial 0, failed 0, held 1)
-- Verified files: 942
-- Verified source bytes: 1193379032987
-- Minimum observed free bytes: 1717802590208 (200 GB floor maintained: True)
+- Models: 72 (verified 70, partial 1, failed 0, held 1)
+- Verified files: 963
+- Verified source bytes: 1257855906173
+- Minimum observed free bytes: 1620067045376 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -78,6 +78,7 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `ibm-granite/granite-switch-4.1-30b` | `eb206725d03c0f1c409ce3aa512afe325fdf8731` | VERIFIED | 25/25 | apache-2.0 |
 | `tencent/Hy-Memory-30B-A3B` | `64a460a94d5498b7316fb02395c72d01c47a7347` | VERIFIED | 58/58 | apache-2.0 |
 | `google/gemma-4-31B` | `5bbc2fb1c1b2c611d06e3d9f23c170ba21659d89` | VERIFIED | 9/9 | apache-2.0 |
+| `allenai/Olmo-3-1125-32B` | `c2b61dae89a1ad10e4ad5653d0e46b590902607b` | PARTIAL | 21/23 | apache-2.0 |
 | `mistralai/Mistral-Small-4-119B-2603` | `a11f36bebf709121056b1dbcc943d1c6afbe494d` | VERIFIED | 21/21 | apache-2.0 |
 | `Qwen/Qwen3-Coder-Next` | `a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb` | VERIFIED | 49/49 | apache-2.0 |
 

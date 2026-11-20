@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "ledger_id": "2026-11-19-v48-execution",
-  "generated_at": "2026-11-20T16:14:09.111134+00:00",
+  "generated_at": "2026-11-20T20:59:38.866064+00:00",
   "canonical_revision": "v48-20261118",
   "source_plan": "queues/proposed-v48-r113-source-pinned-15.json",
   "policy": {
@@ -14,14 +14,14 @@
     "unclear_license": "HOLD"
   },
   "summary": {
-    "models_total": 71,
+    "models_total": 72,
     "models_verified": 70,
-    "models_partial": 0,
+    "models_partial": 1,
     "models_failed": 0,
     "models_held": 1,
-    "files_verified_total": 942,
-    "bytes_verified_total": 1193379032987,
-    "minimum_free_bytes_observed": 1717802590208,
+    "files_verified_total": 963,
+    "bytes_verified_total": 1257855906173,
+    "minimum_free_bytes_observed": 1620067045376,
     "minimum_free_floor_bytes": 200000000000,
     "free_floor_maintained": true
   },
@@ -2790,6 +2790,39 @@
       "started_at": "2026-11-20T09:43:38.393712+00:00",
       "finished_at": "2026-11-20T13:20:07.515335+00:00",
       "free_bytes_after": 1717802590208
+    },
+    {
+      "repo_id": "allenai/Olmo-3-1125-32B",
+      "revision_sha": "c2b61dae89a1ad10e4ad5653d0e46b590902607b",
+      "source_manifest": "local-discovered/allenai__Olmo-3-1125-32B.json",
+      "priority_group": "",
+      "status": "PARTIAL",
+      "license": "apache-2.0",
+      "files_total": 23,
+      "files_verified": 21,
+      "source_bytes": 64476873186,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 14
+      },
+      "file_status_counts": {
+        "DEDUP_VERIFIED": 16,
+        "HASH_MISMATCH": 2,
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00009-of-00014.safetensors",
+          "sha256": "2d61a71dc2a9fe170201360d40e1d5e8bd956c8c854e6803b8973e79e537bcd6"
+        },
+        {
+          "path": "model-00014-of-00014.safetensors",
+          "sha256": "646355e724cbaf090009502c562c3afb34aa8d0a48a659c779e0439b4e04333c"
+        }
+      ],
+      "started_at": "2026-11-20T17:46:16.221219+00:00",
+      "finished_at": "2026-11-20T18:55:13.297810+00:00",
+      "free_bytes_after": 1620067045376
     },
     {
       "repo_id": "mistralai/Mistral-Small-4-119B-2603",
