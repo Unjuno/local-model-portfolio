@@ -127,11 +127,15 @@ def now():
 
 
 def log(msg):
-    LOG.parent.mkdir(parents=True, exist_ok=True)
     line = f"{now()} {msg}"
     print(line, flush=True)
-    with open(LOG, "a", encoding="utf-8") as f:
-        f.write(line + "\n")
+    try:
+        LOG.parent.mkdir(parents=True, exist_ok=True)
+        with open(LOG, "a", encoding="utf-8") as f:
+            f.write(line + "\n")
+    except Exception:
+        # Logging must never abort an acquisition; stdout still records progress.
+        pass
 
 
 def free_bytes(path):
