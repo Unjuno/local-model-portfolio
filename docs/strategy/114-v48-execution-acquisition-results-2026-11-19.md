@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 62 (verified 61, partial 0, failed 0, held 1)
-- Verified files: 708
-- Verified source bytes: 409835119252
-- Minimum observed free bytes: 2445946363904 (200 GB floor maintained: True)
+- Models: 67 (verified 66, partial 0, failed 0, held 1)
+- Verified files: 801
+- Verified source bytes: 851289867641
+- Minimum observed free bytes: 2051385790464 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -71,6 +71,11 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `PrentisAI/GroundGUI-8B` | `9db378189fddaabb5f6e347b9053858a392022ac` | VERIFIED | 16/16 | apache-2.0 |
 | `ACE-Step/acestep-v15-xl-turbo` | `d4a0b288b83ebb7e25a8c0b32c573c22e134e8ee` | VERIFIED | 7/7 | mit |
 | `kandinskylab/Kandinsky-6.0-Lite-distill-5s-Diffusers` | `4c487e8b4aeeb9059e5a77905aa2ddb59ec28f81` | VERIFIED | 34/34 | mit |
+| `HuggingFaceBio/Carbon-X` | `17de89165e25c49e7de4f845d0e5d464469de359` | VERIFIED | 10/10 | apache-2.0 |
+| `microsoft/Fara1.5-27B` | `299c8406a6c6256d45ec200d1ac12b34c5599d9b` | VERIFIED | 21/21 | mit |
+| `Qwen/Qwen3.8-27B` | `37561816e66b5b9153b1b64c10968c18c1e6f4a0` | VERIFIED | 30/30 | apache-2.0 |
+| `meta-models/Muse-Glimmer-30B` | `1297fd7dfeac4598948a5d15886968435c81c2b7` | VERIFIED | 11/11 | apache-2.0 |
+| `mistralai/Mistral-Small-4-119B-2603` | `a11f36bebf709121056b1dbcc943d1c6afbe494d` | VERIFIED | 21/21 | apache-2.0 |
 
 Weight files were compared against publisher LFS SHA-256; ordinary Git blobs were compared by Git blob SHA-1. 'size-only' means no publisher hash existed.
 Gated models without verified owner entitlement were recorded as HOLD and no payload was acquired for them.

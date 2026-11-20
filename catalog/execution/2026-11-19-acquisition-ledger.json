@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "ledger_id": "2026-11-19-v48-execution",
-  "generated_at": "2026-11-19T17:54:55.249254+00:00",
+  "generated_at": "2026-11-20T06:08:30.419711+00:00",
   "canonical_revision": "v48-20261118",
   "source_plan": "queues/proposed-v48-r113-source-pinned-15.json",
   "policy": {
@@ -14,14 +14,14 @@
     "unclear_license": "HOLD"
   },
   "summary": {
-    "models_total": 62,
-    "models_verified": 61,
+    "models_total": 67,
+    "models_verified": 66,
     "models_partial": 0,
     "models_failed": 0,
     "models_held": 1,
-    "files_verified_total": 708,
-    "bytes_verified_total": 409835119252,
-    "minimum_free_bytes_observed": 2445946363904,
+    "files_verified_total": 801,
+    "bytes_verified_total": 851289867641,
+    "minimum_free_bytes_observed": 2051385790464,
     "minimum_free_floor_bytes": 200000000000,
     "free_floor_maintained": true
   },
@@ -2217,6 +2217,313 @@
       "started_at": "2026-11-19T15:22:19.772203+00:00",
       "finished_at": "2026-11-19T16:59:15.561976+00:00",
       "free_bytes_after": 2445946363904
+    },
+    {
+      "repo_id": "HuggingFaceBio/Carbon-X",
+      "revision_sha": "17de89165e25c49e7de4f845d0e5d464469de359",
+      "source_manifest": "local-discovered/HuggingFaceBio__Carbon-X.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 10,
+      "files_verified": 10,
+      "source_bytes": 29655632110,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 7,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 10
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "c7858d72aaf5d22e45e75196c4f7352b7423127329c7d1ece67ec072c980cfe4"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "9a9f69350110babbfab047b6f18358bdf7b0e1f4790b584c57063ed1d2e1f8d7"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506"
+        }
+      ],
+      "started_at": "2026-11-19T16:59:15.878837+00:00",
+      "finished_at": "2026-11-19T18:42:48.882012+00:00",
+      "free_bytes_after": 2371595055104
+    },
+    {
+      "repo_id": "microsoft/Fara1.5-27B",
+      "revision_sha": "299c8406a6c6256d45ec200d1ac12b34c5599d9b",
+      "source_manifest": "local-discovered/microsoft__Fara1.5-27B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 21,
+      "files_verified": 21,
+      "source_bytes": 54743812659,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 11
+      },
+      "file_status_counts": {
+        "VERIFIED": 21
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00010.safetensors",
+          "sha256": "1f06ec5cbbce42881ddb0f263272bc425470b2fcc5eaa4c5fe04fab685bd572b"
+        },
+        {
+          "path": "model-00002-of-00010.safetensors",
+          "sha256": "f0c1482eea525a4f3e2b9926e0254557ebd6d7f04c5ef0ec76670f4d5aef386a"
+        },
+        {
+          "path": "model-00003-of-00010.safetensors",
+          "sha256": "016cc11f32a8ada9359acf7f2d26edaa4c094b271a8bf7da519e68f6653fbfac"
+        },
+        {
+          "path": "model-00004-of-00010.safetensors",
+          "sha256": "5de326b43c85a517b6b2c64935dbc81a9fe14abae9eaf4f1623a31e9e2789723"
+        },
+        {
+          "path": "model-00005-of-00010.safetensors",
+          "sha256": "28ff226c50f6f72bc76e6e34e948acf543c16964b5400da85c1c3b16e42e3088"
+        },
+        {
+          "path": "model-00006-of-00010.safetensors",
+          "sha256": "97befd5bb8b3d4dd13a58b60916143cae087da62a1c00cba87a4d1243ead0913"
+        },
+        {
+          "path": "model-00007-of-00010.safetensors",
+          "sha256": "48a1776df605d71de0ee480e6003e0c7c8c6bad110d916e6a9409ec3d762ef12"
+        },
+        {
+          "path": "model-00008-of-00010.safetensors",
+          "sha256": "6bb82395f05eff9bf78f7695a469f3d84d69c73d1afa9e78e0da3860d1e4238c"
+        },
+        {
+          "path": "model-00009-of-00010.safetensors",
+          "sha256": "c62fdffad8d02430d249228e84e731b5c5779a8bee3396c6b79f33ece560fc13"
+        },
+        {
+          "path": "model-00010-of-00010.safetensors",
+          "sha256": "207ec8c6a11973996b5270043a6c0650d495d5e59287cd5636e2fea695b197e3"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4"
+        }
+      ],
+      "started_at": "2026-11-19T18:42:49.509509+00:00",
+      "finished_at": "2026-11-19T21:49:16.322412+00:00",
+      "free_bytes_after": 2267718479872
+    },
+    {
+      "repo_id": "Qwen/Qwen3.8-27B",
+      "revision_sha": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
+      "source_manifest": "local-discovered/Qwen__Qwen3.8-27B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 30,
+      "files_verified": 30,
+      "source_bytes": 55586105207,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 19
+      },
+      "file_status_counts": {
+        "VERIFIED": 30
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00018.safetensors",
+          "sha256": "ba0ce20aae489ad196733da5064bcdf159a1fe84f53336648196e1ebb7751b1c"
+        },
+        {
+          "path": "model-00002-of-00018.safetensors",
+          "sha256": "06a148c01bfbe3faa14a5f184a7ff29a706f7ae1c8b2705d2058e26d17a001fb"
+        },
+        {
+          "path": "model-00003-of-00018.safetensors",
+          "sha256": "2e1bf62cbcd406eaa64b60d10353e1f0ef4039d0976e56f05cabe953454f9968"
+        },
+        {
+          "path": "model-00004-of-00018.safetensors",
+          "sha256": "511e34063187882659753c4d93f3859f93c019fd438d8813071921c81d9a3f1a"
+        },
+        {
+          "path": "model-00005-of-00018.safetensors",
+          "sha256": "635cb53446dc74f219740fc59e18b774f877b803b9722e289ca62575a6efa701"
+        },
+        {
+          "path": "model-00006-of-00018.safetensors",
+          "sha256": "0bc5214fac607f0e6cc92eec3789d4b8559410ef9fce66621ba8158e8410dae0"
+        },
+        {
+          "path": "model-00007-of-00018.safetensors",
+          "sha256": "80b0c49033e9a0d5762562aa12f4acdb7f54da586f3d0110f28c48d91cf07892"
+        },
+        {
+          "path": "model-00008-of-00018.safetensors",
+          "sha256": "7192c5b66185d3592927daabee1cc19e6f6e0ce75988ee20e824b624765fda79"
+        },
+        {
+          "path": "model-00009-of-00018.safetensors",
+          "sha256": "af3c48cc37af44f3db6ae0579baf019180d48d9c527caa0a1f03ff85813a56d8"
+        },
+        {
+          "path": "model-00010-of-00018.safetensors",
+          "sha256": "163490a76f3bea3a40855b7efc04ce6d27afaf1a34f0bbde495b9491f76457c9"
+        },
+        {
+          "path": "model-00011-of-00018.safetensors",
+          "sha256": "5f3ae1b948aeee39da77aec558e8236cd65fe4d7cb7686a76bb007acc563c6d8"
+        },
+        {
+          "path": "model-00012-of-00018.safetensors",
+          "sha256": "a3de1c7114677a8f5ac5c4892c90e8238ea5c1e2038c80e757dfc87c3902ca55"
+        },
+        {
+          "path": "model-00013-of-00018.safetensors",
+          "sha256": "06ab79a41f74c9c5cb734816feb0c7fc364104b227165ee7391231e1155aa02a"
+        },
+        {
+          "path": "model-00014-of-00018.safetensors",
+          "sha256": "4138ed94603065ba884bbcadedb04d7718bb40117e85e6f5c6fc5b9c05b7a85b"
+        },
+        {
+          "path": "model-00015-of-00018.safetensors",
+          "sha256": "69224e27b9de4e7dbf6fc936c6eaae08447bda3b80a6c31a871ab451173afd22"
+        },
+        {
+          "path": "model-00016-of-00018.safetensors",
+          "sha256": "73cb9a1089fb6155cb648609478d6633be8a5c7d9ca5a05bc8925ce8a553cefe"
+        },
+        {
+          "path": "model-00017-of-00018.safetensors",
+          "sha256": "beb51f01056142ac4984bd800507b0dd0fd18de57f8e9ef6ea41d1a3598983a8"
+        },
+        {
+          "path": "model-00018-of-00018.safetensors",
+          "sha256": "1d3479509e21494658f9b64d317f5ea8e55c4025d28c702d6c4d0b356ce8ea06"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3"
+        }
+      ],
+      "started_at": "2026-11-19T21:49:17.120175+00:00",
+      "finished_at": "2026-11-20T00:37:10.680507+00:00",
+      "free_bytes_after": 2169386549248
+    },
+    {
+      "repo_id": "meta-models/Muse-Glimmer-30B",
+      "revision_sha": "1297fd7dfeac4598948a5d15886968435c81c2b7",
+      "source_manifest": "local-discovered/meta-models__Muse-Glimmer-30B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 11,
+      "files_verified": 11,
+      "source_bytes": 59581823419,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 8,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 11
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "8eef61530e1283642c77ce2e6721feb5c6f348fa055c00e90f2844a136372694"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "b58cc2144ba1ba1af4420f67f4ca3ced7f09298510b80464cc75018a0be14381"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "c9dbee66967b58f31a7c27f723c3760da3526ccd0427578e8905b0abb0031c4d"
+        }
+      ],
+      "started_at": "2026-11-20T00:37:11.497757+00:00",
+      "finished_at": "2026-11-20T03:44:41.968230+00:00",
+      "free_bytes_after": 2051385790464
+    },
+    {
+      "repo_id": "mistralai/Mistral-Small-4-119B-2603",
+      "revision_sha": "a11f36bebf709121056b1dbcc943d1c6afbe494d",
+      "source_manifest": "local-discovered/mistralai__Mistral-Small-4-119B-2603.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 21,
+      "files_verified": 21,
+      "source_bytes": 241887374994,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 12
+      },
+      "file_status_counts": {
+        "VERIFIED": 21
+      },
+      "weight_files_sha256": [
+        {
+          "path": "consolidated-00001-of-00007.safetensors",
+          "sha256": "e493a53149d9fb05e48d5e814e4e40f97a605d32c0d579d15ebc60684af51ae6"
+        },
+        {
+          "path": "consolidated-00002-of-00007.safetensors",
+          "sha256": "82bf13d11290a0d3ee344e5a07224c623ae5f9c473fe774e24dfccb3506fe7b9"
+        },
+        {
+          "path": "consolidated-00003-of-00007.safetensors",
+          "sha256": "1410d0d2223d665800f7d5b05d7d8adf2df4fb9c7e2e71f3b272f5a5bf07f1e6"
+        },
+        {
+          "path": "consolidated-00004-of-00007.safetensors",
+          "sha256": "8725562ee8c0ee67056fe128220f201456abad6fa2039c61bc7421de8baa4dbd"
+        },
+        {
+          "path": "consolidated-00005-of-00007.safetensors",
+          "sha256": "ee67e9f47175ac89750790fcc5751a497ecedfb424779a66d9d5e7fcab468364"
+        },
+        {
+          "path": "consolidated-00006-of-00007.safetensors",
+          "sha256": "793e1be0042f616a50d73f083e47aadaf98ab65e9c909b8986a81e6611565428"
+        },
+        {
+          "path": "consolidated-00007-of-00007.safetensors",
+          "sha256": "55ec7d746e71207f12b5303c65377b84612859bc78a0cceefe9ccfc60cc7e6de"
+        },
+        {
+          "path": "model-00001-of-00003.safetensors",
+          "sha256": "811a33f74a5160806bf59a5134f015a86386eea49d1b8d2f51c6509382cf5f03"
+        },
+        {
+          "path": "model-00002-of-00003.safetensors",
+          "sha256": "50f010b6318591e49c41dda94926dfaa436f17219ec79f27289a72dd93e1effa"
+        },
+        {
+          "path": "model-00003-of-00003.safetensors",
+          "sha256": "166755c02c0c0682302d460c0eadcf138758a022d9a578c7eb74f3251e770999"
+        },
+        {
+          "path": "tekken.json",
+          "sha256": "b1272b956bd6edd2d2c674c76896c7661308c9e723997b0afb55ecb429cb5dc7"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "2ba5b3330fd84d5376fcca797cfb3b42eee6241ce23e3271e6fb2a115a8751bd"
+        }
+      ],
+      "started_at": "2026-11-19T08:53:30.555532+00:00",
+      "finished_at": "2026-11-19T23:36:26.133312+00:00",
+      "free_bytes_after": 2210091720704
     }
   ],
   "notes": [
