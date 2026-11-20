@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "R136_V57_RESEARCH_SELECTION_AND_REACQUISITION_DECISION",
+  "date_jst": "2026-11-20",
+  "repo": "Unjuno/local-model-portfolio",
+  "baseline_revision": "v57-20261120",
+  "baseline_CURRENT_sha": "ed17a3c0dbf33c1dcf330c1dcc78b590676fd615",
+  "source_queue": "queues/proposed-v57-r135-ledger66-next-deduplicated-sources.json",
+  "source_queue_sha": "ee09cae2974f3d1a01a4c44b5e7456e6c2fdc048",
+  "new_sources": "manifests/drafts/r134-2026-11-20-rikiya08b-mellum-mtp-ripple65b.candidate.json",
+  "source_manifest_sha": "d4939378b977c104b0533a69dbd2957b44abf80c",
+  "ledger_sha": "012e56c917e6496fd0e3cf1bc4c56171af9b8633",
+  "formal_catalog_new_assets_added_in_this_decision": 0,
+  "formal_catalog_changes_allowed_only_through_validated_future_revision": true,
+  "models_for_formal_conditional_future_adoption": [
+    "RikiyaT/Qwen3.5-0.8B-weight-space-programming",
+    "JetBrains/Mellum2.1-12B-A2.5B-Thinking-MTP"
+  ],
+  "non_formal_alternatives": [
+    "ricursiveAI/Ripple-65B-Preview",
+    "huihui-ai/Huihui-Qwen3.5-0.8B-abliterated",
+    "Vortecks/LFM3-1.7B-Heretic-Abliterated",
+    "NousResearch/Arete-27B"
+  ],
+  "prior_acquisition_facts": {
+    "reported_verified_models": 66,
+    "reported_files": 801,
+    "reported_source_bytes": 851289867641,
+    "owner_HDD_rehashed_in_current_review": false,
+    "Qwen27B_reported_revision": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
+    "Qwen27B_reported_sha256_weight_shards": 18,
+    "Maya2_reported_bytes": 5021109670
+  },
+  "changed_decisions_vs_old_research": {
+    "PhalaCloud_Qwen3_8_27B_Uncensored_LoRA": "Previous 61-report lacked Qwen parent; current 66-report includes exact adapter config Qwen parent SHA. PARENT_MISSING stop replaced by OWNER_SHA_REHASH + ADAPTER_RUNTIME_PARITY + DATA_LICENSE_OWN_ACT. Do not claim offline ready.",
+    "REMORY": "New 66-report Qwen parent 18 shards present by ledger, but training rev 1d4bf0.. differs from reported 375618.. and publicly 404 now; historical 29 SHA same / 3 metadata differences alone do not prove local restore. Preserve old source references, verify local parent and 3 metadata."
+  },
+  "selected_model_decisions": [
+    {
+      "repo_id": "RikiyaT/Qwen3.5-0.8B-weight-space-programming",
+      "action": "RECOMMEND_FORMAL_CONDITIONAL_ADOPTION",
+      "priority": "P0_OPTIONALITY_0_8B_WEIGHT_EDIT",
+      "quantitative": {
+        "source_bytes": 1779420899,
+        "trained_elements": 873438784,
+        "known_parent_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+        "source_revision": "d1671a178705bcab7644806d23c535517f35723b"
+      },
+      "preservation_value": "Independent non-gradient weight editing on 131072 BF16 values in layers 15 and 19, author-reproduced exact tensor SHA; preserves 0.8B architecture but changes learned function in ways not reconstructible from original alone without code/diff.",
+      "limits": "Publisher and collaborator rerun: edited MATH-500 51.0% over 500 x4 on H200, vLLM 0.33.0, 32768 token cap. Base 25-prompt smoke is not a matched 2000-generation comparison; do not call performance improvement independently proven.",
+      "unresolved": [
+        "License is Apache 2.0 metadata and bundled LICENSE, individual act review pending",
+        "Exact parent revision should be verified before bit-diff reproduction",
+        "Weight-space edit repository scripts and any binary dependencies not archived/offline reconstructed",
+        "Publisher-quality figures not on user machine"
+      ]
+    },
+    {
+      "repo_id": "JetBrains/Mellum2.1-12B-A2.5B-Thinking-MTP",
+      "action": "RECOMMEND_FORMAL_CONDITIONAL_ADOPTION",
+      "priority": "P1_ORIGINAL_MOE_CODING_WITH_MTP",
+      "quantitative": {
+        "source_bytes": 25165148781,
+        "trained_elements_including_mtp": 12578294528,
+        "main_trained_elements": 12149923072,
+        "mtp_trained_elements": 428371456,
+        "mtp_tensors": 205,
+        "source_revision": "d55846102dd1c047e95d4841070f88290227c3b7"
+      },
+      "preservation_value": "Official JetBrains independent code/agent reasoning MoE. All five main BF16 shards have identical SHA256 in regular and MTP repositories; use one MTP repository with its trained 205-tensor head. This avoids extra ~24.3GB duplicate regular repo.",
+      "limits": "JetBrains publisher eval HumanEval+ 91.5 and SWE-bench Verified 47.0; author's agent harness Pi v0.73.1, 114K context, max 16K tokens per turn; not verified on user's HW/clock/batch. Publisher work says architecture changed little from prior Mellum2 base, but distinct RL post-training from base is non-quantized trained outcome.",
+      "unresolved": [
+        "License source Apache 2.0 tag / publisher card, full model/runtime code ABI not reviewed",
+        "MTP head counted with HTTP byte-range metadata only, not full local SHA",
+        "LLM quality and speed under user VRAM unknown",
+        "No source-scoped owner approval"
+      ]
+    },
+    {
+      "repo_id": "ricursiveAI/Ripple-65B-Preview",
+      "action": "RETAIN_SOURCE_PIN_AS_HIGH_VALUE_DEFERRED_RESEARCH_NOT_FIRST_TRANSFER",
+      "priority": "P2_RARE_INDEPENDENT_65B",
+      "quantitative": {
+        "source_bytes": 129572889973,
+        "trained_elements": 64782689360,
+        "source_revision": "d58dbcf43344e27494a40cec6727e180450f4a6b"
+      },
+      "preservation_value": "Distinct Ricursive independently pretrained 12T-token dense ~65B model, with custom architecture and long-context post-training; cannot be recreated by quantizing existing Qwen/Mistral roots. Official Apache 2.0.",
+      "limits": "Publisher SWE-bench Verified 76.5 and up to 1,048,576 tokens context are author claims; no user machine performance. 129.57GB BF16 source is more costly than all preceding phase2 originals combined.",
+      "unresolved": [
+        "Check exact custom model Python/security/ABI and all tokenizer files",
+        "Independent same-HW benchmarks and actual 512GB-class RAM including cache/KV",
+        "Physical owner 4TB capacity and free >=200GB with staging",
+        "Source-specific legal and user permission"
+      ]
+    },
+    {
+      "repo_id": "huihui-ai/Huihui-Qwen3.5-0.8B-abliterated",
+      "action": "HOLD_NOT_ADOPT_NOW",
+      "priority": "P3_OVERLAP_EVIDENCE_LIGHT",
+      "quantitative": {
+        "public_source_bytes": 1769921248,
+        "hub_total_model_parameters": 873438784,
+        "source_revision": "4813135658fe51b2e535b8e77927d2f23909ce42"
+      },
+      "preservation_value": "Another exact 0.8B refusal-direction checkpoint but same Qwen3.5 parent and older widely distributed quantized conversions.",
+      "limits": "Author describes proof-of-concept uncensoring without independent benchmark; prioritize Rikiya's reproducible weight-space edit and existing FrostWolf/Spark edit families first.",
+      "unresolved": [
+        "Independent refusal/quality paired test needed to justify a new independent catalog slot"
+      ]
+    },
+    {
+      "repo_id": "Vortecks/LFM3-1.7B-Heretic-Abliterated",
+      "action": "HOLD_NOT_ADOPT_NOW",
+      "priority": "P3_DUPLICATE_FAMILY",
+      "quantitative": {
+        "public_source_bytes": 3475624067,
+        "hub_total_model_parameters": 1728801536,
+        "source_revision": "dc37c60c02a35603456c85c2aecd7bc22b23b89c"
+      },
+      "preservation_value": "Alternative LFM3 edited weight with different SHA but same parent and very similar refusal direction to already v56 selected FrostWolf LFM3.",
+      "limits": "Author's 3/100 refusals and KL 0.0094 from its own limited 100 examples; no identical held-out cross-model evaluation. Treat difference in hash as distinct data but not proven archival priority.",
+      "unresolved": [
+        "Preservation differentiation of research questions or measured capability not established"
+      ]
+    },
+    {
+      "repo_id": "NousResearch/Arete-27B",
+      "action": "HOLD_NOT_ADOPT_NOW",
+      "priority": "P2_HIGH_BYTES_OVERLAP_QWEN_PARENT",
+      "quantitative": {
+        "publisher_all_repo_bytes": 54743825646,
+        "trained_elements": 27356728560,
+        "source_revision": "108f0afbdcfaa1ceeda4a635004304dfff6d4da2"
+      },
+      "preservation_value": "Independent SFT alignment change of already reported Qwen3.8-27B source; model author's political framing and claims are not independently validated.",
+      "limits": "About 54.74GB standalone weights plus language/political-value evaluation possible, but source family overlaps existing Qwen originals and edited 27B. Compare same task conditions, data provenance and quality before another 55GB.",
+      "unresolved": [
+        "Training dataset and country-frame benchmark coverage, unrelated task parity",
+        "Independent bias/fact evaluation vs publisher perspective"
+      ]
+    }
+  ],
+  "capacity_plan": {
+    "phases": {
+      "P0_PARENT_REUSE": {
+        "repos": 3,
+        "files": 22,
+        "bytes": 486825520
+      },
+      "P1_COMPACT_DIVERSITY": {
+        "repos": 6,
+        "files": 131,
+        "bytes": 11382100237
+      },
+      "P2_MEDIUM_INDEPENDENT": {
+        "repos": 3,
+        "files": 58,
+        "bytes": 52735978432
+      },
+      "P3_LARGE_DEFER": {
+        "repos": 1,
+        "files": 32,
+        "bytes": 129572889973
+      }
+    },
+    "all_selected_source_repo_count": 13,
+    "all_selected_file_count": 243,
+    "all_reported_source_bytes_including_deferred_large": 194177794162,
+    "near_term_excludes_ripple": true,
+    "near_term_if_every_file_absent": 64604904189,
+    "existing_reported_bytes_are_not_new_storage_reservations": true,
+    "physical_4tb_capacity_unknown": true
+  },
+  "policy_correction": {
+    "confirmed": "US BIS effective 2026-11-19 removed old AI Diffusion Rule model weight ECCN 4E091. This is not a universal right to acquire any gated weights. EU Article53 includes some open source exemptions, not universal ban.",
+    "hypotheses": "Targeted upstream license changes, access gating or dual-use risk possible in unspecified future; no model-specific probability or withdrawal deadline.",
+    "all_parameter_cap_includes_inactive_experts": true,
+    "always_review_direct_download_license": true
+  },
+  "primary_source_references": {
+    "BIS": "https://www.govinfo.gov/content/pkg/FR-2026-11-19/pdf/2026-23529.pdf",
+    "EU": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-53",
+    "HUFGATED": "https://huggingface.co/docs/hub/en/models-gated",
+    "JETBRAINS": "https://huggingface.co/JetBrains/Mellum2.1-12B-A2.5B-Thinking-MTP",
+    "RIKIYA": "https://huggingface.co/RikiyaT/Qwen3.5-0.8B-weight-space-programming",
+    "RIPPLE": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+    "PHALA": "https://huggingface.co/PhalaCloud/Qwen3.8-27B-Uncensored-LoRA",
+    "QWEN": "https://huggingface.co/Qwen/Qwen3.8-27B",
+    "MAYA": "https://huggingface.co/maya-research/maya2-native"
+  },
+  "final_authorization": {
+    "approved_queue_entries": 0,
+    "weights_downloaded_this_research": false,
+    "approved": false,
+    "model_code_executed": false,
+    "owner_HDD_SHA_verified": false,
+    "user_specific_rights_verified": false,
+    "license_act_cleared": false
+  },
+  "H_T_D_C_U": {
+    "H": "Prioritize reproducible small independently edited original plus Mellum one MTP repo over redundant conversions; fewer redundant bytes with comparable function, conditional until same HW performance.",
+    "T": "N=66 immutable upstream file refs across 3 newly pinned sources, inspect all paths/bytes/git and LFS; MTP separate static HTTP-range safetensors header, repeat 66-ledger scope match with full canonical, stop on SHA/legal mismatch; future paired task n_min=100 with same backend/dtype/context/batch.",
+    "D": "PASS_SOURCE for three fixed publisher revisions; PASS_AUTHORIZE only with full owner rights, stored parent, verified SHA and physical minimum; FAIL on mismatched tensor SHA/access violation; UNCERTAIN on latency and independent quality.",
+    "C": "Ablation may degrade useful tasks; model architecture/code ABI incompatible; small edits are reproducible from parent and code and need no full standalone duplicate; historic source availability may persist.",
+    "U": "Primary error sources: publisher benchmarks, unknown owner HDD, runtime code, license scope and dataset/teacher provenance. No distribution of outcomes to estimate combined u_c or k."
+  }
+}
