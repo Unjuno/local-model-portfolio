@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "kind": "R137_V58_RESEARCH_CONDITIONAL_ADOPTION",
+  "date_jst": "2026-11-21",
+  "repository": "Unjuno/local-model-portfolio",
+  "previous_revision": "v57-20261120",
+  "new_revision": "v58-20261121",
+  "old_asset_count": 213,
+  "new_asset_count": 218,
+  "new_active_count": 171,
+  "source_manifest": "manifests/drafts/r137-2026-11-21-inkling2mini-and-dettato-four-publisher-sources.candidate.json",
+  "model_repo_count": 5,
+  "publisher_file_count": 39,
+  "publisher_source_bytes": 20312109868,
+  "publisher_lfs_sha256_refs": 17,
+  "new_selected_repos": [
+    "thinkingmachines/Inkling-2-Mini",
+    "kobimusic/dettato",
+    "kobimusic/dettato-evidence",
+    "kobimusic/dettato-grouper",
+    "kobimusic/dettato-drums"
+  ],
+  "inkling": {
+    "repo_id": "thinkingmachines/Inkling-2-Mini",
+    "revision": "1fb4134b9a74f9681054f4ef82e4bf1f458a2337",
+    "main_logical_params_from_hub": 26388646440,
+    "mtp_BF16_header_elements": 317897872,
+    "nominal_count_main_plus_mtp": 26706544312,
+    "architecture": "24 distinct layers, middle 12 looped three passes, 8 of 128 routed experts. Native modelopt mixed NVFP4/MXFP8.",
+    "bytes": 20191643271,
+    "hardware": "publisher recommends 32GB GPU or unified RAM; owner not benchmarked",
+    "legal": "Apache-2.0 tag plus Thinking Machines Model Acceptable Use Policy",
+    "quantization_count_caveat": "Packed U8 physical tensor elements do not equal uncompressed logical parameters; exact logical accounting needs ModelOpt schema review.",
+    "research_alternative": "TML-d24-varloop-research 20,191,620,855 bytes distinct trained mutable pass model research HOLD"
+  },
+  "dettato": {
+    "stage_models": [
+      {
+        "repo_id": "kobimusic/dettato",
+        "role": "88 key pitch-lane transcriber for onset/frame/offset and overlapping notes",
+        "publisher_params": 15299474
+      },
+      {
+        "repo_id": "kobimusic/dettato-evidence",
+        "role": "5M trained note-level error repairer; transcriber output dependent",
+        "publisher_params": 4930929
+      },
+      {
+        "repo_id": "kobimusic/dettato-grouper",
+        "role": "Separate instrument classification and track clustering",
+        "publisher_params": 2896613
+      },
+      {
+        "repo_id": "kobimusic/dettato-drums",
+        "role": "Two percussion sub-models and router sharing one checkpoint",
+        "publisher_params": 5017049
+      }
+    ],
+    "four_stage_publisher_params": 28144065,
+    "four_repo_bytes": 120466597,
+    "weight_files_bytes": 112758556,
+    "code_git_revision": "9b724251794f2bbd5eaa43e54734e5a251829130",
+    "publisher_benchmark": "9-dataset F1=59.2 for transcriber+drums only, MuScriptor=45.1; NOT benchmark of all four-stage output.",
+    "runtime": "Python>=3.10, torch>=2.2, ffmpeg optional for unsupported audio; DETTATO_WEIGHTS offline directory.",
+    "drums_requires_original_input_40kHz_or_more": true,
+    "instrument_grouper_weakness": "Jazz lead instrument track assignment can fail.",
+    "independent_value": "Separate original multi-instrument music-to-MIDI and drum transcription, not duplicate of SheetSage2 melody/chord or music-generation models.",
+    "training_rights": "Weights+code Apache2, some source research training datasets noncommercial. CC-licensed samples still can be copyrighted."
+  },
+  "policy": {
+    "future_model_specific_takedown_unverified": true,
+    "strict_total_parameter_screen_under150B": true,
+    "quantized_conversion_not_a_new_original": true,
+    "user_specific_rights_approved": false,
+    "owner_disk_32GB_or_free_floor_verified": false,
+    "offline_run_completed": false,
+    "approved_queue_entries": 0,
+    "approved": false,
+    "download_enabled": false,
+    "weights_downloaded_this_research": false
+  },
+  "H": "Unique 5 original learned results preserve distinct 26.4B looped multimodal reasoning and 28.1M four-stage MIDI despite existing SheetSage.",
+  "T": "All 39 file metadata path/bytes/Git OID and 17 LFS SHA from publisher revisions; fixed code commit; source-only HTTP206 header sample; stop on first revision/size/rights difference.",
+  "D": "PASS_METADATA; FAIL if source mismatch or missing user rights; UNCERTAIN complete off-line runtime and independent quality.",
+  "C": "Four-stage F1 may not equal two-stage claims, 32GB requirement may defeat target hardware, some training data NC.",
+  "U": "No independent benchmark variance or user HDD/runtime repeats; cannot compute calibrated u_c or k."
+}
