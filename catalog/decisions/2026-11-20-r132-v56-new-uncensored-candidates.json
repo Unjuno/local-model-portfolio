@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "kind": "R132_V56_UNCENSORED_ORIGINAL_RESEARCH_ONLY",
+  "date": "2026-11-20",
+  "baseline": "28b0f2c7dbcdf1d73dc94c7a7c6febc60c6f4701",
+  "canonical_revision": "v56-20261120",
+  "registered": 211,
+  "active": 164,
+  "new_candidates": [
+    {
+      "repo_id": "FrostWolfAI/Spark-X2.6-4B-abliterated",
+      "parameters": 4112100000,
+      "access": "public",
+      "license": "apache-2.0",
+      "parent": "XHToken/Spark-X2.6-4B",
+      "next": "P1 source revision, weight SHA, base_model:quantized tag ambiguity, custom code",
+      "source_revision": null,
+      "selected_bytes": null,
+      "independent_weight_delta_verified": false,
+      "approved": false,
+      "canonical_exists": false
+    },
+    {
+      "repo_id": "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+      "parameters": 9409800000,
+      "access": "public",
+      "license": "apache-2.0",
+      "parent": "Jackrong/DeepSeek-V4-Pro-Qwen3.5-9B",
+      "next": "P2 original trained weight difference, parent 9.6531B vs edited 9.4098B tensor census",
+      "source_revision": null,
+      "selected_bytes": null,
+      "independent_weight_delta_verified": false,
+      "approved": false,
+      "canonical_exists": false
+    },
+    {
+      "repo_id": "llmfan46/gemma-4-31B-it-uncensored-heretic",
+      "parameters": 31273100000,
+      "access": "public",
+      "license": "apache-2.0",
+      "parent": "google/gemma-4-31B-it",
+      "next": "P3 31B VLM high storage cost and overlap; defer",
+      "source_revision": null,
+      "selected_bytes": null,
+      "independent_weight_delta_verified": false,
+      "approved": false,
+      "canonical_exists": false
+    },
+    {
+      "repo_id": "FrostWolfAI/Frost-Cyber-Mini-1.0",
+      "parameters": 4205800000,
+      "access": "GATED",
+      "license": "cc-by-nc-sa-4.0",
+      "parent": "huihui-ai/Huihui-Qwen3.5-4B-abliterated",
+      "next": "HOLD owner entitlement, dataset lineage, NC license",
+      "source_revision": null,
+      "selected_bytes": null,
+      "independent_weight_delta_verified": false,
+      "approved": false,
+      "canonical_exists": false
+    },
+    {
+      "repo_id": "nazeshinjite/Qwen3.8-Flash-Next-Abliterated-LoRA",
+      "parameters": null,
+      "access": "public metadata",
+      "license": "other",
+      "parent": "Qwen/Qwen3.8-Flash-Next",
+      "next": "HOLD parent MoE total, 150B exception, license and runtime",
+      "source_revision": null,
+      "selected_bytes": null,
+      "independent_weight_delta_verified": false,
+      "approved": false,
+      "canonical_exists": false
+    }
+  ],
+  "formal_selections_added": 0,
+  "approved_entries": 0,
+  "weights_downloaded": 0,
+  "stop_conditions": [
+    "immutable revision and publisher SHA",
+    "trained tensor census including MTP and MoE",
+    "owner rights for intended acts and Gated access",
+    "owner HDD SHA and 200GB free floor",
+    "custom code/backend ABI audit",
+    "explicit exact manifest approval"
+  ],
+  "evidence": [
+    "https://huggingface.co/models?other=uncensored&sort=trending",
+    "https://huggingface.co/FrostWolfAI/Spark-X2.6-4B-abliterated",
+    "https://huggingface.co/xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+    "https://huggingface.co/llmfan46/gemma-4-31B-it-uncensored-heretic",
+    "https://huggingface.co/FrostWolfAI/Frost-Cyber-Mini-1.0",
+    "https://huggingface.co/nazeshinjite/Qwen3.8-Flash-Next-Abliterated-LoRA"
+  ],
+  "classification": "metadata research, not confirmed independent trained source or benchmark"
+}
