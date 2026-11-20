@@ -1,0 +1,752 @@
+{
+  "schema_version": 1,
+  "revision_id": "v58-20261121",
+  "previous_revision_id": "v57-20261120",
+  "decision_date_jst": "2026-11-21",
+  "target_branch": "main",
+  "kind": "ONE_INDEPENDENT_INKLING_NATIVE_LOOPED_MULTIMODAL_MOE_PLUS_DETTATO_FOUR_STAGE_MUSIC_AMT",
+  "previous_asset_count": 213,
+  "previous_active_count": 166,
+  "additions": [
+    {
+      "position": 214,
+      "asset_kind": "model",
+      "repo_id": "thinkingmachines/Inkling-2-Mini",
+      "url": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "group": "新規ループ型MoE・画像対応・native混合精度",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "24 distinct layers, middle 12 looped three times; multimodal looped MoE with 128 routed experts and native NVFP4/MXFP8. Preserving native weights and separate trained MTP head captures a unique architecture.",
+      "quality_positive": "Publisher immutable original source: 14 files, 20191643271 bytes, 4 LFS SHA256 refs. HUB main logical 26,388,646,440 plus separately serialized MTP 317,897,872 BF16 elements; exact modelopt packed schema correspondence requires static audit",
+      "quality_negative": "Publisher 32GB minimum memory; 1M context claims not tested on owner's hardware. MTP separate and modelopt packed quantization complicates exact physical scalar counting. Open Apache-2.0 repo tag and separate acceptable use policy; no local runtime validation.",
+      "risk_and_alternative_assessment": "Publisher publicly lists weights now; scenario future distribution tightening is unquantified and not a dated legal ban. Rights and owner archive gates independent.",
+      "evidence_date": "2026-11-21",
+      "evidence_kind": "FIRST_PARTY_HUGGING_FACE_IMMUTABLE_METADATA_AND_STATIC_SAFETENSORS_HEADER_NO_MODEL_EXECUTION",
+      "evidence_urls": [
+        "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+        "https://huggingface.co/thinkingmachines/Inkling-2-Mini/tree/1fb4134b9a74f9681054f4ef82e4bf1f458a2337",
+        "https://github.com/kobimusic/dettato"
+      ],
+      "observed_access": "public ungated:false private:false in 2026-11-21 publisher Hub API",
+      "license_metadata": "Apache-2.0 publisher license metadata; separate Thinking Machines Model Acceptable Use Policy",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "1fb4134b9a74f9681054f4ef82e4bf1f458a2337",
+      "upstream_all_files_bytes_observed": 20191643271,
+      "upstream_file_count_observed": 14,
+      "upstream_lfs_sha256_count_observed": 4,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 14,
+      "candidate_selected_source_file_bytes": 20191643271,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "sha256": null,
+          "git_blob_sha1": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 54831,
+          "sha256": null,
+          "git_blob_sha1": "93b9f80e70b2b321b24860d76f57673aad34402b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 6868,
+          "sha256": null,
+          "git_blob_sha1": "cae99e08917fe3d9ff21551a7c9a835981c69032",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 2699,
+          "sha256": null,
+          "git_blob_sha1": "b7de677835af1c95e3a8794bf2215b75ff7d9c3b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 98,
+          "sha256": null,
+          "git_blob_sha1": "1b5d49d129001d2be58c2f254bfae3221eab6d96",
+          "local_sha_verified": false
+        },
+        {
+          "path": "hf_quant_config.json",
+          "bytes": 67924,
+          "sha256": null,
+          "git_blob_sha1": "ec915fa4d2b07bfe26240f71e981d34778022baf",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00001-of-00001.safetensors",
+          "bytes": 19526019168,
+          "sha256": "65e60f51aa1284d4fb022584908c315270334d991828bb774af60584523539d1",
+          "git_blob_sha1": "7f0fa8d80a5140de6e010c49c855be80ccbe86b1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 109300,
+          "sha256": null,
+          "git_blob_sha1": "3b835a38066039133931b604a0734dfae89a644e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "mtp.safetensors",
+          "bytes": 635801416,
+          "sha256": "7c3b651317f01f73bcf4e1dceba66ef8b7e1a1eac6bc171e882e690a4b10a1d2",
+          "git_blob_sha1": "d4be15f6c0f8552e04f4278cd024afd36ad2042b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 461,
+          "sha256": null,
+          "git_blob_sha1": "0e6df76a75a15f8af795dc08346dad6741f6421e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 529,
+          "sha256": null,
+          "git_blob_sha1": "e4fe9735b528be1c630eb832d655fc8c4c2c309f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tiktoken/tokenizer.model",
+          "bytes": 3386494,
+          "sha256": "f170372dd655728909228220d77cf6b8104a59f38a91262a7d2c4027906ec0d8",
+          "git_blob_sha1": "5206e2465982316e8d9648a88014d41e059204cf",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 26178678,
+          "sha256": "7f332727f9a3f093dd452a39cc978e6757627e5dad1b0673aa4e75174f236dd6",
+          "git_blob_sha1": "5e55fd2939ffee98a8dd9f273b7e8c999e56f9c2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 13235,
+          "sha256": null,
+          "git_blob_sha1": "abf8fb60451e6c33d2cfa3c4dfab9f8c1e7516aa",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r137-2026-11-21-inkling2mini-and-dettato-four-publisher-sources.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 26706544312,
+        "exclusive_max_total_parameters": 150000000000,
+        "evidence_kind": "PUBLISHER_SAFETENSORS_MAIN_AND_STATIC_HEADER_ONLY_MODEL_SPECIFIC_CAVEAT",
+        "review_date": "2026-11-21",
+        "note": "HUB main logical 26,388,646,440 plus separately serialized MTP 317,897,872 BF16 elements; exact modelopt packed schema correspondence requires static audit",
+        "local_full_trainable_tensor_census_certified": false,
+        "conditional_rule": "Below 150B from publisher logical count plus separately packaged MTP when applicable; no implicit permission for download.",
+        "known_before_download": true
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 214,
+        "category": "CAPABILITY_AND_ARCHITECTURE_OPTIONALITY",
+        "scenario_status": "STRESS_TEST_NOT_MODEL_SPECIFIC_TAKEDOWN_PROBABILITY",
+        "rationale": "Preserve independently trained architecture and nonreconstructible task-specific outputs; priority not inferred from actual legal ban."
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "chat_template.jinja",
+          "config.json",
+          "generation_config.json",
+          "hf_quant_config.json",
+          "model-00001-of-00001.safetensors",
+          "model.safetensors.index.json",
+          "mtp.safetensors",
+          "processor_config.json",
+          "special_tokens_map.json",
+          "tiktoken/tokenizer.model",
+          "tokenizer.json",
+          "tokenizer_config.json"
+        ],
+        "trained_state": "full_native_mixed_precision_looped_moe_plus_mtp",
+        "required_weights": [
+          "model-00001-of-00001.safetensors",
+          "mtp.safetensors"
+        ],
+        "loops": 3,
+        "experts_total": 128,
+        "experts_active_per_token": 8,
+        "requires_GPU_or_unified_RAM_bytes_publisher": 32000000000,
+        "vision_included": true,
+        "trained_mtp_header_tensor_count": 54,
+        "mtp_header_elements": 317897872,
+        "python_code_not_executed": true,
+        "owner_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 20191643271,
+        "source_bytes_are_not_selected_bytes": false,
+        "actual_owner_disk_free_bytes": null,
+        "storage_planning_not_approved": true,
+        "hw_tested_on_user_machine": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "position": 215,
+      "asset_kind": "model",
+      "repo_id": "kobimusic/dettato",
+      "url": "https://huggingface.co/kobimusic/dettato",
+      "group": "音楽→MIDI・極小音高検出",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "15.3M original pitch lane transcriber with two voices per pitch; unique local automatic music transcription learned result, not ASR speech or MIDI music generation.",
+      "quality_positive": "Publisher immutable original source: 8 files, 64794996 bytes, 5 LFS SHA256 refs. Publisher Hub metadata and BF16? Actually F32 safetensors header 15,299,474 float entries +22 I64 buffers",
+      "quality_negative": "Benchmark is author transcriber+drums only; not full four-stage end-to-end system. Requires evidence, grouper, drums and pinned code for full MIDI multitrack workflow. Dataset training rights independent.",
+      "risk_and_alternative_assessment": "Publisher publicly lists weights now; scenario future distribution tightening is unquantified and not a dated legal ban. Rights and owner archive gates independent.",
+      "evidence_date": "2026-11-21",
+      "evidence_kind": "FIRST_PARTY_HUGGING_FACE_IMMUTABLE_METADATA_AND_STATIC_SAFETENSORS_HEADER_NO_MODEL_EXECUTION",
+      "evidence_urls": [
+        "https://huggingface.co/kobimusic/dettato",
+        "https://huggingface.co/kobimusic/dettato/tree/a0d1e354d282c4ed458b83b287065587979b053e",
+        "https://github.com/kobimusic/dettato"
+      ],
+      "observed_access": "public ungated:false private:false in 2026-11-21 publisher Hub API",
+      "license_metadata": "Apache-2.0 code and weights; model cards list upstream training datasets incl NC research terms",
+      "license_text_reviewed": true,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "a0d1e354d282c4ed458b83b287065587979b053e",
+      "upstream_all_files_bytes_observed": 64794996,
+      "upstream_file_count_observed": 8,
+      "upstream_lfs_sha256_count_observed": 5,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 8,
+      "candidate_selected_source_file_bytes": 64794996,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2011,
+          "sha256": null,
+          "git_blob_sha1": "9884d74669ea74312fc9572dc5a03411325bb1af",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 8967,
+          "sha256": null,
+          "git_blob_sha1": "3317ff5c691e2bb771b0a7f6f287ff510b5f9731",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 915,
+          "sha256": null,
+          "git_blob_sha1": "b59cca93b082dcc98aa1a708a13ad88573b322d8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "figures/bench_all_sets.png",
+          "bytes": 1384844,
+          "sha256": "c82b9010725c7556e1f05a3cc9e9b9945d99a14ec5d37875b923c5e425683c6c",
+          "git_blob_sha1": "13c1fa4d3a941e38c20ffc0eca53fa3cf1f1177f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "figures/bench_mirelo_sets.png",
+          "bytes": 880536,
+          "sha256": "434d85370701262c41adabaae814739565a7e1ce3c6af2d4d2f98aa550cf0461",
+          "git_blob_sha1": "8528ac19bf00fd63e6402ca4bbe99c2d7cbb418a",
+          "local_sha_verified": false
+        },
+        {
+          "path": "figures/pipeline.png",
+          "bytes": 672163,
+          "sha256": "3dc6025e79d3c5f08589c82fa142fc5f798786e0d4e7323575f62ce0ecb2be1a",
+          "git_blob_sha1": "7926d21c028f200bc38956af96b3eade1126cd8f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "figures/transcriber_example.png",
+          "bytes": 617608,
+          "sha256": "461fd3c87f6022de4ba6d343e02576cc89590cad4d1e80f10d03430af8017548",
+          "git_blob_sha1": "288d756860c10112e0c8f853dc8ff0710f2a6a67",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 61227952,
+          "sha256": "696d22c5341c6e3df1bdb5670cb7945b65aa36f06811dfa5dfe73dc06cd53be5",
+          "git_blob_sha1": "a8c66035969ea510cab15791c4e89d94b640f01d",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r137-2026-11-21-inkling2mini-and-dettato-four-publisher-sources.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 15299474,
+        "exclusive_max_total_parameters": 150000000000,
+        "evidence_kind": "PUBLISHER_SAFETENSORS_MAIN_AND_STATIC_HEADER_ONLY_MODEL_SPECIFIC_CAVEAT",
+        "review_date": "2026-11-21",
+        "note": "Publisher Hub metadata and BF16? Actually F32 safetensors header 15,299,474 float entries +22 I64 buffers",
+        "local_full_trainable_tensor_census_certified": false,
+        "conditional_rule": "Below 150B from publisher logical count plus separately packaged MTP when applicable; no implicit permission for download.",
+        "known_before_download": true
+      },
+      "forecast_priority": {
+        "wave": "S3",
+        "rank": 215,
+        "category": "SMALL_SPECIALIST_MUSIC_TRANSCRIPTION",
+        "scenario_status": "STRESS_TEST_NOT_MODEL_SPECIFIC_TAKEDOWN_PROBABILITY",
+        "rationale": "Preserve independently trained architecture and nonreconstructible task-specific outputs; priority not inferred from actual legal ban."
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "config.json",
+          "figures/bench_all_sets.png",
+          "figures/bench_mirelo_sets.png",
+          "figures/pipeline.png",
+          "figures/transcriber_example.png",
+          "model.safetensors"
+        ],
+        "trained_state": "dettato_transcriber_original_f32",
+        "original_stage": 1,
+        "requires": [
+          "kobimusic/dettato-evidence",
+          "kobimusic/dettato-grouper",
+          "kobimusic/dettato-drums"
+        ],
+        "publisher_code_commit": "9b724251794f2bbd5eaa43e54734e5a251829130",
+        "python_code_not_executed": true,
+        "owner_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 64794996,
+        "source_bytes_are_not_selected_bytes": false,
+        "actual_owner_disk_free_bytes": null,
+        "storage_planning_not_approved": true,
+        "hw_tested_on_user_machine": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "position": 216,
+      "asset_kind": "model",
+      "repo_id": "kobimusic/dettato-evidence",
+      "url": "https://huggingface.co/kobimusic/dettato-evidence",
+      "group": "音楽音符の校正・独立学習済み補正器",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "4.93M learned transformer repairs missed/wrong note onsets and offsets from dettato, separate training outcome required for publisher four-stage pipeline.",
+      "quality_positive": "Publisher immutable original source: 6 files, 21234165 bytes, 3 LFS SHA256 refs. Header F32 4,930,929 entries in 86 tensors",
+      "quality_negative": "Benchmark plus0.30 F1 evaluated with an earlier transcription checkpoint, not full new pipeline; source repo without main transcriber cannot run the complete system.",
+      "risk_and_alternative_assessment": "Publisher publicly lists weights now; scenario future distribution tightening is unquantified and not a dated legal ban. Rights and owner archive gates independent.",
+      "evidence_date": "2026-11-21",
+      "evidence_kind": "FIRST_PARTY_HUGGING_FACE_IMMUTABLE_METADATA_AND_STATIC_SAFETENSORS_HEADER_NO_MODEL_EXECUTION",
+      "evidence_urls": [
+        "https://huggingface.co/kobimusic/dettato-evidence",
+        "https://huggingface.co/kobimusic/dettato-evidence/tree/5633f28ee330a48bc31bdd3f9f98bb1a71206141",
+        "https://github.com/kobimusic/dettato"
+      ],
+      "observed_access": "public ungated:false private:false in 2026-11-21 publisher Hub API",
+      "license_metadata": "Apache-2.0 code and weights; model cards list upstream training datasets incl NC research terms",
+      "license_text_reviewed": true,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "5633f28ee330a48bc31bdd3f9f98bb1a71206141",
+      "upstream_all_files_bytes_observed": 21234165,
+      "upstream_file_count_observed": 6,
+      "upstream_lfs_sha256_count_observed": 3,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 6,
+      "candidate_selected_source_file_bytes": 21234165,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1645,
+          "sha256": null,
+          "git_blob_sha1": "8094e7d91342b12ba6147b8301742f7495320c03",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 6071,
+          "sha256": null,
+          "git_blob_sha1": "c9d2972606f66a5259bd1ba4840e18343d89f93c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 251,
+          "sha256": null,
+          "git_blob_sha1": "95e3b1bc92d5e78fb94b359aace03fe37868a6b2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "figures/bench_evidence.png",
+          "bytes": 860162,
+          "sha256": "8e8fe76884d494e6504d54dae72aeb18103989806a72660c4fd1ea4827fd27b7",
+          "git_blob_sha1": "132d0a2ea27d032737d9635831019dce54968407",
+          "local_sha_verified": false
+        },
+        {
+          "path": "figures/evidence_edits.png",
+          "bytes": 634648,
+          "sha256": "98ade0570c4f5eccdfea7f5599cf163ab291a4c857f82f3f102e6ef7a7a32a0c",
+          "git_blob_sha1": "1d7a055345b8ca7893f483114fee0d5cdc843ebc",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 19731388,
+          "sha256": "25f06767a6ad72a9d409701b11ae500bd54622b3d7ddde8dd51152a148a3833a",
+          "git_blob_sha1": "e8cc5c2214f9a916ebf26faf4e2ab7a2520d1095",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r137-2026-11-21-inkling2mini-and-dettato-four-publisher-sources.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 4930929,
+        "exclusive_max_total_parameters": 150000000000,
+        "evidence_kind": "PUBLISHER_SAFETENSORS_MAIN_AND_STATIC_HEADER_ONLY_MODEL_SPECIFIC_CAVEAT",
+        "review_date": "2026-11-21",
+        "note": "Header F32 4,930,929 entries in 86 tensors",
+        "local_full_trainable_tensor_census_certified": false,
+        "conditional_rule": "Below 150B from publisher logical count plus separately packaged MTP when applicable; no implicit permission for download.",
+        "known_before_download": true
+      },
+      "forecast_priority": {
+        "wave": "S3",
+        "rank": 216,
+        "category": "SMALL_SPECIALIST_MUSIC_TRANSCRIPTION",
+        "scenario_status": "STRESS_TEST_NOT_MODEL_SPECIFIC_TAKEDOWN_PROBABILITY",
+        "rationale": "Preserve independently trained architecture and nonreconstructible task-specific outputs; priority not inferred from actual legal ban."
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "config.json",
+          "figures/bench_evidence.png",
+          "figures/evidence_edits.png",
+          "model.safetensors"
+        ],
+        "trained_state": "dettato_evidence_original_f32",
+        "original_stage": 2,
+        "requires": [
+          "kobimusic/dettato"
+        ],
+        "publisher_code_commit": "9b724251794f2bbd5eaa43e54734e5a251829130",
+        "python_code_not_executed": true,
+        "owner_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 21234165,
+        "source_bytes_are_not_selected_bytes": false,
+        "actual_owner_disk_free_bytes": null,
+        "storage_planning_not_approved": true,
+        "hw_tested_on_user_machine": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "position": 217,
+      "asset_kind": "model",
+      "repo_id": "kobimusic/dettato-grouper",
+      "url": "https://huggingface.co/kobimusic/dettato-grouper",
+      "group": "楽器別トラック分離・小型専門モデル",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "2.9M independent note-level transformer clusters MIDI note events by instrument and track; function differs from notes detector and prior SheetSage2 melody/chord estimates.",
+      "quality_positive": "Publisher immutable original source: 5 files, 12460661 bytes, 2 LFS SHA256 refs. Header F32 2,896,613 entries in 202 tensors",
+      "quality_negative": "Publisher acknowledges weak instrument assignment, especially jazz. Some source research training datasets have noncommercial conditions; model Apache metadata does not certify downstream data rights.",
+      "risk_and_alternative_assessment": "Publisher publicly lists weights now; scenario future distribution tightening is unquantified and not a dated legal ban. Rights and owner archive gates independent.",
+      "evidence_date": "2026-11-21",
+      "evidence_kind": "FIRST_PARTY_HUGGING_FACE_IMMUTABLE_METADATA_AND_STATIC_SAFETENSORS_HEADER_NO_MODEL_EXECUTION",
+      "evidence_urls": [
+        "https://huggingface.co/kobimusic/dettato-grouper",
+        "https://huggingface.co/kobimusic/dettato-grouper/tree/5a94cea2329f53228d7bcf1fd6a9f8d9778cc75b",
+        "https://github.com/kobimusic/dettato"
+      ],
+      "observed_access": "public ungated:false private:false in 2026-11-21 publisher Hub API",
+      "license_metadata": "Apache-2.0 code and weights; model cards list upstream training datasets incl NC research terms",
+      "license_text_reviewed": true,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "5a94cea2329f53228d7bcf1fd6a9f8d9778cc75b",
+      "upstream_all_files_bytes_observed": 12460661,
+      "upstream_file_count_observed": 5,
+      "upstream_lfs_sha256_count_observed": 2,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 5,
+      "candidate_selected_source_file_bytes": 12460661,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1710,
+          "sha256": null,
+          "git_blob_sha1": "79c34dace66f8e19cd7bb69a1b8f910b40d6f5bd",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 7498,
+          "sha256": null,
+          "git_blob_sha1": "18c07007ac967aa85b4c9cb203089ef97f26b842",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 2229,
+          "sha256": null,
+          "git_blob_sha1": "a0d4c873b8a54315640170ae34e8521613baef73",
+          "local_sha_verified": false
+        },
+        {
+          "path": "figures/example_tracks.png",
+          "bytes": 845252,
+          "sha256": "1358ad4d7b3dcce406c72f90930e39161bd5e0a53da82892cfb55a1ef5c21a51",
+          "git_blob_sha1": "fbe269e86001c2ffba97695252d192811ca46fe5",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 11603972,
+          "sha256": "4d46f18dc59201d4392b5ee31a3e0640ea89268cf1fa7b8b087dcd910193e07c",
+          "git_blob_sha1": "7f020d43bf7739f11265513fa47bccc0e3bb3d57",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r137-2026-11-21-inkling2mini-and-dettato-four-publisher-sources.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 2896613,
+        "exclusive_max_total_parameters": 150000000000,
+        "evidence_kind": "PUBLISHER_SAFETENSORS_MAIN_AND_STATIC_HEADER_ONLY_MODEL_SPECIFIC_CAVEAT",
+        "review_date": "2026-11-21",
+        "note": "Header F32 2,896,613 entries in 202 tensors",
+        "local_full_trainable_tensor_census_certified": false,
+        "conditional_rule": "Below 150B from publisher logical count plus separately packaged MTP when applicable; no implicit permission for download.",
+        "known_before_download": true
+      },
+      "forecast_priority": {
+        "wave": "S3",
+        "rank": 217,
+        "category": "SMALL_SPECIALIST_MUSIC_TRANSCRIPTION",
+        "scenario_status": "STRESS_TEST_NOT_MODEL_SPECIFIC_TAKEDOWN_PROBABILITY",
+        "rationale": "Preserve independently trained architecture and nonreconstructible task-specific outputs; priority not inferred from actual legal ban."
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "config.json",
+          "figures/example_tracks.png",
+          "model.safetensors"
+        ],
+        "trained_state": "dettato_grouper_original_f32",
+        "original_stage": 3,
+        "requires": [
+          "kobimusic/dettato",
+          "kobimusic/dettato-evidence"
+        ],
+        "publisher_code_commit": "9b724251794f2bbd5eaa43e54734e5a251829130",
+        "python_code_not_executed": true,
+        "owner_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 12460661,
+        "source_bytes_are_not_selected_bytes": false,
+        "actual_owner_disk_free_bytes": null,
+        "storage_planning_not_approved": true,
+        "hw_tested_on_user_machine": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "position": 218,
+      "asset_kind": "model",
+      "repo_id": "kobimusic/dettato-drums",
+      "url": "https://huggingface.co/kobimusic/dettato-drums",
+      "group": "音源から打楽器MIDI・小型専門モデル",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "5M independent drum kit and orchestral percussion learned detectors plus router, required for fully instrumented MIDI recording.",
+      "quality_positive": "Publisher immutable original source: 6 files, 21976775 bytes, 3 LFS SHA256 refs. Publisher HF 5,017,049 whereas header 5,016,945 F32 +208 I64 buffers; 104 count difference unresolved, well below cap",
+      "quality_negative": "Original file sample rate must be >=40kHz for drums. Publisher scores transcriber+drums on six relevant benchmark sets, not full chain; some data NC rights.",
+      "risk_and_alternative_assessment": "Publisher publicly lists weights now; scenario future distribution tightening is unquantified and not a dated legal ban. Rights and owner archive gates independent.",
+      "evidence_date": "2026-11-21",
+      "evidence_kind": "FIRST_PARTY_HUGGING_FACE_IMMUTABLE_METADATA_AND_STATIC_SAFETENSORS_HEADER_NO_MODEL_EXECUTION",
+      "evidence_urls": [
+        "https://huggingface.co/kobimusic/dettato-drums",
+        "https://huggingface.co/kobimusic/dettato-drums/tree/97801f2328e32e4c87b12586aa81121f62cacacb",
+        "https://github.com/kobimusic/dettato"
+      ],
+      "observed_access": "public ungated:false private:false in 2026-11-21 publisher Hub API",
+      "license_metadata": "Apache-2.0 code and weights; model cards list upstream training datasets incl NC research terms",
+      "license_text_reviewed": true,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "97801f2328e32e4c87b12586aa81121f62cacacb",
+      "upstream_all_files_bytes_observed": 21976775,
+      "upstream_file_count_observed": 6,
+      "upstream_lfs_sha256_count_observed": 3,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 6,
+      "candidate_selected_source_file_bytes": 21976775,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1702,
+          "sha256": null,
+          "git_blob_sha1": "ff6066a62ff52bec6937e60d21acd8e00722d9aa",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 7712,
+          "sha256": null,
+          "git_blob_sha1": "fec3969c22d2e7de7ad1552ea59c8d92cfb53736",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 1539,
+          "sha256": null,
+          "git_blob_sha1": "fb1b294638a8443776f41f1bdb5e74e8771cc7b1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "figures/bench_drums.png",
+          "bytes": 1188114,
+          "sha256": "c1d668d698c71a80db8f17b4ddbad032e363729dc6dbe7a701962ebf3fd5c91a",
+          "git_blob_sha1": "45a17dd1442c79ed3696cbd9dda116e6c7df1aed",
+          "local_sha_verified": false
+        },
+        {
+          "path": "figures/drums_example.png",
+          "bytes": 582464,
+          "sha256": "a1f7e73eb150c86aa65b753a04fa80d9334c730a578d564c27eba4cfdfa118ea",
+          "git_blob_sha1": "61bba53b0bc461c72f9f62aa489af36a948f73da",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 20195244,
+          "sha256": "fbdf6243f721dc2e445270671a9361104028d331b6b9d4641ce24102cdef9613",
+          "git_blob_sha1": "35b74ab33f9114fb86ee920b080bd1b1d2e37ae3",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r137-2026-11-21-inkling2mini-and-dettato-four-publisher-sources.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 5017049,
+        "exclusive_max_total_parameters": 150000000000,
+        "evidence_kind": "PUBLISHER_SAFETENSORS_MAIN_AND_STATIC_HEADER_ONLY_MODEL_SPECIFIC_CAVEAT",
+        "review_date": "2026-11-21",
+        "note": "Publisher HF 5,017,049 whereas header 5,016,945 F32 +208 I64 buffers; 104 count difference unresolved, well below cap",
+        "local_full_trainable_tensor_census_certified": false,
+        "conditional_rule": "Below 150B from publisher logical count plus separately packaged MTP when applicable; no implicit permission for download.",
+        "known_before_download": true
+      },
+      "forecast_priority": {
+        "wave": "S3",
+        "rank": 218,
+        "category": "SMALL_SPECIALIST_MUSIC_TRANSCRIPTION",
+        "scenario_status": "STRESS_TEST_NOT_MODEL_SPECIFIC_TAKEDOWN_PROBABILITY",
+        "rationale": "Preserve independently trained architecture and nonreconstructible task-specific outputs; priority not inferred from actual legal ban."
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "config.json",
+          "figures/bench_drums.png",
+          "figures/drums_example.png",
+          "model.safetensors"
+        ],
+        "trained_state": "dettato_drums_original_f32",
+        "original_stage": 4,
+        "requires": [
+          "kobimusic/dettato"
+        ],
+        "minimum_audio_original_sample_rate_Hz": 40000,
+        "publisher_code_commit": "9b724251794f2bbd5eaa43e54734e5a251829130",
+        "python_code_not_executed": true,
+        "owner_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 21976775,
+        "source_bytes_are_not_selected_bytes": false,
+        "actual_owner_disk_free_bytes": null,
+        "storage_planning_not_approved": true,
+        "hw_tested_on_user_machine": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    }
+  ],
+  "added_assets": [
+    "thinkingmachines/Inkling-2-Mini",
+    "kobimusic/dettato",
+    "kobimusic/dettato-evidence",
+    "kobimusic/dettato-grouper",
+    "kobimusic/dettato-drums"
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "source_manifest": "manifests/drafts/r137-2026-11-21-inkling2mini-and-dettato-four-publisher-sources.candidate.json",
+  "source_model_repositories": 5,
+  "source_files": 39,
+  "publisher_source_bytes": 20312109868,
+  "publisher_LFS_sha256_refs": 17,
+  "prior_213_asset_decisions_unchanged": true,
+  "related_research_alternative": "thinkingmachines/TML-d24-varloop-research is a distinct posttrained variable-loop model, NOT a format conversion, but holds separate 20.1916GB source. Compare before formal archive decision; no auto acquisition.",
+  "dettato_code_revision": "9b724251794f2bbd5eaa43e54734e5a251829130",
+  "license_and_data_terms_owner_act_verified": false,
+  "physical_HDD_and_local_SHA_verified": false,
+  "model_code_executed": false,
+  "model_payloads_downloaded": false,
+  "download_authorizations_added": 0,
+  "approved": false
+}
