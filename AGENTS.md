@@ -1,3 +1,11 @@
+# 現行v57／R133（2026-11-20）：Spark4BとHeretic9BのBF16無検閲原本2件を条件付き採用
+
+**唯一の現行正本は[catalog/CURRENT.json](catalog/CURRENT.json) → v57／213登録・166有効（SELECT53＋CONDITIONAL113）**。Spark-X2.6-4B AbliteratedとDeepSeek-V4-Pro-Qwen3.5-9B Hereticの**2出版社41ファイル／27,570,829,651byte・LFS SHA8件**を[固定マニフェスト](manifests/drafts/r133-2026-11-20-spark4b-and-heretic9b-bf16-mtp-originals.candidate.json)で確定。[v57正式CONDITIONAL選定](catalog/revisions/v57-2026-11-20.json)、[判断レポート](docs/strategy/133-v57-spark4b-heretic9b-original-selection.md)、[166件readiness](catalog/readiness/v57-2026-11-20-r133-all166-gates.json)、[研究キュー](queues/proposed-v57-2026-11-20.json)、[条件付き113件access](catalog/access/2026-11-20-v57-conditional-hub-gates.json)。9B全学習済み総数9,653,104,368は15 MTPテンソルを含む。主index9,409,813,744を完全総数と混同しない。
+
+**最新の取得実行台帳は66モデル／801ファイル／851,289,867,641byteのVERIFIEDを報告するが、この調査から所有者Windows Dドライブを独立再ハッシュしていない。** 正式[approved queue](queues/approved.json)は0件。Owner個別利用権利、D物理空き200GBの安全床とcache/staging、全重量SHA、Tensor比較、custom Python/MTP/vision ABI、offline復元・file-scopeの明示取得承認なしに新規重量ダウンロード・既存削除・未審査コード実行・Gated回避をしてはならない。**mainのみ**。
+
+---
+
 # 現行v56／R131（2026-11-20）：無検閲小型原本2件の独立publisher SHA照合と取得ゲート
 
 **唯一の正本は[CURRENT](catalog/CURRENT.json)→v56、211登録／164有効（SELECT53／CONDITIONAL111）**。[FrostWolf 1.7B BF16とPhala rank3 LoRAの正式選定](docs/strategy/130-v56-public-uncensored-selection-source-and-rights.md)、[v56全164候補](queues/proposed-v56-2026-11-20.json)、[全164 readiness](catalog/readiness/v56-2026-11-20-r130-all164-gates.json)、[条件付き111件 access](catalog/access/2026-11-20-v56-conditional-hub-gates.json)、[164件 dependency](catalog/preparation/2026-11-20-insurance-bundles-v56.json)。原本[正規固定source 20ファイル](manifests/drafts/r130-2026-11-20-frostwolf-and-phala-originals-fixed.candidate.json)と[独立HF APIファイル調査](manifests/drafts/r130-2026-11-20-frostwolf-and-phala-uncensored-originals.candidate.json)を全20件のpath/byte/LFS SHA/Git blobで照合し20件すべて一致。[R131調査／反証条件](docs/strategy/131-v56-uncensored-source-crosscheck-and-pointer-repair-2026-11-20.md)、[オフライン退行テスト](tests/test_r131_v56_source_and_latest_pointers.py)を参照。
