@@ -10,9 +10,9 @@ def load(path):
 
 class V57SparkHereticSourceTest(unittest.TestCase):
     def test_canonical_and_selection_counts(self):
-        c = load("catalog/CURRENT.json")
-        self.assertEqual(c["revision_id"], "v57-20261120")
-        x = load(c["materialized_catalog_path"])
+        # Historical v57 assertion; CURRENT may move to v58 or later.
+        x = load("catalog/effective-portfolio-2026-11-20-v57.json")
+        self.assertEqual(x["revision_id"], "v57-20261120")
         self.assertEqual((x["counts"]["tracked"], x["counts"]["active"], x["counts"]["models"], x["counts"]["datasets"]), (213, 166, 187, 26))
         self.assertEqual(x["counts"]["by_decision"]["select"], 53)
         self.assertEqual(x["counts"]["by_decision"]["conditional"], 113)
@@ -41,11 +41,11 @@ class V57SparkHereticSourceTest(unittest.TestCase):
         self.assertEqual(line["hub_safetensors_total_including_mtp"] - line["main_index_total_excluding_mtp"], 243290624)
 
     def test_every_derived_scope_active_and_stopped(self):
-        c = load("catalog/CURRENT.json")
-        q = load(c["priority_worklist_path"])
-        a = load(c["latest_conditional_access_audit"]["path"])
-        b = load(c["insurance_preparation_worklist_path"])
-        r = load(c["latest_active_readiness_audit"]["summary_path"])
+        # Check immutable historical sidecars, not the moving CURRENT pointers.
+        q = load("queues/proposed-v57-2026-11-20.json")
+        a = load("catalog/access/2026-11-20-v57-conditional-hub-gates.json")
+        b = load("catalog/preparation/2026-11-20-insurance-bundles-v57.json")
+        r = load("catalog/readiness/v57-2026-11-20-r133-all166-gates.json")
         self.assertEqual((len(q["candidates"]), len(a["entries"]), len(b["items"]), len(r["records"])), (166, 113, 166, 166))
         self.assertEqual((r["summary"]["blocked_any"], r["summary"]["ready_to_approve"], r["summary"]["downloads_approved"]), (166, 0, 0))
         for repo_id in ("FrostWolfAI/Spark-X2.6-4B-abliterated", "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic"):
