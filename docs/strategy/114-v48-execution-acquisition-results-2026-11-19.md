@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 84 (verified 82, partial 0, failed 0, held 1)
-- Verified files: 1127
-- Verified source bytes: 1657839886952
-- Minimum observed free bytes: 1313189318656 (200 GB floor maintained: True)
+- Models: 96 (verified 93, partial 0, failed 0, held 1)
+- Verified files: 1282
+- Verified source bytes: 1726720441591
+- Minimum observed free bytes: 1244293509120 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -91,6 +91,18 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `PhalaCloud/Qwen3.8-27B-Uncensored-LoRA` | `588752bc181b999247f0e7df578bbc55d2b920e9` | VERIFIED | 7/7 | apache-2.0 |
 | `kobimusic/dettato-evidence` | `5633f28ee330a48bc31bdd3f9f98bb1a71206141` | VERIFIED | 6/6 | apache-2.0 |
 | `kobimusic/dettato-drums` | `97801f2328e32e4c87b12586aa81121f62cacacb` | VERIFIED | 6/6 | apache-2.0 |
+| `kobimusic/dettato` | `a0d1e354d282c4ed458b83b287065587979b053e` | VERIFIED | 8/8 | apache-2.0 |
+| `speechbrain/spkrec-ecapa-voxceleb` | `0f99f2d0ebe89ac095bcc5903c4dd8f72b367286` | VERIFIED | 10/10 | apache-2.0 |
+| `CohereLabs/aya_dataset` | `f9ea04583f02a8f86404ff6c58bf75fe637df8a2` | FAIL_API_HTTPError | 0/0 | None |
+| `kyutai/mimi` | `89091b3e466eb6a9d11e537bf26b144f194978f7` | VERIFIED | 5/5 | cc-by-4.0 |
+| `Reson8/Rumble-2-Flash` | `a0c34287229103b706c670d70791683e34379732` | VERIFIED | 19/19 | apache-2.0 |
+| `RikiyaT/Qwen3.5-0.8B-weight-space-programming` | `d1671a178705bcab7644806d23c535517f35723b` | VERIFIED | 17/17 | apache-2.0 |
+| `FrostWolfAI/LFM3-1.7B-abliterated` | `fc0f808655210ef891515bad9b5195b03d89f11b` | VERIFIED | 13/13 | other |
+| `microsoft/Aion-1.0-Instruct-2.3B` | `28902cbfd9f4e0347d6c853aa1301f5d559b2fc0` | VERIFIED | 11/11 | mit |
+| `FrostWolfAI/Spark-X2.6-4B-abliterated` | `505257b7969eb03a5a62d81f9afec6f88abd26e4` | VERIFIED | 22/22 | apache-2.0 |
+| `aaaaygd/DeepSeek-V4-Pro-Qwen3.5-4B-UNCENSORED-heretic` | `cdd9b11e7f92e4ba53dfeb6c02c6e7baf7a7e8a1` | VERIFIED | 17/17 | apache-2.0 |
+| `xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic` | `fbccdc6adf70a1981e8f40e91a8370e428e4f998` | VERIFIED | 19/19 | apache-2.0 |
+| `thinkingmachines/Inkling-2-Mini` | `1fb4134b9a74f9681054f4ef82e4bf1f458a2337` | VERIFIED | 14/14 | apache-2.0 |
 | `mistralai/Mistral-Small-4-119B-2603` | `a11f36bebf709121056b1dbcc943d1c6afbe494d` | VERIFIED | 21/21 | apache-2.0 |
 | `Qwen/Qwen3-Coder-Next` | `a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb` | VERIFIED | 49/49 | apache-2.0 |
 
