@@ -15,7 +15,10 @@
     "publisher_reference_bytes": 2234744280,
     "publisher_lfs_sha256_references": 29,
     "incremental_owner_disk_bytes": "UNVERIFIED; 99-receipt and existing local file SHA must be compared first",
-    "Cactus_4_1_4_separate_runtime_source_bytes": 4137947
+    "Cactus_4_1_4_separate_runtime_source_bytes": 4137947,
+    "is_complete_training_outcome_archive": false,
+    "Pico_INT8_QAD_source_bytes_outside_locked_scope": 63628208,
+    "future_full_pico_possible_selected_source_bytes": 349508085
   },
   "entries": [
     {
@@ -407,8 +410,16 @@
       "download_enabled": false,
       "automatic_approval_forbidden": true,
       "extra_dependencies": [
-        "ONNX runtime, G2P and language/voice bundle input checks; do not mix up per-language int4 marketing byte with full archival source"
-      ]
+        "ONNX runtime, G2P and language/voice bundle input checks; do not mix up per-language int4 marketing byte with full archival source",
+        "Publisher technical documentation describes INT8 and INT4 as separate quantization-aware-distillation trained outcomes, not proven format-only re-encodings. 8 INT8 per-language trained weights (63,628,208 bytes) were excluded from this exact 33-file locked scope; immutable Git OID and publisher LFS SHA not yet source-locked."
+      ],
+      "known_distinct_weight_source_not_yet_frozen": {
+        "source_manifest": "manifests/drafts/r150-2026-11-22-kitten-pico-int8-qad-source-delta.candidate.json",
+        "excluded_8_int8_QAD_files": 8,
+        "additional_reference_bytes": 63628208,
+        "final_source_lock_ready": false,
+        "owner_acquisition_approved": false
+      }
     },
     {
       "review_order": 4,
@@ -516,7 +527,8 @@
     "Owner Windows target drive identity, effective free space and temporary cache/staging not reverified",
     "After staging+cache and preserving a minimum 200,000,000,000 free bytes, required headroom is unavailable",
     "Nonweight custom code/runtime is unaudited or full offline restoration is unproven",
-    "Any candidate was already acquired at matching revision and file hashes; do not duplicate"
+    "Any candidate was already acquired at matching revision and file hashes; do not duplicate",
+    "Pico INT8 quantization-aware-distillation trained weights are distinct until tensor-delta/reproducibility evidence proves otherwise; freeze eight additional Publisher file OIDs and LFS SHA-256 before any source-scope expansion."
   ],
   "approval_gate": {
     "approval_file_created": false,
@@ -532,6 +544,7 @@
     "publisher_file_identity_and_per_repo_byte_sums": "PASS_STATIC_METADATA",
     "compared_to_existing_r149_11_sources": "PASS_4_OF_11",
     "local_device_real_SHA_and_available_bytes": "NOT_TESTED",
-    "legal_rights_and_runtime": "NOT_TESTED"
+    "legal_rights_and_runtime": "NOT_TESTED",
+    "first_four_source_scope_complete_for_all_publisher_distinct_learned_outcomes": "UNCERTAIN_PICO_QAD_INT8_UNFROZEN"
   }
 }
