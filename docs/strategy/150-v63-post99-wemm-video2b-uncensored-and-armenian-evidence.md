@@ -14,13 +14,19 @@
 | [Metric-AI Ayb-0.5-0.8B](https://huggingface.co/Metric-AI/Ayb-0.5-0.8B) | **HOLD** | Qwen3.5-0.8B派生でアルメニア語特化。低資源言語アーカイブとしては独自価値 | GatedアクセスとCC BY-NC 4.0。本人のgate許可・行為許諾・固定SHAが揃わない。迂回不可 |
 | [Ricursive Ripple-65B](https://huggingface.co/ricursiveAI/Ripple-65B-Preview) | **P3 HOLD継続** | 既存研究キューの約129.573GB原本 | 同条件実測による独立価値・復元環境・容量証明の不足 |
 
+### Timestral-5Mの超小型予測原本と競合比較
+
+[Mistral公式Timestral-5M](https://huggingface.co/mistralai/Timestral-5M)を追加の**非実行ソース固定・研究CONDITIONAL候補**とする。immutable revision `bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f`、全6ファイル **20,854,471byte**（F32 `model.safetensors`ほか）を[出版社tree census](../../manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json)から確認済み。現行にすでにある28M版とは**パラメータを少なくした独立学習済み原本**であり、元の28Mを置換する根拠ではない。作者ベンチマークGIFT-Eval MASEは5M **0.705**、28M **0.678**（小さいほど誤差が小さい）。改善ではなく、容量と品質のトレードオフ。作者記事は8-thread CPUの1日先予測を5M約17msと報告するが、実機再現なし。モデル全体がModified MIT：**利用者本人または雇用者の前月連結月商がUSD20m超の場合、別途ライセンス取得が必要**。無料使用の無条件認定は禁止。取得許可・本人行為別ライセンス審査は別。
+
+比較候補 [Datadog Toto-2.0-4m](https://huggingface.co/Datadog/Toto-2.0-4m) はApache-2.0公開・約4Mで、作者はA100・バッチ8・予測長1024条件の約3.8ms forward passを報告（クロック未記載）。**同一HW・context・データのTimestral-5Mとの直接性能優越性は未実証**。Publisher不変revisionと完全ファイルSHAを未固定のため、正式追加ではなくwatchlistにとどめる。time seriesの小型保存は無検閲LLMと別のタスクであり、汎用QAの代替にはならない。
+
 ### WeMM 原本とSHAの意味
 [公開元の不変コミット](https://huggingface.co/tencent/WeMM-Video-2B/commit/821690998399cac0f55bb7f7f805ebafa650c3a4)は `821690998399cac0f55bb7f7f805ebafa650c3a4`。[publisher SHA256SUMS](https://huggingface.co/tencent/WeMM-Video-2B/raw/821690998399cac0f55bb7f7f805ebafa650c3a4/SHA256SUMS)は25 pathのdigestを列挙する。27 pathのうち `.gitattributes` と `SHA256SUMS` 自身には同表にhashがなく、Git tree OID/byte censusが追加で必要。モデルindexの `metadata.total_size=6,567,256,208 byte` は**重みのtensor payload表記**であり、ダウンロード対象全ファイルのbyte数ではない。別のpublisher tree全27file監査と25/25 SHA照合を行い、**全体6,590,699,556byte、重み2 shard合計6,567,395,904byte** を正本のPublisher参照値として確定した（[照合先](../../manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json)）。ただしオーナー媒体の存在や権利・動作環境は確定しておらず、取得未承認の研究候補とする。
 
 [機械可読publisher digest一覧](../../manifests/drafts/r150-2026-11-22-wemm-video2b-publisher-sha256.candidate.json)を公開元の記録として転記した。Dの現物を検査したものではなく、モデルの重みをロード・実行してもいない。公開者のモデルカードはApache-2.0を掲示するが、第三者ライブラリ・音声映像の利用条件は別。コードに `trust_remote_code` / custom `modeling_wemm.py` / `h5_modeling_*.py`等があるため、未審査ロードを停止する。報告されたハードウェアL20/H20、パッチ付きvLLMは利用者環境の保証ではない。2Bは名称上のtext規模であり、全multimodal学習済みtensor総数を独立に数えていない。
 
 ### 重複排除と順位
-既存最小P0 4repo合計 **2,234,744,280byte**を先に審査する。次にWeMMのsource/実ディスクbyte差分とcustom codeレビューを行い、P1の無検閲親・2B視覚対話に追加する価値を審査する。既存OpenMOSS 22,687,497,344byteとWeMMを性能比較せずに入れ替えない。既存P0–P2 10repo **68,544,170,933byte**にWeMMの`model.safetensors.index.json` payloadを単純加算して正式予算と称してはならない。30億パラメータ規模というHF UI表記と「Video-2B」という名称も、合計tensor censusで検証してから総パラメータ制約を判定する。
+既存最小P0 4repo合計 **2,234,744,280byte**を先に審査し、その次に20.85MBのTimestral-5MのModified MIT権利と28M差分の実測を行う。次にWeMMのsource/実ディスクbyte差分とcustom codeレビューを行い、P1の無検閲親・2B視覚対話に追加する価値を審査する。既存OpenMOSS 22,687,497,344byteとWeMMを性能比較せずに入れ替えない。既存P0–P2 10repo **68,544,170,933byte**に、追加の新2repo Publisher原本6,611,554,027byteを参照する（単純合計75,155,724,960byteはオーナーの増分所要容量ではない）。既存sourceにWeMMの`model.safetensors.index.json` payloadを単純加算して正式予算と称してはならない。30億パラメータ規模というHF UI表記と「Video-2B」という名称も、合計tensor censusで検証してから総パラメータ制約を判定する。
 
 ## 規制リスクと権利の分離
 [米BIS連邦官報2026-11-19](https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm)は旧モデルウェイトECCN 4E091を撤廃。半導体／最終用途関連の規制や発行者のライセンス、Gated条件は別。個別モデルの将来禁止確率は**計測していない反証可能仮説**として扱い、過度な規制予測で選定順位を偽装しない。無検閲の保存価値は編集差分・親との関係・検証可能な重みが残るかで判断する。
