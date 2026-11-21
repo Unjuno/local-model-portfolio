@@ -1,3 +1,9 @@
+# R151／v63（2026-11-22）：6原本の固定ソース統合監査とCartwheel小型制御ポリシーの審査
+
+[新R151報告](docs/strategy/151-v63-six-primary-source-freeze-cartwheel-and-redundancy-reconciliation.md)／[6 repo・243 file・Publisher原本SHAとbyte](manifests/drafts/r150-2026-11-22-six-specialists-source-freeze.candidate.json)／[新6件の研究採否・承認STOP](catalog/decisions/2026-11-22-r150-six-specialists-review-and-uncensored-dedup.json)。**CartwheelのRP1/Asimov-1/G1三つの異なる学習済みpolicy（304,057,444byte全repo）**は新たに正式CONDITIONAL候補として権利・simulation-only実装を審査。WeMM同期音声動画の6,590,699,556byte原本は高優先調査、Groundhogの53.12GB決定MoEはPublisher-source固定済みだが校正/非生成ABI未検証で取得HOLD。AlpieとBisonも品質増分未証明でHOLD。OpenUncensored Inkling Miniフル20.19GBは既存親＋rank2 LoRAからBF16微小丸め差で再合成できるため重複追加を見送る。**v63の235登録・188有効、既取得99報告、R149既存11原本研究順を変更しない。重量新規DL0、owner D独立SHA未確認、所有者個別LICENSE許可0、approved queue0、モデルコード実行0**。下記のR150以下は履歴。
+
+---
+
 # R150／追加原本照合補遺（2026-11-22）
 
 正本v63／235登録・188有効は不変。[WeMM発行者SHA25/25](manifests/drafts/r150-2026-11-22-wemm-video2b-publisher-sha256.candidate.json)は[27原本のサイズとGit OID資料](manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json)と一致。正確なpublisher source 6,590,699,556 byte。Weight indexにある6,567,256,208 byteは全repo bytesではない。**D実物ハッシュ・ユーザー権利・安全な実行コード・承認は未確認**。 [採否](docs/strategy/150-v63-post99-wemm-video2b-uncensored-and-armenian-evidence.md)：WeMMは正式登録前のCONDITIONAL研究候補、Inkling無検閲フル版はLoRAとの約20GB重複を保留、Gated AybはHOLD。現在の`queues/approved.json`は空、新規取得0。研究の追加が実転送許可に化けないようにする。mainのみ。
