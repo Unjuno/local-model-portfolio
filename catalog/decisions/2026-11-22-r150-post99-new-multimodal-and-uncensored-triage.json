@@ -60,6 +60,25 @@
       "existing_reference_bytes": 129572889973,
       "reason": "Large independent source; insufficient incremental value and owner storage/runtime proof relative to compact originals.",
       "download_approved": false
+    },
+    {
+      "repo_id": "mistralai/Timestral-5M",
+      "decision": "RESEARCH_CONDITIONAL_PINNED_EDGE_TSFM_HOLD_ON_LICENSE_AND_FUNCTIONAL_PROOF",
+      "repo_license_metadata": "Modified MIT, corporate/employer global consolidated revenue >USD20 million in preceding month requires separate commercial license",
+      "publisher_revision_sha": "bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f",
+      "publisher_source_file_count": 6,
+      "publisher_full_repo_bytes_exact": 20854471,
+      "full_repo_sha_file_census_manifest": "manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json",
+      "estimated_full_parameters": 5210000,
+      "existing_portfolio_model_for_comparison": "mistralai/Timestral-28M",
+      "new_distinct_trained_checkpoint": true,
+      "publisher_GIFT_MASE_5M": 0.705,
+      "publisher_GIFT_MASE_28M": 0.678,
+      "independent_equal_setup_benchmark": false,
+      "reason": "Independent 5M tiny probabilistic TSFM for severely constrained CPU and robust offline forecast, despite weaker prediction loss than existing 28M; alternative open Apache Datadog Toto-2.0-4m should be evaluated.",
+      "download_approved": false,
+      "canonical_v63_entry_exists": false,
+      "owner_licensed_act_verified": false
     }
   ],
   "legacy_candidate_queue": "queues/proposed-v63-r149-after99-11-research-only.json",
@@ -83,5 +102,18 @@
     "https://huggingface.co/OpenUncensored/Inkling-2-Mini-Uncensored",
     "https://huggingface.co/Metric-AI/Ayb-0.5-0.8B",
     "https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm"
+  ],
+  "additional_watchlist_not_pinned": [
+    {
+      "repo_id": "Datadog/Toto-2.0-4m",
+      "decision": "RESEARCH_ONLY_POTENTIAL_OPEN_APACHE2_EDGE_TSFM",
+      "source": "https://huggingface.co/Datadog/Toto-2.0-4m",
+      "source_revision_and_file_hash_frozen": false,
+      "publisher_license": "Apache-2.0",
+      "publisher_params_approx": "4M",
+      "publisher_latent_speed_claim": "~3.8ms at batch8 length1024 single A100, forward only (publisher; clock not reported)",
+      "cross_benchmark_direct_comparison_to_Timestral5M_validated": false,
+      "download_approved": false
+    }
   ]
 }
