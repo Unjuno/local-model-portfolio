@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "ledger_id": "2026-11-19-v48-execution",
-  "generated_at": "2026-11-21T04:21:21.637936+00:00",
+  "generated_at": "2026-11-21T04:41:30.478451+00:00",
   "canonical_revision": "v48-20261118",
   "source_plan": "queues/proposed-v48-r113-source-pinned-15.json",
   "policy": {
@@ -15,13 +15,13 @@
   },
   "summary": {
     "models_total": 76,
-    "models_verified": 73,
-    "models_partial": 2,
+    "models_verified": 75,
+    "models_partial": 0,
     "models_failed": 0,
     "models_held": 1,
-    "files_verified_total": 1010,
-    "bytes_verified_total": 1422920340343,
-    "minimum_free_bytes_observed": 1342625525760,
+    "files_verified_total": 970,
+    "bytes_verified_total": 1293732015585,
+    "minimum_free_bytes_observed": 1331646930944,
     "minimum_free_floor_bytes": 200000000000,
     "free_floor_maintained": true
   },
@@ -2824,72 +2824,28 @@
     {
       "repo_id": "EPFLiGHT/OLMo-2-32B-MeditronFO",
       "revision_sha": "04c6953977c3a9f913e3d08a6c23edaae6bd6459",
-      "source_manifest": "local-discovered/EPFLiGHT__OLMo-2-32B-MeditronFO.json",
+      "source_manifest": "local-discovered/repair-EPFLiGHT__OLMo-2-32B-MeditronFO.json",
       "priority_group": "",
-      "status": "PARTIAL",
+      "status": "VERIFIED",
       "license": "apache-2.0",
-      "files_total": 23,
-      "files_verified": 19,
-      "source_bytes": 64477462899,
+      "files_total": 1,
+      "files_verified": 1,
+      "source_bytes": 4991358312,
       "verification_methods": {
-        "git-blob-sha1-vs-publisher": 9,
-        "sha256-vs-publisher": 11
+        "sha256-vs-publisher": 1
       },
       "file_status_counts": {
-        "VERIFIED": 19,
-        "FAIL_RuntimeError": 2,
-        "HASH_MISMATCH": 1,
-        "FAIL_OSError": 1
+        "VERIFIED": 1
       },
       "weight_files_sha256": [
         {
-          "path": "model-00002-of-00014.safetensors",
-          "sha256": "d8f427423592a14ba6108a0d88a717610b5500ce88779f4d1d0fc9264401b04d"
-        },
-        {
-          "path": "model-00003-of-00014.safetensors",
-          "sha256": "519888e4be60b09b1898a38fdda200b41daa6145bab991ae8412faeb925ed81c"
-        },
-        {
-          "path": "model-00004-of-00014.safetensors",
-          "sha256": "2b03ac824614de304481482b630071e6e6d629f05917e81eec0a30b286ca0278"
-        },
-        {
-          "path": "model-00005-of-00014.safetensors",
-          "sha256": "b9df03c11442f373595c70a1ffde17333618fe718781cdf81eb371e72aa87cf2"
-        },
-        {
-          "path": "model-00006-of-00014.safetensors",
-          "sha256": "e2ed72325c56c10bd457b213362a069dc8b54b395204c0f6a62ba28ff4601202"
-        },
-        {
-          "path": "model-00007-of-00014.safetensors",
-          "sha256": "f765c8413ee80d29feeb1c52a48dc6dbc5a9a486377cc755d6da50bd804f8cc4"
-        },
-        {
-          "path": "model-00010-of-00014.safetensors",
-          "sha256": "4de40c5c68748c10a6453d27d06accc03e350ad7382f43c521dfe6b8f11c5432"
-        },
-        {
-          "path": "model-00011-of-00014.safetensors",
-          "sha256": "4a48262f7525f06e6590de2ab15242e939e9a4e65fa0381b46e1a28d437cc2b6"
-        },
-        {
-          "path": "model-00012-of-00014.safetensors",
-          "sha256": "ee50f0b6020a1522c2df44622f78fa4d0ab03546c4a55a40a4fa0880f35a7a72"
-        },
-        {
-          "path": "model-00013-of-00014.safetensors",
-          "sha256": "4eb406a08636f11642d0a20e13fe27796081fba0c97d4371205e4318075c1179"
-        },
-        {
-          "path": "model-00014-of-00014.safetensors",
-          "sha256": "06c1f2fe0301c5ce32506f3084725531d4b6d10550114510436ef76b173739bb"
+          "path": "model-00001-of-00014.safetensors",
+          "sha256": "a0e7f5be8efb6891f3ba508b8a244bc9221e7ed0bea289257c63014a4ddab525"
         }
       ],
-      "started_at": "2026-11-20T18:55:14.403749+00:00",
-      "finished_at": "2026-11-20T22:24:39.644587+00:00",
-      "free_bytes_after": 1526962884608
+      "started_at": "2026-11-21T04:29:21.805290+00:00",
+      "finished_at": "2026-11-21T04:41:12.939549+00:00",
+      "free_bytes_after": 1331646930944
     },
     {
       "repo_id": "Nanbeige/Nanbeige4.3-33B",
@@ -3003,6 +2959,32 @@
       "started_at": "2026-11-21T02:56:43.139459+00:00",
       "finished_at": "2026-11-21T04:19:51.346278+00:00",
       "free_bytes_after": 1342625525760
+    },
+    {
+      "repo_id": "Qwen/Qwen3.5-35B-A3B-Base",
+      "revision_sha": "0f0813072d2358973511097385626f21fcb6d422",
+      "source_manifest": "local-discovered/repair-Qwen__Qwen3.5-35B-A3B-Base.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 1,
+      "files_verified": 1,
+      "source_bytes": 2224764664,
+      "verification_methods": {
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 1
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors-00014-of-00014.safetensors",
+          "sha256": "901d0d82c3b4b97850fd7332cabe0e7ad4616485aebc5835a4edfb94a2d9b444"
+        }
+      ],
+      "started_at": "2026-11-21T04:21:13.851691+00:00",
+      "finished_at": "2026-11-21T04:29:21.682829+00:00",
+      "free_bytes_after": 1338772008960
     },
     {
       "repo_id": "mistralai/Mistral-Small-4-119B-2603",
@@ -3257,90 +3239,6 @@
       "started_at": "2026-11-19T23:36:26.529709+00:00",
       "finished_at": "2026-11-20T09:16:01.154225+00:00",
       "free_bytes_after": 1867301199872
-    },
-    {
-      "repo_id": "Qwen/Qwen3.5-35B-A3B-Base",
-      "revision_sha": "0f0813072d2358973511097385626f21fcb6d422",
-      "source_manifest": "local-discovered/Qwen__Qwen3.5-35B-A3B-Base.json",
-      "priority_group": "",
-      "status": "PARTIAL",
-      "license": "apache-2.0",
-      "files_total": 24,
-      "files_verified": 23,
-      "source_bytes": 71926984835,
-      "verification_methods": {
-        "git-blob-sha1-vs-publisher": 9,
-        "sha256-vs-publisher": 15
-      },
-      "file_status_counts": {
-        "VERIFIED": 23,
-        "HASH_MISMATCH": 1
-      },
-      "weight_files_sha256": [
-        {
-          "path": "model.safetensors-00001-of-00014.safetensors",
-          "sha256": "0a3ca09e49e5f8468ba7b145f242db2ddff69fd1d0df041f03eceabba6d13f3e"
-        },
-        {
-          "path": "model.safetensors-00002-of-00014.safetensors",
-          "sha256": "da4b9e643edb2d42cd7dd476f42d84393344025e6ac3602d26df26aa1c3ca447"
-        },
-        {
-          "path": "model.safetensors-00003-of-00014.safetensors",
-          "sha256": "9896227bfc2081ee06b027cda00ed85d8a7d5470782cbc3cec1c7c00d90b6ddb"
-        },
-        {
-          "path": "model.safetensors-00004-of-00014.safetensors",
-          "sha256": "270a0e62d35949a8b7bdbbec2dfcce5a9dc8423fe0d2b4fd60917839f9d986f2"
-        },
-        {
-          "path": "model.safetensors-00005-of-00014.safetensors",
-          "sha256": "3306916aecce0b3cd9e12aa00f5a28cdb4c5a1ce3d6723ddb6a9063fb7975a27"
-        },
-        {
-          "path": "model.safetensors-00006-of-00014.safetensors",
-          "sha256": "2eb8f3a0309824813f89c287e47bf806f962ccdd17a98338c7f450505b40d6f5"
-        },
-        {
-          "path": "model.safetensors-00007-of-00014.safetensors",
-          "sha256": "9f11f34db5c9531a131bc8b7e3d16a7704de746e3f23a150c06296b2de22b55d"
-        },
-        {
-          "path": "model.safetensors-00008-of-00014.safetensors",
-          "sha256": "7a04143de019935574ae069607221df7b64c73aaee9e86d0bf6c1fe634fe223b"
-        },
-        {
-          "path": "model.safetensors-00009-of-00014.safetensors",
-          "sha256": "d2c224c67e11866f83356b8c56320cddf7a2c84e29306bf8b4abfe4d97f17968"
-        },
-        {
-          "path": "model.safetensors-00010-of-00014.safetensors",
-          "sha256": "a5315874320efdbd4df5a4b1bf7707468918455016c51f83382993f50ba15751"
-        },
-        {
-          "path": "model.safetensors-00011-of-00014.safetensors",
-          "sha256": "1be21efee407839f1585b6e811f70d3a2d0f01815b4b8ad77f1104b0e524e00e"
-        },
-        {
-          "path": "model.safetensors-00012-of-00014.safetensors",
-          "sha256": "3543da914abbbf17d0c8b97de38f60d988acd42576b4b1d49bce31c8a44e9186"
-        },
-        {
-          "path": "model.safetensors-00013-of-00014.safetensors",
-          "sha256": "6899a73fb1e539089d15dd16c75e36f0208f5a3581d5cc525aa046f5f95a8b86"
-        },
-        {
-          "path": "model.safetensors-00014-of-00014.safetensors",
-          "sha256": "9fdcfab320c6e6f91bdde8b1310ce8685cd2c29201d5143ec67607054f69b0da"
-        },
-        {
-          "path": "tokenizer.json",
-          "sha256": "fe000e3ed39ed12b8d2481d527d44f93c65d37e87645d2dcc80d1bf9d50d2927"
-        }
-      ],
-      "started_at": "2026-11-20T22:01:40.651952+00:00",
-      "finished_at": "2026-11-21T01:54:43.435547+00:00",
-      "free_bytes_after": 1393718820864
     }
   ],
   "notes": [
