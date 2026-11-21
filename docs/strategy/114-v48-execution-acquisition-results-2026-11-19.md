@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 97 (verified 96, partial 0, failed 0, held 1)
-- Verified files: 1370
-- Verified source bytes: 1752033357565
-- Minimum observed free bytes: 1218980286464 (200 GB floor maintained: True)
+- Models: 100 (verified 99, partial 0, failed 0, held 1)
+- Verified files: 1478
+- Verified source bytes: 1879994309866
+- Minimum observed free bytes: 1167311646720 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -104,8 +104,11 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `elyza/ELYZA-tasks-100` | `240fc800c4695d86ce0f32a713e199cd2ba66ab6` | VERIFIED | 65/65 | cc-by-sa-4.0 |
 | `CohereLabs/aya_dataset` | `f9ea04583f02a8f86404ff6c58bf75fe637df8a2` | VERIFIED | 6/6 | apache-2.0 |
 | `JetBrains/Mellum2.1-12B-A2.5B-Thinking-MTP` | `d55846102dd1c047e95d4841070f88290227c3b7` | VERIFIED | 17/17 | apache-2.0 |
+| `tencent/Hy-SimulMT-30B-A3B` | `56c233df75bf09e386aa6282b01730b461afc83f` | VERIFIED | 53/53 | apache-2.0 |
 | `mistralai/Mistral-Small-4-119B-2603` | `a11f36bebf709121056b1dbcc943d1c6afbe494d` | VERIFIED | 21/21 | apache-2.0 |
 | `Qwen/Qwen3-Coder-Next` | `a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb` | VERIFIED | 49/49 | apache-2.0 |
+| `Wan-AI/Wan2.2-TI2V-5B` | `921dbaf3f1674a56f47e83fb80a34bac8a8f203e` | VERIFIED | 23/23 | apache-2.0 |
+| `Tongyi-MAI/Z-Image-Turbo` | `f332072aa78be7aecdf3ee76d5c247082da564a6` | VERIFIED | 32/32 | apache-2.0 |
 
 Weight files were compared against publisher LFS SHA-256; ordinary Git blobs were compared by Git blob SHA-1. 'size-only' means no publisher hash existed.
 Gated models without verified owner entitlement were recorded as HOLD and no payload was acquired for them.

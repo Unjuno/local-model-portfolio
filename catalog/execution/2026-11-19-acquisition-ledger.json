@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "ledger_id": "2026-11-19-v48-execution",
-  "generated_at": "2026-11-21T11:40:47.479074+00:00",
+  "generated_at": "2026-11-21T16:43:06.279598+00:00",
   "canonical_revision": "v48-20261118",
   "source_plan": "queues/proposed-v48-r113-source-pinned-15.json",
   "policy": {
@@ -14,14 +14,14 @@
     "unclear_license": "HOLD"
   },
   "summary": {
-    "models_total": 97,
-    "models_verified": 96,
+    "models_total": 100,
+    "models_verified": 99,
     "models_partial": 0,
     "models_failed": 0,
     "models_held": 1,
-    "files_verified_total": 1370,
-    "bytes_verified_total": 1752033357565,
-    "minimum_free_bytes_observed": 1218980286464,
+    "files_verified_total": 1478,
+    "bytes_verified_total": 1879994309866,
+    "minimum_free_bytes_observed": 1167311646720,
     "minimum_free_floor_bytes": 200000000000,
     "free_floor_maintained": true
   },
@@ -3818,6 +3818,28 @@
       "free_bytes_after": 1218980286464
     },
     {
+      "repo_id": "tencent/Hy-SimulMT-30B-A3B",
+      "revision_sha": "56c233df75bf09e386aa6282b01730b461afc83f",
+      "source_manifest": "local-discovered/existing-tencent-hy-simulmt.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 53,
+      "files_verified": 53,
+      "source_bytes": 60858161407,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 41
+      },
+      "file_status_counts": {
+        "DEDUP_VERIFIED": 53
+      },
+      "weight_files_sha256": [],
+      "started_at": "2026-11-21T16:12:53.604426+00:00",
+      "finished_at": "2026-11-21T16:42:56.678749+00:00",
+      "free_bytes_after": 1167311646720
+    },
+    {
       "repo_id": "mistralai/Mistral-Small-4-119B-2603",
       "revision_sha": "a11f36bebf709121056b1dbcc943d1c6afbe494d",
       "source_manifest": "local-discovered/mistralai__Mistral-Small-4-119B-2603.json",
@@ -4070,6 +4092,50 @@
       "started_at": "2026-11-19T23:36:26.529709+00:00",
       "finished_at": "2026-11-20T09:16:01.154225+00:00",
       "free_bytes_after": 1867301199872
+    },
+    {
+      "repo_id": "Wan-AI/Wan2.2-TI2V-5B",
+      "revision_sha": "921dbaf3f1674a56f47e83fb80a34bac8a8f203e",
+      "source_manifest": "pre-existing-acquisition-receipt/wan22-ti2v-5b-2026-11-05.json",
+      "priority_group": "PRE_EXISTING",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 23,
+      "files_verified": 23,
+      "source_bytes": 34203123497,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 12
+      },
+      "file_status_counts": {
+        "VERIFIED": 23
+      },
+      "weight_files_sha256": [],
+      "started_at": "2026-11-05",
+      "finished_at": "2026-11-05",
+      "free_bytes_after": null
+    },
+    {
+      "repo_id": "Tongyi-MAI/Z-Image-Turbo",
+      "revision_sha": "f332072aa78be7aecdf3ee76d5c247082da564a6",
+      "source_manifest": "pre-existing-acquisition-receipt/z-image-turbo-2026-11-04.json",
+      "priority_group": "PRE_EXISTING",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 32,
+      "files_verified": 32,
+      "source_bytes": 32899667397,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 14,
+        "sha256-vs-publisher": 18
+      },
+      "file_status_counts": {
+        "VERIFIED": 32
+      },
+      "weight_files_sha256": [],
+      "started_at": "2026-11-04",
+      "finished_at": "2026-11-04",
+      "free_bytes_after": null
     }
   ],
   "notes": [
