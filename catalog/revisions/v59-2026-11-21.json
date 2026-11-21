@@ -1,0 +1,609 @@
+{
+  "schema_version": 1,
+  "revision_id": "v59-20261121",
+  "previous_revision_id": "v58-20261121",
+  "decision_date_jst": "2026-11-21",
+  "target_branch": "main",
+  "kind": "ONE_INDEPENDENT_4B_MTP_MODEL_PLUS_TWO_DIFFERENT_INKLING_TINY_ALIGNMENT_EDITS_WITH_SHARED_PARENT_SHA_DEDUP",
+  "previous_asset_count": 218,
+  "previous_active_count": 171,
+  "additions": [
+    {
+      "position": 219,
+      "asset_kind": "model",
+      "repo_id": "aaaaygd/DeepSeek-V4-Pro-Qwen3.5-4B-UNCENSORED-heretic",
+      "url": "https://huggingface.co/aaaaygd/DeepSeek-V4-Pro-Qwen3.5-4B-UNCENSORED-heretic",
+      "group": "小型4B・DeepSeek蒸留と拒否方向編集・独立MTP",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Distinct trained 4B distribution with independent MTP head, original higher precision and smaller than 9B full, retains different model capacity/latency options.",
+      "quality_positive": "15 trained MTP BF16 tensors/120,599,552 elements included in Hub model-index total 4,539,265,536. Publisher GSM8K MTP-Q8 GGUF 1319x2 answers avg ~91.77%; quality is author-only, BF16 same result unproven.",
+      "quality_negative": "Original Jackrong SFT/teacher data and exact derivative use rights not audited; low-download new source, publisher performance on Q8 GGUF not identical BF16; parent source code/Torch version and owner hardware unverified.",
+      "risk_and_alternative_assessment": "Current publisher source is ungated and public. Potential future access restriction is a hypothesis without model-specific measured probability or effective legal ban.",
+      "evidence_date": "2026-11-21",
+      "evidence_kind": "PUBLISHER_IMMUTABLE_TREE_BLOB_AND_LFS_PLUS_SAFETENSORS_HEADER_METADATA_NOT_RUNTIME",
+      "evidence_urls": [
+        "https://huggingface.co/aaaaygd/DeepSeek-V4-Pro-Qwen3.5-4B-UNCENSORED-heretic",
+        "https://huggingface.co/aaaaygd/DeepSeek-V4-Pro-Qwen3.5-4B-UNCENSORED-heretic/tree/cdd9b11e7f92e4ba53dfeb6c02c6e7baf7a7e8a1"
+      ],
+      "observed_access": "public gated:false private:false from official Hub immutable snapshot",
+      "license_metadata": "Publisher Apache2.0 tag; parent, teacher data and user acts independently unverified",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "cdd9b11e7f92e4ba53dfeb6c02c6e7baf7a7e8a1",
+      "upstream_all_files_bytes_observed": 9345162884,
+      "upstream_file_count_observed": 17,
+      "upstream_lfs_sha256_count_observed": 4,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 17,
+      "candidate_selected_source_file_bytes": 9345162884,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "sha256": null,
+          "git_blob_sha1": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 30787,
+          "sha256": null,
+          "git_blob_sha1": "52dddbaf780bc0407bb7f1969918f000e2b1f064",
+          "local_sha_verified": false
+        },
+        {
+          "path": "added_tokens.json",
+          "bytes": 904,
+          "sha256": null,
+          "git_blob_sha1": "9955816d3da3e9560559861b82fc5a27cff5b364",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 9059,
+          "sha256": null,
+          "git_blob_sha1": "f465ae979f3591bb340e4ac58117921b85fdc262",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 3066,
+          "sha256": null,
+          "git_blob_sha1": "29d0b5d5eab4a6cdbfe597ab556500d19fe8bc09",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 142,
+          "sha256": null,
+          "git_blob_sha1": "c11247e3607126783448a08c1d93c376148d88ed",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "bytes": 4972947968,
+          "sha256": "4a1359364037ce09f5c115aefbe590019aed38d178c8185867a7c67a413863d8",
+          "git_blob_sha1": "26a4ac5836bfcc47b395a5fa2f3a6e8e61f7fd91",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "bytes": 4105672464,
+          "sha256": "1d9228733e52fd5240becf4266c5f97b3101f338ad2914edd1252f45a0f591e4",
+          "git_blob_sha1": "c7c9d3d7e34852ad137acb7b7a547859d78c0deb",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-mtp.safetensors",
+          "bytes": 241200864,
+          "sha256": "b035e98218c1f1618da8461c3df46acc7e691b3a992e2f63261b7449125a3190",
+          "git_blob_sha1": "e2f0a2facdb96cd8b71496517c40cf76b367cbd9",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 67211,
+          "sha256": null,
+          "git_blob_sha1": "eacaf18c159f751fb7bf1d7b4e4fbd853e82d4cd",
+          "local_sha_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 781,
+          "sha256": null,
+          "git_blob_sha1": "484b50c430e48aa6732a3ebb1b72f77cdaf8fc9e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 1325,
+          "sha256": null,
+          "git_blob_sha1": "a9804dd9789683a33fe72bd98bc0ccb71663afd1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 876,
+          "sha256": null,
+          "git_blob_sha1": "fca0ded4fda885a161deeda0547c114ddbc97093",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 19989339,
+          "sha256": "a5cd9732badce41de57e6efce8302930ded1c1188c5f81feb2bd6c24c4a1941f",
+          "git_blob_sha1": "a200a8dd650a52c17957673398767ac34b96dbeb",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1217,
+          "sha256": null,
+          "git_blob_sha1": "0bf8509edc202a6c885898778c000f2260919fe4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 817,
+          "sha256": null,
+          "git_blob_sha1": "e32b1d90356f74457edbfca27aa1e121dab7cdc7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 5234494,
+          "sha256": null,
+          "git_blob_sha1": "b94df23d650b0c60a2264d9de779cb3b7fb8570c",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r139-2026-11-21-inkling-micro-edits-and-deepseek4b-varloop.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 4539265536,
+        "evidence_kind": "HUB_MAIN_INDEX_WITH_MTP_FOR_4B_OR_PUBLISHER_LOGICAL_INKLING_PARENT_PLUS_EDIT_PARAMETERS",
+        "review_date": "2026-11-21",
+        "local_tensor_census_not_executed": true,
+        "note": "For delta-only repos, total includes reused parent nominal 26.7065B with independent editing matrix elements; no duplicate parent payload selected."
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 219,
+        "category": "INDEPENDENT_EDITED_OUTCOME_AND_NATIVE_ORIGINAL",
+        "scenario_status": "HYPOTHESIS_FUTURE_ACCESS_NOT_CERTIFIED"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "added_tokens.json",
+          "chat_template.jinja",
+          "config.json",
+          "generation_config.json",
+          "model-00001-of-00002.safetensors",
+          "model-00002-of-00002.safetensors",
+          "model-mtp.safetensors",
+          "model.safetensors.index.json",
+          "preprocessor_config.json",
+          "processor_config.json",
+          "special_tokens_map.json",
+          "tokenizer.json",
+          "tokenizer_config.json",
+          "video_preprocessor_config.json",
+          "vocab.json"
+        ],
+        "trained_state": "STANDALONE_BF16_HERETIC_QWEN3_5_4B_MTP",
+        "trained_state_comment": "Full 4B Qwen3.5 DeepSeek distilled SFT and Heretic edited BF16 original with 15 trained MTP tensors. Smaller learned state than already selected 9B, not same model quantization.",
+        "source_two_BF16_weight_shards_plus_MTP": 3,
+        "mtp_tensors": 15,
+        "mtp_BF16_parameters": 120599552,
+        "model_safetensors_index_includes_MTP_in_total": true,
+        "base_model": "Jackrong/DeepSeek-V4-Pro-Qwen3.5-4B",
+        "source_licenses_require_review": true,
+        "original_publisher_files_not_same_as_acquisition_scope": false,
+        "repo_40_hex_revision": "cdd9b11e7f92e4ba53dfeb6c02c6e7baf7a7e8a1",
+        "model_code_not_executed": true,
+        "owner_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 9345162884,
+        "publisher_selected_source_bytes": 9345162884,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "position": 220,
+      "asset_kind": "model",
+      "repo_id": "satellitedown/Inkling-2-Mini-abliterated-ingine",
+      "url": "https://huggingface.co/satellitedown/Inkling-2-Mini-abliterated-ingine",
+      "group": "Inkling Mini・無検閲activation編集・稼働時専用追加データ",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Differentiated runtime steering/edit method and frozen tests; materially independent tiny parameters without duplicating 20GB original. Extra learned/optimized edit parameters preserved for access changes.",
+      "quality_positive": "13 files source-hash-identical to publisher Inkling Mini, excluded 20.1916GB transfer. 20 truly changed/new source files totaling 1,190,518 bytes; original weights preserved by v58 research scope.",
+      "quality_negative": "Not new pretrained model; no weights re-trained or permanently changed. Custom ingine CUDA13, NVIDIA compute capability12/32GB and Linux x86_64; unsuitable for unverified owner Windows CPU/AMD. Publisher refusal scores not independent comparable benchmarks.",
+      "risk_and_alternative_assessment": "Current publisher source is ungated and public. Potential future access restriction is a hypothesis without model-specific measured probability or effective legal ban.",
+      "evidence_date": "2026-11-21",
+      "evidence_kind": "PUBLISHER_IMMUTABLE_TREE_BLOB_AND_LFS_PLUS_SAFETENSORS_HEADER_METADATA_NOT_RUNTIME",
+      "evidence_urls": [
+        "https://huggingface.co/satellitedown/Inkling-2-Mini-abliterated-ingine",
+        "https://huggingface.co/satellitedown/Inkling-2-Mini-abliterated-ingine/tree/6e823ba0031071d549e4973ec8caf86873cf60db"
+      ],
+      "observed_access": "public gated:false private:false from official Hub immutable snapshot",
+      "license_metadata": "Publisher Apache2.0 tag; parent, teacher data and user acts independently unverified",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "6e823ba0031071d549e4973ec8caf86873cf60db",
+      "upstream_all_files_bytes_observed": 20192778958,
+      "upstream_file_count_observed": 33,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 20,
+      "candidate_selected_source_file_bytes": 1190518,
+      "candidate_selected_source_files": [
+        {
+          "path": "LICENSE",
+          "bytes": 11357,
+          "sha256": null,
+          "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+          "local_sha_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 3136,
+          "sha256": null,
+          "git_blob_sha1": "8da9cdf4b77b855af83acc1e8e54aa4ce8fa0236",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 11386,
+          "sha256": null,
+          "git_blob_sha1": "15e813cca17b77cbe45d42506fc2640b41824ce1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "SHA256SUMS",
+          "bytes": 2961,
+          "sha256": null,
+          "git_blob_sha1": "d5a13d65635e195b4745317f0376f8d7f7f8af27",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/ablate.py",
+          "bytes": 25585,
+          "sha256": null,
+          "git_blob_sha1": "4f656a0351589f9e8d2ff5fd6b20244613b5e0d4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/capability_eval.py",
+          "bytes": 11342,
+          "sha256": null,
+          "git_blob_sha1": "3a289284c2734b0bf59417f8bac5875cbeabbfd5",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/eval.sh",
+          "bytes": 2147,
+          "sha256": null,
+          "git_blob_sha1": "63fc888ebc410aee1713e2a00fc241a4714eecf3",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/inkling_ref.py",
+          "bytes": 10310,
+          "sha256": null,
+          "git_blob_sha1": "381ddf162aed96c2e55518cc62eaa76a297d70ca",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/refusal_eval.py",
+          "bytes": 9117,
+          "sha256": null,
+          "git_blob_sha1": "b1a0c5440ba56cfc3eafc778cb0618f2a4d3e45c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/requirements.txt",
+          "bytes": 252,
+          "sha256": null,
+          "git_blob_sha1": "79b60c4f23ab19f194d0a0f6e4e55d6370ceada7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/results/capability-abliterated.json",
+          "bytes": 7054,
+          "sha256": null,
+          "git_blob_sha1": "12dfc3351b382c4cb9322176ecc33359600fe833",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/results/capability-original.json",
+          "bytes": 7056,
+          "sha256": null,
+          "git_blob_sha1": "27ffc3dfd47175cf0078c888e1e9e53c257e7688",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/results/refusals-abliterated-thinking.json",
+          "bytes": 58990,
+          "sha256": null,
+          "git_blob_sha1": "5870a86e4a731c14c0844cff85ea9ded57ca3be7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/results/refusals-abliterated.json",
+          "bytes": 39215,
+          "sha256": null,
+          "git_blob_sha1": "152221ebfb08e6e7ae9359566b7374bf36f32c40",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/results/refusals-original-thinking.json",
+          "bytes": 50796,
+          "sha256": null,
+          "git_blob_sha1": "d2f851f1d96a8e6e681884c6e71766483b4e193c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/results/refusals-original.json",
+          "bytes": 36888,
+          "sha256": null,
+          "git_blob_sha1": "965e96685c06590099ecc65a8cacafc86877438a",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/results/verify-abliterated.json",
+          "bytes": 6392,
+          "sha256": null,
+          "git_blob_sha1": "24652eb52116327faddbd3427ac66b4bb055750a",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/results/verify-alt-t37.json",
+          "bytes": 6384,
+          "sha256": null,
+          "git_blob_sha1": "781583f0b06ad36f77d1d5ef6b4efc2f0b1ebd30",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/results/verify-nothink-t44.json",
+          "bytes": 4302,
+          "sha256": null,
+          "git_blob_sha1": "37e7482f60e3c6be45961992fbc3b3fb27757554",
+          "local_sha_verified": false
+        },
+        {
+          "path": "inkling-2-mini-abliterated.safetensors",
+          "bytes": 885848,
+          "sha256": "9467240bdbcd4737a3496bf167525989d79196dbeec582361880ad4d8cbe4d73",
+          "git_blob_sha1": "095c85289b42da7e22cce72755fe39962db7301a",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r139-2026-11-21-inkling-micro-edits-and-deepseek4b-varloop.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 26706765592,
+        "evidence_kind": "HUB_MAIN_INDEX_WITH_MTP_FOR_4B_OR_PUBLISHER_LOGICAL_INKLING_PARENT_PLUS_EDIT_PARAMETERS",
+        "review_date": "2026-11-21",
+        "local_tensor_census_not_executed": true,
+        "note": "For delta-only repos, total includes reused parent nominal 26.7065B with independent editing matrix elements; no duplicate parent payload selected."
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 220,
+        "category": "INDEPENDENT_EDITED_OUTCOME_AND_NATIVE_ORIGINAL",
+        "scenario_status": "HYPOTHESIS_FUTURE_ACCESS_NOT_CERTIFIED"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          "LICENSE",
+          "NOTICE",
+          "README.md",
+          "SHA256SUMS",
+          "abliteration/ablate.py",
+          "abliteration/capability_eval.py",
+          "abliteration/eval.sh",
+          "abliteration/inkling_ref.py",
+          "abliteration/refusal_eval.py",
+          "abliteration/requirements.txt",
+          "abliteration/results/capability-abliterated.json",
+          "abliteration/results/capability-original.json",
+          "abliteration/results/refusals-abliterated-thinking.json",
+          "abliteration/results/refusals-abliterated.json",
+          "abliteration/results/refusals-original-thinking.json",
+          "abliteration/results/refusals-original.json",
+          "abliteration/results/verify-abliterated.json",
+          "abliteration/results/verify-alt-t37.json",
+          "abliteration/results/verify-nothink-t44.json",
+          "inkling-2-mini-abliterated.safetensors"
+        ],
+        "trained_state": "RUNTIME_WEIGHTED_ABLATION_PARAMETERS_PLUS_REPRODUCIBLE_CODE",
+        "trained_state_comment": "Publisher original Inkling 2 Mini main+MTP source SHA identical, excluded both main weights and 11 other matching files. Preserve optimized 221,280 F32 edit parameters + CUDA 13/Linux code and eval data only.",
+        "parent_repo": "thinkingmachines/Inkling-2-Mini",
+        "parent_revision": "1fb4134b9a74f9681054f4ef82e4bf1f458a2337",
+        "unique_F32_edit_elements": 221280,
+        "unique_edit_weight_filename": "inkling-2-mini-abliterated.safetensors",
+        "source_same_file_count": 13,
+        "source_same_file_bytes": 20191588440,
+        "original_full_repo_bytes": 20192778958,
+        "delta_selected_bytes": 1190518,
+        "requires_own_32GB_plus_CUDA13_Linux": true,
+        "not_same_as_pretrained_model": true,
+        "original_publisher_files_not_same_as_acquisition_scope": true,
+        "repo_40_hex_revision": "6e823ba0031071d549e4973ec8caf86873cf60db",
+        "model_code_not_executed": true,
+        "owner_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 20192778958,
+        "publisher_selected_source_bytes": 1190518,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "position": 221,
+      "asset_kind": "model",
+      "repo_id": "OpenUncensored/Inkling-2-Mini-Uncensored-LoRA",
+      "url": "https://huggingface.co/OpenUncensored/Inkling-2-Mini-Uncensored-LoRA",
+      "group": "Inkling Mini・超小型無検閲LoRA・親再利用",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Minimal PEFT representation of modified Inkling behavior, little storage per distinct alignment edit, not a duplicate pre-trained checkpoint.",
+      "quality_positive": "Frozen 865,296 byte adapter and 5-file 877,939 byte publisher repo with rank2 config and static merge script. 32-prompt author refusal-only metric and MMLU 78.95->79.47, not independent.",
+      "quality_negative": "adapter_config parent revision=null, task_type CAUSAL_LM despite Inkling multimodal seq2seq; compatibility/merge and exact upstream revision need human static code review before executable. 32 harmful prompts not reliable for general quality.",
+      "risk_and_alternative_assessment": "Current publisher source is ungated and public. Potential future access restriction is a hypothesis without model-specific measured probability or effective legal ban.",
+      "evidence_date": "2026-11-21",
+      "evidence_kind": "PUBLISHER_IMMUTABLE_TREE_BLOB_AND_LFS_PLUS_SAFETENSORS_HEADER_METADATA_NOT_RUNTIME",
+      "evidence_urls": [
+        "https://huggingface.co/OpenUncensored/Inkling-2-Mini-Uncensored-LoRA",
+        "https://huggingface.co/OpenUncensored/Inkling-2-Mini-Uncensored-LoRA/tree/b328f8112173024d0f097aba1ea09e5f475ca7f9"
+      ],
+      "observed_access": "public gated:false private:false from official Hub immutable snapshot",
+      "license_metadata": "Publisher Apache2.0 tag; parent, teacher data and user acts independently unverified",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "b328f8112173024d0f097aba1ea09e5f475ca7f9",
+      "upstream_all_files_bytes_observed": 877939,
+      "upstream_file_count_observed": 5,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 5,
+      "candidate_selected_source_file_bytes": 877939,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": null,
+          "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 7143,
+          "sha256": null,
+          "git_blob_sha1": "d79d67e1b88098c6651e75b56188d2b78255b33d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "adapter_config.json",
+          "bytes": 457,
+          "sha256": null,
+          "git_blob_sha1": "da0ebcedc476890f58e90153381d48cb7eda87c6",
+          "local_sha_verified": false
+        },
+        {
+          "path": "adapter_model.safetensors",
+          "bytes": 865296,
+          "sha256": "c67b9d8d18c4a916440eafaf57a42f1510bc00562f52c8a0a29f8f417ed41443",
+          "git_blob_sha1": "7e3c540d9a4c30d6e4d1e235e5aa8580d099e541",
+          "local_sha_verified": false
+        },
+        {
+          "path": "merge_adapter.py",
+          "bytes": 3524,
+          "sha256": null,
+          "git_blob_sha1": "c94800f145a14c92bb63e126330a3eb576c5abc8",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r139-2026-11-21-inkling-micro-edits-and-deepseek4b-varloop.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 26706759352,
+        "evidence_kind": "HUB_MAIN_INDEX_WITH_MTP_FOR_4B_OR_PUBLISHER_LOGICAL_INKLING_PARENT_PLUS_EDIT_PARAMETERS",
+        "review_date": "2026-11-21",
+        "local_tensor_census_not_executed": true,
+        "note": "For delta-only repos, total includes reused parent nominal 26.7065B with independent editing matrix elements; no duplicate parent payload selected."
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 221,
+        "category": "INDEPENDENT_EDITED_OUTCOME_AND_NATIVE_ORIGINAL",
+        "scenario_status": "HYPOTHESIS_FUTURE_ACCESS_NOT_CERTIFIED"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "adapter_config.json",
+          "adapter_model.safetensors",
+          "merge_adapter.py"
+        ],
+        "trained_state": "PEFT_RANK2_LOOP_AWARE_SAFETY_ALIGNMENT_ADAPTER",
+        "trained_state_comment": "215,040 trainable/edited F32 LoRA elements across 40 matrices, rank2 safety-direction adapter. Different mechanism from runtime 'ingine', uses native Inkling Mini source instead of new 20GB weights.",
+        "parent_repo": "thinkingmachines/Inkling-2-Mini",
+        "archive_assumed_parent_revision": "1fb4134b9a74f9681054f4ef82e4bf1f458a2337",
+        "author_adapter_parent_revision": null,
+        "LoRA_rank": 2,
+        "LoRA_F32_tensor_count": 40,
+        "LoRA_F32_elements": 215040,
+        "adapter_bytes": 865296,
+        "selected_source_bytes": 877939,
+        "requires_PEFT_merge_compatibility_review": true,
+        "not_same_as_pretrained_model": true,
+        "original_publisher_files_not_same_as_acquisition_scope": false,
+        "repo_40_hex_revision": "b328f8112173024d0f097aba1ea09e5f475ca7f9",
+        "model_code_not_executed": true,
+        "owner_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 877939,
+        "publisher_selected_source_bytes": 877939,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    }
+  ],
+  "added_assets": [
+    "aaaaygd/DeepSeek-V4-Pro-Qwen3.5-4B-UNCENSORED-heretic",
+    "satellitedown/Inkling-2-Mini-abliterated-ingine",
+    "OpenUncensored/Inkling-2-Mini-Uncensored-LoRA"
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "source_manifest": "manifests/drafts/r139-2026-11-21-inkling-micro-edits-and-deepseek4b-varloop.candidate.json",
+  "publisher_source_files_selected": 42,
+  "publisher_selected_bytes": 9347231341,
+  "publisher_full_repo_total_bytes_including_shared_duplicates": 29538819781,
+  "related_research_hold": "thinkingmachines/TML-d24-varloop-research: independently trained variable loop 1-5 pass/20.19GB. Source rev fixed in R139, not selected for next acquisition.",
+  "shared_origin_publisher_files_excluded": 13,
+  "shared_origin_source_bytes_excluded": 20191588440,
+  "publisher_file_hashes_and_parent_sha_crosschecked": true,
+  "download_authorizations_added": 0,
+  "model_weights_acquired_this_research": 0,
+  "owner_HDD_SHA_rehashed": false,
+  "owner_license_per_act_verified": false,
+  "code_executed": false,
+  "owner_restore_verified": false,
+  "approved": false
+}
