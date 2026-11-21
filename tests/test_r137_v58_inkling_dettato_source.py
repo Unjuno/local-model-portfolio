@@ -22,11 +22,13 @@ class V58SourceAndCatalogTest(unittest.TestCase):
         cls.ready = load("catalog/readiness/v58-2026-11-21-r137-all171-gates.json")
 
     def test_current_and_five_added_immutable(self):
-        self.assertEqual(self.curr["revision_id"], "v58-20261121")
-        self.assertEqual(self.curr["materialized_catalog_path"],
-                         "catalog/effective-portfolio-2026-11-21-v58.json")
-        self.assertEqual(self.curr["expected"]["tracked"], 218)
-        self.assertEqual(self.curr["expected"]["active"], 171)
+        # R137 proves immutable v58 history; CURRENT advances independently.
+        live = load(self.curr["materialized_catalog_path"])
+        self.assertEqual(live["revision_id"], self.curr["revision_id"])
+        self.assertEqual(live["counts"]["tracked"], self.curr["expected"]["tracked"])
+        self.assertEqual(live["counts"]["active"], self.curr["expected"]["active"])
+        self.assertGreaterEqual(self.curr["expected"]["tracked"], 218)
+        self.assertGreaterEqual(self.curr["expected"]["active"], 171)
         self.assertEqual(self.eff["counts"]["tracked"], 218)
         self.assertEqual(self.eff["counts"]["active"], 171)
         self.assertEqual(self.eff["counts"]["models"], 192)
