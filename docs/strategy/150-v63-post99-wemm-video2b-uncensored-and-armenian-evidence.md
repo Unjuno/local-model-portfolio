@@ -9,18 +9,18 @@
 
 | 候補 | 判断 | publisher source / 目的 | 停止条件 |
 |---|---|---|---|
-| [Tencent WeMM-Video-2B](https://huggingface.co/tencent/WeMM-Video-2B) | **R1/CONDITIONALに向けた研究ソース固定**。まだv63正式資産ではない | 元動画・音声を同期的に扱う小型時系列multimodal学習状態。大規模MOSS-VL-Realtimeと用途が重なるが学習済み原本と容量が異なるため、無測定の置換は禁止 | 27ファイルの出版社immutable revision、25ファイルに発行者SHA256。二分割Safetensors。custom code + patched vLLM/SGLang ABI・第三者依存／権利／GPUピーク未検証。全repoの正確なbytes未採集 |
+| [Tencent WeMM-Video-2B](https://huggingface.co/tencent/WeMM-Video-2B) | **R1/CONDITIONALに向けた研究ソース固定**。まだv63正式資産ではない | 元動画・音声を同期的に扱う小型時系列multimodal学習状態。大規模MOSS-VL-Realtimeと用途が重なるが学習済み原本と容量が異なるため、無測定の置換は禁止 | 27ファイルの出版社immutable revision、25ファイルに発行者SHA256。二分割Safetensors。custom code + patched vLLM/SGLang ABI・第三者依存／権利／GPUピーク未検証。別のpublisher tree censusと25/25 SHA一致、全27file正確に6,590,699,556byte |
 | [OpenUncensored Inkling Mini Full](https://huggingface.co/OpenUncensored/Inkling-2-Mini-Uncensored) | **フル約20GBの追加保全を見送る** | 公開者は同じ拒否編集のrank2 LoRA版も提供。既存v59に親ThinkingMachines Inkling・rank2 LoRA・別ablation編集を登録済み | LoRA再合成とfullのtensor完全一致は独立検証前。現物を削除したり同一性を断定しない |
 | [Metric-AI Ayb-0.5-0.8B](https://huggingface.co/Metric-AI/Ayb-0.5-0.8B) | **HOLD** | Qwen3.5-0.8B派生でアルメニア語特化。低資源言語アーカイブとしては独自価値 | GatedアクセスとCC BY-NC 4.0。本人のgate許可・行為許諾・固定SHAが揃わない。迂回不可 |
 | [Ricursive Ripple-65B](https://huggingface.co/ricursiveAI/Ripple-65B-Preview) | **P3 HOLD継続** | 既存研究キューの約129.573GB原本 | 同条件実測による独立価値・復元環境・容量証明の不足 |
 
 ### WeMM 原本とSHAの意味
-[公開元の不変コミット](https://huggingface.co/tencent/WeMM-Video-2B/commit/821690998399cac0f55bb7f7f805ebafa650c3a4)は `821690998399cac0f55bb7f7f805ebafa650c3a4`。[publisher SHA256SUMS](https://huggingface.co/tencent/WeMM-Video-2B/raw/821690998399cac0f55bb7f7f805ebafa650c3a4/SHA256SUMS)は25 pathのdigestを列挙する。27 pathのうち `.gitattributes` と `SHA256SUMS` 自身には同表にhashがなく、Git tree OID/byte censusが追加で必要。モデルindexの `metadata.total_size=6,567,256,208 byte` は**重みのtensor payload表記**であり、ダウンロード対象全ファイルのbyte数ではない。よって「6.59GBを正確に取得確定」とはせず、源ファイルを固定した研究候補とする。
+[公開元の不変コミット](https://huggingface.co/tencent/WeMM-Video-2B/commit/821690998399cac0f55bb7f7f805ebafa650c3a4)は `821690998399cac0f55bb7f7f805ebafa650c3a4`。[publisher SHA256SUMS](https://huggingface.co/tencent/WeMM-Video-2B/raw/821690998399cac0f55bb7f7f805ebafa650c3a4/SHA256SUMS)は25 pathのdigestを列挙する。27 pathのうち `.gitattributes` と `SHA256SUMS` 自身には同表にhashがなく、Git tree OID/byte censusが追加で必要。モデルindexの `metadata.total_size=6,567,256,208 byte` は**重みのtensor payload表記**であり、ダウンロード対象全ファイルのbyte数ではない。別のpublisher tree全27file監査と25/25 SHA照合を行い、**全体6,590,699,556byte、重み2 shard合計6,567,395,904byte** を正本のPublisher参照値として確定した（[照合先](../../manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json)）。ただしオーナー媒体の存在や権利・動作環境は確定しておらず、取得未承認の研究候補とする。
 
 [機械可読publisher digest一覧](../../manifests/drafts/r150-2026-11-22-wemm-video2b-publisher-sha256.candidate.json)を公開元の記録として転記した。Dの現物を検査したものではなく、モデルの重みをロード・実行してもいない。公開者のモデルカードはApache-2.0を掲示するが、第三者ライブラリ・音声映像の利用条件は別。コードに `trust_remote_code` / custom `modeling_wemm.py` / `h5_modeling_*.py`等があるため、未審査ロードを停止する。報告されたハードウェアL20/H20、パッチ付きvLLMは利用者環境の保証ではない。2Bは名称上のtext規模であり、全multimodal学習済みtensor総数を独立に数えていない。
 
 ### 重複排除と順位
-既存最小P0 4repo合計 **2,234,744,280byte**を先に審査する。次にWeMMのsource byte censusとcustom codeレビューを行い、P1の無検閲親・2B視覚対話に追加する価値を審査する。既存OpenMOSS 22,687,497,344byteとWeMMを性能比較せずに入れ替えない。既存P0–P2 10repo **68,544,170,933byte**にWeMMの`model.safetensors.index.json` payloadを単純加算して正式予算と称してはならない。30億パラメータ規模というHF UI表記と「Video-2B」という名称も、合計tensor censusで検証してから総パラメータ制約を判定する。
+既存最小P0 4repo合計 **2,234,744,280byte**を先に審査する。次にWeMMのsource/実ディスクbyte差分とcustom codeレビューを行い、P1の無検閲親・2B視覚対話に追加する価値を審査する。既存OpenMOSS 22,687,497,344byteとWeMMを性能比較せずに入れ替えない。既存P0–P2 10repo **68,544,170,933byte**にWeMMの`model.safetensors.index.json` payloadを単純加算して正式予算と称してはならない。30億パラメータ規模というHF UI表記と「Video-2B」という名称も、合計tensor censusで検証してから総パラメータ制約を判定する。
 
 ## 規制リスクと権利の分離
 [米BIS連邦官報2026-11-19](https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm)は旧モデルウェイトECCN 4E091を撤廃。半導体／最終用途関連の規制や発行者のライセンス、Gated条件は別。個別モデルの将来禁止確率は**計測していない反証可能仮説**として扱い、過度な規制予測で選定順位を偽装しない。無検閲の保存価値は編集差分・親との関係・検証可能な重みが残るかで判断する。
