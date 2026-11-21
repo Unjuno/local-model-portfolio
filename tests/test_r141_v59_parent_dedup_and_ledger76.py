@@ -64,7 +64,9 @@ class V59ArchiveSourceIntegrityTest(unittest.TestCase):
                 self.assertEqual(len(f["git_blob_sha1"]), 40)
                 if f["publisher_lfs_sha256"]:
                     self.assertEqual(len(f["publisher_lfs_sha256"]), 64)
-                self.assertFalse(f["owner_local_sha_verified"])
+                # R139 freezes upstream metadata; owner physical SHA is still not checked.
+                self.assertIn("owner_sha_checked", f)
+                self.assertFalse(f["owner_sha_checked"])
 
     def test_duplicate_main_inkling_files_excluded_without_unsafe_rewrite(self):
         m = self.src["parent_shared_exact_dedup"]
