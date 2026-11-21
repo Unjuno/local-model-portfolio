@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "kind": "R150_V63_POST99_INCREMENTAL_WEIGHT_AND_RISK_TRIAGE_RESEARCH_ONLY",
+  "as_of_jst": "2026-11-22",
+  "baseline": {
+    "revision": "v63-20261122",
+    "registered_total": 235,
+    "model_assets": 209,
+    "dataset_assets": 26,
+    "active_total": 188,
+    "select": 55,
+    "conditional": 133,
+    "already_reported_acquired": 99,
+    "approved_downloads": 0,
+    "prior_candidate_queue": "queues/proposed-v63-r149-after99-11-research-only.json"
+  },
+  "source_consistency": {
+    "legacy_11_source_queue_preserved": true,
+    "legacy_99_verified_repo_ids_not_marked_to_redownload": true,
+    "no_existing_canonical_asset_replaced": true
+  },
+  "decisions": [
+    {
+      "repo_id": "nchapman/Qwen3.5-0.8B-Heretic-LoRA",
+      "priority": "P0_ONE_NEW_SMALL_SOURCE_RESEARCH_FINALIST",
+      "disposition": "ADVANCE_MANIFEST_FREEZE_NOT_FORMAL_SELECT",
+      "publisher_revision": "92e2ae29c379d7378c696511ec9c70ace8be1434",
+      "publisher_display_total_bytes_approx": 6170000,
+      "unique_safetensors_states": 2,
+      "unique_safetensors_bytes": 2006488,
+      "reason": "Novel reversible rank-3 MPOA refusal-control LoRA for already-selected Qwen3.5-0.8B; two Pareto settings; do not count duplicate root and trial_002 as two trained states; full 6.17MB includes alternate GGUF formats.",
+      "conditions": "Need full publisher source nonweight path scope, parent pinned revision and local SHA, legal act review, inference ABI and blind paired reasoning evaluation before official catalog inclusion.",
+      "evidence_urls": [
+        "https://huggingface.co/nchapman/Qwen3.5-0.8B-Heretic-LoRA",
+        "https://huggingface.co/nchapman/Qwen3.5-0.8B-Heretic-LoRA/commit/92e2ae29c379d7378c696511ec9c70ace8be1434"
+      ]
+    },
+    {
+      "repo_id": "darrellbest/Qwen3.5-0.8B-Heretic",
+      "priority": "P0_BENCHMARK_COMPARATOR",
+      "disposition": "HOLD_AS_ALTERNATIVE_TO_TINY_LORA",
+      "publisher_revision": "fe1b6c084607d8b75f013d41bbf4b95cc9ea9109",
+      "publisher_display_total_bytes_approx": 1780000000,
+      "reason": "Full BF16/F32 1.78GB Qwen 0.8B ARA edit including 488 tensors and MTP; author measured 15/100 refusals vs 98/100 base and thinking arithmetic/word 27/40 vs 26/40 parent. nchapman has no matched reasoning evaluation.",
+      "evidence_urls": [
+        "https://huggingface.co/darrellbest/Qwen3.5-0.8B-Heretic",
+        "https://huggingface.co/darrellbest/Qwen3.5-0.8B-Heretic/commit/fe1b6c084607d8b75f013d41bbf4b95cc9ea9109"
+      ]
+    },
+    {
+      "repo_id": "Peymandc/Qwen3.5-0.8B-Heretic-Uncensored",
+      "priority": "P0_BACKUP_ONLY",
+      "disposition": "HOLD_UNTIL_PRIMARY_PUBLISHER_FULL_SOURCE",
+      "reason": "Secondary-source index reports about 1.61GB; full author file/version+reasoning not independently auditable here; additional full copy low marginal value compared to LoRA.",
+      "evidence_urls": [
+        "https://huggingface.co/Peymandc/Qwen3.5-0.8B-Heretic-Uncensored",
+        "https://abliteration.org/models/Peymandc/Qwen3.5-0.8B-Heretic-Uncensored"
+      ]
+    },
+    {
+      "repo_id": "baselabs/bison-1",
+      "priority": "P2_DECISION_SPECIALIST_COMPARATOR",
+      "disposition": "HOLD",
+      "publisher_display_total_bytes_approx": 65400000000,
+      "reason": "Dense 31B decision-only calibrated scorer, publisher cites AA Decision Index 76/19 ranking #1 and Brier 0.14; large 65.4GB source and overlap with existing decision models, local comparison missing.",
+      "evidence_urls": [
+        "https://huggingface.co/baselabs/bison-1",
+        "https://huggingface.co/baselabs/bison-1/tree/main"
+      ]
+    },
+    {
+      "repo_id": "baselabs/groundhog-1",
+      "priority": "P2_DECISION_SPECIALIST_COMPARATOR",
+      "disposition": "HOLD_NO_SIMULTANEOUS_BISON_ACQUISITION",
+      "publisher_display_total_bytes_approx": 53100000000,
+      "reason": "MoE 26B total/~4B active; long context; no AA Decision Index score for groundhog itself. Same 6.71M decision training family as bison; don't add both until marginal performance and RAM are measured.",
+      "evidence_urls": [
+        "https://huggingface.co/baselabs/groundhog-1",
+        "https://huggingface.co/baselabs/groundhog-1/tree/main"
+      ]
+    },
+    {
+      "repo_id": "ContinuousIntelligence/ci-proto",
+      "priority": "EXISTING_R105_HOLD_RETAINED",
+      "disposition": "HOLD_NO_PROMOTION",
+      "publisher_display_total_bytes_approx": 1340000000,
+      "reason": "Two 167M time-series weights 1.34GB repository, but ci-proto licence adds attribution/notification terms on external distribution; safe checkpoint loading and matched comparison to already-selected Simons297M still absent.",
+      "evidence_urls": [
+        "https://huggingface.co/ContinuousIntelligence/ci-proto",
+        "https://huggingface.co/ContinuousIntelligence/ci-proto/blob/main/LICENCE"
+      ]
+    },
+    {
+      "repo_id": "salesforce-sovereign-intelligence/SOV-Transcribe-1",
+      "priority": "EXISTING_R102_HOLD_RETAINED",
+      "disposition": "HOLD_NO_PROMOTION",
+      "publisher_revision": "505d8fae243924c0d8acdc622f7f0abab344eba3",
+      "publisher_selected_source_bytes": 53315653534,
+      "reason": "Prior frozen 34-file source and separate 430M DFlash companion already audited R102; no matched ASR quality on owner HW, custom vLLM 0.32 / transformers>=5.19,<5.23 dependency; do not duplicate research and do not fetch optional DFlash before parent.",
+      "evidence_urls": [
+        "https://huggingface.co/salesforce-sovereign-intelligence/SOV-Transcribe-1",
+        "https://github.com/Unjuno/local-model-portfolio/blob/main/catalog/research/2026-11-18-r102-sov-transcribe-original-and-dflash.json"
+      ]
+    },
+    {
+      "repo_id": "kelsey1337/DaisyRose-27B-Heretic-v2",
+      "priority": "FRESH_UNCENSORED_DISCOVERY",
+      "disposition": "HOLD_DUPLICATED_FAMILY_NO_WEIGHT_MANIFEST",
+      "reason": "Very recent HF variant of already-catalogued DaisyRose 27B family; no reproducible fixed trained state/source license/quality delta audited.",
+      "evidence_urls": [
+        "https://huggingface.co/models?other=uncensored&sort=created"
+      ]
+    },
+    {
+      "repo_id": "yanauto/Inkling-2-Mini-heretic-full",
+      "priority": "FRESH_UNCENSORED_DISCOVERY",
+      "disposition": "HOLD_DUPLICATED_FAMILY_NO_WEIGHT_MANIFEST",
+      "reason": "New 26B Inkling variant; existing portfolio already tracks original and edited Inkling outcomes; source lineage and unique trained delta not verified.",
+      "evidence_urls": [
+        "https://huggingface.co/models?other=uncensored&sort=created"
+      ]
+    }
+  ],
+  "provenance": {
+    "new_publisher_models_discovered_not_canonical": [
+      "nchapman/Qwen3.5-0.8B-Heretic-LoRA",
+      "darrellbest/Qwen3.5-0.8B-Heretic",
+      "baselabs/bison-1",
+      "baselabs/groundhog-1"
+    ],
+    "prior_hold_maintained": [
+      "ContinuousIntelligence/ci-proto",
+      "salesforce-sovereign-intelligence/SOV-Transcribe-1"
+    ],
+    "research_sources": [
+      "https://huggingface.co/nchapman/Qwen3.5-0.8B-Heretic-LoRA/commit/92e2ae29c379d7378c696511ec9c70ace8be1434",
+      "https://huggingface.co/darrellbest/Qwen3.5-0.8B-Heretic/commit/fe1b6c084607d8b75f013d41bbf4b95cc9ea9109",
+      "https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm"
+    ]
+  },
+  "policy": {
+    "effective_US_BIS_notice": "2026-11-19",
+    "source": "https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm",
+    "verified_fact": "IFR revokes AI Diffusion Rule 4E091 model-weights ECCN while imposing other advanced-compute semiconductors restrictions; does not establish blanket prohibition on private model archiving.",
+    "risk_forecast": "UNQUANTIFIED_HYPOTHESIS"
+  },
+  "followup_test": {
+    "H": "An independently pinned reversible Qwen0.8B LoRA can reduce refusal frequency while keeping paired neutral reasoning and multilingual task accuracy within predeclared tolerance.",
+    "T": "Fixed parent+LoRA exact revision, source sha; >=100 paired benign prompts and >=100 controlled refusal prompts, >=40 matched reasoning questions across >=5 seeds; same backend, clock, precision, context, batch and full runtime ABI; owner device only after prior authorization.",
+    "D": "PASS only if refusal-rate reduction is reproduced and benign reasoning noninferiority margin <=5 percentage points with 95% paired CI, plus correct offline restore and rights gates. FAIL on clear reasoning degradation or SHA/license mismatch; otherwise UNCERTAIN.",
+    "C": "Keyword refusal-score improvement is a prompt-marker effect; reasoning degradation or parent-ABI mismatch nullifies observed benefit.",
+    "U": "Publisher n=100 refusal scoring not blinded; localized prompts, seeds, quantizer/zero-point, CPU/GPU kernel and MTP behavior are unmeasured; u_c and k not calculable without repeated owner measurements."
+  },
+  "execution": {
+    "download_authorized": false,
+    "files_transferred": 0,
+    "approved_queue_modified": false,
+    "old_catalog_items_modified": false,
+    "owner_disk_measured": false,
+    "owner_code_executed": false
+  }
+}
