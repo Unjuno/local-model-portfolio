@@ -1,3 +1,9 @@
+# R149／v63（2026-11-22）：11既存固定sourceの優先順確定・新規5特殊モデルはwatchlistだけ
+
+正本は引き続き`main`の`catalog/CURRENT.json` **v63（235登録／188有効：SELECT55、CONDITIONAL133）**。 [R149報告](docs/strategy/149-v63-post99-prioritization-and-novel-specialists.md)、[11固定source＋5watchlist研究キュー](queues/proposed-v63-r150-prioritized-sources-and-watchlist.json)、[機械可読根拠](catalog/research/2026-11-22-r149-post99-compact-and-rare-source-screen.json)が最新の非実行研究資料。新規5件は正式選定されていない。所有者の個別利用権と200GB残床、外部依存、実機SHA、offline restore及び**正確なmanifest別承認**がない限り新規重量取得不可。古い自動承認を復元してはならない。今回：承認追加0、重みDL0、owner D改変0、カタログ既存235変更0。以下のR148以下は履歴。
+
+---
+
 # R149／現行v63維持・11原本の優先順位再確認（2026-11-22）
 
 **mainの唯一の正本**：`catalog/CURRENT.json`→`v63-20261122`、235登録、188有効、SELECT55／CONDITIONAL133。最新[11repoの一次再審査](docs/strategy/149-v63-post99-next11-live-primary-adjudication-2026-11-22.md)／[全11件decision JSON](catalog/decisions/2026-11-22-r149-v63-next11-source-adjudication.json)／[回帰テスト](tests/test_r149_v63_post99_live_source_adjudication.py)。取得台帳の99件は履歴のファイル照合報告に限り、owner Windows Dの独立現物再SHA、本人個別ライセンス行為権限、完整なoffline restoreや稼働ABIは未確認。**次の11repoはすべて研究用未承認sourceであり `queues/approved.json` には追加しない。取得候補P0 4件2.235GB、P1 4件11.871GB、P2 2件54.438GB、大型P3 Ripple 129.573GBはHOLD。** TimestralのModified MIT月商条件、Hereticのexact Liquid親とBF16＋Q4+mmproj単一編集状態、Apple FastFramesのCausal Forcing++/Wan親、Cactus engine、Kitten Pico対Nano、RFD4別重量revisionを混同しない。BIS 2026-11-19 ECCN4E091撤回は事実、全オープン重み将来禁止は未確認の仮説。**本人の明示的なファイル別承認、権利、SHA、4TB物理容量/200GB余裕、全コード依存・GPU ABI確認まで実ダウンロードSTOP。新規承認0・重量DL0・ユーザー媒体変更0・旧モデル削除0、mainのみ。**
