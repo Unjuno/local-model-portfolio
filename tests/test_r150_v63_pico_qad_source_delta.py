@@ -37,7 +37,7 @@ class PicoQADDelta(unittest.TestCase):
         self.assertEqual(len(candidate), 8)
         self.assertEqual(sum(candidate.values()), 63_628_208)
         for path in candidate:
-            self.assertRegex(path, r"^kitten_tts_2_pico_(?:de|en|es|fr|hi|it|pt|ru)\\.onnx$")
+            self.assertIn(path, {f"kitten_tts_2_pico_{lang}.onnx" for lang in ("de", "en", "es", "fr", "hi", "it", "pt", "ru")})
 
     def test_source_revision_and_full_scope_reconcile(self):
         self.assertEqual(self.new["publisher_immutable_revision_sha"], self.parent["revision_sha"])
