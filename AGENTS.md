@@ -1,3 +1,9 @@
+# R150／追加原本照合補遺（2026-11-22）
+
+正本v63／235登録・188有効は不変。[WeMM発行者SHA25/25](manifests/drafts/r150-2026-11-22-wemm-video2b-publisher-sha256.candidate.json)は[27原本のサイズとGit OID資料](manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json)と一致。正確なpublisher source 6,590,699,556 byte。Weight indexにある6,567,256,208 byteは全repo bytesではない。**D実物ハッシュ・ユーザー権利・安全な実行コード・承認は未確認**。 [採否](docs/strategy/150-v63-post99-wemm-video2b-uncensored-and-armenian-evidence.md)：WeMMは正式登録前のCONDITIONAL研究候補、Inkling無検閲フル版はLoRAとの約20GB重複を保留、Gated AybはHOLD。現在の`queues/approved.json`は空、新規取得0。研究の追加が実転送許可に化けないようにする。mainのみ。
+
+---
+
 # R149／v63（2026-11-22）：11既存固定sourceの優先順確定・新規5特殊モデルはwatchlistだけ
 
 正本は引き続き`main`の`catalog/CURRENT.json` **v63（235登録／188有効：SELECT55、CONDITIONAL133）**。 [R149報告](docs/strategy/149-v63-post99-prioritization-and-novel-specialists.md)、[11固定source＋5watchlist研究キュー](queues/proposed-v63-r150-prioritized-sources-and-watchlist.json)、[機械可読根拠](catalog/research/2026-11-22-r149-post99-compact-and-rare-source-screen.json)が最新の非実行研究資料。新規5件は正式選定されていない。所有者の個別利用権と200GB残床、外部依存、実機SHA、offline restore及び**正確なmanifest別承認**がない限り新規重量取得不可。古い自動承認を復元してはならない。今回：承認追加0、重みDL0、owner D改変0、カタログ既存235変更0。以下のR148以下は履歴。
