@@ -1,5 +1,7 @@
 # R149／v63 — 99件取得報告後の11原本：固定scopeの再検証・優先順位の確定（2026-11-22）
 
+> **後続のR150訂正・選定順位に注意（2026-11-22）**：本R149は11sourceの歴史的静的照合記録。現行の所有者審査優先順位は[後続R150](150-v63-post99-reselection-and-four-source-review.md)の **Mirage → Timestral → Kitten Pico → Aurora2** を優先する。特にPico INT8を単純重複とした旧判断は[別途R150で訂正](150-v63-kitten-pico-int8-qad-source-delta-2026-11-22.md)。R149の2,234,744,280byteは**旧33ファイル選択**を含む静的範囲であり、INT8追加審査8ファイル分を含まない。新しい条件付きP0参照は2,298,372,488byte（ローカル実転送量ではない）。
+
 ## 1. 結論と変更境界
 
 対象：[`catalog/CURRENT.json`](../../catalog/CURRENT.json) の **v63-20261122／235資産・188有効（SELECT55／CONDITIONAL133）**。既存の取得報告は **99モデル／1,478ファイル／1,879,994,309,866byte**。本研究は所有者Windows Dドライブの実ファイルを再ハッシュしていない。取得済み重量とこれから確保するべき重量を混同しない。
@@ -34,7 +36,7 @@ P0の4repoは **2,234,744,280 B**。P0～P2の10repoのPublisher参照は **68,5
 
 ### Kitten Picoの量子化除外とオフライン復元は別問題
 
-[公式モデルカード](https://huggingface.co/KittenML/kitten-tts-2-pico)によれば、`KittenTTS(...)`のデフォルトONNXはINT8。保存候補は**FP32 safetensorsとINT4 ONNX、voice pack・G2P**で、INT8 ONNXを重複変換として除外した。これ自体は訓練成果の重複排除に妥当。ただしINT4の使用には `weights="int4"`、`onnxruntime>=1.20` が必要と公式に明記される。通常のデフォルト起動がINT8ファイルを求めれば、**重み選択が正しくても復元FAIL**。既存manifestを勝手に拡大せず、明示INT4プロファイルでoffline testする。声パックとG2Pの権利はApache2.0との公式声明があるが、利用行為・音声の個別権利を別確認する。
+[公式モデルカード](https://huggingface.co/KittenML/kitten-tts-2-pico)によれば、`KittenTTS(...)`のデフォルトONNXはINT8。R143時点の選定33ファイルは**FP32 safetensorsとINT4 ONNX、voice pack・G2P**で、INT8 ONNXは除外されていた。ただし後続[R150の配布者固定コードと学習記述の再監査](150-v63-kitten-pico-int8-qad-source-delta-2026-11-22.md)では、INT8は量子化を考慮した蒸留（QAD）による原本で、単純な事後量子化複製として捨ててよい根拠が不十分と判明。**追加8path・63,628,208byteを同じPicoモデルの条件付き追加sourceとして再審査**する（既存R143は不変、INT8 SHA未固定、正式取得は未承認）。ただしINT4の使用には `weights="int4"`、`onnxruntime>=1.20` が必要と公式に明記される。通常のデフォルト起動がINT8ファイルを求めれば、**重み選択が正しくても復元FAIL**。既存manifestを勝手に拡大せず、明示INT4プロファイルでoffline testする。声パックとG2Pの権利はApache2.0との公式声明があるが、利用行為・音声の個別権利を別確認する。
 
 ### Mirageは重み単体では動かない
 
