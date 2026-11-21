@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "kind": "R150_V63_POST99_ADDITIVE_RESEARCH_QUEUE_WITH_NEW_SOURCE_NOT_APPROVED",
+  "review_jst": "2026-11-22",
+  "baseline_legacy_queue": "queues/proposed-v63-r149-after99-11-research-only.json",
+  "canonical_catalog_revision": "v63-20261122",
+  "canonical_235_tracked_188_active_unchanged": true,
+  "reported_acquired_models": 99,
+  "do_not_reacquire_any_same_reported_verified_scope": true,
+  "existing_candidate_repos": 11,
+  "existing_nonhold_candidate_repos": 10,
+  "existing_nonhold_reference_bytes": 68544170933,
+  "newly_researched_source_repo_count": 1,
+  "new_source_repo_exact_full_bytes": null,
+  "source_budget_note": "6,567,256,208 bytes is publisher index tensor payload, NOT full source bytes; do not include in exact total until immutable publisher per-file byte census.",
+  "priority_phases": [
+    {
+      "phase": "P0_EXISTING_COMPACT",
+      "repo_ids": [
+        "Cactus-Compute/mirage",
+        "mistralai/Timestral-28M",
+        "KittenML/kitten-tts-2-pico",
+        "AuroraAI-Research/Aurora2-400M-A20M"
+      ],
+      "existing_publisher_reference_bytes": 2234744280,
+      "download_approved": false
+    },
+    {
+      "phase": "P1_NEW_COMPACT_VIDEO_AUDIT_ONLY",
+      "repo_ids": [
+        "tencent/WeMM-Video-2B"
+      ],
+      "publisher_reference_bytes_exact": null,
+      "sha256_source_manifest": "manifests/drafts/r150-2026-11-22-wemm-video2b-publisher-sha256.candidate.json",
+      "status": "RESEARCH_ONLY_NOT_CANONICAL",
+      "download_approved": false
+    },
+    {
+      "phase": "P1_EXISTING_SPECIALIST",
+      "repo_ids": [
+        "internlm/Intern-Decision-0.8B",
+        "LiquidAI/LFM3-VL-2B",
+        "saidutta69/LFM3-VL-2B-heretic",
+        "apple/FastFrames-S"
+      ],
+      "existing_publisher_reference_bytes": 11871408047,
+      "download_approved": false
+    },
+    {
+      "phase": "P2_EXISTING_LARGE_SPECIALIST",
+      "repo_ids": [
+        "OpenMOSS-Team/MOSS-VL-Realtime",
+        "nvidia/Cosmos3-Nano-Sim-Transfer"
+      ],
+      "existing_publisher_reference_bytes": 54438018606,
+      "download_approved": false
+    },
+    {
+      "phase": "P3_LARGE_HOLD",
+      "repo_ids": [
+        "ricursiveAI/Ripple-65B-Preview"
+      ],
+      "existing_publisher_reference_bytes": 129572889973,
+      "download_approved": false
+    }
+  ],
+  "non_duplicate_exclusions": [
+    "OpenUncensored/Inkling-2-Mini-Uncensored"
+  ],
+  "gated_rights_HOLD": [
+    "Metric-AI/Ayb-0.5-0.8B"
+  ],
+  "no_user_authorization_for_future_downloads": true,
+  "approval_controls": {
+    "entries_approved": 0,
+    "approved": false,
+    "download_enabled": false,
+    "license_text_reviewed": false,
+    "owner_rights_verified": false,
+    "owner_local_sha_reverified": false,
+    "custom_code_reviewed": false,
+    "model_payload_fetched": false
+  },
+  "after_source_audit_next_step": "When source bytes/LFS identities, license and code risks are inspected, prepare a separate canonical additive revision and require owner-specific permission prior to any transfer."
+}
