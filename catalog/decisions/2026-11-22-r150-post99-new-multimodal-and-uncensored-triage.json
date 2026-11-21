@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "kind": "R150_INCREMENTAL_POST99_SOURCE_AND_SELECTION_REVIEW_NO_AUTOMATIC_CANONICAL_CHANGE",
+  "as_of_jst": "2026-11-22",
+  "baseline_main_catalog": "v63-20261122",
+  "current_tracked": 235,
+  "current_active": 188,
+  "reported_verified_models": 99,
+  "approved_downloads_added": 0,
+  "physical_owner_D_sha_rechecked": false,
+  "evaluation_policy": "Preserve unique trained-state capability, exclude redundant alternate packaging, separate publisher immutable source evidence from owner physical availability; never infer future regulation or personal rights.",
+  "decisions": [
+    {
+      "repo_id": "tencent/WeMM-Video-2B",
+      "decision": "RESEARCH_CONDITIONAL_SOURCE_PIN_APPROVE_NO_TRANSFER",
+      "tier_if_formally_added": "R1 / CONDITIONAL",
+      "new_unique_capability": "Small ~2B text video+native audio synchronized temporal reasoning; candidate complement to existing large OpenMOSS realtime video, NOT a measured replacement.",
+      "model_publisher_license_metadata": "apache-2.0",
+      "independent_weight_size_bytes": null,
+      "index_tensor_payload_bytes": 6567256208,
+      "manifest_path": "manifests/drafts/r150-2026-11-22-wemm-video2b-publisher-sha256.candidate.json",
+      "source_fingerprint": "25 publisher SHA256 entries / 27 publisher files / immutable commit",
+      "external_dependencies": "custom model Python / patched vLLM-SGLang, exact compatibility untested",
+      "canonical_v63_entry_exists": false,
+      "download_approved": false,
+      "follow_up": "Verify all original file bytes and immutable 27-file tree, publisher license text, model code and nonmodel dependencies; only then propose canonical v64 and owner approval."
+    },
+    {
+      "repo_id": "OpenUncensored/Inkling-2-Mini-Uncensored",
+      "decision": "DO_NOT_STORE_ADDITIONAL_FULL_CHECKPOINT_PENDING_DISTINCT_WEIGHT_PROOF",
+      "publisher_revision_observed": "4e5f06d72b5a70c9dcd5e8046aea576eb3ee8487",
+      "repo_source_rounded_bytes": "~20.2GB",
+      "existing_alternatives": [
+        "thinkingmachines/Inkling-2-Mini",
+        "OpenUncensored/Inkling-2-Mini-Uncensored-LoRA",
+        "satellitedown/Inkling-2-Mini-abliterated-ingine"
+      ],
+      "evidence": "Publisher model card states full uncensored model provides edit also preserved by OpenUncensored rank2 LoRA, but exact restored tensor equivalence not independently confirmed.",
+      "opportunity_cost": "Avoid another ~20.2GB without independently distinct train state; retain existing LoRA and original parent.",
+      "download_approved": false
+    },
+    {
+      "repo_id": "Metric-AI/Ayb-0.5-0.8B",
+      "decision": "HOLD_GATED_NONCOMMERCIAL_LANGUAGE_SPECIALIST",
+      "publisher_model_card": "https://huggingface.co/Metric-AI/Ayb-0.5-0.8B",
+      "license_metadata": "CC-BY-NC-4.0",
+      "access_observed": "Gated: explicit sharing/permission required",
+      "value": "Independent Armenian-language fine-tuning and tokenizer extension of Qwen3.5-0.8B, low-resource linguistic insurance",
+      "estimated_repo_rounded_size": "~1.75GB",
+      "immutable_file_sources_verified": false,
+      "download_approved": false,
+      "follow_up": "Do not bypass access gate; verify explicit access approval, permitted preservation act, immutable revision and originality first."
+    },
+    {
+      "repo_id": "ricursiveAI/Ripple-65B-Preview",
+      "decision": "KEEP_P3_HOLD_NO_CHANGE",
+      "existing_reference_bytes": 129572889973,
+      "reason": "Large independent source; insufficient incremental value and owner storage/runtime proof relative to compact originals.",
+      "download_approved": false
+    }
+  ],
+  "legacy_candidate_queue": "queues/proposed-v63-r149-after99-11-research-only.json",
+  "existing_P0_first": [
+    "Cactus-Compute/mirage",
+    "mistralai/Timestral-28M",
+    "KittenML/kitten-tts-2-pico",
+    "AuroraAI-Research/Aurora2-400M-A20M"
+  ],
+  "existing_P0_source_bytes": 2234744280,
+  "current_existing_nonhold_reference_bytes": 68544170933,
+  "new_candidate_exact_full_source_bytes": null,
+  "owner_rights_verified": false,
+  "no_new_model_transfer": true,
+  "no_model_code_executed": true,
+  "no_delete_requant_or_modify_on_owner_HDD": true,
+  "known_regulatory_correction": "BIS Nov 19 2026 regulation repealed former 4E091 model weights control; other license/end-use controls persist. No individual model takedown probability calculated.",
+  "evidence_urls": [
+    "https://huggingface.co/tencent/WeMM-Video-2B",
+    "https://huggingface.co/tencent/WeMM-Video-2B/raw/821690998399cac0f55bb7f7f805ebafa650c3a4/SHA256SUMS",
+    "https://huggingface.co/OpenUncensored/Inkling-2-Mini-Uncensored",
+    "https://huggingface.co/Metric-AI/Ayb-0.5-0.8B",
+    "https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm"
+  ]
+}
