@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "ledger_id": "2026-11-19-v48-execution",
-  "generated_at": "2026-11-21T11:25:08.616688+00:00",
+  "generated_at": "2026-11-21T11:30:37.465020+00:00",
   "canonical_revision": "v48-20261118",
   "source_plan": "queues/proposed-v48-r113-source-pinned-15.json",
   "policy": {
@@ -15,13 +15,13 @@
   },
   "summary": {
     "models_total": 96,
-    "models_verified": 93,
+    "models_verified": 95,
     "models_partial": 0,
     "models_failed": 0,
     "models_held": 1,
-    "files_verified_total": 1282,
-    "bytes_verified_total": 1726720441591,
-    "minimum_free_bytes_observed": 1244293509120,
+    "files_verified_total": 1353,
+    "bytes_verified_total": 1726868208784,
+    "minimum_free_bytes_observed": 1225345126400,
     "minimum_free_floor_bytes": 200000000000,
     "free_floor_maintained": true
   },
@@ -3192,23 +3192,6 @@
       "free_bytes_after": 1313258098688
     },
     {
-      "repo_id": "elyza/ELYZA-tasks-100",
-      "revision_sha": "240fc800c4695d86ce0f32a713e199cd2ba66ab6",
-      "source_manifest": "local-discovered/v59-elyza__ELYZA-tasks-100.json",
-      "priority_group": "",
-      "status": "FAIL_API_HTTPError",
-      "license": null,
-      "files_total": 0,
-      "files_verified": 0,
-      "source_bytes": 0,
-      "verification_methods": {},
-      "file_status_counts": {},
-      "weight_files_sha256": [],
-      "started_at": "2026-11-21T09:32:54.086261+00:00",
-      "finished_at": null,
-      "free_bytes_after": null
-    },
-    {
       "repo_id": "kobimusic/dettato-grouper",
       "revision_sha": "5a94cea2329f53228d7bcf1fd6a9f8d9778cc75b",
       "source_manifest": "local-discovered/v59-kobimusic__dettato-grouper.json",
@@ -3409,23 +3392,6 @@
       "started_at": "2026-11-21T09:33:44.859306+00:00",
       "finished_at": "2026-11-21T09:33:58.582417+00:00",
       "free_bytes_after": 1313035337728
-    },
-    {
-      "repo_id": "CohereLabs/aya_dataset",
-      "revision_sha": "f9ea04583f02a8f86404ff6c58bf75fe637df8a2",
-      "source_manifest": "local-discovered/v59-CohereLabs__aya_dataset.json",
-      "priority_group": "",
-      "status": "FAIL_API_HTTPError",
-      "license": null,
-      "files_total": 0,
-      "files_verified": 0,
-      "source_bytes": 0,
-      "verification_methods": {},
-      "file_status_counts": {},
-      "weight_files_sha256": [],
-      "started_at": "2026-11-21T09:33:58.621815+00:00",
-      "finished_at": null,
-      "free_bytes_after": null
     },
     {
       "repo_id": "kyutai/mimi",
@@ -3733,6 +3699,72 @@
       "started_at": "2026-11-21T10:30:47.193650+00:00",
       "finished_at": "2026-11-21T11:07:50.606102+00:00",
       "free_bytes_after": 1244293509120
+    },
+    {
+      "repo_id": "elyza/ELYZA-tasks-100",
+      "revision_sha": "240fc800c4695d86ce0f32a713e199cd2ba66ab6",
+      "source_manifest": "local-discovered/v59-elyza__ELYZA-tasks-100.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "cc-by-sa-4.0",
+      "files_total": 65,
+      "files_verified": 65,
+      "source_bytes": 7606817,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 64,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 65
+      },
+      "weight_files_sha256": [
+        {
+          "path": "images/key_visual.png",
+          "sha256": "b46f77951c7d6eea7506cd99f1bc94aaa3dc3112f356cb2f1356a943b48baf01"
+        }
+      ],
+      "started_at": "2026-11-21T11:27:41.657967+00:00",
+      "finished_at": "2026-11-21T11:29:27.077191+00:00",
+      "free_bytes_after": 1226106077184
+    },
+    {
+      "repo_id": "CohereLabs/aya_dataset",
+      "revision_sha": "f9ea04583f02a8f86404ff6c58bf75fe637df8a2",
+      "source_manifest": "local-discovered/v59-CohereLabs__aya_dataset.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 140160376,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 2,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "aya_header.png",
+          "sha256": "a6b6013a0dd85b50636b50a138841b2f6aee43109570334ace52f6152b8fc0de"
+        },
+        {
+          "path": "data/test-00000-of-00001.parquet",
+          "sha256": "52bbb79461bff9887c9987a5737d9a06f5ec6c78c08d770828c37fc182ce2cca"
+        },
+        {
+          "path": "data/train-00000-of-00001.parquet",
+          "sha256": "51baa85043b569ba117f41516b32d1b0e4e2647fb203a08933f98a556fb1fb06"
+        },
+        {
+          "path": "demographics/train-00000-of-00001.parquet",
+          "sha256": "6468cc56f1c115458507368381fd2b9e74d7b7a5dc0228f6b550146e5320bc2d"
+        }
+      ],
+      "started_at": "2026-11-21T11:29:27.285887+00:00",
+      "finished_at": "2026-11-21T11:30:10.524270+00:00",
+      "free_bytes_after": 1225345126400
     },
     {
       "repo_id": "mistralai/Mistral-Small-4-119B-2603",
