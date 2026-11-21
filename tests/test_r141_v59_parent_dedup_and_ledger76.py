@@ -65,8 +65,8 @@ class V59ArchiveSourceIntegrityTest(unittest.TestCase):
                 if f["publisher_lfs_sha256"]:
                     self.assertEqual(len(f["publisher_lfs_sha256"]), 64)
                 # R139 freezes upstream metadata; owner physical SHA is still not checked.
-                self.assertIn("owner_sha_checked", f)
-                self.assertFalse(f["owner_sha_checked"])
+                self.assertIn("local_sha256_verified", f)
+                self.assertFalse(f["local_sha256_verified"])
 
     def test_duplicate_main_inkling_files_excluded_without_unsafe_rewrite(self):
         m = self.src["parent_shared_exact_dedup"]
