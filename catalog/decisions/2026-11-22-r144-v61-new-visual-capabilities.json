@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "kind": "R144_V61_VIDEO_WORLD_REALTIME_MODEL_SELECTION_AND_AFTER_LEDGER96_RESEARCH",
+  "as_of_jst": "2026-11-22",
+  "repository": "Unjuno/local-model-portfolio",
+  "old_revision": "v60-20261122",
+  "new_revision": "v61-20261122",
+  "old_tracked": 224,
+  "old_active": 177,
+  "new_tracked": 227,
+  "new_active": 180,
+  "original_decisions_unchanged": 224,
+  "models_decisions": [
+    {
+      "repo_id": "apple/FastFrames-S",
+      "decision": "ADOPT_CONDITIONAL_DEDUP_TRAINED_REFINER_COMPONENTS",
+      "independent_training_reason": "FastFrames-S adds a trained KV refiner and pixel decoder around separately frozen Causal Forcing++ two-step generator, not merely converting Wan weight dtype.",
+      "independent_source_selected_files": 6,
+      "selected_bytes": 947927443,
+      "mandatory_extra_learned_dependency_bytes": 17567235949,
+      "status": "SOURCE_ONLY_EXTERNAL_PARENT_UNVERIFIED",
+      "rights": "apple-amlr scientific-research limited model rights, separate Apache2 Wan and Causal Forcing parent, all owner acts review needed",
+      "negative": "Parent CF++ .pt and Wan .pth loader may execute pickle. CUDA 12.8/Linux and third-party library pins not owner-verified. Partial weight archive cannot run by itself.",
+      "alternatives": "Apple FastFrames-L has much larger 173.55GB source including different trained outputs but unverified incremental preservation value, HOLD."
+    },
+    {
+      "repo_id": "OpenMOSS-Team/MOSS-VL-Realtime",
+      "decision": "ADOPT_CONDITIONAL_ORIGINAL_REALTIME_VIDEO_STREAMING",
+      "independent_training_reason": "Post-trained 11.336B serialized BF16 video-language transformer supports streaming frames/time stamps and proactive answer decisions while generating; existing MOSS TTS and Haru audio duplex do not provide equivalent video-loop learned state.",
+      "independent_source_selected_files": 20,
+      "selected_bytes": 22687497344,
+      "status": "SOURCE_ONLY_OWNER_ABI_UNKNOWN",
+      "rights": "Apache 2.0 model card tag; owner and model/code usage rights and training-data provenance not audited",
+      "negative": "Remote code in modeling_moss_vl/processing/video_processing paths, one concurrent realtime stream/model instance, measured time-to-first-token dependent on GPU and input frame rate.",
+      "alternatives": "MOSS-VL-Instruct and Base are separate training outcomes, not same-weight quant variants; research HOLD due missing incremental realtime-specific value for this portfolio."
+    },
+    {
+      "repo_id": "nvidia/Cosmos3-Nano-Sim-Transfer",
+      "decision": "ADOPT_CONDITIONAL_DISTINCT_16B_CAUSAL_SIM_TRANSFER",
+      "independent_training_reason": "Distinct post-trained 6 independent BF16 transformer shards convert simulation depth/segmentation/edge/blur to photorealistic robot video, unlike existing Sim-Auto driving sensors and Sim-Bimanual robot action-conditioned future prediction.",
+      "independent_source_selected_files": 44,
+      "selected_bytes": 31750521262,
+      "publisher_shared_VAE_bytes": 1409400600,
+      "publisher_shared_VAE_with": [
+        "nvidia/Cosmos3-Nano-Sim-Auto",
+        "nvidia/Cosmos3-Nano-Sim-Bimanual"
+      ],
+      "owner_local_VAE_sha_unverified": true,
+      "status": "SOURCE_ONLY_HOPPER_BLACKWELL_DEPENDENCIES_UNKNOWN",
+      "rights": "NVIDIA OpenMDW1.1 rights/license terms and restrictions to be confirmed for actual owner acts",
+      "negative": "31.751GB selected publisher file source; model may require Hopper/Blackwell, vLLM-Omni/SGLang, simulator/Isaac rendering and large RAM; performance for owner hardware not proven.",
+      "alternatives": "NVIDIA Cosmos3-Nano-Transfer-Auto is separately trained with camera/LiDAR transfer and 34.497GB source, but existing Sim-Auto covers streaming driving multi-sensor; research HOLD pending missing mode/task value and storage verification."
+    }
+  ],
+  "overlay_path": "catalog/revisions/v61-2026-11-22.json",
+  "publisher_manifest_path": "manifests/drafts/r144-2026-11-22-video-world-and-streaming-publisher-sources.candidate.json",
+  "next_candidate_queue_path": "queues/proposed-v61-r145-post96-next-research-sources.json",
+  "publisher_source_scope": {
+    "new_selected_source_repos": 3,
+    "new_selected_file_references": 70,
+    "new_selected_source_bytes": 55385946049,
+    "selected_lfs_sha256_references": 16,
+    "fastframes_mandatory_parent_bytes_separate": 17567235949,
+    "cosmos_shared_vae_bytes_potential_dedup": 1409400600,
+    "dedup_saving_only_if_owner_physical_SHA_verified": true
+  },
+  "ledger_reconciliation": {
+    "source_repos_prior": 21,
+    "now_reported_verified": 20,
+    "remaining_research_only": [
+      "ricursiveAI/Ripple-65B-Preview"
+    ],
+    "source_baseline_76_previous_no_longer_current": true,
+    "do_not_reacquire_previously_reported_20_without_owner_local_SHA_check": true
+  },
+  "observed_regulatory_and_legal_facts": {
+    "official_BIS_2026_11_19_rule": "https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm",
+    "ECCN_4E091_rescinded": true,
+    "future_model_takedown_probability": null,
+    "Apple_AMLR_license_source": "https://huggingface.co/apple/FastFrames-S/blob/aa099efcedf1b65447106bf9004cde75821f7387/LICENSE",
+    "NVIDIA_license_source": "https://openmdw.ai/license/1-1/",
+    "no_new_legal_ownership_ban_identified": true
+  },
+  "H_T_D_C_U": {
+    "H": "Independent next-task preservation: video-on-the-fly trained refiners, streaming visual dialogue, and simulator-control photorealistic rendering are not recoverable from the 224 old logical trained states without relearning. With publisher-sha dedup, no need to store identical VAE twice; identity and useful runtime remain separate hypotheses.",
+    "T": "Publisher full recursive paginated HF tree for 3 repos: fixed 40hex source refs and 70 selected paths/bytes/LFS hash refs; parent CF++ and Wan file scope separately pinned, compare publisher Cosmos shared VAE SHA with two existing catalogued models; offline 224-prefix + 180-active readiness/127 access/0 approved assertions; user runtime minimum 30 matched trials with recorded hardware clocks, backend/ABI, quantization/zero-point, context, batch.",
+    "D": "PASS source-level iff all 70 official selected file refs and 16 LFS SHA match snapshot and all historical 224 assets identical, 0 approved. FAIL on source/hash conflicts or regenerated duplicate checkpoint counted as independent. Owner acquisition FAIL-CLOSED until rights, local SHA, 200GB physical floor, full learned dependencies and explicit approval; performance UNCERTAIN.",
+    "C": "FastFrames no correct pinned Causal Forcing parent or license incompatible, MOSS realtime input pipeline unsupported on Windows, Cosmos controllable simulator video has little added value or 16B inference resource prohibitive, existing video families perform as well.",
+    "U": "Main uncertainty: host hardware, CUDA12.8/Apple and NVIDIA runtime code ABI, third party license/data conditions, actual storage free and VAE local SHA, publisher benchmark sampling, unsafe .pt/.pth code execution, exact FastFrames complete trained parameter census. u_c and k not calculated absent independent repeated measurements."
+  },
+  "cross_disciplines": [
+    "machine_learning_independent_trained_outcomes",
+    "software_supply_chain_checksum_and_restore",
+    "law_license_export_compliance",
+    "GPU_hardware_and_simulation_systems"
+  ],
+  "execution": {
+    "reported_existing_verified_models": 96,
+    "reported_existing_verified_file_count": 1370,
+    "reported_existing_bytes": 1752033357565,
+    "owner_Windows_D_rehashed_by_this_study": false,
+    "new_model_weight_bytes_downloaded_this_study": 0,
+    "untrusted_model_code_executed": false,
+    "approved_queue_entries_added": 0,
+    "owner_device_current_free_verified": false
+  }
+}

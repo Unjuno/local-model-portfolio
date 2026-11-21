@@ -1,5 +1,11 @@
 # 資産台帳
 
+## 現行v61・2026-11-22（v60以下は履歴）
+
+[CURRENT](CURRENT.json)で**227登録・180有効**。FastFrames-S／MOSS-VL-Realtime／Cosmos3-Nano-Sim-Transferの3独立学習成果をCONDITIONAL追加。旧224件不変更。[判断・権利・固定コード](../docs/strategy/144-v61-video-realtime-world-model-source-selection.md)／[70ファイル／55.386GB source](../manifests/drafts/r144-2026-11-22-video-world-and-streaming-publisher-sources.candidate.json)／[177から180へ拡張した停止ゲート](readiness/v61-2026-11-22-r144-all180-gates.json)。owner HDD実測なし、取得承認0、危険コード未実行。
+
+---
+
 ## 現行v60・2026-11-22（過去のv42などの「現行」は歴史）
 
 唯一の正本：[CURRENT](CURRENT.json)→**224登録／177有効**。[本次選定](../docs/strategy/143-v60-three-small-originals-and-regulatory-triage.md)、[新3件immutable59files](../manifests/drafts/r143-2026-11-22-three-specialists-originals.candidate.json)、[全177STOP](readiness/v60-2026-11-22-r143-all177-gates.json)。旧221件の判断保持。取得承認0、所有者HDD・実行コード・本人権利未検証。

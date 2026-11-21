@@ -22,11 +22,12 @@ class V58SourceAndCatalogTest(unittest.TestCase):
         cls.ready = load("catalog/readiness/v58-2026-11-21-r137-all171-gates.json")
 
     def test_current_and_five_added_immutable(self):
-        self.assertIn(self.curr["revision_id"], ("v58-20261121", "v59-20261121", "v60-20261122"))
+        self.assertIn(self.curr["revision_id"], ("v58-20261121", "v59-20261121", "v60-20261122", "v61-20261122"))
         self.assertIn(self.curr["materialized_catalog_path"],
                          ("catalog/effective-portfolio-2026-11-21-v58.json",
                           "catalog/effective-portfolio-2026-11-21-v59.json",
-                          "catalog/effective-portfolio-2026-11-22-v60.json"))
+                          "catalog/effective-portfolio-2026-11-22-v60.json",
+                          "catalog/effective-portfolio-2026-11-22-v61.json"))
         self.assertGreaterEqual(self.curr["expected"]["tracked"], 218)
         self.assertGreaterEqual(self.curr["expected"]["active"], 171)
         self.assertEqual(self.eff["counts"]["tracked"], 218)

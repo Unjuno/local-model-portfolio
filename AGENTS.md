@@ -1,3 +1,9 @@
+# 現行v61／R144（2026-11-22）：映像・世界モデルの独立3原本と全取得STOP
+
+**唯一の正本はmainの[catalog/CURRENT.json](catalog/CURRENT.json)、227登録／180有効（SELECT53＋CONDITIONAL127）**。Apple FastFrames-Sは親CF++＋Wan2.1 Encoder/VAE17.567GBの必須追加source、OpenMOSS Realtimeは独立動画対話BF16、NVIDIA Cosmos Sim-Transferは独立6-shardと既存2件と出版社SHA一致の共有VAE。3 source70ファイル55.386GBを[固定](manifests/drafts/r144-2026-11-22-video-world-and-streaming-publisher-sources.candidate.json)し、[選定報告](docs/strategy/144-v61-video-realtime-world-model-source-selection.md)と[96件報告後の非実行キュー](queues/proposed-v61-r145-post96-next-research-sources.json)を追加。実行台帳96モデル／1370files／1.752TBはowner Dの本回独立現物再SHAではない。Apple AMLR/親権利、NVIDIA OpenMDW、MOSS Apache2、custom code/ABI、GPU/HDD最低空き200GB、本人別権利、明示source承認の全条件は未完了。**approved queue0、モデルDL0、未審査コード実行0、既存削除0。mainだけを更新。**
+
+---
+
 # 現行v60／R143（2026-11-22）：小型独立学習3系統追加、過去96モデルの取得報告を区別
 
 唯一の正本は [catalog/CURRENT.json](catalog/CURRENT.json) → **224登録・177有効、SELECT53＋CONDITIONAL124**。[選定報告](docs/strategy/143-v60-three-small-originals-and-regulatory-triage.md)、[59ファイルSource freeze](manifests/drafts/r143-2026-11-22-three-specialists-originals.candidate.json)、[全177件停止](catalog/readiness/v60-2026-11-22-r143-all177-gates.json)を優先。Timestral28MはModified MIT月商制限、InternDecisionは親Qwen通知・校正コード、Kitten Picoは8言語F32＋INT4/G2Pと総学習済み未知が必須審査。取得台帳の96モデル／1,370ファイル／約1.752TB VERIFIEDは実行報告であり、本回の所有者Windows D独立SHAを意味しない。**queues/approved.jsonは空、未承認重量DL・コード実行・既存削除・Gated回避禁止**。新しい調査ブランチ不要、mainのみ。

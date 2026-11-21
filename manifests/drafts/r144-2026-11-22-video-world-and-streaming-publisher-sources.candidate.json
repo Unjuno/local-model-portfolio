@@ -1,0 +1,840 @@
+{
+  "schema_version": 1,
+  "kind": "R144_V61_THREE_INDEPENDENT_VIDEO_AND_WORLD_MODEL_ORIGINAL_SOURCE_FREEZE",
+  "observed_on": "2026-11-22",
+  "repository": "Unjuno/local-model-portfolio",
+  "baseline_revision": "v60-20261122",
+  "publisher_model_sources": [
+    {
+      "repo_id": "apple/FastFrames-S",
+      "source_url": "https://huggingface.co/apple/FastFrames-S",
+      "immutable_revision_sha": "aa099efcedf1b65447106bf9004cde75821f7387",
+      "publisher_access": {
+        "gated": false,
+        "private": false
+      },
+      "publisher_license_tag": "apple-amlr",
+      "source_code": {
+        "repo": "https://github.com/apple-aiml-research/ml-fastframes",
+        "commit": "a65c59240e01cf1de86197fa771ca09b38cf592a"
+      },
+      "publisher_all_file_count": 10,
+      "publisher_all_file_bytes": 1788075411,
+      "selected_file_count": 6,
+      "selected_file_bytes": 947927443,
+      "selected_lfs_sha256_refs": 2,
+      "selected_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1653,
+          "git_blob_sha1": "223b21bba8156e372cdb62ae4f1a6cf03556941e",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 5820,
+          "git_blob_sha1": "fa90c32d32865d95de3d47441c46049ef3418ac9",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 5820,
+          "git_blob_sha1": "1ff8db8e1d1cf3624fc2e22ac99e72fd6fe35d21",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "SHA256SUMS",
+          "bytes": 758,
+          "git_blob_sha1": "ee69993a2268f9779224c20376992e12a5f3dbc6",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "fastframes-s/kv_refiner.safetensors",
+          "bytes": 692418448,
+          "git_blob_sha1": "6279ac782a0fe3b371d5cfb50a84284c77def46f",
+          "publisher_lfs_sha256": "b4f36d00effd78a60435526dcc2b1a0e6bbed0f09621ee8ab4019460769a7bbb",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "fastframes-s/pixel_decoder.safetensors",
+          "bytes": 255494944,
+          "git_blob_sha1": "fe038ef7deece7439b9631e2de768d0062ecf171",
+          "publisher_lfs_sha256": "815682581f6376d2cdacc60568facf1bd979112091e4157fb6c00ae946b89b32",
+          "local_sha256_verified": false
+        }
+      ],
+      "excluded_nonessential_files": [
+        {
+          "path": "assets/fastframes_demo.mp4",
+          "bytes": 16745606,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "assets/fastframes_demo_preview.gif",
+          "bytes": 3235010,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "lingbot-1.3b/kv_refiner.safetensors",
+          "bytes": 692418448,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "lingbot-1.3b/pixel_decoder.safetensors",
+          "bytes": 127748904,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        }
+      ],
+      "owner_license_per_act_verified": false,
+      "owner_local_sha_verified": false,
+      "source_code_security_and_ABI_verified": false,
+      "download_approved": false,
+      "offline_reconstruction_verified": false
+    },
+    {
+      "repo_id": "OpenMOSS-Team/MOSS-VL-Realtime",
+      "source_url": "https://huggingface.co/OpenMOSS-Team/MOSS-VL-Realtime",
+      "immutable_revision_sha": "d1f71a588deaf2b9b9cea7c6fff66cb10847cc86",
+      "publisher_access": {
+        "gated": false,
+        "private": false
+      },
+      "publisher_license_tag": "apache-2.0",
+      "source_code": {
+        "repo": "https://github.com/OpenMOSS/MOSS-VL",
+        "commit": "a3feb74da1a5184bfc10be59b58a33874231f51e"
+      },
+      "publisher_all_file_count": 23,
+      "publisher_all_file_bytes": 22695590456,
+      "selected_file_count": 20,
+      "selected_file_bytes": 22687497344,
+      "selected_lfs_sha256_refs": 6,
+      "selected_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1749,
+          "git_blob_sha1": "ab3c50e30b46257e21ad1f7540fef2c1ba9a3bc2",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 14945,
+          "git_blob_sha1": "0552af011c5833fc918c6ce2f74f94075d051757",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "chat_template.json",
+          "bytes": 5363,
+          "git_blob_sha1": "7eb5b586a39c74586df461e72b44e115630c1aad",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 1906,
+          "git_blob_sha1": "12ff12ad472f3322fa2b90d64734de8665f4734e",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "configuration_moss_vl.py",
+          "bytes": 5551,
+          "git_blob_sha1": "113e932ae09daaa020f027b00801ac122feef7d8",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 121,
+          "git_blob_sha1": "a811a763dedb8d7dfd07cd05e3f177c1a1473beb",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "model-00001-of-00005.safetensors",
+          "bytes": 5274500800,
+          "git_blob_sha1": "624ef452eff02515f866f5373834954aac9fa3e6",
+          "publisher_lfs_sha256": "3fe2d46a92e3c036e8dfbb2519f65415f8f1ab4f731ffdcb9c8bbff4e66fc3d6",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "model-00002-of-00005.safetensors",
+          "bytes": 5360568508,
+          "git_blob_sha1": "8cceebb29ad9276c7e540d7ce86976a642691c35",
+          "publisher_lfs_sha256": "18f3579907933bad721053b3ac405c51045db4539fedcc7ee3c8db79e79f70e5",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "model-00003-of-00005.safetensors",
+          "bytes": 5360577920,
+          "git_blob_sha1": "065732a847d288610c96e24606593018a58a87da",
+          "publisher_lfs_sha256": "cecf1e02afe5c7250bb43d6b6e99c7cb430a02afc07a2d697ab1dc4b5f784567",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "model-00004-of-00005.safetensors",
+          "bytes": 5366957460,
+          "git_blob_sha1": "e6a85b9746ada071abbab2a18f1dcb158e5fe5de",
+          "publisher_lfs_sha256": "57d794a266a1283d209d054114d9888a6a6b36a0af87fbf314c92b76c89dc294",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "model-00005-of-00005.safetensors",
+          "bytes": 1310247928,
+          "git_blob_sha1": "c8aa78296ba14b7947bd2a7b720b319c0afdde74",
+          "publisher_lfs_sha256": "34009172ba732eb447caf1293126bba35eb934a622677ac7c24bb2d6af462b0d",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 81805,
+          "git_blob_sha1": "aea42b791be714bc5bec9217203a861d37d47368",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "modeling_moss_vl.py",
+          "bytes": 211160,
+          "git_blob_sha1": "bcfb4fda04796fd415bbbd34cc27bffe887a9c02",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 592,
+          "git_blob_sha1": "64397f08f6fa9491bfbb9c27782a7a23da1f0cc6",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "processing_moss_vl.py",
+          "bytes": 53201,
+          "git_blob_sha1": "7fdd806577c26ab7c1686da1f111d377b66eb859",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 11423411,
+          "git_blob_sha1": "155488d77f2a610ed79f95d249112ec90b8ec177",
+          "publisher_lfs_sha256": "e7bbd0f9784004df51aca562befc3c7a8f294b4045aa8685536c35804c9aa493",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 11560,
+          "git_blob_sha1": "e215b64aa88fac07f576b40d0043e3353863b1d5",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 680,
+          "git_blob_sha1": "2e3b833b1fd5f63ab9eb370a302ca210fc5f5f9c",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "video_processing_moss_vl.py",
+          "bytes": 55851,
+          "git_blob_sha1": "b6abbb12990cccc22d0ae63e1f090194cfd5a87f",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 2776833,
+          "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        }
+      ],
+      "excluded_nonessential_files": [
+        {
+          "path": "assets/architecture.png",
+          "bytes": 6086877,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "assets/benchmark-streaming.png",
+          "bytes": 1065647,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "assets/logo.png",
+          "bytes": 940588,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        }
+      ],
+      "owner_license_per_act_verified": false,
+      "owner_local_sha_verified": false,
+      "source_code_security_and_ABI_verified": false,
+      "download_approved": false,
+      "offline_reconstruction_verified": false
+    },
+    {
+      "repo_id": "nvidia/Cosmos3-Nano-Sim-Transfer",
+      "source_url": "https://huggingface.co/nvidia/Cosmos3-Nano-Sim-Transfer",
+      "immutable_revision_sha": "45510d5b8cefa338b7abc01eb702cf1e9cdf6742",
+      "publisher_access": {
+        "gated": false,
+        "private": false
+      },
+      "publisher_license_tag": "openmdw1.1-license",
+      "source_code": {
+        "repo": "https://github.com/NVIDIA/cosmos-framework",
+        "commit": "a3fb34690e157972a9d04244c11b16022c9d6479"
+      },
+      "publisher_all_file_count": 60,
+      "publisher_all_file_bytes": 31881091337,
+      "selected_file_count": 44,
+      "selected_file_bytes": 31750521262,
+      "selected_lfs_sha256_refs": 8,
+      "selected_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 6268,
+          "git_blob_sha1": "3c3a6c25b384dad8358bdf9f1c75eca3f6604ee3",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 28328,
+          "git_blob_sha1": "accc713019b10dd7d5ae5fe1cca3e5c7e4011822",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "bias.md",
+          "bytes": 4665,
+          "git_blob_sha1": "4b3a729743f60150e791973916abbc442baab96d",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "chat_template.json",
+          "bytes": 5499,
+          "git_blob_sha1": "1081bacf1af7c7c6de4a585ce02cd0fd34e382da",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "checkpoint.json",
+          "bytes": 1457,
+          "git_blob_sha1": "8ce5501572206809e39f2d46bbf16c9444395d03",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 14341,
+          "git_blob_sha1": "5ed9c43026856c446d923e2786971a75e1ebc952",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "cosmos3_nano_sim_bimanual_artifact.json",
+          "bytes": 252987,
+          "git_blob_sha1": "c8564a3a6344935496fb68dcf9df610f607cbb83",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "cosmos3_nano_sim_bimanual_expected_diffusers_weights.json",
+          "bytes": 98035,
+          "git_blob_sha1": "4bb84b13356fee11dfc0f42cfd15b39989f33e84",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "cosmos3_nano_sim_bimanual_expected_weights.json",
+          "bytes": 131747,
+          "git_blob_sha1": "8eb68edd2e1cf1ea98027f2ab6c174437e431e5b",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "cosmos_dreams_artifact.json",
+          "bytes": 253140,
+          "git_blob_sha1": "7a585b8855ffd48b3c69d5e62f96e968b47a0d93",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "cosmos_dreams_expected_diffusers_weights.json",
+          "bytes": 98035,
+          "git_blob_sha1": "4bb84b13356fee11dfc0f42cfd15b39989f33e84",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "cosmos_dreams_expected_weights.json",
+          "bytes": 131747,
+          "git_blob_sha1": "8eb68edd2e1cf1ea98027f2ab6c174437e431e5b",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "cosmos_dreams_manifest.json",
+          "bytes": 1275,
+          "git_blob_sha1": "1ee6cfd88589ee6c223cd6dca26ee536329e2982",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "explainability-Cosmos3-Nano-Sim-Transfer.md",
+          "bytes": 3074,
+          "git_blob_sha1": "f3ef97487e114e95c04938ba2912c2ab72bb6a2f",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 269,
+          "git_blob_sha1": "e116347d7ef42621c7a5957f82c015c38d939c1f",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 1671839,
+          "git_blob_sha1": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 87660,
+          "git_blob_sha1": "90b21bf57dc13c0e314c428e55a2f6ad42db185e",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "model_index.json",
+          "bytes": 1490,
+          "git_blob_sha1": "0b534d9d945d912d45e138ef577a983d30668d6b",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "modular_model_index.json",
+          "bytes": 2290,
+          "git_blob_sha1": "445bf6fd7ddc46c74dbc7379897d7e411a45de53",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 390,
+          "git_blob_sha1": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "privacy.md",
+          "bytes": 1228,
+          "git_blob_sha1": "35c90baa577cc126e46518f1fdceaecb9213125b",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "safety.md",
+          "bytes": 3678,
+          "git_blob_sha1": "bd2621eb992bea6a8eb7836afb8250c14dd80572",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "scheduler/scheduler_config.json",
+          "bytes": 710,
+          "git_blob_sha1": "b92a632472b827db011dd7905a60b467ccdbb01e",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "text_tokenizer/added_tokens.json",
+          "bytes": 707,
+          "git_blob_sha1": "b54f9135e44c1e81047e8d05cb027af8bc039eed",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "text_tokenizer/chat_template.jinja",
+          "bytes": 5292,
+          "git_blob_sha1": "124386803f142761528f710e77ae483f5f8c4fc4",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "text_tokenizer/merges.txt",
+          "bytes": 1671853,
+          "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "text_tokenizer/special_tokens_map.json",
+          "bytes": 613,
+          "git_blob_sha1": "ac23c0aaa2434523c494330aeb79c58395378103",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "text_tokenizer/tokenizer.json",
+          "bytes": 11422654,
+          "git_blob_sha1": "cd71f61a15a522601badb3dc960d800d9cb3766c",
+          "publisher_lfs_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "text_tokenizer/tokenizer_config.json",
+          "bytes": 5404,
+          "git_blob_sha1": "1d4fba2de0e94e8f97e08927cfb7d084160c2880",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "text_tokenizer/vocab.json",
+          "bytes": 2776833,
+          "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 7032403,
+          "git_blob_sha1": "c6cc1014128b19d1fc46b1d30a23e3b1d35db421",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 10868,
+          "git_blob_sha1": "d3d3763207692c78780f4bf42d4dadf49a5c8012",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "transformer/config.json",
+          "bytes": 2470,
+          "git_blob_sha1": "668824847ecf40ca02755b726a7eb21d93860455",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00001-of-00006.safetensors",
+          "bytes": 5308017880,
+          "git_blob_sha1": "de3261ddd2fa7a1cb400f9d7ec1317f90b27dbc4",
+          "publisher_lfs_sha256": "85b1d981d502adb1382eb9340cfef66987c1c1a19a93621ef58238a4e5664e22",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00002-of-00006.safetensors",
+          "bytes": 5301854008,
+          "git_blob_sha1": "7ef86bbf122b623fe72c8f97ed136031dc2963c2",
+          "publisher_lfs_sha256": "6225ebe8201999e6f2a6ff05237c7098a188f1671f427ef82653932638907981",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00003-of-00006.safetensors",
+          "bytes": 5301854000,
+          "git_blob_sha1": "797b5ca78834679aa59c8dc10a75b74906525d52",
+          "publisher_lfs_sha256": "2b5d130c62fac7d8a1da1d47a59897256e1602a018998f144da10abd9bc57937",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00004-of-00006.safetensors",
+          "bytes": 5301854016,
+          "git_blob_sha1": "f0ace6a2436bcb7f81d5d3354fdeef8b91d329fc",
+          "publisher_lfs_sha256": "052b330d8dce1536195b12dbf697411803292ee6f7f1e7503eef87cf7fe29eb7",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00005-of-00006.safetensors",
+          "bytes": 5301854008,
+          "git_blob_sha1": "0a9b5ed79b002ef87c1bf4ba06c829b5a759dc69",
+          "publisher_lfs_sha256": "3f7cb7cb80a661d2a931f57ae23de60e94cca569d8755d48953fef9d50ecc9d6",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00006-of-00006.safetensors",
+          "bytes": 3797100520,
+          "git_blob_sha1": "4544abf94a2a5fd0978b4d822dbccfc05b8c1183",
+          "publisher_lfs_sha256": "bc498faa025d478aac09725d67735227a87f2b3a01d90be39fab431ae7d0d28f",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+          "bytes": 78013,
+          "git_blob_sha1": "94e6e01a23700242a0fedfb2af746072b1ca73e5",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "vae/config.json",
+          "bytes": 1750,
+          "git_blob_sha1": "d2345338012a1f3efb4b430f9848240ff2154100",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "vae/diffusion_pytorch_model.safetensors",
+          "bytes": 1409400600,
+          "git_blob_sha1": "0c71384d6c6985e8a26aa317b48a8155d6e36bcd",
+          "publisher_lfs_sha256": "230496cb59ff85bc9c040487737c4062480cb61c71e697b197b4c30142f2a0da",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 385,
+          "git_blob_sha1": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 2776833,
+          "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        }
+      ],
+      "excluded_nonessential_files": [
+        {
+          "path": "assets/output/cosmos3-nano-sim-transfer-quickstart.mp4",
+          "bytes": 8579681,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "assets/sample_data/example1/example1.mp4",
+          "bytes": 861717,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "assets/sample_data/example1/example1_depth.mp4",
+          "bytes": 431848,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "assets/sample_data/example1/example1_prompt.txt",
+          "bytes": 628,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "assets/sample_data/example1/example1_segmentation.mp4",
+          "bytes": 798303,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "assets/sample_data/example1/example1_upsampled_prompt.json",
+          "bytes": 11984,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "assets/sample_data/example2/example2.mp4",
+          "bytes": 3717255,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "assets/sample_data/example2/example2_blur.mp4",
+          "bytes": 6935115,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "assets/sample_data/example2/example2_depth.mp4",
+          "bytes": 1011299,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "assets/sample_data/example2/example2_edge.mp4",
+          "bytes": 2268508,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "assets/sample_data/example2/example2_prompt.txt",
+          "bytes": 1314,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "assets/sample_data/example2/example2_segmentation.mp4",
+          "bytes": 1634326,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "assets/sample_data/example2/example2_upsampled_prompt.json",
+          "bytes": 5705,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "images/cosmos3-nano-sim-transfer-depth-seg.gif",
+          "bytes": 58181953,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "images/cosmos3-nano-sim-transfer-edge-blur.gif",
+          "bytes": 46016860,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        },
+        {
+          "path": "images/cosmos3-nano-sim-transfer-graph.png",
+          "bytes": 113579,
+          "reason": "publisher demonstration media or separate optimized Lingbot model, not required for primary original"
+        }
+      ],
+      "owner_license_per_act_verified": false,
+      "owner_local_sha_verified": false,
+      "source_code_security_and_ABI_verified": false,
+      "download_approved": false,
+      "offline_reconstruction_verified": false
+    }
+  ],
+  "source_repos": 3,
+  "full_publisher_file_refs": 93,
+  "full_publisher_repo_bytes": 56364757204,
+  "selected_file_refs": 70,
+  "selected_source_bytes": 55385946049,
+  "selected_lfs_sha256_refs": 16,
+  "parent_dependencies": {
+    "apple_FastFrames_S": {
+      "frozen_two_step_generator": {
+        "repo_id": "zhuhz22/Causal-Forcing",
+        "revision_sha": "2f8eb8bb6eeb1238da9d13e5420d342a74d634a6",
+        "file": {
+          "path": "causal-forcing++/framewise-2step.pt",
+          "bytes": 5676220819,
+          "git_blob_sha1": "b264a6dff06e83b2fefc3ee1497df8770219b41c",
+          "publisher_lfs_sha256": "8f899a016dffb9539788fac82c6200e43ef6e23b6e61ec6b885bb507a760ce42",
+          "local_sha256_verified": false
+        },
+        "github_setup_file": "https://github.com/apple-aiml-research/ml-fastframes/blob/a65c59240e01cf1de86197fa771ca09b38cf592a/docs/installation.md"
+      },
+      "wan_text_encoder_tokenizer_vae": {
+        "repo_id": "Wan-AI/Wan2.1-T2V-1.3B",
+        "revision_sha": "37ec512624d61f7aa208f7ea8140a131f93afc9a",
+        "required_file_count": 10,
+        "required_selected_bytes": 11891015130,
+        "required_files": [
+          {
+            "path": ".gitattributes",
+            "bytes": 2232,
+            "git_blob_sha1": "0a1f66aea84e17cbf6a60c51431723062f87df8a",
+            "publisher_lfs_sha256": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "LICENSE.txt",
+            "bytes": 11357,
+            "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+            "publisher_lfs_sha256": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "README.md",
+            "bytes": 16913,
+            "git_blob_sha1": "fbbf7c13900d37f3179c546d09372aeb52e0fae1",
+            "publisher_lfs_sha256": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "Wan2.1_VAE.pth",
+            "bytes": 507609880,
+            "git_blob_sha1": "5897fba405232a6b07a947d6188d19a8e050ccfb",
+            "publisher_lfs_sha256": "38071ab59bd94681c686fa51d75a1968f64e470262043be31f7a094e442fd981",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "config.json",
+            "bytes": 249,
+            "git_blob_sha1": "d203bef600b2f3c64fe1f5f53d70a2087f4ccd2f",
+            "publisher_lfs_sha256": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "google/umt5-xxl/special_tokens_map.json",
+            "bytes": 6623,
+            "git_blob_sha1": "14855e7052ffbb595057dfd791d293c1c940db2c",
+            "publisher_lfs_sha256": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "google/umt5-xxl/spiece.model",
+            "bytes": 4548313,
+            "git_blob_sha1": "2fe5f347e9f9367585589ae89e997dfbd5cf802c",
+            "publisher_lfs_sha256": "e3909a67b780650b35cf529ac782ad2b6b26e6d1f849d3fbb6a872905f452458",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "google/umt5-xxl/tokenizer.json",
+            "bytes": 16837417,
+            "git_blob_sha1": "7bd4ee3cf5633e49c0e06a3aac2a621559e6222a",
+            "publisher_lfs_sha256": "6e197b4d3dbd71da14b4eb255f4fa91c9c1f2068b20a2de2472967ca3d22602b",
+            "local_sha256_verified": false
+          },
+          {
+            "path": "google/umt5-xxl/tokenizer_config.json",
+            "bytes": 61728,
+            "git_blob_sha1": "4e1cc1cd85599ce0b47fd0a746af188fe4043ff2",
+            "publisher_lfs_sha256": null,
+            "local_sha256_verified": false
+          },
+          {
+            "path": "models_t5_umt5-xxl-enc-bf16.pth",
+            "bytes": 11361920418,
+            "git_blob_sha1": "d5dad910304ab4b909a2c8a225a71840606e6de4",
+            "publisher_lfs_sha256": "7cace0da2b446bbbbc57d031ab6cf163a3d59b366da94e5afe36745b746fd81d",
+            "local_sha256_verified": false
+          }
+        ],
+        "base_DiT_file_excluded_as_unused_for_generation": {
+          "path": "diffusion_pytorch_model.safetensors",
+          "bytes": 5676070424
+        }
+      },
+      "parent_source_reference_bytes_not_verified_on_owner_HDD": 17567235949,
+      "trained_total_pipeline_parameters_unknown": true,
+      "torch_PTH_and_PT_pickle_code_not_executed": true
+    },
+    "nvidia_Cosmos3_Nano_Sim_Transfer": {
+      "identical_publisher_VAE_source": {
+        "path": "vae/diffusion_pytorch_model.safetensors",
+        "bytes": 1409400600,
+        "git_blob_sha1": "0c71384d6c6985e8a26aa317b48a8155d6e36bcd",
+        "publisher_lfs_sha256": "230496cb59ff85bc9c040487737c4062480cb61c71e697b197b4c30142f2a0da",
+        "local_sha256_verified": false
+      },
+      "identical_to_two_selected_models": [
+        {
+          "existing_selected_repo": "nvidia/Cosmos3-Nano-Sim-Auto",
+          "observed_publisher_sha256": "230496cb59ff85bc9c040487737c4062480cb61c71e697b197b4c30142f2a0da",
+          "owner_reuse_verified": false
+        },
+        {
+          "existing_selected_repo": "nvidia/Cosmos3-Nano-Sim-Bimanual",
+          "observed_publisher_sha256": "230496cb59ff85bc9c040487737c4062480cb61c71e697b197b4c30142f2a0da",
+          "owner_reuse_verified": false
+        }
+      ],
+      "publisher_VAE_bytes_potential_reuse": 1409400600,
+      "owner_VAE_local_presence_and_SHA_verified": false,
+      "restoration_requires_VAE_even_if_proposed_increment_deduplicates": true
+    },
+    "openmoss_MOSS_VL_Realtime": {
+      "requires_modeling_moss_vl_processing_and_runtime_code_security_review": true,
+      "separate_language_vision_cross_attention": true,
+      "producer_code_commit": "a3feb74da1a5184bfc10be59b58a33874231f51e"
+    }
+  },
+  "source_size_note": "Selected bytes includes Cosmos VAE, even though publisher SHA matches two previously selected Cosmos assets; actual owner disk reuse is unverified. FastFrames-S dependencies listed separately and not included in 3-repo selected byte total.",
+  "rights_and_runtime_final_approved": false,
+  "owner_Windows_D_rehashed": false,
+  "model_payload_downloaded": false,
+  "publisher_tree_metadata_only": true,
+  "approved_downloads": 0
+}

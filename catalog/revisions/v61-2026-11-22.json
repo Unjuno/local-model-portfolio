@@ -1,0 +1,828 @@
+{
+  "schema_version": 1,
+  "revision_id": "v61-20261122",
+  "previous_revision_id": "v60-20261122",
+  "decision_date_jst": "2026-11-22",
+  "target_branch": "main",
+  "kind": "THREE_INDEPENDENT_TRAINED_VISUAL_REALTIME_AND_WORLD_MODEL_OUTCOMES",
+  "previous_asset_count": 224,
+  "previous_active_count": 177,
+  "additions": [
+    {
+      "position": 225,
+      "asset_kind": "model",
+      "repo_id": "apple/FastFrames-S",
+      "url": "https://huggingface.co/apple/FastFrames-S",
+      "group": "動画・低遅延FastFrames・二つの追加学習原本",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Separate trained 1.3B-class low-latency video generator refinements: original FP model has newly learned KV refiner and pixel decoder, while frozen Causal Forcing++ framewise two-step generator plus Wan VAE/UMT5 remain mandatory dependencies. Not same base/quantization.",
+      "quality_positive": "Publisher immutable 6-file subset 947,927,443 bytes, distinct 692.418MB KV refiner and 255.495MB pixel decoder. Author documents 480p interactive video; not owner HW benchmark.",
+      "quality_negative": "Licensed apple-amlr research-oriented revocable model rights; full runtime source additionally requires Causal Forcing++ 5.676GB .pt and Wan2.1 VAE+UMT5 11.891GB; PTH/PT torch.load unsafe unless static reviewed, CUDA12.8 Linux; exact complete learned parameter census unavailable.",
+      "risk_and_alternative_assessment": "2026-11-22 official public, ungated source observed; future model-specific restriction is a scenario without verified legal ban or disappearance forecast.",
+      "evidence_date": "2026-11-22",
+      "evidence_kind": "PUBLISHER_40HEX_IMMUTABLE_HF_FULL_PAGINATED_TREE_LFS_SHA256_NO_WEIGHT_LOAD",
+      "evidence_urls": [
+        "https://huggingface.co/apple/FastFrames-S",
+        "https://huggingface.co/apple/FastFrames-S/tree/aa099efcedf1b65447106bf9004cde75821f7387",
+        "https://github.com/apple-aiml-research/ml-fastframes/tree/a65c59240e01cf1de86197fa771ca09b38cf592a"
+      ],
+      "observed_access": "public gated:false private:false official Hugging Face immutable tree",
+      "license_metadata": "Apple Machine Learning Research Model License (apple-amlr), personally scoped scientific research terms and revocability require individual owner review; upstream Apache2 parent and Wan2.1 license separately.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "aa099efcedf1b65447106bf9004cde75821f7387",
+      "upstream_all_files_bytes_observed": 1788075411,
+      "upstream_file_count_observed": 10,
+      "upstream_lfs_sha256_count_observed": 2,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 6,
+      "candidate_selected_source_file_bytes": 947927443,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1653,
+          "sha256": null,
+          "git_blob_sha1": "223b21bba8156e372cdb62ae4f1a6cf03556941e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 5820,
+          "sha256": null,
+          "git_blob_sha1": "fa90c32d32865d95de3d47441c46049ef3418ac9",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 5820,
+          "sha256": null,
+          "git_blob_sha1": "1ff8db8e1d1cf3624fc2e22ac99e72fd6fe35d21",
+          "local_sha_verified": false
+        },
+        {
+          "path": "SHA256SUMS",
+          "bytes": 758,
+          "sha256": null,
+          "git_blob_sha1": "ee69993a2268f9779224c20376992e12a5f3dbc6",
+          "local_sha_verified": false
+        },
+        {
+          "path": "fastframes-s/kv_refiner.safetensors",
+          "bytes": 692418448,
+          "sha256": "b4f36d00effd78a60435526dcc2b1a0e6bbed0f09621ee8ab4019460769a7bbb",
+          "git_blob_sha1": "6279ac782a0fe3b371d5cfb50a84284c77def46f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "fastframes-s/pixel_decoder.safetensors",
+          "bytes": 255494944,
+          "sha256": "815682581f6376d2cdacc60568facf1bd979112091e4157fb6c00ae946b89b32",
+          "git_blob_sha1": "fe038ef7deece7439b9631e2de768d0062ecf171",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r144-2026-11-22-video-world-and-streaming-publisher-sources.candidate.json",
+      "parameter_gate": {
+        "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+        "total_parameters": null,
+        "evidence_kind": "UNKNOWN_COMPLETE_TRAINED_PIPELINE_INCLUDING_EXTERNAL_CAUSAL_FORCING_AND_WAN",
+        "review_date": "2026-11-22",
+        "local_tensor_census_not_executed": true,
+        "note": "Separate Causal Forcing++ parent, Wan VAE, T5 encoder and two FP trained auxiliaries; total all learned tensors not censused. BLOCK_FINAL_LOCK."
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 225,
+        "category": "INDEPENDENT_REALTIME_VISUAL_PHYSICAL_MODEL_ORIGINAL",
+        "scenario_status": "HYPOTHESIS_FUTURE_ACCESS_NOT_CERTIFIED"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "LICENSE",
+          "README.md",
+          "SHA256SUMS",
+          "fastframes-s/kv_refiner.safetensors",
+          "fastframes-s/pixel_decoder.safetensors"
+        ],
+        "trained_state": "FROZEN_CAUSAL_FORCING_TWO_STEP_GENERATOR_PLUS_TRAINED_KV_REFINER_AND_PIXEL_DECODER",
+        "trained_state_comment": "Separate trained 1.3B-class low-latency video generator refinements: original FP model has newly learned KV refiner and pixel decoder, while frozen Causal Forcing++ framewise two-step generator plus Wan VAE/UMT5 remain mandatory dependencies. Not same base/quantization.",
+        "source_code_commit": {
+          "repo": "https://github.com/apple-aiml-research/ml-fastframes",
+          "commit": "a65c59240e01cf1de86197fa771ca09b38cf592a"
+        },
+        "mandatory_trained_dependencies": "manifests/drafts/r144-2026-11-22-video-world-and-streaming-publisher-sources.candidate.json",
+        "actual_licensed_user_acts_verified": false,
+        "publisher_file_SHA_not_local": true,
+        "owner_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 1788075411,
+        "publisher_selected_source_bytes": 947927443,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "position": 226,
+      "asset_kind": "model",
+      "repo_id": "OpenMOSS-Team/MOSS-VL-Realtime",
+      "url": "https://huggingface.co/OpenMOSS-Team/MOSS-VL-Realtime",
+      "group": "ストリーミング映像理解・対話・11B",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Publisher post-trained 11B realtime video-language model, continuous timestamped frames while text generation proceeds, proactive answers, one active stream/session, and 256K context. Different from selected Haru audio duplex and MOSS TTS.",
+      "quality_positive": "Five original BF16 shards total 22.67GB with custom text, vision, processor runtime. Technical report arXiv:2608.15045 reports proactivity performance but independent comparison not done.",
+      "quality_negative": "Dedicated Python model/processor/video code must be safety-audited and matched to code commit, Python/transformers and CUDA ABI; VRAM/real-time throughput on owner hardware not measured. One realtime session per instance is a practical limitation.",
+      "risk_and_alternative_assessment": "2026-11-22 official public, ungated source observed; future model-specific restriction is a scenario without verified legal ban or disappearance forecast.",
+      "evidence_date": "2026-11-22",
+      "evidence_kind": "PUBLISHER_40HEX_IMMUTABLE_HF_FULL_PAGINATED_TREE_LFS_SHA256_NO_WEIGHT_LOAD",
+      "evidence_urls": [
+        "https://huggingface.co/OpenMOSS-Team/MOSS-VL-Realtime",
+        "https://huggingface.co/OpenMOSS-Team/MOSS-VL-Realtime/tree/d1f71a588deaf2b9b9cea7c6fff66cb10847cc86",
+        "https://github.com/OpenMOSS/MOSS-VL/tree/a3feb74da1a5184bfc10be59b58a33874231f51e"
+      ],
+      "observed_access": "public gated:false private:false official Hugging Face immutable tree",
+      "license_metadata": "Apache-2.0 publisher model tag. Respect Apache notices and any underlying training data licenses for owner acts. Owner legal review not complete.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "d1f71a588deaf2b9b9cea7c6fff66cb10847cc86",
+      "upstream_all_files_bytes_observed": 22695590456,
+      "upstream_file_count_observed": 23,
+      "upstream_lfs_sha256_count_observed": 6,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 20,
+      "candidate_selected_source_file_bytes": 22687497344,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1749,
+          "sha256": null,
+          "git_blob_sha1": "ab3c50e30b46257e21ad1f7540fef2c1ba9a3bc2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 14945,
+          "sha256": null,
+          "git_blob_sha1": "0552af011c5833fc918c6ce2f74f94075d051757",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.json",
+          "bytes": 5363,
+          "sha256": null,
+          "git_blob_sha1": "7eb5b586a39c74586df461e72b44e115630c1aad",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 1906,
+          "sha256": null,
+          "git_blob_sha1": "12ff12ad472f3322fa2b90d64734de8665f4734e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "configuration_moss_vl.py",
+          "bytes": 5551,
+          "sha256": null,
+          "git_blob_sha1": "113e932ae09daaa020f027b00801ac122feef7d8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 121,
+          "sha256": null,
+          "git_blob_sha1": "a811a763dedb8d7dfd07cd05e3f177c1a1473beb",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00001-of-00005.safetensors",
+          "bytes": 5274500800,
+          "sha256": "3fe2d46a92e3c036e8dfbb2519f65415f8f1ab4f731ffdcb9c8bbff4e66fc3d6",
+          "git_blob_sha1": "624ef452eff02515f866f5373834954aac9fa3e6",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00002-of-00005.safetensors",
+          "bytes": 5360568508,
+          "sha256": "18f3579907933bad721053b3ac405c51045db4539fedcc7ee3c8db79e79f70e5",
+          "git_blob_sha1": "8cceebb29ad9276c7e540d7ce86976a642691c35",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00003-of-00005.safetensors",
+          "bytes": 5360577920,
+          "sha256": "cecf1e02afe5c7250bb43d6b6e99c7cb430a02afc07a2d697ab1dc4b5f784567",
+          "git_blob_sha1": "065732a847d288610c96e24606593018a58a87da",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00004-of-00005.safetensors",
+          "bytes": 5366957460,
+          "sha256": "57d794a266a1283d209d054114d9888a6a6b36a0af87fbf314c92b76c89dc294",
+          "git_blob_sha1": "e6a85b9746ada071abbab2a18f1dcb158e5fe5de",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00005-of-00005.safetensors",
+          "bytes": 1310247928,
+          "sha256": "34009172ba732eb447caf1293126bba35eb934a622677ac7c24bb2d6af462b0d",
+          "git_blob_sha1": "c8aa78296ba14b7947bd2a7b720b319c0afdde74",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 81805,
+          "sha256": null,
+          "git_blob_sha1": "aea42b791be714bc5bec9217203a861d37d47368",
+          "local_sha_verified": false
+        },
+        {
+          "path": "modeling_moss_vl.py",
+          "bytes": 211160,
+          "sha256": null,
+          "git_blob_sha1": "bcfb4fda04796fd415bbbd34cc27bffe887a9c02",
+          "local_sha_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 592,
+          "sha256": null,
+          "git_blob_sha1": "64397f08f6fa9491bfbb9c27782a7a23da1f0cc6",
+          "local_sha_verified": false
+        },
+        {
+          "path": "processing_moss_vl.py",
+          "bytes": 53201,
+          "sha256": null,
+          "git_blob_sha1": "7fdd806577c26ab7c1686da1f111d377b66eb859",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 11423411,
+          "sha256": "e7bbd0f9784004df51aca562befc3c7a8f294b4045aa8685536c35804c9aa493",
+          "git_blob_sha1": "155488d77f2a610ed79f95d249112ec90b8ec177",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 11560,
+          "sha256": null,
+          "git_blob_sha1": "e215b64aa88fac07f576b40d0043e3353863b1d5",
+          "local_sha_verified": false
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 680,
+          "sha256": null,
+          "git_blob_sha1": "2e3b833b1fd5f63ab9eb370a302ca210fc5f5f9c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "video_processing_moss_vl.py",
+          "bytes": 55851,
+          "sha256": null,
+          "git_blob_sha1": "b6abbb12990cccc22d0ae63e1f090194cfd5a87f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 2776833,
+          "sha256": null,
+          "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r144-2026-11-22-video-world-and-streaming-publisher-sources.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 11336371208,
+        "evidence_kind": "PUBLISHER_SAFE_TENSORS_TOTAL_PLUS_MODEL_CARD",
+        "review_date": "2026-11-22",
+        "local_tensor_census_not_executed": true,
+        "note": "Official model safetensors BF16 total 11,336,371,208. Parent/bundled architecture verified statically only; not effective inference VRAM."
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 226,
+        "category": "INDEPENDENT_REALTIME_VISUAL_PHYSICAL_MODEL_ORIGINAL",
+        "scenario_status": "HYPOTHESIS_FUTURE_ACCESS_NOT_CERTIFIED"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "chat_template.json",
+          "config.json",
+          "configuration_moss_vl.py",
+          "generation_config.json",
+          "model-00001-of-00005.safetensors",
+          "model-00002-of-00005.safetensors",
+          "model-00003-of-00005.safetensors",
+          "model-00004-of-00005.safetensors",
+          "model-00005-of-00005.safetensors",
+          "model.safetensors.index.json",
+          "modeling_moss_vl.py",
+          "preprocessor_config.json",
+          "processing_moss_vl.py",
+          "tokenizer.json",
+          "tokenizer_config.json",
+          "video_preprocessor_config.json",
+          "video_processing_moss_vl.py",
+          "vocab.json"
+        ],
+        "trained_state": "REALTIME_STREAMING_VIDEO_LANGUAGE_11B_DISTINCT_POST_TRAINED_CHECKPOINT",
+        "trained_state_comment": "Publisher post-trained 11B realtime video-language model, continuous timestamped frames while text generation proceeds, proactive answers, one active stream/session, and 256K context. Different from selected Haru audio duplex and MOSS TTS.",
+        "source_code_commit": {
+          "repo": "https://github.com/OpenMOSS/MOSS-VL",
+          "commit": "a3feb74da1a5184bfc10be59b58a33874231f51e"
+        },
+        "mandatory_trained_dependencies": "manifests/drafts/r144-2026-11-22-video-world-and-streaming-publisher-sources.candidate.json",
+        "actual_licensed_user_acts_verified": false,
+        "publisher_file_SHA_not_local": true,
+        "owner_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 22695590456,
+        "publisher_selected_source_bytes": 22687497344,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "position": 227,
+      "asset_kind": "model",
+      "repo_id": "nvidia/Cosmos3-Nano-Sim-Transfer",
+      "url": "https://huggingface.co/nvidia/Cosmos3-Nano-Sim-Transfer",
+      "group": "ロボットシミュレータ・深度分割制御・因果動画",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Distinct causally distilled world model generating photorealistic videos from simulator depth/segmentation/edge/blur controls; existing Cosmos Sim-Auto drives multi-camera/LiDAR and Sim-Bimanual predicts action-conditioned robot video, not the same learned state. Distinct six trained transformer shard SHA.",
+      "quality_positive": "Official model has 15,156,222,144 indexed BF16 elements; six individual transformer weights publisher SHA differ from selected Sim-Auto and Bimanual, while VAE 1,409,400,600 bytes matches publisher SHA shared. Total 44 selected files 31.7505GB.",
+      "quality_negative": "Actual deployment on owner hardware not tested (publisher Linux Hopper/Blackwell GPU and specialized PyTorch/vLLM-Omni/SGLang runtimes). Simulator depth and Isaac Lab dependencies, OpenMDW conditions, physical owner shared VAE SHA and full learned pipeline unknown.",
+      "risk_and_alternative_assessment": "2026-11-22 official public, ungated source observed; future model-specific restriction is a scenario without verified legal ban or disappearance forecast.",
+      "evidence_date": "2026-11-22",
+      "evidence_kind": "PUBLISHER_40HEX_IMMUTABLE_HF_FULL_PAGINATED_TREE_LFS_SHA256_NO_WEIGHT_LOAD",
+      "evidence_urls": [
+        "https://huggingface.co/nvidia/Cosmos3-Nano-Sim-Transfer",
+        "https://huggingface.co/nvidia/Cosmos3-Nano-Sim-Transfer/tree/45510d5b8cefa338b7abc01eb702cf1e9cdf6742",
+        "https://github.com/NVIDIA/cosmos-framework/tree/a3fb34690e157972a9d04244c11b16022c9d6479"
+      ],
+      "observed_access": "public gated:false private:false official Hugging Face immutable tree",
+      "license_metadata": "NVIDIA OpenMDW1.1 license; source license and user act-specific compliance not independently cleared. Gated metadata false does not prove local entitlement or runtime.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "45510d5b8cefa338b7abc01eb702cf1e9cdf6742",
+      "upstream_all_files_bytes_observed": 31881091337,
+      "upstream_file_count_observed": 60,
+      "upstream_lfs_sha256_count_observed": 8,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 44,
+      "candidate_selected_source_file_bytes": 31750521262,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 6268,
+          "sha256": null,
+          "git_blob_sha1": "3c3a6c25b384dad8358bdf9f1c75eca3f6604ee3",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 28328,
+          "sha256": null,
+          "git_blob_sha1": "accc713019b10dd7d5ae5fe1cca3e5c7e4011822",
+          "local_sha_verified": false
+        },
+        {
+          "path": "bias.md",
+          "bytes": 4665,
+          "sha256": null,
+          "git_blob_sha1": "4b3a729743f60150e791973916abbc442baab96d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.json",
+          "bytes": 5499,
+          "sha256": null,
+          "git_blob_sha1": "1081bacf1af7c7c6de4a585ce02cd0fd34e382da",
+          "local_sha_verified": false
+        },
+        {
+          "path": "checkpoint.json",
+          "bytes": 1457,
+          "sha256": null,
+          "git_blob_sha1": "8ce5501572206809e39f2d46bbf16c9444395d03",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 14341,
+          "sha256": null,
+          "git_blob_sha1": "5ed9c43026856c446d923e2786971a75e1ebc952",
+          "local_sha_verified": false
+        },
+        {
+          "path": "cosmos3_nano_sim_bimanual_artifact.json",
+          "bytes": 252987,
+          "sha256": null,
+          "git_blob_sha1": "c8564a3a6344935496fb68dcf9df610f607cbb83",
+          "local_sha_verified": false
+        },
+        {
+          "path": "cosmos3_nano_sim_bimanual_expected_diffusers_weights.json",
+          "bytes": 98035,
+          "sha256": null,
+          "git_blob_sha1": "4bb84b13356fee11dfc0f42cfd15b39989f33e84",
+          "local_sha_verified": false
+        },
+        {
+          "path": "cosmos3_nano_sim_bimanual_expected_weights.json",
+          "bytes": 131747,
+          "sha256": null,
+          "git_blob_sha1": "8eb68edd2e1cf1ea98027f2ab6c174437e431e5b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "cosmos_dreams_artifact.json",
+          "bytes": 253140,
+          "sha256": null,
+          "git_blob_sha1": "7a585b8855ffd48b3c69d5e62f96e968b47a0d93",
+          "local_sha_verified": false
+        },
+        {
+          "path": "cosmos_dreams_expected_diffusers_weights.json",
+          "bytes": 98035,
+          "sha256": null,
+          "git_blob_sha1": "4bb84b13356fee11dfc0f42cfd15b39989f33e84",
+          "local_sha_verified": false
+        },
+        {
+          "path": "cosmos_dreams_expected_weights.json",
+          "bytes": 131747,
+          "sha256": null,
+          "git_blob_sha1": "8eb68edd2e1cf1ea98027f2ab6c174437e431e5b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "cosmos_dreams_manifest.json",
+          "bytes": 1275,
+          "sha256": null,
+          "git_blob_sha1": "1ee6cfd88589ee6c223cd6dca26ee536329e2982",
+          "local_sha_verified": false
+        },
+        {
+          "path": "explainability-Cosmos3-Nano-Sim-Transfer.md",
+          "bytes": 3074,
+          "sha256": null,
+          "git_blob_sha1": "f3ef97487e114e95c04938ba2912c2ab72bb6a2f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 269,
+          "sha256": null,
+          "git_blob_sha1": "e116347d7ef42621c7a5957f82c015c38d939c1f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 1671839,
+          "sha256": null,
+          "git_blob_sha1": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 87660,
+          "sha256": null,
+          "git_blob_sha1": "90b21bf57dc13c0e314c428e55a2f6ad42db185e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model_index.json",
+          "bytes": 1490,
+          "sha256": null,
+          "git_blob_sha1": "0b534d9d945d912d45e138ef577a983d30668d6b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "modular_model_index.json",
+          "bytes": 2290,
+          "sha256": null,
+          "git_blob_sha1": "445bf6fd7ddc46c74dbc7379897d7e411a45de53",
+          "local_sha_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 390,
+          "sha256": null,
+          "git_blob_sha1": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64",
+          "local_sha_verified": false
+        },
+        {
+          "path": "privacy.md",
+          "bytes": 1228,
+          "sha256": null,
+          "git_blob_sha1": "35c90baa577cc126e46518f1fdceaecb9213125b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "safety.md",
+          "bytes": 3678,
+          "sha256": null,
+          "git_blob_sha1": "bd2621eb992bea6a8eb7836afb8250c14dd80572",
+          "local_sha_verified": false
+        },
+        {
+          "path": "scheduler/scheduler_config.json",
+          "bytes": 710,
+          "sha256": null,
+          "git_blob_sha1": "b92a632472b827db011dd7905a60b467ccdbb01e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "text_tokenizer/added_tokens.json",
+          "bytes": 707,
+          "sha256": null,
+          "git_blob_sha1": "b54f9135e44c1e81047e8d05cb027af8bc039eed",
+          "local_sha_verified": false
+        },
+        {
+          "path": "text_tokenizer/chat_template.jinja",
+          "bytes": 5292,
+          "sha256": null,
+          "git_blob_sha1": "124386803f142761528f710e77ae483f5f8c4fc4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "text_tokenizer/merges.txt",
+          "bytes": 1671853,
+          "sha256": null,
+          "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "text_tokenizer/special_tokens_map.json",
+          "bytes": 613,
+          "sha256": null,
+          "git_blob_sha1": "ac23c0aaa2434523c494330aeb79c58395378103",
+          "local_sha_verified": false
+        },
+        {
+          "path": "text_tokenizer/tokenizer.json",
+          "bytes": 11422654,
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+          "git_blob_sha1": "cd71f61a15a522601badb3dc960d800d9cb3766c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "text_tokenizer/tokenizer_config.json",
+          "bytes": 5404,
+          "sha256": null,
+          "git_blob_sha1": "1d4fba2de0e94e8f97e08927cfb7d084160c2880",
+          "local_sha_verified": false
+        },
+        {
+          "path": "text_tokenizer/vocab.json",
+          "bytes": 2776833,
+          "sha256": null,
+          "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 7032403,
+          "sha256": null,
+          "git_blob_sha1": "c6cc1014128b19d1fc46b1d30a23e3b1d35db421",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 10868,
+          "sha256": null,
+          "git_blob_sha1": "d3d3763207692c78780f4bf42d4dadf49a5c8012",
+          "local_sha_verified": false
+        },
+        {
+          "path": "transformer/config.json",
+          "bytes": 2470,
+          "sha256": null,
+          "git_blob_sha1": "668824847ecf40ca02755b726a7eb21d93860455",
+          "local_sha_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00001-of-00006.safetensors",
+          "bytes": 5308017880,
+          "sha256": "85b1d981d502adb1382eb9340cfef66987c1c1a19a93621ef58238a4e5664e22",
+          "git_blob_sha1": "de3261ddd2fa7a1cb400f9d7ec1317f90b27dbc4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00002-of-00006.safetensors",
+          "bytes": 5301854008,
+          "sha256": "6225ebe8201999e6f2a6ff05237c7098a188f1671f427ef82653932638907981",
+          "git_blob_sha1": "7ef86bbf122b623fe72c8f97ed136031dc2963c2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00003-of-00006.safetensors",
+          "bytes": 5301854000,
+          "sha256": "2b5d130c62fac7d8a1da1d47a59897256e1602a018998f144da10abd9bc57937",
+          "git_blob_sha1": "797b5ca78834679aa59c8dc10a75b74906525d52",
+          "local_sha_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00004-of-00006.safetensors",
+          "bytes": 5301854016,
+          "sha256": "052b330d8dce1536195b12dbf697411803292ee6f7f1e7503eef87cf7fe29eb7",
+          "git_blob_sha1": "f0ace6a2436bcb7f81d5d3354fdeef8b91d329fc",
+          "local_sha_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00005-of-00006.safetensors",
+          "bytes": 5301854008,
+          "sha256": "3f7cb7cb80a661d2a931f57ae23de60e94cca569d8755d48953fef9d50ecc9d6",
+          "git_blob_sha1": "0a9b5ed79b002ef87c1bf4ba06c829b5a759dc69",
+          "local_sha_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00006-of-00006.safetensors",
+          "bytes": 3797100520,
+          "sha256": "bc498faa025d478aac09725d67735227a87f2b3a01d90be39fab431ae7d0d28f",
+          "git_blob_sha1": "4544abf94a2a5fd0978b4d822dbccfc05b8c1183",
+          "local_sha_verified": false
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+          "bytes": 78013,
+          "sha256": null,
+          "git_blob_sha1": "94e6e01a23700242a0fedfb2af746072b1ca73e5",
+          "local_sha_verified": false
+        },
+        {
+          "path": "vae/config.json",
+          "bytes": 1750,
+          "sha256": null,
+          "git_blob_sha1": "d2345338012a1f3efb4b430f9848240ff2154100",
+          "local_sha_verified": false
+        },
+        {
+          "path": "vae/diffusion_pytorch_model.safetensors",
+          "bytes": 1409400600,
+          "sha256": "230496cb59ff85bc9c040487737c4062480cb61c71e697b197b4c30142f2a0da",
+          "git_blob_sha1": "0c71384d6c6985e8a26aa317b48a8155d6e36bcd",
+          "local_sha_verified": false
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 385,
+          "sha256": null,
+          "git_blob_sha1": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe",
+          "local_sha_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 2776833,
+          "sha256": null,
+          "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r144-2026-11-22-video-world-and-streaming-publisher-sources.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 15156222144,
+        "evidence_kind": "PUBLISHER_SAFE_TENSORS_TOTAL_PLUS_MODEL_CARD",
+        "review_date": "2026-11-22",
+        "local_tensor_census_not_executed": true,
+        "note": "HF safetensors indexed transformer 15,156,222,144 elements, NVIDIA card says 16B. Additional VAE ~1.409GB weights and software runtime. Combined still below 150B by conservatively bounded weight memory, not measured."
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 227,
+        "category": "INDEPENDENT_REALTIME_VISUAL_PHYSICAL_MODEL_ORIGINAL",
+        "scenario_status": "HYPOTHESIS_FUTURE_ACCESS_NOT_CERTIFIED"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "bias.md",
+          "chat_template.json",
+          "checkpoint.json",
+          "config.json",
+          "cosmos3_nano_sim_bimanual_artifact.json",
+          "cosmos3_nano_sim_bimanual_expected_diffusers_weights.json",
+          "cosmos3_nano_sim_bimanual_expected_weights.json",
+          "cosmos_dreams_artifact.json",
+          "cosmos_dreams_expected_diffusers_weights.json",
+          "cosmos_dreams_expected_weights.json",
+          "cosmos_dreams_manifest.json",
+          "explainability-Cosmos3-Nano-Sim-Transfer.md",
+          "generation_config.json",
+          "merges.txt",
+          "model.safetensors.index.json",
+          "model_index.json",
+          "modular_model_index.json",
+          "preprocessor_config.json",
+          "privacy.md",
+          "safety.md",
+          "scheduler/scheduler_config.json",
+          "text_tokenizer/added_tokens.json",
+          "text_tokenizer/chat_template.jinja",
+          "text_tokenizer/merges.txt",
+          "text_tokenizer/special_tokens_map.json",
+          "text_tokenizer/tokenizer.json",
+          "text_tokenizer/tokenizer_config.json",
+          "text_tokenizer/vocab.json",
+          "tokenizer.json",
+          "tokenizer_config.json",
+          "transformer/config.json",
+          "transformer/diffusion_pytorch_model-00001-of-00006.safetensors",
+          "transformer/diffusion_pytorch_model-00002-of-00006.safetensors",
+          "transformer/diffusion_pytorch_model-00003-of-00006.safetensors",
+          "transformer/diffusion_pytorch_model-00004-of-00006.safetensors",
+          "transformer/diffusion_pytorch_model-00005-of-00006.safetensors",
+          "transformer/diffusion_pytorch_model-00006-of-00006.safetensors",
+          "transformer/diffusion_pytorch_model.safetensors.index.json",
+          "vae/config.json",
+          "vae/diffusion_pytorch_model.safetensors",
+          "video_preprocessor_config.json",
+          "vocab.json"
+        ],
+        "trained_state": "NVIDIA_CAUSALLY_DISTILLED_16B_SIM_TRANSFER_FROM_SPATIAL_CONTROL_VIDEO",
+        "trained_state_comment": "Distinct causally distilled world model generating photorealistic videos from simulator depth/segmentation/edge/blur controls; existing Cosmos Sim-Auto drives multi-camera/LiDAR and Sim-Bimanual predicts action-conditioned robot video, not the same learned state. Distinct six trained transformer shard SHA.",
+        "source_code_commit": {
+          "repo": "https://github.com/NVIDIA/cosmos-framework",
+          "commit": "a3fb34690e157972a9d04244c11b16022c9d6479"
+        },
+        "mandatory_trained_dependencies": "manifests/drafts/r144-2026-11-22-video-world-and-streaming-publisher-sources.candidate.json",
+        "actual_licensed_user_acts_verified": false,
+        "publisher_file_SHA_not_local": true,
+        "owner_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 31881091337,
+        "publisher_selected_source_bytes": 31750521262,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    }
+  ],
+  "added_assets": [
+    "apple/FastFrames-S",
+    "OpenMOSS-Team/MOSS-VL-Realtime",
+    "nvidia/Cosmos3-Nano-Sim-Transfer"
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "source_manifest": "manifests/drafts/r144-2026-11-22-video-world-and-streaming-publisher-sources.candidate.json",
+  "publisher_source_files_selected": 70,
+  "publisher_selected_bytes": 55385946049,
+  "publisher_full_repo_source_bytes": 56364757204,
+  "parent_frozen_fastframes_approx_source_bytes": 17567235949,
+  "publisher_LFS_sha256_refs_selected": 16,
+  "research_hold_not_added": [
+    "nvidia/Cosmos3-Nano-Transfer-Auto",
+    "apple/FastFrames-L",
+    "OpenMOSS-Team/MOSS-VL-Instruct",
+    "OpenUncensored/Inkling-2-Mini-Uncensored",
+    "yanauto/Inkling-2-Mini-heretic"
+  ],
+  "source_hash_only_no_local_SHA": true,
+  "download_authorizations_added": 0,
+  "model_weights_acquired_this_research": 0,
+  "owner_HDD_SHA_rehashed": false,
+  "owner_license_per_act_verified": false,
+  "code_executed": false,
+  "owner_restore_verified": false,
+  "approved": false
+}
