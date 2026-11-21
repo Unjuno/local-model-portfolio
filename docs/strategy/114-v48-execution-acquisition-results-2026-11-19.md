@@ -3,9 +3,9 @@
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
 - Models: 76 (verified 75, partial 0, failed 0, held 1)
-- Verified files: 970
-- Verified source bytes: 1293732015585
-- Minimum observed free bytes: 1331646930944 (200 GB floor maintained: True)
+- Verified files: 1068
+- Verified source bytes: 1591042659895
+- Minimum observed free bytes: 1393718820864 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -22,7 +22,7 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF` | `ab8d7bd81d03117501e4da60cccdff4c80f0eea0` | VERIFIED | 4/4 | apache-2.0 |
 | `InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF` | `e6924b3a08765341e01546308ccf2683d43e880b` | VERIFIED | 5/5 | apache-2.0 |
 | `Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2` | `6af1278a92223c717ccea671e4571a5cc135f5d8` | VERIFIED | 12/12 | apache-2.0 |
-| `orcarouter/Qwen3.8-27B-Uncensored` | `0f639a9bde23fe229a7b064b40a5153c5bec0b48` | HOLD_GATED_OR_PRIVATE | None/None | None |
+| `orcarouter/Qwen3.8-27B-Uncensored` | `0f639a9bde23fe229a7b064b40a5153c5bec0b48` | HOLD_GATED_OR_PRIVATE | 0/0 | None |
 | `DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU` | `079b2b268c637b77f2fb4ab6a5ca1edc47d462a5` | VERIFIED | 25/25 | apache-2.0 |
 | `Qwen/Qwen3.5-0.8B` | `2fc06364715b967f1860aea9cf38778875588b17` | VERIFIED | 13/13 | apache-2.0 |
 | `lightonai/LightOnOCR-3-0.8B` | `36d8636925327c671bd8e479c517a004f7566bd9` | VERIFIED | 15/15 | apache-2.0 |
@@ -78,11 +78,11 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `ibm-granite/granite-switch-4.1-30b` | `eb206725d03c0f1c409ce3aa512afe325fdf8731` | VERIFIED | 25/25 | apache-2.0 |
 | `tencent/Hy-Memory-30B-A3B` | `64a460a94d5498b7316fb02395c72d01c47a7347` | VERIFIED | 58/58 | apache-2.0 |
 | `google/gemma-4-31B` | `5bbc2fb1c1b2c611d06e3d9f23c170ba21659d89` | VERIFIED | 9/9 | apache-2.0 |
-| `allenai/Olmo-3-1125-32B` | `c2b61dae89a1ad10e4ad5653d0e46b590902607b` | VERIFIED | 2/2 | apache-2.0 |
-| `EPFLiGHT/OLMo-2-32B-MeditronFO` | `04c6953977c3a9f913e3d08a6c23edaae6bd6459` | VERIFIED | 1/1 | apache-2.0 |
+| `allenai/Olmo-3-1125-32B` | `c2b61dae89a1ad10e4ad5653d0e46b590902607b` | VERIFIED | 23/23 | apache-2.0 |
+| `EPFLiGHT/OLMo-2-32B-MeditronFO` | `04c6953977c3a9f913e3d08a6c23edaae6bd6459` | VERIFIED | 23/23 | apache-2.0 |
 | `Nanbeige/Nanbeige4.3-33B` | `df919e1e2cf077a22204c78b6c826bf3db18bc08` | VERIFIED | 22/22 | apache-2.0 |
-| `openai/gpt-oss-120b` | `b5c939de8f754692c1647ca79fbf85e8c1e70f8a` | VERIFIED | 2/2 | apache-2.0 |
-| `Qwen/Qwen3.5-35B-A3B-Base` | `0f0813072d2358973511097385626f21fcb6d422` | VERIFIED | 1/1 | apache-2.0 |
+| `openai/gpt-oss-120b` | `b5c939de8f754692c1647ca79fbf85e8c1e70f8a` | VERIFIED | 34/34 | apache-2.0 |
+| `Qwen/Qwen3.5-35B-A3B-Base` | `0f0813072d2358973511097385626f21fcb6d422` | VERIFIED | 24/24 | apache-2.0 |
 | `mistralai/Mistral-Small-4-119B-2603` | `a11f36bebf709121056b1dbcc943d1c6afbe494d` | VERIFIED | 21/21 | apache-2.0 |
 | `Qwen/Qwen3-Coder-Next` | `a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb` | VERIFIED | 49/49 | apache-2.0 |
 

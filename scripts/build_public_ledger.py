@@ -35,44 +35,64 @@ def main():
         if p.exists():
             d = json.loads(p.read_text(encoding="utf-8"))
             all_entries.extend(d.get("entries", []))
-    # Deduplicate by exact publisher identity; a later VERIFIED receipt
-    # supersedes an earlier HOLD from a blocked attempt.
-    def rank(x):
-        return 0 if str(x.get("status")) == "VERIFIED" else 1
-
-    deduped = {}
+    # Merge receipts for the same exact publisher identity. Repair receipts
+    # contain only the fixed shards, so union every file path and prefer the
+    # verified version of each path. The full scope comes from the largest
+    # receipt, preventing a narrow repair from undercounting a model.
+    grouped = {}
     for e in all_entries:
         key = (e.get("repo_id"), e.get("revision_sha"))
-        old = deduped.get(key)
-        if old is None or rank(e) < rank(old):
-            deduped[key] = e
-    all_entries = list(deduped.values())
+        grouped.setdefault(key, []).append(e)
 
+    good = {"VERIFIED", "DEDUP_VERIFIED"}
     entries = []
-    for e in all_entries:
-        files = e.get("files", [])
-        methods = Counter(f.get("method") for f in files if f.get("method"))
-        statuses = Counter(f.get("status") for f in files)
+    for (repo, rev), group in grouped.items():
+        files = {}
+        for e in group:
+            for f in e.get("files", []):
+                p = f.get("path")
+                if not p:
+                    continue
+                old = files.get(p)
+                if old is None or (f.get("status") in good and
+                                   old.get("status") not in good):
+                    files[p] = f
+        expected = max((int(e.get("total") or 0) for e in group), default=0)
+        verified_count = sum(1 for f in files.values() if f.get("status") in good)
+        holds = [str(e.get("status")) for e in group
+                 if str(e.get("status", "")).startswith("HOLD")]
+        if holds:
+            status = holds[0]
+        elif expected and verified_count >= expected:
+            status = "VERIFIED"
+        elif verified_count:
+            status = "PARTIAL"
+        else:
+            status = max((str(e.get("status")) for e in group), default="FAILED")
+        base = max(group, key=lambda e: (int(e.get("total") or 0),
+                                         str(e.get("finished_at", ""))))
+        methods = Counter(f.get("method") for f in files.values() if f.get("method"))
+        statuses = Counter(f.get("status") for f in files.values())
         entries.append({
-            "repo_id": e.get("repo_id"),
-            "revision_sha": e.get("revision_sha"),
-            "source_manifest": sanitize_source(e.get("source")),
-            "priority_group": e.get("group"),
-            "status": e.get("status"),
-            "license": e.get("license"),
-            "files_total": e.get("total"),
-            "files_verified": e.get("verified"),
-            "source_bytes": e.get("bytes"),
+            "repo_id": repo,
+            "revision_sha": rev,
+            "source_manifest": sanitize_source(base.get("source")),
+            "priority_group": base.get("group"),
+            "status": status,
+            "license": base.get("license"),
+            "files_total": expected or len(files),
+            "files_verified": verified_count,
+            "source_bytes": max((int(e.get("bytes") or 0) for e in group), default=0),
             "verification_methods": dict(methods),
             "file_status_counts": dict(statuses),
             "weight_files_sha256": [
                 {"path": f["path"], "sha256": f["sha256"]}
-                for f in files
+                for f in files.values()
                 if f.get("method") == "sha256-vs-publisher" and f.get("sha256")
             ],
-            "started_at": e.get("started_at"),
-            "finished_at": e.get("finished_at"),
-            "free_bytes_after": e.get("free_bytes_after"),
+            "started_at": base.get("started_at"),
+            "finished_at": base.get("finished_at"),
+            "free_bytes_after": base.get("free_bytes_after"),
         })
     summary = {
         "models_total": len(entries),
