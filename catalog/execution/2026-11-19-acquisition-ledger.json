@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "ledger_id": "2026-11-19-v48-execution",
-  "generated_at": "2026-11-20T20:59:38.866064+00:00",
+  "generated_at": "2026-11-21T01:35:20.242605+00:00",
   "canonical_revision": "v48-20261118",
   "source_plan": "queues/proposed-v48-r113-source-pinned-15.json",
   "policy": {
@@ -14,14 +14,14 @@
     "unclear_license": "HOLD"
   },
   "summary": {
-    "models_total": 72,
-    "models_verified": 70,
-    "models_partial": 1,
+    "models_total": 75,
+    "models_verified": 71,
+    "models_partial": 3,
     "models_failed": 0,
     "models_held": 1,
-    "files_verified_total": 963,
-    "bytes_verified_total": 1257855906173,
-    "minimum_free_bytes_observed": 1620067045376,
+    "files_verified_total": 1036,
+    "bytes_verified_total": 1519115675060,
+    "minimum_free_bytes_observed": 1400219856896,
     "minimum_free_floor_bytes": 200000000000,
     "free_floor_maintained": true
   },
@@ -2825,6 +2825,159 @@
       "free_bytes_after": 1620067045376
     },
     {
+      "repo_id": "EPFLiGHT/OLMo-2-32B-MeditronFO",
+      "revision_sha": "04c6953977c3a9f913e3d08a6c23edaae6bd6459",
+      "source_manifest": "local-discovered/EPFLiGHT__OLMo-2-32B-MeditronFO.json",
+      "priority_group": "",
+      "status": "PARTIAL",
+      "license": "apache-2.0",
+      "files_total": 23,
+      "files_verified": 19,
+      "source_bytes": 64477462899,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 11
+      },
+      "file_status_counts": {
+        "VERIFIED": 19,
+        "FAIL_RuntimeError": 2,
+        "HASH_MISMATCH": 1,
+        "FAIL_OSError": 1
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00002-of-00014.safetensors",
+          "sha256": "d8f427423592a14ba6108a0d88a717610b5500ce88779f4d1d0fc9264401b04d"
+        },
+        {
+          "path": "model-00003-of-00014.safetensors",
+          "sha256": "519888e4be60b09b1898a38fdda200b41daa6145bab991ae8412faeb925ed81c"
+        },
+        {
+          "path": "model-00004-of-00014.safetensors",
+          "sha256": "2b03ac824614de304481482b630071e6e6d629f05917e81eec0a30b286ca0278"
+        },
+        {
+          "path": "model-00005-of-00014.safetensors",
+          "sha256": "b9df03c11442f373595c70a1ffde17333618fe718781cdf81eb371e72aa87cf2"
+        },
+        {
+          "path": "model-00006-of-00014.safetensors",
+          "sha256": "e2ed72325c56c10bd457b213362a069dc8b54b395204c0f6a62ba28ff4601202"
+        },
+        {
+          "path": "model-00007-of-00014.safetensors",
+          "sha256": "f765c8413ee80d29feeb1c52a48dc6dbc5a9a486377cc755d6da50bd804f8cc4"
+        },
+        {
+          "path": "model-00010-of-00014.safetensors",
+          "sha256": "4de40c5c68748c10a6453d27d06accc03e350ad7382f43c521dfe6b8f11c5432"
+        },
+        {
+          "path": "model-00011-of-00014.safetensors",
+          "sha256": "4a48262f7525f06e6590de2ab15242e939e9a4e65fa0381b46e1a28d437cc2b6"
+        },
+        {
+          "path": "model-00012-of-00014.safetensors",
+          "sha256": "ee50f0b6020a1522c2df44622f78fa4d0ab03546c4a55a40a4fa0880f35a7a72"
+        },
+        {
+          "path": "model-00013-of-00014.safetensors",
+          "sha256": "4eb406a08636f11642d0a20e13fe27796081fba0c97d4371205e4318075c1179"
+        },
+        {
+          "path": "model-00014-of-00014.safetensors",
+          "sha256": "06c1f2fe0301c5ce32506f3084725531d4b6d10550114510436ef76b173739bb"
+        }
+      ],
+      "started_at": "2026-11-20T18:55:14.403749+00:00",
+      "finished_at": "2026-11-20T22:24:39.644587+00:00",
+      "free_bytes_after": 1526962884608
+    },
+    {
+      "repo_id": "Nanbeige/Nanbeige4.3-33B",
+      "revision_sha": "df919e1e2cf077a22204c78b6c826bf3db18bc08",
+      "source_manifest": "local-discovered/Nanbeige__Nanbeige4.3-33B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 22,
+      "files_verified": 22,
+      "source_bytes": 66256520718,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 7,
+        "sha256-vs-publisher": 15
+      },
+      "file_status_counts": {
+        "VERIFIED": 22
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00014.safetensors",
+          "sha256": "a70e695f1a8c9686158e791829e603833840e7a8ce7ece884eff6aeca561f9b2"
+        },
+        {
+          "path": "model-00002-of-00014.safetensors",
+          "sha256": "36599c909e677a50cffd7715376a2e6eeb40097296e2bb1103cd6316ffe8af52"
+        },
+        {
+          "path": "model-00003-of-00014.safetensors",
+          "sha256": "228267c30873849f69149f09faf35f9e956bf5a50ddd0820ee33b5cd326eb66d"
+        },
+        {
+          "path": "model-00004-of-00014.safetensors",
+          "sha256": "e5654a03d7e9bfddfee1b8b051864d5b61a3f1aae282c1c5deed2117a9a8f94e"
+        },
+        {
+          "path": "model-00005-of-00014.safetensors",
+          "sha256": "055ef50375b8ce6342d5beaf971f59c67fbb1f358047511c0781564b7fcaf541"
+        },
+        {
+          "path": "model-00006-of-00014.safetensors",
+          "sha256": "5d0fb320fd4161bb901f7869f67d2e3459a2c2699040818b6349c6021bfe3ddb"
+        },
+        {
+          "path": "model-00007-of-00014.safetensors",
+          "sha256": "8b2203d94427d8b5e64805ccec17c14b1ca3f12baffb542ed396424e03c474df"
+        },
+        {
+          "path": "model-00008-of-00014.safetensors",
+          "sha256": "4e7b957640e52ee183ebe0f8f1f23d65c94075dd0aff0b22176e3f44abb3102b"
+        },
+        {
+          "path": "model-00009-of-00014.safetensors",
+          "sha256": "5e90fe70ad8f88bf5ccd9ca3a3f38b384960689d26a05f45d1b135afba6a749e"
+        },
+        {
+          "path": "model-00010-of-00014.safetensors",
+          "sha256": "19bb937ef55014945b7ac20b0b0ca039c75756679da28b6bc949bf6cdfd92b1e"
+        },
+        {
+          "path": "model-00011-of-00014.safetensors",
+          "sha256": "09909f3730fe888a83518c88e67b44d6d1aa45a2ffd411ddefe767f510e6e72f"
+        },
+        {
+          "path": "model-00012-of-00014.safetensors",
+          "sha256": "2cdb2749eb589bf5e89290d457609d0461169e115bfa9549b0755f5b48dd716c"
+        },
+        {
+          "path": "model-00013-of-00014.safetensors",
+          "sha256": "a1babb6d7bef3d4a31f071e590ec58fc96ac084584b8d55f632d9a44b2647df5"
+        },
+        {
+          "path": "model-00014-of-00014.safetensors",
+          "sha256": "b23adaf4c6e6d62e7e93a76bdcb55dbd5a47f6870a5713200e6627b6b291ebdc"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "1d858a0fc007f22af6ae18bfa1ae52d30e398aa9cd1ea06e7777176869346a3f"
+        }
+      ],
+      "started_at": "2026-11-20T22:24:40.145484+00:00",
+      "finished_at": "2026-11-21T01:33:47.855550+00:00",
+      "free_bytes_after": 1400219856896
+    },
+    {
       "repo_id": "mistralai/Mistral-Small-4-119B-2603",
       "revision_sha": "a11f36bebf709121056b1dbcc943d1c6afbe494d",
       "source_manifest": "local-discovered/mistralai__Mistral-Small-4-119B-2603.json",
@@ -3077,6 +3230,44 @@
       "started_at": "2026-11-19T23:36:26.529709+00:00",
       "finished_at": "2026-11-20T09:16:01.154225+00:00",
       "free_bytes_after": 1867301199872
+    },
+    {
+      "repo_id": "openai/gpt-oss-120b",
+      "revision_sha": "b5c939de8f754692c1647ca79fbf85e8c1e70f8a",
+      "source_manifest": "local-discovered/openai__gpt-oss-120b.json",
+      "priority_group": "",
+      "status": "PARTIAL",
+      "license": "apache-2.0",
+      "files_total": 34,
+      "files_verified": 32,
+      "source_bytes": 130525785270,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 21
+      },
+      "file_status_counts": {
+        "DEDUP_VERIFIED": 26,
+        "FAIL_OSError": 1,
+        "FAIL_RuntimeError": 1,
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "original/model--00006-of-00007.safetensors",
+          "sha256": "3aedef2ee0a5a78a003b3f74fd6883033946b80097bf41e4f4715d95066f0588"
+        },
+        {
+          "path": "original/model--00007-of-00007.safetensors",
+          "sha256": "20d5dfcad1ed6c50aa3c0da7d3f08828dba72b5f58686a987bf3a8f01659cda6"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "0614fe83cadab421296e664e1f48f4261fa8fef6e03e63bb75c20f38e37d07d3"
+        }
+      ],
+      "started_at": "2026-11-20T19:17:53.455335+00:00",
+      "finished_at": "2026-11-20T22:01:40.560131+00:00",
+      "free_bytes_after": 1541965238272
     }
   ],
   "notes": [
