@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 76 (verified 75, partial 0, failed 0, held 1)
-- Verified files: 1068
-- Verified source bytes: 1591042659895
-- Minimum observed free bytes: 1393718820864 (200 GB floor maintained: True)
+- Models: 77 (verified 76, partial 0, failed 0, held 1)
+- Verified files: 1078
+- Verified source bytes: 1657769112167
+- Minimum observed free bytes: 1313320169472 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -83,6 +83,7 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `Nanbeige/Nanbeige4.3-33B` | `df919e1e2cf077a22204c78b6c826bf3db18bc08` | VERIFIED | 22/22 | apache-2.0 |
 | `openai/gpt-oss-120b` | `b5c939de8f754692c1647ca79fbf85e8c1e70f8a` | VERIFIED | 34/34 | apache-2.0 |
 | `Qwen/Qwen3.5-35B-A3B-Base` | `0f0813072d2358973511097385626f21fcb6d422` | VERIFIED | 24/24 | apache-2.0 |
+| `OctoMed/OctoMed-32B` | `7b480e62a0f59139aa504e67d62974b83e360200` | VERIFIED | 10/10 | apache-2.0 |
 | `mistralai/Mistral-Small-4-119B-2603` | `a11f36bebf709121056b1dbcc943d1c6afbe494d` | VERIFIED | 21/21 | apache-2.0 |
 | `Qwen/Qwen3-Coder-Next` | `a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb` | VERIFIED | 49/49 | apache-2.0 |
 

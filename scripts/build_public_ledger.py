@@ -15,6 +15,8 @@ LOCAL = Path("D:/AI_VAULT/state/ledger/acquisition-ledger.json")
 LOCAL_WAVE2 = Path("D:/AI_VAULT/state/ledger/wave2-ledger.json")
 LOCAL_CONT = Path("D:/AI_VAULT/state/ledger/waves3plus-ledger.json")
 LOCAL_LARGE = Path("D:/AI_VAULT/state/ledger/waves-large-ledger.json")
+LOCAL_OCT = Path("D:/AI_VAULT/state/ledger/octomed-ledger.json")
+LOCAL_REPAIR = Path("D:/AI_VAULT/state/ledger/waves3plus-ledger.json")
 OUT = Path("catalog/execution/2026-11-19-acquisition-ledger.json")
 MD = Path("docs/strategy/114-v48-execution-acquisition-results-2026-11-19.md")
 
@@ -31,7 +33,7 @@ def sanitize_source(value):
 
 def main():
     all_entries = []
-    for p in (LOCAL, LOCAL_WAVE2, LOCAL_CONT, LOCAL_LARGE):
+    for p in (LOCAL, LOCAL_WAVE2, LOCAL_CONT, LOCAL_LARGE, LOCAL_OCT):
         if p.exists():
             d = json.loads(p.read_text(encoding="utf-8"))
             all_entries.extend(d.get("entries", []))
@@ -61,12 +63,13 @@ def main():
         verified_count = sum(1 for f in files.values() if f.get("status") in good)
         holds = [str(e.get("status")) for e in group
                  if str(e.get("status", "")).startswith("HOLD")]
-        if holds:
-            status = holds[0]
-        elif expected and verified_count >= expected:
+        # A verified receipt always supersedes a stale HOLD from a blocked attempt.
+        if expected and verified_count >= expected:
             status = "VERIFIED"
         elif verified_count:
             status = "PARTIAL"
+        elif holds:
+            status = holds[0]
         else:
             status = max((str(e.get("status")) for e in group), default="FAILED")
         base = max(group, key=lambda e: (int(e.get("total") or 0),
