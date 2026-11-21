@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "kind": "R150_V63_TWO_RESEARCH_ADOPTIONS_TWO_HOLD_NO_CANONICAL_OR_ACQUISITION_CHANGE",
+  "reviewed_jst": "2026-11-22",
+  "preserved_canonical_revision": "v63-20261122",
+  "source_manifest": "manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json",
+  "priority_queue": "queues/proposed-v63-r150-after99-13-research-only.json",
+  "canonical_new_assets_adopted": 0,
+  "review_recommended_for_next_canonical_conditional": 2,
+  "hold_watchlist": 2,
+  "approved_manifest_count": 0,
+  "payload_bytes_downloaded": 0,
+  "user_D_direct_sha_verified": false,
+  "unreviewed_model_code_run": false,
+  "models": [
+    {
+      "repo_id": "mistralai/Timestral-5M",
+      "immutable_revision_sha": "bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f",
+      "research_decision": "PROVISIONAL_CONDITIONAL_FOR_NEXT_CANONICAL_REVISION",
+      "phase": "P0",
+      "params_total_hf": 5208960,
+      "publisher_original_source_bytes": 20854471,
+      "publisher_file_count": 6,
+      "distinct_value": "Independent 5.2M-param time-series prediction pretrained weights, NOT a precision conversion of the existing 28M Timestral; 20.84MB weight master.",
+      "benchmark_author": "GIFT-Eval MASE 0.705 (5M) vs 0.678 (28M); reduction in parameters comes with 4.0% relative higher forecast error; no matched user CPU latency data.",
+      "license": "Modified MIT requires attribution and denies exercising license if company/employer consolidated monthly revenue exceeded USD20m in prior month, absent separate commercial agreement.",
+      "owner_rights_validated": false,
+      "local_hash_validated": false,
+      "runtime_validated": false,
+      "download_authorized": false
+    },
+    {
+      "repo_id": "tencent/WeMM-Video-2B",
+      "immutable_revision_sha": "821690998399cac0f55bb7f7f805ebafa650c3a4",
+      "research_decision": "PROVISIONAL_CONDITIONAL_FOR_NEXT_CANONICAL_REVISION",
+      "phase": "P1",
+      "params_total_hf": 3283624264,
+      "publisher_original_source_bytes": 6590699556,
+      "publisher_file_count": 27,
+      "weights_bytes": 6567395904,
+      "sha256sum_entries": 25,
+      "distinct_value": "Independent first-party model supports video+original soundtrack together, standalone audio/image/text, unlike existing MOSS-VL real-time video specialist. Model title 2B is not complete stored learned parameter count.",
+      "publisher_abi": "Model card requires trust_remote_code and patched vLLM 0.18.0 or 0.31.0 / patched SGLang 0.5.16 or 0.5.19; L20/H20 publisher tests not owner measurements.",
+      "license": "Apache2 Tencent release with third-party exceptions in LICENSE; all component license and executable code review required.",
+      "owner_rights_validated": false,
+      "local_hash_validated": false,
+      "runtime_validated": false,
+      "download_authorized": false
+    },
+    {
+      "repo_id": "abacusai/Smaug-Uncensored",
+      "immutable_revision_sha": "e4bbcf7aec54ab72f4ce720569f3b3dc7b973087",
+      "research_decision": "HOLD_UNTIL_PARENT_WEIGHT_REUSE_AND_MEASURED_QUALITY",
+      "publisher_source_bytes_observed": 55575816096,
+      "params_total_hf": 27781427952,
+      "distinct_value": "Full trained DPO change from Qwen3.8-27B, 400 modified of 1199 weight tensors claimed; not merely abliterated by name.",
+      "publisher_only_evaluation": "OR-Bench-Hard: 45.2% base versus 2.3% model refusal rate (benign-risk prompts n=1309), compared by Abacus using an LLM judge, not independently reproduced.",
+      "reason_hold": "More than 55GB mostly Qwen parent-similar content, already retained several 27B edits; freeze delta/adapter lineage and compare weights/quality before allocating new full model.",
+      "download_authorized": false
+    },
+    {
+      "repo_id": "IndrasMirror/Inkling-2-Mini-XQ-Uncensored",
+      "immutable_revision_sha": "629e214bd67315f6faaa45274f253f0cc6ac561b",
+      "research_decision": "HOLD_UNTIL_ENGINE_REPRODUCIBILITY_AND_OTHER_INKLING_EDIT_DEDUP",
+      "publisher_total_gguf_params": 26070390272,
+      "publisher_used_storage_bytes": 15221549728,
+      "distinct_value": "ARA refusal-direction edited then mixed-precision XQ GGUF; publisher tag quantized alone insufficient to prove edited weights, review attached methodology.",
+      "publisher_only_evaluation": "Author reports RTX4090 + Xolotl commit 2bd4b5d77, 113 decode tok/s (2.8K prompt/256 generated), 136 with drafter, plus ~4,190 prefill tok/s at 32K; quality MMLU sample n=100, agentic Gauntlet unfinished; not independently verified.",
+      "reason_hold": "Another Inkling official master and prior uncensored editing records exist; need tensor lineage, precise runtime ABI, dedup of DSpark/mmproj and reliable matched quality.",
+      "download_authorized": false
+    }
+  ],
+  "no_previous_model_replacement": true,
+  "freeze_source_not_owner_download": true,
+  "owner_approval_gates": [
+    "Current owner license acts and third-party rights",
+    "exact immutable repo+file SHA and owner local bytes",
+    "actual 4TB drive usable and >=200GB remaining including staging",
+    "trusted audited model/custom engine code and full offline dependency closure",
+    "fixed owner HW/backend/quantization/context/batch matched quality+throughput",
+    "explicit user approval of source-by-source file manifest"
+  ],
+  "policy_primary": "https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm",
+  "policy_factual_note": "BIS 2026-11-19 repeals ECCN4E091 model-weights AI Diffusion controls; country/end-use/compute and individual license terms remain. Imminent universal model bans are not established.",
+  "validation": {
+    "H": "Two unique low-storage original trained sources are publicly present and exact source metadata can be fixed without touching 99 reported acquired.",
+    "T": "Compare publisher repo revision, 33 paths, integer bytes, 27/6 manifests, publisher SHA256SUMS 25 and HF LFS, keep original 11 unchanged, verify all approvals false; require >=30 matched task trials for performance claims.",
+    "D": "Metadata PASS only if all counts and SHA consistent; downloads/owner restore UNCERTAIN. FAIL if auto-authorized or source mismatch.",
+    "C": "5M forecasting accuracy/latency dominated by 28M; WeMM runtime patch unavailable, Smaug edited performance not reproducible, Inkling XQ throughput engine-dependent.",
+    "U": "No direct D drive SHA, matched HW trials or third-party rights complete; no defensible combined standard uncertainty u_c or coverage factor k."
+  },
+  "disciplines": [
+    "time-series forecasting and uncertainty",
+    "omnimodal audio-visual machine learning",
+    "supply-chain provenance and SHA",
+    "copyright and export compliance"
+  ]
+}
