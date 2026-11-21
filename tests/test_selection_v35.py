@@ -42,7 +42,7 @@ class V35(unittest.TestCase):
   self.assertEqual({key(x) for x in active},{key(x) for x in p["items"]})
   self.assertEqual({key(x) for x in active},{key(x) for x in r["records"]})
   self.assertEqual({key(x) for x in cond},{key(x) for x in a["entries"]})
-  self.assertEqual(sum(x["hub_gated"] for x in a["entries"]),17)
+  self.assertEqual(sum(x["hub_gated"] is True for x in a["entries"]),17)
   self.assertEqual(len(r["records"]),142)
   self.assertEqual(r["summary"]["unknown_total_active"],9)
   self.assertEqual(r["summary"]["no_final_revision"],140)

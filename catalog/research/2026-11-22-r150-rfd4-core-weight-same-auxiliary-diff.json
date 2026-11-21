@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "kind": "R150_RFD4_CORE_SAME_AUXILIARY_VARIANT_CHANGED_SOURCE_RECONCILIATION",
+  "observed_jst": "2026-11-22",
+  "repository": "Unjuno/local-model-portfolio",
+  "model_repo_id": "nvidia/RFD4-Proteina",
+  "license_tag_observed_in_ledger": "bsd-3-clause",
+  "catalog_prior_revision": "cf31b93509df5af854c7f6ad704f5c83c77c0698",
+  "ledger_reported_verified_revision": "5ec66c399bf0b48727ab24e6b298dcf33864fa07",
+  "publisher_immutable_tree_urls": [
+    "https://huggingface.co/nvidia/RFD4-Proteina/tree/cf31b93509df5af854c7f6ad704f5c83c77c0698",
+    "https://huggingface.co/nvidia/RFD4-Proteina/tree/5ec66c399bf0b48727ab24e6b298dcf33864fa07"
+  ],
+  "publisher_tree_pages": [
+    2,
+    2
+  ],
+  "publisher_files_in_snapshots": [
+    51,
+    78
+  ],
+  "core_identity": {
+    "path": "model.safetensors",
+    "same_lfs_sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0",
+    "bytes": 1742660596,
+    "old_and_acquired_equal": true,
+    "acquisition_weight_receipt_confirms_publisher_sha": true,
+    "conclusion": "Original central merged/root model is bit-for-bit identical in both publisher revisions. No case for redownloading core weights."
+  },
+  "distinct_runtime_or_learned_scope": {
+    "transformers_conversion_weight_differs": true,
+    "older_transformers_sha256": "2fcecba5656ae980750b78034ce768cb1fcbf2c2fc1afe7d9e64de6c8b5cd96f",
+    "acquired_transformers_sha256": "e753bed3e506f5f907276c30e8bf711df6c74b05a1cadecd643973867d71cdb7",
+    "added_base_and_adapter_weights": [
+      "base/model.safetensors",
+      "adapter/adapter_model.safetensors"
+    ],
+    "added_antibody_variant": "antibody/rfd4-proteina-antibody-2026-10-30-ema.ckpt",
+    "semantically_same_transformers_conversion_not_proven": true,
+    "extra_auxiliary_components_need_separate_offline_restoration_and_license_review": true
+  },
+  "critical_source_files": [
+    {
+      "path": "model.safetensors",
+      "older_source": {
+        "path": "model.safetensors",
+        "bytes": 1742660596,
+        "sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0",
+        "blob_sha1": "3a6858ef2ee0cdf80a432f433b29915537629a50"
+      },
+      "acquired_source": {
+        "path": "model.safetensors",
+        "bytes": 1742660596,
+        "sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0",
+        "blob_sha1": "3a6858ef2ee0cdf80a432f433b29915537629a50"
+      },
+      "same_SHA256": true,
+      "reported_acquired_weight_sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0",
+      "ledger_weight_receipt_matches_acquired_SHA256": true
+    },
+    {
+      "path": "transformers/model.safetensors",
+      "older_source": {
+        "path": "transformers/model.safetensors",
+        "bytes": 1742671204,
+        "sha256": "2fcecba5656ae980750b78034ce768cb1fcbf2c2fc1afe7d9e64de6c8b5cd96f",
+        "blob_sha1": "98c5f60d3b4682ea82c664ed0f3a1342483943f1"
+      },
+      "acquired_source": {
+        "path": "transformers/model.safetensors",
+        "bytes": 1742669076,
+        "sha256": "e753bed3e506f5f907276c30e8bf711df6c74b05a1cadecd643973867d71cdb7",
+        "blob_sha1": "3d2cd42f1b8422a99b15333180b35cdbecfc08b3"
+      },
+      "same_SHA256": false,
+      "reported_acquired_weight_sha256": "e753bed3e506f5f907276c30e8bf711df6c74b05a1cadecd643973867d71cdb7",
+      "ledger_weight_receipt_matches_acquired_SHA256": true
+    },
+    {
+      "path": "base/model.safetensors",
+      "older_source": null,
+      "acquired_source": {
+        "path": "base/model.safetensors",
+        "bytes": 1742660596,
+        "sha256": "10e90a76e3b09c94a700d2f67e89ed660af7f3018e3f2209b5d52f24d00fbd39",
+        "blob_sha1": "f76d07913bda8783fa56fd4104372f1d30bb704e"
+      },
+      "same_SHA256": false,
+      "reported_acquired_weight_sha256": "10e90a76e3b09c94a700d2f67e89ed660af7f3018e3f2209b5d52f24d00fbd39",
+      "ledger_weight_receipt_matches_acquired_SHA256": true
+    },
+    {
+      "path": "adapter/adapter_model.safetensors",
+      "older_source": null,
+      "acquired_source": {
+        "path": "adapter/adapter_model.safetensors",
+        "bytes": 8264360,
+        "sha256": "3b0762a73b543dfd88958267ba93a729fd91b31f2e18dba2d34c302260f50402",
+        "blob_sha1": "bca294e5b9993340363862cdf557ea41335b7bc8"
+      },
+      "same_SHA256": false,
+      "reported_acquired_weight_sha256": "3b0762a73b543dfd88958267ba93a729fd91b31f2e18dba2d34c302260f50402",
+      "ledger_weight_receipt_matches_acquired_SHA256": true
+    },
+    {
+      "path": "antibody/rfd4-proteina-antibody-2026-10-30-ema.ckpt",
+      "older_source": null,
+      "acquired_source": {
+        "path": "antibody/rfd4-proteina-antibody-2026-10-30-ema.ckpt",
+        "bytes": 1743353524,
+        "sha256": "6abf4ed28125d7f1ebcd6238456a622e782fe218753577decf92b1275a5f7b02",
+        "blob_sha1": "6e3547f823603c6c6e6a96f18270c61368652139"
+      },
+      "same_SHA256": false,
+      "reported_acquired_weight_sha256": null,
+      "ledger_weight_receipt_matches_acquired_SHA256": null
+    },
+    {
+      "path": "ae_checkpoints/rfd4_proteina_ae-ema.ckpt",
+      "older_source": {
+        "path": "ae_checkpoints/rfd4_proteina_ae-ema.ckpt",
+        "bytes": 1029340246,
+        "sha256": "24536372f3fc9a5083b6b813baa80630d2287a5d61fbf2f126c9735802e1d21a",
+        "blob_sha1": "24ff1c0f8bcba98dde75273156705ddf5b68df9f"
+      },
+      "acquired_source": {
+        "path": "ae_checkpoints/rfd4_proteina_ae-ema.ckpt",
+        "bytes": 1029340246,
+        "sha256": "24536372f3fc9a5083b6b813baa80630d2287a5d61fbf2f126c9735802e1d21a",
+        "blob_sha1": "24ff1c0f8bcba98dde75273156705ddf5b68df9f"
+      },
+      "same_SHA256": true,
+      "reported_acquired_weight_sha256": null,
+      "ledger_weight_receipt_matches_acquired_SHA256": null
+    },
+    {
+      "path": "flow_checkpoints/rfd4_proteina_flow-ema.ckpt",
+      "older_source": {
+        "path": "flow_checkpoints/rfd4_proteina_flow-ema.ckpt",
+        "bytes": 1751488703,
+        "sha256": "c1c8b7068e87c41a334ec5b77e7d7cdda30bd31ed4504909d93bd72f7742afe4",
+        "blob_sha1": "b7f7c66039f8d13b31d2f277c354bbb0e63b3d92"
+      },
+      "acquired_source": {
+        "path": "flow_checkpoints/rfd4_proteina_flow-ema.ckpt",
+        "bytes": 1751488703,
+        "sha256": "c1c8b7068e87c41a334ec5b77e7d7cdda30bd31ed4504909d93bd72f7742afe4",
+        "blob_sha1": "b7f7c66039f8d13b31d2f277c354bbb0e63b3d92"
+      },
+      "same_SHA256": true,
+      "reported_acquired_weight_sha256": null,
+      "ledger_weight_receipt_matches_acquired_SHA256": null
+    }
+  ],
+  "historical_v45_exact_source_manifest": {
+    "path": "manifests/drafts/r106-v45-rfd4-pretrain-plus-merged-original.candidate.json",
+    "sha_matches_ledger_reported_acquired_revision": true,
+    "publisher_selected_core_scope_files": 12,
+    "publisher_selected_core_scope_bytes": 3493648941
+  },
+  "historical_ledger_receipt": {
+    "path": "catalog/execution/2026-11-19-acquisition-ledger.json",
+    "status": "VERIFIED",
+    "files_verified": 17,
+    "bytes_verified_reported": 5236405470,
+    "this_research_independently_rehashed_owner_disk": false
+  },
+  "file_scope_conclusions": {
+    "core_reacquisition_decision": "DO_NOT_REDOWNLOAD",
+    "auxiliary_variants_decision": "KEEP_EXISTING_AND_STATIC_REVIEW_DISTINCT_RUNTIME_ONLY",
+    "complete_offline_reconstruction_proven": false,
+    "model_parameter_full_pipeline_new_total_measured": false,
+    "local_weight_content_downloaded_this_study": false,
+    "approved_queue_entries_added": 0
+  },
+  "prior_r148_classification_superseded_note": "R148 correctly identified one changed transformers weight and new auxiliary learned components; R150 refines this to core root identical, auxiliary variant/scope changed. Do not label the entire central model separately trained.",
+  "repeat_audit_instruction": "When owner accessible, verify root publisher SHA, transformers variant, base+adapter version, exact code/container and refolding dependencies separately; no model execution during checksum audit."
+}

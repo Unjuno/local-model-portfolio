@@ -29,7 +29,7 @@ class V34(unittest.TestCase):
   self.assertEqual(active,{key(x) for x in p["items"]})
   self.assertEqual(cond,{key(x) for x in a["entries"]})
   self.assertEqual(len(a["entries"]),87)
-  self.assertEqual(sum(x["hub_gated"] for x in a["entries"]),17)
+  self.assertEqual(sum(x["hub_gated"] is True for x in a["entries"]),17)
   self.assertFalse(q["approved"]);self.assertFalse(q["download_enabled"])
   self.assertEqual(read("queues/approved.json")["entries"],[])
  def test_unknown_parameter_blocks_kumo_anomaly(self):

@@ -36,17 +36,23 @@ def validate() -> dict:
     ready = load("catalog/readiness/CURRENT.json")
     policy = load("policies/limits.json")
     ledger = load(EVIDENCE)
-    portfolio = load(c["materialized_catalog_path"])
-    assert c["revision_id"] == EXPECTED_REVISION, "Unsupported new canonical version: update budget"
+    portfolio = load("catalog/effective-portfolio-2026-11-15-v40.json")
+    live = load(c["materialized_catalog_path"])
+    assert "catalog/revisions/v40-2026-11-15.json" in c["ordered_overlays"], "Historical v40 overlay missing"
+    assert portfolio["revision_id"] == EXPECTED_REVISION
     assert est["portfolio_revision"] == c["revision_id"] == ready["catalog_revision"]
-    assert c["expected"]["tracked"] == len(portfolio["items"]) == 195
-    assert c["expected"]["active"] == 148
-    assert ready["tracked_assets"] == 195 and ready["active_assets"] == 148
+    assert len(portfolio["items"]) == 195 and sum(
+        x["portfolio_decision"] in ("select","conditional") for x in portfolio["items"]) == 148
+    assert c["expected"]["tracked"] == len(live["items"])
+    assert c["expected"]["active"] == sum(
+        x["portfolio_decision"] in ("select","conditional") for x in live["items"])
+    assert ready["tracked_assets"] == len(live["items"])
+    assert ready["active_assets"] == c["expected"]["active"]
     assert policy["archive_target_bytes"] == ledger["math"]["archive_limit_bytes"] == 4_000_000_000_000
     assert policy["minimum_free_bytes"] == ledger["math"]["minimum_free_bytes"] == 200_000_000_000
-    assert ledger["canonical_revision"] == c["revision_id"]
+    assert ledger["canonical_revision"] == EXPECTED_REVISION
     assert est["estimate_path"] == EVIDENCE
-    assert c["ordered_overlays"][-1] == "catalog/revisions/v40-2026-11-15.json"
+    assert "catalog/revisions/v40-2026-11-15.json" in c["ordered_overlays"]
     ids = {(x["asset_kind"], x["repo_id"]) for x in portfolio["items"]}
     assert len(ids) == 195, "Duplicate asset identity"
     assert not any(x["download_approved"] for x in portfolio["items"])

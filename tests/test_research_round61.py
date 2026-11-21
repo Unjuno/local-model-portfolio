@@ -46,7 +46,11 @@ class R61(unittest.TestCase):
         self.assertTrue(self.a["conclusions"]["v32_total_135_assets_source_union_finalized"] is False)
     def test_nonexecuting_main_unchanged(self):
         c=read("catalog/CURRENT.json")
-        self.assertEqual((c["revision_id"],c["expected"]["tracked"],c["expected"]["active"]),("v36-20261115",191,144))
+        self.assertIn("catalog/revisions/v36-2026-11-15.json",c["ordered_overlays"])
+        self.assertEqual(len(read("catalog/effective-portfolio-2026-11-15-v36.json")["items"]),191)
+        self.assertEqual(sum(x["portfolio_decision"] in ("select","conditional")
+                             for x in read("catalog/effective-portfolio-2026-11-15-v36.json")["items"]),144)
+        self.assertGreaterEqual(c["expected"]["tracked"],191)
         self.assertEqual(c["latest_pruna_original_source_scope_audit"]["path"],"catalog/research/2026-11-14-r61-pruna-source-curve-capacity.json")
         self.assertEqual(read("queues/approved.json")["entries"],[])
         self.assertFalse(self.d["download_enabled"])

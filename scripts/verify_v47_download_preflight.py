@@ -47,9 +47,17 @@ def validate(q, d, approved, limits, current):
     errors, result, observed_sha = [], [], {}
     records = q.get("entries", [])
     groups = d.get("groups", {})
-    if current.get("revision_id") != "v47-20261118":
-        errors.append("Not v47 canonical revision")
-    if current.get("expected", {}).get("tracked") != 200 or current.get("expected", {}).get("active") != 153:
+    revision = str(current.get("revision_id",""))
+    try:
+        revision_number = int(revision.split("-",1)[0].lstrip("v"))
+    except ValueError:
+        revision_number = -1
+    if revision_number < 47 or "catalog/revisions/v47-2026-11-18.json" not in current.get("ordered_overlays",[]):
+        errors.append("Not v47 canonical revision or valid later descendant")
+    historical = read_json(ROOT / "catalog/effective-portfolio-2026-11-18-v47.json")
+    if (len(historical["items"]) != 200 or
+            sum(x["portfolio_decision"] in ("select","conditional")
+                for x in historical["items"]) != 153):
         errors.append("200/153 v47 active invariants violated")
     if q.get("model_count") != 14 or len(records) != 14:
         errors.append("R110 expected 14 model records")

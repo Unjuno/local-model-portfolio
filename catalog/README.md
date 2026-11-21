@@ -1,5 +1,11 @@
 # 資産台帳
 
+## R150最新運用照合／2026-11-22（正式v63 235/188は変更なし）
+
+[235件全カタログの取得報告statusマップ](audits/2026-11-22-r150-all235-completion-status.json)、[RFD4中心モデルSHA同一・別推論variant](research/2026-11-22-r150-rfd4-core-weight-same-auxiliary-diff.json)、[研究報告](../docs/strategy/150-completion-audit-rfd4-and-historical-ci-recovery.md)。現在の99取得報告・1 Gated HOLDはowner現物実証ではない。旧テスト固有版の混同とNTFSパス解釈を修正、66x Pythonテストは**691 PASS**、全188件は引き続き個別権利・オフライン復元未確証で新取得STOP。正本そのものは[CURRENT](CURRENT.json)のv63。
+
+---
+
 ## 現行v63／R148（2026-11-22）：取得済み99件のID整合と不正自動承認防止
 
 [CURRENT](CURRENT.json)：**235登録／188有効、SELECT55／CONDITIONAL133**。[取得台帳99件差分とRFD4重み相違](research/2026-11-22-r148-ledger99-immutable-revision-drift.json)、[既保存4source49ファイル追加](../manifests/drafts/r148-2026-11-22-ledger99-four-untracked-trained-sources.candidate.json)、[研究・安全判断](../docs/strategy/148-v63-reconcile-99-acquisitions-and-block-implicit-approval.md)。全188アクティブは[取得STOP](readiness/v63-2026-11-22-r148-all188-gates.json)。Publisher SHAと所有者D現物の独立再ハッシュは分ける。再ダウンロード・追加承認0。

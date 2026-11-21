@@ -6,12 +6,16 @@ def j(p): return json.loads((ROOT/p).read_text(encoding="utf-8"))
 def k(x):return x["asset_kind"],x["repo_id"].lower()
 class TestR106(unittest.TestCase):
  def test_current_joins(self):
-  c=j("catalog/CURRENT.json");v=j(c["materialized_catalog_path"])
-  q=j(c["priority_worklist_path"]);p=j(c["insurance_preparation_worklist_path"])
-  a=j(c["latest_conditional_access_audit"]["path"]);r=j(c["latest_active_readiness_audit"]["summary_path"])
+  c=j("catalog/CURRENT.json")
+  self.assertIn("catalog/revisions/v45-2026-11-18.json", c["ordered_overlays"])
+  v=j("catalog/effective-portfolio-2026-11-18-v45.json")
+  q=j("queues/proposed-v45-2026-11-18.json")
+  p=j("catalog/preparation/2026-11-18-insurance-bundles-v45.json")
+  a=j("catalog/access/2026-11-18-v45-conditional-hub-gates.json")
+  r=j("catalog/readiness/v45-2026-11-18-r106-all151-gates.json")
   active={k(x) for x in v["items"] if x["portfolio_decision"] in ("select","conditional")}
   cond={k(x) for x in v["items"] if x["portfolio_decision"]=="conditional"}
-  self.assertEqual(c["revision_id"],"v45-20261118")
+  self.assertEqual(v["revision_id"],"v45-20261118")
   self.assertEqual((len(v["items"]),len(active),len(cond)),(198,151,98))
   self.assertEqual(active,{k(x) for x in q["candidates"]})
   self.assertEqual(active,{k(x) for x in p["items"]})

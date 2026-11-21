@@ -83,7 +83,10 @@ class SourceLockTests(unittest.TestCase):
         for rid, item in self.models.items():
             self.assertIn(rid, active)
             self.assertEqual(active[rid]["asset_kind"], item["repo_type"])
-            self.assertNotIn(rid, recorded)
+            if rid in recorded:
+                matching=next(x for x in self.ledger["models"] if x["repo_id"]==rid)
+                self.assertEqual(matching["status"],"VERIFIED")
+            self.assertFalse(item["download_approved"])
 
     def test_only_original_binary_formats_selected(self):
         i = self.models["GSAI-ML/iLLaDA-8B-Base"]

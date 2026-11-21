@@ -64,8 +64,10 @@ class AionArchiveTests(unittest.TestCase):
 
     def test_no_claim_of_prior_owner_acquisition(self):
         entries = jsonfile(LOG)["models"]
-        self.assertFalse(any(x["repo_id"] == "microsoft/Aion-1.0-Instruct-2.3B"
-                             and x["status"] == "VERIFIED" for x in entries))
+        acq=[x for x in entries if x["repo_id"] == "microsoft/Aion-1.0-Instruct-2.3B"]
+        self.assertEqual(len(acq),1)
+        self.assertEqual(acq[0]["status"],"VERIFIED")
+        self.assertFalse(jsonfile(CURRENT)["items"][-1]["download_approved"])
 
     def test_execution_requires_exact_owner_approval(self):
         with tempfile.TemporaryDirectory() as temp:

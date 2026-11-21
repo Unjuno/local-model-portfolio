@@ -25,6 +25,17 @@ class OwnerSourceTests(unittest.TestCase):
         self.assertEqual(sum(len(x["files"]) for x in idx.values()), 60020)
         self.assertNotIn("ACE-Step/Ace-Step1.5", idx)
 
+    def test_historical_colon_path_preserved_with_ntfs_alias(self):
+        entry = audit.normalized_historical_publisher(
+            "baseline/preds/anthropic.claude-v2:1.csv", 123, None, "a"*40)
+        self.assertEqual(entry["path"],"baseline/preds/anthropic.claude-v2%3A1.csv")
+        self.assertEqual(entry["publisher_relative_path"],
+                         "baseline/preds/anthropic.claude-v2:1.csv")
+        with tempfile.TemporaryDirectory() as td:
+            self.assertEqual(audit.check_file(Path(td),entry),"MISSING")
+        with self.assertRaises(ValueError):
+            audit.normalized("baseline/preds/anthropic.claude-v2:1.csv",123,None,"a"*40)
+
     def test_hash_size_missing_and_unknown_mask_fail_closed(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

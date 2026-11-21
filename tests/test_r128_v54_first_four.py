@@ -67,8 +67,10 @@ class R128OriginalsTests(unittest.TestCase):
     def test_no_ledger_download_claim_for_four_sources(self):
         recorded = {x["repo_id"]: x for x in self.ledger["models"]}
         for e in self.m["entries"]:
-            self.assertNotIn(e["catalog_repo_id"], recorded)
-        self.assertEqual(self.ledger["summary"]["models_verified"], 61)
+            if e["catalog_repo_id"] in recorded:
+                self.assertEqual(recorded[e["catalog_repo_id"]]["status"],"VERIFIED")
+            self.assertFalse(e["download_approved"])
+        self.assertGreaterEqual(self.ledger["summary"]["models_verified"],61)
         self.assertFalse(self.m["owner_disk_independently_rehashed_this_turn"])
 
     def test_owner_specific_approval_has_not_been_inferred(self):

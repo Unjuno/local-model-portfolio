@@ -61,9 +61,15 @@ class R122Tests(unittest.TestCase):
                    and prior[x["catalog_repo_id"]]["revision_sha"] == x["source_revision"]
                    and prior[x["catalog_repo_id"]]["source_bytes"] == x["source_bytes"]
                    and prior[x["catalog_repo_id"]]["files_total"] == len(x["files"])]
-        self.assertEqual(len(matched), 7)
+        # R122 froze a seven-source dedup. Rumble was acquired afterwards
+        # and now matches the live ledger, without retroactively invalidating
+        # the historical choice to include it in R122.
+        historical = [x for x in matched if x["source_repo_id"] != "Reson8/Rumble-2-Flash"]
+        self.assertEqual(len(historical),7)
         out = {x["source_repo_id"] for x in self.d["entries"]}
-        self.assertFalse(any(x["source_repo_id"] in out for x in matched))
+        self.assertFalse(any(x["source_repo_id"] in out for x in historical))
+        self.assertIn("Reson8/Rumble-2-Flash",out)
+        self.assertEqual(prior["Reson8/Rumble-2-Flash"]["status"],"VERIFIED")
 
     def test_verified_old_quantization_is_not_original_upgrade(self):
         for rid in ("InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",

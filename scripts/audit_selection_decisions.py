@@ -54,7 +54,11 @@ def check_record(row:dict, ids:set[str])->list[str]:
 def audit(root:Path=ROOT)->list[str]:
     errors=[]
     current=load(root,"catalog/CURRENT.json")
-    if current.get("revision_id") not in ("v19-20261106", "v20-20261106", "v21-20261106", "v22-20261106", "v23-20261106", "v24-20261106", "v25-20261106", "v26-20261106", "v27-20261107", "v28-20261112", "v29-20261112", "v30-20261112", "v31-20261113", "v32-20261114", "v33-20261115", "v34-20261115", "v35-20261115", "v36-20261115", "v37-20261115", "v38-20261115"): return ["unexpected CURRENT revision"]
+    # Historical v17 decision logic is unchanged; the current canonical
+    # version keeps advancing. Validate immutable overlay ancestry and the
+    # materialized/current joins instead of a finite 2026-11-15 whitelist.
+    if "catalog/revisions/v19-2026-11-06.json" not in current.get("ordered_overlays",[]):
+        return ["historical v19 provenance absent from current overlays"]
     if current.get("decision_method_path")!="policies/selection-decision-v17.json": return ["decision policy not current"]
     model=load(root,current["materialized_catalog_path"])
     if model.get("revision_id")!=current["revision_id"]: errors.append("view revision differs from current")
@@ -78,8 +82,27 @@ def audit(root:Path=ROOT)->list[str]:
             model_record=known.get(row.get("model_id"))
             if model_record and model_record.get("portfolio_decision")!=row.get("portfolio_decision"): errors.append(f"{row.get('key')}: decision mismatch")
             if row.get("portfolio_decision") in ("select","conditional") and model_record and model_record.get("parameter_gate",{}).get("status")!="PASS_TOTAL_PARAMS_LT_150B" and not model_record.get("research_only_unknown_total_allow_conditional"): errors.append(f"{row.get('key')}: active unknown total")
+    q=load(root,current["priority_worklist_path"])
+    qmap={(x.get("asset_kind"),x.get("repo_id")):x for x in q.get("candidates",[]) if isinstance(x,dict)}
     for x in active:
-        if x.get("asset_kind")=="model" and x.get("parameter_gate",{}).get("status") not in ("PASS_TOTAL_PARAMS_LT_150B","OVER_150B_QUANT_RUNTIME_VERIFIED") and not (x.get("portfolio_decision")=="conditional" and x.get("research_only_unknown_total_allow_conditional") is True and x.get("parameter_gate",{}).get("status")=="UNVERIFIED_BLOCK_FINAL_LOCK" and x.get("download_approved") is False): errors.append(f"{x.get('repo_id')}: unverified active gate")
+        if x.get("asset_kind")!="model":
+            continue
+        g=x.get("parameter_gate",{}).get("status")
+        if g in ("PASS_TOTAL_PARAMS_LT_150B","OVER_150B_QUANT_RUNTIME_VERIFIED"):
+            continue
+        queue_row=qmap.get((x.get("asset_kind"),x.get("repo_id")),{})
+        stopped=(x.get("portfolio_decision")=="conditional"
+                 and g=="UNVERIFIED_BLOCK_FINAL_LOCK"
+                 and x.get("download_approved") is False
+                 and (x.get("research_only_unknown_total_allow_conditional") is True
+                      or (x.get("research_only_nonexecutable") is True
+                          and x.get("can_enter_approved_queue") is False))
+                 and queue_row.get("not_authorized") is True
+                 and queue_row.get("download_approved") is False
+                 and queue_row.get("research_only") is True
+                 and queue_row.get("can_enter_approved_queue") is False)
+        if not stopped:
+            errors.append(f"{x.get('repo_id')}: unverified active gate")
     q=load(root,current["priority_worklist_path"])
     a={(x["asset_kind"],x["repo_id"]) for x in active}
     b={(x["asset_kind"],x["repo_id"]) for x in q.get("candidates",[])}

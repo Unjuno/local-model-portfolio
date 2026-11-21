@@ -105,7 +105,8 @@ def verified_quant_exception(item: dict[str, Any], peak_limit: int = PEAK_LIMIT)
     return True
 
 
-def validate_model(item: dict[str, Any], threshold: int = BASELINE) -> list[str]:
+def validate_model(item: dict[str, Any], threshold: int = BASELINE,
+                   *, queue_block: dict[str, Any] | None = None) -> list[str]:
     errors: list[str] = []
     g = item.get("parameter_gate") or {}
     n, status = g.get("total_parameters"), g.get("status")
@@ -114,9 +115,49 @@ def validate_model(item: dict[str, Any], threshold: int = BASELINE) -> list[str]
     if not is_int(threshold) or threshold <= 0:
         raise ValueError("invalid baseline")
     if n is None:
+        # Some LoRA+parent sources have an exact *conservative upper bound*
+        # below 150B even though a complete tensor census is unavailable.
+        # This can justify research screening, NEVER a finalized source lock.
+        bound = g.get("conservative_parent_plus_adapter_upper_bound",
+                      g.get("conservative_parent_plus_adapter_upper"))
+        bounding_method_documented = (
+            g.get("screen_is_conservative_conditional_upper_bound_not_exact_total") is True
+            or g.get("upper_bound_based_on_min_1bit_per_weight") is True)
+        bounded_research_only = (
+            status == LOW
+            and is_int(bound) and 0 < bound < threshold
+            and bounding_method_documented
+            and item.get("portfolio_decision") == "conditional"
+            and item.get("research_only_nonexecutable") is True
+            and item.get("download_ready") is False
+            and item.get("download_approved") is False
+            and (g.get("allow_final_lock") is False
+                 or g.get("fully_licensed") is False))
+        if bounded_research_only:
+            return errors
+
         if status != UNKNOWN:
             errors.append(f"{rid}: unknown total must block acquisition")
-        if active and not (item.get("portfolio_decision") == "conditional" and item.get("research_only_unknown_total_allow_conditional") is True and item.get("download_approved") is False and g.get("research_screening_exception") == "CONDITIONAL_RESEARCH_ONLY_NON_EXECUTABLE"):
+        modern_marker = (item.get("research_only_nonexecutable") is True
+                         and item.get("can_enter_approved_queue") is False)
+        old_marker = (item.get("research_only_unknown_total_allow_conditional") is True
+                      and g.get("research_screening_exception") ==
+                          "CONDITIONAL_RESEARCH_ONLY_NON_EXECUTABLE")
+        # Historical Kumo-Anomaly has an explicit model-level research marker
+        # but no old exception string. A *matching exact current queue* that
+        # is research-only, unapproved, and not approvable is required.
+        queue_marker = (
+            item.get("research_only_unknown_total_allow_conditional") is True
+            and isinstance(queue_block, dict)
+            and queue_block.get("repo_id") == rid
+            and queue_block.get("research_only") is True
+            and queue_block.get("can_enter_approved_queue") is False
+            and queue_block.get("download_approved") is False
+            and queue_block.get("not_authorized") is True)
+        if (active and not (
+                item.get("portfolio_decision") == "conditional"
+                and item.get("download_approved") is False
+                and (modern_marker or old_marker or queue_marker))):
             errors.append(f"{rid}: unknown total requires explicit non-executable research marker")
         return errors
     if not is_int(n) or n < 0:
@@ -154,6 +195,10 @@ def audit(root: Path = ROOT) -> list[str]:
     items = portfolio.get("items")
     if not isinstance(items, list):
         return ["missing items"]
+    queue = load_json(root, current["priority_worklist_path"])
+    strict_queue = {
+        (x.get("asset_kind"),x.get("repo_id")):x
+        for x in queue.get("candidates",[]) if isinstance(x,dict)}
     ids: set[tuple[str, str]] = set()
     models: dict[str, dict[str, Any]] = {}
     for item in items:
@@ -169,7 +214,8 @@ def audit(root: Path = ROOT) -> list[str]:
             errors.append(f"duplicate: {key}")
         ids.add(key)
         if kind == "model":
-            errors.extend(validate_model(item))
+            errors.extend(validate_model(
+                item, queue_block=strict_queue.get(("model",rid))))
             models[rid.lower()] = item
         elif kind == "dataset":
             if item.get("parameter_gate", {}).get("status") != "NOT_APPLICABLE_TO_DATASET":

@@ -87,7 +87,8 @@ def verify()->dict:
     assert b["nominal_source_reference_bytes"]==3_630_126_586_458
     assert b["nominal_cap_scenario_after_floor_margin_bytes"]==(4_000_000_000_000-200_000_000_000-b["nominal_plan_cap_bytes"])==159_409_767_827
     assert b["nominal_source_scenario_after_floor_margin_bytes"]==(4_000_000_000_000-200_000_000_000-b["nominal_source_reference_bytes"])==169_873_413_542
-    assert b["physical_disk_verified"] is False and b["physical_free_bytes"] is None and b["complete_offline_archive_bytes"] is None
+    assert b["physical_disk_total_bytes"] is None and b["physical_free_bytes"] is None and b["complete_offline_archive_bytes"] is None
+    assert b["storage_fit_verified"] is False
     assert not any(x["download_approved"] for x in all_items.values())
     assert not q["approved"] and not q["download_enabled"] and not p["download_enabled"]
     assert not a["download_authorized"] and not t["approved"] and not t["download_enabled"]

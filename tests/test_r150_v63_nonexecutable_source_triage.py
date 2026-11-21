@@ -56,7 +56,13 @@ class R150SourceSafety(unittest.TestCase):
   self.assertEqual(q["approval_controls"]["entries_approved"],0)
   self.assertFalse(q["approval_controls"]["download_enabled"])
   self.assertTrue(q["canonical_235_tracked_188_active_unchanged"])
-  self.assertEqual(len(q["priority_phases"]),5)
-  self.assertEqual(q["priority_phases"][1]["repo_ids"],["tencent/WeMM-Video-2B"])
-  self.assertEqual(q["priority_phases"][1]["publisher_reference_bytes_exact"],6590699556)
+  phases={x["phase"]:x for x in q["priority_phases"]}
+  self.assertEqual(len(phases),6)
+  self.assertEqual(phases["P0B_NEW_ULTRATINY_TIMESERIES"]["repo_ids"],
+                   ["mistralai/Timestral-5M"])
+  self.assertEqual(phases["P0B_NEW_ULTRATINY_TIMESERIES"]["publisher_reference_bytes_exact"],20854471)
+  self.assertEqual(phases["P1_NEW_COMPACT_VIDEO_AUDIT_ONLY"]["repo_ids"],
+                   ["tencent/WeMM-Video-2B"])
+  self.assertEqual(phases["P1_NEW_COMPACT_VIDEO_AUDIT_ONLY"]["publisher_reference_bytes_exact"],6590699556)
+  self.assertTrue(all(x["download_approved"] is False for x in phases.values()))
 if __name__ == "__main__": unittest.main()

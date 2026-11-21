@@ -41,6 +41,31 @@ def normalized(path: str, n: int, sha: str | None, blob: str | None,
             "git_blob_sha1": blob if normal_git else None}
 
 
+def normalized_historical_publisher(path: str, n: int, sha: str | None,
+                                    blob: str | None, *, kind: str | None = None) -> dict:
+    """Map publisher-origin NTFS-incompatible ':' without claiming it was fetched.
+
+    The metadata retains publisher_relative_path and byte/hash identity. This
+    is only for immutable historical publisher inventories: interactive paths
+    still go through normalized(), which rejects colon, traversal and symlinks.
+    Actual owner disks are never modified. A future Windows acquisition must
+    use this reversible mapping, not silently write an illegal ':' filename.
+    """
+    if ":" not in path:
+        return normalized(path,n,sha,blob,kind=kind)
+    if not isinstance(path,str) or path.startswith("/") or "\\" in path or "\x00" in path:
+        raise ValueError("unsafe publisher source path")
+    if any(seg in ("", ".", "..") for seg in path.split("/")):
+        raise ValueError("path traversal in publisher name")
+    if path.split("/")[0].endswith(":") or (len(path.split("/")[0])==2 and path[1]==":"):
+        raise ValueError("drive-letter publisher source path")
+    portable = path.replace("%", "%25").replace(":", "%3A")
+    x = normalized(portable,n,sha,blob,kind=kind)
+    x["publisher_relative_path"] = path
+    x["portable_path_encoding"] = "PERCENT_ESCAPE_PERCENT_THEN_COLON"
+    return x
+
+
 def build_index(catalog: dict, v27: dict, r64: dict, r48: dict) -> dict:
     active = [x for x in catalog["items"] if x["portfolio_decision"] in ("select", "conditional")]
     if catalog["revision_id"] != "v32-20261114" or len(active) != 135:
@@ -61,7 +86,7 @@ def build_index(catalog: dict, v27: dict, r64: dict, r48: dict) -> dict:
                        "files": files, "evidence": origin}
 
     for row in v27["items"]:
-        selected = [normalized(f["path"], f["bytes"], f.get("sha256"),
+        selected = [normalized_historical_publisher(f["path"], f["bytes"], f.get("sha256"),
                                f.get("git_blob_sha1"), kind=f.get("identity_kind"))
                     for f in row["files"]]
         put(row["asset_kind"], row["repo_id"], row["source_revision"],

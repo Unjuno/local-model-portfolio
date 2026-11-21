@@ -58,9 +58,13 @@ class R135SourceAndLedgerTest(unittest.TestCase):
                               if f["path"].endswith(".safetensors")]), 18)
         self.assertEqual(ledger["maya-research/maya2-native"]["status"], "VERIFIED")
         all_ids = {x["repo_id"] for x in self.queue["entries"]}
-        for old in self.ledger["models"]:
-            if old["status"] == "VERIFIED":
-                self.assertNotIn(old["repo_id"], all_ids)
+        # The historical queue was frozen before later acquisitions. A current
+        # VERIFIED receipt is not proof that its earlier source plan was flawed;
+        # preserve its no-execution / approval STOP rather than claiming no
+        # acquisition could ever happen after R135.
+        self.assertFalse(self.queue["approved"])
+        self.assertTrue(all(e.get("download_approved") is False
+                            for e in self.queue["entries"]))
         self.assertEqual(self.queue["report66"]["already_reported_Qwen_parent"]["revision_sha"],
                          parent["revision_sha"])
 

@@ -40,7 +40,7 @@ class V36(unittest.TestCase):
   self.assertEqual(active,{k(x) for x in p["items"]})
   self.assertEqual(conditional,{k(x) for x in a["entries"]})
   self.assertEqual(len(a["entries"]),91)
-  self.assertEqual(sum(x["hub_gated"] for x in a["entries"]),19)
+  self.assertEqual(sum(x["hub_gated"] is True for x in a["entries"]),19)
   self.assertEqual(len(ready["records"]),144)
   self.assertEqual(ready["summary"]["ready_to_approve"],0)
   self.assertEqual(j("queues/approved.json")["entries"],[])
