@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "ledger_id": "2026-11-19-v48-execution",
-  "generated_at": "2026-11-21T11:30:37.465020+00:00",
+  "generated_at": "2026-11-21T11:40:47.479074+00:00",
   "canonical_revision": "v48-20261118",
   "source_plan": "queues/proposed-v48-r113-source-pinned-15.json",
   "policy": {
@@ -14,14 +14,14 @@
     "unclear_license": "HOLD"
   },
   "summary": {
-    "models_total": 96,
-    "models_verified": 95,
+    "models_total": 97,
+    "models_verified": 96,
     "models_partial": 0,
     "models_failed": 0,
     "models_held": 1,
-    "files_verified_total": 1353,
-    "bytes_verified_total": 1726868208784,
-    "minimum_free_bytes_observed": 1225345126400,
+    "files_verified_total": 1370,
+    "bytes_verified_total": 1752033357565,
+    "minimum_free_bytes_observed": 1218980286464,
     "minimum_free_floor_bytes": 200000000000,
     "free_floor_maintained": true
   },
@@ -3765,6 +3765,57 @@
       "started_at": "2026-11-21T11:29:27.285887+00:00",
       "finished_at": "2026-11-21T11:30:10.524270+00:00",
       "free_bytes_after": 1225345126400
+    },
+    {
+      "repo_id": "JetBrains/Mellum2.1-12B-A2.5B-Thinking-MTP",
+      "revision_sha": "d55846102dd1c047e95d4841070f88290227c3b7",
+      "source_manifest": "local-discovered/v59-JetBrains__Mellum2.1-12B-A2.5B-Thinking-MTP.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 17,
+      "files_verified": 17,
+      "source_bytes": 25165148781,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 7
+      },
+      "file_status_counts": {
+        "VERIFIED": 17
+      },
+      "weight_files_sha256": [
+        {
+          "path": "mellum21_summary.png",
+          "sha256": "2a86585d0f7075c56a9a3ae7cd582561dc7020aff87e094a065651d5d4f92324"
+        },
+        {
+          "path": "model-00001-of-00005.safetensors",
+          "sha256": "f5ccf8012c7d44fd2598325bf2482b8fc21792ef888de68f9ca8c9053c2e022f"
+        },
+        {
+          "path": "model-00002-of-00005.safetensors",
+          "sha256": "266beea6f34dea9c86414d8bf8cb35c0f4a53330731d99ed41ec666390758e39"
+        },
+        {
+          "path": "model-00003-of-00005.safetensors",
+          "sha256": "da9a04fb6ea121f71e30920c7657b889ca0078aea57d878e5cb768ebb3e4483a"
+        },
+        {
+          "path": "model-00004-of-00005.safetensors",
+          "sha256": "32f27ab7f38ff5d98ac3d50dabb57ab8a55a8aa552febd42c2a5b01f4116262a"
+        },
+        {
+          "path": "model-00005-of-00005.safetensors",
+          "sha256": "d8bbb9b829cb3279e23f59af55bf68ec00cc8ad30923c227d8b13c7d831e6b3b"
+        },
+        {
+          "path": "model-mtp.safetensors",
+          "sha256": "89a2f2454b185b97b809eef2b2a2c32300c6cf550fdbde6430a1c2e8290e025c"
+        }
+      ],
+      "started_at": "2026-11-21T11:07:50.773372+00:00",
+      "finished_at": "2026-11-21T11:40:38.675288+00:00",
+      "free_bytes_after": 1218980286464
     },
     {
       "repo_id": "mistralai/Mistral-Small-4-119B-2603",
