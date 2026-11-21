@@ -21,15 +21,28 @@ REF = "user directive 2026-11-19: continuous open-weight acquisition to D drive"
 
 
 def main():
-    bad = {}
+    # Latest VERIFIED receipt supersedes older PARTIAL receipts for the same
+    # exact repo/revision, so already-repaired shards are not fetched again.
+    by_id = {}
     for p in LEDGERS:
         if not p.exists():
             continue
         for e in json.loads(p.read_text(encoding="utf-8")).get("entries", []):
-            files = [f for f in e.get("files", [])
-                     if f.get("status") not in ("VERIFIED", "DEDUP_VERIFIED")]
-            if files:
-                bad[e["repo_id"]] = {f["path"] for f in files}
+            key = (e.get("repo_id"), e.get("revision_sha"))
+            old = by_id.get(key)
+            if old is None:
+                by_id[key] = e
+            elif e.get("status") == "VERIFIED" and old.get("status") != "VERIFIED":
+                by_id[key] = e
+            elif (e.get("status") != "VERIFIED" and old.get("status") != "VERIFIED"
+                  and str(e.get("finished_at", "")) > str(old.get("finished_at", ""))):
+                by_id[key] = e
+    bad = {}
+    for e in by_id.values():
+        files = [f for f in e.get("files", [])
+                 if f.get("status") not in ("VERIFIED", "DEDUP_VERIFIED")]
+        if files:
+            bad[e["repo_id"]] = {f["path"] for f in files}
     candidates, approvals = [], []
     for repo, paths in bad.items():
         mp = DISC / (repo.replace("/", "__") + ".json")
