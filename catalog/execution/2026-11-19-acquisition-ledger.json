@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "ledger_id": "2026-11-19-v48-execution",
-  "generated_at": "2026-11-21T16:43:06.279598+00:00",
+  "generated_at": "2026-11-21T21:26:46.130850+00:00",
   "canonical_revision": "v48-20261118",
   "source_plan": "queues/proposed-v48-r113-source-pinned-15.json",
   "policy": {
@@ -14,14 +14,14 @@
     "unclear_license": "HOLD"
   },
   "summary": {
-    "models_total": 100,
-    "models_verified": 99,
+    "models_total": 110,
+    "models_verified": 109,
     "models_partial": 0,
     "models_failed": 0,
     "models_held": 1,
-    "files_verified_total": 1478,
-    "bytes_verified_total": 1879994309866,
-    "minimum_free_bytes_observed": 1167311646720,
+    "files_verified_total": 1665,
+    "bytes_verified_total": 1948538480799,
+    "minimum_free_bytes_observed": 1098749452288,
     "minimum_free_floor_bytes": 200000000000,
     "free_floor_maintained": true
   },
@@ -3838,6 +3838,456 @@
       "started_at": "2026-11-21T16:12:53.604426+00:00",
       "finished_at": "2026-11-21T16:42:56.678749+00:00",
       "free_bytes_after": 1167311646720
+    },
+    {
+      "repo_id": "mistralai/Timestral-28M",
+      "revision_sha": "49b26409ac87b5935539a5d8ffe7f397b720db47",
+      "source_manifest": "local-discovered/v62-mistralai__Timestral-28M.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "other",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 111307038,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 5,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "dfc83c6220937ce5fc6687b35a4df94cd25e28a2cfe6fb92a23dad6301b2015d"
+        }
+      ],
+      "started_at": "2026-11-21T18:16:05.979906+00:00",
+      "finished_at": "2026-11-21T18:16:36.483998+00:00",
+      "free_bytes_after": 1167193882624
+    },
+    {
+      "repo_id": "Cactus-Compute/mirage",
+      "revision_sha": "3d03cee88c0acbe4e71b94b567ab14e6e55f40c9",
+      "source_manifest": "local-discovered/v62-Cactus-Compute__mirage.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 237985863,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "mirage.cact",
+          "sha256": "4249a0f7515272ff76b9414bec17d7e7daf84b15b66c7fb4f17fce1e66f9f237"
+        },
+        {
+          "path": "mirage.safetensors",
+          "sha256": "6ba97c5c1bef661c9b0c80782135682b38b4312fb33e0b645c93c10604bb16cd"
+        }
+      ],
+      "started_at": "2026-11-21T18:16:36.542975+00:00",
+      "finished_at": "2026-11-21T18:17:03.092825+00:00",
+      "free_bytes_after": 1166955855872
+    },
+    {
+      "repo_id": "KittenML/kitten-tts-2-pico",
+      "revision_sha": "a5632deac7d92f6178db814d933eba746a97f2dc",
+      "source_manifest": "local-discovered/v62-KittenML__kitten-tts-2-pico.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 33,
+      "files_verified": 33,
+      "source_bytes": 285879877,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 8,
+        "sha256-vs-publisher": 25
+      },
+      "file_status_counts": {
+        "VERIFIED": 33
+      },
+      "weight_files_sha256": [
+        {
+          "path": "g2p/g2p_bart_en_us/model.safetensors",
+          "sha256": "dc4a02e62d4fcb4bb4097ecf00db89b8e1a12a549a52ab6adfbba220b80a55c5"
+        },
+        {
+          "path": "kitten_tts_2_pico_de.safetensors",
+          "sha256": "f4d760d4a9a419847ef364a8add13b1136fb27cd6183ecf6430e456c8c6de748"
+        },
+        {
+          "path": "kitten_tts_2_pico_de_int4.onnx",
+          "sha256": "d74476524bc0e241b376544e9f39d2cec34992eb322e451d239161c89f521e4d"
+        },
+        {
+          "path": "kitten_tts_2_pico_en.safetensors",
+          "sha256": "b3bf0e1381ad0642fc294ccdd8de13009452695571b648b3d30d265a6bcfd5d5"
+        },
+        {
+          "path": "kitten_tts_2_pico_en_int4.onnx",
+          "sha256": "9751511ba5d5311dd8557967af92bf437f57dfe490bf8a2c135d8f85359b4f58"
+        },
+        {
+          "path": "kitten_tts_2_pico_es.safetensors",
+          "sha256": "da50b6a13bdc3180090681eabb3a971887f6158f9207211921cca3be0d0aacdf"
+        },
+        {
+          "path": "kitten_tts_2_pico_es_int4.onnx",
+          "sha256": "53b72529e05b3bd92c754185cada01b9414947a6795a24540d792dcf2b7ad92c"
+        },
+        {
+          "path": "kitten_tts_2_pico_fr.safetensors",
+          "sha256": "c33ef596048565d58f76e433894967d68d6af8c2c37d5217fdc2dc4f2f140818"
+        },
+        {
+          "path": "kitten_tts_2_pico_fr_int4.onnx",
+          "sha256": "6932f046d24dcc294c039f4a9b1605e609d66fd764996b9022f67181bbd4615a"
+        },
+        {
+          "path": "kitten_tts_2_pico_hi.safetensors",
+          "sha256": "12430055ddb48c754d534075151cda31fbac5cb3c7c3b9887ad51c8d2ef2fadf"
+        },
+        {
+          "path": "kitten_tts_2_pico_hi_int4.onnx",
+          "sha256": "a1a010354b3e3f254dcc4a2d63e2059d40c4185023c4fb7fdf042332e2cf4c3b"
+        },
+        {
+          "path": "kitten_tts_2_pico_it.safetensors",
+          "sha256": "0f257bbbd2e9356d119e0a055ccf4db1b072f3ee7e1a91a68368e09971e90574"
+        },
+        {
+          "path": "kitten_tts_2_pico_it_int4.onnx",
+          "sha256": "815a01b7ab3abdae2b2f862fdb916c345c1ac7d0a676eff3da9c609cdd4211af"
+        },
+        {
+          "path": "kitten_tts_2_pico_pt.safetensors",
+          "sha256": "d9169249be86ed76474acfc6271faab70de628916138cc5954232c804b753bfe"
+        },
+        {
+          "path": "kitten_tts_2_pico_pt_int4.onnx",
+          "sha256": "855485098ed1e5151109b6683358c2a1071308d57e98697a1415ba93a17eed2c"
+        },
+        {
+          "path": "kitten_tts_2_pico_ru.safetensors",
+          "sha256": "6bc45bc826598009bb4e4db772b8e897d12cbfc1d6c5a3373abe1ee722d54c0d"
+        },
+        {
+          "path": "kitten_tts_2_pico_ru_int4.onnx",
+          "sha256": "cc9f192600bfb54d320aa3e08c0eb214d2d029adff290a6f84b2368d51ee2024"
+        },
+        {
+          "path": "voices_de.npz",
+          "sha256": "fc4c7a8548f54e0378aa0d5e1b134a4d13ae9142b095edb2340248dc99a0398f"
+        },
+        {
+          "path": "voices_en.npz",
+          "sha256": "48496124eef320b70ccf741d871e401889597d5e14e15e6b2116bdc6100f1a0c"
+        },
+        {
+          "path": "voices_es.npz",
+          "sha256": "832e908c27bc7f8e63dbd96e2a9b15c8e45c7c67b9fe2aff27435887ea2e7c07"
+        },
+        {
+          "path": "voices_fr.npz",
+          "sha256": "c5bc25dbe99e0e4823ff52a51edec5bfa06071790b048a928a020e3fbbd93e34"
+        },
+        {
+          "path": "voices_hi.npz",
+          "sha256": "4d79ee747ab9d066dfb825e2125a131af0fa78f921535f839aef0f45a235c701"
+        },
+        {
+          "path": "voices_it.npz",
+          "sha256": "a43bcb3ab0b023145645bfd86ff2df3a6d4a254f345bfde8eae49ef209475374"
+        },
+        {
+          "path": "voices_pt.npz",
+          "sha256": "8fcc5244c6e9a6ba48e7c80bf2de490203b75729f2e905abaabce95d74f36ad7"
+        },
+        {
+          "path": "voices_ru.npz",
+          "sha256": "76f67e934c4400dbc0f10efb135e8c9011781d0f23286bd45a0a9d29a6c43c3d"
+        }
+      ],
+      "started_at": "2026-11-21T18:17:03.174054+00:00",
+      "finished_at": "2026-11-21T18:18:27.692562+00:00",
+      "free_bytes_after": 1166669283328
+    },
+    {
+      "repo_id": "apple/FastFrames-S",
+      "revision_sha": "aa099efcedf1b65447106bf9004cde75821f7387",
+      "source_manifest": "local-discovered/v62-apple__FastFrames-S.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apple-amlr",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 947927443,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "fastframes-s/kv_refiner.safetensors",
+          "sha256": "b4f36d00effd78a60435526dcc2b1a0e6bbed0f09621ee8ab4019460769a7bbb"
+        },
+        {
+          "path": "fastframes-s/pixel_decoder.safetensors",
+          "sha256": "815682581f6376d2cdacc60568facf1bd979112091e4157fb6c00ae946b89b32"
+        }
+      ],
+      "started_at": "2026-11-21T18:18:27.750148+00:00",
+      "finished_at": "2026-11-21T18:20:13.849250+00:00",
+      "free_bytes_after": 1165721227264
+    },
+    {
+      "repo_id": "AuroraAI-Research/Aurora2-400M-A20M",
+      "revision_sha": "f2e561d38b0c0c35e910c8a519f553b2831ffad4",
+      "source_manifest": "local-discovered/v62-AuroraAI-Research__Aurora2-400M-A20M.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 10,
+      "files_verified": 10,
+      "source_bytes": 1599571502,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 10
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "508b7c3f991db2787bab100a4d6b817789d25ed262ff0c0cdbab62e69d3a1737"
+        }
+      ],
+      "started_at": "2026-11-21T18:20:13.932118+00:00",
+      "finished_at": "2026-11-21T18:22:59.880272+00:00",
+      "free_bytes_after": 1164121489408
+    },
+    {
+      "repo_id": "internlm/Intern-Decision-0.8B",
+      "revision_sha": "42457fafd13d10d0b0d9be46cb30a23caa409994",
+      "source_manifest": "local-discovered/v62-internlm__Intern-Decision-0.8B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 20,
+      "files_verified": 20,
+      "source_bytes": 1734731370,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 16,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 20
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-language-0001-save_rank0.safetensors",
+          "sha256": "4acc4bd67febb2466ef7c282099fd05ee0ba47b853b6c49b9e763fb642957820"
+        },
+        {
+          "path": "model-projector-0001-save_rank0.safetensors",
+          "sha256": "7f81b4ab1b4434c4d0322c849525337c1746f0ca4b9beac107a94e23b2952fee"
+        },
+        {
+          "path": "model-vision-0001-save_rank0.safetensors",
+          "sha256": "bf8e03e3be40018e51037b46bb8ebe0471e2aceb394ad988632cce2c87d2e177"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "94a639c4b33b192cc5a22cd3d7f0aaf6d97efa9577957a0382b55292ca4f0f00"
+        }
+      ],
+      "started_at": "2026-11-21T18:22:59.947005+00:00",
+      "finished_at": "2026-11-21T18:26:54.839834+00:00",
+      "free_bytes_after": 1162385702912
+    },
+    {
+      "repo_id": "LiquidAI/LFM3-VL-2B",
+      "revision_sha": "f83d2b0a2296aaa277f394990a9b8b949ddf9691",
+      "source_manifest": "local-discovered/v62-LiquidAI__LFM3-VL-2B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "other",
+      "files_total": 18,
+      "files_verified": 18,
+      "source_bytes": 3854651108,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 16,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 18
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "a9bb8b1c159c9d6c3007bc1c7ad8018b599f759d97da2701714e37426283e131"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "a39eed58008cbcbc09e5b629b81338a654269c64cd13348aaa6090f4db75c7e7"
+        }
+      ],
+      "started_at": "2026-11-21T18:26:54.897738+00:00",
+      "finished_at": "2026-11-21T18:33:33.346458+00:00",
+      "free_bytes_after": 1158530109440
+    },
+    {
+      "repo_id": "saidutta69/LFM3-VL-2B-heretic",
+      "revision_sha": "f4cf2cfb5b1289ca4ca10c6c71eb17d147c8c795",
+      "source_manifest": "local-discovered/v62-saidutta69__LFM3-VL-2B-heretic.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "other",
+      "files_total": 25,
+      "files_verified": 25,
+      "source_bytes": 5334098126,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 21,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 25
+      },
+      "weight_files_sha256": [
+        {
+          "path": "LFM3-VL-2B-heretic-Q4_K_M.gguf",
+          "sha256": "d44c819c8146025f254c3c530a4b4365c13ff0f4ed21d82e73ca9fb4c1e84de0"
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-mmproj-F16.gguf",
+          "sha256": "1c8d2e7085db355f3e5a9673914154350124ee27b58b88e2eb4063034c228bf6"
+        },
+        {
+          "path": "model.safetensors",
+          "sha256": "91d527edb09f1e382172c9bf4028247676f92b6c1545f1e4d6b8920b4eba906a"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "a39eed58008cbcbc09e5b629b81338a654269c64cd13348aaa6090f4db75c7e7"
+        }
+      ],
+      "started_at": "2026-11-21T18:33:33.408653+00:00",
+      "finished_at": "2026-11-21T18:52:59.282830+00:00",
+      "free_bytes_after": 1153193041920
+    },
+    {
+      "repo_id": "OpenMOSS-Team/MOSS-VL-Realtime",
+      "revision_sha": "d1f71a588deaf2b9b9cea7c6fff66cb10847cc86",
+      "source_manifest": "local-discovered/v62-OpenMOSS-Team__MOSS-VL-Realtime.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 20,
+      "files_verified": 20,
+      "source_bytes": 22687497344,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 14,
+        "sha256-vs-publisher": 6
+      },
+      "file_status_counts": {
+        "VERIFIED": 20
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00005.safetensors",
+          "sha256": "3fe2d46a92e3c036e8dfbb2519f65415f8f1ab4f731ffdcb9c8bbff4e66fc3d6"
+        },
+        {
+          "path": "model-00002-of-00005.safetensors",
+          "sha256": "18f3579907933bad721053b3ac405c51045db4539fedcc7ee3c8db79e79f70e5"
+        },
+        {
+          "path": "model-00003-of-00005.safetensors",
+          "sha256": "cecf1e02afe5c7250bb43d6b6e99c7cb430a02afc07a2d697ab1dc4b5f784567"
+        },
+        {
+          "path": "model-00004-of-00005.safetensors",
+          "sha256": "57d794a266a1283d209d054114d9888a6a6b36a0af87fbf314c92b76c89dc294"
+        },
+        {
+          "path": "model-00005-of-00005.safetensors",
+          "sha256": "34009172ba732eb447caf1293126bba35eb934a622677ac7c24bb2d6af462b0d"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "e7bbd0f9784004df51aca562befc3c7a8f294b4045aa8685536c35804c9aa493"
+        }
+      ],
+      "started_at": "2026-11-21T18:52:59.411456+00:00",
+      "finished_at": "2026-11-21T20:35:36.621443+00:00",
+      "free_bytes_after": 1130504851456
+    },
+    {
+      "repo_id": "nvidia/Cosmos3-Nano-Sim-Transfer",
+      "revision_sha": "45510d5b8cefa338b7abc01eb702cf1e9cdf6742",
+      "source_manifest": "local-discovered/v62-nvidia__Cosmos3-Nano-Sim-Transfer.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "other",
+      "files_total": 44,
+      "files_verified": 44,
+      "source_bytes": 31750521262,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 36,
+        "sha256-vs-publisher": 8
+      },
+      "file_status_counts": {
+        "VERIFIED": 44
+      },
+      "weight_files_sha256": [
+        {
+          "path": "text_tokenizer/tokenizer.json",
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00001-of-00006.safetensors",
+          "sha256": "85b1d981d502adb1382eb9340cfef66987c1c1a19a93621ef58238a4e5664e22"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00002-of-00006.safetensors",
+          "sha256": "6225ebe8201999e6f2a6ff05237c7098a188f1671f427ef82653932638907981"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00003-of-00006.safetensors",
+          "sha256": "2b5d130c62fac7d8a1da1d47a59897256e1602a018998f144da10abd9bc57937"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00004-of-00006.safetensors",
+          "sha256": "052b330d8dce1536195b12dbf697411803292ee6f7f1e7503eef87cf7fe29eb7"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00005-of-00006.safetensors",
+          "sha256": "3f7cb7cb80a661d2a931f57ae23de60e94cca569d8755d48953fef9d50ecc9d6"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00006-of-00006.safetensors",
+          "sha256": "bc498faa025d478aac09725d67735227a87f2b3a01d90be39fab431ae7d0d28f"
+        },
+        {
+          "path": "vae/diffusion_pytorch_model.safetensors",
+          "sha256": "230496cb59ff85bc9c040487737c4062480cb61c71e697b197b4c30142f2a0da"
+        }
+      ],
+      "started_at": "2026-11-21T20:35:36.863103+00:00",
+      "finished_at": "2026-11-21T21:26:01.915983+00:00",
+      "free_bytes_after": 1098749452288
     },
     {
       "repo_id": "mistralai/Mistral-Small-4-119B-2603",

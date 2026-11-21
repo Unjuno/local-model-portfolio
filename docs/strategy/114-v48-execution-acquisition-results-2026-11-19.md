@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 100 (verified 99, partial 0, failed 0, held 1)
-- Verified files: 1478
-- Verified source bytes: 1879994309866
-- Minimum observed free bytes: 1167311646720 (200 GB floor maintained: True)
+- Models: 110 (verified 109, partial 0, failed 0, held 1)
+- Verified files: 1665
+- Verified source bytes: 1948538480799
+- Minimum observed free bytes: 1098749452288 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -105,6 +105,16 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `CohereLabs/aya_dataset` | `f9ea04583f02a8f86404ff6c58bf75fe637df8a2` | VERIFIED | 6/6 | apache-2.0 |
 | `JetBrains/Mellum2.1-12B-A2.5B-Thinking-MTP` | `d55846102dd1c047e95d4841070f88290227c3b7` | VERIFIED | 17/17 | apache-2.0 |
 | `tencent/Hy-SimulMT-30B-A3B` | `56c233df75bf09e386aa6282b01730b461afc83f` | VERIFIED | 53/53 | apache-2.0 |
+| `mistralai/Timestral-28M` | `49b26409ac87b5935539a5d8ffe7f397b720db47` | VERIFIED | 6/6 | other |
+| `Cactus-Compute/mirage` | `3d03cee88c0acbe4e71b94b567ab14e6e55f40c9` | VERIFIED | 5/5 | apache-2.0 |
+| `KittenML/kitten-tts-2-pico` | `a5632deac7d92f6178db814d933eba746a97f2dc` | VERIFIED | 33/33 | apache-2.0 |
+| `apple/FastFrames-S` | `aa099efcedf1b65447106bf9004cde75821f7387` | VERIFIED | 6/6 | apple-amlr |
+| `AuroraAI-Research/Aurora2-400M-A20M` | `f2e561d38b0c0c35e910c8a519f553b2831ffad4` | VERIFIED | 10/10 | apache-2.0 |
+| `internlm/Intern-Decision-0.8B` | `42457fafd13d10d0b0d9be46cb30a23caa409994` | VERIFIED | 20/20 | apache-2.0 |
+| `LiquidAI/LFM3-VL-2B` | `f83d2b0a2296aaa277f394990a9b8b949ddf9691` | VERIFIED | 18/18 | other |
+| `saidutta69/LFM3-VL-2B-heretic` | `f4cf2cfb5b1289ca4ca10c6c71eb17d147c8c795` | VERIFIED | 25/25 | other |
+| `OpenMOSS-Team/MOSS-VL-Realtime` | `d1f71a588deaf2b9b9cea7c6fff66cb10847cc86` | VERIFIED | 20/20 | apache-2.0 |
+| `nvidia/Cosmos3-Nano-Sim-Transfer` | `45510d5b8cefa338b7abc01eb702cf1e9cdf6742` | VERIFIED | 44/44 | other |
 | `mistralai/Mistral-Small-4-119B-2603` | `a11f36bebf709121056b1dbcc943d1c6afbe494d` | VERIFIED | 21/21 | apache-2.0 |
 | `Qwen/Qwen3-Coder-Next` | `a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb` | VERIFIED | 49/49 | apache-2.0 |
 | `Wan-AI/Wan2.2-TI2V-5B` | `921dbaf3f1674a56f47e83fb80a34bac8a8f203e` | VERIFIED | 23/23 | apache-2.0 |
