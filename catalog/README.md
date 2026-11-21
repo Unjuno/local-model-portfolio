@@ -1,5 +1,11 @@
 # 資産台帳
 
+## 現行v63／R148（2026-11-22）：取得済み99件のID整合と不正自動承認防止
+
+[CURRENT](CURRENT.json)：**235登録／188有効、SELECT55／CONDITIONAL133**。[取得台帳99件差分とRFD4重み相違](research/2026-11-22-r148-ledger99-immutable-revision-drift.json)、[既保存4source49ファイル追加](../manifests/drafts/r148-2026-11-22-ledger99-four-untracked-trained-sources.candidate.json)、[研究・安全判断](../docs/strategy/148-v63-reconcile-99-acquisitions-and-block-implicit-approval.md)。全188アクティブは[取得STOP](readiness/v63-2026-11-22-r148-all188-gates.json)。Publisher SHAと所有者D現物の独立再ハッシュは分ける。再ダウンロード・追加承認0。
+
+---
+
 ## 現行v62・2026-11-22（v61以前は履歴）
 
 [CURRENT](CURRENT.json) →**231登録／184有効**、[Aurora2＋Mirage＋LFM3-VL親・Heretic改変原本](../docs/strategy/146-v62-rare-small-uncensored-vision-dual-master-selection.md)をCONDITIONAL4件追加。[新4repoの58 source file SHA](../manifests/drafts/r146-2026-11-22-aurora-mirage-lfm3-paired-source.candidate.json)、[全184STOP](readiness/v62-2026-11-22-r146-all184-gates.json)。旧227全て維持。publisher sourceのみ、owner HDD実測なし、今回重みDL/承認0。

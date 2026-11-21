@@ -2,7 +2,7 @@
 """Convert the canonical v59 R140 21-source queue into downloader manifests.
 
 Skips P3_LARGE_SOURCE_HOLD (canonical HOLD). Produces a plan and matching
-local approval entries with exact pinned revisions + publisher hashes.
+local UNAPPROVED review templates with exact pinned revisions + publisher hashes.\nNever infer license signoff or user approval from a historical directive.
 """
 import json
 from pathlib import Path
@@ -10,7 +10,7 @@ from pathlib import Path
 QUEUE = Path("queues/proposed-v59-r140-ledger76-next-21-deduplicated-sources.json")
 DISC = Path("D:/AI_VAULT/state/discovered")
 PLAN = DISC / "plan-v59.json"
-APPROVAL = Path("D:/AI_VAULT/state/approved-v59.json")
+APPROVAL = DISC / "review-v59-UNAPPROVED.json"
 SKIP_PHASE = "P3_LARGE_SOURCE_HOLD"
 REF = "v59 R140 canonical 21-source queue; user directive 2026-11-19 continuous acquisition to D drive"
 
@@ -55,17 +55,17 @@ def main():
                       "bytes": m["selected_file_bytes"], "manifest": str(mp),
                       "phase": e.get("phase")})
         approvals.append({"repo_id": repo, "revision_sha": rev,
-                          "approved": True, "download_enabled": True,
-                          "approved_by_user": True, "license_text_reviewed": True,
-                          "parent_dependency_rights_reviewed": True,
-                          "nonstandard_license_permission_verified": True,
-                          "license": str(lic), "approval_ref": REF,
+                          "approved": False, "download_enabled": False,
+                          "approved_by_user": False, "license_text_reviewed": False,
+                          "parent_dependency_rights_reviewed": False,
+                          "nonstandard_license_permission_verified": False,
+                          "license": str(lic), "approval_ref": None,
                           "files": afiles})
     PLAN.write_text(json.dumps({"schema_version": 1, "source": str(QUEUE),
                                 "candidates": cands}, indent=2, ensure_ascii=False),
                     encoding="utf-8")
     APPROVAL.write_text(json.dumps({"schema_version": 1,
-                                    "authorization_source": REF,
+                                    "authorization_source": "UNAPPROVED_RESEARCH_SOURCE_REVIEW_ONLY",
                                     "entries": approvals}, indent=2, ensure_ascii=False),
                         encoding="utf-8")
     print(f"plan: {len(cands)} models, {sum(c['bytes'] for c in cands)} bytes")

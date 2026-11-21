@@ -1,0 +1,724 @@
+{
+  "schema_version": 1,
+  "revision_id": "v63-20261122",
+  "previous_revision_id": "v62-20261122",
+  "decision_date_jst": "2026-11-22",
+  "target_branch": "main",
+  "kind": "BACKFILL_FOUR_ALREADY_REPORTED_ACQUIRED_LEARNED_ARTIFACTS_ZERO_DUPLICATE_DOWNLOADS",
+  "previous_asset_count": 231,
+  "previous_active_count": 184,
+  "additions": [
+    {
+      "position": 232,
+      "asset_kind": "model",
+      "repo_id": "speechbrain/spkrec-ecapa-voxceleb",
+      "url": "https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb",
+      "group": "補助音声学習成果：ECAPA-TDNN話者照合・埋め込み",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Already reported VERIFIED original ECAPA speaker embedding and classifier learned state 89MB, not represented as independent model in v62. Supporting reusable first-party pretrained voice identity component for Dettato and related speaker/evidence workflows, not a generic LLM and not a new download.",
+      "quality_positive": "VoxCeleb1 cleaned author EER0.80% with VoxCeleb1+2 training, model publisher Apache2, ledger full 10-file receipt and two sha256 weights, no new bytes needed.",
+      "quality_negative": "Speaker identity recognition entails biometric consent/privacy risks, inference depends on SpeechBrain and legacy PyTorch .ckpt non-executable trusted environment, quality and user rights not independently measured. 0.8 EER is publisher benchmark.",
+      "risk_and_alternative_assessment": "No future release ban probability inferred. Ledger VERIFIED already reported at same immutable publisher revision; do not download again without owner SHA validation. Source selection and user legal rights not conflated.",
+      "evidence_date": "2026-11-22",
+      "evidence_kind": "EXISTING_99_LEDGER_VERIFIED_REPORT_PLUS_OFFICIAL_PUBLISHER_FULL_TREE_IMMUTABLE_SHA_AND_LEARNED_STATE_LINEAGE",
+      "evidence_urls": [
+        "https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb",
+        "https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb/tree/0f99f2d0ebe89ac095bcc5903c4dd8f72b367286"
+      ],
+      "observed_access": "official publisher ungated public, ledger VERIFIED historical report only",
+      "license_metadata": "Publisher Apache-2.0 license, VoxCeleb-derived data rights and biometric use case privacy restrictions require separate review.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "0f99f2d0ebe89ac095bcc5903c4dd8f72b367286",
+      "upstream_all_files_bytes_observed": 89133738,
+      "upstream_file_count_observed": 10,
+      "upstream_lfs_sha256_count_observed": 2,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 10,
+      "candidate_selected_source_file_bytes": 89133738,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 858,
+          "sha256": null,
+          "git_blob_sha1": "c79d72cc1197b4b32646fb55b18f4baf69a33dc1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 5377,
+          "sha256": null,
+          "git_blob_sha1": "6023cecccb30eba7ed77fea84a9e47d334dd3a6c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "classifier.ckpt",
+          "bytes": 5534328,
+          "sha256": "fd9e3634fe68bd0a427c95e354c0c677374f62b3f434e45b78599950d860d535",
+          "git_blob_sha1": "d6f70f222826ea5490bfad657373af3d6d2a08ba",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 51,
+          "sha256": null,
+          "git_blob_sha1": "2e8b3b4d97ae58d7daa78954a5c7f5b8abb42934",
+          "local_sha_verified": false
+        },
+        {
+          "path": "embedding_model.ckpt",
+          "bytes": 83316686,
+          "sha256": "0575cb64845e6b9a10db9bcb74d5ac32b326b8dc90352671d345e2ee3d0126a2",
+          "git_blob_sha1": "8ba959669e5570dbbf8076bc6b8a79555a81d5c4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "example1.wav",
+          "bytes": 104390,
+          "sha256": null,
+          "git_blob_sha1": "2d5abbd526328179f0516569cb9ff5ddd289a1fc",
+          "local_sha_verified": false
+        },
+        {
+          "path": "example2.flac",
+          "bytes": 39589,
+          "sha256": null,
+          "git_blob_sha1": "a38e3061f91ba51b02b7ef4c5fd4d088659c183d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "hyperparams.yaml",
+          "bytes": 1919,
+          "sha256": null,
+          "git_blob_sha1": "70e4cd0beb74ca08a2df9de6bd79d938670a4d15",
+          "local_sha_verified": false
+        },
+        {
+          "path": "label_encoder.txt",
+          "bytes": 128619,
+          "sha256": null,
+          "git_blob_sha1": "72c6fa7b170cbfd169df5e09326cd97febdf086a",
+          "local_sha_verified": false
+        },
+        {
+          "path": "mean_var_norm_emb.ckpt",
+          "bytes": 1921,
+          "sha256": null,
+          "git_blob_sha1": "1978c5e7f20d5ffd14c8a932a7e85a09816f3da9",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r148-2026-11-22-ledger99-four-untracked-trained-sources.candidate.json",
+      "parameter_gate": {
+        "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+        "total_parameters": null,
+        "evidence_kind": "Trained ECAPA ckpt and classifier weights count not independently enumerated in model metadata. Parameter limit final lock blocked despite small serialized bytes.",
+        "review_date": "2026-11-22",
+        "local_tensor_census_not_executed": true,
+        "note": "Trained ECAPA ckpt and classifier weights count not independently enumerated in model metadata. Parameter limit final lock blocked despite small serialized bytes."
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 232,
+        "category": "ALREADY_REPORTED_VERIFIED_UNTRACKED_LEARNED_SOURCE_BACKFILL",
+        "scenario_status": "FUTURE_DISTRIBUTION_RESTRICTION_HYPOTHESIS_ONLY"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "classifier.ckpt",
+          "config.json",
+          "embedding_model.ckpt",
+          "example1.wav",
+          "example2.flac",
+          "hyperparams.yaml",
+          "label_encoder.txt",
+          "mean_var_norm_emb.ckpt"
+        ],
+        "trained_state": "PRETRAINED_SPEECHBRAIN_ECAPA_SPEAKER_EMBEDDING_AND_CLASSIFIER",
+        "original_publisher_revision": "0f99f2d0ebe89ac095bcc5903c4dd8f72b367286",
+        "already_reported_acquired": true,
+        "acquisition_ledger_reference": "catalog/execution/2026-11-19-acquisition-ledger.json",
+        "dont_redownload_existing_verified_scope": true,
+        "owner_live_hash_rechecked_by_this_research": false,
+        "full_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 89133738,
+        "publisher_selected_source_bytes": 89133738,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": true,
+      "historical_acquisition_ledger_revision": "0f99f2d0ebe89ac095bcc5903c4dd8f72b367286"
+    },
+    {
+      "position": 233,
+      "asset_kind": "model",
+      "repo_id": "kyutai/mimi",
+      "url": "https://huggingface.co/kyutai/mimi",
+      "group": "補助音声学習成果：12.5HzストリーミングMimi音声codec",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Already reported VERIFIED original Kyutai Mimi 96,151,393-F32-element speech neural codec with 12.5Hz token and semantic/acoustic stream, independently trained state needed for audio language/Dettato-compatible speech workflows, not a duplicate format of an LLM.",
+      "quality_positive": "Publisher CC-BY-4.0 model, full 5-file original F32 384,657,055 byte repo in acquisition ledger, frozen source SHA, low-bitrate ~1.1 kbps claimed.",
+      "quality_negative": "Codec input and decoding sample rate and ABI depend on library version; support workflows parent dependencies and complete offline decode not tested. CC BY attribution required and input voice rights independent.",
+      "risk_and_alternative_assessment": "No future release ban probability inferred. Ledger VERIFIED already reported at same immutable publisher revision; do not download again without owner SHA validation. Source selection and user legal rights not conflated.",
+      "evidence_date": "2026-11-22",
+      "evidence_kind": "EXISTING_99_LEDGER_VERIFIED_REPORT_PLUS_OFFICIAL_PUBLISHER_FULL_TREE_IMMUTABLE_SHA_AND_LEARNED_STATE_LINEAGE",
+      "evidence_urls": [
+        "https://huggingface.co/kyutai/mimi",
+        "https://kyutai.org/Moshi.pdf",
+        "https://huggingface.co/kyutai/mimi/tree/89091b3e466eb6a9d11e537bf26b144f194978f7"
+      ],
+      "observed_access": "official publisher ungated public, ledger VERIFIED historical report only",
+      "license_metadata": "CC BY 4.0 official model, attribution and upstream third-party voices/data use rights assessed separately.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "89091b3e466eb6a9d11e537bf26b144f194978f7",
+      "upstream_all_files_bytes_observed": 384657055,
+      "upstream_file_count_observed": 5,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 5,
+      "candidate_selected_source_file_bytes": 384657055,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": null,
+          "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 4357,
+          "sha256": null,
+          "git_blob_sha1": "d1e30734ef1f02f47b5d4ade90707fbe5412151c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 1117,
+          "sha256": null,
+          "git_blob_sha1": "907c57dc64c983785bfc68572e4e8ab8eddd64b8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 384649828,
+          "sha256": "bac7e85083dcded655d24eaadde7e6eea34c0da1b35fa2d284e641bd2b942a5e",
+          "git_blob_sha1": "76014877d4b6e844b44244cd8115a641ca5dc136",
+          "local_sha_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 234,
+          "sha256": null,
+          "git_blob_sha1": "ba40914f4f49ab98a8ca545d4892ef7291a39592",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r148-2026-11-22-ledger99-four-untracked-trained-sources.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 96151393,
+        "evidence_kind": "Official Hub F32 safetensors metadata parameter total 96,151,393. Does not prove complete parent codec runtime memory.",
+        "review_date": "2026-11-22",
+        "local_tensor_census_not_executed": true,
+        "note": "Official Hub F32 safetensors metadata parameter total 96,151,393. Does not prove complete parent codec runtime memory."
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 233,
+        "category": "ALREADY_REPORTED_VERIFIED_UNTRACKED_LEARNED_SOURCE_BACKFILL",
+        "scenario_status": "FUTURE_DISTRIBUTION_RESTRICTION_HYPOTHESIS_ONLY"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "config.json",
+          "model.safetensors",
+          "preprocessor_config.json"
+        ],
+        "trained_state": "KYUTAI_MIMI_STREAMING_NEURAL_SPEECH_CODEC_12_5HZ",
+        "original_publisher_revision": "89091b3e466eb6a9d11e537bf26b144f194978f7",
+        "already_reported_acquired": true,
+        "acquisition_ledger_reference": "catalog/execution/2026-11-19-acquisition-ledger.json",
+        "dont_redownload_existing_verified_scope": true,
+        "owner_live_hash_rechecked_by_this_research": false,
+        "full_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 384657055,
+        "publisher_selected_source_bytes": 384657055,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": true,
+      "historical_acquisition_ledger_revision": "89091b3e466eb6a9d11e537bf26b144f194978f7"
+    },
+    {
+      "position": 234,
+      "asset_kind": "model",
+      "repo_id": "RikiyaT/Qwen3.5-0.8B-weight-space-programming",
+      "url": "https://huggingface.co/RikiyaT/Qwen3.5-0.8B-weight-space-programming",
+      "group": "選定済み0.8B Qwen系の独自重み直接編集・推論停止修正",
+      "risk_tier": "R1",
+      "portfolio_decision": "select",
+      "reason_selected": "Already VERIFIED special model with published bit-exact weight-space programming diff of exactly two MLP down_proj layer tensors 15/19, no gradient training. Distinct from independently SELECT parent Qwen/Qwen3.5-0.8B and important rare capability research for behavior corrections at extremely small edited fraction; no new download needed.",
+      "quality_positive": "Official author claims only 131,072 elements edited, weight SHA different from 2fc063... original source, 500-problem 4x MATH500 author independent-rerun 51.0% and 31.6% token-limit vs 25-problem base smoke 5%, not matched n. Rebuild source and two raw tensor hashes available.",
+      "quality_negative": "High variance and nonmatched evaluation (edited MATH500 full 2000 attempts vs base 25-problem smoke), author 7.9->48.1 on separate protocol not independent owner result; model context 34k with H200 author. Loops can persist and security coding quality unverified.",
+      "risk_and_alternative_assessment": "No future release ban probability inferred. Ledger VERIFIED already reported at same immutable publisher revision; do not download again without owner SHA validation. Source selection and user legal rights not conflated.",
+      "evidence_date": "2026-11-22",
+      "evidence_kind": "EXISTING_99_LEDGER_VERIFIED_REPORT_PLUS_OFFICIAL_PUBLISHER_FULL_TREE_IMMUTABLE_SHA_AND_LEARNED_STATE_LINEAGE",
+      "evidence_urls": [
+        "https://huggingface.co/RikiyaT/Qwen3.5-0.8B-weight-space-programming",
+        "https://github.com/RikiyaT/lm_understand-logs",
+        "https://huggingface.co/RikiyaT/Qwen3.5-0.8B-weight-space-programming/tree/d1671a178705bcab7644806d23c535517f35723b"
+      ],
+      "observed_access": "official publisher ungated public, ledger VERIFIED historical report only",
+      "license_metadata": "Apache-2.0 Qwen parent and publisher tag; source training evaluation data and owner compliance independently reviewed.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "d1671a178705bcab7644806d23c535517f35723b",
+      "upstream_all_files_bytes_observed": 1779420899,
+      "upstream_file_count_observed": 17,
+      "upstream_lfs_sha256_count_observed": 2,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 17,
+      "candidate_selected_source_file_bytes": 1779420899,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "sha256": null,
+          "git_blob_sha1": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11544,
+          "sha256": null,
+          "git_blob_sha1": "f938136e3adacfd92be087f6e113b5d6d97f678f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 4876,
+          "sha256": null,
+          "git_blob_sha1": "a9e2c6d992b1b000363f5784c1e2e64c748c0cac",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 7755,
+          "sha256": null,
+          "git_blob_sha1": "0ef09f214eaa6d9bca297988afc1454b5827b2c7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 2907,
+          "sha256": null,
+          "git_blob_sha1": "715f0448b9d38103211f0ad88bbb4d6e4f4be8c9",
+          "local_sha_verified": false
+        },
+        {
+          "path": "eval/samples_base_math500.jsonl",
+          "bytes": 1626439,
+          "sha256": null,
+          "git_blob_sha1": "f683c483ffb084b9e1530703008dd64f9a9ed7bd",
+          "local_sha_verified": false
+        },
+        {
+          "path": "eval/samples_edited_math500.jsonl",
+          "bytes": 7818699,
+          "sha256": null,
+          "git_blob_sha1": "81c2ec100f295cfa6f94b89f709dbb9ed19b0290",
+          "local_sha_verified": false
+        },
+        {
+          "path": "eval/scores_base_math500.json",
+          "bytes": 2794,
+          "sha256": null,
+          "git_blob_sha1": "c0a2c4095f063150b1555bac26371c3bbff4025f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "eval/scores_edited_math500.json",
+          "bytes": 48899,
+          "sha256": null,
+          "git_blob_sha1": "44fef4bb1047e8504acf361bb83f5277da59e01d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 3353259,
+          "sha256": null,
+          "git_blob_sha1": "a494e019ca1502219fd0128658b979e5f05ae8e8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors-00001-of-00001.safetensors",
+          "bytes": 1746943032,
+          "sha256": "fd1e42acdd118ac1b300d37500fd2885e75f5a09de3a33010d802bf7f737b553",
+          "git_blob_sha1": "3b857e08d359f8e28450fd43f11108345832ea06",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 50900,
+          "sha256": null,
+          "git_blob_sha1": "f691cefdb79d73270895ebd6d9594ddcecfc1838",
+          "local_sha_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 390,
+          "sha256": null,
+          "git_blob_sha1": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 12807982,
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+          "git_blob_sha1": "a73a846725794819aa6e1c9e97d8dc9671c2006d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 16709,
+          "sha256": null,
+          "git_blob_sha1": "fae3ce993e07c092ad024dde45e592379fde91bb",
+          "local_sha_verified": false
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 385,
+          "sha256": null,
+          "git_blob_sha1": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe",
+          "local_sha_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 6722759,
+          "sha256": null,
+          "git_blob_sha1": "0aa0ce0658d60ac4a5d609f4eadb0e8e43514176",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r148-2026-11-22-ledger99-four-untracked-trained-sources.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 873438784,
+        "evidence_kind": "Publisher HF 873,436,192 BF16 + 2,592 F32 total; author reports 131072 edited weights, not model total.",
+        "review_date": "2026-11-22",
+        "local_tensor_census_not_executed": true,
+        "note": "Publisher HF 873,436,192 BF16 + 2,592 F32 total; author reports 131072 edited weights, not model total."
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 234,
+        "category": "ALREADY_REPORTED_VERIFIED_UNTRACKED_LEARNED_SOURCE_BACKFILL",
+        "scenario_status": "FUTURE_DISTRIBUTION_RESTRICTION_HYPOTHESIS_ONLY"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "LICENSE",
+          "README.md",
+          "chat_template.jinja",
+          "config.json",
+          "eval/samples_base_math500.jsonl",
+          "eval/samples_edited_math500.jsonl",
+          "eval/scores_base_math500.json",
+          "eval/scores_edited_math500.json",
+          "merges.txt",
+          "model.safetensors-00001-of-00001.safetensors",
+          "model.safetensors.index.json",
+          "preprocessor_config.json",
+          "tokenizer.json",
+          "tokenizer_config.json",
+          "video_preprocessor_config.json",
+          "vocab.json"
+        ],
+        "trained_state": "BIT_EXACT_TWO_DOWN_PROJ_WEIGHTS_PROGRAMMED_WITHOUT_GRADIENT_UPDATE",
+        "original_publisher_revision": "d1671a178705bcab7644806d23c535517f35723b",
+        "already_reported_acquired": true,
+        "acquisition_ledger_reference": "catalog/execution/2026-11-19-acquisition-ledger.json",
+        "dont_redownload_existing_verified_scope": true,
+        "owner_live_hash_rechecked_by_this_research": false,
+        "full_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 1779420899,
+        "publisher_selected_source_bytes": 1779420899,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": true,
+      "historical_acquisition_ledger_revision": "d1671a178705bcab7644806d23c535517f35723b"
+    },
+    {
+      "position": 235,
+      "asset_kind": "model",
+      "repo_id": "JetBrains/Mellum2.1-12B-A2.5B-Thinking-MTP",
+      "url": "https://huggingface.co/JetBrains/Mellum2.1-12B-A2.5B-Thinking-MTP",
+      "group": "コーディングThinking MoEと別学習MTP投機ヘッド",
+      "risk_tier": "R1",
+      "portfolio_decision": "select",
+      "reason_selected": "Already VERIFIED original Mellum2.1 MoE reasoning coding checkpoint with five weight shards identical by publisher SHA to non-MTP Thinking plus an independently trained 856,767,160 byte MTP prediction head. As the regular Thinking base is not separately selected, choose MTP bundle as one canonical learned state rather than acquire duplicate base.",
+      "quality_positive": "Official JetBrains Apache2 source 17 files /25.165GB ledger verification; six trained BF16 shards incl MTP. Author claims 1.4-1.8x decode with 90% speculative acceptance, vLLM>=0.33 / transformers>=5.20 / llama.cpp draft-mtp; no owner HW measurement.",
+      "quality_negative": "Publisher HF metadata BF16 tensor-element sum 12,578,294,528 vs total field 12,149,923,072 (likely excludes 428,371,456 MTP elements). Actual runtime verification and benchmark/peak VRAM not measured; only one hardware profile from author, extra MTPLayer dependent ABI.",
+      "risk_and_alternative_assessment": "No future release ban probability inferred. Ledger VERIFIED already reported at same immutable publisher revision; do not download again without owner SHA validation. Source selection and user legal rights not conflated.",
+      "evidence_date": "2026-11-22",
+      "evidence_kind": "EXISTING_99_LEDGER_VERIFIED_REPORT_PLUS_OFFICIAL_PUBLISHER_FULL_TREE_IMMUTABLE_SHA_AND_LEARNED_STATE_LINEAGE",
+      "evidence_urls": [
+        "https://huggingface.co/JetBrains/Mellum2.1-12B-A2.5B-Thinking-MTP",
+        "https://huggingface.co/JetBrains/Mellum2.1-12B-A2.5B-Thinking",
+        "https://huggingface.co/JetBrains/Mellum2.1-12B-A2.5B-Thinking-MTP/tree/d55846102dd1c047e95d4841070f88290227c3b7"
+      ],
+      "observed_access": "official publisher ungated public, ledger VERIFIED historical report only",
+      "license_metadata": "First-party JetBrains Apache-2.0; code/tokenizer dependency and actual user acts unreviewed.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "d55846102dd1c047e95d4841070f88290227c3b7",
+      "upstream_all_files_bytes_observed": 25165148781,
+      "upstream_file_count_observed": 17,
+      "upstream_lfs_sha256_count_observed": 7,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 17,
+      "candidate_selected_source_file_bytes": 25165148781,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1576,
+          "sha256": null,
+          "git_blob_sha1": "7624774fc4ca389dd2cfde597233efae6b302281",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 11203,
+          "sha256": null,
+          "git_blob_sha1": "9ae8dd78b6f88b400d8e802939ca92e82d5dd048",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 4849,
+          "sha256": null,
+          "git_blob_sha1": "116fec1e4c4f6d8c370111d0ad694ef752858412",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 2362,
+          "sha256": null,
+          "git_blob_sha1": "1a0c2a479334fff0e84eedf624f940902fe4a8be",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 111,
+          "sha256": null,
+          "git_blob_sha1": "a9500a728d7ffc4a81bec6d90377f7863321446e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "mellum-logo-dark.svg",
+          "bytes": 5176,
+          "sha256": null,
+          "git_blob_sha1": "0e8d124bdcef96aef2b74476c9b9a3f0014136ed",
+          "local_sha_verified": false
+        },
+        {
+          "path": "mellum21_summary.png",
+          "bytes": 174934,
+          "sha256": "2a86585d0f7075c56a9a3ae7cd582561dc7020aff87e094a065651d5d4f92324",
+          "git_blob_sha1": "230bca3cccf22a703986a50f41532632cbeefad3",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00001-of-00005.safetensors",
+          "bytes": 4999531104,
+          "sha256": "f5ccf8012c7d44fd2598325bf2482b8fc21792ef888de68f9ca8c9053c2e022f",
+          "git_blob_sha1": "62c85bb03b537609c682d9914b21ebd8a5a29dcd",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00002-of-00005.safetensors",
+          "bytes": 4996604776,
+          "sha256": "266beea6f34dea9c86414d8bf8cb35c0f4a53330731d99ed41ec666390758e39",
+          "git_blob_sha1": "9b6a90b7beb2ab99f7f8e8856caaed3d6de09289",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00003-of-00005.safetensors",
+          "bytes": 4996605688,
+          "sha256": "da9a04fb6ea121f71e30920c7657b889ca0078aea57d878e5cb768ebb3e4483a",
+          "git_blob_sha1": "6de7f89c03befd9d0d8cdbc48c8eaa83f907b22c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00004-of-00005.safetensors",
+          "bytes": 4996605688,
+          "sha256": "32f27ab7f38ff5d98ac3d50dabb57ab8a55a8aa552febd42c2a5b01f4116262a",
+          "git_blob_sha1": "df5f882c284c8f376dcd8f3ae5c5b8963db9be8f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00005-of-00005.safetensors",
+          "bytes": 4311191552,
+          "sha256": "d8bbb9b829cb3279e23f59af55bf68ec00cc8ad30923c227d8b13c7d831e6b3b",
+          "git_blob_sha1": "8985a4f233e8b153c4af102e594fd3182514623c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-mtp.safetensors",
+          "bytes": 856767160,
+          "sha256": "89a2f2454b185b97b809eef2b2a2c32300c6cf550fdbde6430a1c2e8290e025c",
+          "git_blob_sha1": "6c34e291d8550e3b8b4be455342f189382becadd",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 542797,
+          "sha256": null,
+          "git_blob_sha1": "e5b5413d4030217ef1bb23ad71b9a8e31e2c2e48",
+          "local_sha_verified": false
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 1185,
+          "sha256": null,
+          "git_blob_sha1": "8245cf33537325c3cf60028ce625da5aee09d124",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 7091587,
+          "sha256": null,
+          "git_blob_sha1": "6d5c16d2f9452829c41ad4441f9e0c89833d5ef4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 7033,
+          "sha256": null,
+          "git_blob_sha1": "360a848ea68319c453479a3f49edd60fb74d80ab",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r148-2026-11-22-ledger99-four-untracked-trained-sources.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 12578294528,
+        "evidence_kind": "Official model metadata BF16 parameter tensor sum 12,578,294,528, versus total 12,149,923,072 excluding 428,371,456-element MTP. Combined under150B; local shape census not run.",
+        "review_date": "2026-11-22",
+        "local_tensor_census_not_executed": true,
+        "note": "Official model metadata BF16 parameter tensor sum 12,578,294,528, versus total 12,149,923,072 excluding 428,371,456-element MTP. Combined under150B; local shape census not run."
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 235,
+        "category": "ALREADY_REPORTED_VERIFIED_UNTRACKED_LEARNED_SOURCE_BACKFILL",
+        "scenario_status": "FUTURE_DISTRIBUTION_RESTRICTION_HYPOTHESIS_ONLY"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "chat_template.jinja",
+          "config.json",
+          "generation_config.json",
+          "mellum-logo-dark.svg",
+          "mellum21_summary.png",
+          "model-00001-of-00005.safetensors",
+          "model-00002-of-00005.safetensors",
+          "model-00003-of-00005.safetensors",
+          "model-00004-of-00005.safetensors",
+          "model-00005-of-00005.safetensors",
+          "model-mtp.safetensors",
+          "model.safetensors.index.json",
+          "special_tokens_map.json",
+          "tokenizer.json",
+          "tokenizer_config.json"
+        ],
+        "trained_state": "JETBRAINS_MELLUM2_1_THINKING_MAIN_PLUS_SEPARATE_TRAINED_MTP_HEAD",
+        "original_publisher_revision": "d55846102dd1c047e95d4841070f88290227c3b7",
+        "already_reported_acquired": true,
+        "acquisition_ledger_reference": "catalog/execution/2026-11-19-acquisition-ledger.json",
+        "dont_redownload_existing_verified_scope": true,
+        "owner_live_hash_rechecked_by_this_research": false,
+        "full_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 25165148781,
+        "publisher_selected_source_bytes": 25165148781,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": true,
+      "historical_acquisition_ledger_revision": "d55846102dd1c047e95d4841070f88290227c3b7"
+    }
+  ],
+  "added_assets": [
+    "speechbrain/spkrec-ecapa-voxceleb",
+    "kyutai/mimi",
+    "RikiyaT/Qwen3.5-0.8B-weight-space-programming",
+    "JetBrains/Mellum2.1-12B-A2.5B-Thinking-MTP"
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "reconcile_ledger99": "catalog/research/2026-11-22-r148-ledger99-immutable-revision-drift.json",
+  "source_manifest": "manifests/drafts/r148-2026-11-22-ledger99-four-untracked-trained-sources.candidate.json",
+  "publisher_source_files_selected": 49,
+  "publisher_source_bytes_already_reported_acquired": 27418360473,
+  "no_new_disk_reservation_required_for_already_acquired_four_reported_sources": true,
+  "reported_models_verified": 99,
+  "reported_files_verified": 1478,
+  "select_for_independent_edited_qwen_and_mellum_MTP": 2,
+  "conditional_supporting_audio_components": 2,
+  "owner_D_independently_rehashed_this_research": false,
+  "new_model_payload_downloaded": 0,
+  "approved_downloads_added": 0,
+  "model_code_executed": false
+}

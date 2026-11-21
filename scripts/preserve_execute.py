@@ -92,6 +92,15 @@ def approval_for(task, approval_path=None):
             continue
         if not isinstance(entry.get("approval_ref"), str) or not entry["approval_ref"].strip():
             continue
+        # Prior automated plan builders falsely used a dated, general chat
+        # directive to assert *individual* owner signoff and license review.
+        # Old local approved-*.json files can remain on disk. Reject their
+        # synthetic references even if every boolean in them is true.
+        review_ref = entry["approval_ref"].lower()
+        if ("user directive 2026-11-19" in review_ref
+                or "canonical post96 source queue" in review_ref
+                or "canonical 21-source queue" in review_ref):
+            continue
         allowed = entry.get("files")
         if not isinstance(allowed, list) or len(allowed) != len(paths):
             continue

@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "kind": "R148_V63_ACQUISITION_REPORT99_RECONCILED_MATERIAL_SELECTION",
+  "as_of_jst": "2026-11-22",
+  "repository": "Unjuno/local-model-portfolio",
+  "canonical_previous": "v62-20261122",
+  "canonical_new": "v63-20261122",
+  "registered_before": 231,
+  "registered_after": 235,
+  "active_before": 184,
+  "active_after": 188,
+  "select_before": 53,
+  "select_after": 55,
+  "conditional_before": 131,
+  "conditional_after": 133,
+  "old_231_items_changed": 0,
+  "source_frozen": "manifests/drafts/r148-2026-11-22-ledger99-four-untracked-trained-sources.candidate.json",
+  "revision_drift_audit": "catalog/research/2026-11-22-r148-ledger99-immutable-revision-drift.json",
+  "after99_research_queue": "queues/proposed-v63-r149-after99-11-research-only.json",
+  "decisions": [
+    {
+      "repo_id": "speechbrain/spkrec-ecapa-voxceleb",
+      "decision": "CONDITIONAL_KEEP_ALREADY_VERIFIED_SUPPORT_MODEL",
+      "parent_companion_scope": "Speaker embeddings can support multiple voice operations. Do not falsely assert Dettato irreducible dependency without ABI evidence. Existing 10 files already reported VERIFIED.",
+      "rights_and_runtime_STOP": "Apache2 publisher, training VoxCeleb privacy/data, Python SpeechBrain ckpt and learned parameter census unknown. No new download."
+    },
+    {
+      "repo_id": "kyutai/mimi",
+      "decision": "CONDITIONAL_KEEP_ALREADY_VERIFIED_STREAMING_CODEC",
+      "parent_companion_scope": "Independent Mimi 96,151,393 F32 trained streaming audio codec, already reported VERIFIED and may be reused with Kyutai/speech generative models. No identical source relation to other saved codec proven.",
+      "rights_and_runtime_STOP": "CC BY 4.0 attribution, specific model codec framing/sample rate and native offline decode ABI not independently tested."
+    },
+    {
+      "repo_id": "RikiyaT/Qwen3.5-0.8B-weight-space-programming",
+      "decision": "SELECT_EXISTING_BIT_EXACT_DIRECT_WEIGHT_EDIT_OUTCOME",
+      "parent_companion_scope": "Edited Qwen3.5 0.8B differs from already SELECT upstream Qwen; source reports only two MLP down_proj tensor changes (131072 weights) but full separate 873M-element checkpoint in existing ledger. Preserve both unique states for rollback and research, do not re-download.",
+      "rights_and_runtime_STOP": "Apache2, author only MATH-500 rerun H200 not matched base n; owner actual runtime and source training rights unverified."
+    },
+    {
+      "repo_id": "JetBrains/Mellum2.1-12B-A2.5B-Thinking-MTP",
+      "decision": "SELECT_EXISTING_FIRST_PARTY_THINKING_PLUS_MTP_SOURCE_BUNDLE",
+      "parent_companion_scope": "JetBrains official regular Thinking 5 BF16 shards identical publisher LFS hashes to archived MTP model, plus independent learned 856,767,160 byte MTP head. Do not download regular Thinking as an independent duplicate trained state.",
+      "rights_and_runtime_STOP": "Apache2, vLLM>=0.33 or transformers>=5.20 code ABI, owner GPU RAM/latency/memory, exact MTP total model tensor census not independently run."
+    }
+  ],
+  "all_prior_ledger99_verified_model_repo_ids_canonical_now_represented": true,
+  "four_reported_existing_source_file_count": 49,
+  "four_reported_existing_publisher_source_bytes": 27418360473,
+  "four_reported_existing_source_lfs_sha256_refs": 12,
+  "no_new_acquisition": true,
+  "no_delete_requantize_or_user_D_edit": true,
+  "revision_metadata_drift_counts": {
+    "conflicts_total": 9,
+    "identical_trained_weight_refs": 8,
+    "different_weight_or_scope": 1
+  },
+  "RFD4_conflict": {
+    "repo": "nvidia/RFD4-Proteina",
+    "catalog_observed_sha": "cf31b93509df5af854c7f6ad704f5c83c77c0698",
+    "ledger_acquired_sha": "5ec66c399bf0b48727ab24e6b298dcf33864fa07",
+    "different_weight_changed_path": "transformers/model.safetensors",
+    "new_acquired_weight_parts": [
+      "adapter/adapter_model.safetensors",
+      "base/model.safetensors",
+      "antibody/rfd4-proteina-antibody-2026-10-30-ema.ckpt"
+    ],
+    "ledger_reported_verified_scope_bytes": 5236405470,
+    "what_is_not_proven": "Same learned state as old catalog merged root and complete source/parent offline restore not proven; no transfer/replacement authorized."
+  },
+  "automated_owner_approvals_blocked": {
+    "scripts_reviewed": [
+      "scripts/build_v62_plan.py",
+      "scripts/build_v59_plan.py",
+      "scripts/build_repair_plan.py",
+      "scripts/prepare_session_approvals.py",
+      "scripts/preserve_execute.py"
+    ],
+    "historical_user_directive_not_per_file_license_rights_evidence": true,
+    "future_owner_review_templates_all_boolean_false": true,
+    "existing_D_approval_files_not_deleted_or_inspected": true,
+    "historical_synthetic_2026_11_19_approval_refs_rejected": true,
+    "approved_queue": "queues/approved.json",
+    "approved_entries": 0
+  },
+  "H_T_D_C_U": {
+    "H": "Four prior 99-ledger verified models not in v62 are independent pretrained or weight-edited states, and their correct registration reduces catalog completeness error without any new bytes transferred.",
+    "T": "Compare repo ID for all 99 ledger VERIFIED with v62 231 list; freeze 4 untracked at exact 49 publisher file paths, sizes and 12 LFS digests and same historical verified files/bytes. Compare 9 source SHA drift pairs against all official HF immutable tree weight digests and code changes. Offline rebuild v63 235/188 and reject synthetic auto approvals.",
+    "D": "PASS if all 99 reported verified repo IDs represented, source 49 files/27,418,360,473 bytes match same ledger, old 231 prefix unchanged, eight drift comparisons contain identical weights but not necessarily behavior, RFD4 is flagged distinct, and 0 approvals. FAIL any mismatch. User physical restore/rights completion UNCERTAIN, no new acquisition permitted.",
+    "C": "Some speaker codec may not be directly required by installed parent; MTP runtime may not work; edited Qwen gains are unreplicated or regress other tasks; RFD4 alternative revision should not be merged into old archive scope.",
+    "U": "Publisher-only file hashes and author benchmark evidence, previous ledger not independently user D rehashed, runtime code version and legal rights including biometric/voice data, unknown local drive headroom, missing exact nonweight ABIs. Combined standard uncertainty u_c and coverage factor k not calculable without owner hardware test replicates."
+  },
+  "cross_discipline": [
+    "weight_space_model_editing_and_speculative_decoding",
+    "speech_codec_and_biometric_identity",
+    "file_hash_supply_chain_archiving",
+    "user_rights_and_software_security"
+  ],
+  "execution": {
+    "user_Windows_D_rehashed_now": false,
+    "model_weights_downloaded_now": 0,
+    "unreviewed_model_code_executed": false,
+    "owner_license_acts_verified_now": false,
+    "approved_queue_entries_added": 0
+  }
+}

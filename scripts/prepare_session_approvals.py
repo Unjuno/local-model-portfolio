@@ -1,21 +1,9 @@
-#!/usr/bin/env python3
-"""Record the user's standing acquisition directive as exact local approvals.
-
-The repository's fail-closed downloader requires per-model approval entries.
-This writes them to LOCAL state only (never to the public repo), binding each
-entry to the fixed revision and the publisher hash of every selected file.
-
-Authorization source: the user's explicit directive for this session to
-continuously acquire open-weight models to the D drive without confirmation
-questions; unrestricted by model. License/dependency review is based on the
-canonical portfolio's permissive-license classification and the publisher
-LICENSE file in each pinned scope.
-"""
+"""Generate UNAPPROVED owner-review records only; no standing grants.\n\nHistorical continuous-acquisition instructions do not prove that each license,\ntrained dependency, exact source file or owner act is authorized. Existing\napproved-session.json is never touched. No transfers or model code runs.\n"""
 import json
 from pathlib import Path
 
 PLAN = Path("D:/AI_VAULT/state/discovered/plan.json")
-OUT = Path("D:/AI_VAULT/state/approved-session.json")
+OUT = Path("D:/AI_VAULT/state/review-session-UNAPPROVED.json")
 REF = "user directive 2026-11-19: continuous open-weight acquisition to D drive"
 
 
@@ -39,16 +27,16 @@ def main():
         lic = str(c.get("license") or "").lower()
         entries.append({
             "repo_id": m["repo_id"], "revision_sha": m["source_revision_sha"],
-            "approved": True, "download_enabled": True, "approved_by_user": True,
-            "license_text_reviewed": True,
-            "parent_dependency_rights_reviewed": True,
-            "nonstandard_license_permission_verified": True,
-            "license": lic, "approval_ref": REF, "files": files,
+            "approved": False, "download_enabled": False, "approved_by_user": False,
+            "license_text_reviewed": False,
+            "parent_dependency_rights_reviewed": False,
+            "nonstandard_license_permission_verified": False,
+            "license": lic, "approval_ref": None, "files": files,
         })
-    OUT.write_text(json.dumps({"schema_version": 1, "authorization_source": REF,
+    OUT.write_text(json.dumps({"schema_version": 1, "authorization_source": "UNAPPROVED_RESEARCH_SOURCE_REVIEW_ONLY",
                                "entries": entries}, indent=2, ensure_ascii=False),
                    encoding="utf-8")
-    print(f"wrote {OUT}: {len(entries)} exact pinned approvals")
+    print(f"wrote {OUT}: {len(entries)} exact pinned UNAPPROVED review entries")
 
 
 if __name__ == "__main__":

@@ -16,7 +16,7 @@ LEDGERS = [
 ]
 DISC = Path("D:/AI_VAULT/state/discovered")
 PLAN = DISC / "plan-repair.json"
-APPROVAL = Path("D:/AI_VAULT/state/approved-repair.json")
+APPROVAL = DISC / "review-repair-UNAPPROVED.json"
 REF = "user directive 2026-11-19: continuous open-weight acquisition to D drive"
 
 
@@ -71,15 +71,15 @@ def main():
                 r["git_blob_sha1"] = f["publisher_git_blob_sha1"]
             afiles.append(r)
         approvals.append({"repo_id": repo, "revision_sha": m["source_revision_sha"],
-                          "approved": True, "download_enabled": True,
-                          "approved_by_user": True, "license_text_reviewed": True,
-                          "parent_dependency_rights_reviewed": True,
-                          "nonstandard_license_permission_verified": True,
+                          "approved": False, "download_enabled": False,
+                          "approved_by_user": False, "license_text_reviewed": False,
+                          "parent_dependency_rights_reviewed": False,
+                          "nonstandard_license_permission_verified": False,
                           "license": m.get("license_tag", ""),
-                          "approval_ref": REF, "files": afiles})
+                          "approval_ref": None, "files": afiles})
     PLAN.write_text(json.dumps({"schema_version": 1, "candidates": candidates},
                                indent=2, ensure_ascii=False), encoding="utf-8")
-    APPROVAL.write_text(json.dumps({"schema_version": 1, "authorization_source": REF,
+    APPROVAL.write_text(json.dumps({"schema_version": 1, "authorization_source": "UNAPPROVED_RESEARCH_SOURCE_REVIEW_ONLY",
                                    "entries": approvals}, indent=2, ensure_ascii=False),
                         encoding="utf-8")
     print(f"repair models={len(candidates)} files={sum(c['files'] for c in candidates)} "
