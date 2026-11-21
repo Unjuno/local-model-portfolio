@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 75 (verified 71, partial 3, failed 0, held 1)
-- Verified files: 1036
-- Verified source bytes: 1519115675060
-- Minimum observed free bytes: 1400219856896 (200 GB floor maintained: True)
+- Models: 76 (verified 73, partial 2, failed 0, held 1)
+- Verified files: 1010
+- Verified source bytes: 1422920340343
+- Minimum observed free bytes: 1342625525760 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -78,12 +78,13 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `ibm-granite/granite-switch-4.1-30b` | `eb206725d03c0f1c409ce3aa512afe325fdf8731` | VERIFIED | 25/25 | apache-2.0 |
 | `tencent/Hy-Memory-30B-A3B` | `64a460a94d5498b7316fb02395c72d01c47a7347` | VERIFIED | 58/58 | apache-2.0 |
 | `google/gemma-4-31B` | `5bbc2fb1c1b2c611d06e3d9f23c170ba21659d89` | VERIFIED | 9/9 | apache-2.0 |
-| `allenai/Olmo-3-1125-32B` | `c2b61dae89a1ad10e4ad5653d0e46b590902607b` | PARTIAL | 21/23 | apache-2.0 |
+| `allenai/Olmo-3-1125-32B` | `c2b61dae89a1ad10e4ad5653d0e46b590902607b` | VERIFIED | 2/2 | apache-2.0 |
 | `EPFLiGHT/OLMo-2-32B-MeditronFO` | `04c6953977c3a9f913e3d08a6c23edaae6bd6459` | PARTIAL | 19/23 | apache-2.0 |
 | `Nanbeige/Nanbeige4.3-33B` | `df919e1e2cf077a22204c78b6c826bf3db18bc08` | VERIFIED | 22/22 | apache-2.0 |
+| `openai/gpt-oss-120b` | `b5c939de8f754692c1647ca79fbf85e8c1e70f8a` | VERIFIED | 2/2 | apache-2.0 |
 | `mistralai/Mistral-Small-4-119B-2603` | `a11f36bebf709121056b1dbcc943d1c6afbe494d` | VERIFIED | 21/21 | apache-2.0 |
 | `Qwen/Qwen3-Coder-Next` | `a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb` | VERIFIED | 49/49 | apache-2.0 |
-| `openai/gpt-oss-120b` | `b5c939de8f754692c1647ca79fbf85e8c1e70f8a` | PARTIAL | 32/34 | apache-2.0 |
+| `Qwen/Qwen3.5-35B-A3B-Base` | `0f0813072d2358973511097385626f21fcb6d422` | PARTIAL | 23/24 | apache-2.0 |
 
 Weight files were compared against publisher LFS SHA-256; ordinary Git blobs were compared by Git blob SHA-1. 'size-only' means no publisher hash existed.
 Gated models without verified owner entitlement were recorded as HOLD and no payload was acquired for them.
