@@ -1,3 +1,9 @@
+# 現行v60／R143（2026-11-22）：小型独立学習3系統追加、過去96モデルの取得報告を区別
+
+唯一の正本は [catalog/CURRENT.json](catalog/CURRENT.json) → **224登録・177有効、SELECT53＋CONDITIONAL124**。[選定報告](docs/strategy/143-v60-three-small-originals-and-regulatory-triage.md)、[59ファイルSource freeze](manifests/drafts/r143-2026-11-22-three-specialists-originals.candidate.json)、[全177件停止](catalog/readiness/v60-2026-11-22-r143-all177-gates.json)を優先。Timestral28MはModified MIT月商制限、InternDecisionは親Qwen通知・校正コード、Kitten Picoは8言語F32＋INT4/G2Pと総学習済み未知が必須審査。取得台帳の96モデル／1,370ファイル／約1.752TB VERIFIEDは実行報告であり、本回の所有者Windows D独立SHAを意味しない。**queues/approved.jsonは空、未承認重量DL・コード実行・既存削除・Gated回避禁止**。新しい調査ブランチ不要、mainのみ。
+
+---
+
 # 現行v57／R133（2026-11-20）：Spark4BとHeretic9BのBF16無検閲原本2件を条件付き採用
 
 **唯一の現行正本は[catalog/CURRENT.json](catalog/CURRENT.json) → v57／213登録・166有効（SELECT53＋CONDITIONAL113）**。Spark-X2.6-4B AbliteratedとDeepSeek-V4-Pro-Qwen3.5-9B Hereticの**2出版社41ファイル／27,570,829,651byte・LFS SHA8件**を[固定マニフェスト](manifests/drafts/r133-2026-11-20-spark4b-and-heretic9b-bf16-mtp-originals.candidate.json)で確定。[v57正式CONDITIONAL選定](catalog/revisions/v57-2026-11-20.json)、[判断レポート](docs/strategy/133-v57-spark4b-heretic9b-original-selection.md)、[166件readiness](catalog/readiness/v57-2026-11-20-r133-all166-gates.json)、[研究キュー](queues/proposed-v57-2026-11-20.json)、[条件付き113件access](catalog/access/2026-11-20-v57-conditional-hub-gates.json)。9B全学習済み総数9,653,104,368は15 MTPテンソルを含む。主index9,409,813,744を完全総数と混同しない。

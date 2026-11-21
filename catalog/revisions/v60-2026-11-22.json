@@ -1,0 +1,742 @@
+{
+  "schema_version": 1,
+  "revision_id": "v60-20261122",
+  "previous_revision_id": "v59-20261121",
+  "decision_date_jst": "2026-11-22",
+  "target_branch": "main",
+  "kind": "THREE_DIVERSE_COMPACT_ORIGINAL_TRAINED_OUTCOMES_TIMESERIES_DECISION_MULTILINGUAL_TTS",
+  "previous_asset_count": 221,
+  "previous_active_count": 174,
+  "additions": [
+    {
+      "position": 222,
+      "asset_kind": "model",
+      "repo_id": "mistralai/Timestral-28M",
+      "url": "https://huggingface.co/mistralai/Timestral-28M",
+      "group": "時系列予測・28M・21分位点",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Original 27.82M learned zero-shot probabilistic time-series forecaster with past/future covariates and 21 quantiles; compact research alternative to existing IBM TTM time-series models, not a representation conversion.",
+      "quality_positive": "Publisher reports GIFT-Eval MASE 0.678 vs Timestral-209M 0.658, at publisher frozen 28M; F32 model.safetensors 111.296MB and 6 file source. Dataset/HW/backend not independently reproduced.",
+      "quality_negative": "Modified MIT prohibits exercising license rights for organizations with prior-month worldwide consolidated revenue above USD20m; model card reports benchmarks without matched owner HW trials. Runtime PyTorch/timestral package version/code ABI untested.",
+      "risk_and_alternative_assessment": "Authoritative current public access is observed. Future access restrictions are an unquantified scenario rather than an announced model-specific ban.",
+      "evidence_date": "2026-11-22",
+      "evidence_kind": "OFFICIAL_HF_IMMUTABLE_MODEL_API_EXPANDED_FILE_TREE_NO_WEIGHT_PAYLOAD_OR_RUNTIME",
+      "evidence_urls": [
+        "https://huggingface.co/mistralai/Timestral-28M",
+        "https://huggingface.co/mistralai/Timestral-28M/tree/49b26409ac87b5935539a5d8ffe7f397b720db47",
+        "https://github.com/mistralai/timestral/tree/a534bdbd244d64f3d9d743f46c7bf6fc330ed4ff"
+      ],
+      "observed_access": "public gated:false private:false from official Hub immutable snapshot",
+      "license_metadata": "Modified MIT, copyright notice and US$20M previous-month consolidated revenue clause. Owner action-specific applicability unverified.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "49b26409ac87b5935539a5d8ffe7f397b720db47",
+      "upstream_all_files_bytes_observed": 111307038,
+      "upstream_file_count_observed": 6,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 6,
+      "candidate_selected_source_file_bytes": 111307038,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": null,
+          "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 1695,
+          "sha256": null,
+          "git_blob_sha1": "84f5934373961902a63503ab5563636a2d9e2c05",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 4552,
+          "sha256": null,
+          "git_blob_sha1": "e9b2a03f9b169f0888dc762e8fdeb37459bcd4f1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 961,
+          "sha256": null,
+          "git_blob_sha1": "701263f646d492639c89f0297ca821c385c27413",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 111296464,
+          "sha256": "dfc83c6220937ce5fc6687b35a4df94cd25e28a2cfe6fb92a23dad6301b2015d",
+          "git_blob_sha1": "3d5930c67c997dd233690941c96900cfac33a19f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "timestral-hourglass.png",
+          "bytes": 1847,
+          "sha256": null,
+          "git_blob_sha1": "76e7e95b80364be16463b9bad7e6da8d05bcdfa9",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r143-2026-11-22-three-specialists-originals.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 27821184,
+        "evidence_kind": "OFFICIAL_HF_SAFETENSORS_ELEMENT_SUM",
+        "review_date": "2026-11-22",
+        "local_tensor_census_not_executed": true,
+        "note": "under150B screen only, not local ABI or license approval"
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 222,
+        "category": "DISTINCT_EFFICIENT_SMALL_SPECIALIST",
+        "scenario_status": "HYPOTHESIS_FUTURE_ACCESS_NOT_CERTIFIED"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "LICENSE",
+          "README.md",
+          "config.json",
+          "model.safetensors",
+          "timestral-hourglass.png"
+        ],
+        "trained_state": "TIME_SERIES_PATCH_TRANSFORMER_PROBABILISTIC_28M",
+        "trained_state_comment": "Original 27.82M learned zero-shot probabilistic time-series forecaster with past/future covariates and 21 quantiles; compact research alternative to existing IBM TTM time-series models, not a representation conversion.",
+        "source_repo_40hex_revision": "49b26409ac87b5935539a5d8ffe7f397b720db47",
+        "source_code_repo": {
+          "repo": "mistralai/timestral",
+          "commit": "a534bdbd244d64f3d9d743f46c7bf6fc330ed4ff"
+        },
+        "code_and_abi": "pin mistralai/timestral code a534bdbd; dependency and owner rights check before any transfer",
+        "trained_dependency_ownership_verified": false,
+        "actual_owner_local_files_verified": false,
+        "offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 111307038,
+        "publisher_selected_source_bytes": 111307038,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "position": 223,
+      "asset_kind": "model",
+      "repo_id": "internlm/Intern-Decision-0.8B",
+      "url": "https://huggingface.co/internlm/Intern-Decision-0.8B",
+      "group": "構造化確率判断・画像入力・0.8B",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Separate decision-tuned Qwen3.5-0.8B learned state with image and typed choice/score/noul probability outputs from one masked token-logit forward pass, rather than generic chat; smaller than existing Kanana3.665B decision candidate.",
+      "quality_positive": "Publisher original 3 BF16 shards plus config/tokenizer/inference script and reported calibrated validation split: 1,693 cases. 852,985,920 hub safetensors elements, but performance not independently measured.",
+      "quality_negative": "Needs untrusted inference.py / chat template, candidate ordering and temperature calibration; Qwen upstream license notices, tokenizer/vision compatibility and security ABI unverified. Publisher validation not proof on owner device.",
+      "risk_and_alternative_assessment": "Authoritative current public access is observed. Future access restrictions are an unquantified scenario rather than an announced model-specific ban.",
+      "evidence_date": "2026-11-22",
+      "evidence_kind": "OFFICIAL_HF_IMMUTABLE_MODEL_API_EXPANDED_FILE_TREE_NO_WEIGHT_PAYLOAD_OR_RUNTIME",
+      "evidence_urls": [
+        "https://huggingface.co/internlm/Intern-Decision-0.8B",
+        "https://huggingface.co/internlm/Intern-Decision-0.8B/tree/42457fafd13d10d0b0d9be46cb30a23caa409994",
+        "https://github.com/internlm/Intern-Decision/tree/a7b01e276cd5e18bae640be925e685ba6f5159ad"
+      ],
+      "observed_access": "public gated:false private:false from official Hub immutable snapshot",
+      "license_metadata": "Apache-2.0 tag and LICENSE-QWEN upstream; owner rights and third-party datasets unverified.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "42457fafd13d10d0b0d9be46cb30a23caa409994",
+      "upstream_all_files_bytes_observed": 1734731370,
+      "upstream_file_count_observed": 20,
+      "upstream_lfs_sha256_count_observed": 4,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 20,
+      "candidate_selected_source_file_bytes": 1734731370,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 102,
+          "sha256": null,
+          "git_blob_sha1": "12531084461a17a1f80b27f12765195de12d66af",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11558,
+          "sha256": null,
+          "git_blob_sha1": "1c1c160c3af8a3d18b039efc1f9ed2021699ef5f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE-QWEN",
+          "bytes": 11544,
+          "sha256": null,
+          "git_blob_sha1": "f938136e3adacfd92be087f6e113b5d6d97f678f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 9200,
+          "sha256": null,
+          "git_blob_sha1": "71f9dbd1d9811aee20f7d91a0035e0db3640f917",
+          "local_sha_verified": false
+        },
+        {
+          "path": "added_tokens.json",
+          "bytes": 928,
+          "sha256": null,
+          "git_blob_sha1": "ba128ef8a099bf93a90870440818b6b467bb5f22",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 7755,
+          "sha256": null,
+          "git_blob_sha1": "0ef09f214eaa6d9bca297988afc1454b5827b2c7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 2907,
+          "sha256": null,
+          "git_blob_sha1": "715f0448b9d38103211f0ad88bbb4d6e4f4be8c9",
+          "local_sha_verified": false
+        },
+        {
+          "path": "inference.py",
+          "bytes": 16262,
+          "sha256": null,
+          "git_blob_sha1": "59ead69e8e7266761c6e3f6d75033400230cb423",
+          "local_sha_verified": false
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 3353273,
+          "sha256": null,
+          "git_blob_sha1": "f08945b961d2ec392da209998b51d931f1194f4c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-language-0001-save_rank0.safetensors",
+          "bytes": 1504832320,
+          "sha256": "4acc4bd67febb2466ef7c282099fd05ee0ba47b853b6c49b9e763fb642957820",
+          "git_blob_sha1": "ccd9d5ca41af92b98d7323c1f4fdd0bd859f320d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-projector-0001-save_rank0.safetensors",
+          "bytes": 25177720,
+          "sha256": "7f81b4ab1b4434c4d0322c849525337c1746f0ca4b9beac107a94e23b2952fee",
+          "git_blob_sha1": "fe1d99a59521073830d85ef09d5f41f00a662523",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-vision-0001-save_rank0.safetensors",
+          "bytes": 176024696,
+          "sha256": "bf8e03e3be40018e51037b46bb8ebe0471e2aceb394ad988632cce2c87d2e177",
+          "git_blob_sha1": "7381c39760bbec66aa84393cf71bb78df7578792",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 50211,
+          "sha256": null,
+          "git_blob_sha1": "4ccc72734afa679235f35c042fda6b3f91a6fabc",
+          "local_sha_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 390,
+          "sha256": null,
+          "git_blob_sha1": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64",
+          "local_sha_verified": false
+        },
+        {
+          "path": "requirements.txt",
+          "bytes": 69,
+          "sha256": null,
+          "git_blob_sha1": "5139e110eba8bc04676268fb6f3c6eb5464cecf3",
+          "local_sha_verified": false
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 735,
+          "sha256": null,
+          "git_blob_sha1": "0195db277ac22bceeef8fe850d5496087a159eac",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 19989530,
+          "sha256": "94a639c4b33b192cc5a22cd3d7f0aaf6d97efa9577957a0382b55292ca4f0f00",
+          "git_blob_sha1": "24e9039cb9d37c0d4bd9e263f46694ef12814a39",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 7291,
+          "sha256": null,
+          "git_blob_sha1": "6fb6abc18754fa46ca33a8bb43aac3b3294850ad",
+          "local_sha_verified": false
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 385,
+          "sha256": null,
+          "git_blob_sha1": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe",
+          "local_sha_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 5234494,
+          "sha256": null,
+          "git_blob_sha1": "b94df23d650b0c60a2264d9de779cb3b7fb8570c",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r143-2026-11-22-three-specialists-originals.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 852985920,
+        "evidence_kind": "OFFICIAL_HF_SAFETENSORS_ELEMENT_SUM",
+        "review_date": "2026-11-22",
+        "local_tensor_census_not_executed": true,
+        "note": "under150B screen only, not local ABI or license approval"
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 223,
+        "category": "DISTINCT_EFFICIENT_SMALL_SPECIALIST",
+        "scenario_status": "HYPOTHESIS_FUTURE_ACCESS_NOT_CERTIFIED"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "LICENSE",
+          "LICENSE-QWEN",
+          "README.md",
+          "added_tokens.json",
+          "chat_template.jinja",
+          "config.json",
+          "inference.py",
+          "merges.txt",
+          "model-language-0001-save_rank0.safetensors",
+          "model-projector-0001-save_rank0.safetensors",
+          "model-vision-0001-save_rank0.safetensors",
+          "model.safetensors.index.json",
+          "preprocessor_config.json",
+          "requirements.txt",
+          "special_tokens_map.json",
+          "tokenizer.json",
+          "tokenizer_config.json",
+          "video_preprocessor_config.json",
+          "vocab.json"
+        ],
+        "trained_state": "MULTIMODAL_STRUCTURED_DECISION_0_8B",
+        "trained_state_comment": "Separate decision-tuned Qwen3.5-0.8B learned state with image and typed choice/score/noul probability outputs from one masked token-logit forward pass, rather than generic chat; smaller than existing Kanana3.665B decision candidate.",
+        "source_repo_40hex_revision": "42457fafd13d10d0b0d9be46cb30a23caa409994",
+        "source_code_repo": {
+          "repo": "internlm/Intern-Decision",
+          "commit": "a7b01e276cd5e18bae640be925e685ba6f5159ad"
+        },
+        "code_and_abi": "pin Intern-Decision code a7b01e; no generate() claims; do not execute inference.py until static review",
+        "trained_dependency_ownership_verified": false,
+        "actual_owner_local_files_verified": false,
+        "offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 1734731370,
+        "publisher_selected_source_bytes": 1734731370,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "position": 224,
+      "asset_kind": "model",
+      "repo_id": "KittenML/kitten-tts-2-pico",
+      "url": "https://huggingface.co/KittenML/kitten-tts-2-pico",
+      "group": "超小型CPU TTS・8言語・8独立言語重み",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Eight independently trained ~7.2M-per-language compact TTS states (8 languages, 30 voices total), F32 masters with efficient INT4 ONNX for 4MB/language CPU use; distinct capacity extreme versus already selected 82M Kitten TTS Mini; include speaker voice packs and G2P.",
+      "quality_positive": "Publisher files include 8 F32 checkpoints (29,000,600 byte each), eight 3.96MB INT4 ONNX, eight voice packs and G2P; 33 selected files total 285.879877MB after omitting eight duplicate INT8 ONNX.",
+      "quality_negative": "All eight language models and learned 3MB G2P/voice pack count cannot be collapsed to 7.2M total: full trained tensor/voice census incomplete; INT4 ONNX runtime version >=1.20, custom G2P input and actual CPU quality/latency untested. Japanese absent from Pico.",
+      "risk_and_alternative_assessment": "Authoritative current public access is observed. Future access restrictions are an unquantified scenario rather than an announced model-specific ban.",
+      "evidence_date": "2026-11-22",
+      "evidence_kind": "OFFICIAL_HF_IMMUTABLE_MODEL_API_EXPANDED_FILE_TREE_NO_WEIGHT_PAYLOAD_OR_RUNTIME",
+      "evidence_urls": [
+        "https://huggingface.co/KittenML/kitten-tts-2-pico",
+        "https://huggingface.co/KittenML/kitten-tts-2-pico/tree/a5632deac7d92f6178db814d933eba746a97f2dc",
+        "https://github.com/KittenML/KittenTTS/tree/5802f6b956844919ecf210f4e55f4750a6ad7c6f"
+      ],
+      "observed_access": "public gated:false private:false from official Hub immutable snapshot",
+      "license_metadata": "Apache-2.0 card covers models, voice packs and bundled G2P; owner usage rights and upstream voice-data provenance unverified.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "a5632deac7d92f6178db814d933eba746a97f2dc",
+      "upstream_all_files_bytes_observed": 349508085,
+      "upstream_file_count_observed": 41,
+      "upstream_lfs_sha256_count_observed": 25,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 33,
+      "candidate_selected_source_file_bytes": 285879877,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 194,
+          "sha256": null,
+          "git_blob_sha1": "9db2b871ca6a9169ef56fe037bb24a07b890de58",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 3439,
+          "sha256": null,
+          "git_blob_sha1": "e6e3ef0e26516048d730a466d3e4cce0248d4301",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 20304,
+          "sha256": null,
+          "git_blob_sha1": "d0b9b7f6fd723322cb2ad53e5f25949f746e4d59",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g2p/cmu_misaki_us.json",
+          "bytes": 3418388,
+          "sha256": null,
+          "git_blob_sha1": "d7e24d3f5bd6647a5c0598b33265fc898b5007b7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g2p/g2p_bart_en_us/README.md",
+          "bytes": 31,
+          "sha256": null,
+          "git_blob_sha1": "7b95401dc46245ac339fc25059d4a56d90b4cde5",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g2p/g2p_bart_en_us/config.json",
+          "bytes": 1257,
+          "sha256": null,
+          "git_blob_sha1": "f6f03c4cb8deed1f2ff51ca861b83514854e324e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g2p/g2p_bart_en_us/generation_config.json",
+          "bytes": 191,
+          "sha256": null,
+          "git_blob_sha1": "c0710cf2fbcc9bf0e8bf71de6b0a032b6ee2df6e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g2p/g2p_bart_en_us/model.safetensors",
+          "bytes": 3011692,
+          "sha256": "dc4a02e62d4fcb4bb4097ecf00db89b8e1a12a549a52ab6adfbba220b80a55c5",
+          "git_blob_sha1": "b48ab3699ffc71560b23a93bcc643e3b4a406bfb",
+          "local_sha_verified": false
+        },
+        {
+          "path": "kitten_tts_2_pico_de.safetensors",
+          "bytes": 29000600,
+          "sha256": "f4d760d4a9a419847ef364a8add13b1136fb27cd6183ecf6430e456c8c6de748",
+          "git_blob_sha1": "606d0c8f32194537527b3fec0b04d5de6fe4ec3d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "kitten_tts_2_pico_de_int4.onnx",
+          "bytes": 3967605,
+          "sha256": "d74476524bc0e241b376544e9f39d2cec34992eb322e451d239161c89f521e4d",
+          "git_blob_sha1": "a93d4a0b2f8317a62a60dc41a4d426f87196bac6",
+          "local_sha_verified": false
+        },
+        {
+          "path": "kitten_tts_2_pico_en.safetensors",
+          "bytes": 29000600,
+          "sha256": "b3bf0e1381ad0642fc294ccdd8de13009452695571b648b3d30d265a6bcfd5d5",
+          "git_blob_sha1": "c20b2c84a45071a294526fd09b55ca1fac4100ce",
+          "local_sha_verified": false
+        },
+        {
+          "path": "kitten_tts_2_pico_en_int4.onnx",
+          "bytes": 3969655,
+          "sha256": "9751511ba5d5311dd8557967af92bf437f57dfe490bf8a2c135d8f85359b4f58",
+          "git_blob_sha1": "9021de4880f9df649c3bbf9ef65b2fb67075865f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "kitten_tts_2_pico_es.safetensors",
+          "bytes": 29000600,
+          "sha256": "da50b6a13bdc3180090681eabb3a971887f6158f9207211921cca3be0d0aacdf",
+          "git_blob_sha1": "a72a6e415ebf44c9b939981c614d9f3ffa044225",
+          "local_sha_verified": false
+        },
+        {
+          "path": "kitten_tts_2_pico_es_int4.onnx",
+          "bytes": 3967605,
+          "sha256": "53b72529e05b3bd92c754185cada01b9414947a6795a24540d792dcf2b7ad92c",
+          "git_blob_sha1": "24d2f18352790a7358e4a72581f98e28ee0d5290",
+          "local_sha_verified": false
+        },
+        {
+          "path": "kitten_tts_2_pico_fr.safetensors",
+          "bytes": 29000600,
+          "sha256": "c33ef596048565d58f76e433894967d68d6af8c2c37d5217fdc2dc4f2f140818",
+          "git_blob_sha1": "75035558dfbd40cc3a501c480f14b9815d5e4ea6",
+          "local_sha_verified": false
+        },
+        {
+          "path": "kitten_tts_2_pico_fr_int4.onnx",
+          "bytes": 3968631,
+          "sha256": "6932f046d24dcc294c039f4a9b1605e609d66fd764996b9022f67181bbd4615a",
+          "git_blob_sha1": "97ce5243cba4a78cee68cc758f29877b181aceda",
+          "local_sha_verified": false
+        },
+        {
+          "path": "kitten_tts_2_pico_hi.safetensors",
+          "bytes": 29000600,
+          "sha256": "12430055ddb48c754d534075151cda31fbac5cb3c7c3b9887ad51c8d2ef2fadf",
+          "git_blob_sha1": "7b6b98e5f2ff9232fbf8f0f3864afaea4f5f0ace",
+          "local_sha_verified": false
+        },
+        {
+          "path": "kitten_tts_2_pico_hi_int4.onnx",
+          "bytes": 3968117,
+          "sha256": "a1a010354b3e3f254dcc4a2d63e2059d40c4185023c4fb7fdf042332e2cf4c3b",
+          "git_blob_sha1": "5079d905019fa3d6f00204cef1e8e11416a8db5e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "kitten_tts_2_pico_it.safetensors",
+          "bytes": 29000600,
+          "sha256": "0f257bbbd2e9356d119e0a055ccf4db1b072f3ee7e1a91a68368e09971e90574",
+          "git_blob_sha1": "6d67af053e560fd918b83a2ce2eee2c4533051f0",
+          "local_sha_verified": false
+        },
+        {
+          "path": "kitten_tts_2_pico_it_int4.onnx",
+          "bytes": 3967605,
+          "sha256": "815a01b7ab3abdae2b2f862fdb916c345c1ac7d0a676eff3da9c609cdd4211af",
+          "git_blob_sha1": "633d6a580c2c7a38a575e336ad0e9baa20ad2d3c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "kitten_tts_2_pico_pt.safetensors",
+          "bytes": 29000600,
+          "sha256": "d9169249be86ed76474acfc6271faab70de628916138cc5954232c804b753bfe",
+          "git_blob_sha1": "8640a488287497fd8116eef7c5085c8793b5d5ff",
+          "local_sha_verified": false
+        },
+        {
+          "path": "kitten_tts_2_pico_pt_int4.onnx",
+          "bytes": 3967605,
+          "sha256": "855485098ed1e5151109b6683358c2a1071308d57e98697a1415ba93a17eed2c",
+          "git_blob_sha1": "300ff2f45123dad0012251d0aec0d48a30151b7d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "kitten_tts_2_pico_ru.safetensors",
+          "bytes": 29000600,
+          "sha256": "6bc45bc826598009bb4e4db772b8e897d12cbfc1d6c5a3373abe1ee722d54c0d",
+          "git_blob_sha1": "8c5937c3cd328048b0ea161fb3d602d305dd5ad8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "kitten_tts_2_pico_ru_int4.onnx",
+          "bytes": 3966773,
+          "sha256": "cc9f192600bfb54d320aa3e08c0eb214d2d029adff290a6f84b2368d51ee2024",
+          "git_blob_sha1": "d2d80a9dca94f62e00fa60c289b04f5949b7172b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 1313,
+          "sha256": null,
+          "git_blob_sha1": "d480c3e5f5ad4408ac3ddcf6e118feed69e8be3d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "voices_de.npz",
+          "bytes": 2089942,
+          "sha256": "fc4c7a8548f54e0378aa0d5e1b134a4d13ae9142b095edb2340248dc99a0398f",
+          "git_blob_sha1": "d19807b4d15f64a5244d90f2168c4217b04b555f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "voices_en.npz",
+          "bytes": 2089952,
+          "sha256": "48496124eef320b70ccf741d871e401889597d5e14e15e6b2116bdc6100f1a0c",
+          "git_blob_sha1": "7fcdc2870de328db73f651c43e46ba64739ee0a1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "voices_es.npz",
+          "bytes": 2089950,
+          "sha256": "832e908c27bc7f8e63dbd96e2a9b15c8e45c7c67b9fe2aff27435887ea2e7c07",
+          "git_blob_sha1": "ed60c286da383988bc693d7d2f028606b8706ac5",
+          "local_sha_verified": false
+        },
+        {
+          "path": "voices_fr.npz",
+          "bytes": 2089952,
+          "sha256": "c5bc25dbe99e0e4823ff52a51edec5bfa06071790b048a928a020e3fbbd93e34",
+          "git_blob_sha1": "1b9752ca3327057221a6fa69f4a117823ad8ec8d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "voices_hi.npz",
+          "bytes": 1044986,
+          "sha256": "4d79ee747ab9d066dfb825e2125a131af0fa78f921535f839aef0f45a235c701",
+          "git_blob_sha1": "4ada900f07bd4da58a5d3742bb212cec989c07cd",
+          "local_sha_verified": false
+        },
+        {
+          "path": "voices_it.npz",
+          "bytes": 2089974,
+          "sha256": "a43bcb3ab0b023145645bfd86ff2df3a6d4a254f345bfde8eae49ef209475374",
+          "git_blob_sha1": "221199e473a69364cedb102e3bb7021bcc7c9a0a",
+          "local_sha_verified": false
+        },
+        {
+          "path": "voices_pt.npz",
+          "bytes": 2089960,
+          "sha256": "8fcc5244c6e9a6ba48e7c80bf2de490203b75729f2e905abaabce95d74f36ad7",
+          "git_blob_sha1": "7aa11dc4287ad0311c6ab24a2f13a11a0b490987",
+          "local_sha_verified": false
+        },
+        {
+          "path": "voices_ru.npz",
+          "bytes": 2089956,
+          "sha256": "76f67e934c4400dbc0f10efb135e8c9011781d0f23286bd45a0a9d29a6c43c3d",
+          "git_blob_sha1": "1bab655be93685b4c0ed0e453ffe339cdf5090c7",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r143-2026-11-22-three-specialists-originals.candidate.json",
+      "parameter_gate": {
+        "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+        "total_parameters": null,
+        "evidence_kind": "PUBLISHER_7_2M_PER_LANGUAGE_EIGHT_MODELS_OTHER_LEARNED_DEPENDENCIES_UNCENSUSED",
+        "review_date": "2026-11-22",
+        "local_tensor_census_not_executed": true,
+        "note": "G2P and voice packs learned elements not fully counted; cannot apply final lock/approval"
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 224,
+        "category": "DISTINCT_EFFICIENT_SMALL_SPECIALIST",
+        "scenario_status": "HYPOTHESIS_FUTURE_ACCESS_NOT_CERTIFIED"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "config.json",
+          "g2p/cmu_misaki_us.json",
+          "g2p/g2p_bart_en_us/README.md",
+          "g2p/g2p_bart_en_us/config.json",
+          "g2p/g2p_bart_en_us/generation_config.json",
+          "g2p/g2p_bart_en_us/model.safetensors",
+          "kitten_tts_2_pico_de.safetensors",
+          "kitten_tts_2_pico_de_int4.onnx",
+          "kitten_tts_2_pico_en.safetensors",
+          "kitten_tts_2_pico_en_int4.onnx",
+          "kitten_tts_2_pico_es.safetensors",
+          "kitten_tts_2_pico_es_int4.onnx",
+          "kitten_tts_2_pico_fr.safetensors",
+          "kitten_tts_2_pico_fr_int4.onnx",
+          "kitten_tts_2_pico_hi.safetensors",
+          "kitten_tts_2_pico_hi_int4.onnx",
+          "kitten_tts_2_pico_it.safetensors",
+          "kitten_tts_2_pico_it_int4.onnx",
+          "kitten_tts_2_pico_pt.safetensors",
+          "kitten_tts_2_pico_pt_int4.onnx",
+          "kitten_tts_2_pico_ru.safetensors",
+          "kitten_tts_2_pico_ru_int4.onnx",
+          "vocab.json",
+          "voices_de.npz",
+          "voices_en.npz",
+          "voices_es.npz",
+          "voices_fr.npz",
+          "voices_hi.npz",
+          "voices_it.npz",
+          "voices_pt.npz",
+          "voices_ru.npz"
+        ],
+        "trained_state": "EIGHT_INDEPENDENT_LANGUAGE_7_2M_TTS_CHECKPOINTS_PLUS_G2P_VOICES",
+        "trained_state_comment": "Eight independently trained ~7.2M-per-language compact TTS states (8 languages, 30 voices total), F32 masters with efficient INT4 ONNX for 4MB/language CPU use; distinct capacity extreme versus already selected 82M Kitten TTS Mini; include speaker voice packs and G2P.",
+        "source_repo_40hex_revision": "a5632deac7d92f6178db814d933eba746a97f2dc",
+        "source_code_repo": {
+          "repo": "KittenML/KittenTTS",
+          "commit": "5802f6b956844919ecf210f4e55f4750a6ad7c6f"
+        },
+        "code_and_abi": "pin KittenTTS source code 5802f6; preserve 8 F32 and 8 INT4 ONNX, no second asset per quantized format",
+        "trained_dependency_ownership_verified": false,
+        "actual_owner_local_files_verified": false,
+        "offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 349508085,
+        "publisher_selected_source_bytes": 285879877,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    }
+  ],
+  "added_assets": [
+    "mistralai/Timestral-28M",
+    "internlm/Intern-Decision-0.8B",
+    "KittenML/kitten-tts-2-pico"
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "source_manifest": "manifests/drafts/r143-2026-11-22-three-specialists-originals.candidate.json",
+  "publisher_source_files_selected": 59,
+  "publisher_selected_bytes": 2131918285,
+  "publisher_full_repo_bytes_including_alternative_onnx": 2195546493,
+  "publisher_lfs_sha256_refs_selected": 30,
+  "excluded_same_trained_outcome_int8_onnx": 8,
+  "research_hold_not_added": [
+    "mistralai/Timestral-209M",
+    "apple/FastFrames-S",
+    "Cactus-Compute/mirage",
+    "LG-AI-Research/EXAONE-Tabular"
+  ],
+  "publisher_hashes_referenced_not_owner_rehashed": true,
+  "download_authorizations_added": 0,
+  "model_weights_acquired_this_research": 0,
+  "owner_HDD_SHA_rehashed": false,
+  "owner_license_per_act_verified": false,
+  "code_executed": false,
+  "owner_restore_verified": false,
+  "approved": false
+}

@@ -1,5 +1,11 @@
 # 資産台帳
 
+## 現行v60・2026-11-22（過去のv42などの「現行」は歴史）
+
+唯一の正本：[CURRENT](CURRENT.json)→**224登録／177有効**。[本次選定](../docs/strategy/143-v60-three-small-originals-and-regulatory-triage.md)、[新3件immutable59files](../manifests/drafts/r143-2026-11-22-three-specialists-originals.candidate.json)、[全177STOP](readiness/v60-2026-11-22-r143-all177-gates.json)。旧221件の判断保持。取得承認0、所有者HDD・実行コード・本人権利未検証。
+
+---
+
 ## 現行正本（main・v42／2026-11-15）
 
 [CURRENT](CURRENT.json)→[全195資産・有効148](effective-portfolio-2026-11-15-v42.json)（SELECT53／CONDITIONAL95）。[正式v42の停止条件](../docs/strategy/94-v42-ltx-parent-gates-interim-export-policy.md)／[追加の一次証拠](research/2026-11-15-r93-hf-ltx-parent-gated-china-interim-kimi-review.json)／[148件キュー](../queues/proposed-v42-2026-11-15.json)／[95件アクセス](access/2026-11-15-v42-conditional-hub-gates.json)／[148件停止](readiness/v42-2026-11-15-r94-all148-gates.json)。3件LTX原本・権利監査の追記のみ、承認0。

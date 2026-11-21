@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "kind": "R143_V60_SMALL_UNIQUE_SPECIALISTS_96_LEDGER_PRIORITY",
+  "date_jst": "2026-11-22",
+  "repository": "Unjuno/local-model-portfolio",
+  "previous_revision": "v59-20261121",
+  "new_revision": "v60-20261122",
+  "previous_tracked": 221,
+  "previous_active": 174,
+  "new_tracked": 224,
+  "new_active": 177,
+  "overlay": "catalog/revisions/v60-2026-11-22.json",
+  "source_manifest": "manifests/drafts/r143-2026-11-22-three-specialists-originals.candidate.json",
+  "publisher_source_references": {
+    "repos": 3,
+    "full_repo_files": 67,
+    "full_repo_bytes": 2195546493,
+    "selected_files": 59,
+    "selected_bytes": 2131918285,
+    "selected_lfs_sha256_refs": 30,
+    "int8_duplicate_onnx_not_selected": 8,
+    "int8_bytes_not_selected": 63628208
+  },
+  "decisions": [
+    {
+      "repo_id": "mistralai/Timestral-28M",
+      "decision": "CONDITIONAL_ADOPT_INDEPENDENT_F32_ZERO_SHOT_TIMESERIES",
+      "alternative": "mistralai/Timestral-209M",
+      "alternative_decision": "RESEARCH_HOLD",
+      "selected_bytes": 111307038,
+      "note": "28M paper MASE GIFT 0.678 vs 209M 0.658 while 7.5x smaller; publisher not owner reproducibility. Modified MIT company prior-month global revenue 20m USD cap; personal rights not verified."
+    },
+    {
+      "repo_id": "internlm/Intern-Decision-0.8B",
+      "decision": "CONDITIONAL_ADOPT_STRUCTURED_MULTIMODAL_PROBABILISTIC_ORIGINAL",
+      "alternative": "internlm/Intern-Decision-4B",
+      "alternative_decision": "RESEARCH_HOLD",
+      "selected_bytes": 1734731370,
+      "note": "Independent Qwen3.5 0.8B decision tuning, 852985920 serialized elements with language vision projector. Existing Kanana 3.665B is larger alternative. Code and original Qwen notices require review."
+    },
+    {
+      "repo_id": "KittenML/kitten-tts-2-pico",
+      "decision": "CONDITIONAL_ADOPT_EIGHT_F32_ORIGINALS_WITH_PORTABLE_INT4",
+      "alternative": "KittenML/kitten-tts-2-nano",
+      "alternative_decision": "RESEARCH_HOLD",
+      "selected_bytes": 285879877,
+      "note": "Eight language checkpoints plus voices/G2P; not eight separately catalogued models; 8 redundant INT8 ONNX omitted, F32+INT4 chosen. Full learned G2P/voice parameter total unverified -> final lock STOP."
+    }
+  ],
+  "other_research_holds": [
+    {
+      "repo_id": "apple/FastFrames-S",
+      "reason": "Apple research-only terms, parent Wan2.1-T2V-1.3B and CUDA12.8/B200 run requirements, preserved KV and decoder files but not standalone video model; high potential but dependency/rights closure incomplete",
+      "source_bytes_observed": 1788075411,
+      "revision": "aa099efcedf1b65447106bf9004cde75821f7387"
+    },
+    {
+      "repo_id": "Cactus-Compute/mirage",
+      "reason": "216MB safetensors +21MB vendor cact binary and external engine; no full offline reproducibility or quality validation",
+      "source_bytes_observed": 238610263,
+      "revision": "3d03cee88c0acbe4e71b94b567ab14e6e55f40c9"
+    },
+    {
+      "repo_id": "LG-AI-Research/EXAONE-Tabular",
+      "reason": "Noncommercial proprietary EXAONE weights and overlapping Kumo/TabPFN tabular coverage, multiple classifier/regressor ensembles; needs side-by-side comparison",
+      "source_bytes_observed": 928313107,
+      "revision": "093ad1c2613e1e95d26df8610451d2e02ed53cbe"
+    }
+  ],
+  "regulatory_facts": {
+    "US_2026_11_19_BIS_removes_4E091": "https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm",
+    "universal_open_weight_local_possession_ban_supported": false,
+    "future_model_specific_takedown_probability": null
+  },
+  "H_T_D_C_U": {
+    "H": "Keeping 3 distinct original task checkpoints yields new time-series quantile, multimodal decision, and <4MB/language practical CPU TTS capability without redundant INT8 copies, in selected source reference below 2.2e9 bytes; hypothesis about useful performance not yet tested.",
+    "T": "Read only official immutable expanded 3 repo trees and SHA metadata (59 selected files, 30 LFS hashes), compare all previous 221 records verbatim, then run offline catalog gate tests. For owner runtime require 30 fixed workload trials per relevant model, fixed HW/backend/quant/context/batch and owner-rights verified before actual transfer; sequential stop at first hash/license/ABI failure.",
+    "D": "Static PASS iff repo hashes immutable, 59 file path+bytes+oid consistent, no reselected 8 Pico int8 conversion files, prior 221 assets identical, active 177 exactly and approved queue empty. Acquisition FAIL-CLOSED while any independent rights/HDD/parent/runtime approval gate missing. Quality useful runtime UNCERTAIN until independent 30 trials.",
+    "C": "Author metrics may not generalize; Intern choice calibration depends on exact token positions; Kitten Pico may be too low quality and its voice/G2P runtime might need more assets; large Timestral may outperform beyond acceptable difference.",
+    "U": "Unknown owner hardware and local file SHA, data provenance, dependent code ABI, publisher-only benchmark sampling, modified-MIT economic threshold, voice pack parameter count; no independent measured variance to estimate standard uncertainty u_c and coverage factor k."
+  },
+  "execution": {
+    "ledger_reported_verified_models_now": 96,
+    "ledger_reported_files_now": 1370,
+    "ledger_reported_bytes_now": 1752033357565,
+    "ledger_not_independent_owner_Windows_D_SHA": true,
+    "new_model_weight_bytes_fetched": 0,
+    "owner_HDD_checked": false,
+    "custom_code_executed": false,
+    "approved_queue_entries_added": 0,
+    "approved": false,
+    "download_enabled": false
+  },
+  "cross_disciplines": [
+    "machine_learning_model_distinctiveness",
+    "software_supply_chain_reproducibility",
+    "IP_export_license_enforcement",
+    "edge_hardware_memory_and_latency"
+  ]
+}
