@@ -10,7 +10,7 @@
   "existing_candidate_repos": 11,
   "existing_nonhold_candidate_repos": 10,
   "existing_nonhold_reference_bytes": 68544170933,
-  "newly_researched_source_repo_count": 1,
+  "newly_researched_source_repo_count": 2,
   "new_source_repo_exact_full_bytes": 6590699556,
   "source_budget_note": "6,590,699,556 bytes publisher immutable full 27-file source tree verified by cross-manifest size sum; 6,567,256,208 bytes is only tensor payload index (not same as weight file bytes or full repo). Owner D incremental bytes remain unknown.",
   "priority_phases": [
@@ -23,6 +23,18 @@
         "AuroraAI-Research/Aurora2-400M-A20M"
       ],
       "existing_publisher_reference_bytes": 2234744280,
+      "download_approved": false
+    },
+    {
+      "phase": "P0B_NEW_ULTRATINY_TIMESERIES",
+      "repo_ids": [
+        "mistralai/Timestral-5M"
+      ],
+      "publisher_reference_bytes_exact": 20854471,
+      "source_manifest_with_6_file_byte_census": "manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json",
+      "existing_28M_comparator": "mistralai/Timestral-28M",
+      "license_metadata": "Modified MIT; preceding month corporate/employer revenue > USD20m needs separate license",
+      "status": "RESEARCH_ONLY_NOT_CANONICAL",
       "download_approved": false
     },
     {
@@ -82,5 +94,15 @@
     "custom_code_reviewed": false,
     "model_payload_fetched": false
   },
-  "after_source_audit_next_step": "When source bytes/LFS identities, license and code risks are inspected, prepare a separate canonical additive revision and require owner-specific permission prior to any transfer."
+  "after_source_audit_next_step": "When source bytes/LFS identities, license and code risks are inspected, prepare a separate canonical additive revision and require owner-specific permission prior to any transfer.",
+  "new_source_repos_exact_full_bytes": 6611554027,
+  "new_source_model_ids": [
+    "tencent/WeMM-Video-2B",
+    "mistralai/Timestral-5M"
+  ],
+  "new_source_metadata": "Both models pinned with exact publisher byte count in manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json; NOT physically downloaded or user-approved.",
+  "additional_open_license_alternative_watchlist": [
+    "Datadog/Toto-2.0-4m"
+  ],
+  "nonhold_new_plus_existing_reference_bytes_not_incremental_owner": 75155724960
 }
