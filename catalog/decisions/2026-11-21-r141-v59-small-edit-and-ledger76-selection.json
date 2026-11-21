@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "kind": "R141_V59_MODEL_SELECTION_PARENT_SHA_REUSE_AND_LEDGER76",
+  "reviewed_on": "2026-11-21",
+  "repo": "Unjuno/local-model-portfolio",
+  "previous_revision": "v58-20261121",
+  "new_revision": "v59-20261121",
+  "previous_registered": 218,
+  "previous_active": 171,
+  "new_registered": 221,
+  "new_active": 174,
+  "overlay": "catalog/revisions/v59-2026-11-21.json",
+  "source_manifest": "manifests/drafts/r139-2026-11-21-inkling-micro-edits-and-deepseek4b-varloop.candidate.json",
+  "consolidated_source_plan": "queues/proposed-v59-r140-ledger76-next-21-deduplicated-sources.json",
+  "model_decisions": [
+    {
+      "repo_id": "aaaaygd/DeepSeek-V4-Pro-Qwen3.5-4B-UNCENSORED-heretic",
+      "decision": "ADOPT_CONDITIONAL_DISTINCT_BF16_MTP_ORIGINAL",
+      "reason": "Independent 4B SFT/distilled/Heretic edited checkpoint and separate MTP head, not conversion of selected 9B; lower VRAM deployment possibility not owner tested.",
+      "source_files": 17,
+      "source_bytes": 9345162884,
+      "full_parameters_including_MTP": 4539265536,
+      "MTP_parameters": 120599552,
+      "evidence_limits": "Publisher MTP-Q8 GGUF evaluation 1319x2 GSM8K 91.7741% not independent and cannot be taken as BF16 inference quality or same HW benchmark.",
+      "unverified": "Parent teacher provenance/dataset rights, standalone LICENSE absent, code/MTP/vision ABI and owner RAM."
+    },
+    {
+      "repo_id": "satellitedown/Inkling-2-Mini-abliterated-ingine",
+      "decision": "ADOPT_CONDITIONAL_RUNTIME_EDIT_PARAMETERS_ONLY",
+      "reason": "221280 optimized F32 activation steering elements and reproducible custom code; 13 full repo files identical sha/bytes to v58 Inkling baseline, so only 20 unique files selected.",
+      "publisher_original_repo_bytes": 20192778958,
+      "source_files": 20,
+      "selected_delta_bytes": 1190518,
+      "shared_baseline_files": 13,
+      "shared_baseline_bytes": 20191588440,
+      "evidence_limits": "No trained new foundation checkpoint. Author refusal tests non-independent and CUDA13/compute12.0/32GB Linux interpreter not owner tested.",
+      "unverified": "Original v58 parent on disk, exact ModelOpt native operational compatibility, AUP and code security review."
+    },
+    {
+      "repo_id": "OpenUncensored/Inkling-2-Mini-Uncensored-LoRA",
+      "decision": "ADOPT_CONDITIONAL_PEFT_TINY_ADAPTER_ONLY",
+      "reason": "215040 F32 learned/edit elements in 40 LoRA tensors, rank2; alternate editable math method to ingine and incremental bytes tiny.",
+      "source_files": 5,
+      "selected_delta_bytes": 877939,
+      "adapter_bytes": 865296,
+      "author_base_revision_not_pinned": true,
+      "evidence_limits": "Author test 32 refused prompts only; PEFT CAUSAL_LM task_type conflicts with actual Inkling multimodal AutoModelForSeq2SeqLM unless merge process correct. No independent quality or compatibility evidence.",
+      "unverified": "Pin parent v58 source revision (archive reference, not author provenance), code license and merge static review; do not auto execute."
+    },
+    {
+      "repo_id": "thinkingmachines/TML-d24-varloop-research",
+      "decision": "RESEARCH_HOLD_NOT_IN_v59_ACTIVE",
+      "reason": "Different midtrained model supporting 1–5 core passes; distinct weight and MTP SHA from fixed-loop Inkling2 Mini, but costs additional 20.1916GB and producer says not production-ready.",
+      "source_full_bytes": 20191620855,
+      "revisit": "Independent variable-pass benchmark and owner storage capacity, not a quant format duplicate."
+    }
+  ],
+  "parameter_census": {
+    "fourB_HF_index_total_includes_MTP": 4539265536,
+    "fourB_MTP_tensor_elements": 120599552,
+    "ingine_F32_edit_elements": 221280,
+    "openUncensored_LoRA_F32_elements": 215040,
+    "parent_including_MTP_nominal": 26706544312
+  },
+  "immutable_scope": {
+    "formal_new_active_repos": 3,
+    "source_selected_file_refs": 42,
+    "source_selected_bytes": 9347231341,
+    "varloop_hold_source_bytes": 20191620855,
+    "sha_matched_Inkling_parent_files_excluded": 13,
+    "sha_matched_Inkling_parent_publisher_bytes_excluded": 20191588440
+  },
+  "post_ledger76_priority": {
+    "existing_reported_verified_models": 76,
+    "existing_reported_verified_file_count": 1078,
+    "oldest_reported_free_min_bytes": 1313320169472,
+    "owner_live_capacity_tested": false,
+    "next_source_repos": 21,
+    "source_file_refs": 324,
+    "logical_source_bytes": 223837135371,
+    "phase_summary": {
+      "P0_PREP_FIRST": {
+        "repo_count": 9,
+        "source_file_count": 72,
+        "source_bytes": 609360574
+      },
+      "P1_COMPACT_ORIGINALS": {
+        "repo_count": 7,
+        "source_file_count": 148,
+        "source_bytes": 20727263121
+      },
+      "P2_NATIVE_MID_ORIGINALS": {
+        "repo_count": 4,
+        "source_file_count": 72,
+        "source_bytes": 72927621703
+      },
+      "P3_LARGE_SOURCE_HOLD": {
+        "repo_count": 1,
+        "source_file_count": 32,
+        "source_bytes": 129572889973
+      }
+    },
+    "near_term_excluding_Ripple_bytes": 94264245398,
+    "same_sha_4B_and_9B_tokenizer": [
+      {
+        "sha256": "a5cd9732badce41de57e6efce8302930ded1c1188c5f81feb2bd6c24c4a1941f",
+        "source_A": "aaaaygd/DeepSeek-V4-Pro-Qwen3.5-4B-UNCENSORED-heretic/tokenizer.json",
+        "source_B": "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic/tokenizer.json",
+        "bytes_equal_each": 19989339,
+        "canonical_reuse_possible_only_if_owner_local_SHA_verified": true
+      }
+    ],
+    "potential_reuse_bytes_unverified_owner": 19989339
+  },
+  "regulation_source": {
+    "US_BIS_2026_11_19_Federal_Register": "https://www.govinfo.gov/content/pkg/FR-2026-11-19/pdf/2026-23529.pdf",
+    "rule_removing_old_AI_Diffusion_ECCN4E091_is_not_blanket_ownership_ban": true,
+    "dataset_license_model_AUP_cross_jurisdiction_requires_user_act_review": true,
+    "future_model_access_withdrawal_probability": null
+  },
+  "H_T_D_C_U": {
+    "H": "Tiny independent optimized edits on existing Inkling parent preserve two distinct testable ways of modifying behavior without duplicating 20GB parent; 4B MTP holds smaller independent learned state.",
+    "T": "R139 four publisher repos fixed full trees, 4B MTP and 2 tiny edit headers using HTTP 206, plus R140 exact SHA metadata 21 repos/324 logical files and 70 unique LFS SHA, no training weight loaded; owner check required n_min=324 file refs.",
+    "D": "PASS only source identity and no reported acquisition duplicate; actual acquisition PASS only with owner rights, disk SHA, 200GB floor, full code ABI and explicit file approval. FAIL on new full Inkling duplicate or wrong PEFT parent. UNCERTAIN behavior/performance.",
+    "C": "Different editing methods could yield same behavior or degrade capability, LoRA merge incompatible, varloop 20GB more valuable than anticipated, release remains available.",
+    "U": "Author-only benchmarks, missing owner hardware measurements, software ABIs, teacher corpus rights, storage staging peak; no repeated independent observations to compute u_c or coverage k."
+  },
+  "final_execution": {
+    "approved_queue_entries": 0,
+    "approved": false,
+    "download_enabled": false,
+    "local_weight_SHA_rehashed": false,
+    "owner_current_free_bytes": null,
+    "model_code_run": false,
+    "model_weight_bytes_fetched_this_research": false
+  }
+}
