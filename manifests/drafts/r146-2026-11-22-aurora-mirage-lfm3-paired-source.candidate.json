@@ -1,0 +1,792 @@
+{
+  "schema_version": 1,
+  "kind": "R146_V62_ORIGINAL_MOE_EDGE_VISION_PAIRED_LFM3_UNCENSORED_SOURCE_FREEZE",
+  "as_of_jst": "2026-11-22",
+  "repository": "Unjuno/local-model-portfolio",
+  "baseline_revision": "v61-20261122",
+  "publisher_sources": [
+    {
+      "repo_id": "AuroraAI-Research/Aurora2-400M-A20M",
+      "publisher_url": "https://huggingface.co/AuroraAI-Research/Aurora2-400M-A20M",
+      "immutable_revision_sha": "f2e561d38b0c0c35e910c8a519f553b2831ffad4",
+      "repo_gated": false,
+      "repo_private": false,
+      "repo_card_license": "apache-2.0",
+      "publisher_all_files_count": 26,
+      "publisher_all_repo_bytes": 3200300891,
+      "publisher_selected_files_count": 10,
+      "publisher_selected_bytes": 1599571502,
+      "publisher_selected_lfs_sha256_count": 1,
+      "publisher_selected_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 10293,
+          "git_blob_sha1": "c89b67fcd3529c192777ee42bdf178b992f20305",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 784,
+          "git_blob_sha1": "758f57cbf748a6731ea0462b682f992da71324c2",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "configuration_aurora2.py",
+          "bytes": 1899,
+          "git_blob_sha1": "a5c50e826aeabb93d6bd0e60331f75886132a301",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 167,
+          "git_blob_sha1": "c827584f9d2502a7b5c00866c383bb3794c7454a",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 1598408840,
+          "git_blob_sha1": "70569813c105ff1727585b9354b96bce505aa49b",
+          "publisher_lfs_sha256": "508b7c3f991db2787bab100a4d6b817789d25ed262ff0c0cdbab62e69d3a1737",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "modeling_aurora2.py",
+          "bytes": 10199,
+          "git_blob_sha1": "235017c0ea70912ef494922eea56c4c8b9e7df39",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 80,
+          "git_blob_sha1": "8c136f1ad1dfd22b0ac3181cb09a6422874d524b",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 1137456,
+          "git_blob_sha1": "a59e67eb022eb97885655fc567b4208fe2b8d7d5",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 265,
+          "git_blob_sha1": "da8c7cc4070ab2357dfe434a73c0606bb7f8d1c4",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        }
+      ],
+      "not_selected_duplicate_formats_or_nonessential": [
+        {
+          "path": "bf16/config.json",
+          "bytes": 785,
+          "reason": "Aurora duplicated BF16/FP16 instead of high precision F32 master"
+        },
+        {
+          "path": "bf16/configuration_aurora2.py",
+          "bytes": 1899,
+          "reason": "Aurora duplicated BF16/FP16 instead of high precision F32 master"
+        },
+        {
+          "path": "bf16/generation_config.json",
+          "bytes": 167,
+          "reason": "Aurora duplicated BF16/FP16 instead of high precision F32 master"
+        },
+        {
+          "path": "bf16/model.safetensors",
+          "bytes": 799213948,
+          "reason": "Aurora duplicated BF16/FP16 instead of high precision F32 master"
+        },
+        {
+          "path": "bf16/modeling_aurora2.py",
+          "bytes": 10199,
+          "reason": "Aurora duplicated BF16/FP16 instead of high precision F32 master"
+        },
+        {
+          "path": "bf16/special_tokens_map.json",
+          "bytes": 80,
+          "reason": "Aurora duplicated BF16/FP16 instead of high precision F32 master"
+        },
+        {
+          "path": "bf16/tokenizer.json",
+          "bytes": 1137456,
+          "reason": "Aurora duplicated BF16/FP16 instead of high precision F32 master"
+        },
+        {
+          "path": "bf16/tokenizer_config.json",
+          "bytes": 265,
+          "reason": "Aurora duplicated BF16/FP16 instead of high precision F32 master"
+        },
+        {
+          "path": "fp16/config.json",
+          "bytes": 784,
+          "reason": "Aurora duplicated BF16/FP16 instead of high precision F32 master"
+        },
+        {
+          "path": "fp16/configuration_aurora2.py",
+          "bytes": 1899,
+          "reason": "Aurora duplicated BF16/FP16 instead of high precision F32 master"
+        },
+        {
+          "path": "fp16/generation_config.json",
+          "bytes": 167,
+          "reason": "Aurora duplicated BF16/FP16 instead of high precision F32 master"
+        },
+        {
+          "path": "fp16/model.safetensors",
+          "bytes": 799213740,
+          "reason": "Aurora duplicated BF16/FP16 instead of high precision F32 master"
+        },
+        {
+          "path": "fp16/modeling_aurora2.py",
+          "bytes": 10199,
+          "reason": "Aurora duplicated BF16/FP16 instead of high precision F32 master"
+        },
+        {
+          "path": "fp16/special_tokens_map.json",
+          "bytes": 80,
+          "reason": "Aurora duplicated BF16/FP16 instead of high precision F32 master"
+        },
+        {
+          "path": "fp16/tokenizer.json",
+          "bytes": 1137456,
+          "reason": "Aurora duplicated BF16/FP16 instead of high precision F32 master"
+        },
+        {
+          "path": "fp16/tokenizer_config.json",
+          "bytes": 265,
+          "reason": "Aurora duplicated BF16/FP16 instead of high precision F32 master"
+        }
+      ],
+      "owner_rights_checked": false,
+      "owner_hdd_local_sha_checked": false,
+      "code_loaded": false,
+      "runtime_reconstructed_offline": false,
+      "download_approved": false
+    },
+    {
+      "repo_id": "Cactus-Compute/mirage",
+      "publisher_url": "https://huggingface.co/Cactus-Compute/mirage",
+      "immutable_revision_sha": "3d03cee88c0acbe4e71b94b567ab14e6e55f40c9",
+      "repo_gated": false,
+      "repo_private": false,
+      "repo_card_license": "apache-2.0",
+      "publisher_all_files_count": 6,
+      "publisher_all_repo_bytes": 238610263,
+      "publisher_selected_files_count": 5,
+      "publisher_selected_bytes": 237985863,
+      "publisher_selected_lfs_sha256_count": 2,
+      "publisher_selected_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1623,
+          "git_blob_sha1": "e28b1818d7c9b28a89c3f5ceb48eff37a3bd2524",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 1263,
+          "git_blob_sha1": "ed3772001c5c7fe41bb4adaaa000ca0bd1b5d43d",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 1430,
+          "git_blob_sha1": "c3b3ad2dc5db355553f4eaaafdcea696ba573673",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "mirage.cact",
+          "bytes": 21611043,
+          "git_blob_sha1": "523901a19ec2d30b734e8166fd5b8c569f615032",
+          "publisher_lfs_sha256": "4249a0f7515272ff76b9414bec17d7e7daf84b15b66c7fb4f17fce1e66f9f237",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "mirage.safetensors",
+          "bytes": 216370504,
+          "git_blob_sha1": "441199c823d7dfbcbabab4a7bf14564f6bc651b8",
+          "publisher_lfs_sha256": "6ba97c5c1bef661c9b0c80782135682b38b4312fb33e0b645c93c10604bb16cd",
+          "local_sha256_verified": false
+        }
+      ],
+      "not_selected_duplicate_formats_or_nonessential": [
+        {
+          "path": "assets/overview.png",
+          "bytes": 624400,
+          "reason": "illustration only"
+        }
+      ],
+      "owner_rights_checked": false,
+      "owner_hdd_local_sha_checked": false,
+      "code_loaded": false,
+      "runtime_reconstructed_offline": false,
+      "download_approved": false
+    },
+    {
+      "repo_id": "LiquidAI/LFM3-VL-2B",
+      "publisher_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B",
+      "immutable_revision_sha": "f83d2b0a2296aaa277f394990a9b8b949ddf9691",
+      "repo_gated": false,
+      "repo_private": false,
+      "repo_card_license": "other",
+      "publisher_all_files_count": 18,
+      "publisher_all_repo_bytes": 3854651108,
+      "publisher_selected_files_count": 18,
+      "publisher_selected_bytes": 3854651108,
+      "publisher_selected_lfs_sha256_count": 2,
+      "publisher_selected_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "git_blob_sha1": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 10574,
+          "git_blob_sha1": "2a513f17eb4b8008fb100349fd2b7551d009fed0",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 141669,
+          "git_blob_sha1": "f4442340c9b04a926413b4ba17600aa133e2568f",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 12129,
+          "git_blob_sha1": "d0747b8b5fc99eaecfe02a04eefcff75eb181334",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 2905,
+          "git_blob_sha1": "e533d46df1b9c3e3edfcb900d36ceaa9c8feb0a1",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "configuration_lfm3.py",
+          "bytes": 6105,
+          "git_blob_sha1": "f314814961969f97cdb91ad7e00ab4b9fab1e594",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "configuration_lfm3_vl.py",
+          "bytes": 9138,
+          "git_blob_sha1": "ef6fa2dbd2048fb0d9fca609f28aa726ff2ec031",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 323,
+          "git_blob_sha1": "53eb5506081689943b64dcde4fbfcc41043aa87a",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "image_processing_lfm3_vl.py",
+          "bytes": 12036,
+          "git_blob_sha1": "8d27ebbca64a3aa55313c2d074fc684a8d9c335b",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "lfm3_conv.py",
+          "bytes": 8532,
+          "git_blob_sha1": "a1b67afdb605452f5a99751862863d5460a1fa69",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 3836417920,
+          "git_blob_sha1": "32cf98bd0797a7972d6085c1b525c882feead47e",
+          "publisher_lfs_sha256": "a9bb8b1c159c9d6c3007bc1c7ad8018b599f759d97da2701714e37426283e131",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "modeling_lfm3.py",
+          "bytes": 42343,
+          "git_blob_sha1": "c6e66b81281c20e5758c3b4d96e0a248c3d3a233",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "modeling_lfm3_vl.py",
+          "bytes": 44999,
+          "git_blob_sha1": "e6c75314edc860cadaa162ab595e2f96956d6cfe",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "processing_lfm3_vl.py",
+          "bytes": 12152,
+          "git_blob_sha1": "b15a003dcad67a5d9b8ba2113bb35d622be04619",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 1535,
+          "git_blob_sha1": "1f38b9a150b604c3270dbfb883b6902a5763d3da",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 17908258,
+          "git_blob_sha1": "2ad6ecfda312be128ac878a61f3ee84dfe1134f8",
+          "publisher_lfs_sha256": "a39eed58008cbcbc09e5b629b81338a654269c64cd13348aaa6090f4db75c7e7",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1759,
+          "git_blob_sha1": "e095df65c9ef161fc054821fc6773614ac728f03",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "video_processing_lfm3_vl.py",
+          "bytes": 17161,
+          "git_blob_sha1": "f26f48efc0ff1087dffdef2516b08c7ea905c9cb",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        }
+      ],
+      "not_selected_duplicate_formats_or_nonessential": [],
+      "owner_rights_checked": false,
+      "owner_hdd_local_sha_checked": false,
+      "code_loaded": false,
+      "runtime_reconstructed_offline": false,
+      "download_approved": false
+    },
+    {
+      "repo_id": "saidutta69/LFM3-VL-2B-heretic",
+      "publisher_url": "https://huggingface.co/saidutta69/LFM3-VL-2B-heretic",
+      "immutable_revision_sha": "f4cf2cfb5b1289ca4ca10c6c71eb17d147c8c795",
+      "repo_gated": false,
+      "repo_private": false,
+      "repo_card_license": "other",
+      "publisher_all_files_count": 39,
+      "publisher_all_repo_bytes": 23166105486,
+      "publisher_selected_files_count": 25,
+      "publisher_selected_bytes": 5334098126,
+      "publisher_selected_lfs_sha256_count": 4,
+      "publisher_selected_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2632,
+          "git_blob_sha1": "7e0942b8998b61661307400f65b714c4064d099a",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-Q4_K_M.gguf",
+          "bytes": 1099627040,
+          "git_blob_sha1": "b00c5cb3cf74314229f342612cab7ab20b8381f2",
+          "publisher_lfs_sha256": "d44c819c8146025f254c3c530a4b4365c13ff0f4ed21d82e73ca9fb4c1e84de0",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-mmproj-F16.gguf",
+          "bytes": 378995200,
+          "git_blob_sha1": "37e06e0ae73100f566e6c2e38c14e06bc923ff40",
+          "publisher_lfs_sha256": "1c8d2e7085db355f3e5a9673914154350124ee27b58b88e2eb4063034c228bf6",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 13210,
+          "git_blob_sha1": "9b789d18e56478636d5ed91a8a05fb9159e56453",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 12129,
+          "git_blob_sha1": "d0747b8b5fc99eaecfe02a04eefcff75eb181334",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 3638,
+          "git_blob_sha1": "a2758f2ab3dc54c564ebdbb994c0b4bcc90072a5",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "configuration_lfm3.py",
+          "bytes": 6105,
+          "git_blob_sha1": "f314814961969f97cdb91ad7e00ab4b9fab1e594",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "configuration_lfm3_vl.py",
+          "bytes": 9138,
+          "git_blob_sha1": "ef6fa2dbd2048fb0d9fca609f28aa726ff2ec031",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 318,
+          "git_blob_sha1": "58fd81359a2e801e00146ca9d4c78159466a07c4",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "image_processing_lfm3_vl.py",
+          "bytes": 12036,
+          "git_blob_sha1": "8d27ebbca64a3aa55313c2d074fc684a8d9c335b",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "lfm3_conv.py",
+          "bytes": 8532,
+          "git_blob_sha1": "a1b67afdb605452f5a99751862863d5460a1fa69",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 3836417920,
+          "git_blob_sha1": "5be0dab72cc39eb8f2c260869bcc411644c295e9",
+          "publisher_lfs_sha256": "91d527edb09f1e382172c9bf4028247676f92b6c1545f1e4d6b8920b4eba906a",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "modeling_lfm3.py",
+          "bytes": 42343,
+          "git_blob_sha1": "c6e66b81281c20e5758c3b4d96e0a248c3d3a233",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "modeling_lfm3_vl.py",
+          "bytes": 44999,
+          "git_blob_sha1": "e6c75314edc860cadaa162ab595e2f96956d6cfe",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "processing_lfm3_vl.py",
+          "bytes": 12152,
+          "git_blob_sha1": "b15a003dcad67a5d9b8ba2113bb35d622be04619",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 1657,
+          "git_blob_sha1": "6bad741b2e210292ac0b57f27ea14a77096bd9d1",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "reproduce/LiquidAI--LFM3-VL-2B.jsonl",
+          "bytes": 944881,
+          "git_blob_sha1": "34a442dacba8349a59f36a2dc04dbf25441f76b3",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "reproduce/README.md",
+          "bytes": 3930,
+          "git_blob_sha1": "b25d064ae549913e1eb597d3169277a7688b6001",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "reproduce/SHA256SUMS",
+          "bytes": 84,
+          "git_blob_sha1": "7482526460b81e045c6eacbf082e51e420d6bdb8",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "reproduce/config.toml",
+          "bytes": 1937,
+          "git_blob_sha1": "f9230a179897d4eeb857ec4d29dcf5df5ef1d481",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "reproduce/reproduce.json",
+          "bytes": 9023,
+          "git_blob_sha1": "754fba4a256625e97394948e60ded46d1176df98",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "reproduce/requirements.txt",
+          "bytes": 1964,
+          "git_blob_sha1": "c34a7b2b27941768bb72a3d9ba209049ab3cf20d",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 17908258,
+          "git_blob_sha1": "2ad6ecfda312be128ac878a61f3ee84dfe1134f8",
+          "publisher_lfs_sha256": "a39eed58008cbcbc09e5b629b81338a654269c64cd13348aaa6090f4db75c7e7",
+          "local_sha256_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1839,
+          "git_blob_sha1": "a75e03477be65dc10ecab9ed56c303063cf74019",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        },
+        {
+          "path": "video_processing_lfm3_vl.py",
+          "bytes": 17161,
+          "git_blob_sha1": "f26f48efc0ff1087dffdef2516b08c7ea905c9cb",
+          "publisher_lfs_sha256": null,
+          "local_sha256_verified": false
+        }
+      ],
+      "not_selected_duplicate_formats_or_nonessential": [
+        {
+          "path": "LFM3-VL-2B-heretic-F16.gguf",
+          "bytes": 3466625568,
+          "reason": "Heretic alternate GGUF formats already represented by BF16 original and Q4_K_M+mmproj pair"
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-IQ3_S.gguf",
+          "bytes": 854875936,
+          "reason": "Heretic alternate GGUF formats already represented by BF16 original and Q4_K_M+mmproj pair"
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-IQ4_XS.gguf",
+          "bytes": 1011166752,
+          "reason": "Heretic alternate GGUF formats already represented by BF16 original and Q4_K_M+mmproj pair"
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-Q2_K.gguf",
+          "bytes": 750153760,
+          "reason": "Heretic alternate GGUF formats already represented by BF16 original and Q4_K_M+mmproj pair"
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-Q3_K_L.gguf",
+          "bytes": 967065376,
+          "reason": "Heretic alternate GGUF formats already represented by BF16 original and Q4_K_M+mmproj pair"
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-Q3_K_M.gguf",
+          "bytes": 914898720,
+          "reason": "Heretic alternate GGUF formats already represented by BF16 original and Q4_K_M+mmproj pair"
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-Q3_K_S.gguf",
+          "bytes": 854875936,
+          "reason": "Heretic alternate GGUF formats already represented by BF16 original and Q4_K_M+mmproj pair"
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-Q4_0.gguf",
+          "bytes": 1049614880,
+          "reason": "Heretic alternate GGUF formats already represented by BF16 original and Q4_K_M+mmproj pair"
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-Q4_1.gguf",
+          "bytes": 1141256736,
+          "reason": "Heretic alternate GGUF formats already represented by BF16 original and Q4_K_M+mmproj pair"
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-Q4_K_S.gguf",
+          "bytes": 1056037408,
+          "reason": "Heretic alternate GGUF formats already represented by BF16 original and Q4_K_M+mmproj pair"
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-Q5_K_M.gguf",
+          "bytes": 1258662432,
+          "reason": "Heretic alternate GGUF formats already represented by BF16 original and Q4_K_M+mmproj pair"
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-Q5_K_S.gguf",
+          "bytes": 1232898592,
+          "reason": "Heretic alternate GGUF formats already represented by BF16 original and Q4_K_M+mmproj pair"
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-Q6_K.gguf",
+          "bytes": 1427637536,
+          "reason": "Heretic alternate GGUF formats already represented by BF16 original and Q4_K_M+mmproj pair"
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-Q8_0.gguf",
+          "bytes": 1846237728,
+          "reason": "Heretic alternate GGUF formats already represented by BF16 original and Q4_K_M+mmproj pair"
+        }
+      ],
+      "owner_rights_checked": false,
+      "owner_hdd_local_sha_checked": false,
+      "code_loaded": false,
+      "runtime_reconstructed_offline": false,
+      "download_approved": false
+    }
+  ],
+  "model_repo_count": 4,
+  "publisher_all_repo_files_count": 89,
+  "publisher_all_repo_bytes": 30459667748,
+  "selected_files_count": 58,
+  "selected_source_bytes": 11026306599,
+  "selected_lfs_sha256_count": 9,
+  "source_relation_compare": {
+    "official_LFM3_VL_parent_training_revision": "f83d2b0a2296aaa277f394990a9b8b949ddf9691",
+    "official_LFM3_VL_latest_revision_observed": "23387beda43c60310348e83e25f78f33c3140d3a",
+    "training_parent_official_same_weight_sha_as_latest": true,
+    "edited_derivative_revision": "f4cf2cfb5b1289ca4ca10c6c71eb17d147c8c795",
+    "parent_weight_lfs_sha256": "a9bb8b1c159c9d6c3007bc1c7ad8018b599f759d97da2701714e37426283e131",
+    "heretic_weight_lfs_sha256": "91d527edb09f1e382172c9bf4028247676f92b6c1545f1e4d6b8920b4eba906a",
+    "independently_different_trained_edit_weights": true,
+    "shared_identical_code_and_tokenizer_references": [
+      {
+        "path": "chat_template.jinja",
+        "publisher_sha256": null,
+        "git_blob_sha1": "d0747b8b5fc99eaecfe02a04eefcff75eb181334",
+        "bytes": 12129
+      },
+      {
+        "path": "configuration_lfm3.py",
+        "publisher_sha256": null,
+        "git_blob_sha1": "f314814961969f97cdb91ad7e00ab4b9fab1e594",
+        "bytes": 6105
+      },
+      {
+        "path": "configuration_lfm3_vl.py",
+        "publisher_sha256": null,
+        "git_blob_sha1": "ef6fa2dbd2048fb0d9fca609f28aa726ff2ec031",
+        "bytes": 9138
+      },
+      {
+        "path": "image_processing_lfm3_vl.py",
+        "publisher_sha256": null,
+        "git_blob_sha1": "8d27ebbca64a3aa55313c2d074fc684a8d9c335b",
+        "bytes": 12036
+      },
+      {
+        "path": "lfm3_conv.py",
+        "publisher_sha256": null,
+        "git_blob_sha1": "a1b67afdb605452f5a99751862863d5460a1fa69",
+        "bytes": 8532
+      },
+      {
+        "path": "modeling_lfm3.py",
+        "publisher_sha256": null,
+        "git_blob_sha1": "c6e66b81281c20e5758c3b4d96e0a248c3d3a233",
+        "bytes": 42343
+      },
+      {
+        "path": "modeling_lfm3_vl.py",
+        "publisher_sha256": null,
+        "git_blob_sha1": "e6c75314edc860cadaa162ab595e2f96956d6cfe",
+        "bytes": 44999
+      },
+      {
+        "path": "processing_lfm3_vl.py",
+        "publisher_sha256": null,
+        "git_blob_sha1": "b15a003dcad67a5d9b8ba2113bb35d622be04619",
+        "bytes": 12152
+      },
+      {
+        "path": "tokenizer.json",
+        "publisher_sha256": "a39eed58008cbcbc09e5b629b81338a654269c64cd13348aaa6090f4db75c7e7",
+        "git_blob_sha1": "2ad6ecfda312be128ac878a61f3ee84dfe1134f8",
+        "bytes": 17908258
+      },
+      {
+        "path": "video_processing_lfm3_vl.py",
+        "publisher_sha256": null,
+        "git_blob_sha1": "f26f48efc0ff1087dffdef2516b08c7ea905c9cb",
+        "bytes": 17161
+      }
+    ],
+    "shared_identical_publisher_reference_bytes": 18072853,
+    "owner_local_shared_files_sha_checked": false,
+    "publisher_diff_does_not_prove_better_quality": true
+  },
+  "heretic_quantized_runtime_representation": {
+    "one_text_quant_file": "LFM3-VL-2B-heretic-Q4_K_M.gguf",
+    "one_vision_projector_file": "LFM3-VL-2B-heretic-mmproj-F16.gguf",
+    "archival_original_file": "model.safetensors",
+    "why_two_representations_not_two_models": "Reproducibility insurance: full-precision BF16 original plus one portable llama.cpp Q4 text and FP16 vision bridge. No other GGUF formats as separate models.",
+    "publisher_engine_requirements": "LFM3-VL capable llama.cpp late Oct 2026+ for images; Transformers>=5.21.0 with static reviewed trust_remote_code for video; Win and native CPU/GPU unknown"
+  },
+  "cactus_engine_required_for_mirage": {
+    "HF_repo_id": "Cactus-Compute/cactus",
+    "runtime_repo_revision": "f4ab2741203a282c6e7b89983de2b5e5b2e805a8",
+    "runtime_version": "4.1.4",
+    "source_code_repo": "https://github.com/cactus-compute/cactus",
+    "source_code_latest_commit_at_study": "bb822a35983cf0ff942d67d46b8b79b535773b02",
+    "windows_x86_64_and_linux_x86_64_runtime_file_refs": [
+      {
+        "path": "releases/4.1.4/LICENSE",
+        "size": 11358,
+        "oid": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+        "lfs_sha256": null
+      },
+      {
+        "path": "releases/4.1.4/manifest.json",
+        "size": 8896,
+        "oid": "758ee1daa242fc84ee6af4566ad08d457bfc6138",
+        "lfs_sha256": null
+      },
+      {
+        "path": "releases/4.1.4/windows-x86_64/cactus.exe",
+        "size": 1622528,
+        "oid": "13e073be3416a569e4f7be4b1b1c9f1132f6583c",
+        "lfs_sha256": "674b106bcb5a51b347c744871489a911cecdf1f418db7462abadc223367ab0fa"
+      },
+      {
+        "path": "releases/4.1.4/linux-x86_64/cactus",
+        "size": 1604112,
+        "oid": "5b867da7e71509f772413560ef1ce1c2fd87c6b0",
+        "lfs_sha256": "b673d15cea1aab473094acdcea8f9fc2a295f67c5bacdb46b516f199e0a3002f"
+      },
+      {
+        "path": "releases/4.1.4/python/cactus_runtime-4.1.4-py3-none-win_amd64.whl",
+        "size": 891053,
+        "oid": "127ad9ba9a2318dff49dd2f68097c19a947f4a22",
+        "lfs_sha256": "76f21737d93a5246afe2bfee65a5a338df35217cb6258c7aa9cc747e6ea2bb73"
+      }
+    ],
+    "selected_runtime_files_bytes": 4137947,
+    "model_source_bytes_exclude_runtime": true,
+    "owner_Windows_D_runtime_binary_untrusted_not_executed": true
+  },
+  "Aurora2_format_dedup": "FP32 399597454 trainable serialized elements master only; BF16 and FP16 conversions in same repo intentionally not selected",
+  "mirage_technical_model_parameter_count": "Publisher claims 51.3M; no reliable complete tensor metadata from HF repo, final lock blocked",
+  "rights_and_full_offline_bundle_complete": false,
+  "owner_hdd_sha_reverified": false,
+  "new_model_payload_download_bytes": 0,
+  "download_approval_added": 0
+}

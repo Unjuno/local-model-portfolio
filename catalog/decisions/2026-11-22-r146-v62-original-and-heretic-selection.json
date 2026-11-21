@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "kind": "R146_V62_FOUR_ORIGINAL_MODELS_SMALL_UNCENSORED_LICENSE_AND_HASH_SELECTION",
+  "date_jst": "2026-11-22",
+  "target_repo": "Unjuno/local-model-portfolio",
+  "previous_revision": "v61-20261122",
+  "new_revision": "v62-20261122",
+  "old_registered": 227,
+  "old_active": 180,
+  "new_registered": 231,
+  "new_active": 184,
+  "overlay": "catalog/revisions/v62-2026-11-22.json",
+  "source_manifest": "manifests/drafts/r146-2026-11-22-aurora-mirage-lfm3-paired-source.candidate.json",
+  "post96_queue": "queues/proposed-v62-r147-post96-next-research-sources.json",
+  "decisions": [
+    {
+      "repo_id": "AuroraAI-Research/Aurora2-400M-A20M",
+      "decision": "ADOPT_CONDITIONAL_SCRATCH_PRETRAINED_F32_ARCHIVAL_MASTER",
+      "trained_total_parameters": 399597454,
+      "active_parameters_per_token_publisher_claim": 19050382,
+      "selected_bytes": 1599571502,
+      "selected_files": 10,
+      "why_preserve": "Independent scratch-trained 400M total top-1 MoE (19M active), unique training state and router code; research on efficient routing. F32 master survives even if BF16 conversions are reproducible.",
+      "alternative": "Existing Liquid/LFM3 hybrid and Tiny drafter are differently trained/architected, not functional substitutes for Aurora routing. FP16/BF16 Aurora conversion copies excluded.",
+      "uncertainty": "Publisher only 100B training tokens and 36h RTX PRO 6000 claim; short 2048 context, base-only non-assistant, source training datasets and FlexAttention runtime unverified.",
+      "status": "SOURCE_ONLY_NO_OWNER_ABI_LICENSE_OR_QUALITY_PASS"
+    },
+    {
+      "repo_id": "Cactus-Compute/mirage",
+      "decision": "ADOPT_CONDITIONAL_TINY_F32_AND_CACT_RUNTIME_ORIGINAL_ONE_LOGICAL_MODEL",
+      "trained_total_parameters": null,
+      "publisher_claim_parameters": 51300000,
+      "selected_bytes": 237985863,
+      "selected_files": 5,
+      "why_preserve": "Independent multifunctional tiny visual perception trained outcome distinct from much larger OCR and VLMs; native compressed 21MB cact plus F32 safetensors 216MB under same logical ID. Pinned Windows/Linux Cactus 4.1.4 native runtime and repo source make future offline study possible.",
+      "alternative": "PaddleOCR-VL1.5 and WeVisOne-VL work in larger VLM regime, not minimal structured spatial/segmentation decision on phones; retain existing source without replacement.",
+      "uncertainty": "No total tensor census on HF for Mirage, reviewer vendor claims 51.3M; 74ms Samsung Galaxy S26 NPU and 107ms CPU lack independently verified clocks/batch/runtime; standalone binaries untrusted until static review.",
+      "status": "SOURCE_ONLY_UNKNOWN_TRAINED_TOTAL_BLOCK_FINAL_LOCK"
+    },
+    {
+      "repo_id": "LiquidAI/LFM3-VL-2B",
+      "decision": "ADOPT_CONDITIONAL_EXACT_TRAINING_PARENT_BF16_MULTIMODAL_ORIGINAL",
+      "trained_total_parameters": 1918181888,
+      "selected_bytes": 3854651108,
+      "selected_files": 18,
+      "why_preserve": "This exact parent f83d2b0a is referenced by independently edited safety model and is full post-trained image/video QnA BF16 original. Later HF code revision has same weight SHA, but recipe exact parent revision preserves historical reconstruction.",
+      "alternative": "Existing LFM3-1.7B-Base and Omni2B are not the same trained image/video model, so neither is an equivalent substitute.",
+      "uncertainty": "LFM Open License v1.0 annual 10 million USD revenue threshold for commercial use; parent code remote Python, ABI/owner hardware and full offline restoration untested.",
+      "status": "SOURCE_ONLY_OWNER_LFM_LICENSE_AND_RUNTIME_STOP"
+    },
+    {
+      "repo_id": "saidutta69/LFM3-VL-2B-heretic",
+      "decision": "ADOPT_CONDITIONAL_BF16_SAFETY_DIRECTION_EDIT_PLUS_ONE_Q4_AND_MMPROJ",
+      "trained_total_parameters": 1918181888,
+      "selected_bytes": 5334098126,
+      "selected_files": 25,
+      "why_preserve": "Actual independent refusal-direction edited language tower with BF16 SHA different from publisher training parent; completely independent from full original but shares unchanged custom code and tokenizer; preserve BF16 original + 1 Q4_K_M text GGUF + 1 F16 vision projector as one logical trained outcome; author published exact Heretic1.4.0 and pinned parent/harmless-harmful datasets config.",
+      "alternative": "14 extra GGUF quantizations are not distinct training and excluded; earlier Inkling tiny edit LoRA is a different architecture and multimodal editing technique.",
+      "uncertainty": "Author 100-request refusal set 98 vs 3 and 14042-question text MMLU accuracy difference 34.37 vs 34.44 not conclusive, no independent image quality. LFM $10m annual commercial license clause and owner code ABI/parent local SHA unverified.",
+      "status": "SOURCE_ONLY_PAIRED_LFM_ORIGINAL_RIGHTS_ABI_UNTESTED"
+    }
+  ],
+  "source_scope": {
+    "repo_count": 4,
+    "selected_file_refs": 58,
+    "selected_reference_bytes": 11026306599,
+    "selected_lfs_sha256_refs": 9,
+    "Cactus_4_1_4_code_binary_refs": 5,
+    "Cactus_4_1_4_runtime_reference_bytes": 4137947,
+    "publisher_same_training_parent_heretic_code_sha_reuse_bytes": 18072853,
+    "owner_local_dedup_not_verified": true
+  },
+  "reference_evidence": {
+    "Liquid_LFM_license": "https://www.liquid.ai/lfm-license",
+    "Cactus_mirage_publisher": "https://cactuscompute.com/blog/mirage",
+    "Aurora_publisher": "https://huggingface.co/AuroraAI-Research/Aurora2-400M-A20M",
+    "Heretic_publisher": "https://huggingface.co/saidutta69/LFM3-VL-2B-heretic",
+    "US_2026_11_19_BIS_ECCN_4E091_repeal": "https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm",
+    "future_specific_access_removal_probability": null
+  },
+  "H_T_D_C_U": {
+    "H": "Four independently trained or edited states provide small scratch MoE, one-pass tiny visual/OCR, exact base multimodal LFM, and uncensored multimodal weight editing with a fixed user-offline usable Q4 representation, without counting format copies as models.",
+    "T": "Inspect publisher immutable 40hex model revisions and exact 58 selected paths, byte sizes and 9 LFS SHA256 references; compare heretic parent BF16 weights SHA different and 18.07MB code/tokenizer identical at publisher; freeze Cactus 4.1.4 native Win/Linux path. Offline verify v61 old227 exact prefix, 184 active, 131 conditional, 0 approved. Independent runtime future minimum 30 representative trials per model at fixed HW/clock/backend/quantization/zero-point, context and batch with predeclared quality thresholds.",
+    "D": "PASS archive selection when source metadata identity 58/9 verified, historical 227 unchanged, all active blocked and zero approved. FAIL on missing model weight SHA/version, duplicate quant treated separately, known-restricted rights or dependency mismatch. Actual user download FAIL-CLOSED without owner legal acts, live HDD 200GB floor, local file SHA, dependencies/runtime, and explicit manifest approval. Quality UNCERTAIN until independent trials.",
+    "C": "Aurora base model may be too weak beyond research; Mirage engine may not work on owner Windows or OCR quality low; heretic edit may diminish critical vision or add unsafe compliance, training parent might not be necessary if full derivative is self-contained.",
+    "U": "Main uncertainties: author-only benchmarks, trainer-data rights, LFM user annual revenue classification, Cactus proprietary compressed ABI, owner D physical capacity/sha and CPU/GPU drivers, unverified Mirage total learned tensor count. No independent repeated measured error terms to compute combined standard uncertainty u_c or k."
+  },
+  "cross_disciplines": [
+    "efficient_MoE_architecture_and_quantization",
+    "edge_perception_and_robotics",
+    "software_supply_chain_reproducibility",
+    "copyright_export_and_commercial_license"
+  ],
+  "execution": {
+    "ledger_existing_verified_models_reported": 96,
+    "owner_D_independent_SHA_retested": false,
+    "approved_queue_entries": 0,
+    "model_weight_bytes_downloaded_by_this_research": 0,
+    "unreviewed_runtime_executed": false,
+    "user_rights_checked": false
+  }
+}

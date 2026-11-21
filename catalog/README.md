@@ -1,5 +1,11 @@
 # 資産台帳
 
+## 現行v62・2026-11-22（v61以前は履歴）
+
+[CURRENT](CURRENT.json) →**231登録／184有効**、[Aurora2＋Mirage＋LFM3-VL親・Heretic改変原本](../docs/strategy/146-v62-rare-small-uncensored-vision-dual-master-selection.md)をCONDITIONAL4件追加。[新4repoの58 source file SHA](../manifests/drafts/r146-2026-11-22-aurora-mirage-lfm3-paired-source.candidate.json)、[全184STOP](readiness/v62-2026-11-22-r146-all184-gates.json)。旧227全て維持。publisher sourceのみ、owner HDD実測なし、今回重みDL/承認0。
+
+---
+
 ## 現行v61・2026-11-22（v60以下は履歴）
 
 [CURRENT](CURRENT.json)で**227登録・180有効**。FastFrames-S／MOSS-VL-Realtime／Cosmos3-Nano-Sim-Transferの3独立学習成果をCONDITIONAL追加。旧224件不変更。[判断・権利・固定コード](../docs/strategy/144-v61-video-realtime-world-model-source-selection.md)／[70ファイル／55.386GB source](../manifests/drafts/r144-2026-11-22-video-world-and-streaming-publisher-sources.candidate.json)／[177から180へ拡張した停止ゲート](readiness/v61-2026-11-22-r144-all180-gates.json)。owner HDD実測なし、取得承認0、危険コード未実行。

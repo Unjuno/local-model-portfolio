@@ -1,0 +1,789 @@
+{
+  "schema_version": 1,
+  "revision_id": "v62-20261122",
+  "previous_revision_id": "v61-20261122",
+  "decision_date_jst": "2026-11-22",
+  "target_branch": "main",
+  "kind": "FOUR_COMPACT_INDEPENDENT_ORIGINAL_TRAINED_STATES_WITH_ONE_HERETIC_SAFETY_EDIT_PAIRED_LFM3_PARENT",
+  "previous_asset_count": 227,
+  "previous_active_count": 180,
+  "additions": [
+    {
+      "position": 228,
+      "asset_kind": "model",
+      "repo_id": "AuroraAI-Research/Aurora2-400M-A20M",
+      "url": "https://huggingface.co/AuroraAI-Research/Aurora2-400M-A20M",
+      "group": "小型400M総・A20M活性・独立事前学習MoE",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Publisher original scratch-pretrained 399,597,454 F32 total MoE and 19,050,382 active per token with top-1/32 routed experts and per-token shared expert; unique dense-vs-active sparse training research outcome, unlike existing LFM hybrid or drafter variants. Keep FP32 master not duplicate BF16/FP16 copies.",
+      "quality_positive": "Complete first party config, tokenizer, custom code and F32 weight snapshot; 100B token training claim, single RTX PRO 6000 approximately 36 hours claimed; no instruction/RLHF stage.",
+      "quality_negative": "Base-only model not an instruction assistant; 2,048 context, English-heavy, limited factual reasoning, and publisher training data mixing rights and FlexAttention PyTorch ABI not validated; claims not independently benchmarked.",
+      "risk_and_alternative_assessment": "Publisher source currently public ungated; no model-specific impending removal or universal local possession ban verified. Demand for uncensored output is not evidence of superior capability.",
+      "evidence_date": "2026-11-22",
+      "evidence_kind": "PUBLISHER_HF_IMMUTABLE_40HEX_FULL_TREE_LFS_SHA256_STATIC_CONFIG_NO_WEIGHTS_EXECUTED",
+      "evidence_urls": [
+        "https://huggingface.co/AuroraAI-Research/Aurora2-400M-A20M",
+        "https://huggingface.co/AuroraAI-Research/Aurora2-400M-A20M/tree/f2e561d38b0c0c35e910c8a519f553b2831ffad4"
+      ],
+      "observed_access": "official public gated:false private:false source snapshot",
+      "license_metadata": "Official Apache-2.0 tag but source training datasets have separate conditions; owner act-specific rights and code security unverified.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "f2e561d38b0c0c35e910c8a519f553b2831ffad4",
+      "upstream_all_files_bytes_observed": 3200300891,
+      "upstream_file_count_observed": 26,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 10,
+      "candidate_selected_source_file_bytes": 1599571502,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": null,
+          "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 10293,
+          "sha256": null,
+          "git_blob_sha1": "c89b67fcd3529c192777ee42bdf178b992f20305",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 784,
+          "sha256": null,
+          "git_blob_sha1": "758f57cbf748a6731ea0462b682f992da71324c2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "configuration_aurora2.py",
+          "bytes": 1899,
+          "sha256": null,
+          "git_blob_sha1": "a5c50e826aeabb93d6bd0e60331f75886132a301",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 167,
+          "sha256": null,
+          "git_blob_sha1": "c827584f9d2502a7b5c00866c383bb3794c7454a",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 1598408840,
+          "sha256": "508b7c3f991db2787bab100a4d6b817789d25ed262ff0c0cdbab62e69d3a1737",
+          "git_blob_sha1": "70569813c105ff1727585b9354b96bce505aa49b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "modeling_aurora2.py",
+          "bytes": 10199,
+          "sha256": null,
+          "git_blob_sha1": "235017c0ea70912ef494922eea56c4c8b9e7df39",
+          "local_sha_verified": false
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 80,
+          "sha256": null,
+          "git_blob_sha1": "8c136f1ad1dfd22b0ac3181cb09a6422874d524b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 1137456,
+          "sha256": null,
+          "git_blob_sha1": "a59e67eb022eb97885655fc567b4208fe2b8d7d5",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 265,
+          "sha256": null,
+          "git_blob_sha1": "da8c7cc4070ab2357dfe434a73c0606bb7f8d1c4",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r146-2026-11-22-aurora-mirage-lfm3-paired-source.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 399597454,
+        "evidence_kind": "HF safetensors F32 399597454 elements full master; active 19050382 separate routing measure, not total",
+        "review_date": "2026-11-22",
+        "local_tensor_census_not_executed": true,
+        "note": "HF safetensors F32 399597454 elements full master; active 19050382 separate routing measure, not total"
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 228,
+        "category": "COMPACT_UNIQUE_TRAINED_OUTCOME_AND_EDITED_VISION",
+        "scenario_status": "HYPOTHESIS_NOT_CERTIFIED_BAN"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "config.json",
+          "configuration_aurora2.py",
+          "generation_config.json",
+          "model.safetensors",
+          "modeling_aurora2.py",
+          "special_tokens_map.json",
+          "tokenizer.json",
+          "tokenizer_config.json"
+        ],
+        "trained_state": "SCRATCH_PRETRAINED_400M_TOP1_ROUTED_32_PLUS_SHARED_MOE",
+        "publisher_immutable_revision": "f2e561d38b0c0c35e910c8a519f553b2831ffad4",
+        "must_retain_license_and_metadata": true,
+        "separate_native_runtime_or_training_parent_provenance": "manifests/drafts/r146-2026-11-22-aurora-mirage-lfm3-paired-source.candidate.json",
+        "owner_local_file_SHA_verified": false,
+        "owner_code_ABI_verified": false,
+        "offline_restoration_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 3200300891,
+        "publisher_selected_source_bytes": 1599571502,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "position": 229,
+      "asset_kind": "model",
+      "repo_id": "Cactus-Compute/mirage",
+      "url": "https://huggingface.co/Cactus-Compute/mirage",
+      "group": "超小型視覚・OCR＋検出＋領域＋構造化判断51.3M",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Independently trained 51.3M-publisher-claimed multifunction image perception outcome, structured scene/OCR/detection/segmentation/symbolic decisions, 216.37MB safetensors original plus 21.611MB native compressed cact representation for edge inference. No duplicate from existing PaddleOCR/WeVisOne/LFM VLM because one-pass tiny specialized perception interface.",
+      "quality_positive": "Official Apache2 HF original, 2 model formats with separate publisher SHA, Cactus Compute version 4.1.4 runtime binary and Windows-x86_64 Python wheel paths now frozen at source revision, so runnable dependency archive can be prepared without auto-install.",
+      "quality_negative": "Complete trained tensor count not independently verified; vendor 74ms Samsung Galaxy S26 NPU and 107ms CPU conditions require independent batch/clocks verification; compressed cact uses proprietary layout but source code pinned; owner Windows runtime/quality untested.",
+      "risk_and_alternative_assessment": "Publisher source currently public ungated; no model-specific impending removal or universal local possession ban verified. Demand for uncensored output is not evidence of superior capability.",
+      "evidence_date": "2026-11-22",
+      "evidence_kind": "PUBLISHER_HF_IMMUTABLE_40HEX_FULL_TREE_LFS_SHA256_STATIC_CONFIG_NO_WEIGHTS_EXECUTED",
+      "evidence_urls": [
+        "https://huggingface.co/Cactus-Compute/mirage",
+        "https://huggingface.co/Cactus-Compute/mirage/tree/3d03cee88c0acbe4e71b94b567ab14e6e55f40c9"
+      ],
+      "observed_access": "official public gated:false private:false source snapshot",
+      "license_metadata": "Official model Apache-2.0; runtime 4.1.4 LICENSE source must be checked and owner permission for binary execution approved.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "3d03cee88c0acbe4e71b94b567ab14e6e55f40c9",
+      "upstream_all_files_bytes_observed": 238610263,
+      "upstream_file_count_observed": 6,
+      "upstream_lfs_sha256_count_observed": 2,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 5,
+      "candidate_selected_source_file_bytes": 237985863,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1623,
+          "sha256": null,
+          "git_blob_sha1": "e28b1818d7c9b28a89c3f5ceb48eff37a3bd2524",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 1263,
+          "sha256": null,
+          "git_blob_sha1": "ed3772001c5c7fe41bb4adaaa000ca0bd1b5d43d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 1430,
+          "sha256": null,
+          "git_blob_sha1": "c3b3ad2dc5db355553f4eaaafdcea696ba573673",
+          "local_sha_verified": false
+        },
+        {
+          "path": "mirage.cact",
+          "bytes": 21611043,
+          "sha256": "4249a0f7515272ff76b9414bec17d7e7daf84b15b66c7fb4f17fce1e66f9f237",
+          "git_blob_sha1": "523901a19ec2d30b734e8166fd5b8c569f615032",
+          "local_sha_verified": false
+        },
+        {
+          "path": "mirage.safetensors",
+          "bytes": 216370504,
+          "sha256": "6ba97c5c1bef661c9b0c80782135682b38b4312fb33e0b645c93c10604bb16cd",
+          "git_blob_sha1": "441199c823d7dfbcbabab4a7bf14564f6bc651b8",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r146-2026-11-22-aurora-mirage-lfm3-paired-source.candidate.json",
+      "parameter_gate": {
+        "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+        "total_parameters": null,
+        "evidence_kind": "Publisher claims 51.3M; no reliable official safetensors index/model census for full engine -> final trained total not locked",
+        "review_date": "2026-11-22",
+        "local_tensor_census_not_executed": true,
+        "note": "Publisher claims 51.3M; no reliable official safetensors index/model census for full engine -> final trained total not locked"
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 229,
+        "category": "COMPACT_UNIQUE_TRAINED_OUTCOME_AND_EDITED_VISION",
+        "scenario_status": "HYPOTHESIS_NOT_CERTIFIED_BAN"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "config.json",
+          "mirage.cact",
+          "mirage.safetensors"
+        ],
+        "trained_state": "CACTUS_MIRAGE_TINY_VISUAL_STRUCTURED_PERCEPTION_F32_AND_2BIT",
+        "publisher_immutable_revision": "3d03cee88c0acbe4e71b94b567ab14e6e55f40c9",
+        "must_retain_license_and_metadata": true,
+        "separate_native_runtime_or_training_parent_provenance": "manifests/drafts/r146-2026-11-22-aurora-mirage-lfm3-paired-source.candidate.json",
+        "owner_local_file_SHA_verified": false,
+        "owner_code_ABI_verified": false,
+        "offline_restoration_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 238610263,
+        "publisher_selected_source_bytes": 237985863,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "position": 230,
+      "asset_kind": "model",
+      "repo_id": "LiquidAI/LFM3-VL-2B",
+      "url": "https://huggingface.co/LiquidAI/LFM3-VL-2B",
+      "group": "LFM3-VL・小型画像動画の親学習原本",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Publisher original 1,918,181,888 element BF16 multimodal trained VLM (language 1.729B, vision 164.2M, projector 25.17M); the exact parent commit f83d2b0a.. is named in the independently published Heretic edit recipe; preserve base as distinct learned state to allow rollback and future redirection, not separate quantization.",
+      "quality_positive": "Publisher exact training parent BF16 LFS SHA a9bb8b... is unchanged in newer HF revision 23387beda...; all 18 training-parent files, native video preprocessing and custom code retained.",
+      "quality_negative": "No independent owner video/OCR quality or runtime test; transformers>=5.21 custom model Python code, 128K advertised context may exceed owner GPU, license and training data rights not audited.",
+      "risk_and_alternative_assessment": "Publisher source currently public ungated; no model-specific impending removal or universal local possession ban verified. Demand for uncensored output is not evidence of superior capability.",
+      "evidence_date": "2026-11-22",
+      "evidence_kind": "PUBLISHER_HF_IMMUTABLE_40HEX_FULL_TREE_LFS_SHA256_STATIC_CONFIG_NO_WEIGHTS_EXECUTED",
+      "evidence_urls": [
+        "https://huggingface.co/LiquidAI/LFM3-VL-2B",
+        "https://huggingface.co/LiquidAI/LFM3-VL-2B/tree/f83d2b0a2296aaa277f394990a9b8b949ddf9691"
+      ],
+      "observed_access": "official public gated:false private:false source snapshot",
+      "license_metadata": "LFM Open License v1.0, commercial use threshold $10M annual company revenue; owner action-specific commercial status not verified. Retain LICENSE and attribution.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "f83d2b0a2296aaa277f394990a9b8b949ddf9691",
+      "upstream_all_files_bytes_observed": 3854651108,
+      "upstream_file_count_observed": 18,
+      "upstream_lfs_sha256_count_observed": 2,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 18,
+      "candidate_selected_source_file_bytes": 3854651108,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "sha256": null,
+          "git_blob_sha1": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 10574,
+          "sha256": null,
+          "git_blob_sha1": "2a513f17eb4b8008fb100349fd2b7551d009fed0",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 141669,
+          "sha256": null,
+          "git_blob_sha1": "f4442340c9b04a926413b4ba17600aa133e2568f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 12129,
+          "sha256": null,
+          "git_blob_sha1": "d0747b8b5fc99eaecfe02a04eefcff75eb181334",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 2905,
+          "sha256": null,
+          "git_blob_sha1": "e533d46df1b9c3e3edfcb900d36ceaa9c8feb0a1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "configuration_lfm3.py",
+          "bytes": 6105,
+          "sha256": null,
+          "git_blob_sha1": "f314814961969f97cdb91ad7e00ab4b9fab1e594",
+          "local_sha_verified": false
+        },
+        {
+          "path": "configuration_lfm3_vl.py",
+          "bytes": 9138,
+          "sha256": null,
+          "git_blob_sha1": "ef6fa2dbd2048fb0d9fca609f28aa726ff2ec031",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 323,
+          "sha256": null,
+          "git_blob_sha1": "53eb5506081689943b64dcde4fbfcc41043aa87a",
+          "local_sha_verified": false
+        },
+        {
+          "path": "image_processing_lfm3_vl.py",
+          "bytes": 12036,
+          "sha256": null,
+          "git_blob_sha1": "8d27ebbca64a3aa55313c2d074fc684a8d9c335b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "lfm3_conv.py",
+          "bytes": 8532,
+          "sha256": null,
+          "git_blob_sha1": "a1b67afdb605452f5a99751862863d5460a1fa69",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 3836417920,
+          "sha256": "a9bb8b1c159c9d6c3007bc1c7ad8018b599f759d97da2701714e37426283e131",
+          "git_blob_sha1": "32cf98bd0797a7972d6085c1b525c882feead47e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "modeling_lfm3.py",
+          "bytes": 42343,
+          "sha256": null,
+          "git_blob_sha1": "c6e66b81281c20e5758c3b4d96e0a248c3d3a233",
+          "local_sha_verified": false
+        },
+        {
+          "path": "modeling_lfm3_vl.py",
+          "bytes": 44999,
+          "sha256": null,
+          "git_blob_sha1": "e6c75314edc860cadaa162ab595e2f96956d6cfe",
+          "local_sha_verified": false
+        },
+        {
+          "path": "processing_lfm3_vl.py",
+          "bytes": 12152,
+          "sha256": null,
+          "git_blob_sha1": "b15a003dcad67a5d9b8ba2113bb35d622be04619",
+          "local_sha_verified": false
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 1535,
+          "sha256": null,
+          "git_blob_sha1": "1f38b9a150b604c3270dbfb883b6902a5763d3da",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 17908258,
+          "sha256": "a39eed58008cbcbc09e5b629b81338a654269c64cd13348aaa6090f4db75c7e7",
+          "git_blob_sha1": "2ad6ecfda312be128ac878a61f3ee84dfe1134f8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1759,
+          "sha256": null,
+          "git_blob_sha1": "e095df65c9ef161fc054821fc6773614ac728f03",
+          "local_sha_verified": false
+        },
+        {
+          "path": "video_processing_lfm3_vl.py",
+          "bytes": 17161,
+          "sha256": null,
+          "git_blob_sha1": "f26f48efc0ff1087dffdef2516b08c7ea905c9cb",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r146-2026-11-22-aurora-mirage-lfm3-paired-source.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 1918181888,
+        "evidence_kind": "Hugging Face BF16 safetensors metadata total 1918181888, training-recipe parent SHA verified",
+        "review_date": "2026-11-22",
+        "local_tensor_census_not_executed": true,
+        "note": "Hugging Face BF16 safetensors metadata total 1918181888, training-recipe parent SHA verified"
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 230,
+        "category": "COMPACT_UNIQUE_TRAINED_OUTCOME_AND_EDITED_VISION",
+        "scenario_status": "HYPOTHESIS_NOT_CERTIFIED_BAN"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "LICENSE",
+          "README.md",
+          "chat_template.jinja",
+          "config.json",
+          "configuration_lfm3.py",
+          "configuration_lfm3_vl.py",
+          "generation_config.json",
+          "image_processing_lfm3_vl.py",
+          "lfm3_conv.py",
+          "model.safetensors",
+          "modeling_lfm3.py",
+          "modeling_lfm3_vl.py",
+          "processing_lfm3_vl.py",
+          "processor_config.json",
+          "tokenizer.json",
+          "tokenizer_config.json",
+          "video_processing_lfm3_vl.py"
+        ],
+        "trained_state": "OFFICIAL_POSTTRAINED_LFM3_VL_2B_FULL_BF16_TRAINING_PARENT",
+        "publisher_immutable_revision": "f83d2b0a2296aaa277f394990a9b8b949ddf9691",
+        "must_retain_license_and_metadata": true,
+        "separate_native_runtime_or_training_parent_provenance": "manifests/drafts/r146-2026-11-22-aurora-mirage-lfm3-paired-source.candidate.json",
+        "owner_local_file_SHA_verified": false,
+        "owner_code_ABI_verified": false,
+        "offline_restoration_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 3854651108,
+        "publisher_selected_source_bytes": 3854651108,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    },
+    {
+      "position": 231,
+      "asset_kind": "model",
+      "repo_id": "saidutta69/LFM3-VL-2B-heretic",
+      "url": "https://huggingface.co/saidutta69/LFM3-VL-2B-heretic",
+      "group": "小型無検閲・画像理解Heretic1.92B BF16原本",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Independently weight-edited 1,918,181,888 element BF16 LFM3-VL state: refusal direction ablation on language tower differs in official model SHA from selected training parent; preserve full BF16 plus one Q4_K_M GGUF text and FP16 mmproj for local vision, not 14 alternative quant copies. Includes pinned complete reproduction recipe with parent commit.",
+      "quality_positive": "Author 100-prompt refusal test 98→3 refusals at KL=0.0014; same-HW 14,042-question MMLU text 34.44% vs parent 34.37% is within reported 0.40pp standard error. Repro log documents RTX PRO 6000 Blackwell 94.97GB VRAM, CUDA13.0, driver595.71.05, Heretic1.4.0, lm-eval0.4.13, batch 128 for abliteration. Not independently validated.",
+      "quality_negative": "Does not improve base reasoning/visual quality by refusal editing; source HF yaml once misreported parent, but reproduce/config.toml has f83d2b0a and corrected card. Q4 plus mmproj compatible llama.cpp implementation and Windows CPU/GPU not tested. Some author prompts/data may have downstream rights.",
+      "risk_and_alternative_assessment": "Publisher source currently public ungated; no model-specific impending removal or universal local possession ban verified. Demand for uncensored output is not evidence of superior capability.",
+      "evidence_date": "2026-11-22",
+      "evidence_kind": "PUBLISHER_HF_IMMUTABLE_40HEX_FULL_TREE_LFS_SHA256_STATIC_CONFIG_NO_WEIGHTS_EXECUTED",
+      "evidence_urls": [
+        "https://huggingface.co/saidutta69/LFM3-VL-2B-heretic",
+        "https://huggingface.co/saidutta69/LFM3-VL-2B-heretic/tree/f4cf2cfb5b1289ca4ca10c6c71eb17d147c8c795"
+      ],
+      "observed_access": "official public gated:false private:false source snapshot",
+      "license_metadata": "Inherits LFM Open License v1.0, annual revenue threshold $10M for commercial use; author model tag other rather than Apache2. Upstream and training dataset rights unverified.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "f4cf2cfb5b1289ca4ca10c6c71eb17d147c8c795",
+      "upstream_all_files_bytes_observed": 23166105486,
+      "upstream_file_count_observed": 39,
+      "upstream_lfs_sha256_count_observed": 4,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 25,
+      "candidate_selected_source_file_bytes": 5334098126,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2632,
+          "sha256": null,
+          "git_blob_sha1": "7e0942b8998b61661307400f65b714c4064d099a",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-Q4_K_M.gguf",
+          "bytes": 1099627040,
+          "sha256": "d44c819c8146025f254c3c530a4b4365c13ff0f4ed21d82e73ca9fb4c1e84de0",
+          "git_blob_sha1": "b00c5cb3cf74314229f342612cab7ab20b8381f2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-mmproj-F16.gguf",
+          "bytes": 378995200,
+          "sha256": "1c8d2e7085db355f3e5a9673914154350124ee27b58b88e2eb4063034c228bf6",
+          "git_blob_sha1": "37e06e0ae73100f566e6c2e38c14e06bc923ff40",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 13210,
+          "sha256": null,
+          "git_blob_sha1": "9b789d18e56478636d5ed91a8a05fb9159e56453",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 12129,
+          "sha256": null,
+          "git_blob_sha1": "d0747b8b5fc99eaecfe02a04eefcff75eb181334",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 3638,
+          "sha256": null,
+          "git_blob_sha1": "a2758f2ab3dc54c564ebdbb994c0b4bcc90072a5",
+          "local_sha_verified": false
+        },
+        {
+          "path": "configuration_lfm3.py",
+          "bytes": 6105,
+          "sha256": null,
+          "git_blob_sha1": "f314814961969f97cdb91ad7e00ab4b9fab1e594",
+          "local_sha_verified": false
+        },
+        {
+          "path": "configuration_lfm3_vl.py",
+          "bytes": 9138,
+          "sha256": null,
+          "git_blob_sha1": "ef6fa2dbd2048fb0d9fca609f28aa726ff2ec031",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 318,
+          "sha256": null,
+          "git_blob_sha1": "58fd81359a2e801e00146ca9d4c78159466a07c4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "image_processing_lfm3_vl.py",
+          "bytes": 12036,
+          "sha256": null,
+          "git_blob_sha1": "8d27ebbca64a3aa55313c2d074fc684a8d9c335b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "lfm3_conv.py",
+          "bytes": 8532,
+          "sha256": null,
+          "git_blob_sha1": "a1b67afdb605452f5a99751862863d5460a1fa69",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 3836417920,
+          "sha256": "91d527edb09f1e382172c9bf4028247676f92b6c1545f1e4d6b8920b4eba906a",
+          "git_blob_sha1": "5be0dab72cc39eb8f2c260869bcc411644c295e9",
+          "local_sha_verified": false
+        },
+        {
+          "path": "modeling_lfm3.py",
+          "bytes": 42343,
+          "sha256": null,
+          "git_blob_sha1": "c6e66b81281c20e5758c3b4d96e0a248c3d3a233",
+          "local_sha_verified": false
+        },
+        {
+          "path": "modeling_lfm3_vl.py",
+          "bytes": 44999,
+          "sha256": null,
+          "git_blob_sha1": "e6c75314edc860cadaa162ab595e2f96956d6cfe",
+          "local_sha_verified": false
+        },
+        {
+          "path": "processing_lfm3_vl.py",
+          "bytes": 12152,
+          "sha256": null,
+          "git_blob_sha1": "b15a003dcad67a5d9b8ba2113bb35d622be04619",
+          "local_sha_verified": false
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 1657,
+          "sha256": null,
+          "git_blob_sha1": "6bad741b2e210292ac0b57f27ea14a77096bd9d1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "reproduce/LiquidAI--LFM3-VL-2B.jsonl",
+          "bytes": 944881,
+          "sha256": null,
+          "git_blob_sha1": "34a442dacba8349a59f36a2dc04dbf25441f76b3",
+          "local_sha_verified": false
+        },
+        {
+          "path": "reproduce/README.md",
+          "bytes": 3930,
+          "sha256": null,
+          "git_blob_sha1": "b25d064ae549913e1eb597d3169277a7688b6001",
+          "local_sha_verified": false
+        },
+        {
+          "path": "reproduce/SHA256SUMS",
+          "bytes": 84,
+          "sha256": null,
+          "git_blob_sha1": "7482526460b81e045c6eacbf082e51e420d6bdb8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "reproduce/config.toml",
+          "bytes": 1937,
+          "sha256": null,
+          "git_blob_sha1": "f9230a179897d4eeb857ec4d29dcf5df5ef1d481",
+          "local_sha_verified": false
+        },
+        {
+          "path": "reproduce/reproduce.json",
+          "bytes": 9023,
+          "sha256": null,
+          "git_blob_sha1": "754fba4a256625e97394948e60ded46d1176df98",
+          "local_sha_verified": false
+        },
+        {
+          "path": "reproduce/requirements.txt",
+          "bytes": 1964,
+          "sha256": null,
+          "git_blob_sha1": "c34a7b2b27941768bb72a3d9ba209049ab3cf20d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 17908258,
+          "sha256": "a39eed58008cbcbc09e5b629b81338a654269c64cd13348aaa6090f4db75c7e7",
+          "git_blob_sha1": "2ad6ecfda312be128ac878a61f3ee84dfe1134f8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1839,
+          "sha256": null,
+          "git_blob_sha1": "a75e03477be65dc10ecab9ed56c303063cf74019",
+          "local_sha_verified": false
+        },
+        {
+          "path": "video_processing_lfm3_vl.py",
+          "bytes": 17161,
+          "sha256": null,
+          "git_blob_sha1": "f26f48efc0ff1087dffdef2516b08c7ea905c9cb",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r146-2026-11-22-aurora-mirage-lfm3-paired-source.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 1918181888,
+        "evidence_kind": "Full BF16 model metadata 1918181888 and exact different LFS SHA vs training parent; Q4/mmproj are same learned outcome representations",
+        "review_date": "2026-11-22",
+        "local_tensor_census_not_executed": true,
+        "note": "Full BF16 model metadata 1918181888 and exact different LFS SHA vs training parent; Q4/mmproj are same learned outcome representations"
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 231,
+        "category": "COMPACT_UNIQUE_TRAINED_OUTCOME_AND_EDITED_VISION",
+        "scenario_status": "HYPOTHESIS_NOT_CERTIFIED_BAN"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "LFM3-VL-2B-heretic-Q4_K_M.gguf",
+          "LFM3-VL-2B-heretic-mmproj-F16.gguf",
+          "README.md",
+          "chat_template.jinja",
+          "config.json",
+          "configuration_lfm3.py",
+          "configuration_lfm3_vl.py",
+          "generation_config.json",
+          "image_processing_lfm3_vl.py",
+          "lfm3_conv.py",
+          "model.safetensors",
+          "modeling_lfm3.py",
+          "modeling_lfm3_vl.py",
+          "processing_lfm3_vl.py",
+          "processor_config.json",
+          "reproduce/LiquidAI--LFM3-VL-2B.jsonl",
+          "reproduce/README.md",
+          "reproduce/SHA256SUMS",
+          "reproduce/config.toml",
+          "reproduce/reproduce.json",
+          "reproduce/requirements.txt",
+          "tokenizer.json",
+          "tokenizer_config.json",
+          "video_processing_lfm3_vl.py"
+        ],
+        "trained_state": "HERETIC_SAFETY_DIRECTION_EDIT_FULL_BF16_PLUS_Q4_VISION_BRIDGE",
+        "publisher_immutable_revision": "f4cf2cfb5b1289ca4ca10c6c71eb17d147c8c795",
+        "must_retain_license_and_metadata": true,
+        "separate_native_runtime_or_training_parent_provenance": "manifests/drafts/r146-2026-11-22-aurora-mirage-lfm3-paired-source.candidate.json",
+        "owner_local_file_SHA_verified": false,
+        "owner_code_ABI_verified": false,
+        "offline_restoration_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 23166105486,
+        "publisher_selected_source_bytes": 5334098126,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false
+    }
+  ],
+  "added_assets": [
+    "AuroraAI-Research/Aurora2-400M-A20M",
+    "Cactus-Compute/mirage",
+    "LiquidAI/LFM3-VL-2B",
+    "saidutta69/LFM3-VL-2B-heretic"
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "source_manifest": "manifests/drafts/r146-2026-11-22-aurora-mirage-lfm3-paired-source.candidate.json",
+  "publisher_selected_file_refs": 58,
+  "publisher_selected_source_bytes": 11026306599,
+  "publisher_original_full_repo_bytes_including_redundant_conversion": 30459667748,
+  "publisher_LFS_sha256_refs_selected": 9,
+  "shared_parent_heretic_code_tokenizer_hashes": 10,
+  "prior_owner_d_drive_rehash": false,
+  "custom_code_executed": false,
+  "model_weights_fetched_now": 0,
+  "approved": false,
+  "download_authorizations_added": 0,
+  "linked_hf_runtime_Cactus_4_1_4_reference_files": 5,
+  "unselected_research": [
+    "AuroraAI-Research/Aurora2-400M-A20M BF16 or FP16 duplicate formats",
+    "saidutta69/LFM3-VL-2B-heretic alternate GGUF 14 variants",
+    "OpenUncensored/Inkling-2-Mini-Uncensored full alternative without tested incremental quality"
+  ]
+}

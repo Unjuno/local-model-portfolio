@@ -1,3 +1,9 @@
+# 現行v62・R146（2026-11-22）：4独立小型モデル原本と無検閲VLM親を選定、実取得STOP
+
+唯一の正本はmainの[catalog/CURRENT.json](catalog/CURRENT.json)→**231登録／184有効（SELECT53＋CONDITIONAL131）**。Aurora2-400M-A20MのFP32 pretrain原本、Cactus Mirageのsafetensors＋cact tiny多用途視覚、Liquid LFM3-VL-2B作者レシピ指定の親BF16、saidutta69の独立拒否方向編集Heretic BF16＋Q4＋mmprojの4原本をCONDITIONAL追加。[固定58 Publisher file SHA/bytes](manifests/drafts/r146-2026-11-22-aurora-mirage-lfm3-paired-source.candidate.json)、[採否・権利・CUDA/driver/ModelOpt等](docs/strategy/146-v62-rare-small-uncensored-vision-dual-master-selection.md)、[新11非実行優先順位](queues/proposed-v62-r147-post96-next-research-sources.json)、[184全件のSTOP](catalog/readiness/v62-2026-11-22-r146-all184-gates.json)を参照。元モデルのLicense LFM v1.0には年間売上高USD10m以上の企業の商用利用制限あり、Mirage学習済み全tensor未知、Cactus Windows engine/自作コードABI未検証。取得履歴96モデル／1370ファイル／1.752TBはowner D今回独立再SHAではない。**approved queue0、重量DL0、Gated回避0、未審査model code実行0、既存削除0**。main一本を使い、研究branchを増やさない。
+
+---
+
 # 現行v61／R144（2026-11-22）：映像・世界モデルの独立3原本と全取得STOP
 
 **唯一の正本はmainの[catalog/CURRENT.json](catalog/CURRENT.json)、227登録／180有効（SELECT53＋CONDITIONAL127）**。Apple FastFrames-Sは親CF++＋Wan2.1 Encoder/VAE17.567GBの必須追加source、OpenMOSS Realtimeは独立動画対話BF16、NVIDIA Cosmos Sim-Transferは独立6-shardと既存2件と出版社SHA一致の共有VAE。3 source70ファイル55.386GBを[固定](manifests/drafts/r144-2026-11-22-video-world-and-streaming-publisher-sources.candidate.json)し、[選定報告](docs/strategy/144-v61-video-realtime-world-model-source-selection.md)と[96件報告後の非実行キュー](queues/proposed-v61-r145-post96-next-research-sources.json)を追加。実行台帳96モデル／1370files／1.752TBはowner Dの本回独立現物再SHAではない。Apple AMLR/親権利、NVIDIA OpenMDW、MOSS Apache2、custom code/ABI、GPU/HDD最低空き200GB、本人別権利、明示source承認の全条件は未完了。**approved queue0、モデルDL0、未審査コード実行0、既存削除0。mainだけを更新。**
