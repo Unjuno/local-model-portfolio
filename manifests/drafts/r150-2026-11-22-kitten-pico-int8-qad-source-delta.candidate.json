@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "kind": "R150_V63_PICO_INT8_QAD_INDEPENDENT_TRAINING_AND_DEFAULT_RUNTIME_SOURCE_DELTA_RESEARCH_ONLY",
+  "as_of_jst": "2026-11-22",
+  "canonical_revision_unchanged": "v63-20261122",
+  "repository": "Unjuno/local-model-portfolio",
+  "source_repo_id": "KittenML/kitten-tts-2-pico",
+  "publisher_immutable_revision_sha": "a5632deac7d92f6178db814d933eba746a97f2dc",
+  "publisher_url": "https://huggingface.co/KittenML/kitten-tts-2-pico/tree/a5632deac7d92f6178db814d933eba746a97f2dc",
+  "historical_manifest": "manifests/drafts/r143-2026-11-22-three-specialists-originals.candidate.json",
+  "new_evidence": {
+    "fixed_author_code_repo": "KittenML/KittenTTS",
+    "fixed_author_code_revision_sha": "5802f6b956844919ecf210f4e55f4750a6ad7c6f",
+    "fixed_author_technical_doc_url": "https://github.com/KittenML/KittenTTS/blob/5802f6b956844919ecf210f4e55f4750a6ad7c6f/docs/kitten-tts-2-tiny.md",
+    "fixed_runtime_code_url": "https://github.com/KittenML/KittenTTS/blob/5802f6b956844919ecf210f4e55f4750a6ad7c6f/kittenml/kittentts2_tiny/model.py",
+    "observations": [
+      "Publisher explicitly says INT8 weights are learned through quantization-aware distillation from FP32 rather than only post-training conversion.",
+      "Publisher says INT4 files are trained analogously through quantization-aware distillation, so INT8 and INT4 are not evidenced as mere format-only re-encodings.",
+      "Published tiny runtime chooses int8 by default; weights='int4' selects the already-preserved alternative, requiring ONNX Runtime >=1.20.",
+      "INT8 exact bit-level parameter novelty versus FP32 and INT4 is not independently tensor-proven in this research; classification is author documentation, not quality benchmark replication."
+    ]
+  },
+  "prior_selected_file_count": 33,
+  "prior_selected_publisher_bytes": 285879877,
+  "publisher_total_repo_file_count": 41,
+  "publisher_total_repo_bytes": 349508085,
+  "additional_int8_files": [
+    {
+      "path": "kitten_tts_2_pico_de.onnx",
+      "publisher_reference_bytes": 7953526,
+      "publisher_lfs_sha256": null,
+      "publisher_git_blob_oid": null,
+      "local_sha256_verified": false,
+      "final_source_lock_ready": false,
+      "previous_reason_is_overruled_for_research": "format-only duplicate not supported by author QAD description"
+    },
+    {
+      "path": "kitten_tts_2_pico_en.onnx",
+      "publisher_reference_bytes": 7953526,
+      "publisher_lfs_sha256": null,
+      "publisher_git_blob_oid": null,
+      "local_sha256_verified": false,
+      "final_source_lock_ready": false,
+      "previous_reason_is_overruled_for_research": "format-only duplicate not supported by author QAD description"
+    },
+    {
+      "path": "kitten_tts_2_pico_es.onnx",
+      "publisher_reference_bytes": 7953526,
+      "publisher_lfs_sha256": null,
+      "publisher_git_blob_oid": null,
+      "local_sha256_verified": false,
+      "final_source_lock_ready": false,
+      "previous_reason_is_overruled_for_research": "format-only duplicate not supported by author QAD description"
+    },
+    {
+      "path": "kitten_tts_2_pico_fr.onnx",
+      "publisher_reference_bytes": 7953526,
+      "publisher_lfs_sha256": null,
+      "publisher_git_blob_oid": null,
+      "local_sha256_verified": false,
+      "final_source_lock_ready": false,
+      "previous_reason_is_overruled_for_research": "format-only duplicate not supported by author QAD description"
+    },
+    {
+      "path": "kitten_tts_2_pico_hi.onnx",
+      "publisher_reference_bytes": 7953526,
+      "publisher_lfs_sha256": null,
+      "publisher_git_blob_oid": null,
+      "local_sha256_verified": false,
+      "final_source_lock_ready": false,
+      "previous_reason_is_overruled_for_research": "format-only duplicate not supported by author QAD description"
+    },
+    {
+      "path": "kitten_tts_2_pico_it.onnx",
+      "publisher_reference_bytes": 7953526,
+      "publisher_lfs_sha256": null,
+      "publisher_git_blob_oid": null,
+      "local_sha256_verified": false,
+      "final_source_lock_ready": false,
+      "previous_reason_is_overruled_for_research": "format-only duplicate not supported by author QAD description"
+    },
+    {
+      "path": "kitten_tts_2_pico_pt.onnx",
+      "publisher_reference_bytes": 7953526,
+      "publisher_lfs_sha256": null,
+      "publisher_git_blob_oid": null,
+      "local_sha256_verified": false,
+      "final_source_lock_ready": false,
+      "previous_reason_is_overruled_for_research": "format-only duplicate not supported by author QAD description"
+    },
+    {
+      "path": "kitten_tts_2_pico_ru.onnx",
+      "publisher_reference_bytes": 7953526,
+      "publisher_lfs_sha256": null,
+      "publisher_git_blob_oid": null,
+      "local_sha256_verified": false,
+      "final_source_lock_ready": false,
+      "previous_reason_is_overruled_for_research": "format-only duplicate not supported by author QAD description"
+    }
+  ],
+  "additional_file_count": 8,
+  "additional_publisher_reference_bytes": 63628208,
+  "proposed_selected_file_count": 41,
+  "proposed_selected_publisher_reference_bytes": 349508085,
+  "model_assets_added": 0,
+  "existing_conditional_model_selection_unchanged": true,
+  "existing_approved_queue_unchanged": true,
+  "research_adoption": "RECOMMEND_CONDITIONAL_SOURCE_SCOPE_EXPANSION_ONLY",
+  "final_lock_blockers": [
+    "Fetch official immutable revision tree file LFS SHA256 and Git object ID for all 8 INT8 files without downloading model weights, then compare exact bytes and hashes.",
+    "Review immutable publisher LICENSE and user-specific intended acts, as distinct from license tag apache-2.0.",
+    "Reconcile default INT8 offline ABI (ONNX Runtime version, Python code, external G2P and espeak/spacy data, voice packs) and confirm local full restore.",
+    "Measure user D-drive available bytes including >=200GB free floor and stage/cache; check any existing local copies by SHA before transfers.",
+    "Obtain explicit file-scoped user approval; no blanket or synthetic automatic approvals."
+  ],
+  "owner_intended_license_acts_verified": false,
+  "owner_windows_D_current_capacity_or_sha_verified": false,
+  "owner_offline_restore_verified": false,
+  "publisher_int8_weight_sha256_refs_observed": 0,
+  "download_enabled": false,
+  "download_approved": false,
+  "approved_by_user": false,
+  "license_text_reviewed_for_owner": false,
+  "parent_dependency_rights_reviewed": false,
+  "new_model_weights_downloaded_this_research_bytes": 0,
+  "older_source_manifest_and_canonical_overlay_not_rewritten": true
+}
