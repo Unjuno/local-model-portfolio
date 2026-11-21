@@ -1,3 +1,5 @@
+**R150追加監査／WeMM-Video-2B SHA25件・27ファイル完全サイズ一致（2026-11-22）**：[原本比較と無検閲・Gated判断](docs/strategy/150-v63-post99-wemm-video2b-uncensored-and-armenian-evidence.md)／[25発行者SHA相互照合](manifests/drafts/r150-2026-11-22-wemm-video2b-publisher-sha256.candidate.json)／[全27ファイルpublisher sizeとTimestral-5M](manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json)。WeMM 6,590,699,556 byte はPublisher原本sourceの正確な参照値（ユーザーD現物の再SHAではない）。独立小型音声動画の新規研究候補として保持し、Inkling無検閲フル重みの既存LoRA重複を見送り、AybはGated/NC HOLD。**現行v63は235登録・188有効のまま、取得新規承認・重量転送ともゼロ。**
+
 **R149／v63（2026-11-22）—既取得99モデルを除外した11原本の厳密優先順位・新規特殊5件の研究監視**：[固定済み11原本と追加候補の判断](docs/strategy/149-v63-post99-prioritization-and-novel-specialists.md)／[11source・5watchlistの非実行順位表](queues/proposed-v63-r150-prioritized-sources-and-watchlist.json)／[調査の静的証拠](catalog/research/2026-11-22-r149-post99-compact-and-rare-source-screen.json)。**正本v63／235登録・188有効、既存99件の再取得0、approved0、今回の新規重量DL0・新規正式資産0**。小型独立原本（Kitten Pico・Aurora2・InternDecision）→Cactus/Timestral独立ゲート→LFM Heretic親子→動画依存大型→Ripple保留。新規watchlist5件は不変Publisherファイル未固定のため研究だけ。以下のR148は正本の直前の更新履歴。
 
 # Local Model Portfolio
