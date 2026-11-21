@@ -43,11 +43,12 @@ def main():
                 a["git_blob_sha1"] = f["git_blob_sha1"]
             afiles.append(a)
         lic = e.get("license_metadata") or e.get("license") or "canonical-selected"
+        rtype = "dataset" if e.get("asset_kind") == "dataset" else "model"
         m = {"repo_id": repo, "source_revision_sha": rev, "selected_files": recs,
              "selected_file_count": len(recs),
              "selected_file_bytes": sum(r["bytes"] for r in recs),
              "license_tag": str(lic), "phase": e.get("phase"),
-             "canonical_queue": str(QUEUE)}
+             "repo_type": rtype, "canonical_queue": str(QUEUE)}
         mp = DISC / ("v59-" + repo.replace("/", "__") + ".json")
         mp.write_text(json.dumps(m, indent=2, ensure_ascii=False), encoding="utf-8")
         cands.append({"repo_id": repo, "revision_sha": rev, "files": len(recs),

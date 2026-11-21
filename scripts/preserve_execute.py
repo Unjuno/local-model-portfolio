@@ -142,8 +142,9 @@ def free_bytes(path):
     return shutil.disk_usage(str(path)).free
 
 
-def api_model(repo, rev):
-    url = f"https://huggingface.co/api/models/{repo}/revision/{rev}?blobs=true"
+def api_model(repo, rev, repo_type="model"):
+    seg = "datasets" if repo_type == "dataset" else "models"
+    url = f"https://huggingface.co/api/{seg}/{repo}/revision/{rev}?blobs=true"
     req = urllib.request.Request(url, headers={"User-Agent": "preserve-execute/1.0"})
     with urllib.request.urlopen(req, timeout=60) as r:
         return json.load(r)
@@ -291,8 +292,11 @@ def extract_tasks(m):
         lic = str(lic).lower()
         gated = bool(x.get("gated") or x.get("hub_metadata_gated") or
                      x.get("current_hub_gated")) or (x.get("gated") == "auto")
+        rtype = x.get("repo_type") or x.get("asset_kind") or m.get("repo_type") or "model"
+        if rtype not in ("model", "dataset"):
+            rtype = "model"
         tasks.append({"repo_id": repo, "rev": rev, "files": files,
-                      "license": lic, "gated_hint": gated,
+                      "license": lic, "gated_hint": gated, "repo_type": rtype,
                       "group": x.get("priority_group") or x.get("group") or ""})
     return tasks
 
@@ -322,7 +326,7 @@ def process_task(task, source, dry=False):
         log("  HOLD: not in exact user-approved immutable file queue")
         return res
     try:
-        meta = api_model(repo, rev)
+        meta = api_model(repo, rev, task.get("repo_type", "model"))
     except Exception as e:
         res["status"] = f"FAIL_API_{type(e).__name__}"
         res["error"] = str(e)
@@ -376,7 +380,8 @@ def process_task(task, source, dry=False):
             out.update(status="DRY_RUN_SKIP")
             res["files"].append(out)
             continue
-        url = f"https://huggingface.co/{repo}/resolve/{rev}/{rel}"
+        host_seg = ("datasets/" if task.get("repo_type") == "dataset" else "")
+        url = f"https://huggingface.co/{host_seg}{repo}/resolve/{rev}/{rel}"
         try:
             http_fetch(url, target, r["bytes"])
             v, method, exp = verify_file(target, r)
