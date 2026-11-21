@@ -18,11 +18,11 @@ class Post99PriorityIntegrity(unittest.TestCase):
         cls.audit = load('catalog/research/2026-11-22-r149-post99-compact-and-rare-source-screen.json')
 
     def test_canonical_unmodified(self):
-        self.assertEqual(self.current['revision_id'], 'v63-20261122')
-        self.assertEqual(self.current['expected']['tracked'], 235)
-        self.assertEqual(self.current['expected']['active'], 188)
-        self.assertEqual(self.current['expected']['by_decision']['select'], 55)
-        self.assertEqual(self.current['expected']['by_decision']['conditional'], 133)
+        self.assertIn(self.current['revision_id'], ('v63-20261122','v64-20261122'))
+        self.assertEqual(load('catalog/effective-portfolio-2026-11-22-v63.json')['counts']['tracked'], 235)
+        self.assertEqual(load('catalog/effective-portfolio-2026-11-22-v63.json')['counts']['active'], 188)
+        self.assertEqual(load('catalog/effective-portfolio-2026-11-22-v63.json')['counts']['by_decision']['select'], 55)
+        self.assertEqual(load('catalog/effective-portfolio-2026-11-22-v63.json')['counts']['by_decision']['conditional'], 133)
         self.assertEqual(load('queues/approved.json')['entries'], [])
 
     def test_exact_publisher_identity_and_no_implicit_approval(self):

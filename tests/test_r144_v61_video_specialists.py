@@ -17,9 +17,9 @@ class V61VisualAudit(unittest.TestCase):
   cls.next=L('queues/proposed-v61-r145-post96-next-research-sources.json')
   cls.decision=L('catalog/decisions/2026-11-22-r144-v61-new-visual-capabilities.json')
  def test_canonical_and_prior224_unchanged(self):
-  self.assertIn(self.c['revision_id'],('v61-20261122','v62-20261122','v63-20261122'))
+  self.assertIn(self.c['revision_id'],('v61-20261122','v62-20261122','v63-20261122','v64-20261122'))
   self.assertIn('catalog/revisions/v61-2026-11-22.json',self.c['ordered_overlays'])
-  self.assertIn(self.c['materialized_catalog_path'],('catalog/effective-portfolio-2026-11-22-v61.json','catalog/effective-portfolio-2026-11-22-v62.json','catalog/effective-portfolio-2026-11-22-v63.json'))
+  self.assertIn(self.c['materialized_catalog_path'],('catalog/effective-portfolio-2026-11-22-v61.json','catalog/effective-portfolio-2026-11-22-v62.json','catalog/effective-portfolio-2026-11-22-v63.json','catalog/effective-portfolio-2026-11-22-v64.json'))
   self.assertEqual(self.old['items'],self.e['items'][:224])
   self.assertEqual(len(self.e['items']),227)
   self.assertEqual(self.ov['previous_asset_count'],224)

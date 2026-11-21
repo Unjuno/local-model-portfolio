@@ -23,11 +23,11 @@ class R149Post99SourceFinalization(unittest.TestCase):
         cls.by_id = {item["repo_id"]: item for item in cls.report["decisions"]}
 
     def test_canonical_stays_v63_and_no_implicit_approval(self):
-        self.assertEqual(self.current["revision_id"], "v63-20261122")
-        self.assertEqual(self.current["expected"]["tracked"], 235)
-        self.assertEqual(self.current["expected"]["active"], 188)
-        self.assertEqual(self.current["expected"]["by_decision"]["select"], 55)
-        self.assertEqual(self.current["expected"]["by_decision"]["conditional"], 133)
+        self.assertIn(self.current["revision_id"], ("v63-20261122", "v64-20261122"))
+        self.assertEqual(read("catalog/effective-portfolio-2026-11-22-v63.json")["counts"]["tracked"], 235)
+        self.assertEqual(read("catalog/effective-portfolio-2026-11-22-v63.json")["counts"]["active"], 188)
+        self.assertEqual(read("catalog/effective-portfolio-2026-11-22-v63.json")["counts"]["by_decision"]["select"], 55)
+        self.assertEqual(read("catalog/effective-portfolio-2026-11-22-v63.json")["counts"]["by_decision"]["conditional"], 133)
         pointer = self.current["latest_r149_post99_source_decision"]
         self.assertEqual(
             pointer["machine_readable_decisions"],

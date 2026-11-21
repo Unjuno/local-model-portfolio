@@ -1,3 +1,9 @@
+# 現行v64／R151（2026-11-22）：Bison確率校正マルチモーダル判定原本を追加、Groundhog/Ayb研究HOLD
+
+唯一の正本は[CURRENT](catalog/CURRENT.json)→**236登録／189有効（SELECT55、CONDITIONAL134）**。旧235資産全件不変。[16 Publisherファイル65,398,108,261byteの固定SHA原本](manifests/drafts/r151-2026-11-22-baseten-bison-and-groundhog-frozen.candidate.json)・[比較・R149 revision差分](docs/strategy/151-v64-baseten-decision-original-selection-and-drift.md)・[全189件取得STOP](catalog/readiness/v64-2026-11-22-r151-all189-gates.json)。Bisonは会話生成の性能置換ではなく別学習済みの確率判定学習成果。Groundhogの同系53.121GBは研究HOLD、Ayb 0.8BはGated/CC BY-NCのためHOLD。旧99件の再取得なし、owner D独立SHA0、モデル重みDL0、`queues/approved.json`空。新承認ファイルの自動生成・Gated回避は禁止。調査は`main`のみ。
+
+---
+
 # R151／v63（2026-11-22）：6原本の固定ソース統合監査とCartwheel小型制御ポリシーの審査
 
 [新R151報告](docs/strategy/151-v63-six-primary-source-freeze-cartwheel-and-redundancy-reconciliation.md)／[6 repo・243 file・Publisher原本SHAとbyte](manifests/drafts/r150-2026-11-22-six-specialists-source-freeze.candidate.json)／[新6件の研究採否・承認STOP](catalog/decisions/2026-11-22-r150-six-specialists-review-and-uncensored-dedup.json)。**CartwheelのRP1/Asimov-1/G1三つの異なる学習済みpolicy（304,057,444byte全repo）**は新たに正式CONDITIONAL候補として権利・simulation-only実装を審査。WeMM同期音声動画の6,590,699,556byte原本は高優先調査、Groundhogの53.12GB決定MoEはPublisher-source固定済みだが校正/非生成ABI未検証で取得HOLD。AlpieとBisonも品質増分未証明でHOLD。OpenUncensored Inkling Miniフル20.19GBは既存親＋rank2 LoRAからBF16微小丸め差で再合成できるため重複追加を見送る。**v63の235登録・188有効、既取得99報告、R149既存11原本研究順を変更しない。重量新規DL0、owner D独立SHA未確認、所有者個別LICENSE許可0、approved queue0、モデルコード実行0**。下記のR150以下は履歴。

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "kind": "R151_V64_SPECIALIST_TRAINED_DECISION_SELECTION_AND_RETRIEVAL_GATES",
+  "date_jst": "2026-11-22",
+  "old_revision": "v63-20261122",
+  "new_revision": "v64-20261122",
+  "previous_tracked_unchanged": 235,
+  "new_tracked": 236,
+  "new_active": 189,
+  "new_conditional": 134,
+  "new_select": 55,
+  "selected_originals": [
+    {
+      "repo_id": "baselabs/bison-1",
+      "decision": "CONDITIONAL_R2_NOT_DOWNLOAD_APPROVAL",
+      "files": 16,
+      "publisher_bytes": 65398108261,
+      "sha": "bf8350b2c59eb6c36e95d02a2af870aec18724a7",
+      "bison_BF16_elements": 32682375020,
+      "bison_safetensors_total": 31273086512,
+      "rationale": "Non-generative calibrated multimodal decision posttraining; unique exact trained result; publisher-specific license in LICENSE/NOTICE. Prior general Gemma is not equivalent."
+    }
+  ],
+  "alternatives_held": [
+    {
+      "repo_id": "baselabs/groundhog-1",
+      "revision": "f4602c43599114a7af2c158472b59a4ff2d13663",
+      "publisher_bytes": 53120939617,
+      "reason": "Same decision-training family, 53.121GB additional storage; AA Decision Index not yet measured and own LongMemEval lower; no measured owner runtime throughput. Keep immutable source for later comparison."
+    },
+    {
+      "repo_id": "Metric-AI/Ayb-0.5-0.8B",
+      "revision": "7184ec226df76c932d604886fa7a43f0becc9e38",
+      "gated": "manual",
+      "license": "cc-by-nc-4.0",
+      "reason": "Small Armenian specialism has value but is user-gated and noncommercial; no assumed entitlement or circumvention."
+    }
+  ],
+  "previous_99_verified_reports_not_revalidated_by_this_task": true,
+  "R149_live_drift": "catalog/research/2026-11-22-r151-publisher-revision-drift-after99.json",
+  "source_manifest": "manifests/drafts/r151-2026-11-22-baseten-bison-and-groundhog-frozen.candidate.json",
+  "approval_queue": "queues/approved.json",
+  "download_approvals_added": 0,
+  "owner_window_D_rehashed": false,
+  "model_weights_downloaded": 0,
+  "owner_runtime_benchmarks_measured": 0,
+  "old_assets_deleted_or_replaced": 0,
+  "regulation": [
+    "2026-11-19 BIS rule rescinded ECCN4E091 model-weight rule",
+    "No demonstrated blanket ban or per-model takedown probability",
+    "Gated/third-party license and exact intended acts independent"
+  ],
+  "H_T_D_C_U": {
+    "H": "Preserving one distinct publicly available posttrained multimodal decision capability has more nonredundant functional coverage than blindly adding both dense and MoE siblings.",
+    "T": "11 existing post99 source IDs plus one new repo, 16 exact publisher files at pinned revision, compare 99 ledger and current canonical, assert 0 approval/0 transfer; runtime quality requires later n>=100 matched decisions including images and long context with predeclared scoring.",
+    "D": "PASS static only if SHA, license provenance, unique ID, 236/189 counts, zero approvals, owner gating correct; FAIL on duplicated source, ref drift silent repin, any permission auto-signoff; UNCERTAIN quality/runtime/legal authorizations until measured.",
+    "C": "Groundhog is actually preferable due MoE inference speed, smaller existing classifier suffices, 128k multimodal posttraining fails locally, calibration does not transfer to intended tasks.",
+    "U": "Publisher benchmark and metadata only; stored tensor elements differ from HF reported total, owner HW/driver/backend/context/batch/quantization/space unknown, no u_c or k available without repeated measurement."
+  },
+  "interdisciplinary": [
+    "ML calibration and classification",
+    "software supply-chain content addressed checks",
+    "copyright and AI licensing",
+    "privacy and multimodal evidence"
+  ],
+  "cannot_enter_executable_queue": true
+}

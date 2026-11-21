@@ -34,8 +34,8 @@ class R150SourceSafety(unittest.TestCase):
    self.assertEqual(other["publisher_sha256_from_checksums"],x["publisher_declared_sha256"])
  def test_baseline_unchanged_and_no_apparent_approval(self):
   current=read("catalog/CURRENT.json")
-  self.assertEqual(current["revision_id"],"v63-20261122")
-  self.assertEqual((current["expected"]["tracked"],current["expected"]["active"]),(235,188))
+  self.assertIn(current["revision_id"],("v63-20261122","v64-20261122"))
+  historical=read("catalog/effective-portfolio-2026-11-22-v63.json"); self.assertEqual((historical["counts"]["tracked"],historical["counts"]["active"]),(235,188))
   self.assertEqual(read("queues/approved.json")["entries"],[])
   d=read("catalog/decisions/2026-11-22-r150-post99-new-multimodal-and-uncensored-triage.json")
   q=read("queues/proposed-v63-r150-after99-plus-wemm-research-only.json")

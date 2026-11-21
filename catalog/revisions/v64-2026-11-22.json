@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "revision_id": "v64-20261122",
+  "previous_revision_id": "v63-20261122",
+  "decision_date_jst": "2026-11-22",
+  "target_branch": "main",
+  "kind": "SELECT_ONE_NEW_SPECIALIST_BISON_ORIGINAL_RETAIN_GROUNDHOG_AYB_RESEARCH_HOLD",
+  "previous_asset_count": 235,
+  "previous_active_count": 188,
+  "additions": [
+    {
+      "position": 236,
+      "asset_kind": "model",
+      "repo_id": "baselabs/bison-1",
+      "url": "https://huggingface.co/baselabs/bison-1",
+      "group": "非生成・長文マルチモーダル確率判定・校正専用フルFT学習成果",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Separate Baseten posttrained Gemma4-31B-IT original optimized for typed text/image decisions, probability calibration and 131072 context; existing general chat, small decision and tabular specialists do not supply this exact trained state. Groundhog sibling is a separately trained alternative with overlapping objective, held to avoid duplicate 53.121GB.",
+      "quality_positive": "Publisher-reported Decision Index v2.1 76 among 19 and Brier 0.14, LongMemEval M 84.8 @ 128k; not independently reproduced. 16-file BF16 65.398GB original source with MIT Baseten modifications + Apache2 Gemma4 parent LICENSE and NOTICE; exact HF revision and hashes pinned.",
+      "quality_negative": "Publisher card quotes a benchmark/third-party leaderboard without an independent replicated run by owner. 65.398GB publisher source; 2 BF16 shard weights are 65.365GB, runtime peak + KV cache unknown. HF total 31,273,086,512 differs from BF16 stored tensor elements 32,682,375,020. Separate legal actions, custom typed-decision readout parity and backend/transformers version not validated.",
+      "risk_and_alternative_assessment": "Regulatory takedown probability not substantiated. Bison conditional selection for rare trained decision behavior, Groundhog held for overlap / missing AA comparison, Ayb 0.8B gated CC-BY-NC held. No swap/deletion of prior 235 models; no inferred transfer approval.",
+      "evidence_date": "2026-11-22",
+      "evidence_kind": "PUBLISHER_OFFICIAL_HF_16_FILE_REVISION_SOURCE_AND_README_LICENCE_REVIEW_METADATA_ONLY",
+      "evidence_urls": [
+        "https://huggingface.co/baselabs/bison-1",
+        "https://huggingface.co/baselabs/bison-1/tree/bf8350b2c59eb6c36e95d02a2af870aec18724a7",
+        "https://huggingface.co/baselabs/groundhog-1",
+        "https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm"
+      ],
+      "observed_access": "publisher HF public ungated at immutable revision; owner access and rights unverified",
+      "license_metadata": "MIT for Baseten modifications, Apache-2.0 for google/gemma-4-31B-it inherited weights; preserve LICENSE and NOTICE. User-specific uses (storage/redistribution/derived work) not separately authorized.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "bf8350b2c59eb6c36e95d02a2af870aec18724a7",
+      "upstream_all_files_bytes_observed": 65398108261,
+      "upstream_file_count_observed": 16,
+      "upstream_lfs_sha256_count_observed": 3,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 16,
+      "candidate_selected_source_file_bytes": 65398108261,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1624,
+          "sha256": null,
+          "git_blob_sha1": "67ae4aa6ed8e3bade1f14e17c14e8ac48f391c53",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 1424,
+          "sha256": null,
+          "git_blob_sha1": "ba07238059173521d8e01ba89ebfbc8a4da65b90",
+          "local_sha_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 551,
+          "sha256": null,
+          "git_blob_sha1": "6f5987eca98d72f68f91fb5b19b19d609cad0ddc",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 5597,
+          "sha256": null,
+          "git_blob_sha1": "9e25552ef8cba224059054ef4cfbe1023f5ba70b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/banner.png",
+          "bytes": 868714,
+          "sha256": "86fbe04c379f6cab025bdbd304b11d1c31e99158cdbd19dfc8fa77c283cdef28",
+          "git_blob_sha1": "441397a80c8b65caa9b9e863415cd6b40150d9b0",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 18683,
+          "sha256": null,
+          "git_blob_sha1": "4741bf6e4132ba23a5537f9d6e74e9a6d613d7cd",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 5293,
+          "sha256": null,
+          "git_blob_sha1": "03eb6a5577e56270e1bcbe00eccb71a76d866dd8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "gemma_image.json",
+          "bytes": 25,
+          "sha256": null,
+          "git_blob_sha1": "1395e0a6ef3213a7fba5f2f2991c0af556001320",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 204,
+          "sha256": null,
+          "git_blob_sha1": "9db20c780d4668c758f8eb6effd343f73a3b60aa",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "bytes": 49989076892,
+          "sha256": "55b01d0ec3e7e36547a32544d013ece6ff0cf4447be0f2444ad46452422fc5e7",
+          "git_blob_sha1": "645065fb14190e6bae45e3724d0aae3e627af46f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "bytes": 15375833844,
+          "sha256": "1d9f8e96e15b50c160a3f5dc69d40daf579ced5c62b628a6c7328b808f40bb62",
+          "git_blob_sha1": "7ae76387b0b92394bc3f1814b0db4e4560a8a4ca",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 120304,
+          "sha256": null,
+          "git_blob_sha1": "be67e63346bd06f4b74935c86f9cfa90f40eabd3",
+          "local_sha_verified": false
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 1689,
+          "sha256": null,
+          "git_blob_sha1": "caa5a476a74061f38733213a6752b3fe7c6375bf",
+          "local_sha_verified": false
+        },
+        {
+          "path": "readout.json",
+          "bytes": 63,
+          "sha256": null,
+          "git_blob_sha1": "444b7bf8313d43415e97988a79740a93154fdd3b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 32169626,
+          "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+          "git_blob_sha1": "1ff9f3e3439a939b971f9919e821bf87e835a503",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 3728,
+          "sha256": null,
+          "git_blob_sha1": "28aa7f8ac77f9486acc1ab52495ad5c8b5e2aefa",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r151-2026-11-22-baseten-bison-and-groundhog-frozen.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 31273086512,
+        "BF16_stored_tensor_elements": 32682375020,
+        "evidence_kind": "Publisher HF safetensors metadata; total vs stored elements disagree by 1,409,288,508, both below cap; final local tensor census pending",
+        "review_date": "2026-11-22",
+        "local_tensor_census_not_executed": true,
+        "note": "Do not infer runtime RAM or exactly tied/duplicated parameter count from one field."
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 236,
+        "category": "SPECIALIST_MULTIMODAL_CALIBRATED_DECISION_ORIGINAL",
+        "scenario_status": "FUTURE_DISTRIBUTION_RESTRICTION_HYPOTHESIS_ONLY"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "LICENSE",
+          "NOTICE",
+          "README.md",
+          "assets/banner.png",
+          "chat_template.jinja",
+          "config.json",
+          "gemma_image.json",
+          "generation_config.json",
+          "model-00001-of-00002.safetensors",
+          "model-00002-of-00002.safetensors",
+          "model.safetensors.index.json",
+          "processor_config.json",
+          "readout.json",
+          "tokenizer.json",
+          "tokenizer_config.json"
+        ],
+        "trained_state": "BASETEN_BISON1_GEMMA4_31B_POSTTRAINED_DECISION_CALIBRATION_FULL_FINE_TUNE",
+        "original_publisher_revision": "bf8350b2c59eb6c36e95d02a2af870aec18724a7",
+        "separate_groundhog_source_HOLD_revision": "f4602c43599114a7af2c158472b59a4ff2d13663",
+        "trained_parent": "google/gemma-4-31B-it",
+        "license_notice_must_accompany_archive": true,
+        "historical_acquisition_ledger99_matched": false,
+        "owner_live_hash_rechecked_by_this_research": false,
+        "full_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 65398108261,
+        "publisher_selected_source_bytes": 65398108261,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false
+    }
+  ],
+  "added_assets": 1,
+  "removed_assets": 0,
+  "changed_prior_decisions": 0,
+  "source_manifest": "manifests/drafts/r151-2026-11-22-baseten-bison-and-groundhog-frozen.candidate.json",
+  "selected_file_count": 16,
+  "selected_source_bytes": 65398108261,
+  "groundhog_duplicate_research_HOLD_bytes": 53120939617,
+  "ayb_gated_research_HOLD_bytes": 1773997430,
+  "all_prior_assets_preserved_identically": true,
+  "new_weight_payloads_downloaded": 0,
+  "owner_hdd_rehashed": false,
+  "approved_downloads_added": 0,
+  "custom_code_executed": false,
+  "new_active_selection_research_only": true
+}

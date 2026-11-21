@@ -24,8 +24,8 @@ class R151UnifiedSourceReadOnly(unittest.TestCase):
 
     def test_canonical_v63_unchanged_and_no_synthetic_authorization(self):
         current = load("catalog/CURRENT.json")
-        self.assertEqual(current["revision_id"], "v63-20261122")
-        self.assertEqual((current["expected"]["tracked"], current["expected"]["active"]), (235, 188))
+        self.assertIn(current["revision_id"], ("v63-20261122", "v64-20261122"))
+        historical=load("catalog/effective-portfolio-2026-11-22-v63.json"); self.assertEqual((historical["counts"]["tracked"], historical["counts"]["active"]), (235, 188))
         self.assertEqual(load("queues/approved.json")["entries"], [])
         self.assertEqual(self.q["source_scope_count"], 15)
         self.assertEqual(self.q["new_provisional_research_source_scopes_not_in_catalog"], 4)

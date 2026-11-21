@@ -28,9 +28,9 @@ class R148Ledger99AndApprovals(unittest.TestCase):
   cls.access=L('catalog/access/2026-11-22-v63-conditional-hub-gates.json')
   cls.prep=L('catalog/preparation/2026-11-22-insurance-bundles-v63.json')
  def test_current_integrity_and_immutable_old231(self):
-  self.assertEqual(self.current['revision_id'],'v63-20261122')
-  self.assertEqual(self.current['ordered_overlays'][-1],'catalog/revisions/v63-2026-11-22.json')
-  self.assertEqual(self.current['materialized_catalog_path'],'catalog/effective-portfolio-2026-11-22-v63.json')
+  self.assertIn('catalog/revisions/v63-2026-11-22.json',self.current['ordered_overlays'])
+  self.assertIn(self.current['revision_id'],('v63-20261122','v64-20261122'))
+  self.assertEqual(self.new['revision_id'],'v63-20261122')
   self.assertEqual(self.original['items'],self.new['items'][:231])
   self.assertEqual(len(self.new['items']),235)
   self.assertEqual(len({(x['asset_kind'],x['repo_id']) for x in self.new['items']}),235)
@@ -39,8 +39,8 @@ class R148Ledger99AndApprovals(unittest.TestCase):
   self.assertEqual(self.new['counts']['parameter_gate']['UNVERIFIED_BLOCK_FINAL_LOCK'],26)
   self.assertEqual(self.new['counts']['parameter_gate']['PASS_TOTAL_PARAMS_LT_150B'],181)
   for k in ('tracked','active','models','datasets','by_decision','by_tier','by_forecast_wave','parameter_gate','resource_screen'):
-   self.assertEqual(self.current['expected'][k],self.new['counts'][k])
-  self.assertEqual(self.current['expected']['budget_scenario'],self.new['budget'])
+   self.assertEqual(self.current['expected'][k],L(self.current['materialized_catalog_path'])['counts'][k])
+  self.assertEqual(self.current['expected']['budget_scenario'],L(self.current['materialized_catalog_path'])['budget'])
  def test_all99_ledger_ids_represented_without_any_transfer(self):
   reported=[x for x in self.ledger['models'] if x['status']=='VERIFIED']
   self.assertEqual(len(reported),99)
@@ -97,8 +97,8 @@ class R148Ledger99AndApprovals(unittest.TestCase):
   self.assertFalse(self.queue['download_enabled'])
   self.assertFalse(self.prep['download_enabled'])
   self.assertEqual(L('queues/approved.json')['entries'],[])
-  self.assertEqual(L('catalog/readiness/CURRENT.json')['catalog_revision'],'v63-20261122')
-  self.assertEqual(L('catalog/estimates/CURRENT.json')['portfolio_revision'],'v63-20261122')
+  self.assertIn(L('catalog/readiness/CURRENT.json')['catalog_revision'],('v63-20261122','v64-20261122'))
+  self.assertIn(L('catalog/estimates/CURRENT.json')['portfolio_revision'],('v63-20261122','v64-20261122'))
  def test_synthetic_2026_ref_is_rejected_even_if_flags_true(self):
   p=imp('preserve_execute')
   task={'repo_id':'Example/Model','rev':'a'*40,'files':[{'path':'model.safetensors','bytes':11,'sha256':'b'*64}]}
