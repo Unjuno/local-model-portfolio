@@ -11,8 +11,8 @@
   "existing_nonhold_candidate_repos": 10,
   "existing_nonhold_reference_bytes": 68544170933,
   "newly_researched_source_repo_count": 1,
-  "new_source_repo_exact_full_bytes": null,
-  "source_budget_note": "6,567,256,208 bytes is publisher index tensor payload, NOT full source bytes; do not include in exact total until immutable publisher per-file byte census.",
+  "new_source_repo_exact_full_bytes": 6590699556,
+  "source_budget_note": "6,590,699,556 bytes publisher immutable full 27-file source tree verified by cross-manifest size sum; 6,567,256,208 bytes is only tensor payload index (not same as weight file bytes or full repo). Owner D incremental bytes remain unknown.",
   "priority_phases": [
     {
       "phase": "P0_EXISTING_COMPACT",
@@ -30,10 +30,11 @@
       "repo_ids": [
         "tencent/WeMM-Video-2B"
       ],
-      "publisher_reference_bytes_exact": null,
+      "publisher_reference_bytes_exact": 6590699556,
       "sha256_source_manifest": "manifests/drafts/r150-2026-11-22-wemm-video2b-publisher-sha256.candidate.json",
       "status": "RESEARCH_ONLY_NOT_CANONICAL",
-      "download_approved": false
+      "download_approved": false,
+      "source_manifest_with_27_file_byte_census": "manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json"
     },
     {
       "phase": "P1_EXISTING_SPECIALIST",
