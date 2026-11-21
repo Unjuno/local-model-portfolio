@@ -17,7 +17,7 @@ LEDGER = Path("D:/AI_VAULT/state/ledger/waves3plus-ledger.json")
 
 
 def main():
-    approval = Path("D:/AI_VAULT/state/approved-session.json")
+    approval = Path(sys.argv[2]) if len(sys.argv) > 2 else Path("D:/AI_VAULT/state/approved-session.json")
     if approval.exists():
         pe.APPROVED_QUEUE = approval
         pe.log(f"using local session approvals: {approval}")
