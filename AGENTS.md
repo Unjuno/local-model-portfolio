@@ -1,3 +1,9 @@
+# R156／v65継続・Toto4m＋Pico INT8 Publisher差分、旧v64の偽承認生成を封鎖（2026-11-22）
+
+現行正本は[CURRENT](catalog/CURRENT.json) **240登録／192有効**。R156で[未承認15ファイル／81,355,672byte研究仕様](manifests/drafts/r156-2026-11-22-toto4m-pico8-post112-publisher-source.candidate.json)と[一次比較・法務・依存ゲート](docs/strategy/156-v65-after112-toto-pico-qad-and-synthetic-v64-approval-repair.md)を固定。Toto2.0-4m新規7file 17,727,464byteとKitten Pico（33file既取得報告済み）のINT8追加8file 63,628,208byte以外を勝手に新規転送にしない。旧v64取得生成器はかつてユーザー・ライセンス承認を未確認のまま`approved:true`へしていたが、更新後は`review-v65-r156-UNAPPROVED.json`だけを生成、承認trueは生成しない。実行器も旧R152の偽承認refを拒否。R152旧14sourceのうち13repo／140,553,833,221byteは取得台帳112件と全属性一致、再取得しない。owner Windows D現物SHA・権利・実空き/200GB床・バックエンドABI・完全offline復元とユーザー個別承認は未検証。**モデル重量DL0・承認0・D媒体改変0・Gated回避0・既存ファイル削除0。**
+
+---
+
 # 現行v65／R154（2026-11-22）：112取得報告IDを完全照合し、超小型・無検閲LoRAと3ロボット制御sourceを審査
 
 唯一の正本[CURRENT](catalog/CURRENT.json)→**240登録／192有効（SELECT56、CONDITIONAL136）**。旧236項目全件不変。[Timestral-5MとWeMM-Video-2Bを取得報告再DL0で正式収録、Heretic rank3 LoRA2 stateを条件付き、Cartwheel policy3件はRP1第三者権利でHOLD](docs/strategy/154-v65-post112-backfill-small-heretic-and-robot-rights.md)。[4原本203ファイル固定](manifests/drafts/r154-2026-11-22-four-primary-sources-after112.candidate.json)。Kitten Picoの[追加INT8 8件SHA](catalog/research/2026-11-22-r154-pico-eight-int8-extra-publisher-sha.json)は別学習結果と断定しない。112モデル／1,714files／2.021TBは取得台帳報告でowner Dの今回独立SHAではない。[次期未承認差分キュー](queues/proposed-v65-r155-after112-unapproved-source-scopes.json)。承認0、重量DL0、ユーザーD変更0、未審査コード実行0、Gated回避0。mainのみ。
