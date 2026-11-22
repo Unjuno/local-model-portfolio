@@ -1,3 +1,9 @@
+# 現行v65／R153（2026-11-22）: 112報告済み取得を正本と整合、独立Smaug無検閲DPO原本を条件付き採用
+
+正本 [CURRENT](catalog/CURRENT.json) は239登録・192有効（SELECT55＋CONDITIONAL137）。旧236件全記録不変。最新取得台帳112モデル・1714files・約2.0205TBは取得側報告で、本回所有者D実体再SHAはなし。Timestral5MとWeMM既取得のため再取得しない。Smaugは親Qwen18重量のうちSHA一致2（5.935GB）／差異16（49.628GB）、実取得と権利は未承認。Atlas/AtomicChat LoRAの旧モデルへの互換性も未確認。[R153](docs/strategy/153-v65-112ledger-smaug-shards.md)。[承認キュー](queues/approved.json)は空。本人利用権、SHA、200GB残床とstaging、依存とコードABI、指定モデル単位の承認が閉じるまで新規重み取得、既存削除、未審査コード実行、Gated回避を禁止。mainのみ。
+
+---
+
 # R153／v64（2026-11-22）：取得報告112件・旧13原本の重複取得停止と小型原本4系統の選定
 
 `main`の唯一の正本は[catalog/CURRENT.json](catalog/CURRENT.json) **v64／236登録・189有効**のまま。実行台帳の**112 VERIFED報告／1,714 files／2,020,548,143,087byte**は所有者Dの今回の独立SHA/個別利用権/完全offline復元ではない。旧[post99 R152](queues/proposed-v64-r152-post99-13-plus-bison-research-only.json)の非HOLD13repoは13/13で最新ledgerにrepo+40hex rev+files+bytesが一致し、**追加ダウンロード候補からすべて除外**。次の[4新独立系統181 selected refs／1,505,197,831byte](queues/proposed-v64-r153-after112-next-originals-UNAPPROVED.json)はnchapman Qwen0.8B Heretic LoRA独立2状態、Cartwheel3 simulation policies、LingSante Pulse F32、Primal VAE 3状態。Octen WebGRはCC BY-NC/URL表プライバシーでHOLD。既取得報告だが未登録のTimestral-5M/WeMMは次revisionでbackfill審査し、**二重取得しない**。[R153報告](docs/strategy/153-v64-post112-next-small-rare-originals-and-no-repeat.md)、[5公開元225ファイルの固定マニフェスト](manifests/drafts/r153-2026-11-22-post112-five-distinct-origins-source-frozen.candidate.json)、[決定台帳](catalog/decisions/2026-11-22-r153-post112-reconciliation-and-next-originals.json)、[オフライン検証](tests/test_r153_post112_dedup_and_source_pins.py)。**承認queue0・新規重量DL0・owner D編集0・未審査第三者code実行0・既存モデル削除0**。以下R151以前は履歴。

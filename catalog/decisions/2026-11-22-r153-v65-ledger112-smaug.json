@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-11-22",
+  "kind": "FORMAL_V65_SELECTION_LEDGER112_BACKFILL_AND_SMAUG_DPO",
+  "old_canonical": "v64-20261122",
+  "new_canonical": "v65-20261122",
+  "assets_before": 236,
+  "assets_after": 239,
+  "active_before": 189,
+  "active_after": 192,
+  "added_models": [
+    {
+      "repo_id": "mistralai/Timestral-5M",
+      "already_ledger_verified": true,
+      "publisher_bytes": 20854471,
+      "decision": "conditional"
+    },
+    {
+      "repo_id": "tencent/WeMM-Video-2B",
+      "already_ledger_verified": true,
+      "publisher_bytes": 6590699556,
+      "decision": "conditional"
+    },
+    {
+      "repo_id": "abacusai/Smaug-Uncensored",
+      "already_ledger_verified": false,
+      "publisher_bytes": 55586070091,
+      "decision": "conditional"
+    }
+  ],
+  "removed_prior": 0,
+  "ledger112_verified_models": 112,
+  "ledger112_reported_files": 1714,
+  "ledger112_reported_bytes": 2020548143087,
+  "ledger_repo_identity_mismatch_after": 0,
+  "smaug_equal_shards": 2,
+  "smaug_equal_bytes": 5934994296,
+  "smaug_different_shards": 16,
+  "smaug_different_bytes": 49628012480,
+  "atomic_inkling_lora_decision": "HOLD_VENDOR_REPORTED_MMLU_DROP_AND_GGUF_ABI_UNKNOWN",
+  "new_download_approved": 0,
+  "payload_transferred": 0,
+  "owner_HDD_sha_measured": false,
+  "H": "Previously reported acquired trained states 2 plus newly verified distinct DPO checkpoint are unique portfolio identities.",
+  "T": "112/112 ledger ID join; 18 parent/smaug weight shard SHA; static counts and 192/137 associated ledger joins.",
+  "D": "Metadata PASS, owner rights/quality/hardware UNCERTAIN/STOP, all automatic downloads FAIL.",
+  "C": "Weight reconstruction / model quality failure; ABI errors.",
+  "U": "No owner physical SHA, runtime, probability measurements; uc and k not estimated."
+}

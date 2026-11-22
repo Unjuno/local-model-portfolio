@@ -1,3 +1,5 @@
+**R153／現行v65（2026-11-22）—112取得報告とモデルIDを統合、無検閲Smaug DPOを正式CONDITIONAL追加**：[239資産／192有効（SELECT55／CONDITIONAL137）](catalog/CURRENT.json)。[判断・根拠](docs/strategy/153-v65-112ledger-smaug-shards.md)／[Smaug18重量SHAの16差分・2親一致/AtomicChat LoRA研究HOLD](manifests/drafts/r153-2026-11-22-smaug-qwen-hash-reuse-and-atomic-lora.candidate.json)／[既取得Timestral5M・WeMM 33files](manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json)／[192候補非実行キュー](queues/proposed-v65-2026-11-22.json)。旧236件変更0、112取得報告全ID登録、モデル新規ダウンロード・承認・既存削除0、owner D現物再ハッシュ未実施。
+
 **最新R153（2026-11-22）**：正本v64は236登録/189有効のまま。取得実行報告は[112モデル・1,714ファイル・約2.021TB](catalog/execution/2026-11-19-acquisition-ledger.json)。旧R152の未承認13候補は全件この取得報告に同一revision/file/byteで一致したため再取得候補から除外。次の[新4系統・研究用未承認source約1.505GBと別HOLD1件](queues/proposed-v64-r153-after112-next-originals-UNAPPROVED.json)／[全根拠と原本選定](docs/strategy/153-v64-post112-next-small-rare-originals-and-no-repeat.md)を参照。未登録の取得報告済みTimestral-5M/WeMMは次の正式catalog審査対象。**これはユーザーDの独立SHA・本人ライセンス承認・完全オフライン復元ではない**。`queues/approved.json`は空、新規weight DL・owner変更・既存削除0。
 
 ---
