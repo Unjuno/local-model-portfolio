@@ -14,9 +14,9 @@ class R153(unittest.TestCase):
  def test_canonical(self):
   self.assertEqual(self.c['revision_id'],'v65-20261122')
   self.assertEqual(self.old['items'],self.v['items'][:236])
-  self.assertEqual((len(self.v['items']),self.v['counts']['active'],self.v['counts']['models'],self.v['counts']['datasets']),(239,192,213,26))
-  self.assertEqual(self.v['counts']['by_decision']['conditional'],137)
-  self.assertEqual(len({(x['asset_kind'],x['repo_id']) for x in self.v['items']}),239)
+  self.assertEqual((len(self.v['items']),self.v['counts']['active'],self.v['counts']['models'],self.v['counts']['datasets']),(240,192,214,26))
+  self.assertEqual(self.v['counts']['by_decision']['conditional'],136)
+  self.assertEqual(len({(x['asset_kind'],x['repo_id']) for x in self.v['items']}),240)
   ids={x['repo_id'] for x in self.v['items']}
   self.assertEqual(sum(x['status']=='VERIFIED' for x in self.l['models']),112)
   self.assertTrue(all(x['repo_id'] in ids for x in self.l['models'] if x['status']=='VERIFIED'))
