@@ -1,3 +1,7 @@
+**最新R153（2026-11-22）**：正本v64は236登録/189有効のまま。取得実行報告は[112モデル・1,714ファイル・約2.021TB](catalog/execution/2026-11-19-acquisition-ledger.json)。旧R152の未承認13候補は全件この取得報告に同一revision/file/byteで一致したため再取得候補から除外。次の[新4系統・研究用未承認source約1.505GBと別HOLD1件](queues/proposed-v64-r153-after112-next-originals-UNAPPROVED.json)／[全根拠と原本選定](docs/strategy/153-v64-post112-next-small-rare-originals-and-no-repeat.md)を参照。未登録の取得報告済みTimestral-5M/WeMMは次の正式catalog審査対象。**これはユーザーDの独立SHA・本人ライセンス承認・完全オフライン復元ではない**。`queues/approved.json`は空、新規weight DL・owner変更・既存削除0。
+
+---
+
 **R151／現行v64（2026-11-22）—非生成マルチモーダル確率判定Bison原本1件CONDITIONAL追加**：[236登録／189有効 (SELECT55/CONDITIONAL134)](catalog/CURRENT.json)。[Bison全16ファイルとLFS SHA](manifests/drafts/r151-2026-11-22-baseten-bison-and-groundhog-frozen.candidate.json)・[新モデルとGroundhog/Ayb比較](docs/strategy/151-v64-baseten-decision-original-selection-and-drift.md)・[取得後の次期13＋1研究source](queues/proposed-v64-r152-post99-13-plus-bison-research-only.json)。新原本は公開元65.398GBの研究用固定ソース、ダウンロード実行は**未承認**。既存99の重複再取得・無断承認・owner Windows D更新0。歴史的v63以前は以下。
 
 
