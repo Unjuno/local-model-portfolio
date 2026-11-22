@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "kind": "R156_V65_SMALL_OPEN_WEIGHTS_DELTA_AFTER_112_LEDGER",
+  "as_of_jst": "2026-11-22",
+  "catalog_revision": "v65-20261122",
+  "source": "manifests/drafts/r156-2026-11-22-toto4m-pico8-post112-publisher-source.candidate.json",
+  "research_queue": "queues/proposed-v65-r156-toto4m-pico8-UNAPPROVED.json",
+  "reused_existing_source_research": "manifests/drafts/r153-2026-11-22-post112-five-distinct-origins-source-frozen.candidate.json",
+  "already_research_selected": [
+    "nchapman/Qwen3.5-0.8B-Heretic-LoRA",
+    "inclusionAI/LingSante-Pulse-1.0",
+    "GetCartwheelInc/cartwheel-control",
+    "ostris/primal_vae"
+  ],
+  "new_findings": [
+    {
+      "repo_id": "KittenML/kitten-tts-2-pico",
+      "scope": "8 INT8 ONNX trained QAD variant files, NOT existing 33 files",
+      "bytes": 63628208,
+      "publisher_LFS_digest_count": 8,
+      "independent_state_evidence": "Author states quantization-aware distillation; not fully proven by runtime/weight-delta comparison",
+      "decision": "ADDITIONAL_SOURCE_CANDIDATE_ONLY_NO_NEW_CATALOG_MODEL_ID",
+      "download_approved": false
+    },
+    {
+      "repo_id": "Datadog/Toto-2.0-4m",
+      "scope": "7 files/17,727,464B including model.safetensors 16,582,848B",
+      "bytes": 17727464,
+      "publisher_revision": "8306a9801cf98c0f5ffe4b2dcc8f496e616d84d9",
+      "license_tag": "apache-2.0",
+      "comparison": "Distinct 4.1M forecasting model from already archived Timestral 5M; cannot claim cross-architecture performance win",
+      "decision": "RESEARCH_CONDITIONAL_NEW_ORIGINAL_NO_TRANSFER",
+      "download_approved": false
+    }
+  ],
+  "fallback_hold": [
+    {
+      "repo_id": "ricursiveAI/Ripple-65B-Preview",
+      "status": "HOLD",
+      "bytes": 129572889973
+    },
+    {
+      "repo_id": "baselabs/groundhog-1",
+      "status": "HOLD",
+      "bytes": 53120939617
+    }
+  ],
+  "authorization": {
+    "approved_queue_entries_added": 0,
+    "model_weight_downloads": 0,
+    "owner_drive_SHA_checked": false,
+    "code_executed": false,
+    "old_v64_synthetic_approval_ref_rejected": true
+  },
+  "initial_ledger": {
+    "models_verified": 112,
+    "files_verified": 1714,
+    "bytes_verified": 2020548143087
+  },
+  "regulatory_evidence": "https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm",
+  "H_T_D_C_U": {
+    "H": "Pico QAD and Toto4m preserve distinct small trained outcomes beyond the already recorded 112 sources, with source reference size <=81,355,672 bytes.",
+    "T": "Freeze exact 15 paths, Git OID and all publisher LFS digests at immutable commits, compare to 112 ledger and test without loading models, separate owner benchmark n>=100 and source/license review.",
+    "D": "PASS for immutable metadata and no approved queue, FAIL for SHA mismatch or fabricated approval, UNCERTAIN for learned novelty, actual owner space and runtime parity.",
+    "C": "Pico QAD turns out same state as postquantized ONNX; Toto is redundant or worse than already archived 5M on comparable tasks.",
+    "U": "Publisher self-reports, unverified owner HW, license acts, dependency ABI, and offline restoration; u_c and coverage k cannot be estimated without measured repeated trials."
+  }
+}
