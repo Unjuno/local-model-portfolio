@@ -1,3 +1,9 @@
+# R153／v64（2026-11-22）：取得報告112件・旧13原本の重複取得停止と小型原本4系統の選定
+
+`main`の唯一の正本は[catalog/CURRENT.json](catalog/CURRENT.json) **v64／236登録・189有効**のまま。実行台帳の**112 VERIFED報告／1,714 files／2,020,548,143,087byte**は所有者Dの今回の独立SHA/個別利用権/完全offline復元ではない。旧[post99 R152](queues/proposed-v64-r152-post99-13-plus-bison-research-only.json)の非HOLD13repoは13/13で最新ledgerにrepo+40hex rev+files+bytesが一致し、**追加ダウンロード候補からすべて除外**。次の[4新独立系統181 selected refs／1,505,197,831byte](queues/proposed-v64-r153-after112-next-originals-UNAPPROVED.json)はnchapman Qwen0.8B Heretic LoRA独立2状態、Cartwheel3 simulation policies、LingSante Pulse F32、Primal VAE 3状態。Octen WebGRはCC BY-NC/URL表プライバシーでHOLD。既取得報告だが未登録のTimestral-5M/WeMMは次revisionでbackfill審査し、**二重取得しない**。[R153報告](docs/strategy/153-v64-post112-next-small-rare-originals-and-no-repeat.md)、[5公開元225ファイルの固定マニフェスト](manifests/drafts/r153-2026-11-22-post112-five-distinct-origins-source-frozen.candidate.json)、[決定台帳](catalog/decisions/2026-11-22-r153-post112-reconciliation-and-next-originals.json)、[オフライン検証](tests/test_r153_post112_dedup_and_source_pins.py)。**承認queue0・新規重量DL0・owner D編集0・未審査第三者code実行0・既存モデル削除0**。以下R151以前は履歴。
+
+---
+
 # 現行v64／R151（2026-11-22）：Bison確率校正マルチモーダル判定原本を追加、Groundhog/Ayb研究HOLD
 
 唯一の正本は[CURRENT](catalog/CURRENT.json)→**236登録／189有効（SELECT55、CONDITIONAL134）**。旧235資産全件不変。[16 Publisherファイル65,398,108,261byteの固定SHA原本](manifests/drafts/r151-2026-11-22-baseten-bison-and-groundhog-frozen.candidate.json)・[比較・R149 revision差分](docs/strategy/151-v64-baseten-decision-original-selection-and-drift.md)・[全189件取得STOP](catalog/readiness/v64-2026-11-22-r151-all189-gates.json)。Bisonは会話生成の性能置換ではなく別学習済みの確率判定学習成果。Groundhogの同系53.121GBは研究HOLD、Ayb 0.8BはGated/CC BY-NCのためHOLD。旧99件の再取得なし、owner D独立SHA0、モデル重みDL0、`queues/approved.json`空。新承認ファイルの自動生成・Gated回避は禁止。調査は`main`のみ。
