@@ -1,0 +1,2024 @@
+{
+  "schema_version": 1,
+  "kind": "R153_V64_POST112_FIVE_DISTINCT_PUBLISHER_SOURCES_RESEARCH_ONLY",
+  "as_of_jst": "2026-11-22",
+  "canonical_revision": "v64-20261122",
+  "source_policy": "Official Hugging Face repository API fixed 40-hex revision, Git OID and LFS SHA256, not downloaded full tensor payload or owner D local files.",
+  "source_repos": [
+    {
+      "id": "nchapman/Qwen3.5-0.8B-Heretic-LoRA",
+      "sha": "92e2ae29c379d7378c696511ec9c70ace8be1434",
+      "count": 16,
+      "total": 6165749,
+      "license": "Apache-2.0 metadata; parent Qwen3.5-0.8B rights and exact owner revision to verify",
+      "phase": "P0_SMALL_UNCENSORED_DELTA",
+      "decision": "RECOMMEND_CONDITIONAL_RESEARCH_NOT_FORMAL",
+      "reason": "Two SHA-distinct Heretic v2.1 rank-3 LoRA trained/edited states; reuses already-reported VERIFIED original Qwen3.5-0.8B parent, no need to redownload parent or GGUF variants.",
+      "exclude": [
+        "Qwen3.5-0.8B-Heretic-LoRA.gguf",
+        "pareto/trial_002_ref4_kl0.0714/Qwen3.5-0.8B-Heretic-LoRA.gguf",
+        "pareto/trial_002_ref4_kl0.0714/adapter_model.safetensors",
+        "pareto/trial_004_ref6_kl0.0275/Qwen3.5-0.8B-Heretic-LoRA.gguf"
+      ],
+      "blockers": [
+        "Parent exact 40hex revision and owner-local SHA must match adapter_config target",
+        "Model/code PEFT vLLM Qwen3.5 linear attention layer naming and Quantization/zero-point need static and owner-runtime tests",
+        "Published refusal/neutral behavior values not independently measured",
+        "Explicit owner license act and model-specific scope approval"
+      ],
+      "url": "https://huggingface.co/nchapman/Qwen3.5-0.8B-Heretic-LoRA",
+      "publisher_tree_url": "https://huggingface.co/nchapman/Qwen3.5-0.8B-Heretic-LoRA/tree/92e2ae29c379d7378c696511ec9c70ace8be1434",
+      "publisher_file_count": 16,
+      "publisher_bytes_full": 6165749,
+      "selected_file_count": 12,
+      "selected_bytes": 2031005,
+      "publisher_LFS_refs_full": 6,
+      "selected_LFS_refs": 2,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1782,
+          "git_blob_sha1": "3c6bc24bdfc845d6b8790e8c6eff0e195aa8bdb8",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "Qwen3.5-0.8B-Heretic-LoRA.gguf",
+          "bytes": 1066944,
+          "git_blob_sha1": "6a5709f8b28cd337f8d4681d2f4070db3c4cbece",
+          "publisher_lfs_sha256": "9606a9c1b961d19bcae8fb76c8dde76132558093789b23e015320e266e842a0b",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 2819,
+          "git_blob_sha1": "787419eed5102913a788c3b00fc93679791e652b",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "adapter_config.json",
+          "bytes": 2972,
+          "git_blob_sha1": "93f711aa7607bd2371662d11f16c488cfcf3281a",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "adapter_model.safetensors",
+          "bytes": 1073240,
+          "git_blob_sha1": "71a4b7268e55818703c28d3bdfec025d11d2e3b7",
+          "publisher_lfs_sha256": "269cee632d7b2dc1cb5163d6f1b2a378df3b2130e51c8b08c686709997c28679",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "heretic_summary.json",
+          "bytes": 8438,
+          "git_blob_sha1": "2d5ef1ab303239d7d1c5830576a0de7623db9231",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "pareto/trial_002_ref4_kl0.0714/Qwen3.5-0.8B-Heretic-LoRA.gguf",
+          "bytes": 1066816,
+          "git_blob_sha1": "f926c7c74d80088ff8fc1f2c57f7e2ed8d3935c9",
+          "publisher_lfs_sha256": "1af82d2f20d52ac5f1cbe322967131129cef1e5dc2d24d8320c035c51ccf46c4",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "pareto/trial_002_ref4_kl0.0714/README.md",
+          "bytes": 686,
+          "git_blob_sha1": "5fd20994128b50c98e7a08fbd60e92a3fd50d442",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "pareto/trial_002_ref4_kl0.0714/adapter_config.json",
+          "bytes": 2972,
+          "git_blob_sha1": "93f711aa7607bd2371662d11f16c488cfcf3281a",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "pareto/trial_002_ref4_kl0.0714/adapter_model.safetensors",
+          "bytes": 1073240,
+          "git_blob_sha1": "71a4b7268e55818703c28d3bdfec025d11d2e3b7",
+          "publisher_lfs_sha256": "269cee632d7b2dc1cb5163d6f1b2a378df3b2130e51c8b08c686709997c28679",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "pareto/trial_002_ref4_kl0.0714/heretic_summary.json",
+          "bytes": 751,
+          "git_blob_sha1": "c9d0d6dbfbd5ec7c12abd169b8da0b7880d92c91",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "pareto/trial_004_ref6_kl0.0275/Qwen3.5-0.8B-Heretic-LoRA.gguf",
+          "bytes": 927744,
+          "git_blob_sha1": "90cfe111604b5af020781715c3718444e07b9e4b",
+          "publisher_lfs_sha256": "167736db9f45a469bca293b28d220861d76f169710a997aec8ba879d49ac09e4",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "pareto/trial_004_ref6_kl0.0275/README.md",
+          "bytes": 686,
+          "git_blob_sha1": "7cda465e80b2ac0165c227428a6ff73162be7a31",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "pareto/trial_004_ref6_kl0.0275/adapter_config.json",
+          "bytes": 2649,
+          "git_blob_sha1": "bb488c1075b48cbdedb3e8906ad3216db933ebde",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "pareto/trial_004_ref6_kl0.0275/adapter_model.safetensors",
+          "bytes": 933248,
+          "git_blob_sha1": "fd9b7f6c46d67a80d9a491b2c7fdd86eafba4109",
+          "publisher_lfs_sha256": "26836a1374eb43aef39f04970b558f347a62558ebce8c0e00388ff217146ba6e",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "pareto/trial_004_ref6_kl0.0275/heretic_summary.json",
+          "bytes": 762,
+          "git_blob_sha1": "1278df8257c56aceec4936c848cbbbd9378c35a9",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        }
+      ],
+      "selected_paths": [
+        ".gitattributes",
+        "README.md",
+        "adapter_config.json",
+        "adapter_model.safetensors",
+        "heretic_summary.json",
+        "pareto/trial_002_ref4_kl0.0714/README.md",
+        "pareto/trial_002_ref4_kl0.0714/adapter_config.json",
+        "pareto/trial_002_ref4_kl0.0714/heretic_summary.json",
+        "pareto/trial_004_ref6_kl0.0275/README.md",
+        "pareto/trial_004_ref6_kl0.0275/adapter_config.json",
+        "pareto/trial_004_ref6_kl0.0275/adapter_model.safetensors",
+        "pareto/trial_004_ref6_kl0.0275/heretic_summary.json"
+      ],
+      "immutable_rev_verified": true,
+      "observed_ungated": true,
+      "download_approved": false,
+      "download_enabled": false,
+      "owner_license_act_approved": false,
+      "owner_actual_disk_free_measured": false,
+      "owner_local_SHA_verified": false,
+      "offline_restore_verified": false
+    },
+    {
+      "id": "GetCartwheelInc/cartwheel-control",
+      "sha": "24fc279af8f70097f503767b81db5384d779aae5",
+      "count": 154,
+      "total": 304057444,
+      "license": "Cartwheel Open Model License + hardware/mesh third-party NOTICE; publisher allows commercial use subject to conditions and updates",
+      "phase": "P0_ROBOTICS_THREE_POLICY_STATES",
+      "decision": "RECOMMEND_CONDITIONAL_RESEARCH_NOT_FORMAL",
+      "reason": "Three separately trained simulation-only motion tracking policies for Asimov-1, Unitree G1 and RP1 with robot morphology, motions and simulation assets; no collision with existing text or vision checkpoints.",
+      "exclude": [],
+      "blockers": [
+        "Separate current LICENSE terms and third-party model/mesh NOTICE individual rights",
+        "Simulation-only: do not assume real-robot safety or directly operate hardware",
+        "Pin physics engine, policy controller, 3 robot specs and deterministic replay tests",
+        "Explicit owner scope approval and owner local file SHA"
+      ],
+      "url": "https://huggingface.co/GetCartwheelInc/cartwheel-control",
+      "publisher_tree_url": "https://huggingface.co/GetCartwheelInc/cartwheel-control/tree/24fc279af8f70097f503767b81db5384d779aae5",
+      "publisher_file_count": 154,
+      "publisher_bytes_full": 304057444,
+      "selected_file_count": 154,
+      "selected_bytes": 304057444,
+      "publisher_LFS_refs_full": 130,
+      "selected_LFS_refs": 130,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 8058,
+          "git_blob_sha1": "45f13edf12f5018535151d9aa29f22545fbf0878",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/config.json",
+          "bytes": 747,
+          "git_blob_sha1": "c64b2d30bb23788d2b9213d458a5aadb064c9fb8",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/LICENSE",
+          "bytes": 13419,
+          "git_blob_sha1": "0f1092207caa645ff426e0cc40b7eaad69caecb1",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_ankle_pitch_link.STL",
+          "bytes": 221284,
+          "git_blob_sha1": "e98ae8a54a4d7ed624304d8f45a0306460af07e9",
+          "publisher_lfs_sha256": "19e1917b48eaee35ee1da292368558b17e51e42201171ccf21be9796b63dc77a",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_ankle_roll_link.STL",
+          "bytes": 4088434,
+          "git_blob_sha1": "f61051b2ee281b9ca664def99742cc6bba64f49c",
+          "publisher_lfs_sha256": "511a94a8836ab025344cff98a97cc5b6cc0101e58be3ae8cd56e0261b51be65d",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_elbow_link.STL",
+          "bytes": 390984,
+          "git_blob_sha1": "1196c0d1f0567d9ae3498bfdc0f6502004bf682f",
+          "publisher_lfs_sha256": "a038ae67934eaf5d05fc460f99054de77f524e2de8d0a17bc70ead43dcbc75cc",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_hip_pitch_link.STL",
+          "bytes": 1220134,
+          "git_blob_sha1": "ab69c691dbbd80e9b8c5be9c8eaae6a4370ae09c",
+          "publisher_lfs_sha256": "69d67c3d8d695203e43322e15d7da97a6dc89315bb0ce02724e74aefecd692d0",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_hip_roll_link.STL",
+          "bytes": 370284,
+          "git_blob_sha1": "e92ec5173477fb440015439e598c58477c5861f8",
+          "publisher_lfs_sha256": "1433cb1c5db4c89d7a91e8f70fc298fd7754754ba967c9cffddfc42597b91d01",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_hip_yaw_link.STL",
+          "bytes": 1861384,
+          "git_blob_sha1": "a7ec1133acd5052af02ab614e94b029466898002",
+          "publisher_lfs_sha256": "77081b3b3f779271610918d3ee09eb6b5ab422c4182696cda7c9e15b03745397",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_knee_link.STL",
+          "bytes": 3449384,
+          "git_blob_sha1": "8e72d2a294163297f12601ae4ee180c6de2105fe",
+          "publisher_lfs_sha256": "cd35cd599bdfd25fbc00e5f99b49ef4be41df6c937ebb7a12daed6d4de68947e",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_shoulder_pitch_link.STL",
+          "bytes": 239934,
+          "git_blob_sha1": "3fa9feb6a3da4e118f32c54ab61360954a190209",
+          "publisher_lfs_sha256": "21f8c2c4b579ed6fc111ae318acc7f287b837d0577623a75dd028aeb203eb2b3",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_shoulder_roll_link.STL",
+          "bytes": 868084,
+          "git_blob_sha1": "863be51fba7d2366594a0079901b5ce3a8be84e8",
+          "publisher_lfs_sha256": "908d4a03f9d235dedb7f3de522e4beb65b8afccaf620bdf7beda365ab4fe1faa",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_shoulder_yaw_link.STL",
+          "bytes": 711384,
+          "git_blob_sha1": "be0c75c3e343fd637cb822774ae966ba45c514af",
+          "publisher_lfs_sha256": "f2b67a0be553de3d475d2d1afd3604fc20b912d05b1025a4dea1fa7b454ba9be",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_wrist_yaw_link.STL",
+          "bytes": 882784,
+          "git_blob_sha1": "9246efb4aa003718cb678999a31669e83b45c183",
+          "publisher_lfs_sha256": "913c38bccc12882503171772e764fdcbde7919b00f330f73f557f1dc83582ab6",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/neck_pitch_link.STL",
+          "bytes": 2454684,
+          "git_blob_sha1": "fae880ac97b9b038b88be179229c6fd7710148e5",
+          "publisher_lfs_sha256": "02b8f74aa436fad2316eec9923f0ccd50355ff3777bec7aec76cd21a6aa008e1",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/neck_yaw_link.STL",
+          "bytes": 344984,
+          "git_blob_sha1": "5d32800d564220215185a0c67adc7e504fbd06c1",
+          "publisher_lfs_sha256": "0ec199de629a352610888d896efaaf6699cb42ccf0107849d1553dc0915bac25",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/pelvis_link.STL",
+          "bytes": 9165984,
+          "git_blob_sha1": "f0994f7bb185e3389e9a3c0ac0fda0de0e814636",
+          "publisher_lfs_sha256": "d8a968e00ef8a3838aa760a58fd059e5f92a2b696acf7a00bc87d0d0708ef877",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_ankle_pitch_link.STL",
+          "bytes": 220984,
+          "git_blob_sha1": "0c926d13930795fc4e32b251ae25210df3979a8c",
+          "publisher_lfs_sha256": "47718ddb1133aa87969d0e64f05b49f34709a42e5d8876f17e6678c9611899c8",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_ankle_roll_link.STL",
+          "bytes": 4091734,
+          "git_blob_sha1": "6fa31763fa3fd4c612300e612e4cb111cd5708d1",
+          "publisher_lfs_sha256": "21f2214e42e72aeb52842f50b3702457300a2539f8412d06a977cf3742764c2a",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_elbow_link.STL",
+          "bytes": 401284,
+          "git_blob_sha1": "d74496d929d5b3e22a60b29a43f7f3330c204132",
+          "publisher_lfs_sha256": "04667620945b5a838a97146e75e50bb8a9087f930d3a0411723f8e1bd8aead85",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_hip_pitch_link.STL",
+          "bytes": 1236034,
+          "git_blob_sha1": "61b95dbfbcf8e0b06ef62da7277492cae2e479bd",
+          "publisher_lfs_sha256": "7ecc884721b175aaed091b2b3d67d94b8409649edabdeedde8e3d475a6869248",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_hip_roll_link.STL",
+          "bytes": 368284,
+          "git_blob_sha1": "5736d9578e28473e49435d84ca09210733c721db",
+          "publisher_lfs_sha256": "32f245002354c905702e352dbe0fa42b65f36f3430e2b739c293db9982f7da14",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_hip_yaw_link.STL",
+          "bytes": 1864784,
+          "git_blob_sha1": "459759d1705303ee4e5744df2ca54b156b5f71d6",
+          "publisher_lfs_sha256": "771cccee7503546623598c96894a2ae79d739648e72eeceb8e39ec67f3815a33",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_knee_link.STL",
+          "bytes": 3447184,
+          "git_blob_sha1": "e2b78f273d4e398bccc0a9f0a3aca9e48b63b5de",
+          "publisher_lfs_sha256": "69c407ee36dfe7e820ec7caf6f17bd9998ad561c84aedc08107c304ed11c22bb",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_shoulder_pitch_link.STL",
+          "bytes": 239734,
+          "git_blob_sha1": "7c424059a2fc1cd8b3620ebf47a872132e5fa14a",
+          "publisher_lfs_sha256": "02c73779b8d8405cfa3280d8784c8d8d0ce4ca9aed6c092ee85b0cac6022b3f6",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_shoulder_roll_link.STL",
+          "bytes": 881284,
+          "git_blob_sha1": "ec27a62a81d4d61eed78a8cc0e64c3c3ceb075c1",
+          "publisher_lfs_sha256": "4155d9397583a6acf550ef970c9a482fc6fb2e0de69ed53def50a1748f799379",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_shoulder_yaw_link.STL",
+          "bytes": 700984,
+          "git_blob_sha1": "81386061b17424bf7fc2df78744617892ce60b80",
+          "publisher_lfs_sha256": "9b1a1650100c784d64da9b45cfb8bc9bd35726236aa0708d0db45f5ec1b79217",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_wrist_yaw_link.STL",
+          "bytes": 882184,
+          "git_blob_sha1": "4584ea4c300501f460c309ee5030f3035368e465",
+          "publisher_lfs_sha256": "1a5c3740c0c23209b07397098eb6e0eb1ee89a209609d5bd46e321cc6d702b30",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/waist_yaw_link.STL",
+          "bytes": 9750034,
+          "git_blob_sha1": "8256c7a3edd593a2ec91f9298cc2a5f6b4154444",
+          "publisher_lfs_sha256": "4574372f4057cbea7a5e4032bdf45a5c132b8f80e9a4618494a248fa369ce98f",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/NOTICE",
+          "bytes": 539,
+          "git_blob_sha1": "e6bc7ba66d5ba88892f057d4e7a79311e7a6824b",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/xml/asimov_1_25dof.xml",
+          "bytes": 29675,
+          "git_blob_sha1": "0e2932b44b40184f997a0bbd192da8022c93a4ff",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/basketball_shot.npz",
+          "bytes": 48215,
+          "git_blob_sha1": "42465b7fab96803f433a8958e3007b9cd71a1a81",
+          "publisher_lfs_sha256": "a3fe0c38e265e9c7ca6b954570b6d3d6f31fc685b94f1d3916ca1104e0a60a2d",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/bear_crawl.npz",
+          "bytes": 59802,
+          "git_blob_sha1": "1dcf68418d37ddb2f01a715ca18e51c4a61836a7",
+          "publisher_lfs_sha256": "9b166a9420515f34a072d98f3a53434698d7f8bb6acf9bc8d55970511ff9e2de",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/boxing.npz",
+          "bytes": 83192,
+          "git_blob_sha1": "6c253a16ef5ab75d8a017fd5ea8ba268e8797f7f",
+          "publisher_lfs_sha256": "08c65a003c1afa9be0c3ba8d15e203f58458eb3ede686328870aaa9bb557bc75",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/brisk_walk.npz",
+          "bytes": 84518,
+          "git_blob_sha1": "758c5d69a83d8759897624eed78e569c8af70bea",
+          "publisher_lfs_sha256": "f242c10043bbc126055ca50ec9c92a99c974a99128174a32cade3f4f2afbed7a",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/front_kick.npz",
+          "bytes": 38355,
+          "git_blob_sha1": "a5850ca8a8256883b7697fee2ba0178f9dec0903",
+          "publisher_lfs_sha256": "8788c4f87bdff36ac299b04edf8224cec05f49a85ff69d157e610e821adc5f8b",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/high_jump.npz",
+          "bytes": 117531,
+          "git_blob_sha1": "d0867bad0b0fc309ea93278530d8aae1013c65b6",
+          "publisher_lfs_sha256": "81859ad4518fa6199e4cb03601f690c61af6314ac46f2622bee6ee8c5a2cac1b",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/jazz_dance.npz",
+          "bytes": 27898,
+          "git_blob_sha1": "7170786b2ec16280ae29b51d831fde4c764bbde9",
+          "publisher_lfs_sha256": "37f415c9911ca982b50c15acacf11fa63ad10cfb1609d81cf1032e910d78d08a",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/modern_dance_jump.npz",
+          "bytes": 21086,
+          "git_blob_sha1": "57e99eb8287d2f13d99027beaa7f48b6fd0e74fa",
+          "publisher_lfs_sha256": "bb77db68098f4a28c934b7e40089a326bba85a84203ad59d28ab66ea704423d1",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/push_up.npz",
+          "bytes": 28511,
+          "git_blob_sha1": "88df887e9300159d3161ac9ae8fb00e9f1f7bf48",
+          "publisher_lfs_sha256": "b65511c43480b845c47ba7d0506860e994e187ac98527f3cc98f6a0c3bf028f9",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/run.npz",
+          "bytes": 72081,
+          "git_blob_sha1": "2c4254cf92fb3d175a6b58b061e7f51a0a4732ba",
+          "publisher_lfs_sha256": "f28dcc9653b9510990309642fb13f263bb52a479ee2a94e2ed0f5b28ea2d57bc",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/stand_to_prone.npz",
+          "bytes": 88502,
+          "git_blob_sha1": "6eea443391deded64fbf74511f585cc27b4ed68c",
+          "publisher_lfs_sha256": "5f79ffc828a7d379ea7c0b68229c09fd6d19e71bee7554ecaa0b683514fcc132",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/standing_long_jump.npz",
+          "bytes": 75512,
+          "git_blob_sha1": "75741e9f65e927d5c4b73a274c6a66ee9abba0e1",
+          "publisher_lfs_sha256": "8b5ba7c4a01e9e75169c540d3984e0c48494bc4474c5733b8fd40dd6e2f6bef7",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/sword.npz",
+          "bytes": 47081,
+          "git_blob_sha1": "40746fa6929e2902dd364c8809437d522165b32b",
+          "publisher_lfs_sha256": "2e198c9e73c50fa3348a7a6d1803eac858cf6db4bde8132f8d3dd473a487376f",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/wave.npz",
+          "bytes": 110098,
+          "git_blob_sha1": "0a5d8d28514ae59eeb44d6f356e94cbb7ebbdbbb",
+          "publisher_lfs_sha256": "655f9d874e81a52c38424740fdf59ea97686b671030d29109821fcf9a0cd4193",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/policy.safetensors",
+          "bytes": 34837748,
+          "git_blob_sha1": "5cf9e39e1109e7049b0c68f1018578424fd25220",
+          "publisher_lfs_sha256": "e3d44811fbd368e22b084898f00628eb74cd3e29b6be9fb3d8dff24de6ceeb5a",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/robot.glb",
+          "bytes": 24167840,
+          "git_blob_sha1": "514900eb039c55d0e578a6cd2e68b463feeca93e",
+          "publisher_lfs_sha256": "5a594a10eb05636a0167cdcbc1bc6135f42c32ab31c640658bfa8a4502e78b47",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "assets/cartwheel-control.mp4",
+          "bytes": 15954404,
+          "git_blob_sha1": "b2dd3c3d6f22e605f708c1e9cc53395622560d3e",
+          "publisher_lfs_sha256": "db7e122875364a11e7b444f4fa19bb74d8d4e416891f57f068ac853129e5e25f",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/config.json",
+          "bytes": 856,
+          "git_blob_sha1": "55af57aa795160580dc19fcfa71a788a96fffa3e",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/head_link.STL",
+          "bytes": 932784,
+          "git_blob_sha1": "401f822751c33dab53c6cee77eb62890aca5cd8f",
+          "publisher_lfs_sha256": "005fb67fbd3eff94aa8bf4a6e83238174e9f91b6721f7111594322f223724411",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_ankle_pitch_link.STL",
+          "bytes": 71184,
+          "git_blob_sha1": "69de8490184afc698f633e34bb74e65351bd4689",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_ankle_roll_link.STL",
+          "bytes": 653384,
+          "git_blob_sha1": "cb69f65c6a8059fc6720cb393540f579b4d0c26e",
+          "publisher_lfs_sha256": "c4092af943141d4d9f74232f3cfa345afc6565f46a077793b8ae0e68b39dc33f",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_elbow_link.STL",
+          "bytes": 88784,
+          "git_blob_sha1": "1a96d99ba469960173129084ab6dd3bf8a732a71",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_hip_pitch_link.STL",
+          "bytes": 181684,
+          "git_blob_sha1": "4cf7475bf6bbaef47d5b3f7644a34c73b3d64037",
+          "publisher_lfs_sha256": "4725168105ee768ee31638ef22b53f6be2d7641bfd7cfefe803488d884776fa4",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_hip_roll_link.STL",
+          "bytes": 192184,
+          "git_blob_sha1": "585f6040c38571177d55519417a0f46ca7b29381",
+          "publisher_lfs_sha256": "91f25922ee8a7c3152790051bebad17b4d9cd243569c38fe340285ff93a97acf",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_hip_yaw_link.STL",
+          "bytes": 296284,
+          "git_blob_sha1": "b46a74134f90c568cbdfb8484eeb83a0503b4504",
+          "publisher_lfs_sha256": "a16d88aa6ddac8083aa7ad55ed317bea44b1fa003d314fba88965b7ed0f3b55b",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_knee_link.STL",
+          "bytes": 854884,
+          "git_blob_sha1": "2dcf84e4018ab9e4cff48cecdafe433601c48480",
+          "publisher_lfs_sha256": "8d92b9e3d3a636761150bb8025e32514c4602b91c7028d523ee42b3e632de477",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_rubber_hand.STL",
+          "bytes": 2287484,
+          "git_blob_sha1": "04a2fa22b7f60f2d00c64ec996b33a5219c2b633",
+          "publisher_lfs_sha256": "cff2221a690fa69303f61fce68f2d155c1517b52efb6ca9262dd56e0bc6e70fe",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_shoulder_pitch_link.STL",
+          "bytes": 176784,
+          "git_blob_sha1": "926d9807f1cbf6ad0d41170904785eb30427c848",
+          "publisher_lfs_sha256": "f0d1cfd02fcf0d42f95e678eeca33da3afbcc366ffba5c052847773ec4f31d52",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_shoulder_roll_link.STL",
+          "bytes": 400284,
+          "git_blob_sha1": "4c6840b93ea15d1ba7b4dac0f18f94655867cab7",
+          "publisher_lfs_sha256": "fb9df21687773522598dc384f1a2945c7519f11cbc8bd372a49170316d6eee88",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_shoulder_yaw_link.STL",
+          "bytes": 249184,
+          "git_blob_sha1": "89b0e0661275ed832c674a46893239ad2e5bef85",
+          "publisher_lfs_sha256": "1aa97e9748e924336567992181f78c7cd0652fd52a4afcca3df6b2ef6f9e712e",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_wrist_pitch_link.STL",
+          "bytes": 85984,
+          "git_blob_sha1": "82cc224a8e41251d879502f9809e31d0988ec7f9",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_wrist_roll_link.STL",
+          "bytes": 356184,
+          "git_blob_sha1": "2097ca3e5bbc0af985d150e5dcda4d8ba9bcf43f",
+          "publisher_lfs_sha256": "edc387c9a0ba8c2237e9b296d32531426fabeb6f53e58df45c76106bca74148c",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_wrist_yaw_link.STL",
+          "bytes": 318684,
+          "git_blob_sha1": "692f4b07105fa0ec4ffd989dc60be9b2a33ac9c3",
+          "publisher_lfs_sha256": "83f8fb3a726bf9613d65dd14f0f447cb918c3c95b3938042a0c9c09749267d3b",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/logo_link.STL",
+          "bytes": 243384,
+          "git_blob_sha1": "6c25961c594c714ada9d32e922250d326c121f4a",
+          "publisher_lfs_sha256": "8571a0a19bc4916fa55f91449f51d5fdefd751000054865a842449429d5f155b",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/pelvis_contour_link.STL",
+          "bytes": 1805184,
+          "git_blob_sha1": "8025bc070cd65550f345e9e97bc44a8ff9740dea",
+          "publisher_lfs_sha256": "5cc5c2c7a312329e3feeb2b03d3fc09fc29705bd01864f6767e51be959662420",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/pelvis.STL",
+          "bytes": 1060884,
+          "git_blob_sha1": "f98a88dbf6c7698791ba694e16cbcc180c40663c",
+          "publisher_lfs_sha256": "5ba6bbc888e630550140d3c26763f10206da8c8bd30ed886b8ede41c61f57a31",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_ankle_pitch_link.STL",
+          "bytes": 71184,
+          "git_blob_sha1": "e77d8a2fe1e5d56fac049833d254d6ffa4f6b350",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_ankle_roll_link.STL",
+          "bytes": 653784,
+          "git_blob_sha1": "3c38507b9060eda2c40e5e2bb1b174ef5bda0390",
+          "publisher_lfs_sha256": "4b66222ea56653e627711b56d0a8949b4920da5df091da0ceb343f54e884e3a5",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_elbow_link.STL",
+          "bytes": 88784,
+          "git_blob_sha1": "f259e3812efb9985d6463c04d3e8a4b53793a699",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_hip_pitch_link.STL",
+          "bytes": 181284,
+          "git_blob_sha1": "064085fca108bfc2a5a365403ceb6cdac4d5cd5f",
+          "publisher_lfs_sha256": "e4f3c99d7f4a7d34eadbef9461fc66e3486cb5442db1ec50c86317d459f1a9c6",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_hip_roll_link.STL",
+          "bytes": 192684,
+          "git_blob_sha1": "6544025eeb7dc7d09da549746ae28272e5bcf224",
+          "publisher_lfs_sha256": "4c254ef66a356f492947f360dd931965477b631e3fcc841f91ccc46d945d54f6",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_hip_yaw_link.STL",
+          "bytes": 296284,
+          "git_blob_sha1": "0ad7bee36419f85b490debe929957c6932df393f",
+          "publisher_lfs_sha256": "e479c2936ca2057e9eb2f7dff6c189b7419d7b8484dea0b298cbb36a2a6aa668",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_knee_link.STL",
+          "bytes": 852284,
+          "git_blob_sha1": "65e8a708a7e86f1f242cd32e8959a560ea66c2d7",
+          "publisher_lfs_sha256": "63c4008449c9bbe701a6e2b557b7a252e90cf3a5abcf54cee46862b9a69f8ec8",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_rubber_hand.STL",
+          "bytes": 2192684,
+          "git_blob_sha1": "58148fb9e7307176d43f71da139781a77b63d156",
+          "publisher_lfs_sha256": "99533b778bca6246144fa511bb9d4e555e075c641f2a0251e04372869cd99d67",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_shoulder_pitch_link.STL",
+          "bytes": 176784,
+          "git_blob_sha1": "48a1c46009929341f2c312966acf81c3c733d7ec",
+          "publisher_lfs_sha256": "24cdb387e0128dfe602770a81c56cdce3a0181d34d039a11d1aaf8819b7b8c02",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_shoulder_roll_link.STL",
+          "bytes": 401884,
+          "git_blob_sha1": "2a5d22f9e17a986ec8c958a6ff7668d65878a907",
+          "publisher_lfs_sha256": "962b97c48f9ce9e8399f45dd9522e0865d19aa9fd299406b2d475a8fc4a53e81",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_shoulder_yaw_link.STL",
+          "bytes": 249984,
+          "git_blob_sha1": "0882a567fc1a11f0cf821182154551058b0517f3",
+          "publisher_lfs_sha256": "a0b76489271da0c72461a344c9ffb0f0c6e64f019ea5014c1624886c442a2fe5",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_wrist_pitch_link.STL",
+          "bytes": 79584,
+          "git_blob_sha1": "da194543c40df9d492abb0553c06cc614a78caae",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_wrist_roll_link.STL",
+          "bytes": 356084,
+          "git_blob_sha1": "77d23a77ad6ab659884db4d540e0bd9fd0675d0f",
+          "publisher_lfs_sha256": "a7ee9212ff5b94d6cb7f52bb1bbf3f352194d5b598acff74f4c77d340c5b344f",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_wrist_yaw_link.STL",
+          "bytes": 341484,
+          "git_blob_sha1": "77edbb4135bb5b9b64357a0226431fd665d794b2",
+          "publisher_lfs_sha256": "bc9dece2d12509707e0057ba2e48df8f3d56db0c79410212963a25e8a50f61a6",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/torso_link_rev_1_0.STL",
+          "bytes": 2570584,
+          "git_blob_sha1": "836b9923b3edac7a1c06ecd2f11bfbbc0dedf7e0",
+          "publisher_lfs_sha256": "11ddb46f2098efbbd8816b1d65893632d8e78be936376c7cdcd6771899ccc723",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/waist_roll_link_rev_1_0.STL",
+          "bytes": 85884,
+          "git_blob_sha1": "a64f330c592582dc31cdf38f4d08cfff06681c5f",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/waist_yaw_link_rev_1_0.STL",
+          "bytes": 619984,
+          "git_blob_sha1": "dc628fbdda04129fda29140243d148cbd2c81c83",
+          "publisher_lfs_sha256": "ec6db442b11f25eed898b5add07940c85d804f300de24dcbd264ccd8be7d554c",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/g1.xml",
+          "bytes": 24799,
+          "git_blob_sha1": "23d9a9ca2678b90489a619caf9d32c04b1760654",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/LICENSE",
+          "bytes": 1537,
+          "git_blob_sha1": "62637c8d1416c57ef1aafdf0d4867502e96b9164",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/model/NOTICE",
+          "bytes": 640,
+          "git_blob_sha1": "2da0ffae1730f8d7372d5844c52b244e36541326",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/basketball_shot.npz",
+          "bytes": 58672,
+          "git_blob_sha1": "8e3d6ee344e440ec6467d5a5df2915989c750f42",
+          "publisher_lfs_sha256": "c9b1f02a2b933e9a6b3f8f8bd996a798133a0afb6b0cc8188e0be90503228b4b",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/bear_crawl.npz",
+          "bytes": 79135,
+          "git_blob_sha1": "c4e416117de6969f14b6bde73e9738debc5b9b73",
+          "publisher_lfs_sha256": "d1e22fabb1afff4ac5fb38ee79d2babeb8436bd79dcae97847746c81e122e811",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/boxing.npz",
+          "bytes": 99410,
+          "git_blob_sha1": "acc31f5778fba04d093726cc91506c48f04b4416",
+          "publisher_lfs_sha256": "ec3045d7c12443f8b6727e8e9a40b54b34d545d695f1a2ee49fcab9e0fa13dee",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/brisk_walk.npz",
+          "bytes": 102359,
+          "git_blob_sha1": "121970413b37439413ec3cb50cca63a9f697d1a2",
+          "publisher_lfs_sha256": "3c3a83e0816e4471908e55c648be9aa87c83c5640909740e6cd551ae88f8e8f0",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/front_kick.npz",
+          "bytes": 51299,
+          "git_blob_sha1": "5874769b6cc3ef1432157e2c8bbbea0dc683ca39",
+          "publisher_lfs_sha256": "300037514c8b452612c3ae952b604bf42df519b90ff8617f012a1bc4c4b239e7",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/high_jump.npz",
+          "bytes": 144644,
+          "git_blob_sha1": "7bc745956f98727b9ca5bab2a637afd15ce81888",
+          "publisher_lfs_sha256": "3553a00fea496609c30c2cd08c5e5e2185d3495d4afbe0c1c3b0a0238bdee93a",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/jazz_dance.npz",
+          "bytes": 33370,
+          "git_blob_sha1": "8a928eac57d7e670f7f5441090304230a31ef939",
+          "publisher_lfs_sha256": "29e2bf6f8245284086422a371325f375109dc0504f0cc792a25a8f304a094f52",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/modern_dance_jump.npz",
+          "bytes": 25714,
+          "git_blob_sha1": "129d567f10d06f99b3e870a165e6b37c5638dea9",
+          "publisher_lfs_sha256": "a501c4ec1a1a0297820cbbcbd4f074be0a271984e12fc257765e3dcbfee06a4b",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/push_up.npz",
+          "bytes": 38941,
+          "git_blob_sha1": "ca41e1f5dc6bedb67e06acf557fbb44b263ea5e5",
+          "publisher_lfs_sha256": "2ce3f0234e8f6d7a5f2846f2a0f9473fab10f46908fa73a6bd5ab516fbc8cf78",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/run.npz",
+          "bytes": 87541,
+          "git_blob_sha1": "13657b884199a4b98c45d9b7221588df45f7081b",
+          "publisher_lfs_sha256": "6553d9ee91dc92a30937db74a875ccfabfd6159e6e906bb7ca137424d24f9dda",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/stand_to_prone.npz",
+          "bytes": 114246,
+          "git_blob_sha1": "4d61545591f03da8206763b554a6cb4a8bc6da72",
+          "publisher_lfs_sha256": "42ad8ca02b9f9b4af9530e2048a79be8cda0b44702376745868ffc33a4968877",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/standing_long_jump.npz",
+          "bytes": 96215,
+          "git_blob_sha1": "e28071ae68c7a2c293d54b0bba0dfc3bcfbabc45",
+          "publisher_lfs_sha256": "1639f595dc599a5ab2eee75604f3153331fb1fbd5e55f610c4d928745dedda07",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/sword.npz",
+          "bytes": 61239,
+          "git_blob_sha1": "d01019dc1e7ebda15eba500cd27a92ba47b63932",
+          "publisher_lfs_sha256": "4b6c007305c7bcd747a64a6d0c31195496c4b3bb5cbe5185de60eb0dfa09059a",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/wave.npz",
+          "bytes": 145992,
+          "git_blob_sha1": "6f46e03837feac4c9ef90dc46637276760b0a216",
+          "publisher_lfs_sha256": "33e276f85e316e5f23dcaad5013810be222931a666fecf611480cf71c575f36c",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/policy.safetensors",
+          "bytes": 36481860,
+          "git_blob_sha1": "323e27da23ff15b0ac30ade68f6b190ea19637ee",
+          "publisher_lfs_sha256": "8ea0488d9bc655987696cd10ce19fbd93c41b2f2bc4afa994056923447f8cd6a",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "g1/robot.glb",
+          "bytes": 7111972,
+          "git_blob_sha1": "fbf5e0686715970be34df59f0267fb9012efedc6",
+          "publisher_lfs_sha256": "34662a3556fab4d7ac2c521d561fb9f7274658ee4403311da15bc0f2b5026dd2",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 9113,
+          "git_blob_sha1": "787f4e21148e649993bc9827bbc2a90f5f86c025",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 857,
+          "git_blob_sha1": "876385e9a9e1f326bc61fb42931a4480100cdc57",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 1673,
+          "git_blob_sha1": "ee80bbb88fddc0802b9f03f77f791b222a970c37",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/config.json",
+          "bytes": 834,
+          "git_blob_sha1": "51fce36d0977e2b2e7d7a7252de459efda883753",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/base_link.STL",
+          "bytes": 2954484,
+          "git_blob_sha1": "791f07102b46f84756fd9fc7596e2ac79b6b4c13",
+          "publisher_lfs_sha256": "8fa93e11010c1d0a35ae79f03638fadfc26335320dbfbbd6ff56b5c6cb3c0d2e",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_ankle_pitch_link.STL",
+          "bytes": 63484,
+          "git_blob_sha1": "6e819ef9ec195e73096f18810d4e9e1e6520d619",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_ankle_roll_link.STL",
+          "bytes": 732984,
+          "git_blob_sha1": "d8dcb874118a3bd868e6752a560b3714435f9adb",
+          "publisher_lfs_sha256": "4ac951e3a1adef25aff5d5a9557bab03e293340bb5713cb2b43d3888947560c0",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_elbow_link.STL",
+          "bytes": 1927134,
+          "git_blob_sha1": "c2fb8ec08d74f499ded8207d5383ae2979440f19",
+          "publisher_lfs_sha256": "45e761a34c5570ec7b200a6b15cf6e5d7dfe61fea1497e1954e17140c3c400b1",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_hip_pitch_link.STL",
+          "bytes": 882384,
+          "git_blob_sha1": "d03b189d6a58b4b9fb67435ba1c192f1cfcfafd4",
+          "publisher_lfs_sha256": "cd12a399efb65721f3c75b73619971eafb26958367c30222ef3110bd4090a19d",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_hip_roll_link.STL",
+          "bytes": 1816834,
+          "git_blob_sha1": "d56f807e13e7c525e305be92dd969ac8b439f442",
+          "publisher_lfs_sha256": "4ccc27044b9c274cd81dae6775a59036c6449bb3d64fb6ed70294f17046edcb8",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_hip_yaw_link.STL",
+          "bytes": 1650784,
+          "git_blob_sha1": "5165689a6599d3d30954f7b1808452d84e08e45e",
+          "publisher_lfs_sha256": "e6361ed133e72f2040c88529746d4c17a057d60b0e8d253318fc94bea514e129",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_knee_link.STL",
+          "bytes": 4138534,
+          "git_blob_sha1": "bce1e9a10405fc05ff394fbe2cb4a127ca0ff40e",
+          "publisher_lfs_sha256": "878aa675f24ad2154265e72c4a3fbed65de041337dfe5c80c74f3333e6f6602a",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_shoulder_pitch_link.STL",
+          "bytes": 906184,
+          "git_blob_sha1": "fb8296caf65fcd39efb8f77a81e2d6dfdd644358",
+          "publisher_lfs_sha256": "2c0eb4ed8ccd410dc2d7f6949829a59d05889ab27ea4944120e8689720e6c40b",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_shoulder_roll_link.STL",
+          "bytes": 1201984,
+          "git_blob_sha1": "4508ebffb03299bb2c7eee27d659c3d91001c7a5",
+          "publisher_lfs_sha256": "41f6738917180d3aa62798f279e99f4d64ed57950d6138f8e249c7ca629444a9",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_shoulder_yaw_link.STL",
+          "bytes": 1027984,
+          "git_blob_sha1": "dcf8e3f006b369e870e06313ef85ae34859e4eba",
+          "publisher_lfs_sha256": "4cfe28c2a31c5b7602c8546cac8fa491a97f1b88cbe579d48034bf857702adbb",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_wrist_pitch_link.STL",
+          "bytes": 2032734,
+          "git_blob_sha1": "b18af7b777fb2651734e62f92dd60bf8e587da10",
+          "publisher_lfs_sha256": "da93046e7d2db4fa35a6bec6a77dce76819b1abcba799003e9cb7daf30d24b2c",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_wrist_roll_link.STL",
+          "bytes": 750484,
+          "git_blob_sha1": "ea2ef515a0c34a55f8d219213304c1649ec6969c",
+          "publisher_lfs_sha256": "74462f873e4776f14601da7f72c35e9a9e2bf0cf060463bec207f46bad527ac8",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_wrist_yaw_link.STL",
+          "bytes": 1078134,
+          "git_blob_sha1": "0076ad11071b57f67297ea927abbc7a8edeb27cd",
+          "publisher_lfs_sha256": "01f494bbe21b95a7308ea29c9ef7e08a6214515a93c5e2be307c6fa11b1f6a34",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_ankle_pitch_link.STL",
+          "bytes": 63484,
+          "git_blob_sha1": "7c89f685eb9a964e7d2e47f9f498d2a87436818b",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_ankle_roll_link.STL",
+          "bytes": 733034,
+          "git_blob_sha1": "d2eebaffc63a22dc101845db10ca1d64c7808cbe",
+          "publisher_lfs_sha256": "057843359003abc4e5ec0a9763833440c42b881f853c1ddbd3945bd1168ff947",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_elbow_link.STL",
+          "bytes": 1927534,
+          "git_blob_sha1": "60d60ee0eaa65d128722326b7b813ffdd0caadf7",
+          "publisher_lfs_sha256": "34c9eeeb41588fc9970940d4d82db73ee0c3881613d1a76f0c90421d3b7c8e81",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_hip_pitch_link.STL",
+          "bytes": 884784,
+          "git_blob_sha1": "1f9c56710e2c243376463fa5973101855b1f1e93",
+          "publisher_lfs_sha256": "a427e4c982b181623b8f322f45be08ebfc2f73abdf5492afb8728e0fefa80d83",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_hip_roll_link.STL",
+          "bytes": 1815834,
+          "git_blob_sha1": "4f9a1a1f1e4d4e3c54c6afc9998a1a1717ae2c7d",
+          "publisher_lfs_sha256": "52c5c2edb3e83aafdbc633ee10ff4c368993e6c889d6a560d75982da5cc9a799",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_hip_yaw_link.STL",
+          "bytes": 1796034,
+          "git_blob_sha1": "d23b5a8e765b27417a9fcac052fa288af9aacfc7",
+          "publisher_lfs_sha256": "7e792ca8795b4f44b7de1e2e8747a6c188c10fb8810b17f3269965dde27292bc",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_knee_link.STL",
+          "bytes": 4129784,
+          "git_blob_sha1": "a4a3701fa073d253d5b348cf70df826efc6b1721",
+          "publisher_lfs_sha256": "ffe17fc9ba1614ae86610dc1b657461a3d1d70350729296c9210f68f3934d01d",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_shoulder_pitch_link.STL",
+          "bytes": 906634,
+          "git_blob_sha1": "c25eb77240567be8c279c10d518a2d268a37aa69",
+          "publisher_lfs_sha256": "21ac44a4e038f09a7f0472490ee06c3ecb5c87cac51fdb645ad4382875235be0",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_shoulder_roll_link.STL",
+          "bytes": 1272984,
+          "git_blob_sha1": "d58dfe6b08c0f848462ca6f23cffacf5f8410f41",
+          "publisher_lfs_sha256": "4435df453ffe4325b6783d217081ec6360d52252ddb87b7f894434eb9e60c39b",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_shoulder_yaw_link.STL",
+          "bytes": 1028484,
+          "git_blob_sha1": "9f8dc5614296177950d0f04dc6caa10b420a94b5",
+          "publisher_lfs_sha256": "a88c4bce9e69979ae082de8420a031ca6772a4e0d08ab9f10af4b9617f4ec723",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_wrist_pitch_link.STL",
+          "bytes": 2000784,
+          "git_blob_sha1": "96152990ec26ed71a4312a49c10255b15c5bf788",
+          "publisher_lfs_sha256": "5cb2ffb0fcd5cb43c7757793ed187706f17c8efddb67ffe31a2c1067be660954",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_wrist_roll_link.STL",
+          "bytes": 750134,
+          "git_blob_sha1": "4cbca090eea39a5a0c17035fe7c1e05c0a9aca81",
+          "publisher_lfs_sha256": "35632d2cc24533d8f86fa497928b7744e865b97d2477969173c6ea3e09d4bede",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_wrist_yaw_link.STL",
+          "bytes": 1080034,
+          "git_blob_sha1": "9921ed93c71f0dd529a72951c48239f9338e86ef",
+          "publisher_lfs_sha256": "9b91c81609e00ad96f0a360dbbad1d6df3c88193df11033773f7fa463675b6a6",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/waist_roll_link.STL",
+          "bytes": 741434,
+          "git_blob_sha1": "c5d0a51f3cb2b31f9c40c1a8cc13ec2ad509ee8c",
+          "publisher_lfs_sha256": "500f00489349bf018bbf325d9ed67dd272629b5f37e734a82b141329a9d656df",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/waist_yaw_link.STL",
+          "bytes": 3406834,
+          "git_blob_sha1": "ff1c44cfde0def45ffa21a6cd70cb4bbd51de569",
+          "publisher_lfs_sha256": "36de51037852da450e75b86ef000d145e9e1b37e30925edd3e2307d5c2f449d3",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/mjcf/robot.xml",
+          "bytes": 31411,
+          "git_blob_sha1": "74ddba0d50974c0da0a477786e9715908c192126",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/NOTICE",
+          "bytes": 476,
+          "git_blob_sha1": "8efad1490765131cea19f5113e8b5f39586312e3",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/basketball_shot.npz",
+          "bytes": 57793,
+          "git_blob_sha1": "4d5baa443aefbf1ad0c0a42feb0e5109d20fe1c6",
+          "publisher_lfs_sha256": "242b2cde2c6870f6073e5cdd9d727227de071712dd60d00661d3b69e919d5ada",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/bear_crawl.npz",
+          "bytes": 78446,
+          "git_blob_sha1": "92225e3d0bed16c0234137c81a942fd699525712",
+          "publisher_lfs_sha256": "db75cdd1e6a53c94be644d6308c365504c6146d5fe36111670834aae13794d03",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/boxing.npz",
+          "bytes": 97371,
+          "git_blob_sha1": "cdbfa0fa287c2d5a6064cce0157aa82b5ca84056",
+          "publisher_lfs_sha256": "c05daca8ac025b97b57a52934e85ed895b3f5c17e2d213eef41a8bc0c7a2260a",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/brisk_walk.npz",
+          "bytes": 99749,
+          "git_blob_sha1": "a85903ffc09fd3306d1716e4b24d70b425292007",
+          "publisher_lfs_sha256": "2f4411c4824a50c3ed0e1ee53fb2490949340b7679167f81605947d77e5af06a",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/front_kick.npz",
+          "bytes": 50614,
+          "git_blob_sha1": "339dd5bef60afe6a41a71b71dc28ff4e24f90733",
+          "publisher_lfs_sha256": "8d5a2aa4ab2a4e987461090fb644dd402733bee62e66a81bcd3adfa786c528af",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/high_jump.npz",
+          "bytes": 141095,
+          "git_blob_sha1": "7e11e27150c2961c55885638f13c8a42af4686e7",
+          "publisher_lfs_sha256": "7b20bc6f9c1c6d21f552facee66a99e7c23cdc9b850e2375a253e2d867234966",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/jazz_dance.npz",
+          "bytes": 32949,
+          "git_blob_sha1": "0e617738172fa603a5474a9cbbdc8f8ac7275872",
+          "publisher_lfs_sha256": "a7d79a560a9bb2ee48938de62e53726a81a74126de3ad46ac44524cfc36f16d2",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/modern_dance_jump.npz",
+          "bytes": 25225,
+          "git_blob_sha1": "790627db54a19907e369b86ca88ba07eccd56d3a",
+          "publisher_lfs_sha256": "899b59b5f166e8b4a272746b6b21613f70d794c71e1ab7bb308139b314e5c032",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/push_up.npz",
+          "bytes": 38085,
+          "git_blob_sha1": "1b9f0bad37be08787bf0cba942513aafd9fc1ef5",
+          "publisher_lfs_sha256": "39c3c0dc8f5f26d16f86098727b17d8227aa44d1dc004aad4982d6c98a8e8855",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/run.npz",
+          "bytes": 85538,
+          "git_blob_sha1": "d6532a2dcf41f0fc8a8619050731a9051ff17d55",
+          "publisher_lfs_sha256": "3d4b51dad612e06aa71d89275e45a7f55f39deb22ca3773ce9bc96d6d998ef70",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/stand_to_prone.npz",
+          "bytes": 113777,
+          "git_blob_sha1": "24ef098bcd3415716e6773901b051792329aba20",
+          "publisher_lfs_sha256": "ef48b2ee01d9bf0dc5dd8044b9fe16d29a7beac094ddac8860f9f8ddd167ae02",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/standing_long_jump.npz",
+          "bytes": 93684,
+          "git_blob_sha1": "aec3b2eb9d0ea3fcfb952d8aae413a68fece0003",
+          "publisher_lfs_sha256": "87c633cfb3cdf9e715f96221d4401ad332c9786f9bb03e4f0448bd1c6b0568f3",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/sword.npz",
+          "bytes": 60955,
+          "git_blob_sha1": "9dd7e94603ddebdcc3a20eee62cbdd7f1383cfb0",
+          "publisher_lfs_sha256": "3a0b3e5526539f6c5b9352ae290232a3592f258edc421c0c49bd29117f32e378",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/wave.npz",
+          "bytes": 142116,
+          "git_blob_sha1": "e37680878aa66d40320d1468b8767bf14add2305",
+          "publisher_lfs_sha256": "661dc5638db89d8277d965c3d27aa065367d2c42d92a074da605e40daa18d4ef",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/policy.safetensors",
+          "bytes": 36070832,
+          "git_blob_sha1": "9db7320e0ccab3201d1f3b65c95665041b0f4db7",
+          "publisher_lfs_sha256": "5e46723697325917530a6c89f8231190e8ef812ebb81b870778bcc22e9e7a4a2",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "rp1/robot.glb",
+          "bytes": 32426988,
+          "git_blob_sha1": "3295a66203251f4a78f977927b301a9042ec777d",
+          "publisher_lfs_sha256": "81c8546f82738335c3f5474d004d1aee1ed452a4b8ab097a859cdaec1cb01f09",
+          "owner_local_sha_verified": false
+        }
+      ],
+      "selected_paths": [
+        ".gitattributes",
+        "asimov-1/config.json",
+        "asimov-1/model/LICENSE",
+        "asimov-1/model/meshes/left_ankle_pitch_link.STL",
+        "asimov-1/model/meshes/left_ankle_roll_link.STL",
+        "asimov-1/model/meshes/left_elbow_link.STL",
+        "asimov-1/model/meshes/left_hip_pitch_link.STL",
+        "asimov-1/model/meshes/left_hip_roll_link.STL",
+        "asimov-1/model/meshes/left_hip_yaw_link.STL",
+        "asimov-1/model/meshes/left_knee_link.STL",
+        "asimov-1/model/meshes/left_shoulder_pitch_link.STL",
+        "asimov-1/model/meshes/left_shoulder_roll_link.STL",
+        "asimov-1/model/meshes/left_shoulder_yaw_link.STL",
+        "asimov-1/model/meshes/left_wrist_yaw_link.STL",
+        "asimov-1/model/meshes/neck_pitch_link.STL",
+        "asimov-1/model/meshes/neck_yaw_link.STL",
+        "asimov-1/model/meshes/pelvis_link.STL",
+        "asimov-1/model/meshes/right_ankle_pitch_link.STL",
+        "asimov-1/model/meshes/right_ankle_roll_link.STL",
+        "asimov-1/model/meshes/right_elbow_link.STL",
+        "asimov-1/model/meshes/right_hip_pitch_link.STL",
+        "asimov-1/model/meshes/right_hip_roll_link.STL",
+        "asimov-1/model/meshes/right_hip_yaw_link.STL",
+        "asimov-1/model/meshes/right_knee_link.STL",
+        "asimov-1/model/meshes/right_shoulder_pitch_link.STL",
+        "asimov-1/model/meshes/right_shoulder_roll_link.STL",
+        "asimov-1/model/meshes/right_shoulder_yaw_link.STL",
+        "asimov-1/model/meshes/right_wrist_yaw_link.STL",
+        "asimov-1/model/meshes/waist_yaw_link.STL",
+        "asimov-1/model/NOTICE",
+        "asimov-1/model/xml/asimov_1_25dof.xml",
+        "asimov-1/motions/basketball_shot.npz",
+        "asimov-1/motions/bear_crawl.npz",
+        "asimov-1/motions/boxing.npz",
+        "asimov-1/motions/brisk_walk.npz",
+        "asimov-1/motions/front_kick.npz",
+        "asimov-1/motions/high_jump.npz",
+        "asimov-1/motions/jazz_dance.npz",
+        "asimov-1/motions/modern_dance_jump.npz",
+        "asimov-1/motions/push_up.npz",
+        "asimov-1/motions/run.npz",
+        "asimov-1/motions/stand_to_prone.npz",
+        "asimov-1/motions/standing_long_jump.npz",
+        "asimov-1/motions/sword.npz",
+        "asimov-1/motions/wave.npz",
+        "asimov-1/policy.safetensors",
+        "asimov-1/robot.glb",
+        "assets/cartwheel-control.mp4",
+        "g1/config.json",
+        "g1/model/assets/head_link.STL",
+        "g1/model/assets/left_ankle_pitch_link.STL",
+        "g1/model/assets/left_ankle_roll_link.STL",
+        "g1/model/assets/left_elbow_link.STL",
+        "g1/model/assets/left_hip_pitch_link.STL",
+        "g1/model/assets/left_hip_roll_link.STL",
+        "g1/model/assets/left_hip_yaw_link.STL",
+        "g1/model/assets/left_knee_link.STL",
+        "g1/model/assets/left_rubber_hand.STL",
+        "g1/model/assets/left_shoulder_pitch_link.STL",
+        "g1/model/assets/left_shoulder_roll_link.STL",
+        "g1/model/assets/left_shoulder_yaw_link.STL",
+        "g1/model/assets/left_wrist_pitch_link.STL",
+        "g1/model/assets/left_wrist_roll_link.STL",
+        "g1/model/assets/left_wrist_yaw_link.STL",
+        "g1/model/assets/logo_link.STL",
+        "g1/model/assets/pelvis_contour_link.STL",
+        "g1/model/assets/pelvis.STL",
+        "g1/model/assets/right_ankle_pitch_link.STL",
+        "g1/model/assets/right_ankle_roll_link.STL",
+        "g1/model/assets/right_elbow_link.STL",
+        "g1/model/assets/right_hip_pitch_link.STL",
+        "g1/model/assets/right_hip_roll_link.STL",
+        "g1/model/assets/right_hip_yaw_link.STL",
+        "g1/model/assets/right_knee_link.STL",
+        "g1/model/assets/right_rubber_hand.STL",
+        "g1/model/assets/right_shoulder_pitch_link.STL",
+        "g1/model/assets/right_shoulder_roll_link.STL",
+        "g1/model/assets/right_shoulder_yaw_link.STL",
+        "g1/model/assets/right_wrist_pitch_link.STL",
+        "g1/model/assets/right_wrist_roll_link.STL",
+        "g1/model/assets/right_wrist_yaw_link.STL",
+        "g1/model/assets/torso_link_rev_1_0.STL",
+        "g1/model/assets/waist_roll_link_rev_1_0.STL",
+        "g1/model/assets/waist_yaw_link_rev_1_0.STL",
+        "g1/model/g1.xml",
+        "g1/model/LICENSE",
+        "g1/model/NOTICE",
+        "g1/motions/basketball_shot.npz",
+        "g1/motions/bear_crawl.npz",
+        "g1/motions/boxing.npz",
+        "g1/motions/brisk_walk.npz",
+        "g1/motions/front_kick.npz",
+        "g1/motions/high_jump.npz",
+        "g1/motions/jazz_dance.npz",
+        "g1/motions/modern_dance_jump.npz",
+        "g1/motions/push_up.npz",
+        "g1/motions/run.npz",
+        "g1/motions/stand_to_prone.npz",
+        "g1/motions/standing_long_jump.npz",
+        "g1/motions/sword.npz",
+        "g1/motions/wave.npz",
+        "g1/policy.safetensors",
+        "g1/robot.glb",
+        "LICENSE",
+        "NOTICE",
+        "README.md",
+        "rp1/config.json",
+        "rp1/model/meshes/base_link.STL",
+        "rp1/model/meshes/left_ankle_pitch_link.STL",
+        "rp1/model/meshes/left_ankle_roll_link.STL",
+        "rp1/model/meshes/left_elbow_link.STL",
+        "rp1/model/meshes/left_hip_pitch_link.STL",
+        "rp1/model/meshes/left_hip_roll_link.STL",
+        "rp1/model/meshes/left_hip_yaw_link.STL",
+        "rp1/model/meshes/left_knee_link.STL",
+        "rp1/model/meshes/left_shoulder_pitch_link.STL",
+        "rp1/model/meshes/left_shoulder_roll_link.STL",
+        "rp1/model/meshes/left_shoulder_yaw_link.STL",
+        "rp1/model/meshes/left_wrist_pitch_link.STL",
+        "rp1/model/meshes/left_wrist_roll_link.STL",
+        "rp1/model/meshes/left_wrist_yaw_link.STL",
+        "rp1/model/meshes/right_ankle_pitch_link.STL",
+        "rp1/model/meshes/right_ankle_roll_link.STL",
+        "rp1/model/meshes/right_elbow_link.STL",
+        "rp1/model/meshes/right_hip_pitch_link.STL",
+        "rp1/model/meshes/right_hip_roll_link.STL",
+        "rp1/model/meshes/right_hip_yaw_link.STL",
+        "rp1/model/meshes/right_knee_link.STL",
+        "rp1/model/meshes/right_shoulder_pitch_link.STL",
+        "rp1/model/meshes/right_shoulder_roll_link.STL",
+        "rp1/model/meshes/right_shoulder_yaw_link.STL",
+        "rp1/model/meshes/right_wrist_pitch_link.STL",
+        "rp1/model/meshes/right_wrist_roll_link.STL",
+        "rp1/model/meshes/right_wrist_yaw_link.STL",
+        "rp1/model/meshes/waist_roll_link.STL",
+        "rp1/model/meshes/waist_yaw_link.STL",
+        "rp1/model/mjcf/robot.xml",
+        "rp1/model/NOTICE",
+        "rp1/motions/basketball_shot.npz",
+        "rp1/motions/bear_crawl.npz",
+        "rp1/motions/boxing.npz",
+        "rp1/motions/brisk_walk.npz",
+        "rp1/motions/front_kick.npz",
+        "rp1/motions/high_jump.npz",
+        "rp1/motions/jazz_dance.npz",
+        "rp1/motions/modern_dance_jump.npz",
+        "rp1/motions/push_up.npz",
+        "rp1/motions/run.npz",
+        "rp1/motions/stand_to_prone.npz",
+        "rp1/motions/standing_long_jump.npz",
+        "rp1/motions/sword.npz",
+        "rp1/motions/wave.npz",
+        "rp1/policy.safetensors",
+        "rp1/robot.glb"
+      ],
+      "immutable_rev_verified": true,
+      "observed_ungated": true,
+      "download_approved": false,
+      "download_enabled": false,
+      "owner_license_act_approved": false,
+      "owner_actual_disk_free_measured": false,
+      "owner_local_SHA_verified": false,
+      "offline_restore_verified": false
+    },
+    {
+      "id": "inclusionAI/LingSante-Pulse-1.0",
+      "sha": "51582cc8487ab0e0f48d866bfc0124afbaf6562a",
+      "count": 7,
+      "total": 66946541,
+      "license": "MIT model package; physiological signal data use and privacy separately reviewed",
+      "phase": "P0_SMALL_PHYSIOLOGICAL_ENCODER",
+      "decision": "RECOMMEND_CONDITIONAL_RESEARCH_NOT_FORMAL",
+      "reason": "Independent learned 16.7M F32 physiological waveform encoder + channel-conditioned vectors, not a generic text model or a time-series forecaster; ~67MB self-contained publisher model source.",
+      "exclude": [],
+      "blockers": [
+        "Pin and code-review separate lingsante_pulse package and dependencies",
+        "Input rates, channel descriptions and 128Hz preprocessing fixed for offline restore",
+        "No clinical prediction/diagnosis claims; evaluate on lawful consented synthetic or deidentified signal",
+        "Explicit owner permitted use and source approval"
+      ],
+      "url": "https://huggingface.co/inclusionAI/LingSante-Pulse-1.0",
+      "publisher_tree_url": "https://huggingface.co/inclusionAI/LingSante-Pulse-1.0/tree/51582cc8487ab0e0f48d866bfc0124afbaf6562a",
+      "publisher_file_count": 7,
+      "publisher_bytes_full": 66946541,
+      "selected_file_count": 7,
+      "selected_bytes": 66946541,
+      "publisher_LFS_refs_full": 2,
+      "selected_LFS_refs": 2,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 1085,
+          "git_blob_sha1": "f591910dcc681f6129b8951cfd259ff82d0ef5f1",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 2207,
+          "git_blob_sha1": "a862e1a814d0e6674d1d839c2635a45c67385409",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "channels.json",
+          "bytes": 7225,
+          "git_blob_sha1": "ee6d9e1510da187f04a5b24ad12bbe91311ddbfc",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "channels.npz",
+          "bytes": 82266,
+          "git_blob_sha1": "659098f21a83f7d29abe55173b518d9627bbe677",
+          "publisher_lfs_sha256": "b9860422c4e9b6a701b4822975e1815ca71eda798ab77feee0c2b252cb5c81c5",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 343,
+          "git_blob_sha1": "83ddcc8cc1a686c2cd7fc98f21c38fcd60292af4",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 66851896,
+          "git_blob_sha1": "556c51ff14bc1d25b06a88d52e91c097a570657b",
+          "publisher_lfs_sha256": "7daa43c9b271fa1d842457c9100824c859b06b9800023dc8b97eb76eb37012a3",
+          "owner_local_sha_verified": false
+        }
+      ],
+      "selected_paths": [
+        ".gitattributes",
+        "LICENSE",
+        "README.md",
+        "channels.json",
+        "channels.npz",
+        "config.json",
+        "model.safetensors"
+      ],
+      "immutable_rev_verified": true,
+      "observed_ungated": true,
+      "download_approved": false,
+      "download_enabled": false,
+      "owner_license_act_approved": false,
+      "owner_actual_disk_free_measured": false,
+      "owner_local_SHA_verified": false,
+      "offline_restore_verified": false
+    },
+    {
+      "id": "ostris/primal_vae",
+      "sha": "dc3e96c879e8cf4247c9474c3109bc2847099b50",
+      "count": 14,
+      "total": 1145019884,
+      "license": "Apache-2.0 in publisher LICENSE; model code separate custom AutoModel trust_remote_code review",
+      "phase": "P1_THREE_TRAINED_LATENT_VAES",
+      "decision": "RECOMMEND_CONDITIONAL_RESEARCH_NOT_FORMAL",
+      "reason": "Three non-equivalent FP32 learned autoencoder states (2x1, 2x2 and 4x1); latent layout experiments not reproducible from converting a generic Flux/SD VAE.",
+      "exclude": [
+        "assets/compare_2x1.svg",
+        "assets/compare_2x2.svg",
+        "assets/compare_4x1.svg",
+        "assets/img01.png",
+        "assets/img02.png",
+        "assets/img03.png"
+      ],
+      "blockers": [
+        "Code-review modeling_primal_vae.py and frozen Diffusers/torch backend/ABI before execution",
+        "Publisher 3-image PSNR is not representative performance; independent ≥30 images",
+        "Patching latent shape does not guarantee latent-distribution compatibility with existing diffusion backbone",
+        "Explicit owner rights and source approval"
+      ],
+      "url": "https://huggingface.co/ostris/primal_vae",
+      "publisher_tree_url": "https://huggingface.co/ostris/primal_vae/tree/dc3e96c879e8cf4247c9474c3109bc2847099b50",
+      "publisher_file_count": 14,
+      "publisher_bytes_full": 1145019884,
+      "selected_file_count": 8,
+      "selected_bytes": 1132162841,
+      "publisher_LFS_refs_full": 6,
+      "selected_LFS_refs": 3,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1678,
+          "git_blob_sha1": "1bd1e976c5caf314373900f1b68820c985614203",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11341,
+          "git_blob_sha1": "21118db7bfd41baaa8a4ed1593dcedf1dcab533a",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 10201,
+          "git_blob_sha1": "2cb8ef307b2a8c4f80e81b4fd5c42ef18ee4dd78",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "assets/compare_2x1.svg",
+          "bytes": 3247173,
+          "git_blob_sha1": "694b6024ee4df651249a4b425c32ad04c27da02b",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "assets/compare_2x2.svg",
+          "bytes": 3628342,
+          "git_blob_sha1": "e3cff347d36aaec9090bc0937980df3467d5413f",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "assets/compare_4x1.svg",
+          "bytes": 4641013,
+          "git_blob_sha1": "f7ffbb6ee3c1ee9e10f9a6fe4afe6d3c46522f06",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "assets/img01.png",
+          "bytes": 475535,
+          "git_blob_sha1": "a856677b1a10006c944a0188456fa5417ae640ae",
+          "publisher_lfs_sha256": "e52eb66759fa93e82556fe28ea7e6058ccccf483cb292165f08ed2421c0d88c8",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "assets/img02.png",
+          "bytes": 673739,
+          "git_blob_sha1": "fff08a3d79a8affc570948e066860605b751d798",
+          "publisher_lfs_sha256": "91d44f76cf0a74973e317a183285bca57b83b2a8242186f7cfcda4c44f18375d",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "assets/img03.png",
+          "bytes": 191241,
+          "git_blob_sha1": "c707b68b8f5991981181ad105e1158944c89f04f",
+          "publisher_lfs_sha256": "ceca452dab225f3fc62f2a785d57acd39e4205a4d5ae033b621dc203b585e892",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 257,
+          "git_blob_sha1": "615102b894562714aef7a702fe820f24436ab5a8",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "modeling_primal_vae.py",
+          "bytes": 10364,
+          "git_blob_sha1": "b7c27c89456cc0b25f6cfc446d37adbd0cddcadc",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "primal_vae_2x1.safetensors",
+          "bytes": 321415516,
+          "git_blob_sha1": "eca72b966970ce8f5226ccb51b28374dff436fd4",
+          "publisher_lfs_sha256": "b035c96861e3d36ed0a5308e89535ba19c26846d98c358a3907949ff8d1776f3",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "primal_vae_2x2.safetensors",
+          "bytes": 321422432,
+          "git_blob_sha1": "22dedc1e748280e3815ce00853477d2e45af6f49",
+          "publisher_lfs_sha256": "f90813d9a7b2aa4f9334a93dc22c28867f5204b850357fe224029431727be3e8",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "primal_vae_4x1.safetensors",
+          "bytes": 489291052,
+          "git_blob_sha1": "4ee0bfad2898f303cdae758a5d3aeaf6c4043f56",
+          "publisher_lfs_sha256": "6dc655af2eae2bc7a4da0d20015b7ec3fbeaef2077d5bc53e5f2291f87b6649c",
+          "owner_local_sha_verified": false
+        }
+      ],
+      "selected_paths": [
+        ".gitattributes",
+        "LICENSE",
+        "README.md",
+        "config.json",
+        "modeling_primal_vae.py",
+        "primal_vae_2x1.safetensors",
+        "primal_vae_2x2.safetensors",
+        "primal_vae_4x1.safetensors"
+      ],
+      "immutable_rev_verified": true,
+      "observed_ungated": true,
+      "download_approved": false,
+      "download_enabled": false,
+      "owner_license_act_approved": false,
+      "owner_actual_disk_free_measured": false,
+      "owner_local_SHA_verified": false,
+      "offline_restore_verified": false
+    },
+    {
+      "id": "Octen/Octen-WebGR-0.6B",
+      "sha": "5c062c8ff81eb36f05b66e2fcd8652060d9b8960",
+      "count": 34,
+      "total": 1980313007,
+      "license": "CC BY-NC 4.0 weights and 16 SID table partitions; code Apache-2.0, Qwen3 original Apache-2.0",
+      "phase": "P2_NONCOMMERCIAL_WEB_SEMANTIC_ID_TABLE_HOLD",
+      "decision": "HOLD_RIGHTS_PRIVACY_AND_URL_AGING",
+      "reason": "Distinct trained generative URL retrieval and 30,931,888-row learned SID↔URL mapping; without 16 parquet shards model alone cannot reconstruct offline retrieval. NC and privacy/takedown risks prevent fast-path preservation.",
+      "exclude": [],
+      "blockers": [
+        "Owner intended noncommercial act and derivative licenses must be reviewed",
+        "Evaluate SID table URLs for personal data, abuse reports and takedown obligations; never claim table is privacy-clean",
+        "Freeze 16 parquet and Python constrained decoding code and verify 31M-row content count",
+        "No standalone model.generate(); strict CPU/GPU ABI and search quality tests",
+        "Explicit file-specific owner authorization"
+      ],
+      "url": "https://huggingface.co/Octen/Octen-WebGR-0.6B",
+      "publisher_tree_url": "https://huggingface.co/Octen/Octen-WebGR-0.6B/tree/5c062c8ff81eb36f05b66e2fcd8652060d9b8960",
+      "publisher_file_count": 34,
+      "publisher_bytes_full": 1980313007,
+      "selected_file_count": 34,
+      "selected_bytes": 1980313007,
+      "publisher_LFS_refs_full": 18,
+      "selected_LFS_refs": 18,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1586,
+          "git_blob_sha1": "a6ca7d59b9fb79854cfc56fae32e9c40860ccdf8",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 19347,
+          "git_blob_sha1": "fe463e0f7888bbf8b82e42d55f5743508ddafb7e",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "LICENSE-CODE",
+          "bytes": 11358,
+          "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "LICENSE-QWEN3",
+          "bytes": 11343,
+          "git_blob_sha1": "6634c8cc3133b3848ec74b9f275acaaa1ea618ab",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 745,
+          "git_blob_sha1": "de984a8744b21dfd5b1b90352bbcad77bda62cc7",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 8585,
+          "git_blob_sha1": "510020f6b9bb968a8d5a69829f34fcbbd3049bad",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "assets/pulse-search-banner.png",
+          "bytes": 154998,
+          "git_blob_sha1": "f306dfaf6f86c83cd5b550f2fe1352b0e8d2749d",
+          "publisher_lfs_sha256": "98006eec463d17cec2fcae5e42d46ae2f51891b190ff540c63fb39efa28c9f75",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 1361,
+          "git_blob_sha1": "97c32cd277a6a5ee7eae2f390787856187b47364",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 117,
+          "git_blob_sha1": "8734133c897e5003b5ac4755aec98e3e813fdb36",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "infer_cpu.py",
+          "bytes": 9398,
+          "git_blob_sha1": "0401f3746f4d0597bf3e636f1981c8e04080ee86",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "infer_gpu.py",
+          "bytes": 8983,
+          "git_blob_sha1": "0950ca7496ba1bdb5918371fbfa277bdea11fdfa",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 1671853,
+          "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 1460570744,
+          "git_blob_sha1": "85f4fc4d8317ba081825c071d32590e007618da8",
+          "publisher_lfs_sha256": "e47bcdb53a232e0c9e96873f93045bd4dd6e412a413a0d5aabd8f823c1a85205",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "requirements.txt",
+          "bytes": 288,
+          "git_blob_sha1": "ecc26ce2d3e568486873adeecb67c426fc6b1a29",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "sid_table/part-00000.parquet",
+          "bytes": 31531671,
+          "git_blob_sha1": "3a35bbe3badc6d35d71ebda26be8846602a3fbaa",
+          "publisher_lfs_sha256": "4180468c4b1fa8e7ad65aec1a25a51b5069f417646fd7e17a25afc37fdc633b4",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "sid_table/part-00001.parquet",
+          "bytes": 31799269,
+          "git_blob_sha1": "707905f039fa48f65f96a4971cc9c5537a78865d",
+          "publisher_lfs_sha256": "b3658ce6353467b255ef1b3e5b21af4be3b83a422be663acc1ac9f8c4ae0e6f9",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "sid_table/part-00002.parquet",
+          "bytes": 31693288,
+          "git_blob_sha1": "4646b7cfaca6dc80a0d802b9f461c15c54157b97",
+          "publisher_lfs_sha256": "8d7cc140e3c3ff6e1e95a9760593ad16b3481a5a739fda2caccaf4ab0aad3751",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "sid_table/part-00003.parquet",
+          "bytes": 31736936,
+          "git_blob_sha1": "ef0ced3db092371358fe2078ea8f6779eeabed71",
+          "publisher_lfs_sha256": "d73ff107b49fbaca4747770dd89a6b57cdb1a835784804410465ed311bcdf1a9",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "sid_table/part-00004.parquet",
+          "bytes": 31589516,
+          "git_blob_sha1": "12f4212b09381f765fa01d7c952acc15b7f755f8",
+          "publisher_lfs_sha256": "55e81780548c664c13389682ff6a1b929725023ae752b5c7f69cc8be5afa5ec7",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "sid_table/part-00005.parquet",
+          "bytes": 31629650,
+          "git_blob_sha1": "f24e76b55a5b977fdd5316e0761a2cd6b11f7b2f",
+          "publisher_lfs_sha256": "fb0b0820c61a656712bc63bc94bf78cd625ec78792f659bdc0bfa4e171c4e3a1",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "sid_table/part-00006.parquet",
+          "bytes": 31944011,
+          "git_blob_sha1": "cccf453978bddf16c3347bc464d1bb92c1f46158",
+          "publisher_lfs_sha256": "f15d508a183e6538010cd4989edf8a71075ee560c95e060e3339b1b3301b880a",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "sid_table/part-00007.parquet",
+          "bytes": 31871427,
+          "git_blob_sha1": "532e8ff455ef1bd3baab6bcde431e06818472b30",
+          "publisher_lfs_sha256": "e316e212bd0206b6d11b4c2d2f8f06ac822d7bae15ae4733ef0e3fe466ac9895",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "sid_table/part-00008.parquet",
+          "bytes": 31734513,
+          "git_blob_sha1": "c38c754536cfc769ce1f7b8ab825c6a7dce6ca47",
+          "publisher_lfs_sha256": "49b2b7a57715ea2a56a9fff0d0fc3b2f53c858b92997d2d412856e6d0d8f7853",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "sid_table/part-00009.parquet",
+          "bytes": 31776391,
+          "git_blob_sha1": "060c976258f1d5013b0545bd5efe034f7f7c0fd7",
+          "publisher_lfs_sha256": "7b8263b362820ef59dee03ffe08e31877f4af559f08bea84f4da806cfc8f33ce",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "sid_table/part-00010.parquet",
+          "bytes": 32088628,
+          "git_blob_sha1": "12901c49cde30e2d73a2f1f1ee06376acd0dcf45",
+          "publisher_lfs_sha256": "079e40331c62605837c5ad1eed154d4ac76ce58dfdf00b6318ca77905ea0e7f3",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "sid_table/part-00011.parquet",
+          "bytes": 31622101,
+          "git_blob_sha1": "67b3b62760212b191a0cc8e48975b54e3aec1165",
+          "publisher_lfs_sha256": "0932aa95b4b17bc1ec8bdb57f0d2b6854a78c00092410b559294504873e149d4",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "sid_table/part-00012.parquet",
+          "bytes": 31445943,
+          "git_blob_sha1": "951bcfd8abbb60fa8a291478a79c623fa3e76906",
+          "publisher_lfs_sha256": "344b7844bac264396b37bef5b4d165ae5eb733080d33cb6328269f55cc74e0df",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "sid_table/part-00013.parquet",
+          "bytes": 31932041,
+          "git_blob_sha1": "94ad8c52448db6629e14a3bd72d11f63ad8b5315",
+          "publisher_lfs_sha256": "5f510f466f1f9a9816751f898879749a98ae65c7cfe2a6ee26eaf88c9a532879",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "sid_table/part-00014.parquet",
+          "bytes": 31810571,
+          "git_blob_sha1": "9bca7917c42c64ad5df750682e8967a599d246b9",
+          "publisher_lfs_sha256": "fdf7c2807fd681da18cd1749ac75de60f64d0b19eb01af73b74eb312bee3303b",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "sid_table/part-00015.parquet",
+          "bytes": 31794344,
+          "git_blob_sha1": "12501696d1e81136da593ef1613746df469e9498",
+          "publisher_lfs_sha256": "b65b0e991bd285e8f0a487466202b3107eb3c18d7e4e68ef0d486bbddabc9800",
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "smoke_test.json",
+          "bytes": 23845,
+          "git_blob_sha1": "421df94c9983bfa47db24f695103ed87d35496be",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 7031645,
+          "git_blob_sha1": "443909a61d429dff23010e5bddd28ff530edda00",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 9678,
+          "git_blob_sha1": "6a3829ee9491f36113e64df37573be81df0366f5",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 2776833,
+          "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+          "publisher_lfs_sha256": null,
+          "owner_local_sha_verified": false
+        }
+      ],
+      "selected_paths": [
+        ".gitattributes",
+        "LICENSE",
+        "LICENSE-CODE",
+        "LICENSE-QWEN3",
+        "NOTICE",
+        "README.md",
+        "assets/pulse-search-banner.png",
+        "config.json",
+        "generation_config.json",
+        "infer_cpu.py",
+        "infer_gpu.py",
+        "merges.txt",
+        "model.safetensors",
+        "requirements.txt",
+        "sid_table/part-00000.parquet",
+        "sid_table/part-00001.parquet",
+        "sid_table/part-00002.parquet",
+        "sid_table/part-00003.parquet",
+        "sid_table/part-00004.parquet",
+        "sid_table/part-00005.parquet",
+        "sid_table/part-00006.parquet",
+        "sid_table/part-00007.parquet",
+        "sid_table/part-00008.parquet",
+        "sid_table/part-00009.parquet",
+        "sid_table/part-00010.parquet",
+        "sid_table/part-00011.parquet",
+        "sid_table/part-00012.parquet",
+        "sid_table/part-00013.parquet",
+        "sid_table/part-00014.parquet",
+        "sid_table/part-00015.parquet",
+        "smoke_test.json",
+        "tokenizer.json",
+        "tokenizer_config.json",
+        "vocab.json"
+      ],
+      "immutable_rev_verified": true,
+      "observed_ungated": true,
+      "download_approved": false,
+      "download_enabled": false,
+      "owner_license_act_approved": false,
+      "owner_actual_disk_free_measured": false,
+      "owner_local_SHA_verified": false,
+      "offline_restore_verified": false
+    }
+  ],
+  "totals": {
+    "studied_repos": 5,
+    "studied_full_files": 225,
+    "studied_full_bytes": 3502502625,
+    "studied_full_lfs_refs": 162,
+    "priority_repos": 4,
+    "priority_selected_files": 181,
+    "priority_selected_bytes": 1505197831,
+    "priority_selected_lfs_refs": 137,
+    "weight_bytes_downloaded": 0
+  },
+  "rights_and_runtime": {
+    "owner_license_text_per_act_reviewed": false,
+    "owner_signed_scope_authorization": false,
+    "unreviewed_third_party_code_not_executed": true,
+    "owner_D_SHA_verified": false,
+    "archive_limit_bytes": 4000000000000,
+    "safe_floor_bytes": 200000000000,
+    "owner_D_free_bytes_now": null,
+    "staging_peak_bytes": null
+  },
+  "prior_research": "manifests/drafts/r150-2026-11-22-six-specialists-source-freeze.candidate.json",
+  "prior_reported_ledger": {
+    "models_verified": 112,
+    "bytes_verified": 2020548143087,
+    "owner_independently_rehashed_this_research": false
+  }
+}
