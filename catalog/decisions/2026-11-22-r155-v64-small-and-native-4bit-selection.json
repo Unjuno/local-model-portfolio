@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "kind": "R155_V64_NOV22_MINICPM5_SMALL_AND_EDGE0_NATIVELY_TRAINED_QUANT_SELECTION",
+  "as_of_jst": "2026-11-22",
+  "repo": "Unjuno/local-model-portfolio",
+  "baseline_catalog_revision": "v64-20261122",
+  "baseline_registered": 236,
+  "baseline_active": 189,
+  "reported_acquired_verified_models": 112,
+  "reported_acquired_verified_files": 1714,
+  "reported_acquired_source_bytes": 2020548143087,
+  "real_owner_D_independent_SHA_verified": false,
+  "real_owner_D_capacity_remeasured": false,
+  "source_manifest": "manifests/drafts/r155-2026-11-22-minicpm5-edge0-immutable-sources.candidate.json",
+  "decisions": [
+    {
+      "repo_id": "openbmb/MiniCPM5-2B",
+      "action": "CONFIRM_IMMUTABLE_SOURCE_AND_RECOMMEND_NEW_CONDITIONAL; NOT_IN_CATALOG_YET",
+      "risk_wave": "S2_SMALL_STRONG",
+      "publisher_revision_sha": "42433e90dad95123ab87729fd7011e7110629556",
+      "original_trained_state": "Independent 2,516,756,480-element post-trained 2B-class model; standard LlamaForCausalLM; 131072-token advertised context, BF16 original single safetensors shard; not a GGUF conversion of an already archived model",
+      "publisher_source_file_count": 11,
+      "publisher_reference_bytes": 5043807977,
+      "publisher_lfs_sha256_refs": 1,
+      "why_keep": "Distinct source-learned coding, math, long-context, agent/tiny assistant behavior at 5.044GB; unknown value beyond already archived small models requires matched owner benchmark",
+      "quality_evidence": "Publisher reports average 53.9 on its benchmark set; not owner reproduced and no benchmark HW/clock/batch replication",
+      "license": "HF model-card apache-2.0 tag; repository 11-file tree does not include a standalone LICENSE file. Review upstream project license and all dataset use rights for intended act.",
+      "software": "Standard LlamaForCausalLM with published model configs and tokenizer; actual transformers, llama.cpp, vLLM and 131k KV cache ABI on owner hardware untested",
+      "download_approved": false,
+      "download_enabled": false
+    },
+    {
+      "repo_id": "Edge0/Edge0-120B-NVFP4",
+      "action": "SOURCE_FROZEN_RESEARCH_HOLD_PENDING_TOTAL_TENSOR_AND_RUNTIME; OPTIONAL_SPEED_REPRESENTATIVE",
+      "risk_wave": "S2_NATIVE_QUANT_SPECIAL",
+      "publisher_revision_sha": "b0628ee6f3655c40a1afde343d6e265387eea094",
+      "original_trained_state": "Publisher claims independently post-trained 120B latent sparse MoE with 1280-dimensional routed expert subspace and native 4-bit experts; exact prior training base SHA unverified",
+      "publisher_source_file_count": 43,
+      "publisher_reference_bytes": 98531583107,
+      "publisher_lfs_sha256_refs": 13,
+      "why_keep": "Architecture/learned-state novelty cannot be reconstructed by merely quantizing Qwen3.8-Flash-Next; lower-cost speed comparator to 145B, but full publisher source is 98.532GB including PLE, not a 32.96GiB full offline bundle",
+      "license": "Edge0 Community Model License 1.0 and separately Qwen Community License 1.0; commercial model offering and upstream use require distinct rights review. Not Apache-2.0 model weights.",
+      "blocking": [
+        "Total learned parameters including PLE+MTP+encoder: unknown independent tensor census",
+        "Pinned source for edge0-infer/edge0-strata plus dependencies and ABI unverified",
+        "Owner device peak memory, performance, cached/swap and KV context unknown",
+        "Model card speed comes from publisher not owner replicated"
+      ],
+      "download_approved": false,
+      "download_enabled": false
+    },
+    {
+      "repo_id": "Edge0/Edge0-145B-NVFP4",
+      "action": "SOURCE_FROZEN_RESEARCH_HOLD_STRONGER_QUALITY_ALTERNATIVE; NO_AUTOMATIC_DUAL_DOWNLOAD",
+      "risk_wave": "S2_NATIVE_QUANT_SPECIAL",
+      "publisher_revision_sha": "f7a465395af029f3f59a624caefb0fc273988faa",
+      "original_trained_state": "Publisher claims post-trained 145B latent sparse MoE with 1792-dimensional expert subspace, native 4-bit expert pack and separately required FP8 PLE table + MTP head; full learned component count uncensused",
+      "publisher_source_file_count": 43,
+      "publisher_reference_bytes": 113772093975,
+      "publisher_lfs_sha256_refs": 14,
+      "why_keep": "Publisher terminal-bench2.1 reported 86.5 vs 120B reported 75.3; trade-off in source bytes 15.240GB, on same claimed reference HW; no independent match; preserve source lock rather than auto choose two",
+      "license": "Edge0 Community Model License 1.0 (separate commercial model offering licensing) + upstream Qwen Community License 1.0; code may use MIT/Apache2 separately.",
+      "blocking": [
+        "Total parameters including PLE+MTP not independently established; cannot certify sub-150B gate",
+        "At fixed 145B revision, separate ple-fp8.gguf file alone is 51,200,246,112 bytes, referenced by model.json",
+        "Author claimed 47.79GiB core model excludes independent mandatory runtime parts; source snapshot 113.772GB",
+        "No owner GPU/CPU/RAM/offline inference or clock-matched repeat",
+        "Cannot assume no extra Qwen commercial permission"
+      ],
+      "download_approved": false,
+      "download_enabled": false
+    }
+  ],
+  "alternative_risks_and_not_selected": [
+    {
+      "repo_id": "openbmb/MiniCPM5-1B",
+      "action": "RESEARCH_ALTERNATIVE_NOT_ADDED",
+      "reason": "Different 1.08B trained state and publisher original ~2.171GB; optional small-footprint comparison but shared family, independent 2B vs1B marginal value not measured; do not blindly double archiving"
+    },
+    {
+      "repo_id": "briaai/RMBG-3.0",
+      "action": "GATED_HOLD_NO_ACCESS_BYPASS",
+      "reason": "Distinct 8.127B image matting posttraining, but Hugging Face gated=auto and CC BY-NC/bria-fibo license, exact selected weight access and owner authorized intended act unverified; no download or SHA fabrication"
+    },
+    {
+      "repo_id": "qvac/BotPsy-0.8B",
+      "action": "NO_DUPLICATE_ALREADY_SELECTED_AND_REPORTED_ACQUIRED",
+      "reason": "Already registered conditional since v28 and present among 112 historical VERIFIED receipts"
+    },
+    {
+      "repo_id": "robbyant/lingbot-touch-tiny",
+      "action": "NO_DUPLICATE_ALREADY_SELECTED_AND_REPORTED_ACQUIRED",
+      "reason": "Already registered conditional since v29 and present among 112 historical VERIFIED receipts"
+    }
+  ],
+  "edge0_full_source_cross_repo_sha_dedup": {
+    "identical_publisher_paths": 27,
+    "identical_publisher_bytes": 60467010496,
+    "two_full_repo_reference_bytes": 212303677082,
+    "two_full_repo_CAS_deduplicated_reference_bytes": 151836666586,
+    "shared_ple_sha256_exact_same": "c7615c59b060277ddf6f84729fa8f7469cfc82c7fb983d6e7eab5a2f7446f170",
+    "physically_available_or_dedup_saved_on_owner_drive": false,
+    "no_full_two_model_fetch_approved": true,
+    "shared_asset_reuse_requires_owner_local_SHA": true
+  },
+  "permission_separation": {
+    "research_selection_is_not_download_approval": true,
+    "approved_queue_unchanged": true,
+    "new_approvals": 0,
+    "model_weight_bytes_downloaded_by_review": 0,
+    "custom_model_code_executed": false,
+    "owner_archive_files_deleted": 0,
+    "gated_bypass": false,
+    "user_disk_live_rehash": false
+  },
+  "H_T_D_C_U": {
+    "H": "MiniCPM5-2B has distinct, useful compact posttraining; Edge0 120/145 each encode edited latent MoE training state not replicable by Qwen post-training-independent bitwise conversion, but two variants may have overlapping task coverage.",
+    "T": "Pin complete official HF model trees by immutable 40-hex revision and raw Git/LFS identities. Compare catalog and 112-receipt ledger IDs. For owner execution, freeze matched code commit and package ABI, check all learned PLE/MTP params and rights, 30+ latency/peak-memory trials per fixed task set plus >=100 matched tool/coding examples.",
+    "D": "PASS if current v64 236/189, source 11+43+43, exact bytes, no 112-receipt duplicate, Edge0 shared-SHA reference dedup accurate, approvals zero. FAIL on silent repin, model-license conflation, missing PLE, duplicate learned-stage accounting or automatic download. OWNER_REAL_HARDWARE_AND_LEGAL_ACTS remain UNCERTAIN.",
+    "C": "Publisher quality/speed benchmark may fail on identical hardware; learned Edge0 source may be less independent than author claims; future access restrictions may never happen; original MiniCPM5 small models may suffice.",
+    "U": "No independent benchmark replicates, runtime version/driver/clock/batch/cache or license act decision; no empirical variance, hence combined uncertainty u_c and coverage factor k cannot be numerically estimated."
+  },
+  "interdisciplinary": [
+    "sparse expert routing and quantization-aware deployment",
+    "software supply-chain content identities and reproducible offline inference",
+    "agentic benchmark methodology and hardware performance metrology",
+    "intellectual property and model distribution rights"
+  ]
+}
