@@ -1,0 +1,566 @@
+{
+  "schema_version": 1,
+  "kind": "R153_SMAUG_DPO_FULL_SOURCE_QWEN_PINNED_SHARD_HASH_DELTA_PLUS_ATOMIC_43MB_LORA_NONEXECUTABLE",
+  "observed_jst": "2026-11-22",
+  "canonical_revision_at_research": "v64-20261122",
+  "ledger_repo": "catalog/execution/2026-11-19-acquisition-ledger.json",
+  "observed_ledger": {
+    "blob_sha": "1679a3f8f755ae9a0d5b26cae0617acf9fc85e34",
+    "generated_at": "2026-11-22T00:17:07.615508+00:00",
+    "models_verified": 112,
+    "verified_bytes": 2020548143087
+  },
+  "full_sources": [
+    {
+      "repo_id": "abacusai/Smaug-Uncensored",
+      "revision_sha": "e4bbcf7aec54ab72f4ce720569f3b3dc7b973087",
+      "model_url": "https://huggingface.co/abacusai/Smaug-Uncensored/tree/e4bbcf7aec54ab72f4ce720569f3b3dc7b973087",
+      "observed_gated": false,
+      "observed_license": "Apache-2.0",
+      "file_count": 32,
+      "publisher_full_repo_bytes": 55586070091,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "sha256": null,
+          "git_blob_sha1": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+          "identical_parent_source": true,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11544,
+          "sha256": null,
+          "git_blob_sha1": "f938136e3adacfd92be087f6e113b5d6d97f678f",
+          "identical_parent_source": true,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 557,
+          "sha256": null,
+          "git_blob_sha1": "a48d9bf6001f2070e94f48a0d7d9c9ef082ede05",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 19921,
+          "sha256": null,
+          "git_blob_sha1": "9f901d0862c37388b223b0635f22ec67a2439cb1",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 8952,
+          "sha256": null,
+          "git_blob_sha1": "c0c686f9c38d70d179fb7b5f5aa7530bc913dda3",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 4312,
+          "sha256": null,
+          "git_blob_sha1": "706cebd746c4b6f2b1d1f892630867acfdfd3df8",
+          "identical_parent_source": true,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 202,
+          "sha256": null,
+          "git_blob_sha1": "023756cfadf88e5bf69eefeee3e172f38c448d64",
+          "identical_parent_source": true,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 3353259,
+          "sha256": null,
+          "git_blob_sha1": "a494e019ca1502219fd0128658b979e5f05ae8e8",
+          "identical_parent_source": true,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00001-of-00018.safetensors",
+          "bytes": 3966730552,
+          "sha256": "d550bfbbeb4d96861555ed448167efa4ba954ddd6dbdccd45887e922af963f36",
+          "git_blob_sha1": "c1ac13a324136b364a3ec54c0813376fa4e69e92",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00002-of-00018.safetensors",
+          "bytes": 3043080328,
+          "sha256": "2213ee86b7db3afb8eb7600d92080b10e8c85f5d6560e44926195b5e2564a538",
+          "git_blob_sha1": "007e181d5c8dfc4b61ec592b349978094376f7ca",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00003-of-00018.safetensors",
+          "bytes": 2542796952,
+          "sha256": "2e1bf62cbcd406eaa64b60d10353e1f0ef4039d0976e56f05cabe953454f9968",
+          "git_blob_sha1": "a2da5e6cd6307a6cae13d04820ab0d31b47b48bd",
+          "identical_parent_source": true,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00004-of-00018.safetensors",
+          "bytes": 3988973152,
+          "sha256": "aa76e1e0f93c38afb9abff6a20407e3026beeaa6db8438dd88a32ae7a2dc2ebe",
+          "git_blob_sha1": "656bd42478066ada7a8ce3b9316379addf3887f0",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00005-of-00018.safetensors",
+          "bytes": 2099339864,
+          "sha256": "253503eb9022d91c598cc0aeb1cc30f5fdc81b523f97cdcd4dd36221784cf89a",
+          "git_blob_sha1": "937d670cb95bfde2edc7d5d0045f732cda8395fa",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00006-of-00018.safetensors",
+          "bytes": 3979553696,
+          "sha256": "b83e36be1d58d6df638e765b0b920d46fcc13383ffb17ca9690994fca57e3586",
+          "git_blob_sha1": "b30d6b33530e9947e3bd98ae3ce723eb40880200",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00007-of-00018.safetensors",
+          "bytes": 2108759344,
+          "sha256": "ed3b4225d50aad6dae34a510877a800b4b70df635ba160b470ce13bfa623e6af",
+          "git_blob_sha1": "2ba49c5fb86464b65f35dcc04bd37357cb8e8102",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00008-of-00018.safetensors",
+          "bytes": 3979553696,
+          "sha256": "6896c4e316466061acd92fe54e6c093d7cb57fc9485fafc636b1a947383c9beb",
+          "git_blob_sha1": "32a005c5d4127d06e62fb3861fae4fc8b99ce808",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00009-of-00018.safetensors",
+          "bytes": 2108759344,
+          "sha256": "313b6ea5f7eebefeb4d5000454c70a74f0ac42083b6f66fd59071a8b8ea1908d",
+          "git_blob_sha1": "1c4f45478617dbd95e3f595711bac879fe69290e",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00010-of-00018.safetensors",
+          "bytes": 3979553696,
+          "sha256": "a0aca3cf8007bda54fca3344fd0788db433710104910f119da30fc6c19414651",
+          "git_blob_sha1": "150bda1a2225e5fbb12005ff4c3eed428b090996",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00011-of-00018.safetensors",
+          "bytes": 2108759344,
+          "sha256": "ede2abd4cd2563f76577a3bead23592f4220219a22f79d49b8fd5086058381ad",
+          "git_blob_sha1": "c5a6b00a8142de9d4dfd79c1ab81110b5d146942",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00012-of-00018.safetensors",
+          "bytes": 3979553696,
+          "sha256": "6fa25a6c6452adec760e5521bc8fc140f18f5977eae4811b0071ad765b654657",
+          "git_blob_sha1": "4b658f6da268c6175cf3ac7835f543067145c2d0",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00013-of-00018.safetensors",
+          "bytes": 2108759344,
+          "sha256": "905ac7f451742746fd8a75a1372c615213251d37a3e281b81589446443d49b22",
+          "git_blob_sha1": "8555de0d8723f705a5c2590ac723d6e00ffe9321",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00014-of-00018.safetensors",
+          "bytes": 3979553696,
+          "sha256": "3d5685175f1b2f7bb2ae68d61462420ebb8671244b38e6178162f34abfbb6646",
+          "git_blob_sha1": "8123b5d79e23e1402540ec7361988ff41829d3d4",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00015-of-00018.safetensors",
+          "bytes": 2108759344,
+          "sha256": "35fe3b19c386d3e60e3a65a70db24c73fffc816e16c6dc1027f1afb4bcd99a0a",
+          "git_blob_sha1": "95f0b2ed38b46cdbec0d526e1c48222a8ba85052",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00016-of-00018.safetensors",
+          "bytes": 3979564040,
+          "sha256": "f6a7f85484e753ed0e13845016ba978ec4a962144977a45987ef0d029a744cce",
+          "git_blob_sha1": "cc680291149019e2b5b57fcefd83cfd296752c2e",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00017-of-00018.safetensors",
+          "bytes": 2108759344,
+          "sha256": "dc8099e9ff14394b8b428636e2c293b9fd32fec7249373d8061b8c2361350782",
+          "git_blob_sha1": "7557fbb13a31ece495c0709737fd9e36a56e4961",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model-00018-of-00018.safetensors",
+          "bytes": 3392197344,
+          "sha256": "1d3479509e21494658f9b64d317f5ea8e55c4025d28c702d6c4d0b356ce8ea06",
+          "git_blob_sha1": "a92b4073fc6a58ffc9334ac63360fc8d9cc50d33",
+          "identical_parent_source": true,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 112216,
+          "sha256": null,
+          "git_blob_sha1": "da35e3c564457dface7d138f0b6cac284ff8958c",
+          "identical_parent_source": true,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 390,
+          "sha256": null,
+          "git_blob_sha1": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64",
+          "identical_parent_source": true,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 12809320,
+          "sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3",
+          "git_blob_sha1": "9328ce9c41e80f6dd7bc2c66d8ae1fc93bf87440",
+          "identical_parent_source": true,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 17928,
+          "sha256": null,
+          "git_blob_sha1": "5de744b3fca2129d7186979ae47c06be33903243",
+          "identical_parent_source": false,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 385,
+          "sha256": null,
+          "git_blob_sha1": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe",
+          "identical_parent_source": true,
+          "owner_local_sha_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 6722759,
+          "sha256": null,
+          "git_blob_sha1": "0aa0ce0658d60ac4a5d609f4eadb0e8e43514176",
+          "identical_parent_source": true,
+          "owner_local_sha_verified": false
+        }
+      ],
+      "parent_repo_id": "Qwen/Qwen3.8-27B",
+      "parent_revision_sha": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
+      "parent_reported_acquired_same_revision": true,
+      "learned_shard_comparison": [
+        {
+          "path": "model-00001-of-00018.safetensors",
+          "smaug_sha256": "d550bfbbeb4d96861555ed448167efa4ba954ddd6dbdccd45887e922af963f36",
+          "base_sha256": "ba0ce20aae489ad196733da5064bcdf159a1fe84f53336648196e1ebb7751b1c",
+          "bytes": 3966730552,
+          "sha256_equal": false,
+          "already_parent_ledger_verified_report": false
+        },
+        {
+          "path": "model-00002-of-00018.safetensors",
+          "smaug_sha256": "2213ee86b7db3afb8eb7600d92080b10e8c85f5d6560e44926195b5e2564a538",
+          "base_sha256": "06a148c01bfbe3faa14a5f184a7ff29a706f7ae1c8b2705d2058e26d17a001fb",
+          "bytes": 3043080328,
+          "sha256_equal": false,
+          "already_parent_ledger_verified_report": false
+        },
+        {
+          "path": "model-00003-of-00018.safetensors",
+          "smaug_sha256": "2e1bf62cbcd406eaa64b60d10353e1f0ef4039d0976e56f05cabe953454f9968",
+          "base_sha256": "2e1bf62cbcd406eaa64b60d10353e1f0ef4039d0976e56f05cabe953454f9968",
+          "bytes": 2542796952,
+          "sha256_equal": true,
+          "already_parent_ledger_verified_report": true
+        },
+        {
+          "path": "model-00004-of-00018.safetensors",
+          "smaug_sha256": "aa76e1e0f93c38afb9abff6a20407e3026beeaa6db8438dd88a32ae7a2dc2ebe",
+          "base_sha256": "511e34063187882659753c4d93f3859f93c019fd438d8813071921c81d9a3f1a",
+          "bytes": 3988973152,
+          "sha256_equal": false,
+          "already_parent_ledger_verified_report": false
+        },
+        {
+          "path": "model-00005-of-00018.safetensors",
+          "smaug_sha256": "253503eb9022d91c598cc0aeb1cc30f5fdc81b523f97cdcd4dd36221784cf89a",
+          "base_sha256": "635cb53446dc74f219740fc59e18b774f877b803b9722e289ca62575a6efa701",
+          "bytes": 2099339864,
+          "sha256_equal": false,
+          "already_parent_ledger_verified_report": false
+        },
+        {
+          "path": "model-00006-of-00018.safetensors",
+          "smaug_sha256": "b83e36be1d58d6df638e765b0b920d46fcc13383ffb17ca9690994fca57e3586",
+          "base_sha256": "0bc5214fac607f0e6cc92eec3789d4b8559410ef9fce66621ba8158e8410dae0",
+          "bytes": 3979553696,
+          "sha256_equal": false,
+          "already_parent_ledger_verified_report": false
+        },
+        {
+          "path": "model-00007-of-00018.safetensors",
+          "smaug_sha256": "ed3b4225d50aad6dae34a510877a800b4b70df635ba160b470ce13bfa623e6af",
+          "base_sha256": "80b0c49033e9a0d5762562aa12f4acdb7f54da586f3d0110f28c48d91cf07892",
+          "bytes": 2108759344,
+          "sha256_equal": false,
+          "already_parent_ledger_verified_report": false
+        },
+        {
+          "path": "model-00008-of-00018.safetensors",
+          "smaug_sha256": "6896c4e316466061acd92fe54e6c093d7cb57fc9485fafc636b1a947383c9beb",
+          "base_sha256": "7192c5b66185d3592927daabee1cc19e6f6e0ce75988ee20e824b624765fda79",
+          "bytes": 3979553696,
+          "sha256_equal": false,
+          "already_parent_ledger_verified_report": false
+        },
+        {
+          "path": "model-00009-of-00018.safetensors",
+          "smaug_sha256": "313b6ea5f7eebefeb4d5000454c70a74f0ac42083b6f66fd59071a8b8ea1908d",
+          "base_sha256": "af3c48cc37af44f3db6ae0579baf019180d48d9c527caa0a1f03ff85813a56d8",
+          "bytes": 2108759344,
+          "sha256_equal": false,
+          "already_parent_ledger_verified_report": false
+        },
+        {
+          "path": "model-00010-of-00018.safetensors",
+          "smaug_sha256": "a0aca3cf8007bda54fca3344fd0788db433710104910f119da30fc6c19414651",
+          "base_sha256": "163490a76f3bea3a40855b7efc04ce6d27afaf1a34f0bbde495b9491f76457c9",
+          "bytes": 3979553696,
+          "sha256_equal": false,
+          "already_parent_ledger_verified_report": false
+        },
+        {
+          "path": "model-00011-of-00018.safetensors",
+          "smaug_sha256": "ede2abd4cd2563f76577a3bead23592f4220219a22f79d49b8fd5086058381ad",
+          "base_sha256": "5f3ae1b948aeee39da77aec558e8236cd65fe4d7cb7686a76bb007acc563c6d8",
+          "bytes": 2108759344,
+          "sha256_equal": false,
+          "already_parent_ledger_verified_report": false
+        },
+        {
+          "path": "model-00012-of-00018.safetensors",
+          "smaug_sha256": "6fa25a6c6452adec760e5521bc8fc140f18f5977eae4811b0071ad765b654657",
+          "base_sha256": "a3de1c7114677a8f5ac5c4892c90e8238ea5c1e2038c80e757dfc87c3902ca55",
+          "bytes": 3979553696,
+          "sha256_equal": false,
+          "already_parent_ledger_verified_report": false
+        },
+        {
+          "path": "model-00013-of-00018.safetensors",
+          "smaug_sha256": "905ac7f451742746fd8a75a1372c615213251d37a3e281b81589446443d49b22",
+          "base_sha256": "06ab79a41f74c9c5cb734816feb0c7fc364104b227165ee7391231e1155aa02a",
+          "bytes": 2108759344,
+          "sha256_equal": false,
+          "already_parent_ledger_verified_report": false
+        },
+        {
+          "path": "model-00014-of-00018.safetensors",
+          "smaug_sha256": "3d5685175f1b2f7bb2ae68d61462420ebb8671244b38e6178162f34abfbb6646",
+          "base_sha256": "4138ed94603065ba884bbcadedb04d7718bb40117e85e6f5c6fc5b9c05b7a85b",
+          "bytes": 3979553696,
+          "sha256_equal": false,
+          "already_parent_ledger_verified_report": false
+        },
+        {
+          "path": "model-00015-of-00018.safetensors",
+          "smaug_sha256": "35fe3b19c386d3e60e3a65a70db24c73fffc816e16c6dc1027f1afb4bcd99a0a",
+          "base_sha256": "69224e27b9de4e7dbf6fc936c6eaae08447bda3b80a6c31a871ab451173afd22",
+          "bytes": 2108759344,
+          "sha256_equal": false,
+          "already_parent_ledger_verified_report": false
+        },
+        {
+          "path": "model-00016-of-00018.safetensors",
+          "smaug_sha256": "f6a7f85484e753ed0e13845016ba978ec4a962144977a45987ef0d029a744cce",
+          "base_sha256": "73cb9a1089fb6155cb648609478d6633be8a5c7d9ca5a05bc8925ce8a553cefe",
+          "bytes": 3979564040,
+          "sha256_equal": false,
+          "already_parent_ledger_verified_report": false
+        },
+        {
+          "path": "model-00017-of-00018.safetensors",
+          "smaug_sha256": "dc8099e9ff14394b8b428636e2c293b9fd32fec7249373d8061b8c2361350782",
+          "base_sha256": "beb51f01056142ac4984bd800507b0dd0fd18de57f8e9ef6ea41d1a3598983a8",
+          "bytes": 2108759344,
+          "sha256_equal": false,
+          "already_parent_ledger_verified_report": false
+        },
+        {
+          "path": "model-00018-of-00018.safetensors",
+          "smaug_sha256": "1d3479509e21494658f9b64d317f5ea8e55c4025d28c702d6c4d0b356ce8ea06",
+          "base_sha256": "1d3479509e21494658f9b64d317f5ea8e55c4025d28c702d6c4d0b356ce8ea06",
+          "bytes": 3392197344,
+          "sha256_equal": true,
+          "already_parent_ledger_verified_report": true
+        }
+      ],
+      "identical_shard_count": 2,
+      "identical_shard_bytes": 5934994296,
+      "different_shard_count": 16,
+      "different_shard_bytes": 49628012480,
+      "identical_parent_all_files_count": 12,
+      "caveat": "SHARD hash equality is lossless reuse proof at publisher scope only. 16 changed shard hashes do NOT establish 16 shards all tensor values changed; original DPO adapter not published. Owner D bytes not independently verified.",
+      "transfer_plan_status": "RESEARCH_ONLY_FULL_ORIGINAL_PLUS_POSSIBLE_SHA_REUSE_NEVER_AUTO_TRANSFER",
+      "owner_sha_verified": false,
+      "licensed_acts_verified": false,
+      "approved": false
+    },
+    {
+      "repo_id": "AtomicChat/Inkling-2-Mini-Uncensored-GGUF",
+      "revision_sha": "40886ab636cabb4decf4998224f790b462ab048e",
+      "model_url": "https://huggingface.co/AtomicChat/Inkling-2-Mini-Uncensored-GGUF/tree/40886ab636cabb4decf4998224f790b462ab048e",
+      "observed_gated": false,
+      "observed_license": "Apache-2.0",
+      "all_repo_file_count": 9,
+      "all_repo_public_file_bytes": 39856142433,
+      "all_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1975,
+          "sha256": null,
+          "git_blob_sha1": "269524009a2cc7f39a2c35203d85920a320c60d7"
+        },
+        {
+          "path": "Inkling-2-Mini-Uncensored-AD-IQ2_M.gguf",
+          "bytes": 8665091680,
+          "sha256": "fca99d488bff5d401c8bc6b0110c5377c743f0ffb3a6d19c1ae4a3b9071fa2cd",
+          "git_blob_sha1": "bb758d881244e5f4a760235b3194fc2b1f9d7db4"
+        },
+        {
+          "path": "Inkling-2-Mini-Uncensored-AD-IQ3_S.gguf",
+          "bytes": 13340510176,
+          "sha256": "23a8e6792481b6f1d0ebad51399e9ee2a2c2be8525b09ed1ae6737811159f892",
+          "git_blob_sha1": "0ae7b18bdc74c7f1e9eb67102f1f6c09c068d6ab"
+        },
+        {
+          "path": "Inkling-2-Mini-Uncensored-AD-Q4_K.gguf",
+          "bytes": 16525559776,
+          "sha256": "36e99f1f56ca33cb356f19d7e3822938f65af1cde978ad13170238928d4c955f",
+          "git_blob_sha1": "e4643a5c82563997c890cee210983de40b4df3eb"
+        },
+        {
+          "path": "Inkling-2-Mini-Uncensored-LoRA.gguf",
+          "bytes": 43805184,
+          "sha256": "42914b85c874e7fe249e93f0ac6e8abf08dc0bdf32aa1ec46c72714e64808f12",
+          "git_blob_sha1": "89ac57db06486ea6e467cf68eb0e1ebd5398dfed"
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11358,
+          "sha256": null,
+          "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+        },
+        {
+          "path": "README.md",
+          "bytes": 7788,
+          "sha256": null,
+          "git_blob_sha1": "f845c484b6a24b0eefe04951b1371e909f9eae11"
+        },
+        {
+          "path": "mmproj-Inkling-2-Mini-Uncensored-BF16.gguf",
+          "bytes": 641806048,
+          "sha256": "7dd7fd3a59b501efce2fadbeaee9baf22972e1c751066a374bb90b49923735d6",
+          "git_blob_sha1": "0921426465016eebdddfc411c4196e6c9900f7e1"
+        },
+        {
+          "path": "mmproj-Inkling-2-Mini-Uncensored-F16.gguf",
+          "bytes": 639348448,
+          "sha256": "5a72e0b6e2bef13c3f455f4edb85df0c752b92ff76ab46af879eae088163efe6",
+          "git_blob_sha1": "9ba5c205d53048cdeeabc29d26ac70d3c90644e1"
+        }
+      ],
+      "selected_research_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1975,
+          "sha256": null,
+          "git_blob_sha1": "269524009a2cc7f39a2c35203d85920a320c60d7"
+        },
+        {
+          "path": "Inkling-2-Mini-Uncensored-LoRA.gguf",
+          "bytes": 43805184,
+          "sha256": "42914b85c874e7fe249e93f0ac6e8abf08dc0bdf32aa1ec46c72714e64808f12",
+          "git_blob_sha1": "89ac57db06486ea6e467cf68eb0e1ebd5398dfed"
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11358,
+          "sha256": null,
+          "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+        },
+        {
+          "path": "README.md",
+          "bytes": 7788,
+          "sha256": null,
+          "git_blob_sha1": "f845c484b6a24b0eefe04951b1371e909f9eae11"
+        }
+      ],
+      "selected_research_file_count": 4,
+      "selected_research_bytes": 43826305,
+      "unmerged_adapter_path": "Inkling-2-Mini-Uncensored-LoRA.gguf",
+      "unmerged_adapter_bytes": 43805184,
+      "unmerged_adapter_sha256": "42914b85c874e7fe249e93f0ac6e8abf08dc0bdf32aa1ec46c72714e64808f12",
+      "preexisting_distinct_adapter_repo": "OpenUncensored/Inkling-2-Mini-Uncensored-LoRA",
+      "preexisting_adapter_rev": "b328f8112173024d0f097aba1ea09e5f475ca7f9",
+      "preexisting_adapter_sha256": "c67b9d8d18c4a916440eafaf57a42f1510bc00562f52c8a0a29f8f417ed41443",
+      "preexisting_adapter_bytes": 865296,
+      "trained_lineage_conclusion": "Different published bytes and quant/LoRA format; author claims independent rank-1 49 writer edits. Exact functional independence not yet established by tensor diff or paired benchmark.",
+      "compatible_runtime": "llama.cpp >= b12600, Inkling 2 merged loop graph PR #32694, base AtomicChat/Inkling-2-Mini-GGUF matched conversion required, cannot assume original safetensors or prior GGUF ABI works.",
+      "author_negative_evidence": "MMLU 2000 Q: 80.65% parent to 79.15% with adapter, McNemar p=.006; first-token harmless KL .94 above .10 stated gate. Not a performance improvement.",
+      "selected_only_adapter_not_three_ready_gguf_quants": true,
+      "owner_sha_verified": false,
+      "licensed_acts_verified": false,
+      "approved": false
+    }
+  ],
+  "findings": {
+    "smaug_publisher_unchanged_shards": 2,
+    "smaug_publisher_unchanged_weight_bytes": 5934994296,
+    "smaug_changed_weight_shard_bytes": 49628012480,
+    "atomic_adapter_file_bytes": 43805184,
+    "atomic_author_bench_quality_gate_failed": true,
+    "full_model_parent_available_in_112_report": true
+  },
+  "actions": {
+    "can_adopt_smaug_as_conditional_research": true,
+    "atomic_should_remain_research_hold_until_abi_and_reliability": true,
+    "download_enabled": false,
+    "approved_queue_entries_added": 0,
+    "model_payload_downloaded": 0,
+    "existing_model_files_deleted": 0,
+    "unreviewed_code_executed": false
+  },
+  "freeze_note": "Exact path, integer byte count, publisher Git OID and LFS SHA2. No tensor data downloaded, owner physical media NOT checked."
+}
