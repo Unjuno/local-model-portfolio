@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "kind": "R154_V65_POST112_TWO_RECEIPT_BACKFILLS_1_SMALL_UNCENSORED_CONDITIONAL_1_RARE_ROBOT_HOLD",
+  "date_jst": "2026-11-22",
+  "old_revision": "v64-20261122",
+  "new_revision": "v65-20261122",
+  "tracked_before": 236,
+  "tracked_after": 240,
+  "active_before": 189,
+  "active_after": 192,
+  "select_after": 56,
+  "conditional_after": 136,
+  "hold_after": 29,
+  "source_manifest": "manifests/drafts/r154-2026-11-22-four-primary-sources-after112.candidate.json",
+  "ledger112_audit": "catalog/audits/2026-11-22-r154-all112-ledger-and-new-source-delta.json",
+  "kitten_delta": "KittenML/kitten-tts-2-pico",
+  "decisions": [
+    {
+      "repo_id": "mistralai/Timestral-5M",
+      "portfolio_decision": "select",
+      "publisher_source_bytes": 20854471,
+      "publisher_file_count": 6,
+      "original_revision_sha": "bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f",
+      "reason": "The 5.20896M original F32 time-series transformer has independent trained weights from existing Timestral-28M. Exactly six publisher files are reported VERIFIED in the updated 112 ledger but were uncatalogued; preservation now requires zero redundant transfer.",
+      "owner_specific_approval": false,
+      "no_new_download_authorization": true
+    },
+    {
+      "repo_id": "tencent/WeMM-Video-2B",
+      "portfolio_decision": "conditional",
+      "publisher_source_bytes": 6590699556,
+      "publisher_file_count": 27,
+      "original_revision_sha": "821690998399cac0f55bb7f7f805ebafa650c3a4",
+      "reason": "Independent published 3.2836B stored total video-audio understanding checkpoint, not merely a conversion of existing text-VLM. All 27 pinned files have been reported VERIFIED in the 112 ledger but are not in the canonical selection.",
+      "owner_specific_approval": false,
+      "no_new_download_authorization": true
+    },
+    {
+      "repo_id": "nchapman/Qwen3.5-0.8B-Heretic-LoRA",
+      "portfolio_decision": "conditional",
+      "publisher_source_bytes": 6165749,
+      "publisher_file_count": 16,
+      "original_revision_sha": "92e2ae29c379d7378c696511ec9c70ace8be1434",
+      "reason": "Two distinct trained BF16 low-rank ablation adapters are independently preserved in one public frozen repository. Reuse the already ledger-VERIFIED 0.8B parent rather than acquiring a second full checkpoint; root/trial_002 same SHA is deduplicated.",
+      "owner_specific_approval": false,
+      "no_new_download_authorization": true
+    },
+    {
+      "repo_id": "GetCartwheelInc/cartwheel-control",
+      "portfolio_decision": "hold",
+      "publisher_source_bytes": 304057444,
+      "publisher_file_count": 154,
+      "original_revision_sha": "24fc279af8f70097f503767b81db5384d779aae5",
+      "reason": "Three independent RP1, Menlo Asimov-1 and Unitree G1 simulation-only policy safetensors weights, exact publisher SHA pinned, 154 files. Unique learned physical-control capabilities justify source research.",
+      "owner_specific_approval": false,
+      "no_new_download_authorization": true
+    }
+  ],
+  "Kitten_extra_eight_model_IDs_added": 0,
+  "latest_112_ledger_ids_registered": true,
+  "privacy_rights_and_license_per_act_unverified": true,
+  "model_payload_downloaded": 0,
+  "source_manifest_approval": false,
+  "existing_assets_modified": 0,
+  "historical_ledger_not_independent_owner_rehash": true,
+  "BIS_2026_11_19_not_per_model_ban_probability": "ECCN 4E091 removed in official rule; other legal controls may apply",
+  "H_T_D_C_U": {
+    "H": "Two already stored original learned outcomes can be formalized without retransmission, and two small or rare additional capabilities can be tracked with strict rights gates.",
+    "T": "Join all 112 verified receipts on normalized exact repo IDs; inspect full 6+27+16+154 immutable source references, SHA/OID, independent LoRA content hashes, Kitten 8 extra LFS; run offline regression tests; no model code execution.",
+    "D": "PASS for source identity and 112/112 canonical join, source SHA structure, 240 tracked/192 active and zero approval. Owner runtime, risk, quality/rights remain UNCERTAIN with STOP; FAIL if unknown-parent LoRA is marked runtime-ready or robot mesh given implicit redistribution rights.",
+    "C": "Author measured refusal suppression does not improve harmless capability, LoRA parent may be incompatible, robot vendor license cannot authorize RP1 assets, 8 INT8 files are format variants rather than new training.",
+    "U": "Actual local hashing, 112 receipt trust, legal act rights, runtime ABI, QAD independence and author benchmark statistical variance. u_c and k cannot be estimated without repeated same-HW measurements."
+  },
+  "interdisciplinary": [
+    "time-series statistics",
+    "multimodal temporal alignment and ML",
+    "low-rank parameter edits and local execution ABI",
+    "software archival and license provenance",
+    "robotic control and third-party IP"
+  ]
+}

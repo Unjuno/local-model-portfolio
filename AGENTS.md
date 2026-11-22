@@ -1,6 +1,6 @@
-# 現行v65／R153（2026-11-22）: 112報告済み取得を正本と整合、独立Smaug無検閲DPO原本を条件付き採用
+# 現行v65／R154（2026-11-22）：112取得報告IDを完全照合し、超小型・無検閲LoRAと3ロボット制御sourceを審査
 
-正本 [CURRENT](catalog/CURRENT.json) は239登録・192有効（SELECT55＋CONDITIONAL137）。旧236件全記録不変。最新取得台帳112モデル・1714files・約2.0205TBは取得側報告で、本回所有者D実体再SHAはなし。Timestral5MとWeMM既取得のため再取得しない。Smaugは親Qwen18重量のうちSHA一致2（5.935GB）／差異16（49.628GB）、実取得と権利は未承認。Atlas/AtomicChat LoRAの旧モデルへの互換性も未確認。[R153](docs/strategy/153-v65-112ledger-smaug-shards.md)。[承認キュー](queues/approved.json)は空。本人利用権、SHA、200GB残床とstaging、依存とコードABI、指定モデル単位の承認が閉じるまで新規重み取得、既存削除、未審査コード実行、Gated回避を禁止。mainのみ。
+唯一の正本[CURRENT](catalog/CURRENT.json)→**240登録／192有効（SELECT56、CONDITIONAL136）**。旧236項目全件不変。[Timestral-5MとWeMM-Video-2Bを取得報告再DL0で正式収録、Heretic rank3 LoRA2 stateを条件付き、Cartwheel policy3件はRP1第三者権利でHOLD](docs/strategy/154-v65-post112-backfill-small-heretic-and-robot-rights.md)。[4原本203ファイル固定](manifests/drafts/r154-2026-11-22-four-primary-sources-after112.candidate.json)。Kitten Picoの[追加INT8 8件SHA](catalog/research/2026-11-22-r154-pico-eight-int8-extra-publisher-sha.json)は別学習結果と断定しない。112モデル／1,714files／2.021TBは取得台帳報告でowner Dの今回独立SHAではない。[次期未承認差分キュー](queues/proposed-v65-r155-after112-unapproved-source-scopes.json)。承認0、重量DL0、ユーザーD変更0、未審査コード実行0、Gated回避0。mainのみ。
 
 ---
 

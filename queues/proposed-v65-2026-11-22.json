@@ -4,7 +4,7 @@
   "generated_at": "2026-11-22",
   "approved": false,
   "download_enabled": false,
-  "description": "v65 192 active, 112 acquisition report IDs all represented; Timestral5M and WeMM no repeat transfer, Smaug DPO candidate not downloaded.",
+  "description": "R154 v65 192 active selected research identities; 112 ledger VERIFIED report including two formerly uncatalogued; no source-specific download approval. Cartwheel HOLD omitted; Kitten INT8 8-files are source delta, not new trained catalog models.",
   "candidates": [
     {
       "asset_kind": "model",
@@ -2458,22 +2458,14 @@
     {
       "asset_kind": "model",
       "repo_id": "mistralai/Timestral-5M",
-      "selection": "conditional",
+      "selection": "select",
       "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
       "not_authorized": true,
       "download_approved": false,
-      "research_only": true,
-      "can_enter_approved_queue": false,
-      "source_file_scope_only": "manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json",
-      "publisher_original_revision_sha": "bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f",
-      "publisher_source_selected_bytes": 20854471,
-      "selected_file_count": 6,
-      "owner_hdd_verified": false,
-      "license_owner_acts_verified": false,
-      "local_sha_verified": false,
-      "full_offline_restore_verified": false,
-      "historical_ledger_verified": true,
-      "do_not_redownload_reported_verified_scope": true
+      "source_manifest": "manifests/drafts/r154-2026-11-22-four-primary-sources-after112.candidate.json",
+      "original_revision_sha": "bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f",
+      "publisher_source_bytes": 20854471,
+      "historical_acquisition_ledger112_verified_report": true
     },
     {
       "asset_kind": "model",
@@ -2482,38 +2474,24 @@
       "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
       "not_authorized": true,
       "download_approved": false,
-      "research_only": true,
-      "can_enter_approved_queue": false,
-      "source_file_scope_only": "manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json",
-      "publisher_original_revision_sha": "821690998399cac0f55bb7f7f805ebafa650c3a4",
-      "publisher_source_selected_bytes": 6590699556,
-      "selected_file_count": 27,
-      "owner_hdd_verified": false,
-      "license_owner_acts_verified": false,
-      "local_sha_verified": false,
-      "full_offline_restore_verified": false,
-      "historical_ledger_verified": true,
-      "do_not_redownload_reported_verified_scope": true
+      "source_manifest": "manifests/drafts/r154-2026-11-22-four-primary-sources-after112.candidate.json",
+      "original_revision_sha": "821690998399cac0f55bb7f7f805ebafa650c3a4",
+      "publisher_source_bytes": 6590699556,
+      "historical_acquisition_ledger112_verified_report": true
     },
     {
       "asset_kind": "model",
-      "repo_id": "abacusai/Smaug-Uncensored",
+      "repo_id": "nchapman/Qwen3.5-0.8B-Heretic-LoRA",
       "selection": "conditional",
-      "parameter_gate": "PASS_TOTAL_PARAMS_LT_150B",
+      "parameter_gate": "UNVERIFIED_BLOCK_FINAL_LOCK",
       "not_authorized": true,
       "download_approved": false,
+      "source_manifest": "manifests/drafts/r154-2026-11-22-four-primary-sources-after112.candidate.json",
+      "original_revision_sha": "92e2ae29c379d7378c696511ec9c70ace8be1434",
+      "publisher_source_bytes": 6165749,
+      "historical_acquisition_ledger112_verified_report": false,
       "research_only": true,
-      "can_enter_approved_queue": false,
-      "source_file_scope_only": "manifests/drafts/r153-2026-11-22-smaug-qwen-hash-reuse-and-atomic-lora.candidate.json",
-      "publisher_original_revision_sha": "e4bbcf7aec54ab72f4ce720569f3b3dc7b973087",
-      "publisher_source_selected_bytes": 55586070091,
-      "selected_file_count": 32,
-      "owner_hdd_verified": false,
-      "license_owner_acts_verified": false,
-      "local_sha_verified": false,
-      "full_offline_restore_verified": false,
-      "historical_ledger_verified": false,
-      "do_not_redownload_reported_verified_scope": false
+      "can_enter_approved_queue": false
     }
   ],
   "blocked_unknown_total_repo_ids": [
@@ -2641,10 +2619,6 @@
     "nvidia/nemotron-labs-unified-asr-0.6b",
     "PerceptronAI/Isaac-0.2-2B-Preview"
   ],
-  "latest_research_source_choice": [
-    "mistralai/Timestral-5M",
-    "tencent/WeMM-Video-2B",
-    "abacusai/Smaug-Uncensored"
-  ],
-  "latest_research_source_choice_path": "manifests/drafts/r153-2026-11-22-smaug-qwen-hash-reuse-and-atomic-lora.candidate.json"
+  "latest_research_source_choice": "R155_AFTER112_DEDUP_DELTA_ONLY",
+  "latest_research_source_choice_path": "queues/proposed-v65-r155-after112-unapproved-source-scopes.json"
 }

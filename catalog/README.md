@@ -1,3 +1,9 @@
+## v65 R154／112取得台帳の全IDを正式目録へ照合
+
+[正式CURRENT](CURRENT.json) は240登録・192有効。Timestral5M/WeMM-video2bは既存112 VERIFIED原本、Hereticの2小型LoRAを条件付き、Cartwheel3制御policyを第三者権利でHOLD。[監査](audits/2026-11-22-r154-all112-ledger-and-new-source-delta.json)、[8INT8差分](research/2026-11-22-r154-pico-eight-int8-extra-publisher-sha.json)、[判断報告](../docs/strategy/154-v65-post112-backfill-small-heretic-and-robot-rights.md)。承認0。
+
+---
+
 # 資産台帳
 
 ## R150最新運用照合／2026-11-22（正式v63 235/188は変更なし）

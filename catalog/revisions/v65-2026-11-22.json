@@ -2,31 +2,32 @@
   "schema_version": 1,
   "revision_id": "v65-20261122",
   "previous_revision_id": "v64-20261122",
-  "target_branch": "main",
   "decision_date_jst": "2026-11-22",
+  "target_branch": "main",
+  "kind": "BACKFILL_TWO_ALREADY_REPORTED_VERIFIED_PLUS_TWO_SMALL_OR_RARE_RESEARCH_SOURCE_JUDGMENTS_ONE_HOLD",
   "previous_asset_count": 236,
   "previous_active_count": 189,
-  "kind": "APPEND_TWO_ALREADY_LEDGER112_VERIFIED_ORIGINALS_AND_SMAUG_UNCENSORED_DPO_CONDITIONAL",
   "additions": [
     {
       "position": 237,
       "asset_kind": "model",
       "repo_id": "mistralai/Timestral-5M",
       "url": "https://huggingface.co/mistralai/Timestral-5M",
-      "group": "独立小型・オムニモーダル学習原本",
-      "risk_tier": "R2",
-      "portfolio_decision": "conditional",
-      "reason_selected": "Independent ultra-small 5.2M trained time-series forecaster with substantial size savings vs selected 28M; historical ledger112 original already verified so no redownload.",
-      "quality_positive": "Publisher GIFT-Eval MASE 0.705 vs 28M 0.678; worse accuracy, not measured on owner CPU.",
-      "quality_negative": "No owner local SHA, legal act review, matched inference benchmark or full offline restore; high-risk altered model behavior may be unsafe for unattended deployment.",
-      "risk_and_alternative_assessment": "Future model restrictions are a planning scenario, not observed model-specific takedown probability.",
+      "group": "5.21M超小型・時系列予測独立学習結果",
+      "risk_tier": "R1",
+      "portfolio_decision": "select",
+      "reason_selected": "The 5.20896M original F32 time-series transformer has independent trained weights from existing Timestral-28M. Exactly six publisher files are reported VERIFIED in the updated 112 ledger but were uncatalogued; preservation now requires zero redundant transfer.",
+      "quality_positive": "5.208960M F32 tensor elements, 20.854471MB full published package, 8-layer low-memory time-series method. Distinct size/performance operating point for edge and low-compute forecasting; author family benchmarks not reproduced.",
+      "quality_negative": "5M is not proven superior to 28M on the owner data. Zero-shot score, CPU latency/clock, context/horizon, backend ABI and offline restoration are unmeasured. Modified MIT monthly revenue gate may disallow company use.",
+      "risk_and_alternative_assessment": "Model-specific future legal restriction probabilities unknown. Public publisher access is not proof of owner licensed acts, offline restoration, or runtime compatibility. Distinguish independent learned outcomes from conversion formats.",
       "evidence_date": "2026-11-22",
-      "evidence_kind": "HUGGINGFACE_PUBLISHER_IMMUTABLE_SOURCE_WITH_VERIFIED_ACQUISITION_LEDGER_ID_WHEN_PRESENT",
+      "evidence_kind": "PRIMARY_HF_IMMUTABLE_FULL_TREE_WITH_PARENT_AND_EXISTING112_LEDGER_RECONCILIATION",
       "evidence_urls": [
-        "https://huggingface.co/mistralai/Timestral-5M/tree/bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f"
+        "https://huggingface.co/mistralai/Timestral-5M/tree/bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f",
+        "https://huggingface.co/mistralai/Timestral-5M/blob/bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f/LICENSE"
       ],
-      "observed_access": "publisher public ungated, user license actions not verified",
-      "license_metadata": "Mistral Modified MIT; corporate/employer consolidated monthly revenue >USD20m may require separate license; attribution required",
+      "observed_access": "publisher public ungated at observed revision, individual rights not reviewed",
+      "license_metadata": "Modified MIT custom license; excludes companies/employers with prior-month consolidated global revenues over USD20M; attribution and act-specific owner review required.",
       "license_text_reviewed": false,
       "dependencies_reviewed": false,
       "download_approved": false,
@@ -83,19 +84,19 @@
           "local_sha_verified": false
         }
       ],
-      "source_manifest_path": "manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json",
+      "source_manifest_path": "manifests/drafts/r154-2026-11-22-four-primary-sources-after112.candidate.json",
       "parameter_gate": {
         "status": "PASS_TOTAL_PARAMS_LT_150B",
         "total_parameters": 5208960,
-        "evidence_kind": "publisher model tensor metadata; no owner local tensor census",
+        "evidence_kind": "Publisher safetensors total tensor elements; no local model code or tensor census executed. Original model F32 5,208,960 elements",
         "review_date": "2026-11-22",
         "local_tensor_census_not_executed": true
       },
       "forecast_priority": {
+        "wave": "S1",
         "rank": 237,
-        "wave": "S3",
-        "category": "INDEPENDENT_SMALL_SPECIALIST",
-        "scenario_status": "SCENARIO_ONLY_NOT_FUTURE_LAW_FACT"
+        "category": "R154_POST112_DISTINCT_LEARNED_STATE_OR_LEGAL_HOLD",
+        "scenario_status": "FUTURE_DISTRIBUTION_RESTRICTION_HYPOTHESIS_ONLY"
       },
       "preservation_bundle": {
         "must_preserve": [
@@ -106,12 +107,12 @@
           "model.safetensors",
           "timestral-hourglass.png"
         ],
-        "original_repo_sha": "bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f",
-        "source_manifest": "manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json",
-        "already_reported_acquired": true,
-        "owner_hdd_sha_verified": false,
-        "offline_restore_verified": false,
-        "smaug_parent_shard_reuse_only_on_SHA_match": false
+        "original_publisher_revision": "bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f",
+        "historical_acquisition_ledger_112_reported": true,
+        "owner_live_hash_rechecked_by_this_research": false,
+        "full_offline_reconstruction_verified": false,
+        "backup_rights_unverified": true,
+        "dont_redownload_existing_verified_scope": true
       },
       "resource_screen": {
         "source_all_repo_bytes": 20854471,
@@ -132,20 +133,21 @@
       "asset_kind": "model",
       "repo_id": "tencent/WeMM-Video-2B",
       "url": "https://huggingface.co/tencent/WeMM-Video-2B",
-      "group": "独立小型・オムニモーダル学習原本",
-      "risk_tier": "R1",
+      "group": "映像・音声時間同期マルチモーダル理解学習成果",
+      "risk_tier": "R2",
       "portfolio_decision": "conditional",
-      "reason_selected": "Independently trained synchronized audio-video model including image/text inputs; no overlap in learned state with selected MOSS Realtime. Publisher immutable 27file source is already ledger112 VERIFIED.",
-      "quality_positive": "25 Publisher SHA256SUMS matches 5 LFS SHA; model 3.284B stored elements (marketing 2B), patched vLLM/SGLang and unreviewed remote Python required.",
-      "quality_negative": "No owner local SHA, legal act review, matched inference benchmark or full offline restore; high-risk altered model behavior may be unsafe for unattended deployment.",
-      "risk_and_alternative_assessment": "Future model restrictions are a planning scenario, not observed model-specific takedown probability.",
+      "reason_selected": "Independent published 3.2836B stored total video-audio understanding checkpoint, not merely a conversion of existing text-VLM. All 27 pinned files have been reported VERIFIED in the 112 ledger but are not in the canonical selection.",
+      "quality_positive": "6.590699556GB complete source with two BF16 shards; available custom preprocessor and configuration source at frozen revision; official accompanying research arXiv:2611.26409.",
+      "quality_negative": "Video/audio synchronized time and frame alignment, custom modeling Python and codec/clip requirements are untested and could be unsafe. User Windows driver/torch/transformers ABI, peak GPU RAM and rights unknown.",
+      "risk_and_alternative_assessment": "Model-specific future legal restriction probabilities unknown. Public publisher access is not proof of owner licensed acts, offline restoration, or runtime compatibility. Distinguish independent learned outcomes from conversion formats.",
       "evidence_date": "2026-11-22",
-      "evidence_kind": "HUGGINGFACE_PUBLISHER_IMMUTABLE_SOURCE_WITH_VERIFIED_ACQUISITION_LEDGER_ID_WHEN_PRESENT",
+      "evidence_kind": "PRIMARY_HF_IMMUTABLE_FULL_TREE_WITH_PARENT_AND_EXISTING112_LEDGER_RECONCILIATION",
       "evidence_urls": [
-        "https://huggingface.co/tencent/WeMM-Video-2B/tree/821690998399cac0f55bb7f7f805ebafa650c3a4"
+        "https://huggingface.co/tencent/WeMM-Video-2B/tree/821690998399cac0f55bb7f7f805ebafa650c3a4",
+        "https://arxiv.org/abs/2611.26409"
       ],
-      "observed_access": "publisher public ungated, user license actions not verified",
-      "license_metadata": "Tencent Apache2 with exceptions for original third-party components",
+      "observed_access": "publisher public ungated at observed revision, individual rights not reviewed",
+      "license_metadata": "Official publisher Apache-2.0, separate original input video/audio rights and dependency code/legal notices review pending.",
       "license_text_reviewed": false,
       "dependencies_reviewed": false,
       "download_approved": false,
@@ -349,19 +351,19 @@
           "local_sha_verified": false
         }
       ],
-      "source_manifest_path": "manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json",
+      "source_manifest_path": "manifests/drafts/r154-2026-11-22-four-primary-sources-after112.candidate.json",
       "parameter_gate": {
         "status": "PASS_TOTAL_PARAMS_LT_150B",
         "total_parameters": 3283624264,
-        "evidence_kind": "publisher model tensor metadata; no owner local tensor census",
+        "evidence_kind": "Publisher safetensors total tensor elements; no local model code or tensor census executed. Publisher BF16 3,283,621,448 + F32 2,304 + I64 512 = total 3,283,624,264 stored elements.",
         "review_date": "2026-11-22",
         "local_tensor_census_not_executed": true
       },
       "forecast_priority": {
-        "rank": 238,
         "wave": "S2",
-        "category": "INDEPENDENT_SMALL_SPECIALIST",
-        "scenario_status": "SCENARIO_ONLY_NOT_FUTURE_LAW_FACT"
+        "rank": 238,
+        "category": "R154_POST112_DISTINCT_LEARNED_STATE_OR_LEGAL_HOLD",
+        "scenario_status": "FUTURE_DISTRIBUTION_RESTRICTION_HYPOTHESIS_ONLY"
       },
       "preservation_bundle": {
         "must_preserve": [
@@ -393,12 +395,12 @@
           "wemm_zip.py",
           "wemm_zip_policy.py"
         ],
-        "original_repo_sha": "821690998399cac0f55bb7f7f805ebafa650c3a4",
-        "source_manifest": "manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json",
-        "already_reported_acquired": true,
-        "owner_hdd_sha_verified": false,
-        "offline_restore_verified": false,
-        "smaug_parent_shard_reuse_only_on_SHA_match": false
+        "original_publisher_revision": "821690998399cac0f55bb7f7f805ebafa650c3a4",
+        "historical_acquisition_ledger_112_reported": true,
+        "owner_live_hash_rechecked_by_this_research": false,
+        "full_offline_reconstruction_verified": false,
+        "backup_rights_unverified": true,
+        "dont_redownload_existing_verified_scope": true
       },
       "resource_screen": {
         "source_all_repo_bytes": 6590699556,
@@ -417,319 +419,198 @@
     {
       "position": 239,
       "asset_kind": "model",
-      "repo_id": "abacusai/Smaug-Uncensored",
-      "url": "https://huggingface.co/abacusai/Smaug-Uncensored",
-      "group": "無検閲独立DPO後学習",
-      "risk_tier": "R0",
+      "repo_id": "nchapman/Qwen3.5-0.8B-Heretic-LoRA",
+      "url": "https://huggingface.co/nchapman/Qwen3.5-0.8B-Heretic-LoRA",
+      "group": "0.8B親共有・2種類の独立rank3拒否方向LoRA編集",
+      "risk_tier": "R1",
       "portfolio_decision": "conditional",
-      "reason_selected": "Independent DPO+NLL trained uncensored full checkpoint, cannot be reconstructed from base by simple quantization; 16 of 18 weight shards differ in SHA against acquired official Qwen parent.",
-      "quality_positive": "2 identical weight shards 5,934,994,296B, 16 differing 49,628,012,480B; author over-refusal OR-Bench-Hard n1309 45.2% to 2.3%, no external matched performance replication.",
-      "quality_negative": "No owner local SHA, legal act review, matched inference benchmark or full offline restore; high-risk altered model behavior may be unsafe for unattended deployment.",
-      "risk_and_alternative_assessment": "Future model restrictions are a planning scenario, not observed model-specific takedown probability.",
+      "reason_selected": "Two distinct trained BF16 low-rank ablation adapters are independently preserved in one public frozen repository. Reuse the already ledger-VERIFIED 0.8B parent rather than acquiring a second full checkpoint; root/trial_002 same SHA is deduplicated.",
+      "quality_positive": "16-file public publisher source totals 6,165,749 bytes with two distinct original safetensors payloads totaling 2,006,488 bytes. Author refusal tests are 4/100 versus base 93/100 for root and 6/100 for lower-KL trial. The source includes GGUF variants that are conversions, not new trained results.",
+      "quality_negative": "Exact base training revision is null in adapter_config and may differ from the owned revision; no on-owner PEFT/vLLM/llama.cpp/GatedDeltaNet ABI test, no matched capability evaluation. Refusal suppression is not a general intelligence or safety benchmark.",
+      "risk_and_alternative_assessment": "Model-specific future legal restriction probabilities unknown. Public publisher access is not proof of owner licensed acts, offline restoration, or runtime compatibility. Distinguish independent learned outcomes from conversion formats.",
       "evidence_date": "2026-11-22",
-      "evidence_kind": "HUGGINGFACE_PUBLISHER_IMMUTABLE_SOURCE_WITH_VERIFIED_ACQUISITION_LEDGER_ID_WHEN_PRESENT",
+      "evidence_kind": "PRIMARY_HF_IMMUTABLE_FULL_TREE_WITH_PARENT_AND_EXISTING112_LEDGER_RECONCILIATION",
       "evidence_urls": [
-        "https://huggingface.co/abacusai/Smaug-Uncensored/tree/e4bbcf7aec54ab72f4ce720569f3b3dc7b973087"
+        "https://huggingface.co/nchapman/Qwen3.5-0.8B-Heretic-LoRA/tree/92e2ae29c379d7378c696511ec9c70ace8be1434"
       ],
-      "observed_access": "publisher public ungated, user license actions not verified",
-      "license_metadata": "Author Apache-2.0 and NOTICE with Qwen Apache-2.0 parent",
+      "observed_access": "publisher public ungated at observed revision, individual rights not reviewed",
+      "license_metadata": "Hub Apache-2.0 tag; source repository has no separate LICENSE file, parent Qwen Apache attribution and intended acts must be independently inspected.",
       "license_text_reviewed": false,
       "dependencies_reviewed": false,
       "download_approved": false,
       "selected_file_bytes": null,
       "fully_pinned_revision_sha": null,
-      "upstream_revision_sha_observed": "e4bbcf7aec54ab72f4ce720569f3b3dc7b973087",
-      "upstream_all_files_bytes_observed": 55586070091,
-      "upstream_file_count_observed": 32,
-      "upstream_lfs_sha256_count_observed": 19,
+      "upstream_revision_sha_observed": "92e2ae29c379d7378c696511ec9c70ace8be1434",
+      "upstream_all_files_bytes_observed": 6165749,
+      "upstream_file_count_observed": 16,
+      "upstream_lfs_sha256_count_observed": 6,
       "upstream_all_files_are_selected": true,
-      "candidate_selected_source_file_count": 32,
-      "candidate_selected_source_file_bytes": 55586070091,
+      "candidate_selected_source_file_count": 16,
+      "candidate_selected_source_file_bytes": 6165749,
       "candidate_selected_source_files": [
         {
           "path": ".gitattributes",
-          "bytes": 1570,
+          "bytes": 1782,
           "sha256": null,
-          "git_blob_sha1": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+          "git_blob_sha1": "3c6bc24bdfc845d6b8790e8c6eff0e195aa8bdb8",
           "local_sha_verified": false
         },
         {
-          "path": "LICENSE",
-          "bytes": 11544,
-          "sha256": null,
-          "git_blob_sha1": "f938136e3adacfd92be087f6e113b5d6d97f678f",
-          "local_sha_verified": false
-        },
-        {
-          "path": "NOTICE",
-          "bytes": 557,
-          "sha256": null,
-          "git_blob_sha1": "a48d9bf6001f2070e94f48a0d7d9c9ef082ede05",
+          "path": "Qwen3.5-0.8B-Heretic-LoRA.gguf",
+          "bytes": 1066944,
+          "sha256": "9606a9c1b961d19bcae8fb76c8dde76132558093789b23e015320e266e842a0b",
+          "git_blob_sha1": "6a5709f8b28cd337f8d4681d2f4070db3c4cbece",
           "local_sha_verified": false
         },
         {
           "path": "README.md",
-          "bytes": 19921,
+          "bytes": 2819,
           "sha256": null,
-          "git_blob_sha1": "9f901d0862c37388b223b0635f22ec67a2439cb1",
+          "git_blob_sha1": "787419eed5102913a788c3b00fc93679791e652b",
           "local_sha_verified": false
         },
         {
-          "path": "chat_template.jinja",
-          "bytes": 8952,
+          "path": "adapter_config.json",
+          "bytes": 2972,
           "sha256": null,
-          "git_blob_sha1": "c0c686f9c38d70d179fb7b5f5aa7530bc913dda3",
+          "git_blob_sha1": "93f711aa7607bd2371662d11f16c488cfcf3281a",
           "local_sha_verified": false
         },
         {
-          "path": "config.json",
-          "bytes": 4312,
+          "path": "adapter_model.safetensors",
+          "bytes": 1073240,
+          "sha256": "269cee632d7b2dc1cb5163d6f1b2a378df3b2130e51c8b08c686709997c28679",
+          "git_blob_sha1": "71a4b7268e55818703c28d3bdfec025d11d2e3b7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "heretic_summary.json",
+          "bytes": 8438,
           "sha256": null,
-          "git_blob_sha1": "706cebd746c4b6f2b1d1f892630867acfdfd3df8",
+          "git_blob_sha1": "2d5ef1ab303239d7d1c5830576a0de7623db9231",
           "local_sha_verified": false
         },
         {
-          "path": "generation_config.json",
-          "bytes": 202,
+          "path": "pareto/trial_002_ref4_kl0.0714/Qwen3.5-0.8B-Heretic-LoRA.gguf",
+          "bytes": 1066816,
+          "sha256": "1af82d2f20d52ac5f1cbe322967131129cef1e5dc2d24d8320c035c51ccf46c4",
+          "git_blob_sha1": "f926c7c74d80088ff8fc1f2c57f7e2ed8d3935c9",
+          "local_sha_verified": false
+        },
+        {
+          "path": "pareto/trial_002_ref4_kl0.0714/README.md",
+          "bytes": 686,
           "sha256": null,
-          "git_blob_sha1": "023756cfadf88e5bf69eefeee3e172f38c448d64",
+          "git_blob_sha1": "5fd20994128b50c98e7a08fbd60e92a3fd50d442",
           "local_sha_verified": false
         },
         {
-          "path": "merges.txt",
-          "bytes": 3353259,
+          "path": "pareto/trial_002_ref4_kl0.0714/adapter_config.json",
+          "bytes": 2972,
           "sha256": null,
-          "git_blob_sha1": "a494e019ca1502219fd0128658b979e5f05ae8e8",
+          "git_blob_sha1": "93f711aa7607bd2371662d11f16c488cfcf3281a",
           "local_sha_verified": false
         },
         {
-          "path": "model-00001-of-00018.safetensors",
-          "bytes": 3966730552,
-          "sha256": "d550bfbbeb4d96861555ed448167efa4ba954ddd6dbdccd45887e922af963f36",
-          "git_blob_sha1": "c1ac13a324136b364a3ec54c0813376fa4e69e92",
+          "path": "pareto/trial_002_ref4_kl0.0714/adapter_model.safetensors",
+          "bytes": 1073240,
+          "sha256": "269cee632d7b2dc1cb5163d6f1b2a378df3b2130e51c8b08c686709997c28679",
+          "git_blob_sha1": "71a4b7268e55818703c28d3bdfec025d11d2e3b7",
           "local_sha_verified": false
         },
         {
-          "path": "model-00002-of-00018.safetensors",
-          "bytes": 3043080328,
-          "sha256": "2213ee86b7db3afb8eb7600d92080b10e8c85f5d6560e44926195b5e2564a538",
-          "git_blob_sha1": "007e181d5c8dfc4b61ec592b349978094376f7ca",
-          "local_sha_verified": false
-        },
-        {
-          "path": "model-00003-of-00018.safetensors",
-          "bytes": 2542796952,
-          "sha256": "2e1bf62cbcd406eaa64b60d10353e1f0ef4039d0976e56f05cabe953454f9968",
-          "git_blob_sha1": "a2da5e6cd6307a6cae13d04820ab0d31b47b48bd",
-          "local_sha_verified": false
-        },
-        {
-          "path": "model-00004-of-00018.safetensors",
-          "bytes": 3988973152,
-          "sha256": "aa76e1e0f93c38afb9abff6a20407e3026beeaa6db8438dd88a32ae7a2dc2ebe",
-          "git_blob_sha1": "656bd42478066ada7a8ce3b9316379addf3887f0",
-          "local_sha_verified": false
-        },
-        {
-          "path": "model-00005-of-00018.safetensors",
-          "bytes": 2099339864,
-          "sha256": "253503eb9022d91c598cc0aeb1cc30f5fdc81b523f97cdcd4dd36221784cf89a",
-          "git_blob_sha1": "937d670cb95bfde2edc7d5d0045f732cda8395fa",
-          "local_sha_verified": false
-        },
-        {
-          "path": "model-00006-of-00018.safetensors",
-          "bytes": 3979553696,
-          "sha256": "b83e36be1d58d6df638e765b0b920d46fcc13383ffb17ca9690994fca57e3586",
-          "git_blob_sha1": "b30d6b33530e9947e3bd98ae3ce723eb40880200",
-          "local_sha_verified": false
-        },
-        {
-          "path": "model-00007-of-00018.safetensors",
-          "bytes": 2108759344,
-          "sha256": "ed3b4225d50aad6dae34a510877a800b4b70df635ba160b470ce13bfa623e6af",
-          "git_blob_sha1": "2ba49c5fb86464b65f35dcc04bd37357cb8e8102",
-          "local_sha_verified": false
-        },
-        {
-          "path": "model-00008-of-00018.safetensors",
-          "bytes": 3979553696,
-          "sha256": "6896c4e316466061acd92fe54e6c093d7cb57fc9485fafc636b1a947383c9beb",
-          "git_blob_sha1": "32a005c5d4127d06e62fb3861fae4fc8b99ce808",
-          "local_sha_verified": false
-        },
-        {
-          "path": "model-00009-of-00018.safetensors",
-          "bytes": 2108759344,
-          "sha256": "313b6ea5f7eebefeb4d5000454c70a74f0ac42083b6f66fd59071a8b8ea1908d",
-          "git_blob_sha1": "1c4f45478617dbd95e3f595711bac879fe69290e",
-          "local_sha_verified": false
-        },
-        {
-          "path": "model-00010-of-00018.safetensors",
-          "bytes": 3979553696,
-          "sha256": "a0aca3cf8007bda54fca3344fd0788db433710104910f119da30fc6c19414651",
-          "git_blob_sha1": "150bda1a2225e5fbb12005ff4c3eed428b090996",
-          "local_sha_verified": false
-        },
-        {
-          "path": "model-00011-of-00018.safetensors",
-          "bytes": 2108759344,
-          "sha256": "ede2abd4cd2563f76577a3bead23592f4220219a22f79d49b8fd5086058381ad",
-          "git_blob_sha1": "c5a6b00a8142de9d4dfd79c1ab81110b5d146942",
-          "local_sha_verified": false
-        },
-        {
-          "path": "model-00012-of-00018.safetensors",
-          "bytes": 3979553696,
-          "sha256": "6fa25a6c6452adec760e5521bc8fc140f18f5977eae4811b0071ad765b654657",
-          "git_blob_sha1": "4b658f6da268c6175cf3ac7835f543067145c2d0",
-          "local_sha_verified": false
-        },
-        {
-          "path": "model-00013-of-00018.safetensors",
-          "bytes": 2108759344,
-          "sha256": "905ac7f451742746fd8a75a1372c615213251d37a3e281b81589446443d49b22",
-          "git_blob_sha1": "8555de0d8723f705a5c2590ac723d6e00ffe9321",
-          "local_sha_verified": false
-        },
-        {
-          "path": "model-00014-of-00018.safetensors",
-          "bytes": 3979553696,
-          "sha256": "3d5685175f1b2f7bb2ae68d61462420ebb8671244b38e6178162f34abfbb6646",
-          "git_blob_sha1": "8123b5d79e23e1402540ec7361988ff41829d3d4",
-          "local_sha_verified": false
-        },
-        {
-          "path": "model-00015-of-00018.safetensors",
-          "bytes": 2108759344,
-          "sha256": "35fe3b19c386d3e60e3a65a70db24c73fffc816e16c6dc1027f1afb4bcd99a0a",
-          "git_blob_sha1": "95f0b2ed38b46cdbec0d526e1c48222a8ba85052",
-          "local_sha_verified": false
-        },
-        {
-          "path": "model-00016-of-00018.safetensors",
-          "bytes": 3979564040,
-          "sha256": "f6a7f85484e753ed0e13845016ba978ec4a962144977a45987ef0d029a744cce",
-          "git_blob_sha1": "cc680291149019e2b5b57fcefd83cfd296752c2e",
-          "local_sha_verified": false
-        },
-        {
-          "path": "model-00017-of-00018.safetensors",
-          "bytes": 2108759344,
-          "sha256": "dc8099e9ff14394b8b428636e2c293b9fd32fec7249373d8061b8c2361350782",
-          "git_blob_sha1": "7557fbb13a31ece495c0709737fd9e36a56e4961",
-          "local_sha_verified": false
-        },
-        {
-          "path": "model-00018-of-00018.safetensors",
-          "bytes": 3392197344,
-          "sha256": "1d3479509e21494658f9b64d317f5ea8e55c4025d28c702d6c4d0b356ce8ea06",
-          "git_blob_sha1": "a92b4073fc6a58ffc9334ac63360fc8d9cc50d33",
-          "local_sha_verified": false
-        },
-        {
-          "path": "model.safetensors.index.json",
-          "bytes": 112216,
+          "path": "pareto/trial_002_ref4_kl0.0714/heretic_summary.json",
+          "bytes": 751,
           "sha256": null,
-          "git_blob_sha1": "da35e3c564457dface7d138f0b6cac284ff8958c",
+          "git_blob_sha1": "c9d0d6dbfbd5ec7c12abd169b8da0b7880d92c91",
           "local_sha_verified": false
         },
         {
-          "path": "preprocessor_config.json",
-          "bytes": 390,
+          "path": "pareto/trial_004_ref6_kl0.0275/Qwen3.5-0.8B-Heretic-LoRA.gguf",
+          "bytes": 927744,
+          "sha256": "167736db9f45a469bca293b28d220861d76f169710a997aec8ba879d49ac09e4",
+          "git_blob_sha1": "90cfe111604b5af020781715c3718444e07b9e4b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "pareto/trial_004_ref6_kl0.0275/README.md",
+          "bytes": 686,
           "sha256": null,
-          "git_blob_sha1": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64",
+          "git_blob_sha1": "7cda465e80b2ac0165c227428a6ff73162be7a31",
           "local_sha_verified": false
         },
         {
-          "path": "tokenizer.json",
-          "bytes": 12809320,
-          "sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3",
-          "git_blob_sha1": "9328ce9c41e80f6dd7bc2c66d8ae1fc93bf87440",
-          "local_sha_verified": false
-        },
-        {
-          "path": "tokenizer_config.json",
-          "bytes": 17928,
+          "path": "pareto/trial_004_ref6_kl0.0275/adapter_config.json",
+          "bytes": 2649,
           "sha256": null,
-          "git_blob_sha1": "5de744b3fca2129d7186979ae47c06be33903243",
+          "git_blob_sha1": "bb488c1075b48cbdedb3e8906ad3216db933ebde",
           "local_sha_verified": false
         },
         {
-          "path": "video_preprocessor_config.json",
-          "bytes": 385,
-          "sha256": null,
-          "git_blob_sha1": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe",
+          "path": "pareto/trial_004_ref6_kl0.0275/adapter_model.safetensors",
+          "bytes": 933248,
+          "sha256": "26836a1374eb43aef39f04970b558f347a62558ebce8c0e00388ff217146ba6e",
+          "git_blob_sha1": "fd9b7f6c46d67a80d9a491b2c7fdd86eafba4109",
           "local_sha_verified": false
         },
         {
-          "path": "vocab.json",
-          "bytes": 6722759,
+          "path": "pareto/trial_004_ref6_kl0.0275/heretic_summary.json",
+          "bytes": 762,
           "sha256": null,
-          "git_blob_sha1": "0aa0ce0658d60ac4a5d609f4eadb0e8e43514176",
+          "git_blob_sha1": "1278df8257c56aceec4936c848cbbbd9378c35a9",
           "local_sha_verified": false
         }
       ],
-      "source_manifest_path": "manifests/drafts/r153-2026-11-22-smaug-qwen-hash-reuse-and-atomic-lora.candidate.json",
+      "source_manifest_path": "manifests/drafts/r154-2026-11-22-four-primary-sources-after112.candidate.json",
       "parameter_gate": {
-        "status": "PASS_TOTAL_PARAMS_LT_150B",
-        "total_parameters": 27781427952,
-        "evidence_kind": "publisher model tensor metadata; no owner local tensor census",
+        "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+        "total_parameters": null,
+        "evidence_kind": "Full deployable learned total requires pinned parent exact trainer version plus both LoRA tensor counts and associated inference components; original adapter config revision=null. The 2.006MB source size is not an audited trained parameter census.",
         "review_date": "2026-11-22",
-        "local_tensor_census_not_executed": true
+        "local_tensor_census_not_executed": true,
+        "note": "Full deployable learned total requires pinned parent exact trainer version plus both LoRA tensor counts and associated inference components; original adapter config revision=null. The 2.006MB source size is not an audited trained parameter census."
       },
       "forecast_priority": {
-        "rank": 239,
         "wave": "S1",
-        "category": "EDITED_UNCENSORED_DPO",
-        "scenario_status": "SCENARIO_ONLY_NOT_FUTURE_LAW_FACT"
+        "rank": 239,
+        "category": "R154_POST112_DISTINCT_LEARNED_STATE_OR_LEGAL_HOLD",
+        "scenario_status": "FUTURE_DISTRIBUTION_RESTRICTION_HYPOTHESIS_ONLY"
       },
       "preservation_bundle": {
         "must_preserve": [
           ".gitattributes",
-          "LICENSE",
-          "NOTICE",
+          "Qwen3.5-0.8B-Heretic-LoRA.gguf",
           "README.md",
-          "chat_template.jinja",
-          "config.json",
-          "generation_config.json",
-          "merges.txt",
-          "model-00001-of-00018.safetensors",
-          "model-00002-of-00018.safetensors",
-          "model-00003-of-00018.safetensors",
-          "model-00004-of-00018.safetensors",
-          "model-00005-of-00018.safetensors",
-          "model-00006-of-00018.safetensors",
-          "model-00007-of-00018.safetensors",
-          "model-00008-of-00018.safetensors",
-          "model-00009-of-00018.safetensors",
-          "model-00010-of-00018.safetensors",
-          "model-00011-of-00018.safetensors",
-          "model-00012-of-00018.safetensors",
-          "model-00013-of-00018.safetensors",
-          "model-00014-of-00018.safetensors",
-          "model-00015-of-00018.safetensors",
-          "model-00016-of-00018.safetensors",
-          "model-00017-of-00018.safetensors",
-          "model-00018-of-00018.safetensors",
-          "model.safetensors.index.json",
-          "preprocessor_config.json",
-          "tokenizer.json",
-          "tokenizer_config.json",
-          "video_preprocessor_config.json",
-          "vocab.json"
+          "adapter_config.json",
+          "adapter_model.safetensors",
+          "heretic_summary.json",
+          "pareto/trial_002_ref4_kl0.0714/Qwen3.5-0.8B-Heretic-LoRA.gguf",
+          "pareto/trial_002_ref4_kl0.0714/README.md",
+          "pareto/trial_002_ref4_kl0.0714/adapter_config.json",
+          "pareto/trial_002_ref4_kl0.0714/adapter_model.safetensors",
+          "pareto/trial_002_ref4_kl0.0714/heretic_summary.json",
+          "pareto/trial_004_ref6_kl0.0275/Qwen3.5-0.8B-Heretic-LoRA.gguf",
+          "pareto/trial_004_ref6_kl0.0275/README.md",
+          "pareto/trial_004_ref6_kl0.0275/adapter_config.json",
+          "pareto/trial_004_ref6_kl0.0275/adapter_model.safetensors",
+          "pareto/trial_004_ref6_kl0.0275/heretic_summary.json"
         ],
-        "original_repo_sha": "e4bbcf7aec54ab72f4ce720569f3b3dc7b973087",
-        "source_manifest": "manifests/drafts/r153-2026-11-22-smaug-qwen-hash-reuse-and-atomic-lora.candidate.json",
-        "already_reported_acquired": false,
-        "owner_hdd_sha_verified": false,
-        "offline_restore_verified": false,
-        "smaug_parent_shard_reuse_only_on_SHA_match": true
+        "original_publisher_revision": "92e2ae29c379d7378c696511ec9c70ace8be1434",
+        "trained_state": "TWO_DIFFERENT_RANK3_HERETIC_LORA_STATES",
+        "distinct_weight_paths": [
+          "adapter_model.safetensors",
+          "pareto/trial_004_ref6_kl0.0275/adapter_model.safetensors"
+        ],
+        "duplicate_same_SHA_root_and_trial002": true,
+        "parent_repo_id": "Qwen/Qwen3.5-0.8B",
+        "parent_current_112_ledger_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+        "author_exact_training_parent_revision_is_null": true,
+        "owner_live_hash_rechecked_by_this_research": false,
+        "full_offline_reconstruction_verified": false
       },
       "resource_screen": {
-        "source_all_repo_bytes": 55586070091,
-        "publisher_selected_source_bytes": 55586070091,
+        "source_all_repo_bytes": 6165749,
+        "publisher_selected_source_bytes": 6165749,
         "owner_hdd_verified": false,
         "actual_full_runtime_peak_verified": false
       },
@@ -738,23 +619,1332 @@
       "download_ready": false,
       "model_payload_fetched": false,
       "personal_access_verified": false,
-      "historical_acquisition_reported_verified": false,
-      "historical_acquisition_ledger_revision": null
+      "historical_acquisition_reported_verified": false
+    },
+    {
+      "position": 240,
+      "asset_kind": "model",
+      "repo_id": "GetCartwheelInc/cartwheel-control",
+      "url": "https://huggingface.co/GetCartwheelInc/cartwheel-control",
+      "group": "3ロボット専用の学習済み運動制御policy・権利不明HOLD",
+      "risk_tier": "HOLD",
+      "portfolio_decision": "hold",
+      "reason_selected": "Three independent RP1, Menlo Asimov-1 and Unitree G1 simulation-only policy safetensors weights, exact publisher SHA pinned, 154 files. Unique learned physical-control capabilities justify source research.",
+      "quality_positive": "303-304MB full source with three distinct independent trained policy weights around 34-36MB each. Separate robot morphology/meshes/motions allow technical research if licensed.",
+      "quality_negative": "RP1 robot assets have no upstream license recorded; Menlo Asimov CERN-OHL-S2 and Unitree BSD3 separate terms. Dependencies and precise trained parameter totals unknown. Training only in simulation; no hardware performance/safety evidence. HOLD until lawful complete bundle rights and runtime closure.",
+      "risk_and_alternative_assessment": "Model-specific future legal restriction probabilities unknown. Public publisher access is not proof of owner licensed acts, offline restoration, or runtime compatibility. Distinguish independent learned outcomes from conversion formats.",
+      "evidence_date": "2026-11-22",
+      "evidence_kind": "PRIMARY_HF_IMMUTABLE_FULL_TREE_WITH_PARENT_AND_EXISTING112_LEDGER_RECONCILIATION",
+      "evidence_urls": [
+        "https://huggingface.co/GetCartwheelInc/cartwheel-control/tree/24fc279af8f70097f503767b81db5384d779aae5"
+      ],
+      "observed_access": "publisher public ungated at observed revision, individual rights not reviewed",
+      "license_metadata": "Cartwheel Open Model License for policies; third-party robot model/mesh terms differ. RP1 model has no listed upstream license and cannot be assumed redistributable. Full source license approvals absent.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "24fc279af8f70097f503767b81db5384d779aae5",
+      "upstream_all_files_bytes_observed": 304057444,
+      "upstream_file_count_observed": 154,
+      "upstream_lfs_sha256_count_observed": 130,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 154,
+      "candidate_selected_source_file_bytes": 304057444,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 8058,
+          "sha256": null,
+          "git_blob_sha1": "45f13edf12f5018535151d9aa29f22545fbf0878",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 9113,
+          "sha256": null,
+          "git_blob_sha1": "787f4e21148e649993bc9827bbc2a90f5f86c025",
+          "local_sha_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 857,
+          "sha256": null,
+          "git_blob_sha1": "876385e9a9e1f326bc61fb42931a4480100cdc57",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 1673,
+          "sha256": null,
+          "git_blob_sha1": "ee80bbb88fddc0802b9f03f77f791b222a970c37",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/config.json",
+          "bytes": 747,
+          "sha256": null,
+          "git_blob_sha1": "c64b2d30bb23788d2b9213d458a5aadb064c9fb8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/LICENSE",
+          "bytes": 13419,
+          "sha256": null,
+          "git_blob_sha1": "0f1092207caa645ff426e0cc40b7eaad69caecb1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/NOTICE",
+          "bytes": 539,
+          "sha256": null,
+          "git_blob_sha1": "e6bc7ba66d5ba88892f057d4e7a79311e7a6824b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_ankle_pitch_link.STL",
+          "bytes": 221284,
+          "sha256": "19e1917b48eaee35ee1da292368558b17e51e42201171ccf21be9796b63dc77a",
+          "git_blob_sha1": "e98ae8a54a4d7ed624304d8f45a0306460af07e9",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_ankle_roll_link.STL",
+          "bytes": 4088434,
+          "sha256": "511a94a8836ab025344cff98a97cc5b6cc0101e58be3ae8cd56e0261b51be65d",
+          "git_blob_sha1": "f61051b2ee281b9ca664def99742cc6bba64f49c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_elbow_link.STL",
+          "bytes": 390984,
+          "sha256": "a038ae67934eaf5d05fc460f99054de77f524e2de8d0a17bc70ead43dcbc75cc",
+          "git_blob_sha1": "1196c0d1f0567d9ae3498bfdc0f6502004bf682f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_hip_pitch_link.STL",
+          "bytes": 1220134,
+          "sha256": "69d67c3d8d695203e43322e15d7da97a6dc89315bb0ce02724e74aefecd692d0",
+          "git_blob_sha1": "ab69c691dbbd80e9b8c5be9c8eaae6a4370ae09c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_hip_roll_link.STL",
+          "bytes": 370284,
+          "sha256": "1433cb1c5db4c89d7a91e8f70fc298fd7754754ba967c9cffddfc42597b91d01",
+          "git_blob_sha1": "e92ec5173477fb440015439e598c58477c5861f8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_hip_yaw_link.STL",
+          "bytes": 1861384,
+          "sha256": "77081b3b3f779271610918d3ee09eb6b5ab422c4182696cda7c9e15b03745397",
+          "git_blob_sha1": "a7ec1133acd5052af02ab614e94b029466898002",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_knee_link.STL",
+          "bytes": 3449384,
+          "sha256": "cd35cd599bdfd25fbc00e5f99b49ef4be41df6c937ebb7a12daed6d4de68947e",
+          "git_blob_sha1": "8e72d2a294163297f12601ae4ee180c6de2105fe",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_shoulder_pitch_link.STL",
+          "bytes": 239934,
+          "sha256": "21f8c2c4b579ed6fc111ae318acc7f287b837d0577623a75dd028aeb203eb2b3",
+          "git_blob_sha1": "3fa9feb6a3da4e118f32c54ab61360954a190209",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_shoulder_roll_link.STL",
+          "bytes": 868084,
+          "sha256": "908d4a03f9d235dedb7f3de522e4beb65b8afccaf620bdf7beda365ab4fe1faa",
+          "git_blob_sha1": "863be51fba7d2366594a0079901b5ce3a8be84e8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_shoulder_yaw_link.STL",
+          "bytes": 711384,
+          "sha256": "f2b67a0be553de3d475d2d1afd3604fc20b912d05b1025a4dea1fa7b454ba9be",
+          "git_blob_sha1": "be0c75c3e343fd637cb822774ae966ba45c514af",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/left_wrist_yaw_link.STL",
+          "bytes": 882784,
+          "sha256": "913c38bccc12882503171772e764fdcbde7919b00f330f73f557f1dc83582ab6",
+          "git_blob_sha1": "9246efb4aa003718cb678999a31669e83b45c183",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/neck_pitch_link.STL",
+          "bytes": 2454684,
+          "sha256": "02b8f74aa436fad2316eec9923f0ccd50355ff3777bec7aec76cd21a6aa008e1",
+          "git_blob_sha1": "fae880ac97b9b038b88be179229c6fd7710148e5",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/neck_yaw_link.STL",
+          "bytes": 344984,
+          "sha256": "0ec199de629a352610888d896efaaf6699cb42ccf0107849d1553dc0915bac25",
+          "git_blob_sha1": "5d32800d564220215185a0c67adc7e504fbd06c1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/pelvis_link.STL",
+          "bytes": 9165984,
+          "sha256": "d8a968e00ef8a3838aa760a58fd059e5f92a2b696acf7a00bc87d0d0708ef877",
+          "git_blob_sha1": "f0994f7bb185e3389e9a3c0ac0fda0de0e814636",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_ankle_pitch_link.STL",
+          "bytes": 220984,
+          "sha256": "47718ddb1133aa87969d0e64f05b49f34709a42e5d8876f17e6678c9611899c8",
+          "git_blob_sha1": "0c926d13930795fc4e32b251ae25210df3979a8c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_ankle_roll_link.STL",
+          "bytes": 4091734,
+          "sha256": "21f2214e42e72aeb52842f50b3702457300a2539f8412d06a977cf3742764c2a",
+          "git_blob_sha1": "6fa31763fa3fd4c612300e612e4cb111cd5708d1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_elbow_link.STL",
+          "bytes": 401284,
+          "sha256": "04667620945b5a838a97146e75e50bb8a9087f930d3a0411723f8e1bd8aead85",
+          "git_blob_sha1": "d74496d929d5b3e22a60b29a43f7f3330c204132",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_hip_pitch_link.STL",
+          "bytes": 1236034,
+          "sha256": "7ecc884721b175aaed091b2b3d67d94b8409649edabdeedde8e3d475a6869248",
+          "git_blob_sha1": "61b95dbfbcf8e0b06ef62da7277492cae2e479bd",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_hip_roll_link.STL",
+          "bytes": 368284,
+          "sha256": "32f245002354c905702e352dbe0fa42b65f36f3430e2b739c293db9982f7da14",
+          "git_blob_sha1": "5736d9578e28473e49435d84ca09210733c721db",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_hip_yaw_link.STL",
+          "bytes": 1864784,
+          "sha256": "771cccee7503546623598c96894a2ae79d739648e72eeceb8e39ec67f3815a33",
+          "git_blob_sha1": "459759d1705303ee4e5744df2ca54b156b5f71d6",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_knee_link.STL",
+          "bytes": 3447184,
+          "sha256": "69c407ee36dfe7e820ec7caf6f17bd9998ad561c84aedc08107c304ed11c22bb",
+          "git_blob_sha1": "e2b78f273d4e398bccc0a9f0a3aca9e48b63b5de",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_shoulder_pitch_link.STL",
+          "bytes": 239734,
+          "sha256": "02c73779b8d8405cfa3280d8784c8d8d0ce4ca9aed6c092ee85b0cac6022b3f6",
+          "git_blob_sha1": "7c424059a2fc1cd8b3620ebf47a872132e5fa14a",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_shoulder_roll_link.STL",
+          "bytes": 881284,
+          "sha256": "4155d9397583a6acf550ef970c9a482fc6fb2e0de69ed53def50a1748f799379",
+          "git_blob_sha1": "ec27a62a81d4d61eed78a8cc0e64c3c3ceb075c1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_shoulder_yaw_link.STL",
+          "bytes": 700984,
+          "sha256": "9b1a1650100c784d64da9b45cfb8bc9bd35726236aa0708d0db45f5ec1b79217",
+          "git_blob_sha1": "81386061b17424bf7fc2df78744617892ce60b80",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/right_wrist_yaw_link.STL",
+          "bytes": 882184,
+          "sha256": "1a5c3740c0c23209b07397098eb6e0eb1ee89a209609d5bd46e321cc6d702b30",
+          "git_blob_sha1": "4584ea4c300501f460c309ee5030f3035368e465",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/meshes/waist_yaw_link.STL",
+          "bytes": 9750034,
+          "sha256": "4574372f4057cbea7a5e4032bdf45a5c132b8f80e9a4618494a248fa369ce98f",
+          "git_blob_sha1": "8256c7a3edd593a2ec91f9298cc2a5f6b4154444",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/model/xml/asimov_1_25dof.xml",
+          "bytes": 29675,
+          "sha256": null,
+          "git_blob_sha1": "0e2932b44b40184f997a0bbd192da8022c93a4ff",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/basketball_shot.npz",
+          "bytes": 48215,
+          "sha256": "a3fe0c38e265e9c7ca6b954570b6d3d6f31fc685b94f1d3916ca1104e0a60a2d",
+          "git_blob_sha1": "42465b7fab96803f433a8958e3007b9cd71a1a81",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/bear_crawl.npz",
+          "bytes": 59802,
+          "sha256": "9b166a9420515f34a072d98f3a53434698d7f8bb6acf9bc8d55970511ff9e2de",
+          "git_blob_sha1": "1dcf68418d37ddb2f01a715ca18e51c4a61836a7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/boxing.npz",
+          "bytes": 83192,
+          "sha256": "08c65a003c1afa9be0c3ba8d15e203f58458eb3ede686328870aaa9bb557bc75",
+          "git_blob_sha1": "6c253a16ef5ab75d8a017fd5ea8ba268e8797f7f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/brisk_walk.npz",
+          "bytes": 84518,
+          "sha256": "f242c10043bbc126055ca50ec9c92a99c974a99128174a32cade3f4f2afbed7a",
+          "git_blob_sha1": "758c5d69a83d8759897624eed78e569c8af70bea",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/front_kick.npz",
+          "bytes": 38355,
+          "sha256": "8788c4f87bdff36ac299b04edf8224cec05f49a85ff69d157e610e821adc5f8b",
+          "git_blob_sha1": "a5850ca8a8256883b7697fee2ba0178f9dec0903",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/high_jump.npz",
+          "bytes": 117531,
+          "sha256": "81859ad4518fa6199e4cb03601f690c61af6314ac46f2622bee6ee8c5a2cac1b",
+          "git_blob_sha1": "d0867bad0b0fc309ea93278530d8aae1013c65b6",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/jazz_dance.npz",
+          "bytes": 27898,
+          "sha256": "37f415c9911ca982b50c15acacf11fa63ad10cfb1609d81cf1032e910d78d08a",
+          "git_blob_sha1": "7170786b2ec16280ae29b51d831fde4c764bbde9",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/modern_dance_jump.npz",
+          "bytes": 21086,
+          "sha256": "bb77db68098f4a28c934b7e40089a326bba85a84203ad59d28ab66ea704423d1",
+          "git_blob_sha1": "57e99eb8287d2f13d99027beaa7f48b6fd0e74fa",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/push_up.npz",
+          "bytes": 28511,
+          "sha256": "b65511c43480b845c47ba7d0506860e994e187ac98527f3cc98f6a0c3bf028f9",
+          "git_blob_sha1": "88df887e9300159d3161ac9ae8fb00e9f1f7bf48",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/run.npz",
+          "bytes": 72081,
+          "sha256": "f28dcc9653b9510990309642fb13f263bb52a479ee2a94e2ed0f5b28ea2d57bc",
+          "git_blob_sha1": "2c4254cf92fb3d175a6b58b061e7f51a0a4732ba",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/stand_to_prone.npz",
+          "bytes": 88502,
+          "sha256": "5f79ffc828a7d379ea7c0b68229c09fd6d19e71bee7554ecaa0b683514fcc132",
+          "git_blob_sha1": "6eea443391deded64fbf74511f585cc27b4ed68c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/standing_long_jump.npz",
+          "bytes": 75512,
+          "sha256": "8b5ba7c4a01e9e75169c540d3984e0c48494bc4474c5733b8fd40dd6e2f6bef7",
+          "git_blob_sha1": "75741e9f65e927d5c4b73a274c6a66ee9abba0e1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/sword.npz",
+          "bytes": 47081,
+          "sha256": "2e198c9e73c50fa3348a7a6d1803eac858cf6db4bde8132f8d3dd473a487376f",
+          "git_blob_sha1": "40746fa6929e2902dd364c8809437d522165b32b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/motions/wave.npz",
+          "bytes": 110098,
+          "sha256": "655f9d874e81a52c38424740fdf59ea97686b671030d29109821fcf9a0cd4193",
+          "git_blob_sha1": "0a5d8d28514ae59eeb44d6f356e94cbb7ebbdbbb",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/policy.safetensors",
+          "bytes": 34837748,
+          "sha256": "e3d44811fbd368e22b084898f00628eb74cd3e29b6be9fb3d8dff24de6ceeb5a",
+          "git_blob_sha1": "5cf9e39e1109e7049b0c68f1018578424fd25220",
+          "local_sha_verified": false
+        },
+        {
+          "path": "asimov-1/robot.glb",
+          "bytes": 24167840,
+          "sha256": "5a594a10eb05636a0167cdcbc1bc6135f42c32ab31c640658bfa8a4502e78b47",
+          "git_blob_sha1": "514900eb039c55d0e578a6cd2e68b463feeca93e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/cartwheel-control.mp4",
+          "bytes": 15954404,
+          "sha256": "db7e122875364a11e7b444f4fa19bb74d8d4e416891f57f068ac853129e5e25f",
+          "git_blob_sha1": "b2dd3c3d6f22e605f708c1e9cc53395622560d3e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/config.json",
+          "bytes": 856,
+          "sha256": null,
+          "git_blob_sha1": "55af57aa795160580dc19fcfa71a788a96fffa3e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/LICENSE",
+          "bytes": 1537,
+          "sha256": null,
+          "git_blob_sha1": "62637c8d1416c57ef1aafdf0d4867502e96b9164",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/NOTICE",
+          "bytes": 640,
+          "sha256": null,
+          "git_blob_sha1": "2da0ffae1730f8d7372d5844c52b244e36541326",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/head_link.STL",
+          "bytes": 932784,
+          "sha256": "005fb67fbd3eff94aa8bf4a6e83238174e9f91b6721f7111594322f223724411",
+          "git_blob_sha1": "401f822751c33dab53c6cee77eb62890aca5cd8f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_ankle_pitch_link.STL",
+          "bytes": 71184,
+          "sha256": null,
+          "git_blob_sha1": "69de8490184afc698f633e34bb74e65351bd4689",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_ankle_roll_link.STL",
+          "bytes": 653384,
+          "sha256": "c4092af943141d4d9f74232f3cfa345afc6565f46a077793b8ae0e68b39dc33f",
+          "git_blob_sha1": "cb69f65c6a8059fc6720cb393540f579b4d0c26e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_elbow_link.STL",
+          "bytes": 88784,
+          "sha256": null,
+          "git_blob_sha1": "1a96d99ba469960173129084ab6dd3bf8a732a71",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_hip_pitch_link.STL",
+          "bytes": 181684,
+          "sha256": "4725168105ee768ee31638ef22b53f6be2d7641bfd7cfefe803488d884776fa4",
+          "git_blob_sha1": "4cf7475bf6bbaef47d5b3f7644a34c73b3d64037",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_hip_roll_link.STL",
+          "bytes": 192184,
+          "sha256": "91f25922ee8a7c3152790051bebad17b4d9cd243569c38fe340285ff93a97acf",
+          "git_blob_sha1": "585f6040c38571177d55519417a0f46ca7b29381",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_hip_yaw_link.STL",
+          "bytes": 296284,
+          "sha256": "a16d88aa6ddac8083aa7ad55ed317bea44b1fa003d314fba88965b7ed0f3b55b",
+          "git_blob_sha1": "b46a74134f90c568cbdfb8484eeb83a0503b4504",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_knee_link.STL",
+          "bytes": 854884,
+          "sha256": "8d92b9e3d3a636761150bb8025e32514c4602b91c7028d523ee42b3e632de477",
+          "git_blob_sha1": "2dcf84e4018ab9e4cff48cecdafe433601c48480",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_rubber_hand.STL",
+          "bytes": 2287484,
+          "sha256": "cff2221a690fa69303f61fce68f2d155c1517b52efb6ca9262dd56e0bc6e70fe",
+          "git_blob_sha1": "04a2fa22b7f60f2d00c64ec996b33a5219c2b633",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_shoulder_pitch_link.STL",
+          "bytes": 176784,
+          "sha256": "f0d1cfd02fcf0d42f95e678eeca33da3afbcc366ffba5c052847773ec4f31d52",
+          "git_blob_sha1": "926d9807f1cbf6ad0d41170904785eb30427c848",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_shoulder_roll_link.STL",
+          "bytes": 400284,
+          "sha256": "fb9df21687773522598dc384f1a2945c7519f11cbc8bd372a49170316d6eee88",
+          "git_blob_sha1": "4c6840b93ea15d1ba7b4dac0f18f94655867cab7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_shoulder_yaw_link.STL",
+          "bytes": 249184,
+          "sha256": "1aa97e9748e924336567992181f78c7cd0652fd52a4afcca3df6b2ef6f9e712e",
+          "git_blob_sha1": "89b0e0661275ed832c674a46893239ad2e5bef85",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_wrist_pitch_link.STL",
+          "bytes": 85984,
+          "sha256": null,
+          "git_blob_sha1": "82cc224a8e41251d879502f9809e31d0988ec7f9",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_wrist_roll_link.STL",
+          "bytes": 356184,
+          "sha256": "edc387c9a0ba8c2237e9b296d32531426fabeb6f53e58df45c76106bca74148c",
+          "git_blob_sha1": "2097ca3e5bbc0af985d150e5dcda4d8ba9bcf43f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/left_wrist_yaw_link.STL",
+          "bytes": 318684,
+          "sha256": "83f8fb3a726bf9613d65dd14f0f447cb918c3c95b3938042a0c9c09749267d3b",
+          "git_blob_sha1": "692f4b07105fa0ec4ffd989dc60be9b2a33ac9c3",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/logo_link.STL",
+          "bytes": 243384,
+          "sha256": "8571a0a19bc4916fa55f91449f51d5fdefd751000054865a842449429d5f155b",
+          "git_blob_sha1": "6c25961c594c714ada9d32e922250d326c121f4a",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/pelvis.STL",
+          "bytes": 1060884,
+          "sha256": "5ba6bbc888e630550140d3c26763f10206da8c8bd30ed886b8ede41c61f57a31",
+          "git_blob_sha1": "f98a88dbf6c7698791ba694e16cbcc180c40663c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/pelvis_contour_link.STL",
+          "bytes": 1805184,
+          "sha256": "5cc5c2c7a312329e3feeb2b03d3fc09fc29705bd01864f6767e51be959662420",
+          "git_blob_sha1": "8025bc070cd65550f345e9e97bc44a8ff9740dea",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_ankle_pitch_link.STL",
+          "bytes": 71184,
+          "sha256": null,
+          "git_blob_sha1": "e77d8a2fe1e5d56fac049833d254d6ffa4f6b350",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_ankle_roll_link.STL",
+          "bytes": 653784,
+          "sha256": "4b66222ea56653e627711b56d0a8949b4920da5df091da0ceb343f54e884e3a5",
+          "git_blob_sha1": "3c38507b9060eda2c40e5e2bb1b174ef5bda0390",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_elbow_link.STL",
+          "bytes": 88784,
+          "sha256": null,
+          "git_blob_sha1": "f259e3812efb9985d6463c04d3e8a4b53793a699",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_hip_pitch_link.STL",
+          "bytes": 181284,
+          "sha256": "e4f3c99d7f4a7d34eadbef9461fc66e3486cb5442db1ec50c86317d459f1a9c6",
+          "git_blob_sha1": "064085fca108bfc2a5a365403ceb6cdac4d5cd5f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_hip_roll_link.STL",
+          "bytes": 192684,
+          "sha256": "4c254ef66a356f492947f360dd931965477b631e3fcc841f91ccc46d945d54f6",
+          "git_blob_sha1": "6544025eeb7dc7d09da549746ae28272e5bcf224",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_hip_yaw_link.STL",
+          "bytes": 296284,
+          "sha256": "e479c2936ca2057e9eb2f7dff6c189b7419d7b8484dea0b298cbb36a2a6aa668",
+          "git_blob_sha1": "0ad7bee36419f85b490debe929957c6932df393f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_knee_link.STL",
+          "bytes": 852284,
+          "sha256": "63c4008449c9bbe701a6e2b557b7a252e90cf3a5abcf54cee46862b9a69f8ec8",
+          "git_blob_sha1": "65e8a708a7e86f1f242cd32e8959a560ea66c2d7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_rubber_hand.STL",
+          "bytes": 2192684,
+          "sha256": "99533b778bca6246144fa511bb9d4e555e075c641f2a0251e04372869cd99d67",
+          "git_blob_sha1": "58148fb9e7307176d43f71da139781a77b63d156",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_shoulder_pitch_link.STL",
+          "bytes": 176784,
+          "sha256": "24cdb387e0128dfe602770a81c56cdce3a0181d34d039a11d1aaf8819b7b8c02",
+          "git_blob_sha1": "48a1c46009929341f2c312966acf81c3c733d7ec",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_shoulder_roll_link.STL",
+          "bytes": 401884,
+          "sha256": "962b97c48f9ce9e8399f45dd9522e0865d19aa9fd299406b2d475a8fc4a53e81",
+          "git_blob_sha1": "2a5d22f9e17a986ec8c958a6ff7668d65878a907",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_shoulder_yaw_link.STL",
+          "bytes": 249984,
+          "sha256": "a0b76489271da0c72461a344c9ffb0f0c6e64f019ea5014c1624886c442a2fe5",
+          "git_blob_sha1": "0882a567fc1a11f0cf821182154551058b0517f3",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_wrist_pitch_link.STL",
+          "bytes": 79584,
+          "sha256": null,
+          "git_blob_sha1": "da194543c40df9d492abb0553c06cc614a78caae",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_wrist_roll_link.STL",
+          "bytes": 356084,
+          "sha256": "a7ee9212ff5b94d6cb7f52bb1bbf3f352194d5b598acff74f4c77d340c5b344f",
+          "git_blob_sha1": "77d23a77ad6ab659884db4d540e0bd9fd0675d0f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/right_wrist_yaw_link.STL",
+          "bytes": 341484,
+          "sha256": "bc9dece2d12509707e0057ba2e48df8f3d56db0c79410212963a25e8a50f61a6",
+          "git_blob_sha1": "77edbb4135bb5b9b64357a0226431fd665d794b2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/torso_link_rev_1_0.STL",
+          "bytes": 2570584,
+          "sha256": "11ddb46f2098efbbd8816b1d65893632d8e78be936376c7cdcd6771899ccc723",
+          "git_blob_sha1": "836b9923b3edac7a1c06ecd2f11bfbbc0dedf7e0",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/waist_roll_link_rev_1_0.STL",
+          "bytes": 85884,
+          "sha256": null,
+          "git_blob_sha1": "a64f330c592582dc31cdf38f4d08cfff06681c5f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/assets/waist_yaw_link_rev_1_0.STL",
+          "bytes": 619984,
+          "sha256": "ec6db442b11f25eed898b5add07940c85d804f300de24dcbd264ccd8be7d554c",
+          "git_blob_sha1": "dc628fbdda04129fda29140243d148cbd2c81c83",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/model/g1.xml",
+          "bytes": 24799,
+          "sha256": null,
+          "git_blob_sha1": "23d9a9ca2678b90489a619caf9d32c04b1760654",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/basketball_shot.npz",
+          "bytes": 58672,
+          "sha256": "c9b1f02a2b933e9a6b3f8f8bd996a798133a0afb6b0cc8188e0be90503228b4b",
+          "git_blob_sha1": "8e3d6ee344e440ec6467d5a5df2915989c750f42",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/bear_crawl.npz",
+          "bytes": 79135,
+          "sha256": "d1e22fabb1afff4ac5fb38ee79d2babeb8436bd79dcae97847746c81e122e811",
+          "git_blob_sha1": "c4e416117de6969f14b6bde73e9738debc5b9b73",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/boxing.npz",
+          "bytes": 99410,
+          "sha256": "ec3045d7c12443f8b6727e8e9a40b54b34d545d695f1a2ee49fcab9e0fa13dee",
+          "git_blob_sha1": "acc31f5778fba04d093726cc91506c48f04b4416",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/brisk_walk.npz",
+          "bytes": 102359,
+          "sha256": "3c3a83e0816e4471908e55c648be9aa87c83c5640909740e6cd551ae88f8e8f0",
+          "git_blob_sha1": "121970413b37439413ec3cb50cca63a9f697d1a2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/front_kick.npz",
+          "bytes": 51299,
+          "sha256": "300037514c8b452612c3ae952b604bf42df519b90ff8617f012a1bc4c4b239e7",
+          "git_blob_sha1": "5874769b6cc3ef1432157e2c8bbbea0dc683ca39",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/high_jump.npz",
+          "bytes": 144644,
+          "sha256": "3553a00fea496609c30c2cd08c5e5e2185d3495d4afbe0c1c3b0a0238bdee93a",
+          "git_blob_sha1": "7bc745956f98727b9ca5bab2a637afd15ce81888",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/jazz_dance.npz",
+          "bytes": 33370,
+          "sha256": "29e2bf6f8245284086422a371325f375109dc0504f0cc792a25a8f304a094f52",
+          "git_blob_sha1": "8a928eac57d7e670f7f5441090304230a31ef939",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/modern_dance_jump.npz",
+          "bytes": 25714,
+          "sha256": "a501c4ec1a1a0297820cbbcbd4f074be0a271984e12fc257765e3dcbfee06a4b",
+          "git_blob_sha1": "129d567f10d06f99b3e870a165e6b37c5638dea9",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/push_up.npz",
+          "bytes": 38941,
+          "sha256": "2ce3f0234e8f6d7a5f2846f2a0f9473fab10f46908fa73a6bd5ab516fbc8cf78",
+          "git_blob_sha1": "ca41e1f5dc6bedb67e06acf557fbb44b263ea5e5",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/run.npz",
+          "bytes": 87541,
+          "sha256": "6553d9ee91dc92a30937db74a875ccfabfd6159e6e906bb7ca137424d24f9dda",
+          "git_blob_sha1": "13657b884199a4b98c45d9b7221588df45f7081b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/stand_to_prone.npz",
+          "bytes": 114246,
+          "sha256": "42ad8ca02b9f9b4af9530e2048a79be8cda0b44702376745868ffc33a4968877",
+          "git_blob_sha1": "4d61545591f03da8206763b554a6cb4a8bc6da72",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/standing_long_jump.npz",
+          "bytes": 96215,
+          "sha256": "1639f595dc599a5ab2eee75604f3153331fb1fbd5e55f610c4d928745dedda07",
+          "git_blob_sha1": "e28071ae68c7a2c293d54b0bba0dfc3bcfbabc45",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/sword.npz",
+          "bytes": 61239,
+          "sha256": "4b6c007305c7bcd747a64a6d0c31195496c4b3bb5cbe5185de60eb0dfa09059a",
+          "git_blob_sha1": "d01019dc1e7ebda15eba500cd27a92ba47b63932",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/motions/wave.npz",
+          "bytes": 145992,
+          "sha256": "33e276f85e316e5f23dcaad5013810be222931a666fecf611480cf71c575f36c",
+          "git_blob_sha1": "6f46e03837feac4c9ef90dc46637276760b0a216",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/policy.safetensors",
+          "bytes": 36481860,
+          "sha256": "8ea0488d9bc655987696cd10ce19fbd93c41b2f2bc4afa994056923447f8cd6a",
+          "git_blob_sha1": "323e27da23ff15b0ac30ade68f6b190ea19637ee",
+          "local_sha_verified": false
+        },
+        {
+          "path": "g1/robot.glb",
+          "bytes": 7111972,
+          "sha256": "34662a3556fab4d7ac2c521d561fb9f7274658ee4403311da15bc0f2b5026dd2",
+          "git_blob_sha1": "fbf5e0686715970be34df59f0267fb9012efedc6",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/config.json",
+          "bytes": 834,
+          "sha256": null,
+          "git_blob_sha1": "51fce36d0977e2b2e7d7a7252de459efda883753",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/NOTICE",
+          "bytes": 476,
+          "sha256": null,
+          "git_blob_sha1": "8efad1490765131cea19f5113e8b5f39586312e3",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/base_link.STL",
+          "bytes": 2954484,
+          "sha256": "8fa93e11010c1d0a35ae79f03638fadfc26335320dbfbbd6ff56b5c6cb3c0d2e",
+          "git_blob_sha1": "791f07102b46f84756fd9fc7596e2ac79b6b4c13",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_ankle_pitch_link.STL",
+          "bytes": 63484,
+          "sha256": null,
+          "git_blob_sha1": "6e819ef9ec195e73096f18810d4e9e1e6520d619",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_ankle_roll_link.STL",
+          "bytes": 732984,
+          "sha256": "4ac951e3a1adef25aff5d5a9557bab03e293340bb5713cb2b43d3888947560c0",
+          "git_blob_sha1": "d8dcb874118a3bd868e6752a560b3714435f9adb",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_elbow_link.STL",
+          "bytes": 1927134,
+          "sha256": "45e761a34c5570ec7b200a6b15cf6e5d7dfe61fea1497e1954e17140c3c400b1",
+          "git_blob_sha1": "c2fb8ec08d74f499ded8207d5383ae2979440f19",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_hip_pitch_link.STL",
+          "bytes": 882384,
+          "sha256": "cd12a399efb65721f3c75b73619971eafb26958367c30222ef3110bd4090a19d",
+          "git_blob_sha1": "d03b189d6a58b4b9fb67435ba1c192f1cfcfafd4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_hip_roll_link.STL",
+          "bytes": 1816834,
+          "sha256": "4ccc27044b9c274cd81dae6775a59036c6449bb3d64fb6ed70294f17046edcb8",
+          "git_blob_sha1": "d56f807e13e7c525e305be92dd969ac8b439f442",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_hip_yaw_link.STL",
+          "bytes": 1650784,
+          "sha256": "e6361ed133e72f2040c88529746d4c17a057d60b0e8d253318fc94bea514e129",
+          "git_blob_sha1": "5165689a6599d3d30954f7b1808452d84e08e45e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_knee_link.STL",
+          "bytes": 4138534,
+          "sha256": "878aa675f24ad2154265e72c4a3fbed65de041337dfe5c80c74f3333e6f6602a",
+          "git_blob_sha1": "bce1e9a10405fc05ff394fbe2cb4a127ca0ff40e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_shoulder_pitch_link.STL",
+          "bytes": 906184,
+          "sha256": "2c0eb4ed8ccd410dc2d7f6949829a59d05889ab27ea4944120e8689720e6c40b",
+          "git_blob_sha1": "fb8296caf65fcd39efb8f77a81e2d6dfdd644358",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_shoulder_roll_link.STL",
+          "bytes": 1201984,
+          "sha256": "41f6738917180d3aa62798f279e99f4d64ed57950d6138f8e249c7ca629444a9",
+          "git_blob_sha1": "4508ebffb03299bb2c7eee27d659c3d91001c7a5",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_shoulder_yaw_link.STL",
+          "bytes": 1027984,
+          "sha256": "4cfe28c2a31c5b7602c8546cac8fa491a97f1b88cbe579d48034bf857702adbb",
+          "git_blob_sha1": "dcf8e3f006b369e870e06313ef85ae34859e4eba",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_wrist_pitch_link.STL",
+          "bytes": 2032734,
+          "sha256": "da93046e7d2db4fa35a6bec6a77dce76819b1abcba799003e9cb7daf30d24b2c",
+          "git_blob_sha1": "b18af7b777fb2651734e62f92dd60bf8e587da10",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_wrist_roll_link.STL",
+          "bytes": 750484,
+          "sha256": "74462f873e4776f14601da7f72c35e9a9e2bf0cf060463bec207f46bad527ac8",
+          "git_blob_sha1": "ea2ef515a0c34a55f8d219213304c1649ec6969c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/left_wrist_yaw_link.STL",
+          "bytes": 1078134,
+          "sha256": "01f494bbe21b95a7308ea29c9ef7e08a6214515a93c5e2be307c6fa11b1f6a34",
+          "git_blob_sha1": "0076ad11071b57f67297ea927abbc7a8edeb27cd",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_ankle_pitch_link.STL",
+          "bytes": 63484,
+          "sha256": null,
+          "git_blob_sha1": "7c89f685eb9a964e7d2e47f9f498d2a87436818b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_ankle_roll_link.STL",
+          "bytes": 733034,
+          "sha256": "057843359003abc4e5ec0a9763833440c42b881f853c1ddbd3945bd1168ff947",
+          "git_blob_sha1": "d2eebaffc63a22dc101845db10ca1d64c7808cbe",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_elbow_link.STL",
+          "bytes": 1927534,
+          "sha256": "34c9eeeb41588fc9970940d4d82db73ee0c3881613d1a76f0c90421d3b7c8e81",
+          "git_blob_sha1": "60d60ee0eaa65d128722326b7b813ffdd0caadf7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_hip_pitch_link.STL",
+          "bytes": 884784,
+          "sha256": "a427e4c982b181623b8f322f45be08ebfc2f73abdf5492afb8728e0fefa80d83",
+          "git_blob_sha1": "1f9c56710e2c243376463fa5973101855b1f1e93",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_hip_roll_link.STL",
+          "bytes": 1815834,
+          "sha256": "52c5c2edb3e83aafdbc633ee10ff4c368993e6c889d6a560d75982da5cc9a799",
+          "git_blob_sha1": "4f9a1a1f1e4d4e3c54c6afc9998a1a1717ae2c7d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_hip_yaw_link.STL",
+          "bytes": 1796034,
+          "sha256": "7e792ca8795b4f44b7de1e2e8747a6c188c10fb8810b17f3269965dde27292bc",
+          "git_blob_sha1": "d23b5a8e765b27417a9fcac052fa288af9aacfc7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_knee_link.STL",
+          "bytes": 4129784,
+          "sha256": "ffe17fc9ba1614ae86610dc1b657461a3d1d70350729296c9210f68f3934d01d",
+          "git_blob_sha1": "a4a3701fa073d253d5b348cf70df826efc6b1721",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_shoulder_pitch_link.STL",
+          "bytes": 906634,
+          "sha256": "21ac44a4e038f09a7f0472490ee06c3ecb5c87cac51fdb645ad4382875235be0",
+          "git_blob_sha1": "c25eb77240567be8c279c10d518a2d268a37aa69",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_shoulder_roll_link.STL",
+          "bytes": 1272984,
+          "sha256": "4435df453ffe4325b6783d217081ec6360d52252ddb87b7f894434eb9e60c39b",
+          "git_blob_sha1": "d58dfe6b08c0f848462ca6f23cffacf5f8410f41",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_shoulder_yaw_link.STL",
+          "bytes": 1028484,
+          "sha256": "a88c4bce9e69979ae082de8420a031ca6772a4e0d08ab9f10af4b9617f4ec723",
+          "git_blob_sha1": "9f8dc5614296177950d0f04dc6caa10b420a94b5",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_wrist_pitch_link.STL",
+          "bytes": 2000784,
+          "sha256": "5cb2ffb0fcd5cb43c7757793ed187706f17c8efddb67ffe31a2c1067be660954",
+          "git_blob_sha1": "96152990ec26ed71a4312a49c10255b15c5bf788",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_wrist_roll_link.STL",
+          "bytes": 750134,
+          "sha256": "35632d2cc24533d8f86fa497928b7744e865b97d2477969173c6ea3e09d4bede",
+          "git_blob_sha1": "4cbca090eea39a5a0c17035fe7c1e05c0a9aca81",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/right_wrist_yaw_link.STL",
+          "bytes": 1080034,
+          "sha256": "9b91c81609e00ad96f0a360dbbad1d6df3c88193df11033773f7fa463675b6a6",
+          "git_blob_sha1": "9921ed93c71f0dd529a72951c48239f9338e86ef",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/waist_roll_link.STL",
+          "bytes": 741434,
+          "sha256": "500f00489349bf018bbf325d9ed67dd272629b5f37e734a82b141329a9d656df",
+          "git_blob_sha1": "c5d0a51f3cb2b31f9c40c1a8cc13ec2ad509ee8c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/meshes/waist_yaw_link.STL",
+          "bytes": 3406834,
+          "sha256": "36de51037852da450e75b86ef000d145e9e1b37e30925edd3e2307d5c2f449d3",
+          "git_blob_sha1": "ff1c44cfde0def45ffa21a6cd70cb4bbd51de569",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/model/mjcf/robot.xml",
+          "bytes": 31411,
+          "sha256": null,
+          "git_blob_sha1": "74ddba0d50974c0da0a477786e9715908c192126",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/basketball_shot.npz",
+          "bytes": 57793,
+          "sha256": "242b2cde2c6870f6073e5cdd9d727227de071712dd60d00661d3b69e919d5ada",
+          "git_blob_sha1": "4d5baa443aefbf1ad0c0a42feb0e5109d20fe1c6",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/bear_crawl.npz",
+          "bytes": 78446,
+          "sha256": "db75cdd1e6a53c94be644d6308c365504c6146d5fe36111670834aae13794d03",
+          "git_blob_sha1": "92225e3d0bed16c0234137c81a942fd699525712",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/boxing.npz",
+          "bytes": 97371,
+          "sha256": "c05daca8ac025b97b57a52934e85ed895b3f5c17e2d213eef41a8bc0c7a2260a",
+          "git_blob_sha1": "cdbfa0fa287c2d5a6064cce0157aa82b5ca84056",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/brisk_walk.npz",
+          "bytes": 99749,
+          "sha256": "2f4411c4824a50c3ed0e1ee53fb2490949340b7679167f81605947d77e5af06a",
+          "git_blob_sha1": "a85903ffc09fd3306d1716e4b24d70b425292007",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/front_kick.npz",
+          "bytes": 50614,
+          "sha256": "8d5a2aa4ab2a4e987461090fb644dd402733bee62e66a81bcd3adfa786c528af",
+          "git_blob_sha1": "339dd5bef60afe6a41a71b71dc28ff4e24f90733",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/high_jump.npz",
+          "bytes": 141095,
+          "sha256": "7b20bc6f9c1c6d21f552facee66a99e7c23cdc9b850e2375a253e2d867234966",
+          "git_blob_sha1": "7e11e27150c2961c55885638f13c8a42af4686e7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/jazz_dance.npz",
+          "bytes": 32949,
+          "sha256": "a7d79a560a9bb2ee48938de62e53726a81a74126de3ad46ac44524cfc36f16d2",
+          "git_blob_sha1": "0e617738172fa603a5474a9cbbdc8f8ac7275872",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/modern_dance_jump.npz",
+          "bytes": 25225,
+          "sha256": "899b59b5f166e8b4a272746b6b21613f70d794c71e1ab7bb308139b314e5c032",
+          "git_blob_sha1": "790627db54a19907e369b86ca88ba07eccd56d3a",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/push_up.npz",
+          "bytes": 38085,
+          "sha256": "39c3c0dc8f5f26d16f86098727b17d8227aa44d1dc004aad4982d6c98a8e8855",
+          "git_blob_sha1": "1b9f0bad37be08787bf0cba942513aafd9fc1ef5",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/run.npz",
+          "bytes": 85538,
+          "sha256": "3d4b51dad612e06aa71d89275e45a7f55f39deb22ca3773ce9bc96d6d998ef70",
+          "git_blob_sha1": "d6532a2dcf41f0fc8a8619050731a9051ff17d55",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/stand_to_prone.npz",
+          "bytes": 113777,
+          "sha256": "ef48b2ee01d9bf0dc5dd8044b9fe16d29a7beac094ddac8860f9f8ddd167ae02",
+          "git_blob_sha1": "24ef098bcd3415716e6773901b051792329aba20",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/standing_long_jump.npz",
+          "bytes": 93684,
+          "sha256": "87c633cfb3cdf9e715f96221d4401ad332c9786f9bb03e4f0448bd1c6b0568f3",
+          "git_blob_sha1": "aec3b2eb9d0ea3fcfb952d8aae413a68fece0003",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/sword.npz",
+          "bytes": 60955,
+          "sha256": "3a0b3e5526539f6c5b9352ae290232a3592f258edc421c0c49bd29117f32e378",
+          "git_blob_sha1": "9dd7e94603ddebdcc3a20eee62cbdd7f1383cfb0",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/motions/wave.npz",
+          "bytes": 142116,
+          "sha256": "661dc5638db89d8277d965c3d27aa065367d2c42d92a074da605e40daa18d4ef",
+          "git_blob_sha1": "e37680878aa66d40320d1468b8767bf14add2305",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/policy.safetensors",
+          "bytes": 36070832,
+          "sha256": "5e46723697325917530a6c89f8231190e8ef812ebb81b870778bcc22e9e7a4a2",
+          "git_blob_sha1": "9db7320e0ccab3201d1f3b65c95665041b0f4db7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "rp1/robot.glb",
+          "bytes": 32426988,
+          "sha256": "81c8546f82738335c3f5474d004d1aee1ed452a4b8ab097a859cdaec1cb01f09",
+          "git_blob_sha1": "3295a66203251f4a78f977927b301a9042ec777d",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r154-2026-11-22-four-primary-sources-after112.candidate.json",
+      "parameter_gate": {
+        "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+        "total_parameters": null,
+        "evidence_kind": "Three independent safetensors policy checkpoints contain no complete author-published total trained parameter census; header-only local census and model-specific code are not executed.",
+        "review_date": "2026-11-22",
+        "local_tensor_census_not_executed": true,
+        "note": "Three independent safetensors policy checkpoints contain no complete author-published total trained parameter census; header-only local census and model-specific code are not executed."
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 240,
+        "category": "R154_POST112_DISTINCT_LEARNED_STATE_OR_LEGAL_HOLD",
+        "scenario_status": "FUTURE_DISTRIBUTION_RESTRICTION_HYPOTHESIS_ONLY"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "LICENSE",
+          "NOTICE",
+          "README.md",
+          "asimov-1/config.json",
+          "asimov-1/model/LICENSE",
+          "asimov-1/model/NOTICE",
+          "asimov-1/model/meshes/left_ankle_pitch_link.STL",
+          "asimov-1/model/meshes/left_ankle_roll_link.STL",
+          "asimov-1/model/meshes/left_elbow_link.STL",
+          "asimov-1/model/meshes/left_hip_pitch_link.STL",
+          "asimov-1/model/meshes/left_hip_roll_link.STL",
+          "asimov-1/model/meshes/left_hip_yaw_link.STL",
+          "asimov-1/model/meshes/left_knee_link.STL",
+          "asimov-1/model/meshes/left_shoulder_pitch_link.STL",
+          "asimov-1/model/meshes/left_shoulder_roll_link.STL",
+          "asimov-1/model/meshes/left_shoulder_yaw_link.STL",
+          "asimov-1/model/meshes/left_wrist_yaw_link.STL",
+          "asimov-1/model/meshes/neck_pitch_link.STL",
+          "asimov-1/model/meshes/neck_yaw_link.STL",
+          "asimov-1/model/meshes/pelvis_link.STL",
+          "asimov-1/model/meshes/right_ankle_pitch_link.STL",
+          "asimov-1/model/meshes/right_ankle_roll_link.STL",
+          "asimov-1/model/meshes/right_elbow_link.STL",
+          "asimov-1/model/meshes/right_hip_pitch_link.STL",
+          "asimov-1/model/meshes/right_hip_roll_link.STL",
+          "asimov-1/model/meshes/right_hip_yaw_link.STL",
+          "asimov-1/model/meshes/right_knee_link.STL",
+          "asimov-1/model/meshes/right_shoulder_pitch_link.STL",
+          "asimov-1/model/meshes/right_shoulder_roll_link.STL",
+          "asimov-1/model/meshes/right_shoulder_yaw_link.STL",
+          "asimov-1/model/meshes/right_wrist_yaw_link.STL",
+          "asimov-1/model/meshes/waist_yaw_link.STL",
+          "asimov-1/model/xml/asimov_1_25dof.xml",
+          "asimov-1/motions/basketball_shot.npz",
+          "asimov-1/motions/bear_crawl.npz",
+          "asimov-1/motions/boxing.npz",
+          "asimov-1/motions/brisk_walk.npz",
+          "asimov-1/motions/front_kick.npz",
+          "asimov-1/motions/high_jump.npz",
+          "asimov-1/motions/jazz_dance.npz",
+          "asimov-1/motions/modern_dance_jump.npz",
+          "asimov-1/motions/push_up.npz",
+          "asimov-1/motions/run.npz",
+          "asimov-1/motions/stand_to_prone.npz",
+          "asimov-1/motions/standing_long_jump.npz",
+          "asimov-1/motions/sword.npz",
+          "asimov-1/motions/wave.npz",
+          "asimov-1/policy.safetensors",
+          "asimov-1/robot.glb",
+          "assets/cartwheel-control.mp4",
+          "g1/config.json",
+          "g1/model/LICENSE",
+          "g1/model/NOTICE",
+          "g1/model/assets/head_link.STL",
+          "g1/model/assets/left_ankle_pitch_link.STL",
+          "g1/model/assets/left_ankle_roll_link.STL",
+          "g1/model/assets/left_elbow_link.STL",
+          "g1/model/assets/left_hip_pitch_link.STL",
+          "g1/model/assets/left_hip_roll_link.STL",
+          "g1/model/assets/left_hip_yaw_link.STL",
+          "g1/model/assets/left_knee_link.STL",
+          "g1/model/assets/left_rubber_hand.STL",
+          "g1/model/assets/left_shoulder_pitch_link.STL",
+          "g1/model/assets/left_shoulder_roll_link.STL",
+          "g1/model/assets/left_shoulder_yaw_link.STL",
+          "g1/model/assets/left_wrist_pitch_link.STL",
+          "g1/model/assets/left_wrist_roll_link.STL",
+          "g1/model/assets/left_wrist_yaw_link.STL",
+          "g1/model/assets/logo_link.STL",
+          "g1/model/assets/pelvis.STL",
+          "g1/model/assets/pelvis_contour_link.STL",
+          "g1/model/assets/right_ankle_pitch_link.STL",
+          "g1/model/assets/right_ankle_roll_link.STL",
+          "g1/model/assets/right_elbow_link.STL",
+          "g1/model/assets/right_hip_pitch_link.STL",
+          "g1/model/assets/right_hip_roll_link.STL",
+          "g1/model/assets/right_hip_yaw_link.STL",
+          "g1/model/assets/right_knee_link.STL",
+          "g1/model/assets/right_rubber_hand.STL",
+          "g1/model/assets/right_shoulder_pitch_link.STL",
+          "g1/model/assets/right_shoulder_roll_link.STL",
+          "g1/model/assets/right_shoulder_yaw_link.STL",
+          "g1/model/assets/right_wrist_pitch_link.STL",
+          "g1/model/assets/right_wrist_roll_link.STL",
+          "g1/model/assets/right_wrist_yaw_link.STL",
+          "g1/model/assets/torso_link_rev_1_0.STL",
+          "g1/model/assets/waist_roll_link_rev_1_0.STL",
+          "g1/model/assets/waist_yaw_link_rev_1_0.STL",
+          "g1/model/g1.xml",
+          "g1/motions/basketball_shot.npz",
+          "g1/motions/bear_crawl.npz",
+          "g1/motions/boxing.npz",
+          "g1/motions/brisk_walk.npz",
+          "g1/motions/front_kick.npz",
+          "g1/motions/high_jump.npz",
+          "g1/motions/jazz_dance.npz",
+          "g1/motions/modern_dance_jump.npz",
+          "g1/motions/push_up.npz",
+          "g1/motions/run.npz",
+          "g1/motions/stand_to_prone.npz",
+          "g1/motions/standing_long_jump.npz",
+          "g1/motions/sword.npz",
+          "g1/motions/wave.npz",
+          "g1/policy.safetensors",
+          "g1/robot.glb",
+          "rp1/config.json",
+          "rp1/model/NOTICE",
+          "rp1/model/meshes/base_link.STL",
+          "rp1/model/meshes/left_ankle_pitch_link.STL",
+          "rp1/model/meshes/left_ankle_roll_link.STL",
+          "rp1/model/meshes/left_elbow_link.STL",
+          "rp1/model/meshes/left_hip_pitch_link.STL",
+          "rp1/model/meshes/left_hip_roll_link.STL",
+          "rp1/model/meshes/left_hip_yaw_link.STL",
+          "rp1/model/meshes/left_knee_link.STL",
+          "rp1/model/meshes/left_shoulder_pitch_link.STL",
+          "rp1/model/meshes/left_shoulder_roll_link.STL",
+          "rp1/model/meshes/left_shoulder_yaw_link.STL",
+          "rp1/model/meshes/left_wrist_pitch_link.STL",
+          "rp1/model/meshes/left_wrist_roll_link.STL",
+          "rp1/model/meshes/left_wrist_yaw_link.STL",
+          "rp1/model/meshes/right_ankle_pitch_link.STL",
+          "rp1/model/meshes/right_ankle_roll_link.STL",
+          "rp1/model/meshes/right_elbow_link.STL",
+          "rp1/model/meshes/right_hip_pitch_link.STL",
+          "rp1/model/meshes/right_hip_roll_link.STL",
+          "rp1/model/meshes/right_hip_yaw_link.STL",
+          "rp1/model/meshes/right_knee_link.STL",
+          "rp1/model/meshes/right_shoulder_pitch_link.STL",
+          "rp1/model/meshes/right_shoulder_roll_link.STL",
+          "rp1/model/meshes/right_shoulder_yaw_link.STL",
+          "rp1/model/meshes/right_wrist_pitch_link.STL",
+          "rp1/model/meshes/right_wrist_roll_link.STL",
+          "rp1/model/meshes/right_wrist_yaw_link.STL",
+          "rp1/model/meshes/waist_roll_link.STL",
+          "rp1/model/meshes/waist_yaw_link.STL",
+          "rp1/model/mjcf/robot.xml",
+          "rp1/motions/basketball_shot.npz",
+          "rp1/motions/bear_crawl.npz",
+          "rp1/motions/boxing.npz",
+          "rp1/motions/brisk_walk.npz",
+          "rp1/motions/front_kick.npz",
+          "rp1/motions/high_jump.npz",
+          "rp1/motions/jazz_dance.npz",
+          "rp1/motions/modern_dance_jump.npz",
+          "rp1/motions/push_up.npz",
+          "rp1/motions/run.npz",
+          "rp1/motions/stand_to_prone.npz",
+          "rp1/motions/standing_long_jump.npz",
+          "rp1/motions/sword.npz",
+          "rp1/motions/wave.npz",
+          "rp1/policy.safetensors",
+          "rp1/robot.glb"
+        ],
+        "original_publisher_revision": "24fc279af8f70097f503767b81db5384d779aae5",
+        "distinct_policy_files": [
+          "asimov-1/policy.safetensors",
+          "g1/policy.safetensors",
+          "rp1/policy.safetensors"
+        ],
+        "model_and_mesh_licenses_separate": true,
+        "RP1_third_party_upstream_license_missing": true,
+        "no_hardware_robot_claim": true,
+        "owner_live_hash_rechecked_by_this_research": false,
+        "full_offline_reconstruction_verified": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 304057444,
+        "publisher_selected_source_bytes": 304057444,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false
     }
   ],
-  "added_assets": [
-    "mistralai/Timestral-5M",
-    "tencent/WeMM-Video-2B",
-    "abacusai/Smaug-Uncensored"
-  ],
-  "removed_assets": [],
-  "changed_prior_decisions": [],
-  "source_manifests": [
-    "manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json",
-    "manifests/drafts/r153-2026-11-22-smaug-qwen-hash-reuse-and-atomic-lora.candidate.json"
-  ],
-  "ledger112": "catalog/execution/2026-11-19-acquisition-ledger.json",
-  "old236_unchanged": true,
-  "no_new_payload_downloads": true,
-  "new_download_approvals": 0
+  "added_assets": 4,
+  "added_active": 3,
+  "removed_assets": 0,
+  "changed_prior_decisions": 0,
+  "already_112_acquired_two_original_publisher_bytes": 6611554027,
+  "one_new_small_uncensored_adapter_publisher_bytes_unapproved": 6165749,
+  "cartwheel_rare_3_policy_source_held_bytes": 304057444,
+  "new_publisher_model_file_refs_combined": 203,
+  "main_source_manifest": "manifests/drafts/r154-2026-11-22-four-primary-sources-after112.candidate.json",
+  "new_kitten_int8_eight_immutable_publisher_deltas": "catalog/research/2026-11-22-r154-pico-eight-int8-extra-publisher-sha.json",
+  "already_acquired_two_not_retransferred": true,
+  "source_research_not_user_legal_approval": true,
+  "owner_actual_D_rehashed": false,
+  "all_previous236_assets_immutable": true,
+  "new_weight_payload_downloaded": 0,
+  "new_approved_downloads_added": 0,
+  "custom_model_code_executed": 0
 }

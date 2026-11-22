@@ -1,9 +1,3 @@
-**R153／現行v65（2026-11-22）—112取得報告とモデルIDを統合、無検閲Smaug DPOを正式CONDITIONAL追加**：[239資産／192有効（SELECT55／CONDITIONAL137）](catalog/CURRENT.json)。[判断・根拠](docs/strategy/153-v65-112ledger-smaug-shards.md)／[Smaug18重量SHAの16差分・2親一致/AtomicChat LoRA研究HOLD](manifests/drafts/r153-2026-11-22-smaug-qwen-hash-reuse-and-atomic-lora.candidate.json)／[既取得Timestral5M・WeMM 33files](manifests/drafts/r150-2026-11-22-wemm-timestral5m-publisher-fixed.candidate.json)／[192候補非実行キュー](queues/proposed-v65-2026-11-22.json)。旧236件変更0、112取得報告全ID登録、モデル新規ダウンロード・承認・既存削除0、owner D現物再ハッシュ未実施。
-
-**最新R153（2026-11-22）**：正本v64は236登録/189有効のまま。取得実行報告は[112モデル・1,714ファイル・約2.021TB](catalog/execution/2026-11-19-acquisition-ledger.json)。旧R152の未承認13候補は全件この取得報告に同一revision/file/byteで一致したため再取得候補から除外。次の[新4系統・研究用未承認source約1.505GBと別HOLD1件](queues/proposed-v64-r153-after112-next-originals-UNAPPROVED.json)／[全根拠と原本選定](docs/strategy/153-v64-post112-next-small-rare-originals-and-no-repeat.md)を参照。未登録の取得報告済みTimestral-5M/WeMMは次の正式catalog審査対象。**これはユーザーDの独立SHA・本人ライセンス承認・完全オフライン復元ではない**。`queues/approved.json`は空、新規weight DL・owner変更・既存削除0。
-
----
-
 **R151／現行v64（2026-11-22）—非生成マルチモーダル確率判定Bison原本1件CONDITIONAL追加**：[236登録／189有効 (SELECT55/CONDITIONAL134)](catalog/CURRENT.json)。[Bison全16ファイルとLFS SHA](manifests/drafts/r151-2026-11-22-baseten-bison-and-groundhog-frozen.candidate.json)・[新モデルとGroundhog/Ayb比較](docs/strategy/151-v64-baseten-decision-original-selection-and-drift.md)・[取得後の次期13＋1研究source](queues/proposed-v64-r152-post99-13-plus-bison-research-only.json)。新原本は公開元65.398GBの研究用固定ソース、ダウンロード実行は**未承認**。既存99の重複再取得・無断承認・owner Windows D更新0。歴史的v63以前は以下。
 
 
@@ -18,6 +12,13 @@
 **R149／v63（2026-11-22）—既取得99モデルを除外した11原本の厳密優先順位・新規特殊5件の研究監視**：[固定済み11原本と追加候補の判断](docs/strategy/149-v63-post99-prioritization-and-novel-specialists.md)／[11source・5watchlistの非実行順位表](queues/proposed-v63-r150-prioritized-sources-and-watchlist.json)／[調査の静的証拠](catalog/research/2026-11-22-r149-post99-compact-and-rare-source-screen.json)。**正本v63／235登録・188有効、既存99件の再取得0、approved0、今回の新規重量DL0・新規正式資産0**。小型独立原本（Kitten Pico・Aurora2・InternDecision）→Cactus/Timestral独立ゲート→LFM Heretic親子→動画依存大型→Ripple保留。新規watchlist5件は不変Publisherファイル未固定のため研究だけ。以下のR148は正本の直前の更新履歴。
 
 # Local Model Portfolio
+
+# 現行v65／R154（2026-11-22）：112取得報告IDを完全照合し、超小型・無検閲LoRAと3ロボット制御sourceを審査
+
+唯一の正本[CURRENT](catalog/CURRENT.json)→**240登録／192有効（SELECT56、CONDITIONAL136）**。旧236項目全件不変。[Timestral-5MとWeMM-Video-2Bを取得報告再DL0で正式収録、Heretic rank3 LoRA2 stateを条件付き、Cartwheel policy3件はRP1第三者権利でHOLD](docs/strategy/154-v65-post112-backfill-small-heretic-and-robot-rights.md)。[4原本203ファイル固定](manifests/drafts/r154-2026-11-22-four-primary-sources-after112.candidate.json)。Kitten Picoの[追加INT8 8件SHA](catalog/research/2026-11-22-r154-pico-eight-int8-extra-publisher-sha.json)は別学習結果と断定しない。112モデル／1,714files／2.021TBは取得台帳報告でowner Dの今回独立SHAではない。[次期未承認差分キュー](queues/proposed-v65-r155-after112-unapproved-source-scopes.json)。承認0、重量DL0、ユーザーD変更0、未審査コード実行0、Gated回避0。mainのみ。
+
+---
+
 
 **R150／v63維持（2026-11-22）—取得済み99報告後の11原本再選定・小型4件の正確な未承認審査順**：[全11件の機械可読採否・無検閲LFM3親/編集ペア審査繰上げ](catalog/decisions/2026-11-22-r150-v63-post99-reselection.json)／[初回4配布元54ファイル2,234,744,280byte・SHA参照29件の未承認審査キュー](queues/proposed-v63-r150-first-four-UNAPPROVED.json)／[実体・依存・KittenTTS 1.7BライセンスHOLD・規制事実を分離した監査](docs/strategy/150-v63-post99-reselection-and-four-source-review.md)。既存v63の235登録・188有効（SELECT55／CONDITIONAL133）と99件VERIFIED取得**報告**は不変更。先行4件を静的source審査、次に無検閲LFM3-VL-2Bの親＋Heretic編集済み別重量ペアを共に審査。Apple FastFrames単体は追加17.567GB依存未確認のため復元READYではない。KittenML/kitten-tts-2（1.7B）はStellon Labsモデル専用ライセンスと全原本依存未閉包につき研究HOLD。**ユーザー所有媒体の現物SHA再測定0、新重量取得0、取得承認0、既存ファイル削除0。** 旧R148以下は履歴。
 
