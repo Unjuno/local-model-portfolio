@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "ledger_id": "2026-11-19-v48-execution",
-  "generated_at": "2026-11-21T21:26:46.130850+00:00",
+  "generated_at": "2026-11-22T00:17:07.615508+00:00",
   "canonical_revision": "v48-20261118",
   "source_plan": "queues/proposed-v48-r113-source-pinned-15.json",
   "policy": {
@@ -14,14 +14,14 @@
     "unclear_license": "HOLD"
   },
   "summary": {
-    "models_total": 110,
-    "models_verified": 109,
+    "models_total": 113,
+    "models_verified": 112,
     "models_partial": 0,
     "models_failed": 0,
     "models_held": 1,
-    "files_verified_total": 1665,
-    "bytes_verified_total": 1948538480799,
-    "minimum_free_bytes_observed": 1098749452288,
+    "files_verified_total": 1714,
+    "bytes_verified_total": 2020548143087,
+    "minimum_free_bytes_observed": 1026731790336,
     "minimum_free_floor_bytes": 200000000000,
     "free_floor_maintained": true
   },
@@ -4288,6 +4288,195 @@
       "started_at": "2026-11-21T20:35:36.863103+00:00",
       "finished_at": "2026-11-21T21:26:01.915983+00:00",
       "free_bytes_after": 1098749452288
+    },
+    {
+      "repo_id": "mistralai/Timestral-5M",
+      "revision_sha": "bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f",
+      "source_manifest": "local-discovered/v64-mistralai__Timestral-5M.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "other",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 20854471,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 5,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "7ace108c4987e7f2a99a75a445240019d1d31c2117139d1bd05ffdfd25aca738"
+        }
+      ],
+      "started_at": "2026-11-21T21:29:12.160765+00:00",
+      "finished_at": "2026-11-21T21:29:19.661542+00:00",
+      "free_bytes_after": 1098728382464
+    },
+    {
+      "repo_id": "tencent/WeMM-Video-2B",
+      "revision_sha": "821690998399cac0f55bb7f7f805ebafa650c3a4",
+      "source_manifest": "local-discovered/v64-tencent__WeMM-Video-2B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 27,
+      "files_verified": 27,
+      "source_bytes": 6590699556,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 2,
+        "sha256-vs-publisher": 25
+      },
+      "file_status_counts": {
+        "VERIFIED": 27
+      },
+      "weight_files_sha256": [
+        {
+          "path": "LICENSE",
+          "sha256": "bac4d42ddebadb11e405fc4de2335579e67676362ac870108012ab4899ef1e5b"
+        },
+        {
+          "path": "README.md",
+          "sha256": "85fc7289e31dfee3bbcd8af57871a18f97b50b403f92423a8c0347ac0572efdb"
+        },
+        {
+          "path": "README_PROCESSOR.md",
+          "sha256": "5cf26c5a561880138295ce9921c270e1a4c5ca7ac11b489b83fb9c8acbebaf37"
+        },
+        {
+          "path": "chat_template.jinja",
+          "sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80"
+        },
+        {
+          "path": "config.json",
+          "sha256": "ffdb6cd49251e49f27adf229acae2cf474053b59f629cd516d6825d324366e7b"
+        },
+        {
+          "path": "configuration_wemm.py",
+          "sha256": "43ee3ec8477c6677f06835a893a146d18024aea0145086ceca3b6039e2d91887"
+        },
+        {
+          "path": "generation_config.json",
+          "sha256": "b91f22ecb30192b6919660eb61c01d7602f93ff6764556b1991c71fbe9ca82e6"
+        },
+        {
+          "path": "h5_modeling_bert.py",
+          "sha256": "b2eac797422294be10295c27f5709c8fda362c55d6f476dcebfd5f38aa65c6dd"
+        },
+        {
+          "path": "h5_modeling_whisper.py",
+          "sha256": "b507884daee13857c17d2d97290183e71a5a1044253a49c5a9cb109ba3332907"
+        },
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "2c05a5a88d893d867252b634de82ad03690f3186c6c93004b967c228daa28072"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "331cd6f66e76e99e1d5060acdeb6e8ccfe35cf86e6d486ed2a4ad6159466ceec"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "sha256": "56192ed969c18b52bd53e3b4eb241dee68c4b02c43aaa797d269ddb0b290f99a"
+        },
+        {
+          "path": "modeling_wemm.py",
+          "sha256": "30c9e34d16f4b3720410c47034b2b807a3686c88f4558d5aab6c102fc1db0bde"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+        },
+        {
+          "path": "processing_wemm.py",
+          "sha256": "8f907439e011c47293a851e28efec1501c36b862ba8c04784d23a0a4a5aa36a8"
+        },
+        {
+          "path": "processor_config.json",
+          "sha256": "8bc32c6b513528a11f5bbffcf39fcc93ffebf361f725a829d153565f2f7f70c7"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "510fd6ff51823f6b1c820595b5eed750b8ff0ee85961d2f330623b3cf5ff4019"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "sha256": "83febe739ecefd99f984f546dfdc10149cedf293b9ee0291b99894341188b613"
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+        },
+        {
+          "path": "wemm-video-architecture.png",
+          "sha256": "9902c081a70abeaacf34c898c86c44587eebe0fd62f1923225d1726766eb0a7a"
+        },
+        {
+          "path": "wemm-video-capabilities-compact.png",
+          "sha256": "57d892abb395c639078b49ecf317698f038303adf1fc976ddf13ff9e9273c77f"
+        },
+        {
+          "path": "wemm_media.py",
+          "sha256": "2e4b427e3ddabc526f7984066a982bfa7c0a4d56f3d7c979fc41651463461122"
+        },
+        {
+          "path": "wemm_video_policy.py",
+          "sha256": "5a08358f04b011c401d6355cf396caebae4536442df76ae17dc89470c2b1a50e"
+        },
+        {
+          "path": "wemm_zip.py",
+          "sha256": "016d7a2bc9b50cf2bed2e901d7ec445260eff890751e94683c8fac0be09eecdb"
+        },
+        {
+          "path": "wemm_zip_policy.py",
+          "sha256": "f4029f5015cf6342da1bfacaa6b4847d7f20ca450019ff7bc5f4ad899e3706c8"
+        }
+      ],
+      "started_at": "2026-11-21T21:29:19.815588+00:00",
+      "finished_at": "2026-11-21T21:40:48.376359+00:00",
+      "free_bytes_after": 1092136427520
+    },
+    {
+      "repo_id": "baselabs/bison-1",
+      "revision_sha": "bf8350b2c59eb6c36e95d02a2af870aec18724a7",
+      "source_manifest": "local-discovered/v64-baselabs__bison-1.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "other",
+      "files_total": 16,
+      "files_verified": 16,
+      "source_bytes": 65398108261,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 16
+      },
+      "weight_files_sha256": [
+        {
+          "path": "assets/banner.png",
+          "sha256": "86fbe04c379f6cab025bdbd304b11d1c31e99158cdbd19dfc8fa77c283cdef28"
+        },
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "55b01d0ec3e7e36547a32544d013ece6ff0cf4447be0f2444ad46452422fc5e7"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "1d9f8e96e15b50c160a3f5dc69d40daf579ced5c62b628a6c7328b808f40bb62"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+        }
+      ],
+      "started_at": "2026-11-21T21:40:48.630926+00:00",
+      "finished_at": "2026-11-22T00:16:24.149901+00:00",
+      "free_bytes_after": 1026731790336
     },
     {
       "repo_id": "mistralai/Mistral-Small-4-119B-2603",

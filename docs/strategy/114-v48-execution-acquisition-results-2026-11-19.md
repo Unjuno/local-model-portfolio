@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 110 (verified 109, partial 0, failed 0, held 1)
-- Verified files: 1665
-- Verified source bytes: 1948538480799
-- Minimum observed free bytes: 1098749452288 (200 GB floor maintained: True)
+- Models: 113 (verified 112, partial 0, failed 0, held 1)
+- Verified files: 1714
+- Verified source bytes: 2020548143087
+- Minimum observed free bytes: 1026731790336 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -115,6 +115,9 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `saidutta69/LFM3-VL-2B-heretic` | `f4cf2cfb5b1289ca4ca10c6c71eb17d147c8c795` | VERIFIED | 25/25 | other |
 | `OpenMOSS-Team/MOSS-VL-Realtime` | `d1f71a588deaf2b9b9cea7c6fff66cb10847cc86` | VERIFIED | 20/20 | apache-2.0 |
 | `nvidia/Cosmos3-Nano-Sim-Transfer` | `45510d5b8cefa338b7abc01eb702cf1e9cdf6742` | VERIFIED | 44/44 | other |
+| `mistralai/Timestral-5M` | `bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f` | VERIFIED | 6/6 | other |
+| `tencent/WeMM-Video-2B` | `821690998399cac0f55bb7f7f805ebafa650c3a4` | VERIFIED | 27/27 | apache-2.0 |
+| `baselabs/bison-1` | `bf8350b2c59eb6c36e95d02a2af870aec18724a7` | VERIFIED | 16/16 | other |
 | `mistralai/Mistral-Small-4-119B-2603` | `a11f36bebf709121056b1dbcc943d1c6afbe494d` | VERIFIED | 21/21 | apache-2.0 |
 | `Qwen/Qwen3-Coder-Next` | `a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb` | VERIFIED | 49/49 | apache-2.0 |
 | `Wan-AI/Wan2.2-TI2V-5B` | `921dbaf3f1674a56f47e83fb80a34bac8a8f203e` | VERIFIED | 23/23 | apache-2.0 |
