@@ -1,3 +1,5 @@
+**R156／現行v65追補（2026-11-22）—旧v64の無断承認生成を修正し、Toto4MとKitten Pico INT8差分を固定**：[安全修正と採否・検証](docs/strategy/156-v65-after112-toto-pico-qad-and-synthetic-v64-approval-repair.md)／[Toto7file＋Pico追加INT8 8fileの公開元SHA・参照量81,355,672byte](manifests/drafts/r156-2026-11-22-toto4m-pico8-post112-publisher-source.candidate.json)／[取得未承認の差分研究キュー](queues/proposed-v65-r156-toto4m-pico8-UNAPPROVED.json)。旧R152の13source（140,553,833,221byte）は112件取得報告で既に検証済みのため重複取得しない。旧`build_v64_plan.py`の`approved_by_user:true`偽装を排除し、旧承認refも実行器で停止。正式v65 **240登録／192有効（SELECT56、CONDITIONAL136）**は不変更。今回の重量DL・取得承認・ユーザーD現物変更は0、実ディスク独立SHA／法的利用許諾／実機推論は未検証。以下R154以前は履歴。 
+
 **R151／現行v64（2026-11-22）—非生成マルチモーダル確率判定Bison原本1件CONDITIONAL追加**：[236登録／189有効 (SELECT55/CONDITIONAL134)](catalog/CURRENT.json)。[Bison全16ファイルとLFS SHA](manifests/drafts/r151-2026-11-22-baseten-bison-and-groundhog-frozen.candidate.json)・[新モデルとGroundhog/Ayb比較](docs/strategy/151-v64-baseten-decision-original-selection-and-drift.md)・[取得後の次期13＋1研究source](queues/proposed-v64-r152-post99-13-plus-bison-research-only.json)。新原本は公開元65.398GBの研究用固定ソース、ダウンロード実行は**未承認**。既存99の重複再取得・無断承認・owner Windows D更新0。歴史的v63以前は以下。
 
 
