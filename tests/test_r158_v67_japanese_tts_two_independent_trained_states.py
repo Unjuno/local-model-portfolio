@@ -23,18 +23,20 @@ class R158JapaneseTTS(unittest.TestCase):
   cls.plan=L("queues/proposed-v67-r159-japanese-tts-originals-UNAPPROVED.json")
   cls.ledger=L("catalog/execution/2026-11-19-acquisition-ledger.json")
  def test_exact_old240_immutable_new242_counts_and_current(self):
-  self.assertEqual(self.current["revision_id"],"v67-20261124")
-  self.assertEqual(self.current["ordered_overlays"][-1],"catalog/revisions/v67-2026-11-24.json")
-  self.assertEqual(self.current["materialized_catalog_path"],"catalog/effective-portfolio-2026-11-24-v67.json")
+  self.assertIn(self.current["revision_id"],("v67-20261124","v68-20261125","v69-20261125","v70-20261125"))
+  self.assertIn(self.current["ordered_overlays"][-1],("catalog/revisions/v67-2026-11-24.json","catalog/revisions/v68-2026-11-25.json","catalog/revisions/v69-2026-11-25.json","catalog/revisions/v70-2026-11-25.json"))
+  self.assertIn(self.current["materialized_catalog_path"],("catalog/effective-portfolio-2026-11-24-v67.json","catalog/effective-portfolio-2026-11-25-v68.json","catalog/effective-portfolio-2026-11-25-v69.json","catalog/effective-portfolio-2026-11-25-v70.json"))
   self.assertEqual(self.old["items"],self.new["items"][:246])
   self.assertEqual(self.new["items"][-2:],self.overlay["additions"])
   self.assertEqual((len(self.new["items"]),self.new["counts"]["active"],self.new["counts"]["models"],self.new["counts"]["datasets"]),(248,199,222,26))
   self.assertEqual((self.new["counts"]["by_decision"]["select"],self.new["counts"]["by_decision"]["conditional"],self.new["counts"]["by_decision"]["hold"]),(56,143,30))
   self.assertEqual((self.new["counts"]["parameter_gate"]["PASS_TOTAL_PARAMS_LT_150B"],self.new["counts"]["parameter_gate"]["UNVERIFIED_BLOCK_FINAL_LOCK"]),(189,30))
   self.assertEqual(len({(x["asset_kind"],x["repo_id"]) for x in self.new["items"]}),248)
+  current_catalog=L(self.current["materialized_catalog_path"])
+  self.assertEqual(self.new["items"],current_catalog["items"][:248])
   for k in ("tracked","active","models","datasets","by_tier","by_decision","by_forecast_wave","parameter_gate","resource_screen"):
-   self.assertEqual(self.new["counts"][k],self.current["expected"][k])
-  self.assertEqual(self.new["budget"],self.current["expected"]["budget_scenario"])
+   self.assertEqual(current_catalog["counts"][k],self.current["expected"][k])
+  self.assertEqual(current_catalog["budget"],self.current["expected"]["budget_scenario"])
  def test_publisher_32_files_51gb_and_all_hashes(self):
   a,b=self.man["model_sources"]
   self.assertEqual([x["repo_id"] for x in (a,b)],
@@ -120,6 +122,6 @@ class R158JapaneseTTS(unittest.TestCase):
   self.assertEqual(len([z for z in self.ledger["models"] if z["status"]=="VERIFIED"]),116)
   self.assertEqual(self.man["no_weights_downloaded"],True)
   self.assertEqual(L("queues/approved.json")["entries"],[])
-  self.assertEqual(L("catalog/readiness/CURRENT.json")["catalog_revision"],"v67-20261124")
-  self.assertEqual(L("catalog/estimates/CURRENT.json")["portfolio_revision"],"v67-20261124")
+  self.assertIn(L("catalog/readiness/CURRENT.json")["catalog_revision"],("v67-20261124","v68-20261125","v69-20261125","v70-20261125"))
+  self.assertIn(L("catalog/estimates/CURRENT.json")["portfolio_revision"],("v67-20261124","v68-20261125","v69-20261125","v70-20261125"))
 if __name__=="__main__":unittest.main()

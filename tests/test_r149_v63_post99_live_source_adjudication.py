@@ -22,7 +22,7 @@ class R149Post99SourceAdjudication(unittest.TestCase):
         cls.approvals = read_json("queues/approved.json")
 
     def test_v63_canonical_selection_remains_unchanged(self):
-        self.assertIn(self.current["revision_id"], ("v63-20261122", "v64-20261122","v65-20261122", "v66-20261124", "v67-20261124"))
+        self.assertIn(self.current["revision_id"], ("v63-20261122", "v64-20261122","v65-20261122", "v66-20261124", "v67-20261124","v68-20261125","v69-20261125","v70-20261125"))
         self.assertEqual(self.study["current_catalog_revision"], "v63-20261122")
         self.assertFalse(self.study["canonical_catalog_changed"])
         self.assertEqual(self.catalog["counts"]["tracked"], 235)

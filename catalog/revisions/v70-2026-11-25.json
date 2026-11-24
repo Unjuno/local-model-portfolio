@@ -1,0 +1,505 @@
+{
+  "schema_version": 1,
+  "revision_id": "v70-20261125",
+  "previous_revision_id": "v69-20261125",
+  "decision_date_jst": "2026-11-25",
+  "target_branch": "main",
+  "kind": "TWO_SMALL_TRAINED_ORIGINALS_CONDITIONAL_ONE_SALA_UNTRUSTED_RUNTIME_HOLD",
+  "previous_asset_count": 255,
+  "previous_active_count": 206,
+  "additions": [
+    {
+      "position": 256,
+      "asset_kind": "model",
+      "repo_id": "openbmb/MiniCPM5-1B",
+      "url": "https://huggingface.co/openbmb/MiniCPM5-1B",
+      "group": "超小型RL・OPD後学習済み1.08Bコード・ツールagent原本",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Independent 1,080,632,832-element official MiniCPM5-1B final trained state. Distinct in weights from official 2B final and 1B Base/SFT; 2.171GB native full source is a size-constrained learned-outcome preservation tranche.",
+      "quality_positive": "Publisher reports strong coding/tool agent and +16 mean evaluation points from RL+OPD vs earlier stage. Model native LlamaForCausalLM, publisher Apache-2.0 statement; 11 source files pinned at 40-digit revision. Not independently benchmarked.",
+      "quality_negative": "Same MiniCPM5 family as already v68-selected 2B; incremental coverage not independently measured. Long context 131072 advertised but KV cache, user CPU/GPU, SGLang tool parser and owner license acts unverified.",
+      "risk_and_alternative_assessment": "No demonstrated near-term restriction of 1B weights. Retain independent low-footprint original; do not duplicate format-converted GGUF/MLX; early 1B SFT/Base preserve metadata only.",
+      "evidence_date": "2026-11-25",
+      "evidence_kind": "PUBLISHER_IMMUTABLE_HUGGINGFACE_PUBLIC_GIT_OID_AND_LFS_SHA_METADATA_ONLY_NOT_OWNER_LOCAL_HASH",
+      "evidence_urls": [
+        "https://huggingface.co/openbmb/MiniCPM5-1B/tree/ac83f813ba7da263c51a9f3ec37c2072597e54af",
+        "https://github.com/Unjuno/local-model-portfolio/blob/main/manifests/drafts/r161-2026-11-25-three-novel-small-dspark-sala-origins.candidate.json"
+      ],
+      "observed_access": "Public ungated model repo at exact SHA; account-specific owner legal actions not reviewed.",
+      "license_metadata": "Apache-2.0 claimed by first-party model card; model repository LICENSE may not be present; owner legal acts not signed off",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "ac83f813ba7da263c51a9f3ec37c2072597e54af",
+      "upstream_all_files_bytes_observed": 2171355218,
+      "upstream_file_count_observed": 11,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 11,
+      "candidate_selected_source_file_bytes": 2171355218,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": null,
+          "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README-cn.md",
+          "bytes": 22108,
+          "sha256": null,
+          "git_blob_sha1": "52b47670880934fea125d9e5ab4f7cf8b4379dc8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 23436,
+          "sha256": null,
+          "git_blob_sha1": "e439dd1170af4d05c75dfe5887d7c58b41ac7cd6",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 9062,
+          "sha256": null,
+          "git_blob_sha1": "cb2934c459c6eff41b15e45bd6adc13c93846259",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 726,
+          "sha256": null,
+          "git_blob_sha1": "e088beb7e7343bc5620ecd7618cebd255516879b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 213,
+          "sha256": null,
+          "git_blob_sha1": "73dc79c289226ae520cef51a057667aa3d958094",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00000-of-00001.safetensors",
+          "bytes": 2161290912,
+          "sha256": "7ab8fd86563125929be78aeec8cb3969c7ed2ead3be1ab9d3ec0a9fa69c8660d",
+          "git_blob_sha1": "5a60719cf790dfe174d53390b379b671d52ed434",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 18004,
+          "sha256": null,
+          "git_blob_sha1": "cf879b05899b5bc495992c2a7759b283957e573c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 551,
+          "sha256": null,
+          "git_blob_sha1": "492d4b2966a1763442d426d880dbc29f94906e4c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 9894271,
+          "sha256": null,
+          "git_blob_sha1": "ec0bf9a34dc884738494ed1f74d0c5327b06d690",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 94416,
+          "sha256": null,
+          "git_blob_sha1": "2a7bb43f24b04fc8e733b3af8c4ce73eaa974e9a",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r161-2026-11-25-three-novel-small-dspark-sala-origins.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 1080632832,
+        "evidence_kind": "First-party HF safetensors element census, not owner independent tensor count; supplemental learned runtime dependency not fully inventoried",
+        "review_date": "2026-11-25",
+        "owner_runtime_pipeline_complete_census_verified": false
+      },
+      "forecast_priority": {
+        "rank": 256,
+        "wave": "S1",
+        "category": "DISTINCT_NATIVE_SMALL_TRAINING_OR_UNUSUAL_ARCHITECTURE",
+        "scenario_status": "HYPOTHETICAL_DISTRIBUTION_CHANGE_NOT_MEASURED_BAN_PROBABILITY"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README-cn.md",
+          "README.md",
+          "chat_template.jinja",
+          "config.json",
+          "generation_config.json",
+          "model-00000-of-00001.safetensors",
+          "model.safetensors.index.json",
+          "special_tokens_map.json",
+          "tokenizer.json",
+          "tokenizer_config.json"
+        ],
+        "original_publisher_revision": "ac83f813ba7da263c51a9f3ec37c2072597e54af",
+        "source_manifest": "manifests/drafts/r161-2026-11-25-three-novel-small-dspark-sala-origins.candidate.json",
+        "owner_local_sha_verified": false,
+        "full_offline_reconstruction_verified": false,
+        "external_backend_and_parent_mandatory": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 2171355218,
+        "publisher_selected_source_bytes": 2171355218,
+        "source_bytes_are_not_final_incremental_owner_space": true,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false
+    },
+    {
+      "position": 257,
+      "asset_kind": "model",
+      "repo_id": "openbmb/MiniCPM5-2B-DSpark",
+      "url": "https://huggingface.co/openbmb/MiniCPM5-2B-DSpark",
+      "group": "MiniCPM5-2B用・独立学習した323.8M推測デコーディングDrafter",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "A separately trained 323,776,001-element DSpark speculative draft checkpoint, not merely a different bitwidth of 2B final. Learned from 2B output and hidden-state taps, preserves acceleration capability specific to already-selected parent.",
+      "quality_positive": "Official 4 files/647,565,508B, trained using 1,959,525 sequences, ~7.054B tokens and CE/L1/confidence loss. Author reported acceptance length5.5174 at T0, NOT 5.5x throughput.",
+      "quality_negative": "Cannot operate independently; requires MiniCPM5-2B Final, tokenizer/hidden-state layer order, SGLang DSPARK algorithm and safe backend compatibility. Parent training exact source commit and actual speedup on owner HW not verified; parent is not in 116 receipts.",
+      "risk_and_alternative_assessment": "Separate trained state has high archival distinctiveness at 647MB, but expected real latency gain unknown and could be negative. Do not auto-download dependent parent or trust custom code.",
+      "evidence_date": "2026-11-25",
+      "evidence_kind": "PUBLISHER_IMMUTABLE_HUGGINGFACE_PUBLIC_GIT_OID_AND_LFS_SHA_METADATA_ONLY_NOT_OWNER_LOCAL_HASH",
+      "evidence_urls": [
+        "https://huggingface.co/openbmb/MiniCPM5-2B-DSpark/tree/a63eb96b9bba7e999639d3fe3b6d70a0ea38eabd",
+        "https://github.com/Unjuno/local-model-portfolio/blob/main/manifests/drafts/r161-2026-11-25-three-novel-small-dspark-sala-origins.candidate.json"
+      ],
+      "observed_access": "Public ungated model repo at exact SHA; account-specific owner legal actions not reviewed.",
+      "license_metadata": "Apache-2.0 claimed by first-party model card; model repository LICENSE may not be present; owner legal acts not signed off",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "a63eb96b9bba7e999639d3fe3b6d70a0ea38eabd",
+      "upstream_all_files_bytes_observed": 647565508,
+      "upstream_file_count_observed": 4,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 4,
+      "candidate_selected_source_file_bytes": 647565508,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": null,
+          "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 4053,
+          "sha256": null,
+          "git_blob_sha1": "b9c24957cf27658efee913e9e5d23e6b3d58741d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 1414,
+          "sha256": null,
+          "git_blob_sha1": "5f2d826e2d137bc3e77a4b0263a9ce7942cd1018",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 647558522,
+          "sha256": "ae9ff4a8c944e2f88f266cc9452f6b8908a6d2bfce57cd4cf12cfb5cb979bc97",
+          "git_blob_sha1": "4f7290862623e490cb4a55583438948b62ae3fbc",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r161-2026-11-25-three-novel-small-dspark-sala-origins.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 323776001,
+        "evidence_kind": "First-party HF safetensors element census, not owner independent tensor count; supplemental learned runtime dependency not fully inventoried",
+        "review_date": "2026-11-25",
+        "owner_runtime_pipeline_complete_census_verified": false
+      },
+      "forecast_priority": {
+        "rank": 257,
+        "wave": "S1",
+        "category": "DISTINCT_NATIVE_SMALL_TRAINING_OR_UNUSUAL_ARCHITECTURE",
+        "scenario_status": "HYPOTHETICAL_DISTRIBUTION_CHANGE_NOT_MEASURED_BAN_PROBABILITY"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "config.json",
+          "model.safetensors"
+        ],
+        "original_publisher_revision": "a63eb96b9bba7e999639d3fe3b6d70a0ea38eabd",
+        "source_manifest": "manifests/drafts/r161-2026-11-25-three-novel-small-dspark-sala-origins.candidate.json",
+        "owner_local_sha_verified": false,
+        "full_offline_reconstruction_verified": false,
+        "external_backend_and_parent_mandatory": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 647565508,
+        "publisher_selected_source_bytes": 647565508,
+        "source_bytes_are_not_final_incremental_owner_space": true,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "fixed_parent_dependency": {
+        "repo_id": "openbmb/MiniCPM5-2B",
+        "selection_revision": "42433e90dad95123ab87729fd7011e7110629556",
+        "publisher_training_parent_exact_SHA_independently_verified": false,
+        "inference_target_owner_local_SHA_verified": false,
+        "parent_local_116_acquisition_receipt": false,
+        "declared_block_size": 7,
+        "expected_hidden_state_layers": [
+          1,
+          10,
+          20,
+          30,
+          39
+        ]
+      }
+    },
+    {
+      "position": 258,
+      "asset_kind": "model",
+      "repo_id": "openbmb/MiniCPM-SALA",
+      "url": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "group": "9.477B学習済み疎Attention＋線形Attention混合長文言語モデル原本",
+      "risk_tier": "HOLD",
+      "portfolio_decision": "hold",
+      "reason_selected": "Distinct hybrid-trained sparse(25%) + linear(75%) attention 9.477B-element learned checkpoint and a rare original 1M-token long-context technique; NOT same trained state as MiniCPM5-1B/2B. Preserve full immutable source but HOLD for executable code and ABI.",
+      "quality_positive": "15 files/18.960GB with four BF16 shards, main architecture Python files and custom config at pinned SHA. Author reports 3.5x inference speed vs Qwen3-8B at 256K on NVIDIA A6000D; research potential high.",
+      "quality_negative": "Custom AutoModel uses trust_remote_code, special OpenBMB/sglang minicpm_sala fork CUDA12+ and infllmv2 kernel. Cannot certify on Windows or owner GPU; 1M+ input claim not tested, owner rights and code provenance/ABI and full execution requirements unverified.",
+      "risk_and_alternative_assessment": "Source scope can be frozen without executing code, but runtime/security/owner resource gates remain STOP. No demonstrated local speed or model-specific takedown probability.",
+      "evidence_date": "2026-11-25",
+      "evidence_kind": "PUBLISHER_IMMUTABLE_HUGGINGFACE_PUBLIC_GIT_OID_AND_LFS_SHA_METADATA_ONLY_NOT_OWNER_LOCAL_HASH",
+      "evidence_urls": [
+        "https://huggingface.co/openbmb/MiniCPM-SALA/tree/9180fe1db74f71fb81bc7105efe88f6b19c959b0",
+        "https://github.com/Unjuno/local-model-portfolio/blob/main/manifests/drafts/r161-2026-11-25-three-novel-small-dspark-sala-origins.candidate.json"
+      ],
+      "observed_access": "Public ungated model repo at exact SHA; account-specific owner legal actions not reviewed.",
+      "license_metadata": "Apache-2.0 claimed by first-party model card; model repository LICENSE may not be present; owner legal acts not signed off",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "9180fe1db74f71fb81bc7105efe88f6b19c959b0",
+      "upstream_all_files_bytes_observed": 18959519287,
+      "upstream_file_count_observed": 15,
+      "upstream_lfs_sha256_count_observed": 5,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 15,
+      "candidate_selected_source_file_bytes": 18959519287,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": null,
+          "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 9398,
+          "sha256": null,
+          "git_blob_sha1": "e309d14907a2c36749d192daa98e16c02fce2158",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 2397,
+          "sha256": null,
+          "git_blob_sha1": "f983285493857335e03ebb0a00e6e51e8aec8883",
+          "local_sha_verified": false
+        },
+        {
+          "path": "configuration_minicpm_sala.py",
+          "bytes": 11824,
+          "sha256": null,
+          "git_blob_sha1": "2c4aac9e62c40bdfc68f78c2a645d62411b72a79",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 153,
+          "sha256": null,
+          "git_blob_sha1": "1c1a3597f15e730311d8691eda7d5b9949031170",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "bytes": 4968143488,
+          "sha256": "c78212b9421a7f674a0cbce97cd584884f275f381d576973bc0e6dad33a1b31f",
+          "git_blob_sha1": "d9949a6363b35ad932363e968153258948acd6d0",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "bytes": 4874002352,
+          "sha256": "1e93182ef3c7715d3659d297839f2340df869770e6a494f7fc8cce1fdef1eeed",
+          "git_blob_sha1": "7f68e4dba08075b9d3f83af39cae501c9bc35ced",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "bytes": 4874002384,
+          "sha256": "7c9a8cc00265c89b922b3d3020925b0b39cd0ca99ed9dcd951aea6e52f491286",
+          "git_blob_sha1": "9e09cc68bafd0872bc5e50a7131f8ef4976eb2b7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "bytes": 4238305384,
+          "sha256": "a34680df5ba413ff78e1b1faa5c3e4b83a18c07fd54b71fc51cbcb1ec0d995ea",
+          "git_blob_sha1": "c529b5c470938d1eec8f04d6537cb65e19037c3a",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 32584,
+          "sha256": null,
+          "git_blob_sha1": "63d445634f2b811a40ea8075b15274d972cfd161",
+          "local_sha_verified": false
+        },
+        {
+          "path": "modeling_minicpm_sala.py",
+          "bytes": 132102,
+          "sha256": null,
+          "git_blob_sha1": "8d2c239dcc0257a731d69d294071c3e739b756b2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 3497,
+          "sha256": null,
+          "git_blob_sha1": "1e673e6f539f753314fb8a678d4a08ffc1a24eca",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 3676708,
+          "sha256": null,
+          "git_blob_sha1": "ee3572184b1e337b8efc9ccd60e501300ba81201",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.model",
+          "bytes": 1181204,
+          "sha256": "bb74d51116831c3bf65db812c553f94ab0c88dcf97a5bbb37e3504f6d359c530",
+          "git_blob_sha1": "3acef165015d31aa550ee014a62a30de373733f0",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 14293,
+          "sha256": null,
+          "git_blob_sha1": "af7accb0163782798ba8ac1738ff00657669d850",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r161-2026-11-25-three-novel-small-dspark-sala-origins.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 9477203968,
+        "evidence_kind": "First-party HF safetensors element census, not owner independent tensor count; supplemental learned runtime dependency not fully inventoried",
+        "review_date": "2026-11-25",
+        "owner_runtime_pipeline_complete_census_verified": false
+      },
+      "forecast_priority": {
+        "rank": 258,
+        "wave": "S2",
+        "category": "DISTINCT_NATIVE_SMALL_TRAINING_OR_UNUSUAL_ARCHITECTURE",
+        "scenario_status": "HYPOTHETICAL_DISTRIBUTION_CHANGE_NOT_MEASURED_BAN_PROBABILITY"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "README.md",
+          "config.json",
+          "configuration_minicpm_sala.py",
+          "generation_config.json",
+          "model-00001-of-00004.safetensors",
+          "model-00002-of-00004.safetensors",
+          "model-00003-of-00004.safetensors",
+          "model-00004-of-00004.safetensors",
+          "model.safetensors.index.json",
+          "modeling_minicpm_sala.py",
+          "special_tokens_map.json",
+          "tokenizer.json",
+          "tokenizer.model",
+          "tokenizer_config.json"
+        ],
+        "original_publisher_revision": "9180fe1db74f71fb81bc7105efe88f6b19c959b0",
+        "source_manifest": "manifests/drafts/r161-2026-11-25-three-novel-small-dspark-sala-origins.candidate.json",
+        "owner_local_sha_verified": false,
+        "full_offline_reconstruction_verified": false,
+        "external_backend_and_parent_mandatory": true
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 18959519287,
+        "publisher_selected_source_bytes": 18959519287,
+        "source_bytes_are_not_final_incremental_owner_space": true,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "runtime_source_pin_observed": {
+        "repo_id": "OpenBMB/sglang",
+        "branch": "minicpm_sala",
+        "observed_commit_sha": "d29fb130c7fc797902d113027ca68860e1a54d41",
+        "full_dependency_closure_verified": false,
+        "trust_remote_code_safely_audited": false
+      }
+    }
+  ],
+  "added_assets": [
+    "openbmb/MiniCPM5-1B",
+    "openbmb/MiniCPM5-2B-DSpark",
+    "openbmb/MiniCPM-SALA"
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "all_previous_255_assets_preserved_identically": true,
+  "source_manifest": "manifests/drafts/r161-2026-11-25-three-novel-small-dspark-sala-origins.candidate.json",
+  "publisher_new_file_refs": 30,
+  "publisher_new_reference_bytes": 21778440013,
+  "publisher_new_LFS_sha_refs": 7,
+  "new_model_payload_bytes_transferred": 0,
+  "owner_local_hdd_rehashed": false,
+  "approved_queue_entries_added": 0,
+  "individual_license_acts_confirmed": false,
+  "custom_model_code_executed": false,
+  "reason_sala_hold": "CUDA12 and custom SGLang fork, no owner device ABI/remote code review"
+}

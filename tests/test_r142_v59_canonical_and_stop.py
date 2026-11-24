@@ -23,14 +23,14 @@ class V59CanonicalTest(unittest.TestCase):
         cls.next = load("queues/proposed-v59-r140-ledger76-next-21-deduplicated-sources.json")
 
     def test_correct_pointer_and_historical_preservation(self):
-        self.assertIn(self.cur["revision_id"], ("v59-20261121", "v60-20261122", "v61-20261122", "v62-20261122", "v63-20261122", "v64-20261122","v65-20261122", "v66-20261124", "v67-20261124"))
+        self.assertIn(self.cur["revision_id"], ("v59-20261121", "v60-20261122", "v61-20261122", "v62-20261122", "v63-20261122", "v64-20261122","v65-20261122", "v66-20261124", "v67-20261124","v68-20261125","v69-20261125","v70-20261125"))
         self.assertIn("catalog/revisions/v59-2026-11-21.json", self.cur["ordered_overlays"])
         self.assertIn(self.cur["materialized_catalog_path"], (
             "catalog/effective-portfolio-2026-11-21-v59.json",
             "catalog/effective-portfolio-2026-11-22-v60.json",
             "catalog/effective-portfolio-2026-11-22-v61.json",
             "catalog/effective-portfolio-2026-11-22-v62.json",
-            "catalog/effective-portfolio-2026-11-22-v63.json","catalog/effective-portfolio-2026-11-22-v64.json", "catalog/effective-portfolio-2026-11-22-v65.json", "catalog/effective-portfolio-2026-11-24-v66.json", "catalog/effective-portfolio-2026-11-24-v67.json"))
+            "catalog/effective-portfolio-2026-11-22-v63.json","catalog/effective-portfolio-2026-11-22-v64.json", "catalog/effective-portfolio-2026-11-22-v65.json", "catalog/effective-portfolio-2026-11-24-v66.json", "catalog/effective-portfolio-2026-11-24-v67.json","catalog/effective-portfolio-2026-11-25-v68.json","catalog/effective-portfolio-2026-11-25-v69.json","catalog/effective-portfolio-2026-11-25-v70.json"))
         self.assertEqual(self.v58["items"], self.v59["items"][:218])
         self.assertEqual([a["repo_id"] for a in self.delta["additions"]],
                          [a["repo_id"] for a in self.v59["items"][-3:]])

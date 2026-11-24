@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "kind": "R161_V70_UNIQUE_SMALL_1B_FINAL_PAIR_DSPARK_AND_HYBRID_SALA_HOLD_SELECTION",
+  "date_jst": "2026-11-25",
+  "previous_revision": "v69-20261125",
+  "new_revision": "v70-20261125",
+  "previous_tracked": 255,
+  "current_tracked": 258,
+  "previous_active": 206,
+  "current_active": 208,
+  "new_active_conditional": 2,
+  "new_HOLD": 1,
+  "publisher_file_refs": 30,
+  "publisher_full_source_reference_bytes": 21778440013,
+  "publisher_LFS_sha256_refs": 7,
+  "manifest": "manifests/drafts/r161-2026-11-25-three-novel-small-dspark-sala-origins.candidate.json",
+  "new_originals": [
+    {
+      "repo_id": "openbmb/MiniCPM5-1B",
+      "decision": "CONDITIONAL_RESEARCH_ONLY_NOT_DOWNLOAD_APPROVAL",
+      "publisher_source_bytes": 2171355218,
+      "files": 11,
+      "revision_sha": "ac83f813ba7da263c51a9f3ec37c2072597e54af",
+      "reason": "Unrepresented independent ~1B native final RL/OPD learned state and on-device capability compared to v68 2B original. Moderate distinct 1B family overlap; first-party independent performance comparison and local execution remain unverified.",
+      "baseline_marginal_test": "Against already selected Qwen0.8B, LFM2.5 1.2B, and official MiniCPM5-2B, evaluate Japanese/English, coding, instruction-following and latency on same HW.",
+      "upstream_rights": "Author models and OpenBMB code Apache-2.0 declared; immutable HF repository lacks standalone LICENSE; no owner-specific commercial/redistribution rights signed-off."
+    },
+    {
+      "repo_id": "openbmb/MiniCPM5-2B-DSpark",
+      "decision": "CONDITIONAL_RESEARCH_ONLY_PAIR_NOT_STANDALONE",
+      "publisher_source_bytes": 647565508,
+      "files": 4,
+      "revision_sha": "a63eb96b9bba7e999639d3fe3b6d70a0ea38eabd",
+      "reason": "323.776M separately learned speculation drafter with first-party training recipe; different from 2B FP4/GGUF format, direct paired performance behavior is a unique learned result.",
+      "mandatory_parent": "openbmb/MiniCPM5-2B@42433e90dad95123ab87729fd7011e7110629556",
+      "pair_publisher_full_reference_bytes_if_parent_not_yet_acquired": 5691373485,
+      "actual_verified_parent_owner_acquired": false,
+      "training_parent_exact_SHA_verified": false,
+      "quality_caveat": "Author acceptance length 5.5174 at T=0 is not throughput speedup, and 7 draft tokens/block might be worse for short/batch-specific tasks.",
+      "runtime_hard_gate": "SGLang DSPARK 7-block decoder, matching target hidden state layers, tokenizer, CUDA/driver, caller trust_remote_code; owner incremental allocation/parent rights/real GPU tests missing."
+    },
+    {
+      "repo_id": "openbmb/MiniCPM-SALA",
+      "decision": "HOLD_NONEXECUTABLE_UNIQUE_TRAINED_SOURCE",
+      "publisher_source_bytes": 18959519287,
+      "files": 15,
+      "revision_sha": "9180fe1db74f71fb81bc7105efe88f6b19c959b0",
+      "reason": "Separate 9.477B learned hybrid sparse+linear attention long-context system, not merely a MiniCPM5 2B quantization; archival novelty but custom CUDA branch and unreviewed source code. Preserve frozen source research metadata.",
+      "runtime_code_reference": "OpenBMB/sglang@d29fb130c7fc797902d113027ca68860e1a54d41",
+      "author_claim_condition": "3.5x at 256k on NVIDIA A6000D versus Qwen3-8B, other usage/hardware not independently validated",
+      "verification_stop": "Remote Python modeling source execution, CUDA >=12 compilation and infllmv2 extension dependency cannot be considered safe/portable just from model file SHA; no owner rights/license signoff."
+    }
+  ],
+  "not_new_originals": [
+    {
+      "repo_id": "openbmb/MiniCPM5-1B-Base",
+      "action": "HOLD_DISTINCT_PRETRAIN_STAGE",
+      "reason": "2.171GB distinct weight source from RL final, but current goal broad specialist diversity; its user-case marginal value not measured."
+    },
+    {
+      "repo_id": "openbmb/MiniCPM5-1B-SFT",
+      "action": "HOLD_DISTINCT_SFT_STAGE",
+      "reason": "2.172GB distinct learned SFT checkpoint, no new prior matching quality or archival need."
+    },
+    {
+      "repo_id": "openbmb/MiniCPM5-2B-DSpark-GGUF",
+      "action": "HOLD_FORMAT_VARIANT",
+      "reason": "Publisher GGUF counterpart for same DSpark target; no independent additional training evidenced, do not double count independent learned state."
+    },
+    {
+      "repo_id": "Aleph-Alpha/Kolibri-1.1",
+      "action": "PRIOR_R158_SOURCE_FROZEN_RESEARCH_HOLD",
+      "reason": "Previously frozen 77.556GB publisher original and multi-H100/H200/B200 support requirements; owner practical runtime and rights need independent review."
+    },
+    {
+      "repo_id": "Edge0/Edge0-145B-NVFP4",
+      "action": "PRIOR_R155_RESEARCH_HOLD",
+      "reason": "113.77GB full source and shared 51.2GB PLE plus Qwen+Edge license; no full runtime/owner comparisons."
+    }
+  ],
+  "existing_unreviewed_uncensored_models": "Smaug-Uncensored, existing Inkling edits, Heretic LoRA are already separately tracked; new model list does not falsely label MiniCPM5-1B Base or DSpark as refusal-abliterated.",
+  "historical_acquisitions": {
+    "verified_reported_models": 116,
+    "reported_bytes": 2021784002725,
+    "owner_volume_rehashed_by_this_work": false,
+    "new_ids_none_in_116_ledger": true,
+    "do_not_redownload_reported_acquired_model_repo_ids": true
+  },
+  "license_and_hw_gates": {
+    "same_source_Apache_license_claim_not_owner_act_approval": true,
+    "reviewed_owner_rights_and_model_dependencies": false,
+    "verified_owner_hdd_free_bytes": null,
+    "owner_minimum_free_bytes": 200000000000,
+    "archive_4TB_budget_limit_bytes": 4000000000000,
+    "observed_owner_memory_peak_for_any_model": null,
+    "download_approved": false,
+    "max_selected_bytes_including_runtime_and_staging": null,
+    "no_model_code_executed": true,
+    "approved_queue_entries_created": 0
+  },
+  "regulation": {
+    "confirmed_primary": "2026-11-19 BIS IFR 91FR74970 revoked 4E091 weight control",
+    "source": "https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm",
+    "hypothesis": "Specific model access takedown/tiered licensing could occur, not a proven imminent general local model ban; no forecast probability"
+  },
+  "H_T_D_C_U": {
+    "H": "Distinct 1B posttrained model and 323.776M trained DSpark preserve two learned computational capabilities at combined publisher source 2.819GB; rare SALA needs separate controlled runtime gate despite model source lock.",
+    "T": "Official HF immutable rev/tree and 30 files/7 LFS SHA references, v69 old255 identical, 116 receipts disjoint, v70 258/208, queue/access/prep/readiness 208/152/208/208. Later owner tests min n=30 repeated same GPU/clock/context/batch/precision and n>=100 task samples; acceptance length and latency separately.",
+    "D": "PASS if SHA/file totals, old assets immutable, all 208 active STOP and zero approvals. FAIL if DSpark standalone, implicit model-license rights, converting GGUF to new trained state, or running SALA custom code without review. UNCERTAIN real HW, 4TB physical headroom, legal acts, quality and model-specific future restrictions.",
+    "C": "One-billion class underperforms existing 0.8B/2B; DSpark has negative net speedup due verification/PCIe overhead; SALA CUDA fork cannot compile on owner OS; license terms conflict with intended redistribution.",
+    "U": "Publisher reported training and benchmarks without independent repeats, legal terms and owner media inaccessible; no empirical variance for u_c or expansion factor k."
+  },
+  "related_fields": [
+    "machine learning and speculative decoding",
+    "GPU memory/quantization/long-context systems engineering",
+    "digital preservation and supply-chain fingerprinting",
+    "license compliance and regulatory risk scenario planning"
+  ],
+  "model_weight_bytes_downloaded_now": 0,
+  "owner_files_deleted": 0,
+  "user_download_authorizations_added": 0,
+  "previous_255_assets_unchanged": true,
+  "preserved_v69_additions": [
+    "sahilmahendrakar/Paradee-8M-v1.3",
+    "ngocthien/tihon-tts",
+    "electroglyph/Inkling-2-Mini-uncensored-LoRA"
+  ]
+}

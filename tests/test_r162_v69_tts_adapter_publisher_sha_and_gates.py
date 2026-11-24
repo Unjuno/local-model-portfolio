@@ -7,12 +7,12 @@ def key(x):return x["asset_kind"],x["repo_id"]
 class R162(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.c=read("catalog/CURRENT.json");cls.e=read(cls.c["materialized_catalog_path"]);cls.old=read("catalog/effective-portfolio-2026-11-25-v68.json")
+  cls.c=read("catalog/CURRENT.json");cls.e=read("catalog/effective-portfolio-2026-11-25-v69.json");cls.old=read("catalog/effective-portfolio-2026-11-25-v68.json")
   cls.tts=read("manifests/drafts/r162-2026-11-25-paradee13-tihon100k-core-weight-pins.candidate.json");cls.ink=read("manifests/drafts/r162-2026-11-25-electroglyph-inkling-heretic-v22-adapter-core.candidate.json");cls.ledger=read("catalog/execution/2026-11-19-acquisition-ledger.json")
-  cls.queue=read(cls.c["priority_worklist_path"]);cls.access=read(cls.c["latest_conditional_access_audit"]["path"])
-  cls.ready=read(cls.c["latest_active_readiness_audit"]["summary_path"]);cls.prep=read(cls.c["insurance_preparation_worklist_path"])
+  cls.queue=read("queues/proposed-v69-2026-11-25.json");cls.access=read("catalog/access/2026-11-25-v69-conditional-hub-gates.json")
+  cls.ready=read("catalog/readiness/v69-2026-11-25-r162-all206-gates.json");cls.prep=read("catalog/preparation/2026-11-25-insurance-bundles-v69.json")
  def test_same_252_and_counts(self):
-  self.assertEqual(self.c["revision_id"],"v69-20261125")
+  self.assertIn(self.c["revision_id"],("v69-20261125","v70-20261125"))
   self.assertEqual(self.e["items"][:252],self.old["items"])
   self.assertEqual(len(self.e["items"]),255)
   self.assertEqual(len({key(x) for x in self.e["items"]}),255)

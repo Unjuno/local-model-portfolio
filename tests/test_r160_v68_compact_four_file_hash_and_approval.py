@@ -7,13 +7,13 @@ def key(x):return (x["asset_kind"],x["repo_id"])
 class V68(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.c=rd("catalog/CURRENT.json");cls.v=rd(cls.c["materialized_catalog_path"])
+  cls.c=rd("catalog/CURRENT.json");cls.v=rd("catalog/effective-portfolio-2026-11-25-v68.json")
   cls.o=rd("catalog/effective-portfolio-2026-11-24-v67.json")
   cls.m=rd("manifests/drafts/r160-2026-11-25-four-small-trained-states-75file-publisher-frozen.candidate.json");cls.ledger=rd("catalog/execution/2026-11-19-acquisition-ledger.json")
-  cls.queue=rd(cls.c["priority_worklist_path"]);cls.a=rd(cls.c["latest_conditional_access_audit"]["path"])
-  cls.g=rd(cls.c["latest_active_readiness_audit"]["summary_path"]);cls.p=rd(cls.c["insurance_preparation_worklist_path"])
+  cls.queue=rd("queues/proposed-v68-2026-11-25.json");cls.a=rd("catalog/access/2026-11-25-v68-conditional-hub-gates.json")
+  cls.g=rd("catalog/readiness/v68-2026-11-25-r160-all203-gates.json");cls.p=rd("catalog/preparation/2026-11-25-insurance-bundles-v68.json")
  def test_canonical_and_old_items_unchanged(self):
-  self.assertEqual(self.c["revision_id"],"v68-20261125")
+  self.assertIn(self.c["revision_id"],("v68-20261125","v69-20261125","v70-20261125"))
   self.assertEqual(self.v["items"][:248],self.o["items"])
   self.assertEqual(len(self.v["items"]),252)
   self.assertEqual(len({key(x) for x in self.v["items"]}),252)
