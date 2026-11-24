@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "kind": "R164_POST_V71_USER_REPORTED_FAMILY_OMISSION_ROOT_CAUSE",
+  "date_jst": "2026-11-25",
+  "baseline_version": "v71-20261125",
+  "baseline_registered": 260,
+  "baseline_active": 210,
+  "source_manifest": "manifests/drafts/r164-2026-11-25-inkling-small-uncensored-missing-family-publisher-research.candidate.json",
+  "research_queue": "queues/proposed-v71-r164-missed-inkling-small-and-uncensored-UNAPPROVED.json",
+  "confirmed_omission": [
+    "thinkingmachines/Inkling-Small",
+    "distributedcognition/Inkling-Small-abliterated",
+    "thinkingmachines/Inkling-2-Small",
+    "thinkingmachines/Inkling-2-Small-MXFP8",
+    "OpenUncensored/Inkling-2-Small-Uncensored"
+  ],
+  "existing_not_equivalent": [
+    "thinkingmachines/Inkling-2-Mini",
+    "OpenUncensored/Inkling-2-Mini-Uncensored-LoRA"
+  ],
+  "root_cause": [
+    "150B parameter hard selection gate applied as if it should also suppress archival-research discovery",
+    "recency and compact-format priority allowed famous separately trained source model family to be missed",
+    "No required base/full/delta/edit family completeness checklist",
+    "No exact alias disambiguation for Japanese transcription and ambiguous names"
+  ],
+  "corrective_actions": [
+    "register missing original and edited families as P0 preservation RESEARCH HOLD even if the 150B execution gate is not met",
+    "keep original NVFP4 and alternative MXFP8 clearly distinct because uncensored edit requires matching parent representation",
+    "prefer author-published edit provenance only as reproducibility support; do not count edit.pt alone as deployable local model",
+    "do not count source reference bytes as actual local free disk or independently verified storage",
+    "ask owner to identify the unresolved term 無限スマイル rather than silently inventing a model"
+  ],
+  "no_new_formal_selected_models": true,
+  "no_license_or_HDD_authorizations": true,
+  "no_weight_downloads": true,
+  "H_T_D_C_U": {
+    "H": "A family-lineage coverage check catches important uncensored edits and base models systematically omitted by an execution-only sub150B threshold.",
+    "T": "Join precise source IDs against live v71 and reported116 receipts; inspect five publisher immutable 40-character commits and file trees without fetching model payloads; confirm rights, checksum, parent representation and 512GB reference peak gates before executable selection.",
+    "D": "PASS for identification, source-pinned references, gating and no approvals; FAIL if gated hashes are fabricated or MXFP8 edit is claimed deployable using unrelated NVFP4 parent; UNCERTAIN for owner media, user rights, replay code and model performance.",
+    "C": "The user intended a different named model by 無限スマイル; edited checkpoint could lose capability or not replay bit-exactly; owner hardware and budget may exclude huge full model acquisition.",
+    "U": "Ambiguous speech transcription, masked gated repo metadata, self-reported benchmark, hardware memory/staging and incomplete edit replay dependency. No repeated measurements to estimate u_c or k."
+  }
+}
