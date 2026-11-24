@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "kind": "R162_INDEPENDENT_INKLING2_MINI_HERETIC_2P2_LORA_ADAPTER_RESEARCH_ONLY",
+  "research_date_jst": "2026-11-25",
+  "base_canonical": "v68-20261125",
+  "repo_id": "electroglyph/Inkling-2-Mini-uncensored-LoRA",
+  "hub_url": "https://huggingface.co/electroglyph/Inkling-2-Mini-uncensored-LoRA",
+  "immutable_revision_sha": "4d81722b2e939460d5b544e5319b80e9b960236b",
+  "pub_license_tag": "apache-2.0",
+  "publisher_full_repo_reference_bytes": 52406603,
+  "publisher_repo_file_count": 10,
+  "core_weight_files": [
+    {
+      "path": "adapter_model.safetensors",
+      "bytes": 51617184,
+      "sha256": "3f5d669441cc0814e763faedb2c6a65d001f4d6bd22b73b0eb29f2dde96ca9e1",
+      "file_kind": "SEPARATE_TRAINED_WEIGHT_SPACE_EDIT_STORED_AS_LORA_ADAPTER",
+      "owner_SHA_verified": false
+    }
+  ],
+  "nonweight_files_at_immutable_revision_not_individually_sha_frozen": [
+    ".gitattributes",
+    "README.md",
+    "adapter_config.json",
+    "reproduce/README.md",
+    "reproduce/SHA256SUMS.txt",
+    "reproduce/config.toml",
+    "reproduce/reproduce.json",
+    "reproduce/requirements.txt",
+    "reproduce/thinkingmachines--Inkling-2-Mini.jsonl"
+  ],
+  "trained_outcome": {
+    "source_base_model": "thinkingmachines/Inkling-2-Mini",
+    "source_base_parent_original_reported_in_ledger116": true,
+    "hub_reported_method": "Heretic v2.2.0.dev0 Arbitrary-Rank Ablation (ARA), loss_mode relative",
+    "author_settings": {
+      "start_layer_index": 1,
+      "end_layer_index": 16,
+      "preserve_good_behavior_weight": 0.0672,
+      "steer_bad_behavior_weight": 0.0008,
+      "overcorrect_relative_weight": 1.0253,
+      "neighbor_count": 13,
+      "loss_mode": "relative"
+    },
+    "published_refusal_keyword_matches": {
+      "edited": 3,
+      "total_prompts": 100,
+      "base": 100
+    },
+    "published_KL_divergence": 0.0883,
+    "quality_and_safety_independently_replicated": false,
+    "original_parent_revision_exact_match_reverified": false,
+    "existing_archive_other_editors": [
+      "OpenUncensored/Inkling-2-Mini-Uncensored-LoRA",
+      "satellitedown/Inkling-2-Mini-abliterated-ingine"
+    ],
+    "independent_editor_weight_hash_not_equal_existing_adapter_hypothesis_only": "Different published method/config/revision, no local measured tensor or quality delta"
+  },
+  "selection": "CONDITIONAL_RESEARCH_AS_SMALL_ADAPTER_NOT_FULL_MODEL_REPLICA",
+  "source_file_scope_complete": false,
+  "rights_user_act_approved": false,
+  "owner_runtime_adapter_compatible": false,
+  "offline_restore_completed": false,
+  "model_code_executed": false,
+  "model_payload_downloaded": false,
+  "download_approved": false,
+  "conclusion": "51.617MB adapter preserves new ARA settings without 20GB parent duplicate. Confirm 10 complete publisher files, exact parent training SHA and safe adapter application/functional benchmark before owner acquisition approval."
+}
