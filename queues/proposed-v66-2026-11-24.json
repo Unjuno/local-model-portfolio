@@ -2706,6 +2706,23 @@
       "publisher_quality_claim_pct": 95.6,
       "quality_not_equivalent_to_benchmark": true,
       "notes": "Unsloth reports ~378GB quantized file payload and 310–390GB combined memory guidance; hardware-dependent and not user-device measured; UD-IQ3_XXS ~424GB with 435–500GB memory guide close to 512GB limit."
+    },
+    {
+      "source_repo_id": "inclusionAI/LingSante-3.1-flash-MXFP4",
+      "quantized_repo_id": "inclusionAI/LingSante-3.1-flash-MXFP4",
+      "source_url": "https://huggingface.co/inclusionAI/LingSante-3.1-flash-MXFP4",
+      "proposed_quantization": "Publisher MXFP4 RTN quantization representation of 560B original, NOT independent 294B model",
+      "parameter_gate": "OVER_150B_QUANT_REVIEW_REQUIRED",
+      "investigation_only": true,
+      "selected": false,
+      "download_approved": false,
+      "verified_user_access": false,
+      "measured_hardware_performance": false,
+      "source_artifact_size_gb_claim": null,
+      "quantizer_total_memory_guidance_gb": null,
+      "publisher_quality_claim_pct": null,
+      "quality_not_equivalent_to_benchmark": true,
+      "notes": "Original 560,000,000,000 parameters exceeds 150B baseline; 294,289,983,808 stored quantized elements are not the full original. No complete owner-matched <150B reference RAM measurement, source/license or 200GB headroom; HOLD."
     }
   ],
   "blocked_over_baseline_repo_ids": [
