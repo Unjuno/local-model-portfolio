@@ -1,0 +1,580 @@
+{
+  "schema_version": 1,
+  "kind": "R167_V72_NEW17M_ROBOTRACKER_AND_LARGER_NC_WARP_IMMUTABLE_PUBLISHER_ORIGINALS_AND_CODE_PROVENANCE",
+  "evidence_jst": "2026-11-25",
+  "current_formal_portfolio_revision_unmodified": "v72-20261125",
+  "source_models": [
+    {
+      "repo_id": "allenai/RoboTracker",
+      "revision_sha": "3bda363815dca4395b855ba0e7737517300f937f",
+      "publisher_license_tag": "apache-2.0",
+      "observed_gated": false,
+      "source_type": "standalone separately trained point tracking finetune, not GGUF format",
+      "source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "publisher_git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "publisher_lfs_sha256": null,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 5375,
+          "publisher_git_blob_sha1": "3ddc1ffb44596e7437310251894f35162f00acfc",
+          "publisher_lfs_sha256": null,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "robotracker.pth",
+          "bytes": 66004399,
+          "publisher_git_blob_sha1": "3fa580cf8451c67d9d4fc6e1bf55e7742fd49a0f",
+          "publisher_lfs_sha256": "d846b841b698a772bff681b7c1d5446f11ff5e9c4e0371bfa171190b1c7805b8",
+          "owner_actual_sha_verified": false
+        }
+      ],
+      "source_file_count": 3,
+      "source_total_bytes": 66011293,
+      "weight_file_path": "robotracker.pth",
+      "publisher_weight_file_bytes": 66004399,
+      "publisher_weight_sha256": "d846b841b698a772bff681b7c1d5446f11ff5e9c4e0371bfa171190b1c7805b8",
+      "publisher_repo_has_no_LICENSE_file": true,
+      "license_primary_card_only_not_human_rights_attestation": true,
+      "trained_total_parameters_exact_tensor_census": null,
+      "weight_downloaded_by_this_research": false,
+      "download_approved": false,
+      "owner_local_sha_verified": false,
+      "owner_actual_disk_free_bytes": null,
+      "full_offline_runtime_verified": false,
+      "owner_license_use_acts_verified": false,
+      "untrusted_pth_code_executed": false,
+      "priority": "P0_SOURCE_RESEARCH_CONDITIONAL_RECOMMEND",
+      "architecture_publisher_claim": "AllTracker 17M parameters, full finetuned state",
+      "training_parent_repo": "aharley/alltracker",
+      "training_parent_publisher_revision": "c8ba31225828cab9ec512d0627f0f826e641a877",
+      "training_parent_weight_sha256": "ffd9ebcfb6d206d594b646999a150540f92c049cf9b2bf940facf7123f62aa1d",
+      "edited_weight_distinct_from_parent": true,
+      "alltracker_training_parent_weights_required_for_full_finetune_inference": false,
+      "publisher_RoboTrack_Bench_AJ": 63.4,
+      "publisher_original_AllTracker_Bench_AJ": 62.56,
+      "publisher_RoboTAP_AJ": 68.41,
+      "publisher_original_AllTracker_RoboTAP_AJ": 68.48,
+      "benchmark_protocol": "TAP-Vid first, image 384x512, 4 refinement iterations, visible if confidence*visibility >=0.6, f32 TF32 matmuls",
+      "speed_owner_GPU_not_measured": true,
+      "preflight_weight_load_policy": "torch.load(weights_only=True) in publisher code; do not execute until trust review"
+    },
+    {
+      "repo_id": "allenai/RoboTracker-Warp",
+      "revision_sha": "6cf4ddd90571b5e5bb269cf6cfb6112b91e66ec8",
+      "publisher_license_tag": "cc-by-nc-4.0",
+      "observed_gated": false,
+      "source_type": "standalone separately trained point tracking finetune, not GGUF format",
+      "source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "publisher_git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "publisher_lfs_sha256": null,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 5784,
+          "publisher_git_blob_sha1": "89ea2c92dca5a01223cdc5c98a6ba99b84a2f6e9",
+          "publisher_lfs_sha256": null,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "robotracker_warp.pth",
+          "bytes": 3898580646,
+          "publisher_git_blob_sha1": "f0d327def90dcdeae1d6fcea5ff6ad7601eb43d4",
+          "publisher_lfs_sha256": "6a45fc269a227dbb87f9aab8cc8efc43eba77113ac891f6156db9834b1b3830c",
+          "owner_actual_sha_verified": false
+        }
+      ],
+      "source_file_count": 3,
+      "source_total_bytes": 3898587949,
+      "weight_file_path": "robotracker_warp.pth",
+      "publisher_weight_file_bytes": 3898580646,
+      "publisher_weight_sha256": "6a45fc269a227dbb87f9aab8cc8efc43eba77113ac891f6156db9834b1b3830c",
+      "publisher_repo_has_no_LICENSE_file": true,
+      "license_primary_card_only_not_human_rights_attestation": true,
+      "trained_total_parameters_exact_tensor_census": null,
+      "weight_downloaded_by_this_research": false,
+      "download_approved": false,
+      "owner_local_sha_verified": false,
+      "owner_actual_disk_free_bytes": null,
+      "full_offline_runtime_verified": false,
+      "owner_license_use_acts_verified": false,
+      "untrusted_pth_code_executed": false,
+      "priority": "P2_RIGHTS_BACKEND_GPU_HOLD",
+      "architecture_publisher_claim": "CoWTracker VGGT ~1B parameters, distinct finetuned state",
+      "training_parent_repo": "facebook/cowtracker",
+      "noncommercial_weight_license": "CC-BY-NC 4.0",
+      "requires_FAIR_Noncommercial_Research_License_code": true,
+      "publisher_RoboTrack_Bench_AJ": 65.98,
+      "publisher_original_CoWTracker_Bench_AJ": 63.87,
+      "benchmark_protocol": "TAP-Vid first, CoWTracker resolution 336x560; not comparable apples-to-apples with 384x512 RoboTracker",
+      "publisher_H200_18_fps_47GB_peak_claim": "H200 vendor GPU, 18 frames per second and ~47GB GPU memory author statement; unknown clock/batch and independent verification",
+      "CUDA_xformers_torch_exact_abi_needed": true,
+      "source_model_repo_download_status": "HOLD_LICENSE_AND_EXTERNAL_CODE"
+    }
+  ],
+  "publisher_source_model_repos": 2,
+  "publisher_all_source_files_total": 6,
+  "publisher_all_model_repo_bytes_total": 3964599242,
+  "recommended_tiny_model_publisher_file_bytes": 66011293,
+  "research_held_large_noncommercial_publisher_bytes": 3898587949,
+  "parent_original_AllTracker": {
+    "repo_id": "aharley/alltracker",
+    "revision_sha": "c8ba31225828cab9ec512d0627f0f826e641a877",
+    "license": "mit",
+    "publisher_alltracker_pth_weight_sha256": "ffd9ebcfb6d206d594b646999a150540f92c049cf9b2bf940facf7123f62aa1d",
+    "new_model_weight_differs_from_aligned_parent": true,
+    "parent_full_weight_separately_required_to_run_new_finetuned_state": false,
+    "owner_original_parent_download_performed": false
+  },
+  "publisher_runtime_source": {
+    "git_repo": "allenai/robotrack",
+    "revision_sha": "fc5cd87f60fad57c7cbc48c3d09e9aa7b45061a3",
+    "git_tree_sha": "4d44877a3a9c127ce0089a1d2acd0022d8184bed",
+    "tracked_blobs_all": [
+      {
+        "path": ".gitignore",
+        "bytes": 55,
+        "git_blob_sha1": "2191e7aa2e687d5c4169bec15f4f635913ea055f"
+      },
+      {
+        "path": ".gitmodules",
+        "bytes": 120,
+        "git_blob_sha1": "dd19548162aefabdb9a1b4bd0e09dde7983e5861"
+      },
+      {
+        "path": "LICENSE",
+        "bytes": 11358,
+        "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+      },
+      {
+        "path": "README.md",
+        "bytes": 27526,
+        "git_blob_sha1": "324e5b9391c6ad1617474a1481551d7db7b6044c"
+      },
+      {
+        "path": "assets/datagen_pipeline.png",
+        "bytes": 1197333,
+        "git_blob_sha1": "8131c224b87093203ba8d113df188a177a214a90"
+      },
+      {
+        "path": "assets/robotrack_bench_examples.jpg",
+        "bytes": 338771,
+        "git_blob_sha1": "354f3885d407350d90ffd207950b286b044ea0a1"
+      },
+      {
+        "path": "assets/robotrack_logo.svg",
+        "bytes": 11108,
+        "git_blob_sha1": "fa3e1307f0140cdc1c5c71c3910f118a73b16234"
+      },
+      {
+        "path": "datagen/build_manifests.py",
+        "bytes": 4893,
+        "git_blob_sha1": "f5c272f932680cf83974d221ec7b66f3d58f9930"
+      },
+      {
+        "path": "datagen/generate_house.py",
+        "bytes": 9127,
+        "git_blob_sha1": "0bfcbe2a8e2d15f0552884b8846ab777ba30a8dc"
+      },
+      {
+        "path": "datagen/generate_robotrack15m.py",
+        "bytes": 9450,
+        "git_blob_sha1": "5c5e8265fa8fe41f1ec09dea03a524148d65e735"
+      },
+      {
+        "path": "datagen/molmospaces_ext.py",
+        "bytes": 9715,
+        "git_blob_sha1": "ba67cf72e62e998f76f1acaee8352f8e2c161817"
+      },
+      {
+        "path": "datagen/point_tracking.py",
+        "bytes": 5823,
+        "git_blob_sha1": "92ad5a09842a21c3ebffa09a90ec2f52ba84c1be"
+      },
+      {
+        "path": "datagen/robotrack15m_houses.json",
+        "bytes": 2467,
+        "git_blob_sha1": "6b7a6ef01a9e7edb4d2d09f4c0c786c4cc53ccd8"
+      },
+      {
+        "path": "pyproject.toml",
+        "bytes": 1421,
+        "git_blob_sha1": "604e3a5e5298a9c819abae57de97b05301af11c8"
+      },
+      {
+        "path": "robotrack/__init__.py",
+        "bytes": 69,
+        "git_blob_sha1": "3235bf2ca76ce6b33d303f24ff1c07493a3dfe54"
+      },
+      {
+        "path": "robotrack/alltracker/LICENSE",
+        "bytes": 1071,
+        "git_blob_sha1": "9da27057aa2a31f423b33ab24c72ee7a3f143bf2"
+      },
+      {
+        "path": "robotrack/alltracker/__init__.py",
+        "bytes": 402,
+        "git_blob_sha1": "58ceb3e18b779aa8cf4761194d38cf3e93463bac"
+      },
+      {
+        "path": "robotrack/alltracker/basic.py",
+        "bytes": 4362,
+        "git_blob_sha1": "6b7e8c7816cbabe3bcf42a1f32d635b3ccfaa9a7"
+      },
+      {
+        "path": "robotrack/alltracker/blocks.py",
+        "bytes": 48901,
+        "git_blob_sha1": "2b53b215e2de8dbbfece432349db726edfe482a0"
+      },
+      {
+        "path": "robotrack/alltracker/data.py",
+        "bytes": 4689,
+        "git_blob_sha1": "29c7df727d6e1c7ddc6288a732a141cb25fd5b37"
+      },
+      {
+        "path": "robotrack/alltracker/loss.py",
+        "bytes": 9078,
+        "git_blob_sha1": "94cd748d078d7e7a664ac5f49f95f1682bc12e38"
+      },
+      {
+        "path": "robotrack/alltracker/misc.py",
+        "bytes": 3347,
+        "git_blob_sha1": "0528e70918c2c1f4c7484ee706ad9ef1aa46ce8c"
+      },
+      {
+        "path": "robotrack/alltracker/net.py",
+        "bytes": 25853,
+        "git_blob_sha1": "8a2dfa4a15ac32ca2439a2be420421af9fe3bf90"
+      },
+      {
+        "path": "robotrack/alltracker/samp.py",
+        "bytes": 7040,
+        "git_blob_sha1": "f6ce079b638feefdc9ab657beb664dbc95f9071f"
+      },
+      {
+        "path": "robotrack/bench.py",
+        "bytes": 4006,
+        "git_blob_sha1": "291045c9382981d230bc88604d7bb0b371e28223"
+      },
+      {
+        "path": "robotrack/cowtracker/LICENSE",
+        "bytes": 11490,
+        "git_blob_sha1": "3204c47a600a387dd4b3ca255747bc0b7c52efb7"
+      },
+      {
+        "path": "robotrack/cowtracker/__init__.py",
+        "bytes": 0,
+        "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "robotrack/cowtracker/train.py",
+        "bytes": 16677,
+        "git_blob_sha1": "f845cd44ce812bab88dedbead8b7e1ff5bb62d5f"
+      },
+      {
+        "path": "robotrack/egoexo4d.py",
+        "bytes": 4752,
+        "git_blob_sha1": "58dadb5e784c6ca04864d91110f3145ef88efa8d"
+      },
+      {
+        "path": "robotrack/egoexo4d_clips.csv",
+        "bytes": 8146,
+        "git_blob_sha1": "6f539a742cff72f855ee6c1e3f8caee06b224180"
+      },
+      {
+        "path": "robotrack/egoexo4d_take_uids.txt",
+        "bytes": 777,
+        "git_blob_sha1": "79ff4e50ce0030255c8f7da547c72e90994ba28b"
+      },
+      {
+        "path": "robotrack/eval_alltracker.py",
+        "bytes": 4180,
+        "git_blob_sha1": "e17733c23d1d64a5e76e5cac79df422e69cd93d0"
+      },
+      {
+        "path": "robotrack/eval_cowtracker.py",
+        "bytes": 5265,
+        "git_blob_sha1": "db7f969308d55f159871c9421487fae949b43665"
+      },
+      {
+        "path": "robotrack/evaluate.py",
+        "bytes": 3990,
+        "git_blob_sha1": "c8cb41dc91107e14ac1db714206cd8ed73012f9f"
+      },
+      {
+        "path": "robotrack/hub.py",
+        "bytes": 1007,
+        "git_blob_sha1": "51cecd817efeacb836993f848dda25866a13a94e"
+      },
+      {
+        "path": "robotrack/metrics.py",
+        "bytes": 1937,
+        "git_blob_sha1": "f56d84d8d09f68ab6fa1a3a08ff795b2022cdaa7"
+      },
+      {
+        "path": "robotrack/training/__init__.py",
+        "bytes": 0,
+        "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "robotrack/training/checkpoint.py",
+        "bytes": 9689,
+        "git_blob_sha1": "bf2b8ab17154d36d5ecdb34255c993ec123adc06"
+      },
+      {
+        "path": "robotrack/training/config/data/robotrack15m_50_mix.yaml",
+        "bytes": 2184,
+        "git_blob_sha1": "bba918584f0f2e1c82b91b26eb1aa582524a5bc6"
+      },
+      {
+        "path": "robotrack/training/config/data/robotrack15m_only.yaml",
+        "bytes": 1182,
+        "git_blob_sha1": "2e759ff1d6612dd0640d666ab5f26694b2ff602d"
+      },
+      {
+        "path": "robotrack/training/config/model/alltracker.yaml",
+        "bytes": 480,
+        "git_blob_sha1": "38ae0cef9cf39517ca420ed015e84723a04925aa"
+      },
+      {
+        "path": "robotrack/training/config/robotracker.yaml",
+        "bytes": 2762,
+        "git_blob_sha1": "e2f88a77302a84553826c7bc8ad023a48b7c5a61"
+      },
+      {
+        "path": "robotrack/training/data/__init__.py",
+        "bytes": 0,
+        "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "robotrack/training/data/composed_dataset.py",
+        "bytes": 2058,
+        "git_blob_sha1": "53f4d2e4f208ffd7ae64deea29390c03916e6f07"
+      },
+      {
+        "path": "robotrack/training/data/deterministic_dataset.py",
+        "bytes": 2172,
+        "git_blob_sha1": "c2d92789fde2d2d0eea04952692f0f7627224ec3"
+      },
+      {
+        "path": "robotrack/training/data/infinite_loader.py",
+        "bytes": 3361,
+        "git_blob_sha1": "8b339cd49c05ca8a5ad35c39ab25eea00bd18361"
+      },
+      {
+        "path": "robotrack/training/data/resumable_sampler.py",
+        "bytes": 2765,
+        "git_blob_sha1": "3bbabc7a46ac68db3d7c2be400ab2ba36dd08382"
+      },
+      {
+        "path": "robotrack/training/datasets/__init__.py",
+        "bytes": 0,
+        "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "robotrack/training/datasets/kubric.py",
+        "bytes": 9011,
+        "git_blob_sha1": "52465ea9f13ce8a746927866a48e1b045806129b"
+      },
+      {
+        "path": "robotrack/training/datasets/pointdataset.py",
+        "bytes": 14944,
+        "git_blob_sha1": "55d340c39df97aac4cf762d98b37066cd4779250"
+      },
+      {
+        "path": "robotrack/training/datasets/robotrack15m.py",
+        "bytes": 6420,
+        "git_blob_sha1": "9123304c0e413d0afdc356720851e05c1b6f4e9c"
+      },
+      {
+        "path": "robotrack/training/distributed.py",
+        "bytes": 2883,
+        "git_blob_sha1": "ec8b7a42b65cea6828a43f8807c6aa333b14d4a0"
+      },
+      {
+        "path": "robotrack/training/forward.py",
+        "bytes": 8480,
+        "git_blob_sha1": "c9cdbb77aff6ef9332876545a5b5475e085cc171"
+      },
+      {
+        "path": "robotrack/training/logging_utils.py",
+        "bytes": 2403,
+        "git_blob_sha1": "6d4c073b898a0d8fa1f3517cf563cc437c6428d5"
+      },
+      {
+        "path": "robotrack/training/train.py",
+        "bytes": 1188,
+        "git_blob_sha1": "5dcafcf32d063fae8edf75b0a403baa51e032cdc"
+      },
+      {
+        "path": "robotrack/training/trainer.py",
+        "bytes": 39348,
+        "git_blob_sha1": "37c771e1a779a3498f33a2df299012eca503f97e"
+      }
+    ],
+    "tracked_blobs_all_count": 56,
+    "tracked_blobs_all_bytes": 1907536,
+    "selected_deploy_code_files": [
+      {
+        "path": "LICENSE",
+        "bytes": 11358,
+        "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+      },
+      {
+        "path": "README.md",
+        "bytes": 27526,
+        "git_blob_sha1": "324e5b9391c6ad1617474a1481551d7db7b6044c"
+      },
+      {
+        "path": "pyproject.toml",
+        "bytes": 1421,
+        "git_blob_sha1": "604e3a5e5298a9c819abae57de97b05301af11c8"
+      },
+      {
+        "path": "robotrack/__init__.py",
+        "bytes": 69,
+        "git_blob_sha1": "3235bf2ca76ce6b33d303f24ff1c07493a3dfe54"
+      },
+      {
+        "path": "robotrack/alltracker/LICENSE",
+        "bytes": 1071,
+        "git_blob_sha1": "9da27057aa2a31f423b33ab24c72ee7a3f143bf2"
+      },
+      {
+        "path": "robotrack/alltracker/__init__.py",
+        "bytes": 402,
+        "git_blob_sha1": "58ceb3e18b779aa8cf4761194d38cf3e93463bac"
+      },
+      {
+        "path": "robotrack/alltracker/basic.py",
+        "bytes": 4362,
+        "git_blob_sha1": "6b7e8c7816cbabe3bcf42a1f32d635b3ccfaa9a7"
+      },
+      {
+        "path": "robotrack/alltracker/blocks.py",
+        "bytes": 48901,
+        "git_blob_sha1": "2b53b215e2de8dbbfece432349db726edfe482a0"
+      },
+      {
+        "path": "robotrack/alltracker/data.py",
+        "bytes": 4689,
+        "git_blob_sha1": "29c7df727d6e1c7ddc6288a732a141cb25fd5b37"
+      },
+      {
+        "path": "robotrack/alltracker/loss.py",
+        "bytes": 9078,
+        "git_blob_sha1": "94cd748d078d7e7a664ac5f49f95f1682bc12e38"
+      },
+      {
+        "path": "robotrack/alltracker/misc.py",
+        "bytes": 3347,
+        "git_blob_sha1": "0528e70918c2c1f4c7484ee706ad9ef1aa46ce8c"
+      },
+      {
+        "path": "robotrack/alltracker/net.py",
+        "bytes": 25853,
+        "git_blob_sha1": "8a2dfa4a15ac32ca2439a2be420421af9fe3bf90"
+      },
+      {
+        "path": "robotrack/alltracker/samp.py",
+        "bytes": 7040,
+        "git_blob_sha1": "f6ce079b638feefdc9ab657beb664dbc95f9071f"
+      },
+      {
+        "path": "robotrack/bench.py",
+        "bytes": 4006,
+        "git_blob_sha1": "291045c9382981d230bc88604d7bb0b371e28223"
+      },
+      {
+        "path": "robotrack/egoexo4d.py",
+        "bytes": 4752,
+        "git_blob_sha1": "58dadb5e784c6ca04864d91110f3145ef88efa8d"
+      },
+      {
+        "path": "robotrack/eval_alltracker.py",
+        "bytes": 4180,
+        "git_blob_sha1": "e17733c23d1d64a5e76e5cac79df422e69cd93d0"
+      },
+      {
+        "path": "robotrack/evaluate.py",
+        "bytes": 3990,
+        "git_blob_sha1": "c8cb41dc91107e14ac1db714206cd8ed73012f9f"
+      },
+      {
+        "path": "robotrack/hub.py",
+        "bytes": 1007,
+        "git_blob_sha1": "51cecd817efeacb836993f848dda25866a13a94e"
+      },
+      {
+        "path": "robotrack/metrics.py",
+        "bytes": 1937,
+        "git_blob_sha1": "f56d84d8d09f68ab6fa1a3a08ff795b2022cdaa7"
+      }
+    ],
+    "selected_deploy_code_file_count": 19,
+    "selected_deploy_code_bytes": 164989,
+    "code_LICENSE_main": "Apache 2.0 for root",
+    "code_LICENSE_alltracker_vendored": "MIT with embedded license",
+    "code_LICENSE_cowtracker_vendored": "FAIR Noncommercial Research License; excluded from lean RoboTracker runtime selected source",
+    "pyproject_project_combined_licenses_must_act_review": true,
+    "python_min": "3.10",
+    "pytorch_min": "2.1",
+    "fast_small_runtime_optional_packages": [
+      "torchvision",
+      "einops",
+      "numpy",
+      "opencv-python",
+      "huggingface_hub"
+    ],
+    "warp_torch": "2.10.0",
+    "warp_torchvision": "0.25.0",
+    "warp_xformers": "0.0.34",
+    "publisher_small_code_torch_load_weights_only": true,
+    "checkpoints_via_hub_default_auto_network": "RoboTracker eval script default argument robotracker resolves main and can auto-download; offline restore must pass exact local checkpoint path",
+    "owner_code_runtime_executed": false,
+    "wheelhouse_offline_closed": false,
+    "FAIRNC_rights_owner_reviewed": false,
+    "owner_local_tree_SHA_verified": false
+  },
+  "benchmark_reproducibility_dataset_references": [
+    {
+      "repo_id": "allenai/RoboTrack-Bench",
+      "revision_sha": "bb275295d5f616260df87dda32f0362108736340",
+      "license_tag": "other",
+      "publisher_repo_reported_usedStorage_bytes": 921148948,
+      "publisher_sibling_count": 841,
+      "publisher_reported_video_clips": 307,
+      "full_dataset_video_hash_scopes_pinned": false,
+      "individual_video_rights_and_person_privacy_verified": false,
+      "download_approved": false
+    },
+    {
+      "repo_id": "allenai/RoboTrack-15M",
+      "revision_sha": "157e5aebfc0eda97da6046dbd668fdfeeca2bc06",
+      "license_tag": "odc-by",
+      "publisher_repo_reported_usedStorage_bytes": 18776526195,
+      "publisher_sibling_count": 6605,
+      "publisher_reported_video_clips": 3000,
+      "full_dataset_video_hash_scopes_pinned": false,
+      "individual_video_rights_and_person_privacy_verified": false,
+      "download_approved": false
+    }
+  ],
+  "benchmark_source": "https://allenai.org/blog/robotrack",
+  "paper_type": "Ai2 2026 technical report; no peer review verification",
+  "new_weights_retrieved_by_this_research": 0,
+  "source_pins_are_not_owner_local_sha": true,
+  "personal_rights_and_hardware_unverified": true,
+  "download_enabled": false,
+  "approved_by_user": false,
+  "formal_catalog_promotion_performed": false,
+  "runtime_code_executed": false
+}
