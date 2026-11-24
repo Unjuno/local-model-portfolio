@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "kind": "R160_V68_3_NEW_CONDITIONAL_ORIGINALS_SOURCE_FROZEN_RESEARCH_ONLY",
+  "as_of_jst": "2026-11-25",
+  "catalog_revision": "v68-20261125",
+  "formal_overlay": "catalog/revisions/v68-2026-11-25.json",
+  "source_manifest": "manifests/drafts/r160-2026-11-25-three-edge-trained-originals-source-freeze.candidate.json",
+  "acquisition_report_baseline": {
+    "path": "catalog/execution/2026-11-19-acquisition-ledger.json",
+    "verified_models_reported": 116,
+    "verified_bytes_reported": 2021784002725,
+    "owner_drive_sha_independently_checked": false
+  },
+  "proposed_next_three": [
+    {
+      "repo_id": "tencent/WeMM-Ecom-0.8B",
+      "category": "小型EC視覚・言語／独立マルチモーダル後学習0.853B",
+      "phase": "S1",
+      "decision": "CONDITIONAL_RESEARCH_NOT_EXECUTION_APPROVAL",
+      "publisher_revision_sha": "b40297975d72386f1c53103371d80ae0e5a9bd58",
+      "publisher_files": 20,
+      "publisher_source_bytes": 1733044450,
+      "publisher_weight_sha256s": [
+        "5a84c44f4e3beaf16ab0b6aa8238c66a6033291d77b13b81d934098a02d68bf4"
+      ],
+      "publisher_source_manifest": "manifests/drafts/r160-2026-11-25-three-edge-trained-originals-source-freeze.candidate.json",
+      "mandatory_components": [
+        "model.safetensors"
+      ],
+      "legal_owner_use_act_reviewed": false,
+      "owner_local_SHA_verified": false,
+      "owner_current_storage_and_staging_verified": false,
+      "complete_offline_dependency_closure_verified": false,
+      "custom_code_safety_reviewed": false,
+      "explicit_file_manifest_user_approval": false,
+      "download_approved": false,
+      "download_enabled": false
+    },
+    {
+      "repo_id": "openbmb/MiniCPM5-2B",
+      "category": "省容量推論・コード・agent／RL+OPD最終原本2.517B",
+      "phase": "S2",
+      "decision": "CONDITIONAL_RESEARCH_NOT_EXECUTION_APPROVAL",
+      "publisher_revision_sha": "42433e90dad95123ab87729fd7011e7110629556",
+      "publisher_files": 11,
+      "publisher_source_bytes": 5043807977,
+      "publisher_weight_sha256s": [
+        "14fb8e7f0a18d53d1f239773758bf581cee7e456a4523a54622c3a245b64402c"
+      ],
+      "publisher_source_manifest": "manifests/drafts/r160-2026-11-25-three-edge-trained-originals-source-freeze.candidate.json",
+      "mandatory_components": [
+        "model-00000-of-00001.safetensors"
+      ],
+      "legal_owner_use_act_reviewed": false,
+      "owner_local_SHA_verified": false,
+      "owner_current_storage_and_staging_verified": false,
+      "complete_offline_dependency_closure_verified": false,
+      "custom_code_safety_reviewed": false,
+      "explicit_file_manifest_user_approval": false,
+      "download_approved": false,
+      "download_enabled": false
+    },
+    {
+      "repo_id": "illuin/Ivonnet-0.8B",
+      "category": "小型文書・画像決定器／学習済みreadout付0.853B",
+      "phase": "S1",
+      "decision": "CONDITIONAL_RESEARCH_NOT_EXECUTION_APPROVAL",
+      "publisher_revision_sha": "6a6a979489d262861ad3c34faaa1a763d1ce4baf",
+      "publisher_files": 21,
+      "publisher_source_bytes": 1728496331,
+      "publisher_weight_sha256s": [
+        "efa1c618389747c10cac685d832788fe0a147e3a0058c30643f9f7c3c7bd164c",
+        "b8edc7c99b4c03e706c537a3a0ae96763ea33bb7d1e9bebebb615e1a6994b08f"
+      ],
+      "publisher_source_manifest": "manifests/drafts/r160-2026-11-25-three-edge-trained-originals-source-freeze.candidate.json",
+      "mandatory_components": [
+        "model.safetensors",
+        "readout.safetensors"
+      ],
+      "legal_owner_use_act_reviewed": false,
+      "owner_local_SHA_verified": false,
+      "owner_current_storage_and_staging_verified": false,
+      "complete_offline_dependency_closure_verified": false,
+      "custom_code_safety_reviewed": false,
+      "explicit_file_manifest_user_approval": false,
+      "download_approved": false,
+      "download_enabled": false
+    }
+  ],
+  "previous_still_queued_without_new_approval": [
+    {
+      "repo_id": "abacusai/Smaug-Uncensored",
+      "status": "v66_CONDITIONAL_OWNER_UNAPPROVED_NO_REDOWNLOAD"
+    },
+    {
+      "repo_id": "inclusionAI/LingSante-3.1-air-VL",
+      "status": "v66_CONDITIONAL_249GB_OWNER_UNAPPROVED"
+    },
+    {
+      "repo_id": "Aratako/Drama-3-Japanese",
+      "status": "v67_CONDITIONAL_JAPANESE_TTS_OWNER_UNAPPROVED"
+    },
+    {
+      "repo_id": "StudioYebisu-ship-it/Drama-3-Japanese-speech-cpp-gguf",
+      "status": "v67_CONDITIONAL_JAPANESE_DISTILLED_TTS_OWNER_UNAPPROVED"
+    },
+    {
+      "repo_id": "openbmb/MiniCPM5-2B-Base",
+      "status": "RESEARCH_ONLY_SEPARATE_PRETRAINED_STAGE_NO_AUTOMATIC_FULL_DUPLICATE"
+    }
+  ],
+  "held_comparators": [
+    {
+      "repo_id": "illuin/IVE-4B",
+      "reason": "Independent document-decider sibling ~9.103GB; measure 0.8B quality/GB and backend first"
+    },
+    {
+      "repo_id": "tencent/WeMM-Ecom-2B",
+      "reason": "Independent 2B EC outcome; measured comparable gain over 0.8B not shown"
+    },
+    {
+      "repo_id": "Aleph-Alpha/Kolibri-1.1",
+      "reason": "Independent 75B MoE but requires high-memory GPUs and rights/ABI validation"
+    },
+    {
+      "repo_id": "baidu/ERNIE-5.5-Flash-Preview",
+      "reason": "Publisher 280B total > 150B screening, exception RAM comparison not measured"
+    },
+    {
+      "repo_id": "inclusionAI/LingSante-3.1-flash-MXFP4",
+      "reason": "Publisher 560B total >150B, no exception RAM validation"
+    }
+  ],
+  "summary": {
+    "newly_conditionally_registered": 3,
+    "newly_frozen_publisher_files": 52,
+    "newly_frozen_publisher_bytes": 8505348758,
+    "newly_frozen_LFS_refs": 13,
+    "newly_frozen_trained_weight_files": 4,
+    "prior_248_assets_changed_or_deleted": 0,
+    "owner_licensed_act_permissions_added": 0,
+    "owner_local_sha_verified_now": 0,
+    "new_model_payload_downloaded_now_bytes": 0,
+    "approved_queue_entries_expected": 0
+  },
+  "implementation_gates": {
+    "owner_rights_per_individual_act_required": true,
+    "owner_real_available_bytes_measured": null,
+    "minimum_free_bytes": 200000000000,
+    "archive_total_budget_bytes": 4000000000000,
+    "staging_and_cache_peak_bytes_measured": null,
+    "owner_device_SHA_verified": false,
+    "offline_restore_sha_and_readout_verified": false,
+    "all_python_cuda_codec_backends_reviewed": false,
+    "automatic_approval_forbidden": true,
+    "never_execute_remote_code_without_review": true,
+    "prohibited_to_unblock_gated_without_entitlement": true,
+    "download_enabled": false,
+    "approved_by_user": false
+  }
+}
