@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "kind": "R159_POST116_NEW_SMALL_DOCUMENT_DECISION_SELECTION_AND_HOLD_STATES",
+  "as_of_jst": "2026-11-24",
+  "catalog_revision": "v66-20261124",
+  "source_manifest": "manifests/drafts/r159-2026-11-24-ive-ivonnet-ccore-immutable-publisher-source.candidate.json",
+  "acquisition_reconciliation": "catalog/research/2026-11-24-r159-ledger116-reconciliation.json",
+  "source_queue": "queues/proposed-v66-r159-after116-novel-decision-models-UNAPPROVED.json",
+  "formal_catalogue_changed": false,
+  "newly_registered_models": 0,
+  "new_research_candidates": [
+    {
+      "repo_id": "illuin/Ivonnet-0.8B",
+      "decision": "RESEARCH_CONDITIONAL_PINNED_ORIGINAL_NOT_YET_DOWNLOAD_APPROVED",
+      "publisher_revision_sha": "6a6a979489d262861ad3c34faaa1a763d1ce4baf",
+      "publisher_files": 21,
+      "publisher_full_source_bytes": 1728496331,
+      "trained_elements_from_publisher": 852985920,
+      "license_metadata": "apache-2.0",
+      "model_card_has_training_parent_sha": true,
+      "parent_original_weights_must_not_be_reacquired_when_checkpoint_full": true,
+      "trained_readout_is_independent_required_component": true,
+      "custom_code_security_reviewed": false,
+      "owner_licensed_act_reviewed": false,
+      "source_download_approved": false
+    },
+    {
+      "repo_id": "illuin/IVE-4B",
+      "decision": "RESEARCH_CONDITIONAL_PINNED_ORIGINAL_NOT_YET_DOWNLOAD_APPROVED",
+      "publisher_revision_sha": "1e65613dfd83ba6949883325fc5f4791dae56a46",
+      "publisher_files": 23,
+      "publisher_full_source_bytes": 9102712961,
+      "trained_elements_from_publisher": 4539265536,
+      "license_metadata": "apache-2.0",
+      "model_card_has_training_parent_sha": true,
+      "parent_original_weights_must_not_be_reacquired_when_checkpoint_full": true,
+      "trained_readout_is_independent_required_component": true,
+      "custom_code_security_reviewed": false,
+      "owner_licensed_act_reviewed": false,
+      "source_download_approved": false
+    }
+  ],
+  "coauthor_same_code_sha_reuse_publisher_only": [
+    ".gitattributes",
+    "source/src/decision_model/model.py",
+    "source/RUNNING.md",
+    "LICENSE",
+    "source/src/decision_model/server.py",
+    "source/src/decision_model/engine.py",
+    "processor_config.json",
+    "tokenizer.json",
+    "source/src/decision_model/__init__.py",
+    "tokenizer_config.json",
+    "source/pyproject.toml"
+  ],
+  "same_tokenizer_lfs_SHA_for_two_models": true,
+  "uncensored_status": "Retain recorded/selected small Qwen3.5-0.8B Heretic LoRA (two distinct adapters); already in 116 ledger and catalog, not a new duplicate download.",
+  "held_alternative": {
+    "repo_id": "ccore/CCORE-Web-Coder-4B",
+    "reason": "Qwen3.5-4B-Base web coding specialization; quality benchmark and evidence of nonredundant utility vs existing Coder-Next not independently established. The 30-file repo includes multiple same-trained-model GGUF formats; do not archive them as independent models.",
+    "published_full_repo_bytes": 33809262632,
+    "native_shard_bytes": 17490122528,
+    "multiple_gguf_same_train_state_bytes": 16288023488,
+    "download_approved": false
+  },
+  "regulation": "BIS Federal Register 2026-11-19 removed prior 4E091. Per-repo license, Gated access and intended acts still matter; do not assign takedown probabilities without data.",
+  "evidence_urls": [
+    "https://huggingface.co/blog/QuentinJG/ive-release",
+    "https://huggingface.co/illuin/IVE-4B",
+    "https://huggingface.co/illuin/Ivonnet-0.8B",
+    "https://huggingface.co/ccore/CCORE-Web-Coder-4B",
+    "https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm"
+  ],
+  "download_approvals_added": 0,
+  "owner_Windows_D_rehashed_by_this_study": false,
+  "model_payloads_downloaded": 0,
+  "untrusted_model_code_executed": false,
+  "prior_models_deleted": 0,
+  "H_T_D_C_U": {
+    "H": "Ivonnet-0.8B retains independent distilled visual document decision trained behavior and IVE-4B retains stronger full finetune generalized document classification; each extends already archived model categories without a new giant general LLM.",
+    "T": "Immutable 44 publisher file paths, byte sizes, Git OIDs, LFS SHA and publisher release-manifest weights checks. Later n>=100 matched document choices (multilingual/OOD) on one declared CPU/GPU clock precision batch=1, with calibration error, accuracy and latency as separate metrics.",
+    "D": "STATIC PASS when immutable sources and license tag match; FAIL if revision/weights drift, phantom approval or owner rights denied; DOWNLOAD UNCERTAIN until actual local device, rights, dependencies, and explicit approval.",
+    "C": "Existing tiny decision model already covers task as well, published gains do not generalize beyond public/private index, package ABI mismatch or tokenizer/readout missing makes restore impossible.",
+    "U": "Publisher results are not owner replicated, CPU/GPU/driver/clock/batch/cache unspecified, unreviewed code and license, owner D physical space and local SHA unknown. No numeric combined u_c/k without replicated measurements."
+  },
+  "interdisciplinary": [
+    "machine learning probability calibration and visual question answering",
+    "information retrieval/document processing",
+    "reproducible software supply-chain provenance",
+    "AI governance/export/licensing"
+  ],
+  "already_reported_acquired_3_unregistered_historical_v65": [
+    {
+      "repo_id": "Datadog/Toto-2.0-4m",
+      "revision_sha": "8306a9801cf98c0f5ffe4b2dcc8f496e616d84d9",
+      "source_bytes": 17727464,
+      "files_verified": 7
+    },
+    {
+      "repo_id": "inclusionAI/LingSante-Pulse-1.0",
+      "revision_sha": "51582cc8487ab0e0f48d866bfc0124afbaf6562a",
+      "source_bytes": 66946541,
+      "files_verified": 7
+    },
+    {
+      "repo_id": "ostris/primal_vae",
+      "revision_sha": "dc3e96c879e8cf4247c9474c3109bc2847099b50",
+      "source_bytes": 1145019884,
+      "files_verified": 14
+    }
+  ],
+  "already_reported_acquired_3_unregistered": [],
+  "v66_prior_three_backfilled": true
+}
