@@ -22,22 +22,27 @@ class R154V65Selection(unittest.TestCase):
   cls.q=read('queues/proposed-v65-2026-11-22.json')
   cls.post=read('queues/proposed-v65-r155-after112-unapproved-source-scopes.json')
  def test_current_and_old236_immutable(self):
-  self.assertEqual(self.current['revision_id'],'v65-20261122')
-  self.assertEqual(self.current['ordered_overlays'][-1],'catalog/revisions/v65-2026-11-22.json')
-  self.assertEqual(self.current['materialized_catalog_path'],'catalog/effective-portfolio-2026-11-22-v65.json')
+  self.assertEqual(self.current['revision_id'],'v66-20261124')
+  self.assertIn('catalog/revisions/v65-2026-11-22.json',self.current['ordered_overlays'])
+  self.assertEqual(self.current['materialized_catalog_path'],'catalog/effective-portfolio-2026-11-24-v66.json')
   self.assertEqual(self.old['items'],self.new['items'][:236])
   self.assertEqual(len(self.new['items']),240)
   self.assertEqual(len({(x['asset_kind'],x['repo_id']) for x in self.new['items']}),240)
   self.assertEqual((self.new['counts']['tracked'],self.new['counts']['active'],self.new['counts']['models'],self.new['counts']['datasets']),(240,192,214,26))
   self.assertEqual((self.new['counts']['by_decision']['select'],self.new['counts']['by_decision']['conditional'],self.new['counts']['by_decision']['hold']),(56,136,29))
+  latest=read(self.current['materialized_catalog_path'])
+  self.assertEqual(self.new['items'],latest['items'][:240])
   for k in ('tracked','active','models','datasets','by_decision','by_tier','by_forecast_wave','parameter_gate','resource_screen'):
-   self.assertEqual(self.current['expected'][k],self.new['counts'][k])
-  self.assertEqual(self.current['expected']['budget_scenario'],self.new['budget'])
+   self.assertEqual(self.current['expected'][k],latest['counts'][k])
+  self.assertEqual(self.current['expected']['budget_scenario'],latest['budget'])
  def test_all_112_receipt_IDs_registered_and_prior2_missing(self):
-  verified={x['repo_id']:x for x in self.ledger['models'] if x['status']=='VERIFIED'}
-  self.assertEqual(len(verified),112)
-  self.assertEqual(self.ledger['summary']['files_verified_total'],1714)
-  self.assertEqual(self.ledger['summary']['bytes_verified_total'],2020548143087)
+  latest=[x for x in self.ledger['models'] if x['status']=='VERIFIED']
+  self.assertEqual(len(latest),116)
+  self.assertEqual(self.ledger['summary']['files_verified_total'],1758)
+  self.assertEqual(self.ledger['summary']['bytes_verified_total'],2021784002725)
+  historic=[x for x in latest if x['repo_id'] not in {'nchapman/Qwen3.5-0.8B-Heretic-LoRA','Datadog/Toto-2.0-4m','inclusionAI/LingSante-Pulse-1.0','ostris/primal_vae'}]
+  self.assertEqual(len(historic),112)
+  verified={x['repo_id']:x for x in historic}  # original R154 112 receipt set, not ledger ordering
   before={x['repo_id'] for x in self.old['items']}
   after={x['repo_id'] for x in self.new['items']}
   self.assertEqual(sorted(set(verified)-before),['mistralai/Timestral-5M','tencent/WeMM-Video-2B'])
@@ -146,12 +151,12 @@ class R154V65Selection(unittest.TestCase):
   self.assertEqual(self.ov['new_weight_payload_downloaded'],0)
   self.assertEqual(self.ov['new_approved_downloads_added'],0)
  def test_current_sidecar_links_and_no_owner_hdd_claims(self):
-  self.assertEqual(read('catalog/readiness/CURRENT.json')['catalog_revision'],'v65-20261122')
-  self.assertEqual(read('catalog/estimates/CURRENT.json')['portfolio_revision'],'v65-20261122')
-  self.assertEqual(self.current['latest_active_readiness_audit']['summary_path'],'catalog/readiness/v65-2026-11-22-r154-all192-gates.json')
-  self.assertEqual(self.current['latest_conditional_access_audit']['path'],'catalog/access/2026-11-22-v65-conditional-hub-gates.json')
-  self.assertEqual(self.current['insurance_preparation_worklist_path'],'catalog/preparation/2026-11-22-insurance-bundles-v65.json')
-  self.assertEqual(self.current['latest_reported_ledger_summary']['reported_VERIFIED_models'],112)
+  self.assertEqual(read('catalog/readiness/CURRENT.json')['catalog_revision'],'v66-20261124')
+  self.assertEqual(read('catalog/estimates/CURRENT.json')['portfolio_revision'],'v66-20261124')
+  self.assertEqual(self.current['latest_active_readiness_audit']['summary_path'],'catalog/readiness/v66-2026-11-24-r157-all197-gates.json')
+  self.assertEqual(self.current['latest_conditional_access_audit']['path'],'catalog/access/2026-11-24-v66-conditional-hub-gates.json')
+  self.assertEqual(self.current['insurance_preparation_worklist_path'],'catalog/preparation/2026-11-24-insurance-bundles-v66.json')
+  self.assertEqual(self.current['latest_reported_ledger_summary']['reported_VERIFIED_models'],116)
   self.assertFalse(self.current['expected']['budget_scenario']['physical_capacity_verified'])
   self.assertEqual(self.current['expected']['budget_scenario']['v65_new_download_reservation_approved_bytes'],0)
 if __name__=='__main__':unittest.main()
