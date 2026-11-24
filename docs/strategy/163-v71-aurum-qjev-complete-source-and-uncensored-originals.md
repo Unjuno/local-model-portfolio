@@ -88,3 +88,7 @@
 ## 7.〈次に考える問い〉
 
 **Aurumによる低拒否率とBFCLのツール不必要時の不正確な選択増加をどの尺度で評価し、QJevのECE校正破壊が独立測定で判明した場合にどのモデルを優先保全するべきか。**
+
+## 8. メタデータ回帰試験の実行証跡
+
+[実行済みR163/R162テストの監査JSON](../../catalog/audits/2026-11-25-r163-v71-offline-metadata-unittest-executed.json)：公開GitHub mainコミット `414b622c2fb502a0d4637ccc91f9d140ccadbf62` をメタデータ検証用クラウドLinux（`x86_64`／Python 3.12.3）へshallow checkoutし、R163は**5件PASS**、旧R162は**5件PASS**、合計**10件PASS・失敗0・エラー0**。実行したのはレポジトリ内Python標準ライブラリのJSON比較のみ。Publisher提供のPython/重み・GPU推論・Owner Windows Dは実行・アクセスしていない。**この静的PASSを実機の品質・本人許諾・復元成否のPASSへ読み替えてはならない**。
