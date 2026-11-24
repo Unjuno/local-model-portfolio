@@ -31,7 +31,7 @@ class R160V68ThreeCompactOriginals(unittest.TestCase):
         cls.prep_before = load("catalog/preparation/2026-11-24-insurance-bundles-v67.json")
         cls.prep_after = load("catalog/preparation/2026-11-25-insurance-bundles-v68.json")
         cls.readiness_before = load("catalog/readiness/v67-2026-11-24-r158-all199-gates.json")
-        cls.readiness_after = load("catalog/readiness/v68-2026-11-25-r160-all202-gates.json")
+        cls.readiness_after = load("catalog/readiness/v68-2026-11-25-r160-all203-gates.json")
         cls.current = load("catalog/CURRENT.json")
         cls.approved = load("queues/approved.json")
         cls.ledger = load("catalog/execution/2026-11-19-acquisition-ledger.json")
@@ -124,7 +124,7 @@ class R160V68ThreeCompactOriginals(unittest.TestCase):
                          {"tencent/WeMM-Ecom-0.8B", "openbmb/MiniCPM5-2B",
                           "illuin/Ivonnet-0.8B", "illuin/IVE-4B"})
 
-    def test_all_202_active_research_and_approval_stops(self):
+    def test_all_203_active_research_and_approval_stops(self):
         pairs = [
             (self.queue_before["candidates"], self.queue_after["candidates"], 203),
             (self.prep_before["items"], self.prep_after["items"], 203),
