@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "kind": "R162_V68_NEW_SMALL_UNCENSORED_AND_DECISION_ORIGINAL_RESEARCH_SELECTION_NO_CANONICAL_PROMOTION",
+  "review_jst": "2026-11-25",
+  "formal_catalog_baseline": "v68-20261125",
+  "tracked": 252,
+  "active": 203,
+  "ledger_verified_report": 116,
+  "approved_downloads": 0,
+  "publisher_research_source_manifest": "manifests/drafts/r162-2026-11-25-new-uncensored-and-decision-partial-publisher-sha-RESEARCH.candidate.json",
+  "research_only_queue": "queues/proposed-v68-r162-post116-uncensored-specialists-UNAPPROVED.json",
+  "recommended_originals": [
+    {
+      "repo_id": "2Beyes/Aurum-2B-Uncensored",
+      "immutable_commit": "56c735e8dc8efb82d81ad8db95e9eefb2ae7129d",
+      "publisher_full_repo_bytes": 4572557909,
+      "learned_weights": [
+        {
+          "path": "model.safetensors-00001-of-00001.safetensors",
+          "bytes": 4548221520,
+          "publisher_lfs_sha256": "54b60b4e66348f40d9672dbd245407d85a19189e586aab5b06cb635304371c1c"
+        }
+      ],
+      "training_parent": "Qwen/Qwen3.5-2B",
+      "publisher_claims_not_independently_verified": "Publisher says zero refusals over 1113 prompts but baseline refusals are automatic heuristics while transformed model flags were manually reviewed; nonidentical classification. Publisher BFCL no-applicable-tool irrelevance 62.5 vs parent 87.9, GPQA sample long answer worse. No independently replicated performance or safe autonomous-use evidence.",
+      "full_file_oid_scope_complete": false,
+      "download_authorized": false
+    },
+    {
+      "repo_id": "AnkitNayak-dev/QJev-1.5B-Abliterated",
+      "immutable_commit": "1df03fe639898580f53a984355b7cbf3cca24bf4",
+      "publisher_full_repo_bytes": 3102137211,
+      "learned_weights": [
+        {
+          "path": "decision_head.safetensors",
+          "bytes": 3183276,
+          "publisher_lfs_sha256": "ec01a57a7e61c3ee052a5b7ea939cb4e5ae2cfacf2fe84f5e1d67d962805bebe"
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 3087467144,
+          "publisher_lfs_sha256": "5272c8590c74528d5f8604a6a058ddc6a8908089bfb92c010fd73fabd36c796e"
+        }
+      ],
+      "training_parent": "AnkitNayak-dev/QJev-1.5B",
+      "publisher_claims_not_independently_verified": "Model card reports 62.53 percent strict JevBench on 240 cases/1468 trials from same publisher, not independently reproduced. High-stakes emergency and cyber examples are no evidence for safe autonomous action. Decision head has same SHA before/after backbone ablation, so calibrated probabilities may shift and require revalidation.",
+      "full_file_oid_scope_complete": false,
+      "download_authorized": false
+    }
+  ],
+  "held_sources": [
+    {
+      "repo_id": "OpenIntelligenceNet/Aion-1.0-Instruct-2.3B-Abliterated",
+      "immutable_commit": "266067bc254dbf72d76154016023d1687cc0e3d5",
+      "publisher_full_repo_bytes": 4593269888,
+      "original_training_parent_already_acquired_report_only": true,
+      "rationale": "Publisher says 5 refusals in 100 and KL 'very low' without numerical value, test set or full compare code; no independent neutral task data. Original Aion already selected and reported acquired but local owner SHA not independently checked."
+    },
+    {
+      "repo_id": "MC7ever/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16-heretic",
+      "immutable_commit": "9a9220a20924249e07d782fc0cd912345858728e",
+      "publisher_full_repo_bytes": 7968035453,
+      "original_training_parent_already_acquired_report_only": false,
+      "rationale": "Publisher reports refusals 8/100 vs 100/100 and KL0.0664; not independently tested; Looped Dory support depends on vLLM pull request or llama.cpp custom commit, not standard release. Benchmark owner HW and loops/VRAM unverified."
+    }
+  ],
+  "rejected_empty_sources": [
+    {
+      "repo_id": "electroglyph/Spark-X2.6-4B-uncensored-experimental-LoRA",
+      "revision": "82fd1a8d83837c35164c958404dce198bf43fe94",
+      "repository_content_just_attribute_file": true,
+      "learned_payload_bytes": 0
+    }
+  ],
+  "full_source_sha_gate_missing": true,
+  "owner_current_volume_SHA_verified": false,
+  "owner_license_intended_acts_checked": false,
+  "model_runtime_abi_executed": false,
+  "owner_manifest_approval_present": false,
+  "formal_selection_changes": 0,
+  "weights_downloaded": 0,
+  "original_assets_deleted": 0,
+  "regulatory_primary": "https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm",
+  "regulation_factual_evidence": "2026-11-19 BIS withdrew ECCN4E091 AI Diffusion Rule model-weight controls; no verified future blanket local model ban",
+  "H": "Distinct trained no-refusal two-billion-parameter visual model and independently edited option-probability decision model preserve capabilities not duplicable from already acquired generic models; no claimed independent performance superiority.",
+  "T": "Exact SHA256 of 3 trained payloads and 40hex source revisions; verify five reported source aggregate bytes, existing 252 catalog/116 ledger ID exclusion and approved queue zero; complete per-file path/bytes/Git OID/LFS and model runtime before formal registration; independent task evaluation >100 and runtime repeats >=30 only after authority.",
+  "D": "PASS for publisher reported original weight SHA and ID nonduplicate; UNCERTAIN for missing full per-file SHA, owner rights+disk+runtime; FAIL for any implicit approval, downloading empty LoRA, or emergency automation based on uncalibrated decision model.",
+  "C": "Uncensored Aurum loses BFCL tool abstention and long reasoning; QJev decision head now receives shifted representations, compromising calibration; Aion alternative quality unproven; owner licenses or custom backend incompatible.",
+  "U": "Publisher self-evaluation, no reproducible score distribution/CI, no owner actual hardware, memory, and local SHA; u_c and k uncalculated."
+}
