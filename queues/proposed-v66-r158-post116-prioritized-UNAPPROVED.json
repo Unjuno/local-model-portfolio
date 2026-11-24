@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "kind": "R158_V66_AFTER_LEDGER116_DEDUP_RESEARCH_ONLY_PRIORITY",
+  "reviewed_jst": "2026-11-24",
+  "canonical_revision": "v66-20261124",
+  "source_manifest": "manifests/drafts/r157-2026-11-24-post116-five-originals-medical-moe.candidate.json",
+  "ledger": "catalog/execution/2026-11-19-acquisition-ledger.json",
+  "priority_policy": "Preserve independently trained states; publisher SHA evidence, active utility, storage and actual rights are independent non-compensating gates.",
+  "previously_reported_acquired_do_not_retrieve_again": [
+    "Datadog/Toto-2.0-4m",
+    "inclusionAI/LingSante-Pulse-1.0",
+    "ostris/primal_vae"
+  ],
+  "research_priorities": [
+    {
+      "priority": "P0",
+      "repo_id": "abacusai/Smaug-Uncensored",
+      "decision": "CONDITIONAL_SELECTED_RESEARCH_NOT_APPROVED",
+      "publisher_revision_sha": "e4bbcf7aec54ab72f4ce720569f3b3dc7b973087",
+      "publisher_full_scope_bytes": 55586070091,
+      "exact_source_files": 32,
+      "possible_parent_equal_weight_bytes": 5934994296,
+      "publisher_remaining_scope_if_exact_two_shared_weight_files_reused_bytes": 49651075795,
+      "reason": "Independent DPO safety/refusal behavior; same Qwen base 2 shared shard SHA vs 16 different, large overlap unknown within shards. Preserve unique source and avoid blind full duplication.",
+      "owner_parent_sha_matched": false,
+      "owner_disk_capacity_measured_now": false,
+      "license_owner_acts_verified": false,
+      "task_utility_repeat_validation": false,
+      "download_approved": false
+    },
+    {
+      "priority": "P1",
+      "repo_id": "inclusionAI/LingSante-3.1-air-VL",
+      "decision": "CONDITIONAL_ARCHIVE_ONLY_NOT_APPROVED",
+      "publisher_revision_sha": "1f398c937d6069994a156689636832c47d8c09be",
+      "publisher_full_scope_bytes": 249721924398,
+      "exact_source_files": 74,
+      "reason": "Independent 125B medical multimodal trained MoE, 50 weight shards, high archival specialization. 4x141GB GPU published deployment, owner runtime and clinical metrics not verified.",
+      "owner_hdd_capacity_measured_now": false,
+      "runtime_dependency_pinned_and_safe": false,
+      "privacy_medical_research_protocol_verified": false,
+      "license_owner_acts_verified": false,
+      "download_approved": false
+    },
+    {
+      "priority": "P2",
+      "repo_id": "KittenML/kitten-tts-2-pico",
+      "selection": "OPTIONAL_EXTRA_FILES_SAME_MODEL_ID_RESEARCH_ONLY",
+      "immutable_revision_sha": "a5632deac7d92f6178db814d933eba746a97f2dc",
+      "incremental_scope_reference": "manifests/drafts/r156-2026-11-22-toto4m-pico8-post112-publisher-source.candidate.json",
+      "additional_int8_qad_source_files": 8,
+      "publisher_reference_bytes": 63628208,
+      "existing_33files_in_116_ledger_report": true,
+      "reason": "Possible quantization-aware distillation alternate ONNX across eight languages; exact relation to FP32/INT4 and TTS quality not independently validated, no separate model ID.",
+      "download_approved": false
+    }
+  ],
+  "hold_watchlist": [
+    {
+      "repo_id": "inclusionAI/LingSante-3.1-flash-MXFP4",
+      "status": "HOLD_OVER150B_MATCHED_RUNTIME_AND_FULL_MANIFEST",
+      "underlying_total_trained_parameters_claim": 560000000000,
+      "hub_quantized_tensor_elements": 294289983808,
+      "publisher_card_all_files_bytes_claim": 313230131991,
+      "reason": "Original 560B model >150B, stored packed tensor elements not architectural count; no matched memory <512GB measured; complete file lock missing.",
+      "download_approved": false
+    },
+    {
+      "repo_id": "AtomicChat/Inkling-2-Mini-Uncensored-GGUF",
+      "status": "HOLD_ENGINE_FORMAT_AND_NEGATIVE_QUALITY",
+      "adapter_file_bytes": 43805184,
+      "origin_study": "manifests/drafts/r153-2026-11-22-smaug-qwen-hash-reuse-and-atomic-lora.candidate.json",
+      "reason": "Different rank1 LoRA, publisher McNemar p=.006 lower MMLU; requires merged PR#32694 GGUF runtime while official Inkling base already in ledger.",
+      "download_approved": false
+    },
+    {
+      "repo_id": "GetCartwheelInc/cartwheel-control",
+      "status": "HOLD_THIRD_PARTY_RIGHTS",
+      "publisher_reference_bytes": 304057444,
+      "reason": "RP1/Asimov/Unitree three distinct trained simulation policies; multiple third-party robot assets and missing licenses require explicit rights chain, no real robot deployment.",
+      "download_approved": false
+    }
+  ],
+  "two_new_unacquired_full_source_reference_bytes": 305307994489,
+  "owner_inferred_incremental_bytes": null,
+  "owner_hdd_free_bytes_current_verified": null,
+  "user_new_download_approved": false,
+  "approved_queue_entry_count": 0,
+  "model_transfer_started": false,
+  "do_not_repull_116_verified_report_scopes": true,
+  "no_auto_approve_owner_or_licensed_acts": true,
+  "explicit_owner_per_source_manifest_approval_required": true
+}
