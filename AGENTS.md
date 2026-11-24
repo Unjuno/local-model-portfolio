@@ -1,3 +1,9 @@
+# R166／2026-11-25：v71据置、超小型TTS／無検閲LoRAの原本89file完全ハッシュ・権利停止
+
+正本[catalog/CURRENT.json](catalog/CURRENT.json)は **v71／260登録・210有効**。既登録3repoは[Paradee/TiHon/Inkling Heretic ARA全89fileの出版社OID+LFS SHA](manifests/drafts/r166-2026-11-25-tiny-tts-inkling-adapter-complete-publisher-scope.candidate.json)および[復元/権利/量子化/制限](docs/strategy/166-v71-small-tts-and-uncensored-adapter-source-closure.md)を根拠に研究scopeを**優先32file・127,809,861byte**まで最適化。ParadeeのHF APIはデフォルト50件で途中で切れるため、limit100により全59fileを必須照合。元Github実行コード38blob SHA固定だがowner offline wheelsは不明。TiHon CC BY-NC・カスタムコード・MCU用.tfliteグラフ不在・F32数100125対作者100118の差を解消まで実利用しない。Inkling editは学習親ed40e7と取得台帳1fb413が異なるが、**本体・MTP・tokenizer LFS SHAは同じでconfig.jsonにdtype bfloat16のキー追加だけ**、重い親20GBを再取得しない。PEFT 0.22/loopedバックエンド/実機ABI未検証。正式v71変更0、116既取得報告の再取得0、queues/approved.json空、重量DL/Gated回避/本人承認/Owner D現物改変0。原本SHAと本人実行・権利・復元可能性を混同しない。
+
+---
+
 # R165／v71公開後210 STOP（2026-11-25）：取得ゲート・版数の整合補修
 
 現在の唯一正本は[catalog/CURRENT.json](catalog/CURRENT.json) **v71・260登録／210有効**。今回[公開後の整合監査](docs/strategy/165-v71-postpublication-stop-sidecars-and-qjev-aligned-parent.md)で条件付きHubアクセス参照154件、readiness/estimatesのv71指示、全210取得STOP、予算状態を物化済みv71に揃えた。旧258資産と2新原本を変更していない。QJev親の[ヘッドSHAは拒否編集後と一致・バックボーンはSHA不一致](catalog/research/2026-11-25-r165-qjev-parent-head-immutable-provenance.json)だが、元の確率校正の保持は独立未実証。公開新規checkoutで**797テストPASS、1 SKIP**、approved queue0、model weight DL0、Owner Windows D SHAを本研究で独立再計測していない。残床200GB・個人の用途別ライセンス・Python/torch/quant/vision/head ABI・全依存offline restore・個別file scope承認まで取得STOPを維持。Gated回避・既存model削除禁止。
