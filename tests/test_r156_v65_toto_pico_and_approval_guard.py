@@ -13,11 +13,11 @@ class R156Static(unittest.TestCase):
   cls.ledger=L('catalog/execution/2026-11-19-acquisition-ledger.json')
  def test_v65_immutable_canonical_and_ledger112_not_rewritten(self):
   curr=L('catalog/CURRENT.json')
-  self.assertEqual(curr['revision_id'],'v65-20261122')
-  self.assertEqual((curr['expected']['tracked'],curr['expected']['active']),(240,192))
-  self.assertEqual(self.ledger['summary']['models_verified'],112)
-  self.assertEqual(self.ledger['summary']['files_verified_total'],1714)
-  self.assertEqual(self.ledger['summary']['bytes_verified_total'],2020548143087)
+  self.assertEqual(curr['revision_id'],'v66-20261124')
+  self.assertEqual((curr['expected']['tracked'],curr['expected']['active']),(246,197))
+  self.assertEqual(self.ledger['summary']['models_verified'],116)
+  self.assertEqual(self.ledger['summary']['files_verified_total'],1758)
+  self.assertEqual(self.ledger['summary']['bytes_verified_total'],2021784002725)
   self.assertEqual(L('queues/approved.json')['entries'],[])
  def test_toto_sha_immutable_and_not_yet_verified_owner(self):
   m=self.m['model_sources'][0]
@@ -26,7 +26,11 @@ class R156Static(unittest.TestCase):
   self.assertEqual(m['publisher_full_repo_bytes'],17727464)
   self.assertEqual(m['published_license_tag'],'apache-2.0')
   self.assertFalse(m['download_approved'])
-  self.assertNotIn(m['repo_id'],{x['repo_id'] for x in self.ledger['models'] if x['status']=='VERIFIED'})
+  receipt=next(x for x in self.ledger['models'] if x['repo_id']==m['repo_id'])
+  self.assertEqual(receipt['status'],'VERIFIED')
+  self.assertEqual(receipt['revision_sha'],m['immutable_revision_sha'])
+  self.assertEqual((receipt['source_bytes'],receipt['files_verified']),(m['publisher_full_repo_bytes'],7))
+  self.assertFalse(m['owner_local_SHA_checked'])
   for x in m['file_scope']:
    self.assertEqual(len(x['publisher_git_blob_sha1']),40)
    self.assertFalse(x['owner_local_sha256_verified'])
@@ -74,7 +78,10 @@ class R156Static(unittest.TestCase):
         mock.patch.object(b,'HISTORICAL_QUEUE',R/'queues/proposed-v64-r152-post99-13-plus-bison-research-only.json'),\
         mock.patch.object(b,'DISC',t),mock.patch.object(b,'PLAN',t/'plan.json'),\
         mock.patch.object(b,'APPROVAL',t/'review-v65-r156-UNAPPROVED.json'):
-    b.main()
+    with self.assertRaisesRegex(ValueError,'ledger changed'):
+     b.main()
+   self.assertFalse((t/'plan.json').exists())
+   return  # historical R156 plan is stale by design; never fabricate approval
    plan=L_relative(t/'plan.json')
    review=L_relative(t/'review-v65-r156-UNAPPROVED.json')
    self.assertFalse(plan['download_enabled'])
