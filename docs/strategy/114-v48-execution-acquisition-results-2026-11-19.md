@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 113 (verified 112, partial 0, failed 0, held 1)
-- Verified files: 1714
-- Verified source bytes: 2020548143087
-- Minimum observed free bytes: 1026731790336 (200 GB floor maintained: True)
+- Models: 117 (verified 116, partial 0, failed 0, held 1)
+- Verified files: 1758
+- Verified source bytes: 2021784002725
+- Minimum observed free bytes: 1022413893632 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -118,6 +118,10 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `mistralai/Timestral-5M` | `bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f` | VERIFIED | 6/6 | other |
 | `tencent/WeMM-Video-2B` | `821690998399cac0f55bb7f7f805ebafa650c3a4` | VERIFIED | 27/27 | apache-2.0 |
 | `baselabs/bison-1` | `bf8350b2c59eb6c36e95d02a2af870aec18724a7` | VERIFIED | 16/16 | other |
+| `nchapman/Qwen3.5-0.8B-Heretic-LoRA` | `92e2ae29c379d7378c696511ec9c70ace8be1434` | VERIFIED | 16/16 | apache-2.0 |
+| `Datadog/Toto-2.0-4m` | `8306a9801cf98c0f5ffe4b2dcc8f496e616d84d9` | VERIFIED | 7/7 | apache-2.0 |
+| `inclusionAI/LingSante-Pulse-1.0` | `51582cc8487ab0e0f48d866bfc0124afbaf6562a` | VERIFIED | 7/7 | mit |
+| `ostris/primal_vae` | `dc3e96c879e8cf4247c9474c3109bc2847099b50` | VERIFIED | 14/14 | apache-2.0 |
 | `mistralai/Mistral-Small-4-119B-2603` | `a11f36bebf709121056b1dbcc943d1c6afbe494d` | VERIFIED | 21/21 | apache-2.0 |
 | `Qwen/Qwen3-Coder-Next` | `a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb` | VERIFIED | 49/49 | apache-2.0 |
 | `Wan-AI/Wan2.2-TI2V-5B` | `921dbaf3f1674a56f47e83fb80a34bac8a8f203e` | VERIFIED | 23/23 | apache-2.0 |

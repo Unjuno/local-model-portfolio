@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "ledger_id": "2026-11-19-v48-execution",
-  "generated_at": "2026-11-22T00:17:07.615508+00:00",
+  "generated_at": "2026-11-24T07:28:26.883912+00:00",
   "canonical_revision": "v48-20261118",
   "source_plan": "queues/proposed-v48-r113-source-pinned-15.json",
   "policy": {
@@ -14,14 +14,14 @@
     "unclear_license": "HOLD"
   },
   "summary": {
-    "models_total": 113,
-    "models_verified": 112,
+    "models_total": 117,
+    "models_verified": 116,
     "models_partial": 0,
     "models_failed": 0,
     "models_held": 1,
-    "files_verified_total": 1714,
-    "bytes_verified_total": 2020548143087,
-    "minimum_free_bytes_observed": 1026731790336,
+    "files_verified_total": 1758,
+    "bytes_verified_total": 2021784002725,
+    "minimum_free_bytes_observed": 1022413893632,
     "minimum_free_floor_bytes": 200000000000,
     "free_floor_maintained": true
   },
@@ -4477,6 +4477,170 @@
       "started_at": "2026-11-21T21:40:48.630926+00:00",
       "finished_at": "2026-11-22T00:16:24.149901+00:00",
       "free_bytes_after": 1026731790336
+    },
+    {
+      "repo_id": "nchapman/Qwen3.5-0.8B-Heretic-LoRA",
+      "revision_sha": "92e2ae29c379d7378c696511ec9c70ace8be1434",
+      "source_manifest": "local-discovered/v65-nchapman__Qwen3.5-0.8B-Heretic-LoRA.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 16,
+      "files_verified": 16,
+      "source_bytes": 6165749,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 6
+      },
+      "file_status_counts": {
+        "VERIFIED": 16
+      },
+      "weight_files_sha256": [
+        {
+          "path": "Qwen3.5-0.8B-Heretic-LoRA.gguf",
+          "sha256": "9606a9c1b961d19bcae8fb76c8dde76132558093789b23e015320e266e842a0b"
+        },
+        {
+          "path": "adapter_model.safetensors",
+          "sha256": "269cee632d7b2dc1cb5163d6f1b2a378df3b2130e51c8b08c686709997c28679"
+        },
+        {
+          "path": "pareto/trial_002_ref4_kl0.0714/Qwen3.5-0.8B-Heretic-LoRA.gguf",
+          "sha256": "1af82d2f20d52ac5f1cbe322967131129cef1e5dc2d24d8320c035c51ccf46c4"
+        },
+        {
+          "path": "pareto/trial_002_ref4_kl0.0714/adapter_model.safetensors",
+          "sha256": "269cee632d7b2dc1cb5163d6f1b2a378df3b2130e51c8b08c686709997c28679"
+        },
+        {
+          "path": "pareto/trial_004_ref6_kl0.0275/Qwen3.5-0.8B-Heretic-LoRA.gguf",
+          "sha256": "167736db9f45a469bca293b28d220861d76f169710a997aec8ba879d49ac09e4"
+        },
+        {
+          "path": "pareto/trial_004_ref6_kl0.0275/adapter_model.safetensors",
+          "sha256": "26836a1374eb43aef39f04970b558f347a62558ebce8c0e00388ff217146ba6e"
+        }
+      ],
+      "started_at": "2026-11-24T07:25:23.865869+00:00",
+      "finished_at": "2026-11-24T07:25:53.999014+00:00",
+      "free_bytes_after": 1023644188672
+    },
+    {
+      "repo_id": "Datadog/Toto-2.0-4m",
+      "revision_sha": "8306a9801cf98c0f5ffe4b2dcc8f496e616d84d9",
+      "source_manifest": "local-discovered/v65-Datadog__Toto-2.0-4m.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 7,
+      "files_verified": 7,
+      "source_bytes": 17727464,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 7
+      },
+      "weight_files_sha256": [
+        {
+          "path": "assets/architecture.png",
+          "sha256": "973196289f6036b880ec7fdb00fe0b1078215232bf58f0bdd6a27eeebfca46ef"
+        },
+        {
+          "path": "assets/pareto.png",
+          "sha256": "756a059027357cf224effc92995755b2c50ca8396b68918135ef0e5226798294"
+        },
+        {
+          "path": "figures/architecture.png",
+          "sha256": "d17a304f234cc65a426a83c6a8ea9c6e03c3e7f5230860146834063999ced76d"
+        },
+        {
+          "path": "model.safetensors",
+          "sha256": "316660d5afb47943e531f39242e0b02ca0b8bb73be5709dfe07ca80dfce9805e"
+        }
+      ],
+      "started_at": "2026-11-24T07:25:54.169004+00:00",
+      "finished_at": "2026-11-24T07:26:10.590951+00:00",
+      "free_bytes_after": 1023626440704
+    },
+    {
+      "repo_id": "inclusionAI/LingSante-Pulse-1.0",
+      "revision_sha": "51582cc8487ab0e0f48d866bfc0124afbaf6562a",
+      "source_manifest": "local-discovered/v65-inclusionAI__LingSante-Pulse-1.0.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 7,
+      "files_verified": 7,
+      "source_bytes": 66946541,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 5,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 7
+      },
+      "weight_files_sha256": [
+        {
+          "path": "channels.npz",
+          "sha256": "b9860422c4e9b6a701b4822975e1815ca71eda798ab77feee0c2b252cb5c81c5"
+        },
+        {
+          "path": "model.safetensors",
+          "sha256": "7daa43c9b271fa1d842457c9100824c859b06b9800023dc8b97eb76eb37012a3"
+        }
+      ],
+      "started_at": "2026-11-24T07:26:10.791378+00:00",
+      "finished_at": "2026-11-24T07:26:24.324439+00:00",
+      "free_bytes_after": 1023559475200
+    },
+    {
+      "repo_id": "ostris/primal_vae",
+      "revision_sha": "dc3e96c879e8cf4247c9474c3109bc2847099b50",
+      "source_manifest": "local-discovered/v65-ostris__primal_vae.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 14,
+      "files_verified": 14,
+      "source_bytes": 1145019884,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 8,
+        "sha256-vs-publisher": 6
+      },
+      "file_status_counts": {
+        "VERIFIED": 14
+      },
+      "weight_files_sha256": [
+        {
+          "path": "assets/img01.png",
+          "sha256": "e52eb66759fa93e82556fe28ea7e6058ccccf483cb292165f08ed2421c0d88c8"
+        },
+        {
+          "path": "assets/img02.png",
+          "sha256": "91d44f76cf0a74973e317a183285bca57b83b2a8242186f7cfcda4c44f18375d"
+        },
+        {
+          "path": "assets/img03.png",
+          "sha256": "ceca452dab225f3fc62f2a785d57acd39e4205a4d5ae033b621dc203b585e892"
+        },
+        {
+          "path": "primal_vae_2x1.safetensors",
+          "sha256": "b035c96861e3d36ed0a5308e89535ba19c26846d98c358a3907949ff8d1776f3"
+        },
+        {
+          "path": "primal_vae_2x2.safetensors",
+          "sha256": "f90813d9a7b2aa4f9334a93dc22c28867f5204b850357fe224029431727be3e8"
+        },
+        {
+          "path": "primal_vae_4x1.safetensors",
+          "sha256": "6dc655af2eae2bc7a4da0d20015b7ec3fbeaef2077d5bc53e5f2291f87b6649c"
+        }
+      ],
+      "started_at": "2026-11-24T07:26:24.501952+00:00",
+      "finished_at": "2026-11-24T07:28:17.703416+00:00",
+      "free_bytes_after": 1022413893632
     },
     {
       "repo_id": "mistralai/Mistral-Small-4-119B-2603",
