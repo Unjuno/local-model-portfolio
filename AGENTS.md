@@ -1,3 +1,9 @@
+# 現行v68／R160（2026-11-25）：MiniCPM5 2B final、Ivonnet 0.8B、IVE 4B、WeMM-Ecom 0.8Bの4独立trained状態を選定
+
+正本[CURRENT](catalog/CURRENT.json)→252登録／203有効、SELECT56＋CONDITIONAL147、HOLD30。旧v67 248項目の記録は完全不変。[75Publisher files frozen](manifests/drafts/r160-2026-11-25-four-small-trained-states-75file-publisher-frozen.candidate.json)には4repo source17,608,061,719byte、完全一致の12組20,076,087byte参照（Owner物理実容量ではない）。MiniCPM最終学習とSFT/Baseは異なるtrained stateだが今回最終版だけ採用。IvonnetはIVE4Bからの蒸留で、量子化複製ではない。IVEとIvonnetは`readout.safetensors`+原本+codeパッケージ、Python>=3.10/CUDA/transformers>=5.7,<6/flash-linear-attention0.5.2; video WeMM Ecom はTorchCodec/FFmpegを別審査。ユーザーHDD SHA/現在実空きとstaging/復元、本人License行為別許可、モデル別scope明示承認なしでは**新重みダウンロード0**。承認キューは空、既存116報告source再取得0、Gated回避・未審査モデルcode実行・既存ファイル削除禁止。研究はmainのみ。[調査報告](docs/strategy/160-v68-small-posttrained-decision-and-ecommerce-portfolio.md)。
+
+---
+
 # 現行v67／R158（2026-11-24）：日本語Drama3原本とStudioYebisu KL蒸留smallの2訓練成果
 
 唯一の正本は[CURRENT](catalog/CURRENT.json)で**248登録／199有効（SELECT56、CONDITIONAL143、HOLD30）**、旧v66の246行不変。[Publisher SHA・32ファイル固定](manifests/drafts/r158-2026-11-24-aratako-trained-and-studio-distilled-publisher-originals.candidate.json)・[採否およびライセンス/ABI問題](docs/strategy/158-v67-aratako-japanese-drama3-and-studio-distilled-12gb-tts.md)・[all199 readiness STOP](catalog/readiness/v67-2026-11-24-r158-all199-gates.json)。元モデルはfishaudio/drama-3、StudioはAratako日本語FTからexpert枝刈り後JSUT/JVNV＋合成のKL蒸留、Full Q4/Q5はtrained originalityなし。Fish Community License1.0、JSUT非商用研究データ、JVNV CC BY-SA、声の本人同意、Python codec.pthの非安全なロード、speech.cpp fast.patch/CUDA実行ABIは未解決。RTX4090の4.18はRTFxでありパッチの相対改善2.96倍とは別。既取得116モデルは取得器の報告であり本回owner D実体を再SHAしていない。**approved queue0、重量DL0、Gated回避0、main一本**。
