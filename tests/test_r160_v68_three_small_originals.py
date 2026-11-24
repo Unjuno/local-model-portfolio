@@ -63,7 +63,7 @@ class R160V68ThreeCompactOriginals(unittest.TestCase):
         self.assertEqual(expected["by_tier"]["R1"], 142)
         self.assertEqual(expected["by_tier"]["R2"], 42)
         self.assertEqual(expected["parameter_gate"]["PASS_TOTAL_PARAMS_LT_150B"], 193)
-        self.assertIn(self.current["revision_id"], ("v68-20261125", "v69-20261125","v70-20261125"))
+        self.assertIn(self.current["revision_id"], ("v68-20261125", "v69-20261125","v70-20261125", "v71-20261125"))
         self.assertGreaterEqual(self.current["expected"]["tracked"], 252)
         self.assertGreaterEqual(self.current["expected"]["active"], 203)
         self.assertFalse(self.current["statuses"]["download_approved"])

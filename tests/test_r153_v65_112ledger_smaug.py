@@ -12,7 +12,7 @@ class R153(unittest.TestCase):
   cls.q=read('queues/proposed-v65-2026-11-22.json');cls.p=read('catalog/preparation/2026-11-22-insurance-bundles-v65.json')
   cls.g=read('catalog/readiness/v65-2026-11-22-r154-all192-gates.json');cls.a=read('catalog/access/2026-11-22-v65-conditional-hub-gates.json')
  def test_canonical(self):
-  self.assertIn(self.c['revision_id'],('v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125"))
+  self.assertIn(self.c['revision_id'],('v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125"))
   self.assertEqual(self.old['items'],self.v['items'][:236])
   self.assertEqual((len(self.v['items']),self.v['counts']['active'],self.v['counts']['models'],self.v['counts']['datasets']),(240,192,214,26))
   self.assertEqual(self.v['counts']['by_decision']['conditional'],136)

@@ -13,7 +13,7 @@ class R157V66(unittest.TestCase):
   cls.queue=J('queues/proposed-v66-2026-11-24.json');cls.access=J('catalog/access/2026-11-24-v66-conditional-hub-gates.json')
   cls.ready=J('catalog/readiness/v66-2026-11-24-r157-all197-gates.json');cls.prep=J('catalog/preparation/2026-11-24-insurance-bundles-v66.json')
  def test_snapshot_count_and_retain_old(self):
-  self.assertIn(self.c['revision_id'],('v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125"))
+  self.assertIn(self.c['revision_id'],('v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125"))
   self.assertEqual(self.e['items'][:240],self.prior['items'])
   self.assertEqual(len(self.e['items']),246)
   self.assertEqual(len({key(x) for x in self.e['items']}),246)

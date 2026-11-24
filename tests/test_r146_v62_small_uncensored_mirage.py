@@ -19,9 +19,9 @@ class V62Portfolio(unittest.TestCase):
   cls.triage=L('queues/proposed-v62-r147-post96-next-research-sources.json')
   cls.decision=L('catalog/decisions/2026-11-22-r146-v62-original-and-heretic-selection.json')
  def test_current_and_original227_immutable(self):
-  self.assertIn(self.c['revision_id'],('v62-20261122','v63-20261122','v64-20261122','v65-20261122', 'v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125"))
+  self.assertIn(self.c['revision_id'],('v62-20261122','v63-20261122','v64-20261122','v65-20261122', 'v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125"))
   self.assertIn('catalog/revisions/v62-2026-11-22.json',self.c['ordered_overlays'])
-  self.assertIn(self.c['materialized_catalog_path'],('catalog/effective-portfolio-2026-11-22-v62.json','catalog/effective-portfolio-2026-11-22-v63.json','catalog/effective-portfolio-2026-11-22-v64.json','catalog/effective-portfolio-2026-11-22-v65.json', 'catalog/effective-portfolio-2026-11-24-v66.json','catalog/effective-portfolio-2026-11-24-v67.json',"catalog/effective-portfolio-2026-11-25-v68.json","catalog/effective-portfolio-2026-11-25-v69.json","catalog/effective-portfolio-2026-11-25-v70.json"))
+  self.assertIn(self.c['materialized_catalog_path'],('catalog/effective-portfolio-2026-11-22-v62.json','catalog/effective-portfolio-2026-11-22-v63.json','catalog/effective-portfolio-2026-11-22-v64.json','catalog/effective-portfolio-2026-11-22-v65.json', 'catalog/effective-portfolio-2026-11-24-v66.json','catalog/effective-portfolio-2026-11-24-v67.json',"catalog/effective-portfolio-2026-11-25-v68.json","catalog/effective-portfolio-2026-11-25-v69.json","catalog/effective-portfolio-2026-11-25-v70.json", "catalog/effective-portfolio-2026-11-25-v71.json"))
   self.assertEqual(self.old['items'],self.e['items'][:227])
   self.assertEqual(len(self.e['items']),231)
   self.assertEqual(self.d['previous_asset_count'],227)

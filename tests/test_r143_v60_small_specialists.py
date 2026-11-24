@@ -22,9 +22,9 @@ class V60Specialists(unittest.TestCase):
         cls.decision=load("catalog/decisions/2026-11-22-r143-v60-three-small-specialists.json")
 
     def test_canonical_and_old_immutable(self):
-        self.assertIn(self.c["revision_id"],("v60-20261122","v61-20261122","v62-20261122","v63-20261122", "v64-20261122","v65-20261122", "v66-20261124", "v67-20261124","v68-20261125","v69-20261125","v70-20261125"))
+        self.assertIn(self.c["revision_id"],("v60-20261122","v61-20261122","v62-20261122","v63-20261122", "v64-20261122","v65-20261122", "v66-20261124", "v67-20261124","v68-20261125","v69-20261125","v70-20261125", "v71-20261125"))
         self.assertIn("catalog/revisions/v60-2026-11-22.json",self.c["ordered_overlays"])
-        self.assertIn(self.c["materialized_catalog_path"],("catalog/effective-portfolio-2026-11-22-v60.json","catalog/effective-portfolio-2026-11-22-v61.json","catalog/effective-portfolio-2026-11-22-v62.json","catalog/effective-portfolio-2026-11-22-v63.json","catalog/effective-portfolio-2026-11-22-v64.json", "catalog/effective-portfolio-2026-11-22-v65.json", "catalog/effective-portfolio-2026-11-24-v66.json", "catalog/effective-portfolio-2026-11-24-v67.json","catalog/effective-portfolio-2026-11-25-v68.json","catalog/effective-portfolio-2026-11-25-v69.json","catalog/effective-portfolio-2026-11-25-v70.json"))
+        self.assertIn(self.c["materialized_catalog_path"],("catalog/effective-portfolio-2026-11-22-v60.json","catalog/effective-portfolio-2026-11-22-v61.json","catalog/effective-portfolio-2026-11-22-v62.json","catalog/effective-portfolio-2026-11-22-v63.json","catalog/effective-portfolio-2026-11-22-v64.json", "catalog/effective-portfolio-2026-11-22-v65.json", "catalog/effective-portfolio-2026-11-24-v66.json", "catalog/effective-portfolio-2026-11-24-v67.json","catalog/effective-portfolio-2026-11-25-v68.json","catalog/effective-portfolio-2026-11-25-v69.json","catalog/effective-portfolio-2026-11-25-v70.json", "catalog/effective-portfolio-2026-11-25-v71.json"))
         self.assertEqual(self.old["items"],self.e["items"][:221])
         self.assertEqual(self.d["previous_asset_count"],221)
         self.assertEqual(self.d["previous_active_count"],174)
