@@ -1,3 +1,9 @@
+# 現行v66／R157（2026-11-24）：116取得報告と239/240旧資産を照合、独立原本2系統と医療560B HOLD
+
+唯一の正本[CURRENT](catalog/CURRENT.json)は246資産／197有効（SELECT56、CONDITIONAL141、HOLD30）。旧240項目は完全不変。[R157凍結source](manifests/drafts/r157-2026-11-24-post116-five-originals-medical-moe.candidate.json)5repo134file306,537,688,378byteはPublisher参照量（Owner追加容量ではない）。Toto4M、LingSante-Pulse、Primal VAEは**116台帳VERIFIED報告の既取得**として再DLしない。Smaug27B DPO無検閲とLingSante3.1-air-VL 125BはCONDITIONAL原本保全選定のみ、取得承認とは異なる。LingSante-flash MXFP4は元の560B全パラメータ、旧150B超の同HW/backend/context/batch対照RAM測定条件と完全ファイルscopeがないためHOLD。権利・Gated本人許可・所有者D独立SHA・実空き200GB残床、親codec/runtime、任意コードレビューと個別マニフェスト承認まで**モデル重量DL停止**。自動approval、Gated回避、既存削除、未審査コード実行禁止。mainのみ。[調査レポート](docs/strategy/157-v66-post116-small-medical-and-uncensored-originals.md)。
+
+---
+
 # R156／v65継続・Toto4m＋Pico INT8 Publisher差分、旧v64の偽承認生成を封鎖（2026-11-22）
 
 現行正本は[CURRENT](catalog/CURRENT.json) **240登録／192有効**。R156で[未承認15ファイル／81,355,672byte研究仕様](manifests/drafts/r156-2026-11-22-toto4m-pico8-post112-publisher-source.candidate.json)と[一次比較・法務・依存ゲート](docs/strategy/156-v65-after112-toto-pico-qad-and-synthetic-v64-approval-repair.md)を固定。Toto2.0-4m新規7file 17,727,464byteとKitten Pico（33file既取得報告済み）のINT8追加8file 63,628,208byte以外を勝手に新規転送にしない。旧v64取得生成器はかつてユーザー・ライセンス承認を未確認のまま`approved:true`へしていたが、更新後は`review-v65-r156-UNAPPROVED.json`だけを生成、承認trueは生成しない。実行器も旧R152の偽承認refを拒否。R152旧14sourceのうち13repo／140,553,833,221byteは取得台帳112件と全属性一致、再取得しない。owner Windows D現物SHA・権利・実空き/200GB床・バックエンドABI・完全offline復元とユーザー個別承認は未検証。**モデル重量DL0・承認0・D媒体改変0・Gated回避0・既存ファイル削除0。**
