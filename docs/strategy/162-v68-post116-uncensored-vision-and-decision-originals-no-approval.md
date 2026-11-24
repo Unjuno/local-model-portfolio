@@ -1,3 +1,7 @@
+> **履歴資料（R162／v68当時の調査結果）**。当時未完了だった全非重量ファイルのGit OID・Publisher SHA確認は**R163で完了**し、Aurum2BとQJev1.5Bは[正式v71のCONDITIONAL選定](../revisions/v71-2026-11-25.json)に昇格しました。取得実行は引き続き未承認。現在の正本は[CURRENT](../../catalog/CURRENT.json) **260登録／210有効**です。原本SHAと取得権限を混同しないこと。[R163詳細](163-v71-aurum-qjev-complete-source-and-uncensored-originals.md)。以下の数値・『未完了』記述は当時の履歴を示します。
+
+---
+
 # R162／v68（2026-11-25）— 無検閲2B視覚・1.5B意思決定原本の優先研究選定と空LoRAの排除
 
 ## 1.〈本論〉正本、目的、今回の結論
