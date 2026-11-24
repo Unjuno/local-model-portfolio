@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "kind": "R158_V66_POST116_RARE_SMALL_AND_GERMAN_SPARSE_ORIGINAL_SELECTION_NO_APPROVAL",
+  "as_of_jst": "2026-11-24",
+  "repository": "Unjuno/local-model-portfolio",
+  "canonical": {
+    "revision": "v66-20261124",
+    "tracked": 246,
+    "active": 197,
+    "select": 56,
+    "conditional": 141,
+    "hold": 30,
+    "catalog_change_by_this_research": 0
+  },
+  "latest_acquired_ledger": {
+    "models_verified": 116,
+    "files_verified": 1758,
+    "publisher_source_bytes_verified_reported": 2021784002725,
+    "all_reported_repo_IDs_matched_current_catalog": true,
+    "owner_windows_D_independently_rehashed_by_this_study": false
+  },
+  "source_manifest": "manifests/drafts/r158-2026-11-24-minicpm5-kolibri-stage-fixed.candidate.json",
+  "priority_decisions": [
+    {
+      "priority": "P0_A",
+      "repo_id": "openbmb/MiniCPM5-2B",
+      "action": "CONFIRM_FINAL_BF16_LEARNED_SOURCE_FOR_NEXT_CONDITIONAL_ADDITION_PENDING_OWNER_SCOPE_APPROVAL",
+      "source_files": 11,
+      "publisher_source_bytes": 5043807977,
+      "immutable_revision": "42433e90dad95123ab87729fd7011e7110629556",
+      "independent_value": "2,516,756,480-element official dense 2B final RL+OPD checkpoint for small long-context/code/tool use, not currently in portfolio or 116 receipts; independent source from qwen / ollama derivative. Official author benchmark 53.9 average on its comparison, not independently reproduced.",
+      "license": "HF card apache-2.0; OpenBMB/MiniCPM code repository Apache 2.0; official model repo does not bundle a LICENSE file; model and datasets usage rights require owner review.",
+      "runtime": "LlamaForCausalLM, 131072 advertised context, user CPU/GPU & KV/cache, Transformers/llama.cpp exact version unverified.",
+      "source_lock_complete": true,
+      "download_approved": false,
+      "independent_benchmark_complete": false
+    },
+    {
+      "priority": "P0_B",
+      "repo_id": "openbmb/MiniCPM5-2B-Base",
+      "action": "PRESERVE_IMMUTABLE_BASE_SOURCE_AS_DISTINCT_LEARNED_STATE_RESEARCH_CONDITIONAL_FOR_FUTURE_REVIEW",
+      "source_files": 10,
+      "publisher_source_bytes": 5043780610,
+      "immutable_revision": "e09861095569642c3cf632d80e3200ee1d30b547",
+      "independent_value": "Pretraining-only original checkpoint for future alignment/reproducibility comparisons to final; 40-hex SHA and weight LFS differ. Not proven to be an uncensored assistant.",
+      "license": "HF apache-2.0 tag and upstream code license; user legal act and complete data provenance not proven.",
+      "runtime": "Base checkpoint not optimized for chat agent; no owner benchmark or matched tokenization/ABI checks.",
+      "source_lock_complete": true,
+      "download_approved": false,
+      "independent_benchmark_complete": false
+    },
+    {
+      "priority": "P1_RARE",
+      "repo_id": "Aleph-Alpha/Kolibri-1.1",
+      "action": "IMMUTABLE_ORIGINAL_FROZEN_ARCHIVAL_CANDIDATE_DEFER_ACTUAL_ACQUISITION_UNTIL_RESOURCE_RIGHTS_GATE",
+      "source_files": 42,
+      "publisher_source_bytes": 77556017718,
+      "immutable_revision": "bfc33150d363f55a86cd4f0f7f79711deb9e0361",
+      "independent_value": "Published 2026-11-23; bilingual German-English 75.128B total/3.440B active sparse MoE with new attention and checkpoint mixing over 805B+201B mid/long-context tokens plus RL. Distinct from older Kolibri1 and existing archive generalist models.",
+      "license": "Publisher HF repository bundles Apache-2.0 LICENSE; actual intended acts and other third-party notices remain owner responsibility.",
+      "runtime": "Publisher 2x H100 SXM5 or H200 minimum or 1x B200/B300; vendor FP8 original 77.556GB. Exact owner HW CUDA/TF/vLLM runtime peak & quality unknown.",
+      "technical_uncertainty": "Official declared total 75,128,393,984 versus hub safetensors element count 75,112,665,344 differ 15,728,640; both <150B but do not assert exact tensor parity.",
+      "source_lock_complete": true,
+      "download_approved": false,
+      "independent_benchmark_complete": false
+    }
+  ],
+  "alternatives_held": [
+    {
+      "repo_id": "openbmb/MiniCPM5-2B-SFT",
+      "source_bytes": 5043780588,
+      "reason": "Unique SFT intermediate weight but final+base better two-stage preservation value for initially constrained bandwidth; exact hash retained but no separate owner acquisition approval."
+    },
+    {
+      "repo_id": "openbmb/MiniCPM5-2B-Midtrain",
+      "source_bytes": 5043780588,
+      "reason": "Unique mid-training stage before SFT; separate full BF16 adds another 5.044GB with no owner user-case validated."
+    },
+    {
+      "repo_id": "Aleph-Alpha/Kolibri-1",
+      "source_bytes": 78862325687,
+      "reason": "Older 78B variant architecturally and numerically distinct, but v1.1 new sparse attention and posttraining makes 77.56GB v1.1 the first one to evaluate; v1 retained as research alternative."
+    },
+    {
+      "repo_id": "Edge0/Edge0-145B-NVFP4",
+      "source_bytes": 113772093975,
+      "reason": "Previous R155 fixed full source but custom PLE 51.2GB and mixed Qwen+Edge0 licensing, total including MTP/PLE, native backend and owner hardware unclosed; no implicit acquisition.",
+      "prior_source_manifest": "manifests/drafts/r155-2026-11-22-minicpm5-edge0-immutable-sources.candidate.json"
+    },
+    {
+      "repo_id": "Edge0/Edge0-120B-NVFP4",
+      "source_bytes": 98531583107,
+      "reason": "Same R155 audit limitations, and both Edge0 variants share 60.467GB publisher digest refs. Need matched utility tests rather than double download.",
+      "prior_source_manifest": "manifests/drafts/r155-2026-11-22-minicpm5-edge0-immutable-sources.candidate.json"
+    },
+    {
+      "repo_id": "briaai/RMBG-3.0",
+      "source_bytes": null,
+      "reason": "Gated model with inaccessible weight SHA without entitlement; do not bypass or invent hashes."
+    }
+  ],
+  "archive_source_reference": {
+    "source_repo_count": 3,
+    "files": 63,
+    "publisher_reference_bytes": 87643606305,
+    "publisher_sha256_lfs_count": 34,
+    "owner_incremental_after_existing_shared_hash_reuse_bytes": null,
+    "archive_4TB_budget_bytes": 4000000000000,
+    "physical_minimum_free_bytes": 200000000000,
+    "selected_headroom_4TB_calculated": false,
+    "not_download_ready_and_not_current_canonical_selection": true
+  },
+  "planned_next_owner_review_order": [
+    "openbmb/MiniCPM5-2B",
+    "openbmb/MiniCPM5-2B-Base",
+    "Aleph-Alpha/Kolibri-1.1"
+  ],
+  "real_user_approval_gate": {
+    "new_entries_created": 0,
+    "approved_queue": "queues/approved.json",
+    "owner_disk_SHA_and_free_bytes": null,
+    "owner_intended_act_license_confirmed": false,
+    "model_code_execute_authorized": false,
+    "weight_download_enabled": false,
+    "physical_200GB_free_floor_verified_now": false,
+    "full_offline_restore_verified": false
+  },
+  "policy_update": {
+    "observed": "2026-11-19 US BIS withdrew former ECCN 4E091 model-weight rule; EU AI Act open-source GPAI exceptions are conditional and not a general model-possession ban.",
+    "forecast": "No per-model removal/ban odds known. Potential provider policy or distribution changes are stress scenarios for research priorities, not license bypass.",
+    "sources": [
+      "https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm",
+      "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/how-does-ai-act-apply-general-purpose-ai-models-released-open-source"
+    ]
+  },
+  "H_T_D_C_U": {
+    "H": "Adding complete small RL-trained state and pretraining-only baseline plus distinct new 75B bilingual sparse MoE source increases future independent recovery choices at <88 decimal GB of publisher source and no duplicated current repo IDs.",
+    "T": "Compare all 116 receipts and v66 246 IDs; freeze 3 publisher repo+40SHA and 63 files/87,643,606,305B/34 LFS digests; verify 4 MiniCPM trained-stage weight hashes distinct. Owner test n>=30 repeated runtime peaks with fixed HW/clock/context/batch, n>=100 paired quality/agents per model.",
+    "D": "PASS source if exact digests & counts and zero user approvals, FAIL if current IDs overlap, SHA drift, or unreviewed license/code download. UNCERTAIN owner actual disk, license acts, model runtime, model benchmark quality, and regulatory future.",
+    "C": "MiniCPM5 final quality not independently stronger than archived small models; base stage rarely needed; Kolibri hardware may not fit practical runtime; licensing could block desired use.",
+    "U": "Publisher-only weight source metadata, self-reported quality/efficiency, owner hardware/drive and code ABI unknown. No repeatable variance estimates for combined u_c or coverage k."
+  },
+  "cross_disciplines": [
+    "resource-efficient LLM post-training and alignment-stage reconstruction",
+    "bilingual sparse-MoE language modeling and long-context attention",
+    "cryptographic content-addressed software supply chain",
+    "GPU throughput/metrology and legal model distribution rights"
+  ],
+  "this_turn_models_downloaded": 0,
+  "third_party_model_code_executed": false,
+  "previous_model_files_modified": 0
+}
