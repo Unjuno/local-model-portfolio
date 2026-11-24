@@ -1,3 +1,9 @@
+# R165／v71公開後210 STOP（2026-11-25）：取得ゲート・版数の整合補修
+
+現在の唯一正本は[catalog/CURRENT.json](catalog/CURRENT.json) **v71・260登録／210有効**。今回[公開後の整合監査](docs/strategy/165-v71-postpublication-stop-sidecars-and-qjev-aligned-parent.md)で条件付きHubアクセス参照154件、readiness/estimatesのv71指示、全210取得STOP、予算状態を物化済みv71に揃えた。旧258資産と2新原本を変更していない。QJev親の[ヘッドSHAは拒否編集後と一致・バックボーンはSHA不一致](catalog/research/2026-11-25-r165-qjev-parent-head-immutable-provenance.json)だが、元の確率校正の保持は独立未実証。公開新規checkoutで**797テストPASS、1 SKIP**、approved queue0、model weight DL0、Owner Windows D SHAを本研究で独立再計測していない。残床200GB・個人の用途別ライセンス・Python/torch/quant/vision/head ABI・全依存offline restore・個別file scope承認まで取得STOPを維持。Gated回避・既存model削除禁止。
+
+---
+
 # 現行v71／R163（2026-11-25）：無検閲2B視覚原本と1.5B decision編集原本をPublisher原本完全凍結しCONDITIONAL選定
 
 唯一の正本[CURRENT](catalog/CURRENT.json)は**260登録／210有効（SELECT56＋CONDITIONAL154、HOLD31）**。旧v70の258資産行は完全不変。[Aurum2BとQJev1.5Bの全38Publisherファイル・7,674,695,120byte](manifests/drafts/r163-2026-11-25-five-uncensored-source-complete-publisher-OID-SHA.candidate.json)を固定40桁revision／各Git blob OID／LFS SHA256で全件照合。これはOwner D現物SHAや利用権・物理空き容量ではない。5 repo66files全体にはAion Abliterated・Dory Heretic研究HOLD、weight0の空Spark LoRA REJECTを含む。無検閲化の負面：Aurum BFCL不要ツール正答が親87.9→62.5、QJev元判定headのSHA不変は校正不変を意味しない。[R163報告](docs/strategy/163-v71-aurum-qjev-complete-source-and-uncensored-originals.md)／[新2件未承認範囲](queues/proposed-v71-r163-next2-uncensored-full-source-UNAPPROVED.json)／[全210 readiness STOP](catalog/readiness/v71-2026-11-25-r163-all210-gates.json)／[静的10テスト実行PASS](catalog/audits/2026-11-25-r163-v71-offline-metadata-unittest-executed.json)。本人行為別LICENSE・owner Windows D現SHA/空き200GB床/staging・親依存/backend ABI・完全オフライン復元・個別Manifest本人承認まで**実ダウンロード禁止**。承認queue0、重み新規DL0、ownerファイル変更0、未審査モデルcode実行0、Gated迂回0、既存削除0。以下は履歴。
