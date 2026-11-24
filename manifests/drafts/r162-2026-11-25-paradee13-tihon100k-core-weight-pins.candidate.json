@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "kind": "R162_TWO_TINY_UNIQUE_TTS_CORE_WEIGHTS_SHA_PINNED_COMPLETE_SOURCE_NOT_YET_LOCKED",
+  "research_date_jst": "2026-11-25",
+  "canonical_baseline_revision": "v68-20261125",
+  "model_sources": [
+    {
+      "id": "sahilmahendrakar/Paradee-8M-v1.3",
+      "revision": "b569f5efb789af5ba643a44af348427242ceb784",
+      "license": "apache-2.0",
+      "orig_train": "Kokoro-82M distillation, v1.2 continuation to v1.3 with 8 voices in 4 languages",
+      "kind": "ORIGINAL_MULTILINGUAL_TTS_7_88M_PARAM_DISTILLATION",
+      "weights": [
+        {
+          "path": "onnx/paradee_int8.onnx",
+          "bytes": 8462503,
+          "sha256": "f68ed87562d040693dd0dd34e99c11b35ca24294e2149b840503bd1f25a2199f",
+          "type": "PREFERRED_FAST_CPU_ONNX_INT8_INFERENCE",
+          "same_trained_outcome_as_pytorch_parts": true
+        },
+        {
+          "path": "pytorch/decoder.pt",
+          "bytes": 14656297,
+          "sha256": "bcd904258550135f35723943079892a19442e67f366524e51d586f3d32e10684",
+          "type": "ORIGINAL_TRAINED_ACOUSTIC_DECODER_UNSAFE_PICKLE_DO_NOT_LOAD"
+        },
+        {
+          "path": "pytorch/text_side.pt",
+          "bytes": 16991179,
+          "sha256": "c8540bec0af607c72acaf1fe0f9fe4672c4149c524bb3a271e3a5a349b438928",
+          "type": "ORIGINAL_TRAINED_TEXT_SIDE_UNSAFE_PICKLE_DO_NOT_LOAD"
+        }
+      ],
+      "nonweight_files_pinned_by_immutable_revision_not_individual_SHA": [
+        ".gitattributes",
+        "LICENSE",
+        "README.md",
+        "config.json",
+        "tokenizer.json"
+      ],
+      "excluded_same_trained_state_formats": [
+        "onnx/paradee.onnx"
+      ],
+      "inference_code": {
+        "repository": "https://github.com/sahilmahendrakar/paradee",
+        "commit": "2de547e45da92840a636c499eb0782e988be1e47",
+        "python_project_version": "1.3.1",
+        "pyproject_path": "pyproject.toml",
+        "python_min": "3.10",
+        "requirements": [
+          "numpy",
+          "onnxruntime>=1.17",
+          "huggingface-hub>=0.23",
+          "misaki>=0.9.4",
+          "spacy>=3.7",
+          "num2words"
+        ],
+        "additional_language_pronunciation": [
+          "misaki EspeakG2P for hi fr-fr es",
+          "eSpeak NG and optional phonemizer-fork/espeakng-loader; GPL-3.0 license impact needs owner legal act check"
+        ],
+        "offline_wheelhouse_lock_complete": false
+      },
+      "benchmark": {
+        "source": "Publisher model card at pinned SHA; 200 held-out utterances per voice; Whisper large-v3 WER",
+        "languages": [
+          "en",
+          "hi",
+          "fr",
+          "es"
+        ],
+        "voices": 8,
+        "publisher_on_cpu_thread_rtfx": "about 62 on Apple M4 Pro, v1.2 direct; v1.3 within 2% by author",
+        "hindi_WER_percent": [
+          21.7,
+          21.6
+        ],
+        "author_quality_score_not_independently_reproduced": true
+      },
+      "public_hub_gated": false,
+      "full_repo_file_census_frozen": false,
+      "core_weight_file_SHA_pinned_count": 3,
+      "complete_offline_restore_verified": false,
+      "owner_rights_verified": false,
+      "approved": false,
+      "publisher_core_trained_file_scope_count": 3,
+      "publisher_core_trained_file_scope_bytes": 40109979
+    },
+    {
+      "id": "ngocthien/tihon-tts",
+      "revision": "bc71174f68651e7ff32a90f1ffd5e7528288d403",
+      "license": "cc-by-nc-4.0",
+      "orig_train": "Independent Vietnamese 100118-parameter four-voice autoregressive-parameterized harmonic-plus-noise TTS; adapted from AuroraTTS-100K, voice dataset noncommercial",
+      "kind": "ORIGINAL_MICROCONTROLLER_VIETNAMESE_TTS_100118_PARAMS",
+      "weights": [
+        {
+          "path": "model.safetensors",
+          "bytes": 411224,
+          "sha256": "9a48a0b73a3d1be23e18bf8344c7f481deb77b400ad10dbf7866c3b635cd814e",
+          "type": "ORIGINAL_TRAINED_F32_WEIGHTS"
+        }
+      ],
+      "nonweight_files_pinned_by_immutable_revision_not_individual_SHA": [
+        ".gitattributes",
+        "NOTICE",
+        "README.md",
+        "config.json",
+        "configuration_tihon.py",
+        "modeling_tihon.py",
+        "pipeline_tihon.py",
+        "infer.py",
+        "tihon_tts/"
+      ],
+      "excluded_same_trained_state_formats": [],
+      "inference_code": {
+        "repository": "https://huggingface.co/ngocthien/tihon-tts/tree/bc71174f68651e7ff32a90f1ffd5e7528288d403",
+        "commit": "bc71174f68651e7ff32a90f1ffd5e7528288d403",
+        "trust_remote_code_required": true,
+        "custom_code_reviewed_or_executed": false,
+        "offline_dependencies_closed": false
+      },
+      "benchmark": {
+        "source": "Publisher HF blog and model card, 36 held-out sentences per voice and 4 voices; ASR CER 1.0-2.3 percent",
+        "voices": 4,
+        "language": "vi",
+        "publisher_speed_rtfx": {
+          "x86_single_core": 40,
+          "apple_m4_single_core": 83
+        },
+        "microcontroller_claim": "Cortex-M55 + Arm Ethos-U55 simulated, not real-board measurement",
+        "human_MOS_perceptual_study": false
+      },
+      "public_hub_gated": false,
+      "full_repo_file_census_frozen": false,
+      "core_weight_file_SHA_pinned_count": 1,
+      "complete_offline_restore_verified": false,
+      "owner_rights_verified": false,
+      "approved": false,
+      "publisher_core_trained_file_scope_count": 1,
+      "publisher_core_trained_file_scope_bytes": 411224
+    }
+  ],
+  "scope_totals": {
+    "core_weight_references": 4,
+    "core_weight_bytes": 40521203
+  },
+  "source_integrity_and_permissions": {
+    "official_hf_model_revisions_immutable": true,
+    "publisher_lfs_weight_sha256_values_from_hf_raw_pointers": true,
+    "full_immutable_repo_file_listing_with_bytes_and_git_oid_complete": false,
+    "owner_local_SHA256_confirmed": false,
+    "license_per_act_for_user_verified": false,
+    "complete_dependency_wheelhouse_and_offline_execution_verified": false,
+    "explicit_download_authorization_present": false,
+    "payload_downloads_in_study": 0,
+    "unreviewed_model_code_executed": 0
+  },
+  "reason": "Core pretrained state source fixed at immutable repository rev and four exact publisher LFS SHA+byte references. Full model repos include extra files not enumerated at file-specific SHA level; do NOT silently claim acquisition-ready.",
+  "owner_source_model_replacement_authority": false
+}
