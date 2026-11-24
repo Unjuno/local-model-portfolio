@@ -1,3 +1,9 @@
+# R162／v68研究追補（2026-11-25）：小型無検閲2原本の学習済み重量SHAを一次確認、空LoRAを排除
+
+正式正本は[CURRENT](catalog/CURRENT.json) **v68／252資産・203有効（SELECT56＋CONDITIONAL147）**のまま。新たに[2Beyes Aurum 2B Uncensored](https://huggingface.co/2Beyes/Aurum-2B-Uncensored) BF16 23file／4,572,557,909byteと[QJev 1.5B Abliterated](https://huggingface.co/AnkitNayak-dev/QJev-1.5B-Abliterated) 15file／3,102,137,211byte、学習済み重みLFS SHA3件を次の**研究用取得候補P0/P1**として固定。QJev decision headは通常版とSHA同一で、編集後の校正保証はない。Aion2.3B AbliteratedとLooped Dory4B Hereticは機能重複・ライセンス/ABIでHOLD。新Spark LoRAは `.gitattributes` のみ1file／1,519byteでweight0につき除外。[R162判断と負面](docs/strategy/162-v68-post116-uncensored-vision-and-decision-originals-no-approval.md)／[5repo部分凍結元SHA・**非重み全file OID未完了**](manifests/drafts/r162-2026-11-25-new-uncensored-and-decision-partial-publisher-sha-RESEARCH.candidate.json)／[未承認研究キュー](queues/proposed-v68-r162-post116-uncensored-specialists-UNAPPROVED.json)。正式v69へ追加する前に**全ファイルOID/SHA・本人利用行為別LICENSE・現D空き200GB安全床/ステージング・親/コード/ABI完全offline復元・個別manifest承認**が必要。取得実行台帳116はowner D今回独立SHAではない。**承認queue0・新重みDL0・既存削除0・Gated回避0・未審査コード実行0**。以下R161以前は履歴。
+
+---
+
 # R161／v68（2026-11-25）：並行3→4原本選定の正式整合と251→252件への巻戻し防止
 
 最新の唯一正本は[CURRENT](catalog/CURRENT.json) **v68／252登録・203有効・147 CON​​DITIONAL（SELECT56）**。並行したR160の3原本52file／8,505,348,758byteは、最終**4原本75files／17,608,061,719byte**に全52件のpath／revision／Git OID／LFS SHAが一致する**先行部分集合**であり、追加された[illuin/IVE-4B](https://huggingface.co/illuin/IVE-4B) 23file／9,102,712,961byteを削除してはならない。[R161統合監査](docs/strategy/161-v68-concurrent-merge-four-originals-and-203-authorization-stops.md)／[静的audit JSON](catalog/audits/2026-11-25-r161-v68-four-model-concurrency-reconciliation.json)／[更新した旧3原本回帰テスト](tests/test_r160_v68_three_small_originals.py)。旧202readiness/3model研究資料は履歴のみ、現在は[全203 STOP](catalog/readiness/v68-2026-11-25-r160-all203-gates.json)が正本。owner実SHA/法的行為別許可/オフライン復元は未検証、承認queue0、モデル新規DL0、既存削除0。以下R160以前は履歴。
