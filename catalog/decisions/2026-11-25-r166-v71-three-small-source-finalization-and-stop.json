@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "kind": "R166_THREE_ALREADY_V69_CONDITIONAL_TINY_TTS_AND_SMALL_UNCENSORED_ADAPTER_FULL_PUBLISHER_SOURCE_CLOSED_NOT_ACQUISITION_APPROVED",
+  "review_jst": "2026-11-25",
+  "current_formal_revision_stays": "v71-20261125",
+  "active_210_and_conditional_154_unchanged": true,
+  "preexisting_116_ledger_verified_unchanged": true,
+  "input_partial_source_manifests": [
+    "manifests/drafts/r162-2026-11-25-paradee13-tihon100k-core-weight-pins.candidate.json",
+    "manifests/drafts/r162-2026-11-25-electroglyph-inkling-heretic-v22-adapter-core.candidate.json"
+  ],
+  "full_file_publisher_source_manifest": "manifests/drafts/r166-2026-11-25-tiny-tts-inkling-adapter-complete-publisher-scope.candidate.json",
+  "unapproved_research_queue": "queues/proposed-v71-r166-three-small-complete-source-UNAPPROVED.json",
+  "report": "docs/strategy/166-v71-small-tts-and-uncensored-adapter-source-closure.md",
+  "source_closure_result": {
+    "publisher_full_model_repos": 3,
+    "full_model_repo_files": 89,
+    "full_model_repo_reference_bytes": 141875047,
+    "recommended_minimal_selected_file_count": 32,
+    "recommended_minimal_selected_reference_bytes": 127809861,
+    "excluded_demo_art_audio_and_notebook_bytes": 14065186,
+    "separately_pinned_external_runtime_code_git_blobs": 38,
+    "external_runtime_code_reference_bytes": 4678996
+  },
+  "research_decisions": [
+    {
+      "repo_id": "sahilmahendrakar/Paradee-8M-v1.3",
+      "decision": "KEEP_CONDITIONAL_P0_SOURCE_SCOPE_COMPLETE_ACQUISITION_STOP",
+      "source_selected": "9-file scope with original PyTorch two halves and FP32 + INT8 ONNX, tokenizer/config/license; not a count of 4 independent models",
+      "critical_dependency": "Python3.10+, publisher GitHub code commit2de5, G2P model+json, misaki/spacy/eSpeakNG, ONNXRuntime/PyTorch, custom Python and wheelhouse",
+      "security": "PyTorch decoder.pt/text_side.pt may be pickled; preserve bytes only and never load without security review",
+      "negative": "Publisher Hindi WER ~21.6%, Mac M4 Pro inference speed author-only, exact offline G2P and dependencies not restored",
+      "publisher_sample_rights": "49 sample WAV and 1 illustration excluded from minimal source to reduce third-party data and avoid unnecessary copies",
+      "new_user_download_approval": false
+    },
+    {
+      "repo_id": "electroglyph/Inkling-2-Mini-uncensored-LoRA",
+      "decision": "KEEP_CONDITIONAL_P1_UNCENSORED_ARA_EDIT_SOURCE_COMPLETE_PARENT_NO_REDUMP",
+      "critical_parent_sha_check": "13/14 parent publisher paths identical; config.json adds only dtype bfloat16 at editor training revision; all model/MTP/tokenizer LFS SHA equal to 116 ledger parent",
+      "source_selected": "10 full Publisher repo files, 1 trained adapter 51.617MB, 9 reproducibility files",
+      "negative": "Heretic v2.2.0.dev0 refusal keyword result is author-reported 3/100; peft0.22 + Inkling loops and dtype config owner runtime not tested",
+      "model_parameter_count_same_trained_as_base": false,
+      "full_weight_parent_redownload_needed_now": false,
+      "new_user_download_approval": false
+    },
+    {
+      "repo_id": "ngocthien/tihon-tts",
+      "decision": "KEEP_CONDITIONAL_RESEARCH_P2_NC_OWNER_RIGHTS_HOLD",
+      "source_selected": "13 files code, model.safetensors, NOTICE, config, text frontend and TFLite runner; demo WAV/cover/notebook excluded",
+      "critical_legal_gate": "CC BY-NC4.0 weights plus notice of Ngoc Huyen voice dataset NC; no commercial acts and source voice rights review",
+      "critical_technical_gate": "No .tflite graph files in Publisher repo; model Python code only, physical Cortex-M55 + Ethos-U55 benchmark simulated; cannot claim MCU out-of-box",
+      "weight_safetensors_F32_element_count": 100125,
+      "publisher_docs_architecture_count": 100118,
+      "unresolved_7_element_census_delta": true,
+      "new_user_download_approval": false
+    }
+  ],
+  "parent_sha_reconciliation": "catalog/research/2026-11-25-r166-inkling-heretic-parent-source-parity-no-redownload.json",
+  "no_parent_20GB_retransfer": true,
+  "license_restrictions_not_interchangeable": {
+    "Paradee": "Apache2 metadata, G2P external potential GPL obligations",
+    "TiHon": "CC BY-NC4.0 + third-party voice consents",
+    "Inkling LoRA": "Apache2 metadata plus Inkling parent AUP"
+  },
+  "regulation": "US BIS old ECCN4E091 withdrawn in 2026-11-19; future blanket local model ban not demonstrated, priority based on independent learned-state and actual archival rights",
+  "stop_status": {
+    "publisher_path_byte_gitOID_LFS_SHA": "PASS_FOR_3_FULL_HF_REPOS",
+    "external_Paradee_GitHub_code_sha": "PASS_METADATA_ONLY",
+    "owner_act_rights": "UNCERTAIN",
+    "owner_HDD_real_free_cache_and_SHA": "UNCERTAIN",
+    "Python_PEFT_ONNX_G2P_TFLite_ABI": "UNCERTAIN",
+    "runtime_offline_restore": "UNCERTAIN",
+    "download": "STOP",
+    "new_weight_downloaded": false,
+    "approved_queue_entries_added": 0
+  },
+  "H_T_D_C_U": {
+    "H": "Two already conditionally selected tiny separately trained TTS outcomes and distinct ARA adapter can be preserved as 32 exact source files without re-downloading earlier 20GB Inkling parent or 57 unneeded demo/format files.",
+    "T": "59+20+10 first-party HF file names, exact source commits, publisher bytes/Git OIDs/LFS SHA pinned with limit=100 to defeat default 50-page truncation; 38 external GitHub runtime source blobs pinned; parent 14 paths and config diff compared; next owner runtime n>=100 per language and n>=30 speed repeats under fixed hardware, clock, batch and codecs.",
+    "D": "PASS for published metadata scope, excluded demo source, parent weights SHA parity and approval queue empty; FAIL if using mismatched parent tensor, gated bypass, auto-approved source or NC license violation; UNCERTAIN/STOP for complete runtime/owner rights/offline restore.",
+    "C": "Paradee misaki/eSpeak G2P ABI unavailable; TiHon missing actual TFLite graph and noncommercial rights; LoRA o_proj.linear injection unsupported by installed PEFT/SGLang or degraded neutral task performance.",
+    "U": "No repeated owner samples, author WER/CER or RTFx alone, weight-vs-author 7-element mismatch, user disk missing measurements, pickle/remote custom code risk. u_c and k cannot be quantified without measurement."
+  },
+  "interdisciplinary": [
+    "speech synthesis and phonetics",
+    "edge-device compiler and signal processing",
+    "model editing, training provenance and reproducible execution",
+    "cryptographic archive integrity",
+    "license and dataset/voice rights"
+  ],
+  "new_weight_downloads": 0,
+  "new_approvals": 0,
+  "owner_D_modified": false,
+  "prior_260_catalog_items_unchanged": true
+}
