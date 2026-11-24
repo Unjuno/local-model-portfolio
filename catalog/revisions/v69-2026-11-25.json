@@ -1,0 +1,356 @@
+{
+  "schema_version": 1,
+  "revision_id": "v69-20261125",
+  "previous_revision_id": "v68-20261125",
+  "decision_date_jst": "2026-11-25",
+  "target_branch": "main",
+  "kind": "ADD_TWO_TINY_UNIQUE_MULTILINGUAL_AND_EDGE_SPEECH_TRAINED_STATES_PLUS_ONE_UNCENSORED_ARBITRARY_RANK_LORA",
+  "previous_asset_count": 252,
+  "previous_active_count": 203,
+  "additions": [
+    {
+      "position": 253,
+      "asset_kind": "model",
+      "repo_id": "sahilmahendrakar/Paradee-8M-v1.3",
+      "url": "https://huggingface.co/sahilmahendrakar/Paradee-8M-v1.3",
+      "group": "8M級多言語TTS・Kokoro蒸留独立学習重み",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "New multilingual standalone 7.88M distilled TTS state with eight voices across en/hi/fr/es. Two separately trained text/acoustic PyTorch halves and one same-outcome INT8 ONNX graph, not a compressed duplicate of the selected Kokoro82M. Choose one catalog asset, not three.",
+      "quality_positive": "Publisher first-party int8 source 8,462,503B, two original PyTorch-trained halves 31,647,476B, 3 pinned LFS SHA. Author 200 sentences/voice on Whisper large-v3; Apple M4 Pro CPU one thread ~62x RTF reported from v1.2, v1.3 within 2%. 8 voices and four languages.",
+      "quality_negative": "Author Hindi WER~21.6-21.7%, French 6.8%, Spanish5.0%; voice quality UTMOS neural proxy; eSpeak NG optional GPL-3.0, misaki pronunciation, PyTorch .pt pickle unsafe to load. Full model source code/package/G2P ABI and individual file scope not closed.",
+      "risk_and_alternative_assessment": "No claim that legal restrictions or future removals are probable. Protect distinct training/edited state source only. Source scope has immutable repo revision + exact weight SHA, but nonweight code/dependency closure is not locked; user model download remains STOP.",
+      "evidence_date": "2026-11-25",
+      "evidence_kind": "FIRST_PARTY_HF_RAW_LFS_POINTER_SHA_BYTES_AND_WEB_COMMIT_RESEARCH_ONLY_NOT_FULL_REPO_CENSUS",
+      "evidence_urls": [
+        "https://huggingface.co/sahilmahendrakar/Paradee-8M-v1.3/tree/b569f5efb789af5ba643a44af348427242ceb784",
+        "https://github.com/Unjuno/local-model-portfolio/blob/main/manifests/drafts/r162-2026-11-25-paradee13-tihon100k-core-weight-pins.candidate.json"
+      ],
+      "observed_access": "publisher public ungated at immutable HF revision; owner act-specific license not verified",
+      "license_metadata": "Apache-2.0 first-party model; optional GPL-3.0 eSpeak NG separate pronunciation component requires per-act legal review",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "b569f5efb789af5ba643a44af348427242ceb784",
+      "upstream_all_files_bytes_observed": null,
+      "upstream_file_count_observed": null,
+      "upstream_lfs_sha256_count_observed": 3,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 3,
+      "candidate_selected_source_file_bytes": 40109979,
+      "candidate_selected_source_files": [
+        {
+          "path": "onnx/paradee_int8.onnx",
+          "bytes": 8462503,
+          "sha256": "f68ed87562d040693dd0dd34e99c11b35ca24294e2149b840503bd1f25a2199f",
+          "git_blob_sha1": null,
+          "local_sha_verified": false,
+          "source_publisher_LFS_pointer": true
+        },
+        {
+          "path": "pytorch/decoder.pt",
+          "bytes": 14656297,
+          "sha256": "bcd904258550135f35723943079892a19442e67f366524e51d586f3d32e10684",
+          "git_blob_sha1": null,
+          "local_sha_verified": false,
+          "source_publisher_LFS_pointer": true
+        },
+        {
+          "path": "pytorch/text_side.pt",
+          "bytes": 16991179,
+          "sha256": "c8540bec0af607c72acaf1fe0f9fe4672c4149c524bb3a271e3a5a349b438928",
+          "git_blob_sha1": null,
+          "local_sha_verified": false,
+          "source_publisher_LFS_pointer": true
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r162-2026-11-25-paradee13-tihon100k-core-weight-pins.candidate.json",
+      "nonweight_file_paths_not_individually_publisher_SHA_locked": [
+        ".gitattributes",
+        "LICENSE",
+        "README.md",
+        "config.json",
+        "tokenizer.json"
+      ],
+      "source_scope_status": "IMMUTABLE_CORE_WEIGHT_SHA_ONLY_FULL_OFFLINE_SOURCE_FILES_NOT_YET_CLOSED",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 7880000,
+        "parameter_evidence": "First party original published total trained parameters",
+        "owner_tensor_census_not_run": true
+      },
+      "forecast_priority": {
+        "rank": 253,
+        "wave": "S1",
+        "category": "DISTILLED_MULTILINGUAL_TTS",
+        "scenario_status": "UNVERIFIED_FUTURE_RESTRICTION_HYPOTHESIS_NOT_FACT"
+      },
+      "preservation_bundle": {
+        "core_weight_files": [
+          "onnx/paradee_int8.onnx",
+          "pytorch/decoder.pt",
+          "pytorch/text_side.pt"
+        ],
+        "core_weight_sha_pins": 3,
+        "core_weight_bytes": 40109979,
+        "additional_files_require_exact_full_scope": [
+          ".gitattributes",
+          "LICENSE",
+          "README.md",
+          "config.json",
+          "tokenizer.json"
+        ],
+        "nonweight_files_revision_only_not_SHA_verified": true,
+        "original_source_repo_revision": "b569f5efb789af5ba643a44af348427242ceb784",
+        "complete_offline_source_unlocked": true,
+        "license_owner_act_checked": false,
+        "owner_SHA_checked": false,
+        "model_custom_code_reviewed": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "selected_core_source_bytes": 40109979,
+        "owner_incremental_bytes": null,
+        "owner_hdd_verified": false,
+        "active_runtime_memory_measured": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false
+    },
+    {
+      "position": 254,
+      "asset_kind": "model",
+      "repo_id": "ngocthien/tihon-tts",
+      "url": "https://huggingface.co/ngocthien/tihon-tts",
+      "group": "0.1M級ベトナム語マイコンTTS独立学習原本",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "New 100,118-parameter Vietnamese 4-voice learned TTS with deterministic harmonic+noise renderer; adapted from AuroraTTS-100K, original training distinct from tiny-voca/Kitten multilingual pipelines. Rare microcontroller NPU research value.",
+      "quality_positive": "Official F32 safetensors 411,224B SHA pinned; four voices and 24kHz outputs. Publisher CPU speed 40x x86 single core and 83x M4 single core; 1.0-2.3% CER on 36 utterances/voice, Cortex-M55/Ethos-U55 NPU cycles simulator only.",
+      "quality_negative": "CC BY-NC restricted owner acts, no MOS subjective quality, buzz/flicker limitations, device hardware numbers are SIMULATIONS, not board tests. `trust_remote_code=True` pipeline and original PyTorch/runtime dependencies unaudited.",
+      "risk_and_alternative_assessment": "No claim that legal restrictions or future removals are probable. Protect distinct training/edited state source only. Source scope has immutable repo revision + exact weight SHA, but nonweight code/dependency closure is not locked; user model download remains STOP.",
+      "evidence_date": "2026-11-25",
+      "evidence_kind": "FIRST_PARTY_HF_RAW_LFS_POINTER_SHA_BYTES_AND_WEB_COMMIT_RESEARCH_ONLY_NOT_FULL_REPO_CENSUS",
+      "evidence_urls": [
+        "https://huggingface.co/ngocthien/tihon-tts/tree/bc71174f68651e7ff32a90f1ffd5e7528288d403",
+        "https://github.com/Unjuno/local-model-portfolio/blob/main/manifests/drafts/r162-2026-11-25-paradee13-tihon100k-core-weight-pins.candidate.json"
+      ],
+      "observed_access": "publisher public ungated at immutable HF revision; owner act-specific license not verified",
+      "license_metadata": "CC BY-NC 4.0 noncommercial only; third-party Ngoc Huyen voice data NC, restrict commercial/synthetic impersonation.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "bc71174f68651e7ff32a90f1ffd5e7528288d403",
+      "upstream_all_files_bytes_observed": null,
+      "upstream_file_count_observed": null,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 1,
+      "candidate_selected_source_file_bytes": 411224,
+      "candidate_selected_source_files": [
+        {
+          "path": "model.safetensors",
+          "bytes": 411224,
+          "sha256": "9a48a0b73a3d1be23e18bf8344c7f481deb77b400ad10dbf7866c3b635cd814e",
+          "git_blob_sha1": null,
+          "local_sha_verified": false,
+          "source_publisher_LFS_pointer": true
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r162-2026-11-25-paradee13-tihon100k-core-weight-pins.candidate.json",
+      "nonweight_file_paths_not_individually_publisher_SHA_locked": [
+        ".gitattributes",
+        "NOTICE",
+        "README.md",
+        "config.json",
+        "configuration_tihon.py",
+        "modeling_tihon.py",
+        "pipeline_tihon.py",
+        "infer.py",
+        "tihon_tts/"
+      ],
+      "source_scope_status": "IMMUTABLE_CORE_WEIGHT_SHA_ONLY_FULL_OFFLINE_SOURCE_FILES_NOT_YET_CLOSED",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 100118,
+        "parameter_evidence": "First party original published total trained parameters",
+        "owner_tensor_census_not_run": true
+      },
+      "forecast_priority": {
+        "rank": 254,
+        "wave": "S2",
+        "category": "NOVEL_EDGE_VIETNAMESE_TTS",
+        "scenario_status": "UNVERIFIED_FUTURE_RESTRICTION_HYPOTHESIS_NOT_FACT"
+      },
+      "preservation_bundle": {
+        "core_weight_files": [
+          "model.safetensors"
+        ],
+        "core_weight_sha_pins": 1,
+        "core_weight_bytes": 411224,
+        "additional_files_require_exact_full_scope": [
+          ".gitattributes",
+          "NOTICE",
+          "README.md",
+          "config.json",
+          "configuration_tihon.py",
+          "modeling_tihon.py",
+          "pipeline_tihon.py",
+          "infer.py",
+          "tihon_tts/"
+        ],
+        "nonweight_files_revision_only_not_SHA_verified": true,
+        "original_source_repo_revision": "bc71174f68651e7ff32a90f1ffd5e7528288d403",
+        "complete_offline_source_unlocked": true,
+        "license_owner_act_checked": false,
+        "owner_SHA_checked": false,
+        "model_custom_code_reviewed": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "selected_core_source_bytes": 411224,
+        "owner_incremental_bytes": null,
+        "owner_hdd_verified": false,
+        "active_runtime_memory_measured": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false
+    },
+    {
+      "position": 255,
+      "asset_kind": "model",
+      "repo_id": "electroglyph/Inkling-2-Mini-uncensored-LoRA",
+      "url": "https://huggingface.co/electroglyph/Inkling-2-Mini-uncensored-LoRA",
+      "group": "無検閲Inkling ARA v2.2独立重み編集LoRA",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Different ARA v2.2.0.dev0 weight-space edit packed as 51.617MB LoRA for already acquired original Inkling-2-Mini. Separate exact editor/method from archived OpenUncensored rank2 and satellitedown; no 20GB merged copy.",
+      "quality_positive": "Single adapter_model.safetensors 51,617,184B SHA-256 pinned; 10 publisher repository files/52,406,603B observed at immutable rev, reproducible Heretic config/requirements/JSONL. Publisher reports refusal-keyword matches 3/100 versus original 100/100 and KL0.0883.",
+      "quality_negative": "Author refusal-keyword metric n100 not semantic safety/helpfulness validation; neutral MMLU/code/vision not measured. Exact training parent SHA and safe PEFT/SGLang/effective runtime with repeated loop layers unknown; existing 0.865MB edit has potentially comparable purpose.",
+      "risk_and_alternative_assessment": "No claim that legal restrictions or future removals are probable. Protect distinct training/edited state source only. Source scope has immutable repo revision + exact weight SHA, but nonweight code/dependency closure is not locked; user model download remains STOP.",
+      "evidence_date": "2026-11-25",
+      "evidence_kind": "FIRST_PARTY_HF_RAW_LFS_POINTER_SHA_BYTES_AND_WEB_COMMIT_RESEARCH_ONLY_NOT_FULL_REPO_CENSUS",
+      "evidence_urls": [
+        "https://huggingface.co/electroglyph/Inkling-2-Mini-uncensored-LoRA/tree/4d81722b2e939460d5b544e5319b80e9b960236b",
+        "https://github.com/Unjuno/local-model-portfolio/blob/main/manifests/drafts/r162-2026-11-25-electroglyph-inkling-heretic-v22-adapter-core.candidate.json"
+      ],
+      "observed_access": "publisher public ungated at immutable HF revision; owner act-specific license not verified",
+      "license_metadata": "Apache-2.0 publisher metadata, original Inkling acceptable-use obligations and source reuse rights to review.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "4d81722b2e939460d5b544e5319b80e9b960236b",
+      "upstream_all_files_bytes_observed": 52406603,
+      "upstream_file_count_observed": 10,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 1,
+      "candidate_selected_source_file_bytes": 51617184,
+      "candidate_selected_source_files": [
+        {
+          "path": "adapter_model.safetensors",
+          "bytes": 51617184,
+          "sha256": "3f5d669441cc0814e763faedb2c6a65d001f4d6bd22b73b0eb29f2dde96ca9e1",
+          "git_blob_sha1": null,
+          "local_sha_verified": false,
+          "source_publisher_LFS_pointer": true
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r162-2026-11-25-electroglyph-inkling-heretic-v22-adapter-core.candidate.json",
+      "nonweight_file_paths_not_individually_publisher_SHA_locked": [
+        ".gitattributes",
+        "README.md",
+        "adapter_config.json",
+        "reproduce/README.md",
+        "reproduce/SHA256SUMS.txt",
+        "reproduce/config.toml",
+        "reproduce/reproduce.json",
+        "reproduce/requirements.txt",
+        "reproduce/thinkingmachines--Inkling-2-Mini.jsonl"
+      ],
+      "source_scope_status": "IMMUTABLE_CORE_WEIGHT_SHA_ONLY_FULL_OFFLINE_SOURCE_FILES_NOT_YET_CLOSED",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 26706544312,
+        "parameter_evidence": "Original trained parent total parameter count from catalog, adapter additional tensors do not count as 26.7B new training parameters",
+        "owner_tensor_census_not_run": true
+      },
+      "forecast_priority": {
+        "rank": 255,
+        "wave": "S3",
+        "category": "NEW_ARBITRARY_RANK_LOW_REFUSAL_EDIT",
+        "scenario_status": "UNVERIFIED_FUTURE_RESTRICTION_HYPOTHESIS_NOT_FACT"
+      },
+      "preservation_bundle": {
+        "core_weight_files": [
+          "adapter_model.safetensors"
+        ],
+        "core_weight_sha_pins": 1,
+        "core_weight_bytes": 51617184,
+        "additional_files_require_exact_full_scope": [
+          ".gitattributes",
+          "README.md",
+          "adapter_config.json",
+          "reproduce/README.md",
+          "reproduce/SHA256SUMS.txt",
+          "reproduce/config.toml",
+          "reproduce/reproduce.json",
+          "reproduce/requirements.txt",
+          "reproduce/thinkingmachines--Inkling-2-Mini.jsonl"
+        ],
+        "nonweight_files_revision_only_not_SHA_verified": true,
+        "original_source_repo_revision": "4d81722b2e939460d5b544e5319b80e9b960236b",
+        "complete_offline_source_unlocked": true,
+        "license_owner_act_checked": false,
+        "owner_SHA_checked": false,
+        "model_custom_code_reviewed": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "selected_core_source_bytes": 51617184,
+        "owner_incremental_bytes": null,
+        "owner_hdd_verified": false,
+        "active_runtime_memory_measured": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false
+    }
+  ],
+  "added_assets": [
+    "sahilmahendrakar/Paradee-8M-v1.3",
+    "ngocthien/tihon-tts",
+    "electroglyph/Inkling-2-Mini-uncensored-LoRA"
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "full_previous252_preserved": true,
+  "source_core_manifests": [
+    "manifests/drafts/r162-2026-11-25-paradee13-tihon100k-core-weight-pins.candidate.json",
+    "manifests/drafts/r162-2026-11-25-electroglyph-inkling-heretic-v22-adapter-core.candidate.json"
+  ],
+  "weight_sha256_refs": 5,
+  "publisher_exact_core_weight_bytes": 92138387,
+  "full_repository_selected_source_scope_complete": false,
+  "model_payload_downloaded": 0,
+  "approved_downloads_added": 0,
+  "owner_D_rehashed": false,
+  "unreviewed_custom_code_executed": false
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "kind": "R162_V69_TINY_TTS_AND_UNCENSORED_ADAPTER_RESEARCH_SELECTION",
+  "date_jst": "2026-11-25",
+  "revision_from": "v68-20261125",
+  "revision_to": "v69-20261125",
+  "old_items_preserved": 252,
+  "registered_assets_after": 255,
+  "active_after": 206,
+  "select_after": 56,
+  "conditional_after": 150,
+  "hold_after": 30,
+  "model_total_after": 229,
+  "full_sourced_census_incomplete": true,
+  "core_frozen_source_manifests": [
+    "manifests/drafts/r162-2026-11-25-paradee13-tihon100k-core-weight-pins.candidate.json",
+    "manifests/drafts/r162-2026-11-25-electroglyph-inkling-heretic-v22-adapter-core.candidate.json"
+  ],
+  "core_weight_SHA_count": 5,
+  "core_weight_exact_bytes": 92138387,
+  "decisions": [
+    {
+      "repo_id": "sahilmahendrakar/Paradee-8M-v1.3",
+      "formal_decision": "conditional",
+      "source_rev": "b569f5efb789af5ba643a44af348427242ceb784",
+      "core_weight_files": 3,
+      "core_weight_bytes": 40109979,
+      "reason": "New multilingual standalone 7.88M distilled TTS state with eight voices across en/hi/fr/es. Two separately trained text/acoustic PyTorch halves and one same-outcome INT8 ONNX graph, not a compressed duplicate of the selected Kokoro82M. Choose one catalog asset, not three.",
+      "restriction": "Apache-2.0 first-party model; optional GPL-3.0 eSpeak NG separate pronunciation component requires per-act legal review",
+      "negative": "Author Hindi WER~21.6-21.7%, French 6.8%, Spanish5.0%; voice quality UTMOS neural proxy; eSpeak NG optional GPL-3.0, misaki pronunciation, PyTorch .pt pickle unsafe to load. Full model source code/package/G2P ABI and individual file scope not closed.",
+      "model_payload_acquisition_approved": false
+    },
+    {
+      "repo_id": "ngocthien/tihon-tts",
+      "formal_decision": "conditional",
+      "source_rev": "bc71174f68651e7ff32a90f1ffd5e7528288d403",
+      "core_weight_files": 1,
+      "core_weight_bytes": 411224,
+      "reason": "New 100,118-parameter Vietnamese 4-voice learned TTS with deterministic harmonic+noise renderer; adapted from AuroraTTS-100K, original training distinct from tiny-voca/Kitten multilingual pipelines. Rare microcontroller NPU research value.",
+      "restriction": "CC BY-NC 4.0 noncommercial only; third-party Ngoc Huyen voice data NC, restrict commercial/synthetic impersonation.",
+      "negative": "CC BY-NC restricted owner acts, no MOS subjective quality, buzz/flicker limitations, device hardware numbers are SIMULATIONS, not board tests. `trust_remote_code=True` pipeline and original PyTorch/runtime dependencies unaudited.",
+      "model_payload_acquisition_approved": false
+    },
+    {
+      "repo_id": "electroglyph/Inkling-2-Mini-uncensored-LoRA",
+      "formal_decision": "conditional",
+      "source_rev": "4d81722b2e939460d5b544e5319b80e9b960236b",
+      "core_weight_files": 1,
+      "core_weight_bytes": 51617184,
+      "reason": "Different ARA v2.2.0.dev0 weight-space edit packed as 51.617MB LoRA for already acquired original Inkling-2-Mini. Separate exact editor/method from archived OpenUncensored rank2 and satellitedown; no 20GB merged copy.",
+      "restriction": "Apache-2.0 publisher metadata, original Inkling acceptable-use obligations and source reuse rights to review.",
+      "negative": "Author refusal-keyword metric n100 not semantic safety/helpfulness validation; neutral MMLU/code/vision not measured. Exact training parent SHA and safe PEFT/SGLang/effective runtime with repeated loop layers unknown; existing 0.865MB edit has potentially comparable purpose.",
+      "model_payload_acquisition_approved": false
+    }
+  ],
+  "held_watchlist": [
+    {
+      "repo_id": "OpenIntelligenceNet/Aion-1.0-Instruct-2.3B-Abliterated",
+      "observed_revision_sha": "266067bc254dbf72d76154016023d1687cc0e3d5",
+      "weight_only_reference_bytes": 4577698688,
+      "reason": "4.6GB full modified copy of already receipt116 Aion base; only publisher refusal test 5/100 and unquantified qualitative KL, code trust_remote_code=True; no independent utility over existing edits."
+    },
+    {
+      "repo_id": "MC7ever/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16-heretic",
+      "observed_revision_sha": "9a9220a20924249e07d782fc0cd912345858728e",
+      "publisher_full_repo_reference_bytes": 7968035453,
+      "reason": "Novel looped Dory model Heretic editor 8/100 refusal vs parent 100/100 author; under OpenMDW-1.1 not ordinary Apache/MIT, parent training baseline and owner rights not verified; prioritize reproducibility recipe over premature full 8GB copy."
+    },
+    {
+      "repo_id": "Peymandc/Qwen3.5-0.8B-Heretic-Uncensored",
+      "observed_revision_sha": "ae542bda2c055f530b327d2674f673b1f180c581",
+      "full_source_reference_bytes": 1726760416,
+      "reason": "Training-free reproducible ARA full merged Qwen0.8B derivative of existing original parent, not an extra learning outcome; existing nchapman small Heretic-LoRA already receipt116 verified. Need distinct measured behavior or reproducible config fidelity before full duplicate."
+    }
+  ],
+  "legal_regulatory_classification": {
+    "fact": "US BIS 2026-11-19 withdrawal of former AI Diffusion Rule ECCN4E091 for weights; no reliable dated blanket prohibition.",
+    "uncertainty": "Jurisdiction/end use/third-party licenses and future file availability must be assessed separately.",
+    "source_url": "https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm"
+  },
+  "owner_local_SHA_reverified_now": false,
+  "code_executed_now": false,
+  "model_weight_transferred_now": 0,
+  "owner_specific_manifest_approvals_added": 0,
+  "H": "Two independent tiny speech trained states and one compact non-redundant editor of already archived Inkling add distinct language/edge and model-editor reproduction capabilities.",
+  "T": "Exact publisher immutable revisions, five core weight SHA and integer bytes, old252 items unmodified, 206 active queue/prep/readiness joins and 150 conditional access identities, 116 historic acquired IDs unchanged, approvals0; owner runtime samples n>=30 not run.",
+  "D": "Static publisher core file pin consistency PASS; complete owner media, offline dependencies, rights and quality UNCERTAIN -> STOP; any implied download authorization FAIL.",
+  "C": "Paradee G2P eSpeak licensing or Hindi WER impairs utility; TiHon noncommercial/no MOS or physical MCU performance fails; ARA neutral performance damage or identical behavior to existing LoRA.",
+  "U": "Author WER and simulated MCU timings and unverified file dependencies; independent owner SHA and hardware repeat samples absent; uc/k unknown."
+}
