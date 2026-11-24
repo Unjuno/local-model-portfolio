@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "kind": "R167_V72_P0_ROBOTRACKER17M_DISTINCT_LOCAL_PERCEPTION_SPECIALIST_VS_NONCOMMERCIAL_1B_WARP",
+  "reviewed_jst": "2026-11-25",
+  "canonical_revision_kept": "v72-20261125",
+  "existing_264_assets_preserved": true,
+  "existing_210_active_assets_preserved": true,
+  "ledger116_reported_verified_unchanged": true,
+  "publisher_source_manifest": "manifests/drafts/r167-2026-11-25-robotracker17m-vs-warp-nc-publisher-source-frozen.candidate.json",
+  "research_queue": "queues/proposed-v72-r167-robotrack-two-independent-specialists-UNAPPROVED.json",
+  "report": "docs/strategy/167-v72-robotrack-small17m-vs-warp-original-safety.md",
+  "decisions": [
+    {
+      "priority": 0,
+      "repo_id": "allenai/RoboTracker",
+      "source_revision_sha": "3bda363815dca4395b855ba0e7737517300f937f",
+      "publisher_full_repo_source_file_count": 3,
+      "publisher_full_repo_bytes": 66011293,
+      "weight_name": "robotracker.pth",
+      "weight_source_SHA256": "d846b841b698a772bff681b7c1d5446f11ff5e9c4e0371bfa171190b1c7805b8",
+      "catalogue_status": "P0_RESEARCH_ONLY_NOT_FORMALLY_PROMOTED",
+      "recommended_next_formal_decision": "CONDITIONAL_FIRST_BEFORE_WARP",
+      "decision_reason": "17M standalone AllTracker-based video point tracking finetuned on robot manipulation; 66MB original full checkpoint, independent learned state, distinct role from robot control/VLM. Model card Apache2 and code Apache/MIT but individual rights/runtime still unverified.",
+      "author_reported_quality": {
+        "benchmark": "RoboTrack-Bench Average Jaccard, TAP-Vid first @384x512",
+        "baseline": 62.56,
+        "candidate": 63.4,
+        "diff_AJ_points": 0.84
+      },
+      "negative_evidence": "Author RoboTAP AJ 68.41 vs original AllTracker68.48 (slightly worse); one checkpoint only, no local owner benchmark; no model license file in 3-file HF repo, only card + code root/license; weights are potentially unsafe pickle PTH and must never auto-import.",
+      "prerequisites": [
+        "Owner explicit intended legal acts rights and Apache+vendored MIT review",
+        "Vendor Python runtime code static review",
+        "PyTorch torch.load(weights_only=True) pinned source and safe local path, no auto network",
+        "Torch2.1+ CUDA/driver/torchvision/einops/numpy/opencv and GPU peak/batch/resolution",
+        "Full offline restore from exactly pinned source",
+        "Actual Windows D headroom >=200GB after staging/cache",
+        "Owner individual scope approval"
+      ],
+      "new_download_approved": false
+    },
+    {
+      "priority": 2,
+      "repo_id": "allenai/RoboTracker-Warp",
+      "source_revision_sha": "6cf4ddd90571b5e5bb269cf6cfb6112b91e66ec8",
+      "publisher_full_repo_source_file_count": 3,
+      "publisher_full_repo_bytes": 3898587949,
+      "weight_name": "robotracker_warp.pth",
+      "weight_source_SHA256": "6a45fc269a227dbb87f9aab8cc8efc43eba77113ac891f6156db9834b1b3830c",
+      "catalogue_status": "P2_RESEARCH_HOLD_NOT_FORMALLY_PROMOTED",
+      "recommended_next_formal_decision": "HOLD_NONCOMMERCIAL_PARENT_ABI_GPU",
+      "decision_reason": "~1B independently finetuned VGGT CoWTracker source, 3.899GB checkpoint, distinct training from 17M; not interchangeable with small AllTracker model.",
+      "author_reported_quality": {
+        "benchmark": "RoboTrack-Bench Average Jaccard, TAP-Vid first @336x560",
+        "baseline": 63.87,
+        "candidate": 65.98,
+        "diff_AJ_points": 2.11
+      },
+      "negative_evidence": "CC BY-NC 4.0 model weight, external FAIR Noncommercial Research License CoWTracker fork, original self-eval, author H200 GPU ~47GB and 18fps, owner GPU/clock/batch unknown. Cannot call it unrestricted or treat it as source equivalent to RoboTracker.",
+      "prerequisites": [
+        "Noncommercial user act review",
+        "CoWTracker custom dependencies + VGGT and DepthAnything-V2 submodules frozen",
+        "Torch==2.10.0 torchvision==0.25.0 xformers==0.0.34 and python/driver owner ABI",
+        "Owner GPU peak, privacy/robot-control physical safety",
+        "Exact local model SHA and offline restore, explicit owner approval"
+      ],
+      "new_download_approved": false
+    }
+  ],
+  "alternative_assets_reviewed": [
+    "aharley/alltracker",
+    "allenai/RoboTrack-Bench",
+    "allenai/RoboTrack-15M"
+  ],
+  "runtime_repo_pinned_sha": "fc5cd87f60fad57c7cbc48c3d09e9aa7b45061a3",
+  "runtime_selected_19_code_git_blobs": 19,
+  "exact_model_sha_original_state_distinct_from_parent": true,
+  "benchmark_is_publisher_self_report_not_owner_verification": true,
+  "RoboTracker_weight_PTH_has_no_model_repo_LICENSE_file": true,
+  "big_warp_noncommercial_training_and_code_separately_licensed": true,
+  "PTH_untrusted_payload_not_executed": true,
+  "selection_does_not_approve_download": true,
+  "blocked_owner_disk_rights_code_runtime_offline_restore": true,
+  "new_owner_signed_approvals": 0,
+  "weights_downloaded_now": 0,
+  "H_T_D_C_U": {
+    "H": "The small 17M full finetuned point-tracker checkpoint preserves an independently learned robotics perception role not covered by existing generic VLM/robot policies, at 66MB plus 165KB of lean code; the larger 1B Warp has unique higher quality but incompatible NC and GPU constraints.",
+    "T": "Pin each publisher three-file model repo at immutable SHA, all Git blob OIDs and LFS SHA, verify original AllTracker LFS SHA differs, code repository tree 56 blobs and 19 lean blobs, license tags and dataset reference commits. Next evaluate >=100 independent tracking clips and 30 throughput repeats on same HW/clock/batch/resolution, then owner legal/disk/offline checks.",
+    "D": "STATIC PASS if 6 model files, 56 code blob hashes, parent weight difference and noncommercial rights gates match; FULL DOWNLOAD STOP without owner licensed act, local SHA, batch/context backend and explicit source manifest approval; model code/PTH security must PASS before execute.",
+    "C": "Publisher 0.84 AJ improvement is small and RoboTAP is slightly worse, demonstrating limited generalization. External OpenCV/CUDA/AllTracker code might be incompatible; no H200/owner GPU for Warp; rights and benchmark videos may block true offline study.",
+    "U": "Self-eval benchmark and unclear clocks, 17M author param estimate from PTH not independently counted, noncomm code, hardware, D free space, and dataset privacy unverified. No repeated owner measurements to estimate u_c/k."
+  },
+  "interdisciplinary": [
+    "robotics perception and video point tracking",
+    "model supply-chain and serialization security",
+    "statistical validation of held-out benchmark generalization",
+    "software architecture and GPU driver ABI",
+    "model/data licenses and dataset privacy"
+  ]
+}
