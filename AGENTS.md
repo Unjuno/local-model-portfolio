@@ -1,3 +1,9 @@
+# R161／v68（2026-11-25）：並行3→4原本選定の正式整合と251→252件への巻戻し防止
+
+最新の唯一正本は[CURRENT](catalog/CURRENT.json) **v68／252登録・203有効・147 CON​​DITIONAL（SELECT56）**。並行したR160の3原本52file／8,505,348,758byteは、最終**4原本75files／17,608,061,719byte**に全52件のpath／revision／Git OID／LFS SHAが一致する**先行部分集合**であり、追加された[illuin/IVE-4B](https://huggingface.co/illuin/IVE-4B) 23file／9,102,712,961byteを削除してはならない。[R161統合監査](docs/strategy/161-v68-concurrent-merge-four-originals-and-203-authorization-stops.md)／[静的audit JSON](catalog/audits/2026-11-25-r161-v68-four-model-concurrency-reconciliation.json)／[更新した旧3原本回帰テスト](tests/test_r160_v68_three_small_originals.py)。旧202readiness/3model研究資料は履歴のみ、現在は[全203 STOP](catalog/readiness/v68-2026-11-25-r160-all203-gates.json)が正本。owner実SHA/法的行為別許可/オフライン復元は未検証、承認queue0、モデル新規DL0、既存削除0。以下R160以前は履歴。
+
+---
+
 # 現行v68／R160（2026-11-25）：MiniCPM5 2B final、Ivonnet 0.8B、IVE 4B、WeMM-Ecom 0.8Bの4独立trained状態を選定
 
 正本[CURRENT](catalog/CURRENT.json)→252登録／203有効、SELECT56＋CONDITIONAL147、HOLD30。旧v67 248項目の記録は完全不変。[75Publisher files frozen](manifests/drafts/r160-2026-11-25-four-small-trained-states-75file-publisher-frozen.candidate.json)には4repo source17,608,061,719byte、完全一致の12組20,076,087byte参照（Owner物理実容量ではない）。MiniCPM最終学習とSFT/Baseは異なるtrained stateだが今回最終版だけ採用。IvonnetはIVE4Bからの蒸留で、量子化複製ではない。IVEとIvonnetは`readout.safetensors`+原本+codeパッケージ、Python>=3.10/CUDA/transformers>=5.7,<6/flash-linear-attention0.5.2; video WeMM Ecom はTorchCodec/FFmpegを別審査。ユーザーHDD SHA/現在実空きとstaging/復元、本人License行為別許可、モデル別scope明示承認なしでは**新重みダウンロード0**。承認キューは空、既存116報告source再取得0、Gated回避・未審査モデルcode実行・既存ファイル削除禁止。研究はmainのみ。[調査報告](docs/strategy/160-v68-small-posttrained-decision-and-ecommerce-portfolio.md)。
