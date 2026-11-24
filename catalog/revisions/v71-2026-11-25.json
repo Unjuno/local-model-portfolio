@@ -1,0 +1,505 @@
+{
+  "schema_version": 1,
+  "revision_id": "v71-20261125",
+  "previous_revision_id": "v70-20261125",
+  "decision_date_jst": "2026-11-25",
+  "target_branch": "main",
+  "kind": "FORMAL_CONDITIONAL_TWO_UNCENSORED_SOURCE_FROZEN_ORIGINALS_WITH_FULL_SHA_AND_READOUT_CALIBRATION_STOP",
+  "previous_asset_count": 258,
+  "previous_active_count": 208,
+  "additions": [
+    {
+      "position": 259,
+      "asset_kind": "model",
+      "repo_id": "2Beyes/Aurum-2B-Uncensored",
+      "url": "https://huggingface.co/2Beyes/Aurum-2B-Uncensored",
+      "group": "小型・視覚無検閲2B refusal-direction編集BF16原本",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Full BF16 Qwen3.5-2B multimodal independent refusal-direction edited checkpoint. The 41 edited matrix tensors produce a distinct output trained-weight state from upstream base; not a new gradient-training run, not a quantized GGUF clone.",
+      "quality_positive": "Publisher 1113 prompts 0 refusals after manual case review; BFCL v3 claimed 69.3 vs 63.3. Publisher reports vision support, context 262144, independent checkpoint full vision. Not independently established.",
+      "quality_negative": "Publisher no-tool BFCL irrelevance 62.5 vs Qwen parent 87.9, GPQA exceeded token budget more, image math weaker. Refusal rates manually vs automatically flagged not identical protocol. Publication includes quantized benchmarks on RX6600 8GB Vulkan llama.cpp build12289; does not demonstrate owner BF16 runtime.",
+      "risk_and_alternative_assessment": "Original Qwen3.5-2B learned base is not currently among acquired116; full BF16 transformed checkpoint does not require parent weights for inference, but parent revision, notice and tokenizer need provenance review. Cannot infer near-term ban probability from uncensored status.",
+      "evidence_date": "2026-11-25",
+      "evidence_kind": "PUBLISHER_IMMUTABLE_40HEX_HF_FILE_TREE_BYTES_GIT_BLOB_SHA1_AND_LFS_SHA256_SOURCE_ONLY_OWNER_SHA_UNVERIFIED",
+      "evidence_urls": [
+        "https://huggingface.co/2Beyes/Aurum-2B-Uncensored/tree/56c735e8dc8efb82d81ad8db95e9eefb2ae7129d",
+        "https://github.com/Unjuno/local-model-portfolio/blob/main/manifests/drafts/r163-2026-11-25-five-uncensored-source-complete-publisher-OID-SHA.candidate.json"
+      ],
+      "observed_access": "Public ungated at exact frozen publisher revision; user-specific legal license acts not verified",
+      "license_metadata": "Apache-2.0 publisher model-repository LICENSE and tag; parent/corpus, custom server code, individual use acts require separate verification",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "56c735e8dc8efb82d81ad8db95e9eefb2ae7129d",
+      "upstream_all_files_bytes_observed": 4572557909,
+      "upstream_file_count_observed": 23,
+      "upstream_lfs_sha256_count_observed": 6,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 23,
+      "candidate_selected_source_file_bytes": 4572557909,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1812,
+          "sha256": null,
+          "git_blob_sha1": "cf0fc9963c93a208fc5e1b7054b3bf8f40130bfb",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11544,
+          "sha256": null,
+          "git_blob_sha1": "f938136e3adacfd92be087f6e113b5d6d97f678f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 9749,
+          "sha256": null,
+          "git_blob_sha1": "8dccc373d4281f92c2a01bf68a10a5c886de6daf",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/benchmark-comparison.png",
+          "bytes": 195453,
+          "sha256": "0d053329a7bd1813fb0582498b75ec2991ecdef126eee384a78f9cc423f365eb",
+          "git_blob_sha1": "8d6f1dab8d26fa32a8fd6fa2e70a66fe77de9bc6",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/benchmark-comparison.svg",
+          "bytes": 17107,
+          "sha256": null,
+          "git_blob_sha1": "a17bef0cd5f210e136214a28a383c53c5866b987",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/bfcl-netgraph.png",
+          "bytes": 286490,
+          "sha256": "ee936a1935a17ccd47e214771667816cae95cb3c211739817c4e787d6ed7b611",
+          "git_blob_sha1": "8baf87449c7b247d846ef675f6e937a6d95b1fe1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/bfcl-netgraph.svg",
+          "bytes": 15147,
+          "sha256": null,
+          "git_blob_sha1": "2be3df75e5ddbb8b081a7146dab5f9e6eef80cfb",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/edit-map.png",
+          "bytes": 96995,
+          "sha256": null,
+          "git_blob_sha1": "1051601f85347361961f14565564bcc45975eb60",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/edit-map.svg",
+          "bytes": 13967,
+          "sha256": null,
+          "git_blob_sha1": "600e58575253f31ffc7aa8a6a21dd280ae7a9757",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/logo.png",
+          "bytes": 425510,
+          "sha256": "57ef24f726793ce8503688f8b14341ea7eb7c1f569ce94de3f7b956167bc37b6",
+          "git_blob_sha1": "92707925ed1d782b5767d506c9ed28401e769483",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/results-table.png",
+          "bytes": 258438,
+          "sha256": "6ac8c66fc560e5feebb7380127f84c54860adcf7eb72f6db99445c918aadef67",
+          "git_blob_sha1": "2bdb20afd4a5f6774c6fddb0b4aaf658f91df06e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/results-table.svg",
+          "bytes": 24541,
+          "sha256": null,
+          "git_blob_sha1": "3e8797070661290c8cdab804c0ab7b19a842212a",
+          "local_sha_verified": false
+        },
+        {
+          "path": "build_log.json",
+          "bytes": 3029,
+          "sha256": null,
+          "git_blob_sha1": "bf8d389cee706eb18816fa029b3e586f11db8929",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 7755,
+          "sha256": null,
+          "git_blob_sha1": "0ef09f214eaa6d9bca297988afc1454b5827b2c7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 2908,
+          "sha256": null,
+          "git_blob_sha1": "d30a15be1bbfd610f58ad80f1fbeb6778f58a80f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 3353259,
+          "sha256": null,
+          "git_blob_sha1": "a494e019ca1502219fd0128658b979e5f05ae8e8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors-00001-of-00001.safetensors",
+          "bytes": 4548221520,
+          "sha256": "54b60b4e66348f40d9672dbd245407d85a19189e586aab5b06cb635304371c1c",
+          "git_blob_sha1": "9416cdecf540a7d337c9a42d0b565b44821a380f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 64460,
+          "sha256": null,
+          "git_blob_sha1": "69a41758e1138259916d08b99b56fada441fd502",
+          "local_sha_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 390,
+          "sha256": null,
+          "git_blob_sha1": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 12807982,
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+          "git_blob_sha1": "a73a846725794819aa6e1c9e97d8dc9671c2006d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 16709,
+          "sha256": null,
+          "git_blob_sha1": "fae3ce993e07c092ad024dde45e592379fde91bb",
+          "local_sha_verified": false
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 385,
+          "sha256": null,
+          "git_blob_sha1": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe",
+          "local_sha_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 6722759,
+          "sha256": null,
+          "git_blob_sha1": "0aa0ce0658d60ac4a5d609f4eadb0e8e43514176",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r163-2026-11-25-five-uncensored-source-complete-publisher-OID-SHA.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 2274069824,
+        "evidence_kind": "PUBLISHER_HUGGINGFACE_SAFETENSORS_PARAMETER_ELEMENTS_NO_OWNER_LOCAL_CENSUS",
+        "review_date": "2026-11-25",
+        "local_tensor_census_not_executed": true
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 259,
+        "category": "INDEPENDENT_UNCENSORED_MODEL_EDIT_OR_SPECIALIST_DECISION_STATE_NOT_PROVEN_REGULATORY_RISK",
+        "scenario_status": "RESTRICTION_FUTURE_HYPOTHESIS_NOT_VERIFIED"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "Full BF16 Qwen3.5-2B multimodal independent refusal-direction edited checkpoint. The 41 edited matrix tensors produce a distinct output trained-weight state from upstream base; not a new gradient-training run, not a quantized GGUF clone.",
+        "exact_immutable_revision": "56c735e8dc8efb82d81ad8db95e9eefb2ae7129d",
+        "must_preserve": [
+          ".gitattributes",
+          "LICENSE",
+          "README.md",
+          "assets/benchmark-comparison.png",
+          "assets/benchmark-comparison.svg",
+          "assets/bfcl-netgraph.png",
+          "assets/bfcl-netgraph.svg",
+          "assets/edit-map.png",
+          "assets/edit-map.svg",
+          "assets/logo.png",
+          "assets/results-table.png",
+          "assets/results-table.svg",
+          "build_log.json",
+          "chat_template.jinja",
+          "config.json",
+          "merges.txt",
+          "model.safetensors-00001-of-00001.safetensors",
+          "model.safetensors.index.json",
+          "preprocessor_config.json",
+          "tokenizer.json",
+          "tokenizer_config.json",
+          "video_preprocessor_config.json",
+          "vocab.json"
+        ],
+        "mandatory_trained_weight_sha256s": [
+          "54b60b4e66348f40d9672dbd245407d85a19189e586aab5b06cb635304371c1c"
+        ],
+        "runtime_dependencies_to_pin": [
+          "Transformers version supporting Qwen3.5 AutoModelForImageTextToText",
+          "torch and Accelerate, BF16 device or compatible host RAM",
+          "AutoProcessor, image/video preprocessing, tokenizer, merges, vocab, chat template",
+          "Vision tower and MTP head included in BF16 weight; trust policy review before model code run",
+          "Independent tool-use abstention, latency and refusal-bias tests on owner hardware"
+        ],
+        "original_publisher_bytes": 4572557909,
+        "complete_offline_restore_verified": false,
+        "parent_inference_weight_retransfer_required": false
+      },
+      "resource_screen": {
+        "publisher_source_bytes": 4572557909,
+        "owner_actual_free_bytes": null,
+        "owner_new_incremental_bytes": null,
+        "staging_and_cache_bytes": null,
+        "owner_peak_RAM_bytes": null
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "AURUM_TOOL_ABSTENTION_QUALITY_DELTA_AND_OWNER_PUBLISHER_LICENSE_RUNTIME_PHYSICAL_SHA_UNVERIFIED"
+    },
+    {
+      "position": 260,
+      "asset_kind": "model",
+      "repo_id": "AnkitNayak-dev/QJev-1.5B-Abliterated",
+      "url": "https://huggingface.co/AnkitNayak-dev/QJev-1.5B-Abliterated",
+      "group": "1.5B専用意思決定確率readout＋拒否編集原本",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "QJev 1.5B decision-specific trained base plus training-free refusal-subspace edited backbone and separate 3.183MB learned MLP readout. Edited backbone SHA differs from standard QJev; decision readout SHA is equal, which does NOT prove probability calibration equality.",
+      "quality_positive": "Full 15 source files includes model.safetensors, decision_head.safetensors, decision_config, tokenizer, custom qjev.py/handler.py/serve.py, LICENSE. Author JevBench strict 62.53% on 240 cases, 1468 trials; no independent owner verification.",
+      "quality_negative": "Unchanged decision head combined with ablated backbone may alter readout input distribution and invalidate calibration. Author emergency network/physical controller examples are not safe autonomous action endorsements; custom server and Python require static code review.",
+      "risk_and_alternative_assessment": "Different Qwen2.5-based decision outcome from v68 Illuin Ive/Ivonnet visual classification, so cannot equate them as weight-conversion copies. Already acquired116 excludes it; no implicit owner rights or code execution.",
+      "evidence_date": "2026-11-25",
+      "evidence_kind": "PUBLISHER_IMMUTABLE_40HEX_HF_FILE_TREE_BYTES_GIT_BLOB_SHA1_AND_LFS_SHA256_SOURCE_ONLY_OWNER_SHA_UNVERIFIED",
+      "evidence_urls": [
+        "https://huggingface.co/AnkitNayak-dev/QJev-1.5B-Abliterated/tree/1df03fe639898580f53a984355b7cbf3cca24bf4",
+        "https://github.com/Unjuno/local-model-portfolio/blob/main/manifests/drafts/r163-2026-11-25-five-uncensored-source-complete-publisher-OID-SHA.candidate.json"
+      ],
+      "observed_access": "Public ungated at exact frozen publisher revision; user-specific legal license acts not verified",
+      "license_metadata": "Apache-2.0 publisher model-repository LICENSE and tag; parent/corpus, custom server code, individual use acts require separate verification",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "1df03fe639898580f53a984355b7cbf3cca24bf4",
+      "upstream_all_files_bytes_observed": 3102137211,
+      "upstream_file_count_observed": 15,
+      "upstream_lfs_sha256_count_observed": 3,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 15,
+      "candidate_selected_source_file_bytes": 3102137211,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "sha256": null,
+          "git_blob_sha1": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11343,
+          "sha256": null,
+          "git_blob_sha1": "6634c8cc3133b3848ec74b9f275acaaa1ea618ab",
+          "local_sha_verified": false
+        },
+        {
+          "path": "Modelfile",
+          "bytes": 793,
+          "sha256": null,
+          "git_blob_sha1": "accccd6951b1dd41dfe790fd2b181c7d63f86741",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 16124,
+          "sha256": null,
+          "git_blob_sha1": "2a56f0da26979eeb181e3dc890899b736446d5e1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 2561,
+          "sha256": null,
+          "git_blob_sha1": "9840d40f49842423ad9d3c92bbedac488564c088",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 1434,
+          "sha256": null,
+          "git_blob_sha1": "7cd500864c12a50b4f3be31c121c54bedd00501c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "decision_config.json",
+          "bytes": 905,
+          "sha256": null,
+          "git_blob_sha1": "df0650f8f19bf9803833b2e1df3598a2a180f6e6",
+          "local_sha_verified": false
+        },
+        {
+          "path": "decision_head.safetensors",
+          "bytes": 3183276,
+          "sha256": "ec01a57a7e61c3ee052a5b7ea939cb4e5ae2cfacf2fe84f5e1d67d962805bebe",
+          "git_blob_sha1": "e1534f39775ea65621abb518a9a849f1dde16998",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 256,
+          "sha256": null,
+          "git_blob_sha1": "f9091edc53e5f234aae92fc37caec81bfc1fd388",
+          "local_sha_verified": false
+        },
+        {
+          "path": "handler.py",
+          "bytes": 7488,
+          "sha256": null,
+          "git_blob_sha1": "63b247a9957c2ca5a3ea20ae1ee5abbd828f7cb0",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 3087467144,
+          "sha256": "5272c8590c74528d5f8604a6a058ddc6a8908089bfb92c010fd73fabd36c796e",
+          "git_blob_sha1": "326c9c32efd7195180f32eb53086fb05ff10ac1e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "qjev.py",
+          "bytes": 14108,
+          "sha256": null,
+          "git_blob_sha1": "4117bb0df414e83106dc6b06c4c386db1aafd807",
+          "local_sha_verified": false
+        },
+        {
+          "path": "serve.py",
+          "bytes": 7594,
+          "sha256": null,
+          "git_blob_sha1": "a303a440d281e41d98b90f41ab122178d3475bdf",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 11421892,
+          "sha256": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8",
+          "git_blob_sha1": "34510ff0037cd50428af467a17ead5a96140a32c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 723,
+          "sha256": null,
+          "git_blob_sha1": "de1d5357812a266cc7a22a42b21bd7908c67d7b2",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r163-2026-11-25-five-uncensored-source-complete-publisher-OID-SHA.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 1543714304,
+        "evidence_kind": "PUBLISHER_HUGGINGFACE_SAFETENSORS_PARAMETER_ELEMENTS_NO_OWNER_LOCAL_CENSUS",
+        "review_date": "2026-11-25",
+        "local_tensor_census_not_executed": true
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 260,
+        "category": "INDEPENDENT_UNCENSORED_MODEL_EDIT_OR_SPECIALIST_DECISION_STATE_NOT_PROVEN_REGULATORY_RISK",
+        "scenario_status": "RESTRICTION_FUTURE_HYPOTHESIS_NOT_VERIFIED"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "QJev 1.5B decision-specific trained base plus training-free refusal-subspace edited backbone and separate 3.183MB learned MLP readout. Edited backbone SHA differs from standard QJev; decision readout SHA is equal, which does NOT prove probability calibration equality.",
+        "exact_immutable_revision": "1df03fe639898580f53a984355b7cbf3cca24bf4",
+        "must_preserve": [
+          ".gitattributes",
+          "LICENSE",
+          "Modelfile",
+          "README.md",
+          "chat_template.jinja",
+          "config.json",
+          "decision_config.json",
+          "decision_head.safetensors",
+          "generation_config.json",
+          "handler.py",
+          "model.safetensors",
+          "qjev.py",
+          "serve.py",
+          "tokenizer.json",
+          "tokenizer_config.json"
+        ],
+        "mandatory_trained_weight_sha256s": [
+          "ec01a57a7e61c3ee052a5b7ea939cb4e5ae2cfacf2fe84f5e1d67d962805bebe",
+          "5272c8590c74528d5f8604a6a058ddc6a8908089bfb92c010fd73fabd36c796e"
+        ],
+        "runtime_dependencies_to_pin": [
+          "Python and torch+Transformers+SFT Qwen2.5 support",
+          "qjev.py, handler.py, serve.py static inspection before executing",
+          "decision_head.safetensors and config, do not omit custom readout",
+          "Calibrated decision output evaluated with ECE, top choice accuracy and abstention, not only refusal rate",
+          "No autonomous cyber/industrial controls or tool actions without independent validated safety"
+        ],
+        "original_publisher_bytes": 3102137211,
+        "complete_offline_restore_verified": false,
+        "parent_inference_weight_retransfer_required": false
+      },
+      "resource_screen": {
+        "publisher_source_bytes": 3102137211,
+        "owner_actual_free_bytes": null,
+        "owner_new_incremental_bytes": null,
+        "staging_and_cache_bytes": null,
+        "owner_peak_RAM_bytes": null
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "QJEV_SAME_READOUT_AFTER_ABLATION_RECALIBRATION_HIGHRISK_ACTION_REVIEW_AND_OWNER_ABI_SHA_UNVERIFIED"
+    }
+  ],
+  "added_assets": [
+    "2Beyes/Aurum-2B-Uncensored",
+    "AnkitNayak-dev/QJev-1.5B-Abliterated"
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "all_previous_258_assets_preserved_identically": true,
+  "source_manifest": "manifests/drafts/r163-2026-11-25-five-uncensored-source-complete-publisher-OID-SHA.candidate.json",
+  "new_total_publisher_source_file_refs": 38,
+  "new_total_publisher_bytes": 7674695120,
+  "new_publisher_lfs_sha256_refs": 9,
+  "new_model_file_sha_verified_owner": 0,
+  "owner_rights_use_act_approved": 0,
+  "new_downloads_approved": 0,
+  "new_model_payload_downloaded": 0,
+  "existing116_reported_sources_untouched": true,
+  "hold_research_not_formalized": [
+    "OpenIntelligenceNet/Aion-1.0-Instruct-2.3B-Abliterated",
+    "MC7ever/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16-heretic"
+  ],
+  "empty_spark_lora_still_excluded": true,
+  "owner_HDD_rehashed": false,
+  "custom_code_executed": false,
+  "source_complete_flag_is_not_acquisition_approval": true
+}
