@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "kind": "R159_V66_NOV24_NEW_SMALL_MODEL_AND_REGULATORY_EXCEPTION_SELECTION",
+  "review_date_jst": "2026-11-24",
+  "canonical_revision_at_review": "v66-20261124",
+  "previous_116_ledger_verified_repos_not_redownloaded": true,
+  "prior_catalog_published_model_count": 220,
+  "initial_tracked_assets": 246,
+  "initial_active_assets": 197,
+  "source_manifest": "manifests/drafts/r159-2026-11-24-wemm-ecom-plamo-ernie-immutable-sources.candidate.json",
+  "new_research_queue": "queues/proposed-v66-r159-post116-edge-UNAPPROVED.json",
+  "recommended_next_conditional_models": [
+    {
+      "repo_id": "tencent/WeMM-Ecom-0.8B",
+      "url": "https://huggingface.co/tencent/WeMM-Ecom-0.8B",
+      "full_files": 20,
+      "full_bytes": 1733044450,
+      "trained_weight_sha256s": [
+        "5a84c44f4e3beaf16ab0b6aa8238c66a6033291d77b13b81d934098a02d68bf4"
+      ],
+      "reason": "Newly posttrained Qwen3.5-0.8B family multimodal e-commerce VLM. 28 e-commerce evaluations, image/multi-image/video, hybrid thinking; independent trained result rather than GGUF or FP8 conversion.",
+      "gates": [
+        "Static source+license Apache 2.0 exact scope, owner per-act rights",
+        "Transformers>=5.2.0 + PyTorch and TorchCodec/FFmpeg video ABI on owner hardware",
+        "Original publisher 23/28 internal ecommerce benchmarks; no independent broad task parity",
+        "Owner physical SHA, capacity/staging safety floor, individual approved manifest"
+      ],
+      "formal_overlay_added_this_turn": false
+    },
+    {
+      "repo_id": "openbmb/MiniCPM5-2B",
+      "url": "https://huggingface.co/openbmb/MiniCPM5-2B",
+      "full_files": 11,
+      "full_bytes": 5043807977,
+      "trained_weight_sha256s": [
+        "14fb8e7f0a18d53d1f239773758bf581cee7e456a4523a54622c3a245b64402c"
+      ],
+      "reason": "Independent 2.5168B OPD/RL distilled general reasoning and coding/agent trained state, previously R155 research only. Publisher 53.9 average and subbench claims need independent same-harness comparison.",
+      "gates": [
+        "Hub tag Apache 2.0 but no LICENSE included in the frozen 11-file repo: verify applicable underlying text and NOTICE/parents",
+        "Exact base/backbone tokenizer and chat_template, backend ABI, KV cache",
+        "Independent neutral/coding tasks vs existing 2B+ models, avoid relying on author mixed benchmarks",
+        "Owner current live free bytes and source-specific approval"
+      ],
+      "formal_overlay_added_this_turn": false
+    }
+  ],
+  "held_alternatives": [
+    {
+      "repo_id": "tencent/WeMM-Ecom-2B",
+      "full_bytes": 4453620451,
+      "reason": "Different trained Qwen3.5-2B base and BF16 3-shard output, not a quantization of WeMM-Ecom-0.8B. Wait for matched task-quality and hardware cost to justify both.",
+      "held_due_to": [
+        "Same ecommerce task splits and batch/clock/quantization settings vs 0.8B",
+        "Owner per-act Apache licensing and full offline vision pipeline",
+        "Exact source SHA and incremental capacity"
+      ]
+    },
+    {
+      "repo_id": "pfnet/plamo-3-translate-2b",
+      "full_bytes": 5762122137,
+      "reason": "Independent 2.8786B translator training, not quantized 0.8B, but existing selected PLaMo 0.8B and 31B teacher occupy function; measure translation quality per memory/GB before an intermediate original.",
+      "held_due_to": [
+        "PLaMo Community License commercial registration, redistribution and output-training constraints",
+        "Static audit modeling_plamo.py tokenization_plamo.py trust_remote_code and relevant backend",
+        "Independent Japanese plus other language directions quality vs 0.8B and existing 31B, owner file approval"
+      ]
+    },
+    {
+      "repo_id": "baidu/ERNIE-5.5-Flash-Preview",
+      "full_bytes": 165935900630,
+      "reason": "Publisher declares 280B total/14B active plus trained mixed FP8/MXFP4 expert weights with DSpark draft head and new post-training. HF serialized safetensors count 299.559B is not logically identical to base total; total exceeds 150B screening. 165.936GB publisher scope does not prove RAM peak or model quality.",
+      "held_due_to": [
+        "Mandatory measured >=30 matched peak host+GPU RAM vs predeclared <150B fixed reference and both <512GB total",
+        "Owner backend supporting MXFP4 W4A8 FP8 HCA/DSA, custom code, DSpark, tokenizer and 1M context; ABIs all pinned",
+        "Apache2 publisher license/notice and 142 file source hashes; owner available capacity+staging",
+        "No automatic exclusion from research, no executable approval without matched exception evidence"
+      ]
+    }
+  ],
+  "already_selected_no_new_asset": {
+    "repo_id": "pfnet/plamo-3-translate-0.8b",
+    "old_revision": "cc8e88169807d5a272e8ff06db12eb0129b67f81",
+    "new_revision": "c5a33c561bc6a4fbac38c3460bbb384e15c0b231",
+    "sha_equal_weight": true,
+    "modified_nonweights": [
+      "LICENSE/en",
+      "LICENSE/ja",
+      "README.md",
+      "README_ja.md",
+      "chat_template.jinja"
+    ],
+    "current_license_observations": "PLaMo Community License, English/Japanese revised Nov 17 2026; noncommercial personal or academic use free, commercial use up to JPY 1 billion revenue/sales requires prior registration, above requires separate license; distribution and output-derived-model conditions; text/user rights reviewed only as publisher source, NOT owner-specific license approval.",
+    "not_silent_repin": true,
+    "model_weight_retransfer_rejected": true
+  },
+  "new_earnies_280b_constraints": {
+    "repo_id": "baidu/ERNIE-5.5-Flash-Preview",
+    "publisher_declared_total_parameters": 280000000000,
+    "publisher_declared_active_parameters": 14000000000,
+    "hub_safetensors_stored_elements": 299559241286,
+    "all_publisher_bytes": 165935900630,
+    "exception_unverified": true,
+    "required_matched_ram_trials_min": 30,
+    "reference_baseline_below_150b_required": true,
+    "estimated_usable_RAM_at_context_and_batch_unknown": true,
+    "full_source_frozen": true
+  },
+  "source_numbers": {
+    "source_repos": 6,
+    "full_file_count": 229,
+    "full_publisher_reference_bytes": 184714085822,
+    "full_lfs_sha256_references": 159,
+    "new_originals_recommended": [
+      "tencent/WeMM-Ecom-0.8B",
+      "openbmb/MiniCPM5-2B"
+    ],
+    "new_originals_recommended_count": 2,
+    "new_originals_recommended_full_files": 31,
+    "new_originals_recommended_full_publisher_bytes": 6776852427,
+    "exact_cross_source_lfs_duplicates": [
+      [
+        {
+          "model": "tencent/WeMM-Ecom-0.8B",
+          "path": "tokenizer.json",
+          "bytes": 12807982
+        },
+        {
+          "model": "tencent/WeMM-Ecom-2B",
+          "path": "tokenizer.json",
+          "bytes": 12807982
+        }
+      ],
+      [
+        {
+          "model": "pfnet/plamo-3-translate-0.8b",
+          "path": "figures/benchmark_en.png",
+          "bytes": 578650
+        },
+        {
+          "model": "pfnet/plamo-3-translate-2b",
+          "path": "figures/benchmark_en.png",
+          "bytes": 578650
+        }
+      ],
+      [
+        {
+          "model": "pfnet/plamo-3-translate-0.8b",
+          "path": "figures/benchmark_ja.png",
+          "bytes": 585624
+        },
+        {
+          "model": "pfnet/plamo-3-translate-2b",
+          "path": "figures/benchmark_ja.png",
+          "bytes": 585624
+        }
+      ]
+    ],
+    "dedup_reference_bytes_not_owner_verified": 13972256,
+    "actual_weight_bytes_transferred": 0,
+    "model_download_approvals": 0
+  },
+  "regulation_fact_evidence_url": "https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm",
+  "regulation_note": "BIS 2026-11-19 removed AI Diffusion Rule model-weight ECCN 4E091; no supported blanket ban or dated takedown prediction. Export destination/end-use and publisher licenses remain independent.",
+  "formal_catalog_additions": 0,
+  "download_authorizations": 0,
+  "new_weight_payload_transferred": 0,
+  "owner_device_modified": false,
+  "owner_individual_rights_verified": false
+}
