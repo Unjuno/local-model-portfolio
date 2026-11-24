@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "revision_id": "v68-20261125",
+  "previous_revision_id": "v67-20261124",
+  "decision_date_jst": "2026-11-25",
+  "target_branch": "main",
+  "kind": "ADD_THREE_INDEPENDENT_SMALL_ECOM_OPD_AGENT_AND_VISUAL_DECISION_TRAINED_ORIGINALS_CONDITIONAL_ONLY",
+  "previous_asset_count": 248,
+  "previous_active_count": 199,
+  "additions": [
+    {
+      "position": 249,
+      "asset_kind": "model",
+      "repo_id": "tencent/WeMM-Ecom-0.8B",
+      "url": "https://huggingface.co/tencent/WeMM-Ecom-0.8B",
+      "group": "小型EC視覚・言語／独立マルチモーダル後学習0.853B",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Qwen3.5-0.8Bから追加マルチモーダル学習された独立BF16 0.853Bモデル、EC画像属性・複数画像・動画・ハイブリッド思考を扱う。親の量子化、既取得WeMM-Video-2Bの音声同期機能とは独立した学習成果。",
+      "quality_positive": "Publisher 28 EC/64 general benchmarks; claimed EC +16.43 and general +6.93 score points over Qwen3.5-0.8B; low storage 1.733GB and multimodal processor source included.",
+      "quality_negative": "Most EC suites internal; author scores not independently measured on owner HW. Video route requires version-matched TorchCodec/FFmpeg; 262k context not proven in owner VRAM.",
+      "risk_and_alternative_assessment": "Public Apache-2.0 frozen original model; another 2B sibling is separately trained but needs matched incremental quality comparison before duplication. Public access does not predict future bans.",
+      "evidence_date": "2026-11-25",
+      "evidence_kind": "HUGGING_FACE_PUBLISHER_FROZEN_REVISION_GIT_BLOB_AND_LFS_SHA_STATIC_2026_11_25_OWNER_SHA_NOT_VERIFIED",
+      "evidence_urls": [
+        "https://huggingface.co/tencent/WeMM-Ecom-0.8B/tree/b40297975d72386f1c53103371d80ae0e5a9bd58",
+        "https://github.com/Unjuno/local-model-portfolio/blob/main/manifests/drafts/r160-2026-11-25-three-edge-trained-originals-source-freeze.candidate.json"
+      ],
+      "observed_access": "public, ungated at observed publisher revision",
+      "license_metadata": "apache-2.0 in publisher model source; user act / derivative notices must be reviewed",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "b40297975d72386f1c53103371d80ae0e5a9bd58",
+      "upstream_all_files_bytes_observed": 1733044450,
+      "upstream_file_count_observed": 20,
+      "upstream_lfs_sha256_count_observed": 8,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 20,
+      "candidate_selected_source_file_bytes": 1733044450,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1988,
+          "sha256": null,
+          "git_blob_sha1": "08ea05c4318452361d0b6d3c9a90bf492813196e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 24495,
+          "sha256": null,
+          "git_blob_sha1": "cd7f249ccded8dcbcb36669870a65bf88f61b1b2",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 28311,
+          "sha256": null,
+          "git_blob_sha1": "a8b431eca28949290ecb4a3f22357eb45670c111",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/ecommerce-benchmarks.png",
+          "bytes": 654500,
+          "sha256": "65a98ad1dac001d548226dcad4d0ef291dcc0c9600dbc9c85f701635f396c379",
+          "git_blob_sha1": "1a58e12c26bc280d0d49b5fec41322c9b3eb147b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/ecommerce-instruct-table.png",
+          "bytes": 497100,
+          "sha256": "589fa2529919b6e8b7799f8bfbda189718839c3050fa82f70ae6c5d42290dbab",
+          "git_blob_sha1": "f1c1466d6fb4b50ccd9d6c28782e1da54c472d79",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/ecommerce-thinking-table.png",
+          "bytes": 460454,
+          "sha256": "fce95693d627b444bd1d7ca63046736245134e535b222de96937c5d6f62e75c2",
+          "git_blob_sha1": "66c076fd4538b93b5752d7150bab72ec21608db1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/general-benchmarks.png",
+          "bytes": 635864,
+          "sha256": "43236c5b905332a2f29d3ffbff741ccd4497246f8b538c7cd8678c0b22255fde",
+          "git_blob_sha1": "8c38a0449560d69c1cb2734cb8691a335c0b5199",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/general-instruct-table.png",
+          "bytes": 935891,
+          "sha256": "54adead1d491d7ddbfb862c2a4fe650eabb3e72977a3a04ef1c45e41eefc7670",
+          "git_blob_sha1": "1991d8e966153d8c42539d812b59422bf33c593b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/general-thinking-table.png",
+          "bytes": 828122,
+          "sha256": "cced045b5b5382ee18c1579e499129eefdea0913bc95256ab881d3aeaf2ad708",
+          "git_blob_sha1": "c45ddbe0fe6704227c5d70e4d23a2b55b9ab6bc7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 7755,
+          "sha256": null,
+          "git_blob_sha1": "0ef09f214eaa6d9bca297988afc1454b5827b2c7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 2908,
+          "sha256": null,
+          "git_blob_sha1": "1a7c9746b1d0d102bb59bfeb4dcf2069d6ce799e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 184,
+          "sha256": null,
+          "git_blob_sha1": "9a4a4c4f766b1c7deebcac9f057345f465e44d77",
+          "local_sha_verified": false
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 3353259,
+          "sha256": null,
+          "git_blob_sha1": "a494e019ca1502219fd0128658b979e5f05ae8e8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 1706030496,
+          "sha256": "5a84c44f4e3beaf16ab0b6aa8238c66a6033291d77b13b81d934098a02d68bf4",
+          "git_blob_sha1": "51193912c31815070f288d75cfe55cd40f04cbd3",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 34898,
+          "sha256": null,
+          "git_blob_sha1": "42ac47049fbcb666c4d48f69a609801d2c31197a",
+          "local_sha_verified": false
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 390,
+          "sha256": null,
+          "git_blob_sha1": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 12807982,
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+          "git_blob_sha1": "a73a846725794819aa6e1c9e97d8dc9671c2006d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 16709,
+          "sha256": null,
+          "git_blob_sha1": "fae3ce993e07c092ad024dde45e592379fde91bb",
+          "local_sha_verified": false
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 385,
+          "sha256": null,
+          "git_blob_sha1": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe",
+          "local_sha_verified": false
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 6722759,
+          "sha256": null,
+          "git_blob_sha1": "0aa0ce0658d60ac4a5d609f4eadb0e8e43514176",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r160-2026-11-25-three-edge-trained-originals-source-freeze.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 852985920,
+        "evidence_kind": "FIRST_PARTY_HUB_SAFE_TENSORS_TENSOR_ELEMENTS_AND_PUBLISHER_CARD_STATIC_NO_OWNER_LOCAL_CENSUS",
+        "local_tensor_census_not_executed": true,
+        "review_date": "2026-11-25",
+        "note": "Total learned elements distinct from publisher source bytes and runtime peak; optional head and processor dependencies must be included, no model executable rights"
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 249,
+        "category": "SMALL_DISTINCT_LEARNED_OUTCOME_NOT_BAN_PREDICTION",
+        "scenario_status": "EARLY_ACCESS_CHANGE_IS_HYPOTHESIS_NOT_A_MEASURED_FORECAST"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "FULL_BF16_ECOM_MULTIMODAL_TRAINED_ORIGINAL_WITH_TOKENIZER_AND_VIDEO_PROCESSOR",
+        "source_revision": "b40297975d72386f1c53103371d80ae0e5a9bd58",
+        "require_original_and_learned_components": [
+          "model.safetensors"
+        ],
+        "required_offline_dependencies": [
+          "transformers>=5.2.0",
+          "torch",
+          "torchvision",
+          "Pillow",
+          "AutoProcessor",
+          "chat_template.jinja",
+          "preprocessor_config.json",
+          "video_preprocessor_config.json",
+          "TorchCodec/FFmpeg for video; strict compatible versions",
+          "quantization scale and zero point where applicable"
+        ],
+        "model_source_count": 20,
+        "model_source_bytes": 1733044450,
+        "owner_hardware_compatibility_unverified": true
+      },
+      "resource_screen": {
+        "publisher_source_bytes": 1733044450,
+        "owner_free_bytes_measured": false,
+        "quantized_runtime_peak_bytes_measured": null,
+        "staging_and_cache_measured": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "OWNER_LICENSE_SHA_DISK_STAGING_PYTORCH_TRANSFORMERS_TORCHCODEC_FFMPEG_AND_TEST_UNVERIFIED"
+    },
+    {
+      "position": 250,
+      "asset_kind": "model",
+      "repo_id": "openbmb/MiniCPM5-2B",
+      "url": "https://huggingface.co/openbmb/MiniCPM5-2B",
+      "group": "省容量推論・コード・agent／RL+OPD最終原本2.517B",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "2.517Bクラスの基礎学習／中間学習／SFTを経て領域別RL教師とOn-Policy Distillationで統合した最終独立状態。GGUF/INT4量子化形式や過去のQwen/Aionでは同一の学習成果にならない。",
+      "quality_positive": "Publisher reports 53.9 cross-task average, multiple code/math/tool benchmarks, 131072-token architectural context, single BF16 trained weight and original tokenizer/template.",
+      "quality_negative": "Publisher benchmark tasks and settings heterogeneous, not measured owner context. Pinned HF 11 files lack LICENSE though card says Apache-2.0; full applicable legal text and model-specific notices remain unverified.",
+      "risk_and_alternative_assessment": "Source publicly ungated Apache-2.0 metadata; earlier R158 Base/Midtrain/SFT are genuinely different states but this round preserves Final only rather than blindly tripling weight budget.",
+      "evidence_date": "2026-11-25",
+      "evidence_kind": "HUGGING_FACE_PUBLISHER_FROZEN_REVISION_GIT_BLOB_AND_LFS_SHA_STATIC_2026_11_25_OWNER_SHA_NOT_VERIFIED",
+      "evidence_urls": [
+        "https://huggingface.co/openbmb/MiniCPM5-2B/tree/42433e90dad95123ab87729fd7011e7110629556",
+        "https://github.com/Unjuno/local-model-portfolio/blob/main/manifests/drafts/r160-2026-11-25-three-edge-trained-originals-source-freeze.candidate.json"
+      ],
+      "observed_access": "public, ungated at observed publisher revision",
+      "license_metadata": "apache-2.0 metadata; no LICENSE file in model repo; personal legal review required",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "42433e90dad95123ab87729fd7011e7110629556",
+      "upstream_all_files_bytes_observed": 5043807977,
+      "upstream_file_count_observed": 11,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 11,
+      "candidate_selected_source_file_bytes": 5043807977,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": null,
+          "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README-cn.md",
+          "bytes": 110251,
+          "sha256": null,
+          "git_blob_sha1": "acaee37d6747f06977104eae6cf4ae15642c7602",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 112168,
+          "sha256": null,
+          "git_blob_sha1": "8870a24344c68e71cc10b9c9803af782254cd8a9",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 5435,
+          "sha256": null,
+          "git_blob_sha1": "603f4c287d9346b8a6d58d794af5d47aee827826",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 704,
+          "sha256": null,
+          "git_blob_sha1": "9860d7132a243c1c9ce58e39a2704c3f52ad6ea1",
+          "local_sha_verified": false
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 213,
+          "sha256": null,
+          "git_blob_sha1": "be1cb19dd96be786cf0dd4ee45630afe1c81238b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00000-of-00001.safetensors",
+          "bytes": 5033557096,
+          "sha256": "14fb8e7f0a18d53d1f239773758bf581cee7e456a4523a54622c3a245b64402c",
+          "git_blob_sha1": "e9aecaf1e9466b87ffee9ba1b8e0fb69acc9b17c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 31378,
+          "sha256": null,
+          "git_blob_sha1": "6133ebe3ac1d320b6671b9c8d8dde62d859c7f5e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 551,
+          "sha256": null,
+          "git_blob_sha1": "492d4b2966a1763442d426d880dbc29f94906e4c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 9894271,
+          "sha256": null,
+          "git_blob_sha1": "ec0bf9a34dc884738494ed1f74d0c5327b06d690",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 94391,
+          "sha256": null,
+          "git_blob_sha1": "9df89e3f645a975cf87bd22379e9f77b28a1cf02",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r160-2026-11-25-three-edge-trained-originals-source-freeze.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 2516756480,
+        "evidence_kind": "FIRST_PARTY_HUB_SAFE_TENSORS_TENSOR_ELEMENTS_AND_PUBLISHER_CARD_STATIC_NO_OWNER_LOCAL_CENSUS",
+        "local_tensor_census_not_executed": true,
+        "review_date": "2026-11-25",
+        "note": "Total learned elements distinct from publisher source bytes and runtime peak; optional head and processor dependencies must be included, no model executable rights"
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 250,
+        "category": "SMALL_DISTINCT_LEARNED_OUTCOME_NOT_BAN_PREDICTION",
+        "scenario_status": "EARLY_ACCESS_CHANGE_IS_HYPOTHESIS_NOT_A_MEASURED_FORECAST"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "RL_OPD_FINAL_2P517B_CODE_REASONING_AGENT_TRAINED_SOURCE",
+        "source_revision": "42433e90dad95123ab87729fd7011e7110629556",
+        "require_original_and_learned_components": [
+          "model-00000-of-00001.safetensors"
+        ],
+        "required_offline_dependencies": [
+          "LlamaForCausalLM",
+          "Transformers and torch stable ABI",
+          "model-specific tokenizer and chat_template",
+          "131k context KV cache capability",
+          "original code/model license and notice outside HF model tree if needed"
+        ],
+        "model_source_count": 11,
+        "model_source_bytes": 5043807977,
+        "owner_hardware_compatibility_unverified": true
+      },
+      "resource_screen": {
+        "publisher_source_bytes": 5043807977,
+        "owner_free_bytes_measured": false,
+        "quantized_runtime_peak_bytes_measured": null,
+        "staging_and_cache_measured": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "MISSING_MODEL_TREE_LICENSE_FILE_OWNER_ACT_REVIEW_KV_GPU_RUNTIME_OFFLINE_RESTORE_AND_EXPLICIT_AUTH"
+    },
+    {
+      "position": 251,
+      "asset_kind": "model",
+      "repo_id": "illuin/Ivonnet-0.8B",
+      "url": "https://huggingface.co/illuin/Ivonnet-0.8B",
+      "group": "小型文書・画像決定器／学習済みreadout付0.853B",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "2026-11-23公開。Qwen3.5-0.8Bから異なる文書と視覚判定専用のフル微調整・蒸留を行い、別に学習済みreadout.safetensorsを持つ。文章を生成して判定する通常VLMと非生成確率選択器は同一ではない。",
+      "quality_positive": "Full learned BF16 backbone 1,706,027,688 bytes plus independent 1,044,560-byte decision readout, complete 21-file original with loader, source code and Apache LICENSE.",
+      "quality_negative": "Publisher vision index 47.6 and latency numbers are author measurements only; not matched baseline vs existing Intern-Decision 0.8B or Bison, custom PyTorch source unreviewed.",
+      "risk_and_alternative_assessment": "Competes with existing Intern-Decision and Bison; prioritise smaller learned state, track nonredundant doc+vision interface; no automatic weight replacement of prior decision models.",
+      "evidence_date": "2026-11-25",
+      "evidence_kind": "HUGGING_FACE_PUBLISHER_FROZEN_REVISION_GIT_BLOB_AND_LFS_SHA_STATIC_2026_11_25_OWNER_SHA_NOT_VERIFIED",
+      "evidence_urls": [
+        "https://huggingface.co/illuin/Ivonnet-0.8B/tree/6a6a979489d262861ad3c34faaa1a763d1ce4baf",
+        "https://github.com/Unjuno/local-model-portfolio/blob/main/manifests/drafts/r160-2026-11-25-three-edge-trained-originals-source-freeze.candidate.json"
+      ],
+      "observed_access": "public, ungated at observed publisher revision",
+      "license_metadata": "apache-2.0 in publisher model source; user act / derivative notices must be reviewed",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "6a6a979489d262861ad3c34faaa1a763d1ce4baf",
+      "upstream_all_files_bytes_observed": 1728496331,
+      "upstream_file_count_observed": 21,
+      "upstream_lfs_sha256_count_observed": 4,
+      "upstream_all_files_are_selected": true,
+      "candidate_selected_source_file_count": 21,
+      "candidate_selected_source_file_bytes": 1728496331,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1624,
+          "sha256": null,
+          "git_blob_sha1": "67ae4aa6ed8e3bade1f14e17c14e8ac48f391c53",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11358,
+          "sha256": null,
+          "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 887,
+          "sha256": null,
+          "git_blob_sha1": "406706699f23640d248f12d4cfa4dc46342a91a4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 13216,
+          "sha256": null,
+          "git_blob_sha1": "f4c13659d7c23156b511e3cfe43f24235ca92859",
+          "local_sha_verified": false
+        },
+        {
+          "path": "assets/banner.png",
+          "bytes": 1323237,
+          "sha256": "f11d8b989f0b7767c0a4256c23b2ea30557b7a23d4d1cd69759d58172a8e22e6",
+          "git_blob_sha1": "afd407b1e0d00997c80201736a2e3d77c3d9bb1d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 7755,
+          "sha256": null,
+          "git_blob_sha1": "0ef09f214eaa6d9bca297988afc1454b5827b2c7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 2603,
+          "sha256": null,
+          "git_blob_sha1": "e98b7dae69153d2925e31093d9a709ec22ca5e6b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "decision_config.json",
+          "bytes": 5673,
+          "sha256": null,
+          "git_blob_sha1": "57b769b2780f2000df41c7d4d7a83ae9d289780d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "evaluation/export-verification.json",
+          "bytes": 801,
+          "sha256": null,
+          "git_blob_sha1": "012963fa0ea3e31d43ea33aa903a0c73a1f544f7",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 1706027688,
+          "sha256": "efa1c618389747c10cac685d832788fe0a147e3a0058c30643f9f7c3c7bd164c",
+          "git_blob_sha1": "7e23064547b491c9ac145a02236c2ed328ed4417",
+          "local_sha_verified": false
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 1190,
+          "sha256": null,
+          "git_blob_sha1": "eeae4e0d3deea072f656ecf524a92078abce4abf",
+          "local_sha_verified": false
+        },
+        {
+          "path": "readout.safetensors",
+          "bytes": 1044560,
+          "sha256": "b8edc7c99b4c03e706c537a3a0ae96763ea33bb7d1e9bebebb615e1a6994b08f",
+          "git_blob_sha1": "5808f67ce8df44fb5bd7e36292a614fe768b53d4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "release-manifest.json",
+          "bytes": 1579,
+          "sha256": null,
+          "git_blob_sha1": "ee2a1e00c1016c6e826bd3202049087977f3a4b3",
+          "local_sha_verified": false
+        },
+        {
+          "path": "source/RUNNING.md",
+          "bytes": 15956,
+          "sha256": null,
+          "git_blob_sha1": "8291065a782187949aaa7ac4de769eabd21c0be5",
+          "local_sha_verified": false
+        },
+        {
+          "path": "source/pyproject.toml",
+          "bytes": 861,
+          "sha256": null,
+          "git_blob_sha1": "e4639b0fc167a267c7680463b9bb0cfb26823cd0",
+          "local_sha_verified": false
+        },
+        {
+          "path": "source/src/decision_model/__init__.py",
+          "bytes": 288,
+          "sha256": null,
+          "git_blob_sha1": "d44e1abdebe2064ae8b7bc983da4b9c868601108",
+          "local_sha_verified": false
+        },
+        {
+          "path": "source/src/decision_model/engine.py",
+          "bytes": 6824,
+          "sha256": null,
+          "git_blob_sha1": "e46e9734ed6c3d8aba83a01d4d18a67747eba168",
+          "local_sha_verified": false
+        },
+        {
+          "path": "source/src/decision_model/model.py",
+          "bytes": 32464,
+          "sha256": null,
+          "git_blob_sha1": "b332eddf553d8b9f9a11ccd1b1ac10bfa112456e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "source/src/decision_model/server.py",
+          "bytes": 7277,
+          "sha256": null,
+          "git_blob_sha1": "b77cdfd6863f05815a5b40f7ddf1c818ab006572",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 19989325,
+          "sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+          "git_blob_sha1": "5520bfd2dd834ce386c1312c410fa71af56db5ad",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1165,
+          "sha256": null,
+          "git_blob_sha1": "48e883d93941a5b318ea53dcac02d96fa23b599e",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r160-2026-11-25-three-edge-trained-originals-source-freeze.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 852985920,
+        "evidence_kind": "FIRST_PARTY_HUB_SAFE_TENSORS_TENSOR_ELEMENTS_AND_PUBLISHER_CARD_STATIC_NO_OWNER_LOCAL_CENSUS",
+        "local_tensor_census_not_executed": true,
+        "review_date": "2026-11-25",
+        "note": "Total learned elements distinct from publisher source bytes and runtime peak; optional head and processor dependencies must be included, no model executable rights"
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 251,
+        "category": "SMALL_DISTINCT_LEARNED_OUTCOME_NOT_BAN_PREDICTION",
+        "scenario_status": "EARLY_ACCESS_CHANGE_IS_HYPOTHESIS_NOT_A_MEASURED_FORECAST"
+      },
+      "preservation_bundle": {
+        "learned_outcome": "FULL_MULTIMODAL_DECISION_BACKBONE_PLUS_TRAINED_READOUT_AND_LOADER",
+        "source_revision": "6a6a979489d262861ad3c34faaa1a763d1ce4baf",
+        "require_original_and_learned_components": [
+          "model.safetensors",
+          "readout.safetensors"
+        ],
+        "required_offline_dependencies": [
+          "Python>=3.10",
+          "torch>=2.6",
+          "transformers>=5.7,<6",
+          "safetensors>=0.4",
+          "Pillow>=10",
+          "decision_config.json",
+          "readout.safetensors",
+          "source/src/decision_model/*.py",
+          "source/pyproject.toml",
+          "optional flash-linear-attention==0.5.2 ABI only after source audit"
+        ],
+        "model_source_count": 21,
+        "model_source_bytes": 1728496331,
+        "owner_hardware_compatibility_unverified": true
+      },
+      "resource_screen": {
+        "publisher_source_bytes": 1728496331,
+        "owner_free_bytes_measured": false,
+        "quantized_runtime_peak_bytes_measured": null,
+        "staging_and_cache_measured": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "CUSTOM_CODE_SECURITY_PYTORCH_TRANSFORMERS_ABI_OWNER_DISK_RIGHTS_AND_HARDWARE_TEST_UNVERIFIED"
+    }
+  ],
+  "added_assets": [
+    "tencent/WeMM-Ecom-0.8B",
+    "openbmb/MiniCPM5-2B",
+    "illuin/Ivonnet-0.8B"
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "all_prior_248_assets_preserved_identically": true,
+  "source_manifest": "manifests/drafts/r160-2026-11-25-three-edge-trained-originals-source-freeze.candidate.json",
+  "selected_file_count": 52,
+  "selected_publisher_full_source_reference_bytes": 8505348758,
+  "publisher_LFS_sha256_refs": 13,
+  "independent_trained_weight_files": 4,
+  "license_and_runtime_stop": "Owner intended lawful action, pinned runtime and tokenizer/processor/readout, secure code static review, owner D current free >=200GB including staging, owner local SHA and full offline restore, and explicit per-manifest approval remain false.",
+  "already_reported_verified_116_redundant_downloads": 0,
+  "quantized_formats_count_as_new_trained_outcome": false,
+  "prior_uncensored_models_preserved": true,
+  "prior_japanese_TTS_v67_preserved": true,
+  "owner_current_D_rehashed": false,
+  "weights_downloaded_now": 0,
+  "download_approvals_added": 0,
+  "third_party_model_code_executed": false
+}
