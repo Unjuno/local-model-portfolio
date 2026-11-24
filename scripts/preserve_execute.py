@@ -100,7 +100,9 @@ def approval_for(task, approval_path=None):
         if ("user directive 2026-11-19" in review_ref
                 or "canonical post96 source queue" in review_ref
                 or "canonical 21-source queue" in review_ref
-                or "v64 r152 canonical post99 source queue" in review_ref):
+                or "v64 r152 canonical post99 source queue" in review_ref
+                or "v65-post112-exact-source-files-" in review_ref
+                or "v65 post112 pinned source queues" in review_ref):
             continue
         allowed = entry.get("files")
         if not isinstance(allowed, list) or len(allowed) != len(paths):
