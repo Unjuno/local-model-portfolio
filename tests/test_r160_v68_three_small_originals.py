@@ -1,4 +1,4 @@
-"""R160 v68 offline metadata regression; no model payload fetch or arbitrary code execution.
+"""R160 v68 three-source precursor regression reconciled with the four-original canonical v68; no model payload fetch or arbitrary code execution.
 
 Run from repository root with: python -m unittest tests.test_r160_v68_three_small_originals
 """
@@ -23,6 +23,7 @@ class R160V68ThreeCompactOriginals(unittest.TestCase):
         cls.after = load("catalog/effective-portfolio-2026-11-25-v68.json")
         cls.overlay = load("catalog/revisions/v68-2026-11-25.json")
         cls.freeze = load("manifests/drafts/r160-2026-11-25-three-edge-trained-originals-source-freeze.candidate.json")
+        cls.merged = load("manifests/drafts/r160-2026-11-25-four-small-trained-states-75file-publisher-frozen.candidate.json")
         cls.queue_before = load("queues/proposed-v67-2026-11-24.json")
         cls.queue_after = load("queues/proposed-v68-2026-11-25.json")
         cls.access_before = load("catalog/access/2026-11-24-v67-conditional-hub-gates.json")
@@ -39,12 +40,13 @@ class R160V68ThreeCompactOriginals(unittest.TestCase):
         self.assertEqual(self.before["revision_id"], "v67-20261124")
         self.assertEqual(self.after["revision_id"], "v68-20261125")
         self.assertEqual(len(self.before["items"]), 248)
-        self.assertEqual(len(self.after["items"]), 251)
+        self.assertEqual(len(self.after["items"]), 252)
         self.assertEqual(self.after["items"][:248], self.before["items"])
-        self.assertEqual(self.after["items"][-3:], self.overlay["additions"])
+        self.assertEqual(self.after["items"][-4:], self.overlay["additions"])
         self.assertEqual(self.overlay["previous_asset_count"], 248)
         self.assertEqual(self.overlay["added_assets"],
-                         ["tencent/WeMM-Ecom-0.8B", "openbmb/MiniCPM5-2B", "illuin/Ivonnet-0.8B"])
+                         ["openbmb/MiniCPM5-2B", "illuin/Ivonnet-0.8B",
+                          "illuin/IVE-4B", "tencent/WeMM-Ecom-0.8B"])
         self.assertEqual(self.overlay["removed_assets"], [])
         self.assertEqual(self.overlay["changed_prior_decisions"], [])
         keys = [(x["asset_kind"], x["repo_id"]) for x in self.after["items"]]
@@ -52,18 +54,18 @@ class R160V68ThreeCompactOriginals(unittest.TestCase):
 
     def test_counts_and_owner_nonapproval(self):
         expected = self.after["counts"]
-        self.assertEqual(expected["tracked"], 251)
-        self.assertEqual(expected["active"], 202)
-        self.assertEqual(expected["models"], 225)
+        self.assertEqual(expected["tracked"], 252)
+        self.assertEqual(expected["active"], 203)
+        self.assertEqual(expected["models"], 226)
         self.assertEqual(expected["datasets"], 26)
-        self.assertEqual(expected["by_decision"]["conditional"], 146)
+        self.assertEqual(expected["by_decision"]["conditional"], 147)
         self.assertEqual(expected["by_decision"]["select"], 56)
-        self.assertEqual(expected["by_tier"]["R1"], 141)
+        self.assertEqual(expected["by_tier"]["R1"], 142)
         self.assertEqual(expected["by_tier"]["R2"], 42)
-        self.assertEqual(expected["parameter_gate"]["PASS_TOTAL_PARAMS_LT_150B"], 192)
+        self.assertEqual(expected["parameter_gate"]["PASS_TOTAL_PARAMS_LT_150B"], 193)
         self.assertEqual(self.current["revision_id"], "v68-20261125")
-        self.assertEqual(self.current["expected"]["tracked"], 251)
-        self.assertEqual(self.current["expected"]["active"], 202)
+        self.assertEqual(self.current["expected"]["tracked"], 252)
+        self.assertEqual(self.current["expected"]["active"], 203)
         self.assertFalse(self.current["statuses"]["download_approved"])
         self.assertEqual(self.approved["entries"], [])
         self.assertFalse(any(x.get("download_approved", False) for x in self.after["items"]))
@@ -111,13 +113,23 @@ class R160V68ThreeCompactOriginals(unittest.TestCase):
         i = next(x for x in f["originals"] if x["repo_id"] == "illuin/Ivonnet-0.8B")
         self.assertEqual(set(i["trained_weight_paths"]), {"model.safetensors", "readout.safetensors"})
         self.assertFalse(f["source_selected_bytes_are_owner_incremental_bytes"])
+        # This three-repo frozen source is a documented precursor and subset of the
+        # independently merged four-model v68 source; IVE-4B is not deleted.
+        merged = self.merged["publisher_source_aggregates"]
+        self.assertEqual(merged["source_repos"], 4)
+        self.assertEqual(merged["file_count"], 75)
+        self.assertEqual(merged["source_bytes_without_dedup"], 17608061719)
+        self.assertEqual(merged["publisher_hash_unique_bytes"], 17587985632)
+        self.assertEqual({x["repo_id"] for x in self.merged["model_sources"]},
+                         {"tencent/WeMM-Ecom-0.8B", "openbmb/MiniCPM5-2B",
+                          "illuin/Ivonnet-0.8B", "illuin/IVE-4B"})
 
     def test_all_202_active_research_and_approval_stops(self):
         pairs = [
-            (self.queue_before["candidates"], self.queue_after["candidates"], 202),
-            (self.prep_before["items"], self.prep_after["items"], 202),
-            (self.readiness_before["records"], self.readiness_after["records"], 202),
-            (self.access_before["entries"], self.access_after["entries"], 146),
+            (self.queue_before["candidates"], self.queue_after["candidates"], 203),
+            (self.prep_before["items"], self.prep_after["items"], 203),
+            (self.readiness_before["records"], self.readiness_after["records"], 203),
+            (self.access_before["entries"], self.access_after["entries"], 147),
         ]
         for prior, after, count in pairs:
             self.assertEqual(after[:len(prior)], prior)
@@ -126,14 +138,14 @@ class R160V68ThreeCompactOriginals(unittest.TestCase):
         expected_active = {x["repo_id"] for x in self.after["items"]
                            if x["portfolio_decision"] in ("select", "conditional")}
         self.assertEqual(ids, expected_active)
-        self.assertEqual(self.readiness_after["summary"]["blocked_any"], 202)
+        self.assertEqual(self.readiness_after["summary"]["blocked_any"], 203)
         self.assertEqual(self.readiness_after["summary"]["ready_to_approve"], 0)
         self.assertFalse(any(r["ready_to_acquire"] or r["download_approved"]
                              for r in self.readiness_after["records"]))
         self.assertFalse(any(r["download_authorized"] for r in self.access_after["entries"]))
         self.assertFalse(any(r["download_approved"] for r in self.queue_after["candidates"]))
         self.assertFalse(any(r["download_approved"] for r in self.prep_after["items"]))
-        for new in self.readiness_after["records"][-3:]:
+        for new in self.readiness_after["records"][-4:]:
             self.assertIn("EXPLICIT_ACQUISITION_AUTHORIZATION", new["blocking_gates"])
             self.assertIn("OWNER_LOCAL_HASH_AND_OFFLINE_RESTORE", new["blocking_gates"])
             self.assertFalse(new["offline_restore_verified"])
@@ -145,9 +157,9 @@ class R160V68ThreeCompactOriginals(unittest.TestCase):
         existing = {x["repo_id"] for x in self.ledger["models"] if x["status"] == "VERIFIED"}
         added = set(self.overlay["added_assets"])
         self.assertFalse(existing & added)
-        self.assertEqual(self.current["expected"]["budget_scenario"]["v68_approved_download_bytes"], 0)
-        self.assertFalse(self.current["latest_v68_original_selection"]["owner_live_disk_SHA_verified"])
-        self.assertEqual(self.current["latest_v68_original_selection"]["new_download_approvals"], 0)
+        self.assertEqual(self.current["expected"]["budget_scenario"]["v68_new_download_approval_bytes"], 0)
+        self.assertFalse(self.current["latest_v68_small_decision_and_ecommerce"]["owner_D_SHA_rechecked"])
+        self.assertEqual(self.current["latest_v68_small_decision_and_ecommerce"]["explicit_approvals_added"], 0)
 
 
 if __name__ == "__main__":
