@@ -26,9 +26,9 @@ class R157RightsAndDedup(unittest.TestCase):
 
     def test_current_canonical_decisions_preserved_not_overwritten(self):
         current = load("catalog/CURRENT.json")
-        self.assertEqual(current["revision_id"], "v65-20261122")
-        self.assertEqual((current["expected"]["tracked"], current["expected"]["active"]), (240, 192))
-        self.assertEqual((current["expected"]["by_decision"]["select"], current["expected"]["by_decision"]["conditional"], current["expected"]["by_decision"]["hold"]), (56, 136, 29))
+        self.assertEqual(current["revision_id"], "v66-20261124")
+        self.assertEqual((current["expected"]["tracked"], current["expected"]["active"]), (246, 197))
+        self.assertEqual((current["expected"]["by_decision"]["select"], current["expected"]["by_decision"]["conditional"], current["expected"]["by_decision"]["hold"]), (56, 141, 30))
         current_models = {x["repo_id"]: x for x in self.catalog["items"]}
         self.assertEqual(current_models["GetCartwheelInc/cartwheel-control"]["portfolio_decision"], "hold")
         self.assertEqual(current_models["nchapman/Qwen3.5-0.8B-Heretic-LoRA"]["portfolio_decision"], "conditional")
@@ -96,9 +96,11 @@ class R157RightsAndDedup(unittest.TestCase):
         self.assertFalse(q["download_enabled"])
         self.assertEqual(q["new_approvals_added"], 0)
         verified = {x["repo_id"] for x in self.ledger["models"] if x["status"] == "VERIFIED"}
-        self.assertEqual(len(verified), 112)
-        self.assertTrue(verified.issubset({x["repo_id"] for x in self.catalog["items"]}))
-        self.assertNotIn("nchapman/Qwen3.5-0.8B-Heretic-LoRA", verified)
+        self.assertEqual(len(verified), 116)
+        selected={x["repo_id"] for x in self.catalog["items"]}
+        self.assertEqual(verified-selected,
+                         {"Datadog/Toto-2.0-4m","inclusionAI/LingSante-Pulse-1.0","ostris/primal_vae"})
+        self.assertIn("nchapman/Qwen3.5-0.8B-Heretic-LoRA", verified)
         self.assertNotIn("GetCartwheelInc/cartwheel-control", verified)
         for x in q["source_research_rows"]:
             self.assertFalse(self.queue["download_enabled"])
@@ -129,7 +131,10 @@ class R157RightsAndDedup(unittest.TestCase):
                  mock.patch.object(module, "DISC", d), \
                  mock.patch.object(module, "PLAN", d / "plan.json"), \
                  mock.patch.object(module, "APPROVAL", d / "review-v65-r156-UNAPPROVED.json"):
-                module.main()
+                with self.assertRaisesRegex(ValueError,"ledger changed"):
+                    module.main()
+            self.assertFalse((d / "plan.json").exists())
+            return  # historical v64 plan stale after ledger116, stop safely
             plan = json.loads((d / "plan.json").read_text())
             review = json.loads((d / "review-v65-r156-UNAPPROVED.json").read_text())
             self.assertEqual(len(plan["candidates"]), 2)
