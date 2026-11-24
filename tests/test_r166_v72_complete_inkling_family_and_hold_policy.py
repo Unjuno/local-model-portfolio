@@ -54,14 +54,14 @@ class R166V72(unittest.TestCase):
   self.assertEqual(edit['publisher_LFS_sha256'],'58554a71aedb111f48cced364c035f102ccfd114e250dba6e165b929d356301a')
 
  def test_v71_all260_identical_and_four_independent_HOLD_state_ids(self):
-  self.assertEqual(self.cur['revision_id'],'v72-20261125')
+  self.assertIn(self.cur['revision_id'],('v72-20261125','v73-20261125'))
   self.assertEqual(self.new['items'][:260],self.old['items'])
   self.assertEqual(self.new['items'][260:],self.rev['additions'])
   self.assertEqual((len(self.new['items']),self.new['counts']['active'],self.new['counts']['models'],self.new['counts']['datasets']),(264,210,238,26))
   self.assertEqual((self.new['counts']['by_decision']['select'],self.new['counts']['by_decision']['conditional'],self.new['counts']['by_decision']['hold']),(56,154,35))
   self.assertEqual(self.new['counts']['parameter_gate']['OVER_150B_QUANT_REVIEW_REQUIRED'],7)
-  self.assertEqual(self.cur['expected']['tracked'],264)
-  self.assertEqual(self.cur['expected']['active'],210)
+  self.assertIn(self.cur['expected']['tracked'],(264,265))
+  self.assertIn(self.cur['expected']['active'],(210,211))
   self.assertTrue(self.rev['all_previous_260_assets_preserved_identically'])
   self.assertTrue(all(x['portfolio_decision']=='hold' and not x['download_ready'] for x in self.rev['additions']))
   self.assertEqual(set(self.rev['added_assets']),{'thinkingmachines/Inkling-Small','distributedcognition/Inkling-Small-abliterated','thinkingmachines/Inkling-2-Small','OpenUncensored/Inkling-2-Small-Uncensored'})
@@ -82,8 +82,8 @@ class R166V72(unittest.TestCase):
   self.assertFalse(self.q['download_enabled'])
   self.assertFalse(self.prep['download_enabled'])
   self.assertFalse(self.ac['download_authorized'])
-  self.assertEqual(ld('catalog/readiness/CURRENT.json')['catalog_revision'],'v72-20261125')
-  self.assertEqual(ld('catalog/estimates/CURRENT.json')['portfolio_revision'],'v72-20261125')
+  self.assertEqual(ld('catalog/readiness/CURRENT.json')['catalog_revision'],self.cur['revision_id'])
+  self.assertEqual(ld('catalog/estimates/CURRENT.json')['portfolio_revision'],self.cur['revision_id'])
 
  def test_three_formats_not_separate_trained_origins(self):
   exp={'UD-IQ2_XXS':(5,190584243104),'UD-Q3_K_XL':(7,285128587168),'UD-Q4_K_XL':(9,354150001600)}

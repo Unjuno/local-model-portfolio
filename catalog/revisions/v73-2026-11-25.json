@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "revision_id": "v73-20261125",
+  "previous_revision_id": "v72-20261125",
+  "decision_date_jst": "2026-11-25",
+  "target_branch": "main",
+  "kind": "ONE_NEW_UNCENSORED_SFT_DPO_TRAINED_RESULT_CONDITIONAL_COMPACT_REPLAY_SCOPE_PARENT_ALREADY_IN_116_REPORT",
+  "previous_asset_count": 264,
+  "previous_active_count": 210,
+  "additions": [
+    {
+      "position": 265,
+      "asset_kind": "model",
+      "repo_id": "nokeepai/Inkling-2-Mini-Unbound",
+      "url": "https://huggingface.co/nokeepai/Inkling-2-Mini-Unbound",
+      "group": "既取得26B Inkling 2 Miniを親に、拒否方向編集＋独立SFT/DPO後学習したv2.1無検閲差分",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Independent 26B merged edited post-training (direction ablation followed by SFT and DPO on self-generated answers), not merely GGUF/LoRA conversion or existing refusal-only edits. 16 immutable publisher files with 141.452942MB three-stage reconstruction candidate reuses historically reported acquired Inkling 2 Mini parent. Full direct model is 20.696GB, not first storage scope.",
+      "quality_positive": "Publisher reports 263 prompt author-held-out usefulness 83.7% off/85.2% on, and MMLU-300 74.3 vs base76.3 and GSM8K-100 98. Self-reported with Jev judge partly used for training; author independent Bison judge not owner replication.",
+      "quality_negative": "More KLD drift 0.0439; greedy-thinking 22.1% hit 4096-token cap; vision, long-context, coding agent and safety/robustness not measured for v2.1. Stage edits may not replay exactly due fp64/BF16 rounding; original parent historical receipt not physically rehashed; .pt is untrusted pickle and official GitHub runtime code/license closure unverified.",
+      "risk_and_alternative_assessment": "Separate added SFT/DPO trained state; avoid selecting existing edited GGUF formats or alternate r16/r64 SVD approximations as more trained states. Model Apache2 publisher tag and upstream acceptable-use-policy restrictions apply; do not equate uncensored output with authorization. No model-specific regulation probability.",
+      "evidence_date": "2026-11-25",
+      "evidence_kind": "OFFICIAL_FIXED_HF_98_FILE_CURSOR_TREE_PUBLISHER_GIT_OID_SHA_LFS_AND_MODEL_CARD_AUTHOR_TRAINING_RECIPE_OWNER_UNVERIFIED",
+      "evidence_urls": [
+        "https://huggingface.co/nokeepai/Inkling-2-Mini-Unbound/tree/ef74b44edd2851b8e8d221a7313f36c419590430",
+        "https://github.com/nokeepai/inkling-2-mini-unbound/tree/b4a63660a178872ac1f8c63c4b01dfd6d4d46297",
+        "https://github.com/Unjuno/local-model-portfolio/blob/main/manifests/drafts/r167-2026-11-25-inkling2-mini-unbound-v21-compact-3stage-replay-scope.candidate.json"
+      ],
+      "observed_access": "HF public ungated at fixed revision; author upstream acceptable-use-policy + owner license rights not reviewed",
+      "license_metadata": "HF Apache-2.0 model card; Thinking Machines upstream AUP; third-party GitHub code repo root LICENSE not independently found, code and commercial actions need review",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "ef74b44edd2851b8e8d221a7313f36c419590430",
+      "upstream_all_files_bytes_observed": 20696238628,
+      "upstream_file_count_observed": 98,
+      "upstream_lfs_sha256_count_observed": 39,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 16,
+      "candidate_selected_source_file_bytes": 141452942,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 3293,
+          "sha256": null,
+          "git_blob_sha1": "080466de3a623c092ea4af3791b2639d7c514abb",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 23766,
+          "sha256": null,
+          "git_blob_sha1": "2b4e265dcca92919da05d8efeb303dc969317175",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 2722,
+          "sha256": null,
+          "git_blob_sha1": "e6c170c3fb666c50e3b509493b6b7a8f948b7d15",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 6868,
+          "sha256": null,
+          "git_blob_sha1": "cae99e08917fe3d9ff21551a7c9a835981c69032",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/apply_edit.py",
+          "bytes": 2149,
+          "sha256": null,
+          "git_blob_sha1": "6c0500d23029a1f105476a9587d0e6ec3b201b33",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/edit.pt",
+          "bytes": 821297,
+          "sha256": "3f24aa8fe6b1eedebea08a78b315fa30146d046f17af0e8511dd4b6b020cc2e3",
+          "git_blob_sha1": "0c9da0184af9c391779ad6eaab1b9f2a74dd6012",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/MANIFEST.json",
+          "bytes": 479342,
+          "sha256": null,
+          "git_blob_sha1": "e1e27fec28097ff5d8d742e84f41e250a781621f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "abliteration/MANIFEST.md",
+          "bytes": 4872,
+          "sha256": null,
+          "git_blob_sha1": "e5b6857b144c1fa4cad60dc03685753809705ecc",
+          "local_sha_verified": false
+        },
+        {
+          "path": "finetune/lora_v2.safetensors",
+          "bytes": 35033840,
+          "sha256": "61edf91754de813fdf9862b341a76df506a3ba0ec0e0235bb38b87c55a4eb241",
+          "git_blob_sha1": "e428d7b162851d7576e2bcfeb11502477f330e15",
+          "local_sha_verified": false
+        },
+        {
+          "path": "finetune/MANIFEST.json",
+          "bytes": 23341,
+          "sha256": null,
+          "git_blob_sha1": "6b4910607495acfb476c86bddaa4a4bff6787923",
+          "local_sha_verified": false
+        },
+        {
+          "path": "finetune/adapter_config.json",
+          "bytes": 450,
+          "sha256": null,
+          "git_blob_sha1": "726497d35dcafe8267279c6e495c982c586f40f4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "finetune/train_config.json",
+          "bytes": 220,
+          "sha256": null,
+          "git_blob_sha1": "001039daaef045cfc5fe084f78897df315ee64f8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "finetune_v2.1/lora_v2.1.safetensors",
+          "bytes": 105026408,
+          "sha256": "f12cef662aa3c94e1e7b5e604535111e1aff8f9b92b8d515530b38274d036384",
+          "git_blob_sha1": "69a2067663dafc77c577d88ec2be3f7e919e0c0e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "finetune_v2.1/MANIFEST.json",
+          "bytes": 23341,
+          "sha256": null,
+          "git_blob_sha1": "af9573b4a9a0430c11705388d6c9066a42cebaca",
+          "local_sha_verified": false
+        },
+        {
+          "path": "finetune_v2.1/adapter_config.json",
+          "bytes": 468,
+          "sha256": null,
+          "git_blob_sha1": "59a6e0f4d146fab1a2e8f19c1c3cc860ab3eb55e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "finetune_v2.1/train_config.json",
+          "bytes": 565,
+          "sha256": null,
+          "git_blob_sha1": "06ca75f17ebbcbc06354f848c6fa68e52a36c8c0",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r167-2026-11-25-inkling2-mini-unbound-v21-compact-3stage-replay-scope.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 26706544312,
+        "evidence_kind": "Official Inkling2 Mini parent main 26,388,646,440 elements plus MTP 317,897,872 serialized element count; merged edited source same tensor layout, offline owner census not performed",
+        "review_date": "2026-11-25",
+        "parent_original_trained_total_count_physically_verified": false,
+        "additional_LoRA_is_delta_not_extra_merged_model_tensor_elements": true
+      },
+      "forecast_priority": {
+        "rank": 265,
+        "wave": "S1",
+        "category": "UNCENSORED_INDEPENDENT_POSTTRAINING_SOURCE_PRESERVATION",
+        "scenario_status": "FUTURE_HF_ACCESS_CHANGE_UNCERTAIN_NOT_TAKEDOWN_FORECAST"
+      },
+      "preservation_bundle": {
+        "selected_3stage_replay_source_files": [
+          ".gitattributes",
+          "README.md",
+          "config.json",
+          "chat_template.jinja",
+          "abliteration/apply_edit.py",
+          "abliteration/edit.pt",
+          "abliteration/MANIFEST.json",
+          "abliteration/MANIFEST.md",
+          "finetune/lora_v2.safetensors",
+          "finetune/MANIFEST.json",
+          "finetune/adapter_config.json",
+          "finetune/train_config.json",
+          "finetune_v2.1/lora_v2.1.safetensors",
+          "finetune_v2.1/MANIFEST.json",
+          "finetune_v2.1/adapter_config.json",
+          "finetune_v2.1/train_config.json"
+        ],
+        "full_publisher_repo_model_checkpoint_weight_SHA": "8c6193978a8409a53133709224253349b7e0dc9ad10caf876637f152b64ca9fb",
+        "source_revision": "ef74b44edd2851b8e8d221a7313f36c419590430",
+        "source_manifest": "manifests/drafts/r167-2026-11-25-inkling2-mini-unbound-v21-compact-3stage-replay-scope.candidate.json",
+        "required_parent_exact_author_train_rev": "ed40e7da625f594fc9c4990f5f66be24873c22d7",
+        "compatible_historical_receipt_rev": "1fb4134b9a74f9681054f4ef82e4bf1f458a2337",
+        "same_learned_weights_proven_by_publisher_SHA_only": true,
+        "upstream_code_commit": "b4a63660a178872ac1f8c63c4b01dfd6d4d46297",
+        "offline_software_and_model_replay_complete": false,
+        "owner_actual_file_hash_verified": false,
+        "user_intended_acts_rights_verified": false,
+        "untrusted_pt_safely_audited": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 20696238628,
+        "publisher_selected_source_bytes": 141452942,
+        "selection_as_parent_reuse_patch_only": true,
+        "owner_hdd_verified": false,
+        "full_runtime_memory_peak_verified": false,
+        "actual_archive_incremental_bytes": null
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "UNBOUND_V21_3STAGE_EDIT_PT_UNTRUSTED_REPLAY_SFT_DPO_PARENT_RECEIPT_PARITY_ABI_AUP_AND_OWNER_SIGNATURE_STOP"
+    }
+  ],
+  "added_assets": [
+    "nokeepai/Inkling-2-Mini-Unbound"
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "all_previous_264_assets_preserved_identically": true,
+  "original_model_metadata_manifest": "manifests/drafts/r167-2026-11-25-inkling2-mini-unbound-v21-compact-3stage-replay-scope.candidate.json",
+  "new_candidate_minimal_file_refs": 16,
+  "new_candidate_minimal_reference_bytes": 141452942,
+  "full_duplicate_checkpoint_reference_bytes": 20696238628,
+  "all_weights_and_code_reconstruction_tested_owner": false,
+  "new_download_approvals": 0,
+  "new_weight_payload_downloaded": 0,
+  "owner_HDD_actual_sha_verified": false,
+  "model_code_executed": false,
+  "user_license_signoff": false
+}

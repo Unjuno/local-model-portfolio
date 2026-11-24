@@ -22,9 +22,9 @@ class R154V65Selection(unittest.TestCase):
   cls.q=read('queues/proposed-v65-2026-11-22.json')
   cls.post=read('queues/proposed-v65-r155-after112-unapproved-source-scopes.json')
  def test_current_and_old236_immutable(self):
-  self.assertIn(self.current['revision_id'],('v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125"))
+  self.assertIn(self.current['revision_id'],('v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125", "v73-20261125"))
   self.assertIn('catalog/revisions/v65-2026-11-22.json',self.current['ordered_overlays'])
-  self.assertIn(self.current['materialized_catalog_path'],('catalog/effective-portfolio-2026-11-24-v66.json','catalog/effective-portfolio-2026-11-24-v67.json',"catalog/effective-portfolio-2026-11-25-v68.json","catalog/effective-portfolio-2026-11-25-v69.json","catalog/effective-portfolio-2026-11-25-v70.json", "catalog/effective-portfolio-2026-11-25-v71.json","catalog/effective-portfolio-2026-11-25-v72.json"))
+  self.assertIn(self.current['materialized_catalog_path'],('catalog/effective-portfolio-2026-11-24-v66.json','catalog/effective-portfolio-2026-11-24-v67.json',"catalog/effective-portfolio-2026-11-25-v68.json","catalog/effective-portfolio-2026-11-25-v69.json","catalog/effective-portfolio-2026-11-25-v70.json", "catalog/effective-portfolio-2026-11-25-v71.json","catalog/effective-portfolio-2026-11-25-v72.json","catalog/effective-portfolio-2026-11-25-v73.json"))
   self.assertEqual(self.old['items'],self.new['items'][:236])
   self.assertEqual(len(self.new['items']),240)
   self.assertEqual(len({(x['asset_kind'],x['repo_id']) for x in self.new['items']}),240)

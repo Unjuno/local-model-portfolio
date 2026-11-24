@@ -14,7 +14,7 @@ class R166SourceProof(unittest.TestCase):
   cls.queue=load('queues/proposed-v71-r166-three-small-complete-source-UNAPPROVED.json')
   cls.dec=load('catalog/decisions/2026-11-25-r166-v71-three-small-source-finalization-and-stop.json')
  def test_current_v71_remains_exact_260_210_and_116_existing_ledger(self):
-  self.assertIn((self.c['revision_id'],self.c['expected']['tracked'],self.c['expected']['active']),(('v71-20261125',260,210),('v72-20261125',264,210)))
+  self.assertIn((self.c['revision_id'],self.c['expected']['tracked'],self.c['expected']['active']),(('v71-20261125',260,210),('v72-20261125',264,210),('v73-20261125',265,211)))
   self.assertEqual(load(self.c['materialized_catalog_path'])['items'][:260],self.cat['items'])
   self.assertEqual((self.cat['counts']['by_decision']['select'],self.cat['counts']['by_decision']['conditional'],self.cat['counts']['by_decision']['hold']),(56,154,31))
   self.assertEqual((self.ledger['summary']['models_verified'],self.ledger['summary']['files_verified_total'],self.ledger['summary']['bytes_verified_total']),(116,1758,2021784002725))

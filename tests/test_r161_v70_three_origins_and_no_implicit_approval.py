@@ -50,7 +50,7 @@ class R161V70SourceAndGuards(unittest.TestCase):
   self.assertEqual(self.e['items'][:255],self.b['items'])
   self.assertEqual(self.e['items'][255:],self.v['additions'])
   self.assertEqual(self.e['revision_id'],'v70-20261125')
-  self.assertIn(self.c['revision_id'],('v71-20261125','v72-20261125'))
+  self.assertIn(self.c['revision_id'],('v71-20261125','v72-20261125', 'v73-20261125'))
   current_view=load(self.c['materialized_catalog_path'])
   self.assertEqual(current_view['items'][:258],self.e['items'])
   self.assertEqual((len(self.e['items']),self.e['counts']['tracked'],self.e['counts']['active']),(258,258,208))

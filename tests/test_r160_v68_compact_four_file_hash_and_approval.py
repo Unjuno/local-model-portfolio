@@ -13,7 +13,7 @@ class V68(unittest.TestCase):
   cls.queue=rd("queues/proposed-v68-2026-11-25.json");cls.a=rd("catalog/access/2026-11-25-v68-conditional-hub-gates.json")
   cls.g=rd("catalog/readiness/v68-2026-11-25-r160-all203-gates.json");cls.p=rd("catalog/preparation/2026-11-25-insurance-bundles-v68.json")
  def test_canonical_and_old_items_unchanged(self):
-  self.assertIn(self.c["revision_id"],("v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125"))
+  self.assertIn(self.c["revision_id"],("v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125", "v73-20261125"))
   self.assertEqual(self.v["items"][:248],self.o["items"])
   self.assertEqual(len(self.v["items"]),252)
   self.assertEqual(len({key(x) for x in self.v["items"]}),252)

@@ -13,7 +13,7 @@ class R156Static(unittest.TestCase):
   cls.ledger=L('catalog/execution/2026-11-19-acquisition-ledger.json')
  def test_v65_immutable_canonical_and_ledger112_not_rewritten(self):
   curr=L('catalog/CURRENT.json')
-  self.assertIn(curr['revision_id'],('v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125"))
+  self.assertIn(curr['revision_id'],('v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125", "v73-20261125"))
   self.assertEqual((len(L('catalog/effective-portfolio-2026-11-24-v66.json')['items']),L('catalog/effective-portfolio-2026-11-24-v66.json')['counts']['active']),(246,197))
   self.assertEqual(self.ledger['summary']['models_verified'],116)
   self.assertEqual(self.ledger['summary']['files_verified_total'],1758)

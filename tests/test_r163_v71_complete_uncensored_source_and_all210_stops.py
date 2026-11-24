@@ -58,9 +58,9 @@ class R163V71FullSourceAndStop(unittest.TestCase):
         self.assertEqual(self.after["counts"]["datasets"], 26)
         self.assertEqual(self.after["counts"]["by_decision"]["select"], 56)
         self.assertEqual(self.after["counts"]["by_decision"]["conditional"], 154)
-        self.assertIn(self.cur["revision_id"], ("v71-20261125","v72-20261125"))
-        self.assertIn(self.cur["expected"]["tracked"], (260,264))
-        self.assertEqual(self.cur["expected"]["active"], 210)
+        self.assertIn(self.cur["revision_id"], ("v71-20261125","v72-20261125", "v73-20261125"))
+        self.assertIn(self.cur["expected"]["tracked"], (260,264,265))
+        self.assertIn(self.cur["expected"]["active"], (210,211))
         self.assertFalse(self.cur["statuses"]["download_approved"])
 
     def test_complete_publisher_trees_compare_with_prior_partial_refs(self) -> None:

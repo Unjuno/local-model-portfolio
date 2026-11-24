@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "kind": "R167_V73_FROZEN_16_FILE_UNBOUND21_TRULY_INDEPENDENT_SFT_DPO_LEARNED_OUTCOME_WITH_PARENT_REUSE_NOT_IMPLICIT_DOWNLOAD",
+  "date_jst": "2026-11-25",
+  "revision_before": "v72-20261125",
+  "revision_after": "v73-20261125",
+  "old_264_assets_preserved": true,
+  "added_repo_id": "nokeepai/Inkling-2-Mini-Unbound",
+  "formal_decision": "CONDITIONAL_NON_EXECUTABLE",
+  "pinned_source_manifest": "manifests/drafts/r167-2026-11-25-inkling2-mini-unbound-v21-compact-3stage-replay-scope.candidate.json",
+  "source_full_repo_98_files_bytes": 20696238628,
+  "source_selected_16_stage_files_bytes": 141452942,
+  "source_stage_weight_files_bytes": 140060248,
+  "full_merged_checkpoint_main_weight_lfs_SHA256": "8c6193978a8409a53133709224253349b7e0dc9ad10caf876637f152b64ca9fb",
+  "why_unique": [
+    "Original parent already selected/receipt-verified, new author edit directions then SFT+SFT/DPO on self-generated data; final source main model weight digest differs from parent.",
+    "Separate learned posttraining state is not generic LoRA representation or the earlier archived ARA/Heretic refusal-only edits.",
+    "The author provides stage-specific LoRAs and manifest hashes, enabling a concrete reproducibility experiment; not claimed bit-exact until local replay."
+  ],
+  "why_no_parent_retransfer": {
+    "owner_receipt_parent_revision": "1fb4134b9a74f9681054f4ef82e4bf1f458a2337",
+    "author_training_parent_revision": "ed40e7da625f594fc9c4990f5f66be24873c22d7",
+    "model_MTP_tokenizer_publisher_weight_SHAs_identical": true,
+    "only_parent_publisher_git_blob_SHA_change": "config.json",
+    "local_parent_SHA_live_verified_now": false
+  },
+  "release_version_comparison": {
+    "full_v21": {
+      "download_selected": false,
+      "publisher_source_bytes": 20696238628
+    },
+    "stage_compact_16_file": {
+      "officially_research_selected": true,
+      "reference_bytes": 141452942,
+      "exact_replay_verified": false
+    },
+    "direct_peft_rank64_SVD": {
+      "download_selected": false,
+      "reference_bytes": 140030976,
+      "approximation_not_exact_edit": true
+    }
+  },
+  "alternative_edited_sources_watch_only": [
+    {
+      "repo_id": "OpenUncensored/Inkling-2-Mini-Uncensored",
+      "reason": "Author has a full refusal-direction edit but existing separately selected OpenUncensored Mini LoRA; avoid duplicating formats before measuring incremental learning and parent replay."
+    },
+    {
+      "repo_id": "dealignai/Inkling-2-Mini-UNCENSORED-NVFP4",
+      "reason": "Community Model License v0.3 != Apache2; more restrictive rights and independent quality unknown, research HOLD not immediate acquisition."
+    }
+  ],
+  "stop_conditions": [
+    "Owner exact local parent SHA and metadata not independently rehashed",
+    "PyTorch edit.pt unpickling and scripts static audit and sandbox not completed",
+    "Three-step replay from stage LoRAs has not passed bit-exact manifest and independent quality tests",
+    "Publisher Apache 2.0 weight tag plus upstream acceptable-use-policy and GitHub code LICENSE/NOTICE not reconciled for owner intended acts",
+    "Actual 4TB disk/free 200GB floor, temporary caches, expected exact trained-state scope and runtime ABI not measured on user device",
+    "No user file-by-file acquisition signoff"
+  ],
+  "H_T_D_C_U": {
+    "H": "Reuse the reported existing 20.191GB Inkling2 Mini parent and archive 141.452942MB of separate edit+SFT+DPO trained-stage source to preserve an independent refusal-edited posttraining result without duplicating the full merged model payload.",
+    "T": "Fixed HF 98-file cursor tree, commit SHA and 16 selected exact paths+Git OID/LFS digests, compare parent author ed40 and historical receipt1fb unchanged weight/MTP/tokenizer SHA; v72 264 unchanged, v73 265/211; license/runtime=not verified; repeat restore with n>=30 matched quality probes/throughput runs after owner approval.",
+    "D": "PASS for immutable publisher scope, distinct learned stage identity, parent publisher SHA reuse and all211 stopped. FAIL if selected 16-file patch treated as standalone model or SVD adapter bit-exact, or unreviewed pickle/code executed. UNCERTAIN real owner local parent, replay hashes, AUP rights and actual quality.",
+    "C": "Unbound author self-evaluation overfits training judge or more refusal compliance degrades reasoning; replay fails due bfloat16 rounding/custom LoopedMoE loader; owner license or code rights prohibit intended acts.",
+    "U": "Publisher model card metrics under different settings from owner, 263 prompts and judge bias, owner current disk, missing pinned Python wheelhouse and vLLM/llama.cpp versions; no repeated owner quality estimate for u_c or k."
+  },
+  "cross_disciplines": [
+    "model editing and independent self-distillation DPO alignment",
+    "software supply chain and content-addressed incremental backups",
+    "statistics and measurement bias in self-reported refusal/utility benchmarking",
+    "security auditing of untrusted PyTorch pickles and license obligations"
+  ],
+  "new_weight_downloads_this_turn": 0,
+  "new_user_acquisition_approvals": 0,
+  "owner_D_actual_SHA_reverified_this_turn": false,
+  "related_model_code_executed": false
+}

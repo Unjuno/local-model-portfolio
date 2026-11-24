@@ -1,3 +1,5 @@
+# R167／v73 2026-11-25｜無検閲独立後学習を再評価、既取得親を再使用し3段階差分のみ研究選定
+
 # R167／v72継続（2026-11-25）：新17Mロボット点追跡原本は研究P0、1B WarpはNC・GPU HOLD
 
 唯一の正式正本は[catalog/CURRENT.json](catalog/CURRENT.json) **264登録／210有効**。11月23日のAi2新原本[allenai/RoboTrackerとRoboTracker-Warp](manifests/drafts/r167-2026-11-25-robotracker17m-vs-warp-nc-publisher-source-frozen.candidate.json)を別fine-tuneとして評価。17Mは66,011,293byte全repo、原作者GitHubコード56 blob／Lean実行19 blob164,989byteをSHA固定。元AllTracker full weightは別SHAだが新モデルの推論には親丸ごと再DL不要。作者RoboTrack-Bench AJ小型+0.84に対しRoboTAP-0.07、研究価値と性能上の優位を分離。1B WarpはCC BY-NC4.0とFAIR Noncommercialコード・Torch2.10 xformers ABI・GPU許諾を所有者確認するまでHOLD。小型も.pthの未審査ロード禁止、torch.load(weights_only=True)の作者コード固定のみ、実行禁止。評価データ実動画にはライセンスタグother／第三者プライバシー。**今の264正式登録を自動追加せず、次期CONDITIONAL推薦だけ、210取得STOP/approved0、owner媒体SHA未再検査、実DL0・Gated迂回0・実ロボット操作0**。[R167詳細](docs/strategy/167-v72-robotrack-small17m-vs-warp-original-safety.md)／[非承認研究queue](queues/proposed-v72-r167-robotrack-two-independent-specialists-UNAPPROVED.json)。

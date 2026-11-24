@@ -7,14 +7,14 @@ class R167RoboTrackStudy(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
   cls.c=J('catalog/CURRENT.json')
-  cls.v=J(cls.c['materialized_catalog_path'])
+  cls.v=J('catalog/effective-portfolio-2026-11-25-v72.json')
   cls.m=J('manifests/drafts/r167-2026-11-25-robotracker17m-vs-warp-nc-publisher-source-frozen.candidate.json')
   cls.d=J('catalog/decisions/2026-11-25-r167-v72-robotracker-small-vs-warp-source-adjudication.json')
   cls.q=J('queues/proposed-v72-r167-robotrack-two-independent-specialists-UNAPPROVED.json')
   cls.l=J('catalog/execution/2026-11-19-acquisition-ledger.json')
  def test_canonical_v72_and_owner_authorizations_unchanged(self):
-  self.assertEqual((self.c['revision_id'],self.c['expected']['tracked'],self.c['expected']['active']),('v72-20261125',264,210))
-  self.assertEqual((self.c['expected']['by_decision']['select'],self.c['expected']['by_decision']['conditional'],self.c['expected']['by_decision']['hold']),(56,154,35))
+  self.assertIn((self.c['revision_id'],self.c['expected']['tracked'],self.c['expected']['active']),(('v72-20261125',264,210),('v73-20261125',265,211)))
+  self.assertEqual((self.v['counts']['by_decision']['select'],self.v['counts']['by_decision']['conditional'],self.v['counts']['by_decision']['hold']),(56,154,35))
   self.assertEqual(len(self.v['items']),264)
   self.assertEqual((self.l['summary']['models_verified'],self.l['summary']['files_verified_total'],self.l['summary']['bytes_verified_total']),(116,1758,2021784002725))
   self.assertEqual(J('queues/approved.json')['entries'],[])
