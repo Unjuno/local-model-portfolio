@@ -1,137 +1,129 @@
 #!/usr/bin/env python3
-"""Build a plan for acquirable new repos in the canonical v65 research queues.
+"""R159: fail-closed, metadata-only source review for the post-116 portfolio.
 
-Excludes canonical HOLD / rights-barrier repos (cartwheel, groundhog, Ripple,
-Octen) and already-verified repos. Reads pinned source files from the queue's
-referenced manifests, emits exact approval entries with neutral refs.
+Never infers rights or human download approval from HF licenses, previous chat,
+or an acquisition ledger. Never writes 'approved-v65.json' or downloads weights.
+Legacy v65 generated 'approved_by_user: true' without a human act; do not reuse.
 """
 import json
-import os
+import re
 from pathlib import Path
 
+QUEUE = Path("queues/proposed-v66-r159-after116-novel-decision-models-UNAPPROVED.json")
+SOURCE = Path("manifests/drafts/r159-2026-11-24-ive-ivonnet-ccore-immutable-publisher-source.candidate.json")
+LEDGER = Path("catalog/execution/2026-11-19-acquisition-ledger.json")
+CURRENT = Path("catalog/CURRENT.json")
 DISC = Path("D:/AI_VAULT/state/discovered")
-PLAN = DISC / "plan-v65.json"
-APPROVAL = Path("D:/AI_VAULT/state/approved-v65.json")
-STORE = Path("D:/AI_VAULT/store/huggingface/model")
-
-# (repo_id, revision_sha, manifest path) - public/permissive, no canonical HOLD
-TARGETS = [
-    ("nchapman/Qwen3.5-0.8B-Heretic-LoRA", "92e2ae29c379d7378c696511ec9c70ace8be1434",
-     "manifests/drafts/r154-2026-11-22-four-primary-sources-after112.candidate.json"),
-    ("Datadog/Toto-2.0-4m", None,
-     "manifests/drafts/r156-2026-11-22-toto4m-pico8-post112-publisher-source.candidate.json"),
-    ("inclusionAI/LingSante-Pulse-1.0", "51582cc8487a",
-     "manifests/drafts/r153-2026-11-22-post112-five-distinct-origins-source-frozen.candidate.json"),
-    ("ostris/primal_vae", "dc3e96c879e8",
-     "manifests/drafts/r153-2026-11-22-post112-five-distinct-origins-source-frozen.candidate.json"),
-]
+PLAN = DISC / "plan-v66-r159-RESEARCH-ONLY.json"
+APPROVAL = DISC / "review-v66-r159-UNAPPROVED.json"
+EXPECTED = ("illuin/Ivonnet-0.8B", "illuin/IVE-4B")
+EXPECTED_FILES = 44
+EXPECTED_BYTES = 10831209292
 
 
-def find_repo(man, repo):
-    for key in ("model_repos", "publisher_sources", "sources", "models",
-                "publisher_model_sources", "repositories", "model_sources",
-                "source_repos"):
-        v = man.get(key)
-        if isinstance(v, list):
-            for e in v:
-                if not isinstance(e, dict):
-                    continue
-                if (e.get("repo_id") == repo or e.get("id") == repo or
-                        e.get("source_repo_id") == repo):
-                    return e
-    return None
+def read(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
-def files_of(e):
-    for k in ("selected_files", "files", "publisher_selected_files", "source_files",
-              "file_scope", "additional_files"):
-        v = e.get(k)
-        if isinstance(v, list) and v and isinstance(v[0], dict) and "path" in v[0]:
-            return v
-    return []
+def _valid_hex(value, count):
+    return isinstance(value, str) and re.fullmatch(r"[0-9a-f]{" + str(count) + "}", value) is not None
+
+
+def _file(f):
+    path = f["path"]
+    if (not isinstance(path, str) or not path or path.startswith("/")
+            or "\\" in path or any(x in ("", ".", "..") for x in path.split("/"))):
+        raise ValueError("unsafe source path")
+    size = f.get("bytes")
+    if not isinstance(size, int) or size <= 0:
+        raise ValueError("invalid source size")
+    git = f.get("git_blob_sha1")
+    sha = f.get("publisher_lfs_sha256")
+    if not _valid_hex(git, 40) or (sha is not None and not _valid_hex(sha, 64)):
+        raise ValueError("missing or invalid publisher immutable fingerprint")
+    return {
+        "path": path, "bytes": size, "git_blob_sha1": git,
+        "sha256": sha, "owner_local_sha_verified": False
+    }
 
 
 def main():
+    queue, source, ledger, current = read(QUEUE), read(SOURCE), read(LEDGER), read(CURRENT)
+    if current["revision_id"] != "v66-20261124":
+        raise ValueError("canonical selection changed: refresh model research")
+    if (current["expected"]["tracked"], current["expected"]["active"]) != (246, 197):
+        raise ValueError("unexpected canonical counts")
+    if (ledger["summary"]["models_verified"], ledger["summary"]["files_verified_total"],
+            ledger["summary"]["bytes_verified_total"]) != (116, 1758, 2021784002725):
+        raise ValueError("updated acquisition ledger requires fresh reconciliation")
+    verified = {x["repo_id"]: x for x in ledger["models"] if x["status"] == "VERIFIED"}
+    if len(verified) != 116:
+        raise ValueError("duplicate or missing receipt identities")
+    if tuple(r["repo_id"] for r in queue["research_selection_rows"]) != EXPECTED:
+        raise ValueError("unrecognized candidates, fail closed")
+    if queue["download_enabled"] or queue["approved_by_user"] or queue["approved_entries"] != 0:
+        raise ValueError("research queue cannot authorize downloads")
+    src = {x["repo_id"]: x for x in source["publisher_sources"]}
+    if set(src) != set(EXPECTED) | {"ccore/CCORE-Web-Coder-4B"}:
+        raise ValueError("unexpected model source scope")
+    candidates, owner_review, scratch = [], [], []
+    for r in queue["research_selection_rows"]:
+        repo, rev = r["repo_id"], r["frozen_revision_sha"]
+        if repo in verified or r["download_approved"] or r["explicit_owner_licensed_act_verified"]:
+            raise ValueError("repo already downloaded or falsely authorized")
+        entry = src[repo]
+        if entry["research_selection"] != "RESEARCH_CONDITIONAL_NOT_CANONICAL":
+            raise ValueError("source is not selected for research")
+        if not _valid_hex(rev, 40) or rev != entry["publisher_revision_sha"]:
+            raise ValueError("immutable revision mismatch")
+        if entry["model_card_license_tag"] != "apache-2.0" or entry["observed_gated"] is not False:
+            raise ValueError("license metadata/gating requires individual inspection")
+        files = [_file(x) for x in entry["publisher_source_files"]]
+        paths = {x["path"] for x in files}
+        if (len(files) != len(paths) or len(files) != r["publisher_source_file_count"]
+                or sum(f["bytes"] for f in files) != r["publisher_original_source_bytes"]
+                or r["publisher_original_source_bytes"] != entry["publisher_full_bytes"]):
+            raise ValueError("publisher file scope changed")
+        if not {"readout.safetensors", "decision_config.json", "source/pyproject.toml", "tokenizer.json"}.issubset(paths):
+            raise ValueError("cannot restore decision model without readout, tokenizer and runtime source")
+        output = DISC / ("v65-r159-" + repo.replace("/", "__") + ".json")
+        scratch.append((output, {
+            "schema_version": 1, "repo_id": repo, "source_revision_sha": rev,
+            "selected_file_count": len(files), "selected_file_bytes": entry["publisher_full_bytes"],
+            "selected_files": files, "research_only": True, "download_approved": False,
+            "owner_license_rights_verified": False, "owner_live_sha_verified": False
+        }))
+        candidates.append({
+            "repo_id": repo, "revision_sha": rev, "selected_file_count": len(files),
+            "selected_file_bytes": entry["publisher_full_bytes"], "manifest_path": str(output),
+            "source_status": "PUBLISHER_ONLY_NOT_ACQUISITION_APPROVAL", "download_approved": False
+        })
+        owner_review.append({
+            "repo_id": repo, "revision_sha": rev, "approved": False, "download_enabled": False,
+            "approved_by_user": False, "license_text_reviewed": False,
+            "parent_dependency_rights_reviewed": False, "nonstandard_license_permission_verified": False,
+            "approval_ref": None, "files": files,
+            "note": "A review template, not a signed human authorization."
+        })
+    if len(candidates) != 2 or sum(c["selected_file_count"] for c in candidates) != EXPECTED_FILES or sum(c["selected_file_bytes"] for c in candidates) != EXPECTED_BYTES:
+        raise ValueError("new selected model scope changed")
+    plan = {
+        "schema_version": 1, "source": str(QUEUE), "catalog_revision": "v66-20261124",
+        "ledger116_reported_only": True, "approved": False, "download_enabled": False,
+        "candidate_repo_count": len(candidates), "publisher_reference_bytes": EXPECTED_BYTES,
+        "candidates": candidates, "warning": "No source/license/owner authorization implied"
+    }
+    approval = {
+        "schema_version": 1, "kind": "UNAPPROVED_OWNER_REVIEW_TEMPLATE_ONLY",
+        "authorization_source": None, "approved": False, "download_enabled": False,
+        "entries": owner_review
+    }
     DISC.mkdir(parents=True, exist_ok=True)
-    # exclude already verified
-    led = []
-    for p in os.listdir("D:/AI_VAULT/state/ledger"):
-        if p.endswith(".json"):
-            led += json.load(open("D:/AI_VAULT/state/ledger/" + p, encoding="utf-8")).get("entries", [])
-    verified = {e.get("repo_id") for e in led if e.get("status") == "VERIFIED"}
-    cands, approvals = [], []
-    for repo, rev_prefix, mp_path in TARGETS:
-        if repo in verified:
-            print("SKIP verified:", repo)
-            continue
-        mp = Path(mp_path)
-        if not mp.exists():
-            print("SKIP no manifest:", repo)
-            continue
-        man = json.loads(mp.read_text(encoding="utf-8"))
-        e = find_repo(man, repo)
-        if not e:
-            print("SKIP not in manifest:", repo)
-            continue
-        rev = ""
-        for k in ("revision_sha", "immutable_revision_sha", "publisher_revision_sha",
-                  "source_revision_sha", "sha", "source_sha"):
-            v = e.get(k)
-            if isinstance(v, str) and len(v) == 40:
-                rev = v
-                break
-        if not rev and rev_prefix and len(rev_prefix) == 40:
-            rev = rev_prefix
-        files = files_of(e)
-        if len(rev) != 40 or not files:
-            print("SKIP bad pin/files:", repo, len(rev), len(files))
-            continue
-        recs, afiles = [], []
-        for f in files:
-            r = {"path": f["path"], "bytes": int(f.get("bytes", 0)),
-                 "publisher_lfs_sha256": (f.get("publisher_lfs_sha256") or
-                                          f.get("publisher_sha256_from_checksums")),
-                 "publisher_git_blob_sha1": (f.get("git_blob_sha1") or
-                                             f.get("publisher_git_blob_sha1"))}
-            recs.append(r)
-            a = {"path": f["path"], "bytes": int(f.get("bytes", 0))}
-            if r["publisher_lfs_sha256"]:
-                a["sha256"] = r["publisher_lfs_sha256"]
-            elif r["publisher_git_blob_sha1"]:
-                a["git_blob_sha1"] = r["publisher_git_blob_sha1"]
-            else:
-                continue
-            afiles.append(a)
-        if len(afiles) != len(recs):
-            print("SKIP missing hashes:", repo)
-            continue
-        m = {"repo_id": repo, "source_revision_sha": rev, "selected_files": recs,
-             "selected_file_count": len(recs),
-             "selected_file_bytes": sum(r["bytes"] for r in recs),
-             "license_tag": str(e.get("repo_card_license") or
-                                e.get("publisher_license_hub_metadata") or "public-permissive"),
-             "canonical_queue": "v65 research queues"}
-        out = DISC / ("v65-" + repo.replace("/", "__") + ".json")
-        out.write_text(json.dumps(m, indent=2, ensure_ascii=False), encoding="utf-8")
-        cands.append({"repo_id": repo, "revision_sha": rev, "files": len(recs),
-                      "bytes": m["selected_file_bytes"], "manifest": str(out)})
-        approvals.append({"repo_id": repo, "revision_sha": rev,
-                          "approved": True, "download_enabled": True,
-                          "approved_by_user": True, "license_text_reviewed": True,
-                          "parent_dependency_rights_reviewed": True,
-                          "nonstandard_license_permission_verified": True,
-                          "license": m["license_tag"],
-                          "approval_ref": "v65-post112-exact-source-files-" + repo.replace("/", "-"),
-                          "files": afiles})
-    PLAN.write_text(json.dumps({"schema_version": 1, "candidates": cands},
-                               indent=2, ensure_ascii=False), encoding="utf-8")
-    APPROVAL.write_text(json.dumps({"schema_version": 1,
-                                    "authorization_source": "v65 post112 pinned source queues, exact per-file publisher hashes",
-                                    "entries": approvals}, indent=2, ensure_ascii=False),
-                        encoding="utf-8")
-    print(f"plan: {len(cands)} models, {sum(c['bytes'] for c in cands)} bytes")
-    for c in sorted(cands, key=lambda x: x["bytes"]):
-        print(f"  {c['bytes']/1e6:9.2f} MB {c['files']:3d}f {c['repo_id']}")
+    for path, data in scratch:
+        path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    PLAN.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    APPROVAL.write_text(json.dumps(approval, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print("R159 source review only: 2 models, 44 publisher files, 10831209292 byte; 0 approvals, 0 weight downloads")
 
 
 if __name__ == "__main__":
