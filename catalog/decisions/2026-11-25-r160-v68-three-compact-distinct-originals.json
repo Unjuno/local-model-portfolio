@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "kind": "R160_V68_THREE_SMALL_DISTINCT_TRAINED_ORIGINALS_FORMAL_CONDITIONAL_WITH_FULL_STOP",
+  "date_jst": "2026-11-25",
+  "baseline": "v67-20261124",
+  "new_revision": "v68-20261125",
+  "old_tracked_assets": 248,
+  "new_tracked_assets": 251,
+  "old_active": 199,
+  "new_active": 202,
+  "old_conditional": 143,
+  "new_conditional": 146,
+  "old_select": 56,
+  "new_select": 56,
+  "old_248_assets_preserved": true,
+  "new_originals": [
+    {
+      "repo_id": "tencent/WeMM-Ecom-0.8B",
+      "provenance": "HUGGING_FACE_PUBLISHER_FROZEN_REVISION_GIT_BLOB_AND_LFS_SHA_STATIC_2026_11_25_OWNER_SHA_NOT_VERIFIED",
+      "source_revision": "b40297975d72386f1c53103371d80ae0e5a9bd58",
+      "source_files": 20,
+      "source_bytes": 1733044450,
+      "trained_params": 852985920,
+      "trained_weight_paths": [
+        "model.safetensors"
+      ],
+      "trained_weight_sha256": [
+        "5a84c44f4e3beaf16ab0b6aa8238c66a6033291d77b13b81d934098a02d68bf4"
+      ],
+      "license_metadata": "apache-2.0 in publisher model source; user act / derivative notices must be reviewed",
+      "owner_license_act_checked": false,
+      "owner_runtime_tested": false,
+      "fully_download_approved": false
+    },
+    {
+      "repo_id": "openbmb/MiniCPM5-2B",
+      "provenance": "HUGGING_FACE_PUBLISHER_FROZEN_REVISION_GIT_BLOB_AND_LFS_SHA_STATIC_2026_11_25_OWNER_SHA_NOT_VERIFIED",
+      "source_revision": "42433e90dad95123ab87729fd7011e7110629556",
+      "source_files": 11,
+      "source_bytes": 5043807977,
+      "trained_params": 2516756480,
+      "trained_weight_paths": [
+        "model-00000-of-00001.safetensors"
+      ],
+      "trained_weight_sha256": [
+        "14fb8e7f0a18d53d1f239773758bf581cee7e456a4523a54622c3a245b64402c"
+      ],
+      "license_metadata": "apache-2.0 metadata; no LICENSE file in model repo; personal legal review required",
+      "owner_license_act_checked": false,
+      "owner_runtime_tested": false,
+      "fully_download_approved": false
+    },
+    {
+      "repo_id": "illuin/Ivonnet-0.8B",
+      "provenance": "HUGGING_FACE_PUBLISHER_FROZEN_REVISION_GIT_BLOB_AND_LFS_SHA_STATIC_2026_11_25_OWNER_SHA_NOT_VERIFIED",
+      "source_revision": "6a6a979489d262861ad3c34faaa1a763d1ce4baf",
+      "source_files": 21,
+      "source_bytes": 1728496331,
+      "trained_params": 852985920,
+      "trained_weight_paths": [
+        "model.safetensors",
+        "readout.safetensors"
+      ],
+      "trained_weight_sha256": [
+        "efa1c618389747c10cac685d832788fe0a147e3a0058c30643f9f7c3c7bd164c",
+        "b8edc7c99b4c03e706c537a3a0ae96763ea33bb7d1e9bebebb615e1a6994b08f"
+      ],
+      "license_metadata": "apache-2.0 in publisher model source; user act / derivative notices must be reviewed",
+      "owner_license_act_checked": false,
+      "owner_runtime_tested": false,
+      "fully_download_approved": false
+    }
+  ],
+  "source_manifest": "manifests/drafts/r160-2026-11-25-three-edge-trained-originals-source-freeze.candidate.json",
+  "overlay": "catalog/revisions/v68-2026-11-25.json",
+  "non_executable_queue": "queues/proposed-v68-r160-next3-UNAPPROVED.json",
+  "all_202_readiness": "catalog/readiness/v68-2026-11-25-r160-all202-gates.json",
+  "previous_116_acquisitions_keep_no_duplicate": true,
+  "pinned_full_publisher_source_bytes": 8505348758,
+  "source_bytes_not_owner_incremental": true,
+  "posttraining_vs_quantization_note": "Each model is independently trained and has distinct learned safetensors SHA; different GGUF, FP8, GPTQ, base Qwen, or readout-free checkpoints are not automatically equivalent. Full checkpoint inference does not require redundant re-download of training parent.",
+  "parent_reuse_not_physically_confirmed": true,
+  "blocked_because": [
+    "NO_OWNER_LICENSE_USE_ACT",
+    "NO_OWNER_FREE_BYTES_STAGING",
+    "NO_OWNER_FILE_HASH_AND_OFFLINE_RESTORE",
+    "NO_FIXED_SAFE_BACKEND_ABI",
+    "NO_INDIVIDUAL_FILE_MANIFEST_APPROVAL"
+  ],
+  "regulatory_primary": "https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm",
+  "regulatory_fact": "Effective 2026-11-19 BIS rescinded the old AI Diffusion Rule model-weight ECCN 4E091. No verified blanket future local model ban; end-use/destination and publisher rights independent.",
+  "H": "Three separately trained compact model specialties add non-overlapping inference utility relative to existing Qwen/Intern Decision and general 2B after controlling for data overlap.",
+  "T": "Verify 52 frozen file path+byte+publisher SHA, no duplicate current or ledger116, 251/202 counts, all 202 blocked, no approvals, and future independent n>=100 tasks per model with matched 30 repetitions on owner hardware.",
+  "D": "PASS provenance/metadata only, UNCERTAIN owner license/hardware/runtime/quality, FAIL if implicit user approval or model weights fetched. Owner-specific GO remains STOP.",
+  "C": "Ivonnet overlaps InternDecision or performs worse; MiniCPM benefit over existing 2B vanishes; Tencent EC internal evaluation doesn't generalize; missing model license rights or codec compatibility.",
+  "U": "Publisher bench variance, source provenance outside frozen files, user rights, independent owner SHA and runtime RAM/ABI. No n repetitions measured, so composite uncertainty and coverage factor not assigned.",
+  "new_weights_downloaded": 0,
+  "new_owner_approval_grants": 0,
+  "owner_local_disk_modified": false,
+  "previous_models_deleted": 0
+}
