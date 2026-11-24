@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "kind": "R159_POST116_NEXT_ORIGINAL_SOURCE_DECISIONS_WITH_NO_SILENT_ACQUISITION",
+  "as_of_jst": "2026-11-24",
+  "catalog_revision": "v66-20261124",
+  "reported_ledger_path": "catalog/execution/2026-11-19-acquisition-ledger.json",
+  "reported_116_models_from_source": true,
+  "reported_116_files": 1758,
+  "reported_116_bytes": 2021784002725,
+  "legacy_v65_source_plan": "scripts/build_v65_plan.py",
+  "publisher_source_manifest": "manifests/drafts/r159-2026-11-24-ive-ivonnet-ccore-immutable-publisher-source.candidate.json",
+  "research_selection_rows": [
+    {
+      "priority": "P0",
+      "repo_id": "illuin/Ivonnet-0.8B",
+      "frozen_revision_sha": "6a6a979489d262861ad3c34faaa1a763d1ce4baf",
+      "publisher_source_file_count": 21,
+      "publisher_original_source_bytes": 1728496331,
+      "selection": "CONDITIONAL_RESEARCH_ONLY_SOURCE_FROZEN",
+      "reason": "Distinct fully fine-tuned 0.8B Qwen3.5 visual document decision state with trained readout, no full-parent redownload",
+      "download_approved": false,
+      "explicit_owner_licensed_act_verified": false,
+      "owner_device_sha_checked": false
+    },
+    {
+      "priority": "P1",
+      "repo_id": "illuin/IVE-4B",
+      "frozen_revision_sha": "1e65613dfd83ba6949883325fc5f4791dae56a46",
+      "publisher_source_file_count": 23,
+      "publisher_original_source_bytes": 9102712961,
+      "selection": "CONDITIONAL_RESEARCH_ONLY_SOURCE_FROZEN",
+      "reason": "Separate 4.54B full fine-tune multimodal decision training state. Novel OCR-free document evidence scoring/reranking and probability calibration; author benchmark not independent.",
+      "download_approved": false,
+      "explicit_owner_licensed_act_verified": false,
+      "owner_device_sha_checked": false
+    }
+  ],
+  "research_selection_repo_count": 2,
+  "research_selection_source_file_count": 44,
+  "research_selection_publisher_reference_bytes": 10831209292,
+  "not_canonical_formal_additions_yet": true,
+  "preexisting_reported_not_to_redownload": true,
+  "independently_rechecked_owner_D_local_sha_now": false,
+  "hold_models": [
+    {
+      "repo_id": "ccore/CCORE-Web-Coder-4B",
+      "revision_sha": "b3b7eff06af48b7d850402fc8e85ea7f9aa2a9b9",
+      "publisher_all_source_files": 30,
+      "full_source_reference_bytes": 33809262632,
+      "native_safetensors_shard_bytes": 17490122528,
+      "reason": "Large mixed formats/GGUF redundancy and no controlled quality benchmark versus existing coding models; full checkpoint still under research.",
+      "decision": "HOLD_FOR_QUALITY_AND_SOURCE_DEDUP",
+      "download_approved": false
+    },
+    {
+      "repo_id": "GetCartwheelInc/cartwheel-control",
+      "reason": "RP1 third-party asset/geometry rights and real-robot safety unverified",
+      "decision": "HOLD"
+    },
+    {
+      "repo_id": "ricursiveAI/Ripple-65B-Preview",
+      "reason": "129.57GB duplicate/utility/hardware evidence insufficient",
+      "decision": "HOLD"
+    },
+    {
+      "repo_id": "Metric-AI/OhanTTS",
+      "reason": "Gated CC BY-NC 4.0, speaker consent and user entitlement unverified",
+      "decision": "HOLD"
+    }
+  ],
+  "same_repo_train_scope_research_only": {
+    "repo_id": "KittenML/kitten-tts-2-pico",
+    "bytes_extra_int8_files": 63628208,
+    "files_extra_int8": 8,
+    "independent_qad_state_not_proven": true,
+    "source_audit": "catalog/research/2026-11-22-r154-pico-eight-int8-extra-publisher-sha.json",
+    "download_approved": false
+  },
+  "future_owner_preflight": [
+    "exact source id + 40 character immutable revision + path/byte/gitOID/LFS sha",
+    "local owner device SHA and remaining free disk with cache/staging and 200GB floor",
+    "License and intended usage acts per original and parent rights",
+    "full offline model code dependency audit and Python/PyTorch/Transformers/flash-linear-attention ABI",
+    "manual model-scope owner authorization; never infer from research queue",
+    "post-acquisition local hash and offline restore are independent tests"
+  ],
+  "auto_approval_prohibited": true,
+  "download_enabled": false,
+  "approved_by_user": false,
+  "license_text_reviewed": false,
+  "parent_dependency_rights_reviewed": false,
+  "approved_entries": 0,
+  "weights_transferred_during_this_audit": 0,
+  "owner_D_disk_touched": false,
+  "preexisting_reported_VERIFIED_but_uncatalogued_historical_v65": [
+    "Datadog/Toto-2.0-4m",
+    "inclusionAI/LingSante-Pulse-1.0",
+    "ostris/primal_vae"
+  ],
+  "preexisting_reported_VERIFIED_but_uncatalogued": [],
+  "v66_has_canonically_backfilled_the_three": true
+}
