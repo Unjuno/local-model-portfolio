@@ -20,7 +20,7 @@ class R151BisonOriginalSelection(unittest.TestCase):
   cls.drift=L('catalog/research/2026-11-22-r151-publisher-revision-drift-after99.json')
  def test_canonical_latest_all_235_unchanged(self):
   self.assertIn('catalog/revisions/v64-2026-11-22.json',self.c['ordered_overlays'])
-  self.assertIn(self.c['revision_id'],('v64-20261122','v65-20261122', 'v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125"))
+  self.assertIn(self.c['revision_id'],('v64-20261122','v65-20261122', 'v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125"))
   self.assertEqual(self.new['revision_id'],'v64-20261122')
   self.assertEqual(self.old['items'],self.new['items'][:235])
   self.assertEqual(len(self.new['items']),236)
@@ -121,8 +121,8 @@ class R151BisonOriginalSelection(unittest.TestCase):
   self.assertNotIn('model.safetensors',{x['path'] for x in z[0]['changes']})
   self.assertTrue(z[0]['silent_repin_forbidden'])
  def test_all_latest_pointers_align_and_never_claim_live_hdd(self):
-  self.assertIn(L('catalog/readiness/CURRENT.json')['catalog_revision'],('v64-20261122','v65-20261122', 'v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125"))
-  self.assertIn(L('catalog/estimates/CURRENT.json')['portfolio_revision'],('v64-20261122','v65-20261122', 'v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125"))
+  self.assertIn(L('catalog/readiness/CURRENT.json')['catalog_revision'],('v64-20261122','v65-20261122', 'v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125"))
+  self.assertIn(L('catalog/estimates/CURRENT.json')['portfolio_revision'],('v64-20261122','v65-20261122', 'v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125"))
   self.assertEqual(L(self.c['latest_active_readiness_audit']['summary_path'])['summary']['active'],self.c['expected']['active'])
   self.assertFalse(self.new['budget']['physical_capacity_verified'])
   self.assertIsNone(self.new['budget']['owner_actual_free_bytes'])

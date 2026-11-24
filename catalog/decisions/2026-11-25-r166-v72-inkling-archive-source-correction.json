@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "kind": "R166_V72_FIX_HF_EXPAND_PAGINATION_AND_ARCHIVE_4_OVER150B_MODEL_ORIGINALS_EDITS_HOLD",
+  "date_jst": "2026-11-25",
+  "before_revision": "v71-20261125",
+  "after_revision": "v72-20261125",
+  "old_260_assets_unchanged": true,
+  "registered_before": 260,
+  "registered_after": 264,
+  "active_before": 210,
+  "active_after": 210,
+  "hold_before": 31,
+  "hold_after": 35,
+  "selection_overlay": "catalog/revisions/v72-2026-11-25.json",
+  "publisher_corrected_manifest": "manifests/drafts/r166-2026-11-25-inkling-small-five-complete-paginated-original-sources.candidate.json",
+  "quantization_alternatives": "manifests/drafts/r166-2026-11-25-inkling2-small-three-gguf-format-alternatives-UNAPPROVED.candidate.json",
+  "research_holds": "queues/proposed-v72-r166-inkling-family-archive-HOLD-UNAPPROVED.json",
+  "all_five_corrected_files": 263,
+  "first_page_omitted_file_delta": 27,
+  "after_pagination": [
+    {
+      "repo_id": "thinkingmachines/Inkling-Small",
+      "pages_fetched": 2,
+      "publisher_reference_file_count": 50,
+      "publisher_reference_bytes": 531944669421,
+      "publisher_lfs_sha256_available": 35,
+      "publisher_lfs_masked": 0
+    },
+    {
+      "repo_id": "distributedcognition/Inkling-Small-abliterated",
+      "pages_fetched": 2,
+      "publisher_reference_file_count": 48,
+      "publisher_reference_bytes": 698246151509,
+      "publisher_lfs_sha256_available": 0,
+      "publisher_lfs_masked": 26
+    },
+    {
+      "repo_id": "thinkingmachines/Inkling-2-Small",
+      "pages_fetched": 1,
+      "publisher_reference_file_count": 43,
+      "publisher_reference_bytes": 393510050371,
+      "publisher_lfs_sha256_available": 27,
+      "publisher_lfs_masked": 0
+    },
+    {
+      "repo_id": "thinkingmachines/Inkling-2-Small-MXFP8",
+      "pages_fetched": 2,
+      "publisher_reference_file_count": 61,
+      "publisher_reference_bytes": 622833459732,
+      "publisher_lfs_sha256_available": 51,
+      "publisher_lfs_masked": 0
+    },
+    {
+      "repo_id": "OpenUncensored/Inkling-2-Small-Uncensored",
+      "pages_fetched": 2,
+      "publisher_reference_file_count": 61,
+      "publisher_reference_bytes": 622833373184,
+      "publisher_lfs_sha256_available": 52,
+      "publisher_lfs_masked": 0
+    }
+  ],
+  "new_four_formally_HOLDed_repo_IDs": [
+    "thinkingmachines/Inkling-Small",
+    "distributedcognition/Inkling-Small-abliterated",
+    "thinkingmachines/Inkling-2-Small",
+    "OpenUncensored/Inkling-2-Small-Uncensored"
+  ],
+  "five_repo_sources_are_not_five_independent_trained_outcomes": "Original 2Small MXFP8 and native NVFP4 are same trained state different quantization; two refusal-edited versions count as distinct edited states not distinct pretrained foundations.",
+  "no_auto_promotion_to_approved": true,
+  "owner_HDD_and_license_not_verified": true,
+  "model_payload_transferred_this_turn": 0,
+  "H_T_D_C_U": {
+    "H": "Fixing HF cursor pagination prevents missing last 12 model shards and MTP dependencies, while frontier learned-state and uncensored edit research HOLDs preserve a historically important model family previously suppressed by runtime cutoff.",
+    "T": "Follow official HF Link rel=next at immutable 40-hex SHA for 5 repositories, compare to previous 236 references, validate 263 complete files and publisher LFS/OID structure. Add 4 distinct original/edited states as HOLD leaving previous 260 bytes identical. Require user same hardware >=30 repeated memory and quality >=100 samples before promotion.",
+    "D": "PASS if full 263 files/source bytes and old260 unchanged with active210 and all210 STOP, user approved queue empty. FAIL if first page treated full, gated SHA masked invented, MXFP8 counted independent training or unbenchmarked 594B marked runnable. UNCERTAIN owner actual free space, legal acts, full offline restore and edit reproducibility.",
+    "C": "Source publishers can reallocate or gate repos, code version may be incompatible, edit.pt may not replay bit exact due stochastic quant round, and owner hardware cap/quality makes full source impractical.",
+    "U": "Publisher metadata and model card authorship, legal access entitlement, 512GB hardware peak, cache/staging/CAS de-dupe and independent model quality. No measured u_c and k."
+  },
+  "interdisciplinary": [
+    "model architecture and post-training/refusal-space edits",
+    "GPU low-precision quantization and runtime memory",
+    "cryptographic software supply-chain manifests and cursor pagination",
+    "copyright/licensing and international access restrictions"
+  ]
+}

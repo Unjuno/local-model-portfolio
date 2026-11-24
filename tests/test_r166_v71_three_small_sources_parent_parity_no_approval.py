@@ -7,14 +7,15 @@ class R166SourceProof(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
   cls.c=load('catalog/CURRENT.json')
-  cls.cat=load(cls.c['materialized_catalog_path'])
+  cls.cat=load('catalog/effective-portfolio-2026-11-25-v71.json')
   cls.ledger=load('catalog/execution/2026-11-19-acquisition-ledger.json')
   cls.src=load('manifests/drafts/r166-2026-11-25-tiny-tts-inkling-adapter-complete-publisher-scope.candidate.json')
   cls.parent=load('catalog/research/2026-11-25-r166-inkling-heretic-parent-source-parity-no-redownload.json')
   cls.queue=load('queues/proposed-v71-r166-three-small-complete-source-UNAPPROVED.json')
   cls.dec=load('catalog/decisions/2026-11-25-r166-v71-three-small-source-finalization-and-stop.json')
  def test_current_v71_remains_exact_260_210_and_116_existing_ledger(self):
-  self.assertEqual((self.c['revision_id'],self.c['expected']['tracked'],self.c['expected']['active']),('v71-20261125',260,210))
+  self.assertIn((self.c['revision_id'],self.c['expected']['tracked'],self.c['expected']['active']),(('v71-20261125',260,210),('v72-20261125',264,210)))
+  self.assertEqual(load(self.c['materialized_catalog_path'])['items'][:260],self.cat['items'])
   self.assertEqual((self.cat['counts']['by_decision']['select'],self.cat['counts']['by_decision']['conditional'],self.cat['counts']['by_decision']['hold']),(56,154,31))
   self.assertEqual((self.ledger['summary']['models_verified'],self.ledger['summary']['files_verified_total'],self.ledger['summary']['bytes_verified_total']),(116,1758,2021784002725))
   base={x['repo_id'] for x in self.cat['items']}

@@ -11,7 +11,8 @@ class R165PostPublication(unittest.TestCase):
   q=J(c['priority_worklist_path'])
   d=J(c['latest_active_readiness_audit']['summary_path'])
   p=J(c['insurance_preparation_worklist_path'])
-  self.assertEqual((c['revision_id'],c['expected']['tracked'],c['expected']['active']),('v71-20261125',260,210))
+  self.assertIn((c['revision_id'],c['expected']['tracked'],c['expected']['active']),(('v71-20261125',260,210),('v72-20261125',264,210)))
+  self.assertEqual(v['items'][:260],J('catalog/effective-portfolio-2026-11-25-v71.json')['items'])
   self.assertEqual(v['items'][:258],J('catalog/effective-portfolio-2026-11-25-v70.json')['items'])
   active={(x['asset_kind'],x['repo_id']) for x in v['items'] if x['portfolio_decision'] in ('select','conditional')}
   cond={(x['asset_kind'],x['repo_id']) for x in v['items'] if x['portfolio_decision']=='conditional'}
@@ -20,10 +21,10 @@ class R165PostPublication(unittest.TestCase):
   self.assertEqual({(x['asset_kind'],x['repo_id']) for x in p['items']},active)
   self.assertEqual({(x['asset_kind'],x['repo_id']) for x in d['records']},active)
   self.assertEqual({(x['asset_kind'],x['repo_id']) for x in a['entries']},cond)
-  self.assertEqual(a['source_revision'],'v71-20261125')
+  self.assertEqual(a['source_revision'],c['revision_id'])
   self.assertEqual((a['scope'],a['tracked_conditional'],a['gated_count']),(154,154,21))
-  self.assertEqual(J('catalog/readiness/CURRENT.json')['catalog_revision'],'v71-20261125')
-  self.assertEqual(J('catalog/estimates/CURRENT.json')['portfolio_revision'],'v71-20261125')
+  self.assertEqual(J('catalog/readiness/CURRENT.json')['catalog_revision'],c['revision_id'])
+  self.assertEqual(J('catalog/estimates/CURRENT.json')['portfolio_revision'],c['revision_id'])
   self.assertEqual(c['expected']['budget_scenario'],v['budget'])
   self.assertEqual(d['summary']['blocked_any'],210)
   self.assertEqual(d['summary']['downloads_approved'],0)

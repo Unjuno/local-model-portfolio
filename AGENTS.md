@@ -1,3 +1,9 @@
+# R166／v72 2026-11-25：Inkling Small 276B／Inkling 2 Small 594B原本・無検閲編集を正式研究HOLD収録
+
+公開元HF tree expand=trueは1ページ50件であるため、R164初ページ参照を完全データと扱わない。[完全ページ送りした5ソース263ファイル](manifests/drafts/r166-2026-11-25-inkling-small-five-complete-paginated-original-sources.candidate.json)を正本研究資料とし、[ページ送りガード](scripts/audit_hf_tree_pagination.py)を追加。先行v71の260件は不変、v72 264登録・210有効、HOLD35。旧R166のParadee/TiHon/Inkling Miniの研究も維持。所有者HDD現物SHA／個別行為の利用許諾／150B超・512GB未満の実測例外／明示DL承認は未取得であり、全210稼働候補を取得STOP。
+
+---
+
 # R166／2026-11-25：v71据置、超小型TTS／無検閲LoRAの原本89file完全ハッシュ・権利停止
 
 正本[catalog/CURRENT.json](catalog/CURRENT.json)は **v71／260登録・210有効**。既登録3repoは[Paradee/TiHon/Inkling Heretic ARA全89fileの出版社OID+LFS SHA](manifests/drafts/r166-2026-11-25-tiny-tts-inkling-adapter-complete-publisher-scope.candidate.json)および[復元/権利/量子化/制限](docs/strategy/166-v71-small-tts-and-uncensored-adapter-source-closure.md)を根拠に研究scopeを**優先32file・127,809,861byte**まで最適化。ParadeeのHF APIはデフォルト50件で途中で切れるため、limit100により全59fileを必須照合。元Github実行コード38blob SHA固定だがowner offline wheelsは不明。TiHon CC BY-NC・カスタムコード・MCU用.tfliteグラフ不在・F32数100125対作者100118の差を解消まで実利用しない。Inkling editは学習親ed40e7と取得台帳1fb413が異なるが、**本体・MTP・tokenizer LFS SHAは同じでconfig.jsonにdtype bfloat16のキー追加だけ**、重い親20GBを再取得しない。PEFT 0.22/loopedバックエンド/実機ABI未検証。正式v71変更0、116既取得報告の再取得0、queues/approved.json空、重量DL/Gated回避/本人承認/Owner D現物改変0。原本SHAと本人実行・権利・復元可能性を混同しない。

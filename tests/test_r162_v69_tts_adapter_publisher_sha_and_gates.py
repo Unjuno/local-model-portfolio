@@ -12,7 +12,7 @@ class R162(unittest.TestCase):
   cls.queue=read("queues/proposed-v69-2026-11-25.json");cls.access=read("catalog/access/2026-11-25-v69-conditional-hub-gates.json")
   cls.ready=read("catalog/readiness/v69-2026-11-25-r162-all206-gates.json");cls.prep=read("catalog/preparation/2026-11-25-insurance-bundles-v69.json")
  def test_same_252_and_counts(self):
-  self.assertIn(self.c["revision_id"],("v69-20261125","v70-20261125", "v71-20261125"))
+  self.assertIn(self.c["revision_id"],("v69-20261125","v70-20261125", "v71-20261125", "v72-20261125"))
   self.assertEqual(self.e["items"][:252],self.old["items"])
   self.assertEqual(len(self.e["items"]),255)
   self.assertEqual(len({key(x) for x in self.e["items"]}),255)

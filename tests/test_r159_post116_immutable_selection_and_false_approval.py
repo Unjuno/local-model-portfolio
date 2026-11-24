@@ -20,7 +20,7 @@ class R159Post116SourceAndApproval(unittest.TestCase):
         cls.audit=L("catalog/research/2026-11-24-r159-ledger116-reconciliation.json")
         cls.dec=L("catalog/decisions/2026-11-24-r159-v66-novel-decision-models-and-ledger116.json")
     def test_catalog_unmodified_and_acquisition116_not_owner_SHA(self):
-        self.assertIn(self.current["revision_id"],("v66-20261124","v67-20261124","v68-20261125","v69-20261125","v70-20261125", "v71-20261125"))
+        self.assertIn(self.current["revision_id"],("v66-20261124","v67-20261124","v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125"))
         self.assertEqual((len(L("catalog/effective-portfolio-2026-11-24-v66.json")["items"]),L("catalog/effective-portfolio-2026-11-24-v66.json")["counts"]["active"]),(246,197))
         self.assertEqual((self.ledger["summary"]["models_verified"],self.ledger["summary"]["files_verified_total"],self.ledger["summary"]["bytes_verified_total"]),(116,1758,2021784002725))
         self.assertFalse(self.audit["owner_windows_D_physically_rehashed_by_this_audit"])
