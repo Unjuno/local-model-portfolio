@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "kind": "R163_V71_OFFLINE_STATIC_UNITTEST_EXECUTION_EVIDENCE",
+  "reviewed_date_jst": "2026-11-25",
+  "repository": "Unjuno/local-model-portfolio",
+  "tested_git_commit_sha": "414b622c2fb502a0d4637ccc91f9d140ccadbf62",
+  "environment": {
+    "execution_context": "User-connected Simular cloud Linux box; NOT user's Windows D model storage",
+    "os": "Linux",
+    "architecture": "x86_64",
+    "python": "3.12.3",
+    "no_cuda_or_model_runtime_needed": true,
+    "no_model_weights_fetched": true,
+    "model_supplier_python_or_custom_code_executed": false
+  },
+  "commands": [
+    {
+      "command": "python3 -m unittest discover -s tests -p 'test_r163_v71_complete_uncensored_source_and_all210_stops.py' -v",
+      "test_methods": 5,
+      "pass": 5,
+      "failed": 0,
+      "errors": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p 'test_r162_v68_uncensored_and_decision_source_gates.py' -v",
+      "test_methods": 5,
+      "pass": 5,
+      "failed": 0,
+      "errors": 0
+    }
+  ],
+  "summary": {
+    "test_cases": 10,
+    "passed": 10,
+    "failed": 0,
+    "errors": 0,
+    "ran_source_metadata_only": true,
+    "all_210_active_acquisition_ready_false": true,
+    "approved_queue_entries": 0,
+    "all_258_previous_catalog_rows_identical": true,
+    "publisher_exact_all_five_file_refs": 66,
+    "publisher_lfs_sha256_refs": 14,
+    "publisher_prioritized_full_file_refs": 38,
+    "publisher_prioritized_ref_bytes": 7674695120,
+    "source_repo_id_nonduplicate_with_116_acquisition_report": true,
+    "owner_windows_d_sha_independently_measured": false,
+    "owner_individual_licence_approved": false,
+    "complete_offline_model_runtime_reproduced": false
+  },
+  "source_manifest": "manifests/drafts/r163-2026-11-25-five-uncensored-source-complete-publisher-OID-SHA.candidate.json",
+  "current_revision": "v71-20261125",
+  "report": "docs/strategy/163-v71-aurum-qjev-complete-source-and-uncensored-originals.md",
+  "notes": "Tests execute only trusted project-local stdlib assertions over repository JSON; no third-party publisher model code or weights were imported; Python unit test execution does not prove owner runtime, actual downloaded local files or general model quality."
+}
