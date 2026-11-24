@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "kind": "R164_FAMILY_OMISSION_PRIORITY_RESEARCH_ONLY_NO_DOWNLOAD_AUTHORIZATION",
+  "reviewed_jst": "2026-11-25",
+  "baseline_canonical_revision": "v71-20261125",
+  "source_manifest": "manifests/drafts/r164-2026-11-25-inkling-small-uncensored-missing-family-publisher-research.candidate.json",
+  "known_user_requested_name_approx": "リンキングスモール",
+  "matched_family": "Inkling Small / Inkling 2 Small / uncensored",
+  "unresolved_other_user_term": "無限スマイル",
+  "other_term_identification_status": "NEEDS_EXACT_UPSTREAM_ID_NO_GUESSED_MODEL",
+  "critical_research_rows": [
+    {
+      "rank": 1,
+      "repo_id": "thinkingmachines/Inkling-2-Small",
+      "phase": "RESEARCH_ARCHIVE_ONLY_OVER_150B_HOLD",
+      "reason": "594B total new MoE original, not Inkling-2-Mini; original NVFP4 archival source reference 393.510GB; 500GB aggregate GPU vendor baseline is untested against user peak rule",
+      "download_approved": false
+    },
+    {
+      "rank": 2,
+      "repo_id": "OpenUncensored/Inkling-2-Small-Uncensored",
+      "phase": "RESEARCH_ARCHIVE_ONLY_OVER_150B_HOLD",
+      "reason": "Independent refusal-edited state, 553.0047GB MXFP8 full original, edit.pt 39.174KB not a self-contained 2Small model; needs source-compatible MXFP8 parent and reviewed replay code",
+      "download_approved": false
+    },
+    {
+      "rank": 3,
+      "repo_id": "thinkingmachines/Inkling-2-Small-MXFP8",
+      "phase": "DEPENDENCY_RESEARCH_DO_NOT_APPROVE",
+      "reason": "553.0048GB appropriate parent representation for uncensored edit; 800GB minimum GPU advertised. Do not infer recoverability from the dissimilar 393GB NVFP4 parent.",
+      "download_approved": false
+    },
+    {
+      "rank": 4,
+      "repo_id": "thinkingmachines/Inkling-Small",
+      "phase": "OLDER_276B_DISTINCT_ORIGINAL_RESEARCH_HOLD",
+      "reason": "Older 276B total/12B active multimodal original, not Inkling-2-Small 594B or Mini 26B.",
+      "download_approved": false
+    },
+    {
+      "rank": 5,
+      "repo_id": "distributedcognition/Inkling-Small-abliterated",
+      "phase": "GATED_RIGHTS_FIRST_HOLD",
+      "reason": "Gated-auto derivative with 2 precision subtrees and scale versions; cannot claim rights or publisher content hashes from masked SHA.",
+      "download_approved": false
+    }
+  ],
+  "do_not_replace_with_existing_mini_family": [
+    "thinkingmachines/Inkling-2-Mini",
+    "OpenUncensored/Inkling-2-Mini-Uncensored-LoRA",
+    "satellitedown/Inkling-2-Mini-abliterated-ingine"
+  ],
+  "project_specific_recommendation": "Separate long-term learned-state preservation priority from immediate <150B local execution gate. Retain full provenance as archive-only research HOLD; no implicit approval or download.",
+  "actual_weight_download_enabled": false,
+  "explicit_user_approval_granted": false,
+  "license_act_verified": false,
+  "owner_4TB_and_200GB_floor_live_verified": false,
+  "owner_GPU_peak_and_memory_exception_tested": false,
+  "all_previous_acquisition_116_reported_IDs_unchanged": true,
+  "canonical_current_catalog_unchanged": true
+}
