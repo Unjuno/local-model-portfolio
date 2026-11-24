@@ -1,0 +1,4798 @@
+{
+  "schema_version": 1,
+  "ledger_id": "2026-11-19-v48-execution",
+  "generated_at": "2026-11-24T07:28:26.883912+00:00",
+  "canonical_revision": "v48-20261118",
+  "source_plan": "queues/proposed-v48-r113-source-pinned-15.json",
+  "policy": {
+    "pinned_revision_only": true,
+    "publisher_hash_verification": true,
+    "dedupe_by_hash": true,
+    "resume_partial_downloads": true,
+    "model_code_executed": false,
+    "gated_without_entitlement": "HOLD",
+    "unclear_license": "HOLD"
+  },
+  "summary": {
+    "models_total": 113,
+    "models_verified": 112,
+    "models_partial": 0,
+    "models_failed": 0,
+    "models_held": 1,
+    "files_verified_total": 1714,
+    "bytes_verified_total": 2020548143087,
+    "minimum_free_bytes_observed": 1026731790336,
+    "minimum_free_floor_bytes": 200000000000,
+    "free_floor_maintained": true
+  },
+  "models": [
+    {
+      "repo_id": "n4ze3m/tiny-voca",
+      "revision_sha": "d94d2a0338fd1e0eab7dd896ec0ad23d8cdf7c14",
+      "source_manifest": "manifests/drafts/v48-2026-11-18-tiny-voca-immutable-source.candidate.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 14,
+      "files_verified": 14,
+      "source_bytes": 23626858,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "DEDUP_VERIFIED": 14
+      },
+      "weight_files_sha256": [
+        {
+          "path": "tiny-voca.pt",
+          "sha256": "ebb22871524c5732520fb1652e6aefcec708a7452e83bdd00adcf6181db5ef70"
+        },
+        {
+          "path": "phonemizer/g2p.npz",
+          "sha256": "eb3fd519ff00e72d850928d2fccb968adc36134bca2f3bda09de7e794c2ed01b"
+        }
+      ],
+      "started_at": "2026-11-18T15:49:12.973831+00:00",
+      "finished_at": "2026-11-18T15:49:13.761653+00:00",
+      "free_bytes_after": 2981074751488
+    },
+    {
+      "repo_id": "ibm-granite/granite-timeseries-ttm-r3",
+      "revision_sha": "ea17cfd2e3edcaea21eb8dcecd18bf88971482fa",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_SMALL_SPECIAL",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 5748963,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "8ec0509a18a38f65b02f046fc28298ab3acf5d54eecb0a0df959b9fa001bc9fb"
+        }
+      ],
+      "started_at": "2026-11-18T15:49:26.531299+00:00",
+      "finished_at": "2026-11-18T15:49:31.913256+00:00",
+      "free_bytes_after": 2981068988416
+    },
+    {
+      "repo_id": "robbyant/lingbot-touch-tiny",
+      "revision_sha": "f23969ccd4b6bba2163e69cc05a577455a075fe9",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_TACTILE_SAFE_PT",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 21873479,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "encoder.pt",
+          "sha256": "ddb8b435963348fff5b8a83bb48f995978dc8841d82f87be007c775bf5a88055"
+        }
+      ],
+      "started_at": "2026-11-18T15:49:31.964549+00:00",
+      "finished_at": "2026-11-18T15:49:37.942995+00:00",
+      "free_bytes_after": 2981047107584
+    },
+    {
+      "repo_id": "nvidia/Nemotron-3-Diarization",
+      "revision_sha": "52a432672732425e4c19765b9fec9b5810e6f4ba",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_AUDIO_OPENMDW",
+      "status": "VERIFIED",
+      "license": "openmdw-1.1",
+      "files_total": 11,
+      "files_verified": 11,
+      "source_bytes": 397030277,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 11
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "c074d86335b3b794f8fa5edc25594558f128bdb3914d27806a3a5a2e44963cb6"
+        }
+      ],
+      "started_at": "2026-11-18T15:49:38.008044+00:00",
+      "finished_at": "2026-11-18T15:50:09.719204+00:00",
+      "free_bytes_after": 2980650061824
+    },
+    {
+      "repo_id": "KittenML/kitten-tts-2-mini",
+      "revision_sha": "c01797caec3967b400da457656e011eb81f530a4",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "R110_SMALL_INDEPENDENT_TRAINED_ORIGINAL",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 27,
+      "files_verified": 27,
+      "source_bytes": 477936075,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 8,
+        "sha256-vs-publisher": 19
+      },
+      "file_status_counts": {
+        "VERIFIED": 27
+      },
+      "weight_files_sha256": [
+        {
+          "path": "g2p/g2p_bart_en_us/model.safetensors",
+          "sha256": "dc4a02e62d4fcb4bb4097ecf00db89b8e1a12a549a52ab6adfbba220b80a55c5"
+        },
+        {
+          "path": "kitten_tts_2_mini.onnx",
+          "sha256": "fa821c1cdd8f7fbfdbd5d1cae0a767673871d62696b85af7db059a9bd26b42d2"
+        },
+        {
+          "path": "kitten_tts_2_mini.safetensors",
+          "sha256": "b4cbca44add074c66bf0d36e335c55d0a213cd3e69200856617d0d7ed8e1e23e"
+        },
+        {
+          "path": "voices_da.npz",
+          "sha256": "a4d191e87175519bab110aed747ccdb48586455b9c4896aa74c2d269766d8eef"
+        },
+        {
+          "path": "voices_de.npz",
+          "sha256": "b33f8c44a7f3968ed53aca31666bed9110d5ab0023a75dc69125f3e3218e9a9d"
+        },
+        {
+          "path": "voices_en.npz",
+          "sha256": "5c18573d075f53f6f218c2056dfc84ad10e976e81e23d55e5a7a6adc6e9135a4"
+        },
+        {
+          "path": "voices_es.npz",
+          "sha256": "3de943ddab5eeced04a42c732d39152802df01fd94f194181a7bc5bd60d52c3b"
+        },
+        {
+          "path": "voices_fi.npz",
+          "sha256": "7764dec2e1e21cae23d623e9b9ccb5d15122f1fbbc582e40fbd57c53e3ce2c73"
+        },
+        {
+          "path": "voices_fr.npz",
+          "sha256": "df2f679a9b3b73b6b3cf14003a782804db1a22985f68f3912859598249dcd79e"
+        },
+        {
+          "path": "voices_hi.npz",
+          "sha256": "ce6d14445f10b16347daa9385f411d87f8cc73d989f5467c0fd975abdf906329"
+        },
+        {
+          "path": "voices_it.npz",
+          "sha256": "1c9d98962dd50e240450d5316a1ad80f32d67f9b2919c9419422359d1c4333d6"
+        },
+        {
+          "path": "voices_ja.npz",
+          "sha256": "17293773d30660c39120541586451aa66c0a8e8b58590e38381e22dc1bf6d271"
+        },
+        {
+          "path": "voices_ko.npz",
+          "sha256": "d3d5295000153ad90f7a321769cd4647b8db42612feaf6e3d6e765f1c35b9daf"
+        },
+        {
+          "path": "voices_nl.npz",
+          "sha256": "d1862bfe3554d1c47d22dc44ed943335ba695cbbe6d5324a129365fadf22238d"
+        },
+        {
+          "path": "voices_pt.npz",
+          "sha256": "83dc34bca3e2c454548d8d63cda7830aa22748cc1a0643fa5bdac445fe8f4f57"
+        },
+        {
+          "path": "voices_ru.npz",
+          "sha256": "f998f1fce7b19a0714c47b99aaaa06c8ab94be13e1dfb3acf8a6a6c2b97a05f2"
+        },
+        {
+          "path": "voices_sv.npz",
+          "sha256": "73c6b92a0be1c970bd0334b0099a57354057930c40911d17c6dfc0347c6b1cba"
+        },
+        {
+          "path": "voices_sw.npz",
+          "sha256": "809450b8dc88cae0e042ad935c1e5751b9a2448a2251c51f29285cc6d3f46e09"
+        },
+        {
+          "path": "voices_tr.npz",
+          "sha256": "d2af4c7636381c26ad3252002021cbacef130b401e45ed5d4ee079f901b61920"
+        }
+      ],
+      "started_at": "2026-11-18T15:50:09.798180+00:00",
+      "finished_at": "2026-11-18T15:51:14.162741+00:00",
+      "free_bytes_after": 2980172066816
+    },
+    {
+      "repo_id": "usezn/Galvanize-3",
+      "revision_sha": "597237be3b0fabbf5d70ff16ce95fad14a591f20",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_SMALL_SPECIAL",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 9,
+      "files_verified": 9,
+      "source_bytes": 597001839,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 7,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 9
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "a17273035cf5f52b6363d3420695c8809be33913ef6ece4bd72927bf93741305"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "8ab59b95e06d1d289dba953ef1ab95044067692bf5877f49236ebd1d8a24dcdf"
+        }
+      ],
+      "started_at": "2026-11-18T15:51:14.244608+00:00",
+      "finished_at": "2026-11-18T15:51:58.791241+00:00",
+      "free_bytes_after": 2979575046144
+    },
+    {
+      "repo_id": "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-LoRA-v0.1",
+      "revision_sha": "aa213272180d6ad0d03f5fb3d597f0f0322647c5",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "A_RESEARCH_LICENSE",
+      "status": "VERIFIED",
+      "license": "other",
+      "files_total": 8,
+      "files_verified": 8,
+      "source_bytes": 671173375,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 7,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 8
+      },
+      "weight_files_sha256": [
+        {
+          "path": "chatrlabs-omni-lora-v0.1-bf16.safetensors",
+          "sha256": "5991a9845bc5251240febf944f653505a00966515b77073f2c639c4dfcba672a"
+        }
+      ],
+      "started_at": "2026-11-18T15:51:58.879030+00:00",
+      "finished_at": "2026-11-18T15:52:45.824165+00:00",
+      "free_bytes_after": 2978774708224
+    },
+    {
+      "repo_id": "qvac/BotPsy-0.8B",
+      "revision_sha": "24561e9681643eaf807fc28b0875210cb17f89c1",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_SMALL_AGENT",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 11,
+      "files_verified": 11,
+      "source_bytes": 1726201481,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 11
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "9a52e9fb1552e8592542e3de8104af9040b56c60644f5a9c2c270621a3b0ab48"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523"
+        }
+      ],
+      "started_at": "2026-11-18T15:52:46.052354+00:00",
+      "finished_at": "2026-11-18T15:57:13.718786+00:00",
+      "free_bytes_after": 2974811705344
+    },
+    {
+      "repo_id": "tencent/Qwen3.8-27B-DSpine-b16",
+      "revision_sha": "260a6c23070ca873ff1a5f33b7119ac3f6a245ee",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "B_DRAFT_TARGET_DEP",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 4051857976,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "ac90f1df842ea66b23e4224f3e86624add547526f689ffe9e9c6b7a5937116b1"
+        }
+      ],
+      "started_at": "2026-11-18T15:57:13.895009+00:00",
+      "finished_at": "2026-11-18T16:07:02.074883+00:00",
+      "free_bytes_after": 2967994912768
+    },
+    {
+      "repo_id": "osunlp/ARLoop-1.2B",
+      "revision_sha": "a29f310ac46646edf5c462425dc546b2ce7ea985",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "R110_SMALL_INDEPENDENT_TRAINED_ORIGINAL",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 15,
+      "files_verified": 15,
+      "source_bytes": 4838079760,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 15
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00003.safetensors",
+          "sha256": "f63b6dc22428c92a8ab8fad1150546745e542df1870cd03cc6503ae1a62a521d"
+        },
+        {
+          "path": "model-00002-of-00003.safetensors",
+          "sha256": "cfee1065c0fa1ca1f61b33191cc326148c7609847198ae7a44342947b06c8826"
+        },
+        {
+          "path": "model-00003-of-00003.safetensors",
+          "sha256": "e21d16b37eae586a58f2df1107e05fe6c88e81aa3814d12e7f46af9342702359"
+        }
+      ],
+      "started_at": "2026-11-18T16:07:02.129395+00:00",
+      "finished_at": "2026-11-18T16:11:52.632192+00:00",
+      "free_bytes_after": 2963156799488
+    },
+    {
+      "repo_id": "0bserverx/Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF",
+      "revision_sha": "ab8d7bd81d03117501e4da60cccdff4c80f0eea0",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "A_UNCENSORED",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 4,
+      "files_verified": 4,
+      "source_bytes": 17176692278,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 2,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 4
+      },
+      "weight_files_sha256": [
+        {
+          "path": "mmproj-Qwen3.8-27B-Q8_0.gguf",
+          "sha256": "2e968a6af97ce35d8971890b257b9b7edabf20ad91450501fa53162a19ee33eb"
+        },
+        {
+          "path": "RVN-Q4_K_M-multilingual.gguf",
+          "sha256": "9ed40ccc8b8432f38b9a85d0ca67928167f5719e8c10bd299e56d34facaf6e61"
+        }
+      ],
+      "started_at": "2026-11-18T16:11:52.686963+00:00",
+      "finished_at": "2026-11-18T16:41:12.723344+00:00",
+      "free_bytes_after": 2945980100608
+    },
+    {
+      "repo_id": "InterpreticAI/Qwen3.8-27B-Uncensored-v2-GGUF",
+      "revision_sha": "e6924b3a08765341e01546308ccf2683d43e880b",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "A_UNCENSORED",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 17738327225,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "mmproj-Qwen3.8-27B-Uncensored-v2-F16.gguf",
+          "sha256": "0b296c3155e945290000aa4eb62edec4a5d2d183aae52feca3df39798095a9db"
+        },
+        {
+          "path": "Qwen3.8-27B-Uncensored-v2-Q4_K_M.gguf",
+          "sha256": "2a76f31d17e879589f2527bb4f657526ce0f4719aa352adc944e13f9f7365972"
+        }
+      ],
+      "started_at": "2026-11-18T16:41:12.797982+00:00",
+      "finished_at": "2026-11-18T17:11:22.621782+00:00",
+      "free_bytes_after": 2928241762304
+    },
+    {
+      "repo_id": "Gryphe/Pantheon-Reasoning-26B-A4B-1.1-V2",
+      "revision_sha": "6af1278a92223c717ccea671e4571a5cc135f5d8",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "C_LARGE_SFT_REVIEW",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 53121584389,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 8,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "25b9bbda873b017f3aef54234542e4daf322f7117d7ebafa90dce405ea50f547"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "eb7eaf504f060ecd157ef4e03b1a174ed62f23c8a119d620f63138c1e1396183"
+        },
+        {
+          "path": "Pantheon-Reasoning.jpg",
+          "sha256": "04ce599b4249fd1c989e8f86ce598e84a77a90a658f87c0bdbd0bd3ff1ce434a"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+        }
+      ],
+      "started_at": "2026-11-18T17:11:22.680466+00:00",
+      "finished_at": "2026-11-18T18:46:19.214572+00:00",
+      "free_bytes_after": 2875120144384
+    },
+    {
+      "repo_id": "orcarouter/Qwen3.8-27B-Uncensored",
+      "revision_sha": "0f639a9bde23fe229a7b064b40a5153c5bec0b48",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "D_GATED_OWNER_PERMISSION",
+      "status": "HOLD_GATED_OR_PRIVATE",
+      "license": null,
+      "files_total": 0,
+      "files_verified": 0,
+      "source_bytes": 0,
+      "verification_methods": {},
+      "file_status_counts": {},
+      "weight_files_sha256": [],
+      "started_at": "2026-11-18T18:46:19.259611+00:00",
+      "finished_at": null,
+      "free_bytes_after": null
+    },
+    {
+      "repo_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU",
+      "revision_sha": "079b2b268c637b77f2fb4ab6a5ca1edc47d462a5",
+      "source_manifest": "queues/proposed-v47-r110-source-pinned-14.json",
+      "priority_group": "C_LARGE_SFT_REVIEW",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 25,
+      "files_verified": 25,
+      "source_bytes": 55589894917,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 14
+      },
+      "file_status_counts": {
+        "VERIFIED": 25
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00012.safetensors",
+          "sha256": "b5df896d93260f64913e8e09892c9f3724e92e4bfb7f4708238880fb50833f98"
+        },
+        {
+          "path": "model-00002-of-00012.safetensors",
+          "sha256": "feacdeb20032f0a1bd7315f80f991885add3e31da43ea65aebde67786b740746"
+        },
+        {
+          "path": "model-00003-of-00012.safetensors",
+          "sha256": "42845ce58e2b023b13df6fdfbacf637cfbf6f0fa764dca7b163b355bd5844aab"
+        },
+        {
+          "path": "model-00004-of-00012.safetensors",
+          "sha256": "a2d24cb46efbb0a75df8becd0d5d3bcea30ddc636273065f8a1b199cf5139cde"
+        },
+        {
+          "path": "model-00005-of-00012.safetensors",
+          "sha256": "3aadc678e631cd4d30213cb15007bedd0e41d77301f17b0ed978c743c7387264"
+        },
+        {
+          "path": "model-00006-of-00012.safetensors",
+          "sha256": "bb1024157fb4f4b6ec734c0a0d75902ecaa2406311bf065db495ede3878d2c37"
+        },
+        {
+          "path": "model-00007-of-00012.safetensors",
+          "sha256": "a590217a8c876cb2b489f6d3e890001fa1d923d07b10b3c09fb552238c86a68f"
+        },
+        {
+          "path": "model-00008-of-00012.safetensors",
+          "sha256": "ba25c6b10abf3b31c43e92906f10e37b10d09b18f6535d1e6a826803a8f077bd"
+        },
+        {
+          "path": "model-00009-of-00012.safetensors",
+          "sha256": "0c5254879f08b62212362fc6c0caf0b3cd36117a2de35075a6b363f3cace4df4"
+        },
+        {
+          "path": "model-00010-of-00012.safetensors",
+          "sha256": "064a6765b5bd47eb82955e23c4d0f6b945aa4871fc29db645f24043acf73a41c"
+        },
+        {
+          "path": "model-00011-of-00012.safetensors",
+          "sha256": "4cbbbf4c89d0cb69755011a686279f6707df6f70ed2f9df344ed7b4467a4794e"
+        },
+        {
+          "path": "model-00012-of-00012.safetensors",
+          "sha256": "1007f875318e6cecadde4d5f56696b8e89d9fe30b71e8ed4aa26b387aac9d304"
+        },
+        {
+          "path": "model-mtp-restored.safetensors",
+          "sha256": "fbea25865ec18d0fcc2ba235d7c32a39d5dfad15531b39498796ef8ae9998d25"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4"
+        }
+      ],
+      "started_at": "2026-11-18T18:46:19.702371+00:00",
+      "finished_at": "2026-11-18T20:16:42.208629+00:00",
+      "free_bytes_after": 2819530194944
+    },
+    {
+      "repo_id": "Qwen/Qwen3.5-0.8B",
+      "revision_sha": "2fc06364715b967f1860aea9cf38778875588b17",
+      "source_manifest": "manifests/drafts/qwen3.5-0.8b-2026-10-30.candidate.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 13,
+      "files_verified": 13,
+      "source_bytes": 1769980465,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 13
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors-00001-of-00001.safetensors",
+          "sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+        }
+      ],
+      "started_at": "2026-11-18T15:52:21.762034+00:00",
+      "finished_at": "2026-11-18T15:56:08.918161+00:00",
+      "free_bytes_after": 2975427137536
+    },
+    {
+      "repo_id": "lightonai/LightOnOCR-3-0.8B",
+      "revision_sha": "36d8636925327c671bd8e479c517a004f7566bd9",
+      "source_manifest": "manifests/drafts/lightonocr-3-0.8b-2026-10-30.candidate.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 15,
+      "files_verified": 15,
+      "source_bytes": 1737771835,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 15
+      },
+      "weight_files_sha256": [
+        {
+          "path": "lightonocr3_logo.png",
+          "sha256": "768eee79d378518cfea9ed8d81ba3a53a0cff17ccf4b12c22a9e5ebedde32bcf"
+        },
+        {
+          "path": "model.safetensors",
+          "sha256": "ae46aa6fd7136d57297ac006ed9ec345b7a2083feb2e99501bedcb014ca3efdf"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523"
+        }
+      ],
+      "started_at": "2026-11-18T15:56:09.455857+00:00",
+      "finished_at": "2026-11-18T16:02:32.190084+00:00",
+      "free_bytes_after": 2969617440768
+    },
+    {
+      "repo_id": "openai/whisper-large-v3-turbo",
+      "revision_sha": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+      "source_manifest": "manifests/drafts/whisper-large-v3-turbo-2026-10-30.candidate.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 13,
+      "files_verified": 13,
+      "source_bytes": 1622466054,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 13
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "542566a422ae4f3fd23f1ba11add198fca01bbf82e66e6a2857b3f608b1eb9d1"
+        }
+      ],
+      "started_at": "2026-11-18T16:02:32.883618+00:00",
+      "finished_at": "2026-11-18T16:06:25.334491+00:00",
+      "free_bytes_after": 2967994941440
+    },
+    {
+      "repo_id": "nvidia/Kumo-Anomaly",
+      "revision_sha": "369ccba38a105736c6c9e4b5788a330c7e22112e",
+      "source_manifest": "local-discovered/nvidia__Kumo-Anomaly.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 2,
+      "files_verified": 2,
+      "source_bytes": 29607656,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 1,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 2
+      },
+      "weight_files_sha256": [
+        {
+          "path": "final_model.pth",
+          "sha256": "e7c2c06ac290d5ad42c8528caaefea3e6e0cb3d77227d2eca79f81ee427811a5"
+        }
+      ],
+      "started_at": "2026-11-19T06:00:03.503347+00:00",
+      "finished_at": "2026-11-19T06:00:09.835883+00:00",
+      "free_bytes_after": 2819500167168
+    },
+    {
+      "repo_id": "gradium/phonon-31m-en",
+      "revision_sha": "8f7a37c94a4c58b04c8287300c53f11d2e208eae",
+      "source_manifest": "local-discovered/gradium__phonon-31m-en.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 11,
+      "files_verified": 11,
+      "source_bytes": 103690426,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 11
+      },
+      "weight_files_sha256": [
+        {
+          "path": "default-voice.safetensors",
+          "sha256": "dc537478eaadc1a5257fcda2e3501ab81e14c111a5d95a5838f350db2afd0f1a"
+        },
+        {
+          "path": "model.safetensors",
+          "sha256": "8a04cf833cfe69b67c2ec968b2d31244655b9accc84ade9c0ebcc176f2074607"
+        }
+      ],
+      "started_at": "2026-11-19T06:00:09.928900+00:00",
+      "finished_at": "2026-11-19T06:00:29.747922+00:00",
+      "free_bytes_after": 2819396452352
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati-Checker",
+      "revision_sha": "7edaac6de4cfe7127f973d8641335c4cb2f84b08",
+      "source_manifest": "local-discovered/udgamlabs__Lilavati-Checker.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 190647761,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 5,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "b537563da101acc99fd800ae8798ce1f287d469da29f43ba824ab49d36ed164a"
+        }
+      ],
+      "started_at": "2026-11-19T06:00:29.869899+00:00",
+      "finished_at": "2026-11-19T06:00:50.969302+00:00",
+      "free_bytes_after": 2819205787648
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati",
+      "revision_sha": "5aef8c4b79fa6b8aaf5d63a1e8dd05ca572fe25d",
+      "source_manifest": "local-discovered/udgamlabs__Lilavati.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 190654999,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 5,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "24c02955743f5b918dff4e8709075ac7d9a05255739545ce1543ae10e72c8349"
+        }
+      ],
+      "started_at": "2026-11-19T06:00:51.063726+00:00",
+      "finished_at": "2026-11-19T06:01:13.325472+00:00",
+      "free_bytes_after": 2819015122944
+    },
+    {
+      "repo_id": "nvidia/Kumo-Relational",
+      "revision_sha": "efdbb110daea5aae123447864a64612e8a3dc6be",
+      "source_manifest": "local-discovered/nvidia__Kumo-Relational.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "openmdw-1.1",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 243653558,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "classifier.pt",
+          "sha256": "0c2e35cc18303f0d3ddeaf04e9cab6ca3a8bd6ea17195ac0e42d47af4bcb2a2d"
+        },
+        {
+          "path": "regressor.pt",
+          "sha256": "f863b3632f738e1444fb83a8cea5746f298889b5c96953a000c4720d202ae4cf"
+        }
+      ],
+      "started_at": "2026-11-19T06:01:13.428285+00:00",
+      "finished_at": "2026-11-19T06:01:34.295420+00:00",
+      "free_bytes_after": 2818771451904
+    },
+    {
+      "repo_id": "autogluon/chronos-2",
+      "revision_sha": "60088152a34e242427b44c3100014473a0157d53",
+      "source_manifest": "local-discovered/autogluon__chronos-2.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 3,
+      "files_verified": 3,
+      "source_bytes": 477939313,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 2,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 3
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "ddcda3c7508bf2528087723e98a20707cc04b7f370ae275a9fd88078ddba4f42"
+        }
+      ],
+      "started_at": "2026-11-19T06:01:34.412924+00:00",
+      "finished_at": "2026-11-19T06:02:08.139803+00:00",
+      "free_bytes_after": 2818293506048
+    },
+    {
+      "repo_id": "Zyphra/ZONOS3-Mini",
+      "revision_sha": "2921b8821772b0bd10a04456863d21abf9d2f283",
+      "source_manifest": "local-discovered/Zyphra__ZONOS3-Mini.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 66,
+      "files_verified": 66,
+      "source_bytes": 775728152,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 65,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 66
+      },
+      "weight_files_sha256": [
+        {
+          "path": "autoencoder/teacher/model.safetensors",
+          "sha256": "a15182741d6ee3cd780b8b830f49fa6b7fcce383655d451970841b24114767a5"
+        }
+      ],
+      "started_at": "2026-11-19T06:02:08.268083+00:00",
+      "finished_at": "2026-11-19T06:03:56.563568+00:00",
+      "free_bytes_after": 2817517690880
+    },
+    {
+      "repo_id": "lerobot/smolvla_base",
+      "revision_sha": "5e8d12a6e2975b0e5e5fce7c8caf47c371d257b6",
+      "source_manifest": "local-discovered/lerobot__smolvla_base.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 7,
+      "files_verified": 7,
+      "source_bytes": 906723311,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 7
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "7cd549ac2351fb069c0ddb3c34ad2d09cfc92b56a15dccdfc2e41467aaca01eb"
+        },
+        {
+          "path": "policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+          "sha256": "490ab239d96e263687c0b2e386a0afbc235a2eceb9857c36ed32f2f162a3e7c8"
+        },
+        {
+          "path": "policy_preprocessor_step_5_normalizer_processor.safetensors",
+          "sha256": "490ab239d96e263687c0b2e386a0afbc235a2eceb9857c36ed32f2f162a3e7c8"
+        }
+      ],
+      "started_at": "2026-11-19T06:03:56.680051+00:00",
+      "finished_at": "2026-11-19T06:04:54.397212+00:00",
+      "free_bytes_after": 2816610926592
+    },
+    {
+      "repo_id": "ibm-granite/granite-speech-5.0-470m-turboctc",
+      "revision_sha": "91dcb0605daf65f88dbb04fef015c423241d941d",
+      "source_manifest": "local-discovered/ibm-granite__granite-speech-5.0-470m-turboctc.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 7,
+      "files_verified": 7,
+      "source_bytes": 948024305,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 6,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 7
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "5b569c3744c42a9172ac976881539926b66176d03fbaaa3c51b5d2960067f6fc"
+        }
+      ],
+      "started_at": "2026-11-19T06:04:54.515688+00:00",
+      "finished_at": "2026-11-19T06:05:53.629932+00:00",
+      "free_bytes_after": 2815662886912
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+      "revision_sha": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+      "source_manifest": "local-discovered/Qwen__Qwen3-Reranker-0.6B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 13,
+      "files_verified": 13,
+      "source_bytes": 1207486774,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 13
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "27cd75a405b9c1b46b59abfd88aaa209e6fed2a1972cde9b70e7659537c5e65b"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+        }
+      ],
+      "started_at": "2026-11-19T06:05:53.752407+00:00",
+      "finished_at": "2026-11-19T06:07:14.864020+00:00",
+      "free_bytes_after": 2814455377920
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "revision_sha": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+      "source_manifest": "local-discovered/Qwen__Qwen3-Embedding-0.6B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 11,
+      "files_verified": 11,
+      "source_bytes": 1207487471,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 11
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "0437e45c94563b09e13cb7a64478fc406947a93cb34a7e05870fc8dcd48e23fd"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "def76fb086971c7867b829c23a26261e38d9d74e02139253b38aeb9df8b4b50a"
+        }
+      ],
+      "started_at": "2026-11-19T06:07:14.980329+00:00",
+      "finished_at": "2026-11-19T06:08:34.788086+00:00",
+      "free_bytes_after": 2813247864832
+    },
+    {
+      "repo_id": "Edge0/Audio8-TTS-Realistic-Air",
+      "revision_sha": "6bf7a980759d8022a66922ee975dab99229a2dd9",
+      "source_manifest": "local-discovered/Edge0__Audio8-TTS-Realistic-Air.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 14,
+      "files_verified": 14,
+      "source_bytes": 1215781745,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 14
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "f590053e980a45ebcbb2e787cff4f2dead932b2b61e5cf54d05664d9764e12d8"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "f24e08099d45a8adf3f52f5f0b03276e433bb9d689bb15fcbcc48ce58744588b"
+        }
+      ],
+      "started_at": "2026-11-19T06:08:34.925312+00:00",
+      "finished_at": "2026-11-19T06:09:56.855316+00:00",
+      "free_bytes_after": 2812032057344
+    },
+    {
+      "repo_id": "google/siglip2-base-patch16-224",
+      "revision_sha": "75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2",
+      "source_manifest": "local-discovered/google__siglip2-base-patch16-224.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 7,
+      "files_verified": 7,
+      "source_bytes": 1535215765,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 5,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 7
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "612923381c76ec5a9bed335d1c48827e3f2e506ac31b044b63b2031fadee6a0b"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "cb9140fae3ac5122c972d37adf83e1248471a38147ad76f8215c8872c6fd8322"
+        }
+      ],
+      "started_at": "2026-11-19T06:09:56.992076+00:00",
+      "finished_at": "2026-11-19T06:11:34.033521+00:00",
+      "free_bytes_after": 2810496827392
+    },
+    {
+      "repo_id": "answerdotai/ModernBERT-large",
+      "revision_sha": "45bb4654a4d5aaff24dd11d4781fa46d39bf8c13",
+      "source_manifest": "local-discovered/answerdotai__ModernBERT-large.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 1585708932,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 5,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "44510fec5d3a81a1877f225637b869495f18e55f6f23a09abb9be0acc030295f"
+        }
+      ],
+      "started_at": "2026-11-19T06:11:34.189189+00:00",
+      "finished_at": "2026-11-19T06:13:33.966774+00:00",
+      "free_bytes_after": 2808911093760
+    },
+    {
+      "repo_id": "PaddlePaddle/PaddleOCR-VL-1.5",
+      "revision_sha": "1e5216083435c7851caad5d691ef55aab81b5949",
+      "source_manifest": "local-discovered/PaddlePaddle__PaddleOCR-VL-1.5.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 1928697282,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "d557c9d8997ae57ed3b1b33bdf347be878cc335687f32ca105341c16973f8958"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "c8a215a59183d0d0781adc33bacd3ce6162716f7fd568fb30234a74d69803a7d"
+        }
+      ],
+      "started_at": "2026-11-19T06:13:34.103923+00:00",
+      "finished_at": "2026-11-19T06:15:26.251804+00:00",
+      "free_bytes_after": 2806982369280
+    },
+    {
+      "repo_id": "KlingTeam/LivePortrait",
+      "revision_sha": "82a4fa6735ca58432b6ce39301b4b9ee066dea47",
+      "source_manifest": "local-discovered/KlingTeam__LivePortrait.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 16,
+      "files_verified": 16,
+      "source_bytes": 1999661089,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 1,
+        "sha256-vs-publisher": 15
+      },
+      "file_status_counts": {
+        "VERIFIED": 16
+      },
+      "weight_files_sha256": [
+        {
+          "path": "liveportrait/base_models/appearance_feature_extractor.pth",
+          "sha256": "5279bb8654293dbdf327030b397f107237dd9212fb11dd75b83dfb635211ceb5"
+        },
+        {
+          "path": "liveportrait/base_models/motion_extractor.pth",
+          "sha256": "251e6a94ad667a1d0c69526d292677165110ef7f0cf0f6d199f0e414e8aa0ca5"
+        },
+        {
+          "path": "liveportrait/base_models/spade_generator.pth",
+          "sha256": "4780afc7909a9f84e24c01d73b31a555ef651521a1fe3b2429bd04534d992aee"
+        },
+        {
+          "path": "liveportrait/base_models/warping_module.pth",
+          "sha256": "2f61a6f265fe344f14132364859a78bdbbc2068577170693da57fb96d636e282"
+        },
+        {
+          "path": "liveportrait/retargeting_models/stitching_retargeting_module.pth",
+          "sha256": "3652d5a3f95099141a56986aaddec92fadf0a73c87a20fac9a2c07c32b28b611"
+        },
+        {
+          "path": "liveportrait_animals/base_models/appearance_feature_extractor.pth",
+          "sha256": "e2cd1d5d67c0457229e9736d401d39225e096895b869f34234978082561af6de"
+        },
+        {
+          "path": "liveportrait_animals/base_models/motion_extractor.pth",
+          "sha256": "63c0d450099ef6ebece788ab711cb012509712e23fd1200b79fb65ef980adbb9"
+        },
+        {
+          "path": "liveportrait_animals/base_models/spade_generator.pth",
+          "sha256": "7fafa1e31c7c72c9384310d679e32af3fbf214e241fb657df8c3b18ad826f336"
+        },
+        {
+          "path": "liveportrait_animals/base_models/warping_module.pth",
+          "sha256": "c9719ea184ca9da059f4eee8a8c8c7c6bd46a2b1e40a241ea5490cc42ce6b79b"
+        },
+        {
+          "path": "liveportrait_animals/base_models_v1.1/appearance_feature_extractor.pth",
+          "sha256": "7e320d545579caa83c7b094cef8b7b43fe92a2e410c219ffa97b08be549f45bf"
+        },
+        {
+          "path": "liveportrait_animals/base_models_v1.1/motion_extractor.pth",
+          "sha256": "827d0ea4c56ff252dba50feece3bc62ced365ecae5edb86db07eb71b2f39a696"
+        },
+        {
+          "path": "liveportrait_animals/base_models_v1.1/spade_generator.pth",
+          "sha256": "6ac31a9b608f3920ec41a402b1c4e29d22007dafd79a855f204aae9307039445"
+        },
+        {
+          "path": "liveportrait_animals/base_models_v1.1/warping_module.pth",
+          "sha256": "7dfd251dc6b3a1baefebfc658f5bb2a2c565649cdb9aa75032591e824a0bfcee"
+        },
+        {
+          "path": "liveportrait_animals/retargeting_models/stitching_retargeting_module.pth",
+          "sha256": "3652d5a3f95099141a56986aaddec92fadf0a73c87a20fac9a2c07c32b28b611"
+        },
+        {
+          "path": "liveportrait_animals/xpose.pth",
+          "sha256": "bf58e5a3c4a3a017198edc69e33f89c9a37adc856fe6b1776059b2d4a524a7dd"
+        }
+      ],
+      "started_at": "2026-11-19T06:15:26.371362+00:00",
+      "finished_at": "2026-11-19T06:17:39.570977+00:00",
+      "free_bytes_after": 2804982669312
+    },
+    {
+      "repo_id": "IFM/K2-Horizon-0.9B",
+      "revision_sha": "fc5c9dc7c13df2360acee789fca2cd55d439e644",
+      "source_manifest": "local-discovered/IFM__K2-Horizon-0.9B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 2161702898,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00000-of-00001.safetensors",
+          "sha256": "6392cc67c8dcc7aef1575f94ecdf3c7113b7d0e8f4e7058c4c3c74d4d876c365"
+        }
+      ],
+      "started_at": "2026-11-19T06:17:39.746437+00:00",
+      "finished_at": "2026-11-19T06:19:41.875320+00:00",
+      "free_bytes_after": 2802820943872
+    },
+    {
+      "repo_id": "BAAI/bge-m3",
+      "revision_sha": "5617a9f61b028005a4858fdac845db406aefb181",
+      "source_manifest": "local-discovered/BAAI__bge-m3.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 16,
+      "files_verified": 16,
+      "source_bytes": 2307452418,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 5
+      },
+      "file_status_counts": {
+        "VERIFIED": 16
+      },
+      "weight_files_sha256": [
+        {
+          "path": "colbert_linear.pt",
+          "sha256": "19bfbae397c2b7524158c919d0e9b19393c5639d098f0a66932c91ed8f5f9abb"
+        },
+        {
+          "path": "onnx/tokenizer.json",
+          "sha256": "6710678b12670bc442b99edc952c4d996ae309a7020c1fa0096dd245c2faf790"
+        },
+        {
+          "path": "pytorch_model.bin",
+          "sha256": "b5e0ce3470abf5ef3831aa1bd5553b486803e83251590ab7ff35a117cf6aad38"
+        },
+        {
+          "path": "sparse_linear.pt",
+          "sha256": "45c93804d2142b8f6d7ec6914ae23a1eee9c6a1d27d83d908a20d2afb3595ad9"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "21106b6d7dab2952c1d496fb21d5dc9db75c28ed361a05f5020bbba27810dd08"
+        }
+      ],
+      "started_at": "2026-11-19T06:19:42.033298+00:00",
+      "finished_at": "2026-11-19T06:22:40.599494+00:00",
+      "free_bytes_after": 2800513466368
+    },
+    {
+      "repo_id": "nvidia/Kumo-Tabular",
+      "revision_sha": "c5893d418e162b9f841ae179dc767afefff73831",
+      "source_manifest": "local-discovered/nvidia__Kumo-Tabular.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "openmdw-1.1",
+      "files_total": 9,
+      "files_verified": 9,
+      "source_bytes": 2437931843,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 6
+      },
+      "file_status_counts": {
+        "VERIFIED": 9
+      },
+      "weight_files_sha256": [
+        {
+          "path": "large/classifier.pt",
+          "sha256": "cc21484316949641cc3d65a7bb6c36cdea854cc569435755ff23b850018ec613"
+        },
+        {
+          "path": "large/regressor.pt",
+          "sha256": "745e0e5d97e4256d8a24cb61c2eecbd1128da6c83938c196b7589ea6f62e7421"
+        },
+        {
+          "path": "medium/classifier.pt",
+          "sha256": "70d6aee8fd13416300afead71a5145a40edb790952e2417d87f27b3f7e57793d"
+        },
+        {
+          "path": "medium/regressor.pt",
+          "sha256": "daa6a17420b5aed231007e5d2f9c712abe093b4f94b3e1189b178947a95fb725"
+        },
+        {
+          "path": "small/classifier.pt",
+          "sha256": "1ff91f484e19021aaf7d9eff6cc07e6d95a60b4aaad473e83e2ab2c3bfd2b617"
+        },
+        {
+          "path": "small/regressor.pt",
+          "sha256": "fc672f536501d64356036050ac2acea7e46927f7b9ad38366abe048f88e7d423"
+        }
+      ],
+      "started_at": "2026-11-19T06:22:40.789429+00:00",
+      "finished_at": "2026-11-19T06:25:27.634234+00:00",
+      "free_bytes_after": 2798075510784
+    },
+    {
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+      "revision_sha": "85e237c12c027371202489a0ec509ded67b5e4b5",
+      "source_manifest": "local-discovered/Qwen__Qwen3-TTS-12Hz-0.6B-CustomVoice.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 2498386873,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "bc3c7e785eb961179c25450d1acff03f839e0002f2f3a5aeb67b5735c0fa2adb"
+        },
+        {
+          "path": "speech_tokenizer/model.safetensors",
+          "sha256": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258"
+        }
+      ],
+      "started_at": "2026-11-19T06:25:27.762520+00:00",
+      "finished_at": "2026-11-19T06:28:00.367710+00:00",
+      "free_bytes_after": 2795577102336
+    },
+    {
+      "repo_id": "speridlabs/idol",
+      "revision_sha": "2731c2291fc65a797c5cb627a5e5526fc1490902",
+      "source_manifest": "local-discovered/speridlabs__idol.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 3078988505,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 2,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "birefnet.safetensors",
+          "sha256": "44bbc97b041f879975d0d6d538b8e66a25eb04d1f49aab40697544cdd97eaa8e"
+        },
+        {
+          "path": "decoder.safetensors",
+          "sha256": "9da4d7676bfcadb1c3fdfbff796e6257dadf82d26ec05be7717c79b2b13a1c4e"
+        },
+        {
+          "path": "decoder_gs.safetensors",
+          "sha256": "3087eb8ee5763206a53e4078acf2a1bf382dab5147d407ec13a2cf39c04cc544"
+        },
+        {
+          "path": "denoiser.safetensors",
+          "sha256": "ded2cacf671bf3978ebc62729087abdbd318ef4752e6805b4c9fc8ffa51fe716"
+        }
+      ],
+      "started_at": "2026-11-19T06:28:00.512123+00:00",
+      "finished_at": "2026-11-19T06:31:04.065781+00:00",
+      "free_bytes_after": 2792498089984
+    },
+    {
+      "repo_id": "facebook/vjepa2-vitg-fpc64-384",
+      "revision_sha": "12ca91694b230e0d4b5b0078af6f4ae1d51e933d",
+      "source_manifest": "local-discovered/facebook__vjepa2-vitg-fpc64-384.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 4,
+      "files_verified": 4,
+      "source_bytes": 4138316896,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 4
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "861d9fafec3cf764f01f00ed26bf53bda531116cc6b67d7dbadd80e8be814e9b"
+        }
+      ],
+      "started_at": "2026-11-19T06:31:04.220482+00:00",
+      "finished_at": "2026-11-19T06:35:12.477618+00:00",
+      "free_bytes_after": 2788359761920
+    },
+    {
+      "repo_id": "Qwen/Qwen3-VL-2B-Instruct",
+      "revision_sha": "89644892e4d85e24eaac8bacfd4f463576704203",
+      "source_manifest": "local-discovered/Qwen__Qwen3-VL-2B-Instruct.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 11,
+      "files_verified": 11,
+      "source_bytes": 4266647442,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 11
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "7de1838c87a5349b016c26a1c3f7d2bc400a3d485f95ef39a7059ffd734977a0"
+        }
+      ],
+      "started_at": "2026-11-19T06:35:12.601393+00:00",
+      "finished_at": "2026-11-19T06:39:36.422112+00:00",
+      "free_bytes_after": 2784093097984
+    },
+    {
+      "repo_id": "boltz-community/boltz-2",
+      "revision_sha": "6fdef46d763fee7fbb83ca5501ccceff43b85607",
+      "source_manifest": "local-discovered/boltz-community__boltz-2.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 3,
+      "files_verified": 3,
+      "source_bytes": 4348700663,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 1,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 3
+      },
+      "weight_files_sha256": [
+        {
+          "path": "boltz2_aff.ckpt",
+          "sha256": "dcc5cd3722b1c9eaa34267e4ae32f55cbbf1963f4c19319381ccfa30fdd2ca9e"
+        },
+        {
+          "path": "boltz2_conf.ckpt",
+          "sha256": "090e82ac8c92f5e943fa1b39e7410a44027bea7243c0bbb3caa67a77fc1428e1"
+        }
+      ],
+      "started_at": "2026-11-19T06:39:36.572118+00:00",
+      "finished_at": "2026-11-19T06:45:32.113552+00:00",
+      "free_bytes_after": 2779744391168
+    },
+    {
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "revision_sha": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "source_manifest": "local-discovered/Qwen__Qwen3-TTS-12Hz-1.7B-VoiceDesign.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 4520162313,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "391e8db219f292c515297cdceeb43e4eae67cdde35fa57e79a6a8a532fca0522"
+        },
+        {
+          "path": "speech_tokenizer/model.safetensors",
+          "sha256": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258"
+        }
+      ],
+      "started_at": "2026-11-19T06:45:32.302186+00:00",
+      "finished_at": "2026-11-19T06:52:29.526530+00:00",
+      "free_bytes_after": 2775224201216
+    },
+    {
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+      "revision_sha": "fd4b254389122332181a7c3db7f27e918eec64e3",
+      "source_manifest": "local-discovered/Qwen__Qwen3-TTS-12Hz-1.7B-Base.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 4544228181,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "38fc7fc51c5e776e840414b6fd443962e9411b9654888fd7913e4da643cb857c"
+        },
+        {
+          "path": "speech_tokenizer/model.safetensors",
+          "sha256": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258"
+        }
+      ],
+      "started_at": "2026-11-19T06:52:29.635752+00:00",
+      "finished_at": "2026-11-19T06:59:13.812837+00:00",
+      "free_bytes_after": 2770679947264
+    },
+    {
+      "repo_id": "Qwen/Qwen3-ASR-1.7B",
+      "revision_sha": "7278e1e70fe206f11671096ffdd38061171dd6e5",
+      "source_manifest": "local-discovered/Qwen__Qwen3-ASR-1.7B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 11,
+      "files_verified": 11,
+      "source_bytes": 4703112789,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 11
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "a4cd1f1a04d90b757dc7f7dd26254e69a013b19e80efe590a83c6a3bde8608d6"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "6e0b9d9e09e2e0238e7ef3cc8a484ab387e91b90f1900bedf88bc92d7929ccfc"
+        }
+      ],
+      "started_at": "2026-11-19T06:59:13.992529+00:00",
+      "finished_at": "2026-11-19T07:05:27.039077+00:00",
+      "free_bytes_after": 2765976805376
+    },
+    {
+      "repo_id": "maya-research/maya2-native",
+      "revision_sha": "87a83efdd6551e038246b6b37836a6264713eec3",
+      "source_manifest": "local-discovered/maya-research__maya2-native.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 13,
+      "files_verified": 13,
+      "source_bytes": 5021109670,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 13
+      },
+      "weight_files_sha256": [
+        {
+          "path": "backbone/tokenizer.json",
+          "sha256": "26c51f9b772f9084ed6bdeabc44b7c15397c12966bfa3e1c09b025e82f4fdbaf"
+        },
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "a6f3488abb925ec758a3e6908ffa105f4b2db93662e1471be6819111196c7f8c"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "5e3bfab00767a3035a93f527c6021e7ab01988d63ddf137ccbf1edb13e4d75d2"
+        }
+      ],
+      "started_at": "2026-11-19T07:05:27.220227+00:00",
+      "finished_at": "2026-11-19T07:15:21.517364+00:00",
+      "free_bytes_after": 2760955666432
+    },
+    {
+      "repo_id": "ibm-granite/granite-speech-5.0-2b",
+      "revision_sha": "ec49ca6b1a5e7e9176127e09cb303ab78cbacdf7",
+      "source_manifest": "local-discovered/ibm-granite__granite-speech-5.0-2b.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 14,
+      "files_verified": 14,
+      "source_bytes": 5047707858,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 14
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "4151269881d2dd825d45ca75d6552b2a20e6e39d0934ed84c4db826af8bf6d88"
+        },
+        {
+          "path": "out_llm.safetensors",
+          "sha256": "a6b638a913b2dcf835dfbc621d9780d2557ac635a5c4718d1ffe64d39beb8ada"
+        }
+      ],
+      "started_at": "2026-11-19T07:15:21.686693+00:00",
+      "finished_at": "2026-11-19T07:25:10.305202+00:00",
+      "free_bytes_after": 2755907932160
+    },
+    {
+      "repo_id": "meta-models/Muse-Glimmer-30B-assistant",
+      "revision_sha": "c676cce91658f9568aaf264a416211e2782735b7",
+      "source_manifest": "local-discovered/meta-models__Muse-Glimmer-30B-assistant.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 4,
+      "files_verified": 4,
+      "source_bytes": 5112006576,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 4
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "fd88d337eb84f8d0e6ba33a7684d7efa6722d4460ba4d6badca9699418392a84"
+        }
+      ],
+      "started_at": "2026-11-19T07:25:10.491426+00:00",
+      "finished_at": "2026-11-19T07:36:19.776791+00:00",
+      "free_bytes_after": 2750795911168
+    },
+    {
+      "repo_id": "facebook/esm2_t33_650M_UR50D",
+      "revision_sha": "08e4846e537177426273712802403f7ba8261b6c",
+      "source_manifest": "local-discovered/facebook__esm2_t33_650M_UR50D.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 5214618801,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "a08adabb949fa67ad3c14b509d04fd60368b35007b0095e3358f81200c4f4db0"
+        },
+        {
+          "path": "tf_model.h5",
+          "sha256": "3110b0ee07a47362ff90dc4d780b12287e06f2a09f56c8e117c4aed089fc96b8"
+        }
+      ],
+      "started_at": "2026-11-19T07:36:19.958726+00:00",
+      "finished_at": "2026-11-19T07:43:34.532919+00:00",
+      "free_bytes_after": 2745581277184
+    },
+    {
+      "repo_id": "nvidia/RFD4-Proteina",
+      "revision_sha": "5ec66c399bf0b48727ab24e6b298dcf33864fa07",
+      "source_manifest": "local-discovered/nvidia__RFD4-Proteina.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "bsd-3-clause",
+      "files_total": 17,
+      "files_verified": 17,
+      "source_bytes": 5236405470,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 13,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 17
+      },
+      "weight_files_sha256": [
+        {
+          "path": "adapter/adapter_model.safetensors",
+          "sha256": "3b0762a73b543dfd88958267ba93a729fd91b31f2e18dba2d34c302260f50402"
+        },
+        {
+          "path": "base/model.safetensors",
+          "sha256": "10e90a76e3b09c94a700d2f67e89ed660af7f3018e3f2209b5d52f24d00fbd39"
+        },
+        {
+          "path": "model.safetensors",
+          "sha256": "5b549dd61adb2f6c6b5cb95bda13f40f5e31556b4e6c755edc0ca6f011c68fb0"
+        },
+        {
+          "path": "transformers/model.safetensors",
+          "sha256": "e753bed3e506f5f907276c30e8bf711df6c74b05a1cadecd643973867d71cdb7"
+        }
+      ],
+      "started_at": "2026-11-19T07:43:34.751008+00:00",
+      "finished_at": "2026-11-19T07:50:23.878520+00:00",
+      "free_bytes_after": 2740344827904
+    },
+    {
+      "repo_id": "microsoft/VibeVoice-1.5B",
+      "revision_sha": "c00898d257e6b46004e3e2866a47534085fb685a",
+      "source_manifest": "local-discovered/microsoft__VibeVoice-1.5B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 7,
+      "files_verified": 7,
+      "source_bytes": 5408335462,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 7
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00003.safetensors",
+          "sha256": "c5f0a61ddeaeb028e3af540ba4dee7933ad30f9f30b6e1320dd9c875a2daa033"
+        },
+        {
+          "path": "model-00002-of-00003.safetensors",
+          "sha256": "81c3891f7b2493eb48a9eb6f5be0df48d4f1a4bfd952d84e21683ca6d0bf7969"
+        },
+        {
+          "path": "model-00003-of-00003.safetensors",
+          "sha256": "cb6e7e5e86b4a41fffbe1f3aaf445d0d50b5e21ed47574101b777f77d75fa196"
+        }
+      ],
+      "started_at": "2026-11-19T07:50:24.061756+00:00",
+      "finished_at": "2026-11-19T07:58:19.247319+00:00",
+      "free_bytes_after": 2734936473600
+    },
+    {
+      "repo_id": "deepseek-ai/DeepSeek-OCR-2",
+      "revision_sha": "aaa02f3811945a91062062994c5c4a3f4c0af2b0",
+      "source_manifest": "local-discovered/deepseek-ai__DeepSeek-OCR-2.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 9,
+      "files_verified": 9,
+      "source_bytes": 6788986097,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 8,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 9
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-000001.safetensors",
+          "sha256": "d8ff67a424ba6f4dd077885eb9d6a05d2537e76fe5491f0e2a9b712f8c8870fa"
+        }
+      ],
+      "started_at": "2026-11-19T07:58:19.429350+00:00",
+      "finished_at": "2026-11-19T08:11:13.066923+00:00",
+      "free_bytes_after": 2728147460096
+    },
+    {
+      "repo_id": "ibm-granite/granite-4.1-3b-llmon-preview",
+      "revision_sha": "55a14cac002854bb64c7f465c30da29209b170c8",
+      "source_manifest": "local-discovered/ibm-granite__granite-4.1-3b-llmon-preview.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 7,
+      "files_verified": 7,
+      "source_bytes": 7326709548,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 6,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 7
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "1b3bca7852237cd0d23d0b71c3e809231568425f66ce4005b3cdad1e992af3dc"
+        }
+      ],
+      "started_at": "2026-11-19T08:11:13.234321+00:00",
+      "finished_at": "2026-11-19T08:25:34.178625+00:00",
+      "free_bytes_after": 2720820736000
+    },
+    {
+      "repo_id": "higurashi-ai/Haru-4B",
+      "revision_sha": "8d6e83bcd3701a76fc27a764965665da1df7da78",
+      "source_manifest": "local-discovered/higurashi-ai__Haru-4B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 10560110179,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "ad2c3534ef6bd88525e22e5da3ac4fb739368406bf3b1c852cbafbade647c0fa"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523"
+        }
+      ],
+      "started_at": "2026-11-19T08:25:34.407192+00:00",
+      "finished_at": "2026-11-19T08:46:51.699502+00:00",
+      "free_bytes_after": 2710260613120
+    },
+    {
+      "repo_id": "ResembleAI/chatterbox",
+      "revision_sha": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+      "source_manifest": "local-discovered/ResembleAI__chatterbox.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 10681443628,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 5,
+        "sha256-vs-publisher": 7
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "s3gen.safetensors",
+          "sha256": "2b78103c654207393955e4900aac14a12de8ef25f4b09424f1ef91941f161d4e"
+        },
+        {
+          "path": "s3gen_v3.safetensors",
+          "sha256": "4a46190f3dccc2230fbb3488a930bccc925862ee68f2662433dfcfe93ce6c2cb"
+        },
+        {
+          "path": "t3_23lang.safetensors",
+          "sha256": "5b2194350053f9fc01544e614d923f1e5c8cd785ba596acc142d3d1d8614908c"
+        },
+        {
+          "path": "t3_cfg.safetensors",
+          "sha256": "914cb1696f47527fe8852ca8f1fe1fa63cb34f76f9c715e84e067b744dd0da81"
+        },
+        {
+          "path": "t3_mtl23ls_v2.safetensors",
+          "sha256": "b1237586127ce98e7800a68e49938eb5092846862aabcb6e17b2fda7889a6c75"
+        },
+        {
+          "path": "t3_mtl23ls_v3.safetensors",
+          "sha256": "5abca8321ede76f8e61f1cc0d19aea6c946b28871017ce8726f8a69203f05953"
+        },
+        {
+          "path": "ve.safetensors",
+          "sha256": "f0921cab452fa278bc25cd23ffd59d36f816d7dc5181dd1bef9751a7fb61f63c"
+        }
+      ],
+      "started_at": "2026-11-19T08:46:51.904488+00:00",
+      "finished_at": "2026-11-19T09:09:52.913435+00:00",
+      "free_bytes_after": 2693740949504
+    },
+    {
+      "repo_id": "RWKV/RWKV7-7.2B-20260805",
+      "revision_sha": "9e47155004fe9df0f2a8015efa9152595c9065be",
+      "source_manifest": "local-discovered/RWKV__RWKV7-7.2B-20260805.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 14401662526,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00003.safetensors",
+          "sha256": "fff4b47785bf4628cff28dd4eedd98b541143bada5618a63c094146ebb044b29"
+        },
+        {
+          "path": "model-00002-of-00003.safetensors",
+          "sha256": "08b39a7e41fc8b2abc1a0c8e42686bf3da16fd076bcf64e9067fad402fd4012c"
+        },
+        {
+          "path": "model-00003-of-00003.safetensors",
+          "sha256": "afc3cf0d7fb5874f1cff0af595fb6402218d98aa0cb83f6605e54fa5a8fa3a7a"
+        }
+      ],
+      "started_at": "2026-11-19T09:09:53.449001+00:00",
+      "finished_at": "2026-11-19T10:06:36.952814+00:00",
+      "free_bytes_after": 2665176055808
+    },
+    {
+      "repo_id": "microsoft/TRELLIS.2-4B",
+      "revision_sha": "af44b45f2e35a493886929c6d786e563ec68364d",
+      "source_manifest": "local-discovered/microsoft__TRELLIS.2-4B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 21,
+      "files_verified": 21,
+      "source_bytes": 16237483525,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 9
+      },
+      "file_status_counts": {
+        "VERIFIED": 21
+      },
+      "weight_files_sha256": [
+        {
+          "path": "ckpts/shape_dec_next_dc_f16c32_fp16.safetensors",
+          "sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581"
+        },
+        {
+          "path": "ckpts/shape_enc_next_dc_f16c32_fp16.safetensors",
+          "sha256": "f37c5ff5b983b68e9946060000f09bc131f3e84318a2c8b7430a81e4b4636c41"
+        },
+        {
+          "path": "ckpts/slat_flow_img2shape_dit_1_3B_1024_bf16.safetensors",
+          "sha256": "07cd0596f634c5adc1890023d16023afc5eed02fb84b22bb23aff5bf0030fbbd"
+        },
+        {
+          "path": "ckpts/slat_flow_img2shape_dit_1_3B_512_bf16.safetensors",
+          "sha256": "ec5e0917ef9b7e25ad51dffc7d19687a42019871f94239f2fa7f86264c55b70f"
+        },
+        {
+          "path": "ckpts/slat_flow_imgshape2tex_dit_1_3B_1024_bf16.safetensors",
+          "sha256": "580401269059a339b8318ab9ced459a13ba63391721c83a6c383198c29e77686"
+        },
+        {
+          "path": "ckpts/slat_flow_imgshape2tex_dit_1_3B_512_bf16.safetensors",
+          "sha256": "8371aa1c5d13be79dcd5ddfd2cf3835e902e204dc34427169a1c702828e1a94d"
+        },
+        {
+          "path": "ckpts/ss_flow_img_dit_1_3B_64_bf16.safetensors",
+          "sha256": "ca01377c485bec418076d38ee80166d32dc776d744f2553b835cba1e97a7abf6"
+        },
+        {
+          "path": "ckpts/tex_dec_next_dc_f16c32_fp16.safetensors",
+          "sha256": "97ea69addea2ecd9312910f5f548234665eef51c088386180b7cd5b258645e3c"
+        },
+        {
+          "path": "ckpts/tex_enc_next_dc_f16c32_fp16.safetensors",
+          "sha256": "dd109f75f84b90fa411554ed6b0e4a87f430841163156fc0ebda2ebdc4752493"
+        }
+      ],
+      "started_at": "2026-11-19T10:06:37.905883+00:00",
+      "finished_at": "2026-11-19T10:57:31.007960+00:00",
+      "free_bytes_after": 2633702711296
+    },
+    {
+      "repo_id": "GSAI-ML/iLLaDA-8B-Base",
+      "revision_sha": "a1b5b5f8a31a3854a46205ee584178c04b45ec9a",
+      "source_manifest": "local-discovered/GSAI-ML__iLLaDA-8B-Base.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 12,
+      "files_verified": 12,
+      "source_bytes": 16512890112,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 7,
+        "sha256-vs-publisher": 5
+      },
+      "file_status_counts": {
+        "VERIFIED": 12
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "sha256": "c83160fce649d87fed6ffa4c543dc83bd87393e90ab93d4d4dcaea20af65b829"
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "sha256": "fe8eeca4cec7b85a05ded44b61044a25f8bb2f924fe85de082c42f2263e5e01a"
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "sha256": "8c08a73848b3046912ec5ea1de21f8ffb17518f6e2a563bf309ddc49cb142ba7"
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "sha256": "d15b88adf89bd0b59bd223ee44bc2b6b9cdabfd8d1b48e4efcab64cb204037a4"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "62dd8b84b725abc895c3c845fb2632e53d9ebaabfb49443f9c8a117dec8668c7"
+        }
+      ],
+      "started_at": "2026-11-19T10:57:31.359615+00:00",
+      "finished_at": "2026-11-19T11:58:08.382268+00:00",
+      "free_bytes_after": 2604564586496
+    },
+    {
+      "repo_id": "OpenMOSS-Team/MOSS-TTS-v1.5",
+      "revision_sha": "cdd3b911b1585e3f2dbc7775ef10f9926f58850a",
+      "source_manifest": "local-discovered/OpenMOSS-Team__MOSS-TTS-v1.5.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 15,
+      "files_verified": 15,
+      "source_bytes": 16995674217,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 5
+      },
+      "file_status_counts": {
+        "VERIFIED": 15
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "sha256": "749b82d07cebea77dd15af365e2efeb1dc0dd54537f7010795fdf42f520743a9"
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "sha256": "4d891c8adb8bf9c135e8a44cd9f003f1dbf8b09278ced48d5af1fe7d989efb39"
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "sha256": "111013e05174e67748443eafdd4d64c051292d0e5fce2cac23a16988b661eea1"
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "sha256": "951ee88cf85996ee5c39441ace6e50f52894adad5da42ad2314b9a9db7f940b8"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "cb3c8fa82993d515469c2800cc455bff4aaa3c4fed9da1f2b0c0668c304f335a"
+        }
+      ],
+      "started_at": "2026-11-19T11:58:08.816207+00:00",
+      "finished_at": "2026-11-19T12:58:08.416431+00:00",
+      "free_bytes_after": 2574110072832
+    },
+    {
+      "repo_id": "PrentisAI/GroundGUI-8B",
+      "revision_sha": "9db378189fddaabb5f6e347b9053858a392022ac",
+      "source_manifest": "local-discovered/PrentisAI__GroundGUI-8B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 16,
+      "files_verified": 16,
+      "source_bytes": 17550248700,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 14,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 16
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "fbaee7f2fd09150eb3b937732c803802974f5e45b2b6651fc1f101b4d190f265"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+        }
+      ],
+      "started_at": "2026-11-19T12:58:08.762029+00:00",
+      "finished_at": "2026-11-19T14:08:50.984410+00:00",
+      "free_bytes_after": 2537886396416
+    },
+    {
+      "repo_id": "ACE-Step/acestep-v15-xl-turbo",
+      "revision_sha": "d4a0b288b83ebb7e25a8c0b32c573c22e134e8ee",
+      "source_manifest": "local-discovered/ACE-Step__acestep-v15-xl-turbo.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 7,
+      "files_verified": 7,
+      "source_bytes": 19949418488,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 7
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "sha256": "e54a8413c981797312f53d512dec9944023d03f42f0740cbe86f62582cc27bdc"
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "sha256": "b45f788b6dc9f15957cfa3d9b403f25f3f64c5211ecaf18dda45b67ea6470664"
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "sha256": "a4f6bd572eab79cf5f3e4678796f904c6d6c33680a3e6ed09034d6de7cabea4d"
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "sha256": "a868b05493c73808408f58b33a903371bb2846b53c8b19bd7476991bc8837259"
+        }
+      ],
+      "started_at": "2026-11-19T14:08:51.707288+00:00",
+      "finished_at": "2026-11-19T15:22:18.851177+00:00",
+      "free_bytes_after": 2497939210240
+    },
+    {
+      "repo_id": "kandinskylab/Kandinsky-6.0-Lite-distill-5s-Diffusers",
+      "revision_sha": "4c487e8b4aeeb9059e5a77905aa2ddb59ec28f81",
+      "source_manifest": "local-discovered/kandinskylab__Kandinsky-6.0-Lite-distill-5s-Diffusers.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 34,
+      "files_verified": 34,
+      "source_bytes": 26670721789,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 23,
+        "sha256-vs-publisher": 11
+      },
+      "file_status_counts": {
+        "VERIFIED": 34
+      },
+      "weight_files_sha256": [
+        {
+          "path": "audio_vae/diffusion_pytorch_model.safetensors",
+          "sha256": "dfccdf9d0d8d3de270a23b097400f21adb91f4ec683bdc26369cb65b08a5af87"
+        },
+        {
+          "path": "text_encoder/model-00001-of-00005.safetensors",
+          "sha256": "e97b877e47fde53a6c6e77aafb36e58e91ee9d95c4a3eeac6f1b5c0e6a1c986e"
+        },
+        {
+          "path": "text_encoder/model-00002-of-00005.safetensors",
+          "sha256": "a9a300a43b4724eee2abe7c18ceb26768d0ab011eb0cad19d9bfd2476a24d024"
+        },
+        {
+          "path": "text_encoder/model-00003-of-00005.safetensors",
+          "sha256": "111223d173e00bbee81cba1216fad28668df3476706b7fd26f4d5b50f8b3a507"
+        },
+        {
+          "path": "text_encoder/model-00004-of-00005.safetensors",
+          "sha256": "ef47f634fa57d46ee134edcc09f34085a47da1e16c12a2abe0d67118be6d72ed"
+        },
+        {
+          "path": "text_encoder/model-00005-of-00005.safetensors",
+          "sha256": "0c859795ad3a627a9b95bcb762e059d5b768a4a36fdd4affeff269d93fdecc67"
+        },
+        {
+          "path": "text_encoder_2/model.safetensors",
+          "sha256": "5f02387099a844470dcf7e621cb0af6106bb7ce428666e3bdffbd80b777b458a"
+        },
+        {
+          "path": "tokenizer/tokenizer.json",
+          "sha256": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model.safetensors",
+          "sha256": "b1b52668561d9138d93bb4da13c9999e615bf569be9f8cf65732d54652447f53"
+        },
+        {
+          "path": "vae/diffusion_pytorch_model.safetensors",
+          "sha256": "7c68a6295f9034a88225fbafb1f3258291a08d57a1fdb938233fa57b1b8f4883"
+        },
+        {
+          "path": "vocoder/diffusion_pytorch_model.safetensors",
+          "sha256": "abf0536824bdce8dcf8ee10b815770111f4b5d05d0122e1bab4b5719324edca7"
+        }
+      ],
+      "started_at": "2026-11-19T15:22:19.772203+00:00",
+      "finished_at": "2026-11-19T16:59:15.561976+00:00",
+      "free_bytes_after": 2445946363904
+    },
+    {
+      "repo_id": "HuggingFaceBio/Carbon-X",
+      "revision_sha": "17de89165e25c49e7de4f845d0e5d464469de359",
+      "source_manifest": "local-discovered/HuggingFaceBio__Carbon-X.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 10,
+      "files_verified": 10,
+      "source_bytes": 29655632110,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 7,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 10
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "c7858d72aaf5d22e45e75196c4f7352b7423127329c7d1ece67ec072c980cfe4"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "9a9f69350110babbfab047b6f18358bdf7b0e1f4790b584c57063ed1d2e1f8d7"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506"
+        }
+      ],
+      "started_at": "2026-11-19T16:59:15.878837+00:00",
+      "finished_at": "2026-11-19T18:42:48.882012+00:00",
+      "free_bytes_after": 2371595055104
+    },
+    {
+      "repo_id": "microsoft/Fara1.5-27B",
+      "revision_sha": "299c8406a6c6256d45ec200d1ac12b34c5599d9b",
+      "source_manifest": "local-discovered/microsoft__Fara1.5-27B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 21,
+      "files_verified": 21,
+      "source_bytes": 54743812659,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 11
+      },
+      "file_status_counts": {
+        "VERIFIED": 21
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00010.safetensors",
+          "sha256": "1f06ec5cbbce42881ddb0f263272bc425470b2fcc5eaa4c5fe04fab685bd572b"
+        },
+        {
+          "path": "model-00002-of-00010.safetensors",
+          "sha256": "f0c1482eea525a4f3e2b9926e0254557ebd6d7f04c5ef0ec76670f4d5aef386a"
+        },
+        {
+          "path": "model-00003-of-00010.safetensors",
+          "sha256": "016cc11f32a8ada9359acf7f2d26edaa4c094b271a8bf7da519e68f6653fbfac"
+        },
+        {
+          "path": "model-00004-of-00010.safetensors",
+          "sha256": "5de326b43c85a517b6b2c64935dbc81a9fe14abae9eaf4f1623a31e9e2789723"
+        },
+        {
+          "path": "model-00005-of-00010.safetensors",
+          "sha256": "28ff226c50f6f72bc76e6e34e948acf543c16964b5400da85c1c3b16e42e3088"
+        },
+        {
+          "path": "model-00006-of-00010.safetensors",
+          "sha256": "97befd5bb8b3d4dd13a58b60916143cae087da62a1c00cba87a4d1243ead0913"
+        },
+        {
+          "path": "model-00007-of-00010.safetensors",
+          "sha256": "48a1776df605d71de0ee480e6003e0c7c8c6bad110d916e6a9409ec3d762ef12"
+        },
+        {
+          "path": "model-00008-of-00010.safetensors",
+          "sha256": "6bb82395f05eff9bf78f7695a469f3d84d69c73d1afa9e78e0da3860d1e4238c"
+        },
+        {
+          "path": "model-00009-of-00010.safetensors",
+          "sha256": "c62fdffad8d02430d249228e84e731b5c5779a8bee3396c6b79f33ece560fc13"
+        },
+        {
+          "path": "model-00010-of-00010.safetensors",
+          "sha256": "207ec8c6a11973996b5270043a6c0650d495d5e59287cd5636e2fea695b197e3"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4"
+        }
+      ],
+      "started_at": "2026-11-19T18:42:49.509509+00:00",
+      "finished_at": "2026-11-19T21:49:16.322412+00:00",
+      "free_bytes_after": 2267718479872
+    },
+    {
+      "repo_id": "Qwen/Qwen3.8-27B",
+      "revision_sha": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
+      "source_manifest": "local-discovered/Qwen__Qwen3.8-27B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 30,
+      "files_verified": 30,
+      "source_bytes": 55586105207,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 19
+      },
+      "file_status_counts": {
+        "VERIFIED": 30
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00018.safetensors",
+          "sha256": "ba0ce20aae489ad196733da5064bcdf159a1fe84f53336648196e1ebb7751b1c"
+        },
+        {
+          "path": "model-00002-of-00018.safetensors",
+          "sha256": "06a148c01bfbe3faa14a5f184a7ff29a706f7ae1c8b2705d2058e26d17a001fb"
+        },
+        {
+          "path": "model-00003-of-00018.safetensors",
+          "sha256": "2e1bf62cbcd406eaa64b60d10353e1f0ef4039d0976e56f05cabe953454f9968"
+        },
+        {
+          "path": "model-00004-of-00018.safetensors",
+          "sha256": "511e34063187882659753c4d93f3859f93c019fd438d8813071921c81d9a3f1a"
+        },
+        {
+          "path": "model-00005-of-00018.safetensors",
+          "sha256": "635cb53446dc74f219740fc59e18b774f877b803b9722e289ca62575a6efa701"
+        },
+        {
+          "path": "model-00006-of-00018.safetensors",
+          "sha256": "0bc5214fac607f0e6cc92eec3789d4b8559410ef9fce66621ba8158e8410dae0"
+        },
+        {
+          "path": "model-00007-of-00018.safetensors",
+          "sha256": "80b0c49033e9a0d5762562aa12f4acdb7f54da586f3d0110f28c48d91cf07892"
+        },
+        {
+          "path": "model-00008-of-00018.safetensors",
+          "sha256": "7192c5b66185d3592927daabee1cc19e6f6e0ce75988ee20e824b624765fda79"
+        },
+        {
+          "path": "model-00009-of-00018.safetensors",
+          "sha256": "af3c48cc37af44f3db6ae0579baf019180d48d9c527caa0a1f03ff85813a56d8"
+        },
+        {
+          "path": "model-00010-of-00018.safetensors",
+          "sha256": "163490a76f3bea3a40855b7efc04ce6d27afaf1a34f0bbde495b9491f76457c9"
+        },
+        {
+          "path": "model-00011-of-00018.safetensors",
+          "sha256": "5f3ae1b948aeee39da77aec558e8236cd65fe4d7cb7686a76bb007acc563c6d8"
+        },
+        {
+          "path": "model-00012-of-00018.safetensors",
+          "sha256": "a3de1c7114677a8f5ac5c4892c90e8238ea5c1e2038c80e757dfc87c3902ca55"
+        },
+        {
+          "path": "model-00013-of-00018.safetensors",
+          "sha256": "06ab79a41f74c9c5cb734816feb0c7fc364104b227165ee7391231e1155aa02a"
+        },
+        {
+          "path": "model-00014-of-00018.safetensors",
+          "sha256": "4138ed94603065ba884bbcadedb04d7718bb40117e85e6f5c6fc5b9c05b7a85b"
+        },
+        {
+          "path": "model-00015-of-00018.safetensors",
+          "sha256": "69224e27b9de4e7dbf6fc936c6eaae08447bda3b80a6c31a871ab451173afd22"
+        },
+        {
+          "path": "model-00016-of-00018.safetensors",
+          "sha256": "73cb9a1089fb6155cb648609478d6633be8a5c7d9ca5a05bc8925ce8a553cefe"
+        },
+        {
+          "path": "model-00017-of-00018.safetensors",
+          "sha256": "beb51f01056142ac4984bd800507b0dd0fd18de57f8e9ef6ea41d1a3598983a8"
+        },
+        {
+          "path": "model-00018-of-00018.safetensors",
+          "sha256": "1d3479509e21494658f9b64d317f5ea8e55c4025d28c702d6c4d0b356ce8ea06"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3"
+        }
+      ],
+      "started_at": "2026-11-19T21:49:17.120175+00:00",
+      "finished_at": "2026-11-20T00:37:10.680507+00:00",
+      "free_bytes_after": 2169386549248
+    },
+    {
+      "repo_id": "meta-models/Muse-Glimmer-30B",
+      "revision_sha": "1297fd7dfeac4598948a5d15886968435c81c2b7",
+      "source_manifest": "local-discovered/meta-models__Muse-Glimmer-30B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 11,
+      "files_verified": 11,
+      "source_bytes": 59581823419,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 8,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 11
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "8eef61530e1283642c77ce2e6721feb5c6f348fa055c00e90f2844a136372694"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "b58cc2144ba1ba1af4420f67f4ca3ced7f09298510b80464cc75018a0be14381"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "c9dbee66967b58f31a7c27f723c3760da3526ccd0427578e8905b0abb0031c4d"
+        }
+      ],
+      "started_at": "2026-11-20T00:37:11.497757+00:00",
+      "finished_at": "2026-11-20T03:44:41.968230+00:00",
+      "free_bytes_after": 2051385790464
+    },
+    {
+      "repo_id": "ibm-granite/granite-switch-4.1-30b",
+      "revision_sha": "eb206725d03c0f1c409ce3aa512afe325fdf8731",
+      "source_manifest": "local-discovered/ibm-granite__granite-switch-4.1-30b.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 25,
+      "files_verified": 25,
+      "source_bytes": 59991291739,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 13
+      },
+      "file_status_counts": {
+        "VERIFIED": 25
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00013.safetensors",
+          "sha256": "1375530bdf6e0d20572210a0addc1a5863b792f1ca715d2cb05611501cdfd33d"
+        },
+        {
+          "path": "model-00002-of-00013.safetensors",
+          "sha256": "92a7e28341aaa63f43dcb2004b759e21e865044cbaffbcddf6a0cfd751cf308a"
+        },
+        {
+          "path": "model-00003-of-00013.safetensors",
+          "sha256": "afab41845ec4a9174c0b0d3893de339b4bff9b08cb46dc13c9ab8876dc1acbb4"
+        },
+        {
+          "path": "model-00004-of-00013.safetensors",
+          "sha256": "8bcf753128752e920acebd8e75d2cc862023da9dd7d7bd6caa2d9666ef11fe00"
+        },
+        {
+          "path": "model-00005-of-00013.safetensors",
+          "sha256": "ad6ea3a035ea8a48148fcb9602fb10d7f5c730bf3cbe7ec34d2cc4c9946c7300"
+        },
+        {
+          "path": "model-00006-of-00013.safetensors",
+          "sha256": "92ebbb883b0347f19a7cd0b6835e9e3beae359e0631855c07b6c9f81e90ecae8"
+        },
+        {
+          "path": "model-00007-of-00013.safetensors",
+          "sha256": "54cf347d49a19de836dda516a6d8a1ccf81ba8755238cf2b54d543504310fe42"
+        },
+        {
+          "path": "model-00008-of-00013.safetensors",
+          "sha256": "da30cf9270141ee457f886c7a932376d04ca871c21f84094e01b240425def3c9"
+        },
+        {
+          "path": "model-00009-of-00013.safetensors",
+          "sha256": "a81fc77766dbaff2ea320f177e3b1713dbcdcb40094ef9e7be868d4ed47c999b"
+        },
+        {
+          "path": "model-00010-of-00013.safetensors",
+          "sha256": "242b664cf5487814ca1df8d72ed3031245bfc596e3ed894f09ee439d58668a38"
+        },
+        {
+          "path": "model-00011-of-00013.safetensors",
+          "sha256": "30733801c5593228b95325a0c24185d58f547575d946907aa17d098fc20d1491"
+        },
+        {
+          "path": "model-00012-of-00013.safetensors",
+          "sha256": "18db2b3062cf1b65719ec31a1636c3f45877a166a51f173216f079532486d4f7"
+        },
+        {
+          "path": "model-00013-of-00013.safetensors",
+          "sha256": "c545262205e56b60529f793d280455e0560cab1d9b60e7ccd84ce15fc9d0faf4"
+        }
+      ],
+      "started_at": "2026-11-20T03:44:42.223418+00:00",
+      "finished_at": "2026-11-20T07:44:54.949451+00:00",
+      "free_bytes_after": 1936723398656
+    },
+    {
+      "repo_id": "tencent/Hy-Memory-30B-A3B",
+      "revision_sha": "64a460a94d5498b7316fb02395c72d01c47a7347",
+      "source_manifest": "local-discovered/tencent__Hy-Memory-30B-A3B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 58,
+      "files_verified": 58,
+      "source_bytes": 60142911383,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 7,
+        "sha256-vs-publisher": 51
+      },
+      "file_status_counts": {
+        "VERIFIED": 58
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00000-of-00051.safetensors",
+          "sha256": "9b519abdcb9349b9a6e67dd718e2a523216c4033e39c6821386e0700f0528781"
+        },
+        {
+          "path": "model-00001-of-00051.safetensors",
+          "sha256": "3876137ff2e79d5ad1f8284abe10cda0bc8460ec2050a4cec5eaae27e7446b23"
+        },
+        {
+          "path": "model-00002-of-00051.safetensors",
+          "sha256": "c531849711898d90a27ae4cf2ff5423c247f5872bc5bdd86178de795776f7447"
+        },
+        {
+          "path": "model-00003-of-00051.safetensors",
+          "sha256": "7a1354a7b7f6c5d233746438679bc8bf1e714402f4298b25776ffc04363ac677"
+        },
+        {
+          "path": "model-00004-of-00051.safetensors",
+          "sha256": "da8778f1b109ee11e7bd5858244d33ee94222f777baf6b83f80c274a35deecf3"
+        },
+        {
+          "path": "model-00005-of-00051.safetensors",
+          "sha256": "8e7e8eb2d29124a56b66db0eb2f1c21c4c8143c2d78527904deb3b033f1b150f"
+        },
+        {
+          "path": "model-00006-of-00051.safetensors",
+          "sha256": "391ae683ed790feb739ba930d8d0d781f604d4d4984adf5ff195fd4a1d22cfba"
+        },
+        {
+          "path": "model-00007-of-00051.safetensors",
+          "sha256": "559d92b8b05a95c7cd932bf8d110cb4bce8ea98c89bcd7ad010eb0848d45535c"
+        },
+        {
+          "path": "model-00008-of-00051.safetensors",
+          "sha256": "551b059f762d16e48df89052e30f420456d06f3b21fd3792696c6d70a0e19e88"
+        },
+        {
+          "path": "model-00009-of-00051.safetensors",
+          "sha256": "ed427abb252460e623ae5c7fa0ba6bd512f060d8eeb2f279f1da53a6e011d90b"
+        },
+        {
+          "path": "model-00010-of-00051.safetensors",
+          "sha256": "1ce1277e8fef264da89d9a1900e89b32111390e7cc9cfd66667881ef575d7820"
+        },
+        {
+          "path": "model-00011-of-00051.safetensors",
+          "sha256": "b4ea4b71d701a672be3b174b069bc8c4ac4178b38f5d7c46de02ea50e4b7e681"
+        },
+        {
+          "path": "model-00012-of-00051.safetensors",
+          "sha256": "5c2db052d9cb8389647a93df3e34f2100d2857ab44725c263ff90846c8de3fd5"
+        },
+        {
+          "path": "model-00013-of-00051.safetensors",
+          "sha256": "b4239a2a0dcbcfd83042691d52c140fa18638fc711adbc40afbc53a5ff59d835"
+        },
+        {
+          "path": "model-00014-of-00051.safetensors",
+          "sha256": "c2d6158c99ba7f0e2b93ebed82999c66b94d7989465c1738449bf86a8241f073"
+        },
+        {
+          "path": "model-00015-of-00051.safetensors",
+          "sha256": "77e88a036d7c5c9a9ab2280421e59454cfdf3071de63f2f1e265de3076d50c41"
+        },
+        {
+          "path": "model-00016-of-00051.safetensors",
+          "sha256": "5f22ea727f0c142fb9c14a6616300551bdec790f37cd638bb9bc4c363ed2f72e"
+        },
+        {
+          "path": "model-00017-of-00051.safetensors",
+          "sha256": "c2e99214b1d21602e3d35fa36239102d9d8ee0d8c66469f15d08de31800f6e87"
+        },
+        {
+          "path": "model-00018-of-00051.safetensors",
+          "sha256": "8d7319fb24fd0500190bd13db7e6a7d3806a50354dbab6d061eec921e6b72953"
+        },
+        {
+          "path": "model-00019-of-00051.safetensors",
+          "sha256": "8703815253fdcb98c63acff89ff5320de86297aaeda55a9c69cdbcf8b67f24b3"
+        },
+        {
+          "path": "model-00020-of-00051.safetensors",
+          "sha256": "38369076f8239ff583dc8603839202be4a654d6979f2fdf620788098a82d3ba9"
+        },
+        {
+          "path": "model-00021-of-00051.safetensors",
+          "sha256": "f1203e5662ababe75014b3cd436a4b60c1bd78f3c069ae8e7d6e6499f364cc22"
+        },
+        {
+          "path": "model-00022-of-00051.safetensors",
+          "sha256": "0e3885c0efa7b4a7add0a56cd86847eb7348c534b943288c3f4513dd1e1e3795"
+        },
+        {
+          "path": "model-00023-of-00051.safetensors",
+          "sha256": "13a8ff80b5aaa1be3aae48ef65a0074d1765dec062b8881bbf025a48872c186b"
+        },
+        {
+          "path": "model-00024-of-00051.safetensors",
+          "sha256": "0e479bdc65efc0cdc66e1c9338c363c1cf59eff30721e7ee3fc8095a22c65763"
+        },
+        {
+          "path": "model-00025-of-00051.safetensors",
+          "sha256": "92894a641f85742cb8b856bff189979878e89fdf619ec2f7df6c82dc64872f44"
+        },
+        {
+          "path": "model-00026-of-00051.safetensors",
+          "sha256": "556d594a1ebd5c0d326f289adad1e28af41c3daa75aa8a50baa02173450f04df"
+        },
+        {
+          "path": "model-00027-of-00051.safetensors",
+          "sha256": "d7201fa721d9689d6509da242e071dcfc254078271d4920863e1d355e9d82836"
+        },
+        {
+          "path": "model-00028-of-00051.safetensors",
+          "sha256": "8f77c80bda930ae8a901e32b7e578febf3a6f89cf52ed8b62a36a248f7fc91b8"
+        },
+        {
+          "path": "model-00029-of-00051.safetensors",
+          "sha256": "ae0162641ce081e6b9b3e7aa10d0e1052137e1519c3cef255ba4e96937210ab5"
+        },
+        {
+          "path": "model-00030-of-00051.safetensors",
+          "sha256": "1df13739b710d42d54a2d14f82e9712cb7c05c025fd23c71c7c2a73f8161cf89"
+        },
+        {
+          "path": "model-00031-of-00051.safetensors",
+          "sha256": "7ee177c94989130327c06f53df00ec8a9a4be1a503977e920b1b59bfcdcf7b63"
+        },
+        {
+          "path": "model-00032-of-00051.safetensors",
+          "sha256": "ee167118ced711b71f95d7d9c0d23f801ac1485b4292e2574bfc1f797c8f2173"
+        },
+        {
+          "path": "model-00033-of-00051.safetensors",
+          "sha256": "58666c53d97eb161cf46793d87e21bf745fee24c851059766eff86693b71f894"
+        },
+        {
+          "path": "model-00034-of-00051.safetensors",
+          "sha256": "1915c9e4e089533901d16e0abde2f357bc251f55c1841c4326d38bdd465c1b74"
+        },
+        {
+          "path": "model-00035-of-00051.safetensors",
+          "sha256": "1f3971268e06843eca99c0cde0421dc60acc6da50c37e6fdbb4ddeb186b338db"
+        },
+        {
+          "path": "model-00036-of-00051.safetensors",
+          "sha256": "a7f0f3656f1e48d9d22acf54e00dc1c067e9c607128c17c663b1be53e0c3ae6d"
+        },
+        {
+          "path": "model-00037-of-00051.safetensors",
+          "sha256": "5039a5b2b00a64f630d39c07b8444cb6d07fa158f36918700a898374e468246b"
+        },
+        {
+          "path": "model-00038-of-00051.safetensors",
+          "sha256": "2b420532a29591006f59eccb06307e09cac36368c4490fbeca5f49de6a463052"
+        },
+        {
+          "path": "model-00039-of-00051.safetensors",
+          "sha256": "fcf1ff65f2413611cd7c7bd20ec2a4f091a903677509f64b3e9c8566868228f5"
+        },
+        {
+          "path": "model-00040-of-00051.safetensors",
+          "sha256": "7bdeb8e0ac480414d95eb39c0a24c5204270e02c08e1204d88a98fd668239b6d"
+        },
+        {
+          "path": "model-00041-of-00051.safetensors",
+          "sha256": "38698f7da86c571b2e7af41a963d2a19913ca7828878fd5dbc4941ed5b295f8a"
+        },
+        {
+          "path": "model-00042-of-00051.safetensors",
+          "sha256": "eecef5ef4fdded410c9c0a6bb38ae819ecf45e514e1c7af32f106fec0cee6c6b"
+        },
+        {
+          "path": "model-00043-of-00051.safetensors",
+          "sha256": "460a865e576b211f32b8470ea02dc968bc782e6a28106239116cefae3c756898"
+        },
+        {
+          "path": "model-00044-of-00051.safetensors",
+          "sha256": "f4238dc376c42944184e9c631ffe1c9dd13019d8c83d09ec6d22751ad97656d6"
+        },
+        {
+          "path": "model-00045-of-00051.safetensors",
+          "sha256": "421159cd1e439436d84c529c20a200f7221dbd153511ccc02665605188ffd3f8"
+        },
+        {
+          "path": "model-00046-of-00051.safetensors",
+          "sha256": "83ac8fdd0e514ded8ac4bb93fdc79e4d862a3b384b97c268cd6fa51e022e6809"
+        },
+        {
+          "path": "model-00047-of-00051.safetensors",
+          "sha256": "ae9b8183f0796859451549b07611fe4fb0235feff5bf92e6f3bd5878467fe40b"
+        },
+        {
+          "path": "model-00048-of-00051.safetensors",
+          "sha256": "01fb3c1b812f709bc665277cd9fb653ccef9abdc185f684af2e28084176aca96"
+        },
+        {
+          "path": "model-00049-of-00051.safetensors",
+          "sha256": "50bb9a5f5316139008028a04352cdd9e36cd89371e33bfc9fb003082b33dee9a"
+        },
+        {
+          "path": "model-00050-of-00051.safetensors",
+          "sha256": "d3d1940cbd358b97c058b59fbece6dee72089cd52348fc5c9a75c8b2c7e16f3b"
+        }
+      ],
+      "started_at": "2026-11-20T07:44:55.192555+00:00",
+      "finished_at": "2026-11-20T09:43:38.177713+00:00",
+      "free_bytes_after": 1843598897152
+    },
+    {
+      "repo_id": "google/gemma-4-31B",
+      "revision_sha": "5bbc2fb1c1b2c611d06e3d9f23c170ba21659d89",
+      "source_manifest": "local-discovered/google__gemma-4-31B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 9,
+      "files_verified": 9,
+      "source_bytes": 62578663313,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 6,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 9
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "186fa361e76abbb5f48ffb3d9965181a5da33522e39c25eb75d7241da1637aac"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "b78ae8294981a6d674c47f2261d34240b7539bbeafb4f7d0525f6167946e6da0"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "12bac982b793c44b03d52a250a9f0d0b666813da566b910c24a6da0695fd11e6"
+        }
+      ],
+      "started_at": "2026-11-20T09:43:38.393712+00:00",
+      "finished_at": "2026-11-20T13:20:07.515335+00:00",
+      "free_bytes_after": 1717802590208
+    },
+    {
+      "repo_id": "allenai/Olmo-3-1125-32B",
+      "revision_sha": "c2b61dae89a1ad10e4ad5653d0e46b590902607b",
+      "source_manifest": "local-discovered/allenai__Olmo-3-1125-32B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 23,
+      "files_verified": 23,
+      "source_bytes": 64476873186,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 14
+      },
+      "file_status_counts": {
+        "DEDUP_VERIFIED": 16,
+        "VERIFIED": 7
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00009-of-00014.safetensors",
+          "sha256": "4e1657f9f4a91222fb87e0fdf0fcab39bf05a1c73971678cea00e7d8abe9c150"
+        },
+        {
+          "path": "model-00014-of-00014.safetensors",
+          "sha256": "c7a7fdfe6c66166ae417c1c4d35620fe13582bb49accc1a48d51200c5d7d83a2"
+        }
+      ],
+      "started_at": "2026-11-20T17:46:16.221219+00:00",
+      "finished_at": "2026-11-20T18:55:13.297810+00:00",
+      "free_bytes_after": 1620067045376
+    },
+    {
+      "repo_id": "EPFLiGHT/OLMo-2-32B-MeditronFO",
+      "revision_sha": "04c6953977c3a9f913e3d08a6c23edaae6bd6459",
+      "source_manifest": "local-discovered/EPFLiGHT__OLMo-2-32B-MeditronFO.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 23,
+      "files_verified": 23,
+      "source_bytes": 64477462899,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 14
+      },
+      "file_status_counts": {
+        "VERIFIED": 22,
+        "DEDUP_VERIFIED": 1
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00014.safetensors",
+          "sha256": "a0e7f5be8efb6891f3ba508b8a244bc9221e7ed0bea289257c63014a4ddab525"
+        },
+        {
+          "path": "model-00002-of-00014.safetensors",
+          "sha256": "764ef24da34d9a4412adc50162e80777e96436cd424c6fa922b477f6c7c321b2"
+        },
+        {
+          "path": "model-00003-of-00014.safetensors",
+          "sha256": "519888e4be60b09b1898a38fdda200b41daa6145bab991ae8412faeb925ed81c"
+        },
+        {
+          "path": "model-00004-of-00014.safetensors",
+          "sha256": "2b03ac824614de304481482b630071e6e6d629f05917e81eec0a30b286ca0278"
+        },
+        {
+          "path": "model-00005-of-00014.safetensors",
+          "sha256": "b9df03c11442f373595c70a1ffde17333618fe718781cdf81eb371e72aa87cf2"
+        },
+        {
+          "path": "model-00006-of-00014.safetensors",
+          "sha256": "e2ed72325c56c10bd457b213362a069dc8b54b395204c0f6a62ba28ff4601202"
+        },
+        {
+          "path": "model-00007-of-00014.safetensors",
+          "sha256": "f765c8413ee80d29feeb1c52a48dc6dbc5a9a486377cc755d6da50bd804f8cc4"
+        },
+        {
+          "path": "model-00009-of-00014.safetensors",
+          "sha256": "729e1753331af12f3d16c9c8b8d0cbd3e44d7ded135adbf8eb5e33cb079eca4f"
+        },
+        {
+          "path": "model-00010-of-00014.safetensors",
+          "sha256": "4de40c5c68748c10a6453d27d06accc03e350ad7382f43c521dfe6b8f11c5432"
+        },
+        {
+          "path": "model-00011-of-00014.safetensors",
+          "sha256": "4a48262f7525f06e6590de2ab15242e939e9a4e65fa0381b46e1a28d437cc2b6"
+        },
+        {
+          "path": "model-00012-of-00014.safetensors",
+          "sha256": "ee50f0b6020a1522c2df44622f78fa4d0ab03546c4a55a40a4fa0880f35a7a72"
+        },
+        {
+          "path": "model-00013-of-00014.safetensors",
+          "sha256": "4eb406a08636f11642d0a20e13fe27796081fba0c97d4371205e4318075c1179"
+        },
+        {
+          "path": "model-00014-of-00014.safetensors",
+          "sha256": "06c1f2fe0301c5ce32506f3084725531d4b6d10550114510436ef76b173739bb"
+        }
+      ],
+      "started_at": "2026-11-20T18:55:14.403749+00:00",
+      "finished_at": "2026-11-20T22:24:39.644587+00:00",
+      "free_bytes_after": 1526962884608
+    },
+    {
+      "repo_id": "Nanbeige/Nanbeige4.3-33B",
+      "revision_sha": "df919e1e2cf077a22204c78b6c826bf3db18bc08",
+      "source_manifest": "local-discovered/Nanbeige__Nanbeige4.3-33B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 22,
+      "files_verified": 22,
+      "source_bytes": 66256520718,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 7,
+        "sha256-vs-publisher": 15
+      },
+      "file_status_counts": {
+        "VERIFIED": 22
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00014.safetensors",
+          "sha256": "a70e695f1a8c9686158e791829e603833840e7a8ce7ece884eff6aeca561f9b2"
+        },
+        {
+          "path": "model-00002-of-00014.safetensors",
+          "sha256": "36599c909e677a50cffd7715376a2e6eeb40097296e2bb1103cd6316ffe8af52"
+        },
+        {
+          "path": "model-00003-of-00014.safetensors",
+          "sha256": "228267c30873849f69149f09faf35f9e956bf5a50ddd0820ee33b5cd326eb66d"
+        },
+        {
+          "path": "model-00004-of-00014.safetensors",
+          "sha256": "e5654a03d7e9bfddfee1b8b051864d5b61a3f1aae282c1c5deed2117a9a8f94e"
+        },
+        {
+          "path": "model-00005-of-00014.safetensors",
+          "sha256": "055ef50375b8ce6342d5beaf971f59c67fbb1f358047511c0781564b7fcaf541"
+        },
+        {
+          "path": "model-00006-of-00014.safetensors",
+          "sha256": "5d0fb320fd4161bb901f7869f67d2e3459a2c2699040818b6349c6021bfe3ddb"
+        },
+        {
+          "path": "model-00007-of-00014.safetensors",
+          "sha256": "8b2203d94427d8b5e64805ccec17c14b1ca3f12baffb542ed396424e03c474df"
+        },
+        {
+          "path": "model-00008-of-00014.safetensors",
+          "sha256": "4e7b957640e52ee183ebe0f8f1f23d65c94075dd0aff0b22176e3f44abb3102b"
+        },
+        {
+          "path": "model-00009-of-00014.safetensors",
+          "sha256": "5e90fe70ad8f88bf5ccd9ca3a3f38b384960689d26a05f45d1b135afba6a749e"
+        },
+        {
+          "path": "model-00010-of-00014.safetensors",
+          "sha256": "19bb937ef55014945b7ac20b0b0ca039c75756679da28b6bc949bf6cdfd92b1e"
+        },
+        {
+          "path": "model-00011-of-00014.safetensors",
+          "sha256": "09909f3730fe888a83518c88e67b44d6d1aa45a2ffd411ddefe767f510e6e72f"
+        },
+        {
+          "path": "model-00012-of-00014.safetensors",
+          "sha256": "2cdb2749eb589bf5e89290d457609d0461169e115bfa9549b0755f5b48dd716c"
+        },
+        {
+          "path": "model-00013-of-00014.safetensors",
+          "sha256": "a1babb6d7bef3d4a31f071e590ec58fc96ac084584b8d55f632d9a44b2647df5"
+        },
+        {
+          "path": "model-00014-of-00014.safetensors",
+          "sha256": "b23adaf4c6e6d62e7e93a76bdcb55dbd5a47f6870a5713200e6627b6b291ebdc"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "1d858a0fc007f22af6ae18bfa1ae52d30e398aa9cd1ea06e7777176869346a3f"
+        }
+      ],
+      "started_at": "2026-11-20T22:24:40.145484+00:00",
+      "finished_at": "2026-11-21T01:33:47.855550+00:00",
+      "free_bytes_after": 1400219856896
+    },
+    {
+      "repo_id": "openai/gpt-oss-120b",
+      "revision_sha": "b5c939de8f754692c1647ca79fbf85e8c1e70f8a",
+      "source_manifest": "local-discovered/openai__gpt-oss-120b.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 34,
+      "files_verified": 34,
+      "source_bytes": 130525785270,
+      "verification_methods": {
+        "sha256-vs-publisher": 23,
+        "git-blob-sha1-vs-publisher": 11
+      },
+      "file_status_counts": {
+        "VERIFIED": 8,
+        "DEDUP_VERIFIED": 26
+      },
+      "weight_files_sha256": [
+        {
+          "path": "original/model--00004-of-00007.safetensors",
+          "sha256": "bcc73cf6d18f96a2e62428758463157cc12768f410873152a50d3929a64cd049"
+        },
+        {
+          "path": "original/model--00005-of-00007.safetensors",
+          "sha256": "15fd69843e9cc6fdf2db0efe0cf0979b49a6ba84b3a38169b2fabc5479d04a7d"
+        },
+        {
+          "path": "original/model--00006-of-00007.safetensors",
+          "sha256": "3aedef2ee0a5a78a003b3f74fd6883033946b80097bf41e4f4715d95066f0588"
+        },
+        {
+          "path": "original/model--00007-of-00007.safetensors",
+          "sha256": "20d5dfcad1ed6c50aa3c0da7d3f08828dba72b5f58686a987bf3a8f01659cda6"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "0614fe83cadab421296e664e1f48f4261fa8fef6e03e63bb75c20f38e37d07d3"
+        }
+      ],
+      "started_at": "2026-11-20T19:17:53.455335+00:00",
+      "finished_at": "2026-11-20T22:01:40.560131+00:00",
+      "free_bytes_after": 1541965238272
+    },
+    {
+      "repo_id": "Qwen/Qwen3.5-35B-A3B-Base",
+      "revision_sha": "0f0813072d2358973511097385626f21fcb6d422",
+      "source_manifest": "local-discovered/Qwen__Qwen3.5-35B-A3B-Base.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 24,
+      "files_verified": 24,
+      "source_bytes": 71926984835,
+      "verification_methods": {
+        "sha256-vs-publisher": 15,
+        "git-blob-sha1-vs-publisher": 9
+      },
+      "file_status_counts": {
+        "VERIFIED": 24
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors-00014-of-00014.safetensors",
+          "sha256": "901d0d82c3b4b97850fd7332cabe0e7ad4616485aebc5835a4edfb94a2d9b444"
+        },
+        {
+          "path": "model.safetensors-00001-of-00014.safetensors",
+          "sha256": "0a3ca09e49e5f8468ba7b145f242db2ddff69fd1d0df041f03eceabba6d13f3e"
+        },
+        {
+          "path": "model.safetensors-00002-of-00014.safetensors",
+          "sha256": "da4b9e643edb2d42cd7dd476f42d84393344025e6ac3602d26df26aa1c3ca447"
+        },
+        {
+          "path": "model.safetensors-00003-of-00014.safetensors",
+          "sha256": "9896227bfc2081ee06b027cda00ed85d8a7d5470782cbc3cec1c7c00d90b6ddb"
+        },
+        {
+          "path": "model.safetensors-00004-of-00014.safetensors",
+          "sha256": "270a0e62d35949a8b7bdbbec2dfcce5a9dc8423fe0d2b4fd60917839f9d986f2"
+        },
+        {
+          "path": "model.safetensors-00005-of-00014.safetensors",
+          "sha256": "3306916aecce0b3cd9e12aa00f5a28cdb4c5a1ce3d6723ddb6a9063fb7975a27"
+        },
+        {
+          "path": "model.safetensors-00006-of-00014.safetensors",
+          "sha256": "2eb8f3a0309824813f89c287e47bf806f962ccdd17a98338c7f450505b40d6f5"
+        },
+        {
+          "path": "model.safetensors-00007-of-00014.safetensors",
+          "sha256": "9f11f34db5c9531a131bc8b7e3d16a7704de746e3f23a150c06296b2de22b55d"
+        },
+        {
+          "path": "model.safetensors-00008-of-00014.safetensors",
+          "sha256": "7a04143de019935574ae069607221df7b64c73aaee9e86d0bf6c1fe634fe223b"
+        },
+        {
+          "path": "model.safetensors-00009-of-00014.safetensors",
+          "sha256": "d2c224c67e11866f83356b8c56320cddf7a2c84e29306bf8b4abfe4d97f17968"
+        },
+        {
+          "path": "model.safetensors-00010-of-00014.safetensors",
+          "sha256": "a5315874320efdbd4df5a4b1bf7707468918455016c51f83382993f50ba15751"
+        },
+        {
+          "path": "model.safetensors-00011-of-00014.safetensors",
+          "sha256": "1be21efee407839f1585b6e811f70d3a2d0f01815b4b8ad77f1104b0e524e00e"
+        },
+        {
+          "path": "model.safetensors-00012-of-00014.safetensors",
+          "sha256": "3543da914abbbf17d0c8b97de38f60d988acd42576b4b1d49bce31c8a44e9186"
+        },
+        {
+          "path": "model.safetensors-00013-of-00014.safetensors",
+          "sha256": "6899a73fb1e539089d15dd16c75e36f0208f5a3581d5cc525aa046f5f95a8b86"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "fe000e3ed39ed12b8d2481d527d44f93c65d37e87645d2dcc80d1bf9d50d2927"
+        }
+      ],
+      "started_at": "2026-11-20T22:01:40.651952+00:00",
+      "finished_at": "2026-11-21T01:54:43.435547+00:00",
+      "free_bytes_after": 1393718820864
+    },
+    {
+      "repo_id": "OctoMed/OctoMed-32B",
+      "revision_sha": "7b480e62a0f59139aa504e67d62974b83e360200",
+      "source_manifest": "local-discovered/OctoMed__OctoMed-32B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 10,
+      "files_verified": 10,
+      "source_bytes": 66726452272,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 7,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "DEDUP_VERIFIED": 6,
+        "VERIFIED": 4
+      },
+      "weight_files_sha256": [
+        {
+          "path": "tokenizer.json",
+          "sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506"
+        }
+      ],
+      "started_at": "2026-11-21T06:15:10.756029+00:00",
+      "finished_at": "2026-11-21T06:47:22.082995+00:00",
+      "free_bytes_after": 1313320169472
+    },
+    {
+      "repo_id": "OpenUncensored/Inkling-2-Mini-Uncensored-LoRA",
+      "revision_sha": "b328f8112173024d0f097aba1ea09e5f475ca7f9",
+      "source_manifest": "local-discovered/v59-OpenUncensored__Inkling-2-Mini-Uncensored-LoRA.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 877939,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "adapter_model.safetensors",
+          "sha256": "c67b9d8d18c4a916440eafaf57a42f1510bc00562f52c8a0a29f8f417ed41443"
+        }
+      ],
+      "started_at": "2026-11-21T09:32:31.681395+00:00",
+      "finished_at": "2026-11-21T09:32:36.787624+00:00",
+      "free_bytes_after": 1313259343872
+    },
+    {
+      "repo_id": "satellitedown/Inkling-2-Mini-abliterated-ingine",
+      "revision_sha": "6e823ba0031071d549e4973ec8caf86873cf60db",
+      "source_manifest": "local-discovered/v59-satellitedown__Inkling-2-Mini-abliterated-ingine.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 20,
+      "files_verified": 20,
+      "source_bytes": 1190518,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 19,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 20
+      },
+      "weight_files_sha256": [
+        {
+          "path": "inkling-2-mini-abliterated.safetensors",
+          "sha256": "9467240bdbcd4737a3496bf167525989d79196dbeec582361880ad4d8cbe4d73"
+        }
+      ],
+      "started_at": "2026-11-21T09:32:36.884887+00:00",
+      "finished_at": "2026-11-21T09:32:54.049550+00:00",
+      "free_bytes_after": 1313258098688
+    },
+    {
+      "repo_id": "kobimusic/dettato-grouper",
+      "revision_sha": "5a94cea2329f53228d7bcf1fd6a9f8d9778cc75b",
+      "source_manifest": "local-discovered/v59-kobimusic__dettato-grouper.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 12460661,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "figures/example_tracks.png",
+          "sha256": "1358ad4d7b3dcce406c72f90930e39161bd5e0a53da82892cfb55a1ef5c21a51"
+        },
+        {
+          "path": "model.safetensors",
+          "sha256": "4d46f18dc59201d4392b5ee31a3e0640ea89268cf1fa7b8b087dcd910193e07c"
+        }
+      ],
+      "started_at": "2026-11-21T09:32:55.506527+00:00",
+      "finished_at": "2026-11-21T09:33:05.240883+00:00",
+      "free_bytes_after": 1313245618176
+    },
+    {
+      "repo_id": "PhalaCloud/Qwen3.8-27B-Uncensored-LoRA",
+      "revision_sha": "588752bc181b999247f0e7df578bbc55d2b920e9",
+      "source_manifest": "local-discovered/v59-PhalaCloud__Qwen3.8-27B-Uncensored-LoRA.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 7,
+      "files_verified": 7,
+      "source_bytes": 13034727,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 6,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 7
+      },
+      "weight_files_sha256": [
+        {
+          "path": "adapter_model.safetensors",
+          "sha256": "1abf13b2191c9973a4dc4d978448512d3ce2efabfd1e671edd5956b6aebfa5ac"
+        }
+      ],
+      "started_at": "2026-11-21T09:33:05.274583+00:00",
+      "finished_at": "2026-11-21T09:33:12.055690+00:00",
+      "free_bytes_after": 1313232560128
+    },
+    {
+      "repo_id": "kobimusic/dettato-evidence",
+      "revision_sha": "5633f28ee330a48bc31bdd3f9f98bb1a71206141",
+      "source_manifest": "local-discovered/v59-kobimusic__dettato-evidence.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 21234165,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "figures/bench_evidence.png",
+          "sha256": "8e8fe76884d494e6504d54dae72aeb18103989806a72660c4fd1ea4827fd27b7"
+        },
+        {
+          "path": "figures/evidence_edits.png",
+          "sha256": "98ade0570c4f5eccdfea7f5599cf163ab291a4c857f82f3f102e6ef7a7a32a0c"
+        },
+        {
+          "path": "model.safetensors",
+          "sha256": "25f06767a6ad72a9d409701b11ae500bd54622b3d7ddde8dd51152a148a3833a"
+        }
+      ],
+      "started_at": "2026-11-21T09:33:12.097560+00:00",
+      "finished_at": "2026-11-21T09:33:21.386496+00:00",
+      "free_bytes_after": 1313211310080
+    },
+    {
+      "repo_id": "kobimusic/dettato-drums",
+      "revision_sha": "97801f2328e32e4c87b12586aa81121f62cacacb",
+      "source_manifest": "local-discovered/v59-kobimusic__dettato-drums.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 21976775,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 3
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "figures/bench_drums.png",
+          "sha256": "c1d668d698c71a80db8f17b4ddbad032e363729dc6dbe7a701962ebf3fd5c91a"
+        },
+        {
+          "path": "figures/drums_example.png",
+          "sha256": "a1f7e73eb150c86aa65b753a04fa80d9334c730a578d564c27eba4cfdfa118ea"
+        },
+        {
+          "path": "model.safetensors",
+          "sha256": "fbdf6243f721dc2e445270671a9361104028d331b6b9d4641ce24102cdef9613"
+        }
+      ],
+      "started_at": "2026-11-21T09:33:21.432305+00:00",
+      "finished_at": "2026-11-21T09:33:30.230719+00:00",
+      "free_bytes_after": 1313189318656
+    },
+    {
+      "repo_id": "kobimusic/dettato",
+      "revision_sha": "a0d1e354d282c4ed458b83b287065587979b053e",
+      "source_manifest": "local-discovered/v59-kobimusic__dettato.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 8,
+      "files_verified": 8,
+      "source_bytes": 64794996,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 5
+      },
+      "file_status_counts": {
+        "VERIFIED": 8
+      },
+      "weight_files_sha256": [
+        {
+          "path": "figures/bench_all_sets.png",
+          "sha256": "c82b9010725c7556e1f05a3cc9e9b9945d99a14ec5d37875b923c5e425683c6c"
+        },
+        {
+          "path": "figures/bench_mirelo_sets.png",
+          "sha256": "434d85370701262c41adabaae814739565a7e1ce3c6af2d4d2f98aa550cf0461"
+        },
+        {
+          "path": "figures/pipeline.png",
+          "sha256": "3dc6025e79d3c5f08589c82fa142fc5f798786e0d4e7323575f62ce0ecb2be1a"
+        },
+        {
+          "path": "figures/transcriber_example.png",
+          "sha256": "461fd3c87f6022de4ba6d343e02576cc89590cad4d1e80f10d03430af8017548"
+        },
+        {
+          "path": "model.safetensors",
+          "sha256": "696d22c5341c6e3df1bdb5670cb7945b65aa36f06811dfa5dfe73dc06cd53be5"
+        }
+      ],
+      "started_at": "2026-11-21T09:33:30.281359+00:00",
+      "finished_at": "2026-11-21T09:33:44.827160+00:00",
+      "free_bytes_after": 1313124499456
+    },
+    {
+      "repo_id": "speechbrain/spkrec-ecapa-voxceleb",
+      "revision_sha": "0f99f2d0ebe89ac095bcc5903c4dd8f72b367286",
+      "source_manifest": "local-discovered/v59-speechbrain__spkrec-ecapa-voxceleb.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 10,
+      "files_verified": 10,
+      "source_bytes": 89133738,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 8,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 10
+      },
+      "weight_files_sha256": [
+        {
+          "path": "classifier.ckpt",
+          "sha256": "fd9e3634fe68bd0a427c95e354c0c677374f62b3f434e45b78599950d860d535"
+        },
+        {
+          "path": "embedding_model.ckpt",
+          "sha256": "0575cb64845e6b9a10db9bcb74d5ac32b326b8dc90352671d345e2ee3d0126a2"
+        }
+      ],
+      "started_at": "2026-11-21T09:33:44.859306+00:00",
+      "finished_at": "2026-11-21T09:33:58.582417+00:00",
+      "free_bytes_after": 1313035337728
+    },
+    {
+      "repo_id": "kyutai/mimi",
+      "revision_sha": "89091b3e466eb6a9d11e537bf26b144f194978f7",
+      "source_manifest": "local-discovered/v59-kyutai__mimi.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "cc-by-4.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 384657055,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "bac7e85083dcded655d24eaadde7e6eea34c0da1b35fa2d284e641bd2b942a5e"
+        }
+      ],
+      "started_at": "2026-11-21T09:33:59.005985+00:00",
+      "finished_at": "2026-11-21T09:34:29.155442+00:00",
+      "free_bytes_after": 1312650665984
+    },
+    {
+      "repo_id": "Reson8/Rumble-2-Flash",
+      "revision_sha": "a0c34287229103b706c670d70791683e34379732",
+      "source_manifest": "local-discovered/v59-Reson8__Rumble-2-Flash.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 19,
+      "files_verified": 19,
+      "source_bytes": 1385998807,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 17,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 19
+      },
+      "weight_files_sha256": [
+        {
+          "path": "ctc/ctc_head.safetensors",
+          "sha256": "c13befc1c60a8410185a730cdccefc825df12ac8af75d4411fdff8106291ede7"
+        },
+        {
+          "path": "model.safetensors",
+          "sha256": "6dc35af40ad150e50767382a9d401eb9af9c3a1ad4e915c61fe05aecfa79a3e1"
+        }
+      ],
+      "started_at": "2026-11-21T09:34:29.195765+00:00",
+      "finished_at": "2026-11-21T09:36:05.610235+00:00",
+      "free_bytes_after": 1311264628736
+    },
+    {
+      "repo_id": "RikiyaT/Qwen3.5-0.8B-weight-space-programming",
+      "revision_sha": "d1671a178705bcab7644806d23c535517f35723b",
+      "source_manifest": "local-discovered/v59-RikiyaT__Qwen3.5-0.8B-weight-space-programming.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 17,
+      "files_verified": 17,
+      "source_bytes": 1779420899,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 15,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 17
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors-00001-of-00001.safetensors",
+          "sha256": "fd1e42acdd118ac1b300d37500fd2885e75f5a09de3a33010d802bf7f737b553"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+        }
+      ],
+      "started_at": "2026-11-21T09:36:05.657195+00:00",
+      "finished_at": "2026-11-21T09:38:48.880647+00:00",
+      "free_bytes_after": 1309485170688
+    },
+    {
+      "repo_id": "FrostWolfAI/LFM3-1.7B-abliterated",
+      "revision_sha": "fc0f808655210ef891515bad9b5195b03d89f11b",
+      "source_manifest": "local-discovered/v59-FrostWolfAI__LFM3-1.7B-abliterated.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "other",
+      "files_total": 13,
+      "files_verified": 13,
+      "source_bytes": 3475637066,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 13
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "4064371dcfed8660f03d688dd7688aad48cce630fd3117ec30572a976352f165"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "8f7ed4182b60c4ade9645e2f98b8f2141961bfd71c783e15daaa89e95ae66338"
+        }
+      ],
+      "started_at": "2026-11-21T09:38:48.924404+00:00",
+      "finished_at": "2026-11-21T09:43:09.697739+00:00",
+      "free_bytes_after": 1306004385792
+    },
+    {
+      "repo_id": "microsoft/Aion-1.0-Instruct-2.3B",
+      "revision_sha": "28902cbfd9f4e0347d6c853aa1301f5d559b2fc0",
+      "source_manifest": "local-discovered/v59-microsoft__Aion-1.0-Instruct-2.3B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "mit",
+      "files_total": 11,
+      "files_verified": 11,
+      "source_bytes": 4593276272,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 11
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "6c779881b539d9074f356964ad3089459e9e837da7649d6f271859135256984e"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "7ea8bdf68c3e7549a3fb4342523288ce628f6ab56a618f9a4dfb234a0b4d46a8"
+        }
+      ],
+      "started_at": "2026-11-21T09:43:09.757119+00:00",
+      "finished_at": "2026-11-21T09:47:48.646116+00:00",
+      "free_bytes_after": 1301411078144
+    },
+    {
+      "repo_id": "FrostWolfAI/Spark-X2.6-4B-abliterated",
+      "revision_sha": "505257b7969eb03a5a62d81f9afec6f88abd26e4",
+      "source_manifest": "local-discovered/v59-FrostWolfAI__Spark-X2.6-4B-abliterated.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 22,
+      "files_verified": 22,
+      "source_bytes": 8239173287,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 20,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 22
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "618c7df2a8fdaf923069b85e6cce9125c99a929479fafb4424f9f1c38dcc2af3"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "0d6674e83396f084f798f6eb630edbe8523a7815cc8b731207490637d55b561f"
+        }
+      ],
+      "started_at": "2026-11-21T09:47:48.682826+00:00",
+      "finished_at": "2026-11-21T09:59:21.285350+00:00",
+      "free_bytes_after": 1293171851264
+    },
+    {
+      "repo_id": "aaaaygd/DeepSeek-V4-Pro-Qwen3.5-4B-UNCENSORED-heretic",
+      "revision_sha": "cdd9b11e7f92e4ba53dfeb6c02c6e7baf7a7e8a1",
+      "source_manifest": "local-discovered/v59-aaaaygd__DeepSeek-V4-Pro-Qwen3.5-4B-UNCENSORED-heretic.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 17,
+      "files_verified": 17,
+      "source_bytes": 9345162884,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 13,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 17
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "4a1359364037ce09f5c115aefbe590019aed38d178c8185867a7c67a413863d8"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "1d9228733e52fd5240becf4266c5f97b3101f338ad2914edd1252f45a0f591e4"
+        },
+        {
+          "path": "model-mtp.safetensors",
+          "sha256": "b035e98218c1f1618da8461c3df46acc7e691b3a992e2f63261b7449125a3190"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "a5cd9732badce41de57e6efce8302930ded1c1188c5f81feb2bd6c24c4a1941f"
+        }
+      ],
+      "started_at": "2026-11-21T09:59:21.327752+00:00",
+      "finished_at": "2026-11-21T10:10:03.937751+00:00",
+      "free_bytes_after": 1283826638848
+    },
+    {
+      "repo_id": "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+      "revision_sha": "fbccdc6adf70a1981e8f40e91a8370e428e4f998",
+      "source_manifest": "local-discovered/v59-xtools-at__DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 19,
+      "files_verified": 19,
+      "source_bytes": 19331656364,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 13,
+        "sha256-vs-publisher": 6
+      },
+      "file_status_counts": {
+        "VERIFIED": 19
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "sha256": "eff65295d35e6d20bf41850c7cc5b0a01cff80f360672c5a9d139a9d975d8f6a"
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "sha256": "46aa75be1332340c83834e88a4fb1515548e4d740799bf46c7ca3d15c5f579a3"
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "sha256": "e27e41463bf0e3e56cd44b5cd9dd25abb61bfdecc1d261e18a53cdbac5384091"
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "sha256": "13b5cea39a1cb3afe9509fee99791ef3151285bcff718c90017332e2a910c241"
+        },
+        {
+          "path": "model-mtp.safetensors",
+          "sha256": "5e0b04fcbff49f29114af4c453663871a625514fccca5a4efb34f495ebeca237"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "a5cd9732badce41de57e6efce8302930ded1c1188c5f81feb2bd6c24c4a1941f"
+        }
+      ],
+      "started_at": "2026-11-21T10:10:03.987397+00:00",
+      "finished_at": "2026-11-21T10:30:47.034513+00:00",
+      "free_bytes_after": 1264494923776
+    },
+    {
+      "repo_id": "thinkingmachines/Inkling-2-Mini",
+      "revision_sha": "1fb4134b9a74f9681054f4ef82e4bf1f458a2337",
+      "source_manifest": "local-discovered/v59-thinkingmachines__Inkling-2-Mini.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 14,
+      "files_verified": 14,
+      "source_bytes": 20191643271,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 14
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00001.safetensors",
+          "sha256": "65e60f51aa1284d4fb022584908c315270334d991828bb774af60584523539d1"
+        },
+        {
+          "path": "mtp.safetensors",
+          "sha256": "7c3b651317f01f73bcf4e1dceba66ef8b7e1a1eac6bc171e882e690a4b10a1d2"
+        },
+        {
+          "path": "tiktoken/tokenizer.model",
+          "sha256": "f170372dd655728909228220d77cf6b8104a59f38a91262a7d2c4027906ec0d8"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "7f332727f9a3f093dd452a39cc978e6757627e5dad1b0673aa4e75174f236dd6"
+        }
+      ],
+      "started_at": "2026-11-21T10:30:47.193650+00:00",
+      "finished_at": "2026-11-21T11:07:50.606102+00:00",
+      "free_bytes_after": 1244293509120
+    },
+    {
+      "repo_id": "elyza/ELYZA-tasks-100",
+      "revision_sha": "240fc800c4695d86ce0f32a713e199cd2ba66ab6",
+      "source_manifest": "local-discovered/v59-elyza__ELYZA-tasks-100.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "cc-by-sa-4.0",
+      "files_total": 65,
+      "files_verified": 65,
+      "source_bytes": 7606817,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 64,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 65
+      },
+      "weight_files_sha256": [
+        {
+          "path": "images/key_visual.png",
+          "sha256": "b46f77951c7d6eea7506cd99f1bc94aaa3dc3112f356cb2f1356a943b48baf01"
+        }
+      ],
+      "started_at": "2026-11-21T11:27:41.657967+00:00",
+      "finished_at": "2026-11-21T11:29:27.077191+00:00",
+      "free_bytes_after": 1226106077184
+    },
+    {
+      "repo_id": "CohereLabs/aya_dataset",
+      "revision_sha": "f9ea04583f02a8f86404ff6c58bf75fe637df8a2",
+      "source_manifest": "local-discovered/v59-CohereLabs__aya_dataset.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 140160376,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 2,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "aya_header.png",
+          "sha256": "a6b6013a0dd85b50636b50a138841b2f6aee43109570334ace52f6152b8fc0de"
+        },
+        {
+          "path": "data/test-00000-of-00001.parquet",
+          "sha256": "52bbb79461bff9887c9987a5737d9a06f5ec6c78c08d770828c37fc182ce2cca"
+        },
+        {
+          "path": "data/train-00000-of-00001.parquet",
+          "sha256": "51baa85043b569ba117f41516b32d1b0e4e2647fb203a08933f98a556fb1fb06"
+        },
+        {
+          "path": "demographics/train-00000-of-00001.parquet",
+          "sha256": "6468cc56f1c115458507368381fd2b9e74d7b7a5dc0228f6b550146e5320bc2d"
+        }
+      ],
+      "started_at": "2026-11-21T11:29:27.285887+00:00",
+      "finished_at": "2026-11-21T11:30:10.524270+00:00",
+      "free_bytes_after": 1225345126400
+    },
+    {
+      "repo_id": "JetBrains/Mellum2.1-12B-A2.5B-Thinking-MTP",
+      "revision_sha": "d55846102dd1c047e95d4841070f88290227c3b7",
+      "source_manifest": "local-discovered/v59-JetBrains__Mellum2.1-12B-A2.5B-Thinking-MTP.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 17,
+      "files_verified": 17,
+      "source_bytes": 25165148781,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 10,
+        "sha256-vs-publisher": 7
+      },
+      "file_status_counts": {
+        "VERIFIED": 17
+      },
+      "weight_files_sha256": [
+        {
+          "path": "mellum21_summary.png",
+          "sha256": "2a86585d0f7075c56a9a3ae7cd582561dc7020aff87e094a065651d5d4f92324"
+        },
+        {
+          "path": "model-00001-of-00005.safetensors",
+          "sha256": "f5ccf8012c7d44fd2598325bf2482b8fc21792ef888de68f9ca8c9053c2e022f"
+        },
+        {
+          "path": "model-00002-of-00005.safetensors",
+          "sha256": "266beea6f34dea9c86414d8bf8cb35c0f4a53330731d99ed41ec666390758e39"
+        },
+        {
+          "path": "model-00003-of-00005.safetensors",
+          "sha256": "da9a04fb6ea121f71e30920c7657b889ca0078aea57d878e5cb768ebb3e4483a"
+        },
+        {
+          "path": "model-00004-of-00005.safetensors",
+          "sha256": "32f27ab7f38ff5d98ac3d50dabb57ab8a55a8aa552febd42c2a5b01f4116262a"
+        },
+        {
+          "path": "model-00005-of-00005.safetensors",
+          "sha256": "d8bbb9b829cb3279e23f59af55bf68ec00cc8ad30923c227d8b13c7d831e6b3b"
+        },
+        {
+          "path": "model-mtp.safetensors",
+          "sha256": "89a2f2454b185b97b809eef2b2a2c32300c6cf550fdbde6430a1c2e8290e025c"
+        }
+      ],
+      "started_at": "2026-11-21T11:07:50.773372+00:00",
+      "finished_at": "2026-11-21T11:40:38.675288+00:00",
+      "free_bytes_after": 1218980286464
+    },
+    {
+      "repo_id": "tencent/Hy-SimulMT-30B-A3B",
+      "revision_sha": "56c233df75bf09e386aa6282b01730b461afc83f",
+      "source_manifest": "local-discovered/existing-tencent-hy-simulmt.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 53,
+      "files_verified": 53,
+      "source_bytes": 60858161407,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 41
+      },
+      "file_status_counts": {
+        "DEDUP_VERIFIED": 53
+      },
+      "weight_files_sha256": [],
+      "started_at": "2026-11-21T16:12:53.604426+00:00",
+      "finished_at": "2026-11-21T16:42:56.678749+00:00",
+      "free_bytes_after": 1167311646720
+    },
+    {
+      "repo_id": "mistralai/Timestral-28M",
+      "revision_sha": "49b26409ac87b5935539a5d8ffe7f397b720db47",
+      "source_manifest": "local-discovered/v62-mistralai__Timestral-28M.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "other",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 111307038,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 5,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "dfc83c6220937ce5fc6687b35a4df94cd25e28a2cfe6fb92a23dad6301b2015d"
+        }
+      ],
+      "started_at": "2026-11-21T18:16:05.979906+00:00",
+      "finished_at": "2026-11-21T18:16:36.483998+00:00",
+      "free_bytes_after": 1167193882624
+    },
+    {
+      "repo_id": "Cactus-Compute/mirage",
+      "revision_sha": "3d03cee88c0acbe4e71b94b567ab14e6e55f40c9",
+      "source_manifest": "local-discovered/v62-Cactus-Compute__mirage.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 5,
+      "files_verified": 5,
+      "source_bytes": 237985863,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 3,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 5
+      },
+      "weight_files_sha256": [
+        {
+          "path": "mirage.cact",
+          "sha256": "4249a0f7515272ff76b9414bec17d7e7daf84b15b66c7fb4f17fce1e66f9f237"
+        },
+        {
+          "path": "mirage.safetensors",
+          "sha256": "6ba97c5c1bef661c9b0c80782135682b38b4312fb33e0b645c93c10604bb16cd"
+        }
+      ],
+      "started_at": "2026-11-21T18:16:36.542975+00:00",
+      "finished_at": "2026-11-21T18:17:03.092825+00:00",
+      "free_bytes_after": 1166955855872
+    },
+    {
+      "repo_id": "KittenML/kitten-tts-2-pico",
+      "revision_sha": "a5632deac7d92f6178db814d933eba746a97f2dc",
+      "source_manifest": "local-discovered/v62-KittenML__kitten-tts-2-pico.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 33,
+      "files_verified": 33,
+      "source_bytes": 285879877,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 8,
+        "sha256-vs-publisher": 25
+      },
+      "file_status_counts": {
+        "VERIFIED": 33
+      },
+      "weight_files_sha256": [
+        {
+          "path": "g2p/g2p_bart_en_us/model.safetensors",
+          "sha256": "dc4a02e62d4fcb4bb4097ecf00db89b8e1a12a549a52ab6adfbba220b80a55c5"
+        },
+        {
+          "path": "kitten_tts_2_pico_de.safetensors",
+          "sha256": "f4d760d4a9a419847ef364a8add13b1136fb27cd6183ecf6430e456c8c6de748"
+        },
+        {
+          "path": "kitten_tts_2_pico_de_int4.onnx",
+          "sha256": "d74476524bc0e241b376544e9f39d2cec34992eb322e451d239161c89f521e4d"
+        },
+        {
+          "path": "kitten_tts_2_pico_en.safetensors",
+          "sha256": "b3bf0e1381ad0642fc294ccdd8de13009452695571b648b3d30d265a6bcfd5d5"
+        },
+        {
+          "path": "kitten_tts_2_pico_en_int4.onnx",
+          "sha256": "9751511ba5d5311dd8557967af92bf437f57dfe490bf8a2c135d8f85359b4f58"
+        },
+        {
+          "path": "kitten_tts_2_pico_es.safetensors",
+          "sha256": "da50b6a13bdc3180090681eabb3a971887f6158f9207211921cca3be0d0aacdf"
+        },
+        {
+          "path": "kitten_tts_2_pico_es_int4.onnx",
+          "sha256": "53b72529e05b3bd92c754185cada01b9414947a6795a24540d792dcf2b7ad92c"
+        },
+        {
+          "path": "kitten_tts_2_pico_fr.safetensors",
+          "sha256": "c33ef596048565d58f76e433894967d68d6af8c2c37d5217fdc2dc4f2f140818"
+        },
+        {
+          "path": "kitten_tts_2_pico_fr_int4.onnx",
+          "sha256": "6932f046d24dcc294c039f4a9b1605e609d66fd764996b9022f67181bbd4615a"
+        },
+        {
+          "path": "kitten_tts_2_pico_hi.safetensors",
+          "sha256": "12430055ddb48c754d534075151cda31fbac5cb3c7c3b9887ad51c8d2ef2fadf"
+        },
+        {
+          "path": "kitten_tts_2_pico_hi_int4.onnx",
+          "sha256": "a1a010354b3e3f254dcc4a2d63e2059d40c4185023c4fb7fdf042332e2cf4c3b"
+        },
+        {
+          "path": "kitten_tts_2_pico_it.safetensors",
+          "sha256": "0f257bbbd2e9356d119e0a055ccf4db1b072f3ee7e1a91a68368e09971e90574"
+        },
+        {
+          "path": "kitten_tts_2_pico_it_int4.onnx",
+          "sha256": "815a01b7ab3abdae2b2f862fdb916c345c1ac7d0a676eff3da9c609cdd4211af"
+        },
+        {
+          "path": "kitten_tts_2_pico_pt.safetensors",
+          "sha256": "d9169249be86ed76474acfc6271faab70de628916138cc5954232c804b753bfe"
+        },
+        {
+          "path": "kitten_tts_2_pico_pt_int4.onnx",
+          "sha256": "855485098ed1e5151109b6683358c2a1071308d57e98697a1415ba93a17eed2c"
+        },
+        {
+          "path": "kitten_tts_2_pico_ru.safetensors",
+          "sha256": "6bc45bc826598009bb4e4db772b8e897d12cbfc1d6c5a3373abe1ee722d54c0d"
+        },
+        {
+          "path": "kitten_tts_2_pico_ru_int4.onnx",
+          "sha256": "cc9f192600bfb54d320aa3e08c0eb214d2d029adff290a6f84b2368d51ee2024"
+        },
+        {
+          "path": "voices_de.npz",
+          "sha256": "fc4c7a8548f54e0378aa0d5e1b134a4d13ae9142b095edb2340248dc99a0398f"
+        },
+        {
+          "path": "voices_en.npz",
+          "sha256": "48496124eef320b70ccf741d871e401889597d5e14e15e6b2116bdc6100f1a0c"
+        },
+        {
+          "path": "voices_es.npz",
+          "sha256": "832e908c27bc7f8e63dbd96e2a9b15c8e45c7c67b9fe2aff27435887ea2e7c07"
+        },
+        {
+          "path": "voices_fr.npz",
+          "sha256": "c5bc25dbe99e0e4823ff52a51edec5bfa06071790b048a928a020e3fbbd93e34"
+        },
+        {
+          "path": "voices_hi.npz",
+          "sha256": "4d79ee747ab9d066dfb825e2125a131af0fa78f921535f839aef0f45a235c701"
+        },
+        {
+          "path": "voices_it.npz",
+          "sha256": "a43bcb3ab0b023145645bfd86ff2df3a6d4a254f345bfde8eae49ef209475374"
+        },
+        {
+          "path": "voices_pt.npz",
+          "sha256": "8fcc5244c6e9a6ba48e7c80bf2de490203b75729f2e905abaabce95d74f36ad7"
+        },
+        {
+          "path": "voices_ru.npz",
+          "sha256": "76f67e934c4400dbc0f10efb135e8c9011781d0f23286bd45a0a9d29a6c43c3d"
+        }
+      ],
+      "started_at": "2026-11-21T18:17:03.174054+00:00",
+      "finished_at": "2026-11-21T18:18:27.692562+00:00",
+      "free_bytes_after": 1166669283328
+    },
+    {
+      "repo_id": "apple/FastFrames-S",
+      "revision_sha": "aa099efcedf1b65447106bf9004cde75821f7387",
+      "source_manifest": "local-discovered/v62-apple__FastFrames-S.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apple-amlr",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 947927443,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 4,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "fastframes-s/kv_refiner.safetensors",
+          "sha256": "b4f36d00effd78a60435526dcc2b1a0e6bbed0f09621ee8ab4019460769a7bbb"
+        },
+        {
+          "path": "fastframes-s/pixel_decoder.safetensors",
+          "sha256": "815682581f6376d2cdacc60568facf1bd979112091e4157fb6c00ae946b89b32"
+        }
+      ],
+      "started_at": "2026-11-21T18:18:27.750148+00:00",
+      "finished_at": "2026-11-21T18:20:13.849250+00:00",
+      "free_bytes_after": 1165721227264
+    },
+    {
+      "repo_id": "AuroraAI-Research/Aurora2-400M-A20M",
+      "revision_sha": "f2e561d38b0c0c35e910c8a519f553b2831ffad4",
+      "source_manifest": "local-discovered/v62-AuroraAI-Research__Aurora2-400M-A20M.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 10,
+      "files_verified": 10,
+      "source_bytes": 1599571502,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 10
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "508b7c3f991db2787bab100a4d6b817789d25ed262ff0c0cdbab62e69d3a1737"
+        }
+      ],
+      "started_at": "2026-11-21T18:20:13.932118+00:00",
+      "finished_at": "2026-11-21T18:22:59.880272+00:00",
+      "free_bytes_after": 1164121489408
+    },
+    {
+      "repo_id": "internlm/Intern-Decision-0.8B",
+      "revision_sha": "42457fafd13d10d0b0d9be46cb30a23caa409994",
+      "source_manifest": "local-discovered/v62-internlm__Intern-Decision-0.8B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 20,
+      "files_verified": 20,
+      "source_bytes": 1734731370,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 16,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 20
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-language-0001-save_rank0.safetensors",
+          "sha256": "4acc4bd67febb2466ef7c282099fd05ee0ba47b853b6c49b9e763fb642957820"
+        },
+        {
+          "path": "model-projector-0001-save_rank0.safetensors",
+          "sha256": "7f81b4ab1b4434c4d0322c849525337c1746f0ca4b9beac107a94e23b2952fee"
+        },
+        {
+          "path": "model-vision-0001-save_rank0.safetensors",
+          "sha256": "bf8e03e3be40018e51037b46bb8ebe0471e2aceb394ad988632cce2c87d2e177"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "94a639c4b33b192cc5a22cd3d7f0aaf6d97efa9577957a0382b55292ca4f0f00"
+        }
+      ],
+      "started_at": "2026-11-21T18:22:59.947005+00:00",
+      "finished_at": "2026-11-21T18:26:54.839834+00:00",
+      "free_bytes_after": 1162385702912
+    },
+    {
+      "repo_id": "LiquidAI/LFM3-VL-2B",
+      "revision_sha": "f83d2b0a2296aaa277f394990a9b8b949ddf9691",
+      "source_manifest": "local-discovered/v62-LiquidAI__LFM3-VL-2B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "other",
+      "files_total": 18,
+      "files_verified": 18,
+      "source_bytes": 3854651108,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 16,
+        "sha256-vs-publisher": 2
+      },
+      "file_status_counts": {
+        "VERIFIED": 18
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "a9bb8b1c159c9d6c3007bc1c7ad8018b599f759d97da2701714e37426283e131"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "a39eed58008cbcbc09e5b629b81338a654269c64cd13348aaa6090f4db75c7e7"
+        }
+      ],
+      "started_at": "2026-11-21T18:26:54.897738+00:00",
+      "finished_at": "2026-11-21T18:33:33.346458+00:00",
+      "free_bytes_after": 1158530109440
+    },
+    {
+      "repo_id": "saidutta69/LFM3-VL-2B-heretic",
+      "revision_sha": "f4cf2cfb5b1289ca4ca10c6c71eb17d147c8c795",
+      "source_manifest": "local-discovered/v62-saidutta69__LFM3-VL-2B-heretic.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "other",
+      "files_total": 25,
+      "files_verified": 25,
+      "source_bytes": 5334098126,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 21,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 25
+      },
+      "weight_files_sha256": [
+        {
+          "path": "LFM3-VL-2B-heretic-Q4_K_M.gguf",
+          "sha256": "d44c819c8146025f254c3c530a4b4365c13ff0f4ed21d82e73ca9fb4c1e84de0"
+        },
+        {
+          "path": "LFM3-VL-2B-heretic-mmproj-F16.gguf",
+          "sha256": "1c8d2e7085db355f3e5a9673914154350124ee27b58b88e2eb4063034c228bf6"
+        },
+        {
+          "path": "model.safetensors",
+          "sha256": "91d527edb09f1e382172c9bf4028247676f92b6c1545f1e4d6b8920b4eba906a"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "a39eed58008cbcbc09e5b629b81338a654269c64cd13348aaa6090f4db75c7e7"
+        }
+      ],
+      "started_at": "2026-11-21T18:33:33.408653+00:00",
+      "finished_at": "2026-11-21T18:52:59.282830+00:00",
+      "free_bytes_after": 1153193041920
+    },
+    {
+      "repo_id": "OpenMOSS-Team/MOSS-VL-Realtime",
+      "revision_sha": "d1f71a588deaf2b9b9cea7c6fff66cb10847cc86",
+      "source_manifest": "local-discovered/v62-OpenMOSS-Team__MOSS-VL-Realtime.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 20,
+      "files_verified": 20,
+      "source_bytes": 22687497344,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 14,
+        "sha256-vs-publisher": 6
+      },
+      "file_status_counts": {
+        "VERIFIED": 20
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00005.safetensors",
+          "sha256": "3fe2d46a92e3c036e8dfbb2519f65415f8f1ab4f731ffdcb9c8bbff4e66fc3d6"
+        },
+        {
+          "path": "model-00002-of-00005.safetensors",
+          "sha256": "18f3579907933bad721053b3ac405c51045db4539fedcc7ee3c8db79e79f70e5"
+        },
+        {
+          "path": "model-00003-of-00005.safetensors",
+          "sha256": "cecf1e02afe5c7250bb43d6b6e99c7cb430a02afc07a2d697ab1dc4b5f784567"
+        },
+        {
+          "path": "model-00004-of-00005.safetensors",
+          "sha256": "57d794a266a1283d209d054114d9888a6a6b36a0af87fbf314c92b76c89dc294"
+        },
+        {
+          "path": "model-00005-of-00005.safetensors",
+          "sha256": "34009172ba732eb447caf1293126bba35eb934a622677ac7c24bb2d6af462b0d"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "e7bbd0f9784004df51aca562befc3c7a8f294b4045aa8685536c35804c9aa493"
+        }
+      ],
+      "started_at": "2026-11-21T18:52:59.411456+00:00",
+      "finished_at": "2026-11-21T20:35:36.621443+00:00",
+      "free_bytes_after": 1130504851456
+    },
+    {
+      "repo_id": "nvidia/Cosmos3-Nano-Sim-Transfer",
+      "revision_sha": "45510d5b8cefa338b7abc01eb702cf1e9cdf6742",
+      "source_manifest": "local-discovered/v62-nvidia__Cosmos3-Nano-Sim-Transfer.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "other",
+      "files_total": 44,
+      "files_verified": 44,
+      "source_bytes": 31750521262,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 36,
+        "sha256-vs-publisher": 8
+      },
+      "file_status_counts": {
+        "VERIFIED": 44
+      },
+      "weight_files_sha256": [
+        {
+          "path": "text_tokenizer/tokenizer.json",
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00001-of-00006.safetensors",
+          "sha256": "85b1d981d502adb1382eb9340cfef66987c1c1a19a93621ef58238a4e5664e22"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00002-of-00006.safetensors",
+          "sha256": "6225ebe8201999e6f2a6ff05237c7098a188f1671f427ef82653932638907981"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00003-of-00006.safetensors",
+          "sha256": "2b5d130c62fac7d8a1da1d47a59897256e1602a018998f144da10abd9bc57937"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00004-of-00006.safetensors",
+          "sha256": "052b330d8dce1536195b12dbf697411803292ee6f7f1e7503eef87cf7fe29eb7"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00005-of-00006.safetensors",
+          "sha256": "3f7cb7cb80a661d2a931f57ae23de60e94cca569d8755d48953fef9d50ecc9d6"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00006-of-00006.safetensors",
+          "sha256": "bc498faa025d478aac09725d67735227a87f2b3a01d90be39fab431ae7d0d28f"
+        },
+        {
+          "path": "vae/diffusion_pytorch_model.safetensors",
+          "sha256": "230496cb59ff85bc9c040487737c4062480cb61c71e697b197b4c30142f2a0da"
+        }
+      ],
+      "started_at": "2026-11-21T20:35:36.863103+00:00",
+      "finished_at": "2026-11-21T21:26:01.915983+00:00",
+      "free_bytes_after": 1098749452288
+    },
+    {
+      "repo_id": "mistralai/Timestral-5M",
+      "revision_sha": "bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f",
+      "source_manifest": "local-discovered/v64-mistralai__Timestral-5M.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "other",
+      "files_total": 6,
+      "files_verified": 6,
+      "source_bytes": 20854471,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 5,
+        "sha256-vs-publisher": 1
+      },
+      "file_status_counts": {
+        "VERIFIED": 6
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model.safetensors",
+          "sha256": "7ace108c4987e7f2a99a75a445240019d1d31c2117139d1bd05ffdfd25aca738"
+        }
+      ],
+      "started_at": "2026-11-21T21:29:12.160765+00:00",
+      "finished_at": "2026-11-21T21:29:19.661542+00:00",
+      "free_bytes_after": 1098728382464
+    },
+    {
+      "repo_id": "tencent/WeMM-Video-2B",
+      "revision_sha": "821690998399cac0f55bb7f7f805ebafa650c3a4",
+      "source_manifest": "local-discovered/v64-tencent__WeMM-Video-2B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 27,
+      "files_verified": 27,
+      "source_bytes": 6590699556,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 2,
+        "sha256-vs-publisher": 25
+      },
+      "file_status_counts": {
+        "VERIFIED": 27
+      },
+      "weight_files_sha256": [
+        {
+          "path": "LICENSE",
+          "sha256": "bac4d42ddebadb11e405fc4de2335579e67676362ac870108012ab4899ef1e5b"
+        },
+        {
+          "path": "README.md",
+          "sha256": "85fc7289e31dfee3bbcd8af57871a18f97b50b403f92423a8c0347ac0572efdb"
+        },
+        {
+          "path": "README_PROCESSOR.md",
+          "sha256": "5cf26c5a561880138295ce9921c270e1a4c5ca7ac11b489b83fb9c8acbebaf37"
+        },
+        {
+          "path": "chat_template.jinja",
+          "sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80"
+        },
+        {
+          "path": "config.json",
+          "sha256": "ffdb6cd49251e49f27adf229acae2cf474053b59f629cd516d6825d324366e7b"
+        },
+        {
+          "path": "configuration_wemm.py",
+          "sha256": "43ee3ec8477c6677f06835a893a146d18024aea0145086ceca3b6039e2d91887"
+        },
+        {
+          "path": "generation_config.json",
+          "sha256": "b91f22ecb30192b6919660eb61c01d7602f93ff6764556b1991c71fbe9ca82e6"
+        },
+        {
+          "path": "h5_modeling_bert.py",
+          "sha256": "b2eac797422294be10295c27f5709c8fda362c55d6f476dcebfd5f38aa65c6dd"
+        },
+        {
+          "path": "h5_modeling_whisper.py",
+          "sha256": "b507884daee13857c17d2d97290183e71a5a1044253a49c5a9cb109ba3332907"
+        },
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "2c05a5a88d893d867252b634de82ad03690f3186c6c93004b967c228daa28072"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "331cd6f66e76e99e1d5060acdeb6e8ccfe35cf86e6d486ed2a4ad6159466ceec"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "sha256": "56192ed969c18b52bd53e3b4eb241dee68c4b02c43aaa797d269ddb0b290f99a"
+        },
+        {
+          "path": "modeling_wemm.py",
+          "sha256": "30c9e34d16f4b3720410c47034b2b807a3686c88f4558d5aab6c102fc1db0bde"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+        },
+        {
+          "path": "processing_wemm.py",
+          "sha256": "8f907439e011c47293a851e28efec1501c36b862ba8c04784d23a0a4a5aa36a8"
+        },
+        {
+          "path": "processor_config.json",
+          "sha256": "8bc32c6b513528a11f5bbffcf39fcc93ffebf361f725a829d153565f2f7f70c7"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "510fd6ff51823f6b1c820595b5eed750b8ff0ee85961d2f330623b3cf5ff4019"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "sha256": "83febe739ecefd99f984f546dfdc10149cedf293b9ee0291b99894341188b613"
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+        },
+        {
+          "path": "wemm-video-architecture.png",
+          "sha256": "9902c081a70abeaacf34c898c86c44587eebe0fd62f1923225d1726766eb0a7a"
+        },
+        {
+          "path": "wemm-video-capabilities-compact.png",
+          "sha256": "57d892abb395c639078b49ecf317698f038303adf1fc976ddf13ff9e9273c77f"
+        },
+        {
+          "path": "wemm_media.py",
+          "sha256": "2e4b427e3ddabc526f7984066a982bfa7c0a4d56f3d7c979fc41651463461122"
+        },
+        {
+          "path": "wemm_video_policy.py",
+          "sha256": "5a08358f04b011c401d6355cf396caebae4536442df76ae17dc89470c2b1a50e"
+        },
+        {
+          "path": "wemm_zip.py",
+          "sha256": "016d7a2bc9b50cf2bed2e901d7ec445260eff890751e94683c8fac0be09eecdb"
+        },
+        {
+          "path": "wemm_zip_policy.py",
+          "sha256": "f4029f5015cf6342da1bfacaa6b4847d7f20ca450019ff7bc5f4ad899e3706c8"
+        }
+      ],
+      "started_at": "2026-11-21T21:29:19.815588+00:00",
+      "finished_at": "2026-11-21T21:40:48.376359+00:00",
+      "free_bytes_after": 1092136427520
+    },
+    {
+      "repo_id": "baselabs/bison-1",
+      "revision_sha": "bf8350b2c59eb6c36e95d02a2af870aec18724a7",
+      "source_manifest": "local-discovered/v64-baselabs__bison-1.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "other",
+      "files_total": 16,
+      "files_verified": 16,
+      "source_bytes": 65398108261,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 12,
+        "sha256-vs-publisher": 4
+      },
+      "file_status_counts": {
+        "VERIFIED": 16
+      },
+      "weight_files_sha256": [
+        {
+          "path": "assets/banner.png",
+          "sha256": "86fbe04c379f6cab025bdbd304b11d1c31e99158cdbd19dfc8fa77c283cdef28"
+        },
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "sha256": "55b01d0ec3e7e36547a32544d013ece6ff0cf4447be0f2444ad46452422fc5e7"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "sha256": "1d9f8e96e15b50c160a3f5dc69d40daf579ced5c62b628a6c7328b808f40bb62"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+        }
+      ],
+      "started_at": "2026-11-21T21:40:48.630926+00:00",
+      "finished_at": "2026-11-22T00:16:24.149901+00:00",
+      "free_bytes_after": 1026731790336
+    },
+    {
+      "repo_id": "mistralai/Mistral-Small-4-119B-2603",
+      "revision_sha": "a11f36bebf709121056b1dbcc943d1c6afbe494d",
+      "source_manifest": "local-discovered/mistralai__Mistral-Small-4-119B-2603.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 21,
+      "files_verified": 21,
+      "source_bytes": 241887374994,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 12
+      },
+      "file_status_counts": {
+        "VERIFIED": 21
+      },
+      "weight_files_sha256": [
+        {
+          "path": "consolidated-00001-of-00007.safetensors",
+          "sha256": "e493a53149d9fb05e48d5e814e4e40f97a605d32c0d579d15ebc60684af51ae6"
+        },
+        {
+          "path": "consolidated-00002-of-00007.safetensors",
+          "sha256": "82bf13d11290a0d3ee344e5a07224c623ae5f9c473fe774e24dfccb3506fe7b9"
+        },
+        {
+          "path": "consolidated-00003-of-00007.safetensors",
+          "sha256": "1410d0d2223d665800f7d5b05d7d8adf2df4fb9c7e2e71f3b272f5a5bf07f1e6"
+        },
+        {
+          "path": "consolidated-00004-of-00007.safetensors",
+          "sha256": "8725562ee8c0ee67056fe128220f201456abad6fa2039c61bc7421de8baa4dbd"
+        },
+        {
+          "path": "consolidated-00005-of-00007.safetensors",
+          "sha256": "ee67e9f47175ac89750790fcc5751a497ecedfb424779a66d9d5e7fcab468364"
+        },
+        {
+          "path": "consolidated-00006-of-00007.safetensors",
+          "sha256": "793e1be0042f616a50d73f083e47aadaf98ab65e9c909b8986a81e6611565428"
+        },
+        {
+          "path": "consolidated-00007-of-00007.safetensors",
+          "sha256": "55ec7d746e71207f12b5303c65377b84612859bc78a0cceefe9ccfc60cc7e6de"
+        },
+        {
+          "path": "model-00001-of-00003.safetensors",
+          "sha256": "811a33f74a5160806bf59a5134f015a86386eea49d1b8d2f51c6509382cf5f03"
+        },
+        {
+          "path": "model-00002-of-00003.safetensors",
+          "sha256": "50f010b6318591e49c41dda94926dfaa436f17219ec79f27289a72dd93e1effa"
+        },
+        {
+          "path": "model-00003-of-00003.safetensors",
+          "sha256": "166755c02c0c0682302d460c0eadcf138758a022d9a578c7eb74f3251e770999"
+        },
+        {
+          "path": "tekken.json",
+          "sha256": "b1272b956bd6edd2d2c674c76896c7661308c9e723997b0afb55ecb429cb5dc7"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "2ba5b3330fd84d5376fcca797cfb3b42eee6241ce23e3271e6fb2a115a8751bd"
+        }
+      ],
+      "started_at": "2026-11-19T08:53:30.555532+00:00",
+      "finished_at": "2026-11-19T23:36:26.133312+00:00",
+      "free_bytes_after": 2210091720704
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Coder-Next",
+      "revision_sha": "a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb",
+      "source_manifest": "local-discovered/Qwen__Qwen3-Coder-Next.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 49,
+      "files_verified": 49,
+      "source_bytes": 159376298911,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 9,
+        "sha256-vs-publisher": 40
+      },
+      "file_status_counts": {
+        "VERIFIED": 49
+      },
+      "weight_files_sha256": [
+        {
+          "path": "model-00001-of-00040.safetensors",
+          "sha256": "8e9a517133bfbdc6806cf8b61793055a260efeb68e6e019fd90e4bbb1b665d0a"
+        },
+        {
+          "path": "model-00002-of-00040.safetensors",
+          "sha256": "0ab43285dec19a2eba2705538dfc914dd37b3c85477d3769054e44f300e659a3"
+        },
+        {
+          "path": "model-00003-of-00040.safetensors",
+          "sha256": "68a5796b8bd75672e471daf4488bdb6c792ad895772efeacfdc41c09eeb3eb6b"
+        },
+        {
+          "path": "model-00004-of-00040.safetensors",
+          "sha256": "93f07b2ae634bdaee995c35d16d1186e7481f202e05095d17b1fc162e62c45f6"
+        },
+        {
+          "path": "model-00005-of-00040.safetensors",
+          "sha256": "9832c0217fc2ff64f1a051769aa51c004b39fcc12d785e336217087c968651f5"
+        },
+        {
+          "path": "model-00006-of-00040.safetensors",
+          "sha256": "983dce04bba12c65e457feeeb37cfb13756690b63d75d93cea3b56c361cd6859"
+        },
+        {
+          "path": "model-00007-of-00040.safetensors",
+          "sha256": "41f27ff915d0797f6016d32d30beb3ab092b53e56ad99461d130854b2db64bc1"
+        },
+        {
+          "path": "model-00008-of-00040.safetensors",
+          "sha256": "7382d1f4621bcef01ebf2df6ce855692f48bc94184bbfe2afab30b8d976c87de"
+        },
+        {
+          "path": "model-00009-of-00040.safetensors",
+          "sha256": "8ba622e8d78aac210b56f250e3faa6c759ab858b3d683fc0520015a60d8674b2"
+        },
+        {
+          "path": "model-00010-of-00040.safetensors",
+          "sha256": "0b5ca0b7ddaa8d5f481753d8357db9ec5c66485d93732168a7e216e8bfda6f1f"
+        },
+        {
+          "path": "model-00011-of-00040.safetensors",
+          "sha256": "e85c1ce556170c785b9479b2e0c8302e2a5bc69ccf44bdc2d8b5477d15cfb356"
+        },
+        {
+          "path": "model-00012-of-00040.safetensors",
+          "sha256": "91f8c5b1a133c191348ac8631474e3114b8f084a68dc4eb93664130efd758b79"
+        },
+        {
+          "path": "model-00013-of-00040.safetensors",
+          "sha256": "a571b802c7946fc33c90f4c5728c53505b5b94cb002a4567541a9a1899c07495"
+        },
+        {
+          "path": "model-00014-of-00040.safetensors",
+          "sha256": "32e918bdba2d2b9b7ff866e361f99626f7df92299df1e5e195f85f1ea22c8911"
+        },
+        {
+          "path": "model-00015-of-00040.safetensors",
+          "sha256": "496865f049712fb4176154f9a2c7d48063fe855a17b2ad025466a3a316692fb4"
+        },
+        {
+          "path": "model-00016-of-00040.safetensors",
+          "sha256": "9f1ff8098b81710184f274232b04ca4fbdd820afd28213bde60e4630ed57048f"
+        },
+        {
+          "path": "model-00017-of-00040.safetensors",
+          "sha256": "04d03dd323e34ea5eb409a41685b515ef36d1c943c4546d31e9c73d96f8c0c7d"
+        },
+        {
+          "path": "model-00018-of-00040.safetensors",
+          "sha256": "cc03f69e8d061957d9b5d08b7da0b40d79b27a34e8c4c3fb8d503b123b268df1"
+        },
+        {
+          "path": "model-00019-of-00040.safetensors",
+          "sha256": "040ea97dd90ebb9a183fdbcc1bdfba1228f1fc56eeb35dbd09fe3dc807dbae41"
+        },
+        {
+          "path": "model-00020-of-00040.safetensors",
+          "sha256": "036b86c2808d34d0d6972424937753ca434713defe433b04c1cf1ddde4c77685"
+        },
+        {
+          "path": "model-00021-of-00040.safetensors",
+          "sha256": "f93091cfc1df5f0d290b43517382f06cc96709b71cc494431d36c217d4e05035"
+        },
+        {
+          "path": "model-00022-of-00040.safetensors",
+          "sha256": "1173933660614dbcd56463c30573e4bc52f8b3e674217294149abd0368332366"
+        },
+        {
+          "path": "model-00023-of-00040.safetensors",
+          "sha256": "d6c7d46d0b74aba6b7125c4797393900cf54c8545fd0da99485f24df7309e470"
+        },
+        {
+          "path": "model-00024-of-00040.safetensors",
+          "sha256": "e98c2798567def2ef801648b8e1ef5e0451a04dcb4586f19c7d6843c7e71160f"
+        },
+        {
+          "path": "model-00025-of-00040.safetensors",
+          "sha256": "14b34f3e8899eb81a427320b7a17d94387f2e762af8dadcf667c28957c46b992"
+        },
+        {
+          "path": "model-00026-of-00040.safetensors",
+          "sha256": "8f0c2a1bae6835037643e18e3d964f3cd59679fe31ed2c57d3d3e0e2902ec3e0"
+        },
+        {
+          "path": "model-00027-of-00040.safetensors",
+          "sha256": "2c2aefa4ae3e70a2275f151669076c857df1549c5d13458947a8f5459d5531f3"
+        },
+        {
+          "path": "model-00028-of-00040.safetensors",
+          "sha256": "8f3f40bafcd7bd2d902813ee3110746c8f46f2f646d11cf4c4611cf59d39001f"
+        },
+        {
+          "path": "model-00029-of-00040.safetensors",
+          "sha256": "69f5a1c4f50c3d24fff41a7a0b4ef806c6ab1e2469f6523acbe0b6a7b6a840d2"
+        },
+        {
+          "path": "model-00030-of-00040.safetensors",
+          "sha256": "518965232d096a23f01c9d955ad925828ed22e77e2a067013ba549820ad8231f"
+        },
+        {
+          "path": "model-00031-of-00040.safetensors",
+          "sha256": "a24847e00ccfb3b510135d245083622f6f3337c016aa80c5bafceabf584e63c4"
+        },
+        {
+          "path": "model-00032-of-00040.safetensors",
+          "sha256": "605e2609278cd172ab8e0fab95e89fed2e7884b2bad378a516d35275812c9031"
+        },
+        {
+          "path": "model-00033-of-00040.safetensors",
+          "sha256": "3d2aa165f7b0d2a8acb66d869f823d7aa6344db75c6e1be833480acc2b252fdf"
+        },
+        {
+          "path": "model-00034-of-00040.safetensors",
+          "sha256": "04bd78b03a131401169af0e67d96db5c6071631010ac19e9c0c9b7fb8c3f1871"
+        },
+        {
+          "path": "model-00035-of-00040.safetensors",
+          "sha256": "eb6da0385f8ba56b98a6677bdc59f1c9cfff291024d61f26554b1881bba8edab"
+        },
+        {
+          "path": "model-00036-of-00040.safetensors",
+          "sha256": "4925757ada6c754070fd6381c5e01225ca51c19213c83011ba6c39e541dda984"
+        },
+        {
+          "path": "model-00037-of-00040.safetensors",
+          "sha256": "12528012534bba5c61b237f3441864f55707ec050e1372d8eaaf9fdce259cffd"
+        },
+        {
+          "path": "model-00038-of-00040.safetensors",
+          "sha256": "58d4fd2e057fe619a690ee969bd79f85e45b0862df6a5a433abeff31abf03f7f"
+        },
+        {
+          "path": "model-00039-of-00040.safetensors",
+          "sha256": "407d45b48d0682469ac555c84c6aa3ce6ee8c56759074a532670a4ab035fade3"
+        },
+        {
+          "path": "model-00040-of-00040.safetensors",
+          "sha256": "9606cbc3a087efaba8e17cb97b9d91cd8d25e6cba6958079d58c19871d272053"
+        }
+      ],
+      "started_at": "2026-11-19T23:36:26.529709+00:00",
+      "finished_at": "2026-11-20T09:16:01.154225+00:00",
+      "free_bytes_after": 1867301199872
+    },
+    {
+      "repo_id": "Wan-AI/Wan2.2-TI2V-5B",
+      "revision_sha": "921dbaf3f1674a56f47e83fb80a34bac8a8f203e",
+      "source_manifest": "pre-existing-acquisition-receipt/wan22-ti2v-5b-2026-11-05.json",
+      "priority_group": "PRE_EXISTING",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 23,
+      "files_verified": 23,
+      "source_bytes": 34203123497,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 11,
+        "sha256-vs-publisher": 12
+      },
+      "file_status_counts": {
+        "VERIFIED": 23
+      },
+      "weight_files_sha256": [],
+      "started_at": "2026-11-05",
+      "finished_at": "2026-11-05",
+      "free_bytes_after": null
+    },
+    {
+      "repo_id": "Tongyi-MAI/Z-Image-Turbo",
+      "revision_sha": "f332072aa78be7aecdf3ee76d5c247082da564a6",
+      "source_manifest": "pre-existing-acquisition-receipt/z-image-turbo-2026-11-04.json",
+      "priority_group": "PRE_EXISTING",
+      "status": "VERIFIED",
+      "license": "apache-2.0",
+      "files_total": 32,
+      "files_verified": 32,
+      "source_bytes": 32899667397,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 14,
+        "sha256-vs-publisher": 18
+      },
+      "file_status_counts": {
+        "VERIFIED": 32
+      },
+      "weight_files_sha256": [],
+      "started_at": "2026-11-04",
+      "finished_at": "2026-11-04",
+      "free_bytes_after": null
+    }
+  ],
+  "notes": [
+    "Local absolute paths, usernames and credentials are intentionally omitted.",
+    "A HOLD entry means no payload was acquired for that model.",
+    "Publisher LFS SHA-256 compared for weight files; ordinary Git blobs compared by Git blob SHA-1; 'size-only' means no publisher hash existed."
+  ],
+  "R158_historical_snapshot": {
+    "kind": "ASOF112_RESEARCH_FIXTURE_RECONSTRUCTED_FROM_116_REPORTED_LEDGER_BY_EXCLUDING_4_NEWLY_VERIFIED_REPO_IDS",
+    "date_jst": "2026-11-24",
+    "source_ledger": "catalog/execution/2026-11-19-acquisition-ledger.json",
+    "excluded_later_4_receipt_repos": [
+      "nchapman/Qwen3.5-0.8B-Heretic-LoRA",
+      "Datadog/Toto-2.0-4m",
+      "inclusionAI/LingSante-Pulse-1.0",
+      "ostris/primal_vae"
+    ],
+    "not_independent_owner_local_SHA_or_offline_reconstruction": true,
+    "for_historical_R156_112_regression_tests_only": true
+  }
+}

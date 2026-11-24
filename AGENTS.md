@@ -1,3 +1,10 @@
+# 現行v67／R158（2026-11-24）：日本語Drama3原本とStudioYebisu KL蒸留smallの2訓練成果
+
+唯一の正本は[CURRENT](catalog/CURRENT.json)で**248登録／199有効（SELECT56、CONDITIONAL143、HOLD30）**、旧v66の246行不変。[Publisher SHA・32ファイル固定](manifests/drafts/r158-2026-11-24-aratako-trained-and-studio-distilled-publisher-originals.candidate.json)・[採否およびライセンス/ABI問題](docs/strategy/158-v67-aratako-japanese-drama3-and-studio-distilled-12gb-tts.md)・[all199 readiness STOP](catalog/readiness/v67-2026-11-24-r158-all199-gates.json)。元モデルはfishaudio/drama-3、StudioはAratako日本語FTからexpert枝刈り後JSUT/JVNV＋合成のKL蒸留、Full Q4/Q5はtrained originalityなし。Fish Community License1.0、JSUT非商用研究データ、JVNV CC BY-SA、声の本人同意、Python codec.pthの非安全なロード、speech.cpp fast.patch/CUDA実行ABIは未解決。RTX4090の4.18はRTFxでありパッチの相対改善2.96倍とは別。既取得116モデルは取得器の報告であり本回owner D実体を再SHAしていない。**approved queue0、重量DL0、Gated回避0、main一本**。
+
+
+---
+
 # R159-Ive／v66資料追加（2026-11-24）：小型文書判定trained states／116台帳の差分／偽承認停止
 
 唯一正本は[catalog/CURRENT.json](catalog/CURRENT.json) **v66 246資産・197有効**。[R159-Ive詳細](docs/strategy/159-v66-after116-nov23-decision-models-and-approval-hardening.md)と[44ファイル10,831,209,292B publisher固定SHA](manifests/drafts/r159-2026-11-24-ive-ivonnet-ccore-immutable-publisher-source.candidate.json)、[未承認キュー](queues/proposed-v66-r159-after116-novel-decision-models-UNAPPROVED.json)を参照。Ivonnet0.8B／IVE4Bは独立したfull微調整・専用readout原本だが正式v66資産には追加しない研究CONDITIONAL。CCORE4Bは比較品質と重複GGUFによりHOLD。116モデルVERIFIEDはowner D本回再SHA・完全オフライン復元の証明ではなく、旧v65未登録のToto・LingSante-Pulse・Primal VAEはv66でbackfill済み。緊急修正：旧scripts/build_v65_plan.pyはユーザー／LICENSE確認済みを偽装して承認を生成したが、今後はreview-v66-r159-UNAPPROVED.json全フラグfalseのみ生成。旧v65-post112-exact-source-files自動承認refをscripts/preserve_execute.pyで拒否。v66 unknown有効15/全29、150B超HOLD3に修正。個別本人の権利・owner D実SHA/200GB床・実機ABI/parent依存・完全offline復元・手動file-scope承認がない限り実転送禁止。**重量DL0・承認0・Gated回避0・未審査code実行0・owner媒体改変0**。

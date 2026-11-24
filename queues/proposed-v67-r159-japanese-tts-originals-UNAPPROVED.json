@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "kind": "R159_V67_JAPANESE_TTS_JAPANESE_TRAINING_ORIGINAL_PLUS_12GB_DISTILLED_RUNTIME_UNAPPROVED",
+  "as_of_jst": "2026-11-24",
+  "catalog_revision": "v67-20261124",
+  "source_manifest": "manifests/drafts/r158-2026-11-24-aratako-trained-and-studio-distilled-publisher-originals.candidate.json",
+  "parent_training_source_repo": "fishaudio/drama-3",
+  "reported_acquisition_ledger_models_verified": 116,
+  "reported_base_fish_model_acquired": false,
+  "next_two_conditionally_selected_models": [
+    {
+      "repo_id": "StudioYebisu-ship-it/Drama-3-Japanese-speech-cpp-gguf",
+      "research_priority": "P0_SMALL_KL_DISTILLED_JAPANESE_MOE",
+      "repo_revision_sha": "cca4c0d8cfab67a2bccbb634d52e544199ac5108",
+      "publisher_candidate_files": 12,
+      "publisher_candidate_bytes": 9762550467,
+      "backend": "speech.cpp v0.11.2 CUDA12.8, patches subject to audit",
+      "owner_license_rights_unknown": true,
+      "status": "SOURCE_ONLY_NOT_APPROVED"
+    },
+    {
+      "repo_id": "Aratako/Drama-3-Japanese",
+      "research_priority": "P1_LONG_TERM_UNQUANTIZED_BF16_FP8_JAPANESE_FINE_TUNE",
+      "repo_revision_sha": "e3762febfc794eaa1d08ee9931215365f92968a8",
+      "publisher_candidate_files": 20,
+      "publisher_candidate_bytes": 41502599201,
+      "backend": "SGLang-Omni fixed commit or Fish Speech code; checkpoint codec.pth safe read validation needed",
+      "owner_license_rights_unknown": true,
+      "status": "SOURCE_ONLY_NOT_APPROVED"
+    }
+  ],
+  "conditional_full_Q4_K_optional_one_format_source_only": {
+    "file_name": "Drama-35B-A3B-Japanese-v3-Q4_K.gguf",
+    "publisher_bytes": 22359473504,
+    "not_an_independent_trained_state": true,
+    "estimated_all_GPU_free_VRAM_GiB": 23.21,
+    "24GB_GPU_full_offload_not_guaranteed": true,
+    "status": "NOT_SELECTED_IN_MINIMAL_2_LEARNED_STATES"
+  },
+  "conditional_audio_cpp_alternate_same_small_trained_state_source_only": {
+    "file_name": "drama3-japanese-small-IQ3_XXS-audiocpp.gguf",
+    "publisher_bytes": 9962579296,
+    "not_an_independent_trained_state": true,
+    "status": "NOT_SELECTED_IN_MINIMAL_SPEECHCPP_RESTORE"
+  },
+  "Fish_Audio_license_effective_minimum_annual_revenue_threshold_USD": 500000,
+  "Fish_Audio_restrictions_conditional_commercial_and_hosted": true,
+  "JSUT_and_JVNV_training_corpora_are_separate_rights_stop": true,
+  "owner_specific_allowed_actions_reviewed": false,
+  "license_text_reviewed": false,
+  "current_owner_live_free_bytes": null,
+  "model_src_exact_public_LFS_hashes_only": true,
+  "owner_checksum_or_offline_restore_verified": false,
+  "approved_queue": "queues/approved.json",
+  "approved": false,
+  "download_enabled": false,
+  "explicit_owner_manifest_approval_added": 0,
+  "new_payload_bytes_downloaded_now": 0
+}

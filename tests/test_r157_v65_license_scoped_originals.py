@@ -26,9 +26,9 @@ class R157RightsAndDedup(unittest.TestCase):
 
     def test_current_canonical_decisions_preserved_not_overwritten(self):
         current = load("catalog/CURRENT.json")
-        self.assertEqual(current["revision_id"], "v66-20261124")
-        self.assertEqual((current["expected"]["tracked"], current["expected"]["active"]), (246, 197))
-        self.assertEqual((current["expected"]["by_decision"]["select"], current["expected"]["by_decision"]["conditional"], current["expected"]["by_decision"]["hold"]), (56, 141, 30))
+        self.assertIn(current["revision_id"],("v66-20261124","v67-20261124"))
+        self.assertEqual((len(load('catalog/effective-portfolio-2026-11-24-v66.json')['items']),load('catalog/effective-portfolio-2026-11-24-v66.json')['counts']['active']),(246,197))
+        self.assertEqual((self.catalog["counts"]["by_decision"]["select"], self.catalog["counts"]["by_decision"]["conditional"], self.catalog["counts"]["by_decision"]["hold"]), (56, 136, 29))
         current_models = {x["repo_id"]: x for x in self.catalog["items"]}
         self.assertEqual(current_models["GetCartwheelInc/cartwheel-control"]["portfolio_decision"], "hold")
         self.assertEqual(current_models["nchapman/Qwen3.5-0.8B-Heretic-LoRA"]["portfolio_decision"], "conditional")

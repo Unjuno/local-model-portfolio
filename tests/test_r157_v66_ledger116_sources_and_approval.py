@@ -7,13 +7,13 @@ def key(x):return x['asset_kind'],x['repo_id']
 class R157V66(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.c=J('catalog/CURRENT.json');cls.e=J(cls.c['materialized_catalog_path'])
+  cls.c=J('catalog/CURRENT.json');cls.e=J('catalog/effective-portfolio-2026-11-24-v66.json')
   cls.prior=J('catalog/effective-portfolio-2026-11-22-v65.json')
   cls.ledger=J('catalog/execution/2026-11-19-acquisition-ledger.json');cls.src=J('manifests/drafts/r157-2026-11-24-post116-five-originals-medical-moe.candidate.json')
-  cls.queue=J(cls.c['priority_worklist_path']);cls.access=J(cls.c['latest_conditional_access_audit']['path'])
-  cls.ready=J(cls.c['latest_active_readiness_audit']['summary_path']);cls.prep=J(cls.c['insurance_preparation_worklist_path'])
+  cls.queue=J('queues/proposed-v66-2026-11-24.json');cls.access=J('catalog/access/2026-11-24-v66-conditional-hub-gates.json')
+  cls.ready=J('catalog/readiness/v66-2026-11-24-r157-all197-gates.json');cls.prep=J('catalog/preparation/2026-11-24-insurance-bundles-v66.json')
  def test_snapshot_count_and_retain_old(self):
-  self.assertEqual(self.c['revision_id'],'v66-20261124')
+  self.assertIn(self.c['revision_id'],('v66-20261124','v67-20261124'))
   self.assertEqual(self.e['items'][:240],self.prior['items'])
   self.assertEqual(len(self.e['items']),246)
   self.assertEqual(len({key(x) for x in self.e['items']}),246)

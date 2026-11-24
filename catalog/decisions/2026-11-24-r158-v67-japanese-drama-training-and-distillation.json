@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "kind": "R158_V67_JAPANESE_DRAMA_TTS_DISTINCT_TRAINING_AND_RUNTIME_LICENSE_DECISION",
+  "review_date_jst": "2026-11-24",
+  "canonical_new_revision": "v67-20261124",
+  "formal_additions": [
+    {
+      "repo_id": "Aratako/Drama-3-Japanese",
+      "adopt": "CONDITIONAL_ARCHIVE_JAPANESE_JAPANESE_LORA_FINETUNED_ORIGINAL",
+      "learned_novelty": "fishAudio drama3 source independent Japanese 70,000 hours finetune with rank32/alpha32 + learned audio_decoder/embeddings; retains 35,899,643,008 BF16+FP8 learned serialized elements",
+      "what_is_negative": "JVS CAM++ speaker similarity declines compared with parent in publisher table, single-speaker limit and inconsistent tag controls; voice cloning with 3 references is publisher claim not owner test.",
+      "selected_bytes": 41502599201,
+      "selected_files": 20,
+      "absolute_license_stop": "Fish Audio Community License1.0 commercial revenue conditions, hosted service separately licensed; Japanese training dataset rights not audited.",
+      "downloader": "RESEARCH_ONLY_NOT_APPROVED"
+    },
+    {
+      "repo_id": "StudioYebisu-ship-it/Drama-3-Japanese-speech-cpp-gguf",
+      "adopt": "CONDITIONAL_ARCHIVE_INDEPENDENT_KL_DISTILLED_SMALL_JAPANESE_MOE_ORIGINAL",
+      "learned_novelty": "NOTICE says other36layers 100 experts vs full256, 4 layers keep256, Japanese KL distilled using JSUT/JVNV and synthetic prompts, then IQ3_XXS. Separate learned state. Q4/Q5 full model quantizations are not new model IDs.",
+      "what_is_negative": "Publisher 3-prompt RTX4090 CUDA12.8 3.88x real time aggregate, peak single4.18 RTFx, 2.96x relative fast patch; outputs seed42 diverged and no independent repeat; 16GB requires appropriate free VRAM, full Q4 23.21GiB free VRAM not 24GB all-GPU. Exact small tensor count unknown.",
+      "selected_bytes": 9762550467,
+      "selected_files": 12,
+      "absolute_license_stop": "Fish Audio Community + JSUT non-commercial + JVNV CC BY-SA 4.0 + multi-origin patch license and voice-cloning consent; per act owner rights not verified.",
+      "downloader": "RESEARCH_ONLY_NOT_APPROVED"
+    }
+  ],
+  "source_exact_manifest": "manifests/drafts/r158-2026-11-24-aratako-trained-and-studio-distilled-publisher-originals.candidate.json",
+  "two_source_repos_selected_publisher_refs": 32,
+  "selected_publisher_source_bytes": 51265149668,
+  "author_runtime_benchmark_hardware": "NVIDIA RTX 4090 CUDA 12.8, batch one per request, memory+11GB, clocks not published",
+  "author_fast_patch_RTFx_vs_speedup": {
+    "maximum_RTFx": 4.18,
+    "aggregate_RTFx": 3.88,
+    "aggregate_relative_speedup": 2.96
+  },
+  "three_distinct_classifications": {
+    "original_Japanese_finetune": "INDEPENDENT_TRAINED_STATE_ARCHIVE",
+    "small_pruned_and_KL_distilled": "INDEPENDENT_TRAINED_STATE_ARCHIVE",
+    "full_Q4_K_and_Q5_K": "ALTERNATIVE_QUANTIZED_FORMATS_NOT_NEW_MODEL_ID"
+  },
+  "known_source_overlap": {
+    "original_Japanese_codec_SHA_equals_fishaudio_s2_pro_same_weight": true,
+    "physical_local_owner_disk_reuse_check": false,
+    "fishAudio_Drama3_base_already_selected_conditional_but_not_in_116_ledger": true
+  },
+  "publisher_license_primary": "https://huggingface.co/fishaudio/drama-3/blob/main/LICENSE",
+  "speaker_impersonation_permission_check_pending": true,
+  "publisher_distilled_training_JSUT_noncommercial_notice_preserved": true,
+  "publisher_derived_Japanese_quality_increase_not_universal": true,
+  "H_T_D_C_U": {
+    "H": "Two independent Japanese TTS trained source states (Aratako fine-tune and Studio small pruning+KL distillation) increase rare Japanese emotive and voice cloned offline local capability. Full Q4/Q5 alternative formats add no new trained state.",
+    "T": "Cross-check 28+22 complete HF immutable tree paths, select 20+12 publisher ref files, 11 LFS SHA, 6 small checksum cases, original 8 BF16/FP8 shards and codec. No D-drive payload downloaded/executed. Publisher JKYB 13,536x5 and JVS 100x5x5; small GGUF RTX 4090 CUDA 12.8 author 3 prompts. Future local matched >=30 prompts fixed batch/seed/quant/tool ABI and predeclared WER/CER, style and latency thresholds.",
+    "D": "PASS if selected 32 files exactly 51,265,149,668 bytes, immutable 40hex revision, Q4/Q5 excluded as model IDs, 242 tracked 194 active, all research only and 0 approvals. FAIL if small mislabelled as simple format copy, native full Q4 assumed16GB full fit, speaker rights presumed, or 4.18 RTFx called 4.18x patch speedup. Owner license and runtime UNCERTAIN.",
+    "C": "Aratako speaker similarity and sentence CER sometimes degrade; small model pruning and KL distillation may cause unstable long sentences and generic prosody, 24GB VRAM full Q4 requires partial CPU offload, training dataset rights constrain distribution.",
+    "U": "Publisher measured speed only n=3 nonpaired stochastic utterances and differing outputs, unknown clock/effective batch and VRAM allocation, model codec pth non-executed, no owner data/permission/real HDD SHA. No independent repeated u_c or k."
+  },
+  "multidisciplinary": [
+    "Japanese_acoustic_phonetics_and_prosody",
+    "MoE_pruning_quantization_and_KL_distillation",
+    "GPU_VRAM_and_inference_software_ABI",
+    "open_weight_license_data_rights_and_voice_privacy",
+    "reproducible_sha_supply_chain"
+  ],
+  "download_approved": false,
+  "new_model_files_downloaded": 0,
+  "owner_HDD_rehashed_now": false,
+  "owner_license_acts_reviewed": false
+}

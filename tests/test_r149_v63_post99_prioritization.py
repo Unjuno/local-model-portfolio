@@ -18,7 +18,7 @@ class Post99PriorityIntegrity(unittest.TestCase):
         cls.audit = load('catalog/research/2026-11-22-r149-post99-compact-and-rare-source-screen.json')
 
     def test_canonical_unmodified(self):
-        self.assertIn(self.current['revision_id'], ('v63-20261122','v64-20261122','v65-20261122', 'v66-20261124'))
+        self.assertIn(self.current['revision_id'], ('v63-20261122','v64-20261122','v65-20261122', 'v66-20261124','v67-20261124'))
         self.assertEqual(load('catalog/effective-portfolio-2026-11-22-v63.json')['counts']['tracked'], 235)
         self.assertEqual(load('catalog/effective-portfolio-2026-11-22-v63.json')['counts']['active'], 188)
         self.assertEqual(load('catalog/effective-portfolio-2026-11-22-v63.json')['counts']['by_decision']['select'], 55)

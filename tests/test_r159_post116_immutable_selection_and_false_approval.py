@@ -20,8 +20,8 @@ class R159Post116SourceAndApproval(unittest.TestCase):
         cls.audit=L("catalog/research/2026-11-24-r159-ledger116-reconciliation.json")
         cls.dec=L("catalog/decisions/2026-11-24-r159-v66-novel-decision-models-and-ledger116.json")
     def test_catalog_unmodified_and_acquisition116_not_owner_SHA(self):
-        self.assertEqual(self.current["revision_id"],"v66-20261124")
-        self.assertEqual((self.current["expected"]["tracked"],self.current["expected"]["active"]),(246,197))
+        self.assertIn(self.current["revision_id"],("v66-20261124","v67-20261124"))
+        self.assertEqual((len(L("catalog/effective-portfolio-2026-11-24-v66.json")["items"]),L("catalog/effective-portfolio-2026-11-24-v66.json")["counts"]["active"]),(246,197))
         self.assertEqual((self.ledger["summary"]["models_verified"],self.ledger["summary"]["files_verified_total"],self.ledger["summary"]["bytes_verified_total"]),(116,1758,2021784002725))
         self.assertFalse(self.audit["owner_windows_D_physically_rehashed_by_this_audit"])
         self.assertEqual(len(self.audit["newly_reported_four_repos"]),4)
@@ -95,10 +95,17 @@ class R159Post116SourceAndApproval(unittest.TestCase):
         spec.loader.exec_module(plan)
         with tempfile.TemporaryDirectory() as td:
             scratch=Path(td)
+            # Historical planner tested against its fixed v66 selection header;
+            # do not weaken production fail-closed check for later v67 current.
+            current = L("catalog/CURRENT.json")
+            current["revision_id"] = "v66-20261124"
+            current["expected"]["tracked"] = 246
+            current["expected"]["active"] = 197
+            (scratch/"current-v66.json").write_text(json.dumps(current))
             with mock.patch.object(plan,"QUEUE",ROOT/"queues/proposed-v66-r159-after116-novel-decision-models-UNAPPROVED.json"),\
                  mock.patch.object(plan,"SOURCE",ROOT/"manifests/drafts/r159-2026-11-24-ive-ivonnet-ccore-immutable-publisher-source.candidate.json"),\
                  mock.patch.object(plan,"LEDGER",ROOT/"catalog/execution/2026-11-19-acquisition-ledger.json"),\
-                 mock.patch.object(plan,"CURRENT",ROOT/"catalog/CURRENT.json"),\
+                 mock.patch.object(plan,"CURRENT",scratch/"current-v66.json"),\
                  mock.patch.object(plan,"DISC",scratch),\
                  mock.patch.object(plan,"PLAN",scratch/"plan.json"),\
                  mock.patch.object(plan,"APPROVAL",scratch/"review-UNAPPROVED.json"):

@@ -1,3 +1,9 @@
+## R158／現行v67（2026-11-24）：独立日本語TTS2モデルを追加
+
+[CURRENT](CURRENT.json)：**248登録／199有効**、旧246件不変。[32file／51,265,149,668byteのPublisher原本SHA](../manifests/drafts/r158-2026-11-24-aratako-trained-and-studio-distilled-publisher-originals.candidate.json)、[全199 STOP](readiness/v67-2026-11-24-r158-all199-gates.json)、[研究/ライセンス](../docs/strategy/158-v67-aratako-japanese-drama3-and-studio-distilled-12gb-tts.md)参照。Aratako35.9B BF16/FP8 LoRA日本語FTとStudio別学習small KL蒸留を別登録、Q4/Q5 GGUF形式重複は非採用。所有者実媒体SHA・ライセンス・CUDA ABI未検証、承認0・新規DL0。
+
+---
+
 ## v65 R154／112取得台帳の全IDを正式目録へ照合
 
 [正式CURRENT](CURRENT.json) は240登録・192有効。Timestral5M/WeMM-video2bは既存112 VERIFIED原本、Hereticの2小型LoRAを条件付き、Cartwheel3制御policyを第三者権利でHOLD。[監査](audits/2026-11-22-r154-all112-ledger-and-new-source-delta.json)、[8INT8差分](research/2026-11-22-r154-pico-eight-int8-extra-publisher-sha.json)、[判断報告](../docs/strategy/154-v65-post112-backfill-small-heretic-and-robot-rights.md)。承認0。

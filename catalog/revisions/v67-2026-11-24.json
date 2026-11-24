@@ -1,0 +1,435 @@
+{
+  "schema_version": 1,
+  "revision_id": "v67-20261124",
+  "previous_revision_id": "v66-20261124",
+  "decision_date_jst": "2026-11-24",
+  "target_branch": "main",
+  "kind": "ADD_TRAINED_JAPANESE_DRAMA_FINE_TUNE_AND_SEPARATELY_KL_DISTILLED_SMALL_MOE_RUNTIME_INDEPENDENT_OUTCOMES",
+  "previous_asset_count": 246,
+  "previous_active_count": 197,
+  "additions": [
+    {
+      "position": 247,
+      "asset_kind": "model",
+      "repo_id": "Aratako/Drama-3-Japanese",
+      "url": "https://huggingface.co/Aratako/Drama-3-Japanese",
+      "group": "日本語演技TTS：独立LoRAファインチューニング原本35.899B",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Distinct Japanese fine-tune of fishaudio/drama-3 using publisher-claimed approx70k hours Japanese speech data, rank32 LoRA plus trained token embeddings and audio decoder. 8 BF16/FP8 safetensor shards + 44.1kHz codec. Separate trained state; not 35B parameter count of Fish base treated as same weight.",
+      "quality_positive": "Publisher JKYB reading accuracy 92.021% Fish base vs93.188% Japanese, pooled 66,423 usable pairs from13,536texts×5; Japanese inline emotive tags and 1–3 same-speaker references. 35,899,643,008 published total serialized parameters.",
+      "quality_negative": "Publisher JVS cloning similarity CAM++ base0.7333 vs Japanese0.7280 with1 reference, base0.7769 vs Japanese0.7688 with3 references; no blanket quality improvement. Random generation can stop early or go silent; caption/tag obeying inconsistent. Unknown 70k hours training data rights.",
+      "risk_and_alternative_assessment": "Source is public ungated; no validated forecast of future banning. Parent and distilled small are independently trained; full Q4/Q5 quantized formats within Studio repo are same Aratako trained output, not new models. Full 24GB GPU cannot fit Q4 without offload due 23.21GiB free VRAM requirement.",
+      "evidence_date": "2026-11-24",
+      "evidence_kind": "PUBLISHER_IMMUTABLE_40HEX_HF_TREE_LFS_SHA256_AND_VERSIONED_NOTICE_AUTHOR_BENCHMARK_ONLY",
+      "evidence_urls": [
+        "https://huggingface.co/Aratako/Drama-3-Japanese/tree/e3762febfc794eaa1d08ee9931215365f92968a8",
+        "https://huggingface.co/StudioYebisu-ship-it/Drama-3-Japanese-speech-cpp-gguf/blob/cca4c0d8cfab67a2bccbb634d52e544199ac5108/NOTICE",
+        "https://huggingface.co/fishaudio/drama-3/blob/main/LICENSE"
+      ],
+      "observed_access": "official public, gated:false private:false",
+      "license_metadata": "Fish Audio Community License v1.0; personal/research rights conditioned; limited revenue<USD500k commercial possible under conditions, hosted service separate written license; voice identity consent and upstream Japanese data rights unknown.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "e3762febfc794eaa1d08ee9931215365f92968a8",
+      "upstream_all_files_bytes_observed": 41508646521,
+      "upstream_file_count_observed": 28,
+      "upstream_lfs_sha256_count_observed": 10,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 20,
+      "candidate_selected_source_file_bytes": 41502599201,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2034,
+          "sha256": null,
+          "git_blob_sha1": "a58d76d7128b0997057ffb684529a6994290d4b9",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 19685,
+          "sha256": null,
+          "git_blob_sha1": "3109ed8be76ee63f8b79e8752deef2bce2886675",
+          "local_sha_verified": false
+        },
+        {
+          "path": "Notice",
+          "bytes": 139,
+          "sha256": null,
+          "git_blob_sha1": "1e25664739d1d39ef0713e1373051a54c395b9bc",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 9077,
+          "sha256": null,
+          "git_blob_sha1": "d7c3229835e93aafd2229339be0ca39e95143725",
+          "local_sha_verified": false
+        },
+        {
+          "path": "TAG_LIST.md",
+          "bytes": 3322,
+          "sha256": null,
+          "git_blob_sha1": "103a8e441cb90f705df1bec92b1171ec864eba6f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 7756,
+          "sha256": null,
+          "git_blob_sha1": "a585dec894e63da457d9440ec6aa7caa16d20860",
+          "local_sha_verified": false
+        },
+        {
+          "path": "codec.pth",
+          "bytes": 1871099728,
+          "sha256": "74fc41c5a7151c6f350af8bd7e5d6e3accfcc7f3dfbfac23afd35af07052bb2f",
+          "git_blob_sha1": "720d65abd6e6d80a6e4e2b87f8248450615107af",
+          "local_sha_verified": false
+        },
+        {
+          "path": "config.json",
+          "bytes": 5535,
+          "sha256": null,
+          "git_blob_sha1": "7d55fb1de30150d0353349b9e1779cbfaa1e836c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00001-of-00008.safetensors",
+          "bytes": 5000197584,
+          "sha256": "357faaf1cdc1e58de34f058cd539654d7b064abcf67d4178956c7bb880307d46",
+          "git_blob_sha1": "3859f8221f459d27ada3396973d43c43b27329ff",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00002-of-00008.safetensors",
+          "bytes": 5000513752,
+          "sha256": "ad1685082b4ab908dd13719875bfaa881c2bfb2c1910d21eac122ec575d42b3d",
+          "git_blob_sha1": "bb930e80a71e4c936a37b4b84f87a17688a5f8d8",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00003-of-00008.safetensors",
+          "bytes": 5000945984,
+          "sha256": "2892ecafd3e0cabddbefa0c192a8ece4b2f6202f8a68e57bac128a8aa9a9978d",
+          "git_blob_sha1": "d3a071250198ce7f3921b1e31fdf88ae71332539",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00004-of-00008.safetensors",
+          "bytes": 5000521944,
+          "sha256": "ddc70ce4006302eaa168d0a1ae9ceb33e26a0fad8548a1e2c17fee2bb8f91dbd",
+          "git_blob_sha1": "6fe64432b80cdba7eae24385624eca91f64ce64d",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00005-of-00008.safetensors",
+          "bytes": 5000201104,
+          "sha256": "654f3b7bef41120a2e53eacee021e5b1d2f5fa5e84e8f340461f8eba761c857c",
+          "git_blob_sha1": "eecf381a2bd2f210221b11e4908f76087d72f337",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00006-of-00008.safetensors",
+          "bytes": 4984557736,
+          "sha256": "8e8fb6830eb22512f8c9c73e3f07dc24578859eb64e473a2c64d0cb775aec2b3",
+          "git_blob_sha1": "a7596cec1d95551245e75a2c3d8aabbf62dce4cb",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00007-of-00008.safetensors",
+          "bytes": 5000445552,
+          "sha256": "f00ff191c96f7c3c6015a0bcf42c0940146063e00f39699d6c3cf3dd36571d4b",
+          "git_blob_sha1": "fe8222a85b5ad5d4d4ece78c484481a54c1c48f3",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model-00008-of-00008.safetensors",
+          "bytes": 4616190624,
+          "sha256": "b73ce6531509bc3fdbed7dc6084a9c42f347c860bb96265c23aebaf6de141ae0",
+          "git_blob_sha1": "410b5a41df36c7c7a984f91cd5d95e9214170055",
+          "local_sha_verified": false
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 6880216,
+          "sha256": null,
+          "git_blob_sha1": "f1888b72432f663c836ca65a667ae9b544233794",
+          "local_sha_verified": false
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 102779,
+          "sha256": null,
+          "git_blob_sha1": "aaac48f459bc88b562c2079a64d5b13aa23d2685",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 20791070,
+          "sha256": "0e9b9db76b2f0389b04b6ef057a2ac3b89100b7e96f2dd7034d19580a09654d6",
+          "git_blob_sha1": "df4406c5fcbc94acf2acbce26334d53cb2345df9",
+          "local_sha_verified": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 103580,
+          "sha256": null,
+          "git_blob_sha1": "f6d3655491f93602f82a61a6ad6fa0658d737f63",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r158-2026-11-24-aratako-trained-and-studio-distilled-publisher-originals.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 35899643008,
+        "evidence_kind": "OFFICIAL_HUB_SAFE_TENSOR_BF16_3687388288_F8_32212254720_TOTAL",
+        "local_tensor_census_not_executed": true,
+        "review_date": "2026-11-24",
+        "note": "fishaudio/drama-3 original training ancestor, version-pinned SGLang-Omni or fish-speech implementation; codec.pth untrusted pickle until safety audited; training data not archived"
+      },
+      "forecast_priority": {
+        "wave": "S2",
+        "rank": 241,
+        "category": "INDEPENDENT_TRAINED_JAPANESE_TTS_AND_DISTILLED_EDGE_ORIGINAL",
+        "scenario_status": "FUTURE_ACCESS_POLICY_HYPOTHESIS_NOT_MEASURED_REMOVAL"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "LICENSE",
+          "Notice",
+          "README.md",
+          "TAG_LIST.md",
+          "chat_template.jinja",
+          "codec.pth",
+          "config.json",
+          "model-00001-of-00008.safetensors",
+          "model-00002-of-00008.safetensors",
+          "model-00003-of-00008.safetensors",
+          "model-00004-of-00008.safetensors",
+          "model-00005-of-00008.safetensors",
+          "model-00006-of-00008.safetensors",
+          "model-00007-of-00008.safetensors",
+          "model-00008-of-00008.safetensors",
+          "model.safetensors.index.json",
+          "special_tokens_map.json",
+          "tokenizer.json",
+          "tokenizer_config.json"
+        ],
+        "trained_state": "ARATAKO_JAPANESE_SPEECH_TRAINED_LORA_70K_HOURS_PLUS_EMBEDDINGS_CODEC_DECODER",
+        "publisher_immutable_revision": "e3762febfc794eaa1d08ee9931215365f92968a8",
+        "separate_runtime_and_trained_dependencies": "fishaudio/drama-3 original training ancestor, version-pinned SGLang-Omni or fish-speech implementation; codec.pth untrusted pickle until safety audited; training data not archived",
+        "publisher_source_selected_bytes": 41502599201,
+        "trained_parent_source_or_teacher": "fishaudio/drama-3",
+        "owner_local_sha_verified": false,
+        "owner_runtime_rebuild_verified": false,
+        "training_data_rights_reviewed": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 41508646521,
+        "publisher_selected_source_bytes": 41502599201,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "FISH_COMMUNITY_LICENSE_JAPANESE_DATA_RIGHTS_CODEC_PTH_CUSTOM_SGLANG_ABI_OWNER_GPU_SHA_UNVERIFIED"
+    },
+    {
+      "position": 248,
+      "asset_kind": "model",
+      "repo_id": "StudioYebisu-ship-it/Drama-3-Japanese-speech-cpp-gguf",
+      "url": "https://huggingface.co/StudioYebisu-ship-it/Drama-3-Japanese-speech-cpp-gguf",
+      "group": "12GB級日本語演技TTS：独立専門蒸留・MoE枝刈り",
+      "risk_tier": "R1",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Different trained compressed derivative of Aratako Japanese. Studio publisher NOTICE expressly reports retaining 256 experts on4 layers and100 on36 layers (4624 vs10240 expert slots), Japanese KL distillation using JSUT/JVNV and synthetic utterances, then IQ3_XXS quantization. Not merely an ordinary Q4/Q5 format conversion; small trained model is distinct. Preserve single speech.cpp small GGUF with fast and minimal patch, checksums and model license.",
+      "quality_positive": "Publisher RTX4090 CUDA12.8 one-prompt runtime full GPU ~11.48GiB estimated free VRAM and delta peak+10.90GiB; patched aggregate RTFx3.88 vs baseline1.31, speedup2.96x on3cases; max single RTFx4.18. Runtime media 44.1kHz, clone demo on speech.cpp.",
+      "quality_negative": "RTFx4.18 is realtime factor not 4x improvement over patch baseline, after patch outputs diverged seed42 and vendor small test only; GPU clock/memory batch missing. Full Q4 requires free23.21GiB and CUDA upstream q8_1 overflow; Q5 ~26.96GiB. Alternate audio.cpp layout same small trained outcome not separate model. Strict exact tensor census for small GGUF not run.",
+      "risk_and_alternative_assessment": "Source is public ungated; no validated forecast of future banning. Parent and distilled small are independently trained; full Q4/Q5 quantized formats within Studio repo are same Aratako trained output, not new models. Full 24GB GPU cannot fit Q4 without offload due 23.21GiB free VRAM requirement.",
+      "evidence_date": "2026-11-24",
+      "evidence_kind": "PUBLISHER_IMMUTABLE_40HEX_HF_TREE_LFS_SHA256_AND_VERSIONED_NOTICE_AUTHOR_BENCHMARK_ONLY",
+      "evidence_urls": [
+        "https://huggingface.co/StudioYebisu-ship-it/Drama-3-Japanese-speech-cpp-gguf/tree/cca4c0d8cfab67a2bccbb634d52e544199ac5108",
+        "https://huggingface.co/StudioYebisu-ship-it/Drama-3-Japanese-speech-cpp-gguf/blob/cca4c0d8cfab67a2bccbb634d52e544199ac5108/NOTICE",
+        "https://huggingface.co/fishaudio/drama-3/blob/main/LICENSE"
+      ],
+      "observed_access": "official public, gated:false private:false",
+      "license_metadata": "Fish Audio Community License v1.0 derivative; JSUT training corpus noncommercial research/personal, JVNV CC BY-SA4, runtime patches mixed MIT/Apache pause-clamp notices; owning commercial rights unverified.",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "cca4c0d8cfab67a2bccbb634d52e544199ac5108",
+      "upstream_all_files_bytes_observed": 68474028527,
+      "upstream_file_count_observed": 22,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 12,
+      "candidate_selected_source_file_bytes": 9762550467,
+      "candidate_selected_source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2210,
+          "sha256": null,
+          "git_blob_sha1": "23a0ebce725aff7ee57abbb642f1967157a848c9",
+          "local_sha_verified": false
+        },
+        {
+          "path": "Drama-35B-A3B-Japanese-v3-small-IQ3_XXS.gguf",
+          "bytes": 9762406560,
+          "sha256": "98edad9311a64ea07524f54f24d6d6db77055a3fe7233f24d3bd4351626d9338",
+          "git_blob_sha1": "fb15de1aef1024fc951d2a019a6a82c17212aea4",
+          "local_sha_verified": false
+        },
+        {
+          "path": "Drama-35B-A3B-Japanese-v3-small-IQ3_XXS.gguf.json",
+          "bytes": 1347,
+          "sha256": null,
+          "git_blob_sha1": "2bac2cc1419351831d32698a9b5da57f5bca7fba",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 19685,
+          "sha256": null,
+          "git_blob_sha1": "3109ed8be76ee63f8b79e8752deef2bce2886675",
+          "local_sha_verified": false
+        },
+        {
+          "path": "LICENSE-SPEECH-CPP",
+          "bytes": 1067,
+          "sha256": null,
+          "git_blob_sha1": "97ee02a30350a419d9332ff4385ba8e2d9a40984",
+          "local_sha_verified": false
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 4664,
+          "sha256": null,
+          "git_blob_sha1": "75a9b6d0badb54f9554de8dab259655b70ff799b",
+          "local_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 17255,
+          "sha256": null,
+          "git_blob_sha1": "962d62d64a9962327c29dfcfe792c0d91daf4356",
+          "local_sha_verified": false
+        },
+        {
+          "path": "SMALL_SHA256SUMS.txt",
+          "bytes": 580,
+          "sha256": null,
+          "git_blob_sha1": "e3710aae8dd72b10fd958f4dbb58de16ab5be39c",
+          "local_sha_verified": false
+        },
+        {
+          "path": "TAG_LIST.md",
+          "bytes": 3322,
+          "sha256": null,
+          "git_blob_sha1": "103a8e441cb90f705df1bec92b1171ec864eba6f",
+          "local_sha_verified": false
+        },
+        {
+          "path": "drama3-small-speechcpp.patch",
+          "bytes": 27184,
+          "sha256": null,
+          "git_blob_sha1": "e9ffd7f47a38fff81a71546204e5f409bad561dd",
+          "local_sha_verified": false
+        },
+        {
+          "path": "drama3-speechcpp-fast.patch",
+          "bytes": 65346,
+          "sha256": null,
+          "git_blob_sha1": "a5fb9c5016bd5960e06f0fa6d4e9bead423f238e",
+          "local_sha_verified": false
+        },
+        {
+          "path": "silence_codes.json",
+          "bytes": 1247,
+          "sha256": null,
+          "git_blob_sha1": "5dd3ac6da66c6b754a666661dc5be481a90a3025",
+          "local_sha_verified": false
+        }
+      ],
+      "source_manifest_path": "manifests/drafts/r158-2026-11-24-aratako-trained-and-studio-distilled-publisher-originals.candidate.json",
+      "parameter_gate": {
+        "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+        "total_parameters": null,
+        "evidence_kind": "GGUF_PRUNED_AND_DISTILLED_SMALL_COMPLETE_SERIALIZED_TENSOR_CENSUS_NOT_PERFORMED",
+        "local_tensor_census_not_executed": true,
+        "review_date": "2026-11-24",
+        "note": "Aratako Japanese teacher; exact nyosegawa/speech.cpp v0.11.2 source ABI and drama3-speechcpp-fast.patch; HF selected .gguf.json with voice codec; local GPU backend CUDA12.8 untested"
+      },
+      "forecast_priority": {
+        "wave": "S1",
+        "rank": 242,
+        "category": "INDEPENDENT_TRAINED_JAPANESE_TTS_AND_DISTILLED_EDGE_ORIGINAL",
+        "scenario_status": "FUTURE_ACCESS_POLICY_HYPOTHESIS_NOT_MEASURED_REMOVAL"
+      },
+      "preservation_bundle": {
+        "must_preserve": [
+          ".gitattributes",
+          "Drama-35B-A3B-Japanese-v3-small-IQ3_XXS.gguf",
+          "Drama-35B-A3B-Japanese-v3-small-IQ3_XXS.gguf.json",
+          "LICENSE",
+          "LICENSE-SPEECH-CPP",
+          "NOTICE",
+          "README.md",
+          "SMALL_SHA256SUMS.txt",
+          "TAG_LIST.md",
+          "drama3-small-speechcpp.patch",
+          "drama3-speechcpp-fast.patch",
+          "silence_codes.json"
+        ],
+        "trained_state": "STUDIOYEBISU_DISTILLED_AND_PRUNED_4624_MOE_EXPERT_SLOTS_ORIGINAL_GGUF_IQ3",
+        "publisher_immutable_revision": "cca4c0d8cfab67a2bccbb634d52e544199ac5108",
+        "separate_runtime_and_trained_dependencies": "Aratako Japanese teacher; exact nyosegawa/speech.cpp v0.11.2 source ABI and drama3-speechcpp-fast.patch; HF selected .gguf.json with voice codec; local GPU backend CUDA12.8 untested",
+        "publisher_source_selected_bytes": 9762550467,
+        "trained_parent_source_or_teacher": "Aratako/Drama-3-Japanese",
+        "owner_local_sha_verified": false,
+        "owner_runtime_rebuild_verified": false,
+        "training_data_rights_reviewed": false
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 68474028527,
+        "publisher_selected_source_bytes": 9762550467,
+        "owner_hdd_verified": false,
+        "actual_full_runtime_peak_verified": false
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "JSUT_TRAINING_LICENSE_FISH_COMMERCIAL_AND_PATCH_MIXED_RIGHTS_VRAM_CODEC_ABI_AND_SMALL_TENSOR_CENSUS"
+    }
+  ],
+  "added_assets": [
+    "Aratako/Drama-3-Japanese",
+    "StudioYebisu-ship-it/Drama-3-Japanese-speech-cpp-gguf"
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "source_manifest": "manifests/drafts/r158-2026-11-24-aratako-trained-and-studio-distilled-publisher-originals.candidate.json",
+  "selected_file_count": 32,
+  "selected_source_bytes": 51265149668,
+  "selected_publisher_LFS_sha256_refs": 11,
+  "excluded_large_Q4_Q5_AND_audio_cpp_alternate_files_are_not_separate_trained_state": true,
+  "rights_and_runtime_stop": true,
+  "model_weights_downloaded_now": 0,
+  "owner_D_rehashed_now": false,
+  "approval_added": 0
+}
