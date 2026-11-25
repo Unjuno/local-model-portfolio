@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 117 (verified 116, partial 0, failed 0, held 1)
-- Verified files: 1758
-- Verified source bytes: 2021784002725
-- Minimum observed free bytes: 1022413893632 (200 GB floor maintained: True)
+- Models: 123 (verified 122, partial 0, failed 0, held 1)
+- Verified files: 1854
+- Verified source bytes: 2048796855613
+- Minimum observed free bytes: 995404148736 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -122,6 +122,12 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `Datadog/Toto-2.0-4m` | `8306a9801cf98c0f5ffe4b2dcc8f496e616d84d9` | VERIFIED | 7/7 | apache-2.0 |
 | `inclusionAI/LingSante-Pulse-1.0` | `51582cc8487ab0e0f48d866bfc0124afbaf6562a` | VERIFIED | 7/7 | mit |
 | `ostris/primal_vae` | `dc3e96c879e8cf4247c9474c3109bc2847099b50` | VERIFIED | 14/14 | apache-2.0 |
+| `tencent/WeMM-Ecom-0.8B` | `b40297975d72386f1c53103371d80ae0e5a9bd58` | VERIFIED | 20/20 | apache-2.0 |
+| `AnkitNayak-dev/QJev-1.5B-Abliterated` | `1df03fe639898580f53a984355b7cbf3cca24bf4` | VERIFIED | 15/15 | apache-2.0 |
+| `2Beyes/Aurum-2B-Uncensored` | `56c735e8dc8efb82d81ad8db95e9eefb2ae7129d` | VERIFIED | 23/23 | apache-2.0 |
+| `OpenIntelligenceNet/Aion-1.0-Instruct-2.3B-Abliterated` | `266067bc254dbf72d76154016023d1687cc0e3d5` | VERIFIED | 11/11 | mit |
+| `openbmb/MiniCPM5-2B` | `42433e90dad95123ab87729fd7011e7110629556` | VERIFIED | 11/11 | apache-2.0 |
+| `MC7ever/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16-heretic` | `9a9220a20924249e07d782fc0cd912345858728e` | VERIFIED | 16/16 | other |
 | `mistralai/Mistral-Small-4-119B-2603` | `a11f36bebf709121056b1dbcc943d1c6afbe494d` | VERIFIED | 21/21 | apache-2.0 |
 | `Qwen/Qwen3-Coder-Next` | `a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb` | VERIFIED | 49/49 | apache-2.0 |
 | `Wan-AI/Wan2.2-TI2V-5B` | `921dbaf3f1674a56f47e83fb80a34bac8a8f203e` | VERIFIED | 23/23 | apache-2.0 |
