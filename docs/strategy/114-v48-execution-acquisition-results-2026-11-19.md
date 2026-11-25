@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 123 (verified 122, partial 0, failed 0, held 1)
-- Verified files: 1854
-- Verified source bytes: 2048796855613
-- Minimum observed free bytes: 995404148736 (200 GB floor maintained: True)
+- Models: 125 (verified 124, partial 0, failed 0, held 1)
+- Verified files: 1906
+- Verified source bytes: 2131396653941
+- Minimum observed free bytes: 912804728832 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -128,6 +128,8 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `OpenIntelligenceNet/Aion-1.0-Instruct-2.3B-Abliterated` | `266067bc254dbf72d76154016023d1687cc0e3d5` | VERIFIED | 11/11 | mit |
 | `openbmb/MiniCPM5-2B` | `42433e90dad95123ab87729fd7011e7110629556` | VERIFIED | 11/11 | apache-2.0 |
 | `MC7ever/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16-heretic` | `9a9220a20924249e07d782fc0cd912345858728e` | VERIFIED | 16/16 | other |
+| `openbmb/MiniCPM5-2B-Base` | `e09861095569642c3cf632d80e3200ee1d30b547` | VERIFIED | 10/10 | apache-2.0 |
+| `Aleph-Alpha/Kolibri-1.1` | `bfc33150d363f55a86cd4f0f7f79711deb9e0361` | VERIFIED | 42/42 | apache-2.0 |
 | `mistralai/Mistral-Small-4-119B-2603` | `a11f36bebf709121056b1dbcc943d1c6afbe494d` | VERIFIED | 21/21 | apache-2.0 |
 | `Qwen/Qwen3-Coder-Next` | `a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb` | VERIFIED | 49/49 | apache-2.0 |
 | `Wan-AI/Wan2.2-TI2V-5B` | `921dbaf3f1674a56f47e83fb80a34bac8a8f203e` | VERIFIED | 23/23 | apache-2.0 |
