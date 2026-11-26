@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 125 (verified 124, partial 0, failed 0, held 1)
-- Verified files: 1906
-- Verified source bytes: 2131396653941
-- Minimum observed free bytes: 912804728832 (200 GB floor maintained: True)
+- Models: 137 (verified 133, partial 0, failed 0, held 4)
+- Verified files: 2095
+- Verified source bytes: 2451205481822
+- Minimum observed free bytes: 578267394048 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -130,10 +130,22 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `MC7ever/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16-heretic` | `9a9220a20924249e07d782fc0cd912345858728e` | VERIFIED | 16/16 | other |
 | `openbmb/MiniCPM5-2B-Base` | `e09861095569642c3cf632d80e3200ee1d30b547` | VERIFIED | 10/10 | apache-2.0 |
 | `Aleph-Alpha/Kolibri-1.1` | `bfc33150d363f55a86cd4f0f7f79711deb9e0361` | VERIFIED | 42/42 | apache-2.0 |
+| `electroglyph/Inkling-2-Mini-uncensored-LoRA` | `4d81722b2e939460d5b544e5319b80e9b960236b` | VERIFIED | 1/1 | apache-2.0 |
+| `nokeepai/Inkling-2-Mini-Unbound` | `ef74b44edd2851b8e8d221a7313f36c419590430` | VERIFIED | 16/16 | apache-2.0 |
+| `openbmb/MiniCPM5-2B-DSpark` | `a63eb96b9bba7e999639d3fe3b6d70a0ea38eabd` | VERIFIED | 4/4 | apache-2.0 |
+| `harness-hub/Qwen3.8-27B-pi-adapted` | `80d05c9051dfd2ae464e1daf4329cb15524caf60` | VERIFIED | 7/7 | apache-2.0 |
+| `illuin/Ivonnet-0.8B` | `6a6a979489d262861ad3c34faaa1a763d1ce4baf` | VERIFIED | 21/21 | apache-2.0 |
+| `openbmb/MiniCPM5-1B` | `ac83f813ba7da263c51a9f3ec37c2072597e54af` | VERIFIED | 11/11 | apache-2.0 |
+| `illuin/IVE-4B` | `1e65613dfd83ba6949883325fc5f4791dae56a46` | VERIFIED | 23/23 | apache-2.0 |
+| `abacusai/Smaug-Uncensored` | `e4bbcf7aec54ab72f4ce720569f3b3dc7b973087` | VERIFIED | 32/32 | apache-2.0 |
+| `inclusionAI/LingSante-3.1-air-VL` | `1f398c937d6069994a156689636832c47d8c09be` | VERIFIED | 74/74 | mit |
 | `mistralai/Mistral-Small-4-119B-2603` | `a11f36bebf709121056b1dbcc943d1c6afbe494d` | VERIFIED | 21/21 | apache-2.0 |
 | `Qwen/Qwen3-Coder-Next` | `a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb` | VERIFIED | 49/49 | apache-2.0 |
 | `Wan-AI/Wan2.2-TI2V-5B` | `921dbaf3f1674a56f47e83fb80a34bac8a8f203e` | VERIFIED | 23/23 | apache-2.0 |
 | `Tongyi-MAI/Z-Image-Turbo` | `f332072aa78be7aecdf3ee76d5c247082da564a6` | VERIFIED | 32/32 | apache-2.0 |
+| `ausboss/Qwen-Image-2.1-Consistency-LoRA` | `None` | HOLD_RIGHTS_UNCLEAR | 0/0 | None |
+| `ngocthien/tihon-tts` | `None` | HOLD_RIGHTS_UNCLEAR | 0/0 | None |
+| `GroundingPI/GroundingPI` | `None` | HOLD_RIGHTS_UNCLEAR | 0/0 | None |
 
 Weight files were compared against publisher LFS SHA-256; ordinary Git blobs were compared by Git blob SHA-1. 'size-only' means no publisher hash existed.
 Gated models without verified owner entitlement were recorded as HOLD and no payload was acquired for them.
