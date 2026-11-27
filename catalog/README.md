@@ -1,4 +1,8 @@
-## 現行 v81 / R178（2026-11-28）
+## 現行 v82 / R179（2026-11-28）
+
+276登録・220有効（SELECT 56、CONDITIONAL 164）。英語・ネパール語混在PAWP 300Kの共有基底・Dense独立学習2状態を1研究限定CONDITIONAL repoとして追加。並行v81の2音声前処理モデルを含む既存275行、133取得報告不変。候補原本参照2,306,237 B、完全依存容量・owner増分未確定。全220取得STOP、承認・重みDL・実行・物理削除0。[調査と正式選定](../docs/strategy/179-v82-pawp-bilingual-compact-tts-and-provenance-gaps.md)。
+
+## 履歴 v81 / R178（2026-11-28）
 
 275登録・219有効（SELECT 56、CONDITIONAL 163）。SAVA（音声活動・発話終端判定）とInworld Voice Isolator（48kHz雑音抑制・2独立チェックポイント）を研究限定CONDITIONALに追加。既存273行・133取得報告不変。3配布元LFS重み参照540,092,596 B、完全依存込み容量とowner増分は未確定。全219取得STOP、承認・重量DL・実行・物理削除0。 [調査と正式選定](../docs/strategy/178-v81-audio-front-end-specialists.md)。
 

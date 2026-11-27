@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "round": "R179",
+  "date_jst": "2026-11-28",
+  "review_started_at_commit": "6fedaf75e9d51b6137c3aec5c4983c1b6e209a59",
+  "rebased_to_commit": "56baa6395c642af08b260a2d8927e3c6c8cbb50b",
+  "bounded_search_windows_days": [
+    7,
+    30,
+    90
+  ],
+  "search_sources": [
+    "Hugging Face model cards/API trees",
+    "GitHub code",
+    "arXiv search (no matched PAWP paper verified)",
+    "publisher announcements"
+  ],
+  "candidates": [
+    {
+      "repo_id": "Firoj112/pawp-tts-300k",
+      "decision": "ADD_CONDITIONAL",
+      "revision": "e7f3c94053ea88e9c17df1264475f4a41d90529e",
+      "reason": "Separate shared-basis and dense learned checkpoints trained on identical bilingual data. Code-mixed WER advantage plus dense mono PER advantage provides controlled architecture comparison distinct from existing English tiny-voca and multilingual Paradee. Keep both states within one repository; ONNX exports are not independent training."
+    },
+    {
+      "repo_id": "empero-ai/PiVo-1.4M",
+      "decision": "HOLD",
+      "revision": "515d84fc3420da6ae138f1b81017fcbc24d622a8",
+      "files": 36,
+      "bytes": 15402348,
+      "missing_http_404": [
+        "evidence/acoustic-expanded-edgeclean-phase-texture-training.json",
+        "evidence/acoustic-expanded-edgeclean-phase-training.json",
+        "evidence/teacher-model-card-provenance.json",
+        "evidence/teachers.json",
+        "evidence/v1-selected-candidate.json"
+      ],
+      "metadata_sha_matches": 7,
+      "reason": "Incomplete declared provenance; no corruption claim. Mixed Apache/Opus/CMU notices."
+    },
+    {
+      "repo_id": "litert-community/PiVo-1.4M",
+      "decision": "EXCLUDE",
+      "revision": "a6acc55c53e092f9dcaa76d96eb1adc12cc4854c",
+      "reason": "Runtime conversion of same learned weights."
+    },
+    {
+      "repo_id": "ampixa/sanoTTS",
+      "decision": "HOLD",
+      "revision": "72ad9e997d03724e100aa0ca86200cd67ab5e8f2",
+      "reason": "104215 voice +96511 G2P; 0.5.7 benchmark vs 0.5.8 examples changed G2P; GPL3, scope and runtime rights not closed."
+    },
+    {
+      "repo_id": "gachimoto/tiny-voca-ja",
+      "decision": "HOLD",
+      "revision": "9b2305c81b9ca92ef8347eba473ea096c86f55c4",
+      "reason": "Independent 4538827 Japanese/English retrain; publisher n16 CER 1%, n40 EN WER 2.8%; new front-end mismatch, code not pinned and no matched incumbent."
+    },
+    {
+      "repo_id": "Inomjonov/tiny-voca-english-reproduction",
+      "decision": "HOLD",
+      "revision": "4daaf8e2bc0c491ce7e5c3e905f0976f3f4af388",
+      "reason": "Independent seed from same code/data; 4537291 parameters but no demonstrated incremental quality."
+    },
+    {
+      "repo_id": "n4ze3m/tiny-voca",
+      "decision": "KEEP",
+      "reason": "Existing English model reported verified; different language and experimental purpose."
+    },
+    {
+      "repo_id": "sahilmahendrakar/Paradee-8M-v1.3",
+      "decision": "KEEP",
+      "reason": "Independent multilingual TTS; no matched replacement evidence."
+    }
+  ],
+  "pawp_publisher_training": {
+    "steps": 36000,
+    "seed": 42,
+    "hardware": "RTX4090",
+    "hours": 2.25,
+    "comparison": "same bilingual data; separate states",
+    "wer_percent": {
+      "shared": [
+        6.88,
+        19.71,
+        12.02
+      ],
+      "dense": [
+        6.15,
+        20.21,
+        18.09
+      ],
+      "larger": [
+        4.02,
+        12.35,
+        12.32
+      ]
+    },
+    "test_utterances": [
+      30,
+      30,
+      9
+    ],
+    "mono_per_percent": {
+      "shared_ne": 6.35,
+      "shared_en": 6.57,
+      "dense_ne": 5.53,
+      "dense_en": 5.34
+    },
+    "per_seeds": 3
+  },
+  "source_manifest": "manifests/drafts/r179-2026-11-28-pawp-300k-two-states-source.candidate.json",
+  "selection_delta": "catalog/revisions/v82-2026-11-28.json",
+  "independent_inference_tested": false,
+  "owner_rights_verified": false,
+  "download_approved": 0,
+  "physical_files_deleted": 0
+}
