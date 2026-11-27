@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "round": "R175",
+  "base_commit": "dad97833259ac9daa01ebbdae4fdf2c4d70a788a",
+  "date_jst": "2026-11-28",
+  "candidate_manifest": "manifests/drafts/r175-2026-11-28-five-specialist-publisher-sources-UNAPPROVED.candidate.json",
+  "source_windows": {
+    "as_of_jst": "2026-11-28",
+    "7_day_since": "2026-11-21",
+    "30_day_since": "2026-10-29",
+    "90_day_since": "2026-08-30",
+    "method": "HF recent creation search by pipeline tags depth-estimation, text-ranking, image-segmentation, image-to-image, time-series-forecasting, feature-extraction, top 20 each; NVIDIA publisher updated listing; separate web search at 7/30/90 days and exact source lookups; check actual date vs search recency. Non-exhaustive.",
+    "updated_7_days": [
+      "nvidia/c-fast-foundationstereo",
+      "yhatlabs/ChakraTS-OS-10M",
+      "kandinskylab/Kandinsky-ImageSR-2.0",
+      "nvidia/Nemotron-3.5-Rerank-1B-BF16",
+      "nvidia/Flora-TempSeg"
+    ],
+    "created_30_days": [
+      "yhatlabs/ChakraTS-OS-10M",
+      "kandinskylab/Kandinsky-ImageSR-2.0",
+      "nvidia/Nemotron-3.5-Rerank-1B-BF16"
+    ],
+    "created_90_days": [
+      "yhatlabs/ChakraTS-OS-10M",
+      "kandinskylab/Kandinsky-ImageSR-2.0",
+      "nvidia/Nemotron-3.5-Rerank-1B-BF16",
+      "nvidia/Flora-TempSeg"
+    ]
+  },
+  "decisions": [
+    {
+      "repo_id": "nvidia/c-fast-foundationstereo",
+      "decision": "ADD",
+      "formal_status": "conditional",
+      "comparison": [
+        "tencent/Hunyuan3D-2.1",
+        "facebook/sam3",
+        "allenai/RoboTracker",
+        "classical SGM",
+        "NVlabs/FoundationStereo",
+        "apple/DepthPro2-S (research only)"
+      ],
+      "reason": "Adds independently distilled/architecture-searched stereo disparity from rectified paired images; v77 has no identified stereo disparity specialist. Hunyuan3D generates assets, SAM3 segments masks, RoboTracker tracks temporal points; none directly estimates dense metric geometry. Publisher ~14.6M parameters, exact full tensor census unresolved.",
+      "quality_positive": "CVPR 2026 family paper reports >10x speed vs FoundationStereo with close zero-shot accuracy; independent arXiv:2610.27199 reports Fast-FoundationStereo family 0.33% AbsRel at a higher compute point on Jetson AGX Orin/Middlebury 2014, not verified for this exact commercial BP2 checkpoint.",
+      "quality_negative": "Authors distinguish faster from more accurate research checkpoints; independent study found classical libSGM competitive (0.73% AbsRel at 25ms at its real-time operating point). Different operating points and exact checkpoint unresolved; no matched owner test, no universal superiority or safety-critical reliability.",
+      "additional_candidate_source_bytes": 71115522,
+      "dependency_complete_increment_bytes": null
+    },
+    {
+      "repo_id": "yhatlabs/ChakraTS-OS-10M",
+      "decision": "HOLD",
+      "formal_status": "research_only_not_registered",
+      "comparison": [
+        "mistralai/Timestral-5M",
+        "mistralai/Timestral-28M",
+        "Datadog/Toto-2.0-4m",
+        "autogluon/chronos-2",
+        "abel-lab/Simons-297M",
+        "cisco-ai/cisco-time-series-model-1.5"
+      ],
+      "reason": "Independent 10,595,753 F32 elements; 21 quantiles, known-future covariates. Publisher FEV all100/42 covariate scores 49.9/50.1 vs Timestral-5M 46.2/44.5, Chronos2 47.3/47.0, Simons 48.4/47.3; Timestral-209M 50.4/50.7 beats it. No exact 28M or Toto-4m paired result in card. API ungated vs indexed early-access page and mandatory YHat account/license. Noncommercial, production prohibited; owner permission and offline authentication restore unresolved. Retain Timestral5M and 28M; no replacement.",
+      "dependency_complete_increment_bytes": null
+    },
+    {
+      "repo_id": "kandinskylab/Kandinsky-ImageSR-2.0",
+      "decision": "HOLD",
+      "formal_status": "research_only_not_registered",
+      "comparison": [
+        "kandinskylab/Kandinsky-6.0-Lite-distill-5s-Diffusers",
+        "classical interpolation",
+        "Real-ESRGAN"
+      ],
+      "reason": "Distinct x2/x4 image restoration, not video generator or one new checkpoint per scale; pre-baked conditioning and bundled FLUX.1-schnell VAE. 4,529,059,392 stored elements incl tables (not verified learned total). Publisher H100 SXM 80GB BF16 torch2.13 CUDA12.9 tile batch1 median5 after 2 warmups: 1024->4096 7.80s. No comparable PSNR/SSIM/LPIPS or fidelity evidence; hallucinated detail risk. Diffusers>=0.41, VAE reuse not proved. No automatic 10.45GB addition.",
+      "dependency_complete_increment_bytes": null
+    },
+    {
+      "repo_id": "nvidia/Nemotron-3.5-Rerank-1B-BF16",
+      "decision": "HOLD",
+      "formal_status": "research_only_not_registered",
+      "comparison": [
+        "Qwen/Qwen3-Reranker-0.6B",
+        "illuin/Ivonnet-0.8B",
+        "illuin/IVE-4B",
+        "nvidia/Nemotron-3.5-Parse"
+      ],
+      "reason": "1,554,712,576 BF16 elements; distilled visual cross-encoder complements text reranker; publisher ViDoRe V3 image NDCG@10 63.50 vs Qwen3-VL-Reranker2B 60.86, teacher8B 67.22; not the catalog text model. Card official release Nov30 2026 is after as-of Nov28, despite repo API created Nov13 updated Nov25. Do not claim released. OpenMDW1.1/custom model.py, rights and runtime validation unresolved.",
+      "dependency_complete_increment_bytes": null
+    },
+    {
+      "repo_id": "nvidia/Flora-TempSeg",
+      "decision": "HOLD",
+      "formal_status": "research_only_not_registered",
+      "comparison": [
+        "allenai/RoboTracker",
+        "facebook/sam3",
+        "OpenCV scene change"
+      ],
+      "reason": "Separate SFT then GRPO learned rank32 LoRA, temporal operation intervals not point tracking/masks. Exact Qwen/Qwen3.5-9B parent c202236235762e1c871ad0ccb60c8ee5ba337b9a not registered; related edited weights cannot substitute by name. Adapter 346302152 B, whole repo 366628473 B; full parent and runtime unknown. No matched quality/rights for benign video annotation. Not an autonomous robot policy; no execution.",
+      "dependency_complete_increment_bytes": null
+    }
+  ],
+  "KEEP_existing": [
+    "mistralai/Timestral-5M",
+    "mistralai/Timestral-28M",
+    "Datadog/Toto-2.0-4m",
+    "autogluon/chronos-2",
+    "abel-lab/Simons-297M",
+    "Qwen/Qwen3-Reranker-0.6B",
+    "illuin/Ivonnet-0.8B",
+    "illuin/IVE-4B",
+    "tencent/Hunyuan3D-2.1",
+    "facebook/sam3",
+    "allenai/RoboTracker",
+    "kandinskylab/Kandinsky-6.0-Lite-distill-5s-Diffusers"
+  ],
+  "formal_additions": [
+    "nvidia/c-fast-foundationstereo"
+  ],
+  "formal_replacements": [],
+  "formal_exclusions": [],
+  "formal_prior_rows_modified": 0,
+  "physical_deletions": 0,
+  "download_approvals": 0,
+  "new_weight_bytes": 0,
+  "over_refusal_comparison": "No new matched benign-task refusal/quality evidence in this pass; no refusal-based selection change. No unsafe capability ranking."
+}

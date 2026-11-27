@@ -1,4 +1,8 @@
-## 現行 v77 / R174（2026-11-28）
+## 現行 v78 / R175（2026-11-28）
+
+270登録・214有効（SELECT 56、CONDITIONAL 158）。ステレオ視差推定 C-Fast-FoundationStereo を研究限定CONDITIONALに追加。既存269行不変、133取得報告保存、全214取得STOP、承認・重量DL・物理削除0。 [一次調査・比較・容量](docs/strategy/175-v78-new-specialist-stereo-forecast-retrieval-research.md)。以下は履歴。
+
+## 履歴 v77 / R174（2026-11-28）
 
 269登録・213有効（SELECT 56、CONDITIONAL 157）。WePM 4BとNemotron 3.5 Parse（任意DFlash2部品）を研究限定追加。WePM 2Bは研究HOLD。並行R172研究・R173 CTSM 1.5含む旧267行不変。全213取得STOP、承認・重量DL・物理削除0。[研究報告](docs/strategy/174-v77-unified-pocket-and-document-parser-originals.md)。
 
