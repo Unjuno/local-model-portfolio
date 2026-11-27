@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "round": "R178",
+  "date_jst": "2026-11-28",
+  "base_commit": "6fedaf75e9d51b6137c3aec5c4983c1b6e209a59",
+  "previous_revision": "v80-20261128",
+  "result_revision": "v81-20261128",
+  "search_scope": {
+    "windows_days": [
+      7,
+      30,
+      90
+    ],
+    "bounded_not_exhaustive": true,
+    "method": "HF public listings and fixed cards/LFS diffs, GitHub pinned source/bench/pyproject, official Nov18 announcements, arXiv DeepFilterNet papers; listing crawl date not release date.",
+    "seven_day": "HF streaming list surfaced isseninc/issen-vad updated four days ago; primary card not retrievable; no exact release/update verified.",
+    "thirty_day": "Official Inworld Nov18 announcements and original releases",
+    "ninety_day": "Broader recent specialist VAD/denoising search; older DeepFilterNet reference also included",
+    "observed_license_change_verified": false
+  },
+  "source_manifest": "manifests/drafts/r178-2026-11-28-inworld-audio-originals.candidate.json",
+  "formal_additions": 2,
+  "formal_replacements": 0,
+  "formal_exclusions": 0,
+  "approved_downloads": 0,
+  "physical_deletions": 0,
+  "comparisons": [
+    {
+      "repo_id": "inworld/sava",
+      "decision": "ADD",
+      "selection": "conditional",
+      "architecture": "Three Mamba-2 blocks plus attention and speech/turn heads; 16 kHz mono; 40 ms frames; VAD 120 ms lookahead, EOT none.",
+      "learning_lineage": "Publisher ~5,000 h unique audio; training recipe, code and data unreleased.",
+      "release_reported": "2026-11-18",
+      "hf_revision": "1beae7c1dd0df6b0f92030644fc905eb087dc6a0",
+      "code_revision": "b4221a54458ea60df8c777911d0567418994cacc",
+      "publisher_parameters_approx": 25500000,
+      "publisher_weight_bytes": 51051668,
+      "positive": "Publisher AMI threshold 0.5: 85.5% within 200 ms vs smart-turn v3.2 30.8%; M3 Max CPU 3.8 ms per 40 ms frame, one stream.",
+      "negative": "AliMeeting VAD AUC 0.9376 vs Silero 0.9635; VAD timing unequal due to lookahead; quiet speech-like noise false positives; no target-speaker selection or independent owner evaluation.",
+      "reason": "Whisper/Granite transcribe and Nemotron diarizes; acoustic-semantic EOT adds a different function. Exact training outcome cannot be reconstructed from released inference source alone.",
+      "source": "https://huggingface.co/inworld/sava"
+    },
+    {
+      "repo_id": "inworld/voice-isolator",
+      "decision": "ADD",
+      "selection": "conditional",
+      "architecture": "48 kHz mono, 46 STFT bands, seven attention/Mamba dual-path blocks, mask+residual; 64M offline and 58.2M causal realtime checkpoints; two trained states, not quantizations.",
+      "learning_lineage": "Publisher ~10,000 h unique training audio; exact training set/reconstruction not established.",
+      "release_reported": "2026-11-18",
+      "hf_revision": "9b0285b3fe8403aa8e2f1dbb2165a80a4294c970",
+      "code_revision": "c73b3fab81a870410cbac50d2f05f25edc4d10aa",
+      "publisher_parameters_approx": 122200000,
+      "publisher_weight_bytes": 489040928,
+      "positive": "Publisher VIBE uses common 48 kHz scoring on 5,502 items / 77 conditions; distinct full-band offline and realtime checkpoints. Realtime 63 ms algorithmic delay at 20 ms lookahead.",
+      "negative": "Publisher tuned its own checkpoint; private eval set, 36 items may share training speakers. Independent superiority not established. No restoration or target-speaker selection; similar-level voices may remain, small GPUs untested.",
+      "reason": "Adds waveform denoising rather than transcription/synthesis/diarization; complements existing speech assets. Keep both trained execution regimes under one repository identity.",
+      "source": "https://huggingface.co/inworld/voice-isolator"
+    },
+    {
+      "repo_id": "ibm-granite/granite-speech-5.0-470m-turboctc",
+      "decision": "KEEP",
+      "existing_selection": "select",
+      "reason": "Complementary transcription, diarization or speaker embedding; no matched replacement evidence."
+    },
+    {
+      "repo_id": "openai/whisper-large-v3-turbo",
+      "decision": "KEEP",
+      "existing_selection": "select",
+      "reason": "Complementary transcription, diarization or speaker embedding; no matched replacement evidence."
+    },
+    {
+      "repo_id": "nvidia/Nemotron-3-Diarization",
+      "decision": "KEEP",
+      "existing_selection": "conditional",
+      "reason": "Complementary transcription, diarization or speaker embedding; no matched replacement evidence."
+    },
+    {
+      "repo_id": "speechbrain/spkrec-ecapa-voxceleb",
+      "decision": "KEEP",
+      "existing_selection": "conditional",
+      "reason": "Complementary transcription, diarization or speaker embedding; no matched replacement evidence."
+    },
+    {
+      "repo_id": "weya-ai/hush",
+      "decision": "HOLD",
+      "reason": "Publisher 1.8M/8 MB, 16kHz, CPU claim; matched quality, fixed source scope, and hardware conditions missing.",
+      "source": "https://huggingface.co/weya-ai/hush"
+    },
+    {
+      "repo_id": "bmarti44/before-the-implant-causal-enhancer",
+      "decision": "HOLD",
+      "reason": "Tiny causal enhancement with simulation-only evidence and erratum; no clinical or matched real-world validation.",
+      "source": "https://huggingface.co/bmarti44/before-the-implant-causal-enhancer"
+    },
+    {
+      "repo_id": "isseninc/issen-vad",
+      "decision": "HOLD",
+      "reason": "Recent listing, direct primary card not retrievable; precise release date and source scope unknown.",
+      "source": "https://huggingface.co/isseninc/issen-vad"
+    },
+    {
+      "repo_id": "DeepFilterNet (reference)",
+      "decision": "HOLD",
+      "reason": "Older real-time comparator; current exact checkpoint and matched incremental quality unresolved.",
+      "source": "https://arxiv.org/abs/2110.05588",
+      "further_source": "https://arxiv.org/abs/2305.08227"
+    }
+  ],
+  "publisher_weight_reference_bytes": 540092596,
+  "actual_incremental_bytes": null,
+  "full_offline_bundle_bytes": null,
+  "acquisition_ledger_preserved": true
+}

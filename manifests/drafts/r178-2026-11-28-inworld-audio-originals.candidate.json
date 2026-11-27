@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "kind": "R178_IMMUTABLE_PUBLISHER_WEIGHT_SCOPE_RESEARCH_ONLY",
+  "evidence_jst": "2026-11-28",
+  "source_catalog_revision": "v81-20261128",
+  "research_only_nonexecutable": true,
+  "download_enabled": false,
+  "download_approved": false,
+  "approved_by_user": false,
+  "model_payload_fetched": false,
+  "owner_local_sha_verified": false,
+  "runtime_code_executed": false,
+  "formal_catalog_promotion_performed": true,
+  "owner_specific_rights_verified": false,
+  "final_selected_file_bytes": null,
+  "publisher_weight_reference_bytes": 540092596,
+  "source_models": [
+    {
+      "repo_id": "inworld/sava",
+      "source_url": "https://huggingface.co/inworld/sava",
+      "revision": "1beae7c1dd0df6b0f92030644fc905eb087dc6a0",
+      "code_url": "https://github.com/inworld-ai/sava/tree/b4221a54458ea60df8c777911d0567418994cacc",
+      "code_revision": "b4221a54458ea60df8c777911d0567418994cacc",
+      "source_files": [
+        {
+          "path": "sava.safetensors",
+          "bytes": 51051668,
+          "lfs_sha256": "aa610ee9b5d3d1be96f70581a8a3affe7cf20d06816b4ada1efdd8ab6274be34",
+          "selected_candidate": true,
+          "metadata_only": true
+        }
+      ],
+      "additional_required_hf_paths": [
+        "README.md",
+        "LICENSE",
+        "NOTICE"
+      ],
+      "additional_required_hf_paths_exact_bytes": null,
+      "complete_hf_tree_bytes": null,
+      "complete_dependency_inclusive_bytes": null,
+      "owner_incremental_bytes": null,
+      "declared_dependencies": [
+        "huggingface-hub",
+        "numpy",
+        "safetensors",
+        "soundfile",
+        "soxr",
+        "torch>=2.1"
+      ],
+      "python": ">=3.10",
+      "weight_bytes": 51051668,
+      "notes": "Pin exact platform wheelhouse and complete code/NOTICE/license before any approval; weight references only; no local hash."
+    },
+    {
+      "repo_id": "inworld/voice-isolator",
+      "source_url": "https://huggingface.co/inworld/voice-isolator",
+      "revision": "9b0285b3fe8403aa8e2f1dbb2165a80a4294c970",
+      "code_url": "https://github.com/inworld-ai/voice-isolator/tree/c73b3fab81a870410cbac50d2f05f25edc4d10aa",
+      "code_revision": "c73b3fab81a870410cbac50d2f05f25edc4d10aa",
+      "source_files": [
+        {
+          "path": "denoiser.safetensors",
+          "bytes": 256260128,
+          "lfs_sha256": "647335a6aeb4dc706b895532c209d51e0e84a4849d17b339f00d4392a050ae53",
+          "selected_candidate": true,
+          "metadata_only": true
+        },
+        {
+          "path": "denoiser_realtime.safetensors",
+          "bytes": 232780800,
+          "lfs_sha256": "76598f05523c0669e76562a8b2f31c9d395fca316e80c907ee11775e7497ae0f",
+          "selected_candidate": true,
+          "metadata_only": true
+        }
+      ],
+      "additional_required_hf_paths": [
+        "README.md",
+        "LICENSE",
+        "NOTICE"
+      ],
+      "additional_required_hf_paths_exact_bytes": null,
+      "complete_hf_tree_bytes": null,
+      "complete_dependency_inclusive_bytes": null,
+      "owner_incremental_bytes": null,
+      "declared_dependencies": [
+        "numpy",
+        "soundfile",
+        "safetensors",
+        "torch>=2.1",
+        "torchaudio>=2.1",
+        "huggingface-hub"
+      ],
+      "python": ">=3.10",
+      "weight_bytes": 489040928,
+      "notes": "Pin exact platform wheelhouse and complete code/NOTICE/license before any approval; weight references only; no local hash."
+    }
+  ]
+}

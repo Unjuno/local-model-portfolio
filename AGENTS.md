@@ -8,7 +8,11 @@
 
 ---
 
-## 現行 v80 / R177（2026-11-28）
+## 現行 v81 / R178（2026-11-28）
+
+275登録・219有効（SELECT 56、CONDITIONAL 163）。SAVA（音声活動・発話終端判定）とInworld Voice Isolator（48kHz雑音抑制・2独立チェックポイント）を研究限定CONDITIONALに追加。既存273行・133取得報告不変。3配布元LFS重み参照540,092,596 B、完全依存込み容量とowner増分は未確定。全219取得STOP、承認・重量DL・実行・物理削除0。 [調査と正式選定](docs/strategy/178-v81-audio-front-end-specialists.md)。
+
+## 履歴 v80 / R177（2026-11-28）
 
 273登録・217有効（SELECT 56、CONDITIONAL 161）。独立学習された極小タイ語・英語印刷文書CPU OCRを研究限定CONDITIONALに追加。既存272行・133取得報告不変。全217取得STOP、取得承認・重量DL・実行・物理削除0。[調査と正式選定](docs/strategy/177-v80-openthai22-cpu-ocr.md)。配布元README checksum・完全学習パラメータ数・権利・依存・owner HDD未解決。旧版は履歴。
 
