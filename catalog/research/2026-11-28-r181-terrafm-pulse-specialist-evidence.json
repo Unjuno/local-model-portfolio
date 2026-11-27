@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "round": "R181",
+  "date_jst": "2026-11-28",
+  "base_commit": "1d3911f35f1802236fda1a5d745f2fb81701673f",
+  "selection_revision": "v85-20261128",
+  "search_windows_days": [
+    7,
+    30,
+    90
+  ],
+  "search_scope": "Bounded newest HF lists image-to-image, image-segmentation, audio-to-audio 30 each, plus targeted HF/GitHub/arXiv. Not exhaustive. No new matched benign refusal study verified.",
+  "decisions": [
+    {
+      "repo_id": "MBZUAI/TerraFM",
+      "decision": "KEEP",
+      "formal_status": "conditional",
+      "selected_state": "TerraFM-B",
+      "positive": "Publisher Landslide4Sense mIoU 70.8 vs Prithvi 65.0; landslide IoU 43.1 vs 31.5. m-EuroSAT frozen kNN 94.2 vs 80.2.",
+      "negative": "m-EuroSAT 1% labels 59.3 vs full 94.2; no matched DINOv3 benchmark; downstream heads/labels necessary. Only Base payload identified.",
+      "reason": "Independent multisensor self-supervised ViT; Sentinel-1 SAR and Sentinel-2 optical modality stems, cross-attention and dual centering. New EO-specific representation, not generic RGB DINOv3 replacement. Concurrent main already selected; no duplicate addition.",
+      "revision": "86f62795ff0e8dfae729e170e0ed82fb3e07ec9e",
+      "source_urls": [
+        "https://huggingface.co/MBZUAI/TerraFM/blob/86f62795ff0e8dfae729e170e0ed82fb3e07ec9e/README.md"
+      ]
+    },
+    {
+      "repo_id": "Phips/PULSE",
+      "decision": "ADD",
+      "formal_status": "conditional",
+      "selected_state": "PULSE_fast 4x fidelity pretrain",
+      "positive": "Publisher Urban100 Y PSNR 25.4263 dB; RTX3060 TensorRT batch1 128x128 to 512x512, 136 images, mean 0.308 ms vs NERVE 1.90 and HEART 74.63 ms.",
+      "negative": "NERVE 26.2685 dB and HEART 28.0458 dB outperform fast 4x. Heavy degradation, temporal consistency, real detail and independent reproduction unverified; clock unavailable.",
+      "reason": "Tiny learned residual CNN on fixed MKS2013 upsampling; fidelity SR differs from generative editing. Select only native fast 4x learned state; other scale/regular states HOLD, not assumed identical.",
+      "revision": "88198f08a21166c9b934cdca4760eaf1a250cb9d",
+      "source_urls": [
+        "https://huggingface.co/Phips/PULSE/blob/88198f08a21166c9b934cdca4760eaf1a250cb9d/README.md"
+      ]
+    },
+    {
+      "repo_id": "facebook/dinov3-vit7b16-pretrain-lvd1689m",
+      "decision": "KEEP",
+      "reason": "RGB generic representation; no matched replacement; 26,864,283,632 B source scope."
+    },
+    {
+      "repo_id": "facebook/dinov3-vith16plus-pretrain-lvd1689m",
+      "decision": "KEEP",
+      "reason": "Generic features and Idol dependency; 3,362,457,679 B source scope; no matched replacement."
+    },
+    {
+      "repo_id": "Qwen/Qwen-Image-2.1",
+      "decision": "KEEP",
+      "reason": "Generative editing differs from fidelity SR."
+    },
+    {
+      "repo_id": "ausboss/Qwen-Image-2.1-Consistency-LoRA",
+      "decision": "KEEP",
+      "reason": "Independent editing adaptation; not fidelity SR."
+    },
+    {
+      "repo_id": "Tongyi-MAI/Z-Image-Turbo",
+      "decision": "KEEP",
+      "reason": "Image generation, not SR."
+    },
+    {
+      "repo_id": "ibm-nasa-geospatial/Prithvi-EO-2.0-300M-TL",
+      "decision": "HOLD",
+      "reason": "Prior proposed comparator, absent from v80; temporal role distinct."
+    },
+    {
+      "repo_id": "kandinskylab/Kandinsky-ImageSR-2.0",
+      "decision": "HOLD",
+      "reason": "Prior R175 candidate; larger scope, matched fidelity metrics missing."
+    },
+    {
+      "repo_id": "Phips/PULSE",
+      "variant": "ONNX FP32/FP16",
+      "decision": "EXCLUDE",
+      "reason": "Format conversions, not independent learned states; no physical deletion."
+    },
+    {
+      "repo_id": "Phips/PULSE",
+      "variant": "other native states",
+      "decision": "HOLD",
+      "reason": "Potential separately trained states; incremental evidence missing."
+    },
+    {
+      "repo_id": "ai-sage/GigaEdge-Enhance",
+      "revision": "f1553bd1859bcef52d0037a0ebe4d17da293548e",
+      "decision": "KEEP",
+      "publisher_repo_bytes": 39967596,
+      "reason": "11/25. quality48 paper earlier checkpoint; hybrid48 EARS-WHAM v2 n=886 SI-SDR13.03 vs DPDFNet2 14.69, PESQ1.90 vs2.21; 56 vs17.3 streams, HW/clock unknown. Generative distortion and ABI unresolved; fast8 lacks matched stronger baseline. Concurrent main already selected; existing decision preserved, earlier limitations remain.",
+      "source_urls": [
+        "https://huggingface.co/ai-sage/GigaEdge-Enhance/blob/f1553bd1859bcef52d0037a0ebe4d17da293548e/README.md",
+        "https://arxiv.org/abs/2611.13243",
+        "https://github.com/salute-developers/giga-edge-enhance"
+      ],
+      "previous_research_decision": "HOLD"
+    },
+    {
+      "repo_id": "grsm-lab/fluxsr-glor",
+      "revision": "db153300ff5e27412feb4c3f00c70fcb54fe4c5a",
+      "decision": "HOLD",
+      "publisher_repo_bytes": 48467545807,
+      "reason": "11/27; FLUX.1-dev noncommercial gated dependency, no matched fidelity evidence.",
+      "source_urls": [
+        "https://huggingface.co/grsm-lab/fluxsr-glor/blob/db153300ff5e27412feb4c3f00c70fcb54fe4c5a/README.md"
+      ]
+    },
+    {
+      "repo_id": "grsm-lab/poem-optical2sar-nir",
+      "revision": "e00860eb2aa44e4a730f7f3502d3c04304cf78bc",
+      "decision": "HOLD",
+      "publisher_repo_bytes": 1035266331,
+      "reason": "11/27; simulated SAR not measured SAR; fidelity, provenance and dependencies unresolved.",
+      "source_urls": [
+        "https://huggingface.co/grsm-lab/poem-optical2sar-nir/blob/e00860eb2aa44e4a730f7f3502d3c04304cf78bc/README.md"
+      ]
+    },
+    {
+      "repo_id": "cowWhySo/Inworld-Voice-Isolator-v1-Turbo5d-MLX",
+      "revision": "6b50971b5c5523b4e126234936a2efa3997d8ce2",
+      "decision": "EXCLUDE",
+      "publisher_repo_bytes": 199910728,
+      "reason": "MLX port not new trained state; underlying pruned model HOLD.",
+      "source_urls": [
+        "https://huggingface.co/cowWhySo/Inworld-Voice-Isolator-v1-Turbo5d-MLX/blob/6b50971b5c5523b4e126234936a2efa3997d8ce2/README.md"
+      ]
+    },
+    {
+      "repo_id": "kaopanboonyuen/KAO-TerraMind-B-OpenEarthMap",
+      "revision": "bb8cccff8456f64bb4cbb49a394f4ff38f0cc04f",
+      "decision": "HOLD",
+      "publisher_repo_bytes": 391203109,
+      "reason": "11/14; 62.13 vs62.12 mIoU, rank 3/7; training code unpublished.",
+      "source_urls": [
+        "https://huggingface.co/kaopanboonyuen/KAO-TerraMind-B-OpenEarthMap/blob/bb8cccff8456f64bb4cbb49a394f4ff38f0cc04f/README.md"
+      ]
+    },
+    {
+      "repo_id": "musetric/mel-band-roformer-duality-student",
+      "revision": "bff4bf516c224506af0a8bb776bc1cd577c22f9f",
+      "decision": "HOLD",
+      "publisher_repo_bytes": 421243072,
+      "reason": "105.1M distilled vs228.2M teacher, median SDR11.29 vs12.09; 13/50 tracks >3dB worse; superseded by KARA2 student; compare pinned successor first.",
+      "source_urls": [
+        "https://huggingface.co/musetric/mel-band-roformer-duality-student/blob/bff4bf516c224506af0a8bb776bc1cd577c22f9f/README.md"
+      ]
+    },
+    {
+      "repo_id": "inworld/sava",
+      "decision": "KEEP",
+      "reason": "Concurrent v81 independently added acoustic-semantic end-of-turn detection; preserve unchanged."
+    },
+    {
+      "repo_id": "inworld/voice-isolator",
+      "decision": "KEEP",
+      "reason": "Concurrent v81 independently added waveform denoising checkpoints; preserve unchanged; GigaEdge HOLD is not a replacement."
+    },
+    {
+      "repo_id": "Firoj112/pawp-tts-300k",
+      "decision": "KEEP",
+      "reason": "Concurrent independent selection preserved without change."
+    }
+  ],
+  "formal_additions": 1,
+  "formal_replacements": 0,
+  "formal_removals": 0,
+  "full_repo_reference_delta_bytes": 16664014,
+  "candidate_source_scope_delta_bytes": 685559,
+  "actual_owner_incremental_bytes": null,
+  "approved_downloads": 0,
+  "physical_files_deleted": 0,
+  "source_manifest": "manifests/drafts/r181-2026-11-28-terrafm-pulse-source.candidate.json",
+  "parallel_merge": {
+    "initial_base": "6fedaf75e9d51b6137c3aec5c4983c1b6e209a59",
+    "integrated_base": "1d3911f35f1802236fda1a5d745f2fb81701673f",
+    "prior_revision": "v84-20261128",
+    "preserved_prior_rows": 278
+  }
+}
