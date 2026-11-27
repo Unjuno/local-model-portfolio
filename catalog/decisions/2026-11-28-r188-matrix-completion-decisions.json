@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "round": "R188",
+  "date_jst": "2026-11-28",
+  "base_commit": "7456f9f4337c617d24ef8cfea59879bdbf91cdf2",
+  "revision": "v92-20261128",
+  "formal_additions": [
+    {
+      "repo_id": "Tabimpute/MatrixFormer",
+      "decision": "ADD",
+      "portfolio_decision": "conditional",
+      "source_manifest": "manifests/drafts/r188-2026-11-28-matrixformer-source.candidate.json",
+      "reason": "Independently trained numerical matrix completion (masked entries across rows and columns, no per-table task labels required); Kumo Tabular predicts designated supervised targets, Kumo Relational consumes relational graphs, Kumo Anomaly is temporal anomaly reconstruction. Keep these non-equivalent assets. Publisher release reports continuation on 250k synthetic matrices / 62,500 updates; save one original state, not two serialization formats."
+    }
+  ],
+  "formal_replacements": [],
+  "formal_exclusions": [],
+  "formal_removals": [],
+  "research_and_comparison": "catalog/research/2026-11-28-matrixformer-tabular-specialists-primary-evidence.json",
+  "previous_rows_unchanged": 285,
+  "approved_downloads": 0,
+  "physical_files_deleted": 0,
+  "owner_actual_incremental_bytes": null
+}

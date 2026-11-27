@@ -1,4 +1,8 @@
-## 現行 v89 / R185（2026-11-28）
+## 現行 v92 / R188（2026-11-28）
+
+286登録・230有効（SELECT 56、CONDITIONAL 174）。独立学習MatrixFormer数値行列補完を研究限定CONDITIONAL追加。並行更新を含む既存285行・133取得報告不変。配布元モデル＋コード312,326,958 B（依存込み・owner増分未確定）。全230取得STOP、承認・重量DL・実行・物理削除0。[調査・正式選定](docs/strategy/188-v92-matrix-completion-and-tabular-specialists.md)。
+
+## 履歴 v91 / R185（2026-11-28）
 
 283登録・227有効（SELECT 56、CONDITIONAL 171）。独立学習STSF+TPLS計測列直接セグメンテーション2状態を研究限定CONDITIONAL追加。並行DGNO・TATR含む旧282行・133取得報告不変。配布元候補＋固定コード295,762,791 B、依存込み・owner増分未確定。全227取得STOP、承認・重量DL・実行・物理削除0。[研究報告](docs/strategy/185-v89-stsf-computational-imaging.md)。
 
