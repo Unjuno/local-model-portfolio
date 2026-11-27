@@ -6,7 +6,7 @@ def read(p):return json.loads((ROOT/p).read_text(encoding='utf-8'))
 def key(x):return x['asset_kind'],x['repo_id']
 class V74Composition(unittest.TestCase):
  def setUp(self):
-  self.c=read('catalog/CURRENT.json')
+  self.c=read('catalog/snapshots/2026-11-28-v74-current-before-v75.json')
   self.old=read('catalog/effective-portfolio-2026-11-25-v73.json')
   self.new=read('catalog/effective-portfolio-2026-11-27-v74.json')
   self.ov=read('catalog/revisions/v74-2026-11-27.json')

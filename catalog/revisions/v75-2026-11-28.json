@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "revision_id": "v75-20261128",
+  "previous_revision_id": "v74-20261127",
+  "decision_date_jst": "2026-11-28",
+  "target_branch": "main",
+  "kind": "DEPENDENCY_AWARE_COMPOSITION_EXCHANGE",
+  "previous_asset_count": 265,
+  "previous_active_count": 210,
+  "replacement_operations": [
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+      "from_decision": "conditional",
+      "from_tier": "R1",
+      "to_decision": "hold",
+      "to_tier": "HOLD",
+      "reason": "Native audio/video dialogue overlaps compact LFM3-Omni-2B. Independent Thinker/Talker weights and potential quality benefit remain valuable; no identical learned state or matched performance equivalence proven. Historical 70,530,595,574 B full-repo reference, no acquisition receipt or confirmed mandatory exact-repo dependency in catalog. HOLD until differentiated lawful benchmark, rights, runtime/dependency closure and incremental bytes established. No deletion.",
+      "download_approved": false,
+      "physical_file_deletion": false
+    }
+  ],
+  "additions": [
+    {
+      "position": 266,
+      "asset_kind": "model",
+      "repo_id": "allenai/RoboTracker",
+      "url": "https://huggingface.co/allenai/RoboTracker",
+      "group": "極小・独立動画点追跡",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Standalone separately fine-tuned AllTracker for benign offline temporal point tracking, unlike static grounding or masks. Publisher ~17M claim, exact census unknown. 3 frozen source files 66,011,293 B plus R167 lean code reference 164,989 B, not complete offline bundle.",
+      "quality_positive": "Publisher RoboTrack-Bench AJ 63.40 vs AllTracker 62.56.",
+      "quality_negative": "Publisher RoboTAP AJ 68.41 vs AllTracker 68.48. Independent replication and owner speed absent.",
+      "risk_and_alternative_assessment": "Distinct trained checkpoint, not format duplication. No physical robot execution. PTH/code trust, rights and dependencies unresolved.",
+      "evidence_date": "2026-11-25",
+      "evidence_kind": "R167_FIXED_PUBLISHER_TREE_GIT_OID_LFS_SHA_AND_UNREPLICATED_BENCHMARK",
+      "evidence_urls": [
+        "https://allenai.org/blog/robotrack",
+        "https://huggingface.co/allenai/RoboTracker/tree/3bda363815dca4395b855ba0e7737517300f937f"
+      ],
+      "observed_access": "public ungated as observed R167",
+      "license_metadata": "Apache-2.0 publisher tag; no LICENSE in model repo; owner rights and code licenses unverified",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "3bda363815dca4395b855ba0e7737517300f937f",
+      "upstream_all_files_bytes_observed": 66011293,
+      "upstream_file_count_observed": 3,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 3,
+      "candidate_selected_source_file_bytes": 66011293,
+      "source_manifest_path": "manifests/drafts/r167-2026-11-25-robotracker17m-vs-warp-nc-publisher-source-frozen.candidate.json",
+      "parameter_gate": {
+        "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+        "total_parameters": null,
+        "publisher_claim_parameters": 17000000,
+        "evidence_kind": "Publisher claim only; exact full tensor census and dependencies unresolved",
+        "review_date": "2026-11-28"
+      },
+      "forecast_priority": {
+        "rank": 266,
+        "wave": "S3",
+        "category": "SPECIALIST_VIDEO_POINT_TRACKING",
+        "scenario_status": "LEGACY_CLASSIFICATION_ONLY_NOT_ACQUISITION_ORDER"
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 66011293,
+        "publisher_selected_source_bytes": 66011293,
+        "source_bytes_are_not_selected_bytes": true,
+        "owner_hdd_verified": false,
+        "full_runtime_memory_peak_verified": false,
+        "actual_archive_incremental_bytes": null
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "COMPLETE_TRAINED_TOTAL_PARAMETERS"
+    }
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [
+    "Qwen/Qwen3-Omni-30B-A3B-Instruct"
+  ],
+  "expected_asset_count": 266,
+  "expected_active_count": 210,
+  "new_approved_downloads": 0,
+  "model_payload_downloaded": 0,
+  "physical_files_deleted": 0
+}

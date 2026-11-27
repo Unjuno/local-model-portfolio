@@ -8,7 +8,11 @@
 
 ---
 
-## 現行 v74 / R169（2026-11-27）
+## 現行 v75 / R171（2026-11-28）
+
+266登録・210有効（SELECT 56、CONDITIONAL 154）。Qwen3-OmniをHOLD、独立した小型動画点追跡モデルRoboTrackerを研究限定CONDITIONALへ追加。全210取得STOP、既取得報告133件保存、取得承認・重量DL・物理削除0。[監査](docs/strategy/171-v75-dependency-aware-composition-exchange.md)。以下の旧版記録は履歴。
+
+## 履歴 v74 / R169（2026-11-27）
 
 [CURRENT](catalog/CURRENT.json)：265登録・210有効。Llama 4 Scoutのみ正式HOLD、264行不変、既取得報告133件を保存。追加・交換・除外・重量DL・承認・物理削除0。[監査](docs/strategy/169-v74-portfolio-composition-and-ledger-reconciliation.md)。
 
