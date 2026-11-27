@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "review_id": "R169-independent-crosscheck",
+  "date_jst": "2026-11-27",
+  "verified_published_commit": "eb0123748a09dfe558b2a4749e94e8c55896826e",
+  "prior_revision": "v73-20261125",
+  "current_revision": "v74-20261127",
+  "catalog": {
+    "tracked": 265,
+    "models": 239,
+    "datasets": 26,
+    "active": 210,
+    "select": 56,
+    "conditional": 154,
+    "hold": 36,
+    "deferred": 13,
+    "excluded": 6,
+    "changed_rows": 1,
+    "unchanged_rows": 264
+  },
+  "formal_decision": {
+    "hold": [
+      "meta-llama/Llama-4-Scout-17B-16E"
+    ],
+    "hold_whole_repo_reference_bytes": 217315708790,
+    "additional_hold_adopted": [],
+    "new_assets": 0,
+    "replacements": 0,
+    "exclusions": 0,
+    "physical_files_deleted": 0,
+    "download_approved": 0
+  },
+  "independent_review": {
+    "legacy_general_base_group_before": 9,
+    "legacy_general_base_group_after": 8,
+    "reported_verified_in_legacy_group": 7,
+    "reported_verified_source_bytes_in_legacy_group": 786358085716,
+    "group_missing_or_null": 52,
+    "active_v73_models_by_recorded_parameter_count": {
+      "<=100M": 22,
+      ">100M_to_3B": 63,
+      ">3B": 90,
+      "missing_numeric": 18
+    },
+    "scope_note": "Legacy group includes specialized coding; recorded parameter count does not establish full runtime dependency size.",
+    "dino_teacher": {
+      "decision": "retain_conditional",
+      "source_repo_bytes": 26864283632,
+      "distilled_H_plus_source_repo_bytes": 3362457679,
+      "reason": "Different learned state, lack of incremental task evidence is not proof of replaceability; retain existing formal choice after concurrent review. Reassess on teacher-specific lawful research utility and complete dependencies.",
+      "publisher": "https://github.com/facebookresearch/dinov3",
+      "paper": "https://arxiv.org/abs/2508.10104"
+    },
+    "weight_file_sha_sets": {
+      "nonempty": 130,
+      "identical_pairs": 0,
+      "partial_overlap_pairs": 33,
+      "scope": "reported file hashes, not all tensor or semantic equivalence"
+    },
+    "reported_receipts": {
+      "verified": 133,
+      "held": 4,
+      "verified_registered": 129,
+      "verified_unregistered": 4,
+      "files": 2095,
+      "bytes": 2451205481822,
+      "historical_min_free_bytes": 578267394048
+    },
+    "capacity": {
+      "selected_file_bytes_nonnull": 2,
+      "selected_file_bytes_null": 208,
+      "complete_final_lock_unknown": 210,
+      "active_whole_repo_reference_unknown": 49,
+      "actual_physical_savings_bytes": null,
+      "owner_current_free_bytes": null,
+      "archive_limit_bytes": 4000000000000,
+      "minimum_free_bytes": 200000000000
+    }
+  },
+  "verification": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests",
+    "tests_run": 839,
+    "passed": 838,
+    "skipped": 1,
+    "failed": 0,
+    "parameter_cutoff": "PASS",
+    "git_diff_prior_execution_approved_and_v73_catalog": "IDENTICAL",
+    "owner_hdd_rehash": false,
+    "model_quality_benchmarks_run": false
+  },
+  "concurrency": {
+    "original_head": "72fc6aab33729fdf26851af58f10718dbfe38116",
+    "published_head": "eb0123748a09dfe558b2a4749e94e8c55896826e",
+    "decision": "Preserve concurrent published v74 and append independent evidence; no competing revision or overwrite."
+  }
+}
