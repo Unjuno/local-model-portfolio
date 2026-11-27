@@ -1,3 +1,7 @@
+## 現行 v91 / R187（2026-11-28）
+
+285登録・229有効（SELECT 56、CONDITIONAL 173）。Horizon独立蒸留140.64M多言語再順位付けを研究限定CONDITIONAL追加。既存284行・取得台帳不変。候補原本597202061 B、依存・owner増分未確定。全229取得STOP、承認・重みDL・物理削除0。[研究報告](docs/strategy/2026-11-28-horizon-reranker-distillation.md)。
+
 # Current v90 / R186 (2026-11-28 JST)
 
 Formal catalog `catalog/effective-portfolio-2026-11-28-v90.json`; 284 tracked / 228 active / 172 conditional, all acquisition STOP. OpenMidnight independent pathology encoder added research-only. All 283 prior rows and concurrent changes preserved. No download approval or deletion. `docs/strategy/186-v90-openmidnight-and-specialist-alternatives.md`.
