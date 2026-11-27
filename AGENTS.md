@@ -1,3 +1,9 @@
+# R168／2026-11-27：v73合成承認遮断、旧117件のcore SHA固定、133件取得報告、未承認小型無検閲4候補
+
+唯一の正本は[catalog/CURRENT.json](catalog/CURRENT.json) v73：265資産・211有効。新たな[Publisher4repo全53ファイル研究仕様](manifests/drafts/r168-2026-11-27-four-small-uncensored-source-frozen.candidate.json)を追加。P0候補はPeymandc/MiniCPM5-1B-Uncensored-Flawless-Peymandcの別ARA編集2,174,627,424 byte、既取得報告済み親openbmb/MiniCPM5-1B@ac83...とは別重み。Luciole1.3B/ LFM3-1.7Bはquality/license/ABI HOLD、Qwen3-4B編集8GBは高KLかつ重複で取得非推奨。[R168詳細](docs/strategy/168-v73-small-uncensored-and-133-ledger-authorization-integrity.md)。**重要**：旧scripts/build_v73_candidates.pyはlicense文字列とPublisher SHAからownerの承認・権利を勝手にtrueとしてapproved-v73.jsonを書き得た。修正版はレビュー全falseのみ生成し、scripts/preserve_execute.pyはv73-pinned-candidate-*参照と旧authorization_sourceを拒否。もしowner Dに昔の合成approved-v73があっても自動削除せず、**実行承認として使ってはならない**。取得台帳の旧117レコード／VERIFIED116と現行133 VERIFIEDを[core SHAで別検証](catalog/audits/2026-11-27-r168-133-receipts-original117-signedness-and-historical-integrity.json)。この研究によるOwner Dの現物再SHA・法律上の用途権利・完全offline restoreは未実施。モデル原本の実DL0、無断owner承認0、Gated回避0。次の取得は現物SHA、200GB床＋staging、ソフトウェアABI、本人のモデルファイル別明示許可までSTOP。
+
+---
+
 # R167／v73 2026-11-25｜無検閲独立後学習を再評価、既取得親を再使用し3段階差分のみ研究選定
 
 # R167／v72継続（2026-11-25）：新17Mロボット点追跡原本は研究P0、1B WarpはNC・GPU HOLD
