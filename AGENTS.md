@@ -8,7 +8,11 @@
 
 ---
 
-## 現行 v79 / R176（2026-11-28）
+## 現行 v80 / R177（2026-11-28）
+
+273登録・217有効（SELECT 56、CONDITIONAL 161）。独立学習された極小タイ語・英語印刷文書CPU OCRを研究限定CONDITIONALに追加。既存272行・133取得報告不変。全217取得STOP、取得承認・重量DL・実行・物理削除0。[調査と正式選定](docs/strategy/177-v80-openthai22-cpu-ocr.md)。配布元README checksum・完全学習パラメータ数・権利・依存・owner HDD未解決。旧版は履歴。
+
+## 履歴 v79 / R176（2026-11-28）
 
 272登録・216有効（SELECT 56、CONDITIONAL 160）。NandiBERT教師450Mと蒸留生徒150Mを研究限定追加、OCR2候補は研究HOLD。旧270行不変、全216取得STOP、既取得報告133件保持、承認・重みDL・物理削除0。1.563GBは配布元参考値。[研究報告](docs/strategy/176-v79-nandi-encoder-distillation-and-ocr-comparison.md)。
 
