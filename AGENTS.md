@@ -1,3 +1,13 @@
+# 現行のモデル選定方針（固定規約）
+
+一般的な高性能モデルの網羅ではなく、無検閲・低拒否と称されるモデルの正当な用途での過剰拒否・通常品質の比較研究、独立後学習・重み編集の研究、極小・小型高性能、専門能力・独自構造を重点とする。汎用モデルは比較基盤・必須依存・能力補完として選ぶ。候補ごとに既存との差、正負の性能証拠、再現困難性、依存込み増分容量、復元可能性を明示する。低拒否ラベルのみや通常量子化の重複だけでは採用しない。
+
+二重用途性・潜在的悪用可能性は安全性・権利・研究管理上の独立評価軸とし、一律の研究除外理由にはしない。危害の実行能力や安全制御回避の強さを取得順位にしない。S1/S2/S3は歴史的ストレスシナリオ・安全審査の参考分類であり、実際の規制予測や自動取得順ではない。
+
+詳細は [選定基準](policies/selection.md)・[保全方針](policies/archival-insurance.json)・[機械判定規約](policies/selection-decision-v17.json)。現行状態は catalog/CURRENT.json を参照。研究重点・採否・取得承認を分け、全既存の法的・安全・容量・承認ゲートを維持する。以下の旧版の選定優先順位は履歴であり、現行の重点は本節に従う。
+
+---
+
 # R168／2026-11-27：v73合成承認遮断、旧117件のcore SHA固定、133件取得報告、未承認小型無検閲4候補
 
 唯一の正本は[catalog/CURRENT.json](catalog/CURRENT.json) v73：265資産・211有効。新たな[Publisher4repo全53ファイル研究仕様](manifests/drafts/r168-2026-11-27-four-small-uncensored-source-frozen.candidate.json)を追加。P0候補はPeymandc/MiniCPM5-1B-Uncensored-Flawless-Peymandcの別ARA編集2,174,627,424 byte、既取得報告済み親openbmb/MiniCPM5-1B@ac83...とは別重み。Luciole1.3B/ LFM3-1.7Bはquality/license/ABI HOLD、Qwen3-4B編集8GBは高KLかつ重複で取得非推奨。[R168詳細](docs/strategy/168-v73-small-uncensored-and-133-ledger-authorization-integrity.md)。**重要**：旧scripts/build_v73_candidates.pyはlicense文字列とPublisher SHAからownerの承認・権利を勝手にtrueとしてapproved-v73.jsonを書き得た。修正版はレビュー全falseのみ生成し、scripts/preserve_execute.pyはv73-pinned-candidate-*参照と旧authorization_sourceを拒否。もしowner Dに昔の合成approved-v73があっても自動削除せず、**実行承認として使ってはならない**。取得台帳の旧117レコード／VERIFIED116と現行133 VERIFIEDを[core SHAで別検証](catalog/audits/2026-11-27-r168-133-receipts-original117-signedness-and-historical-integrity.json)。この研究によるOwner Dの現物再SHA・法律上の用途権利・完全offline restoreは未実施。モデル原本の実DL0、無断owner承認0、Gated回避0。次の取得は現物SHA、200GB床＋staging、ソフトウェアABI、本人のモデルファイル別明示許可までSTOP。
@@ -561,9 +571,9 @@ Pirate Faceは二次のハッシュ付きTorrent索引、Civitaiは別ID体系�
 
 [最新の監査資料](docs/parameter-audit-v9-2026-11-03.md)を参照。25件の前回unknownを配布元資料で再調査し、13件は公開主モデル/主要構成部品の規模が150Bを大幅に下回ると確認、12件は数値不足や依存・MoE総数の未解決で保留。**150Bの原則目安・例外実測・Gated・ライセンス・ファイル選択・実機RAM/容量/個別承認は独立ゲート**。CIは[読み取り専用静的監査](.github/workflows/audit-parameter-cap.yml)のみで、モデル本体・未監査コードを実行しない。
 
-## 規制予測優先（v5）
+## 旧v5の規制予測（歴史的ストレスシナリオ）
 
-**S1（先行する悪用・顔声・合成・権利リスク）→S2（高性能一般・専門科学・世界モデル）→S3（公開重み・データ全体）**のユーザー指定ストレスケースを、[v5順位](catalog/revisions/v5-2026-11-03.json)と[調査作業キュー](queues/proposed-v5-2026-11-03.json)で**選定・調査の主軸**とする。従来のR0/R1/R2は履歴であり、取得順を規定しない。
+**S1（先行する悪用・顔声・合成・権利リスク）→S2（高性能一般・専門科学・世界モデル）→S3（公開重み・データ全体）**のユーザー指定ストレスケースを、[v5順位](catalog/revisions/v5-2026-11-03.json)と[調査作業キュー](queues/proposed-v5-2026-11-03.json)で当時の選定・調査の主軸として記録した。現行の研究重点と取得資格は冒頭の固定規約に従う。従来のR0/R1/R2は履歴であり、取得順を規定しない。
 
 HOLD/BACKLOGのS1項目も権利や重複の調査を先に実施する。ただし権利、同意、Gated手続、依存、完全なロック、ユーザーの承認が満たされない限り取得不可。小型LLM/OCR/ASRの先行3件は**ダウンローダーの安全性試験候補**であり、規制連鎖シナリオ上の最優先3件ではない。
 
@@ -571,7 +581,7 @@ HOLD/BACKLOGのS1項目も権利や重複の調査を先に実施する。ただ
 
 全132件について [資源監査](catalog/revisions/v6-2026-11-03.json)を確認。**モデルの重み保存に必要なバイト数**と**GPUピークVRAM・ホストRAM・SSD streamingの可否**、**性能測定結果**を分離する。8GB VRAM参考シナリオはユーザーの実機ではない。Qwen3-Coder-Nextの8GB試験は非公式な未マージPR・FP8・SSD expert offload・32GB RAMによる約1.8token/sの単独報告のみ。未知の実行可否を成功にしない。
 
-**予防アーカイブレーン**はS1/S2/S3を優先し大きな貴重原本も保存候補とし、**日常実行レーン**は低容量・バックエンド互換・速度/精度・CPU/GPU RAMによる実測を評価。HDDを高速SSDであると仮定しない。ダウンロード時にモデルや第三者コードをimport/executeしない。未知の選択ファイルサイズ・依存を0と数えない。
+**予防アーカイブレーン**は独自の学習成果・復元困難性・実証された保存価値を評価し、S1/S2/S3は安全審査の参考分類として扱い、**日常実行レーン**は低容量・バックエンド互換・速度/精度・CPU/GPU RAMによる実測を評価。HDDを高速SSDであると仮定しない。ダウンロード時にモデルや第三者コードをimport/executeしない。未知の選択ファイルサイズ・依存を0と数えない。
 
 ## 今回の初期状態
 
