@@ -1,3 +1,7 @@
+## 現行 v77 / R174（2026-11-28）
+
+269登録・213有効（SELECT 56、CONDITIONAL 157）。WePM 4BとNemotron 3.5 Parse（任意DFlash2部品）を研究限定追加。WePM 2Bは研究HOLD。並行R172研究・R173 CTSM 1.5含む旧267行不変。全213取得STOP、承認・重量DL・物理削除0。[研究報告](../docs/strategy/174-v77-unified-pocket-and-document-parser-originals.md)。
+
 ## 現行 v75 / R171（2026-11-28）
 
 266登録・210有効（SELECT 56、CONDITIONAL 154）。Qwen3-OmniをHOLD、独立した小型動画点追跡モデルRoboTrackerを研究限定CONDITIONALへ追加。全210取得STOP、既取得報告133件保存、取得承認・重量DL・物理削除0。[監査](../docs/strategy/171-v75-dependency-aware-composition-exchange.md)。以下の旧版記録は履歴。

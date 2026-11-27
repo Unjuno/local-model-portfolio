@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-11-28",
+  "round": "R174",
+  "base_commit": "ae97caf4e5c7bf51a73c1b2d6266cf5676411fa9",
+  "source_manifest": "manifests/drafts/r174-2026-11-28-wepm-and-nemotron-immutable-source.candidate.json",
+  "source_search_windows_days": [
+    7,
+    30,
+    90
+  ],
+  "decisions": [
+    {
+      "repo_id": "tencent/WePocketModel1.0-4B",
+      "action": "ADD",
+      "formal_status": "conditional",
+      "reason": "Independently trained MGVB/ULKD/SEMO unified generation, embedding and structured-decision model with mandatory unimodel_aux.safetensors. Unlike separate Qwen3 Embedding, Intern-Decision, Ivonnet, IVE and Kanana, shared backbone supports all three task modes. 4B creator cross-task comparison supports research; 2B separately trained but same mechanism held pending matched low-memory comparison.",
+      "positive": "Publisher unified 4B HCD 65.1% at about 8 GB BF16 weights vs separate combinations 64.2–64.8% at 21–43 GB; rounded weight-only comparison, not peak RAM.",
+      "negative": "No matched independent comparison against current incumbent bundle; publisher aggregate can hide individual regressions, no owner latency/memory/calibration evidence."
+    },
+    {
+      "repo_id": "nvidia/Nemotron-3.5-Parse",
+      "action": "ADD",
+      "formal_status": "conditional",
+      "reason": "Distinct 3.5 Parse document parsing posttraining with structured layout/table/chart output and GRPO; optional trained DFlash2 companion paired by exact target weight SHA in publisher manifest. Preserve as one research bundle, not separate registered draft or quant copies. Complements rather than displaces LightOnOCR, PaddleOCR and DeepSeek OCR.",
+      "positive": "Creator ParseBench 3-pass 75.20 vs LightOnOCR-3-4B 75.10 and 0.8B 74.60; published SFT→GRPO 66.24→71.38, looping pages 126→29. DFlash2 target-specific trained companion.",
+      "negative": "Single-pass 72.74 below incumbent LightOnOCR-3-0.8B 74.60; multi-pass pipeline not matched standalone model comparison. Independent quality and owner ABI/latency absent."
+    },
+    {
+      "repo_id": "tencent/WePocketModel1.0-2B",
+      "action": "HOLD",
+      "formal_registration": false,
+      "reason": "Independent smaller trained outcome; same unified mechanism as 4B and 4.660 GB lower repo reference, but no matched evidence demonstrating marginal contribution to current compact bundle. Reconsider on matched 2B-vs-4B latency/quality/calibration and owner memory."
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "action": "KEEP",
+      "prior_status": "select",
+      "reason": "No matched task-level superiority/dominance proof; retain specialist reference and independent trained state."
+    },
+    {
+      "repo_id": "internlm/Intern-Decision-0.8B",
+      "action": "KEEP",
+      "prior_status": "conditional",
+      "reason": "No matched task-level superiority/dominance proof; retain specialist reference and independent trained state."
+    },
+    {
+      "repo_id": "illuin/Ivonnet-0.8B",
+      "action": "KEEP",
+      "prior_status": "conditional",
+      "reason": "No matched task-level superiority/dominance proof; retain specialist reference and independent trained state."
+    },
+    {
+      "repo_id": "illuin/IVE-4B",
+      "action": "KEEP",
+      "prior_status": "conditional",
+      "reason": "No matched task-level superiority/dominance proof; retain specialist reference and independent trained state."
+    },
+    {
+      "repo_id": "kakaocorp/kanana-2-v-decide-3b-2611",
+      "action": "KEEP",
+      "prior_status": "conditional",
+      "reason": "No matched task-level superiority/dominance proof; retain specialist reference and independent trained state."
+    },
+    {
+      "repo_id": "lightonai/LightOnOCR-3-0.8B",
+      "action": "KEEP",
+      "prior_status": "select",
+      "reason": "No matched task-level superiority/dominance proof; retain specialist reference and independent trained state."
+    },
+    {
+      "repo_id": "lightonai/LightOnOCR-3-4B",
+      "action": "KEEP",
+      "prior_status": "deferred",
+      "reason": "No matched task-level superiority/dominance proof; retain specialist reference and independent trained state."
+    },
+    {
+      "repo_id": "PaddlePaddle/PaddleOCR-VL-1.5",
+      "action": "KEEP",
+      "prior_status": "select",
+      "reason": "No matched task-level superiority/dominance proof; retain specialist reference and independent trained state."
+    },
+    {
+      "repo_id": "deepseek-ai/DeepSeek-OCR-2",
+      "action": "KEEP",
+      "prior_status": "select",
+      "reason": "No matched task-level superiority/dominance proof; retain specialist reference and independent trained state."
+    },
+    {
+      "repo_id": "nvidia/Nemotron-3.5-Parse#dflash2",
+      "action": "KEEP_AS_OPTIONAL_BUNDLE_COMPONENT",
+      "formal_registration": false,
+      "reason": "Distinct trained target-specific draft, not a second full model or duplicate quantization."
+    }
+  ],
+  "format_duplicates": "Alternative same-weight quantizations not separately registered.",
+  "new_approved_downloads": 0,
+  "owner_disk_rehashed": false,
+  "prior_source_repo_proxy_bytes": 3923105480792,
+  "new_source_repo_proxy_bytes": 3934993704769,
+  "source_proxy_delta_bytes": 11888223977,
+  "unknown_active_source_bytes": 49,
+  "actual_incremental_owner_bytes": null,
+  "access_or_license_change_observed": false
+}

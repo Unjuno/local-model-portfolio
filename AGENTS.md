@@ -8,7 +8,11 @@
 
 ---
 
-## 現行 v76 / R173（2026-11-28）
+## 現行 v77 / R174（2026-11-28）
+
+269登録・213有効（SELECT 56、CONDITIONAL 157）。WePM 4BとNemotron 3.5 Parse（任意DFlash2部品）を研究限定追加。WePM 2Bは研究HOLD。並行R172研究・R173 CTSM 1.5含む旧267行不変。全213取得STOP、承認・重量DL・物理削除0。[研究報告](docs/strategy/174-v77-unified-pocket-and-document-parser-originals.md)。
+
+## 履歴 v76 / R173（2026-11-28）
 
 CTSM 1.5を研究限定CONDITIONAL追加。267登録・211有効（SELECT 56 / CONDITIONAL 155）、従来266行不変、取得報告133件維持、全211 STOP。承認・重みDL・物理削除0。並行R172 OCR/depth研究を維持。 [根拠](docs/strategy/173-v76-ctsm-seasonality-and-specialist-source-research.md) / [CURRENT](catalog/CURRENT.json)。
 
