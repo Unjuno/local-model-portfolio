@@ -43,6 +43,7 @@
       "AION_CUSTOM_REMOTE_CODE_TRUST_AND_WINDOWS_ABI_UNVERIFIED": 1,
       "REMORY_PARENT_TEMPLATE_AND_CUSTOM_SGLANG_ABI_UNVERIFIED": 1,
       "OLALA_CUSTOM_CODE_PUBLISHER_FORK_ABI_OWNER_NOT_VERIFIED": 2,
+      "TRAINING_DATA_AND_PARENT_RIGHTS_UNVERIFIED": 1,
       "SPARK_CUSTOM_CODE_TENSOR_DELTA_AND_ABI_UNVERIFIED": 1,
       "HERETIC_MTP_VISION_DERIVATIVE_LICENSE_ABI_UNVERIFIED": 1,
       "INKLING_MODEL_OPT_MTP_ABI_AND_AUP_NOT_VERIFIED": 1,
@@ -91,8 +92,8 @@
       "UNBOUND_V21_3STAGE_EDIT_PT_UNTRUSTED_REPLAY_SFT_DPO_PARENT_RECEIPT_PARITY_ABI_AUP_AND_OWNER_SIGNATURE_STOP": 1
     },
     "first_blocker_counts": {
-      "OWNER_SPECIFIC_GATED_ENTITLEMENT": 20,
-      "OWNER_HDD_ACTUAL_CAPACITY_AND_STAGING": 17,
+      "OWNER_SPECIFIC_GATED_ENTITLEMENT": 19,
+      "OWNER_HDD_ACTUAL_CAPACITY_AND_STAGING": 18,
       "SINGLE_IMMUTABLE_SOURCE_FILE_SET": 126,
       "COMPLETE_TRAINED_TOTAL_PARAMETERS": 9,
       "ALL_RUNTIME_AND_LEARNED_DEPENDENCIES": 7,
@@ -4319,7 +4320,8 @@
         "LICENSE_POLICY_AND_ACT_RIGHTS",
         "OWNER_HDD_ACTUAL_CAPACITY_AND_STAGING",
         "OWNER_LOCAL_HASH_AND_OFFLINE_RESTORE",
-        "EXPLICIT_ACQUISITION_AUTHORIZATION"
+        "EXPLICIT_ACQUISITION_AUTHORIZATION",
+        "TRAINING_DATA_AND_PARENT_RIGHTS_UNVERIFIED"
       ],
       "individual_license_actions_verified": false,
       "owner_user_access_verified": false,
@@ -5735,7 +5737,16 @@
       "historical_dedup_means_no_new_transfer": false
     }
   ],
-  "evidence_only_corrections": 3,
+  "evidence_only_corrections": {
+    "r170": {
+      "date_jst": "2026-11-28",
+      "audit": "catalog/audits/2026-11-28-r170-v74-metadata-integrity.json",
+      "summary_recomputed_from_records": true,
+      "missing_existing_rights_blocker_restored": true,
+      "no_gates_removed": true,
+      "no_approvals_added": true
+    }
+  },
   "research_evidence_added": "catalog/revisions/v71-2026-11-25.json",
   "v72_four_inactive_hold_source_repo_IDs": [
     "thinkingmachines/Inkling-Small",

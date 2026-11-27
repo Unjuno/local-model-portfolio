@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "review_id": "R170-v74-metadata-integrity",
+  "date_jst": "2026-11-28",
+  "source_commit": "c245218a16cecfc1d7d0d01ed871315f7333ffcb",
+  "revision": "v74-20261127",
+  "scope": "Independent static consistency check and metadata-only repair. No capability or acquisition ranking, no model inference, no external model downloads.",
+  "decision": {
+    "formal_additions": 0,
+    "formal_replacements": 0,
+    "formal_exclusions": 0,
+    "formal_new_holds": 0,
+    "formal_rows_unchanged": 265,
+    "reason": "No independent matched-task evidence establishing a further replacement or additional admission. Preserve prior v74 HOLD and all historical decisions; absence of evidence is not evidence of substitutability."
+  },
+  "observations": {
+    "active": 210,
+    "active_models": 192,
+    "active_datasets": 18,
+    "active_models_explicit_positive_and_negative_quality": 103,
+    "active_models_missing_one_or_both_quality_fields": 89,
+    "active_models_missing_group": 21,
+    "distinct_nonempty_legacy_model_group_labels": 128,
+    "role_coverage_limitation": "Legacy labels are not a normalized task taxonomy. Do not infer missing capabilities or semantic equivalence from labels.",
+    "verified_receipts": 133,
+    "verified_registered": 129,
+    "verified_unregistered": 4,
+    "registered_receipt_revision_comparison": {
+      "match": 107,
+      "different": 9,
+      "unknown": 13,
+      "scope": "Catalog fully_pinned_revision_sha if present, otherwise upstream_revision_sha_observed; revision inequality does not prove different weight hashes."
+    },
+    "capacity": {
+      "source_reference_known": 161,
+      "source_reference_unknown": 49,
+      "known_source_reference_bytes_sum_not_physical": 3992552343845,
+      "source_reference_ge_100GB": 8,
+      "final_lock_unknown": 210,
+      "actual_owner_free_bytes": null,
+      "actual_savings_bytes": null
+    }
+  },
+  "repairs": {
+    "prior_warning": "v73 adds one conditional learned Unbound v2.1 unique SFT/DPO edited state; selected source is non-executable replay candidate only until parent rights, code and exact local hash verified.",
+    "prior_screening_status": {
+      "count": 209,
+      "unknown_repo_bytes": 46,
+      "active_unknown_repo_bytes": 22,
+      "large_active_100gb_or_more": 8,
+      "evidence_conclusion": "v19 only main model source object size and LFS SHA reported for 6 new assets; full selected packages and actual disk headroom unknown. Never approve downloads from raw main.",
+      "v55_correction_v54_screen_count_was_stale": 204
+    },
+    "current_screening_status": {
+      "count": 265,
+      "unknown_repo_bytes": 76,
+      "active_unknown_repo_bytes": 49,
+      "large_active_100gb_or_more": 8,
+      "evidence_conclusion": "Current v74 source-repository reference proxy only (resource_screen.source_all_repo_bytes, fallback upstream_all_files_bytes_observed). Not final selected, dependency-closed, deduplicated or owner physical bytes. No download approval.",
+      "v55_correction_v54_screen_count_was_stale": 204,
+      "r170_metadata_audit": "catalog/audits/2026-11-28-r170-v74-metadata-integrity.json"
+    },
+    "first_blocker_count_differences": [
+      {
+        "gate": "OWNER_SPECIFIC_GATED_ENTITLEMENT",
+        "previous": 20,
+        "current": 19
+      },
+      {
+        "gate": "OWNER_HDD_ACTUAL_CAPACITY_AND_STAGING",
+        "previous": 17,
+        "current": 18
+      }
+    ],
+    "existing_rights_gate_restored_to_blocking_list": "TRAINING_DATA_AND_PARENT_RIGHTS_UNVERIFIED",
+    "rights_gate_count_before": 0,
+    "rights_gate_count_after": 1,
+    "removed_gates": 0
+  },
+  "verification": {
+    "all_catalog_rows_identical": true,
+    "only_readiness_row_change": "Restore existing first_blocker into blocking_gates; no authorization or decision modified",
+    "all_first_blockers_in_list": true,
+    "all_210_stopped": true,
+    "source_reference_counts_match": true,
+    "full_python_suite_executed": false,
+    "owner_storage_rehashed": false,
+    "quality_benchmarks_run": false
+  },
+  "download_approved": false,
+  "physical_files_deleted": 0
+}

@@ -4,7 +4,7 @@
   "generated_date": "2026-11-27",
   "origin": "v73 materialized historical view plus one exact preconditioned conditional-to-HOLD transition; no deletion or acquisition.",
   "read_only_derived": true,
-  "warning": "v73 adds one conditional learned Unbound v2.1 unique SFT/DPO edited state; selected source is non-executable replay candidate only until parent rights, code and exact local hash verified.",
+  "warning": "v74: one formal conditional-to-HOLD change from v73; all other asset rows preserved. All active acquisition gates remain closed; publisher source references do not establish owner rights, physical bytes or complete restore.",
   "selection_and_legal_status_inherited_from": "catalog/revisions/v59-2026-11-21.json",
   "primary_order": "forecast_priority.rank (hypothetical cascade regulation S1 => S2 => S3)",
   "counts": {
@@ -31488,12 +31488,13 @@
     }
   ],
   "screening_status": {
-    "count": 209,
-    "unknown_repo_bytes": 46,
-    "active_unknown_repo_bytes": 22,
+    "count": 265,
+    "unknown_repo_bytes": 76,
+    "active_unknown_repo_bytes": 49,
     "large_active_100gb_or_more": 8,
-    "evidence_conclusion": "v19 only main model source object size and LFS SHA reported for 6 new assets; full selected packages and actual disk headroom unknown. Never approve downloads from raw main.",
-    "v55_correction_v54_screen_count_was_stale": 204
+    "evidence_conclusion": "Current v74 source-repository reference proxy only (resource_screen.source_all_repo_bytes, fallback upstream_all_files_bytes_observed). Not final selected, dependency-closed, deduplicated or owner physical bytes. No download approval.",
+    "v55_correction_v54_screen_count_was_stale": 204,
+    "r170_metadata_audit": "catalog/audits/2026-11-28-r170-v74-metadata-integrity.json"
   },
   "resource_assessment_source": "catalog/revisions/v6-2026-11-03.json",
   "parameter_gate_policy": {
