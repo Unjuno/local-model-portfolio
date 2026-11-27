@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "review_id": "R170-v74-role-coverage-and-unmatched-capacity",
+  "date_jst": "2026-11-28",
+  "source_commit": "649bbebe7ab0e81e1784b39d97da0947bd69289d",
+  "initial_commit": "c245218a16cecfc1d7d0d01ed871315f7333ffcb",
+  "revision": "v74-20261127",
+  "source_catalog_blob": "5739d207c0de1328b46396d7f98647a3c02f0290",
+  "scope": {
+    "tracked": 265,
+    "active": 210,
+    "models": 239,
+    "datasets": 26,
+    "active_models": 192,
+    "active_datasets": 18,
+    "by_decision": {
+      "conditional": 154,
+      "hold": 36,
+      "select": 56,
+      "deferred": 13,
+      "excluded": 6
+    }
+  },
+  "concurrent_update": {
+    "commit": "649bbebe7ab0e81e1784b39d97da0947bd69289d",
+    "prior_catalog_rows_identical": 265,
+    "readiness_row_changes": 1,
+    "first_blocker_counts_recalculated": true,
+    "existing_rights_gate_restored": true,
+    "gate_removed": 0,
+    "first_blocker_gated_before": 20,
+    "first_blocker_gated_after": 19,
+    "first_blocker_hdd_before": 17,
+    "first_blocker_hdd_after": 18,
+    "note": "Concurrent main already repaired these discrepancies. Independently verified, not overwritten."
+  },
+  "composition": {
+    "legacy_language_base_group_count": 8,
+    "legacy_group_includes_code_and_multilingual_vision": true,
+    "legacy_group_source_reference_bytes": 917896592317,
+    "legacy_group_reported_verified_id_matches": 7,
+    "all_group_missing": 52,
+    "active_group_missing": 27,
+    "active_group_missing_by_kind": {
+      "model": 21,
+      "dataset": 6
+    },
+    "review_only_role_assignments": [
+      {
+        "asset_kind": "model",
+        "repo_id": "LiquidAI/LFM2.5-24B-A2B",
+        "role": "language architecture",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "KlingTeam/LivePortrait",
+        "role": "visual motion research",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "select"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "OpenMOSS-Team/MOSS-TTS-v1.5",
+        "role": "speech synthesis",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "select"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+        "role": "speech synthesis",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "select"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "ResembleAI/chatterbox",
+        "role": "speech synthesis",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "select"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "black-forest-labs/flux-3-image-klein-base",
+        "role": "image generation research",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "briaai/Fibo-2.0-dev",
+        "role": "image generation research",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "dataset",
+        "repo_id": "StephaneBah/AfroRadVoice-FR",
+        "role": "medical speech dataset",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+        "role": "compact language research",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+        "role": "multimodal architecture",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "boltz-community/boltz-2",
+        "role": "scientific modeling",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "HuggingFaceBio/Carbon-X",
+        "role": "scientific modeling",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "select"
+      },
+      {
+        "asset_kind": "dataset",
+        "repo_id": "IFM/SFT-Reasoning",
+        "role": "post-training dataset",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "lerobot/pi0_base",
+        "role": "robotics simulation and learning",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "nvidia/GR00T-N1.6-3B",
+        "role": "robotics simulation and learning",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "speridlabs/idol",
+        "role": "3D representation",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "dataset",
+        "repo_id": "laion/emotional-roleplay-finetuning-dataset",
+        "role": "speech training dataset",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "m-a-p/MERT-v2-FullSong",
+        "role": "audio representation",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "m-a-p/SheetSage2",
+        "role": "music transcription",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "m-a-p/YuE2-3B",
+        "role": "music generation",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "m-a-p/YuE2-Vae",
+        "role": "learned audio dependency",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "facebook/dinov3-vit7b16-pretrain-lvd1689m",
+        "role": "visual representation",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "facebook/dinov3-vith16plus-pretrain-lvd1689m",
+        "role": "visual representation / learned dependency",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "dataset",
+        "repo_id": "allenai/pixmo-cap",
+        "role": "visual annotation dataset",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      },
+      {
+        "asset_kind": "dataset",
+        "repo_id": "CohereLabs/aya_dataset",
+        "role": "multilingual instruction dataset",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "select"
+      },
+      {
+        "asset_kind": "dataset",
+        "repo_id": "lerobot/aloha_sim_insertion_human",
+        "role": "robotics demonstration dataset",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "select"
+      },
+      {
+        "asset_kind": "model",
+        "repo_id": "LiquidAI/d1-omni-600M",
+        "role": "structured multimodal classification",
+        "basis": "recorded selection reason",
+        "formal_group_unchanged": true,
+        "formal_decision": "conditional"
+      }
+    ],
+    "active_model_numeric_parameter_bands": {
+      ">3B": 89,
+      ">100M_to_3B": 63,
+      "unknown": 18,
+      "<=100M": 22
+    },
+    "active_model_parameter_gate": {
+      "PASS_TOTAL_PARAMS_LT_150B": 176,
+      "UNVERIFIED_BLOCK_FINAL_LOCK": 16
+    },
+    "active_model_both_explicit_quality_fields": 103,
+    "active_model_missing_one_or_both_quality_fields": 89,
+    "note": "Role tags are interpretive research metadata, not a complete normalized taxonomy or acquisition ranking. Quality-field presence does not prove independently measured performance."
+  },
+  "capacity": {
+    "source_proxy_definition": "resource_screen.source_all_repo_bytes when numeric, else upstream_all_files_bytes_observed; null is unknown. These are full-repository reference bytes, not selected or marginal physical bytes.",
+    "active_known_proxy": 161,
+    "active_unknown_proxy": 49,
+    "active_known_proxy_sum_bytes": 3992552343845,
+    "active_no_verified_receipt_id_match": 81,
+    "active_no_verified_receipt_known_proxy": 63,
+    "active_no_verified_receipt_unknown_proxy": 18,
+    "active_no_verified_receipt_known_proxy_sum_bytes": 1823063523901,
+    "active_with_verified_receipt_id_match": 129,
+    "final_lock_bytes_unknown": 210,
+    "reported_verified_source_bytes": 2451205481822,
+    "archive_limit_bytes": 4000000000000,
+    "minimum_free_bytes": 200000000000,
+    "owner_current_free_bytes": null,
+    "actual_incremental_bytes": null,
+    "actual_reclaimable_bytes": null,
+    "receipt_match_caveat": "repo_id only; not immutable revision equivalence, independent owner hash or proof of non-acquisition"
+  },
+  "duplicate_evidence": {
+    "verified_reported": 133,
+    "nonempty_weight_SHA_sets": 130,
+    "exact_nonempty_SHA_set_pairs": 0,
+    "partial_SHA_set_overlap_pairs": 33,
+    "meaning": "Reported file hashes only. No semantic/tensor equivalence or physical deletion inference."
+  },
+  "decisions": {
+    "formal_additions": 0,
+    "formal_replacements": 0,
+    "formal_exclusions": 0,
+    "formal_new_holds": 0,
+    "maintain_active": 210,
+    "preserve_inactive": 55,
+    "untracked_verified_receipts_review_hold": 4,
+    "reason": "No new matched lawful-task evidence of dominance, complete incremental storage/dependencies or independent verification since R169. Prior formal HOLD and all historic choices remain. Prior low-level visual tracking research remains candidate only; no automatic adoption. Do not remove independently trained teacher/student, parent/adapter or required dependency merely for shared names. Improve comparative evidence rather than expand selection.",
+    "download_approved": false,
+    "physical_deletion_authorized": false,
+    "model_weight_downloads": 0
+  },
+  "validation": {
+    "catalog_unique": true,
+    "active_id_parity_readiness_queue_preparation": true,
+    "conditional_id_parity_access": true,
+    "decision_parity": true,
+    "ready_to_acquire": 0,
+    "approved_entries": 0,
+    "all_first_blockers_in_blocking_gates": true,
+    "summary_counts_recomputed_match": true,
+    "old_vs_concurrent_all_asset_rows_identical": true,
+    "performed": "Static independent recomputation using pinned JSON; no model execution, no full repository test suite",
+    "external_publisher_refreshed": false,
+    "owner_disk_rehashed": false,
+    "model_benchmarks_run": false
+  }
+}
