@@ -1,0 +1,51 @@
+{
+  "round": "R187",
+  "date_jst": "2026-11-28",
+  "base_commit": "3c64592e1483dcdc69d9e51330f251af87d28dae",
+  "source_research": "catalog/research/2026-11-28-tinycast-forecast-primary-evidence.json",
+  "source_manifest": "manifests/drafts/2026-11-28-tinycast-forecast-originals-research.candidate.json",
+  "decisions": [
+    {
+      "repo_id": "raws-labs/tinycast",
+      "decision": "PROPOSE_ADD",
+      "formal_tier": "PROPOSED_CONDITIONAL",
+      "why": "Preserve original compact attention-free learned quantile forecasting using computed periodicity and tied convolutional network; ~35x fewer parameters than selected Timestral-5M, separate low-resource research operating point. Not a quantization of incumbent; no evidence to replace multivariate/covariate forecasters."
+    },
+    {
+      "repo_id": "Tncrd/Hirondel-7M",
+      "decision": "HOLD",
+      "reason": "Separate 7.462M trained state; author GIFT-Eval 0.7003/0.4816, univariate; future covariates linear training-free ridge, tails extrapolated; no matched marginal benefit vs Timestral/Toto. Preserve source references, not formal registration."
+    },
+    {
+      "repo_id": "DAG-UPB/chronos-2-heat-demand-aalborg",
+      "decision": "HOLD",
+      "reason": "Full Chronos-2 fine-tune on 3021 heat meters, 16000 steps TITAN RTX 9.3h; gain in Aalborg but overconfident aggregate intervals, little transfer to Flensburg/Helsinki, oracle weather, no independent evidence; public data and recipe partially reproducible. Keep base Chronos-2."
+    },
+    {
+      "repo_id": "mistralai/Timestral-5M",
+      "decision": "KEEP",
+      "why": "distinct scope; no matched superiority or exchange evidence"
+    },
+    {
+      "repo_id": "Datadog/Toto-2.0-4m",
+      "decision": "KEEP",
+      "why": "distinct scope; no matched superiority or exchange evidence"
+    },
+    {
+      "repo_id": "autogluon/chronos-2",
+      "decision": "KEEP",
+      "why": "distinct scope; no matched superiority or exchange evidence"
+    },
+    {
+      "repo_id": "cisco-ai/cisco-time-series-model-1.5",
+      "decision": "KEEP",
+      "why": "distinct scope; no matched superiority or exchange evidence"
+    }
+  ],
+  "previous_rows_unchanged": null,
+  "owner_incremental_bytes": null,
+  "publisher_model_plus_code_bytes": 3408694,
+  "approved_downloads": 0,
+  "physical_files_deleted": 0,
+  "status": "RESEARCH_RECOMMENDATION_ONLY_NOT_FORMAL_SELECTION"
+}
