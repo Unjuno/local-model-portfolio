@@ -1,0 +1,439 @@
+{
+  "schema_version": 1,
+  "round": "R172",
+  "date_jst": "2026-11-28",
+  "base_commit": "021c6c1ee5afff1a647b2f881b9b4fd1b42cbfe2",
+  "canonical_revision": "v75-20261128",
+  "research_only_nonexecutable": true,
+  "download_approved": false,
+  "model_payload_fetched": false,
+  "owner_disk_verified": false,
+  "complete_offline_restore": false,
+  "source_evidence": "Hugging Face publisher model API at exact revisions, blobs=true; metadata only, not locally computed hashes",
+  "source_repos": [
+    {
+      "repo_id": "datalab-to/indra-ocr",
+      "revision": "a04fa100e778192aa54d040a983983c6d3ee4ce5",
+      "created_at": "2026-10-10T14:12:33.000Z",
+      "last_modified": "2026-11-24T17:35:10.000Z",
+      "gated": false,
+      "private": false,
+      "file_count": 41,
+      "publisher_source_bytes": 128831021,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2464,
+          "git_oid": "d5475f4800cf14b15870b2620c444c035e0bb84e",
+          "lfs_sha256": null
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 14744,
+          "git_oid": "114d9aa9c42e0db91e5db467d48a27a2b42e22f3",
+          "lfs_sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 835,
+          "git_oid": "ab0abf0e5ad902aa70866f612db7dfe7c2570a9c",
+          "lfs_sha256": null
+        },
+        {
+          "path": "assets/datalab-logo.png",
+          "bytes": 6169,
+          "git_oid": "c32033cb18944d41982300f0fee319867e4ed425",
+          "lfs_sha256": null
+        },
+        {
+          "path": "assets/examples/handwriting_letter.png",
+          "bytes": 368867,
+          "git_oid": "eb037dcf6e256ad51cc1a957e2da7c55d3c2f056",
+          "lfs_sha256": "bed634b6df330b040cd52d8d9104433f54e458c16ed87607c406c009b98ecd25"
+        },
+        {
+          "path": "assets/examples/korean_letter.png",
+          "bytes": 406761,
+          "git_oid": "bfa50abed5301dab4f15fc51cf1674b0fa9ac9a1",
+          "lfs_sha256": "973d6e2aca838ba5da72ab691bd8d0d9820e907002ca398eb884a1c87a8efb29"
+        },
+        {
+          "path": "assets/speed_score.png",
+          "bytes": 126637,
+          "git_oid": "6f43902f4bdfd2d91d3ffdf4025c372595fd4509",
+          "lfs_sha256": "83e72fbb5369a045cb6038318337d4a9138217fe394b1a11e7cb0760f46fc7b6"
+        },
+        {
+          "path": "assets/throughput.png",
+          "bytes": 88103,
+          "git_oid": "b6b713cd106c297541232fb322c837e536914fdd",
+          "lfs_sha256": "76812c7807427c1117a8c2fbd0d9070557e911870736a7921fd8e56d49edfcc3"
+        },
+        {
+          "path": "config.json",
+          "bytes": 703,
+          "git_oid": "303ff7639f390ae36d27f30dc22969c7300f7aa6",
+          "lfs_sha256": null
+        },
+        {
+          "path": "det.onnx",
+          "bytes": 389948,
+          "git_oid": "52f0ee39b08bcd5fd6d3c5f42935a45dfea4321e",
+          "lfs_sha256": "f2bd4cba23e9c328cf7ec824634e423e191a2c6aacbbf35c62bd79dd70f62f59"
+        },
+        {
+          "path": "hw.onnx",
+          "bytes": 191005,
+          "git_oid": "da9190b4df94f03ec56d5205cfd9a5f27ac83722",
+          "lfs_sha256": "a93343c37e5566669252b718145bc6419b359a3bc44c4e22121a12a6d76fec4a"
+        },
+        {
+          "path": "lm.npz",
+          "bytes": 15375436,
+          "git_oid": "31ff6d34946d861d50d9f3ba8acf4ca05a254fa4",
+          "lfs_sha256": "c5846a4fd7b56419a75d9555a8372fcacf922e88b7b5bf514658f16614f8b6de"
+        },
+        {
+          "path": "lm_cjk.npz",
+          "bytes": 18955160,
+          "git_oid": "d55a0eff6303eece3f3dad891d93e09f7fd14d25",
+          "lfs_sha256": "6d64f13f4f90f4e529bd63340c6df76238d007feaef2abb903d8cd28d92bc2f3"
+        },
+        {
+          "path": "lm_world.npz",
+          "bytes": 11641215,
+          "git_oid": "19f16a93635aee2eebcf854b540363a463ca3484",
+          "lfs_sha256": "34df5e74a2fcbb9cf5e7f360a559375ffa2e04d2d2943a42308c177bcb444d5d"
+        },
+        {
+          "path": "math_accept.json",
+          "bytes": 661,
+          "git_oid": "2c7c8ce83b5705fd3f653fd0e34072dd2105af71",
+          "lfs_sha256": null
+        },
+        {
+          "path": "math_dec_init.onnx",
+          "bytes": 1356364,
+          "git_oid": "7fd8737c48abc9d6a1986c289b14ebb1bfb0e239",
+          "lfs_sha256": "1d371ab2da0010fab9f5bd9d305f0320d71f0770e483bcbe7e71e00704da878d"
+        },
+        {
+          "path": "math_dec_step.onnx",
+          "bytes": 8429418,
+          "git_oid": "7042656f8d83a2b6feaa8c93a887ec1d6011b11a",
+          "lfs_sha256": "5ff6e6cbaf0dea70314f66222a1469736a8c5e7994fab06a5b4e53c90469239f"
+        },
+        {
+          "path": "math_dec_step_kv.onnx",
+          "bytes": 13307265,
+          "git_oid": "afbb5ac706e6c78765c0085dfe61bf5f53586486",
+          "lfs_sha256": "7ea2499f0b85b53fe360db740b3489088672740fb28cee74ddff6aa4b2b058c4"
+        },
+        {
+          "path": "math_enc.onnx",
+          "bytes": 9889575,
+          "git_oid": "3cf1c8233892baa97378f4ec92e5e6b4f1e72f1c",
+          "lfs_sha256": "579e79144546471c2a169a1578961c70800efd3716712fe7e79b3da67ca5a327"
+        },
+        {
+          "path": "math_gate.json",
+          "bytes": 332,
+          "git_oid": "2027b42066a448c57789da4e6f5271464fbe65b5",
+          "lfs_sha256": null
+        },
+        {
+          "path": "math_meta.json",
+          "bytes": 29820,
+          "git_oid": "e309c10da289245575ab1e14bf2c0b5292bc5997",
+          "lfs_sha256": null
+        },
+        {
+          "path": "math_span.json",
+          "bytes": 6116,
+          "git_oid": "cf1c5766e4817789e06443c6283025c48154878a",
+          "lfs_sha256": null
+        },
+        {
+          "path": "math_span.onnx",
+          "bytes": 281670,
+          "git_oid": "5dd0c3a59178f4db0a956b86c2827aed73a7c6f8",
+          "lfs_sha256": "3a2cf3522a5b2328978e3960c1f3f3534bc277331413d1f669dac30470beb05d"
+        },
+        {
+          "path": "math_span_img.json",
+          "bytes": 84,
+          "git_oid": "8a2bedca7da10e8c3c888787c0939d088175a348",
+          "lfs_sha256": null
+        },
+        {
+          "path": "math_span_img.onnx",
+          "bytes": 538375,
+          "git_oid": "75af96d1e9b160875e9a8c577d7372acbdf60dd9",
+          "lfs_sha256": "f53a6ee1450c746e8b7e26e8c50ce3ef8ee676be51891e0c1f107330b3bb85eb"
+        },
+        {
+          "path": "mathcls.onnx",
+          "bytes": 191005,
+          "git_oid": "4a0f809033087fb4367916668b2b00ece555f30a",
+          "lfs_sha256": "faddb072a2fab660f800cee954c05799090ab023f8b121e9fab354b0bfbf48d2"
+        },
+        {
+          "path": "meta.json",
+          "bytes": 212035,
+          "git_oid": "e696cf90f1cfe6b96488ef2af7dc09a1fb852906",
+          "lfs_sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 5013304,
+          "git_oid": "7d35a8665494c693900236f6860e461173a5456e",
+          "lfs_sha256": "e9b0b74c12176516548664a46429758ac7c1088dd43524534fc7272e221a6762"
+        },
+        {
+          "path": "order.onnx",
+          "bytes": 3025760,
+          "git_oid": "873b34f7836a11b22f527af7f0098342c8868b60",
+          "lfs_sha256": "39e88629bca761896834379e33e65ffbf5a4b92bb937d60a73797cf8d23a7fc0"
+        },
+        {
+          "path": "orient.onnx",
+          "bytes": 371802,
+          "git_oid": "6d6d403626669515a04a831f6e796bd76e856d3e",
+          "lfs_sha256": "20eaf670f55a7cf9facfe1bdd6c7b8e40be75bbf4d48a3df43f66aa3bbd874fd"
+        },
+        {
+          "path": "rec.onnx",
+          "bytes": 5040846,
+          "git_oid": "0535f716f6242fb60ecb79c8b36253b5f6ac76a8",
+          "lfs_sha256": "f70335cbbe4162130a414d6c360857f05b6380d4f9af5d8980685508be7bb0f7"
+        },
+        {
+          "path": "rec_cjk.onnx",
+          "bytes": 10174686,
+          "git_oid": "935c1c9f93c8f8c819d2562fefd636b1579bd126",
+          "lfs_sha256": "e4703a817d413713089a078acbb2ba022dc20e6d688abfa1e2ff3a3bcb904f61"
+        },
+        {
+          "path": "rec_hw.onnx",
+          "bytes": 5073807,
+          "git_oid": "8307cb216e34c8273edf7eb55a43c1c728ac65b8",
+          "lfs_sha256": "727feec5fa3f0258e74194e55a6904b9d588a0943e79496b09db24602c9c489b"
+        },
+        {
+          "path": "rec_rtl.onnx",
+          "bytes": 4811378,
+          "git_oid": "07a47146cc533ef88f63782b531fe26f3b2cfa30",
+          "lfs_sha256": "4e03410c5c8bc403597073b6f33c5f8e3bdcaa51094702ec36e6dfd7b599d267"
+        },
+        {
+          "path": "rec_world.onnx",
+          "bytes": 5626675,
+          "git_oid": "9a80d84d63ef04a60a50c8374111a1916c81fa82",
+          "lfs_sha256": "050392e23392bee3bd40509689319f204372947d145d10ce4dd3026cf091d544"
+        },
+        {
+          "path": "rotcls.onnx",
+          "bytes": 58060,
+          "git_oid": "3ca578c5eb9e2585af2ce0c59d3f350858419def",
+          "lfs_sha256": "bcc035ac8b60696b1464e6c10d9eaa3e51a8f725617849dd3e1be00fd96c5bcd"
+        },
+        {
+          "path": "script.onnx",
+          "bytes": 191630,
+          "git_oid": "cbfa84c8c9632cf863206850147c4cd9c8b04cf1",
+          "lfs_sha256": "b6ce4e926e19c243faaf37bd46880398bf2cb4ae56a29e1177a3b017c1280e36"
+        },
+        {
+          "path": "table_verify.json",
+          "bytes": 6407,
+          "git_oid": "492aa281909d2ddf56f7fc15e8a7cb90ab7151fa",
+          "lfs_sha256": null
+        },
+        {
+          "path": "tsr_refine.onnx",
+          "bytes": 472688,
+          "git_oid": "29ef677729be40dd54665f7182f92208c2bf4e21",
+          "lfs_sha256": "742c4f35c44935f723e24ec0d41361b0ac7d8de72372c0812a9730356db34f8e"
+        },
+        {
+          "path": "tsr_rel.onnx",
+          "bytes": 5632014,
+          "git_oid": "ce2cd83df86aef3a3902314c280696d93a62f1e1",
+          "lfs_sha256": "013cc764c34978cf762c59e1c774f643112b8afd7a3409a1ae840da0ff8f59fc"
+        },
+        {
+          "path": "tsr_split.onnx",
+          "bytes": 1521197,
+          "git_oid": "f0152a569517ca06f8c8eaa28e1002ed184771c3",
+          "lfs_sha256": "1df1e71a0da41251d3da15f1e61b9426ab9b83454674e8a5f43ac1461d309454"
+        }
+      ],
+      "role": "candidate_cpu_ocr"
+    },
+    {
+      "repo_id": "apple/DepthPro2-S",
+      "revision": "903a1c1ade918831d138adcc4aedbcc8f4da0078",
+      "created_at": "2026-11-05T01:27:02.000Z",
+      "last_modified": "2026-11-20T11:28:27.000Z",
+      "gated": false,
+      "private": false,
+      "file_count": 5,
+      "publisher_source_bytes": 97276281,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "lfs_sha256": null
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 5815,
+          "git_oid": "813ad18ca906a92d013a9c8fe332e5321e23d9e6",
+          "lfs_sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 4171,
+          "git_oid": "ee9115f29504c281b105ecd4528f84769a4a6657",
+          "lfs_sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 268,
+          "git_oid": "da7ad0687b61b3f8110353247257406e517cf0a1",
+          "lfs_sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 97264508,
+          "git_oid": "db71898028a1d36f0086d1ad0f9b98852c594f71",
+          "lfs_sha256": "583c4d630779fd231f969c738733624963ad34bd3c29f9c64088257e3436f97c"
+        }
+      ],
+      "role": "candidate_metric_depth"
+    },
+    {
+      "repo_id": "apple/DepthPro2-focal",
+      "revision": "622659d44a2002cf9ae4333f2569afa938290d9a",
+      "created_at": "2026-11-19T18:02:39.000Z",
+      "last_modified": "2026-11-20T11:28:34.000Z",
+      "gated": false,
+      "private": false,
+      "file_count": 5,
+      "publisher_source_bytes": 93851803,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "lfs_sha256": null
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 5815,
+          "git_oid": "813ad18ca906a92d013a9c8fe332e5321e23d9e6",
+          "lfs_sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 3586,
+          "git_oid": "bb283d4ab8a9bb65a976e38049580b97572ff8e7",
+          "lfs_sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 3,
+          "git_oid": "0967ef424bce6791893e9a57bb952f80fd536e93",
+          "lfs_sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 93840880,
+          "git_oid": "506605239eb5c4848390dec3fdf4ff96cf66f53f",
+          "lfs_sha256": "8f567d1c97ff916137288668f6bd306ce2094da2e2b852b0e4539dbb139c8c86"
+        }
+      ],
+      "role": "shared_learned_dependency"
+    },
+    {
+      "repo_id": "apple/DepthPro2-B",
+      "revision": "85e67fdfb7f5b36a6f6c4495e6789d331b1d8a04",
+      "created_at": "2026-11-05T01:27:32.000Z",
+      "last_modified": "2026-11-20T11:28:29.000Z",
+      "gated": false,
+      "private": false,
+      "file_count": 5,
+      "publisher_source_bytes": 386088370,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "lfs_sha256": null
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 5815,
+          "git_oid": "813ad18ca906a92d013a9c8fe332e5321e23d9e6",
+          "lfs_sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 4171,
+          "git_oid": "3856b35ee27a2d5ef09714c7af867acd53b24d9c",
+          "lfs_sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 269,
+          "git_oid": "10ae973bf1678e4e52f4f6c134571b549a2a4a16",
+          "lfs_sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 386076596,
+          "git_oid": "a235ed4b2bf1a1fcd26e755266d1b51c9a9a4337",
+          "lfs_sha256": "244ff85e0d9bde6e0f985de1c61420abc4c2110265b495c974556225ac2b60ed"
+        }
+      ],
+      "role": "same_family_comparison_only"
+    }
+  ],
+  "totals": {
+    "publisher_file_count": 56,
+    "publisher_all_reference_bytes": 706047475,
+    "primary_candidate_and_dependency_bytes": 319959105,
+    "exact_owner_incremental_bytes": null,
+    "approved_download_bytes": 0
+  },
+  "runtime_code": [
+    {
+      "repo": "apple-aiml-research/ml-depth-pro-2",
+      "revision": "aa389cbb0b74341664ed663a0966c859905cd6c0",
+      "python": ">=3.11",
+      "dependencies": [
+        "torch>=2.7",
+        "timm>=1.0.27,<1.1",
+        "av>=14.1",
+        "huggingface-hub>=1.0",
+        "pillow>=11.3"
+      ],
+      "complete_offline_dependency_bytes": null
+    },
+    {
+      "repo": "datalab-to/indra",
+      "revision": "0bd59f72b31e2e4dbeded4b59fac80cc7eca3250",
+      "package": "indra-ocr==1.2.0",
+      "python": ">=3.10",
+      "dependencies": [
+        "onnxruntime",
+        "numpy",
+        "opencv-python-headless",
+        "pypdfium2",
+        "huggingface_hub"
+      ],
+      "complete_offline_dependency_bytes": null
+    }
+  ]
+}

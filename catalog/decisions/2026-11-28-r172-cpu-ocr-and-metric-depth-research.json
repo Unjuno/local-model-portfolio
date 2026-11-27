@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "round": "R172",
+  "date_jst": "2026-11-28",
+  "base_commit": "021c6c1ee5afff1a647b2f881b9b4fd1b42cbfe2",
+  "formal_revision_unchanged": "v75-20261128",
+  "manifest": "manifests/drafts/r172-2026-11-28-indra-depthpro2-source-evidence-RESEARCH.candidate.json",
+  "selection_policy": "policies/selection.md",
+  "review_only": true,
+  "formal_model_additions": 0,
+  "formal_model_replacements": 0,
+  "approved_downloads": 0,
+  "physical_deletions": 0,
+  "comparisons": [
+    {
+      "repo_id": "datalab-to/indra-ocr",
+      "decision": "HOLD",
+      "research_recommendation": "evaluate as a CPU-only complementary conditional candidate, not a replacement",
+      "incumbents": [
+        "lightonai/LightOnOCR-3-0.8B",
+        "PaddlePaddle/PaddleOCR-VL-1.5",
+        "deepseek-ai/DeepSeek-OCR-2"
+      ],
+      "positive": "Publisher OmniParseBench 1.7.0 78.9 math enabled vs 71.6 disabled (2937 pages,16288 tests); distinct CPU ONNX pipeline.",
+      "negative": "Complex tables, handwriting, degraded scans; no same-input incumbent benchmark verified. HF 1.25M refers only to Latin recognizer; config states safetensors is not used by package. End-to-end total, runtime dependency closure and license acts unresolved.",
+      "publisher_reference_bytes": 128831021,
+      "formal_blocker": "No demonstrated incremental quality/CPU Pareto benefit on matched benign documents; complete learned-state identity and restoration plan not yet adjudicated. Unknown totals alone do not bar research-only conditional."
+    },
+    {
+      "repo_id": "apple/DepthPro2-S",
+      "decision": "HOLD",
+      "research_recommendation": "ADD as research-only CONDITIONAL after integration and scope review; no replacement",
+      "incumbents": [
+        "allenai/RoboTracker",
+        "facebook/dinov3-vith16plus-pretrain-lvd1689m"
+      ],
+      "positive": "Native-resolution joint metric depth is distinct from point tracking and feature extraction; author paper arXiv:2611.26603, cross-frame transformer and DPT; approximately 24.3M + 23.5M focal parameters.",
+      "negative": "B200 BF16 PyTorch eager, 32-frame clips including focal: 1080p 44.8 fps/8.0 GiB; 4K 3.6 fps/31.9 GiB; owner hardware not tested. Apple research-only license, no product development/commercial use, owner use scope unresolved.",
+      "publisher_reference_bytes": 191128084,
+      "formal_blocker": "Research-only conditional merits identified; formal integration not performed because full-checkout validation environment ran out of storage. Do not equate this operational blocker with model technical rejection."
+    },
+    {
+      "repo_id": "apple/DepthPro2-focal",
+      "decision": "HOLD",
+      "research_recommendation": "DEPENDENCY_ONLY for S or another size; do not count independent selected model slot",
+      "publisher_reference_bytes": 93851803,
+      "formal_blocker": "Reuse exact identity once; dependent parent not formally admitted."
+    },
+    {
+      "repo_id": "apple/DepthPro2-B",
+      "decision": "HOLD",
+      "research_recommendation": "Same family scale comparison only; distinct learned outcome not presumed duplicate",
+      "publisher_reference_bytes": 386088370,
+      "formal_blocker": "Incremental quality per byte vs S not yet demonstrated for selected tasks; defer extra size."
+    },
+    {
+      "repo_id": "lightonai/LightOnOCR-3-0.8B",
+      "decision": "KEEP",
+      "current_portfolio_decision": "select",
+      "reason": "Existing reported verified 1737771835 B; no matched evidence that CPU candidate substitutes complex document tasks."
+    },
+    {
+      "repo_id": "PaddlePaddle/PaddleOCR-VL-1.5",
+      "decision": "KEEP",
+      "current_portfolio_decision": "select",
+      "reason": "Independent specialized document pipeline; no superiority or redundancy established."
+    },
+    {
+      "repo_id": "deepseek-ai/DeepSeek-OCR-2",
+      "decision": "KEEP",
+      "current_portfolio_decision": "select",
+      "reason": "Distinct OCR baseline; no matched-task substitution demonstrated."
+    },
+    {
+      "repo_id": "allenai/RoboTracker",
+      "decision": "KEEP",
+      "current_portfolio_decision": "conditional",
+      "reason": "Point tracking not metric depth."
+    },
+    {
+      "repo_id": "facebook/dinov3-vith16plus-pretrain-lvd1689m",
+      "decision": "KEEP",
+      "current_portfolio_decision": "conditional",
+      "reason": "Existing exact-repo dependency for IDOL; DepthPro2-S fine-tuned DINOv3-S backbone does not replace it."
+    }
+  ],
+  "no_actual_distribution_change_claimed": true,
+  "comparison_protocol": {
+    "H": "CPU OCR complement has acceptable accuracy on authorized documents under matched resource limits; depth specialist gives usable metric depth on authorized scenes; hypotheses only",
+    "T": "Pre-register representative page/scene strata, same inputs and HW/software; include tables, handwriting, degraded scans, calibration, still/video. No execution authorized.",
+    "D": "PASS only after predeclared quality/resource/rights gates; otherwise FAIL or UNCERTAIN, no lock",
+    "C": "Incumbent quality advantage, runtime/dependency/rights failure or depth calibration error",
+    "U": "Dataset shifts, confidence intervals, runtime variance, memory accounting, owner storage unknown; combined uncertainty not estimated"
+  }
+}
