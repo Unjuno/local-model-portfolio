@@ -1,4 +1,8 @@
-## 現行 v82 / R179（2026-11-28）
+## 現行 v83 / R180（2026-11-28）
+
+277登録・221有効（SELECT56、CONDITIONAL165）。GigaEdge独立2profileを1資産で研究限定追加。Inworld・PAWP含む旧276行・133取得報告維持、全221 STOP、候補7file 11,058,505 B、依存・学習数・権利・owner HDD未解決、承認/DL/実行/削除0。[調査・正式選定](../docs/strategy/180-v83-gigaedge-cpu-speech-enhancement.md)。
+
+## 履歴 v82 / R179（2026-11-28）
 
 276登録・220有効（SELECT 56、CONDITIONAL 164）。英語・ネパール語混在PAWP 300Kの共有基底・Dense独立学習2状態を1研究限定CONDITIONAL repoとして追加。並行v81の2音声前処理モデルを含む既存275行、133取得報告不変。候補原本参照2,306,237 B、完全依存容量・owner増分未確定。全220取得STOP、承認・重みDL・実行・物理削除0。[調査と正式選定](../docs/strategy/179-v82-pawp-bilingual-compact-tts-and-provenance-gaps.md)。
 

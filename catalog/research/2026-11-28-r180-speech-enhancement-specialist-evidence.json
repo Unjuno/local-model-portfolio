@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "round": "R180",
+  "date_jst": "2026-11-28",
+  "base_main_sha": "14bb5bdc80b7fa5c51596f66560ffcb11f65c1c0",
+  "base_revision": "v82-20261128",
+  "concurrent_merge": "R178 v81 Inworld SAVA/Voice Isolator and R179 v82 PAWP bilingual TTS retained. No rewriting or new acquisition approval.",
+  "search_scope": {
+    "recent_7_days": "HF six tasks, up to 25 each: segmentation, audio/audio, restoration, feature extraction, time-series, tabular",
+    "recent_30_days": "November papers/releases",
+    "recent_90_days": "October decision specialist; bounded, not exhaustive",
+    "confirmed_access_license_changes": 0,
+    "novelty": "Five primary IDs absent from original v80 and receipt ledger; GigaEdge absent from concurrent v81."
+  },
+  "decisions": [
+    {
+      "repo_id": "ai-sage/GigaEdge-Enhance",
+      "decision": "ADD",
+      "formal_decision": "conditional",
+      "revision_sha": "f1553bd1859bcef52d0037a0ebe4d17da293548e",
+      "comparison": [
+        "inworld/voice-isolator",
+        "inworld/sava",
+        "openai/whisper-large-v3-turbo",
+        "ibm-granite/granite-speech-5.0-470m-turboctc",
+        "kyutai/mimi"
+      ],
+      "reason": "Different training histories of hybrid48 FP32 restorative enhancement and fast8 INT8 narrowband; complements newly selected Inworld voice-isolator (48kHz mono, no restorative generation, 489040928 weight bytes). 11MB source candidate adds distinct 8kHz and CPU restorative regimes; matched comparison absent, no replacement. Private training corpus and training/quantization tools not released.",
+      "positive": "Publisher 886 EARS-WHAMv2 pairs: hybrid48 DNSMOS P808 3.44 vs noisy 2.68; PESQ-WB 1.90 vs 1.23; SI-SDR 13.03 vs 5.35 dB. Shared model throughput 56.00±1.00 vs DPDFNet2 17.33±0.58 streams. fast8 ESTOI .64 to .72.",
+      "negative": "DPDFNet2 HR higher DNSMOS 3.66/PESQ 2.21/SI-SDR 14.69; RNNoise higher stream capacity; quality48 checkpoint differs from paper. Generative restoration may alter words. Inworld VIBE uses different dataset, no matched WER or hardware evidence.",
+      "selected_source_bytes": 11058505,
+      "full_repo_reference_bytes": 39967596
+    },
+    {
+      "repo_id": "kandinskylab/KVAE-Audio-Stereo",
+      "decision": "HOLD",
+      "revision_sha": "cfbe57c806e11cfd1358893688282955fadc3e13",
+      "created": "2026-11-25",
+      "license": "MIT",
+      "parameters": 167265476,
+      "reference_weight_bytes": 669099176,
+      "comparison": "kyutai/mimi",
+      "reason": "48kHz stereo continuous latent, 960 samples/step,128 channels; internal claim only, no matched public stereo score; three exports not separate outcomes.",
+      "source": "https://huggingface.co/kandinskylab/KVAE-Audio-Stereo"
+    },
+    {
+      "repo_id": "WhiteYC/PixelMatte",
+      "decision": "HOLD",
+      "revision_sha": "556b2ab6a67390412c35e4ee2dee431c49feed57",
+      "created": "2026-11-27",
+      "license": "Apache-2.0 tag, parent rights pending",
+      "parameters": null,
+      "reference_weight_bytes": 29231160232,
+      "comparison": "facebook/sam3",
+      "reason": "HiDream-8B and PRX-7B fine-tunes; alpha not binary segmentation; no VAE/text encoder. Trimaps, census and matched evidence unresolved.",
+      "source": "https://huggingface.co/WhiteYC/PixelMatte"
+    },
+    {
+      "repo_id": "nums-ai/causilo-1.5",
+      "decision": "HOLD",
+      "revision_sha": "c2109e225b6cad0e827acf2e454c82fc550f5e7e",
+      "created": "2026-11-25",
+      "license": "Custom noncommercial weights; Apache-2.0 code",
+      "parameters": null,
+      "reference_weight_bytes": 2208604548,
+      "comparison": "nvidia/Kumo-Tabular",
+      "reason": "Separate classifier/regressor; publisher top Elo nine tasks, 1.5.1 TabArena pending, no matched comparison; rights/census unresolved.",
+      "source": "https://huggingface.co/nums-ai/causilo-1.5"
+    },
+    {
+      "repo_id": "sathiskumarjothi0/Beveridge-Large-C",
+      "decision": "HOLD",
+      "revision_sha": "7cb0d24cce8572b8803a738c083b2419cdc40a8a",
+      "created": "2026-10-12",
+      "license": "Apache-2.0",
+      "parameters": 398229261,
+      "reference_weight_bytes": 1592939676,
+      "comparison": "ModernBERT-large; Intern-Decision-0.8B; Ivonnet-0.8B",
+      "reason": "Decision network; publisher operations 93.04%, typed decisions 75.85%, rules 85.60%; independent calibration and matched comparisons absent.",
+      "source": "https://huggingface.co/sathiskumarjothi0/Beveridge-Large-C"
+    },
+    {
+      "repo_id": "Ceva-IP/DPDFNet",
+      "decision": "HOLD",
+      "revision_sha": null,
+      "created": null,
+      "license": null,
+      "parameters": null,
+      "reference_weight_bytes": null,
+      "comparison": "ai-sage/GigaEdge-Enhance",
+      "reason": "DPDFNet2 HR better quality in GigaEdge study; HOLD pending exact source and rights closure.",
+      "source": "https://huggingface.co/Ceva-IP/DPDFNet"
+    },
+    {
+      "repo_id": "google/timesfm-3.0-pytorch",
+      "decision": "HOLD",
+      "revision_sha": "297aa8f81ab7e152fa70c00de64e2da596d50572",
+      "created": null,
+      "license": "Custom noncommercial",
+      "parameters": 330710976,
+      "reference_weight_bytes": 1322898824,
+      "comparison": "Cisco CTSM 1.5",
+      "reason": "11/27 update; already compared R177; no evidence of distinct training or changed terms.",
+      "source": "https://huggingface.co/google/timesfm-3.0-pytorch"
+    },
+    {
+      "repo_id": "inworld/voice-isolator",
+      "decision": "KEEP",
+      "existing_portfolio_decision": "conditional",
+      "reason": "Distinct incumbent role or no matched replacement evidence"
+    },
+    {
+      "repo_id": "inworld/sava",
+      "decision": "KEEP",
+      "existing_portfolio_decision": "conditional",
+      "reason": "Distinct incumbent role or no matched replacement evidence"
+    },
+    {
+      "repo_id": "openai/whisper-large-v3-turbo",
+      "decision": "KEEP",
+      "existing_portfolio_decision": "select",
+      "reason": "Distinct incumbent role or no matched replacement evidence"
+    },
+    {
+      "repo_id": "ibm-granite/granite-speech-5.0-470m-turboctc",
+      "decision": "KEEP",
+      "existing_portfolio_decision": "select",
+      "reason": "Distinct incumbent role or no matched replacement evidence"
+    },
+    {
+      "repo_id": "kyutai/mimi",
+      "decision": "KEEP",
+      "existing_portfolio_decision": "conditional",
+      "reason": "Distinct incumbent role or no matched replacement evidence"
+    },
+    {
+      "repo_id": "facebook/sam3",
+      "decision": "KEEP",
+      "existing_portfolio_decision": "conditional",
+      "reason": "Distinct incumbent role or no matched replacement evidence"
+    },
+    {
+      "repo_id": "nvidia/Kumo-Tabular",
+      "decision": "KEEP",
+      "existing_portfolio_decision": "conditional",
+      "reason": "Distinct incumbent role or no matched replacement evidence"
+    },
+    {
+      "repo_id": "answerdotai/ModernBERT-large",
+      "decision": "KEEP",
+      "existing_portfolio_decision": "select",
+      "reason": "Distinct incumbent role or no matched replacement evidence"
+    },
+    {
+      "repo_id": "internlm/Intern-Decision-0.8B",
+      "decision": "KEEP",
+      "existing_portfolio_decision": "conditional",
+      "reason": "Distinct incumbent role or no matched replacement evidence"
+    },
+    {
+      "repo_id": "illuin/Ivonnet-0.8B",
+      "decision": "KEEP",
+      "existing_portfolio_decision": "conditional",
+      "reason": "Distinct incumbent role or no matched replacement evidence"
+    },
+    {
+      "repo_id": "Firoj112/pawp-tts-300k",
+      "decision": "KEEP",
+      "existing_portfolio_decision": "conditional",
+      "reason": "New concurrent bilingual TTS is synthesis, not waveform restoration."
+    }
+  ],
+  "profile_decisions": [
+    {
+      "profile": "hybrid48 ONNX",
+      "decision": "ADD research source"
+    },
+    {
+      "profile": "fast8 ONNX",
+      "decision": "ADD research source"
+    },
+    {
+      "profile": "hybrid48 TFLite",
+      "decision": "EXCLUDE default scope only; alternate export"
+    },
+    {
+      "profile": "quality48 ONNX/TFLite",
+      "decision": "HOLD distinct checkpoint"
+    }
+  ],
+  "sources": [
+    "https://huggingface.co/ai-sage/GigaEdge-Enhance/blob/f1553bd1859bcef52d0037a0ebe4d17da293548e/README.md",
+    "https://huggingface.co/ai-sage/GigaEdge-Enhance/blob/f1553bd1859bcef52d0037a0ebe4d17da293548e/LICENSE.txt",
+    "https://huggingface.co/api/models/ai-sage/GigaEdge-Enhance/tree/f1553bd1859bcef52d0037a0ebe4d17da293548e?recursive=true",
+    "https://huggingface.co/ai-sage/GigaEdge-Enhance/blob/f1553bd1859bcef52d0037a0ebe4d17da293548e/hybrid48/onnx/config.yaml",
+    "https://huggingface.co/ai-sage/GigaEdge-Enhance/blob/f1553bd1859bcef52d0037a0ebe4d17da293548e/fast8/onnx/config.yaml",
+    "https://arxiv.org/html/2611.13243v4",
+    "https://github.com/salute-developers/giga-edge-enhance/tree/d55d693be6c73df4804f296687e4e4bbb5783938",
+    "https://huggingface.co/inworld/voice-isolator/blob/9b0285b3fe8403aa8e2f1dbb2165a80a4294c970/README.md",
+    "https://arxiv.org/abs/2611.34929",
+    "https://arxiv.org/abs/2609.22866"
+  ],
+  "validation_plan": {
+    "H": "CPU narrowband and restorative regime adds utility without transcription degradation",
+    "T": "Proposed >=100 paired consented recordings per bandwidth, raw and Inworld/DPDFNet/RNNoise comparisons, fixed CPU/clock/ORT/ABI/thread 16ms hop, >=30 timed repetitions; WER, PESQ, SI-SDR, p95 latency",
+    "D": "Proposed not tested: median WER degradation <=0.5 pp, enhancement improves vs raw, real-time without underruns; otherwise FAIL/UNCERTAIN",
+    "C": "Inworld or DPDFNet suffices; generative alteration of words; RNNoise efficiency",
+    "U": "Dataset mismatch, CPU/backend variation, speech alterations; uncertainty not estimated"
+  },
+  "approved_downloads": 0,
+  "physical_files_deleted": 0,
+  "model_payload_downloaded": 0,
+  "owner_disk_verified": false
+}

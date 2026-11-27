@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "kind": "R180_PUBLISHER_SOURCE_RESEARCH_ONLY",
+  "evidence_jst": "2026-11-28",
+  "source_catalog_revision": "v82-20261128",
+  "research_only_nonexecutable": true,
+  "download_enabled": false,
+  "download_approved": false,
+  "approved_by_user": false,
+  "model_payload_fetched": false,
+  "owner_local_sha_verified": false,
+  "source_models": [
+    {
+      "repo_id": "ai-sage/GigaEdge-Enhance",
+      "revision_sha": "f1553bd1859bcef52d0037a0ebe4d17da293548e",
+      "created_at": "2026-11-25T18:05:22Z",
+      "last_modified": "2026-11-25T21:45:29Z",
+      "observed_gated": false,
+      "publisher_license_tag": "mit",
+      "source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 107,
+          "git_oid": "5a5570f67b08cf1fa3d16fa568812335129ba9ea",
+          "lfs_sha256": null,
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "LICENSE.txt",
+          "bytes": 1061,
+          "git_oid": "ce2b0fb3073e5598c938252c71033711ee9977e1",
+          "lfs_sha256": null,
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 4135,
+          "git_oid": "483fa0d84edbdbeeac5d79fd581ce40aecaa4b2e",
+          "lfs_sha256": null,
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "fast8/onnx/config.yaml",
+          "bytes": 250,
+          "git_oid": "f0b88ddeb92f6e3675ec8e3f05c50a670d086c27",
+          "lfs_sha256": null,
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "fast8/onnx/model.onnx",
+          "bytes": 475375,
+          "git_oid": "7e316b839e95374a2bb7a76b127f994a258d07e8",
+          "lfs_sha256": "2dc29118cf71451eeb15e833df75684ecfee9102cf1e393d627e141acad4bb26",
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "hybrid48/onnx/config.yaml",
+          "bytes": 346,
+          "git_oid": "27c9bba914009b520770af7a176c44489f85f487",
+          "lfs_sha256": null,
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "hybrid48/onnx/model.onnx",
+          "bytes": 10577231,
+          "git_oid": "c52b222b1f0d075b632841e5a92e560bf9172ea9",
+          "lfs_sha256": "ca56b5a1748032baafe19deb9de22a8925555408af0ee77cb49934f1a3d1bbc3",
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "hybrid48/tflite/config.yaml",
+          "bytes": 348,
+          "git_oid": "bf19e5e72d6737e19c0329e43dbb8bb9c3c749de",
+          "lfs_sha256": null,
+          "selected_candidate": false,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "hybrid48/tflite/model.tflite",
+          "bytes": 10679188,
+          "git_oid": "1cde14a1ed3ba852799a19faa26cfd314806055d",
+          "lfs_sha256": "8d7c363ff09d2a166d863dded87dc763edad6382984dbf178d00d5b78d47a8af",
+          "selected_candidate": false,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "quality48/onnx/config.yaml",
+          "bytes": 361,
+          "git_oid": "7612ddcb1b2ff8f3f4d0f1067a72ebb25d086cf6",
+          "lfs_sha256": null,
+          "selected_candidate": false,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "quality48/onnx/model.onnx",
+          "bytes": 9068327,
+          "git_oid": "5fba3807e5776019dbebf451f319ed1483a032d2",
+          "lfs_sha256": "ff227f44600ca71fb54b4902c5ebe698ce812a110c2d4b400f96d959a69dde85",
+          "selected_candidate": false,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "quality48/tflite/config.yaml",
+          "bytes": 363,
+          "git_oid": "3546d8f9229638c4715adc6ebe78325b84d606db",
+          "lfs_sha256": null,
+          "selected_candidate": false,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "quality48/tflite/model.tflite",
+          "bytes": 9160504,
+          "git_oid": "4845029c41773a679e2987126585052e07591147",
+          "lfs_sha256": "094ab113c095a37daa225862a91ec1f3a40e026b2a42f2d370a7fd782360c137",
+          "selected_candidate": false,
+          "owner_actual_sha_verified": false
+        }
+      ],
+      "source_file_count": 13,
+      "source_total_bytes": 39967596,
+      "candidate_selected_source_file_count": 7,
+      "candidate_selected_source_file_bytes": 11058505,
+      "optional_excluded": [
+        "hybrid48 TFLite alternate export; parity unverified",
+        "quality48 ONNX/TFLite HOLD distinct profile: paper checkpoint mismatch"
+      ],
+      "scope_note": "Two differently trained profiles in one repo; metadata not payload verified",
+      "dependency_candidates": [
+        {
+          "source_url": "https://github.com/salute-developers/giga-edge-enhance/tree/d55d693be6c73df4804f296687e4e4bbb5783938",
+          "revision_sha": "d55d693be6c73df4804f296687e4e4bbb5783938",
+          "scope": "C++17 SDK/ORT/platform dependency closure and ABI unresolved"
+        }
+      ],
+      "complete_dependency_inclusive_bytes": null,
+      "owner_incremental_bytes": null,
+      "exact_total_trained_parameters": null,
+      "download_approved": false,
+      "weight_downloaded_by_this_research": false
+    }
+  ],
+  "runtime_code_executed": false,
+  "formal_catalog_promotion_performed": true,
+  "owner_specific_rights_verified": false,
+  "final_selected_file_bytes": null
+}
