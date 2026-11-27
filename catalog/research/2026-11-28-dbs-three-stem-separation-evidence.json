@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "round": "DBS-20261128-INDEPENDENT-RESEARCH",
+  "date_jst": "2026-11-28",
+  "base_commit": "6fedaf75e9d51b6137c3aec5c4983c1b6e209a59",
+  "source_revision": null,
+  "search": {
+    "windows_days": [
+      7,
+      30,
+      90
+    ],
+    "sources": [
+      "Hugging Face public model search separation/DBS/SEAL-small sorted lastModified",
+      "GitHub publisher repos and releases",
+      "arXiv papers and publisher model cards"
+    ],
+    "bounded": true,
+    "no_qualifying_new_7_day_release_confirmed": true,
+    "observed_license_or_access_change": null,
+    "not_exhaustive": true
+  },
+  "decisions": [
+    {
+      "repo_id": "JusperLee/DBS-TIGER-DnR",
+      "decision": "ADD",
+      "formal_selection": "conditional",
+      "reason": "Scratch-trained dynamic 128 bands and three-stem output distinct from incumbents; higher author scores and smaller than DBS-BSRNN.",
+      "positive": "DnR v2 973 tracks, music 7.78 speech 15.90 SFX 6.70 mean 10.13 dB SI-SDR; static TIGER 8.74.",
+      "negative": "Mono only; 6s window vs BSRNN 3s; SFX/music scores lower than speech; no matched latency or independent replication.",
+      "source_bytes": 4116715,
+      "formal_decision": "PROPOSED_CONDITIONAL_NOT_PROMOTED"
+    },
+    {
+      "repo_id": "JusperLee/DBS-BSRNN-DnR",
+      "decision": "HOLD",
+      "reason": "Independent scratch-trained architecture; larger source and lower reported scores on same DnR test; shorter windows could be useful, matched latency and distinct marginal value unverified.",
+      "source_bytes": 18891321
+    },
+    {
+      "repo_id": "Xiang-Lin75/SEAL",
+      "decision": "HOLD",
+      "paper": "https://arxiv.org/abs/2610.07047",
+      "release": "https://github.com/Xiang-Lin75/SEAL/releases/tag/v0.2.0",
+      "published": "2026-09-23T16:21:04Z",
+      "archive": "seal-small-e266.tar",
+      "release_asset_bytes": 7340216,
+      "publisher_sha256": "1eabd30d6983eadcb7a34ac2a04d7e9aac3f1233a06544b8420ddd1c1ad766c7",
+      "reason": "590K noncausal two-speech-source separator, EchoSet SI-SDRi 12.89 dB, author +0.31 dB over static TIGER-small, 2.64G MAC/s not measured latency; different metric/corpus from DnR; tar checkpoint trust and weight-specific terms unresolved."
+    },
+    {
+      "repo_id": "IN03X/SAID",
+      "component": "Audio2Sph-L",
+      "decision": "HOLD",
+      "revision": "177e832ebcff65416fb85cdaf325c4a10209490d",
+      "last_modified": "2026-11-11T14:17:24Z",
+      "reason": "Noncommercial checkpoint terms and spatial audio inputs, distinct sound-event localization; no matched local quality evidence; SAID-L full pretrained weights not released per card."
+    },
+    {
+      "repo_id": "kobimusic/dettato-grouper",
+      "decision": "KEEP",
+      "task": "instrument grouping",
+      "source_repo_bytes": 12460661,
+      "comparison": "different outputs; no matched replacement evidence"
+    },
+    {
+      "repo_id": "kobimusic/dettato-drums",
+      "decision": "KEEP",
+      "task": "drum MIDI transcription",
+      "source_repo_bytes": 21976775,
+      "comparison": "different outputs; no matched replacement evidence"
+    },
+    {
+      "repo_id": "nvidia/Nemotron-3-Diarization",
+      "decision": "KEEP",
+      "task": "speaker-time labels",
+      "source_repo_bytes": null,
+      "comparison": "different outputs; no matched replacement evidence"
+    },
+    {
+      "repo_id": "openai/whisper-large-v3-turbo",
+      "decision": "KEEP",
+      "task": "ASR text",
+      "source_repo_bytes": 1622466054,
+      "comparison": "different outputs; no matched replacement evidence"
+    },
+    {
+      "repo_id": "speechbrain/spkrec-ecapa-voxceleb",
+      "decision": "KEEP",
+      "task": "speaker embeddings",
+      "source_repo_bytes": 89133738,
+      "comparison": "different outputs; no matched replacement evidence"
+    }
+  ],
+  "validation_plan": {
+    "H": "On lawfully licensed mono DnR-style held-out audio, DBS-TIGER improves mean SI-SDR over matched static TIGER and adds separation outputs beyond incumbent grouping.",
+    "T": "At least 100 lawful held-out tracks stratified by speech/music/SFX; paired 95% bootstrap interval, CPU/GPU SKU, clock, thread count, OS, torch ABI, 44.1kHz, batch=1, 6s/3s overlap and matched alternative window; 30 latency repetitions per condition; no execution in this research.",
+    "D": "PASS research comparison if paired 95% lower bound >0 dB for mean SI-SDR improvement, no individual source mean degrades >1 dB, and no nonfinite outputs; FAIL if paired upper bound <=0 or reproducible invalid output; otherwise UNCERTAIN. Acquisition remains STOP independently.",
+    "C": "DnR corpus bias, mono/stereo downmix loss, transient smearing, latency at shorter windows, data leakage.",
+    "U": "Sampling uncertainty and runtime/hardware variation; combined uncertainty not measured; no performance ratio across unmatched hardware."
+  },
+  "capacity": {
+    "selected_model_source_bytes": 4116715,
+    "code_scope_bytes": 206489,
+    "combined_reference_bytes": 4323204,
+    "held_sibling_source_bytes": 18891321,
+    "actual_owner_incremental_bytes": null,
+    "approved_download_bytes": 0
+  },
+  "approved_downloads": 0,
+  "physical_deletions": 0,
+  "formal_catalog_promotion_performed": false,
+  "formal_add_proposal_pending": true,
+  "candidate_formal_commit_unmerged": "9479ed56c0307327e2c8a2470938aff298ced18e",
+  "concurrent_comparison": [
+    {
+      "repo_id": "inworld/sava",
+      "decision": "KEEP",
+      "reason": "VAD/EOT timestamps, not three source waveforms"
+    },
+    {
+      "repo_id": "inworld/voice-isolator",
+      "decision": "KEEP",
+      "reason": "Denoising, not three stems"
+    },
+    {
+      "repo_id": "ai-sage/GigaEdge-Enhance",
+      "decision": "KEEP",
+      "reason": "Speech enhancement, not three stems"
+    }
+  ]
+}
