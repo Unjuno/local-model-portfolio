@@ -81,6 +81,11 @@ def approval_for(task, approval_path=None):
             approved = json.load(stream)
     except (OSError, json.JSONDecodeError):
         return None
+    # A previous v73 plan builder forged signed approval from source/licence tags.
+    # Reject the WHOLE stale synthetic file, even if a row approval_ref was edited.
+    source = str(approved.get("authorization_source") or "").lower()
+    if "v73 effective portfolio pinned candidate sources" in source:
+        return None
     for entry in approved.get("entries", []):
         if not isinstance(entry, dict):
             continue
@@ -102,7 +107,9 @@ def approval_for(task, approval_path=None):
                 or "canonical 21-source queue" in review_ref
                 or "v64 r152 canonical post99 source queue" in review_ref
                 or "v65-post112-exact-source-files-" in review_ref
-                or "v65 post112 pinned source queues" in review_ref):
+                or "v65 post112 pinned source queues" in review_ref
+                or review_ref.startswith("v73-pinned-candidate-")
+                or "v73 effective portfolio pinned candidate sources" in review_ref):
             continue
         allowed = entry.get("files")
         if not isinstance(allowed, list) or len(allowed) != len(paths):
