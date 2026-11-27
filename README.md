@@ -1,4 +1,8 @@
-## 現行 v75 / R171（2026-11-28）
+## 現行 v76 / R173（2026-11-28）
+
+CTSM 1.5を研究限定CONDITIONAL追加。267登録・211有効（SELECT 56 / CONDITIONAL 155）、従来266行不変、取得報告133件維持、全211 STOP。承認・重みDL・物理削除0。並行R172 OCR/depth研究を維持。 [根拠](docs/strategy/173-v76-ctsm-seasonality-and-specialist-source-research.md) / [CURRENT](catalog/CURRENT.json)。
+
+## 履歴 v75 / R171（2026-11-28）
 
 266登録・210有効（SELECT 56、CONDITIONAL 154）。Qwen3-OmniをHOLD、独立した小型動画点追跡モデルRoboTrackerを研究限定CONDITIONALへ追加。全210取得STOP、既取得報告133件保存、取得承認・重量DL・物理削除0。[監査](docs/strategy/171-v75-dependency-aware-composition-exchange.md)。以下の旧版記録は履歴。
 

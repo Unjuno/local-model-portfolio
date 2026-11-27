@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-11-28",
+  "base_commit": "ba341e8860398f23a9548c50de1fb97be62890e3",
+  "formal_revision": "v76-20261128",
+  "scope": "Targeted 7/30/90-day HF, GitHub, arXiv and publisher searches; not exhaustive. Candidates not registered in v75; prior path name search not exhaustive history prose search. Parallel R172 CPU OCR and metric-depth research preserved.",
+  "decisions": [
+    {
+      "repo_id": "cisco-ai/cisco-time-series-model-1.5",
+      "action": "ADD",
+      "formal_decision": "conditional",
+      "revision_sha": "955e6d768451bbe86f8143caf3236e80414c74ea",
+      "positive": "Publisher O11y-Seasonal MASE/CRPS 0.404/0.030 vs Chronos-2 0.503/0.037; CTSM 1.0 0.500/0.037. GIFT-Eval 0.689/0.478 vs Chronos-2 0.698/0.485.",
+      "negative": "GIFT-Eval TimesFM-3 0.667/0.456 better; internal O11y, no independent replication or matched owner HW/batch. No head-to-head with Toto-4M or Simons-297M.",
+      "compared_with": [
+        "Chronos-2",
+        "Simons-297M",
+        "Toto-2.0-4m",
+        "Timestral-5M",
+        "Timestral-28M"
+      ]
+    },
+    {
+      "repo_id": "PARADOXAIlabs/atlas-100m",
+      "revision_sha": "c4ecdcc15f28702d73c54948a455cbc7d6342780",
+      "source_full_repo_bytes": 3583734829,
+      "action": "HOLD",
+      "positive": "98.6M independent spatiotemporal training",
+      "negative": "Task-trained vs zero-shot weather, traffic 22/24 losses, one seed; .pt trust and component scope pending",
+      "compared_with": [
+        "Chronos-2",
+        "Simons-297M"
+      ],
+      "source_url": "https://huggingface.co/PARADOXAIlabs/atlas-100m"
+    },
+    {
+      "repo_id": "DAG-UPB/t0-gamma-heat-demand-aalborg",
+      "revision_sha": "4c817eb688de8268776abeba0d20077ed3004ca3",
+      "source_full_repo_bytes": 11057751,
+      "action": "HOLD",
+      "positive": "2.75M LoRA; MASE improvement 2.7% individual and 11.5% aggregate",
+      "negative": "80% interval actual coverage 65% aggregate and 71% pseudo-district; oracle weather, mandatory parent unpinned, no transfer proof",
+      "compared_with": [
+        "Chronos-2",
+        "CTSM 1.5"
+      ],
+      "source_url": "https://huggingface.co/DAG-UPB/t0-gamma-heat-demand-aalborg"
+    },
+    {
+      "repo_id": "paris-noah/Tabby-Pretrain",
+      "revision_sha": "b26c277bf96087712ea3ae65740947ffe276ae61",
+      "source_full_repo_bytes": 583409819,
+      "action": "HOLD",
+      "positive": "145.84M encoder with 99 quantiles; GIFT-Eval MASE/CRPS 0.7040/0.4827",
+      "negative": "No clear matched advantage; noncommercial rights and reproducibility",
+      "compared_with": [
+        "Chronos-2",
+        "Simons-297M"
+      ],
+      "source_url": "https://huggingface.co/paris-noah/Tabby-Pretrain"
+    },
+    {
+      "repo_id": "paris-noah/Tabby",
+      "revision_sha": "6c6034321b3c811e24c8729fb6e274dded68fa31",
+      "source_full_repo_bytes": 586905762,
+      "action": "HOLD",
+      "positive": "146.70M frozen-backbone prompt-trained checkpoint; GIFT-Eval 0.688/0.4758",
+      "negative": "Leaderboard testdata_leakage Yes, different inference span, NC rights; exact base plus prompt replay unverified",
+      "compared_with": [
+        "Chronos-2",
+        "Tabby-Pretrain"
+      ],
+      "source_url": "https://huggingface.co/paris-noah/Tabby"
+    },
+    {
+      "repo_id": "datalab-to/surya-ocr-2.5",
+      "revision_sha": "00c843e9cae45611dca0a6dc2c9bbbf2dadaaed3",
+      "source_full_repo_bytes": 1395290275,
+      "action": "HOLD",
+      "positive": "689.36M; publisher OPB 85.9 vs Surya 2 83.3; H100 192 DPI 4.5 vs 2.7 pages/s",
+      "negative": "Row/column geometry removed; no matched existing OCR comparison; modified OpenRAIL-M and runtime unresolved",
+      "compared_with": [
+        "LightOnOCR-3-0.8B"
+      ],
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5"
+    },
+    {
+      "repo_id": "ContinuousIntelligence/ci-proto",
+      "revision_sha": "ee3031351a151e3f6febf8c62b53e6ea1008bef6",
+      "source_full_repo_bytes": null,
+      "action": "HOLD",
+      "positive": "Long-context probabilistic forecasting",
+      "negative": "Two ckpt weights; total, custom license, runtime ABI and comparative benefit unresolved",
+      "compared_with": [
+        "Chronos-2",
+        "Simons-297M"
+      ],
+      "source_url": "https://huggingface.co/ContinuousIntelligence/ci-proto"
+    },
+    {
+      "scope": "format-only GGUF conversions of identical trained states, not a specific verified derivative",
+      "action": "EXCLUDE",
+      "reason": "No independent learned outcome demonstrated; no existing exclusion or deletion"
+    },
+    {
+      "repo_id": "autogluon/chronos-2",
+      "action": "KEEP",
+      "formal_decision": "select",
+      "reason": "Distinct role or no matched proof of replacement; retain receipts and prior selection."
+    },
+    {
+      "repo_id": "lightonai/LightOnOCR-3-0.8B",
+      "action": "KEEP",
+      "formal_decision": "select",
+      "reason": "Distinct role or no matched proof of replacement; retain receipts and prior selection."
+    },
+    {
+      "repo_id": "abel-lab/Simons-297M",
+      "action": "KEEP",
+      "formal_decision": "conditional",
+      "reason": "Distinct role or no matched proof of replacement; retain receipts and prior selection."
+    },
+    {
+      "repo_id": "mistralai/Timestral-28M",
+      "action": "KEEP",
+      "formal_decision": "conditional",
+      "reason": "Distinct role or no matched proof of replacement; retain receipts and prior selection."
+    },
+    {
+      "repo_id": "mistralai/Timestral-5M",
+      "action": "KEEP",
+      "formal_decision": "select",
+      "reason": "Distinct role or no matched proof of replacement; retain receipts and prior selection."
+    },
+    {
+      "repo_id": "Datadog/Toto-2.0-4m",
+      "action": "KEEP",
+      "formal_decision": "conditional",
+      "reason": "Distinct role or no matched proof of replacement; retain receipts and prior selection."
+    }
+  ],
+  "formal_add_count": 1,
+  "replacement_count": 0,
+  "approved_download_count": 0,
+  "physical_deletion_count": 0,
+  "test_plan": "Proposed H: >=5% seasonal MASE improvement over Chronos-2, 80% interval coverage 75-85%. T: 40 independent lawful sensor series, four rolling future folds per series, matched horizon/context policy/HW FP32 batch 1; paired series-block bootstrap. D: PASS if paired 95% interval supports >=5% improvement and coverage target, FAIL if contrary, else UNCERTAIN. C/U: training overlap, domain shift, series dependence, latency and RAM measurement uncertainty; no autonomous actuation."
+}
