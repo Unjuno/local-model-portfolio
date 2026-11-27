@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-11-28",
+  "base_commit": "1177f713be655860871de7d46c6673b8fbf46677",
+  "initial_commit": "b8988e16d8ab48f5b9112b94a05426178f33a113",
+  "search_scope": {
+    "windows_days": [
+      7,
+      30,
+      90
+    ],
+    "type": "targeted publisher/arXiv/HF search, not exhaustive",
+    "new_recent_evidence": [
+      "VETime checkpoint 2026-11-02 and code 2026-11-06 updates (HF metadata)",
+      "NVIDIA Parse 2026-11-26 blog; already selected v77"
+    ],
+    "older_foundational_candidate": "microsoft/table-transformer-structure-recognition-v1.1-all"
+  },
+  "findings": [
+    {
+      "repo_id": "microsoft/table-transformer-structure-recognition-v1.1-all",
+      "revision": "7587a7ef111d9dcbf8ac695f1376ab7014340a0c",
+      "parameter_count_approx": 28800000,
+      "source_urls": [
+        "https://huggingface.co/microsoft/table-transformer-structure-recognition-v1.1-all",
+        "https://huggingface.co/microsoft/table-transformer-structure-recognition-v1.1-all/raw/7587a7ef111d9dcbf8ac695f1376ab7014340a0c/model.safetensors",
+        "https://arxiv.org/abs/2303.00716",
+        "https://github.com/microsoft/table-transformer"
+      ],
+      "mechanism": "Independent DETR/ResNet-18 trained on aligned PubTables-1M and FinTabNet.c, table geometry not text recognition",
+      "benchmark": {
+        "source": "https://arxiv.org/abs/2303.00716",
+        "dataset": "ICDAR-2013",
+        "metric": "exact match percent",
+        "before_after": {
+          "PubTables": [
+            65,
+            75
+          ],
+          "FinTabNet": [
+            42,
+            65
+          ],
+          "combined": [
+            69,
+            81
+          ]
+        },
+        "independent_replication": false
+      },
+      "comparison": [
+        {
+          "repo_id": "lightonai/LightOnOCR-3-0.8B",
+          "parameter_count": 853000000,
+          "source_bytes": 1737771835
+        },
+        {
+          "repo_id": "PaddlePaddle/PaddleOCR-VL-1.5",
+          "parameter_count": 958600000,
+          "source_bytes": 1930468959
+        },
+        {
+          "repo_id": "nvidia/Nemotron-3.5-Parse",
+          "parameter_count": null,
+          "source_bytes": 2735296999
+        }
+      ],
+      "limits": "No matched incumbent measurements; 19% not exact in combined benchmark; cropped table, OCR/text and cell assignment needed; exact tensor census and ancillary file sizes unverified.",
+      "weight_reference_bytes": 115437156,
+      "sha256": "9df416575a3a36ebd0129342d4f597f14d6e5170268f3d52d28584ab4466a501"
+    },
+    {
+      "repo_id": "yyyang0/VETime-checkpoints",
+      "source_urls": [
+        "https://arxiv.org/abs/2602.16681",
+        "https://github.com/yyyangcoder/VETime",
+        "https://huggingface.co/yyyang0/VETime-checkpoints",
+        "https://huggingface.co/thu-sail-lab/VETime"
+      ],
+      "paper_date": "2026-02-18",
+      "checkpoint_metadata_update": "2026-11-02",
+      "code_metadata_update": "2026-11-06",
+      "revision": null,
+      "weight_bytes": null,
+      "license_and_dependencies_verified": false,
+      "mechanism": "Vision-assisted temporal anomaly detection; distinct from diffusion reconstruction and forecasting",
+      "benchmark": {
+        "source": "https://arxiv.org/abs/2602.16681",
+        "table": 6,
+        "metric": "VUS-PR percent",
+        "datasets": [
+          "MSL",
+          "PSM",
+          "SMAP",
+          "SMD",
+          "SWaT"
+        ],
+        "VETime": [
+          30.51,
+          23.86,
+          23.7,
+          48.21,
+          42.93
+        ],
+        "TimeRCD": [
+          20.45,
+          18.69,
+          22.68,
+          37.03,
+          17.58
+        ],
+        "negative": "SMD Affiliation-F1 88.94 vs Time-RCD 92.58"
+      },
+      "comparison": [
+        "nvidia/Kumo-Anomaly",
+        "autogluon/chronos-2"
+      ],
+      "limits": "No verified immutable weight tree, exact source bytes, complete dependency or matched incumbent evidence."
+    }
+  ],
+  "observed_license_or_access_change": null,
+  "download_approved": false,
+  "model_payload_downloaded": false
+}
