@@ -33,7 +33,7 @@ Surya OCR 2.5（10/25 repo作成、10/29更新）、689,356,864 BF16保存要素
 現行LightOnOCR-3-0.8B、PaddleOCR-VL-1.5、DeepSeek-OCR-2はKEEP。既存と揃えた同一ベンチマーク不足のため新OCR2候補は正式カタログに追加しない。通常量子化は独立学習成果に数えない。新規REPLACE・EXCLUDEなし。
 
 ## 容量、依存、承認
-Nandi 150M 10 refs 456,755,592 B、450M 10 refs 1,106,214,329 B。合計1,562,969,921 B。重みLFS SHAは別。4つの補助ファイル（.gitattributes、banner、tokenization code、tokenizer.json）Git blob一致9,194,667 B、2repo論理source union 1,553,775,254 B。現物の重複排除やハードリンク節約とは区別。既知有効source-repo proxyは旧3,932,833,343,922 Bから3,934,396,313,843 B（未確定49資産を含まない、量子化等の代替ファイル含有）。完全依存込み増分・現物占有・staging・空きはnull。4TB選定上限、200GB実空き床、150B原則、権利、正規アクセス、明示承認は不変。予算余裕を実証しない。モデル重みDL・新承認・物理削除0。
+Nandi 150M 10 refs 456,755,592 B、450M 10 refs 1,106,214,329 B。合計1,562,969,921 B。重みLFS SHAは別。4つの補助ファイル（.gitattributes、banner、tokenization code、tokenizer.json）Git blob一致9,194,667 B、2repo論理source union 1,553,775,254 B。現物の重複排除やハードリンク節約とは区別。既知有効source-repo proxyは旧3,932,833,343,922 Bから3,934,396,313,843 B（未確定50資産を含まない、量子化等の代替ファイル含有）。完全依存込み増分・現物占有・staging・空きはnull。4TB選定上限、200GB実空き床、150B原則、権利、正規アクセス、明示承認は不変。予算余裕を実証しない。モデル重みDL・新承認・物理削除0。
 
 ## 次の検証（提案・未実行）
 H: 教師・生徒は既存英語対照にないIndic分類/NER性能、圧縮に伴う精度・latencyの差を持つ。T: 適法な独立holdout・3 seedで同一fine-tune設定、7 Indic/10 English tasks、CPU/GPU/OS/driver/backend固定、context 512/4096、batch 1/8、各30反復。D: 比較前に閾値合意、paired bootstrap区間と中央値/peak RAMを報告、追加価値または圧縮便益が未確認ならUNCERTAIN。C: tokenizer差・データ漏洩・タスク重み付けや著者評価条件差。U: seed間分散、サンプル偏り、測定誤差未算定。OCRは同じ許可済みページを各日本語、数式、古いスキャン、KIE strataで100件を目標に対比較、誤り類型と区間、ライセンス条件を別評価。実行は権利と取得明示承認以降。
@@ -42,3 +42,7 @@ H: 教師・生徒は既存英語対照にないIndic分類/NER性能、圧縮�
 v78から272登録／216有効（SELECT56、CONDITIONAL160、HOLD37、BACKLOG13、EXCLUDED6）。既存270行と台帳不変。CURRENT、overlay、materialized、active worklist、access、readiness、preparation、estimatesを同期。R172–R175の並行研究を上書きしない。全216有効はSTOP。検証は標準ライブラリ回帰テストおよびread-only整合監査に限る。
 
 追加統合時に未知総数の集計値を正本の各行から再計算した。既存候補の判定・ゲートは変更していない。
+
+## 反映後の検証と容量集計訂正
+
+正式選定コミット 072df3e70ef4019c38f349dffaddde2967317509 をリモートから再取得し、標準ライブラリテスト869件（868成功、1 skip、失敗0）、audit_portfolio_integrity、check_parameter_cutoff、audit_selection_decisionsを実行しPASS。上位の upstream_all_files_bytes_observed が不明なのは全77行／有効50行（旧76/49は並行追加後の集計遅延）。resource_screen内部の値がある場合も、この上位列の欠測を推測で埋めない。全272モデル・データセット行の内容を変更せず、集計だけ補正。実測ディスク、権利、ABI、復元は未検証。
