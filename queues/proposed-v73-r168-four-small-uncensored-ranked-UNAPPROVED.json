@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "kind": "R168_V73_RESEARCH_PRIORITY_FOUR_SMALL_UNCENSORED_ORIGINALS_UNAPPROVED",
+  "review_jst": "2026-11-27",
+  "canonical_revision_unchanged": "v73-20261125",
+  "publisher_full_immutable_source": "manifests/drafts/r168-2026-11-27-four-small-uncensored-source-frozen.candidate.json",
+  "prior_133_ledger_audit": "catalog/audits/2026-11-27-r168-133-receipts-original117-signedness-and-historical-integrity.json",
+  "priority_rows": [
+    {
+      "repo_id": "Peymandc/MiniCPM5-1B-Uncensored-Flawless-Peymandc",
+      "rank": 0,
+      "action": "P0_NEXT_FORMAL_CONDITIONAL_RECOMMEND",
+      "reason": "Independent full BF16 refusal-edited 1.080632832B-param compact MiniCPM5-1B original. Exact archived parent SHA matches author training parent so no parent redownload. Preserve full edited checkpoint to avoid unproven deterministic replay.",
+      "negative": "Author keyword refusal count 81/100 -> 3/100 and KL0.0070 from same method; no neutral reasoning, tool-use, Chinese or long context independent quality. 1000-trial optimization and full training-free merged model rather than new pretrain.",
+      "publisher_full_source_files": 16,
+      "publisher_source_bytes": 2174627424,
+      "parent_training_source_receipt_reported_verified": true,
+      "owner_local_parent_SHA_independently_checked_this_study": false,
+      "full_edited_source_selected": true,
+      "owner_download_approved": false
+    },
+    {
+      "repo_id": "NuclearDorfus/Luciole-1B-Instruct-1.1-Heretic",
+      "rank": 1,
+      "action": "P1_HOLD_NEUTRAL_QUALITY_FIRST",
+      "reason": "Distinct French+English Nemotron 1.319B edited state, 8 source files 2.648GB; parent absent from 133 receipt, potential rare language coverage.",
+      "negative": "Publisher uses 60 trials on 2xT4; keyword refusals 100/100 -> 0/100, but KL0.4199 and no independent neutral-task or French benchmarks; model repo no LICENSE file; high behavioral drift possible.",
+      "publisher_full_source_files": 8,
+      "publisher_source_bytes": 2648259206,
+      "owner_download_approved": false
+    },
+    {
+      "repo_id": "Peymandc/LFM3-1.7B-Heretic-Uncensored",
+      "rank": 2,
+      "action": "P2_HOLD_LFM_1P0_OWNER_RIGHTS_AND_CUSTOM_CODE",
+      "reason": "Independent LFM3 hybrid 1.729B edited source has multilingual edge architecture, ARA/Heretic replay configuration and full code.",
+      "negative": "License tag other=lfm1.0 with separate intended-act review; custom modeling_lfm3, lfm3_conv, configuration code plus backend ABI unverified. Author refusal98 ->3/100, KL0.0732 is only self-assessment.",
+      "publisher_full_source_files": 19,
+      "publisher_source_bytes": 3476041387,
+      "owner_download_approved": false
+    },
+    {
+      "repo_id": "Sussysam/Qwen3-4B-Instruct-2507-heretic",
+      "rank": 3,
+      "action": "REJECT_FULL_CHECKPOINT_AS_DUPLICATE_HIGH_DISTORTION",
+      "reason": "8.056GB generic Qwen3-4B edit overlaps existing Qwen edited family; little demonstrated new independent task function compared with P0 1B.",
+      "negative": "Very high author KL1.5593 versus original and refusal keyword3/100 not neutral task performance; 4.022B two-shard checkpoint, no repository LICENSE file; not a proven superior copy.",
+      "publisher_full_source_files": 10,
+      "publisher_source_bytes": 8056453418,
+      "owner_download_approved": false
+    }
+  ],
+  "publisher_full_file_refs": 53,
+  "publisher_all_source_reference_bytes": 16355381435,
+  "P0_source_file_count": 16,
+  "P0_full_source_reference_bytes": 2174627424,
+  "full_P0_edited_checkpoint_download_not_approved": true,
+  "parent_MiniCPM5_1B_reported_acquired_before_this_study": true,
+  "no_parent_redownload_for_P0": true,
+  "owner_approved_queue_still_empty": true,
+  "excluded_current_catalogue_and_receipt_duplicate_ids": true,
+  "download_enabled": false,
+  "approved_by_user": false,
+  "license_review_done": false,
+  "owner_live_disk_SHA_verified": false,
+  "owner_disk_cache_and_staging_verified": false,
+  "offline_wheelhouse_and_runtime_verified": false,
+  "full_model_payload_transferred_bytes_now": 0,
+  "explicit_user_authorizations_added": 0,
+  "next_human_review": "Owner must check intended uses, full model-card+parent licenses, local disk SHA and Python/torch/Transformers/PEFT compatible full offline restore before individual file scope approval"
+}

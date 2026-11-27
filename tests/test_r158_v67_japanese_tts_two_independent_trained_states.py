@@ -8,6 +8,8 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def L(p):return json.loads((ROOT/p).read_text(encoding="utf8"))
 
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R158JapaneseTTS(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
@@ -21,7 +23,7 @@ class R158JapaneseTTS(unittest.TestCase):
   cls.prep=L("catalog/preparation/2026-11-24-insurance-bundles-v67.json")
   cls.ready=L("catalog/readiness/v67-2026-11-24-r158-all199-gates.json")
   cls.plan=L("queues/proposed-v67-r159-japanese-tts-originals-UNAPPROVED.json")
-  cls.ledger=L("catalog/execution/2026-11-19-acquisition-ledger.json")
+  cls.ledger=historical_117_ledger(L("catalog/execution/2026-11-19-acquisition-ledger.json"))
  def test_exact_old240_immutable_new242_counts_and_current(self):
   self.assertIn(self.current["revision_id"],("v67-20261124","v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125", "v73-20261125"))
   self.assertIn(self.current["ordered_overlays"][-1],("catalog/revisions/v67-2026-11-24.json","catalog/revisions/v68-2026-11-25.json","catalog/revisions/v69-2026-11-25.json","catalog/revisions/v70-2026-11-25.json","catalog/revisions/v71-2026-11-25.json","catalog/revisions/v72-2026-11-25.json","catalog/revisions/v73-2026-11-25.json"))

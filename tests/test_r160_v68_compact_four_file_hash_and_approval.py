@@ -4,12 +4,14 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def rd(path):return json.loads((ROOT/path).read_text(encoding="utf8"))
 def key(x):return (x["asset_kind"],x["repo_id"])
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class V68(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
   cls.c=rd("catalog/CURRENT.json");cls.v=rd("catalog/effective-portfolio-2026-11-25-v68.json")
   cls.o=rd("catalog/effective-portfolio-2026-11-24-v67.json")
-  cls.m=rd("manifests/drafts/r160-2026-11-25-four-small-trained-states-75file-publisher-frozen.candidate.json");cls.ledger=rd("catalog/execution/2026-11-19-acquisition-ledger.json")
+  cls.m=rd("manifests/drafts/r160-2026-11-25-four-small-trained-states-75file-publisher-frozen.candidate.json");cls.ledger=historical_117_ledger(rd("catalog/execution/2026-11-19-acquisition-ledger.json"))
   cls.queue=rd("queues/proposed-v68-2026-11-25.json");cls.a=rd("catalog/access/2026-11-25-v68-conditional-hub-gates.json")
   cls.g=rd("catalog/readiness/v68-2026-11-25-r160-all203-gates.json");cls.p=rd("catalog/preparation/2026-11-25-insurance-bundles-v68.json")
  def test_canonical_and_old_items_unchanged(self):

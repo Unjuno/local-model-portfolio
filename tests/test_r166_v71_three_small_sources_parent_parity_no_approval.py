@@ -3,12 +3,14 @@ import json,re,unittest,collections
 from pathlib import Path
 R=Path(__file__).resolve().parents[1]
 def load(p):return json.loads((R/p).read_text(encoding='utf-8'))
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R166SourceProof(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
   cls.c=load('catalog/CURRENT.json')
   cls.cat=load('catalog/effective-portfolio-2026-11-25-v71.json')
-  cls.ledger=load('catalog/execution/2026-11-19-acquisition-ledger.json')
+  cls.ledger=historical_117_ledger(load('catalog/execution/2026-11-19-acquisition-ledger.json'))
   cls.src=load('manifests/drafts/r166-2026-11-25-tiny-tts-inkling-adapter-complete-publisher-scope.candidate.json')
   cls.parent=load('catalog/research/2026-11-25-r166-inkling-heretic-parent-source-parity-no-redownload.json')
   cls.queue=load('queues/proposed-v71-r166-three-small-complete-source-UNAPPROVED.json')

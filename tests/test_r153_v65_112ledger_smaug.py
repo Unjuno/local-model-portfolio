@@ -3,12 +3,14 @@ import json, unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def read(p):return json.loads((ROOT/p).read_text(encoding='utf8'))
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R153(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
   cls.c=read('catalog/CURRENT.json');cls.v=read('catalog/effective-portfolio-2026-11-22-v65.json')
   cls.old=read('catalog/effective-portfolio-2026-11-22-v64.json')
-  cls.l=read('catalog/execution/2026-11-19-acquisition-ledger.json');cls.s=read('manifests/drafts/r153-2026-11-22-smaug-qwen-hash-reuse-and-atomic-lora.candidate.json')
+  cls.l=historical_117_ledger(read('catalog/execution/2026-11-19-acquisition-ledger.json'));cls.s=read('manifests/drafts/r153-2026-11-22-smaug-qwen-hash-reuse-and-atomic-lora.candidate.json')
   cls.q=read('queues/proposed-v65-2026-11-22.json');cls.p=read('catalog/preparation/2026-11-22-insurance-bundles-v65.json')
   cls.g=read('catalog/readiness/v65-2026-11-22-r154-all192-gates.json');cls.a=read('catalog/access/2026-11-22-v65-conditional-hub-gates.json')
  def test_canonical(self):

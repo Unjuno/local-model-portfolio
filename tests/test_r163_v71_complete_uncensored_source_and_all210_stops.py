@@ -17,6 +17,8 @@ def read(path: str) -> dict:
     return json.loads((ROOT / path).read_text(encoding="utf-8"))
 
 
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R163V71FullSourceAndStop(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
@@ -35,7 +37,7 @@ class R163V71FullSourceAndStop(unittest.TestCase):
         cls.old_readiness = read("catalog/readiness/v70-2026-11-25-r161-all208-gates.json")
         cls.readiness = read("catalog/readiness/v71-2026-11-25-r163-all210-gates.json")
         cls.approved = read("queues/approved.json")
-        cls.ledger = read("catalog/execution/2026-11-19-acquisition-ledger.json")
+        cls.ledger = historical_117_ledger(read("catalog/execution/2026-11-19-acquisition-ledger.json"))
         cls.r163queue = read("queues/proposed-v71-r163-next2-uncensored-full-source-UNAPPROVED.json")
 
     def test_v70_all258_records_preserved_and_current_v71(self) -> None:

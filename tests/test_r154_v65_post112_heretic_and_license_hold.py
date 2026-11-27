@@ -6,6 +6,8 @@ import json,unittest,collections
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def read(path):return json.loads((ROOT/path).read_text(encoding='utf8'))
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R154V65Selection(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
@@ -15,7 +17,7 @@ class R154V65Selection(unittest.TestCase):
   cls.ov=read('catalog/revisions/v65-2026-11-22.json')
   cls.source=read('manifests/drafts/r154-2026-11-22-four-primary-sources-after112.candidate.json')
   cls.audit=read('catalog/audits/2026-11-22-r154-all112-ledger-and-new-source-delta.json')
-  cls.ledger=read('catalog/execution/2026-11-19-acquisition-ledger.json')
+  cls.ledger=historical_117_ledger(read('catalog/execution/2026-11-19-acquisition-ledger.json'))
   cls.ready=read('catalog/readiness/v65-2026-11-22-r154-all192-gates.json')
   cls.access=read('catalog/access/2026-11-22-v65-conditional-hub-gates.json')
   cls.pico=read('catalog/research/2026-11-22-r154-pico-eight-int8-extra-publisher-sha.json')

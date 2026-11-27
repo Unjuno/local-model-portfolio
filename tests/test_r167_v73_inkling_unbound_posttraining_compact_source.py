@@ -12,6 +12,8 @@ R='catalog/readiness/v73-2026-11-25-r167-all211-gates.json'
 A='catalog/access/2026-11-25-v73-conditional-hub-gates.json'
 P='catalog/preparation/2026-11-25-insurance-bundles-v73.json'
 
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R167V73(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
@@ -39,7 +41,7 @@ class R167V73(unittest.TestCase):
   self.assertFalse(src['estimated_reconstruction_deterministic_or_bit_exact_verified'])
 
  def test_parent_116_reported_compatible_sha_not_owner_local(self):
-  ledger=read('catalog/execution/2026-11-19-acquisition-ledger.json')
+  ledger=historical_117_ledger(read('catalog/execution/2026-11-19-acquisition-ledger.json'))
   receipts={x['repo_id']:x for x in ledger['models'] if x['status']=='VERIFIED'}
   self.assertEqual(len(receipts),116)
   self.assertIn('thinkingmachines/Inkling-2-Mini',receipts)

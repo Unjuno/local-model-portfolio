@@ -10,6 +10,8 @@ DECISION='catalog/decisions/2026-11-24-r158-v66-mini-final-base-kolibri-selectio
 QUEUE='queues/proposed-v66-r158-three-new-originals-UNAPPROVED.json'
 def load(p):return json.loads((ROOT/p).read_text(encoding='utf8'))
 
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R158Source(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -21,7 +23,7 @@ class R158Source(unittest.TestCase):
     def test_baseline_and_receipt_reuse_without_new_transfer(self):
         cur=load('catalog/CURRENT.json')
         catalog=load('catalog/effective-portfolio-2026-11-24-v66.json')
-        ledger=load('catalog/execution/2026-11-19-acquisition-ledger.json')
+        ledger=historical_117_ledger(load('catalog/execution/2026-11-19-acquisition-ledger.json'))
         self.assertGreaterEqual(cur['expected']['tracked'],246)
         self.assertEqual((catalog['counts']['tracked'],catalog['counts']['active']),(246,197))
         self.assertEqual(ledger['summary']['models_verified'],116)

@@ -4,13 +4,15 @@ from pathlib import Path
 from unittest import mock
 R=Path(__file__).resolve().parents[1]
 def L(p):return json.loads((R/p).read_text(encoding='utf-8'))
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R156Static(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
   cls.m=L('manifests/drafts/r156-2026-11-22-toto4m-pico8-post112-publisher-source.candidate.json')
   cls.q=L('queues/proposed-v65-r156-toto4m-pico8-UNAPPROVED.json')
   cls.d=L('catalog/decisions/2026-11-22-r156-v65-toto4m-pico8-no-repeat.json')
-  cls.ledger=L('catalog/execution/2026-11-19-acquisition-ledger.json')
+  cls.ledger=historical_117_ledger(L('catalog/execution/2026-11-19-acquisition-ledger.json'))
  def test_v65_immutable_canonical_and_ledger112_not_rewritten(self):
   curr=L('catalog/CURRENT.json')
   self.assertIn(curr['revision_id'],('v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125", "v73-20261125"))

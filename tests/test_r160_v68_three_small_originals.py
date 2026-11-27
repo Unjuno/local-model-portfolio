@@ -16,6 +16,8 @@ def load(path: str) -> dict:
     return json.loads((ROOT / path).read_text(encoding="utf-8"))
 
 
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R160V68ThreeCompactOriginals(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
@@ -34,7 +36,7 @@ class R160V68ThreeCompactOriginals(unittest.TestCase):
         cls.readiness_after = load("catalog/readiness/v68-2026-11-25-r160-all203-gates.json")
         cls.current = load("catalog/CURRENT.json")
         cls.approved = load("queues/approved.json")
-        cls.ledger = load("catalog/execution/2026-11-19-acquisition-ledger.json")
+        cls.ledger = historical_117_ledger(load("catalog/execution/2026-11-19-acquisition-ledger.json"))
 
     def test_v67_248_asset_records_not_changed(self):
         self.assertEqual(self.before["revision_id"], "v67-20261124")

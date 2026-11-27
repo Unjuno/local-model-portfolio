@@ -18,6 +18,8 @@ PREP='catalog/preparation/2026-11-25-insurance-bundles-v70.json'
 READY='catalog/readiness/v70-2026-11-25-r161-all208-gates.json'
 DEC='catalog/decisions/2026-11-25-r161-v70-three-trained-origins-and-sala-hold.json'
 
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R161V70SourceAndGuards(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
@@ -83,7 +85,7 @@ class R161V70SourceAndGuards(unittest.TestCase):
   self.assertEqual(load('queues/approved.json')['entries'],[])
 
  def test_no_double_download_parent_and_holds(self):
-  ledger=load('catalog/execution/2026-11-19-acquisition-ledger.json')
+  ledger=historical_117_ledger(load('catalog/execution/2026-11-19-acquisition-ledger.json'))
   verified={x['repo_id'] for x in ledger['models'] if x['status']=='VERIFIED'}
   self.assertEqual((len(verified),ledger['summary']['files_verified_total']),(116,1758))
   self.assertTrue(set(self.sources).isdisjoint(verified))

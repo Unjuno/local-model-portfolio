@@ -15,6 +15,8 @@ def load(path):
     return json.loads((ROOT / path).read_text(encoding="utf-8"))
 
 
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R157RightsAndDedup(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -22,7 +24,7 @@ class R157RightsAndDedup(unittest.TestCase):
         cls.queue = load("queues/proposed-v65-r157-post112-noduplicate-and-rights-HOLD-UNAPPROVED.json")
         cls.original = load("manifests/drafts/r154-2026-11-22-four-primary-sources-after112.candidate.json")
         cls.catalog = load("catalog/effective-portfolio-2026-11-22-v65.json")
-        cls.ledger = load("catalog/execution/2026-11-19-acquisition-ledger.json")
+        cls.ledger = historical_117_ledger(load("catalog/execution/2026-11-19-acquisition-ledger.json"))
 
     def test_current_canonical_decisions_preserved_not_overwritten(self):
         current = load("catalog/CURRENT.json")

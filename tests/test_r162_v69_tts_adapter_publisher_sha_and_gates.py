@@ -4,11 +4,13 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def read(path):return json.loads((ROOT/path).read_text(encoding="utf8"))
 def key(x):return x["asset_kind"],x["repo_id"]
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R162(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
   cls.c=read("catalog/CURRENT.json");cls.e=read("catalog/effective-portfolio-2026-11-25-v69.json");cls.old=read("catalog/effective-portfolio-2026-11-25-v68.json")
-  cls.tts=read("manifests/drafts/r162-2026-11-25-paradee13-tihon100k-core-weight-pins.candidate.json");cls.ink=read("manifests/drafts/r162-2026-11-25-electroglyph-inkling-heretic-v22-adapter-core.candidate.json");cls.ledger=read("catalog/execution/2026-11-19-acquisition-ledger.json")
+  cls.tts=read("manifests/drafts/r162-2026-11-25-paradee13-tihon100k-core-weight-pins.candidate.json");cls.ink=read("manifests/drafts/r162-2026-11-25-electroglyph-inkling-heretic-v22-adapter-core.candidate.json");cls.ledger=historical_117_ledger(read("catalog/execution/2026-11-19-acquisition-ledger.json"))
   cls.queue=read("queues/proposed-v69-2026-11-25.json");cls.access=read("catalog/access/2026-11-25-v69-conditional-hub-gates.json")
   cls.ready=read("catalog/readiness/v69-2026-11-25-r162-all206-gates.json");cls.prep=read("catalog/preparation/2026-11-25-insurance-bundles-v69.json")
  def test_same_252_and_counts(self):

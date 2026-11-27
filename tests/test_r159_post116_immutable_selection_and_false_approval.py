@@ -9,12 +9,14 @@ from unittest import mock
 ROOT = Path(__file__).resolve().parents[1]
 def L(p):return json.loads((ROOT/p).read_text(encoding="utf-8"))
 
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R159Post116SourceAndApproval(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.current=L("catalog/CURRENT.json")
         cls.catalog=L("catalog/effective-portfolio-2026-11-24-v66.json")
-        cls.ledger=L("catalog/execution/2026-11-19-acquisition-ledger.json")
+        cls.ledger=historical_117_ledger(L("catalog/execution/2026-11-19-acquisition-ledger.json"))
         cls.src=L("manifests/drafts/r159-2026-11-24-ive-ivonnet-ccore-immutable-publisher-source.candidate.json")
         cls.q=L("queues/proposed-v66-r159-after116-novel-decision-models-UNAPPROVED.json")
         cls.audit=L("catalog/research/2026-11-24-r159-ledger116-reconciliation.json")
@@ -102,9 +104,11 @@ class R159Post116SourceAndApproval(unittest.TestCase):
             current["expected"]["tracked"] = 246
             current["expected"]["active"] = 197
             (scratch/"current-v66.json").write_text(json.dumps(current))
+            # Replay the audited original v66/116 receipts; production 133 must fail closed.
+            (scratch/"ledger-historical-116.json").write_text(json.dumps(self.ledger))
             with mock.patch.object(plan,"QUEUE",ROOT/"queues/proposed-v66-r159-after116-novel-decision-models-UNAPPROVED.json"),\
                  mock.patch.object(plan,"SOURCE",ROOT/"manifests/drafts/r159-2026-11-24-ive-ivonnet-ccore-immutable-publisher-source.candidate.json"),\
-                 mock.patch.object(plan,"LEDGER",ROOT/"catalog/execution/2026-11-19-acquisition-ledger.json"),\
+                 mock.patch.object(plan,"LEDGER",scratch/"ledger-historical-116.json"),\
                  mock.patch.object(plan,"CURRENT",scratch/"current-v66.json"),\
                  mock.patch.object(plan,"DISC",scratch),\
                  mock.patch.object(plan,"PLAN",scratch/"plan.json"),\

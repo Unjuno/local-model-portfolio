@@ -13,6 +13,8 @@ def read(path: str) -> dict:
     return json.loads((ROOT / path).read_text(encoding="utf-8"))
 
 
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R159SourceAndRightsRegression(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -21,7 +23,7 @@ class R159SourceAndRightsRegression(unittest.TestCase):
         cls.decision = read("catalog/decisions/2026-11-24-r159-compact-models-plamo-drift-and-ernie-hold.json")
         cls.current = read("catalog/CURRENT.json")
         cls.approved = read("queues/approved.json")
-        cls.ledger = read("catalog/execution/2026-11-19-acquisition-ledger.json")
+        cls.ledger = historical_117_ledger(read("catalog/execution/2026-11-19-acquisition-ledger.json"))
 
     def test_six_immutable_publisher_source_scopes(self):
         source = self.source

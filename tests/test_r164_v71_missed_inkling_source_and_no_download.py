@@ -3,6 +3,8 @@ import json,re,unittest
 from pathlib import Path
 R=Path(__file__).resolve().parents[1]
 def read(p):return json.loads((R/p).read_text(encoding='utf8'))
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R164(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
@@ -36,7 +38,7 @@ class R164(unittest.TestCase):
   self.assertFalse(d['edit_file_can_be_reapplied_without_code_and_exact_parent'])
   self.assertEqual(self.src['parameter_screen']['inkling_2_small_total_params_author'],594000000000)
  def test_current_selection_and_acquisition_not_changed(self):
-  C=read('catalog/CURRENT.json');E=read('catalog/effective-portfolio-2026-11-25-v71.json');L=read('catalog/execution/2026-11-19-acquisition-ledger.json')
+  C=read('catalog/CURRENT.json');E=read('catalog/effective-portfolio-2026-11-25-v71.json');L=historical_117_ledger(read('catalog/execution/2026-11-19-acquisition-ledger.json'))
   ids={x['repo_id'] for x in E['items']};acq={x['repo_id'] for x in L['models'] if x['status']=='VERIFIED'}
   self.assertTrue({x['repo_id'] for x in self.src['source_repos']}.isdisjoint(ids|acq))
   self.assertEqual(len(ids),260)

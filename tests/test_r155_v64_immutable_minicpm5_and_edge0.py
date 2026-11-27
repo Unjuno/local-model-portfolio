@@ -13,6 +13,8 @@ def load(path):
     return json.loads((ROOT / path).read_text(encoding='utf-8'))
 
 
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R155ImmutablePublisherReferences(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -27,7 +29,7 @@ class R155ImmutablePublisherReferences(unittest.TestCase):
         self.assertGreaterEqual(current['expected']['tracked'], 236)
         self.assertEqual(self.d['baseline_catalog_revision'], 'v64-20261122')
         self.assertEqual(load('queues/approved.json')['entries'], [])
-        reported = {r['repo_id'] for r in load('catalog/execution/2026-11-19-acquisition-ledger.json')['models'] if r['status'] == 'VERIFIED'}
+        reported = {r['repo_id'] for r in historical_117_ledger(load('catalog/execution/2026-11-19-acquisition-ledger.json'))['models'] if r['status'] == 'VERIFIED'}
         self.assertGreaterEqual(len(reported), 112)
         self.assertFalse(reported.intersection(self.models))
         existing = {m['repo_id'] for m in history['items']}

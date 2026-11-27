@@ -4,12 +4,14 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def J(path):return json.loads((ROOT/path).read_text(encoding='utf8'))
 def key(x):return x['asset_kind'],x['repo_id']
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R157V66(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
   cls.c=J('catalog/CURRENT.json');cls.e=J('catalog/effective-portfolio-2026-11-24-v66.json')
   cls.prior=J('catalog/effective-portfolio-2026-11-22-v65.json')
-  cls.ledger=J('catalog/execution/2026-11-19-acquisition-ledger.json');cls.src=J('manifests/drafts/r157-2026-11-24-post116-five-originals-medical-moe.candidate.json')
+  cls.ledger=historical_117_ledger(J('catalog/execution/2026-11-19-acquisition-ledger.json'));cls.src=J('manifests/drafts/r157-2026-11-24-post116-five-originals-medical-moe.candidate.json')
   cls.queue=J('queues/proposed-v66-2026-11-24.json');cls.access=J('catalog/access/2026-11-24-v66-conditional-hub-gates.json')
   cls.ready=J('catalog/readiness/v66-2026-11-24-r157-all197-gates.json');cls.prep=J('catalog/preparation/2026-11-24-insurance-bundles-v66.json')
  def test_snapshot_count_and_retain_old(self):

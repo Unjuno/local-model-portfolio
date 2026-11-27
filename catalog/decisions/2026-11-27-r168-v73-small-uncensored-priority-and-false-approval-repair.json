@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "kind": "R168_POST133_FOUR_SMALL_UNCENSORED_SOURCE_ADJUDICATION_AND_V73_SYNTHETIC_APPROVAL_FAIL_CLOSED",
+  "study_jst": "2026-11-27",
+  "canonical_revision_unchanged": "v73-20261125",
+  "previous_catalogue_265_assets_unmodified": true,
+  "previous_211_selected_active_unmodified": true,
+  "source_manifest": "manifests/drafts/r168-2026-11-27-four-small-uncensored-source-frozen.candidate.json",
+  "research_unapproved_queue": "queues/proposed-v73-r168-four-small-uncensored-ranked-UNAPPROVED.json",
+  "report": "docs/strategy/168-v73-small-uncensored-and-133-ledger-authorization-integrity.md",
+  "historical_ledger_audit": "catalog/audits/2026-11-27-r168-133-receipts-original117-signedness-and-historical-integrity.json",
+  "previous_116_reported_receipts_unchanged": true,
+  "current_reported_verified_count_133": true,
+  "actual_owner_HDD_SHA_rechecked": false,
+  "authorizations_synthetic_bug": "scripts/build_v73_candidates.py previously wrote approved-v73.json and set approved_by_user/license_text_reviewed/parent_dependency_rights_reviewed True from model metadata without owner action",
+  "new_builder": "scripts/build_v73_candidates.py",
+  "executor_block": "scripts/preserve_execute.py",
+  "old_synthetic_approvals_auto_rejected": true,
+  "owner_existing_old_approved_v73_json_not_accessed_or_deleted": true,
+  "new_builder_owner_approval_claims_all_false": true,
+  "decisions": [
+    {
+      "repo_id": "Peymandc/MiniCPM5-1B-Uncensored-Flawless-Peymandc",
+      "rank": 0,
+      "action": "P0_NEXT_FORMAL_CONDITIONAL_RECOMMEND",
+      "reason": "Independent full BF16 refusal-edited 1.080632832B-param compact MiniCPM5-1B original. Exact archived parent SHA matches author training parent so no parent redownload. Preserve full edited checkpoint to avoid unproven deterministic replay.",
+      "negative": "Author keyword refusal count 81/100 -> 3/100 and KL0.0070 from same method; no neutral reasoning, tool-use, Chinese or long context independent quality. 1000-trial optimization and full training-free merged model rather than new pretrain.",
+      "publisher_full_source_files": 16,
+      "publisher_source_bytes": 2174627424,
+      "parent_training_source_receipt_reported_verified": true,
+      "owner_local_parent_SHA_independently_checked_this_study": false,
+      "full_edited_source_selected": true,
+      "owner_download_approved": false
+    },
+    {
+      "repo_id": "NuclearDorfus/Luciole-1B-Instruct-1.1-Heretic",
+      "rank": 1,
+      "action": "P1_HOLD_NEUTRAL_QUALITY_FIRST",
+      "reason": "Distinct French+English Nemotron 1.319B edited state, 8 source files 2.648GB; parent absent from 133 receipt, potential rare language coverage.",
+      "negative": "Publisher uses 60 trials on 2xT4; keyword refusals 100/100 -> 0/100, but KL0.4199 and no independent neutral-task or French benchmarks; model repo no LICENSE file; high behavioral drift possible.",
+      "publisher_full_source_files": 8,
+      "publisher_source_bytes": 2648259206,
+      "owner_download_approved": false
+    },
+    {
+      "repo_id": "Peymandc/LFM3-1.7B-Heretic-Uncensored",
+      "rank": 2,
+      "action": "P2_HOLD_LFM_1P0_OWNER_RIGHTS_AND_CUSTOM_CODE",
+      "reason": "Independent LFM3 hybrid 1.729B edited source has multilingual edge architecture, ARA/Heretic replay configuration and full code.",
+      "negative": "License tag other=lfm1.0 with separate intended-act review; custom modeling_lfm3, lfm3_conv, configuration code plus backend ABI unverified. Author refusal98 ->3/100, KL0.0732 is only self-assessment.",
+      "publisher_full_source_files": 19,
+      "publisher_source_bytes": 3476041387,
+      "owner_download_approved": false
+    },
+    {
+      "repo_id": "Sussysam/Qwen3-4B-Instruct-2507-heretic",
+      "rank": 3,
+      "action": "REJECT_FULL_CHECKPOINT_AS_DUPLICATE_HIGH_DISTORTION",
+      "reason": "8.056GB generic Qwen3-4B edit overlaps existing Qwen edited family; little demonstrated new independent task function compared with P0 1B.",
+      "negative": "Very high author KL1.5593 versus original and refusal keyword3/100 not neutral task performance; 4.022B two-shard checkpoint, no repository LICENSE file; not a proven superior copy.",
+      "publisher_full_source_files": 10,
+      "publisher_source_bytes": 8056453418,
+      "owner_download_approved": false
+    }
+  ],
+  "all_four_publisher_model_file_counts": 53,
+  "all_four_publisher_reference_bytes": 16355381435,
+  "P0_recommended_edited_full_source_bytes": 2174627424,
+  "P0_parent_source_verified_reported_SHA_matching_editor_config": true,
+  "no_download_enabled": true,
+  "weight_bytes_transferred": 0,
+  "new_signed_approvals": 0,
+  "H_T_D_C_U": {
+    "H": "MiniCPM5-1B edited full BF16 2.174GB with KL0.0070 and fixed already-acquired parent offers distinct low-refusal state with less redundant source/memory than generic 8GB Qwen3-4B edit; current publisher measurements are not independent quality superiority.",
+    "T": "Full 53 Publisher files across four model repos, SHA/git OID/LFS per file and exact rev, upstream parents and historical 133 ledger. Validate old117 key metrics via sha256 and 5 executor/security unit tests; later neutral benchmark n>=200 paired safe tasks, speed repetitions n>=30 fixed backend/hardware/clock/batch and owner rights offline closure.",
+    "D": "PASS if metadata complete, exact prior116 unchanged, synthetic v73 generated approvals rejected, all review files false. FAIL if any renderer auto-authorizes from license or owner not sign-off, SHA mismatch, unknown code execution. UNCERTAIN for real model utility, owner SHA, current disk headroom, licenses and full restore.",
+    "C": "MiniCPM tiny edited state degrades tool-calling or reasoning despite low KL, and normal MiniCPM original plus on-the-fly ARA may be sufficient. French Luciole could be more diverse despite high KL; LFM3 hybrid may have better latency but license+code burden. Existing Qwen variants may duplicate Qwen4B change.",
+    "U": "Publisher keyword metrics n100 and no independent neutral accuracy, possible output/KL dependence on tokenization, wrong ABI/quantizations, physical Owner D unknown. u_c and k unestimated."
+  },
+  "cross_domain": [
+    "cryptographic provenance and authorization security",
+    "posttraining model editing and safety evaluation",
+    "software supply-chain / ABI and hardware",
+    "language-specific model capabilities and statistical inference",
+    "licensing and export risk controls"
+  ]
+}

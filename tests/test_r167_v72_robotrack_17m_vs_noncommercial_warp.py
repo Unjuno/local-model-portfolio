@@ -3,6 +3,8 @@ import json,re,unittest
 from pathlib import Path
 R=Path(__file__).resolve().parents[1]
 def J(p):return json.loads((R/p).read_text(encoding='utf-8'))
+from scripts.ledger_history_r168 import historical_117_ledger
+
 class R167RoboTrackStudy(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
@@ -11,7 +13,7 @@ class R167RoboTrackStudy(unittest.TestCase):
   cls.m=J('manifests/drafts/r167-2026-11-25-robotracker17m-vs-warp-nc-publisher-source-frozen.candidate.json')
   cls.d=J('catalog/decisions/2026-11-25-r167-v72-robotracker-small-vs-warp-source-adjudication.json')
   cls.q=J('queues/proposed-v72-r167-robotrack-two-independent-specialists-UNAPPROVED.json')
-  cls.l=J('catalog/execution/2026-11-19-acquisition-ledger.json')
+  cls.l=historical_117_ledger(J('catalog/execution/2026-11-19-acquisition-ledger.json'))
  def test_canonical_v72_and_owner_authorizations_unchanged(self):
   self.assertIn((self.c['revision_id'],self.c['expected']['tracked'],self.c['expected']['active']),(('v72-20261125',264,210),('v73-20261125',265,211)))
   self.assertEqual((self.v['counts']['by_decision']['select'],self.v['counts']['by_decision']['conditional'],self.v['counts']['by_decision']['hold']),(56,154,35))
