@@ -1,3 +1,7 @@
+## 現行 v84 / R180（2026-11-28）
+
+278登録・222有効（SELECT 56、CONDITIONAL 166）。独立学習済みTerraFM-B（多センサー地球観測）を研究限定CONDITIONALへ追加、Fluid Speech Proは研究HOLD、Granite 470Mは同一重みKEEP。並行更新を含む旧277行・133取得報告保持。全222取得STOP、承認・重量DL・実行・物理削除0。配布元候補451,895,030 B、依存込みowner増分未確定。[調査と正式選定](../docs/strategy/180-v84-terrafm-and-asr-source-research.md)。
+
 ## 現行 v83 / R180（2026-11-28）
 
 277登録・221有効（SELECT56、CONDITIONAL165）。GigaEdge独立2profileを1資産で研究限定追加。Inworld・PAWP含む旧276行・133取得報告維持、全221 STOP、候補7file 11,058,505 B、依存・学習数・権利・owner HDD未解決、承認/DL/実行/削除0。[調査・正式選定](../docs/strategy/180-v83-gigaedge-cpu-speech-enhancement.md)。

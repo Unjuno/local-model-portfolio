@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "round": "R180",
+  "date_jst": "2026-11-28",
+  "base_commit": "76d5cc6d5fafd772d3b3f2b41efb1226c088cd69",
+  "from_revision": "v83-20261128",
+  "to_revision": "v84-20261128",
+  "research_scope": {
+    "new_external_sources": [
+      "HF model APIs/complete immutable trees/cards/commit history",
+      "GitHub official TerraFM implementation",
+      "arXiv:2506.06281 and ICLR 2026 proceedings",
+      "FluidVoice official announcement",
+      "arXiv:2609.20104 and IBM model card"
+    ],
+    "bounded_windows_days": [
+      7,
+      30,
+      90
+    ],
+    "windows_jst_note": "7-day: Granite README update 2026-11-25 UTC; 30-day: Fluid release/updates and TerraFM preprocessing/license update; 90-day: September Granite technical report and November ASR/EO searches. Not exhaustive or proof of no other models.",
+    "prior_search": {
+      "paths_searched": 721,
+      "scope": "docs/strategy, catalog/research, catalog/decisions, manifests/drafts, queues; fixed tarball streamed in memory, text terms fluid-speech-pro, mbzuai/terrafm, terrafm-b",
+      "matches": []
+    },
+    "initial_research_base_commit": "6fedaf75e9d51b6137c3aec5c4983c1b6e209a59"
+  },
+  "incumbents": [
+    {
+      "repo_id": "facebook/dinov3-vith16plus-pretrain-lvd1689m",
+      "formal_decision": "conditional",
+      "upstream_all_files_bytes_observed": 3362457679,
+      "upstream_revision_sha_observed": "c807c9eeea853df70aec4069e6f56b28ddc82acc"
+    },
+    {
+      "repo_id": "facebook/dinov3-vit7b16-pretrain-lvd1689m",
+      "formal_decision": "conditional",
+      "upstream_all_files_bytes_observed": 26864283632,
+      "upstream_revision_sha_observed": "b80367753773648a6793235ab9c65cdbb029506f"
+    },
+    {
+      "repo_id": "google/siglip2-base-patch16-224",
+      "formal_decision": "select",
+      "upstream_all_files_bytes_observed": 1539458338,
+      "upstream_revision_sha_observed": "75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2"
+    },
+    {
+      "repo_id": "facebook/sam3",
+      "formal_decision": "conditional",
+      "upstream_all_files_bytes_observed": 6895093624,
+      "upstream_revision_sha_observed": "3c879f39826c281e95690f02c7821c4de09afae7"
+    },
+    {
+      "repo_id": "ibm-granite/granite-speech-5.0-470m-turboctc",
+      "formal_decision": "select",
+      "upstream_all_files_bytes_observed": 949341648,
+      "upstream_revision_sha_observed": "1dd23f46f6d4e6eae2531982ba2e33220086dd97"
+    },
+    {
+      "repo_id": "ibm-granite/granite-speech-5.0-2b",
+      "formal_decision": "select",
+      "upstream_all_files_bytes_observed": 5050435173,
+      "upstream_revision_sha_observed": "c684620bb54fc89d14ba27256b23bbc9e09ba764"
+    },
+    {
+      "repo_id": "Qwen/Qwen3-ASR-1.7B",
+      "formal_decision": "select",
+      "upstream_all_files_bytes_observed": 4703114308,
+      "upstream_revision_sha_observed": "7278e1e70fe206f11671096ffdd38061171dd6e5"
+    },
+    {
+      "repo_id": "Reson8/Rumble-2-Flash",
+      "formal_decision": "conditional",
+      "upstream_all_files_bytes_observed": 1385998807,
+      "upstream_revision_sha_observed": "a0c34287229103b706c670d70791683e34379732"
+    },
+    {
+      "repo_id": "openai/whisper-large-v3-turbo",
+      "formal_decision": "select",
+      "upstream_all_files_bytes_observed": 1622466054,
+      "upstream_revision_sha_observed": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9"
+    }
+  ],
+  "decisions": [
+    {
+      "repo_id": "MBZUAI/TerraFM",
+      "decision": "ADD",
+      "formal_state": "conditional",
+      "revision": "86f62795ff0e8dfae729e170e0ed82fb3e07ec9e",
+      "positive": "Publisher TerraFM-B vs Galileo-B at 1% labels: m-EuroSat 59.3 vs 56.6; m-BigEarthNet 49.4 vs 36.5. ICLR 2026 paper; no matched incumbent test.",
+      "negative": "m-So2Sat 1% 41.6 vs Galileo 43.2; Copernicus BigEarthNet-S1 mAP 76.9 vs SoftCon 78.7. No independent reproduction, released downstream head or measured owner runtime.",
+      "reason": "Independently pretrained Sentinel-1 SAR + Sentinel-2 multispectral representations; modality-specific stems, cross-attention fusion, dual centering. Complements RGB DINOv3/SigLIP2/SAM3 for lawful environmental and crop classification; not a general VLM or quantization duplicate.",
+      "publisher_source_bytes": 453538500,
+      "selected_publisher_reference_bytes": 451895030,
+      "actual_incremental_bytes": null,
+      "evidence": [
+        "https://huggingface.co/MBZUAI/TerraFM/blob/86f62795ff0e8dfae729e170e0ed82fb3e07ec9e/README.md",
+        "https://arxiv.org/abs/2506.06281",
+        "https://proceedings.iclr.cc/paper_files/paper/2026/hash/159511050630689045bf5593e74b13cc-Abstract-Conference.html"
+      ],
+      "reconstruction": "Original learned state cannot be recovered from code or generic vision weights; 18.7M Sentinel tiles publisher training claim. Exact tensor count, full local environment and task heads unverified."
+    },
+    {
+      "repo_id": "FluidVoice-Labs/fluid-speech-pro",
+      "decision": "HOLD",
+      "formal_state": "unregistered research-only",
+      "revision": "46027a3bffc5817ce8f9b29add0a062610134a90",
+      "positive": "Publisher 6.06 average WER vs Qwen3-ASR 6.15, Granite 2B 6.68, Parakeet v3 7.04 on claimed leaderboard comparison; 9.83 noisy WER. Extra block and clean mode may add value.",
+      "negative": "25 European languages exclude Japanese in supported list; clean mode modifies verbatim speech; no matched local comparison with Rumble/Granite 470M or ablation/training recipe proving independent learned contribution. GGUF omits extra block/clean mode; conversion is not evidence of distinct training.",
+      "reason": "CTC/TDT specialist overlap; hold pending lineage, exact mode parity and lawful matched ordinary ASR.",
+      "publisher_source_bytes": 5139989533,
+      "selected_publisher_reference_bytes": null,
+      "actual_incremental_bytes": null,
+      "evidence": [
+        "https://huggingface.co/FluidVoice-Labs/fluid-speech-pro/blob/46027a3bffc5817ce8f9b29add0a062610134a90/README.md",
+        "https://fluidvoice.com/fluid/blog/fluidspeech-pro"
+      ],
+      "source_variants_disposition": "EXCLUDE as separate learned-state additions: ONNX/MLX/GGUF/CoreML absent evidence of independent training. Not a claim of functional parity."
+    },
+    {
+      "repo_id": "ibm-granite/granite-speech-5.0-470m-turboctc",
+      "decision": "KEEP",
+      "formal_state": "select unchanged",
+      "revision": "b8e0718e5b6d70b2e079add8a07c7689c95b89f1",
+      "previous_observed_revision": "1dd23f46f6d4e6eae2531982ba2e33220086dd97",
+      "reason": "Same model.safetensors LFS SHA and all paths except README unchanged; latest audio.cpp usage documentation; no new learned state or re-download. Original multilingual checkpoint retains Japanese and fast CTC.",
+      "positive": "Publisher multilingual release English WER 5.51 vs 5.78 previous English-only; Japanese CER beats 2B in three publisher tests.",
+      "negative": "No new November weights or matched owner runtime; old English-only GGUF must not be mistaken for multilingual checkpoint.",
+      "source_scope_delta_bytes": 2894,
+      "new_weight_source_bytes": 0,
+      "evidence": [
+        "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc/blob/b8e0718e5b6d70b2e079add8a07c7689c95b89f1/README.md",
+        "https://arxiv.org/abs/2609.20104"
+      ],
+      "ledger_match_observed": [
+        {
+          "repo_id": "ibm-granite/granite-speech-5.0-470m-turboctc",
+          "status": "VERIFIED",
+          "revision": "91dcb0605daf65f88dbb04fef015c423241d941d"
+        }
+      ]
+    },
+    {
+      "repo_id": "facebook/dinov3-vith16plus-pretrain-lvd1689m",
+      "decision": "KEEP",
+      "formal_state": "conditional unchanged",
+      "reason": "Different natural-image representations or segmentation task; no replacement evidence."
+    },
+    {
+      "repo_id": "facebook/dinov3-vit7b16-pretrain-lvd1689m",
+      "decision": "KEEP",
+      "formal_state": "conditional unchanged",
+      "reason": "Different natural-image representations or segmentation task; no replacement evidence."
+    },
+    {
+      "repo_id": "google/siglip2-base-patch16-224",
+      "decision": "KEEP",
+      "formal_state": "select unchanged",
+      "reason": "Different natural-image representations or segmentation task; no replacement evidence."
+    },
+    {
+      "repo_id": "facebook/sam3",
+      "decision": "KEEP",
+      "formal_state": "conditional unchanged",
+      "reason": "Different natural-image representations or segmentation task; no replacement evidence."
+    },
+    {
+      "repo_id": "ibm-granite/granite-speech-5.0-2b",
+      "decision": "KEEP",
+      "formal_state": "select unchanged",
+      "reason": "No matched quality/cost comparison supports demotion; keep existing ASR coverage."
+    },
+    {
+      "repo_id": "Qwen/Qwen3-ASR-1.7B",
+      "decision": "KEEP",
+      "formal_state": "select unchanged",
+      "reason": "No matched quality/cost comparison supports demotion; keep existing ASR coverage."
+    },
+    {
+      "repo_id": "Reson8/Rumble-2-Flash",
+      "decision": "KEEP",
+      "formal_state": "conditional unchanged",
+      "reason": "No matched quality/cost comparison supports demotion; keep existing ASR coverage."
+    },
+    {
+      "repo_id": "openai/whisper-large-v3-turbo",
+      "decision": "KEEP",
+      "formal_state": "select unchanged",
+      "reason": "No matched quality/cost comparison supports demotion; keep existing ASR coverage."
+    }
+  ],
+  "observed_access_changes": {
+    "terra": {
+      "old_revision": "3631173fec2c3a445a71e15985e0f3d5aaf4ecb3",
+      "new_revision": "86f62795ff0e8dfae729e170e0ed82fb3e07ec9e",
+      "same_weight_lfs_sha256": "8bdb6a4cfd707a09d79f4790119daa9d76bb316b6ea756c6eb305f99d1797a06",
+      "new_license_file": true,
+      "preprocessing_code_changed": true,
+      "license_scope_note": "Publisher MIT text added; no inference that old license was prohibited or that owner intended acts are cleared."
+    },
+    "granite": {
+      "same_weight_lfs_sha256": "5b569c3744c42a9172ac976881539926b66176d03fbaaa3c51b5d2960067f6fc",
+      "readme_only": true
+    },
+    "observed_gate_restriction_changes": 0
+  },
+  "validation_design": {
+    "H": "Under matched local compute and geographic splits, TerraFM B with frozen encoder adds lawful environmental classification utility unavailable in RGB-only incumbent input paths.",
+    "T": "At least 100 lawful public held-out tiles per stratum and geographically disjoint train/test; matched RGB projection vs sensor-specific input; same supervised head budget, seeds, host CPU/GPU/clock, PyTorch version, batch=1 latency and memory; no actual inference in this round.",
+    "D": "PASS if paired geographic-bootstrap 95% lower confidence bound for task macro-F1 difference >= -2 percentage points and at least one sensor-only task is supported with complete local restore; FAIL if upper bound < -2 points or unsupported local restore; otherwise UNCERTAIN. These are proposed thresholds, not measured.",
+    "C": "RGB baseline may suffice; sensor coverage mismatch, poor regional transfer, missing band order, invalid L2A/L1C preprocessing, unknown exact tensor count and head availability.",
+    "U": "Geographic autocorrelation, label noise, seed, CPU/GPU and sampling variance; combined uncertainty not estimable until measurement."
+  },
+  "capacity": {
+    "new_full_publisher_reference_bytes": 453538500,
+    "new_minimal_publisher_candidate_bytes": 451895030,
+    "dependency_inclusive_incremental_bytes": null,
+    "owner_physical_bytes": null,
+    "new_approved_bytes": 0,
+    "new_reservation_cap_change_bytes": 0,
+    "prior_known_active_full_repo_proxy_bytes": 3934458847794,
+    "new_known_active_full_repo_proxy_bytes": 3934912386294,
+    "active_sources_with_unknown_repo_bytes": 52
+  },
+  "model_weight_downloads": 0,
+  "physical_files_deleted": 0,
+  "owner_approval_added": 0,
+  "model_code_executed": false,
+  "verification_limit": "Full checkout attempted twice and failed ENOSPC; targeted checks planned via Git object/API and streamed Python; no full repository suite claim.",
+  "concurrent_integration": {
+    "preserved_commit": "76d5cc6d5fafd772d3b3f2b41efb1226c088cd69",
+    "preserved_additions_since_initial_v80": [
+      "inworld/sava",
+      "inworld/voice-isolator",
+      "Firoj112/pawp-tts-300k",
+      "ai-sage/GigaEdge-Enhance"
+    ],
+    "prior_rows_preserved": 277,
+    "previous_staged_commit": "4cf40432ae6eed4f6419ae86899967b6534afb56"
+  }
+}
