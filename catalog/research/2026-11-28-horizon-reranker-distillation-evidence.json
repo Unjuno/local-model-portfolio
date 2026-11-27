@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-11-28",
+  "baseline_head": "3c64592e1483dcdc69d9e51330f251af87d28dae",
+  "search_windows": [
+    "2026-11-21 to 11-28",
+    "2026-10-29 to 11-28",
+    "2026-08-30 to 11-28",
+    "older CoREB May 2026"
+  ],
+  "scope": "Independent small ranking models and specialist posttraining. Exact ID prior history search no matches at initial v86. No harmful capability ordering.",
+  "findings": [
+    {
+      "repo_id": "Horizon-Labs/multilingual-reranker-small",
+      "revision": "23139fec6f1f448cdf89a5ac2d2c6bf5e8c7b398",
+      "created": "2026-10-01T10:50:38Z",
+      "updated": "2026-11-05T15:21:51Z",
+      "architecture": "ModernBertForSequenceClassification, 22 layers width384 heads6 local128 global every3, config8192 trained384",
+      "stored_tensor_elements": 140641921,
+      "precision": "F32",
+      "teacher": "Qwen/Qwen3-Reranker-4B",
+      "base": "jhu-clsp/mmBERT-small",
+      "observed_parent_revision_not_training_revision": "abc32620dd4f6ab06f5fbe905dc25f310618e09f",
+      "training": "334400 synthetic queries x16 candidates,40203 MIRACL train,110000 WebFAQ; listwise KL+pointwise; 1 epoch LR5e-5; publisher report",
+      "quality_positive": "Publisher matched nDCG@10 MIRACL/Wikipedia/other/mean .779/.969/.793/.847 versus existing Qwen3-Reranker-0.6B .785/.958/.793/.845. 140641921 stored F32 elements; independent cross-encoder distillation rather than quantization.",
+      "quality_negative": "MIRACL lower .006; teacher Qwen3-Reranker-4B mean .875; BGE v2-m3 .866; Horizon 308M .855. MIRACL training-domain overlap, trained 384 tokens; no independent significance, long technical query generalization, matched owner hardware, batch, clock, latency or ABI evidence.",
+      "protocol": "MIRACL 18x60 queries x100 candidates; Wikipedia 16x60 x9; six other sets",
+      "metrics": {
+        "columns": [
+          "MIRACL",
+          "Wikipedia",
+          "other",
+          "mean"
+        ],
+        "horizon": [
+          0.779,
+          0.969,
+          0.793,
+          0.847
+        ],
+        "qwen_0_6": [
+          0.785,
+          0.958,
+          0.793,
+          0.845
+        ],
+        "qwen_4": [
+          0.833,
+          0.971,
+          0.822,
+          0.875
+        ],
+        "bge": [
+          0.825,
+          0.958,
+          0.814,
+          0.866
+        ],
+        "horizon_308m": [
+          0.8,
+          0.967,
+          0.798,
+          0.855
+        ]
+      },
+      "access": "public ungated",
+      "rights": "Apache-2.0 LICENSE and parent MIT NOTICE; owner act unverified",
+      "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "notice_sha256": "59b14333e0906191675ee467d5560f8c7549371f6c3d74a03239bbaa4415ebd7",
+      "full_bytes": 1428709912,
+      "selected_bytes": 597202061,
+      "decision": "ADD_CONDITIONAL_RESEARCH_ONLY",
+      "links": [
+        "https://huggingface.co/Horizon-Labs/multilingual-reranker-small/tree/23139fec6f1f448cdf89a5ac2d2c6bf5e8c7b398",
+        "https://huggingface.co/Horizon-Labs/multilingual-reranker-small/blob/23139fec6f1f448cdf89a5ac2d2c6bf5e8c7b398/README.md",
+        "https://huggingface.co/Horizon-Labs/multilingual-reranker-small/blob/23139fec6f1f448cdf89a5ac2d2c6bf5e8c7b398/config.json",
+        "https://huggingface.co/Horizon-Labs/multilingual-reranker-small/blob/23139fec6f1f448cdf89a5ac2d2c6bf5e8c7b398/eval/baselines.json",
+        "https://huggingface.co/Horizon-Labs/multilingual-reranker-small/blob/23139fec6f1f448cdf89a5ac2d2c6bf5e8c7b398/eval/this_model.json",
+        "https://huggingface.co/Horizon-Labs/multilingual-reranker-small/blob/23139fec6f1f448cdf89a5ac2d2c6bf5e8c7b398/LICENSE",
+        "https://huggingface.co/Horizon-Labs/multilingual-reranker-small/blob/23139fec6f1f448cdf89a5ac2d2c6bf5e8c7b398/NOTICE",
+        "https://huggingface.co/Qwen/Qwen3-Reranker-0.6B"
+      ]
+    },
+    {
+      "repo_id": "CheezOne/reranker-chinese-japanese-korean-small",
+      "alias": "CheezOne/reranker-cjk-small",
+      "revision": "bb5f9d4a293d8e2e6d2d607a74d5c8b82ee5d93f",
+      "created": "2026-11-25T18:52:15Z",
+      "updated": "2026-11-27T04:53:00Z",
+      "architecture": "mmBERT cross-encoder",
+      "stored_tensor_elements": 140641921,
+      "precision": "BF16",
+      "teacher": "BAAI/bge-reranker-v2-m3",
+      "training": "T2Ranking/MrTyDi; 551k pairs 51858 groups,77% Chinese,2 epochs L40; MIRACL queries excluded, Wikipedia passages may overlap",
+      "head_to_head": {
+        "languages": [
+          "zh",
+          "ja",
+          "ko",
+          "th",
+          "id",
+          "en"
+        ],
+        "candidate": [
+          0.5342,
+          0.7068,
+          0.7191,
+          0.7858,
+          0.5674,
+          0.6503
+        ],
+        "horizon": [
+          0.5274,
+          0.7007,
+          0.693,
+          0.7789,
+          0.5671,
+          0.649
+        ],
+        "protocol": "100 queries/language; card CPU but GPU speed field conflict; no speed inference"
+      },
+      "full_bytes": 1108694864,
+      "non_onnx_bytes": 315768874,
+      "weight_sha256": "3983fbc5a0e979d8e21f5fa355384178ecfa11d075bee37924aabf5c04703637",
+      "access": "public ungated; alias redirects",
+      "rights": "Apache LICENSE; parent MIT NOTICE not separately found; no infringement finding",
+      "decision": "HOLD",
+      "reason": "Independent teacher but close same-size ranking scores; additional coverage and rights unresolved",
+      "links": [
+        "https://huggingface.co/CheezOne/reranker-chinese-japanese-korean-small/tree/bb5f9d4a293d8e2e6d2d607a74d5c8b82ee5d93f"
+      ]
+    },
+    {
+      "repo_id": "hq-bench/coreb-code-reranker",
+      "revision": "24d2ad50bb4a53149cfd3c42c0e966e954cdbcf1",
+      "stored_tensor_elements": 4021784576,
+      "precision": "BF16",
+      "training": "Qwen3-Reranker-4B LoRA rank16 alpha16,3.1M mixed samples, merged original",
+      "metric": "CoREB v202603 C2LLM-7B first stage top128 T2C/C2T/C2C delta +1.1/+0.8/+5.1 vs Qwen0.6 -0.6/-8.2/-2.3; short keyword weakness",
+      "full_bytes": 8055047854,
+      "weight_sha256": "f3222f8eae96b717d299dadad3099a85f35db32b3b73baa57bd6e96c02fbb35e",
+      "access": "public ungated",
+      "rights": "Apache-2.0 metadata; no license file in eight-file tree",
+      "decision": "HOLD",
+      "reason": "Distinct code posttraining but 8GB merged original, standalone adapter/parent and dependencies unresolved",
+      "links": [
+        "https://huggingface.co/hq-bench/coreb-code-reranker/tree/24d2ad50bb4a53149cfd3c42c0e966e954cdbcf1",
+        "https://arxiv.org/abs/2605.04615",
+        "https://github.com/hq-bench/coreb"
+      ]
+    }
+  ],
+  "keep": [
+    "Qwen/Qwen3-Reranker-0.6B",
+    "Qwen/Qwen3-Embedding-0.6B",
+    "BAAI/bge-m3",
+    "answerdotai/ModernBERT-large",
+    "NandiBERT existing 150M/450M"
+  ],
+  "keep_reason": "No dominance evidence; decoder baseline and complementary embedding/encoder roles.",
+  "replace": [],
+  "exclude": [],
+  "observed_change": "Cheez alias redirect only; no verified restriction change",
+  "owner_incremental_bytes": null,
+  "download_approved": false,
+  "physical_deleted": 0
+}
