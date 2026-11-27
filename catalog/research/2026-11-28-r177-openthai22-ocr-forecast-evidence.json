@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "round": "R177",
+  "date_jst": "2026-11-28",
+  "base_commit": "0955358bb4d509b7fb1a8d6e73ae68e1541920cb",
+  "prior_revision": "v79-20261128",
+  "result_revision": "v80-20261128",
+  "parallel_research_preserved": true,
+  "search_scope": {
+    "windows_days": [
+      7,
+      30,
+      90
+    ],
+    "sources": [
+      "HF recent lists, fixed model cards and metadata",
+      "official releases",
+      "GitHub",
+      "arXiv"
+    ],
+    "bounded_not_exhaustive": true,
+    "observed_license_change_verified": false
+  },
+  "source_manifest": "manifests/drafts/r177-2026-11-28-openthai22-cpu-ocr-source.candidate.json",
+  "formal_additions": 1,
+  "formal_replacements": 0,
+  "formal_exclusions": 0,
+  "approved_downloads": 0,
+  "physical_deletions": 0,
+  "comparisons": [
+    {
+      "repo_id": "iapp/OpenThai2.2-OCR-Text-20261127",
+      "decision": "ADD",
+      "formal_decision": "conditional",
+      "publisher_parameters_approx": 2020000,
+      "positive": "Publisher printed Thai/English 12-set mean character accuracy 88.2 vs Typhoon OCR V2 0.8B 85.1; paired 95% CI +1.4..+4.9 pp; 918 old pages particular digit errors 19 to 6.",
+      "negative": "Publisher ThaiOCRBench full pages 83.8 vs 86.1, receipts 68.3 vs 77.8, handwriting 10.3 vs 69.8. Not tables/Markdown; no independent replication or matched portfolio benchmark.",
+      "source": "https://huggingface.co/iapp/OpenThai2.2-OCR-Text-20261127/blob/81237a7e44cee9588ca31bea0f0abdf0653adcb1/README.md"
+    },
+    {
+      "repo_id": "cisco-ai/cisco-time-series-model-1.5",
+      "revision": "955e6d768451bbe86f8143caf3236e80414c74ea",
+      "bytes": 1017721228,
+      "publisher_stored_elements": 254315920,
+      "created": "2026-11-24",
+      "updated": "2026-11-26",
+      "license": "apache-2.0",
+      "decision": "KEEP",
+      "initial_research_recommendation": "HOLD pending matched incremental evidence if not already selected",
+      "positive": "Publisher seasonal O11y MASE 0.404 vs Chronos-2 0.503; GIFT MASE/CRPS 0.689/0.478 vs 0.698/0.485.",
+      "negative": "TimesFM3 better 0.667/0.456; internal O11y; no matched Toto-4M benchmark. Pinned code evidence and concurrent CONDITIONAL justify KEEP.",
+      "source": "https://huggingface.co/cisco-ai/cisco-time-series-model-1.5/blob/955e6d768451bbe86f8143caf3236e80414c74ea/README.md"
+    },
+    {
+      "repo_id": "theforecastingcompany/t0-gamma",
+      "revision": "fef67abad3eed4f227c7b536a6e8ee4e9ab1080d",
+      "bytes": 1022523416,
+      "publisher_stored_elements": 255614293,
+      "created": "2026-10-12",
+      "updated": "2026-11-09",
+      "license": "apache-2.0",
+      "decision": "HOLD",
+      "initial_research_recommendation": "HOLD pending matched incremental evidence if not already selected",
+      "positive": "Publisher GIFT CRPS 0.4503, MASE 0.6580.",
+      "negative": "No matched comparison with Chronos2, Simons or Timestral; earlier family paper arXiv:2609.24559 not exact gamma evidence; runtime closure unknown.",
+      "source": "https://huggingface.co/theforecastingcompany/t0-gamma/blob/fef67abad3eed4f227c7b536a6e8ee4e9ab1080d/README.md"
+    },
+    {
+      "repo_id": "nvidia/Nemotron-3.5-Parse",
+      "revision": "ea2e1fe486bea3e7d0d505df9bafa4ad562407a0",
+      "bytes": 2735296999,
+      "publisher_stored_elements": 630800504,
+      "created": "2026-09-03",
+      "updated": "2026-11-14",
+      "license": "openmdw-1.1",
+      "decision": "KEEP",
+      "initial_research_recommendation": "HOLD pending matched incremental evidence if not already selected",
+      "positive": "Publisher ParseBench triple 75.20 vs LightOnOCR-3-4B 75.10 / 0.8B 74.60.",
+      "negative": "Single 72.74 vs 74.60; main stored elements include 2 I64, optional drafter separate; custom ABI/rights unresolved. Preserve concurrent CONDITIONAL.",
+      "source": "https://huggingface.co/nvidia/Nemotron-3.5-Parse/blob/ea2e1fe486bea3e7d0d505df9bafa4ad562407a0/README.md"
+    },
+    {
+      "repo_id": "iapp/OpenThai2.2-OCR-Markdown-20261127",
+      "revision": "a9357989091e4d70310d6fb29de5527b9febe825",
+      "bytes": 2739786960,
+      "publisher_stored_elements": null,
+      "created": "2026-11-09",
+      "updated": "2026-11-27",
+      "license": "other",
+      "decision": "HOLD",
+      "initial_research_recommendation": "HOLD pending matched incremental evidence if not already selected",
+      "positive": "Thai Markdown specialization; distinct target/drafter hashes from Nemotron Parse.",
+      "negative": "Different hashes alone not independent training proof; no matched results or confirmed rights/genealogy; hold.",
+      "source": "https://huggingface.co/iapp/OpenThai2.2-OCR-Markdown-20261127/blob/a9357989091e4d70310d6fb29de5527b9febe825/README.md"
+    },
+    {
+      "repo_id": "lightonai/LightOnOCR-3-0.8B",
+      "decision": "KEEP",
+      "current_portfolio_decision": "select",
+      "upstream_repo_bytes": 1737771835,
+      "reason": "No matched substitution proof; preserve prior learned states and receipts."
+    },
+    {
+      "repo_id": "PaddlePaddle/PaddleOCR-VL-1.5",
+      "decision": "KEEP",
+      "current_portfolio_decision": "select",
+      "upstream_repo_bytes": 1930468959,
+      "reason": "No matched substitution proof; preserve prior learned states and receipts."
+    },
+    {
+      "repo_id": "deepseek-ai/DeepSeek-OCR-2",
+      "decision": "KEEP",
+      "current_portfolio_decision": "select",
+      "upstream_repo_bytes": 6789306112,
+      "reason": "No matched substitution proof; preserve prior learned states and receipts."
+    },
+    {
+      "repo_id": "autogluon/chronos-2",
+      "decision": "KEEP",
+      "current_portfolio_decision": "select",
+      "upstream_repo_bytes": 477940832,
+      "reason": "No matched substitution proof; preserve prior learned states and receipts."
+    },
+    {
+      "repo_id": "Datadog/Toto-2.0-4m",
+      "decision": "KEEP",
+      "current_portfolio_decision": "conditional",
+      "upstream_repo_bytes": 17727464,
+      "reason": "No matched substitution proof; preserve prior learned states and receipts."
+    },
+    {
+      "repo_id": "mistralai/Timestral-5M",
+      "decision": "KEEP",
+      "current_portfolio_decision": "select",
+      "upstream_repo_bytes": 20854471,
+      "reason": "No matched substitution proof; preserve prior learned states and receipts."
+    },
+    {
+      "repo_id": "mistralai/Timestral-28M",
+      "decision": "KEEP",
+      "current_portfolio_decision": "conditional",
+      "upstream_repo_bytes": 111307038,
+      "reason": "No matched substitution proof; preserve prior learned states and receipts."
+    },
+    {
+      "repo_id": "abel-lab/Simons-297M",
+      "decision": "KEEP",
+      "current_portfolio_decision": "conditional",
+      "upstream_repo_bytes": 1189519836,
+      "reason": "No matched substitution proof; preserve prior learned states and receipts."
+    }
+  ],
+  "capacity": {
+    "full_repo_delta_bytes": 15436348,
+    "default_source_reference_bytes": 8360306,
+    "complete_dependency_bytes": null,
+    "owner_actual_incremental_bytes": null
+  },
+  "protocol": {
+    "H": "CPU Thai printed-document OCR complements existing parsers.",
+    "T": "Proposed 100 lawful held-out pages per printed stratum, same preprocessing, CPU SKU/clock/backend/ABI, threads, batch 1, repeated latency; handwriting and receipt negative controls.",
+    "D": "Proposed PASS if lower paired 95% CI >= -2 pp and improved same-task median latency; FAIL contrary evidence, UNCERTAIN otherwise; independent rights, storage, checksum, runtime gates remain.",
+    "C": "Domain shift, digit correction false positives, runtime or rights failure.",
+    "U": "Sampling, normalization, clock/thermal variance, ABI and dependency bytes; combined uncertainty not estimated."
+  }
+}
