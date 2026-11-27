@@ -14,7 +14,7 @@ from scripts.ledger_history_r168 import historical_117_ledger
 class R159Post116SourceAndApproval(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.current=L("catalog/CURRENT.json")
+        cls.current=L("catalog/snapshots/v73-2026-11-25-current.json")
         cls.catalog=L("catalog/effective-portfolio-2026-11-24-v66.json")
         cls.ledger=historical_117_ledger(L("catalog/execution/2026-11-19-acquisition-ledger.json"))
         cls.src=L("manifests/drafts/r159-2026-11-24-ive-ivonnet-ccore-immutable-publisher-source.candidate.json")
@@ -99,7 +99,7 @@ class R159Post116SourceAndApproval(unittest.TestCase):
             scratch=Path(td)
             # Historical planner tested against its fixed v66 selection header;
             # do not weaken production fail-closed check for later v67 current.
-            current = L("catalog/CURRENT.json")
+            current = L("catalog/snapshots/v73-2026-11-25-current.json")
             current["revision_id"] = "v66-20261124"
             current["expected"]["tracked"] = 246
             current["expected"]["active"] = 197

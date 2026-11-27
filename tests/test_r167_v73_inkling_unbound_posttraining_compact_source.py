@@ -17,7 +17,7 @@ from scripts.ledger_history_r168 import historical_117_ledger
 class R167V73(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.m=read(M);cls.v=read(V);cls.e=read(E);cls.c=read('catalog/CURRENT.json')
+  cls.m=read(M);cls.v=read(V);cls.e=read(E);cls.c=read('catalog/snapshots/v73-2026-11-25-current.json')
   cls.q=read(Q);cls.r=read(R);cls.a=read(A);cls.p=read(P)
   cls.old=read('catalog/effective-portfolio-2026-11-25-v72.json')
 
@@ -84,8 +84,8 @@ class R167V73(unittest.TestCase):
   self.assertFalse(self.q['download_enabled']);self.assertFalse(self.a['download_authorized']);self.assertFalse(self.p['download_enabled'])
   self.assertEqual(self.a['gated_count'],21)
   self.assertEqual(read('queues/approved.json')['entries'],[])
-  self.assertEqual(read('catalog/readiness/CURRENT.json')['catalog_revision'],'v73-20261125')
-  self.assertEqual(read('catalog/estimates/CURRENT.json')['portfolio_revision'],'v73-20261125')
+  self.assertEqual(read('catalog/snapshots/v73-2026-11-25-readiness-current.json')['catalog_revision'],'v73-20261125')
+  self.assertEqual(read('catalog/snapshots/v73-2026-11-25-estimates-current.json')['portfolio_revision'],'v73-20261125')
 
  def test_approx_peft_is_not_executable_exact_checkpoint(self):
   a=self.m['nonselected_alternatives']

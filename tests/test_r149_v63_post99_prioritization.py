@@ -12,7 +12,7 @@ def load(path):
 class Post99PriorityIntegrity(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.current = load('catalog/CURRENT.json')
+        cls.current = load('catalog/snapshots/v73-2026-11-25-current.json')
         cls.prior = load('queues/proposed-v63-r149-after99-11-research-only.json')
         cls.new = load('queues/proposed-v63-r150-prioritized-sources-and-watchlist.json')
         cls.audit = load('catalog/research/2026-11-22-r149-post99-compact-and-rare-source-screen.json')

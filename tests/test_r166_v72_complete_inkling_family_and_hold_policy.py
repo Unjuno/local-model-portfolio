@@ -11,7 +11,7 @@ class R166V72(unittest.TestCase):
   cls.rev=ld('catalog/revisions/v72-2026-11-25.json')
   cls.old=ld('catalog/effective-portfolio-2026-11-25-v71.json')
   cls.new=ld('catalog/effective-portfolio-2026-11-25-v72.json')
-  cls.cur=ld('catalog/CURRENT.json')
+  cls.cur=ld('catalog/snapshots/v73-2026-11-25-current.json')
   cls.ready=ld('catalog/readiness/v72-2026-11-25-r166-all210-gates.json')
   cls.ac=ld('catalog/access/2026-11-25-v72-conditional-hub-gates.json')
   cls.q=ld('queues/proposed-v72-2026-11-25.json')
@@ -82,8 +82,8 @@ class R166V72(unittest.TestCase):
   self.assertFalse(self.q['download_enabled'])
   self.assertFalse(self.prep['download_enabled'])
   self.assertFalse(self.ac['download_authorized'])
-  self.assertEqual(ld('catalog/readiness/CURRENT.json')['catalog_revision'],self.cur['revision_id'])
-  self.assertEqual(ld('catalog/estimates/CURRENT.json')['portfolio_revision'],self.cur['revision_id'])
+  self.assertEqual(ld('catalog/snapshots/v73-2026-11-25-readiness-current.json')['catalog_revision'],self.cur['revision_id'])
+  self.assertEqual(ld('catalog/snapshots/v73-2026-11-25-estimates-current.json')['portfolio_revision'],self.cur['revision_id'])
 
  def test_three_formats_not_separate_trained_origins(self):
   exp={'UD-IQ2_XXS':(5,190584243104),'UD-Q3_K_XL':(7,285128587168),'UD-Q4_K_XL':(9,354150001600)}

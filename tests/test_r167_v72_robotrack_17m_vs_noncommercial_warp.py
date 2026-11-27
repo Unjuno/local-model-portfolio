@@ -8,7 +8,7 @@ from scripts.ledger_history_r168 import historical_117_ledger
 class R167RoboTrackStudy(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.c=J('catalog/CURRENT.json')
+  cls.c=J('catalog/snapshots/v73-2026-11-25-current.json')
   cls.v=J('catalog/effective-portfolio-2026-11-25-v72.json')
   cls.m=J('manifests/drafts/r167-2026-11-25-robotracker17m-vs-warp-nc-publisher-source-frozen.candidate.json')
   cls.d=J('catalog/decisions/2026-11-25-r167-v72-robotracker-small-vs-warp-source-adjudication.json')

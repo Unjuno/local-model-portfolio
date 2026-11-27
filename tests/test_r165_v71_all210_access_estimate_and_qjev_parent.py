@@ -5,7 +5,7 @@ R=Path(__file__).resolve().parents[1]
 def J(p):return json.loads((R/p).read_text(encoding='utf-8'))
 class R165PostPublication(unittest.TestCase):
  def test_v71_owner_stop_sidecars_match_exact_unmodified_selection(self):
-  c=J('catalog/CURRENT.json')
+  c=J('catalog/snapshots/v73-2026-11-25-current.json')
   v=J(c['materialized_catalog_path'])
   a=J(c['latest_conditional_access_audit']['path'])
   q=J(c['priority_worklist_path'])
@@ -23,8 +23,8 @@ class R165PostPublication(unittest.TestCase):
   self.assertEqual({(x['asset_kind'],x['repo_id']) for x in a['entries']},cond)
   self.assertEqual(a['source_revision'],c['revision_id'])
   self.assertEqual((a['scope'],a['tracked_conditional'],a['gated_count']),(c['expected']['by_decision']['conditional'],c['expected']['by_decision']['conditional'],21))
-  self.assertEqual(J('catalog/readiness/CURRENT.json')['catalog_revision'],c['revision_id'])
-  self.assertEqual(J('catalog/estimates/CURRENT.json')['portfolio_revision'],c['revision_id'])
+  self.assertEqual(J('catalog/snapshots/v73-2026-11-25-readiness-current.json')['catalog_revision'],c['revision_id'])
+  self.assertEqual(J('catalog/snapshots/v73-2026-11-25-estimates-current.json')['portfolio_revision'],c['revision_id'])
   self.assertEqual(c['expected']['budget_scenario'],v['budget'])
   self.assertEqual(d['summary']['blocked_any'],c['expected']['active'])
   self.assertEqual(d['summary']['downloads_approved'],0)

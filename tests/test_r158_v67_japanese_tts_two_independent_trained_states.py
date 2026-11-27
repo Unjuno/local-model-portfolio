@@ -13,7 +13,7 @@ from scripts.ledger_history_r168 import historical_117_ledger
 class R158JapaneseTTS(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.current=L("catalog/CURRENT.json")
+  cls.current=L("catalog/snapshots/v73-2026-11-25-current.json")
   cls.old=L("catalog/effective-portfolio-2026-11-24-v66.json")
   cls.new=L("catalog/effective-portfolio-2026-11-24-v67.json")
   cls.overlay=L("catalog/revisions/v67-2026-11-24.json")
@@ -124,6 +124,6 @@ class R158JapaneseTTS(unittest.TestCase):
   self.assertEqual(len([z for z in self.ledger["models"] if z["status"]=="VERIFIED"]),116)
   self.assertEqual(self.man["no_weights_downloaded"],True)
   self.assertEqual(L("queues/approved.json")["entries"],[])
-  self.assertIn(L("catalog/readiness/CURRENT.json")["catalog_revision"],("v67-20261124","v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125", "v73-20261125"))
-  self.assertIn(L("catalog/estimates/CURRENT.json")["portfolio_revision"],("v67-20261124","v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125", "v73-20261125"))
+  self.assertIn(L("catalog/snapshots/v73-2026-11-25-readiness-current.json")["catalog_revision"],("v67-20261124","v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125", "v73-20261125"))
+  self.assertIn(L("catalog/snapshots/v73-2026-11-25-estimates-current.json")["portfolio_revision"],("v67-20261124","v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125", "v73-20261125"))
 if __name__=="__main__":unittest.main()

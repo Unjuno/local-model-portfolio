@@ -1,3 +1,9 @@
+## 現行 v74 / R169（2026-11-27）
+
+[CURRENT](CURRENT.json)：265登録・210有効。Llama 4 Scoutのみ正式HOLD、264行不変、既取得報告133件を保存。追加・交換・除外・重量DL・承認・物理削除0。[監査](../docs/strategy/169-v74-portfolio-composition-and-ledger-reconciliation.md)。
+
+---
+
 ## R158／現行v67（2026-11-24）：独立日本語TTS2モデルを追加
 
 [CURRENT](CURRENT.json)：**248登録／199有効**、旧246件不変。[32file／51,265,149,668byteのPublisher原本SHA](../manifests/drafts/r158-2026-11-24-aratako-trained-and-studio-distilled-publisher-originals.candidate.json)、[全199 STOP](readiness/v67-2026-11-24-r158-all199-gates.json)、[研究/ライセンス](../docs/strategy/158-v67-aratako-japanese-drama3-and-studio-distilled-12gb-tts.md)参照。Aratako35.9B BF16/FP8 LoRA日本語FTとStudio別学習small KL蒸留を別登録、Q4/Q5 GGUF形式重複は非採用。所有者実媒体SHA・ライセンス・CUDA ABI未検証、承認0・新規DL0。

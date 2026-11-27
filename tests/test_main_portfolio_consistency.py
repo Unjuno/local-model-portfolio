@@ -36,7 +36,12 @@ class CurrentPortfolioIntegrity(unittest.TestCase):
   self.assertEqual(len(old["items"]),150)
   for x in old["items"]:
    self.assertIn(identity(x),present)
-   self.assertEqual(x["portfolio_decision"],present[identity(x)]["portfolio_decision"])
+   current=present[identity(x)]
+   if x["portfolio_decision"] != current["portfolio_decision"]:
+    ops=[op for path in self.current["ordered_overlays"] for op in read(path).get("replacement_operations",[]) if op.get("asset_kind")==x["asset_kind"] and op.get("repo_id")==x["repo_id"] and op.get("from_decision")==x["portfolio_decision"] and op.get("to_decision")==current["portfolio_decision"] and op.get("from_tier")==x["risk_tier"] and op.get("to_tier")==current["risk_tier"] and op.get("physical_file_deletion") is False and op.get("download_approved") is False]
+    self.assertEqual(len(ops),1,identity(x))
+   else:
+    self.assertEqual(x["portfolio_decision"],current["portfolio_decision"])
  def test_queue_access_readiness_join(self):
   active={identity(x) for x in self.view["items"] if x["portfolio_decision"] in ACTIVE}
   cond={identity(x) for x in self.view["items"] if x["portfolio_decision"]=="conditional"}

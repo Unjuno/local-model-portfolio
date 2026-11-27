@@ -23,7 +23,7 @@ from scripts.ledger_history_r168 import historical_117_ledger
 class R161V70SourceAndGuards(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.s=load(MAN);cls.v=load(OV);cls.b=load(OLD);cls.e=load(NEW);cls.c=load('catalog/CURRENT.json')
+  cls.s=load(MAN);cls.v=load(OV);cls.b=load(OLD);cls.e=load(NEW);cls.c=load('catalog/snapshots/v73-2026-11-25-current.json')
   cls.q=load(Q);cls.acc=load(ACC);cls.prep=load(PREP);cls.ready=load(READY);cls.dec=load(DEC)
   cls.sources={x['repo_id']:x for x in cls.s['new_model_research_sources']}
 

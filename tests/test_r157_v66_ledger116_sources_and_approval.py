@@ -9,7 +9,7 @@ from scripts.ledger_history_r168 import historical_117_ledger
 class R157V66(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.c=J('catalog/CURRENT.json');cls.e=J('catalog/effective-portfolio-2026-11-24-v66.json')
+  cls.c=J('catalog/snapshots/v73-2026-11-25-current.json');cls.e=J('catalog/effective-portfolio-2026-11-24-v66.json')
   cls.prior=J('catalog/effective-portfolio-2026-11-22-v65.json')
   cls.ledger=historical_117_ledger(J('catalog/execution/2026-11-19-acquisition-ledger.json'));cls.src=J('manifests/drafts/r157-2026-11-24-post116-five-originals-medical-moe.candidate.json')
   cls.queue=J('queues/proposed-v66-2026-11-24.json');cls.access=J('catalog/access/2026-11-24-v66-conditional-hub-gates.json')
@@ -50,6 +50,6 @@ class R157V66(unittest.TestCase):
   self.assertEqual(J('queues/approved.json')['entries'],[])
   self.assertFalse(self.queue['approved'] or self.queue['download_enabled'])
   self.assertTrue(all(not x['download_approved'] for x in self.e['items']))
-  self.assertEqual(J('catalog/readiness/CURRENT.json')['catalog_revision'],self.c['revision_id'])
-  self.assertEqual(J('catalog/estimates/CURRENT.json')['portfolio_revision'],self.c['revision_id'])
+  self.assertEqual(J('catalog/snapshots/v73-2026-11-25-readiness-current.json')['catalog_revision'],self.c['revision_id'])
+  self.assertEqual(J('catalog/snapshots/v73-2026-11-25-estimates-current.json')['portfolio_revision'],self.c['revision_id'])
 if __name__=='__main__':unittest.main()

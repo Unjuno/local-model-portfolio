@@ -17,7 +17,7 @@ def read(path: str) -> dict:
 class R149Post99SourceFinalization(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.current = read("catalog/CURRENT.json")
+        cls.current = read("catalog/snapshots/v73-2026-11-25-current.json")
         cls.report = read("catalog/decisions/2026-11-22-r149-v63-next-source-finalization.json")
         cls.queue = read("queues/proposed-v63-r149-after99-11-research-only.json")
         cls.by_id = {item["repo_id"]: item for item in cls.report["decisions"]}

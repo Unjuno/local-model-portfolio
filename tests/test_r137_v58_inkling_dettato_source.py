@@ -11,7 +11,7 @@ def load(name):
 class V58SourceAndCatalogTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.curr = load("catalog/CURRENT.json")
+        cls.curr = load("catalog/snapshots/v73-2026-11-25-current.json")
         cls.eff = load("catalog/effective-portfolio-2026-11-21-v58.json")
         cls.old = load("catalog/effective-portfolio-2026-11-20-v57.json")
         cls.overlay = load("catalog/revisions/v58-2026-11-21.json")

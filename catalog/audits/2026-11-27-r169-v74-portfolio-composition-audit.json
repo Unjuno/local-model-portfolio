@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-11-27",
+  "source_commit": "72fc6aab33729fdf26851af58f10718dbfe38116",
+  "source_revision": "v73-20261125",
+  "result_revision": "v74-20261127",
+  "method": "All catalog IDs, status, structured evidence fields, source proxy and receipt joins screened. Exact hash-set equality is not semantic equivalence; partial overlap is not a deletion warrant. No risk-evasion or harmful capability ranking. No independent inference experiments.",
+  "metrics": {
+    "tracked_before": 265,
+    "active_before": 211,
+    "active_models_before": 193,
+    "active_datasets_before": 18,
+    "active_after": 210,
+    "active_models_after": 192,
+    "active_datasets_after": 18,
+    "explicit_broad_language_baseline_group_count_before": 8,
+    "explicit_broad_language_baseline_source_reference_bytes_before": 975835949142,
+    "explicit_broad_language_baseline_group_count_after": 7,
+    "explicit_broad_language_baseline_source_reference_bytes_after": 758520240352,
+    "broad_group_is_lower_bound_not_exhaustive_role_classifier": true,
+    "active_models_with_both_explicit_quality_fields": 103,
+    "active_models_with_either_quality_field_missing": 90,
+    "active_models_with_recorded_total_at_most_2B": 74,
+    "recorded_parameter_counts_are_not_full_runtime_totals": true,
+    "active_assets_with_null_selected_file_bytes_before": 209,
+    "active_assets_with_null_final_lock_bytes_before": 211,
+    "active_assets_with_null_final_lock_bytes_after": 210,
+    "active_assets_unknown_source_repo_proxy_after": 49,
+    "active_assets_ge100GB_source_proxy_before": 9,
+    "active_assets_ge100GB_source_proxy_after": 8,
+    "receipt_verified_count": 133,
+    "receipt_verified_catalog_matched": 129,
+    "receipt_verified_catalog_models": 127,
+    "receipt_verified_catalog_datasets": 2,
+    "receipt_verified_untracked": 4,
+    "receipt_nonempty_weight_sha_set_count": 130,
+    "receipt_exact_nonempty_weight_sha_set_duplicate_groups": 0,
+    "receipt_partial_weight_sha_overlap_pairs": 33,
+    "physical_capacity_or_savings_verified": false
+  },
+  "decisions": {
+    "formal_hold": [
+      {
+        "asset_kind": "model",
+        "repo_id": "meta-llama/Llama-4-Scout-17B-16E",
+        "from_decision": "conditional",
+        "from_tier": "R0",
+        "to_decision": "hold",
+        "to_tier": "HOLD",
+        "reason": "Independent Llama 4 MoE with publisher-reported long context and multi-image support is not a duplicate. No specific unmet comparative task or mandatory dependency is established in the v73 records; no receipt, owner entitlement, matched hardware quality or complete bundle is verified. 217315708790 B is a historical whole-repo reference, not incremental or recoverable owner bytes. HOLD pending a justified long-context/multi-image comparison and complete gates; preserve all provenance.",
+        "download_approved": false,
+        "physical_file_deletion": false
+      }
+    ],
+    "formal_additions": [],
+    "formal_exclusions": [],
+    "formal_replacements": [],
+    "unchanged_catalog_rows": 264,
+    "unchanged_is_not_new_selection_or_acquisition_approval": true,
+    "examples": [
+      {
+        "ids": [
+          "Qwen/Qwen3.8-27B",
+          "Qwen/Qwen3.5-0.8B"
+        ],
+        "decision": "maintain",
+        "reason": "Existing comparison baselines with distinct scale/role; receipts reported, no new transfer."
+      },
+      {
+        "ids": [
+          "OVHaiLLM/Olala-v1.0-mini-7A1B-base",
+          "OVHaiLLM/Olala-v1.0-mini-7A1B"
+        ],
+        "decision": "maintain",
+        "reason": "Distinct pretraining and posttraining SHA; useful paired ordinary-task comparison, not format duplication; matched quality and runtime unverified."
+      },
+      {
+        "ids": [
+          "facebook/dinov3-vit7b16-pretrain-lvd1689m",
+          "facebook/dinov3-vith16plus-pretrain-lvd1689m"
+        ],
+        "decision": "maintain conditional",
+        "reason": "Publisher describes teacher and deployment-sized distilled models; distinct learned states; exact downstream feature-space interchangeability unproven."
+      },
+      {
+        "ids": [
+          "pfnet/plamo-3-translate-31b",
+          "pfnet/plamo-3-translate-0.8b"
+        ],
+        "decision": "maintain conditional",
+        "reason": "Independent teacher/student translation; no proof of same-task dominance or complete dependency closure."
+      },
+      {
+        "ids": [
+          "mistralai/Timestral-5M",
+          "mistralai/Timestral-28M"
+        ],
+        "decision": "maintain",
+        "reason": "Independent trained sizes, both receipts; preserve comparison on probabilistic forecasting."
+      },
+      {
+        "ids": [
+          "allenai/RoboTracker"
+        ],
+        "decision": "research only, no addition",
+        "reason": "Earlier source evidence suggests compact point-tracking specialty; independent matched task validation and complete rights/runtime still unverified; no expansion while review backlog remains."
+      }
+    ],
+    "new_addition_screen": "No new active entries in this round; require specific benign missing task, matched evidence, incremental dependency accounting and lawful gates.",
+    "untracked_receipts": "4 VERIFIED reports do not have catalog rows. Retain ledger unchanged; no automatic admission, retransfer, deletion or entitlement inference.",
+    "prior_exclusions_preserved": 6,
+    "prior_holds_preserved": 35,
+    "prior_deferred_preserved": 13
+  },
+  "source_paths": [
+    "catalog/effective-portfolio-2026-11-25-v73.json",
+    "catalog/effective-portfolio-2026-11-27-v74.json",
+    "AGENTS.md",
+    "policies/selection.md",
+    "policies/selection-decision-v17.json",
+    "catalog/execution/2026-11-19-acquisition-ledger.json",
+    "catalog/readiness/v74-2026-11-27-r169-all210-gates.json",
+    "catalog/access/2026-11-27-v74-conditional-hub-gates.json",
+    "queues/proposed-v74-2026-11-27.json",
+    "catalog/preparation/2026-11-27-insurance-bundles-v74.json"
+  ],
+  "owner_disk_sha_rechecked": false,
+  "download_authorized": false,
+  "physical_files_deleted": 0
+}

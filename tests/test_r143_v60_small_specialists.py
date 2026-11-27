@@ -10,7 +10,7 @@ def load(p):
 class V60Specialists(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.c=load("catalog/CURRENT.json")
+        cls.c=load("catalog/snapshots/v73-2026-11-25-current.json")
         cls.old=load("catalog/effective-portfolio-2026-11-21-v59.json")
         cls.e=load("catalog/effective-portfolio-2026-11-22-v60.json")
         cls.d=load("catalog/revisions/v60-2026-11-22.json")

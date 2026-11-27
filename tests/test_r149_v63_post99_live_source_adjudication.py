@@ -14,7 +14,7 @@ def read_json(path):
 class R149Post99SourceAdjudication(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.current = read_json("catalog/CURRENT.json")
+        cls.current = read_json("catalog/snapshots/v73-2026-11-25-current.json")
         cls.catalog = read_json("catalog/effective-portfolio-2026-11-22-v63.json")
         cls.queue = read_json("queues/proposed-v63-r149-after99-11-research-only.json")
         cls.study = read_json("catalog/decisions/2026-11-22-r149-v63-next11-source-adjudication.json")

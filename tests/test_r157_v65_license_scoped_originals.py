@@ -27,7 +27,7 @@ class R157RightsAndDedup(unittest.TestCase):
         cls.ledger = historical_117_ledger(load("catalog/execution/2026-11-19-acquisition-ledger.json"))
 
     def test_current_canonical_decisions_preserved_not_overwritten(self):
-        current = load("catalog/CURRENT.json")
+        current = load("catalog/snapshots/v73-2026-11-25-current.json")
         self.assertIn(current["revision_id"],("v66-20261124","v67-20261124","v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125", "v73-20261125"))
         self.assertEqual((len(load('catalog/effective-portfolio-2026-11-24-v66.json')['items']),load('catalog/effective-portfolio-2026-11-24-v66.json')['counts']['active']),(246,197))
         self.assertEqual((self.catalog["counts"]["by_decision"]["select"], self.catalog["counts"]["by_decision"]["conditional"], self.catalog["counts"]["by_decision"]["hold"]), (56, 136, 29))

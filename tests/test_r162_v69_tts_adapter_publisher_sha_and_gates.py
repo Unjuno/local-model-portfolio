@@ -9,7 +9,7 @@ from scripts.ledger_history_r168 import historical_117_ledger
 class R162(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.c=read("catalog/CURRENT.json");cls.e=read("catalog/effective-portfolio-2026-11-25-v69.json");cls.old=read("catalog/effective-portfolio-2026-11-25-v68.json")
+  cls.c=read("catalog/snapshots/v73-2026-11-25-current.json");cls.e=read("catalog/effective-portfolio-2026-11-25-v69.json");cls.old=read("catalog/effective-portfolio-2026-11-25-v68.json")
   cls.tts=read("manifests/drafts/r162-2026-11-25-paradee13-tihon100k-core-weight-pins.candidate.json");cls.ink=read("manifests/drafts/r162-2026-11-25-electroglyph-inkling-heretic-v22-adapter-core.candidate.json");cls.ledger=historical_117_ledger(read("catalog/execution/2026-11-19-acquisition-ledger.json"))
   cls.queue=read("queues/proposed-v69-2026-11-25.json");cls.access=read("catalog/access/2026-11-25-v69-conditional-hub-gates.json")
   cls.ready=read("catalog/readiness/v69-2026-11-25-r162-all206-gates.json");cls.prep=read("catalog/preparation/2026-11-25-insurance-bundles-v69.json")
@@ -45,6 +45,6 @@ class R162(unittest.TestCase):
   self.assertTrue(all(not x["download_approved"] for x in self.e["items"]))
   self.assertEqual(sum(x["status"]=="VERIFIED" for x in self.ledger["models"]),116)
   self.assertTrue(all(z["repo_id"] in {x["repo_id"] for x in self.e["items"]} for z in self.ledger["models"] if z["status"]=="VERIFIED"))
-  self.assertEqual(read("catalog/readiness/CURRENT.json")["catalog_revision"],self.c["revision_id"])
-  self.assertEqual(read("catalog/estimates/CURRENT.json")["portfolio_revision"],self.c["revision_id"])
+  self.assertEqual(read("catalog/snapshots/v73-2026-11-25-readiness-current.json")["catalog_revision"],self.c["revision_id"])
+  self.assertEqual(read("catalog/snapshots/v73-2026-11-25-estimates-current.json")["portfolio_revision"],self.c["revision_id"])
 if __name__=="__main__":unittest.main()

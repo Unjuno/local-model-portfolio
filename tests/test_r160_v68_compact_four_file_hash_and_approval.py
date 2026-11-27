@@ -9,7 +9,7 @@ from scripts.ledger_history_r168 import historical_117_ledger
 class V68(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.c=rd("catalog/CURRENT.json");cls.v=rd("catalog/effective-portfolio-2026-11-25-v68.json")
+  cls.c=rd("catalog/snapshots/v73-2026-11-25-current.json");cls.v=rd("catalog/effective-portfolio-2026-11-25-v68.json")
   cls.o=rd("catalog/effective-portfolio-2026-11-24-v67.json")
   cls.m=rd("manifests/drafts/r160-2026-11-25-four-small-trained-states-75file-publisher-frozen.candidate.json");cls.ledger=historical_117_ledger(rd("catalog/execution/2026-11-19-acquisition-ledger.json"))
   cls.queue=rd("queues/proposed-v68-2026-11-25.json");cls.a=rd("catalog/access/2026-11-25-v68-conditional-hub-gates.json")
@@ -44,6 +44,6 @@ class V68(unittest.TestCase):
   self.assertEqual(rd("queues/approved.json")["entries"],[])
   self.assertFalse(self.queue["approved"] or self.queue["download_enabled"])
   self.assertTrue(all(not x["download_approved"] for x in self.v["items"]))
-  self.assertEqual(rd("catalog/readiness/CURRENT.json")["catalog_revision"],self.c["revision_id"])
-  self.assertEqual(rd("catalog/estimates/CURRENT.json")["portfolio_revision"],self.c["revision_id"])
+  self.assertEqual(rd("catalog/snapshots/v73-2026-11-25-readiness-current.json")["catalog_revision"],self.c["revision_id"])
+  self.assertEqual(rd("catalog/snapshots/v73-2026-11-25-estimates-current.json")["portfolio_revision"],self.c["revision_id"])
 if __name__=="__main__":unittest.main()

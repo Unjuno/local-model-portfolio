@@ -22,7 +22,7 @@ from scripts.ledger_history_r168 import historical_117_ledger
 class R163V71FullSourceAndStop(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.cur = read("catalog/CURRENT.json")
+        cls.cur = read("catalog/snapshots/v73-2026-11-25-current.json")
         cls.before = read("catalog/effective-portfolio-2026-11-25-v70.json")
         cls.after = read("catalog/effective-portfolio-2026-11-25-v71.json")
         cls.overlay = read("catalog/revisions/v71-2026-11-25.json")

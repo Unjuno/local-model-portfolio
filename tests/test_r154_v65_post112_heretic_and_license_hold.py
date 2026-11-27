@@ -11,7 +11,7 @@ from scripts.ledger_history_r168 import historical_117_ledger
 class R154V65Selection(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.current=read('catalog/CURRENT.json')
+  cls.current=read('catalog/snapshots/v73-2026-11-25-current.json')
   cls.old=read('catalog/effective-portfolio-2026-11-22-v64.json')
   cls.new=read('catalog/effective-portfolio-2026-11-22-v65.json')
   cls.ov=read('catalog/revisions/v65-2026-11-22.json')
@@ -153,8 +153,8 @@ class R154V65Selection(unittest.TestCase):
   self.assertEqual(self.ov['new_weight_payload_downloaded'],0)
   self.assertEqual(self.ov['new_approved_downloads_added'],0)
  def test_current_sidecar_links_and_no_owner_hdd_claims(self):
-  self.assertEqual(read('catalog/readiness/CURRENT.json')['catalog_revision'],self.current['revision_id'])
-  self.assertEqual(read('catalog/estimates/CURRENT.json')['portfolio_revision'],self.current['revision_id'])
+  self.assertEqual(read('catalog/snapshots/v73-2026-11-25-readiness-current.json')['catalog_revision'],self.current['revision_id'])
+  self.assertEqual(read('catalog/snapshots/v73-2026-11-25-estimates-current.json')['portfolio_revision'],self.current['revision_id'])
   self.assertEqual(read(self.current['latest_active_readiness_audit']['summary_path'])['catalog_revision'],self.current['revision_id'])
   self.assertEqual(read(self.current['latest_conditional_access_audit']['path'])['source_revision'],self.current['revision_id'])
   self.assertEqual(read(self.current['insurance_preparation_worklist_path'])['source_revision'],self.current['revision_id'])

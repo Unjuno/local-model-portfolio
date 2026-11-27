@@ -16,7 +16,7 @@ def imp(name):
 class R148Ledger99AndApprovals(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.current=L('catalog/CURRENT.json')
+  cls.current=L('catalog/snapshots/v73-2026-11-25-current.json')
   cls.original=L('catalog/effective-portfolio-2026-11-22-v62.json')
   cls.new=L('catalog/effective-portfolio-2026-11-22-v63.json')
   cls.ov=L('catalog/revisions/v63-2026-11-22.json')
@@ -97,8 +97,8 @@ class R148Ledger99AndApprovals(unittest.TestCase):
   self.assertFalse(self.queue['download_enabled'])
   self.assertFalse(self.prep['download_enabled'])
   self.assertEqual(L('queues/approved.json')['entries'],[])
-  self.assertIn(L('catalog/readiness/CURRENT.json')['catalog_revision'],('v63-20261122','v64-20261122','v65-20261122', 'v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125", "v73-20261125"))
-  self.assertIn(L('catalog/estimates/CURRENT.json')['portfolio_revision'],('v63-20261122','v64-20261122','v65-20261122', 'v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125", "v73-20261125"))
+  self.assertIn(L('catalog/snapshots/v73-2026-11-25-readiness-current.json')['catalog_revision'],('v63-20261122','v64-20261122','v65-20261122', 'v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125", "v73-20261125"))
+  self.assertIn(L('catalog/snapshots/v73-2026-11-25-estimates-current.json')['portfolio_revision'],('v63-20261122','v64-20261122','v65-20261122', 'v66-20261124','v67-20261124',"v68-20261125","v69-20261125","v70-20261125", "v71-20261125", "v72-20261125", "v73-20261125"))
  def test_synthetic_2026_ref_is_rejected_even_if_flags_true(self):
   p=imp('preserve_execute')
   task={'repo_id':'Example/Model','rev':'a'*40,'files':[{'path':'model.safetensors','bytes':11,'sha256':'b'*64}]}

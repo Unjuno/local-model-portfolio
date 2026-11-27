@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "revision_id": "v74-20261127",
+  "previous_revision_id": "v73-20261125",
+  "decision_date_jst": "2026-11-27",
+  "target_branch": "main",
+  "kind": "EXACT_COMPOSITION_HOLD_AND_NO_ASSET_DELETION",
+  "previous_asset_count": 265,
+  "previous_active_count": 211,
+  "replacement_operations": [
+    {
+      "asset_kind": "model",
+      "repo_id": "meta-llama/Llama-4-Scout-17B-16E",
+      "from_decision": "conditional",
+      "from_tier": "R0",
+      "to_decision": "hold",
+      "to_tier": "HOLD",
+      "reason": "Independent Llama 4 MoE with publisher-reported long context and multi-image support is not a duplicate. No specific unmet comparative task or mandatory dependency is established in the v73 records; no receipt, owner entitlement, matched hardware quality or complete bundle is verified. 217315708790 B is a historical whole-repo reference, not incremental or recoverable owner bytes. HOLD pending a justified long-context/multi-image comparison and complete gates; preserve all provenance.",
+      "download_approved": false,
+      "physical_file_deletion": false
+    }
+  ],
+  "additions": [],
+  "removed_assets": [],
+  "changed_prior_decisions": [
+    "meta-llama/Llama-4-Scout-17B-16E"
+  ],
+  "expected_asset_count": 265,
+  "expected_active_count": 210,
+  "new_approved_downloads": 0,
+  "model_payload_downloaded": 0,
+  "physical_files_deleted": 0
+}

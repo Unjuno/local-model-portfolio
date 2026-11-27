@@ -11,7 +11,7 @@ class R168UncensoredTrainedStateStudy(unittest.TestCase):
   cls.dec=J('catalog/decisions/2026-11-27-r168-v73-small-uncensored-priority-and-false-approval-repair.json')
   cls.q=J('queues/proposed-v73-r168-four-small-uncensored-ranked-UNAPPROVED.json')
   cls.ledger=J('catalog/execution/2026-11-19-acquisition-ledger.json')
-  cls.c=J('catalog/CURRENT.json')
+  cls.c=J('catalog/snapshots/v73-2026-11-25-current.json')
   cls.v=J(cls.c['materialized_catalog_path'])
  def test_canonical_old_265_211_133_reported_plus_no_new_approval(self):
   self.assertEqual((self.c['revision_id'],self.c['expected']['tracked'],self.c['expected']['active']),('v73-20261125',265,211))

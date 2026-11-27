@@ -11,7 +11,7 @@ def load(path):
 class V59CanonicalTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.cur = load("catalog/CURRENT.json")
+        cls.cur = load("catalog/snapshots/v73-2026-11-25-current.json")
         cls.v58 = load("catalog/effective-portfolio-2026-11-21-v58.json")
         cls.v59 = load("catalog/effective-portfolio-2026-11-21-v59.json")
         cls.delta = load("catalog/revisions/v59-2026-11-21.json")

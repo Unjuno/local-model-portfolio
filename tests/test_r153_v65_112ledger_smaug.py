@@ -8,7 +8,7 @@ from scripts.ledger_history_r168 import historical_117_ledger
 class R153(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.c=read('catalog/CURRENT.json');cls.v=read('catalog/effective-portfolio-2026-11-22-v65.json')
+  cls.c=read('catalog/snapshots/v73-2026-11-25-current.json');cls.v=read('catalog/effective-portfolio-2026-11-22-v65.json')
   cls.old=read('catalog/effective-portfolio-2026-11-22-v64.json')
   cls.l=historical_117_ledger(read('catalog/execution/2026-11-19-acquisition-ledger.json'));cls.s=read('manifests/drafts/r153-2026-11-22-smaug-qwen-hash-reuse-and-atomic-lora.candidate.json')
   cls.q=read('queues/proposed-v65-2026-11-22.json');cls.p=read('catalog/preparation/2026-11-22-insurance-bundles-v65.json')
@@ -36,8 +36,8 @@ class R153(unittest.TestCase):
   self.assertFalse(self.q['approved'] or self.q['download_enabled'])
   self.assertEqual(self.g['summary']['ready_to_approve'],0)
   self.assertEqual(read('queues/approved.json')['entries'],[])
-  self.assertEqual(read('catalog/readiness/CURRENT.json')['catalog_revision'],self.c['revision_id'])
-  self.assertEqual(read('catalog/estimates/CURRENT.json')['portfolio_revision'],self.c['revision_id'])
+  self.assertEqual(read('catalog/snapshots/v73-2026-11-25-readiness-current.json')['catalog_revision'],self.c['revision_id'])
+  self.assertEqual(read('catalog/snapshots/v73-2026-11-25-estimates-current.json')['portfolio_revision'],self.c['revision_id'])
  def test_smaug_shards(self):
   x=next(x for x in self.s['full_sources'] if x['repo_id']=='abacusai/Smaug-Uncensored')
   self.assertEqual((x['identical_shard_count'],x['different_shard_count']),(2,16))

@@ -34,7 +34,7 @@ class R160V68ThreeCompactOriginals(unittest.TestCase):
         cls.prep_after = load("catalog/preparation/2026-11-25-insurance-bundles-v68.json")
         cls.readiness_before = load("catalog/readiness/v67-2026-11-24-r158-all199-gates.json")
         cls.readiness_after = load("catalog/readiness/v68-2026-11-25-r160-all203-gates.json")
-        cls.current = load("catalog/CURRENT.json")
+        cls.current = load("catalog/snapshots/v73-2026-11-25-current.json")
         cls.approved = load("queues/approved.json")
         cls.ledger = historical_117_ledger(load("catalog/execution/2026-11-19-acquisition-ledger.json"))
 

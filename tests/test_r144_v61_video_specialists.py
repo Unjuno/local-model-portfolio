@@ -6,7 +6,7 @@ def L(p):return json.loads((ROOT/p).read_text(encoding='utf-8'))
 class V61VisualAudit(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.c=L('catalog/CURRENT.json');cls.old=L('catalog/effective-portfolio-2026-11-22-v60.json')
+  cls.c=L('catalog/snapshots/v73-2026-11-25-current.json');cls.old=L('catalog/effective-portfolio-2026-11-22-v60.json')
   cls.e=L('catalog/effective-portfolio-2026-11-22-v61.json')
   cls.ov=L('catalog/revisions/v61-2026-11-22.json')
   cls.m=L('manifests/drafts/r144-2026-11-22-video-world-and-streaming-publisher-sources.candidate.json')
@@ -89,8 +89,8 @@ class V61VisualAudit(unittest.TestCase):
   self.assertFalse(self.p['download_enabled']);self.assertFalse(self.r['ready_to_acquire'])
   self.assertTrue(all(not x['download_approved'] and not x['ready_to_acquire'] for x in self.r['records']))
   self.assertEqual(L('queues/approved.json')['entries'],[])
-  self.assertEqual(L('catalog/readiness/CURRENT.json')['catalog_revision'],self.c['revision_id'])
-  self.assertEqual(L('catalog/estimates/CURRENT.json')['portfolio_revision'],self.c['revision_id'])
+  self.assertEqual(L('catalog/snapshots/v73-2026-11-25-readiness-current.json')['catalog_revision'],self.c['revision_id'])
+  self.assertEqual(L('catalog/snapshots/v73-2026-11-25-estimates-current.json')['portfolio_revision'],self.c['revision_id'])
  def test_ledger96_seven_source_refilter_and_hold(self):
   ledger=L('catalog/execution/2026-11-19-acquisition-ledger.json')
   self.assertGreaterEqual(ledger['summary']['models_verified'],96)
