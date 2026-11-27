@@ -1,4 +1,8 @@
-## 現行 v88 / R184（2026-11-28）
+## 現行 v89 / R185（2026-11-28）
+
+283登録・227有効（SELECT 56、CONDITIONAL 171）。独立学習STSF+TPLS計測列直接セグメンテーション2状態を研究限定CONDITIONAL追加。並行DGNO・TATR含む旧282行・133取得報告不変。配布元候補＋固定コード295,762,791 B、依存込み・owner増分未確定。全227取得STOP、承認・重量DL・実行・物理削除0。[研究報告](../docs/strategy/185-v89-stsf-computational-imaging.md)。
+
+## 履歴 v88 / R184（2026-11-28）
 
 282登録・226 active（SELECT 56、CONDITIONAL 170）、全取得STOP。TATR-v1.1-All独立表構造認識を研究限定追加、VETime HOLD。並行v87 DGNOを含む281旧行と133既取得報告は保持。重みLFS参照115,437,156 B（全依存・実増分未確定）。承認・実DL・実行・削除0。 [研究報告](../docs/strategy/184-v88-table-structure-and-vetime-research.md)。
 

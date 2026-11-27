@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-11-28",
+  "parent_commit": "1177f713be655860871de7d46c6673b8fbf46677",
+  "original_review_base": "b8988e16d8ab48f5b9112b94a05426178f33a113",
+  "concurrent_v87_preserved": true,
+  "search_windows_days": [
+    7,
+    30,
+    90
+  ],
+  "older_model": {
+    "created": "2026-07-21",
+    "hf_api_updated": "2026-08-01",
+    "manifest_prose_updated": "2026-08-10 (timestamp discrepancy, no changed weights demonstrated)",
+    "paper": "https://arxiv.org/abs/2607.22077v2",
+    "source_evidence": [
+      "https://huggingface.co/hanyuyuan/STSF-TPLS-weights/blob/785c3ec304928ea0407da7e048d5579791fbb3bf/README.md",
+      "https://huggingface.co/hanyuyuan/STSF-TPLS-weights/blob/785c3ec304928ea0407da7e048d5579791fbb3bf/MANIFEST.json",
+      "https://huggingface.co/api/models/hanyuyuan/STSF-TPLS-weights/revision/785c3ec304928ea0407da7e048d5579791fbb3bf?blobs=true",
+      "https://arxiv.org/abs/2607.22077v2",
+      "https://github.com/Hanyuyuan6/STSF-TPLS/tree/3552378c260add875790850505a049867f7c4990"
+    ]
+  },
+  "decisions": [
+    {
+      "asset_kind": "model",
+      "repo_id": "hanyuyuan/STSF-TPLS-weights",
+      "decision": "ADD",
+      "formal_state": "conditional",
+      "positive": "Author reports +3.2–9.9 percentage points foreground mIoU over prior image-free baseline on three simulated datasets at 3.13% sampling; optical bench proof of concept.",
+      "negative": "Clean reconstruct-then-segment wins noiseless; fixed 128x128 / 512 natural-order Hadamard measurements, no independent replication or generalization proof; real capture data not distributed; no optimizer/scheduler."
+    },
+    {
+      "repo_id": "Duane245/DGNO",
+      "decision": "KEEP",
+      "reason": "Fluorescence defocus inverse reconstruction from images, not measurement-vector segmentation; preserve parallel v87 adoption."
+    },
+    {
+      "repo_id": "facebook/sam3",
+      "decision": "KEEP",
+      "reason": "Image/video promptable masks require pixels; no matched comparison."
+    },
+    {
+      "repo_id": "nvidia/c-fast-foundationstereo",
+      "decision": "KEEP",
+      "reason": "Stereo disparity from rectified image pairs."
+    },
+    {
+      "repo_id": "MBZUAI/TerraFM",
+      "decision": "KEEP",
+      "reason": "SAR/multispectral representations."
+    },
+    {
+      "repo_id": "Phips/PULSE",
+      "decision": "KEEP",
+      "reason": "Image superresolution."
+    },
+    {
+      "repo_id": "KRAFTON/Raon-1-mini",
+      "decision": "HOLD",
+      "revision": "0e4f53b9a81dd0fac2da1cf0967a8a960b9f7e25",
+      "updated": "2026-11-27",
+      "full_repo_bytes": 32718312959,
+      "positive": "28.8B total/4.3B active RDA/MLA MoE, 256K context",
+      "negative": "Existing Raon-1-nano 7.18GB same family; matched incremental value and custom runtime unresolved",
+      "url": "https://huggingface.co/KRAFTON/Raon-1-mini"
+    },
+    {
+      "repo_id": "ArgoSA/D-FINE-seg",
+      "decision": "HOLD",
+      "revision": "79572c466448db97aa2b2f029c907d8e6b2a42fc",
+      "updated": "2026-11-07",
+      "full_repo_bytes": 2049333247,
+      "positive": "Author Cityscapes val 500 images: N 3.36M mIoU 77.99, X 56.3M 84.84, 1024x2048 RTX5070Ti TensorRT FP16 batch 1",
+      "negative": "NC Cityscapes-derived weights, N lower accuracy, no matched SAM3 comparison",
+      "url": "https://huggingface.co/ArgoSA/D-FINE-seg"
+    },
+    {
+      "repo_id": "GilgameshYX/Trellis_segPart",
+      "decision": "HOLD",
+      "revision": "a5e92a02738ea0ef741053a863a9cf53b007cf9b",
+      "updated": "2026-10-09",
+      "full_repo_bytes": 22141561158,
+      "positive": "128 meshes GT six-view input, surface mIoU 83.58→85.05, small part recall 57.03→60.61",
+      "negative": "GT conditions not real photo pipeline; boundary F1 31.93, 33–63 parts mIoU40.60; TRELLIS.2/paired VAE and rights unresolved",
+      "url": "https://huggingface.co/GilgameshYX/Trellis_segPart"
+    }
+  ],
+  "prior_rows_unchanged": 281,
+  "source_reference": {
+    "full_repo_bytes": 1475910946,
+    "selected_bytes": 295193202,
+    "code_bytes": 569589,
+    "combined_bytes": 295762791,
+    "owner_incremental_bytes": null
+  },
+  "deferred_checkpoints": [
+    "checkpoints/rev_carvana_tpls_m512_s43/best.pth",
+    "checkpoints/rev_carvana_tpls_m512_s44/best.pth",
+    "checkpoints/rev_mnist_tpls_m512_s43/best.pth",
+    "checkpoints/rev_mnist_tpls_m512_s44/best.pth",
+    "checkpoints/rev_mnist_tpls_s42/best.pth",
+    "checkpoints/rev_wbc_tpls_s42/best.pth",
+    "checkpoints/rev_wbc_tpls_s43/best.pth",
+    "checkpoints/rev_wbc_tpls_s44/best.pth"
+  ],
+  "hypothesis": "On fixed lawful instrument tasks STSF improves noisy foreground mIoU versus matched image-free baseline; clean reconstruction may win.",
+  "test": "At least 30 independent scenes/regime; matched operator, split, hardware/backend/precision/batch; paired bootstrap 95% CI, report clean/noisy separately.",
+  "decision_rule": "PASS only if lower CI of mIoU gain >0; FAIL if upper <=0, else UNCERTAIN; acquisition remains STOP.",
+  "counterhypotheses": "Domain shift, changed acquisition order, clean baseline wins.",
+  "uncertainty": "Calibration, correlated scenes, noise, split; no combined uncertainty without measurements.",
+  "approved_downloads": 0,
+  "physical_files_deleted": 0
+}
