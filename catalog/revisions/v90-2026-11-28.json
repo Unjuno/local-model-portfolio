@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "revision_id": "v90-20261128",
+  "previous_revision_id": "v89-20261128",
+  "decision_date_jst": "2026-11-28",
+  "target_branch": "main",
+  "kind": "FRESH_SPECIALIST_RESEARCH_ADDITION",
+  "previous_asset_count": 283,
+  "previous_active_count": 227,
+  "replacement_operations": [],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "expected_asset_count": 284,
+  "expected_active_count": 228,
+  "new_approved_downloads": 0,
+  "model_payload_downloaded": 0,
+  "physical_files_deleted": 0,
+  "additions": [
+    {
+      "position": 284,
+      "asset_kind": "model",
+      "repo_id": "medarc/OpenMidnight-1.1",
+      "url": "https://huggingface.co/medarc/OpenMidnight-1.1",
+      "group": "病理組織タイル・自己教師あり専門視覚表現",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "DINOv2-initialized independent histopathology pretraining on about 12k TCGA slides (320 H100 GPU-hours); complete tile encoder, not a quantization. Complements general DINOv3 and generative MedGemma, distinct from biomedical image-text BiomedCLIP, DGNO inverse imaging and TATR geometry.",
+      "quality_positive": "Author THUNDER: 16 classification and 4 segmentation tasks, mean segmentation Dice 69.7%, overall rank 4/14.",
+      "quality_negative": "Single-run comparisons and prior KDE sign issue; no matched device test versus incumbents, no WSI diagnostic head, clinical external validation not established. New squash preprocessing changes inference without changing learned weights.",
+      "risk_and_alternative_assessment": "Research-only on lawful deidentified data; medical diagnosis not authorized. KEEP existing visual, medical and inverse-imaging states; no dominance proof. HOLD LMD, GraphPFN and Ming; reject separate entries for identical-weight metadata revisions.",
+      "evidence_date": "2026-11-28",
+      "evidence_kind": "R186_PRIMARY_PAPER_FIXED_PUBLISHER_TREE_AND_LFS",
+      "evidence_urls": [
+        "https://huggingface.co/medarc/OpenMidnight-1.1/blob/57efe1ad969958190f245aa87ee3a8e5d5db7e54/README.md",
+        "https://huggingface.co/medarc/OpenMidnight-1.1/blob/57efe1ad969958190f245aa87ee3a8e5d5db7e54/config.json",
+        "https://huggingface.co/medarc/OpenMidnight-1.1/blob/57efe1ad969958190f245aa87ee3a8e5d5db7e54/provenance.json",
+        "https://huggingface.co/medarc/OpenMidnight-1.1/blob/57efe1ad969958190f245aa87ee3a8e5d5db7e54/LICENSE",
+        "https://huggingface.co/api/models/medarc/OpenMidnight-1.1/revision/57efe1ad969958190f245aa87ee3a8e5d5db7e54",
+        "https://arxiv.org/abs/2611.00064",
+        "https://github.com/MedARC-AI/OpenMidnight"
+      ],
+      "observed_access": "public non-gated API observation; owner rights unverified",
+      "license_metadata": "Apache-2.0 publisher license and tag observed; individual intended act/data rights unverified",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "57efe1ad969958190f245aa87ee3a8e5d5db7e54",
+      "upstream_all_files_bytes_observed": 4539168331,
+      "upstream_file_count_observed": 7,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 7,
+      "candidate_selected_source_file_bytes": 4539168331,
+      "source_manifest_path": "manifests/drafts/r186-2026-11-28-openmidnight-source-frozen.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 1134774272,
+        "evidence_kind": "Publisher safetensors F32 element census; conservative tile encoder count, no external learned parent at tile inference; not full slide workflow or independently parsed weight headers.",
+        "evidence_urls": [
+          "https://huggingface.co/api/models/medarc/OpenMidnight-1.1/revision/57efe1ad969958190f245aa87ee3a8e5d5db7e54",
+          "https://huggingface.co/medarc/OpenMidnight-1.1/blob/57efe1ad969958190f245aa87ee3a8e5d5db7e54/config.json",
+          "https://huggingface.co/medarc/OpenMidnight-1.1/blob/57efe1ad969958190f245aa87ee3a8e5d5db7e54/provenance.json"
+        ],
+        "review_date": "2026-11-28"
+      },
+      "forecast_priority": {
+        "rank": 284,
+        "wave": "S2",
+        "category": "SPECIALIST_HISTOPATHOLOGY_REPRESENTATION",
+        "scenario_status": "LEGACY_CLASSIFICATION_ONLY_NOT_ACQUISITION_ORDER"
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 4539168331,
+        "publisher_selected_source_bytes": 4539168331,
+        "source_bytes_are_not_selected_bytes": true,
+        "owner_hdd_verified": false,
+        "full_runtime_memory_peak_verified": false,
+        "actual_archive_incremental_bytes": null
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "SINGLE_IMMUTABLE_SOURCE_FILE_SET"
+    }
+  ]
+}

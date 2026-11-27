@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "round": "R186",
+  "date_jst": "2026-11-28",
+  "base_main": "1150996c7f5b23a476276b6ffb6c78066e7d9298",
+  "initial_main": "b8988e16d8ab48f5b9112b94a05426178f33a113",
+  "preserved_concurrent_commits": [
+    "1177f713be655860871de7d46c6673b8fbf46677",
+    "ae282f219138ed02bcc993ee973db98ea98ec458",
+    "1150996c7f5b23a476276b6ffb6c78066e7d9298"
+  ],
+  "search": "HF, arXiv, GitHub/author sources; 7/30/90 day searches plus older GraphPFN; not exhaustive history crawl.",
+  "new_candidates": [
+    {
+      "repo_id": "medarc/OpenMidnight-1.1",
+      "decision": "ADD",
+      "formal_decision": "conditional",
+      "created": "2026-10-23",
+      "updated": "2026-11-11",
+      "revision": "57efe1ad969958190f245aa87ee3a8e5d5db7e54",
+      "source_bytes": 4539168331,
+      "stored_elements": 1134774272,
+      "sources": [
+        "https://huggingface.co/medarc/OpenMidnight-1.1/blob/57efe1ad969958190f245aa87ee3a8e5d5db7e54/README.md",
+        "https://huggingface.co/medarc/OpenMidnight-1.1/blob/57efe1ad969958190f245aa87ee3a8e5d5db7e54/config.json",
+        "https://huggingface.co/medarc/OpenMidnight-1.1/blob/57efe1ad969958190f245aa87ee3a8e5d5db7e54/provenance.json",
+        "https://huggingface.co/medarc/OpenMidnight-1.1/blob/57efe1ad969958190f245aa87ee3a8e5d5db7e54/LICENSE",
+        "https://huggingface.co/api/models/medarc/OpenMidnight-1.1/revision/57efe1ad969958190f245aa87ee3a8e5d5db7e54",
+        "https://arxiv.org/abs/2611.00064",
+        "https://github.com/MedARC-AI/OpenMidnight"
+      ],
+      "positive": "Author THUNDER: 16 classification and 4 segmentation tasks, mean segmentation Dice 69.7%, overall rank 4/14.",
+      "negative": "Single-run comparisons and prior KDE sign issue; no matched device test versus incumbents, no WSI diagnostic head, clinical external validation not established. New squash preprocessing changes inference without changing learned weights.",
+      "training": "DINOv2 initialization, ~12k TCGA slides, 320 H100 GPU-hours; corrected KDE teacher average steps 87500–137500, original base revision and seed null.",
+      "same_weight_revisions": [
+        "93c239a72b5f56c1431fd52ef6a3e1c59d2321ec",
+        "a9ed8ab814124bcec8ab46c746b2bd3cc7e35b0e",
+        "77e5780c19c980b38cbf8430f87419bba8801eeb",
+        "57efe1ad969958190f245aa87ee3a8e5d5db7e54"
+      ],
+      "weight_sha256": "c6ab52077b9680485bd60a1306dc3f486ed20798ce3f7b038a94f72d1dd6ec5f",
+      "old_config_oid": "6ed51fe96ab256f599b24d58e3da1fa104584e13",
+      "new_config_oid": "ba2d4535fde35c7d6b908e0642a0e0e40cf2d47b",
+      "change": "Same weight hash and Apache tag; latest preprocessing crop_pct=1.0 crop_mode=squash. No observed license restriction change.",
+      "manifest": "manifests/drafts/r186-2026-11-28-openmidnight-source-frozen.candidate.json"
+    },
+    {
+      "repo_id": "ai-hhmi/lmd-vitl-p8-simmim-lvd",
+      "decision": "HOLD",
+      "revision": "40a5c709b5f3f5460124318f72e567ac79dac4f9",
+      "source_bytes": 1211914358,
+      "stored_elements": 302965770,
+      "created": "2026-11-04",
+      "updated": "2026-11-10",
+      "license": "DINOv3 license",
+      "positive": "3D ViT-L, 8nm isotropic microscopy, 8^3 patch, 3D RoPE; inflated DINOv3 and independently pretrained 100k SimMIM steps on 243 volumes.",
+      "negative": "Other input windows untested; decoder/optimizer excluded; compare scratch, affinity and CellMap; inherited DINOv3 rights and pinned code closure unresolved.",
+      "source": "https://huggingface.co/ai-hhmi/lmd-vitl-p8-simmim-lvd",
+      "runtime": "mia-train 0fe3872 short commit; torch 2.13 publisher environment"
+    },
+    {
+      "repo_id": "eremeev-d/graphpfn-1.3",
+      "decision": "HOLD",
+      "revision": "e11da6e2692cc97764a2e97e5a2cb2ef70e37c3b",
+      "source_bytes": 14309966,
+      "created": "2026-06-18",
+      "updated": "2026-07-01",
+      "license": "Apache adapter; LimiX parent separately licensed",
+      "positive": "Independent graph-task adaptation; author reports competitive graph ICL/fine-tuning.",
+      "negative": "Parent revision, full learned total, dependencies and redistribution rights unresolved; .pt code safety unverified. KEEP Kumo-Relational/Tabular; not direct substitutes.",
+      "source": "https://huggingface.co/eremeev-d/graphpfn-1.3",
+      "paper": "https://proceedings.mlr.press/v306/eremeev26a.html"
+    },
+    {
+      "repo_id": "inclusionAI/Ming-Image-0.2-Design",
+      "decision": "HOLD",
+      "revision": "3538f4c311cf8f5256d631ddb7f47793f741aa2e",
+      "source_bytes": 52895171992,
+      "created": "2026-11-25",
+      "updated": "2026-11-26",
+      "license": "MIT tag, full act rights unverified",
+      "positive": "Design-specific generated visual layouts; preliminary publisher AA ranking.",
+      "negative": "6B denotes DiT only; separate MLLM, connector, MLP, VAE; no matched layout/text fidelity or complete cost comparison to Qwen-Image-2.1/Fibo2.0. KEEP both.",
+      "source": "https://huggingface.co/inclusionAI/Ming-Image-0.2-Design"
+    }
+  ],
+  "comparison": [
+    {
+      "repo_id": "briaai/Fibo-2.0-dev",
+      "prior_decision": "conditional",
+      "decision": "KEEP",
+      "reason": "Distinct learned task/representation or unresolved matched comparison; no evidence for removal."
+    },
+    {
+      "repo_id": "briaai/Fibo-2.0-edit-turbo",
+      "prior_decision": "deferred",
+      "decision": "KEEP",
+      "reason": "Distinct learned task/representation or unresolved matched comparison; no evidence for removal."
+    },
+    {
+      "repo_id": "Qwen/Qwen-Image-2.1",
+      "prior_decision": "conditional",
+      "decision": "KEEP",
+      "reason": "Distinct learned task/representation or unresolved matched comparison; no evidence for removal."
+    },
+    {
+      "repo_id": "google/medgemma-4b-it",
+      "prior_decision": "conditional",
+      "decision": "KEEP",
+      "reason": "Distinct learned task/representation or unresolved matched comparison; no evidence for removal."
+    },
+    {
+      "repo_id": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+      "prior_decision": "hold",
+      "decision": "KEEP",
+      "reason": "Distinct learned task/representation or unresolved matched comparison; no evidence for removal."
+    },
+    {
+      "repo_id": "facebook/dinov3-vit7b16-pretrain-lvd1689m",
+      "prior_decision": "conditional",
+      "decision": "KEEP",
+      "reason": "Distinct learned task/representation or unresolved matched comparison; no evidence for removal."
+    },
+    {
+      "repo_id": "facebook/dinov3-vith16plus-pretrain-lvd1689m",
+      "prior_decision": "conditional",
+      "decision": "KEEP",
+      "reason": "Distinct learned task/representation or unresolved matched comparison; no evidence for removal."
+    },
+    {
+      "repo_id": "nvidia/Kumo-Relational",
+      "prior_decision": "conditional",
+      "decision": "KEEP",
+      "reason": "Distinct learned task/representation or unresolved matched comparison; no evidence for removal."
+    },
+    {
+      "repo_id": "nvidia/Kumo-Tabular",
+      "prior_decision": "conditional",
+      "decision": "KEEP",
+      "reason": "Distinct learned task/representation or unresolved matched comparison; no evidence for removal."
+    },
+    {
+      "repo_id": "Duane245/DGNO",
+      "prior_decision": "conditional",
+      "decision": "KEEP",
+      "reason": "Distinct learned task/representation or unresolved matched comparison; no evidence for removal."
+    },
+    {
+      "repo_id": "microsoft/table-transformer-structure-recognition-v1.1-all",
+      "prior_decision": "conditional",
+      "decision": "KEEP",
+      "reason": "Distinct learned task/representation or unresolved matched comparison; no evidence for removal."
+    },
+    {
+      "repo_id": "hanyuyuan/STSF-TPLS-weights",
+      "prior_decision": "conditional",
+      "decision": "KEEP",
+      "reason": "Distinct learned task/representation or unresolved matched comparison; no evidence for removal."
+    }
+  ],
+  "old_rows_unchanged": 283,
+  "model_payload_downloaded": 0,
+  "download_approvals": 0,
+  "physical_deletions": 0,
+  "actual_owner_disk_verified": false
+}

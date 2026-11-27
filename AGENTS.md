@@ -1,3 +1,7 @@
+# Current v90 / R186 (2026-11-28 JST)
+
+Formal catalog `catalog/effective-portfolio-2026-11-28-v90.json`; 284 tracked / 228 active / 172 conditional, all acquisition STOP. OpenMidnight independent pathology encoder added research-only. All 283 prior rows and concurrent changes preserved. No download approval or deletion. `docs/strategy/186-v90-openmidnight-and-specialist-alternatives.md`.
+
 ## 現行 v89 / R185（2026-11-28）
 
 283登録・227有効（SELECT 56、CONDITIONAL 171）。独立学習STSF+TPLS計測列直接セグメンテーション2状態を研究限定CONDITIONAL追加。並行DGNO・TATR含む旧282行・133取得報告不変。配布元候補＋固定コード295,762,791 B、依存込み・owner増分未確定。全227取得STOP、承認・重量DL・実行・物理削除0。[研究報告](docs/strategy/185-v89-stsf-computational-imaging.md)。
