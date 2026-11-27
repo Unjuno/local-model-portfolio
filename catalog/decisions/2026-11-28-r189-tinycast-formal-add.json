@@ -1,0 +1,50 @@
+{
+  "round": "R189",
+  "date_jst": "2026-11-28",
+  "base_commit": "bdca4b104afb12f7f86caf8c091aaae6d06a6a40",
+  "source_research": "catalog/research/2026-11-28-tinycast-forecast-primary-evidence.json",
+  "source_manifest": "manifests/drafts/r189-2026-11-28-tinycast-forecast-originals.candidate.json",
+  "decisions": [
+    {
+      "repo_id": "raws-labs/tinycast",
+      "decision": "ADD",
+      "formal_tier": "CONDITIONAL",
+      "why": "Preserve original compact attention-free learned quantile forecasting using computed periodicity and tied convolutional network; ~35x fewer parameters than selected Timestral-5M, separate low-resource research operating point. Not a quantization of incumbent; no evidence to replace multivariate/covariate forecasters."
+    },
+    {
+      "repo_id": "Tncrd/Hirondel-7M",
+      "decision": "HOLD",
+      "reason": "No matched incremental advantage over incumbent small forecasters"
+    },
+    {
+      "repo_id": "DAG-UPB/chronos-2-heat-demand-aalborg",
+      "decision": "HOLD",
+      "reason": "Aalborg specialized full fine tune, weak transfer and calibration; retain existing Chronos-2"
+    },
+    {
+      "repo_id": "mistralai/Timestral-5M",
+      "decision": "KEEP",
+      "why": "Distinct scope; no matched replacement evidence"
+    },
+    {
+      "repo_id": "Datadog/Toto-2.0-4m",
+      "decision": "KEEP",
+      "why": "Distinct scope; no matched replacement evidence"
+    },
+    {
+      "repo_id": "autogluon/chronos-2",
+      "decision": "KEEP",
+      "why": "Distinct scope; no matched replacement evidence"
+    },
+    {
+      "repo_id": "cisco-ai/cisco-time-series-model-1.5",
+      "decision": "KEEP",
+      "why": "Distinct scope; no matched replacement evidence"
+    }
+  ],
+  "previous_rows_unchanged": 286,
+  "owner_incremental_bytes": null,
+  "publisher_model_plus_code_bytes": 3408694,
+  "approved_downloads": 0,
+  "physical_files_deleted": 0
+}

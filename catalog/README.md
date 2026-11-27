@@ -1,3 +1,7 @@
+## 現行 v93 / R189（2026-11-28）
+
+287登録・231有効（SELECT 56、CONDITIONAL 175）。TinyCast独立学習14.65万パラメータを研究限定CONDITIONAL追加。既存286行・133取得報告不変。配布元候補モデル＋コード3,408,694 B、依存込み・owner増分未確定。全231取得STOP、承認・重みDL・実行・物理削除0。[研究報告](../docs/strategy/189-v93-tinycast-compact-forecast.md)。
+
 ## 現行 v89 / R185（2026-11-28）
 
 283登録・227有効（SELECT 56、CONDITIONAL 171）。独立学習STSF+TPLS計測列直接セグメンテーション2状態を研究限定CONDITIONAL追加。並行DGNO・TATR含む旧282行・133取得報告不変。配布元候補＋固定コード295,762,791 B、依存込み・owner増分未確定。全227取得STOP、承認・重量DL・実行・物理削除0。[研究報告](../docs/strategy/185-v89-stsf-computational-imaging.md)。

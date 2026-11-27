@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "revision_id": "v93-20261128",
+  "previous_revision_id": "v92-20261128",
+  "decision_date_jst": "2026-11-28",
+  "target_branch": "main",
+  "kind": "FRESH_SPECIALIST_RESEARCH_ADDITION",
+  "previous_asset_count": 286,
+  "previous_active_count": 230,
+  "replacement_operations": [],
+  "additions": [
+    {
+      "position": 287,
+      "asset_kind": "model",
+      "repo_id": "raws-labs/tinycast",
+      "url": "https://huggingface.co/raws-labs/tinycast",
+      "group": "極小・周期検出・確率的時系列予測",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Preserve original compact attention-free learned quantile forecasting using computed periodicity and tied convolutional network; ~35x fewer parameters than selected Timestral-5M, separate low-resource research operating point. Not a quantization of incumbent; no evidence to replace multivariate/covariate forecasters.",
+      "quality_positive": "Publisher GIFT-Eval 97 configs nGMASE 0.7738, nWQL/CRPS column 0.5454, nMSIS 0.5541 with BF16 autocast, flip symmetry and period alignment; 146505 unique F32 parameters, attention-free spectral period detection and dilated causal convolution. Paper reports Cortex-M7 INT8 4.08 s, 731 KB RAM; hardware clock/batch and independent replay not verified here.",
+      "quality_negative": "TinyCast nGMASE 0.7738 worse than separate Timestral-5M 0.705, Toto-2.0-4m 0.757, Hirondel 0.7003; these are not matched comparisons. Univariate, 2048 context, nine quantiles; default inference does not reproduce table; training distributed launcher absent, no matched host/MCU ABI, clock, RAM or independent evaluation. No claim of superiority.",
+      "risk_and_alternative_assessment": "Lawful local sensor/energy forecasting and calibration; privacy/rights and operational use validation separate; no harmful or bypass ranking. KEEP incumbent; no replacement evidence.",
+      "evidence_date": "2026-11-28",
+      "evidence_kind": "R189_FIXED_HF_AND_GITHUB_METADATA_ARXIV",
+      "evidence_urls": [
+        "https://huggingface.co/raws-labs/tinycast/blob/9635a27b66a73fedd6e88120c72c7f91427d216e/README.md",
+        "https://huggingface.co/api/models/raws-labs/tinycast/revision/9635a27b66a73fedd6e88120c72c7f91427d216e?blobs=true",
+        "https://arxiv.org/abs/2608.15767",
+        "https://github.com/raws-labs/tinycast/tree/628c0bec8425240d5f12155add1d1d5bc2d92471",
+        "https://github.com/raws-labs/tinycast/blob/628c0bec8425240d5f12155add1d1d5bc2d92471/LICENSE",
+        "https://github.com/raws-labs/tinycast/blob/628c0bec8425240d5f12155add1d1d5bc2d92471/NOTICE"
+      ],
+      "observed_access": "public ungated as observed during 2026-11-28 research",
+      "license_metadata": "Apache-2.0 HF card; pinned code Apache-2.0 and NOTICE; owner act rights/training data rights unresolved",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "9635a27b66a73fedd6e88120c72c7f91427d216e",
+      "upstream_all_files_bytes_observed": 720964,
+      "upstream_file_count_observed": 6,
+      "upstream_lfs_sha256_count_observed": 2,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 3,
+      "candidate_selected_source_file_bytes": 613278,
+      "source_manifest_path": "manifests/drafts/r189-2026-11-28-tinycast-forecast-originals.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 146505,
+        "evidence_kind": "Publisher F32 unique safetensors scalar count and paper, tied state_dict aliases not independent parameters; no local census",
+        "evidence_urls": [
+          "https://huggingface.co/raws-labs/tinycast/blob/9635a27b66a73fedd6e88120c72c7f91427d216e/README.md",
+          "https://huggingface.co/api/models/raws-labs/tinycast/revision/9635a27b66a73fedd6e88120c72c7f91427d216e?blobs=true",
+          "https://arxiv.org/abs/2608.15767"
+        ],
+        "review_date": "2026-11-28"
+      },
+      "forecast_priority": {
+        "rank": 287,
+        "wave": "S3",
+        "category": "SPECIALIST_TINY_ATTENTION_FREE_FORECAST",
+        "scenario_status": "LEGACY_CLASSIFICATION_ONLY_NOT_ACQUISITION_ORDER"
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 720964,
+        "publisher_selected_source_bytes": 613278,
+        "source_bytes_are_not_selected_bytes": true,
+        "owner_hdd_verified": false,
+        "full_runtime_memory_peak_verified": false,
+        "actual_archive_incremental_bytes": null
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "ALL_RUNTIME_AND_LEARNED_DEPENDENCIES"
+    }
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "expected_asset_count": 287,
+  "expected_active_count": 231,
+  "new_approved_downloads": 0,
+  "model_payload_downloaded": 0,
+  "physical_files_deleted": 0
+}
