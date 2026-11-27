@@ -1,0 +1,390 @@
+{
+  "schema_version": 1,
+  "round": "R181",
+  "date_jst": "2026-11-28",
+  "base_commit": "d35e1cf2bced8483726ca40ef202b0cdbd5086c4",
+  "method": "Bounded 7/30/90-day HF recent audio-to-audio/image-to-image (20 each), targeted publisher API/GitHub/arXiv checks; not exhaustive; no model payloads.",
+  "queries": [
+    "https://huggingface.co/api/models?pipeline_tag=audio-to-audio&sort=createdAt&direction=-1&limit=20",
+    "https://huggingface.co/api/models?pipeline_tag=image-to-image&sort=createdAt&direction=-1&limit=20",
+    "GigaEdge Enhance CPU SDK",
+    "TerraFM multisensor update",
+    "AuK September release"
+  ],
+  "decisions": [
+    {
+      "repo_id": "ai-sage/GigaEdge-Enhance",
+      "decision": "KEEP",
+      "formal_selection": "conditional",
+      "revision": "f1553bd1859bcef52d0037a0ebe4d17da293548e",
+      "positive": "Publisher 886 EARS-WHAM v2 pairs: hybrid48 real-time parallel streams 56 vs DPDFNet2 HR 17.3; fast8 ESTOI 0.72 vs noisy 0.64, PESQ-NB 2.28 vs 1.85, SI-SDR 10.99 vs 5.32 dB.",
+      "negative": "Hybrid48 DNSMOS 3.44 vs 3.66, PESQ-WB 1.90 vs 2.21, SI-SDR 13.03 vs 14.69 dB vs DPDFNet2 HR. Earlier quality48 paper checkpoint parity unverified. Blog narrative 98 vs table 56; use 56 only. No independent reproduction.",
+      "reason": "Distinct 8kHz narrowband and 48kHz hybrid neural speech restoration complements ASR, diarization and music transcription; not a format duplicate. Concurrent selection already adopted identical revision; no second formal row.",
+      "limitations": "Preserve original audio; generative restoration may alter speech. TFLite format duplicate, quality48 held. Exact learned totals, C++17/ORT SDK ABI, code allowlist, dependency and owner rights unresolved.",
+      "source_urls": [
+        "https://huggingface.co/ai-sage/GigaEdge-Enhance",
+        "https://arxiv.org/abs/2611.13243",
+        "https://github.com/salute-developers/giga-edge-enhance/tree/d55d693be6c73df4804f296687e4e4bbb5783938"
+      ],
+      "initial_recommendation": "ADD"
+    },
+    {
+      "repo_id": "MBZUAI/TerraFM",
+      "decision": "KEEP",
+      "formal_selection": "conditional",
+      "revision": "86f62795ff0e8dfae729e170e0ed82fb3e07ec9e",
+      "positive": "Publisher kNN TerraFM-B vs Galileo-B: EuroSat 100% 94.2 vs 93.0; BigEarthNet 100% 68.7 vs 59.0; Brick-Kiln 100% 94.5 vs 90.7.",
+      "negative": "So2Sat 1% 41.6 vs 43.2; no matched independent comparison against existing DINOv3/SAM3.",
+      "reason": "Distinct multisensor ViT-B state trained on reported 18.7M tiles; SAR and optical fusion complements RGB DINOv3/SAM3. Updated preprocessing and license, same weights. Concurrent selection already adopted identical revision; no second formal row.",
+      "limitations": "Lawful environmental/land-cover research; untrusted .pth not executed. Exact totals, sensor normalization, PyTorch ABI, downstream task head/data and offline restoration unresolved. Terra-L absent in observed listing.",
+      "source_urls": [
+        "https://huggingface.co/MBZUAI/TerraFM",
+        "https://arxiv.org/abs/2506.06281",
+        "https://github.com/mbzuai-oryx/TerraFM/tree/e245c347ab1ef94e8d14b40dcd5f12d310b03f32"
+      ],
+      "initial_recommendation": "ADD"
+    },
+    {
+      "repo_id": "openai/whisper-large-v3-turbo",
+      "decision": "KEEP",
+      "reason": "Distinct incumbent function; no matched evidence of replacement superiority."
+    },
+    {
+      "repo_id": "Reson8/Rumble-2-Flash",
+      "decision": "KEEP",
+      "reason": "Distinct incumbent function; no matched evidence of replacement superiority."
+    },
+    {
+      "repo_id": "nvidia/Nemotron-3-Diarization",
+      "decision": "KEEP",
+      "reason": "Distinct incumbent function; no matched evidence of replacement superiority."
+    },
+    {
+      "repo_id": "kobimusic/dettato-grouper",
+      "decision": "KEEP",
+      "reason": "Distinct incumbent function; no matched evidence of replacement superiority."
+    },
+    {
+      "repo_id": "facebook/dinov3-vith16plus-pretrain-lvd1689m",
+      "decision": "KEEP",
+      "reason": "Distinct incumbent function; no matched evidence of replacement superiority."
+    },
+    {
+      "repo_id": "facebook/dinov3-vit7b16-pretrain-lvd1689m",
+      "decision": "KEEP",
+      "reason": "Distinct incumbent function; no matched evidence of replacement superiority."
+    },
+    {
+      "repo_id": "facebook/sam3",
+      "decision": "KEEP",
+      "reason": "Distinct incumbent function; no matched evidence of replacement superiority."
+    },
+    {
+      "repo_id": "grsm-lab/fluxsr-glor",
+      "revision": "db153300ff5e27412feb4c3f00c70fcb54fe4c5a",
+      "decision": "HOLD",
+      "reason": "48.47 GB usedStorage, noncommercial FLUX.1-dev parent, dependency closure and matched negative evidence unresolved.",
+      "source": "https://huggingface.co/grsm-lab/fluxsr-glor"
+    },
+    {
+      "repo_id": "tencent/AuK",
+      "revision": "790742b71a4430120daf2b2099192abae449eb9f",
+      "decision": "HOLD",
+      "reason": "Larger unified speech model; matched workload and codec/rights closure unresolved.",
+      "source": "https://huggingface.co/tencent/AuK"
+    },
+    {
+      "repo_id": "tencent/AuK-Flash",
+      "revision": "575b92f0895f75180bf2cbd35f2e176c5732b8ed",
+      "decision": "HOLD",
+      "reason": "Distinct distilled state, not format; matched benefit and codec/rights closure unresolved.",
+      "source": "https://huggingface.co/tencent/AuK-Flash"
+    },
+    {
+      "repo_id": "moonbox-dev/DeepFilterNet3-ONNX",
+      "decision": "EXCLUDE",
+      "reason": "ONNX export, not independent learned state; optional runtime comparator.",
+      "source": "https://huggingface.co/moonbox-dev/DeepFilterNet3-ONNX"
+    },
+    {
+      "repo_id": "ai-sage/GigaEdge-Enhance:quality48",
+      "decision": "HOLD",
+      "reason": "Paper checkpoint parity unverified."
+    },
+    {
+      "repo_id": "ai-sage/GigaEdge-Enhance:TFLite",
+      "decision": "EXCLUDE",
+      "reason": "Alternative format, not separate learned state."
+    },
+    {
+      "repo_id": "inworld/voice-isolator",
+      "decision": "KEEP",
+      "reason": "48kHz 64M offline and 58.2M causal realtime checkpoint; 489040928 B publisher weights; VIBE 5502 items / 77 conditions, 63ms algorithmic delay. Private evaluation and possible overlap; GigaEdge has narrowband 8kHz and compact CPU restorative regime; no matched ranking.",
+      "source": "https://huggingface.co/inworld/voice-isolator/blob/9b0285b3fe8403aa8e2f1dbb2165a80a4294c970/README.md"
+    },
+    {
+      "repo_id": "inworld/sava",
+      "decision": "KEEP",
+      "reason": "VAD/EOT differs from waveform restoration.",
+      "source": "https://huggingface.co/inworld/sava"
+    }
+  ],
+  "observed_access_change": {
+    "repo_id": "MBZUAI/TerraFM",
+    "prior_revision": "3631173fec2c3a445a71e15985e0f3d5aaf4ecb3",
+    "current_revision": "86f62795ff0e8dfae729e170e0ed82fb3e07ec9e",
+    "prior_license_tag": "apache-2.0",
+    "current_license_tag": "mit",
+    "same_weight_sha256": "8bdb6a4cfd707a09d79f4790119daa9d76bb316b6ea756c6eb305f99d1797a06",
+    "evidence": "Publisher metadata same checkpoint hash. New MIT text covers weights, DINO portions Apache-2.0. L2A stem and normalization fixed.",
+    "source_urls": [
+      "https://huggingface.co/MBZUAI/TerraFM/commit/86f62795ff0e8dfae729e170e0ed82fb3e07ec9e",
+      "https://huggingface.co/MBZUAI/TerraFM/blob/86f62795ff0e8dfae729e170e0ed82fb3e07ec9e/LICENSE",
+      "https://huggingface.co/MBZUAI/TerraFM/tree/3631173fec2c3a445a71e15985e0f3d5aaf4ecb3"
+    ]
+  },
+  "capacity": {
+    "independent_research_full_repo_bytes": 493506096,
+    "independent_initial_candidate_bytes": 464597005,
+    "formal_gigaedge_candidate_bytes": 11058505,
+    "formal_terrafm_candidate_bytes": 451895030,
+    "formal_combined_candidate_bytes": 462953535,
+    "terra_optional_illustrations_and_gitattributes_bytes": 1643470,
+    "additional_selected_bytes_from_this_reconciliation": 0,
+    "owner_dependency_inclusive_incremental_bytes": null,
+    "physical_change_bytes": 0,
+    "notes": "Formal TerraFM manifest selects four core files, not eight. Adopt leaner concurrent scope; illustrations retained only as optional metadata reference."
+  },
+  "validation_plan": {
+    "gigaedge": {
+      "H": "Improve CPU throughput without speech recognition degradation.",
+      "T": "100+ lawful utterances, fixed noisy/clean pairs, CPU clock, ORT, 16ms hop, batch 1; compare raw/DPDFNet2.",
+      "D": "PASS WER increase <=1pp and throughput improvement >=20%, with no content changes; FAIL otherwise if supported, UNCERTAIN if intervals cross thresholds.",
+      "C": "Generative restoration alters speech or backend confounding.",
+      "U": "Noise, SNR, clock, backend, sampling; paired bootstrap intervals."
+    },
+    "terrafm": {
+      "H": "Improve multisensor land-cover classification.",
+      "T": "100+ lawful labeled tiles per region, matched geographic holdouts and preprocessing vs DINOv3 and Galileo.",
+      "D": "PASS paired lower 95% bound macro-F1 gain >0; FAIL upper bound <=0; else UNCERTAIN.",
+      "C": "Sensor advantage or geographic leakage; optical-only control.",
+      "U": "Sensor calibration, spatial dependence, labels and split; region bootstrap."
+    }
+  },
+  "owner_authorization": false,
+  "model_payload_downloaded": 0,
+  "physical_files_deleted": 0,
+  "initial_research_base": "6fedaf75e9d51b6137c3aec5c4983c1b6e209a59",
+  "concurrent_adoption": {
+    "gigaedge_commit": "76d5cc6d5fafd772d3b3f2b41efb1226c088cd69",
+    "terrafm_commit": "1d3911f35f1802236fda1a5d745f2fb81701673f",
+    "gigaedge_revision": "v83-20261128",
+    "terrafm_revision": "v84-20261128",
+    "additional_catalog_rows": 0,
+    "reason": "Both independently researched candidates already selected by concurrent commits at same immutable revisions; preserve their actual manifests and decisions."
+  },
+  "independent_source_inventory": [
+    {
+      "repo_id": "ai-sage/GigaEdge-Enhance",
+      "revision_sha": "f1553bd1859bcef52d0037a0ebe4d17da293548e",
+      "created_at": "2026-11-25T18:05:22.000Z",
+      "last_modified": "2026-11-25T21:45:29.000Z",
+      "observed_gated": false,
+      "publisher_license_tag": "mit",
+      "source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 107,
+          "git_oid": "5a5570f67b08cf1fa3d16fa568812335129ba9ea",
+          "lfs_sha256": null,
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "LICENSE.txt",
+          "bytes": 1061,
+          "git_oid": "ce2b0fb3073e5598c938252c71033711ee9977e1",
+          "lfs_sha256": null,
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 4135,
+          "git_oid": "483fa0d84edbdbeeac5d79fd581ce40aecaa4b2e",
+          "lfs_sha256": null,
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "fast8/onnx/config.yaml",
+          "bytes": 250,
+          "git_oid": "f0b88ddeb92f6e3675ec8e3f05c50a670d086c27",
+          "lfs_sha256": null,
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "fast8/onnx/model.onnx",
+          "bytes": 475375,
+          "git_oid": "7e316b839e95374a2bb7a76b127f994a258d07e8",
+          "lfs_sha256": "2dc29118cf71451eeb15e833df75684ecfee9102cf1e393d627e141acad4bb26",
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "hybrid48/onnx/config.yaml",
+          "bytes": 346,
+          "git_oid": "27c9bba914009b520770af7a176c44489f85f487",
+          "lfs_sha256": null,
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "hybrid48/onnx/model.onnx",
+          "bytes": 10577231,
+          "git_oid": "c52b222b1f0d075b632841e5a92e560bf9172ea9",
+          "lfs_sha256": "ca56b5a1748032baafe19deb9de22a8925555408af0ee77cb49934f1a3d1bbc3",
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "hybrid48/tflite/config.yaml",
+          "bytes": 348,
+          "git_oid": "bf19e5e72d6737e19c0329e43dbb8bb9c3c749de",
+          "lfs_sha256": null,
+          "selected_candidate": false,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "hybrid48/tflite/model.tflite",
+          "bytes": 10679188,
+          "git_oid": "1cde14a1ed3ba852799a19faa26cfd314806055d",
+          "lfs_sha256": "8d7c363ff09d2a166d863dded87dc763edad6382984dbf178d00d5b78d47a8af",
+          "selected_candidate": false,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "quality48/onnx/config.yaml",
+          "bytes": 361,
+          "git_oid": "7612ddcb1b2ff8f3f4d0f1067a72ebb25d086cf6",
+          "lfs_sha256": null,
+          "selected_candidate": false,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "quality48/onnx/model.onnx",
+          "bytes": 9068327,
+          "git_oid": "5fba3807e5776019dbebf451f319ed1483a032d2",
+          "lfs_sha256": "ff227f44600ca71fb54b4902c5ebe698ce812a110c2d4b400f96d959a69dde85",
+          "selected_candidate": false,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "quality48/tflite/config.yaml",
+          "bytes": 363,
+          "git_oid": "3546d8f9229638c4715adc6ebe78325b84d606db",
+          "lfs_sha256": null,
+          "selected_candidate": false,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "quality48/tflite/model.tflite",
+          "bytes": 9160504,
+          "git_oid": "4845029c41773a679e2987126585052e07591147",
+          "lfs_sha256": "094ab113c095a37daa225862a91ec1f3a40e026b2a42f2d370a7fd782360c137",
+          "selected_candidate": false,
+          "owner_actual_sha_verified": false
+        }
+      ],
+      "full_repo_bytes": 39967596,
+      "selected_candidate_bytes": 11058505,
+      "owner_incremental_bytes": null,
+      "complete_dependency_inclusive_bytes": null,
+      "external_code_revision": "d55d693be6c73df4804f296687e4e4bbb5783938",
+      "external_code_url": "https://github.com/salute-developers/giga-edge-enhance/tree/d55d693be6c73df4804f296687e4e4bbb5783938",
+      "limitations": "Preserve original audio; generative restoration may alter speech. TFLite format duplicate, quality48 held. Exact learned totals, C++17/ORT SDK ABI, code allowlist, dependency and owner rights unresolved."
+    },
+    {
+      "repo_id": "MBZUAI/TerraFM",
+      "revision_sha": "86f62795ff0e8dfae729e170e0ed82fb3e07ec9e",
+      "created_at": "2025-06-06T09:26:22.000Z",
+      "last_modified": "2026-11-16T10:45:41.000Z",
+      "observed_gated": false,
+      "publisher_license_tag": "mit",
+      "source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1685,
+          "git_oid": "6fe2ecae8ed8a24695e0e685b499a03bf5bf593c",
+          "lfs_sha256": null,
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 1600,
+          "git_oid": "50ec2b3a370013df52b3f5a1bd2095fe2937b219",
+          "lfs_sha256": null,
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "README.md",
+          "bytes": 14230,
+          "git_oid": "abd58bf7a650e19d06543ccaa2eedd02ed5963c9",
+          "lfs_sha256": null,
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "TerraFM-B.pth",
+          "bytes": 451862010,
+          "git_oid": "f4a487721a1a1f547d5cfba73b990ae820ba46b2",
+          "lfs_sha256": "8bdb6a4cfd707a09d79f4790119daa9d76bb316b6ea756c6eb305f99d1797a06",
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "images/arch.jpg",
+          "bytes": 605874,
+          "git_oid": "78144711680e262662135a4660901dad256451c7",
+          "lfs_sha256": "66bafc4de02a78413411df3dcb9aeb706342ef3939503836f61405fdbf7c62ac",
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "images/ls4s_qual.jpg",
+          "bytes": 535299,
+          "git_oid": "8049f3aa79714becea563da95046d9d6bad4f723",
+          "lfs_sha256": "b88a97c4e04f2a5c50f57c30fa539aca4e506f48514cfa523a0244f3b055435b",
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "images/spider_gb.jpg",
+          "bytes": 500612,
+          "git_oid": "c7bd8e08a9a86ff3c47adc669ad275b31a76e3a7",
+          "lfs_sha256": "23f38821eea589a1e179c6bf36ed2936180c38271e5fe599207fe27bfeeb785d",
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        },
+        {
+          "path": "terrafm.py",
+          "bytes": 17190,
+          "git_oid": "f6e1ad15d1ab1e4b2f6446e7ef22c919e1f782dc",
+          "lfs_sha256": null,
+          "selected_candidate": true,
+          "owner_actual_sha_verified": false
+        }
+      ],
+      "full_repo_bytes": 453538500,
+      "selected_candidate_bytes": 453538500,
+      "owner_incremental_bytes": null,
+      "complete_dependency_inclusive_bytes": null,
+      "external_code_revision": "e245c347ab1ef94e8d14b40dcd5f12d310b03f32",
+      "external_code_url": "https://github.com/mbzuai-oryx/TerraFM/tree/e245c347ab1ef94e8d14b40dcd5f12d310b03f32",
+      "limitations": "Lawful environmental/land-cover research; untrusted .pth not executed. Exact totals, sensor normalization, PyTorch ABI, downstream task head/data and offline restoration unresolved. Terra-L absent in observed listing."
+    }
+  ]
+}
