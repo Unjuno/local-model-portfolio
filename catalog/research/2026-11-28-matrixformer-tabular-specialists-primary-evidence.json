@@ -40,7 +40,7 @@
         "difference": 192,
         "independent_tensor_census": false
       },
-      "source_manifest": "manifests/drafts/r184-2026-11-28-matrixformer-source.candidate.json",
+      "source_manifest": "manifests/drafts/r188-2026-11-28-matrixformer-source.candidate.json",
       "source_urls": [
         "https://huggingface.co/Tabimpute/MatrixFormer/blob/22f1e4bfd65b16d47fec696f37ffa419fa00679b/README.md",
         "https://huggingface.co/Tabimpute/MatrixFormer/blob/22f1e4bfd65b16d47fec696f37ffa419fa00679b/release.json",
@@ -597,12 +597,21 @@
         "repo_id": "Tabimpute/MatrixFormer",
         "decision": "ADD",
         "portfolio_decision": "conditional",
-        "source_manifest": "manifests/drafts/r184-2026-11-28-matrixformer-source.candidate.json",
+        "source_manifest": "manifests/drafts/r188-2026-11-28-matrixformer-source.candidate.json",
         "reason": "Independently trained numerical matrix completion (masked entries across rows and columns, no per-table task labels required); Kumo Tabular predicts designated supervised targets, Kumo Relational consumes relational graphs, Kumo Anomaly is temporal anomaly reconstruction. Keep these non-equivalent assets. Publisher release reports continuation on 250k synthetic matrices / 62,500 updates; save one original state, not two serialization formats."
       }
     ]
   },
   "new_approved_downloads": 0,
   "model_payload_downloaded": 0,
-  "physical_files_deleted": 0
+  "physical_files_deleted": 0,
+  "formal_selection_resolution": {
+    "revision": "v92-20261128",
+    "round": "R188",
+    "commit": "e217ddbd9a39a5317fea4a9791ab46ab7ea476bb",
+    "decision": "conditional",
+    "source_manifest": "manifests/drafts/r188-2026-11-28-matrixformer-source.candidate.json",
+    "previous_proposal_only_record_preserved": true,
+    "download_approved": false
+  }
 }
