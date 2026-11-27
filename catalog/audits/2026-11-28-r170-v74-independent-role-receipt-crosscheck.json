@@ -1,0 +1,394 @@
+{
+  "schema_version": 1,
+  "round": "R170-independent",
+  "date_jst": "2026-11-28",
+  "source_commit": "fe9131a8078050109324268830c4ce851c628360",
+  "source_revision": "v74-20261127",
+  "source_blob_ids": {
+    "catalog": "5739d207c0de1328b46396d7f98647a3c02f0290",
+    "receipt": "0db8f48d5edce6a1505f78f7d11bfab6ed7e725c",
+    "readiness": "60195fe582fb7d4128facf3677ed1825411963de",
+    "proposed": "566cdd7f47a6f031aba918a7c47402f331cbab85",
+    "preparation": "585951e5105f28e88a80da5d56f9f2efb9fc38f3",
+    "access": "8c397ade7ed7d5b76cda4e561062040e63bc9575",
+    "approved": "df0e369abda4b765533e0af3921c54a5cb164787"
+  },
+  "metrics": {
+    "tracked": 265,
+    "active": 210,
+    "active_models": 192,
+    "active_datasets": 18,
+    "quality_fields": {
+      "neither": 88,
+      "one": 1,
+      "both": 103
+    },
+    "active_missing_group": 27,
+    "active_models_missing_group": 21,
+    "recorded_total_at_most_2B": 74,
+    "broad_legacy_group_count": 8,
+    "broad_legacy_group_source_proxy_bytes": 917896592317,
+    "broad_legacy_group_reported_logical_bytes": 786358085716,
+    "broad_legacy_group_report_count": 7,
+    "source_proxy_missing_primary_field": 52,
+    "source_proxy_missing_both_fields": 49,
+    "final_lock_unknown": 210,
+    "verified_report_count": 133,
+    "verified_reported_files": 2095,
+    "verified_reported_logical_bytes": 2451205481822,
+    "registered_receipt_count": 129,
+    "unregistered_receipt_count": 4,
+    "unregistered_reported_logical_bytes": 95161103669,
+    "by_decision": {
+      "select": {
+        "catalog_count": 56,
+        "verified_report_count": 50,
+        "reported_logical_bytes": 1424359425307,
+        "revision_status": {
+          "SAME_RECORDED_REVISION": 41,
+          "NOT_COMPARABLE": 4,
+          "DIFFERENT_RECORDED_REVISION": 5
+        }
+      },
+      "conditional": {
+        "catalog_count": 154,
+        "verified_report_count": 79,
+        "reported_logical_bytes": 931684952846,
+        "revision_status": {
+          "SAME_RECORDED_REVISION": 66,
+          "NOT_COMPARABLE": 9,
+          "DIFFERENT_RECORDED_REVISION": 4
+        }
+      },
+      "hold": {
+        "catalog_count": 36,
+        "verified_report_count": 0,
+        "reported_logical_bytes": 0,
+        "revision_status": {}
+      },
+      "deferred": {
+        "catalog_count": 13,
+        "verified_report_count": 0,
+        "reported_logical_bytes": 0,
+        "revision_status": {}
+      },
+      "excluded": {
+        "catalog_count": 6,
+        "verified_report_count": 0,
+        "reported_logical_bytes": 0,
+        "revision_status": {}
+      }
+    },
+    "registered_revision_status": {
+      "SAME_RECORDED_REVISION": 107,
+      "NOT_COMPARABLE": 13,
+      "DIFFERENT_RECORDED_REVISION": 9
+    },
+    "reported_nonempty_weight_sha_sets": 130,
+    "exact_equal_set_pairs": 0,
+    "partially_overlapping_set_pairs": 33
+  },
+  "limitations": {
+    "group_is_legacy_not_normalized_taxonomy": true,
+    "role_backfill_is_descriptive_from_existing_reason_not_formal_classification": true,
+    "quality_field_presence_is_not_benchmark": true,
+    "revision_comparison_is_recorded_upstream_not_live_publisher": true,
+    "weight_hash_set_overlap_is_not_learned_state_equivalence": true,
+    "source_bytes_not_physical_or_dependency_closed": true,
+    "owner_disk_checked": false,
+    "model_inference_benchmarked": false,
+    "publisher_revision_refreshed": false,
+    "full_python_suite_run": false
+  },
+  "unclassified_role_crosswalk": [
+    {
+      "asset_kind": "model",
+      "repo_id": "LiquidAI/LFM2.5-24B-A2B",
+      "role_from_existing_reason": "language_architecture_comparison"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "KlingTeam/LivePortrait",
+      "role_from_existing_reason": "visual_motion_research"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "OpenMOSS-Team/MOSS-TTS-v1.5",
+      "role_from_existing_reason": "speech_synthesis_comparison"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+      "role_from_existing_reason": "speech_training_baseline"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ResembleAI/chatterbox",
+      "role_from_existing_reason": "speech_synthesis_comparison"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "black-forest-labs/flux-3-image-klein-base",
+      "role_from_existing_reason": "image_training_baseline"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "briaai/Fibo-2.0-dev",
+      "role_from_existing_reason": "image_generation_comparison"
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "StephaneBah/AfroRadVoice-FR",
+      "role_from_existing_reason": "annotated_speech_dataset"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "role_from_existing_reason": "compact_language_research"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+      "role_from_existing_reason": "native_multimodal_comparison"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "boltz-community/boltz-2",
+      "role_from_existing_reason": "scientific_model_research"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "HuggingFaceBio/Carbon-X",
+      "role_from_existing_reason": "scientific_model_research"
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "IFM/SFT-Reasoning",
+      "role_from_existing_reason": "training_data"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "lerobot/pi0_base",
+      "role_from_existing_reason": "robotics_training_baseline"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/GR00T-N1.6-3B",
+      "role_from_existing_reason": "robotics_model_research"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "speridlabs/idol",
+      "role_from_existing_reason": "3d_reconstruction"
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "laion/emotional-roleplay-finetuning-dataset",
+      "role_from_existing_reason": "annotated_speech_dataset"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "m-a-p/MERT-v2-FullSong",
+      "role_from_existing_reason": "music_encoder_dependency"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "m-a-p/SheetSage2",
+      "role_from_existing_reason": "music_transcription"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "m-a-p/YuE2-3B",
+      "role_from_existing_reason": "music_generation"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "m-a-p/YuE2-Vae",
+      "role_from_existing_reason": "music_decoder_dependency"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "facebook/dinov3-vit7b16-pretrain-lvd1689m",
+      "role_from_existing_reason": "vision_representation_comparison"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "facebook/dinov3-vith16plus-pretrain-lvd1689m",
+      "role_from_existing_reason": "vision_encoder_dependency"
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "allenai/pixmo-cap",
+      "role_from_existing_reason": "vision_annotation_dataset"
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "CohereLabs/aya_dataset",
+      "role_from_existing_reason": "multilingual_annotation_dataset"
+    },
+    {
+      "asset_kind": "dataset",
+      "repo_id": "lerobot/aloha_sim_insertion_human",
+      "role_from_existing_reason": "robotics_demonstration_dataset"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "LiquidAI/d1-omni-600M",
+      "role_from_existing_reason": "structured_multimodal_decision_research"
+    }
+  ],
+  "receipt_revision_exception_ids": [
+    {
+      "asset_kind": "model",
+      "repo_id": "KlingTeam/LivePortrait",
+      "status": "NOT_COMPARABLE"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "OpenMOSS-Team/MOSS-TTS-v1.5",
+      "status": "NOT_COMPARABLE"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+      "status": "NOT_COMPARABLE"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ResembleAI/chatterbox",
+      "status": "NOT_COMPARABLE"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Edge0/Audio8-TTS-Realistic-Air",
+      "status": "NOT_COMPARABLE"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "kandinskylab/Kandinsky-6.0-Lite-distill-5s-Diffusers",
+      "status": "NOT_COMPARABLE"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "IFM/K2-Horizon-0.9B",
+      "status": "NOT_COMPARABLE"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Qwen/Qwen3.8-27B",
+      "status": "DIFFERENT_RECORDED_REVISION"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "udgamlabs/Lilavati",
+      "status": "NOT_COMPARABLE"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "udgamlabs/Lilavati-Checker",
+      "status": "NOT_COMPARABLE"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "boltz-community/boltz-2",
+      "status": "NOT_COMPARABLE"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "EPFLiGHT/OLMo-2-32B-MeditronFO",
+      "status": "DIFFERENT_RECORDED_REVISION"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ibm-granite/granite-speech-5.0-2b",
+      "status": "DIFFERENT_RECORDED_REVISION"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "ibm-granite/granite-speech-5.0-470m-turboctc",
+      "status": "DIFFERENT_RECORDED_REVISION"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "PaddlePaddle/PaddleOCR-VL-1.5",
+      "status": "DIFFERENT_RECORDED_REVISION"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "maya-research/maya2-native",
+      "status": "NOT_COMPARABLE"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "PrentisAI/GroundGUI-8B",
+      "status": "NOT_COMPARABLE"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "gradium/phonon-31m-en",
+      "status": "DIFFERENT_RECORDED_REVISION"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "Zyphra/ZONOS3-Mini",
+      "status": "NOT_COMPARABLE"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "nvidia/RFD4-Proteina",
+      "status": "DIFFERENT_RECORDED_REVISION"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "meta-models/Muse-Glimmer-30B",
+      "status": "DIFFERENT_RECORDED_REVISION"
+    },
+    {
+      "asset_kind": "model",
+      "repo_id": "meta-models/Muse-Glimmer-30B-assistant",
+      "status": "DIFFERENT_RECORDED_REVISION"
+    }
+  ],
+  "unregistered_reports": [
+    {
+      "repo_id": "OpenIntelligenceNet/Aion-1.0-Instruct-2.3B-Abliterated",
+      "reported_logical_bytes": 4593269888,
+      "disposition": "PRESERVE_NO_AUTOMATIC_SELECTION_OR_TRANSFER"
+    },
+    {
+      "repo_id": "MC7ever/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16-heretic",
+      "reported_logical_bytes": 7968035453,
+      "disposition": "PRESERVE_NO_AUTOMATIC_SELECTION_OR_TRANSFER"
+    },
+    {
+      "repo_id": "openbmb/MiniCPM5-2B-Base",
+      "reported_logical_bytes": 5043780610,
+      "disposition": "PRESERVE_NO_AUTOMATIC_SELECTION_OR_TRANSFER"
+    },
+    {
+      "repo_id": "Aleph-Alpha/Kolibri-1.1",
+      "reported_logical_bytes": 77556017718,
+      "disposition": "PRESERVE_NO_AUTOMATIC_SELECTION_OR_TRANSFER"
+    }
+  ],
+  "decision": {
+    "formal_additions": 0,
+    "formal_replacements": 0,
+    "formal_exclusions": 0,
+    "formal_new_holds": 0,
+    "unchanged_asset_rows": 265,
+    "reason": "No newly established comparable lawful task performance, learned-state equivalence or dependency-closed marginal storage justifies overriding the prior v74 decisions. Do not promote based on harmful capabilities or control evasion. Existing R169 hold and concurrent R170 integrity correction retained."
+  },
+  "verification": {
+    "exact_readiness_proposal_preparation_identity_joins": 210,
+    "exact_conditional_access_identity_join": 154,
+    "first_blocker_summary_matches": true,
+    "blocking_gate_summary_matches": true,
+    "all_first_blockers_in_lists": true,
+    "all_210_stop": true,
+    "approved_queue_empty": true
+  },
+  "physical_deletions": 0,
+  "model_weight_downloads": 0,
+  "download_approvals_added": 0
+}
