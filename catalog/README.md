@@ -1,4 +1,8 @@
-## 現行 v84 / R180（2026-11-28）
+## 現行 v85 / R181
+
+- 279登録 / 223有効（SELECT 56、CONDITIONAL 167）。PULSE_fast 4xを研究限定追加。並行v84のTerraFM等と既存278件を保持。全223取得STOP、承認・物理削除0。[調査報告](../docs/strategy/181-v85-terrafm-pulse-specialist-research.md)。正式正本は catalog/CURRENT.json。
+
+## 履歴 v84 / R180（2026-11-28）
 
 278登録・222有効（SELECT 56、CONDITIONAL 166）。独立学習済みTerraFM-B（多センサー地球観測）を研究限定CONDITIONALへ追加、Fluid Speech Proは研究HOLD、Granite 470Mは同一重みKEEP。並行更新を含む旧277行・133取得報告保持。全222取得STOP、承認・重量DL・実行・物理削除0。配布元候補451,895,030 B、依存込みowner増分未確定。[調査と正式選定](../docs/strategy/180-v84-terrafm-and-asr-source-research.md)。
 
