@@ -1,0 +1,1135 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-11-28",
+  "kind": "INDEPENDENT_SPECIALIST_RESEARCH_NONEXECUTABLE",
+  "formal_selection_applied": false,
+  "download_approved": false,
+  "weight_download_bytes": 0,
+  "physical_deleted_bytes": 0,
+  "publication_note": "Three concurrent canonical revisions superseded drafts. New research, comparisons and full publisher metadata preserved independently; no claim of current formal inclusion. Draft against dad9783 passed 864 tests with one skip, before further main changes.",
+  "decision": {
+    "schema_version": 1,
+    "round": "R175",
+    "base_main": "dad97833259ac9daa01ebbdae4fdf2c4d70a788a",
+    "date_jst": "2026-11-28",
+    "source_manifest": "embedded publisher_manifest in this research record",
+    "selection_changes": [
+      {
+        "repo_id": "Hcompany/NeoMME-260M-Retriever",
+        "action": "PROPOSE_ADD",
+        "formal_decision": "proposed_conditional_not_applied",
+        "reason": "Independent retrieval fine-tune of NeoMME-260M, single bidirectional multimodal encoder for page-image/text dense and late-interaction retrieval; complements text-only embedding and reranker without needing OCR text as sole input."
+      }
+    ],
+    "prior_rows_unchanged": 269,
+    "comparison_baselines": [
+      {
+        "repo_id": "BAAI/bge-m3",
+        "portfolio_decision": "select",
+        "upstream_all_files_bytes_observed": 4587317404
+      },
+      {
+        "repo_id": "deepseek-ai/DeepSeek-OCR-2",
+        "portfolio_decision": "select",
+        "upstream_all_files_bytes_observed": 6789306112
+      },
+      {
+        "repo_id": "lightonai/LightOnOCR-3-0.8B",
+        "portfolio_decision": "select",
+        "upstream_all_files_bytes_observed": 1737771835
+      },
+      {
+        "repo_id": "PaddlePaddle/PaddleOCR-VL-1.5",
+        "portfolio_decision": "select",
+        "upstream_all_files_bytes_observed": 1930468959
+      },
+      {
+        "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+        "portfolio_decision": "select",
+        "upstream_all_files_bytes_observed": 1207489041
+      },
+      {
+        "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+        "portfolio_decision": "select",
+        "upstream_all_files_bytes_observed": 1207488344
+      },
+      {
+        "repo_id": "Cactus-Compute/mirage",
+        "portfolio_decision": "conditional",
+        "upstream_all_files_bytes_observed": 238610263
+      },
+      {
+        "repo_id": "tencent/WePocketModel1.0-4B",
+        "portfolio_decision": "conditional",
+        "upstream_all_files_bytes_observed": 9152926978
+      },
+      {
+        "repo_id": "nvidia/Nemotron-3.5-Parse",
+        "portfolio_decision": "conditional",
+        "upstream_all_files_bytes_observed": 2735296999
+      }
+    ],
+    "keep": [
+      "Qwen/Qwen3-Embedding-0.6B",
+      "Qwen/Qwen3-Reranker-0.6B",
+      "BAAI/bge-m3",
+      "lightonai/LightOnOCR-3-0.8B",
+      "PaddlePaddle/PaddleOCR-VL-1.5",
+      "deepseek-ai/DeepSeek-OCR-2",
+      "Cactus-Compute/mirage",
+      "nvidia/Nemotron-3.5-Parse",
+      "tencent/WePocketModel1.0-4B"
+    ],
+    "hold_research_only": [
+      {
+        "repo_id": "Hcompany/NeoMME-800M-Retriever",
+        "reason": "Higher published accuracy; no owner matched latency/quality justification for both sizes."
+      },
+      {
+        "repo_id": "Hcompany/NeoMME-260M",
+        "reason": "Different pretraining state but concrete unique downstream need not shown."
+      },
+      {
+        "repo_id": "datalab-to/surya-ocr-2.5",
+        "reason": "Overlapping OCR; table cell geometry removed, internal English accuracy 94.3 to 90.3; modified OpenRAIL-M; no matched superiority."
+      },
+      {
+        "repo_id": "yanghaoir/ReAlign-Phi3v",
+        "reason": "Recent metadata change not proof of new independent learning; parent and matched benchmark unresolved."
+      },
+      {
+        "repo_id": "yanghaoir/ReAlign-Qwen",
+        "reason": "Parent and matched benchmark unresolved."
+      },
+      {
+        "repo_id": "epoch-discovery/ep-hindi-ocr",
+        "reason": "Auto gated, upstream rights and comparative task quality unresolved."
+      },
+      {
+        "repo_id": "Stable Gated DeltaNet-2 (paper only)",
+        "reason": "arXiv:2611.34051; matching released checkpoint not confirmed."
+      }
+    ],
+    "recent_screen": {
+      "visual-document-retrieval": [
+        {
+          "repo_id": "yanghaoir/ReAlign-Phi3v",
+          "last_modified": "2026-11-26T10:50:41.000Z"
+        },
+        {
+          "repo_id": "yanghaoir/ReAlign-Qwen",
+          "last_modified": "2026-11-26T10:49:44.000Z"
+        },
+        {
+          "repo_id": "RKB109/multimodal-document-retrieval-20261120-model",
+          "last_modified": "2026-11-20T21:50:23.000Z"
+        },
+        {
+          "repo_id": "athrael-soju/ColQwen3.5-4.5B-v4",
+          "last_modified": "2026-11-20T17:33:13.000Z"
+        },
+        {
+          "repo_id": "jacky2060/EVIE-4.5B-openvino-int4",
+          "last_modified": "2026-11-20T14:44:05.000Z"
+        },
+        {
+          "repo_id": "vultr/VultronRetrieverPrime-Qwen3.5-8B-v2",
+          "last_modified": "2026-11-19T20:35:13.000Z"
+        },
+        {
+          "repo_id": "nohurry/Nemotron-3.5-Embed-1B-GGUF",
+          "last_modified": "2026-11-17T15:00:20.000Z"
+        },
+        {
+          "repo_id": "RKB109/multimodal-document-retrieval-20261110-model",
+          "last_modified": "2026-11-10T20:50:10.000Z"
+        },
+        {
+          "repo_id": "Omundu-Riad/colministral3",
+          "last_modified": "2026-11-05T14:19:36.000Z"
+        },
+        {
+          "repo_id": "vllm/ColUltraVBERT",
+          "last_modified": "2026-11-04T11:05:35.000Z"
+        },
+        {
+          "repo_id": "DakeraAI/colmodernvbert",
+          "last_modified": "2026-11-04T04:24:34.000Z"
+        },
+        {
+          "repo_id": "on1onmangoes/Nemotron-3.5-Embed-1B-BF16",
+          "last_modified": "2026-11-04T00:01:29.000Z"
+        }
+      ],
+      "image-text-to-text": [
+        {
+          "repo_id": "epoch-discovery/ep-hindi-ocr",
+          "last_modified": "2026-11-27T15:56:09.000Z"
+        },
+        {
+          "repo_id": "netprojects/Qwen3.8-27B-think-pi-adapted-LayerFit-MLX-2bit",
+          "last_modified": "2026-11-27T15:54:03.000Z"
+        },
+        {
+          "repo_id": "netprojects/Qwen3.8-27B-think-pi-adapted-LayerFit-MLX-2.5bit",
+          "last_modified": "2026-11-27T15:53:24.000Z"
+        },
+        {
+          "repo_id": "netprojects/Qwen3.8-27B-think-pi-adapted-LayerFit-MLX-3bit",
+          "last_modified": "2026-11-27T15:52:19.000Z"
+        },
+        {
+          "repo_id": "netprojects/Qwen3.8-27B-think-pi-adapted-LayerFit-MLX-4bit",
+          "last_modified": "2026-11-27T15:50:18.000Z"
+        },
+        {
+          "repo_id": "ahpah/DeepSeek-V4.1-4B",
+          "last_modified": "2026-11-27T15:49:35.000Z"
+        },
+        {
+          "repo_id": "NeosQ/Inkling-2-Mini-abliterated-MTPLX",
+          "last_modified": "2026-11-27T15:47:00.000Z"
+        },
+        {
+          "repo_id": "RMDWLLC/Jah-8.0-NVFP4",
+          "last_modified": "2026-11-27T15:46:02.000Z"
+        },
+        {
+          "repo_id": "RMDWLLC/Jah-8.0",
+          "last_modified": "2026-11-27T15:44:36.000Z"
+        },
+        {
+          "repo_id": "lahyk/Qlaude-full",
+          "last_modified": "2026-11-27T15:43:05.000Z"
+        },
+        {
+          "repo_id": "loom-draft/unsloth-gemma-4-E4B-it-loom",
+          "last_modified": "2026-11-27T15:41:56.000Z"
+        },
+        {
+          "repo_id": "loom-draft/unsloth-Qwen3.5-35B-A3B-loom",
+          "last_modified": "2026-11-27T15:41:55.000Z"
+        }
+      ]
+    },
+    "capacity": {
+      "known_active_repo_proxy_before_bytes": 3932555771407,
+      "known_active_repo_proxy_after_bytes": 3933092134211,
+      "delta_publisher_reference_bytes": 536362804,
+      "actual_dependency_inclusive_increment_bytes": null,
+      "physical_bytes_deleted": 0,
+      "acquisition_approved_bytes": 0,
+      "proxy_method": "Sum only upstream_all_files_bytes_observed for active rows; missing values excluded, no resource_screen fallback; not directly comparable to hybrid proxies.",
+      "delta_publisher_reference_bytes_proposed_only": true
+    },
+    "verification_plan": {
+      "H": "Visual retrieval improves nDCG@10 versus existing OCR+text retrieval on rights-cleared visual-specific queries.",
+      "T": "At least 100 paired queries; fixed document corpus, backend, hardware, batch, max tokens and image size; paired bootstrap 95% CI; report CPU/GPU peak, latency and index bytes.",
+      "D": "PASS if lower CI bound on nDCG@10 difference > 0 and measured dependency-inclusive budget fits; FAIL if upper bound <=0 or hard gate fails; otherwise UNCERTAIN.",
+      "C": "OCR+text retrieval can match or exceed visual retrieval; late-interaction storage/latency may erase advantage.",
+      "U": "Publisher vs independent benchmark, language/domain sampling, hardware/ABI, index quantization and document rights; combined uncertainty not yet measured."
+    },
+    "no_approval": true,
+    "no_payload_download": true,
+    "concurrent_history_preserved": [
+      "ba341e8",
+      "ae97caf",
+      "dad9783"
+    ],
+    "keep_rationale_concurrent": "Nemotron Parse has structured OCR/parser role; WePocketModel1.0-4B general multimodal model with retrieval ability, but no matched dense/late-interaction visual-document indexing equivalence to compact NeoMME established. KEEP both.",
+    "kind": "RESEARCH_ONLY_PROPOSED_NOT_FORMALLY_APPLIED",
+    "no_canonical_change": true
+  },
+  "publisher_manifest": {
+    "schema_version": 1,
+    "kind": "PUBLISHER_METADATA_ONLY_NONEXECUTABLE",
+    "research_date_jst": "2026-11-28",
+    "approved_by_user": false,
+    "download_approved": false,
+    "ready_to_acquire": false,
+    "model_payload_downloaded": false,
+    "owner_local_sha_verified": false,
+    "complete_offline_restore_verified": false,
+    "final_selected_bytes": null,
+    "selected_research_repo_id": "Hcompany/NeoMME-260M-Retriever",
+    "selected_research_revision": "481083153ac22931afbd614e672212bffbcb666e",
+    "publisher_candidate_bytes": 536362804,
+    "runtime_dependency_bytes": null,
+    "publisher_metadata_source": "https://huggingface.co/api/models/{repo_id}?blobs=true",
+    "source_repositories": [
+      {
+        "repo_id": "Hcompany/NeoMME-260M-Retriever",
+        "revision": "481083153ac22931afbd614e672212bffbcb666e",
+        "created_at": "2026-07-23T14:38:23.000Z",
+        "last_modified": "2026-09-10T12:33:36.000Z",
+        "gated": false,
+        "license_tag": "apache-2.0",
+        "base_model": [
+          "Hcompany/NeoMME-260M"
+        ],
+        "publisher_safetensors_total": 263068978,
+        "file_count": 9,
+        "publisher_repo_bytes": 536362804,
+        "files": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1645,
+            "git_blob_oid": "ecb5c11d00c51f644799cfd364cedf24f5abc19e",
+            "lfs_sha256": null
+          },
+          {
+            "path": "LICENSE",
+            "bytes": 11353,
+            "git_blob_oid": "4f42e107b3dccff5f5f56929fa72aa7eeb182e09",
+            "lfs_sha256": null
+          },
+          {
+            "path": "README.md",
+            "bytes": 7891,
+            "git_blob_oid": "fd08c668c1df749f1163c8ac6da9cc8d77d05a33",
+            "lfs_sha256": null
+          },
+          {
+            "path": "chat_template.jinja",
+            "bytes": 3488,
+            "git_blob_oid": "0690bfa996cefd80c78a9f6f6ecd2d11f22b7287",
+            "lfs_sha256": null
+          },
+          {
+            "path": "config.json",
+            "bytes": 1980,
+            "git_blob_oid": "651a5dee1813037cf75ffe2048f16c377508ce94",
+            "lfs_sha256": null
+          },
+          {
+            "path": "model.safetensors",
+            "bytes": 526156876,
+            "git_blob_oid": "4d4279600799d00fe71068bd58f43ab8bbae445f",
+            "lfs_sha256": "29bc505e54b7bd1a214f9041081a73b62b0a6b16cee1efc438f777e5bf1a4943"
+          },
+          {
+            "path": "processor_config.json",
+            "bytes": 446,
+            "git_blob_oid": "ad99437311be12c3483fe59f049c12ae03d45993",
+            "lfs_sha256": null
+          },
+          {
+            "path": "tokenizer.json",
+            "bytes": 10178610,
+            "git_blob_oid": "bfcf88cd3e0af127150ada77d1d76714104e36ec",
+            "lfs_sha256": null
+          },
+          {
+            "path": "tokenizer_config.json",
+            "bytes": 515,
+            "git_blob_oid": "64422cc73d0d7effe8e61bf656855300a62f8ee3",
+            "lfs_sha256": null
+          }
+        ],
+        "download_approved": false
+      },
+      {
+        "repo_id": "Hcompany/NeoMME-260M",
+        "revision": "5ba79fb246e23776d2c2fcead975eae2775ed94b",
+        "created_at": "2026-07-16T09:07:30.000Z",
+        "last_modified": "2026-09-10T12:33:35.000Z",
+        "gated": false,
+        "license_tag": "apache-2.0",
+        "base_model": null,
+        "publisher_safetensors_total": 262937906,
+        "file_count": 8,
+        "publisher_repo_bytes": 536093768,
+        "files": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1519,
+            "git_blob_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+            "lfs_sha256": null
+          },
+          {
+            "path": "LICENSE",
+            "bytes": 11353,
+            "git_blob_oid": "4f42e107b3dccff5f5f56929fa72aa7eeb182e09",
+            "lfs_sha256": null
+          },
+          {
+            "path": "README.md",
+            "bytes": 5744,
+            "git_blob_oid": "21336a36472b4cf4d44b7d122b333c057d70aaf9",
+            "lfs_sha256": null
+          },
+          {
+            "path": "config.json",
+            "bytes": 1973,
+            "git_blob_oid": "69c71259707c04a8f33710eed8a904523f044af6",
+            "lfs_sha256": null
+          },
+          {
+            "path": "model.safetensors",
+            "bytes": 525893660,
+            "git_blob_oid": "b8ce3cb5b2360d7c8903ce8519a8d5eedb282001",
+            "lfs_sha256": "54b64e9338cf6715eec4e05ac927d0407217c009f1f0c19d41c065e3cc4d5ff6"
+          },
+          {
+            "path": "processor_config.json",
+            "bytes": 424,
+            "git_blob_oid": "5883c8ff3d30e06090af8ec57b60c999f0ebe0f6",
+            "lfs_sha256": null
+          },
+          {
+            "path": "tokenizer.json",
+            "bytes": 10178610,
+            "git_blob_oid": "bfcf88cd3e0af127150ada77d1d76714104e36ec",
+            "lfs_sha256": null
+          },
+          {
+            "path": "tokenizer_config.json",
+            "bytes": 485,
+            "git_blob_oid": "aa6b50c29de11f0ccaa1093f42a51474fa78d784",
+            "lfs_sha256": null
+          }
+        ],
+        "download_approved": false
+      },
+      {
+        "repo_id": "Hcompany/NeoMME-800M-Retriever",
+        "revision": "1a89315b30e2c2fac38b949b35a92ca321e62b24",
+        "created_at": "2026-08-04T21:09:47.000Z",
+        "last_modified": "2026-09-10T12:33:36.000Z",
+        "gated": false,
+        "license_tag": "apache-2.0",
+        "base_model": [
+          "Hcompany/NeoMME-800M"
+        ],
+        "publisher_safetensors_total": 793944408,
+        "file_count": 9,
+        "publisher_repo_bytes": 1598117163,
+        "files": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1645,
+            "git_blob_oid": "ecb5c11d00c51f644799cfd364cedf24f5abc19e",
+            "lfs_sha256": null
+          },
+          {
+            "path": "LICENSE",
+            "bytes": 11353,
+            "git_blob_oid": "4f42e107b3dccff5f5f56929fa72aa7eeb182e09",
+            "lfs_sha256": null
+          },
+          {
+            "path": "README.md",
+            "bytes": 7894,
+            "git_blob_oid": "7291c267f9c77c02afc608f7cda5b82bedc89092",
+            "lfs_sha256": null
+          },
+          {
+            "path": "chat_template.jinja",
+            "bytes": 3488,
+            "git_blob_oid": "0690bfa996cefd80c78a9f6f6ecd2d11f22b7287",
+            "lfs_sha256": null
+          },
+          {
+            "path": "config.json",
+            "bytes": 2148,
+            "git_blob_oid": "2ca424fa84b2c91ab40c98e9cd41425919c6c4e2",
+            "lfs_sha256": null
+          },
+          {
+            "path": "model.safetensors",
+            "bytes": 1587911064,
+            "git_blob_oid": "9a250c53c78d3500cbf6a7c164b45325df2cefcb",
+            "lfs_sha256": "fe46b5651a588e22b89b4f9bc1cbcd0ef2d36b24895d92233275c09767f1a9dc"
+          },
+          {
+            "path": "processor_config.json",
+            "bytes": 446,
+            "git_blob_oid": "ad99437311be12c3483fe59f049c12ae03d45993",
+            "lfs_sha256": null
+          },
+          {
+            "path": "tokenizer.json",
+            "bytes": 10178610,
+            "git_blob_oid": "bfcf88cd3e0af127150ada77d1d76714104e36ec",
+            "lfs_sha256": null
+          },
+          {
+            "path": "tokenizer_config.json",
+            "bytes": 515,
+            "git_blob_oid": "64422cc73d0d7effe8e61bf656855300a62f8ee3",
+            "lfs_sha256": null
+          }
+        ],
+        "download_approved": false
+      },
+      {
+        "repo_id": "datalab-to/surya-ocr-2.5",
+        "revision": "00c843e9cae45611dca0a6dc2c9bbbf2dadaaed3",
+        "created_at": "2026-10-25T20:57:58.000Z",
+        "last_modified": "2026-10-29T16:31:52.000Z",
+        "gated": false,
+        "license_tag": "openrail",
+        "base_model": null,
+        "publisher_safetensors_total": 689356864,
+        "file_count": 47,
+        "publisher_repo_bytes": 1395290275,
+        "files": [
+          {
+            "path": ".gitattributes",
+            "bytes": 3413,
+            "git_blob_oid": "1f15b68bbee98bf37008d9081de379403d34e623",
+            "lfs_sha256": null
+          },
+          {
+            "path": "LICENSE",
+            "bytes": 14726,
+            "git_blob_oid": "5563e2711dd7afba057e1239cd562a31b8979322",
+            "lfs_sha256": null
+          },
+          {
+            "path": "README.md",
+            "bytes": 33127,
+            "git_blob_oid": "154f86de3121eae97b8026d82f4e0c2585f4a6bb",
+            "lfs_sha256": null
+          },
+          {
+            "path": "chat_template.jinja",
+            "bytes": 2872,
+            "git_blob_oid": "2ccb3df40d2a711a4fc27d43df06c9a9791b3f8f",
+            "lfs_sha256": null
+          },
+          {
+            "path": "config.json",
+            "bytes": 2695,
+            "git_blob_oid": "a511e6c79e6f3fb40e9dc98201eb8d14e69037c5",
+            "lfs_sha256": null
+          },
+          {
+            "path": "generation_config.json",
+            "bytes": 132,
+            "git_blob_oid": "0de9cf9fa213a6de6bffd0358ef0dfe6448043fc",
+            "lfs_sha256": null
+          },
+          {
+            "path": "model.safetensors",
+            "bytes": 1378772208,
+            "git_blob_oid": "c99cb2c7800bb31c1f5743a45346dddc8e012389",
+            "lfs_sha256": "6940baca2d16a20b15b7302cac7253246c78c95469920fcdb064963f48b5cb17"
+          },
+          {
+            "path": "preprocessor_config.json",
+            "bytes": 390,
+            "git_blob_oid": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64",
+            "lfs_sha256": null
+          },
+          {
+            "path": "processor_config.json",
+            "bytes": 1191,
+            "git_blob_oid": "33818c7f9e991ad735fd240209f4fa73e6c28c50",
+            "lfs_sha256": null
+          },
+          {
+            "path": "static/datalab-logo.png",
+            "bytes": 6169,
+            "git_blob_oid": "c32033cb18944d41982300f0fee319867e4ed425",
+            "lfs_sha256": null
+          },
+          {
+            "path": "static/docs/multilingual.md",
+            "bytes": 5021,
+            "git_blob_oid": "2dca4589d804efefd666ca869e631b855fac267a",
+            "lfs_sha256": null
+          },
+          {
+            "path": "static/images/corporate.png",
+            "bytes": 386925,
+            "git_blob_oid": "623353265d854ff8e68e336cc7dacef10eb25a88",
+            "lfs_sha256": "6ae900a07a709d28576d04cc3688f66fbb89ddbc2b6e38d61d9cc468603c9ebf"
+          },
+          {
+            "path": "static/images/corporate_layout.png",
+            "bytes": 363294,
+            "git_blob_oid": "b15d2c8c704f326bedb49736e23793959ac08782",
+            "lfs_sha256": "7cc6fdc5421b50e47f92eb77d70a42459bf48919abe5fb8b2eb99b9337df8897"
+          },
+          {
+            "path": "static/images/corporate_reading.png",
+            "bytes": 365448,
+            "git_blob_oid": "24162ece4114fe996b7da8a797193e9a922fb5a2",
+            "lfs_sha256": "81492fdce5a18d65045e5d8c123d185770f6af4fee141498b784986062a0b3c6"
+          },
+          {
+            "path": "static/images/corporate_text.png",
+            "bytes": 391688,
+            "git_blob_oid": "cff35e233506f64c4b346714f984fc5d76ea4c9e",
+            "lfs_sha256": "9efea9e0c167dad80f37356276a3cd5613540c64d2cf64002dd377044737d442"
+          },
+          {
+            "path": "static/images/excerpt.png",
+            "bytes": 63945,
+            "git_blob_oid": "a154999cbc62a0ab357acd36a59afc116ee5d87e",
+            "lfs_sha256": null
+          },
+          {
+            "path": "static/images/excerpt_layout.png",
+            "bytes": 64187,
+            "git_blob_oid": "1fb83d34ffd97edb41c06830d2eb86b0b918c5c5",
+            "lfs_sha256": null
+          },
+          {
+            "path": "static/images/excerpt_reading.png",
+            "bytes": 63298,
+            "git_blob_oid": "4feb77724c55653bbec74c618765f18c5a932f87",
+            "lfs_sha256": null
+          },
+          {
+            "path": "static/images/excerpt_text.png",
+            "bytes": 62254,
+            "git_blob_oid": "1ec23acb843f90ba745c3e7a3ab286b3f8e35ee1",
+            "lfs_sha256": null
+          },
+          {
+            "path": "static/images/form.png",
+            "bytes": 281819,
+            "git_blob_oid": "e2c27c1b25fc450eda4963e376d9be87fa9f3674",
+            "lfs_sha256": "4ca5ae30a2233efc9a0177460ff6affbe1ae972e52ab00b67fc44ef752cbb21f"
+          },
+          {
+            "path": "static/images/form_layout.png",
+            "bytes": 272860,
+            "git_blob_oid": "615b915dbfa451b799ff254a6ce2419e6326f51b",
+            "lfs_sha256": "18b66cf842f38f04573a07d4f87e7310916673f3f5558813bb921ba4bddee7a0"
+          },
+          {
+            "path": "static/images/form_reading.png",
+            "bytes": 276383,
+            "git_blob_oid": "cc85dff8ba69a6177037822f8a49ba8cc37f1e41",
+            "lfs_sha256": "6f79b8f4d4564178b6c8abdc9c750901f15e30ab60c8eac82bf70dec5a97eb98"
+          },
+          {
+            "path": "static/images/form_text.png",
+            "bytes": 240290,
+            "git_blob_oid": "8569e08c9183a916270e91331036ff40987f0013",
+            "lfs_sha256": "6b8d3a0444a735d06f06d9a3c697c541c888ecf4d51fdfa6ea68d1fc108fc125"
+          },
+          {
+            "path": "static/images/handwritten.png",
+            "bytes": 339914,
+            "git_blob_oid": "a3fa306319fd96299e32d31e7cffa5ff12b18864",
+            "lfs_sha256": "05e03c947351ac33077c288cb71058c4f8c6fb3bd2bcbdc7db130094e2a1e42a"
+          },
+          {
+            "path": "static/images/handwritten_layout.png",
+            "bytes": 258049,
+            "git_blob_oid": "4a0e7ac7e2711ebb39d812ba36e7031b2f588323",
+            "lfs_sha256": "082b3c6529b20db0ef749554c5d8e70e58031c485f7d8cb92260c739df70c652"
+          },
+          {
+            "path": "static/images/handwritten_reading.png",
+            "bytes": 258637,
+            "git_blob_oid": "722123af1760cc6cff51f907b00b78edcf645c5d",
+            "lfs_sha256": "b25c6f5f8e777086c9faa8ceba85321d071b539cfd232a79dda84068a57eaf2d"
+          },
+          {
+            "path": "static/images/handwritten_text.png",
+            "bytes": 84867,
+            "git_blob_oid": "6367c9f6842f2e2d41a72bb2ff121c8b82768c26",
+            "lfs_sha256": null
+          },
+          {
+            "path": "static/images/japanese.png",
+            "bytes": 226261,
+            "git_blob_oid": "41eb912260d1b3c08e64c7d6a7039dff157ec9a5",
+            "lfs_sha256": "728510026418a8cf99b76c54e433d71fffae2d5f0929edf3ced65eaf9969196f"
+          },
+          {
+            "path": "static/images/japanese_layout.png",
+            "bytes": 220653,
+            "git_blob_oid": "fd09635430168d65d0d1c74c37d307ca36e412e7",
+            "lfs_sha256": "30189df8221a95e6631572277aec671031460fc897a2b33059e438c4a2150e35"
+          },
+          {
+            "path": "static/images/japanese_reading.png",
+            "bytes": 218418,
+            "git_blob_oid": "80707d15a75124cc10a95d73e714211985a2e554",
+            "lfs_sha256": "8d47d3b2987ad36b6eb762390f23d9c6b1e8ffae8e0aeea92c7cdcb36935c208"
+          },
+          {
+            "path": "static/images/japanese_text.png",
+            "bytes": 266359,
+            "git_blob_oid": "570b26503e5e7f2d7b6205d6e2d534972c089c91",
+            "lfs_sha256": "dabb5dcd24fe038cf21681c3a9a052b9d71c9cfbb2ff7c6037ef4dcc14f5c5e5"
+          },
+          {
+            "path": "static/images/math.png",
+            "bytes": 183842,
+            "git_blob_oid": "2693962c2dad3a8dadb7e6d897c06168d823aebc",
+            "lfs_sha256": "922c588de3e1b8cc2f01a6c63cd9856ecf032be7df5e321e20bf29b6038cace1"
+          },
+          {
+            "path": "static/images/math_layout.png",
+            "bytes": 185455,
+            "git_blob_oid": "687fd6895801b7ceeea9bd3338005823d9a35306",
+            "lfs_sha256": "ec2c835c44b1a14a3e0a09067f68ecc806bc1ea4286933acd4f186da60eb1a12"
+          },
+          {
+            "path": "static/images/math_reading.png",
+            "bytes": 180518,
+            "git_blob_oid": "a9897d93460ad110760cf34d201bacdcc0dd4f58",
+            "lfs_sha256": "fc5fe72f8a4372b6857a913995c59a27278055b77a05721a71bbc73cac4864db"
+          },
+          {
+            "path": "static/images/math_text.png",
+            "bytes": 174053,
+            "git_blob_oid": "83f1eb26a450b481756a16a7a6d29bbfc73747ec",
+            "lfs_sha256": "30284efcddced07dfe2d2a954d55e3b061632f3163f0b64064274342aef93b28"
+          },
+          {
+            "path": "static/images/newspaper.png",
+            "bytes": 816170,
+            "git_blob_oid": "fd32e0b719cfa8e398d19537600de6da2daa44b8",
+            "lfs_sha256": "2d908b6f72a08fbb14adea01b2fb684407414cb1bb9af8360a2e929a3df4ad83"
+          },
+          {
+            "path": "static/images/newspaper_layout.png",
+            "bytes": 750084,
+            "git_blob_oid": "b1a01a716d2896203293e92b3c584526296f8706",
+            "lfs_sha256": "2fc821add30c94c1a76f9cda6d0f68916f77dcbc68fb627ddf4b767458954795"
+          },
+          {
+            "path": "static/images/newspaper_reading.png",
+            "bytes": 759986,
+            "git_blob_oid": "067c08c1132af8aea7e4d18f46bfe300e242dcd4",
+            "lfs_sha256": "47a8e06b80319913415d8ddb7fc0a33d18d1797f9b834ac29037e34e89390a55"
+          },
+          {
+            "path": "static/images/newspaper_text.png",
+            "bytes": 432396,
+            "git_blob_oid": "2e557b0321718bcca753ca9b261e43a624ff475d",
+            "lfs_sha256": "1abc4e81ec3c7e89d8cf17e2a1b5039f0f7221ebb69e1f8305a42f0afcc8d2bf"
+          },
+          {
+            "path": "static/images/opb_size_chart.png",
+            "bytes": 149507,
+            "git_blob_oid": "fd1626a61b84fedccb2cff2ed4a2423783f6f207",
+            "lfs_sha256": "a94a4f5492275f842b140f0f5e0e8ece91c7470d4a0c59e078db0529943a9eee"
+          },
+          {
+            "path": "static/images/reference.png",
+            "bytes": 1034946,
+            "git_blob_oid": "f5c5fd3c03bded21a4c1eab44d3658576f3aaf1e",
+            "lfs_sha256": "7a25b3c50f90b5381998ea9340c2843a19d691fd3b08677f49d30ab8331eae9b"
+          },
+          {
+            "path": "static/images/reference_layout.png",
+            "bytes": 1065545,
+            "git_blob_oid": "b6f495b56bad0f431f5b39e8d6e2aad1d6febca8",
+            "lfs_sha256": "de15396f2322b017fc1f0f23fbc37a4428908caea53b704b63696705095f19ae"
+          },
+          {
+            "path": "static/images/reference_reading.png",
+            "bytes": 1072439,
+            "git_blob_oid": "b82c8df0c381a88d228ac95658a6b715c4f95ec8",
+            "lfs_sha256": "41a77baf4fa8441ae3dad74c3646be76908e2bdeac90d4426ea4f6ac0868d975"
+          },
+          {
+            "path": "static/images/reference_text.png",
+            "bytes": 707934,
+            "git_blob_oid": "802c2858d5f38a73c3b1f22815a6e5aa66053b17",
+            "lfs_sha256": "be26b80e2450a16b530b7eb2a664e66989fde00c281a11e1d453b2c60a0be096"
+          },
+          {
+            "path": "tokenizer.json",
+            "bytes": 4228747,
+            "git_blob_oid": "9d33f8400814615ce00122ee331c23867b49cf52",
+            "lfs_sha256": null
+          },
+          {
+            "path": "tokenizer_config.json",
+            "bytes": 775,
+            "git_blob_oid": "f43987349675acca7abd11c70661a9f061bdf23c",
+            "lfs_sha256": null
+          },
+          {
+            "path": "video_preprocessor_config.json",
+            "bytes": 385,
+            "git_blob_oid": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe",
+            "lfs_sha256": null
+          }
+        ],
+        "download_approved": false
+      },
+      {
+        "repo_id": "yanghaoir/ReAlign-Phi3v",
+        "revision": "5703ce60add5b13c62e8985c2850ee3a1dfea6b5",
+        "created_at": "2026-04-09T09:28:44.000Z",
+        "last_modified": "2026-11-26T10:50:41.000Z",
+        "gated": false,
+        "license_tag": "mit",
+        "base_model": [
+          "microsoft/Phi-3-vision-128k-instruct"
+        ],
+        "publisher_safetensors_total": null,
+        "file_count": 8,
+        "publisher_repo_bytes": 14960962,
+        "files": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1519,
+            "git_blob_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+            "lfs_sha256": null
+          },
+          {
+            "path": "LICENSE",
+            "bytes": 1061,
+            "git_blob_oid": "bc34534c2305b7d63eca813eb7d1706647316c49",
+            "lfs_sha256": null
+          },
+          {
+            "path": "README.md",
+            "bytes": 3880,
+            "git_blob_oid": "4050a88dfd81d989c1625e56cd2d694c89e35ecb",
+            "lfs_sha256": null
+          },
+          {
+            "path": "adapter_config.json",
+            "bytes": 746,
+            "git_blob_oid": "9e58a12a12b354cafd9f4442457b5fbda31837fd",
+            "lfs_sha256": null
+          },
+          {
+            "path": "adapter_model.safetensors",
+            "bytes": 11316160,
+            "git_blob_oid": "c6e1958eabf75bc30e8c107ad0d1955b4ce4666e",
+            "lfs_sha256": "4c72311d6aaced1514910d5bed6d21d9ad6b7dd27a58f4eb62cecc05f6a7bf95"
+          },
+          {
+            "path": "special_tokens_map.json",
+            "bytes": 670,
+            "git_blob_oid": "0616f20a3af0830d0991f72c15c4f5e6d5dc02fa",
+            "lfs_sha256": null
+          },
+          {
+            "path": "tokenizer.json",
+            "bytes": 3627707,
+            "git_blob_oid": "6b1abdd56f60f735a4a9a10bf54448a2ecd6e5ee",
+            "lfs_sha256": null
+          },
+          {
+            "path": "tokenizer_config.json",
+            "bytes": 9219,
+            "git_blob_oid": "9cefcf49c30d326e5b709fe0d5ede745c876843f",
+            "lfs_sha256": null
+          }
+        ],
+        "download_approved": false
+      },
+      {
+        "repo_id": "yanghaoir/ReAlign-Qwen",
+        "revision": "b4d8b3c147e87d8a89b2b94ab3fc76edaaae53a8",
+        "created_at": "2026-04-09T09:28:45.000Z",
+        "last_modified": "2026-11-26T10:49:44.000Z",
+        "gated": false,
+        "license_tag": "mit",
+        "base_model": [
+          "Qwen/Qwen2.5-VL-7B-Instruct"
+        ],
+        "publisher_safetensors_total": null,
+        "file_count": 11,
+        "publisher_repo_bytes": 63554104,
+        "files": [
+          {
+            "path": ".gitattributes",
+            "bytes": 1570,
+            "git_blob_oid": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+            "lfs_sha256": null
+          },
+          {
+            "path": "README.md",
+            "bytes": 3867,
+            "git_blob_oid": "f9a4175a05d3cb038bf2ec8c867a2626041b959a",
+            "lfs_sha256": null
+          },
+          {
+            "path": "adapter_config.json",
+            "bytes": 737,
+            "git_blob_oid": "b6220ef65ed342082c55416153b27983ac427915",
+            "lfs_sha256": null
+          },
+          {
+            "path": "adapter_model.safetensors",
+            "bytes": 47670280,
+            "git_blob_oid": "b699b1ba8d15bb9f10940611c7eb06d9b0b5194c",
+            "lfs_sha256": "637e9f403576c09360ff46e9cf20a4f39db494cb69609c6043c160f2391bc2aa"
+          },
+          {
+            "path": "added_tokens.json",
+            "bytes": 605,
+            "git_blob_oid": "482ced4679301bf287ebb310bdd1790eb4514232",
+            "lfs_sha256": null
+          },
+          {
+            "path": "chat_template.jinja",
+            "bytes": 1017,
+            "git_blob_oid": "6c226632394ae7474b0d4b13e15793eac2e21ee9",
+            "lfs_sha256": null
+          },
+          {
+            "path": "merges.txt",
+            "bytes": 1671853,
+            "git_blob_oid": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+            "lfs_sha256": null
+          },
+          {
+            "path": "special_tokens_map.json",
+            "bytes": 613,
+            "git_blob_oid": "ac23c0aaa2434523c494330aeb79c58395378103",
+            "lfs_sha256": null
+          },
+          {
+            "path": "tokenizer.json",
+            "bytes": 11421994,
+            "git_blob_oid": "e4d55359e61da740df4d52f40785508fafb5a1b2",
+            "lfs_sha256": "f74a5dd5349630f2f5f28333b4f86baac904df137f9afceb4b630dae2729b1db"
+          },
+          {
+            "path": "tokenizer_config.json",
+            "bytes": 4735,
+            "git_blob_oid": "f79d2a2f384dd5a0f218dc8e65c6b74b9f16cc14",
+            "lfs_sha256": null
+          },
+          {
+            "path": "vocab.json",
+            "bytes": 2776833,
+            "git_blob_oid": "4783fe10ac3adce15ac8f358ef5462739852c569",
+            "lfs_sha256": null
+          }
+        ],
+        "download_approved": false
+      },
+      {
+        "repo_id": "epoch-discovery/ep-hindi-ocr",
+        "revision": "0aa5fb8ed6c638238c8e70636cd3121933323c4c",
+        "created_at": "2026-11-27T13:57:45.000Z",
+        "last_modified": "2026-11-27T15:56:09.000Z",
+        "gated": "auto",
+        "license_tag": "other",
+        "base_model": "nvidia/Nemotron-3.5-Parse",
+        "publisher_safetensors_total": 630800504,
+        "file_count": 34,
+        "publisher_repo_bytes": 2532816660,
+        "files": [
+          {
+            "path": ".gitattributes",
+            "bytes": 2049,
+            "git_blob_oid": "fa26826a3d7c133844dde211b922d02928663755",
+            "lfs_sha256": null
+          },
+          {
+            "path": "CONTRIBUTING.md",
+            "bytes": 2191,
+            "git_blob_oid": "a0fd70e914131b630719d10e15dbb4d2e36787e9",
+            "lfs_sha256": null
+          },
+          {
+            "path": "LICENSE",
+            "bytes": 25546,
+            "git_blob_oid": "88d517a5e0a4c771fb1198f9578e6c6ba07b5ff0",
+            "lfs_sha256": null
+          },
+          {
+            "path": "NVIDIA_LICENSE",
+            "bytes": 3051,
+            "git_blob_oid": "3618e26f595c524d2aee87535e8ed4257cfd1adb",
+            "lfs_sha256": null
+          },
+          {
+            "path": "NVIDIA_THIRD_PARTY_NOTICES.md",
+            "bytes": 730187,
+            "git_blob_oid": "86918c75fe51d4a8cf5d17fa070efa2f6de21f1a",
+            "lfs_sha256": null
+          },
+          {
+            "path": "NVIDIA_TOKENIZER_ATTRIBUTION.md",
+            "bytes": 1963,
+            "git_blob_oid": "24bb6a07c43cc7ce5bcd0afa1f64e03be72114bd",
+            "lfs_sha256": null
+          },
+          {
+            "path": "README.md",
+            "bytes": 5847,
+            "git_blob_oid": "db430ec98de3e56b8a210e401dd0837c09fe5419",
+            "lfs_sha256": null
+          },
+          {
+            "path": "assets/banner.png",
+            "bytes": 164531,
+            "git_blob_oid": "358720ba2376be621f085a40a8ed127d43067285",
+            "lfs_sha256": "ddeb218069218749b22c23bf44108fc4a5c4970e9259d9592650af8bbc4b3b1d"
+          },
+          {
+            "path": "assets/example_dictionary.png",
+            "bytes": 356943,
+            "git_blob_oid": "77bf3119faa9ee433ee3545c87b67292f1422af1",
+            "lfs_sha256": "8e6282cbc2393c6ab8e6be911da534a92b7655565af94d9bb366c786dfc44c5d"
+          },
+          {
+            "path": "assets/example_paragraph.png",
+            "bytes": 74470,
+            "git_blob_oid": "e7fb9cfa27c4527b3ec6ddba17424f7b177a0261",
+            "lfs_sha256": null
+          },
+          {
+            "path": "assets/hindi_accuracy.png",
+            "bytes": 48025,
+            "git_blob_oid": "6e2e32eb70ca834833f2b05f5c35ac5983d34593",
+            "lfs_sha256": null
+          },
+          {
+            "path": "bias.md",
+            "bytes": 684,
+            "git_blob_oid": "9e274c957213724989d59e65de6eee81bafc943c",
+            "lfs_sha256": null
+          },
+          {
+            "path": "chat_template.jinja",
+            "bytes": 212,
+            "git_blob_oid": "f9fa67dcbb2a57650d7e8b9f9f14a70e481a357f",
+            "lfs_sha256": null
+          },
+          {
+            "path": "config.json",
+            "bytes": 5735,
+            "git_blob_oid": "dbba9c73cf3cf8569e4767c7a6d80b81152f5867",
+            "lfs_sha256": null
+          },
+          {
+            "path": "explainability.md",
+            "bytes": 2587,
+            "git_blob_oid": "ba9f39a001cfeb8ef847d32862198fbc11eb6885",
+            "lfs_sha256": null
+          },
+          {
+            "path": "generation_config.json",
+            "bytes": 284,
+            "git_blob_oid": "86ee2d8e3d14c0fb43b2645b2f343ff4c0ad245f",
+            "lfs_sha256": null
+          },
+          {
+            "path": "hf_logits_processor.py",
+            "bytes": 14471,
+            "git_blob_oid": "484182ee1c8fa710f5c5d7f037572d230f5c9cc5",
+            "lfs_sha256": null
+          },
+          {
+            "path": "hf_nemotron_parse_config.py",
+            "bytes": 5016,
+            "git_blob_oid": "7c9a5913c84d25672920fb08dc92f96161604b9c",
+            "lfs_sha256": null
+          },
+          {
+            "path": "hf_nemotron_parse_modeling.py",
+            "bytes": 12773,
+            "git_blob_oid": "82e06070c4431836d2f0f90ef9d68c35e1fdf3cb",
+            "lfs_sha256": null
+          },
+          {
+            "path": "hf_nemotron_parse_processor.py",
+            "bytes": 21061,
+            "git_blob_oid": "fddd7b113f996e9ea8cbcd9faa14dc32652366c2",
+            "lfs_sha256": null
+          },
+          {
+            "path": "hf_prefix_geometry.py",
+            "bytes": 6402,
+            "git_blob_oid": "577a1bb031235a8ef2e8945b9ce4a4b65a839784",
+            "lfs_sha256": null
+          },
+          {
+            "path": "inference.py",
+            "bytes": 2520,
+            "git_blob_oid": "21c0f768adac99de5c7c80dfe4445b9c7d76c247",
+            "lfs_sha256": null
+          },
+          {
+            "path": "latex2html.py",
+            "bytes": 448,
+            "git_blob_oid": "e1e779c2fec1c70d1e1268b36fd670258d981a3e",
+            "lfs_sha256": null
+          },
+          {
+            "path": "model.safetensors",
+            "bytes": 2523268434,
+            "git_blob_oid": "f88634eda043bf80b5c4db04d36b7e2927f7ed38",
+            "lfs_sha256": "c9ed9bf20df913faf79cef3c5a104152d068e12ba532a7056f48066fa48ddbb9"
+          },
+          {
+            "path": "postprocessing.py",
+            "bytes": 502,
+            "git_blob_oid": "5a4e51b1fc28729786c89ba30890ce1a14550a64",
+            "lfs_sha256": null
+          },
+          {
+            "path": "preprocessor_config.json",
+            "bytes": 950,
+            "git_blob_oid": "a3933449b5a6eb9555fd7f29ce229f598f74c665",
+            "lfs_sha256": null
+          },
+          {
+            "path": "privacy.md",
+            "bytes": 201,
+            "git_blob_oid": "29d6539864897277e12c587225f1424a75384c70",
+            "lfs_sha256": null
+          },
+          {
+            "path": "processor_config.json",
+            "bytes": 287,
+            "git_blob_oid": "4959a42e3da9cb1fe6173d2096d0ccf3b37bcb44",
+            "lfs_sha256": null
+          },
+          {
+            "path": "run_transformers_inference.py",
+            "bytes": 3333,
+            "git_blob_oid": "a9bb7d967ae0536f61db23197aeccb0fbc2590e6",
+            "lfs_sha256": null
+          },
+          {
+            "path": "safety.md",
+            "bytes": 1428,
+            "git_blob_oid": "2c72aa636af1ff20fd299f442e1c6bcd9d7a408d",
+            "lfs_sha256": null
+          },
+          {
+            "path": "special_tokens_map.json",
+            "bytes": 747,
+            "git_blob_oid": "0a7046614fdd6368c44cbb4b182d83a9d18b61bf",
+            "lfs_sha256": null
+          },
+          {
+            "path": "tokenizer.json",
+            "bytes": 7627412,
+            "git_blob_oid": "cc5efa9e6dccd31cc047158e05a7523dd365c74e",
+            "lfs_sha256": null
+          },
+          {
+            "path": "tokenizer_config.json",
+            "bytes": 414355,
+            "git_blob_oid": "48f6677397a294f3c87237f77f5bf4cc7f4b79eb",
+            "lfs_sha256": null
+          },
+          {
+            "path": "vllm_example.py",
+            "bytes": 12015,
+            "git_blob_oid": "95c550de3e2287da1449588f815b1f88e817c9f1",
+            "lfs_sha256": null
+          }
+        ],
+        "download_approved": false
+      }
+    ],
+    "notes": [
+      "Public metadata and license text reviewed; no weight payload fetched. SHA is publisher reported, not locally rehashed.",
+      "Fixed source references do not constitute final source lock, runtime closure or owner authorization. Other repos are HOLD research only."
+    ]
+  }
+}
