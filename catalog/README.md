@@ -1,4 +1,8 @@
-## 現行 v86 / R182（2026-11-28）
+## 現行 v87 / R183（2026-11-28）
+
+281登録・225有効（SELECT 56、CONDITIONAL 169）。独立学習DGNO蛍光顕微鏡逆問題（w1 Cell・w2 Faceの2状態）を研究限定CONDITIONAL追加。既存280行・133取得報告不変。配布元モデル＋コード205,898,868 B、依存込み・owner増分未確定。全225取得STOP、承認・重みDL・実行・物理削除0。[研究報告](../docs/strategy/183-v87-dgno-scientific-inverse-problems.md)。
+
+## 履歴 v86 / R182（2026-11-28）
 
 280登録・224有効（SELECT 56、CONDITIONAL 168）。独立学習DBS-TIGER-DnR（3ステム分離）を研究限定CONDITIONAL追加。既存279行・133取得報告不変。配布元モデル＋コード4,323,204 B、依存込み・owner増分未確定。全224取得STOP、承認・重みDL・実行・物理削除0。[研究報告](../docs/strategy/182-v86-compact-dynamic-band-audio-separation.md)。
 

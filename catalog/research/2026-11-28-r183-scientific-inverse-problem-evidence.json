@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "round": "R183",
+  "date_jst": "2026-11-28",
+  "base_commit": "b8988e16d8ab48f5b9112b94a05426178f33a113",
+  "source_revision": "v87-20261128",
+  "search": {
+    "windows_days": [
+      7,
+      30,
+      90
+    ],
+    "queries": [
+      "HF model API sort lastModified: microscopy, neural-operator, deblur, poisson, pde-solver (25 each)",
+      "web search November 2026 neural PDE/measurement inverse problems, HF model cards, arXiv and ICML PMLR",
+      "older DGNO peer-reviewed May/July 2026, previous v86 git grep exact model IDs returned no matches"
+    ],
+    "bounded": true,
+    "observed_license_or_access_change": null,
+    "not_exhaustive": true
+  },
+  "decisions": [
+    {
+      "repo_id": "Duane245/DGNO",
+      "decision": "ADD",
+      "formal_selection": "conditional",
+      "reason": "Independent trained DGNO Cell/Face fluorescence defocus reconstruction, two channels/tasks (nuclei and actin), local volume integrals and interface flux; PULSE is 4x upscaling, TerraFM representation, MedGemma medical VLM; not substitutes. Retain w1 Cell and w2 Face as two distinct training outcomes under one repository identity; do not select other four checkpoints or training archive by default.",
+      "positive": "ICML 2026 Table 1 BBBC006 w1 Cell PSNR 37.22 dB vs Restormer 35.35, MPT+EFCR 35.44; w2 Face 32.66 vs Restormer 31.70. w1 Cell SSIM 0.959 LPIPS 0.103; w2 Face 0.847/0.323.",
+      "negative": "w2 Cell SSIM 0.848 and LPIPS 0.322 slightly better than Face despite PSNR 32.54. Paper reports 15 GB GPU memory at 512x512, hardware/clock/batch of that table unspecified; no owner benchmark. Single-plate fluorescence domain, no diagnostic validation. .pth deserialization and raw/EMA distinction require review; README Python3.9 vs requirements Python3.8.",
+      "weights_source_bytes": 205417842,
+      "code_reference_bytes": 481026
+    },
+    {
+      "repo_id": "Duane245/DGNO",
+      "component": "BBBC006_w1_Face",
+      "decision": "HOLD",
+      "reason": "Same w1 task; PSNR 37.09 vs selected Cell 37.22, SSIM .958 vs .959, LPIPS .104 vs .103; distinct mechanism, not a quant duplicate; retain evidence only"
+    },
+    {
+      "repo_id": "Duane245/DGNO",
+      "component": "BBBC006_w2_Cell",
+      "decision": "HOLD",
+      "reason": "w2 PSNR 32.54 vs Face 32.66, but SSIM/LPIPS .848/.322 vs .847/.323; not dominated; prioritize one state and both mechanisms across channels, retain alternative for morphology comparison"
+    },
+    {
+      "repo_id": "Duane245/DGNO",
+      "component": "3DHistech Cell/Face and BBBC006 tarball",
+      "decision": "HOLD",
+      "reason": "Other trained domain needs independent rights/clinical validation; dataset not required for inference, optional evaluation/training source, original Broad cell-line data copyright waiver not equivalent to mirror license approval"
+    },
+    {
+      "repo_id": "matthewju/duhamel-neural-operator",
+      "decision": "HOLD",
+      "revision": "7bb46c0fb57b9ca1c90341f6dc23d0abdbd5fd04",
+      "updated": "2026-11-21",
+      "source_repo_bytes": 4640533395,
+      "source_file_count": 115,
+      "license": "bsd-3-clause tag",
+      "reason": "Distinct phase-field Fourier SSM + learned nonlinear correction; 109 .pt checkpoints, task/seed/baselines, 4 measured Fourier banks, train normalization and matching release provenance unresolved; no default 4.64GB repo/120GB evaluation data selection; review lean TDGL or Allen-Cahn state with matched paper results first",
+      "source": "https://huggingface.co/matthewju/duhamel-neural-operator/blob/7bb46c0fb57b9ca1c90341f6dc23d0abdbd5fd04/README.md",
+      "code": "https://github.com/matthew-ju/Duhamel-Neural-Operator"
+    },
+    {
+      "repo_id": "Jarrodbarnes/qwen3.5-9b-pde-solver",
+      "decision": "HOLD",
+      "revision": "aa5083ca21cf11715552e40b59af9a1a5ac541f5",
+      "updated": "2026-10-12",
+      "source_repo_bytes": 346333290,
+      "source_file_count": 6,
+      "adapter_lfs_sha256": "462f1859a22ec8ee017b1b78a0f04943b0bd715c9ab00c2eecfccf4ce23d80c2",
+      "parent_repo": "Qwen/Qwen3.5-9B",
+      "parent_current_observed_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "parent_training_revision": null,
+      "parent_full_repo_bytes": 19329393661,
+      "combined_source_reference_bytes": 19675726951,
+      "reason": "RL adapter ~86.6M trainable, rank32; author held-out pass@1 55.7 vs base 9.0, sealed held-out 55.3, training 2 H200/26h; single seed, held-out failure-guided curriculum, Darcy zero, Cahn-Hilliard 29%, no 3D/unstructured or inverse; correct official parent unregistered and not in 133 receipts, incompatible edited derivative not a substitute; 19.676GB full reference not 346MB complete; exact training parent, dependency and safe generated code verifier unresolved",
+      "source": "https://huggingface.co/Jarrodbarnes/qwen3.5-9b-pde-solver/blob/aa5083ca21cf11715552e40b59af9a1a5ac541f5/README.md",
+      "code": "https://github.com/jbarnes850/pde-solver-rl/tree/5c371db55ba32c2cd9859498afa8c7fc0b4c4e89"
+    },
+    {
+      "repo_id": "kenantabak/yolo26m-l929-microscopy-cell-detection-tr",
+      "decision": "HOLD",
+      "revision": "309958cc39d7927ff2abc66fba7a5e9e730acbc1",
+      "updated": "2026-11-26",
+      "source_repo_bytes": 81335021,
+      "reason": "ONNX cell detection not inverse imaging; self-reported mAP50-95 .6361 and recall .7788 on 626 images; 497.5 ms Xeon 2.20GHz 4 threads, no SKU/batch distribution; base YOLO lineage/license compatibility and external held-out split unresolved",
+      "source": "https://huggingface.co/kenantabak/yolo26m-l929-microscopy-cell-detection-tr/blob/309958cc39d7927ff2abc66fba7a5e9e730acbc1/README.md"
+    },
+    {
+      "repo_id": "carloyoung/Delta-Neural-Operator-DNO",
+      "decision": "HOLD",
+      "revision": "484a76c611703b9c652dfec6ec0a247c1011981e",
+      "updated": "2026-11-17",
+      "source_repo_bytes": 568694,
+      "reason": "Four synthetic-task checkpoints and code, no independently demonstrated general or scientific PDE capability; unusual state dynamics worth follow-up but archive value compared with cheap retraining and objective baseline unproven",
+      "source": "https://huggingface.co/carloyoung/Delta-Neural-Operator-DNO/blob/484a76c611703b9c652dfec6ec0a247c1011981e/README.md"
+    },
+    {
+      "repo_id": "AI4Science-WestlakeU/RealPDEBench-models",
+      "decision": "HOLD",
+      "revision": "58898901ae1c557f810767b03b7bf5004f6ead63",
+      "updated": "2026-09-21",
+      "source_repo_bytes": 88093181882,
+      "source_file_count": 219,
+      "reason": "Many architectures and training paradigms; avoid full 88.09GB; need individual real/finetune matched results, model provenance and lawful dataset scope",
+      "source": "https://huggingface.co/AI4Science-WestlakeU/RealPDEBench-models"
+    },
+    {
+      "repo_id": "intell-sci-comput/NPSolver",
+      "decision": "HOLD",
+      "reason": "Paper proposes iterative physics supervision; public GitHub main commit lookup 422, no pretrained checkpoint verified; do not claim weights exist",
+      "source": "https://arxiv.org/abs/2605.25786"
+    },
+    {
+      "repo_id": "Phips/PULSE",
+      "decision": "KEEP",
+      "prior_decision": "conditional",
+      "source_repo_bytes": 16664014,
+      "reason": "Fidelity 4x SR on Urban100 is different from same-resolution fluorescence defocus inversion; no matched substitution test"
+    },
+    {
+      "repo_id": "MBZUAI/TerraFM",
+      "decision": "KEEP",
+      "prior_decision": "conditional",
+      "source_repo_bytes": 453538500,
+      "reason": "Different learned output/task; no matched replacement evidence"
+    },
+    {
+      "repo_id": "google/medgemma-4b-it",
+      "decision": "KEEP",
+      "prior_decision": "conditional",
+      "source_repo_bytes": 8639644263,
+      "reason": "Different learned output/task; no matched replacement evidence"
+    },
+    {
+      "repo_id": "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+      "decision": "KEEP",
+      "prior_decision": "conditional",
+      "source_repo_bytes": 19331656364,
+      "reason": "Reported acquired independent edited/distilled 9B weights are not the official adapter parent; no SHA reuse assumption"
+    },
+    {
+      "repo_id": "nvidia/Ising-Decoder-ColorCode-1-Fast",
+      "decision": "KEEP",
+      "prior_decision": "conditional",
+      "source_repo_bytes": 6158225,
+      "reason": "Different learned output/task; no matched replacement evidence"
+    },
+    {
+      "repo_id": "nvidia/Ising-Decoder-SurfaceCode-1-Fast",
+      "decision": "KEEP",
+      "prior_decision": "conditional",
+      "source_repo_bytes": 2143603,
+      "reason": "Different learned output/task; no matched replacement evidence"
+    }
+  ],
+  "validation_plan": {
+    "H": "On lawful held-out BBBC006 fluorescence planes, selected w1 Cell/w2 Face improve PSNR without degrading morphology compared to matched ordinary deblur baseline; do not assert recovered detail is ground truth.",
+    "T": "At least 100 fields per channel grouped by well and unseen focal planes; paired bootstrap 95% CI, original in-focus z16 and fixed acquisition parameters, compare PSNR/SSIM/LPIPS and segmentation/count/intensity fidelity. Freeze GPU SKU/driver/CUDA ABI, image shape, batch1, FP32 and 30 latency/memory runs. No execution this round.",
+    "D": "Proposed PASS if PSNR paired 95% lower bound >0 dB, nuclear count absolute relative error median no worse than matched baseline, no nonfinite outputs; FAIL if upper bound <=0 or verified morphology/measurement deterioration; otherwise UNCERTAIN. Separate rights/storage approval.",
+    "C": "Plate leakage, focus-plane distribution shift, artificially sharpened features, mismatched preprocessing, raw vs EMA or backend variation.",
+    "U": "Sampling/measurement and calibration errors not measured; combined uncertainty unknown; no hardware performance extrapolation."
+  },
+  "capacity": {
+    "full_model_repo_reference_bytes": 3991019385,
+    "selected_model_reference_bytes": 205417842,
+    "selected_weight_reference_bytes": 205413592,
+    "code_scope_bytes": 481026,
+    "combined_reference_bytes": 205898868,
+    "unselected_hf_source_reference_bytes": 3785601543,
+    "actual_owner_incremental_bytes": null,
+    "complete_dependency_inclusive_bytes": null,
+    "approved_download_bytes": 0
+  },
+  "approved_downloads": 0,
+  "physical_deletions": 0
+}
