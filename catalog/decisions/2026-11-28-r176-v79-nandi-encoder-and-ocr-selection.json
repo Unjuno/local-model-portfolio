@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "round": "R176",
+  "date_jst": "2026-11-28",
+  "base_main_commit": "9150271f16198163c67242b767c627f37e7662fc",
+  "previous_revision_id": "v78-20261128",
+  "new_revision_id": "v79-20261128",
+  "source_manifest": "manifests/drafts/r176-2026-11-28-nandibert-and-ocr-four-source-frozen.candidate.json",
+  "report": "docs/strategy/176-v79-nandi-encoder-distillation-and-ocr-comparison.md",
+  "research_scope": "Targeted 7/30/90 day public HF, developer publication, Github and arXiv discovery; not exhaustive. Two OCR repos predate 30 days by creation, updated Oct29. Nandi public announcement Nov24; no observed access restriction change verified. Xiaomi arXiv metadata identified; full paper not retrieved.",
+  "decisions": [
+    {
+      "repo_id": "FrontiersMind/NandiBERT-150M",
+      "action": "ADD",
+      "formal_decision": "conditional",
+      "reason": "Independent pruned and distilled student of 450M, publisher 500B training tokens; complete BF16 MLM state with untied head, 16k context; low-resource multilingual classification/NER adaptation and teacher-student compression comparison. Not a quantization and no teacher weight required for inference.",
+      "positive": "Publisher Indic 7-task mean 67.37 vs IndicBERT-v2 66.57; 5/7 tasks better; English 10-task mean 62.20 vs ModernBERT-base 60.69 (fixed card).",
+      "negative": "Publisher slot filling 54 vs 58.1 and QA 46 vs 48.3 for IndicBERT-v2; English mean 62.20 vs UltraBERT-150M 64.59; blog narrative differs from fixed card. Not Japanese; no owner matched hardware replication.",
+      "existing_comparators": [
+        "answerdotai/ModernBERT-large",
+        "BAAI/bge-m3",
+        "Qwen/Qwen3-Embedding-0.6B"
+      ],
+      "next_gate": "matched multilingual adaptation, reviewed custom code and ABI, individual rights, local SHA and storage"
+    },
+    {
+      "repo_id": "FrontiersMind/NandiBERT-450M",
+      "action": "ADD",
+      "formal_decision": "conditional",
+      "reason": "Separate from-scratch multilingual encoder trained on publisher 1.1T tokens, 32k context, teacher baseline for student distillation. Distinct trained state and long-context/quality reference for Indic NLP; not an alternative precision file.",
+      "positive": "Publisher Indic 7-task mean 73.23 vs IndicBERT-v2 65.93; 7/7 tasks better. English 10-task mean 63.34 vs existing ModernBERT-large 61.02 (fixed card).",
+      "negative": "Publisher GLUE 89.9 vs ModernBERT-large 90.4; SQuAD2 89.7 vs 89.8; English mean 63.34 vs UltraBERT-380M 66.79. Not Japanese; independent replication, hardware and variance unavailable.",
+      "existing_comparators": [
+        "answerdotai/ModernBERT-large",
+        "BAAI/bge-m3",
+        "Qwen/Qwen3-Embedding-0.6B"
+      ],
+      "next_gate": "matched multilingual adaptation, reviewed custom code and ABI, individual rights, local SHA and storage"
+    },
+    {
+      "repo_id": "xiaomi-research/Xiaomi-OCR-0",
+      "action": "HOLD",
+      "formal_catalog_added": false,
+      "reason": "Independent OCR-centric continued training and verifiable RL, but current OCR specialists overlap. Publisher OCR 5-task mean 83.2 vs Qwen3.5-0.8B 72.9; 4B 84.9; OmniDocBench 96.83 vs TeleOCR 96.87; Wild 87.94 vs 88.53. Real5 comparison against PaddleOCR 1.6 not existing 1.5. No direct matched comparison with LightOnOCR-3, PaddleOCR-VL-1.5 and DeepSeek-OCR-2. Apache-2.0 tag; LICENSE absent; upstream rights unverified.",
+      "existing_comparators": [
+        "lightonai/LightOnOCR-3-0.8B",
+        "PaddlePaddle/PaddleOCR-VL-1.5",
+        "deepseek-ai/DeepSeek-OCR-2"
+      ],
+      "next_gate": "matched held-out KIE, Japanese, math and old-scan benchmark; license/ABI closure"
+    },
+    {
+      "repo_id": "datalab-to/surya-ocr-2.5",
+      "action": "HOLD",
+      "formal_catalog_added": false,
+      "reason": "Publisher OmniParseBench 85.9 vs Surya2 83.3; Japanese 80.5 vs 78.8; English 90.3 vs 94.3; old scans math 78.6 vs 79.0; row/column geometry not in 2.5. Existing OCR specialists overlap. Modified OpenRAIL-M LICENSE includes revenue/funding thresholds and research/personal exceptions; complementary materials excluded; owner permissions unresolved.",
+      "existing_comparators": [
+        "lightonai/LightOnOCR-3-0.8B",
+        "PaddlePaddle/PaddleOCR-VL-1.5",
+        "deepseek-ai/DeepSeek-OCR-2"
+      ],
+      "next_gate": "matched OCR benchmark and rights assessment"
+    },
+    {
+      "repo_id": "answerdotai/ModernBERT-large",
+      "action": "KEEP",
+      "reason": "Distinct baseline or specialist; no matched evidence of redundancy or replacement"
+    },
+    {
+      "repo_id": "lightonai/LightOnOCR-3-0.8B",
+      "action": "KEEP",
+      "reason": "Distinct baseline or specialist; no matched evidence of redundancy or replacement"
+    },
+    {
+      "repo_id": "BAAI/bge-m3",
+      "action": "KEEP",
+      "reason": "Distinct baseline or specialist; no matched evidence of redundancy or replacement"
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "action": "KEEP",
+      "reason": "Distinct baseline or specialist; no matched evidence of redundancy or replacement"
+    },
+    {
+      "repo_id": "PaddlePaddle/PaddleOCR-VL-1.5",
+      "action": "KEEP",
+      "reason": "Distinct baseline or specialist; no matched evidence of redundancy or replacement"
+    },
+    {
+      "repo_id": "deepseek-ai/DeepSeek-OCR-2",
+      "action": "KEEP",
+      "reason": "Distinct baseline or specialist; no matched evidence of redundancy or replacement"
+    }
+  ],
+  "source_reference_delta_bytes": 1562969921,
+  "source_content_union_bytes": 1553775254,
+  "actual_owner_incremental_bytes": null,
+  "full_dependency_bytes": null,
+  "new_formal_additions": 2,
+  "new_formal_replacements": 0,
+  "new_formal_exclusions": 0,
+  "prior_rows_changed": 0,
+  "model_weight_downloaded_bytes": 0,
+  "new_approvals": 0,
+  "physical_files_deleted": 0,
+  "all_active_stop": true,
+  "ledger_preserved": true,
+  "known_active_source_proxy_before_bytes": 3932833343922,
+  "known_active_source_proxy_after_bytes": 3934396313843,
+  "active_unknown_parameter_summary_recomputed": 20
+}

@@ -8,7 +8,11 @@
 
 ---
 
-## 現行 v78 / R175（2026-11-28）
+## 現行 v79 / R176（2026-11-28）
+
+272登録・216有効（SELECT 56、CONDITIONAL 160）。NandiBERT教師450Mと蒸留生徒150Mを研究限定追加、OCR2候補は研究HOLD。旧270行不変、全216取得STOP、既取得報告133件保持、承認・重みDL・物理削除0。1.563GBは配布元参考値。[研究報告](docs/strategy/176-v79-nandi-encoder-distillation-and-ocr-comparison.md)。
+
+## 履歴 v78 / R175（2026-11-28）
 
 270登録・214有効（SELECT 56、CONDITIONAL 158）。ステレオ視差推定 C-Fast-FoundationStereo を研究限定CONDITIONALに追加。既存269行不変、133取得報告保存、全214取得STOP、承認・重量DL・物理削除0。 [一次調査・比較・容量](docs/strategy/175-v78-new-specialist-stereo-forecast-retrieval-research.md)。以下は履歴。
 

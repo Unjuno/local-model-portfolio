@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "revision_id": "v79-20261128",
+  "previous_revision_id": "v78-20261128",
+  "decision_date_jst": "2026-11-28",
+  "target_branch": "main",
+  "kind": "INDEPENDENT_MULTILINGUAL_ENCODER_TEACHER_STUDENT_ADDITION",
+  "previous_asset_count": 270,
+  "previous_active_count": 214,
+  "replacement_operations": [],
+  "additions": [
+    {
+      "position": 271,
+      "asset_kind": "model",
+      "repo_id": "FrontiersMind/NandiBERT-150M",
+      "url": "https://huggingface.co/FrontiersMind/NandiBERT-150M",
+      "group": "小型・多言語エンコーダ／蒸留比較",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Independent pruned and distilled student of 450M, publisher 500B training tokens; complete BF16 MLM state with untied head, 16k context; low-resource multilingual classification/NER adaptation and teacher-student compression comparison. Not a quantization and no teacher weight required for inference.",
+      "quality_positive": "Publisher Indic 7-task mean 67.37 vs IndicBERT-v2 66.57; 5/7 tasks better; English 10-task mean 62.20 vs ModernBERT-base 60.69 (fixed card).",
+      "quality_negative": "Publisher slot filling 54 vs 58.1 and QA 46 vs 48.3 for IndicBERT-v2; English mean 62.20 vs UltraBERT-150M 64.59; blog narrative differs from fixed card. Not Japanese; no owner matched hardware replication.",
+      "risk_and_alternative_assessment": "KEEP ModernBERT-large as English control; KEEP BGE-M3 and Qwen3-Embedding-0.6B trained retrieval states. Nandi is MLM requiring task adaptation, not drop-in retrieval. Custom Transformers 5.x code, ABI, owner rights and offline restore unresolved. No safety-evasion criterion.",
+      "evidence_date": "2026-11-28",
+      "evidence_kind": "R176_IMMUTABLE_PUBLISHER_TREE_LFS_SHA_AND_UNREPLICATED_CARD_BENCHMARK",
+      "evidence_urls": [
+        "https://huggingface.co/FrontiersMind/NandiBERT-150M/tree/a6fc1adcc36a9bbecf8bddcb0af30d922d5b0eac",
+        "https://huggingface.co/blog/FrontiersMind/introducing-nandibert"
+      ],
+      "observed_access": "public ungated as observed R176",
+      "license_metadata": "Apache-2.0 publisher tag and model card link; no LICENSE file in frozen tree; code/parent and individual licensed acts not verified",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "a6fc1adcc36a9bbecf8bddcb0af30d922d5b0eac",
+      "upstream_all_files_bytes_observed": 456755592,
+      "upstream_file_count_observed": 10,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 10,
+      "candidate_selected_source_file_bytes": 456755592,
+      "source_manifest_path": "manifests/drafts/r176-2026-11-28-nandibert-and-ocr-four-source-frozen.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 223742464,
+        "evidence_kind": "Publisher HF safetensors total stored BF16 elements including untied MLM head, no independent tensor census; final lock not cleared",
+        "evidence_urls": [
+          "https://huggingface.co/FrontiersMind/NandiBERT-150M/tree/a6fc1adcc36a9bbecf8bddcb0af30d922d5b0eac",
+          "https://huggingface.co/blog/FrontiersMind/introducing-nandibert"
+        ],
+        "review_date": "2026-11-28"
+      },
+      "forecast_priority": {
+        "rank": 271,
+        "wave": "S3",
+        "category": "MULTILINGUAL_ENCODER_DISTILLATION",
+        "scenario_status": "LEGACY_CLASSIFICATION_ONLY_NOT_ACQUISITION_ORDER"
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 456755592,
+        "publisher_selected_source_bytes": 456755592,
+        "source_bytes_are_not_selected_bytes": true,
+        "owner_hdd_verified": false,
+        "full_runtime_memory_peak_verified": false,
+        "actual_archive_incremental_bytes": null
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "ALL_RUNTIME_AND_LEARNED_DEPENDENCIES"
+    },
+    {
+      "position": 272,
+      "asset_kind": "model",
+      "repo_id": "FrontiersMind/NandiBERT-450M",
+      "url": "https://huggingface.co/FrontiersMind/NandiBERT-450M",
+      "group": "小型・多言語エンコーダ／蒸留比較",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Separate from-scratch multilingual encoder trained on publisher 1.1T tokens, 32k context, teacher baseline for student distillation. Distinct trained state and long-context/quality reference for Indic NLP; not an alternative precision file.",
+      "quality_positive": "Publisher Indic 7-task mean 73.23 vs IndicBERT-v2 65.93; 7/7 tasks better. English 10-task mean 63.34 vs existing ModernBERT-large 61.02 (fixed card).",
+      "quality_negative": "Publisher GLUE 89.9 vs ModernBERT-large 90.4; SQuAD2 89.7 vs 89.8; English mean 63.34 vs UltraBERT-380M 66.79. Not Japanese; independent replication, hardware and variance unavailable.",
+      "risk_and_alternative_assessment": "KEEP ModernBERT-large as English control; KEEP BGE-M3 and Qwen3-Embedding-0.6B trained retrieval states. Nandi is MLM requiring task adaptation, not drop-in retrieval. Custom Transformers 5.x code, ABI, owner rights and offline restore unresolved. No safety-evasion criterion.",
+      "evidence_date": "2026-11-28",
+      "evidence_kind": "R176_IMMUTABLE_PUBLISHER_TREE_LFS_SHA_AND_UNREPLICATED_CARD_BENCHMARK",
+      "evidence_urls": [
+        "https://huggingface.co/FrontiersMind/NandiBERT-450M/tree/87dd9607b1878509939f3eaf328de7f9d13e352f",
+        "https://huggingface.co/blog/FrontiersMind/introducing-nandibert"
+      ],
+      "observed_access": "public ungated as observed R176",
+      "license_metadata": "Apache-2.0 publisher tag and model card link; no LICENSE file in frozen tree; code/parent and individual licensed acts not verified",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "87dd9607b1878509939f3eaf328de7f9d13e352f",
+      "upstream_all_files_bytes_observed": 1106214329,
+      "upstream_file_count_observed": 10,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 10,
+      "candidate_selected_source_file_bytes": 1106214329,
+      "source_manifest_path": "manifests/drafts/r176-2026-11-28-nandibert-and-ocr-four-source-frozen.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 548471808,
+        "evidence_kind": "Publisher HF safetensors total stored BF16 elements including untied MLM head, no independent tensor census; final lock not cleared",
+        "evidence_urls": [
+          "https://huggingface.co/FrontiersMind/NandiBERT-450M/tree/87dd9607b1878509939f3eaf328de7f9d13e352f",
+          "https://huggingface.co/blog/FrontiersMind/introducing-nandibert"
+        ],
+        "review_date": "2026-11-28"
+      },
+      "forecast_priority": {
+        "rank": 272,
+        "wave": "S3",
+        "category": "MULTILINGUAL_ENCODER_DISTILLATION",
+        "scenario_status": "LEGACY_CLASSIFICATION_ONLY_NOT_ACQUISITION_ORDER"
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 1106214329,
+        "publisher_selected_source_bytes": 1106214329,
+        "source_bytes_are_not_selected_bytes": true,
+        "owner_hdd_verified": false,
+        "full_runtime_memory_peak_verified": false,
+        "actual_archive_incremental_bytes": null
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "ALL_RUNTIME_AND_LEARNED_DEPENDENCIES"
+    }
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "expected_asset_count": 272,
+  "expected_active_count": 216,
+  "new_approved_downloads": 0,
+  "model_payload_downloaded": false,
+  "physical_files_deleted": 0
+}
