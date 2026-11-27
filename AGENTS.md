@@ -1,4 +1,8 @@
-## 現行 v85 / R181
+## 現行 v86 / R182（2026-11-28）
+
+280登録・224有効（SELECT 56、CONDITIONAL 168）。独立学習DBS-TIGER-DnR（3ステム分離）を研究限定CONDITIONAL追加。既存279行・133取得報告不変。配布元モデル＋コード4,323,204 B、依存込み・owner増分未確定。全224取得STOP、承認・重みDL・実行・物理削除0。[研究報告](docs/strategy/182-v86-compact-dynamic-band-audio-separation.md)。
+
+## 履歴 v85 / R181
 
 - 279登録 / 223有効（SELECT 56、CONDITIONAL 167）。PULSE_fast 4xを研究限定追加。並行v84のTerraFM等と既存278件を保持。全223取得STOP、承認・物理削除0。[調査報告](docs/strategy/181-v85-terrafm-pulse-specialist-research.md)。正式正本は catalog/CURRENT.json。
 

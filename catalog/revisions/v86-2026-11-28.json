@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "revision_id": "v86-20261128",
+  "previous_revision_id": "v85-20261128",
+  "decision_date_jst": "2026-11-28",
+  "target_branch": "main",
+  "kind": "FRESH_SPECIALIST_RESEARCH_ADDITION",
+  "previous_asset_count": 279,
+  "previous_active_count": 223,
+  "replacement_operations": [],
+  "additions": [
+    {
+      "position": 280,
+      "asset_kind": "model",
+      "repo_id": "JusperLee/DBS-TIGER-DnR",
+      "url": "https://huggingface.co/JusperLee/DBS-TIGER-DnR",
+      "group": "極小・動的帯域分割・音楽/効果音/音声分離",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Scratch-trained 44.1 kHz mono three-source cinematic separator using input-dependent 128-band boundaries; different learned function from dettato-grouper instrument grouping, diarization timestamps and ASR. Smaller and higher author-reported three-stem scores than DBS-BSRNN on the same test corpus; not a quantization copy.",
+      "quality_positive": "DnR v2 test 973 tracks: publisher SI-SDR music 7.78, speech 15.90, SFX 6.70, mean 10.13 dB; static TIGER 8.74, DBS-BSRNN 9.07 mean.",
+      "quality_negative": "SFX 6.70 and music 7.78 dB substantially below speech 15.90 dB; mono only, 6s window/3s hop vs 3s/1.5s for BSRNN; no matched CPU/GPU latency, stereo fidelity, independent replication, or incumbent benchmark.",
+      "risk_and_alternative_assessment": "Lawful licensed/consented soundtrack restoration; privacy and training/recording rights assessed separately. No model execution. Keep incumbent audio grouping/diarization/ASR; no evidence of interchangeability.",
+      "evidence_date": "2026-11-28",
+      "evidence_kind": "R182_FIXED_PUBLISHER_MODEL_CARD_HF_BLOB_METADATA_ARXIV_AND_CODE_TREE",
+      "evidence_urls": [
+        "https://huggingface.co/JusperLee/DBS-TIGER-DnR/blob/22da7d4cd3ea63f9365181008bff1c0d2ab6fb2b/README.md",
+        "https://arxiv.org/abs/2610.14993",
+        "https://github.com/JusperLee/Dynamic-Band-Splitting/tree/ff526463a58ee0278e7bd05c4b8bce112b743e34",
+        "https://github.com/JusperLee/Dynamic-Band-Splitting/blob/ff526463a58ee0278e7bd05c4b8bce112b743e34/LICENSE"
+      ],
+      "observed_access": "public ungated as observed R182",
+      "license_metadata": "Apache-2.0 publisher model card tag; pinned code Apache-2.0 with third-party notices; owner act rights and training data rights unverified",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "22da7d4cd3ea63f9365181008bff1c0d2ab6fb2b",
+      "upstream_all_files_bytes_observed": 4116715,
+      "upstream_file_count_observed": 4,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 4,
+      "candidate_selected_source_file_bytes": 4116715,
+      "source_manifest_path": "manifests/drafts/r182-2026-11-28-dbs-audio-source-frozen.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 1013702,
+        "evidence_kind": "Publisher HF metadata F32 stored elements, author named model ~1.0M; not independent learned parameter census or complete dependency count; screening only",
+        "evidence_urls": [
+          "https://huggingface.co/JusperLee/DBS-TIGER-DnR/blob/22da7d4cd3ea63f9365181008bff1c0d2ab6fb2b/README.md",
+          "https://huggingface.co/api/models/JusperLee/DBS-TIGER-DnR/revision/22da7d4cd3ea63f9365181008bff1c0d2ab6fb2b?blobs=true"
+        ],
+        "review_date": "2026-11-28"
+      },
+      "forecast_priority": {
+        "rank": 280,
+        "wave": "S3",
+        "category": "SPECIALIST_COMPACT_AUDIO_SOURCE_SEPARATION",
+        "scenario_status": "LEGACY_CLASSIFICATION_ONLY_NOT_ACQUISITION_ORDER"
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 4116715,
+        "publisher_selected_source_bytes": 4116715,
+        "source_bytes_are_not_selected_bytes": true,
+        "owner_hdd_verified": false,
+        "full_runtime_memory_peak_verified": false,
+        "actual_archive_incremental_bytes": null
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "ALL_RUNTIME_AND_LEARNED_DEPENDENCIES"
+    }
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "expected_asset_count": 280,
+  "expected_active_count": 224,
+  "new_approved_downloads": 0,
+  "model_payload_downloaded": 0,
+  "physical_files_deleted": 0
+}
