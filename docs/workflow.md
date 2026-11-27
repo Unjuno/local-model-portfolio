@@ -18,7 +18,15 @@ store等の相対名はvault_rootに対して解決し、portfolioの外側か�
 
 ## 1. 選ぶ
 
-**現行は[CURRENT.json](../catalog/CURRENT.json)が指定するv38**。[全193件](../catalog/effective-portfolio-2026-11-15-v38.json)の採否と[有効146件の非実行取得候補](../queues/proposed-v38-2026-11-15.json)、[依存準備146件](../catalog/preparation/2026-11-15-insurance-bundles-v38.json)、[採用・非採用根拠](../docs/strategy/86-v38-risk-aware-original-model-selection-2026-11-15.md)を照合する。先行制限の想定は[3段階シナリオ](../policies/capability-access-risk.md)を参考にする：S1 高度な悪用/声・顔/合成/権利関連→S2 高性能一般/科学/世界モデル→S3 公開ウェイト・データと実行環境全体。これは想定シナリオで、現行法の規制予告ではない。
+**唯一の正式正本は[CURRENT.json](../catalog/CURRENT.json)**。固定版番号をこの手順書で正本としない。`materialized_catalog_path`、`priority_worklist_path`、`insurance_preparation_worklist_path`、`latest_conditional_access_audit.path`、`latest_active_readiness_audit.summary_path` を読み、同一revisionのID集合・採否・取得停止を照合する。選定方針は [selection.md](../policies/selection.md) 冒頭を優先し、S1/S2/S3は安全審査の歴史的ストレスシナリオとしてのみ参照する。研究、選定、取得承認、実機保存、物理削除を分離する。
+
+旧v38（193登録/146有効）の参照は歴史資料：[選定](../catalog/effective-portfolio-2026-11-15-v38.json)・[取得候補](../queues/proposed-v38-2026-11-15.json)・[依存準備](../catalog/preparation/2026-11-15-insurance-bundles-v38.json)・[採否根拠](../docs/strategy/86-v38-risk-aware-original-model-selection-2026-11-15.md)。
+
+### 構成再監査の証拠確認（R170・2026-11-28のスナップショット）
+
+[用途・容量監査](../catalog/audits/2026-11-28-r170-v74-role-coverage-and-unmatched-capacity.json) と [メタデータ整合性監査](../catalog/audits/2026-11-28-r170-v74-metadata-integrity.json) を参照する。v74の旧汎用言語基盤group 8件はコード専用1件、多言語視覚1件、一般比較/基盤6件という限定分類であり、全汎用モデルの網羅数ではない。欠損group27件は記録済み採用理由による監査注記であって、正式groupや採否の変更ではない。SELECTのモデル48件中45件は正負両方の専用品質欄の少なくとも一方を欠く。別資料の証拠を否定せず、実際の比較条件・原典・反証を確認して補完する。欄の存在自体も同条件の性能実証とみなさない。
+
+有効210件の最終lock容量は未確定。参考容量はresource欄158件とupstream欄の補完3件で161件・3,992,552,343,845 B、49件不明。取得報告133件のうち登録一致129件・未登録4件はrepo ID照合であり、固定revision・現物SHAの一致とは別である。既存の別学習成果、教師/生徒、親/adapter、必須依存を同一とみなさず、完全なファイル範囲・重みの来歴・同条件の正当な課題・依存込み増分容量を比較してから正式追加/交換/保留を判断する。低拒否等は無害な通常課題の過剰拒否と品質を測り、安全性を独立審査する。危害実行や安全制御回避の強さを取得順位にしない。v74以降の再監査で追加の正式変更を正当化する新規の比較証拠がないため、既存採否を維持する。物理削除・再取得は行わない。
 
 [v33候補キュー](../queues/proposed-v33-2026-11-15.json)は有効138件の非実行調査表。保留・延期モデルも調査は継続するが、取得資格を自動的に変更しない。**小型3件の先行取得案はダウンローダーの安全試験候補**であり、この予測上の保存順位に取って代わらない。
 
@@ -35,7 +43,7 @@ catalogに1件登録する。欲しい用途・原本/派生の比較目的・�
 
 ## 1.7. 配布元の本体・付属モデルの数を分けて検証
 
-[一次資料監査v9](parameter-audit-v9-2026-11-03.md)の総数確認は**モデル名の推定ではない**。ただし13件のPASSにも公開主モデルの概数や主要コンポーネント合算があり、全テンソル厳密集計ではない。最終lockで固定するrevision、シャード、外部Encoder/Codec/VAEの重み、ライセンスと容量を別々に確認。旧v9の未確認12件は当時の値。歴史的v31の総数不明は20件。現行v33の未確認は21件、うち有効8件（新規Kumoを含む）も最終lock不可。
+[一次資料監査v9](parameter-audit-v9-2026-11-03.md)の総数確認は**モデル名の推定ではない**。ただし13件のPASSにも公開主モデルの概数や主要コンポーネント合算があり、全テンソル厳密集計ではない。最終lockで固定するrevision、シャード、外部Encoder/Codec/VAEの重み、ライセンスと容量を別々に確認。旧v9の未確認12件は当時の値。歴史的v31の総数不明は20件。歴史的v33の未確認は21件、うち有効8件（新規Kumoを含む）も最終lock不可。
 
 標準ライブラリの[静的150B原則＋量子化例外監査](../scripts/check_parameter_cutoff.py)と[CI](../.github/workflows/audit-parameter-cap.yml)で、現在の台帳revision、全件分類、除外/未確認が承認キューに紛れないことを検査。CIは重量ファイルのダウンロードやモデル実行をしない。
 
