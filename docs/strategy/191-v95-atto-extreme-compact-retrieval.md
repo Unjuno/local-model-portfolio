@@ -15,7 +15,11 @@ conv-conditioned attention / PhaseGatedMoE, Wikipedia MLM then retrieval distill
 - NeuML/colbert-atto-90k-32d: ADD — Independent pretrained and distilled Atto late-interaction learned state, not a quantization. 90.3K nominal FP32 parameters, 32-d token embeddings; distinctive extreme low-resource retrieval tradeoff rather than a new broad task. Preserve as research-only conditional; existing BGE-M3 already has multivector retrieval, so no replacement.
 - NeuML/colbert-atto-950k-128d: HOLD — Higher publisher quality; 947K nominal, 128d; matched resource benefit unresolved
 - NeuML/colbert-atto-4m-384d: EXCLUDE_THIS_ROUND — Mean 0.4818 vs 950K 0.4816; larger independent state; insufficient incremental advantage; not a quantization duplicate or irreversible exclusion
-- Atto ColBERT 840 / 9K / 14M / 25M and dense siblings: HOLD — Separate trained states; exact state/source scope and task-resource benefit not established
+- NeuML/colbert-atto-840-8d: HOLD — 0.3139 nDCG@10, 8d; very small but substantial quality gap; distinct state, not conversion.
+- NeuML/colbert-atto-9k-16d: HOLD — 0.3655 nDCG@10, 16d; independent smaller operating point; matched workload benefit unproven.
+- NeuML/colbert-atto-14m-384d: HOLD — 0.4929 nDCG@10, 384d; greater weight/index scope, no matched workload advantage.
+- NeuML/colbert-atto-25m-384d: HOLD — 0.4995 nDCG@10, 384d; incremental quality over 950K, insufficient matched resource evidence.
+- NeuML/atto-90k-2048d: HOLD — 0.4257 nDCG@10; dense single-vector alternative not a ColBERT quantization; 2048d representation and exact source scope need evaluation.
 - BAAI/bge-m3: KEEP — Complementary multilingual/context/quality role; matched comparison not established.
 - Qwen/Qwen3-Embedding-0.6B: KEEP — Complementary multilingual/context/quality role; matched comparison not established.
 - Qwen/Qwen3-Reranker-0.6B: KEEP — Complementary multilingual/context/quality role; matched comparison not established.
@@ -37,3 +41,7 @@ SHA-256 publisher pointer: `5f45c75b57a1a729ade4445d9c30b7f2b174df89913988486d74
 ## Next falsifiable test
 
 Matched BEIR three tasks + multilingual held-out retrieval; report nDCG@10, recall, p50/p95 latency, peak RSS/VRAM, disk index bytes, rebuild time with identical corpus/tokenization protocol and explicit backend/batch/HW. No automatic approval.
+
+Publisher architecture/training and benchmark table: https://huggingface.co/blog/NeuML/introducing-atto
+
+Safety fix: the v93 plan generator no longer writes approved-v93.json or sets user approval/license-review flags; it writes review-v93-UNAPPROVED.json. The executor rejects historical synthetic authorization_source and v73-remaining-pinned- references. This does not attest to owner-side installation or prior files. No acquisition execution.

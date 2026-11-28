@@ -21,9 +21,29 @@
       "reason": "Mean 0.4818 vs 950K 0.4816; larger independent state; insufficient incremental advantage; not a quantization duplicate or irreversible exclusion"
     },
     {
-      "model_family": "Atto ColBERT 840 / 9K / 14M / 25M and dense siblings",
+      "repo_id": "NeuML/colbert-atto-840-8d",
       "decision": "HOLD",
-      "reason": "Separate trained states; exact state/source scope and task-resource benefit not established"
+      "reason": "0.3139 nDCG@10, 8d; very small but substantial quality gap; distinct state, not conversion."
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-9k-16d",
+      "decision": "HOLD",
+      "reason": "0.3655 nDCG@10, 16d; independent smaller operating point; matched workload benefit unproven."
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-14m-384d",
+      "decision": "HOLD",
+      "reason": "0.4929 nDCG@10, 384d; greater weight/index scope, no matched workload advantage."
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-25m-384d",
+      "decision": "HOLD",
+      "reason": "0.4995 nDCG@10, 384d; incremental quality over 950K, insufficient matched resource evidence."
+    },
+    {
+      "repo_id": "NeuML/atto-90k-2048d",
+      "decision": "HOLD",
+      "reason": "0.4257 nDCG@10; dense single-vector alternative not a ColBERT quantization; 2048d representation and exact source scope need evaluation."
     },
     {
       "repo_id": "BAAI/bge-m3",
