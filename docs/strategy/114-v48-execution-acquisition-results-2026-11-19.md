@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 137 (verified 133, partial 0, failed 0, held 4)
-- Verified files: 2095
-- Verified source bytes: 2451205481822
-- Minimum observed free bytes: 578267394048 (200 GB floor maintained: True)
+- Models: 168 (verified 162, partial 2, failed 0, held 4)
+- Verified files: 2647
+- Verified source bytes: 2583024117670
+- Minimum observed free bytes: 427910205440 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -139,6 +139,37 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `illuin/IVE-4B` | `1e65613dfd83ba6949883325fc5f4791dae56a46` | VERIFIED | 23/23 | apache-2.0 |
 | `abacusai/Smaug-Uncensored` | `e4bbcf7aec54ab72f4ce720569f3b3dc7b973087` | VERIFIED | 32/32 | apache-2.0 |
 | `inclusionAI/LingSante-3.1-air-VL` | `1f398c937d6069994a156689636832c47d8c09be` | VERIFIED | 74/74 | mit |
+| `lerobot/aloha_sim_insertion_human` | `cc571a3c661df81b566dbfde3d5c1e85fcdf7884` | VERIFIED | 11/11 | mit |
+| `llm-jp/magpie-sft-v1.0` | `4f949e18cfa01d99abe6f92e5629157d69737e6d` | VERIFIED | 3/3 | apache-2.0 |
+| `EPFLiGHT/fully-open-meditron` | `0d0b7cbbe84a86b31b7fbf7ebb432ac90a3e4091` | VERIFIED | 14/14 | apache-2.0 |
+| `HuggingFaceH4/ultrafeedback_binarized` | `3949bf5f8c17c394422ccfab0c31ea9c20bdeb85` | VERIFIED | 9/9 | mit |
+| `allenai/pixmo-cap` | `edce6390d9d5be6c8db0d863fbe62718c88988a4` | VERIFIED | 6/6 | odc-by |
+| `allenai/tulu-3-sft-mixture` | `b14afda60f1bbebe55d5d2fa1e4df5042f97f8be` | VERIFIED | 8/8 | odc-by |
+| `nvidia/Nemotron-Cascade-2-RL-data` | `05bbaf03bac608e804efc86c5f8bf99844f2d197` | VERIFIED | 6/6 | odc-by |
+| `laion/emotional-roleplay-finetuning-dataset` | `68acdac74d30c12140fe3ebb9a5db30c7247cf1c` | VERIFIED | 11/11 | cc-by-4.0 |
+| `nvidia/OpenCodeInstruct` | `8f3ba5bafe4d6e8db46082cf7ae6741bc370604d` | VERIFIED | 52/52 | cc-by-4.0 |
+| `nvidia/OpenMathInstruct-2` | `469216e3f46f4dacf476b382e192485ea51a143e` | VERIFIED | 59/59 | cc-by-4.0 |
+| `OVHaiLLM/Olala-v1.0-mini-7A1B-base` | `7b631f39cd160dfe396c68a8564fef178e215c86` | VERIFIED | 13/13 | apache-2.0 |
+| `OVHaiLLM/Olala-v1.0-mini-7A1B` | `94836be2ae9bfd5c7c7e7f68f481c9f14f2ee6ea` | PARTIAL | 19/20 | apache-2.0 |
+| `nvidia/Cosmos3-Nano-Sim-Bimanual` | `da4d2c09175e2a6dd5b237265318066d5134312e` | PARTIAL | 90/91 | other |
+| `nvidia/Cosmos3-Nano-Sim-Auto` | `bea7452062866fdd8eebe4c38f305d02baed3699` | VERIFIED | 45/45 | other |
+| `raws-labs/tinycast` | `9635a27b66a73fedd6e88120c72c7f91427d216e` | VERIFIED | 6/6 | apache-2.0 |
+| `JusperLee/DBS-TIGER-DnR` | `22da7d4cd3ea63f9365181008bff1c0d2ab6fb2b` | VERIFIED | 4/4 | apache-2.0 |
+| `Firoj112/pawp-tts-300k` | `e7f3c94053ea88e9c17df1264475f4a41d90529e` | VERIFIED | 23/23 | cc-by-4.0 |
+| `iapp/OpenThai2.2-OCR-Text-20261127` | `81237a7e44cee9588ca31bea0f0abdf0653adcb1` | VERIFIED | 17/17 | apache-2.0 |
+| `Phips/PULSE` | `88198f08a21166c9b934cdca4760eaf1a250cb9d` | VERIFIED | 26/26 | mit |
+| `ai-sage/GigaEdge-Enhance` | `f1553bd1859bcef52d0037a0ebe4d17da293548e` | VERIFIED | 13/13 | mit |
+| `inworld/sava` | `1beae7c1dd0df6b0f92030644fc905eb087dc6a0` | VERIFIED | 13/13 | apache-2.0 |
+| `allenai/RoboTracker` | `3bda363815dca4395b855ba0e7737517300f937f` | VERIFIED | 3/3 | apache-2.0 |
+| `microsoft/table-transformer-structure-recognition-v1.1-all` | `7587a7ef111d9dcbf8ac695f1376ab7014340a0c` | VERIFIED | 5/5 | mit |
+| `MBZUAI/TerraFM` | `86f62795ff0e8dfae729e170e0ed82fb3e07ec9e` | VERIFIED | 8/8 | mit |
+| `FrontiersMind/NandiBERT-150M` | `d5b5f366e3fd12279613bb5333b0ba37699743a3` | VERIFIED | 10/10 | apache-2.0 |
+| `inworld/voice-isolator` | `9b0285b3fe8403aa8e2f1dbb2165a80a4294c970` | VERIFIED | 12/12 | apache-2.0 |
+| `Tabimpute/MatrixFormer` | `22f1e4bfd65b16d47fec696f37ffa419fa00679b` | VERIFIED | 6/6 | apache-2.0 |
+| `cisco-ai/cisco-time-series-model-1.5` | `955e6d768451bbe86f8143caf3236e80414c74ea` | VERIFIED | 5/5 | apache-2.0 |
+| `FrontiersMind/NandiBERT-450M` | `b446d067153f279bbf027d0164b30cbffeaa5447` | VERIFIED | 10/10 | apache-2.0 |
+| `Horizon-Labs/multilingual-reranker-small` | `23139fec6f1f448cdf89a5ac2d2c6bf5e8c7b398` | VERIFIED | 31/31 | apache-2.0 |
+| `hanyuyuan/STSF-TPLS-weights` | `785c3ec304928ea0407da7e048d5579791fbb3bf` | VERIFIED | 14/14 | cc-by-4.0 |
 | `mistralai/Mistral-Small-4-119B-2603` | `a11f36bebf709121056b1dbcc943d1c6afbe494d` | VERIFIED | 21/21 | apache-2.0 |
 | `Qwen/Qwen3-Coder-Next` | `a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb` | VERIFIED | 49/49 | apache-2.0 |
 | `Wan-AI/Wan2.2-TI2V-5B` | `921dbaf3f1674a56f47e83fb80a34bac8a8f203e` | VERIFIED | 23/23 | apache-2.0 |
