@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "round": "R196",
+  "date_jst": "2026-11-28",
+  "base_main_sha": "270aaba8371294f8f0b1d5e940b65ab58f657984",
+  "search": {
+    "windows_days": [
+      7,
+      30,
+      90
+    ],
+    "HF_latest_created": 100,
+    "HF_latest_modified": 100,
+    "keywords": [
+      "symbolic-regression",
+      "symbolic",
+      "equation-discovery",
+      "FoundPDE"
+    ],
+    "limitations": "Bounded search, not exhaustive; older specialist included"
+  },
+  "primary_sources": [
+    {
+      "id": "ShwayW/shorter-formulae",
+      "revision": "f2eddcf91ca8b83c1fe5f4ef683e3f3e8c96c835",
+      "code_revision": "12c71c723f91175dc92317234c24e1b6dbd745ea",
+      "paper": "https://arxiv.org/abs/2610.03947",
+      "architecture": "145M transformer, 2 states, 4 89M ablations",
+      "positive": "Publisher reports better extrapolation at equal time (~10 s author experiment) and improved noise robustness after FT; independent exact equation recovery not verified.",
+      "negative": "Search methods can outperform at 10–1000x time; no matched RASR test, exact tensor census, dependency closure. PTH loader lacks explicit weights_only. Fit does not prove physical law."
+    },
+    {
+      "id": "FoundPDE",
+      "paper": "https://arxiv.org/abs/2610.26963",
+      "checkpoint": null
+    },
+    {
+      "id": "GAIR/SR-Scientist-30B",
+      "revision": "194fff1f0148ebb1f9e9da77ff10511b30bd00ca",
+      "url": "https://huggingface.co/GAIR/SR-Scientist-30B",
+      "total_parameters": 30532122624,
+      "source_repo_bytes": 61084166003
+    },
+    {
+      "id": "At1uri/kolmogorov-arnold-network-symbolic-engine",
+      "revision": "3ff59d4c532d558f77b22becfda671c520470435",
+      "url": "https://huggingface.co/At1uri/kolmogorov-arnold-network-symbolic-engine",
+      "created_at": "2026-11-25T18:15:23Z",
+      "total_parameters": 234,
+      "source_repo_bytes": 16745
+    },
+    {
+      "paper": "https://arxiv.org/abs/2611.31450",
+      "note": "Good fit can have wrong derivatives"
+    }
+  ],
+  "comparisons": [
+    {
+      "repo_id": "ShwayW/shorter-formulae",
+      "decision": "ADD",
+      "scope": "145M base+noise FT",
+      "reason": "Resolve v96 HOLD incomplete pin using immutable HF file and code metadata. Preserve 145M original plus 48h noise FT as controlled robustness pair. RASR-94M-S risk-sensitive GRPO/complexity objective and safer safetensors, 190105408 B partial source; KEEP as complementary smaller baseline. No superiority claim. Distinct learned states, not quantization. Four 89M ablations HOLD."
+    },
+    {
+      "repo_id": "ShwayW/shorter-formulae",
+      "decision": "HOLD",
+      "scope": "four 89M ablations",
+      "reason": "Distinct training results, 4318731740 B; marginal value unverified"
+    },
+    {
+      "repo_id": "FoundPDE",
+      "decision": "HOLD",
+      "reason": "2610.26963; 97.50% clean, 94.43% at 2% noise, 52.09% at 10%; no verified checkpoint ID"
+    },
+    {
+      "repo_id": "GAIR/SR-Scientist-30B",
+      "decision": "HOLD",
+      "reason": "RL agent 30,532,122,624 params, 61,084,166,003 B source; sandbox; matched value unverified"
+    },
+    {
+      "repo_id": "At1uri/kolmogorov-arnold-network-symbolic-engine",
+      "decision": "HOLD",
+      "reason": "234 params, 16,745 B; held-out general recovery unverified"
+    },
+    {
+      "repo_id": "davidotte/RASR-94M-S",
+      "decision": "KEEP",
+      "reason": "94.1M risk-sensitive GRPO; 10.3 mean nodes/26s across 12 tasks author, unmatched; KEEP cheaper comparator"
+    },
+    {
+      "repo_id": "IFM/K2-Horizon-0.9B",
+      "decision": "KEEP",
+      "reason": "text math/code distillation"
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati",
+      "decision": "KEEP",
+      "reason": "94.7M text-to-program word problems"
+    },
+    {
+      "repo_id": "Tabimpute/MatrixFormer",
+      "decision": "KEEP",
+      "reason": "77,998,496 params, numeric cell imputation"
+    },
+    {
+      "repo_id": "Duane245/DGNO",
+      "decision": "KEEP",
+      "reason": "image inverse operator"
+    }
+  ],
+  "manifest": "manifests/drafts/r196-2026-11-28-shorter-formulae-publisher-scope.candidate.json",
+  "observed_license_change": null,
+  "observed_access_change": null,
+  "download_approved": false,
+  "owner_runtime_tested": false
+}

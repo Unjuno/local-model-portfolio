@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "round": "R196",
+  "date_jst": "2026-11-28",
+  "base_main_sha": "270aaba8371294f8f0b1d5e940b65ab58f657984",
+  "previous_revision": "v99-20261128",
+  "new_revision": "v100-20261128",
+  "decisions": [
+    {
+      "repo_id": "ShwayW/shorter-formulae",
+      "decision": "ADD",
+      "scope": "145M base+noise FT",
+      "reason": "Resolve v96 HOLD incomplete pin using immutable HF file and code metadata. Preserve 145M original plus 48h noise FT as controlled robustness pair. RASR-94M-S risk-sensitive GRPO/complexity objective and safer safetensors, 190105408 B partial source; KEEP as complementary smaller baseline. No superiority claim. Distinct learned states, not quantization. Four 89M ablations HOLD."
+    },
+    {
+      "repo_id": "ShwayW/shorter-formulae",
+      "decision": "HOLD",
+      "scope": "four 89M ablations",
+      "reason": "Distinct training results, 4318731740 B; marginal value unverified"
+    },
+    {
+      "repo_id": "FoundPDE",
+      "decision": "HOLD",
+      "reason": "2610.26963; 97.50% clean, 94.43% at 2% noise, 52.09% at 10%; no verified checkpoint ID"
+    },
+    {
+      "repo_id": "GAIR/SR-Scientist-30B",
+      "decision": "HOLD",
+      "reason": "RL agent 30,532,122,624 params, 61,084,166,003 B source; sandbox; matched value unverified"
+    },
+    {
+      "repo_id": "At1uri/kolmogorov-arnold-network-symbolic-engine",
+      "decision": "HOLD",
+      "reason": "234 params, 16,745 B; held-out general recovery unverified"
+    },
+    {
+      "repo_id": "davidotte/RASR-94M-S",
+      "decision": "KEEP",
+      "reason": "94.1M risk-sensitive GRPO; 10.3 mean nodes/26s across 12 tasks author, unmatched; KEEP cheaper comparator"
+    },
+    {
+      "repo_id": "IFM/K2-Horizon-0.9B",
+      "decision": "KEEP",
+      "reason": "text math/code distillation"
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati",
+      "decision": "KEEP",
+      "reason": "94.7M text-to-program word problems"
+    },
+    {
+      "repo_id": "Tabimpute/MatrixFormer",
+      "decision": "KEEP",
+      "reason": "77,998,496 params, numeric cell imputation"
+    },
+    {
+      "repo_id": "Duane245/DGNO",
+      "decision": "KEEP",
+      "reason": "image inverse operator"
+    }
+  ],
+  "additions": 1,
+  "replacements": 0,
+  "exclusions": 0,
+  "prior_catalog_records_unchanged": true,
+  "approved_downloads": 0,
+  "model_payload_downloaded": 0,
+  "physical_deletions": 0,
+  "reference_bytes_delta": 1173518813,
+  "actual_owner_incremental_bytes": null,
+  "manifest": "manifests/drafts/r196-2026-11-28-shorter-formulae-publisher-scope.candidate.json",
+  "research": "catalog/research/2026-11-28-r196-shorter-formulae-primary-evidence.json"
+}
