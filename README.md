@@ -1,3 +1,7 @@
+## 現行 v100 / R196（2026-11-28）
+
+295登録・239有効（SELECT 56、CONDITIONAL 183）。Atto独立学習2モデル（840/947008）研究限定追加。旧293行・133取得報告不変。配布元候補3931097 B・hash union 3918055 B、全依存/owner増分未確定。全239取得STOP、承認・重みDL・実行・削除0。[研究報告](docs/strategy/196-v100-atto-compact-retrieval.md)。
+
 ## v98 / R194 (2026-11-28 JST)
 PULSE MSE 独立学習画像コーデック研究限定CONDITIONAL。292登録 / 236 active / 180 conditional / 56 select、全STOP。依存・総数未確認、承認0、既存行維持。[R194](docs/strategy/194-v98-pulse-learned-image-codec.md)。
 

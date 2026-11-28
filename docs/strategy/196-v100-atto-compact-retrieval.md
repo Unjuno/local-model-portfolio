@@ -1,0 +1,9 @@
+# v100 / R196 — Atto compact retrieval (2026-11-28)
+
+Base main: a18d43ea33297debbd5da62af344069d140fb91b; 293 prior rows including concurrent work unchanged. 295 tracked, 239 active, 183 conditional, all STOP. No new approvals, weights, execution, deletions.
+
+Primary: https://huggingface.co/blog/neuml/introducing-atto, 2026-11-19; [immutable source manifest](../../manifests/drafts/r196-2026-11-28-atto-retrieval-originals.candidate.json). 7/30/90-day search; no independent matched evaluation or observed access/license change established. Card/config/custom code Git blob SHA verified, LFS hashes observed, payload not fetched.
+
+ADD NeuML/colbert-atto-840-8d @ b7cf5e5570c002f70ee08e6f8bb6532ded381f83: 840 F32, 8d, mean .3139, 32187 B. ADD NeuML/colbert-atto-950k-128d @ 682921cd675ebc442b01275417add72658fea533: 947008 F32, 128d, mean .4816, 3898910 B. Distinct learned originals, not quantizations. Existing 90K/32d .4454 intermediate; 4M .4818; LateOn .5463. No matched incumbent test. English only; evaluation HW/clock/batch unknown; PyLate train batch32 FP16 one epoch. 100 token FP32 vector example: 3200 / 12800 / 51200 bytes per doc for 8/32/128d; index overhead excluded. KEEP Qwen/Qwen3-Embedding-0.6B, Qwen/Qwen3-Reranker-0.6B, Horizon-Labs/multilingual-reranker-small, NeuML/colbert-atto-90k-32d. HOLD NeuML/atto-90k-2048d-embeddings, NeuML/colbert-atto-9k-16d, NeuML/colbert-atto-4m-384d. No replacements/exclusions. 22 source references, 3931097 B gross, 3918055 B hash union. Full dependencies/owner delta unknown. Apache tag only, no standalone LICENSE; parent/training/runtime/owner rights and offline ABI not closed. 133 reported acquisitions unchanged. Existing approval queue unchanged.
+
+Focused validation: immutable prior rows, exact typed active/conditional joins, count and source hash/byte checks, acquisition STOP. Full checkout unavailable (cloud disk exhausted); no full test suite claim.

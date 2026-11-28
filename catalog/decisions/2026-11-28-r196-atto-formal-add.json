@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-11-28",
+  "base_commit": "a18d43ea33297debbd5da62af344069d140fb91b",
+  "formal_changes": [
+    {
+      "repo_id": "NeuML/colbert-atto-840-8d",
+      "decision": "ADD",
+      "formal_selection": "conditional",
+      "reason": "840 F32・8d token late interactionの独立学習原本。90K/32d既存中間点に対し品質は低いが省パラメータ/省indexの限界研究。"
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-950k-128d",
+      "decision": "ADD",
+      "formal_selection": "conditional",
+      "reason": "947008 F32・128dの独立学習原本。配布元BEIR平均0.4816は90K 0.4454を上回り4M 0.4818に近い。indexコスト増大のため90Kを交換しない。"
+    }
+  ],
+  "keep": [
+    {
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "decision": "KEEP",
+      "current_selection": "select",
+      "parameters": 595800000,
+      "source_repo_bytes": 1207489041,
+      "reason": "既存dense/pairwise多言語ranking。英語late interactionとの同条件比較なし。"
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+      "decision": "KEEP",
+      "current_selection": "select",
+      "parameters": 595800000,
+      "source_repo_bytes": 1207488344,
+      "reason": "既存dense/pairwise多言語ranking。英語late interactionとの同条件比較なし。"
+    },
+    {
+      "repo_id": "Horizon-Labs/multilingual-reranker-small",
+      "decision": "KEEP",
+      "current_selection": "conditional",
+      "parameters": 140641921,
+      "source_repo_bytes": 1428709912,
+      "reason": "既存dense/pairwise多言語ranking。英語late interactionとの同条件比較なし。"
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-90k-32d",
+      "decision": "KEEP",
+      "current_selection": "conditional",
+      "parameters": 90300,
+      "source_repo_bytes": null,
+      "reason": "90K/32d中間品質・indexコスト点。直接測定なしに除外しない。"
+    }
+  ],
+  "hold": [
+    {
+      "repo_id": "NeuML/atto-90k-2048d-embeddings",
+      "decision": "HOLD",
+      "reason": "dense 2048d・平均0.4257、API総数未確認、既存denseと重複・日本語/runtime未検証"
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-9k-16d",
+      "decision": "HOLD",
+      "reason": "独立学習候補だが限界価値・固定revision・完全ファイル証拠未検証"
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-4m-384d",
+      "decision": "HOLD",
+      "reason": "独立学習候補だが限界価値・固定revision・完全ファイル証拠未検証"
+    }
+  ],
+  "replace": [],
+  "exclude": [],
+  "gross_publisher_candidate_bytes": 3931097,
+  "unique_hash_union_bytes": 3918055,
+  "actual_owner_delta_bytes": null,
+  "approved_downloads": 0,
+  "physical_deletions": 0
+}
