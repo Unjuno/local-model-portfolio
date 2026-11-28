@@ -1,3 +1,7 @@
+## 現行 v102 / R198（2026-11-28）
+
+288登録・232有効（SELECT 56、CONDITIONAL 185）。独立全パラメータ後学習Tofazzol v2.1 1.544B検索計画生成を研究限定CONDITIONAL追加。既存287行・133取得報告保持。候補原本34ファイル3,099,316,333 B、依存込み・owner増分未確定。全232取得STOP、承認・重みDL・実行・物理削除0。[研究報告](docs/strategy/198-v102-tofazzol-local-search-plan-specialist.md)。
+
 ## 現行 v101 / R197（2026-11-28）
 
 296登録・240有効（SELECT 56、CONDITIONAL 184）。Atto独立学習2モデル研究限定追加、並行更新を含む旧294行・133報告保存。配布元3931097 B、hash union 3918055 B、全依存/owner増分未確定。全240取得STOP、承認・重みDL・実行・削除0。[研究報告](docs/strategy/197-v101-atto-840-950k-retrieval.md)。

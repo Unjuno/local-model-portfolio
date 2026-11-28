@@ -1,0 +1,502 @@
+{
+  "schema_version": 1,
+  "kind": "RESEARCH_ONLY_NONEXECUTABLE",
+  "date_jst": "2026-11-28",
+  "source_models": [
+    {
+      "repo_id": "porkr/Tofazzol-v2.1-1.5B",
+      "revision": "a84e48a8a369135ffccb4a2c30f3a1483c0265fd",
+      "created_at": "2026-11-13T04:19:17.000Z",
+      "last_modified": "2026-11-13T05:05:25.000Z",
+      "gated": false,
+      "private": false,
+      "license_tag": "apache-2.0",
+      "safetensors_total": 1543714304,
+      "architecture": "Qwen2ForCausalLM",
+      "source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1722,
+          "git_blob_sha": "a655ef29134a452bbf41e062fd9956c7d272b07e",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": null
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11343,
+          "git_blob_sha": "6634c8cc3133b3848ec74b9f275acaaa1ea618ab",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 1209,
+          "git_blob_sha": "30caa14ab0b9af233a84cc17834be3bd20ca44dc",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "7b7158a519dd8b00ea8e2820ce97a2e95294ea95f564ff635b909856f83feac7"
+        },
+        {
+          "path": "README.md",
+          "bytes": 18153,
+          "git_blob_sha": "9ac0daeba0bdf3d9a0f27d578542090d96d1a0a6",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "ed969bdd9659fe1fbd7986b49914bbc9b95d45bc60556802bb1ef0b573185ea4"
+        },
+        {
+          "path": "SHA256SUMS",
+          "bytes": 6747,
+          "git_blob_sha": "613bfbae85c3fb137e4d1018f0f58f6c4687ea36",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": null
+        },
+        {
+          "path": "VERIFICATION.md",
+          "bytes": 1743,
+          "git_blob_sha": "5aa609f96e1fa04ee666fdc5c51b2c6a963af5a2",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "8402ca224519981d4c46a205c100df313d77327bc4f14f51d2234fd089b10e44"
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 2507,
+          "git_blob_sha": "bdf7919a96cfe43d50914a007b9c0877bd0ec27e",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f"
+        },
+        {
+          "path": "config.json",
+          "bytes": 1372,
+          "git_blob_sha": "465dc4429d5378056a1b66ac6a24dadad59efe1c",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "70775d9498b566701600cec47c7e271e425e427b9bf2a68b52efa38153008e9a"
+        },
+        {
+          "path": "contexts/document_search_context_pristine.txt",
+          "bytes": 3536,
+          "git_blob_sha": "a54a8a3e795fbc566486e22f5ffa1adb7cdd1769",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "1b0128358039008769929806649a840fe0a6688b1d11fabdcf2fd8c253955715"
+        },
+        {
+          "path": "contexts/mail_search_context_calendar_v2.txt",
+          "bytes": 6322,
+          "git_blob_sha": "af15886ad3243bd8e0903babaca791489e0afdc6",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "c5afe2c0a2c4ecf1e8e40f494ba4e9efb614f9365d9b65a52541c4c61b60b78f"
+        },
+        {
+          "path": "evidence/packaging-validation.json",
+          "bytes": 1042,
+          "git_blob_sha": "10d57fa7de1e164e87e88cf1ee71e81c612b351a",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "40cbbc90bb19419c10909b2f0d7b208ae8c7f43915640d2c6e16d63dba38ad71"
+        },
+        {
+          "path": "evidence/paper-v2-results.json",
+          "bytes": 6403,
+          "git_blob_sha": "f30f2ca58b4aad9df97c8c61f94cdb81d2430feb",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "87905dd86305501fa97920bdbcf9aa949b4d65346bb18791636533928856e4ad"
+        },
+        {
+          "path": "evidence/release-inference-consistency.json",
+          "bytes": 934,
+          "git_blob_sha": "eb18586ef48e2f497215a62b594a5a735a239eb7",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "762eb263f39f7f460e9d75f970b387069ae4bcb8ebcd6b83028b5e84cac42fb9"
+        },
+        {
+          "path": "evidence/results.json",
+          "bytes": 4878,
+          "git_blob_sha": "e570375750780e1177e2a14d2e036ab25046657b",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "7e583ccc5d51f040ccec030c1d9825e9869dfc5fdbac3a8a36abdc15cb1a452e"
+        },
+        {
+          "path": "evidence/source-receipts.json",
+          "bytes": 2006,
+          "git_blob_sha": "8f3d6e32fb07a1f87a8fe4df95b2036824c4f025",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "97bf75945f3cc3ed958d51c9a5b58f65317b35c725d28f8539797e77e8637924"
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 242,
+          "git_blob_sha": "b7849b3dad857bc1e227afd6ca21d1e4cb3f8f82",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "1a628a5775bc69cde01c6749a531150ca4d3189652c618a174f7077923acf3b1"
+        },
+        {
+          "path": "inference/LICENSE-MIT",
+          "bytes": 1056,
+          "git_blob_sha": "14fac913ccf80234b1848540089a3bbcb6e5283d",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+        },
+        {
+          "path": "inference/decoding.json",
+          "bytes": 595,
+          "git_blob_sha": "73928eb004d40854f159558ad25d7e7f228b1f34",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "e2518a33d6d311cffcb0764c6fe2e0f963da49eef4b8d839eb90f2bd9ca3310a"
+        },
+        {
+          "path": "inference/requirements-mlx.txt",
+          "bytes": 152,
+          "git_blob_sha": "fcf6fe2c8e935164b4f9328aad7253e5d808cf20",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "91e83d5eb8c9040bc10e5e098d15a50c3b7b3d7e82cd701f6e26ebda9b69c13c"
+        },
+        {
+          "path": "inference/requirements-transformers.txt",
+          "bytes": 151,
+          "git_blob_sha": "082c93f3406d0ac67fa83c1c0d73e9e728fd71a9",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "13ae5e284fffb8ddbc6cad6845721e0bb8d41327a02b828310236b77a9e1c95a"
+        },
+        {
+          "path": "inference/run.py",
+          "bytes": 5677,
+          "git_blob_sha": "64d2199ec898daea792c333b7d1d41551f3d91e0",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "9b6038a7416633a3caa48241c789f3c1e34478a8a8991a1d4a40b9a242cc1ede"
+        },
+        {
+          "path": "inference/verify.py",
+          "bytes": 1037,
+          "git_blob_sha": "7a20cf6e3d263af910b574e1ea63675374bb3cae",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "40799570f97b696164faecc3ce7ee8318fef34663cee87683769bf0de36c9de6"
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 3087467144,
+          "git_blob_sha": "7fc2cbb5a2b0d2ea777397d169b77710cc1e4c2e",
+          "publisher_lfs_sha256": "0bc13eadd050a1a7348a78a494217bdf93aea9ffcb0dd7a2f6b37e05f3a32ebf",
+          "publisher_SHA256SUMS": "0bc13eadd050a1a7348a78a494217bdf93aea9ffcb0dd7a2f6b37e05f3a32ebf"
+        },
+        {
+          "path": "paper/small-models-narrow-tasks.html",
+          "bytes": 96288,
+          "git_blob_sha": "5f85cf83afd9765f35668952c9e4a3a4cf17a851",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "0fcd74fbaaec17e3e69749957e44a29690c29ac95a1ea34c0b0b401f98b4e7ca"
+        },
+        {
+          "path": "paper/tofazzol-small-model-narrow-task-specialization-2026-11-08/aggregate-results.json",
+          "bytes": 6403,
+          "git_blob_sha": "f30f2ca58b4aad9df97c8c61f94cdb81d2430feb",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "87905dd86305501fa97920bdbcf9aa949b4d65346bb18791636533928856e4ad"
+        },
+        {
+          "path": "paper/tofazzol-small-model-narrow-task-specialization-2026-11-08/figures/category-tradeoffs.pdf",
+          "bytes": 18993,
+          "git_blob_sha": "3860fb05a090898e9888b5fe768af1f2284a1754",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "ccc0d36ca784491692788faebf3f2da19fa5d82d6a955c022d39001d3a8d69ae"
+        },
+        {
+          "path": "paper/tofazzol-small-model-narrow-task-specialization-2026-11-08/figures/category-tradeoffs.png",
+          "bytes": 59724,
+          "git_blob_sha": "d5e37ec31c9a0048c81cb076e9e82aa24e71d94d",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "5f6e545f17cfb51deadb3ef1094706c4566b5fa6af27d5cbe4d8bdf8fc7c930f"
+        },
+        {
+          "path": "paper/tofazzol-small-model-narrow-task-specialization-2026-11-08/figures/category-tradeoffs.svg",
+          "bytes": 11947,
+          "git_blob_sha": "a84e27775cf665d45def0279d713555cdc3dd75d",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "0df248419657494a26dfd1570b6d688182863e355eaf0da0a25006a7b763eec9"
+        },
+        {
+          "path": "paper/tofazzol-small-model-narrow-task-specialization-2026-11-08/figures/paired-file-outcomes.pdf",
+          "bytes": 16738,
+          "git_blob_sha": "9ba191b8d43b977b85a39258541c799de037b0ef",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "189213a22b597a2c80bb781cf3a04258c7ef86b342c0fcecc0f58f32cf269eb8"
+        },
+        {
+          "path": "paper/tofazzol-small-model-narrow-task-specialization-2026-11-08/figures/paired-file-outcomes.png",
+          "bytes": 42685,
+          "git_blob_sha": "43cd560fef5369de087e459cdf48ed494e61dc78",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "3c17b224ebc794b2044c6c265ce603f9e8d24236e8a860ba6f928038f326ec4a"
+        },
+        {
+          "path": "paper/tofazzol-small-model-narrow-task-specialization-2026-11-08/figures/paired-file-outcomes.svg",
+          "bytes": 9809,
+          "git_blob_sha": "03e807317dc8ae3c1f06976d48dd0f984f0259cc",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "776bdfd68f9ab2ee33a1ef2693ccf69430066cf0997589af59bad94793acd131"
+        },
+        {
+          "path": "paper/tofazzol-small-model-narrow-task-specialization-2026-11-08/figures/small-model-narrow-task-social-graphic.pdf",
+          "bytes": 42213,
+          "git_blob_sha": "c581cb7a715a5a20c1e55575b75bf76c1c18f7de",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "6b67a9c5f0e0fc4f065da301021119e5f617f7e27002add8f1c3225a09821116"
+        },
+        {
+          "path": "paper/tofazzol-small-model-narrow-task-specialization-2026-11-08/figures/small-model-narrow-task-social-graphic.png",
+          "bytes": 237191,
+          "git_blob_sha": "096e6e3b27d49d39391439943fcdbfa1ffc1d757",
+          "publisher_lfs_sha256": "746825026ea834678617523f60cb6370d85abbd3316fa2868aece5c9ae48b26d",
+          "publisher_SHA256SUMS": "746825026ea834678617523f60cb6370d85abbd3316fa2868aece5c9ae48b26d"
+        },
+        {
+          "path": "paper/tofazzol-small-model-narrow-task-specialization-2026-11-08/figures/small-model-narrow-task-social-graphic.svg",
+          "bytes": 20561,
+          "git_blob_sha": "1274819a0f2d9ebedad85c51f060589cd89a22b4",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "09960124b24d32e236f17d66d1e612dc74a1bcf22a9645e9d964c78fb87f0643"
+        },
+        {
+          "path": "paper/tofazzol-small-model-narrow-task-specialization-2026-11-08/figures/specialization-by-domain.pdf",
+          "bytes": 16718,
+          "git_blob_sha": "e551c895108e43cf1eb7a6e5ee6641b2d2474aa8",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "d86fa4cf4aa645ccf4c22158d67491ee6af0fce0f39c92dcf33331e4b737e8e2"
+        },
+        {
+          "path": "paper/tofazzol-small-model-narrow-task-specialization-2026-11-08/figures/specialization-by-domain.png",
+          "bytes": 78798,
+          "git_blob_sha": "64cd6e3a83f62f5d50220da7938192b00f6214c7",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "8ed71c4e15cd20c6261da9854a8d8f1199212398fa15237f07495ca4144d237a"
+        },
+        {
+          "path": "paper/tofazzol-small-model-narrow-task-specialization-2026-11-08/figures/specialization-by-domain.svg",
+          "bytes": 11911,
+          "git_blob_sha": "1a7d5cd43bae86faaf7a92c9223bea6425e9bad3",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "01cf92e4dbae3619cd8ecc2964d47ecc15ae753d4019b8f2e27a22bc5fa6a04b"
+        },
+        {
+          "path": "paper/tofazzol-synthetic-email-gains-and-executed-retrieval-2026-11-08.html",
+          "bytes": 159238,
+          "git_blob_sha": "9070aa76a50ec4fede34490191ed47d1ac86f869",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "5045a60a1b976b8d5c9ed1d07f55167ac83be6ec9b121de1d5df924207a29070"
+        },
+        {
+          "path": "paper/tofazzol-synthetic-email-gains-and-executed-retrieval-2026-11-08/aggregate-results.json",
+          "bytes": 47848,
+          "git_blob_sha": "cd11fdeed820a098a93ff79d985041cab413555f",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "0fd1ff290c300779c69f272daa961bf50daaf160572b8fdea079df48b744f661"
+        },
+        {
+          "path": "paper/tofazzol-synthetic-email-gains-and-executed-retrieval-2026-11-08/figures/checkpoint-tradeoffs.pdf",
+          "bytes": 16040,
+          "git_blob_sha": "fbbc89cbbd7b5bae3930199985bb6a4c6d3c341b",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "d970493b8574bcc978934ae4d294459855ea0f84f439317354a789fe7bbf1ab4"
+        },
+        {
+          "path": "paper/tofazzol-synthetic-email-gains-and-executed-retrieval-2026-11-08/figures/checkpoint-tradeoffs.png",
+          "bytes": 60445,
+          "git_blob_sha": "357b110797532c1310ebf43bacc11d43045c7d9d",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "ad8ecc1a103a61db3416ba274798be077cb6e4b0950b2086fb5aa13c5d6c9797"
+        },
+        {
+          "path": "paper/tofazzol-synthetic-email-gains-and-executed-retrieval-2026-11-08/figures/checkpoint-tradeoffs.svg",
+          "bytes": 16378,
+          "git_blob_sha": "f7ca57096f3531be3a8aafa142a8df36f8b10b6c",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "5f446ea10bc7eea839618d03f9c0fac50be6cdaf7a1cc0494725170c515e73eb"
+        },
+        {
+          "path": "paper/tofazzol-synthetic-email-gains-and-executed-retrieval-2026-11-08/figures/learning-versus-retrieval.pdf",
+          "bytes": 17262,
+          "git_blob_sha": "4b597e69afacd1da3c0750af225b7c82f4f0d106",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "241009ed67fc213989066a458b4c90baf91bfde2130bc95682cb8db7f04b66be"
+        },
+        {
+          "path": "paper/tofazzol-synthetic-email-gains-and-executed-retrieval-2026-11-08/figures/learning-versus-retrieval.png",
+          "bytes": 58236,
+          "git_blob_sha": "72ded65ed5e76bbb5461d488344e1033db5aec75",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "a9857d3bfa0051cdd804933f078d26214b6e3b34870ed2584540d38e9a546169"
+        },
+        {
+          "path": "paper/tofazzol-synthetic-email-gains-and-executed-retrieval-2026-11-08/figures/learning-versus-retrieval.svg",
+          "bytes": 9024,
+          "git_blob_sha": "88ff6ab38d81c82775236f7b43b7ca6ad6213cd5",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "f2d737fd97e83c824c6df94d3f70bbe6c39dab1b7f041378d848780a179bde6e"
+        },
+        {
+          "path": "paper/tofazzol-synthetic-email-gains-and-executed-retrieval-2026-11-08/figures/paired-email-changes.pdf",
+          "bytes": 16816,
+          "git_blob_sha": "86f6c22a07dad7d01629c20614f2e7f3458a8ea6",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "ad43f5a6c5ce8bc446d1725e3a6be24794380b6377459cc6cb9c6d27f994415a"
+        },
+        {
+          "path": "paper/tofazzol-synthetic-email-gains-and-executed-retrieval-2026-11-08/figures/paired-email-changes.png",
+          "bytes": 46261,
+          "git_blob_sha": "b8e20058c213023c5a8e6169e011efedfde117f9",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "a62d6d6f01e6db3c6b138a7f2902f1f6dde0c9b0e19a0f09ff9e60f99464b712"
+        },
+        {
+          "path": "paper/tofazzol-synthetic-email-gains-and-executed-retrieval-2026-11-08/figures/paired-email-changes.svg",
+          "bytes": 9423,
+          "git_blob_sha": "d9f7368d100494131c1f53a3aa679d9231a943ef",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "9590bd1356f28b0ee5bcc650a0b8f6ff8264e2be711783f37ee9962dcd5869f4"
+        },
+        {
+          "path": "release-manifest.json",
+          "bytes": 9924,
+          "git_blob_sha": "a1d25795522e8eec402941f5c3aaaeb2c781bb2c",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "98a5b8b3b6e2fdf689420770d678998cbeeda2e1f786bde3b7b21cb9d1f168f4"
+        },
+        {
+          "path": "shlex-meanings-v1",
+          "bytes": 305,
+          "git_blob_sha": "f7352125467de8d3c61ac497f26b9ced39c325ca",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "cfe6bb3475b4df767e4cd5208286c674df3af579dc5ebf0c16cbc522a5a0550b"
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 11421892,
+          "git_blob_sha": "34510ff0037cd50428af467a17ead5a96140a32c",
+          "publisher_lfs_sha256": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8",
+          "publisher_SHA256SUMS": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 691,
+          "git_blob_sha": "c5d31a5be67e936a30586f49d3dcb556d0f186c1",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "bd9df05957db8b747d5b6fae78d8a00cc1f1bebe46f7bf3d159c17e0aaf9a5b2"
+        },
+        {
+          "path": "training/README.md",
+          "bytes": 3305,
+          "git_blob_sha": "f2a1ee758d25c52c5c8da043828018c24619aba4",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "3e4244c85e5f6a14e4286063853be08356ad2f195eeca11b2b4e3f538cc0b356"
+        },
+        {
+          "path": "training/recipe.json",
+          "bytes": 3686,
+          "git_blob_sha": "77f2ed6944e7a1cc06f3a7d264fc2223ba80958d",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "dbaf9ef82cbf5d4c262130534b5a3c7794dba4bf11f7b39afc7c5cbb1260e3f3"
+        },
+        {
+          "path": "training/tofazzol_copy_objective.py",
+          "bytes": 4372,
+          "git_blob_sha": "2599dc57a4bc6223c10e8ce2215b0ce89661a90d",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "a58365a3d2d3eaab411b2c2ec21007b3a34d69a3438fea9f687060a261967510"
+        },
+        {
+          "path": "training/trainer_source.py",
+          "bytes": 18132,
+          "git_blob_sha": "c4be21cc45cdc40b2116a1b0b4453a0ae19b5834",
+          "publisher_lfs_sha256": null,
+          "publisher_SHA256SUMS": "9cb50d57d9ba3b272c1d68ff438e357eca841bedcbd21841c1fd9dfe6cc0522d"
+        }
+      ],
+      "full_repo_bytes": 3100135228,
+      "tree_pagination_complete": true,
+      "tree_pages": 2,
+      "model_card_git_blob_verified": true,
+      "small_text_files_git_and_sha256_verified": [
+        "README.md",
+        "NOTICE",
+        "inference/LICENSE-MIT",
+        "inference/decoding.json",
+        "inference/requirements-mlx.txt",
+        "inference/requirements-transformers.txt",
+        "training/recipe.json",
+        "evidence/results.json",
+        "evidence/paper-v2-results.json",
+        "VERIFICATION.md",
+        "config.json",
+        "inference/run.py"
+      ],
+      "api_url": "https://huggingface.co/api/models/porkr/Tofazzol-v2.1-1.5B/revision/a84e48a8a369135ffccb4a2c30f3a1483c0265fd?blobs=true",
+      "model_card_url": "https://huggingface.co/porkr/Tofazzol-v2.1-1.5B/blob/a84e48a8a369135ffccb4a2c30f3a1483c0265fd/README.md",
+      "candidate_selected_files": [
+        "LICENSE",
+        "NOTICE",
+        "README.md",
+        "SHA256SUMS",
+        "VERIFICATION.md",
+        "chat_template.jinja",
+        "config.json",
+        "contexts/document_search_context_pristine.txt",
+        "contexts/mail_search_context_calendar_v2.txt",
+        "evidence/packaging-validation.json",
+        "evidence/paper-v2-results.json",
+        "evidence/release-inference-consistency.json",
+        "evidence/results.json",
+        "evidence/source-receipts.json",
+        "generation_config.json",
+        "inference/LICENSE-MIT",
+        "inference/decoding.json",
+        "inference/requirements-mlx.txt",
+        "inference/requirements-transformers.txt",
+        "inference/run.py",
+        "inference/verify.py",
+        "model.safetensors",
+        "paper/small-models-narrow-tasks.html",
+        "paper/tofazzol-small-model-narrow-task-specialization-2026-11-08/aggregate-results.json",
+        "paper/tofazzol-synthetic-email-gains-and-executed-retrieval-2026-11-08.html",
+        "paper/tofazzol-synthetic-email-gains-and-executed-retrieval-2026-11-08/aggregate-results.json",
+        "release-manifest.json",
+        "shlex-meanings-v1",
+        "tokenizer.json",
+        "tokenizer_config.json",
+        "training/README.md",
+        "training/recipe.json",
+        "training/tofazzol_copy_objective.py",
+        "training/trainer_source.py"
+      ],
+      "candidate_selected_bytes": 3099316333
+    }
+  ],
+  "training_parent": {
+    "repo_id": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "revision": "2e1fd397ee46e1388853d2af2c993145b0f1098a",
+    "publisher_training_weight_sha256": "f69c89242cdf8de3662d89d09ed0d61441cfa908afb423886fd4574f550cf8d4",
+    "needed_for_inference": false,
+    "private_intermediate_and_data_not_reconstructible": true
+  },
+  "runtime_dependencies": {
+    "mlx": [
+      "mlx==0.32.2",
+      "mlx-lm==0.31.3",
+      "transformers==5.15.1",
+      "tokenizers==0.22.2",
+      "safetensors==0.8.0"
+    ],
+    "transformers": [
+      "torch>=2.6",
+      "transformers==5.15.1",
+      "tokenizers==0.22.2",
+      "safetensors==0.8.0"
+    ],
+    "executor": "Historical executor not publicly distributed; independent validated access-controlled executor required",
+    "abi_and_wheelhouse_verified": false,
+    "peak_memory_bytes": null,
+    "owner_hardware_verified": false
+  },
+  "complete_dependency_inclusive_bytes": null,
+  "actual_owner_incremental_bytes": null,
+  "download_enabled": false,
+  "download_authorized": false,
+  "weight_payload_downloaded_bytes": 0,
+  "local_weight_sha_verified": false,
+  "physical_files_deleted": 0
+}

@@ -1,3 +1,7 @@
+## 現行 v102 / R198（2026-11-28）
+
+288登録・232有効（SELECT 56、CONDITIONAL 185）。独立全パラメータ後学習Tofazzol v2.1 1.544B検索計画生成を研究限定CONDITIONAL追加。既存287行・133取得報告保持。候補原本34ファイル3,099,316,333 B、依存込み・owner増分未確定。全232取得STOP、承認・重みDL・実行・物理削除0。[研究報告](../docs/strategy/198-v102-tofazzol-local-search-plan-specialist.md)。
+
 ## 現行 v100 / R196（2026-11-28）
 
 294登録・238有効（SELECT 56、CONDITIONAL 182）。Shorter Formulaeの145M原本・ノイズ追加学習済み2状態を研究限定CONDITIONAL追加。RASR維持。既存293行・133取得報告不変。配布元参照1,173,518,813 B、依存・owner増分未確定。全238取得STOP、承認・重みDL・実行・物理削除0。回帰テスト4/4 PASS。[研究報告](../docs/strategy/196-v100-shorter-formulae-symbolic-regression.md)。正式参照は `CURRENT.json`。

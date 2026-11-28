@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "round": "R198",
+  "date_jst": "2026-11-28",
+  "previous_revision": "v101-20261128",
+  "new_revision": "v102-20261128",
+  "parent_commit": "2b2dfe82c84f081d805a262414f37646053e6e32",
+  "decisions": [
+    {
+      "repo_id": "porkr/Tofazzol-v2.1-1.5B",
+      "decision": "ADD",
+      "reason": "Independent full-parameter search-plan specialization (C-600 continuation) of Qwen2.5-Coder-1.5B-Instruct, 1,543,714,304 BF16 parameters. English natural-language-to-typed document/filename/metadata/Outlook search plans, distinct from embedding/reranking and GUI agents. Private training corpus and intermediate checkpoints unavailable; exact trained BF16 cannot be recovered from base or ordinary quantization. Research-only."
+    },
+    {
+      "repo_id": "google/gemma-4-31B",
+      "decision": "KEEP",
+      "reason": "Existing SELECT base comparison; publisher compared Gemma 4 31B but exact incumbent revision/instruction status parity unverified. Higher aggregate and mail results. Existing full-source proxy 62,578,664,883 B."
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-90k-32d",
+      "decision": "KEEP",
+      "reason": "Concurrent v101 extreme-compact late-interaction retrieval; complementary query-plan stage, not a replacement."
+    },
+    {
+      "repo_id": "BAAI/bge-m3",
+      "decision": "KEEP",
+      "reason": "Existing multilingual dense/sparse/multivector retriever; distinct scoring/index interface, no matched planner equivalence."
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+      "decision": "KEEP",
+      "reason": "SELECT relevance scoring, 1,207,488,344 B source proxy; not a typed search planner."
+    },
+    {
+      "repo_id": "Horizon-Labs/multilingual-reranker-small",
+      "decision": "KEEP",
+      "reason": "140.64M independent multilingual ranker, 597,202,061 B candidate source; complementary stage."
+    },
+    {
+      "repo_id": "ibm-granite/granite-4.1-3b-llmon-preview",
+      "decision": "KEEP",
+      "reason": "Instruction/data separation research, not query executor or permission enforcement."
+    },
+    {
+      "repo_id": "perplexity-ai/pplx-decider-flash-v1.3",
+      "decision": "KEEP",
+      "reason": "Noncausal judgment/span extraction, different interface."
+    },
+    {
+      "repo_id": "Hcompany/Holotron4-30B-A3B",
+      "decision": "KEEP",
+      "reason": "GUI/MCP learned agent, no matched task results or constrained query plan equivalence."
+    },
+    {
+      "repo_id": "mradermacher/Tofazzol-v2.1-1.5B-GGUF",
+      "decision": "EXCLUDE",
+      "reason": "Same learned state conversion, revision a12bb5c5b349e282a2ebe8e06fd7484161ee63a8; no separate archival asset; optional runtime format only."
+    },
+    {
+      "repo_id": "Inomjonov/tiny-voca-english-reproduction",
+      "decision": "HOLD",
+      "reason": "Independent scratch reproduction, inference.pt 18,209,221 B, full 28,350,980 B; versus selected n4ze3m/tiny-voca 4,537,297 core and 23,626,858 B candidate scope, lacks matched WER/MOS and complete census."
+    },
+    {
+      "repo_id": "Kai9987kai/Supermix-Tether",
+      "decision": "HOLD",
+      "reason": "Tiny specialist dependence/shortcut-learning experiments, 146 files 13,852,584 B; many seed/control checkpoints, complete learned dependency census and license unresolved."
+    }
+  ],
+  "formal_additions": [
+    "porkr/Tofazzol-v2.1-1.5B"
+  ],
+  "formal_replacements": [],
+  "formal_exclusions": [],
+  "research_only_excluded_conversion": [
+    "mradermacher/Tofazzol-v2.1-1.5B-GGUF"
+  ],
+  "formal_prior_rows_unchanged": 296,
+  "source_scope": "manifests/drafts/r198-2026-11-28-tofazzol-source.candidate.json",
+  "source_candidate_delta_bytes": 3099316333,
+  "owner_incremental_bytes": null,
+  "download_approved": 0,
+  "physical_files_deleted": 0
+}
