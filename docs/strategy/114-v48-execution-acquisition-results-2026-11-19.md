@@ -2,8 +2,8 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 168 (verified 162, partial 2, failed 0, held 4)
-- Verified files: 2647
+- Models: 168 (verified 164, partial 0, failed 0, held 4)
+- Verified files: 2649
 - Verified source bytes: 2583024117670
 - Minimum observed free bytes: 427910205440 (200 GB floor maintained: True)
 
@@ -150,8 +150,8 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `nvidia/OpenCodeInstruct` | `8f3ba5bafe4d6e8db46082cf7ae6741bc370604d` | VERIFIED | 52/52 | cc-by-4.0 |
 | `nvidia/OpenMathInstruct-2` | `469216e3f46f4dacf476b382e192485ea51a143e` | VERIFIED | 59/59 | cc-by-4.0 |
 | `OVHaiLLM/Olala-v1.0-mini-7A1B-base` | `7b631f39cd160dfe396c68a8564fef178e215c86` | VERIFIED | 13/13 | apache-2.0 |
-| `OVHaiLLM/Olala-v1.0-mini-7A1B` | `94836be2ae9bfd5c7c7e7f68f481c9f14f2ee6ea` | PARTIAL | 19/20 | apache-2.0 |
-| `nvidia/Cosmos3-Nano-Sim-Bimanual` | `da4d2c09175e2a6dd5b237265318066d5134312e` | PARTIAL | 90/91 | other |
+| `OVHaiLLM/Olala-v1.0-mini-7A1B` | `94836be2ae9bfd5c7c7e7f68f481c9f14f2ee6ea` | VERIFIED | 20/20 | apache-2.0 |
+| `nvidia/Cosmos3-Nano-Sim-Bimanual` | `da4d2c09175e2a6dd5b237265318066d5134312e` | VERIFIED | 91/91 | other |
 | `nvidia/Cosmos3-Nano-Sim-Auto` | `bea7452062866fdd8eebe4c38f305d02baed3699` | VERIFIED | 45/45 | other |
 | `raws-labs/tinycast` | `9635a27b66a73fedd6e88120c72c7f91427d216e` | VERIFIED | 6/6 | apache-2.0 |
 | `JusperLee/DBS-TIGER-DnR` | `22da7d4cd3ea63f9365181008bff1c0d2ab6fb2b` | VERIFIED | 4/4 | apache-2.0 |

@@ -19,6 +19,7 @@ LOCAL_OCT = Path("D:/AI_VAULT/state/ledger/octomed-ledger.json")
 LOCAL_REPAIR = Path("D:/AI_VAULT/state/ledger/waves3plus-ledger.json")
 LOCAL_INTEGRATE = Path("D:/AI_VAULT/state/ledger/existing-integrated-ledger.json")
 LOCAL_EXCLUDED = Path("D:/AI_VAULT/state/ledger/excluded-rights-ledger.json")
+LOCAL_FINALREPAIR = Path("D:/AI_VAULT/state/ledger/final-repairs-ledger.json")
 OUT = Path("catalog/execution/2026-11-19-acquisition-ledger.json")
 MD = Path("docs/strategy/114-v48-execution-acquisition-results-2026-11-19.md")
 
@@ -36,7 +37,7 @@ def sanitize_source(value):
 def main():
     all_entries = []
     for p in (LOCAL, LOCAL_WAVE2, LOCAL_CONT, LOCAL_LARGE, LOCAL_OCT,
-              LOCAL_INTEGRATE, LOCAL_EXCLUDED):
+              LOCAL_INTEGRATE, LOCAL_EXCLUDED, LOCAL_FINALREPAIR):
         if p.exists():
             d = json.loads(p.read_text(encoding="utf-8"))
             all_entries.extend(d.get("entries", []))

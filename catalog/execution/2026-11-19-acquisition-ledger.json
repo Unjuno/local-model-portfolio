@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "ledger_id": "2026-11-19-v48-execution",
-  "generated_at": "2026-11-28T02:01:32.892951+00:00",
+  "generated_at": "2026-11-28T02:31:57.632061+00:00",
   "canonical_revision": "v48-20261118",
   "source_plan": "queues/proposed-v48-r113-source-pinned-15.json",
   "policy": {
@@ -15,11 +15,11 @@
   },
   "summary": {
     "models_total": 168,
-    "models_verified": 162,
-    "models_partial": 2,
+    "models_verified": 164,
+    "models_partial": 0,
     "models_failed": 0,
     "models_held": 4,
-    "files_verified_total": 2647,
+    "files_verified_total": 2649,
     "bytes_verified_total": 2583024117670,
     "minimum_free_bytes_observed": 427910205440,
     "minimum_free_floor_bytes": 200000000000,
@@ -6640,19 +6640,18 @@
       "revision_sha": "94836be2ae9bfd5c7c7e7f68f481c9f14f2ee6ea",
       "source_manifest": "local-discovered/rem-OVHaiLLM__Olala-v1.0-mini-7A1B.json",
       "priority_group": "",
-      "status": "PARTIAL",
+      "status": "VERIFIED",
       "license": "apache-2.0",
       "hold_reason": null,
       "files_total": 20,
-      "files_verified": 19,
+      "files_verified": 20,
       "source_bytes": 13595424253,
       "verification_methods": {
         "git-blob-sha1-vs-publisher": 14,
-        "sha256-vs-publisher": 5
+        "sha256-vs-publisher": 6
       },
       "file_status_counts": {
-        "VERIFIED": 19,
-        "FAIL_RuntimeError": 1
+        "VERIFIED": 20
       },
       "weight_files_sha256": [
         {
@@ -6672,6 +6671,10 @@
           "sha256": "f2c8ae50455a254a24f6cb46b7abc36cc6eaaf4596a59d3e5cc265afb5fecee9"
         },
         {
+          "path": "model.safetensors",
+          "sha256": "99a208e1b45a4677ac1ce2eeaeb45150aa3c28aac173df3d22dc7985e9356442"
+        },
+        {
           "path": "tokenizer.json",
           "sha256": "286ead4e29f85215a29ffc035c2529c635ed2dc390d101c8738ab7bcf8f984b5"
         }
@@ -6685,20 +6688,19 @@
       "revision_sha": "da4d2c09175e2a6dd5b237265318066d5134312e",
       "source_manifest": "local-discovered/rem-nvidia__Cosmos3-Nano-Sim-Bimanual.json",
       "priority_group": "",
-      "status": "PARTIAL",
+      "status": "VERIFIED",
       "license": "other",
       "hold_reason": null,
       "files_total": 91,
-      "files_verified": 90,
+      "files_verified": 91,
       "source_bytes": 31830399498,
       "verification_methods": {
         "git-blob-sha1-vs-publisher": 65,
-        "sha256-vs-publisher": 25
+        "sha256-vs-publisher": 26
       },
       "file_status_counts": {
         "DEDUP_VERIFIED": 80,
-        "VERIFIED": 10,
-        "FAIL_RuntimeError": 1
+        "VERIFIED": 11
       },
       "weight_files_sha256": [
         {
@@ -6712,6 +6714,10 @@
         {
           "path": "transformer/diffusion_pytorch_model-00003-of-00006.safetensors",
           "sha256": "135a906487336252d32f110c92e75ab498f31488b1a4871576d470880edbfbc6"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00004-of-00006.safetensors",
+          "sha256": "4558553b32afaab5dd650d97ba4a30e1140f5cf583fe8f3d3c3e2f7932a66ed9"
         },
         {
           "path": "transformer/diffusion_pytorch_model-00005-of-00006.safetensors",
