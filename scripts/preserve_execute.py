@@ -400,7 +400,8 @@ def process_task(task, source, dry=False):
             res["files"].append(out)
             continue
         host_seg = ("datasets/" if task.get("repo_type") == "dataset" else "")
-        url = f"https://huggingface.co/{host_seg}{repo}/resolve/{rev}/{rel}"
+        from urllib.parse import quote
+        url = f"https://huggingface.co/{host_seg}{repo}/resolve/{rev}/" + quote(rel)
         try:
             http_fetch(url, target, r["bytes"])
             v, method, exp = verify_file(target, r)
