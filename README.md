@@ -1,3 +1,7 @@
+## 現行 v100 / R196（2026-11-28）
+
+294登録・238有効（SELECT 56、CONDITIONAL 182）。IBEM-im2typst独立学習14,157,152パラメータ（印刷数式→Typst）を研究限定CONDITIONAL追加。並行更新v94–v99を含む293旧行・133取得報告保持。原本＋固定コード既知部分59,110,340 B、全依存・owner増分未確定。全238取得STOP、承認・重みDL・実行・物理削除0。[研究報告](docs/strategy/196-v100-ibem-im2typst-compact-math-recognition.md)。
+
 ## v98 / R194 (2026-11-28 JST)
 PULSE MSE 独立学習画像コーデック研究限定CONDITIONAL。292登録 / 236 active / 180 conditional / 56 select、全STOP。依存・総数未確認、承認0、既存行維持。[R194](docs/strategy/194-v98-pulse-learned-image-codec.md)。
 

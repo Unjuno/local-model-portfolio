@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "round": "R196",
+  "date_jst": "2026-11-28",
+  "baseline_commit": "12dc57048e48d89ed17c7d19967abcc0e5e04025",
+  "baseline_revision": "v99-20261128",
+  "result_revision": "v100-20261128",
+  "decisions": [
+    {
+      "repo_id": "dbcccc/IBEM-im2typst",
+      "decision": "ADD",
+      "selection": "conditional",
+      "reason": "Independent small image-to-Typst learned state from project-seeded random initialization, not a format conversion or generic OCR derivative. Direct editable scientific formula output and small FP32 checkpoint complement selected LightOnOCR-3-0.8B, PaddleOCR-VL-1.5, DeepSeek-OCR-2 and conditional TATR; keep full document OCR, no replacement evidence. Preserve optimizer-free original FP32 state once, not separate INT8 export assets.",
+      "negative": "Publisher validation-selected checkpoint, held-out test unopened; 33–64 tokens 88.4282% below own 90% gate, display formulas 70.1197%, matrices and accents errors. Printed tight single crop only, not handwriting or page OCR. No matched incumbent test, hardware/clock/batch/latency/peak memory or independent replay. INT8 built-in probe parity only; full-domain INT8 evaluation not completed."
+    },
+    {
+      "repo_id": "deepseek-ai/DeepSeek-OCR-2",
+      "decision": "KEEP",
+      "reason": "Different full-page/layout/table/Thai text role; no same-crop matched evaluation, no replacement or physical removal."
+    },
+    {
+      "repo_id": "lightonai/LightOnOCR-3-0.8B",
+      "decision": "KEEP",
+      "reason": "Different full-page/layout/table/Thai text role; no same-crop matched evaluation, no replacement or physical removal."
+    },
+    {
+      "repo_id": "PaddlePaddle/PaddleOCR-VL-1.5",
+      "decision": "KEEP",
+      "reason": "Different full-page/layout/table/Thai text role; no same-crop matched evaluation, no replacement or physical removal."
+    },
+    {
+      "repo_id": "iapp/OpenThai2.2-OCR-Text-20261127",
+      "decision": "KEEP",
+      "reason": "Different full-page/layout/table/Thai text role; no same-crop matched evaluation, no replacement or physical removal."
+    },
+    {
+      "repo_id": "microsoft/table-transformer-structure-recognition-v1.1-all",
+      "decision": "KEEP",
+      "reason": "Different full-page/layout/table/Thai text role; no same-crop matched evaluation, no replacement or physical removal."
+    },
+    {
+      "repo_id": "PDFluent/formula-recognition-onnx",
+      "decision": "HOLD",
+      "reason": "Separately trained ONNX encoder/decoder, arXiv CC BY/CC0 crop provenance, AGPL-3.0-only or commercial license, 37.4 MB displayed repo. 0.9168 is end-to-end PDF pipeline score, not formula exact match; most formulas not exact per card. Fixed full revision, exact param count and isolated comparison not closed."
+    },
+    {
+      "repo_id": "sugartai/Qwen3.5-2B-MathParser-pro",
+      "decision": "HOLD",
+      "reason": "Publisher 756 handwritten multi-line samples: 2B Base mean edit similarity 0.599258, SFT 0.906516, SFT+DPO 0.916060; runaways 19 to 3; merged 2.2132B according HF metadata; not exact match; test provenance, parent revision, same-domain incumbent evaluation and fixed file scope pending."
+    }
+  ],
+  "same_state_runtime_exports": "EXCLUDE_AS_SEPARATE_ASSETS",
+  "previous_rows_unchanged": 293,
+  "active_delta": 1,
+  "known_partial_reference_bytes": 59110340,
+  "full_dependency_inclusive_bytes": null,
+  "owner_incremental_bytes": null,
+  "new_approved_downloads": 0,
+  "physical_files_deleted": 0,
+  "research_path": "catalog/research/2026-11-28-r190-printed-math-recognition-primary-evidence.json",
+  "manifest_path": "manifests/drafts/r190-2026-11-28-ibem-im2typst-original.candidate.json",
+  "integration_note": "External research originated on v93; concurrent v94–v99 selections preserved. Evidence and manifest filenames preserve research-round provenance."
+}
