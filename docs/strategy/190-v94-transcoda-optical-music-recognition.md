@@ -1,0 +1,17 @@
+# R190 / v94: Transcoda v2.1 optical music recognition
+
+Parent 57256891c173f9a0f36b542bb365283c17fa0b3d. 288登録・232有効（SELECT 56、CONDITIONAL 176）。独立学習済み108Mの楽譜画像→Humdrum **kernを研究限定CONDITIONAL追加。既存287行・133取得報告不変、全232取得STOP。承認・重量DL・実行・物理削除0。
+
+[Research](../../catalog/research/2026-11-28-r190-transcoda-omr-primary-evidence.json) / [Decision](../../catalog/decisions/2026-11-28-r190-transcoda-omr-formal-add.json) / [Source manifest](../../manifests/drafts/r190-2026-11-28-transcoda-omr-publisher-scope.candidate.json) / [Overlay](../../catalog/revisions/v94-2026-11-28.json) / [Readiness](../../catalog/readiness/v94-2026-11-28-r190-all232-gates.json).
+
+Add distinct printed Western score image → structured Humdrum **kern OMR learned outcome (108M publisher count, separate synthetic training, not a quantization); existing selected LightOnOCR/DeepSeek OCR and dettato audio-to-MIDI cannot be assumed to recover notation or staff/voice structure; independent weight exact restoration difficult because private validation and missing optimizer state. Do not replace incumbents.
+
+Positive: Publisher v2.1 FP32 max length 2048: constrained greedy synthetic OMR-NED 1.25%, real 22.59% document CI [18.87,27.21], real renderability 100%; beam width3 real 28.50%, CI [23.71,34.14], renderability 89.1%. No independent matched replay; HW/clock/batch unverified.
+
+Negative: Real scores still error-prone; omits ties, slurs, dynamics, lyrics, articulations etc; no handwriting/non-Western evaluation; real set Chopin-heavy; 134 private validation pages, one training seed, optimizer/scheduler state absent. CC BY-NC weights + PolyForm NC vendor; owner rights unresolved; CKPT untrusted; runtime/ABI/complete bytes unverified.
+
+Fixed HF 6a46a8c2534c882fab8c0b4f9647b78c4e289bde and GitHub 389cca243cb0c531281524662d86da2fe7362703. Publisher SHA256 7016c0c9bb5896ccf2e64624d566427b9e3a524fa57d8ae649609f5aa562a5bf equals pinned export record; no local rehash. Exact core weight 216370752 B; selected 421 code-tree blobs 9456925 B; known partial 225827677 B. Remaining HF text files, ABI/wheels, source rights, physical incremental and complete dependency-inclusive bytes unknown. Code scope includes vendor/config/grammar/tokenizer/locks; excludes evaluation corpus. This is not an approved lock. The original training state SHA and export tensor equivalence are publisher statements, not independently verified.
+
+KEEP deepseek-ai/DeepSeek-OCR-2, lightonai/LightOnOCR-3-0.8B, kobimusic/dettato, kobimusic/dettato-evidence, kobimusic/dettato-grouper, kobimusic/dettato-drums; no matched OMR evidence for replacement. HOLD btrkeks/transcoda-59M-zeroshot-v1, malerlab/u-must, MuScriptor/muscriptor-small, guangyangmusic/legato for distinct learned states or access/quality/closure uncertainty. V1 paper scores are not V2.1 scores. NC license and upstream notices matter; no assertion of retroactive license change. No harmful capability priority.
+
+Source search bounded 7/30/90-day web plus older primary sources. No new verified release within 7 days in this focused OMR search. v2.1 updated 2026-11-13; U-MusT updated 2026-09-09. Exact repo code search found no Transcoda; full historical coverage not guaranteed. Catalog, queue, access, readiness and preparation membership verified programmatically before publication; owner HDD, full offline restore and independent quality tests not performed. Local clone failed for lack of disk; repository test suite not executed in this environment.

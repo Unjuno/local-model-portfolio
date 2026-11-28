@@ -1,3 +1,7 @@
+## 現行 v94 / R190（2026-11-28）
+
+288登録・232有効（SELECT 56、CONDITIONAL 176）。Transcoda v2.1独立学習108M楽譜認識を研究限定CONDITIONAL追加。既存287行・133取得報告不変。重み＋固定コード部分参照225,827,677 B、全依存・owner増分未確定。全232取得STOP、承認・重みDL・実行・物理削除0。[研究報告](docs/strategy/190-v94-transcoda-optical-music-recognition.md)。
+
 ## 現行 v93 / R189（2026-11-28）
 
 287登録・231有効（SELECT 56、CONDITIONAL 175）。TinyCast独立学習14.65万パラメータを研究限定CONDITIONAL追加。既存286行・133取得報告不変。配布元候補モデル＋コード3,408,694 B、依存込み・owner増分未確定。全231取得STOP、承認・重みDL・実行・物理削除0。[研究報告](docs/strategy/189-v93-tinycast-compact-forecast.md)。

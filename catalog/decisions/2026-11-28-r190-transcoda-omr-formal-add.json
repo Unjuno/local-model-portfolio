@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-11-28",
+  "round": "R190",
+  "base_commit": "57256891c173f9a0f36b542bb365283c17fa0b3d",
+  "formal_revision": "v94-20261128",
+  "formal_additions": [
+    "btrkeks/transcoda-v2.1"
+  ],
+  "replacement_operations": [],
+  "prior_rows_unchanged": 287,
+  "incumbents": [
+    {
+      "repo_id": "deepseek-ai/DeepSeek-OCR-2",
+      "decision": "KEEP",
+      "current_selection": "select",
+      "group": "視覚・OCR・分類・検索",
+      "source_repo_proxy_bytes": 6789306112,
+      "reason": "General document OCR, not validated structured musical notation; preserve existing general function; no matched OMR replacement evidence"
+    },
+    {
+      "repo_id": "lightonai/LightOnOCR-3-0.8B",
+      "decision": "KEEP",
+      "current_selection": "select",
+      "group": "小型高効率・分野別業務代替の研究",
+      "source_repo_proxy_bytes": 1737771835,
+      "reason": "General document OCR, not validated structured musical notation; preserve existing general function; no matched OMR replacement evidence"
+    },
+    {
+      "repo_id": "kobimusic/dettato",
+      "decision": "KEEP",
+      "current_selection": "conditional",
+      "group": "音楽→MIDI・極小音高検出",
+      "source_repo_proxy_bytes": 64794996,
+      "reason": "Audio input/note extraction/correction, not image-to-score OMR; no replacement evidence"
+    },
+    {
+      "repo_id": "kobimusic/dettato-evidence",
+      "decision": "KEEP",
+      "current_selection": "conditional",
+      "group": "音楽音符の校正・独立学習済み補正器",
+      "source_repo_proxy_bytes": 21234165,
+      "reason": "Audio input/note extraction/correction, not image-to-score OMR; no replacement evidence"
+    },
+    {
+      "repo_id": "kobimusic/dettato-grouper",
+      "decision": "KEEP",
+      "current_selection": "conditional",
+      "group": "楽器別トラック分離・小型専門モデル",
+      "source_repo_proxy_bytes": 12460661,
+      "reason": "Audio input/note extraction/correction, not image-to-score OMR; no replacement evidence"
+    },
+    {
+      "repo_id": "kobimusic/dettato-drums",
+      "decision": "KEEP",
+      "current_selection": "conditional",
+      "group": "音源から打楽器MIDI・小型専門モデル",
+      "source_repo_proxy_bytes": 21976775,
+      "reason": "Audio input/note extraction/correction, not image-to-score OMR; no replacement evidence"
+    }
+  ],
+  "alternatives": [
+    {
+      "repo_id": "btrkeks/transcoda-59M-zeroshot-v1",
+      "decision": "HOLD",
+      "updated": "2026-05-12",
+      "params_publisher": 58800000,
+      "source": "https://huggingface.co/btrkeks/transcoda-59M-zeroshot-v1",
+      "paper": "https://arxiv.org/abs/2605.10835",
+      "reason": "Separate 59M older trained state, paper synthetic 18.46% and historical Polish scans 63.97% OMR-NED; different tests from v2.1, no matched comparison; old card CC BY vs upstream ConvNeXt NC conflict, custom code; revision/bytes unresolved. Do not label quant duplicate."
+    },
+    {
+      "repo_id": "malerlab/u-must",
+      "decision": "HOLD",
+      "updated": "2026-09-09",
+      "source": "https://huggingface.co/malerlab/u-must",
+      "paper": "https://doi.org/10.1109/TASLPRO.2025.3648794",
+      "reason": "Different multitask image/audio/notation/MIDI directional weights plus learned codec versions; manual gated CC BY-NC-SA; source reports OMR SER 24.58→13.67 on its own benchmark, not comparable NED. Owner permission, six checkpoints scope, total count and bytes unresolved."
+    },
+    {
+      "repo_id": "MuScriptor/muscriptor-small",
+      "decision": "HOLD",
+      "updated": "2026-07-10",
+      "params_publisher": 103000000,
+      "source": "https://huggingface.co/MuScriptor/muscriptor-small",
+      "reason": "Gated CC BY-NC 4.0 plus output/rights conditions. Audio-to-MIDI overlaps dettato; no matched polyphonic accuracy/latency or authorized access. Scope/revision/bytes unresolved."
+    },
+    {
+      "repo_id": "guangyangmusic/legato",
+      "decision": "HOLD",
+      "source": "https://huggingface.co/guangyangmusic/legato",
+      "paper": "https://arxiv.org/abs/2506.19065",
+      "reason": "Gated Llama3.2 11B vision-based specialist, ABC rather than kern; 429 MB listed artifact not full dependency; owner rights/parent and exact total bytes unresolved. v1 paper comparison not v2.1 matched evidence."
+    }
+  ],
+  "source_manifest": "manifests/drafts/r190-2026-11-28-transcoda-omr-publisher-scope.candidate.json",
+  "approval_added": 0,
+  "physical_files_deleted": 0,
+  "known_partial_reference_bytes": 225827677,
+  "actual_incremental_bytes": null,
+  "reason": "Add distinct printed Western score image → structured Humdrum **kern OMR learned outcome (108M publisher count, separate synthetic training, not a quantization); existing selected LightOnOCR/DeepSeek OCR and dettato audio-to-MIDI cannot be assumed to recover notation or staff/voice structure; independent weight exact restoration difficult because private validation and missing optimizer state. Do not replace incumbents."
+}

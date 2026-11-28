@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-11-28",
+  "round": "R190",
+  "base_commit": "57256891c173f9a0f36b542bb365283c17fa0b3d",
+  "search": {
+    "windows_days": [
+      7,
+      30,
+      90
+    ],
+    "coverage": "Bounded web searches of recent HF/GitHub/arXiv specialist OCR, spectra, music transcription; not exhaustive. 7-day result timestamps not independently established for new OMR weights. Older primary research included.",
+    "prior_search": "Exact Transcoda repo code search returned no hits; materialized 287 and ledger137 rows contain no candidate identity; historical coverage cannot be guaranteed exhaustive."
+  },
+  "candidate": {
+    "repo_id": "btrkeks/transcoda-v2.1",
+    "source_urls": [
+      "https://huggingface.co/btrkeks/transcoda-v2.1/blob/6a46a8c2534c882fab8c0b4f9647b78c4e289bde/README.md",
+      "https://huggingface.co/btrkeks/transcoda-v2.1/commit/6a46a8c2534c882fab8c0b4f9647b78c4e289bde",
+      "https://huggingface.co/btrkeks/transcoda-v2.1/blob/main/transcoda-v2.1.ckpt",
+      "https://huggingface.co/btrkeks/transcoda-v2.1/blob/6a46a8c2534c882fab8c0b4f9647b78c4e289bde/NOTICE.md",
+      "https://github.com/btrkeks/transcoda/tree/389cca243cb0c531281524662d86da2fe7362703",
+      "https://github.com/btrkeks/transcoda/blob/389cca243cb0c531281524662d86da2fe7362703/release/model-artifact.json",
+      "https://github.com/btrkeks/transcoda/blob/389cca243cb0c531281524662d86da2fe7362703/pyproject.toml",
+      "https://arxiv.org/abs/2605.10835"
+    ],
+    "revision": "6a46a8c2534c882fab8c0b4f9647b78c4e289bde",
+    "code_revision": "389cca243cb0c531281524662d86da2fe7362703",
+    "release_date": "2026-11-13",
+    "updated_date": "2026-11-13",
+    "training": {
+      "architecture": "ConvNeXt V2 Tiny and Transformer decoder",
+      "publisher_total_params_rounded": 108000000,
+      "synthetic_pages": 343470,
+      "checkpoint_step": 8715,
+      "training_updates": 10695,
+      "private_validation_pages": 134,
+      "seed_count": 1,
+      "export_tensor_count": 427,
+      "original_training_state_sha256": "559167f798492eb3f77a3794abba238176ccdd06e4d7a9b3424e72f3a15981d0",
+      "export_sha256": "7016c0c9bb5896ccf2e64624d566427b9e3a524fa57d8ae649609f5aa562a5bf",
+      "export_tensors_equal_publisher_claim": true
+    },
+    "positive": "Publisher v2.1 FP32 max length 2048: constrained greedy synthetic OMR-NED 1.25%, real 22.59% document CI [18.87,27.21], real renderability 100%; beam width3 real 28.50%, CI [23.71,34.14], renderability 89.1%. No independent matched replay; HW/clock/batch unverified.",
+    "negative": "Real scores still error-prone; omits ties, slurs, dynamics, lyrics, articulations etc; no handwriting/non-Western evaluation; real set Chopin-heavy; 134 private validation pages, one training seed, optimizer/scheduler state absent. CC BY-NC weights + PolyForm NC vendor; owner rights unresolved; CKPT untrusted; runtime/ABI/complete bytes unverified.",
+    "license": "CC BY-NC 4.0 weights; upstream ConvNeXt metadata Apache-2.0 vs upstream NC notice. v1 card CC BY, v2.1 explicitly NC; distinct versions, not proof of retroactive change. AGPL code, vendor noncommercial. No Gated bypass or commercial permission.",
+    "known_weight_bytes": 216370752,
+    "known_code_scope_bytes": 9456925,
+    "known_partial_bytes": 225827677,
+    "dependency_inclusive_bytes": null,
+    "owner_bytes": null
+  },
+  "incumbents": [
+    {
+      "repo_id": "deepseek-ai/DeepSeek-OCR-2",
+      "decision": "KEEP",
+      "current_selection": "select",
+      "group": "視覚・OCR・分類・検索",
+      "source_repo_proxy_bytes": 6789306112,
+      "reason": "General document OCR, not validated structured musical notation; preserve existing general function; no matched OMR replacement evidence"
+    },
+    {
+      "repo_id": "lightonai/LightOnOCR-3-0.8B",
+      "decision": "KEEP",
+      "current_selection": "select",
+      "group": "小型高効率・分野別業務代替の研究",
+      "source_repo_proxy_bytes": 1737771835,
+      "reason": "General document OCR, not validated structured musical notation; preserve existing general function; no matched OMR replacement evidence"
+    },
+    {
+      "repo_id": "kobimusic/dettato",
+      "decision": "KEEP",
+      "current_selection": "conditional",
+      "group": "音楽→MIDI・極小音高検出",
+      "source_repo_proxy_bytes": 64794996,
+      "reason": "Audio input/note extraction/correction, not image-to-score OMR; no replacement evidence"
+    },
+    {
+      "repo_id": "kobimusic/dettato-evidence",
+      "decision": "KEEP",
+      "current_selection": "conditional",
+      "group": "音楽音符の校正・独立学習済み補正器",
+      "source_repo_proxy_bytes": 21234165,
+      "reason": "Audio input/note extraction/correction, not image-to-score OMR; no replacement evidence"
+    },
+    {
+      "repo_id": "kobimusic/dettato-grouper",
+      "decision": "KEEP",
+      "current_selection": "conditional",
+      "group": "楽器別トラック分離・小型専門モデル",
+      "source_repo_proxy_bytes": 12460661,
+      "reason": "Audio input/note extraction/correction, not image-to-score OMR; no replacement evidence"
+    },
+    {
+      "repo_id": "kobimusic/dettato-drums",
+      "decision": "KEEP",
+      "current_selection": "conditional",
+      "group": "音源から打楽器MIDI・小型専門モデル",
+      "source_repo_proxy_bytes": 21976775,
+      "reason": "Audio input/note extraction/correction, not image-to-score OMR; no replacement evidence"
+    }
+  ],
+  "alternatives": [
+    {
+      "repo_id": "btrkeks/transcoda-59M-zeroshot-v1",
+      "decision": "HOLD",
+      "updated": "2026-05-12",
+      "params_publisher": 58800000,
+      "source": "https://huggingface.co/btrkeks/transcoda-59M-zeroshot-v1",
+      "paper": "https://arxiv.org/abs/2605.10835",
+      "reason": "Separate 59M older trained state, paper synthetic 18.46% and historical Polish scans 63.97% OMR-NED; different tests from v2.1, no matched comparison; old card CC BY vs upstream ConvNeXt NC conflict, custom code; revision/bytes unresolved. Do not label quant duplicate."
+    },
+    {
+      "repo_id": "malerlab/u-must",
+      "decision": "HOLD",
+      "updated": "2026-09-09",
+      "source": "https://huggingface.co/malerlab/u-must",
+      "paper": "https://doi.org/10.1109/TASLPRO.2025.3648794",
+      "reason": "Different multitask image/audio/notation/MIDI directional weights plus learned codec versions; manual gated CC BY-NC-SA; source reports OMR SER 24.58→13.67 on its own benchmark, not comparable NED. Owner permission, six checkpoints scope, total count and bytes unresolved."
+    },
+    {
+      "repo_id": "MuScriptor/muscriptor-small",
+      "decision": "HOLD",
+      "updated": "2026-07-10",
+      "params_publisher": 103000000,
+      "source": "https://huggingface.co/MuScriptor/muscriptor-small",
+      "reason": "Gated CC BY-NC 4.0 plus output/rights conditions. Audio-to-MIDI overlaps dettato; no matched polyphonic accuracy/latency or authorized access. Scope/revision/bytes unresolved."
+    },
+    {
+      "repo_id": "guangyangmusic/legato",
+      "decision": "HOLD",
+      "source": "https://huggingface.co/guangyangmusic/legato",
+      "paper": "https://arxiv.org/abs/2506.19065",
+      "reason": "Gated Llama3.2 11B vision-based specialist, ABC rather than kern; 429 MB listed artifact not full dependency; owner rights/parent and exact total bytes unresolved. v1 paper comparison not v2.1 matched evidence."
+    }
+  ],
+  "decisions": {
+    "ADD": [
+      "btrkeks/transcoda-v2.1"
+    ],
+    "REPLACE": [],
+    "KEEP": [
+      "deepseek-ai/DeepSeek-OCR-2",
+      "lightonai/LightOnOCR-3-0.8B",
+      "kobimusic/dettato",
+      "kobimusic/dettato-evidence",
+      "kobimusic/dettato-grouper",
+      "kobimusic/dettato-drums"
+    ],
+    "EXCLUDE": [],
+    "HOLD": [
+      "btrkeks/transcoda-59M-zeroshot-v1",
+      "malerlab/u-must",
+      "MuScriptor/muscriptor-small",
+      "guangyangmusic/legato"
+    ]
+  },
+  "validation": "Source metadata only, no independent inference, owner SHA, training replay or benchmark run."
+}
