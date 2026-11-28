@@ -1,0 +1,1490 @@
+{
+  "schema_version": 1,
+  "kind": "FRESH_EXTERNAL_PRIMARY_SOURCE_RESEARCH_AND_NONEXECUTABLE_SOURCE_SCOPE",
+  "research_date_jst": "2026-11-28",
+  "research_started_from_main": "57256891c173f9a0f36b542bb365283c17fa0b3d",
+  "formal_catalog_promotion_performed": false,
+  "recommendation": "ADD_CONDITIONAL_RESEARCH_ONLY_PENDING_ATOMIC_INTEGRATION",
+  "reason": "Concurrent main selection changes caused expected-head rejection/API error; no force push. Preserve evidence and source scope without claiming formal adoption.",
+  "research": {
+    "schema_version": 1,
+    "kind": "FRESH_EXTERNAL_PRIMARY_SOURCE_RESEARCH",
+    "date_jst": "2026-11-28",
+    "base_main": "57256891c173f9a0f36b542bb365283c17fa0b3d",
+    "search_windows_days": [
+      7,
+      30,
+      90
+    ],
+    "bounded_search": true,
+    "search_scope": [
+      "HF cards and release history",
+      "GitHub official code/README/LICENSE",
+      "arXiv recent papers and PMLR"
+    ],
+    "limitations": [
+      "HF connector model_search unavailable; web fallback, nonexhaustive",
+      "Fixed HF raw/API unavailable; main pointer and commit history only",
+      "No independent matched model evaluation or owner hardware",
+      "Catalog and history path names checked, not all historical full text"
+    ],
+    "catalog_comparison": {
+      "tracked_prior": 287,
+      "active_prior": 231,
+      "receipts_verified_reported": 133,
+      "candidate_absent_by_exact_repo_id": true
+    },
+    "added": {
+      "repo_id": "m42-health/CXformer-small",
+      "decision": "ADD_RESEARCH_ONLY_CONDITIONAL",
+      "positive": "Creator paper CheXpert ablation Small 83.28% mean AUROC vs vanilla DINOv2 settings 80.46%; creator README separate table Small 83.34/91.13/83.68 mean 86.05 vs Base 87.93, RAD-DINO 87.32. Lung/heart Dice 90.52 vs Base 90.94. Pretrain 3.63 vs 14.42 EFLOP (Small/Base); not owner inference measurements.",
+      "negative": "Small lower classification and segmentation scores than Base; frontal CXR only. Encoder needs separate downstream heads or decoder for downstream tasks; no diagnostic claim. YAML parent Base vs prose Small conflict, exact donor revision unresolved. Custom histogram-equalizing remote preprocessing requires review; exact tensor census, fixed complete scope, rights, hardware, matched independent evaluation and offline restore unverified.",
+      "source_urls": [
+        "https://huggingface.co/m42-health/CXformer-small",
+        "https://huggingface.co/m42-health/CXformer-small/commit/21777c302a43197b704c6c92591d9897efaaac3b",
+        "https://huggingface.co/m42-health/CXformer-small/commits/main",
+        "https://huggingface.co/m42-health/CXformer-small/raw/main/model.safetensors",
+        "https://huggingface.co/m42-health/CXformer-small/blob/main/config.json",
+        "https://huggingface.co/m42-health/CXformer-small/blob/main/preprocessor_config.json",
+        "https://huggingface.co/m42-health/CXformer-small/blob/main/custom_processor.py",
+        "https://huggingface.co/m42-health/CXformer-small/blob/main/README.md",
+        "https://proceedings.mlr.press/v301/al-mahrooqi26a.html",
+        "https://github.com/m42-health/CXformer/tree/da740db15a6d16cc06a26b82bd78527f2616dd7e",
+        "https://github.com/m42-health/CXformer/blob/da740db15a6d16cc06a26b82bd78527f2616dd7e/LICENSE.md"
+      ],
+      "known_partial_source_bytes": 93026173,
+      "owner_incremental_bytes": null
+    },
+    "model_decisions": [
+      {
+        "id": "m42-health/CXformer-base",
+        "decision": "HOLD",
+        "reason": "Separate 86.6M state, mean AUROC 87.93 vs 86.05 and Dice 90.94 vs 90.52; ~346MB weight, no matched owner throughput. Small chosen as lower-cost operating point.",
+        "sources": [
+          "https://huggingface.co/m42-health/CXformer-base",
+          "https://proceedings.mlr.press/v301/al-mahrooqi26a.html"
+        ]
+      },
+      {
+        "id": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+        "decision": "KEEP",
+        "reason": "Existing HOLD retained; biomedical image-text embedding not CXR-only self-supervision; no matched comparison.",
+        "sources": []
+      },
+      {
+        "id": "facebook/dinov3-vit7b16-pretrain-lvd1689m",
+        "decision": "KEEP",
+        "reason": "6.716B general pretrained vision baseline, 26,864,283,632 B source proxy; no matched CXR performance.",
+        "sources": []
+      },
+      {
+        "id": "facebook/dinov3-vith16plus-pretrain-lvd1689m",
+        "decision": "KEEP",
+        "reason": "840.6M general encoder, existing dependency; no replacement evidence.",
+        "sources": []
+      },
+      {
+        "id": "medarc/OpenMidnight-1.1",
+        "decision": "KEEP",
+        "reason": "1.1348B pathology tile encoder; 4,539,168,331 B source proxy, different modality; no paired CXR test.",
+        "sources": []
+      },
+      {
+        "id": "google/medgemma-4b-it",
+        "decision": "KEEP",
+        "reason": "4.3001B generative medical VLM, distinct semantics from CXR feature extractor.",
+        "sources": []
+      },
+      {
+        "id": "illuin/IVE-4B",
+        "decision": "KEEP",
+        "reason": "2026-11-23 new release already selected; independently trained typed decision model, not CXR encoder.",
+        "sources": [
+          "https://huggingface.co/illuin/IVE-4B",
+          "https://huggingface.co/blog/QuentinJG/ive-release"
+        ]
+      },
+      {
+        "id": "illuin/Ivonnet-0.8B",
+        "decision": "KEEP",
+        "reason": "Already selected separately distilled student; no duplicate.",
+        "sources": [
+          "https://huggingface.co/illuin/Ivonnet-0.8B",
+          "https://huggingface.co/blog/QuentinJG/ive-release"
+        ]
+      },
+      {
+        "id": "medarc/spectra-openmidnight-lora",
+        "decision": "HOLD",
+        "reason": "Creator reports base 0.618 vs 0.879 +/-0.007 PathoROB robustness, cross-scanner 0.703 vs 0.948 +/-0.015 (three seeds mean +/-2SD); exact donor vs selected OpenMidnight-1.1, size, rights, ABI, negative evidence incomplete.",
+        "sources": [
+          "https://huggingface.co/medarc/spectra-openmidnight-lora",
+          "https://huggingface.co/medarc/spectra-openmidnight-merged"
+        ]
+      },
+      {
+        "id": "medarc/spectra-openmidnight-merged",
+        "decision": "EXCLUDE_AS_SEPARATE_CANDIDATE",
+        "reason": "Publisher says same LoRA delta folded into parent; avoid duplicate representation pending exact donor and parity. No formal exclusion or deletion.",
+        "sources": [
+          "https://huggingface.co/medarc/spectra-openmidnight-merged"
+        ]
+      },
+      {
+        "id": "AlignPre (arXiv:2611.34101)",
+        "decision": "HOLD",
+        "reason": "Nov 25 pixel-space precipitation flow matching + skill-aligned posttraining; paper claims three benchmark gains but released weight identity and scope unverified.",
+        "sources": [
+          "https://arxiv.org/abs/2611.34101"
+        ]
+      },
+      {
+        "id": "Motion-Appearance Coupling Priors (arXiv:2611.15420)",
+        "decision": "HOLD",
+        "reason": "Nov 11 dynamic video inverse-problem diffusion residual prior, reported improvements over photometric/noise-warp baseline; no verified released weights/parent.",
+        "sources": [
+          "https://arxiv.org/abs/2611.15420"
+        ]
+      }
+    ],
+    "performance_evidence": {
+      "creator_classification_small": [
+        83.34,
+        91.13,
+        83.68
+      ],
+      "creator_classification_base": [
+        86.8,
+        91.71,
+        85.28
+      ],
+      "mean_small": 86.05,
+      "mean_base": 87.93,
+      "rad_dino_mean": 87.32,
+      "creator_dice_mean_small": 90.52,
+      "creator_dice_mean_base": 90.94,
+      "pretrain_compute_exaflop_small": 3.63,
+      "pretrain_compute_exaflop_base": 14.42,
+      "matched_owner_hardware": false,
+      "independent_replay": false,
+      "clinical_use": false
+    },
+    "observed_license_change": {
+      "date": "2025-01-27",
+      "evidence": "https://huggingface.co/m42-health/CXformer-small/commits/main",
+      "note": "History shows update license, actual prior-vs-new terms unverified; no claim of tightening."
+    },
+    "download_approved": 0,
+    "weights_fetched": 0,
+    "physical_deletions": 0,
+    "formal_catalog_promotion_performed": false
+  },
+  "manifest": {
+    "schema_version": 1,
+    "kind": "RESEARCH_ONLY_NONEXECUTABLE_PARTIAL_METADATA",
+    "date_jst": "2026-11-28",
+    "source_models": [
+      {
+        "repo_id": "m42-health/CXformer-small",
+        "revision": "21777c302a43197b704c6c92591d9897efaaac3b",
+        "weight_upload_date": "2025-01-27",
+        "last_modified": "2025-05-11",
+        "gated": false,
+        "private": false,
+        "license_tag": "CC BY-NC-4.0 research only",
+        "safetensors_total_approx": 22100000,
+        "source_files": [
+          {
+            "path": ".gitattributes",
+            "bytes": null,
+            "display_size": "1.57 kB",
+            "candidate": false
+          },
+          {
+            "path": "README.md",
+            "bytes": null,
+            "display_size": "7.81 kB",
+            "candidate": true
+          },
+          {
+            "path": "config.json",
+            "bytes": 934,
+            "candidate": true
+          },
+          {
+            "path": "custom_processor.py",
+            "bytes": null,
+            "display_size": "1.26 kB",
+            "candidate": true
+          },
+          {
+            "path": "model.safetensors",
+            "bytes": 88256200,
+            "publisher_lfs_sha256": "a300b6e23ca32b361c2209ac114d77ba13dfeb151cd4a337212d13416df273a2",
+            "candidate": true
+          },
+          {
+            "path": "overview.jpg",
+            "bytes": null,
+            "display_size": "576 kB",
+            "candidate": false
+          },
+          {
+            "path": "preprocessor_config.json",
+            "bytes": 564,
+            "candidate": true
+          }
+        ],
+        "full_repo_bytes": null,
+        "full_repo_display_size": "88.8 MB rounded",
+        "tree_pagination_complete": null,
+        "model_card_git_blob_verified": false,
+        "model_card_url": "https://huggingface.co/m42-health/CXformer-small/blob/main/README.md",
+        "candidate_selected_files": [
+          "README.md",
+          "config.json",
+          "custom_processor.py",
+          "model.safetensors",
+          "preprocessor_config.json"
+        ],
+        "candidate_selected_bytes": null,
+        "known_partial_candidate_bytes": 88257698,
+        "revision_evidence": "https://huggingface.co/m42-health/CXformer-small/commit/21777c302a43197b704c6c92591d9897efaaac3b",
+        "weight_pointer_evidence": "https://huggingface.co/m42-health/CXformer-small/raw/main/model.safetensors",
+        "fixed_revision_raw_pointer_fetch_verified": false,
+        "weight_binding_evidence": "Main pointer and history show weight upload 445ee2c, no later weight update; fixed raw URL/API inaccessible. Not final lock.",
+        "parent_metadata_conflict": "YAML Base vs prose Small, exact donor SHA unknown"
+      }
+    ],
+    "runtime_source": {
+      "repo_url": "https://github.com/m42-health/CXformer",
+      "revision": "da740db15a6d16cc06a26b82bd78527f2616dd7e",
+      "tree_sha": "d1c7606c996d9f868700d9de5dde7042ea69a94b",
+      "tree_complete": true,
+      "source_files": [
+        {
+          "path": ".gitignore",
+          "bytes": 3506,
+          "git_blob_sha": "c2d9f7c7213da702ae6fc69523701cfeeb2e0096"
+        },
+        {
+          "path": "LICENSE.md",
+          "bytes": 17688,
+          "git_blob_sha": "e4cf43e674ebd8216f645782eb3254f06e522d17"
+        },
+        {
+          "path": "Readme.md",
+          "bytes": 7620,
+          "git_blob_sha": "e4698b594521e6945e8501f129b02cd2497992e0"
+        },
+        {
+          "path": "conda_steps.txt",
+          "bytes": 68,
+          "git_blob_sha": "e08700716cf8011065fe79c793d4d09f7074efe7"
+        },
+        {
+          "path": "dinov2/__init__.py",
+          "bytes": 218,
+          "git_blob_sha": "ae847e46898077fe3d8701b8a181d7b4e3d41cd9"
+        },
+        {
+          "path": "dinov2/configs/__init__.py",
+          "bytes": 681,
+          "git_blob_sha": "68e0830c62ea19649b6cd2361995f6df309d7640"
+        },
+        {
+          "path": "dinov2/configs/downstream/classification/cxformer_chexpert_small.yaml",
+          "bytes": 2049,
+          "git_blob_sha": "d8947bdfaad2b8f9437bd329596dac373eacae62"
+        },
+        {
+          "path": "dinov2/configs/downstream/segmentation/cxformer-mimic-chexmask.yaml",
+          "bytes": 2248,
+          "git_blob_sha": "452a24a9ccee474a9d0c7797a62827c884776c69"
+        },
+        {
+          "path": "dinov2/configs/pretrain/cxformer_small.yaml",
+          "bytes": 3290,
+          "git_blob_sha": "546b52fca030b83333eeb76c6055813a965c6172"
+        },
+        {
+          "path": "dinov2/configs/pretrain/vit_131k.yaml",
+          "bytes": 3140,
+          "git_blob_sha": "ffb46089b3c183a28eb680ffad80b22982c9d60e"
+        },
+        {
+          "path": "dinov2/configs/pretrain/vit_base_cxr.yaml",
+          "bytes": 3045,
+          "git_blob_sha": "b6b4f5b70fff21d842e8ec2961817a075204b772"
+        },
+        {
+          "path": "dinov2/configs/pretrain/vit_small_cxr.yaml",
+          "bytes": 3154,
+          "git_blob_sha": "ed059b9a348685e458ebf761f1d52d1c5a2c756c"
+        },
+        {
+          "path": "dinov2/configs/ssl_default_config.yaml",
+          "bytes": 2865,
+          "git_blob_sha": "4bf8eeb9f9185520e39e3c8f508fe4013120609d"
+        },
+        {
+          "path": "dinov2/cxr_data/__init__.py",
+          "bytes": 24,
+          "git_blob_sha": "975d883b3551e3ab8a76306fb79d12e88d34c496"
+        },
+        {
+          "path": "dinov2/cxr_data/convert_to_jpeg.py",
+          "bytes": 3754,
+          "git_blob_sha": "25f90f2c2ba74b540641d8ab9f2054313ce47ad6"
+        },
+        {
+          "path": "dinov2/cxr_data/datasets.py",
+          "bytes": 54793,
+          "git_blob_sha": "d1d005c13f9b6638e2ba05b1cac7fa084c3783ca"
+        },
+        {
+          "path": "dinov2/cxr_data/read_write.py",
+          "bytes": 6308,
+          "git_blob_sha": "5ff8207a3832ca3a91ce259aad7fc4ab4fede830"
+        },
+        {
+          "path": "dinov2/data/__init__.py",
+          "bytes": 484,
+          "git_blob_sha": "c823d5a4944bbed4a52875f25668cc9381269978"
+        },
+        {
+          "path": "dinov2/data/adapters.py",
+          "bytes": 1132,
+          "git_blob_sha": "d1669425b73d1b203c3341c30177213a9a5a7838"
+        },
+        {
+          "path": "dinov2/data/augmentations.py",
+          "bytes": 6175,
+          "git_blob_sha": "b81a1e7527a554759583d3e853ba07d33067d5af"
+        },
+        {
+          "path": "dinov2/data/collate.py",
+          "bytes": 4214,
+          "git_blob_sha": "63aff5e11775ed92270bd1b0d56e894a949a8d89"
+        },
+        {
+          "path": "dinov2/data/datasets/__init__.py",
+          "bytes": 267,
+          "git_blob_sha": "5550fdc5ce16269bc0c28795a389f0182e8bc6c8"
+        },
+        {
+          "path": "dinov2/data/datasets/decoders.py",
+          "bytes": 745,
+          "git_blob_sha": "3769f7750d94f7e0f7bce281ef3ff186970fc9cd"
+        },
+        {
+          "path": "dinov2/data/datasets/extended.py",
+          "bytes": 1224,
+          "git_blob_sha": "f60b619a3c797823cccfc89e262cdb230f9188f0"
+        },
+        {
+          "path": "dinov2/data/datasets/image_net.py",
+          "bytes": 10831,
+          "git_blob_sha": "8d08446147986c58360163e468896e994197c657"
+        },
+        {
+          "path": "dinov2/data/datasets/image_net_22k.py",
+          "bytes": 10241,
+          "git_blob_sha": "52b36a2c664a7b72e30173b03b4e2aef1cd2fcd9"
+        },
+        {
+          "path": "dinov2/data/loaders.py",
+          "bytes": 8467,
+          "git_blob_sha": "055febc921d0f2af5a6748d6f3553d4be54587c1"
+        },
+        {
+          "path": "dinov2/data/masking.py",
+          "bytes": 2945,
+          "git_blob_sha": "ab12aa7bf138b916b16a9a2ed1a628a2759dbec6"
+        },
+        {
+          "path": "dinov2/data/samplers.py",
+          "bytes": 7645,
+          "git_blob_sha": "6562197d94652bb9a75a5fc722fcb2c65ca161be"
+        },
+        {
+          "path": "dinov2/data/transforms.py",
+          "bytes": 3707,
+          "git_blob_sha": "af8eefa38364f5708adddb1ba46b9ad6667cf0aa"
+        },
+        {
+          "path": "dinov2/distributed/__init__.py",
+          "bytes": 8576,
+          "git_blob_sha": "23226f4536bf5acf4ffac242e9903d92863b246d"
+        },
+        {
+          "path": "dinov2/eval/__init__.py",
+          "bytes": 195,
+          "git_blob_sha": "b88da6bf80be92af00b72dfdb0a806fa64a7a2d9"
+        },
+        {
+          "path": "dinov2/eval/depth/__init__.py",
+          "bytes": 195,
+          "git_blob_sha": "b88da6bf80be92af00b72dfdb0a806fa64a7a2d9"
+        },
+        {
+          "path": "dinov2/eval/depth/models/__init__.py",
+          "bytes": 460,
+          "git_blob_sha": "9a5825181dc2189424b5c58d245b36919cbc5b2e"
+        },
+        {
+          "path": "dinov2/eval/depth/models/backbones/__init__.py",
+          "bytes": 250,
+          "git_blob_sha": "520d75bc6e064b9d64487293604ac1bda6e2b6f7"
+        },
+        {
+          "path": "dinov2/eval/depth/models/backbones/vision_transformer.py",
+          "bytes": 435,
+          "git_blob_sha": "69bda46fd69eb7dabb8f5b60e6fa459fdc21aeab"
+        },
+        {
+          "path": "dinov2/eval/depth/models/builder.py",
+          "bytes": 1420,
+          "git_blob_sha": "c152643435308afcff60b07cd68ea979fe1d90cb"
+        },
+        {
+          "path": "dinov2/eval/depth/models/decode_heads/__init__.py",
+          "bytes": 258,
+          "git_blob_sha": "bd0f0754a5b01d7622c1f26bf3f60daea19da4e8"
+        },
+        {
+          "path": "dinov2/eval/depth/models/decode_heads/decode_head.py",
+          "bytes": 8653,
+          "git_blob_sha": "f8c867a3ec687090b280d90bb86aee435320acda"
+        },
+        {
+          "path": "dinov2/eval/depth/models/decode_heads/dpt_head.py",
+          "bytes": 10434,
+          "git_blob_sha": "c6c6d9470d78e1d944cc505f97865f026a9458d3"
+        },
+        {
+          "path": "dinov2/eval/depth/models/decode_heads/linear_head.py",
+          "bytes": 3233,
+          "git_blob_sha": "3da1436f6a3f0bcc389d74ed86d44d455d2f7a87"
+        },
+        {
+          "path": "dinov2/eval/depth/models/depther/__init__.py",
+          "bytes": 275,
+          "git_blob_sha": "be99743bf6c773d05f2b74524116e368c0cfcba0"
+        },
+        {
+          "path": "dinov2/eval/depth/models/depther/base.py",
+          "bytes": 7697,
+          "git_blob_sha": "e133a825a888167f90d95d67803609d6cac7ff55"
+        },
+        {
+          "path": "dinov2/eval/depth/models/depther/encoder_decoder.py",
+          "bytes": 8925,
+          "git_blob_sha": "6b0ec2dd314fdf8ccf4414d81afb95326b7dc0c9"
+        },
+        {
+          "path": "dinov2/eval/depth/models/losses/__init__.py",
+          "bytes": 264,
+          "git_blob_sha": "2f86242e342776da2e0acc61150d15a8d58ff1e0"
+        },
+        {
+          "path": "dinov2/eval/depth/models/losses/gradientloss.py",
+          "bytes": 2540,
+          "git_blob_sha": "1599878a6b70cdff4f8467e1e875f0d13ea89eca"
+        },
+        {
+          "path": "dinov2/eval/depth/models/losses/sigloss.py",
+          "bytes": 2286,
+          "git_blob_sha": "e12fad3e6151e4b975dd055193fdaec0206d4a14"
+        },
+        {
+          "path": "dinov2/eval/depth/ops/__init__.py",
+          "bytes": 225,
+          "git_blob_sha": "78181c29581a281b5f42cf12078636aaeb43b5a5"
+        },
+        {
+          "path": "dinov2/eval/depth/ops/wrappers.py",
+          "bytes": 1229,
+          "git_blob_sha": "15880ee0cb7652d4b41c489b927bf6a156b40e5e"
+        },
+        {
+          "path": "dinov2/eval/finetune_cxr.py",
+          "bytes": 29350,
+          "git_blob_sha": "57b025f0cbead46426066d3d475b9c7bb5f1ce9a"
+        },
+        {
+          "path": "dinov2/eval/image_features_cxr.py",
+          "bytes": 9675,
+          "git_blob_sha": "c01dcece32b6dc9ed007cc2388d1690aa18254a1"
+        },
+        {
+          "path": "dinov2/eval/knn.py",
+          "bytes": 14455,
+          "git_blob_sha": "f3a4845da1313a6db6b8345bb9a98230fcd24acf"
+        },
+        {
+          "path": "dinov2/eval/linear.py",
+          "bytes": 21426,
+          "git_blob_sha": "1bd4c5de5a041be8a188f007257d1e91b6d6921e"
+        },
+        {
+          "path": "dinov2/eval/linear_cxr.py",
+          "bytes": 34196,
+          "git_blob_sha": "e00ba7a90e806deaca71995fdfe8cc061fe074ea"
+        },
+        {
+          "path": "dinov2/eval/log_regression.py",
+          "bytes": 15138,
+          "git_blob_sha": "5f36ec134e0ce25697428a0b3f21cdc2f0145645"
+        },
+        {
+          "path": "dinov2/eval/merging_ckpts.py",
+          "bytes": 24052,
+          "git_blob_sha": "659be3990108ba9d48b2bf45a05c24f557cf1fb1"
+        },
+        {
+          "path": "dinov2/eval/metrics.py",
+          "bytes": 7334,
+          "git_blob_sha": "2390bf9dfb0239a33b54bf3c2e1578d553074214"
+        },
+        {
+          "path": "dinov2/eval/model_cxr.py",
+          "bytes": 2043,
+          "git_blob_sha": "f4f5f64352d92dc66efe0c65d6b2ad7a9ec0641e"
+        },
+        {
+          "path": "dinov2/eval/segmentation/__init__.py",
+          "bytes": 195,
+          "git_blob_sha": "b88da6bf80be92af00b72dfdb0a806fa64a7a2d9"
+        },
+        {
+          "path": "dinov2/eval/segmentation/hooks/__init__.py",
+          "bytes": 237,
+          "git_blob_sha": "738cc2d2069521ea0353acd0cb0a03e3ddf1fa51"
+        },
+        {
+          "path": "dinov2/eval/segmentation/hooks/optimizer.py",
+          "bytes": 1415,
+          "git_blob_sha": "f593f26a84475bbf7ebda9607a4d10914b13a443"
+        },
+        {
+          "path": "dinov2/eval/segmentation/models/__init__.py",
+          "bytes": 277,
+          "git_blob_sha": "88e4563d4c162d67e7900955a06bd9248d4c9a48"
+        },
+        {
+          "path": "dinov2/eval/segmentation/models/backbones/__init__.py",
+          "bytes": 250,
+          "git_blob_sha": "520d75bc6e064b9d64487293604ac1bda6e2b6f7"
+        },
+        {
+          "path": "dinov2/eval/segmentation/models/backbones/vision_transformer.py",
+          "bytes": 476,
+          "git_blob_sha": "c3e9753ae92a36be52f100e3004cbeeff777d14a"
+        },
+        {
+          "path": "dinov2/eval/segmentation/models/decode_heads/__init__.py",
+          "bytes": 228,
+          "git_blob_sha": "c55317875262dadf8970c2b3882f016b8d4731ac"
+        },
+        {
+          "path": "dinov2/eval/segmentation/models/decode_heads/linear_head.py",
+          "bytes": 3292,
+          "git_blob_sha": "d1f39c68fb136f84d1aa5284da5b69581bb177cc"
+        },
+        {
+          "path": "dinov2/eval/segmentation/utils/__init__.py",
+          "bytes": 195,
+          "git_blob_sha": "b88da6bf80be92af00b72dfdb0a806fa64a7a2d9"
+        },
+        {
+          "path": "dinov2/eval/segmentation/utils/colormaps.py",
+          "bytes": 7685,
+          "git_blob_sha": "e6ef604b2c75792e95e438abfd51ab03d40de340"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/__init__.py",
+          "bytes": 299,
+          "git_blob_sha": "6c678fdf8f1dee14d7cf9be70af14e6f9a1441c3"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/core/__init__.py",
+          "bytes": 394,
+          "git_blob_sha": "92599806fbd221c1418d179892a0f46dc0b7d4db"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/core/anchor/__init__.py",
+          "bytes": 258,
+          "git_blob_sha": "e71ac4d6e01462221ae01aa16d0e1231cda7e2e7"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/core/anchor/builder.py",
+          "bytes": 714,
+          "git_blob_sha": "6dba90e22de76d2f23a86d3c057f196d55a99690"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/core/anchor/point_generator.py",
+          "bytes": 8814,
+          "git_blob_sha": "574d71939080e22284fe99087fb2e7336657bd97"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/core/box/__init__.py",
+          "bytes": 287,
+          "git_blob_sha": "bf35a613f81acd77ecab2dfb75a722fa8e5c0787"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/core/box/builder.py",
+          "bytes": 594,
+          "git_blob_sha": "9538c0de3db682c2b111b085a8a1ce321c76a9ff"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/core/box/samplers/__init__.py",
+          "bytes": 261,
+          "git_blob_sha": "19c363e3fabc365d92aeaf1e78189d710db279e9"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/core/box/samplers/base_sampler.py",
+          "bytes": 3819,
+          "git_blob_sha": "c45cec3ed7af5b49bb54b92d6e6bcf59b06b4c99"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/core/box/samplers/mask_pseudo_sampler.py",
+          "bytes": 1647,
+          "git_blob_sha": "3e67ea61ed0fd65cca0addde1893a3c1e176bf15"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/core/box/samplers/mask_sampling_result.py",
+          "bytes": 2163,
+          "git_blob_sha": "270ffd35a5f120dd0560a7fea7fe83ef0bab66bb"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/core/box/samplers/sampling_result.py",
+          "bytes": 5415,
+          "git_blob_sha": "aaee3fe55aeb8c6da7edefbbd382d94b67b6a6b4"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/core/utils/__init__.py",
+          "bytes": 274,
+          "git_blob_sha": "6cdc9e19352f50bc2d5433c412ff71186c5df019"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/core/utils/dist_utils.py",
+          "bytes": 519,
+          "git_blob_sha": "7dfed42da821cd94e31b663d86b20b8f09799b30"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/core/utils/misc.py",
+          "bytes": 1324,
+          "git_blob_sha": "e07579e7b182b62153e81fe637ffd0f3081ef2a3"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/__init__.py",
+          "bytes": 485,
+          "git_blob_sha": "ed89bb0064d82b4360af020798eab3d2f5a47937"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/backbones/__init__.py",
+          "bytes": 232,
+          "git_blob_sha": "c4bf73bcbcee710676f81cb6517ae787f4d61cc6"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/backbones/adapter_modules.py",
+          "bytes": 14983,
+          "git_blob_sha": "26bfdf8f6ae6c107d22d61985cce34d4b5ce275f"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/backbones/drop_path.py",
+          "bytes": 1145,
+          "git_blob_sha": "864eb8738c44652d12b979fc811503f21cbb00dd"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/backbones/vit.py",
+          "bytes": 20135,
+          "git_blob_sha": "8a147570451bd2fbd016ddfafbbfa33035cbd4f8"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/backbones/vit_adapter.py",
+          "bytes": 7938,
+          "git_blob_sha": "ebc4f0f65e04ed764464d141607b3b2073220f6b"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/builder.py",
+          "bytes": 619,
+          "git_blob_sha": "d7cf7b919f6b0e8e00bde45bc244d9c29a36fed6"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/decode_heads/__init__.py",
+          "bytes": 242,
+          "git_blob_sha": "01f08b88950750337781fc671adfea2a935ea8fe"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/decode_heads/mask2former_head.py",
+          "bytes": 25331,
+          "git_blob_sha": "d1705fc444fa8d1583d88fca36d7fe1e060db9e7"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/losses/__init__.py",
+          "bytes": 410,
+          "git_blob_sha": "229a887817372f4991b32354180592cfb236d728"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/losses/cross_entropy_loss.py",
+          "bytes": 11292,
+          "git_blob_sha": "0a1f9dd4aa52ebe94cc527db36b1c7fa2f53813e"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/losses/dice_loss.py",
+          "bytes": 6339,
+          "git_blob_sha": "1bc5ba893c502861032ed531283f225e183eb693"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/losses/match_costs.py",
+          "bytes": 5348,
+          "git_blob_sha": "4917d2a939c01398dd49c0d90b06f4c37d283ce0"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/plugins/__init__.py",
+          "bytes": 261,
+          "git_blob_sha": "81a60db4de31238cb38e078683e5ca265839fe60"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/plugins/msdeformattn_pixel_decoder.py",
+          "bytes": 10706,
+          "git_blob_sha": "db1947175917f73f3f24184cb09c78e092d46ef8"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/segmentors/__init__.py",
+          "bytes": 263,
+          "git_blob_sha": "adf0062691e4889612e118f28ced853cd0bc33db"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/segmentors/encoder_decoder_mask2former.py",
+          "bytes": 10632,
+          "git_blob_sha": "cfe572c9d317303bff8d51b85217d144906ebfe7"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/utils/__init__.py",
+          "bytes": 495,
+          "git_blob_sha": "e7fdc1668b1015c8feea8fa1a4691bc0ebdbd936"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/utils/assigner.py",
+          "bytes": 6368,
+          "git_blob_sha": "3cb08fc1bb2e36336989b45a1d3850f260c05963"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/utils/point_sample.py",
+          "bytes": 3889,
+          "git_blob_sha": "9f1134082bafb51432618a9632592db070f87284"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/utils/positional_encoding.py",
+          "bytes": 6424,
+          "git_blob_sha": "bf5d6fabe946d06fe97cc799da47bae93758b34e"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/models/utils/transformer.py",
+          "bytes": 41364,
+          "git_blob_sha": "8befe6011a34d5ccecb82c8b17b61e19f732f96b"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/ops/modules/__init__.py",
+          "bytes": 425,
+          "git_blob_sha": "49aa8fe612fd4c088e294707c5ee16bd1cb5b5e7"
+        },
+        {
+          "path": "dinov2/eval/segmentation_m2f/ops/modules/ms_deform_attn.py",
+          "bytes": 8296,
+          "git_blob_sha": "d8b4fa23712e87d1a2682b57e71ee37fe8524cff"
+        },
+        {
+          "path": "dinov2/eval/setup.py",
+          "bytes": 3933,
+          "git_blob_sha": "9f801e9f12e0114446496f94109719edb2efbf7d"
+        },
+        {
+          "path": "dinov2/eval/test_linear.py",
+          "bytes": 16732,
+          "git_blob_sha": "ad7cd6b9cce5731df9708b9a621d5a2f018efc7e"
+        },
+        {
+          "path": "dinov2/eval/utils.py",
+          "bytes": 16914,
+          "git_blob_sha": "c27e30bc508b8123a6964af862a6b7c70ab53cb4"
+        },
+        {
+          "path": "dinov2/fsdp/__init__.py",
+          "bytes": 5115,
+          "git_blob_sha": "ed454480e0b76e761d657cc40fd097bd339d15a2"
+        },
+        {
+          "path": "dinov2/hub/__init__.py",
+          "bytes": 195,
+          "git_blob_sha": "b88da6bf80be92af00b72dfdb0a806fa64a7a2d9"
+        },
+        {
+          "path": "dinov2/hub/backbones.py",
+          "bytes": 4991,
+          "git_blob_sha": "53fe83719d5107eb77a8f25ef1814c3d73446002"
+        },
+        {
+          "path": "dinov2/hub/classifiers.py",
+          "bytes": 8195,
+          "git_blob_sha": "3f0841efa80ab3d564cd320d61da254af182606b"
+        },
+        {
+          "path": "dinov2/hub/depth/__init__.py",
+          "bytes": 287,
+          "git_blob_sha": "91716e58ab6158d814df8c653644d9af4c7be65c"
+        },
+        {
+          "path": "dinov2/hub/depth/decode_heads.py",
+          "bytes": 29268,
+          "git_blob_sha": "f455accad38fec6ecdd53460233a564c34f434da"
+        },
+        {
+          "path": "dinov2/hub/depth/encoder_decoder.py",
+          "bytes": 13909,
+          "git_blob_sha": "eb29ced67957a336e763b0e7c90c0eeaea36fea8"
+        },
+        {
+          "path": "dinov2/hub/depth/ops.py",
+          "bytes": 1229,
+          "git_blob_sha": "15880ee0cb7652d4b41c489b927bf6a156b40e5e"
+        },
+        {
+          "path": "dinov2/hub/depthers.py",
+          "bytes": 8149,
+          "git_blob_sha": "f88b7e9a41056594e3b3e66107feee98bffab820"
+        },
+        {
+          "path": "dinov2/hub/utils.py",
+          "bytes": 1260,
+          "git_blob_sha": "9c6641404093652d5a2f19b4cf283d976ec39e64"
+        },
+        {
+          "path": "dinov2/layers/__init__.py",
+          "bytes": 478,
+          "git_blob_sha": "746a100d102a107603c48c69c99b743e81f34bb6"
+        },
+        {
+          "path": "dinov2/layers/attention.py",
+          "bytes": 2652,
+          "git_blob_sha": "0fb76ef2816164729a58cceb18d0f000cfb18777"
+        },
+        {
+          "path": "dinov2/layers/block.py",
+          "bytes": 11255,
+          "git_blob_sha": "3ecd0e4955899928dd1ac3d061a7799d75bd8be9"
+        },
+        {
+          "path": "dinov2/layers/dino_head.py",
+          "bytes": 2007,
+          "git_blob_sha": "0ace8ffd6297a1dd480b19db407b662a6ea0f565"
+        },
+        {
+          "path": "dinov2/layers/drop_path.py",
+          "bytes": 1157,
+          "git_blob_sha": "1d640e0b969b8dcba96260243473700b4e5b24b5"
+        },
+        {
+          "path": "dinov2/layers/layer_scale.py",
+          "bytes": 820,
+          "git_blob_sha": "51df0d7ce61f2b41fa9e6369f52391dd7fe7d386"
+        },
+        {
+          "path": "dinov2/layers/mlp.py",
+          "bytes": 3535,
+          "git_blob_sha": "4608aa2caa855265020a65c0469506e712abf8b7"
+        },
+        {
+          "path": "dinov2/layers/patch_embed.py",
+          "bytes": 2829,
+          "git_blob_sha": "8b7c0804784a42cf80c0297d110dcc68cc85b339"
+        },
+        {
+          "path": "dinov2/layers/swiglu_ffn.py",
+          "bytes": 2182,
+          "git_blob_sha": "5e9dafa4592a408f6874d54853e8f60db5c41f74"
+        },
+        {
+          "path": "dinov2/logging/__init__.py",
+          "bytes": 3284,
+          "git_blob_sha": "04a7f02204316d4d1ef38bf6080dae3d66241c25"
+        },
+        {
+          "path": "dinov2/logging/helpers.py",
+          "bytes": 6220,
+          "git_blob_sha": "c6e70bb15505cbbc4c4732b069ee919bf921a74f"
+        },
+        {
+          "path": "dinov2/loss/__init__.py",
+          "bytes": 314,
+          "git_blob_sha": "d6b0115b74edbd74b324c9056a57fade363c58fd"
+        },
+        {
+          "path": "dinov2/loss/dino_clstoken_loss.py",
+          "bytes": 3647,
+          "git_blob_sha": "c31808e36e6c38ee6dae13ba0443bf1946242117"
+        },
+        {
+          "path": "dinov2/loss/ibot_patch_loss.py",
+          "bytes": 5718,
+          "git_blob_sha": "6732cda0c311c69f193669ebc950fc8665871442"
+        },
+        {
+          "path": "dinov2/loss/koleo_loss.py",
+          "bytes": 1608,
+          "git_blob_sha": "b5cbcd91e0fc0b857f477b0910f957f02a6c4335"
+        },
+        {
+          "path": "dinov2/models/__init__.py",
+          "bytes": 1486,
+          "git_blob_sha": "3fdff20badbd5244bf79f16bf18dd2cb73982265"
+        },
+        {
+          "path": "dinov2/models/chexzero_vit.py",
+          "bytes": 23043,
+          "git_blob_sha": "41b8c4a28c83722c0a2700f2b619ef2a877f34e2"
+        },
+        {
+          "path": "dinov2/models/vision_transformer.py",
+          "bytes": 17039,
+          "git_blob_sha": "326e1314f0d9dc7db9386dd095b32e4015a939fe"
+        },
+        {
+          "path": "dinov2/run/__init__.py",
+          "bytes": 195,
+          "git_blob_sha": "b88da6bf80be92af00b72dfdb0a806fa64a7a2d9"
+        },
+        {
+          "path": "dinov2/run/eval/finetune.py",
+          "bytes": 1696,
+          "git_blob_sha": "e1ecc6f6d930ee316382f5f5c3a51623f62f2c46"
+        },
+        {
+          "path": "dinov2/run/eval/knn.py",
+          "bytes": 1660,
+          "git_blob_sha": "d11918445cdfe415fe58ac8b3ad0bf29702e3457"
+        },
+        {
+          "path": "dinov2/run/eval/linear.py",
+          "bytes": 1688,
+          "git_blob_sha": "0963afaa4b191ee9e3b62a3da59e2138d2a147d9"
+        },
+        {
+          "path": "dinov2/run/eval/log_regression.py",
+          "bytes": 1755,
+          "git_blob_sha": "cdf02181122de72cfa463ef38494967219df9cf3"
+        },
+        {
+          "path": "dinov2/run/submit.py",
+          "bytes": 3491,
+          "git_blob_sha": "01f247872ba7c4b2b1aef7a4af44362b18af952f"
+        },
+        {
+          "path": "dinov2/run/train/train.py",
+          "bytes": 1669,
+          "git_blob_sha": "69d05d20b203cce77b19e20ac470be30687be00d"
+        },
+        {
+          "path": "dinov2/train/__init__.py",
+          "bytes": 411,
+          "git_blob_sha": "e1b5d5ee5c990d471972e23bda2a34307f9acdf2"
+        },
+        {
+          "path": "dinov2/train/cxr_finetune.py",
+          "bytes": 13440,
+          "git_blob_sha": "94c25c0d8c14bf74759f80b91c64196dab27a516"
+        },
+        {
+          "path": "dinov2/train/cxr_pretrain.py",
+          "bytes": 16843,
+          "git_blob_sha": "dcce7517f0dca35055ba914f3b300d1e061937f8"
+        },
+        {
+          "path": "dinov2/train/cxr_segmentation.py",
+          "bytes": 28004,
+          "git_blob_sha": "d1a8693951bc6f3ffbf3a055a2fbac428a45ad6a"
+        },
+        {
+          "path": "dinov2/train/data_utils.py",
+          "bytes": 4489,
+          "git_blob_sha": "f2ce01c34a8c7553b79e95e5998d64161ef637bc"
+        },
+        {
+          "path": "dinov2/train/dino_ssl.py",
+          "bytes": 13985,
+          "git_blob_sha": "af63092321a2863bb442445a90e58dc206285fd0"
+        },
+        {
+          "path": "dinov2/train/dist_utils.py",
+          "bytes": 3534,
+          "git_blob_sha": "74ec13faec2cd5ecf61922b5580ecc6bac34b1da"
+        },
+        {
+          "path": "dinov2/train/finetune_utils.py",
+          "bytes": 8736,
+          "git_blob_sha": "c5b31d623f4cc4f28137741f3c88f5dde8ca859b"
+        },
+        {
+          "path": "dinov2/train/io_utils.py",
+          "bytes": 4891,
+          "git_blob_sha": "f798fbe73eb617851682ee4b99d96a816531fd8f"
+        },
+        {
+          "path": "dinov2/train/policies.py",
+          "bytes": 777,
+          "git_blob_sha": "1764b6cd680a2392beba9278263ec5516a92f008"
+        },
+        {
+          "path": "dinov2/train/remove/pm_finetune.py",
+          "bytes": 25110,
+          "git_blob_sha": "cc36634a60f11065eb0b0a12792ee36c1c8caa0a"
+        },
+        {
+          "path": "dinov2/train/remove/pm_finetune_chsc_mc_to_bin.py",
+          "bytes": 26913,
+          "git_blob_sha": "5428aa18985a0abb67b8e2c1b176dae74d261a15"
+        },
+        {
+          "path": "dinov2/train/remove/pm_finetune_hf.py",
+          "bytes": 23055,
+          "git_blob_sha": "327f936411147f4b09aac8c1f45be4193e5e70f7"
+        },
+        {
+          "path": "dinov2/train/remove/pm_finetune_sweeps.py",
+          "bytes": 14828,
+          "git_blob_sha": "cac821abdbe84c96e73981fe4602a5d4e4044910"
+        },
+        {
+          "path": "dinov2/train/remove/pm_train_fabric.py",
+          "bytes": 12076,
+          "git_blob_sha": "6f4a659e4621c07607fff86451f45cd7bcbb1a22"
+        },
+        {
+          "path": "dinov2/train/remove/pm_train_fsdp.py",
+          "bytes": 10391,
+          "git_blob_sha": "569bf88220083a705788e36efc7947634fb9eece"
+        },
+        {
+          "path": "dinov2/train/remove/pretrain_run.txt",
+          "bytes": 3627588,
+          "git_blob_sha": "42e0f46cdea17a9f6074c4f13c642c4ff9da3b61"
+        },
+        {
+          "path": "dinov2/train/remove/profile.py",
+          "bytes": 12408,
+          "git_blob_sha": "4f10f7ada1e5df6e2856755adb7bb5a9ebf692a3"
+        },
+        {
+          "path": "dinov2/train/ssl_meta_arch.py",
+          "bytes": 40403,
+          "git_blob_sha": "d29490d311badc7cfd42f83175836b2b01737bc6"
+        },
+        {
+          "path": "dinov2/train/train.py",
+          "bytes": 10681,
+          "git_blob_sha": "473b8d01473654182de9f91c94a2d8720fe096a5"
+        },
+        {
+          "path": "dinov2/train/train_cxr_old.py",
+          "bytes": 16843,
+          "git_blob_sha": "dcce7517f0dca35055ba914f3b300d1e061937f8"
+        },
+        {
+          "path": "dinov2/train/train_utils.py",
+          "bytes": 2518,
+          "git_blob_sha": "a81c62736a40ffb11f65df5bcd2c6cee55adfad6"
+        },
+        {
+          "path": "dinov2/utils/__init__.py",
+          "bytes": 195,
+          "git_blob_sha": "b88da6bf80be92af00b72dfdb0a806fa64a7a2d9"
+        },
+        {
+          "path": "dinov2/utils/checkpoint_utils.py",
+          "bytes": 1041,
+          "git_blob_sha": "44172236502c46f4bb53bff765371f9b0a10714c"
+        },
+        {
+          "path": "dinov2/utils/cluster.py",
+          "bytes": 3096,
+          "git_blob_sha": "506af557ec564b4139bbda90e26f06ecfa27f013"
+        },
+        {
+          "path": "dinov2/utils/config.py",
+          "bytes": 2264,
+          "git_blob_sha": "84b8f410350801c3f9de352a596ff4123bc74d79"
+        },
+        {
+          "path": "dinov2/utils/dtype.py",
+          "bytes": 1104,
+          "git_blob_sha": "80f4cd74d99faa2731dbe9f8d3a13d71b3f8e3a8"
+        },
+        {
+          "path": "dinov2/utils/param_groups.py",
+          "bytes": 3761,
+          "git_blob_sha": "9a5d2ff627cddadc222e5f836864ee39c865208f"
+        },
+        {
+          "path": "dinov2/utils/utils.py",
+          "bytes": 4274,
+          "git_blob_sha": "f0eb1dcda1ff20f8af32f8db6a6d4f9e0d6096e4"
+        },
+        {
+          "path": "figures/overview.jpg",
+          "bytes": 576392,
+          "git_blob_sha": "daca370a52b33d7c9fe484853bf5558e4af325b6"
+        },
+        {
+          "path": "hf_predict.py",
+          "bytes": 518,
+          "git_blob_sha": "9056ffe4a1feb7472fde99ef83314d6d98b10344"
+        },
+        {
+          "path": "hf_small_readme.md",
+          "bytes": 7602,
+          "git_blob_sha": "fdb73378ad5747df13b86a567a4945e8e62eb160"
+        },
+        {
+          "path": "requirements.txt",
+          "bytes": 709,
+          "git_blob_sha": "2ef11c92ee10f2592cf240e0c0d47ae402ff37e7"
+        },
+        {
+          "path": "sample_cxr.png",
+          "bytes": 377789,
+          "git_blob_sha": "1de0d533bcd17e466e4bce1e45e01f99e8632bb2"
+        },
+        {
+          "path": "scripts/finetuning/image_classification/ft_cxformer_chexpert.sh",
+          "bytes": 648,
+          "git_blob_sha": "c8a003b898237583fdd4bfa7a62b445a5198dc50"
+        },
+        {
+          "path": "scripts/finetuning/segmentation/cxformer_chexmask.sh",
+          "bytes": 592,
+          "git_blob_sha": "6a62ae0f78f51964d8a6b319c68b07922116fe4a"
+        },
+        {
+          "path": "scripts/pretrain/cxformer_singlegpu.sh",
+          "bytes": 382,
+          "git_blob_sha": "928edfafe381d1bea31e4434d1453b1019ddc142"
+        },
+        {
+          "path": "scripts/pretrain/cxformer_slurm_submit.sh",
+          "bytes": 359,
+          "git_blob_sha": "f0797f78437b1e33caac5c4bb151e2872e25e804"
+        }
+      ],
+      "full_repo_blob_bytes": 5722656,
+      "candidate_code_scope": [
+        ".gitignore",
+        "LICENSE.md",
+        "Readme.md",
+        "conda_steps.txt",
+        "dinov2/__init__.py",
+        "dinov2/configs/__init__.py",
+        "dinov2/configs/downstream/classification/cxformer_chexpert_small.yaml",
+        "dinov2/configs/downstream/segmentation/cxformer-mimic-chexmask.yaml",
+        "dinov2/configs/pretrain/cxformer_small.yaml",
+        "dinov2/configs/pretrain/vit_131k.yaml",
+        "dinov2/configs/pretrain/vit_base_cxr.yaml",
+        "dinov2/configs/pretrain/vit_small_cxr.yaml",
+        "dinov2/configs/ssl_default_config.yaml",
+        "dinov2/cxr_data/__init__.py",
+        "dinov2/cxr_data/convert_to_jpeg.py",
+        "dinov2/cxr_data/datasets.py",
+        "dinov2/cxr_data/read_write.py",
+        "dinov2/data/__init__.py",
+        "dinov2/data/adapters.py",
+        "dinov2/data/augmentations.py",
+        "dinov2/data/collate.py",
+        "dinov2/data/datasets/__init__.py",
+        "dinov2/data/datasets/decoders.py",
+        "dinov2/data/datasets/extended.py",
+        "dinov2/data/datasets/image_net.py",
+        "dinov2/data/datasets/image_net_22k.py",
+        "dinov2/data/loaders.py",
+        "dinov2/data/masking.py",
+        "dinov2/data/samplers.py",
+        "dinov2/data/transforms.py",
+        "dinov2/distributed/__init__.py",
+        "dinov2/eval/__init__.py",
+        "dinov2/eval/depth/__init__.py",
+        "dinov2/eval/depth/models/__init__.py",
+        "dinov2/eval/depth/models/backbones/__init__.py",
+        "dinov2/eval/depth/models/backbones/vision_transformer.py",
+        "dinov2/eval/depth/models/builder.py",
+        "dinov2/eval/depth/models/decode_heads/__init__.py",
+        "dinov2/eval/depth/models/decode_heads/decode_head.py",
+        "dinov2/eval/depth/models/decode_heads/dpt_head.py",
+        "dinov2/eval/depth/models/decode_heads/linear_head.py",
+        "dinov2/eval/depth/models/depther/__init__.py",
+        "dinov2/eval/depth/models/depther/base.py",
+        "dinov2/eval/depth/models/depther/encoder_decoder.py",
+        "dinov2/eval/depth/models/losses/__init__.py",
+        "dinov2/eval/depth/models/losses/gradientloss.py",
+        "dinov2/eval/depth/models/losses/sigloss.py",
+        "dinov2/eval/depth/ops/__init__.py",
+        "dinov2/eval/depth/ops/wrappers.py",
+        "dinov2/eval/finetune_cxr.py",
+        "dinov2/eval/image_features_cxr.py",
+        "dinov2/eval/knn.py",
+        "dinov2/eval/linear.py",
+        "dinov2/eval/linear_cxr.py",
+        "dinov2/eval/log_regression.py",
+        "dinov2/eval/merging_ckpts.py",
+        "dinov2/eval/metrics.py",
+        "dinov2/eval/model_cxr.py",
+        "dinov2/eval/segmentation/__init__.py",
+        "dinov2/eval/segmentation/hooks/__init__.py",
+        "dinov2/eval/segmentation/hooks/optimizer.py",
+        "dinov2/eval/segmentation/models/__init__.py",
+        "dinov2/eval/segmentation/models/backbones/__init__.py",
+        "dinov2/eval/segmentation/models/backbones/vision_transformer.py",
+        "dinov2/eval/segmentation/models/decode_heads/__init__.py",
+        "dinov2/eval/segmentation/models/decode_heads/linear_head.py",
+        "dinov2/eval/segmentation/utils/__init__.py",
+        "dinov2/eval/segmentation/utils/colormaps.py",
+        "dinov2/eval/segmentation_m2f/__init__.py",
+        "dinov2/eval/segmentation_m2f/core/__init__.py",
+        "dinov2/eval/segmentation_m2f/core/anchor/__init__.py",
+        "dinov2/eval/segmentation_m2f/core/anchor/builder.py",
+        "dinov2/eval/segmentation_m2f/core/anchor/point_generator.py",
+        "dinov2/eval/segmentation_m2f/core/box/__init__.py",
+        "dinov2/eval/segmentation_m2f/core/box/builder.py",
+        "dinov2/eval/segmentation_m2f/core/box/samplers/__init__.py",
+        "dinov2/eval/segmentation_m2f/core/box/samplers/base_sampler.py",
+        "dinov2/eval/segmentation_m2f/core/box/samplers/mask_pseudo_sampler.py",
+        "dinov2/eval/segmentation_m2f/core/box/samplers/mask_sampling_result.py",
+        "dinov2/eval/segmentation_m2f/core/box/samplers/sampling_result.py",
+        "dinov2/eval/segmentation_m2f/core/utils/__init__.py",
+        "dinov2/eval/segmentation_m2f/core/utils/dist_utils.py",
+        "dinov2/eval/segmentation_m2f/core/utils/misc.py",
+        "dinov2/eval/segmentation_m2f/models/__init__.py",
+        "dinov2/eval/segmentation_m2f/models/backbones/__init__.py",
+        "dinov2/eval/segmentation_m2f/models/backbones/adapter_modules.py",
+        "dinov2/eval/segmentation_m2f/models/backbones/drop_path.py",
+        "dinov2/eval/segmentation_m2f/models/backbones/vit.py",
+        "dinov2/eval/segmentation_m2f/models/backbones/vit_adapter.py",
+        "dinov2/eval/segmentation_m2f/models/builder.py",
+        "dinov2/eval/segmentation_m2f/models/decode_heads/__init__.py",
+        "dinov2/eval/segmentation_m2f/models/decode_heads/mask2former_head.py",
+        "dinov2/eval/segmentation_m2f/models/losses/__init__.py",
+        "dinov2/eval/segmentation_m2f/models/losses/cross_entropy_loss.py",
+        "dinov2/eval/segmentation_m2f/models/losses/dice_loss.py",
+        "dinov2/eval/segmentation_m2f/models/losses/match_costs.py",
+        "dinov2/eval/segmentation_m2f/models/plugins/__init__.py",
+        "dinov2/eval/segmentation_m2f/models/plugins/msdeformattn_pixel_decoder.py",
+        "dinov2/eval/segmentation_m2f/models/segmentors/__init__.py",
+        "dinov2/eval/segmentation_m2f/models/segmentors/encoder_decoder_mask2former.py",
+        "dinov2/eval/segmentation_m2f/models/utils/__init__.py",
+        "dinov2/eval/segmentation_m2f/models/utils/assigner.py",
+        "dinov2/eval/segmentation_m2f/models/utils/point_sample.py",
+        "dinov2/eval/segmentation_m2f/models/utils/positional_encoding.py",
+        "dinov2/eval/segmentation_m2f/models/utils/transformer.py",
+        "dinov2/eval/segmentation_m2f/ops/modules/__init__.py",
+        "dinov2/eval/segmentation_m2f/ops/modules/ms_deform_attn.py",
+        "dinov2/eval/setup.py",
+        "dinov2/eval/test_linear.py",
+        "dinov2/eval/utils.py",
+        "dinov2/fsdp/__init__.py",
+        "dinov2/hub/__init__.py",
+        "dinov2/hub/backbones.py",
+        "dinov2/hub/classifiers.py",
+        "dinov2/hub/depth/__init__.py",
+        "dinov2/hub/depth/decode_heads.py",
+        "dinov2/hub/depth/encoder_decoder.py",
+        "dinov2/hub/depth/ops.py",
+        "dinov2/hub/depthers.py",
+        "dinov2/hub/utils.py",
+        "dinov2/layers/__init__.py",
+        "dinov2/layers/attention.py",
+        "dinov2/layers/block.py",
+        "dinov2/layers/dino_head.py",
+        "dinov2/layers/drop_path.py",
+        "dinov2/layers/layer_scale.py",
+        "dinov2/layers/mlp.py",
+        "dinov2/layers/patch_embed.py",
+        "dinov2/layers/swiglu_ffn.py",
+        "dinov2/logging/__init__.py",
+        "dinov2/logging/helpers.py",
+        "dinov2/loss/__init__.py",
+        "dinov2/loss/dino_clstoken_loss.py",
+        "dinov2/loss/ibot_patch_loss.py",
+        "dinov2/loss/koleo_loss.py",
+        "dinov2/models/__init__.py",
+        "dinov2/models/chexzero_vit.py",
+        "dinov2/models/vision_transformer.py",
+        "dinov2/run/__init__.py",
+        "dinov2/run/eval/finetune.py",
+        "dinov2/run/eval/knn.py",
+        "dinov2/run/eval/linear.py",
+        "dinov2/run/eval/log_regression.py",
+        "dinov2/run/submit.py",
+        "dinov2/run/train/train.py",
+        "dinov2/train/__init__.py",
+        "dinov2/train/cxr_finetune.py",
+        "dinov2/train/cxr_pretrain.py",
+        "dinov2/train/cxr_segmentation.py",
+        "dinov2/train/data_utils.py",
+        "dinov2/train/dino_ssl.py",
+        "dinov2/train/dist_utils.py",
+        "dinov2/train/finetune_utils.py",
+        "dinov2/train/io_utils.py",
+        "dinov2/train/policies.py",
+        "dinov2/train/remove/pm_finetune.py",
+        "dinov2/train/remove/pm_finetune_chsc_mc_to_bin.py",
+        "dinov2/train/remove/pm_finetune_hf.py",
+        "dinov2/train/remove/pm_finetune_sweeps.py",
+        "dinov2/train/remove/pm_train_fabric.py",
+        "dinov2/train/remove/pm_train_fsdp.py",
+        "dinov2/train/remove/pretrain_run.txt",
+        "dinov2/train/remove/profile.py",
+        "dinov2/train/ssl_meta_arch.py",
+        "dinov2/train/train.py",
+        "dinov2/train/train_cxr_old.py",
+        "dinov2/train/train_utils.py",
+        "dinov2/utils/__init__.py",
+        "dinov2/utils/checkpoint_utils.py",
+        "dinov2/utils/cluster.py",
+        "dinov2/utils/config.py",
+        "dinov2/utils/dtype.py",
+        "dinov2/utils/param_groups.py",
+        "dinov2/utils/utils.py",
+        "hf_predict.py",
+        "hf_small_readme.md",
+        "requirements.txt",
+        "scripts/finetuning/image_classification/ft_cxformer_chexpert.sh",
+        "scripts/finetuning/segmentation/cxformer_chexmask.sh",
+        "scripts/pretrain/cxformer_singlegpu.sh",
+        "scripts/pretrain/cxformer_slurm_submit.sh"
+      ],
+      "candidate_code_bytes": 4768475,
+      "scope_note": "Text source/docs/config by extension, not validated minimal runnable closure. No sample CXR images selected; code untrusted."
+    },
+    "selected_model_repo": "m42-health/CXformer-small",
+    "candidate_model_source_bytes": null,
+    "combined_selected_model_plus_code_reference_bytes": null,
+    "known_partial_model_plus_code_bytes": 93026173,
+    "complete_dependency_inclusive_bytes": null,
+    "actual_owner_incremental_bytes": null,
+    "formal_catalog_promotion_performed": false,
+    "download_enabled": false,
+    "download_approved": false,
+    "model_execution_authorized": false,
+    "dependencies": [
+      "Transformers config 4.48.0, PyTorch, Pillow, safetensors, exact ABI/wheels unresolved",
+      "custom_processor.CustomBitImageProcessor histogram equalization; audit before use",
+      "separate learned downstream heads/decoder when used",
+      "exact training parent needed for lineage/retraining, not presumed necessary at encoder inference",
+      "data rights and research-only noncommercial restrictions"
+    ],
+    "note": "Text metadata only; no weights, sample radiographs or third-party executable code fetched/executed. Partial source bytes, not owner delta."
+  },
+  "model_decisions": [
+    {
+      "id": "m42-health/CXformer-small",
+      "decision": "ADD",
+      "selection": "conditional",
+      "reason": "Compact independent continual-pretraining on 600k+ frontal CXRs across five datasets; ViT-S/14 with registers and teacher centering. Complements DINOv3, MedGemma, OpenMidnight and BiomedCLIP, not a quantization or a diagnostic model."
+    },
+    {
+      "id": "m42-health/CXformer-base",
+      "decision": "HOLD",
+      "reason": "Separate 86.6M state, mean AUROC 87.93 vs 86.05 and Dice 90.94 vs 90.52; ~346MB weight, no matched owner throughput. Small chosen as lower-cost operating point.",
+      "sources": [
+        "https://huggingface.co/m42-health/CXformer-base",
+        "https://proceedings.mlr.press/v301/al-mahrooqi26a.html"
+      ]
+    },
+    {
+      "id": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+      "decision": "KEEP",
+      "reason": "Existing HOLD retained; biomedical image-text embedding not CXR-only self-supervision; no matched comparison.",
+      "sources": []
+    },
+    {
+      "id": "facebook/dinov3-vit7b16-pretrain-lvd1689m",
+      "decision": "KEEP",
+      "reason": "6.716B general pretrained vision baseline, 26,864,283,632 B source proxy; no matched CXR performance.",
+      "sources": []
+    },
+    {
+      "id": "facebook/dinov3-vith16plus-pretrain-lvd1689m",
+      "decision": "KEEP",
+      "reason": "840.6M general encoder, existing dependency; no replacement evidence.",
+      "sources": []
+    },
+    {
+      "id": "medarc/OpenMidnight-1.1",
+      "decision": "KEEP",
+      "reason": "1.1348B pathology tile encoder; 4,539,168,331 B source proxy, different modality; no paired CXR test.",
+      "sources": []
+    },
+    {
+      "id": "google/medgemma-4b-it",
+      "decision": "KEEP",
+      "reason": "4.3001B generative medical VLM, distinct semantics from CXR feature extractor.",
+      "sources": []
+    },
+    {
+      "id": "illuin/IVE-4B",
+      "decision": "KEEP",
+      "reason": "2026-11-23 new release already selected; independently trained typed decision model, not CXR encoder.",
+      "sources": [
+        "https://huggingface.co/illuin/IVE-4B",
+        "https://huggingface.co/blog/QuentinJG/ive-release"
+      ]
+    },
+    {
+      "id": "illuin/Ivonnet-0.8B",
+      "decision": "KEEP",
+      "reason": "Already selected separately distilled student; no duplicate.",
+      "sources": [
+        "https://huggingface.co/illuin/Ivonnet-0.8B",
+        "https://huggingface.co/blog/QuentinJG/ive-release"
+      ]
+    },
+    {
+      "id": "medarc/spectra-openmidnight-lora",
+      "decision": "HOLD",
+      "reason": "Creator reports base 0.618 vs 0.879 +/-0.007 PathoROB robustness, cross-scanner 0.703 vs 0.948 +/-0.015 (three seeds mean +/-2SD); exact donor vs selected OpenMidnight-1.1, size, rights, ABI, negative evidence incomplete.",
+      "sources": [
+        "https://huggingface.co/medarc/spectra-openmidnight-lora",
+        "https://huggingface.co/medarc/spectra-openmidnight-merged"
+      ]
+    },
+    {
+      "id": "medarc/spectra-openmidnight-merged",
+      "decision": "EXCLUDE_AS_SEPARATE_CANDIDATE",
+      "reason": "Publisher says same LoRA delta folded into parent; avoid duplicate representation pending exact donor and parity. No formal exclusion or deletion.",
+      "sources": [
+        "https://huggingface.co/medarc/spectra-openmidnight-merged"
+      ]
+    },
+    {
+      "id": "AlignPre (arXiv:2611.34101)",
+      "decision": "HOLD",
+      "reason": "Nov 25 pixel-space precipitation flow matching + skill-aligned posttraining; paper claims three benchmark gains but released weight identity and scope unverified.",
+      "sources": [
+        "https://arxiv.org/abs/2611.34101"
+      ]
+    },
+    {
+      "id": "Motion-Appearance Coupling Priors (arXiv:2611.15420)",
+      "decision": "HOLD",
+      "reason": "Nov 11 dynamic video inverse-problem diffusion residual prior, reported improvements over photometric/noise-warp baseline; no verified released weights/parent.",
+      "sources": [
+        "https://arxiv.org/abs/2611.15420"
+      ]
+    }
+  ],
+  "formal_replacements": [],
+  "formal_exclusions": [],
+  "download_approved": false,
+  "physical_deletions": 0,
+  "weight_payload_downloaded": false
+}
