@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "round": "R190",
+  "date_jst": "2026-11-28",
+  "baseline_commit": "57256891c173f9a0f36b542bb365283c17fa0b3d",
+  "baseline_revision": "v93-20261128",
+  "research_scope": "Printed/handwritten math OCR, direct editable formula outputs and compact specialist architectures. Bounded web search recency 7/30/90 days, older relevant checkpoints; not an exhaustive HF census.",
+  "catalog_and_history_check": {
+    "formal_ids_checked": 287,
+    "prior_id_search_results": 0,
+    "history_index_limit": "GitHub code search exact IBEM-im2typst returned no results; cannot prove exhaustive unindexed history",
+    "acquisition_ledger_reports": 133
+  },
+  "new_candidate": {
+    "repo_id": "dbcccc/IBEM-im2typst",
+    "decision": "ADD_CONDITIONAL_RESEARCH_ONLY",
+    "source_revision": "a7ced2309da108a911fa6880055a165264872a84",
+    "code_revision": "0c8dc03ade8de3c3124e870bd86296eb03e9e37f",
+    "updated": "2026-08-22",
+    "published_on": null,
+    "architecture": "CNN, depthwise axial 2D context, height-4 pooling, 3-layer autoregressive Transformer decoder, 528-token vocabulary",
+    "total_parameters": 14157152,
+    "training_lineage": "Seeded from scratch then same IBEM lineage; 129303 crops / 480 training docs, 16899 / 60 validation docs; deterministic Typst conversion; no external teacher, synthetic or pretrained state claimed",
+    "positive": "Publisher document-disjoint FP32 validation: exact match 92.6268% over 16899 crops; <=32 tokens 97.8519%; independently initialized 14,157,152 parameter CNN/axial 2D context/three-layer Transformer decoder. 129303 training crops from 480 documents; validation 60 other documents. Direct package-free Typst output, no pretrained external learned dependency.",
+    "negative": "Publisher validation-selected checkpoint, held-out test unopened; 33–64 tokens 88.4282% below own 90% gate, display formulas 70.1197%, matrices and accents errors. Printed tight single crop only, not handwriting or page OCR. No matched incumbent test, hardware/clock/batch/latency/peak memory or independent replay. INT8 built-in probe parity only; full-domain INT8 evaluation not completed.",
+    "source_urls": [
+      "https://huggingface.co/dbcccc/IBEM-im2typst/blob/a7ced2309da108a911fa6880055a165264872a84/README.md",
+      "https://huggingface.co/dbcccc/IBEM-im2typst/blob/a7ced2309da108a911fa6880055a165264872a84/checkpoint-metadata.json",
+      "https://huggingface.co/dbcccc/IBEM-im2typst/blob/a7ced2309da108a911fa6880055a165264872a84/MODEL_LICENSE.md",
+      "https://huggingface.co/dbcccc/IBEM-im2typst/blob/a7ced2309da108a911fa6880055a165264872a84/checkpoint-step-002000-transfer.pt",
+      "https://huggingface.co/dbcccc/IBEM-im2typst/tree/a7ced2309da108a911fa6880055a165264872a84",
+      "https://github.com/dbccccccc/IBEM-im2typst/tree/0c8dc03ade8de3c3124e870bd86296eb03e9e37f",
+      "https://github.com/dbccccccc/IBEM-im2typst/blob/0c8dc03ade8de3c3124e870bd86296eb03e9e37f/python/pyproject.toml",
+      "https://zenodo.org/records/7963703"
+    ],
+    "known_partial_bytes": 59110340,
+    "full_dependency_bytes": null,
+    "source_manifest": "manifests/drafts/r190-2026-11-28-ibem-im2typst-original.candidate.json",
+    "observed_license_change": null
+  },
+  "comparators": [
+    {
+      "repo_id": "deepseek-ai/DeepSeek-OCR-2",
+      "decision": "KEEP",
+      "catalog_selection": "select",
+      "total_parameters": 3389100000,
+      "source_repo_bytes": 6789306112,
+      "reason": "文書の文字・構造理解に特化した3.4B。一般VLMとは異なるOCR専用学習成果を保存できる。",
+      "comparison": "Different full-page/layout/table/Thai text role; no same-crop matched evaluation, no replacement or physical removal."
+    },
+    {
+      "repo_id": "lightonai/LightOnOCR-3-0.8B",
+      "decision": "KEEP",
+      "catalog_selection": "select",
+      "total_parameters": 853000000,
+      "source_repo_bytes": 1737771835,
+      "reason": "文書OCR・表・数式・図表・ページ領域検出を0.8B級で統合した専用重み。以前は複数のOCR/レイアウト認識工程を組み合わせた作業の一部を単体で担える。",
+      "comparison": "Different full-page/layout/table/Thai text role; no same-crop matched evaluation, no replacement or physical removal."
+    },
+    {
+      "repo_id": "PaddlePaddle/PaddleOCR-VL-1.5",
+      "decision": "KEEP",
+      "catalog_selection": "select",
+      "total_parameters": 958600000,
+      "source_repo_bytes": 1930468959,
+      "reason": "小型かつ異なるOCR/文書解析実装。大きなDeepSeek-OCRが動かない環境でも推論と比較ができる。",
+      "comparison": "Different full-page/layout/table/Thai text role; no same-crop matched evaluation, no replacement or physical removal."
+    },
+    {
+      "repo_id": "iapp/OpenThai2.2-OCR-Text-20261127",
+      "decision": "KEEP",
+      "catalog_selection": "conditional",
+      "total_parameters": null,
+      "source_repo_bytes": 15436348,
+      "reason": "Distinct Thai fine-tuned recognizers and newly trained digit classifier; reused detector not separate learned state. Tiny CPU line OCR complements full document parsers, not format duplication.",
+      "comparison": "Different full-page/layout/table/Thai text role; no same-crop matched evaluation, no replacement or physical removal."
+    },
+    {
+      "repo_id": "microsoft/table-transformer-structure-recognition-v1.1-all",
+      "decision": "KEEP",
+      "catalog_selection": "conditional",
+      "total_parameters": null,
+      "source_repo_bytes": null,
+      "reason": "Independent DETR/ResNet-18 TATR-v1.1-All trained on aligned PubTables-1M + FinTabNet.c. Non-generative geometry complements LightOnOCR, PaddleOCR-VL and Nemotron Parse; not a quantization or end-to-end OCR replacement.",
+      "comparison": "Different full-page/layout/table/Thai text role; no same-crop matched evaluation, no replacement or physical removal."
+    }
+  ],
+  "other_candidates": [
+    {
+      "repo_id": "PDFluent/formula-recognition-onnx",
+      "decision": "HOLD",
+      "updated": "2026-11-03",
+      "source_url": "https://huggingface.co/PDFluent/formula-recognition-onnx",
+      "evidence": "Separately trained ONNX encoder/decoder, arXiv CC BY/CC0 crop provenance, AGPL-3.0-only or commercial license, 37.4 MB displayed repo. 0.9168 is end-to-end PDF pipeline score, not formula exact match; most formulas not exact per card. Fixed full revision, exact param count and isolated comparison not closed."
+    },
+    {
+      "repo_id": "sugartai/Qwen3.5-2B-MathParser-pro",
+      "decision": "HOLD",
+      "updated": "2026-06-01",
+      "source_url": "https://huggingface.co/sugartai/Qwen3.5-2B-MathParser-pro",
+      "evidence": "Publisher 756 handwritten multi-line samples: 2B Base mean edit similarity 0.599258, SFT 0.906516, SFT+DPO 0.916060; runaways 19 to 3; merged 2.2132B according HF metadata; not exact match; test provenance, parent revision, same-domain incumbent evaluation and fixed file scope pending."
+    },
+    {
+      "repo_id": null,
+      "paper": "https://arxiv.org/abs/2611.27208",
+      "decision": "HOLD_RESEARCH_NO_VERIFIED_WEIGHT_RELEASE",
+      "date": "2026-11-20",
+      "evidence": "Rank-16 QLoRA Qwen3-VL-4B handwriting-to-linearized SLG; authors report 524/1198 exact matches (43.74%) vs 59/1198 ViT baseline, addition of 2k samples decreases to 42.32%; not same task as Typst. No verified public adapter ID/revision."
+    },
+    {
+      "repo_id": null,
+      "paper": "https://arxiv.org/abs/2609.12917",
+      "decision": "KEEP_AS_EVALUATION_METHOD_REFERENCE_NOT_ASSET",
+      "evidence": "Position-aware evaluation metrics distinguish misplaced structures from plain glyph overlap; no model addition."
+    },
+    {
+      "repo_id": null,
+      "paper": "https://arxiv.org/abs/2609.32513",
+      "decision": "HOLD_RESEARCH_NO_VERIFIED_WEIGHT_RELEASE",
+      "evidence": "Few-shot writer adaptation; camera handwriting gains mixed; no verified checkpoint ID."
+    }
+  ],
+  "format_decision": "FP32 transfer checkpoint retained; same-state INT8 ONNX encoder+decoder are runtime alternatives, not separate learned outcomes; no FP16/FP32 ONNX duplicate registration.",
+  "risk": "No observed imminent removal or licensing transition. Rights remain act-specific; no unsafe or bypass ranking.",
+  "next_validation": {
+    "H": "On >=300 document-disjoint printed crops, direct Typst small model achieves predeclared semantic exact-match threshold while adding low resource operating point relative to selected full-document OCR; not yet tested.",
+    "T": "Evaluate same crops, >=100 displayed/long formulas, canonical rendered structure and symbol placement, compile success, strict match; record per-model pinned checkpoint, CPU/GPU/OS, backend versions, batch 1, p50/p95 latency and peak host RAM/VRAM. Compare LightOnOCR and PaddleOCR with same inputs and deterministic output normalization.",
+    "D": "PASS only if paired evidence and rights/restore/capacity gates established; FAIL on unacceptable structural error or no distinct practical gain; otherwise UNCERTAIN, remain research-only.",
+    "C": "Selection-biased validation and domain shift could explain publisher scores; direct Typst output could be emulated by existing OCR + deterministic converter.",
+    "U": "Dataset source coverage, canonicalization, doc-level correlation, input crop quality, platform ABI and actual physical archive bytes unverified."
+  },
+  "new_download_approvals": 0,
+  "physical_files_deleted": 0
+}

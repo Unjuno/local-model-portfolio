@@ -1,3 +1,7 @@
+## 現行 v97 / R193（2026-11-28）
+
+291登録・235有効（SELECT 56、CONDITIONAL 179）。独立学習IBEM-im2typst（14,157,152パラメータ、印刷数式→Typst）を研究限定CONDITIONAL追加。並行更新を含む290旧行保持。FP32原本＋固定コード既知部分59,110,340 B、全依存・owner増分未確定。全235取得STOP、承認・重みDL・実行・物理削除0。[研究報告](docs/strategy/193-v97-ibem-im2typst-compact-math-recognition.md)。
+
 
 > **v96 / R192 (2026-11-28)**: 290 tracked / 234 active (SELECT 56, CONDITIONAL 178); ADD davidotte/RASR-94M-S, research only. All acquisition STOP. See `docs/strategy/192-v96-symbolic-regression-originals.md`. Exact tensor census, complete source, act rights, owner storage and offline runtime unresolved; no approval/download/deletion.
 
