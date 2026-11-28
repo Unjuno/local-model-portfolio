@@ -1,3 +1,7 @@
+## 現行 v100 / R196（2026-11-28）
+
+294登録・238有効（SELECT 56、CONDITIONAL 182）。Shorter Formulaeの145M原本・ノイズ追加学習済み2状態を研究限定CONDITIONAL追加。RASR維持。既存293行・133取得報告不変。配布元参照1,173,518,813 B、依存・owner増分未確定。全238取得STOP、承認・重みDL・実行・物理削除0。回帰テスト4/4 PASS。[研究報告](docs/strategy/196-v100-shorter-formulae-symbolic-regression.md)。正式参照は `catalog/CURRENT.json`。
+
 ## 現行 v99 / R195（2026-11-28）
 
 293登録・237有効（SELECT 56、CONDITIONAL 181）。SeisLM-base独立地震波形自己教師あり学習11,359,568パラメータを研究限定追加。並行更新を含む既存292行と133取得報告不変。候補45,546,712 B、依存・owner増分未確定。全237取得STOP、承認・重みDL・実行・物理削除0。[研究報告](docs/strategy/195-v99-seislm-seismic-waveform-research.md)。

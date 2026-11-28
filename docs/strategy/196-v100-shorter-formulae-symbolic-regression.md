@@ -22,3 +22,7 @@ Sources: https://huggingface.co/ShwayW/shorter-formulae/blob/f2eddcf91ca8b83c1fe
 H: noise FT improves exact recovery without material clean degradation. T: >=100 paired held-out equations per noise stratum, same HW/backend/time, report seeds/derivative/OOD errors. D: lower 95% paired CI >0 noisy recovery; clean loss <=5 percentage points. C: leakage, fit without symbolic equivalence, derivative failure. U: paired family bootstrap; not measured here.
 
 catalog/research/2026-11-28-r196-shorter-formulae-primary-evidence.json; manifests/drafts/r196-2026-11-28-shorter-formulae-publisher-scope.candidate.json; catalog/decisions/2026-11-28-r196-shorter-formulae-formal-add.json; tests/test_r196_v100_shorter_formulae.py.
+
+## Executed verification
+
+Published main commit bec8a98382edb2397bbfb44481ba555967d61039; fetched from origin main into separate verification worktree files. Python unittest: 4/4 passed (old records and overlay, exact joins and all STOP, source sums, 4TB/200GB policy). CURRENT count map equals catalog counts; readiness blocking gate and first-blocker counts recomputed exactly. Historical ledger 133 verified reports, 137 records; no owner HDD rehash. No full suite or model execution claimed.

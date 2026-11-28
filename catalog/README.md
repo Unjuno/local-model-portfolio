@@ -1,3 +1,7 @@
+## 現行 v100 / R196（2026-11-28）
+
+294登録・238有効（SELECT 56、CONDITIONAL 182）。Shorter Formulaeの145M原本・ノイズ追加学習済み2状態を研究限定CONDITIONAL追加。RASR維持。既存293行・133取得報告不変。配布元参照1,173,518,813 B、依存・owner増分未確定。全238取得STOP、承認・重みDL・実行・物理削除0。回帰テスト4/4 PASS。[研究報告](../docs/strategy/196-v100-shorter-formulae-symbolic-regression.md)。正式参照は `CURRENT.json`。
+
 
 > **v96 / R192 (2026-11-28)**: 290 tracked / 234 active (SELECT 56, CONDITIONAL 178); ADD davidotte/RASR-94M-S, research only. All acquisition STOP. See `docs/strategy/192-v96-symbolic-regression-originals.md`. Exact tensor census, complete source, act rights, owner storage and offline runtime unresolved; no approval/download/deletion.
 

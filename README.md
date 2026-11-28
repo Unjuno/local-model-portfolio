@@ -1,3 +1,7 @@
+## 現行 v100 / R196（2026-11-28）
+
+294登録・238有効（SELECT 56、CONDITIONAL 182）。Shorter Formulaeの145M原本・ノイズ追加学習済み2状態を研究限定CONDITIONAL追加。RASR維持。既存293行・133取得報告不変。配布元参照1,173,518,813 B、依存・owner増分未確定。全238取得STOP、承認・重みDL・実行・物理削除0。回帰テスト4/4 PASS。[研究報告](docs/strategy/196-v100-shorter-formulae-symbolic-regression.md)。正式参照は `catalog/CURRENT.json`。
+
 ## v98 / R194 (2026-11-28 JST)
 PULSE MSE 独立学習画像コーデック研究限定CONDITIONAL。292登録 / 236 active / 180 conditional / 56 select、全STOP。依存・総数未確認、承認0、既存行維持。[R194](docs/strategy/194-v98-pulse-learned-image-codec.md)。
 
