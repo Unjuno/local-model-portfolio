@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "round": "R191b",
+  "date_jst": "2026-11-28",
+  "base_commit": "b7a02ae7526af15ea86175fccf61a17d56f4b77b",
+  "method": {
+    "hf_recent_created_sample_count": 100,
+    "web_search_windows_days": [
+      7,
+      30,
+      90
+    ],
+    "coverage": "Bounded HF most-recently-created sample and web searches; four fixed API re-queries and raw config/code inspection; no weights. Atto/Panda absent in initial named history and materialized catalog; not exhaustive history search. Concurrent selection observed after initial research; 90K fixed API re-queried for full tree. 840 ADD proposal withdrawn before publication."
+  },
+  "source_urls": [
+    "https://huggingface.co/NeuML/colbert-atto-840-8d/blob/b7cf5e5570c002f70ee08e6f8bb6532ded381f83/README.md",
+    "https://huggingface.co/api/models/NeuML/colbert-atto-840-8d/revision/b7cf5e5570c002f70ee08e6f8bb6532ded381f83?blobs=true",
+    "https://huggingface.co/blog/NeuML/introducing-atto",
+    "https://arxiv.org/abs/2004.12832",
+    "https://arxiv.org/abs/2508.03555",
+    "https://github.com/neuml/txtai",
+    "https://github.com/lightonai/pylate",
+    "https://huggingface.co/NeuML/colbert-atto-170-8d/blob/be12e6e23be568da3bcfc256f2da8539032077c1/README.md",
+    "https://huggingface.co/api/models/NeuML/colbert-atto-170-8d/revision/be12e6e23be568da3bcfc256f2da8539032077c1?blobs=true",
+    "https://arxiv.org/abs/2609.00611",
+    "https://github.com/DeepLearnPhysics/particle-imaging-models",
+    "https://huggingface.co/api/models/DeepLearnPhysics/panda-v2-instance.pilarnet-m/revision/dd3b06d8bc21fc15f3f8ecf500a18662845adbd8?blobs=true",
+    "https://huggingface.co/DeepLearnPhysics/panda-v2-instance.pilarnet-m/blob/dd3b06d8bc21fc15f3f8ecf500a18662845adbd8/README.md",
+    "https://huggingface.co/api/models/DeepLearnPhysics/panda-v2-instance.tpcpp-10m/revision/a1bd0c3a70862799ba14aaa9542e8d882a9b1b6e?blobs=true",
+    "https://huggingface.co/DeepLearnPhysics/panda-v2-instance.tpcpp-10m/blob/a1bd0c3a70862799ba14aaa9542e8d882a9b1b6e/README.md",
+    "https://huggingface.co/api/models/NeuML/colbert-atto-90k-32d/revision/e1734c688cdc8413d08a72007b2e7240a2c3f66e?blobs=true"
+  ],
+  "new_models": [
+    {
+      "repo_id": "NeuML/colbert-atto-840-8d",
+      "parameters": 840,
+      "architecture": {
+        "hidden": 4,
+        "embedding": 8,
+        "layers": 1,
+        "heads": 1,
+        "intermediate": 8,
+        "projections": 2,
+        "config_vocab": 252,
+        "card_vocab": 250,
+        "query_length": 48,
+        "document_length": 450,
+        "dtype": "float32"
+      },
+      "training": "English Wikipedia MLM followed by PyLate retrieval distillation from LightOn MS MARCO BGE-Gemma dataset, per family article; exact parent revision and seed unknown.",
+      "positive": "Publisher BEIR subset nDCG@10: ArguAna .2143, NFCorpus .2585, SciFact .4688, mean .3139 vs 170-param sibling .1261; 9K .3655; LateOn 110M .5463. Fixed Hub metadata reports F32 840.",
+      "negative": "English only; config vocabulary 252 vs card 250; 48 query/450 document token limits. Quality trails larger siblings. No matched incumbent or independent results; multi-vector index cost and MaxSim latency can dominate. Card references ST6+/txtai9+, saved config ST/Transformers 5.3.0 and PyTorch 2.11.0+cu130. ABI, training parent revision/data rights, complete dependencies and independent restore unverified; no custom code executed."
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-170-8d",
+      "parameters_claim": 170,
+      "parameters_api": null,
+      "architecture": {
+        "hidden": 2,
+        "embedding": 8,
+        "layers": 1,
+        "heads": 1,
+        "intermediate": 2,
+        "projections": 1,
+        "config_vocab": 76,
+        "card_vocab": 74,
+        "query_length": 40,
+        "document_length": 400
+      },
+      "negative": "Card usage example colbert-atto-168-8d differs; no independent count."
+    },
+    {
+      "repo_id": "DeepLearnPhysics/panda-v2-instance.pilarnet-m",
+      "revision_sha": "dd3b06d8bc21fc15f3f8ecf500a18662845adbd8",
+      "created_utc": "2026-11-28T00:15:55Z",
+      "updated_utc": "2026-11-28T00:16:05Z",
+      "F32": 60427164,
+      "source_repo_bytes": 241780463,
+      "weight_bytes": 241772288,
+      "weight_sha256": "1c913edd5c584344f29d77005f4233022db2a4e61de85a9fcf3d45f3ca2dbed0",
+      "parent": "DeepLearnPhysics/panda-v2.pilarnet-m",
+      "training": "rank16 LoRA + head; 1M labelled PILArNet-M events",
+      "source_api": "https://huggingface.co/api/models/DeepLearnPhysics/panda-v2-instance.pilarnet-m/revision/dd3b06d8bc21fc15f3f8ecf500a18662845adbd8?blobs=true",
+      "source_card": "https://huggingface.co/DeepLearnPhysics/panda-v2-instance.pilarnet-m/blob/dd3b06d8bc21fc15f3f8ecf500a18662845adbd8/README.md",
+      "gated": false,
+      "card_license_tag": null,
+      "decision": "HOLD",
+      "why": "No explicit weights license in fixed four-file tree/card. Exact parent, GPU pimm/attention backend and runtime dependencies not closed; paper label-efficiency findings do not establish matched superiority of these full-label checkpoints."
+    },
+    {
+      "repo_id": "DeepLearnPhysics/panda-v2-instance.tpcpp-10m",
+      "revision_sha": "a1bd0c3a70862799ba14aaa9542e8d882a9b1b6e",
+      "created_utc": "2026-11-28T00:13:34Z",
+      "updated_utc": "2026-11-28T00:13:39Z",
+      "F32": 59836824,
+      "source_repo_bytes": 239417820,
+      "weight_bytes": 239409936,
+      "weight_sha256": "a3fc2e6de80c2a4998966f1433dd7d1c554421c815c6ee1836436ce979383579",
+      "parent": "DeepLearnPhysics/panda-v2.tpcpp-10m",
+      "training": "rank16 LoRA + head; 70K labelled TPCpp-10M events",
+      "source_api": "https://huggingface.co/api/models/DeepLearnPhysics/panda-v2-instance.tpcpp-10m/revision/a1bd0c3a70862799ba14aaa9542e8d882a9b1b6e?blobs=true",
+      "source_card": "https://huggingface.co/DeepLearnPhysics/panda-v2-instance.tpcpp-10m/blob/a1bd0c3a70862799ba14aaa9542e8d882a9b1b6e/README.md",
+      "gated": false,
+      "card_license_tag": null,
+      "decision": "HOLD",
+      "why": "No explicit weights license in fixed four-file tree/card. Exact parent, GPU pimm/attention backend and runtime dependencies not closed; paper label-efficiency findings do not establish matched superiority of these full-label checkpoints."
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-90k-32d",
+      "parameters": 90304,
+      "parameter_source": "Fixed publisher safetensors metadata F32, not independent payload census",
+      "revision_sha": "e1734c688cdc8413d08a72007b2e7240a2c3f66e",
+      "source_repo_bytes": 468771,
+      "weight_bytes": 362720,
+      "source_files": 11,
+      "positive": "Publisher 3 English BEIR subsets mean nDCG@10 0.4454 vs 840 0.3139",
+      "negative": "No matched incumbent replay, dependency/rights closure, owner capacity, index footprint or timing evidence."
+    }
+  ],
+  "publisher_beir_ndcg10": {
+    "datasets": [
+      "ArguAna",
+      "NFCorpus",
+      "SciFact"
+    ],
+    "rows": [
+      {
+        "model": "NeuML/colbert-atto-170-8d",
+        "values": [
+          0.0965,
+          0.1178,
+          0.1641
+        ],
+        "mean": 0.1261
+      },
+      {
+        "model": "NeuML/colbert-atto-840-8d",
+        "values": [
+          0.2143,
+          0.2585,
+          0.4688
+        ],
+        "mean": 0.3139
+      },
+      {
+        "model": "NeuML/colbert-atto-9k-16d",
+        "values": [
+          0.2459,
+          0.2902,
+          0.5604
+        ],
+        "mean": 0.3655
+      },
+      {
+        "model": "NeuML/colbert-atto-90k-32d",
+        "values": [
+          0.3435,
+          0.3263,
+          0.6663
+        ],
+        "mean": 0.4454
+      },
+      {
+        "model": "lightonai/lateon",
+        "values": [
+          0.4979,
+          0.3802,
+          0.7609
+        ],
+        "mean": 0.5463
+      }
+    ],
+    "publisher_only": true,
+    "hardware_clock_batch_inference_unknown": true
+  },
+  "panda_paper": "arXiv:2609.00611 (2026-09-01): paper reports 70x fewer labelled sPHENIX clustering events and up to 1000x fewer LArTPC labels vs Panda V1 for adaptation; not a measured result of these full-label candidate checkpoints.",
+  "existing_comparators": [
+    {
+      "repo_id": "BAAI/bge-m3",
+      "decision": "select",
+      "parameters": 569000000,
+      "source_repo_reference_bytes": 4587317404,
+      "why": "KEEP: different dense/multifunction embedding or cross-encoder retrieval scope; no matched replacement evidence."
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "decision": "select",
+      "parameters": 595800000,
+      "source_repo_reference_bytes": 1207489041,
+      "why": "KEEP: different dense/multifunction embedding or cross-encoder retrieval scope; no matched replacement evidence."
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+      "decision": "select",
+      "parameters": 595800000,
+      "source_repo_reference_bytes": 1207488344,
+      "why": "KEEP: different dense/multifunction embedding or cross-encoder retrieval scope; no matched replacement evidence."
+    },
+    {
+      "repo_id": "Horizon-Labs/multilingual-reranker-small",
+      "decision": "conditional",
+      "parameters": 140641921,
+      "source_repo_reference_bytes": 1428709912,
+      "why": "KEEP: different dense/multifunction embedding or cross-encoder retrieval scope; no matched replacement evidence."
+    }
+  ],
+  "decisions": [
+    {
+      "repo_id": "NeuML/colbert-atto-840-8d",
+      "decision": "HOLD",
+      "why": "Concurrent v95 formally selected the independent 90K state. 840 full pinned scope and 840 F32 count now established; publisher quality 0.3139 vs 90K 0.4454. Extreme control with 8 vs 32 dimensions, but total resource benefit not measured; 107.5x fewer model parameters and 4x fewer vector scalars per equal token count do not prove end-to-end benefit. Retain evidence, not active addition."
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-170-8d",
+      "decision": "HOLD",
+      "why": "Mean nDCG@10 .1261 vs .3139 for 840, Hub tensor count absent, card example 168 differs from ID 170, restricted vocabulary. No practical marginal benefit established."
+    },
+    {
+      "repo_id": "DeepLearnPhysics/panda-v2-instance.pilarnet-m",
+      "decision": "HOLD",
+      "why": "No explicit weights license in fixed four-file tree/card. Exact parent, GPU pimm/attention backend and runtime dependencies not closed; paper label-efficiency findings do not establish matched superiority of these full-label checkpoints."
+    },
+    {
+      "repo_id": "DeepLearnPhysics/panda-v2-instance.tpcpp-10m",
+      "decision": "HOLD",
+      "why": "No explicit weights license in fixed four-file tree/card. Exact parent, GPU pimm/attention backend and runtime dependencies not closed; paper label-efficiency findings do not establish matched superiority of these full-label checkpoints."
+    },
+    {
+      "repo_id": "BAAI/bge-m3",
+      "decision": "KEEP",
+      "why": "KEEP: different dense/multifunction embedding or cross-encoder retrieval scope; no matched replacement evidence."
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "decision": "KEEP",
+      "why": "KEEP: different dense/multifunction embedding or cross-encoder retrieval scope; no matched replacement evidence."
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+      "decision": "KEEP",
+      "why": "KEEP: different dense/multifunction embedding or cross-encoder retrieval scope; no matched replacement evidence."
+    },
+    {
+      "repo_id": "Horizon-Labs/multilingual-reranker-small",
+      "decision": "KEEP",
+      "why": "KEEP: different dense/multifunction embedding or cross-encoder retrieval scope; no matched replacement evidence."
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-90k-32d",
+      "decision": "KEEP",
+      "why": "Concurrent v95 independent trained state; new fixed API closes all 11 publisher file sizes/blob IDs and exact reported parameter total 90304, without approving acquisition or changing its formal tier."
+    }
+  ],
+  "risks": {
+    "observed_distribution_changes": "No actual license change confirmed",
+    "owner_permissions_verified": false,
+    "source_code_executed": false,
+    "model_weights_fetched": false
+  },
+  "verification_plan": {
+    "H": "840 may supply a useful lower-resource research control versus selected 90K and 170; test actual token counts, quality and total system cost before formal addition.",
+    "T": "Freeze corpus/qrels and revisions; compare BM25, 170/840/9K/90K, incumbent BGE/Qwen in identical candidate pool; record CPU/GPU/clock, batch1/16, p50/p95 latency, peak RAM, index bytes, nDCG@10, paired bootstrap CI; min 100 queries or all available if fewer.",
+    "D": "PASS for 840 reconsideration only if lower 95% bound of paired gain over 170 >0 and measured total memory/index/latency advantage over 90K is meaningful for a predeclared use case. UNCERTAIN until matched tests.",
+    "C": "Tokenizer collision, domain mismatch, index overhead, ABI failure.",
+    "U": "Publisher-only results, no hardware or CI measurement; independent replication needed."
+  },
+  "source_manifest": "manifests/drafts/r191b-2026-11-28-atto-three-fixed-publisher-scopes.candidate.json",
+  "concurrent_reconciliation": {
+    "revision": "v98-20261128",
+    "formal_counts": {
+      "tracked": 292,
+      "active": 236,
+      "by_tier": {
+        "R0": 18,
+        "R1": 148,
+        "HOLD": 37,
+        "BACKLOG": 13,
+        "R2": 70,
+        "EXCLUDED": 6
+      },
+      "by_decision": {
+        "conditional": 180,
+        "hold": 37,
+        "select": 56,
+        "deferred": 13,
+        "excluded": 6
+      },
+      "by_forecast_wave": {
+        "S1": {
+          "active": 77,
+          "inactive": 33
+        },
+        "S2": {
+          "active": 86,
+          "inactive": 12
+        },
+        "S3": {
+          "active": 73,
+          "inactive": 11
+        }
+      },
+      "parameter_gate": {
+        "PASS_TOTAL_PARAMS_LT_150B": 212,
+        "OVER_150B_QUANT_REVIEW_REQUIRED": 7,
+        "UNVERIFIED_BLOCK_FINAL_LOCK": 47
+      },
+      "resource_screen": {
+        "tracked": 292,
+        "source_repo_bytes_unknown": 83,
+        "active_source_repo_bytes_unknown": 56,
+        "active_ge_100GB_repo_assets": 8
+      },
+      "models": 266,
+      "datasets": 26
+    },
+    "formal_change_count": 0,
+    "prior_catalog_preserved": true,
+    "concurrent_v95_commit": "c35892c6546aff5ffb274716d7a5423a2c33c5a6",
+    "concurrent_guard_repair_already_present": true
+  }
+}
