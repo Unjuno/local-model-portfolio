@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "round": "R192",
+  "observed_on": "2026-11-28",
+  "parent_sha": "d776ac7f5ebf19640624f560b701b31be90c420c",
+  "search_scope": {
+    "days": [
+      7,
+      30,
+      90
+    ],
+    "queries": "symbolic regression, equation discovery, amortized symbolic regression, neural symbolic regression; bounded web and publisher pages; older baselines included",
+    "limitations": "HF connector model_search and complete Hub tree API unavailable; no sufficiently verified 7-day weight release found; 30-day card activity not treated as exact dates; October papers within 90 days; not exhaustive"
+  },
+  "primary_sources": [
+    "https://huggingface.co/davidotte/RASR-94M-S",
+    "https://huggingface.co/davidotte/RASR-94M-S/commit/b764ebf857a20509de7ba86fa0dc90757b89f3e7",
+    "https://huggingface.co/davidotte/RASR-94M-S/blob/b764ebf857a20509de7ba86fa0dc90757b89f3e7/model.safetensors",
+    "https://arxiv.org/abs/2610.17994",
+    "https://github.com/automl/rasr/tree/f7bdf878a46f0a691d55146d7b4cf1ddac605db7"
+  ],
+  "rasr": {
+    "paper_date": "2026-10-13",
+    "code_initial_commit_date": "2026-10-14",
+    "weight_revision": "b764ebf857a20509de7ba86fa0dc90757b89f3e7",
+    "weight_sha256": "ada6f12950507c70e86ee0c1b94783de6c6852e10c76214bb0c0f52a5e78acfa",
+    "weight_bytes": 188351066,
+    "code_revision": "f7bdf878a46f0a691d55146d7b4cf1ddac605db7",
+    "code_root_bytes": 1754342,
+    "code_root_blobs": 120,
+    "nominal_parameters": 94100000,
+    "exact_total_parameters": null,
+    "full_hub_tree_bytes": null,
+    "training": "~62M synthetic datasets, TabICLv2 prior, risk-sensitive GRPO; S complexity penalty 0.5, M 0.15, L 0.05",
+    "architecture": "Alternating row/feature attention encoder, prefix expression decoder",
+    "positive": "Author S reports mean expression size 10.3 nodes, mean 26s on 12 SRBench 2.0 black-box tasks; family strong average test R2 rank; no independent verification.",
+    "negative": "S may sacrifice fit vs L; up to 11 finite features, no missing values, restricted operator vocabulary, Feynman recovery not universally superior; hardware/clock/batch unverified; no guarantee of unique physical law.",
+    "release_date_exact": null,
+    "latest_update_date_exact": null,
+    "license": "MIT card; MIT source LICENSE; no user act-rights decision",
+    "source_access_change": "No verified change observed; public card/pointer only",
+    "runtime": "Python >=3.12,<3.14; torch >=2.6; simplipy==0.2.14; torchtitan gitlink; triton, NumPy, scipy, scikit-learn. Local safetensors/config supported; snapshot_download if nonlocal path, SimpliPyEngine.load(..., install=True) in estimator/worker; offline engine/wheelhouse not audited.",
+    "gitlinks": [
+      {
+        "path": "srbench",
+        "revision": "7a7c12e8b5b9764161392793ae3bccd7815ea112",
+        "repo_url": "https://github.com/davidotte/srbench",
+        "complete_bytes": null
+      },
+      {
+        "path": "torchtitan",
+        "revision": "81af8833ddeff9b5f1874dc7e20594aa17da6b86",
+        "repo_url": "https://github.com/pytorch/torchtitan",
+        "complete_bytes": null
+      }
+    ]
+  },
+  "other_sources": [
+    {
+      "repo_id": "ShwayW/shorter-formulae",
+      "paper": "https://arxiv.org/abs/2610.03947",
+      "card": "https://huggingface.co/ShwayW/shorter-formulae",
+      "paper_date": "2026-10-02",
+      "evidence": "Author ~10s/equal-time extrapolation advantage; search methods can outperform accuracy with longer runtimes; 145M base/noise FT and four 89M ablations; exact hardware/clock/batch unverified.",
+      "weight_revision_short": "f2eddcf",
+      "full_card_revision_not_weight_revision": "8bb57b33613ed37b0cfa5c5790e44b3e3919189e",
+      "full_repo_display_bytes_approx": 5490000000
+    },
+    {
+      "repo_id": "psaegert/flash-ansr-v25.0-T8-120M",
+      "paper": "https://arxiv.org/abs/2602.08885",
+      "card": "https://huggingface.co/psaegert/flash-ansr-v25.0-T8-120M",
+      "evidence": "120M F32 amortized baseline; author accuracy advantage vs amortized baselines, on par with PySR FastSRB; no matched RASR comparison."
+    }
+  ],
+  "decisions": [
+    {
+      "repo_id": "davidotte/RASR-94M-S",
+      "decision": "ADD",
+      "formal_tier": "conditional",
+      "reason": "Independent pretrained and GRPO post-trained symbolic regression: numeric observations to inspectable expressions, absent in incumbent catalog. Select one complexity-focused state, not all siblings."
+    },
+    {
+      "repo_id": "davidotte/RASR-94M-L",
+      "decision": "HOLD",
+      "reason": "Distinct GRPO state, penalty 0.05; fit-oriented; matched marginal value and immutable scope unresolved."
+    },
+    {
+      "repo_id": "davidotte/RASR-94M-M",
+      "decision": "HOLD",
+      "reason": "Distinct state, penalty 0.15; not quantization; incremental value and fixed scope unresolved."
+    },
+    {
+      "repo_id": "RASR 94M pretrained base (exact repo ID not verified)",
+      "decision": "HOLD",
+      "reason": "Pretraining control useful, identity and immutable scope unresolved."
+    },
+    {
+      "repo_id": "ShwayW/shorter-formulae",
+      "decision": "HOLD",
+      "reason": "145M base/noise-FT and four 89M ablations, extrapolation evidence; .pth serialization, short weight revision only, full file hashes/rights/ABI not closed."
+    },
+    {
+      "repo_id": "psaegert/flash-ansr-v25.0-T8-120M",
+      "decision": "HOLD",
+      "reason": "120M independent baseline, matched incremental value and fixed source not established."
+    },
+    {
+      "repo_id": "nvidia/Kumo-Tabular",
+      "decision": "KEEP",
+      "reason": "Non-equivalent output; no matched replacement evidence."
+    },
+    {
+      "repo_id": "Tabimpute/MatrixFormer",
+      "decision": "KEEP",
+      "reason": "Non-equivalent output; no matched replacement evidence."
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati",
+      "decision": "KEEP",
+      "reason": "Non-equivalent output; no matched replacement evidence."
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati-Checker",
+      "decision": "KEEP",
+      "reason": "Non-equivalent output; no matched replacement evidence."
+    },
+    {
+      "repo_id": "raws-labs/tinycast",
+      "decision": "KEEP",
+      "reason": "Non-equivalent output; no matched replacement evidence."
+    }
+  ],
+  "existing_comparisons": [
+    {
+      "repo_id": "Tabimpute/MatrixFormer",
+      "task": "masked numerical cells",
+      "total_parameters": 77998496
+    },
+    {
+      "repo_id": "nvidia/Kumo-Tabular",
+      "task": "tabular classification/regression",
+      "total_parameters": 429350000
+    },
+    {
+      "repo_id": "udgamlabs/Lilavati",
+      "task": "text-to-program",
+      "total_parameters": 94700000
+    },
+    {
+      "repo_id": "raws-labs/tinycast",
+      "task": "probabilistic time-series forecast",
+      "total_parameters": 146505
+    }
+  ],
+  "known_weight_and_root_code_bytes": 190105408,
+  "complete_dependency_inclusive_bytes": null,
+  "owner_incremental_bytes": null,
+  "downloads_approved": 0,
+  "physical_deletions": 0
+}

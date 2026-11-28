@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "kind": "NONEXECUTABLE_PARTIAL_SOURCE_CANDIDATE",
+  "source_revision": "v96-20261128",
+  "observed_on": "2026-11-28",
+  "source_models": [
+    {
+      "repo_id": "davidotte/RASR-94M-S",
+      "revision": "b764ebf857a20509de7ba86fa0dc90757b89f3e7",
+      "source_files": [
+        {
+          "path": "model.safetensors",
+          "bytes": 188351066,
+          "sha256": "ada6f12950507c70e86ee0c1b94783de6c6852e10c76214bb0c0f52a5e78acfa",
+          "hash_source": "publisher LFS pointer at weight commit"
+        },
+        {
+          "path": "config.toml",
+          "bytes": null,
+          "sha256": null
+        },
+        {
+          "path": "post_train.toml",
+          "bytes": null,
+          "sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": null,
+          "sha256": null
+        },
+        {
+          "path": ".gitattributes",
+          "bytes": null,
+          "sha256": null
+        }
+      ],
+      "tree_pagination_complete": false,
+      "full_repo_bytes": null,
+      "exact_parameters": null,
+      "nominal_parameters": 94100000,
+      "license_tag": "mit",
+      "model_card_git_blob_verified": false
+    }
+  ],
+  "runtime_source": {
+    "repo_url": "https://github.com/automl/rasr",
+    "revision": "f7bdf878a46f0a691d55146d7b4cf1ddac605db7",
+    "tree_truncated": false,
+    "root_blob_count": 120,
+    "root_blob_bytes": 1754342,
+    "root_blobs": [
+      {
+        "path": ".gitignore",
+        "bytes": 1754,
+        "git_blob_sha": "031063c76320166b61f9be20b21dd7714507bbd8"
+      },
+      {
+        "path": ".gitmodules",
+        "bytes": 200,
+        "git_blob_sha": "4f0d8e1d44bd4f31e10030716243d0538576e9b0"
+      },
+      {
+        "path": "LICENSE",
+        "bytes": 1067,
+        "git_blob_sha": "03eb2db3515fa7ec738e27c5b99ae5cd2f7e417d"
+      },
+      {
+        "path": "README.md",
+        "bytes": 10502,
+        "git_blob_sha": "23f88872692b3d972a37a719524f27f3d1d63e13"
+      },
+      {
+        "path": "THIRD_PARTY_NOTICES.md",
+        "bytes": 3281,
+        "git_blob_sha": "8643149a45d41d3bfd93071e3e693bafe5830a0a"
+      },
+      {
+        "path": "assets/pareto_front.png",
+        "bytes": 75183,
+        "git_blob_sha": "4f076f4b4c53667f3164e2e35fe30fd178239192"
+      },
+      {
+        "path": "launch_scripts/launch_post_train.sh",
+        "bytes": 2325,
+        "git_blob_sha": "09f156277196839516a01031d1a6725359f32ad5"
+      },
+      {
+        "path": "launch_scripts/launch_train.sh",
+        "bytes": 3800,
+        "git_blob_sha": "eefbbca94275cbefdc62c9fd8d85d31d44b1f903"
+      },
+      {
+        "path": "notebooks/prior_samples.ipynb",
+        "bytes": 5679,
+        "git_blob_sha": "6801fd34b754dfbac8b6a150158b015cff1d2f3d"
+      },
+      {
+        "path": "notebooks/tutorial.ipynb",
+        "bytes": 399692,
+        "git_blob_sha": "cd14f235c903487c501523567a43e4e6d47f9619"
+      },
+      {
+        "path": "pyproject.toml",
+        "bytes": 1794,
+        "git_blob_sha": "5fbe304b0cd4c3431fab7e1c4dd115978bfb21fd"
+      },
+      {
+        "path": "slurm/data/dataset_creator.sh",
+        "bytes": 1221,
+        "git_blob_sha": "f5163d2a377c4329d4aa13e9e1d029a6cc46c1c5"
+      },
+      {
+        "path": "slurm/data/post_train_data_creator.sh",
+        "bytes": 1070,
+        "git_blob_sha": "07e25bb6cc809c8b7d023d7d61a67d2579ac5e19"
+      },
+      {
+        "path": "slurm/post_train.sh",
+        "bytes": 1508,
+        "git_blob_sha": "fda3ef27eafcfd2dd7da447d1125cad8088af39c"
+      },
+      {
+        "path": "slurm/train.sh",
+        "bytes": 7336,
+        "git_blob_sha": "0560d3bca04cd5d4e473f94ef711fdfe6b730129"
+      },
+      {
+        "path": "src/rasr/__init__.py",
+        "bytes": 3178,
+        "git_blob_sha": "d3fd449cd662a400685317b6bcb704ec10729563"
+      },
+      {
+        "path": "src/rasr/constants.py",
+        "bytes": 68,
+        "git_blob_sha": "c370994b78ab73708cdf68304b0458dbf5d0c590"
+      },
+      {
+        "path": "src/rasr/data/__init__.py",
+        "bytes": 0,
+        "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "src/rasr/data/dataloader.py",
+        "bytes": 13377,
+        "git_blob_sha": "0b8e111b006e97bcd703adba9d393287b3bc7283"
+      },
+      {
+        "path": "src/rasr/data/generation/__init__.py",
+        "bytes": 0,
+        "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "src/rasr/data/generation/constant_sampler.py",
+        "bytes": 21923,
+        "git_blob_sha": "2afc4e6ea5c87b75b339f492b06e84c77c7d6239"
+      },
+      {
+        "path": "src/rasr/data/generation/data_creator.py",
+        "bytes": 14946,
+        "git_blob_sha": "12c1dde3838de8728502da7eb894ddd7eb09bfa8"
+      },
+      {
+        "path": "src/rasr/data/generation/dataset_sampler.py",
+        "bytes": 18739,
+        "git_blob_sha": "9dca500cc1358fdf21a37913c19d246589faaff7"
+      },
+      {
+        "path": "src/rasr/data/generation/expression_sampler.py",
+        "bytes": 20906,
+        "git_blob_sha": "d780b7a8c9b15f2537418dac0e5a74750ebe9e9a"
+      },
+      {
+        "path": "src/rasr/data/generation/expression_wrapper.py",
+        "bytes": 6089,
+        "git_blob_sha": "30c1c57e8975151c7f19d49782f0120b1dfd2217"
+      },
+      {
+        "path": "src/rasr/data/generation/post_train_data_creator.py",
+        "bytes": 12003,
+        "git_blob_sha": "17a7e5bd7de0562336cd2488df8079fa265af959"
+      },
+      {
+        "path": "src/rasr/data/generation/prior_statistics.py",
+        "bytes": 9056,
+        "git_blob_sha": "6bfb062414fe227caac45d1f23cc323a3c5c9073"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/__init__.py",
+        "bytes": 333,
+        "git_blob_sha": "9479cc1c5dbbde349f4826a6d1102b53b0658168"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/__main__.py",
+        "bytes": 198,
+        "git_blob_sha": "5e85c3186b0ef0d508c4c282b20b9e512ade03fc"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/_activations.py",
+        "bytes": 8876,
+        "git_blob_sha": "706f44a439fdf57de379ab39c7b575f1ba66372e"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/_dataset.py",
+        "bytes": 65464,
+        "git_blob_sha": "da9d6eb59298e208d83ed6e87b118ebb4c99ac6b"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/_genload.py",
+        "bytes": 27128,
+        "git_blob_sha": "06907d1589ac7cd1b242951ade8e1078e87c5ff6"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/_graph_scm.py",
+        "bytes": 6458,
+        "git_blob_sha": "93044de731174625ac8b591dea29d600e94bb70e"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/_hp_sampling.py",
+        "bytes": 11386,
+        "git_blob_sha": "5a1af41f4e8ce697e4a6cdafeb7f6fae2086864a"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/_mlp_scm.py",
+        "bytes": 13605,
+        "git_blob_sha": "04abbe3987a8e909572f1b20a8877e2b62036aaa"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/_prior_config.py",
+        "bytes": 2501,
+        "git_blob_sha": "5ade6d2e8755aa6a5a65f058a802d0254e6a238e"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/_reg2cls.py",
+        "bytes": 12903,
+        "git_blob_sha": "741a146258065c9c603d2cd62f214c4b3349e8f2"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/_tree_scm.py",
+        "bytes": 14839,
+        "git_blob_sha": "add15975a04e474544d5854dfffed840b6a3b6bc"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/_utils.py",
+        "bytes": 4415,
+        "git_blob_sha": "f551044e7383c43020531f970e4dd720d7278c9f"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/README.md",
+        "bytes": 3402,
+        "git_blob_sha": "03fb2c879e2eba0dd4c6fc06df50f05380e57403"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/__init__.py",
+        "bytes": 0,
+        "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/_activation.py",
+        "bytes": 6363,
+        "git_blob_sha": "d4e70b08b101e3def0039f8974d9977a3f8cd7c4"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/_base.py",
+        "bytes": 12992,
+        "git_blob_sha": "a68cb4ccf1dfae952fb2d6702238fa99f04a27af"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/_config.py",
+        "bytes": 9583,
+        "git_blob_sha": "d2cfec1f4754e9901f1dad1103114105036f843f"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/_converter.py",
+        "bytes": 6938,
+        "git_blob_sha": "89a72bf3e7d00e0a8b47feb01c1409aa0827d32e"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/_dataset.py",
+        "bytes": 3412,
+        "git_blob_sha": "15a055977bef402c5f482a9b6908c3e370f553e5"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/_function.py",
+        "bytes": 14236,
+        "git_blob_sha": "aaa9579f53ad28498c1671c5a1333b15cebd7f94"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/_graph.py",
+        "bytes": 1259,
+        "git_blob_sha": "679dfc69964a8e7864eccc308b165904ea9d2973"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/_graph_function.py",
+        "bytes": 1793,
+        "git_blob_sha": "a277abe275cb508fc959ac596e80f3523d0fdef0"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/_matrix.py",
+        "bytes": 4156,
+        "git_blob_sha": "55f466962f39a5261de325706e706266c1bb78f9"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/_multi_function.py",
+        "bytes": 2424,
+        "git_blob_sha": "598de30e69b7ddd8f23798633c74fc483f09edf2"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/_node_function.py",
+        "bytes": 3160,
+        "git_blob_sha": "f1f1ed2dc6ae49b1007609ff2446ff0c5218f5f5"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/_points.py",
+        "bytes": 2984,
+        "git_blob_sha": "dc67df5b4ef74c073256b894f302381b680e5731"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/_properties.py",
+        "bytes": 1373,
+        "git_blob_sha": "c2133d08aaa33f1ce402c1004cc3d4d0122e98db"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/_weights.py",
+        "bytes": 2331,
+        "git_blob_sha": "8fd1533973bf3f9fb28bc769360054f0a787fdf1"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/eval/__init__.py",
+        "bytes": 0,
+        "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/eval/check_runtime.py",
+        "bytes": 5295,
+        "git_blob_sha": "96909fac15081a5aa70b75aa27b793678778d8ee"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/eval/plot_random_dag.py",
+        "bytes": 1240,
+        "git_blob_sha": "d9b4e8244c7e85ce2d091a808192574a87342cf6"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/eval/plot_random_dataset.py",
+        "bytes": 1746,
+        "git_blob_sha": "23bcc85a6a3a7efa8746340750db5e3a8e16e6bf"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/eval/plot_random_function.py",
+        "bytes": 2389,
+        "git_blob_sha": "67bf73ca3da3970f5ce77c53890979802cb15d62"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/eval/plot_random_matrix.py",
+        "bytes": 2027,
+        "git_blob_sha": "4d63d65a8ce76e43a1bd7abcffe9d225eb87f0d1"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/eval/plot_random_points.py",
+        "bytes": 1226,
+        "git_blob_sha": "6f62b95cecba1ed0f983ec4e6747a9b94f3334ae"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/eval/plot_random_reg_1d_dataset.py",
+        "bytes": 1468,
+        "git_blob_sha": "ce308e7c7e3da074372ca101636d4512482246dd"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/eval/plot_random_reg_2d_dataset.py",
+        "bytes": 1483,
+        "git_blob_sha": "1b654e5fa76d9b728a1300fe77f6fb8ada5a567a"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/eval/plot_random_weights.py",
+        "bytes": 1064,
+        "git_blob_sha": "548afbace3eebd1602d2647614ec67fc8c791305"
+      },
+      {
+        "path": "src/rasr/data/generation/tabicl_v2_prior/graph_lib/eval/plot_scalars.py",
+        "bytes": 1015,
+        "git_blob_sha": "0fe458681fc593445111dd5f5be58e65a9a7076d"
+      },
+      {
+        "path": "src/rasr/data/tokenization.py",
+        "bytes": 3612,
+        "git_blob_sha": "f3ea6d79183a81db00b571928d5178fbcbe9217e"
+      },
+      {
+        "path": "src/rasr/inference/__init__.py",
+        "bytes": 97,
+        "git_blob_sha": "6d192b3490bf83703b51896092d5b04322709edc"
+      },
+      {
+        "path": "src/rasr/inference/checkpoint.py",
+        "bytes": 8388,
+        "git_blob_sha": "bcd4c0c40bb3e3edea4b63cd03afab031d166fb4"
+      },
+      {
+        "path": "src/rasr/inference/convert_checkpoint.py",
+        "bytes": 2089,
+        "git_blob_sha": "31cd1a7ee78e37f731b1f8731b6ed06049d15599"
+      },
+      {
+        "path": "src/rasr/inference/expression_parser.py",
+        "bytes": 4825,
+        "git_blob_sha": "a2cb0c05b9c82407d2f5c7b4f759614a197e5216"
+      },
+      {
+        "path": "src/rasr/inference/metrics.py",
+        "bytes": 1313,
+        "git_blob_sha": "558baadb2d1978c87a3e38787eedda8bf177904a"
+      },
+      {
+        "path": "src/rasr/inference/rasr.py",
+        "bytes": 39124,
+        "git_blob_sha": "6e593769574933fa48b754f83547b9ec026981b6"
+      },
+      {
+        "path": "src/rasr/inference/refiner.py",
+        "bytes": 12909,
+        "git_blob_sha": "1048d49a543da46db8cb0281fb33940a34f9375f"
+      },
+      {
+        "path": "src/rasr/inference/standardization.py",
+        "bytes": 7756,
+        "git_blob_sha": "8b72b4fd198c83a4aab21a33f526048612d27a3b"
+      },
+      {
+        "path": "src/rasr/infra/__init__.py",
+        "bytes": 0,
+        "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "src/rasr/infra/parallelize.py",
+        "bytes": 7784,
+        "git_blob_sha": "3f4e3df814c977d3ac6ac9e8f57c389bbb9baac6"
+      },
+      {
+        "path": "src/rasr/job_config.py",
+        "bytes": 4509,
+        "git_blob_sha": "5e017a69e3590dc76ebec9298f85ddefc986e78d"
+      },
+      {
+        "path": "src/rasr/loss.py",
+        "bytes": 982,
+        "git_blob_sha": "06cc77fda73acc89e577f5489e7e80b85c3e9cb9"
+      },
+      {
+        "path": "src/rasr/masks.py",
+        "bytes": 873,
+        "git_blob_sha": "2e7c5945f30a5b895e142f7cbfc3a5997fafb263"
+      },
+      {
+        "path": "src/rasr/model/__init__.py",
+        "bytes": 0,
+        "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "src/rasr/model/args.py",
+        "bytes": 2144,
+        "git_blob_sha": "21fa4898678082d460d88a871c7b276627f94a21"
+      },
+      {
+        "path": "src/rasr/model/model.py",
+        "bytes": 17477,
+        "git_blob_sha": "4ff96982fe25b38a4ef89b1e9114e8840c1c355e"
+      },
+      {
+        "path": "src/rasr/model/module/__init__.py",
+        "bytes": 0,
+        "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "src/rasr/model/module/activation.py",
+        "bytes": 622,
+        "git_blob_sha": "b0fb410ad387fee0794dc71be59cc8ee3e8b9521"
+      },
+      {
+        "path": "src/rasr/model/module/attention.py",
+        "bytes": 10736,
+        "git_blob_sha": "e62027858c18a4b44dcdf42a3206974f2cab0631"
+      },
+      {
+        "path": "src/rasr/model/module/axial_attention.py",
+        "bytes": 4575,
+        "git_blob_sha": "a35a6ebf9043e91e40d7c5c781d01256cc79d590"
+      },
+      {
+        "path": "src/rasr/model/module/axial_dropout.py",
+        "bytes": 1026,
+        "git_blob_sha": "9fb5c1591eaa16834f1ca6f2b968b448cc6aaf87"
+      },
+      {
+        "path": "src/rasr/model/module/decoder_block.py",
+        "bytes": 3357,
+        "git_blob_sha": "ea5af4482cae2e4362fcc9e4254d69024bc06535"
+      },
+      {
+        "path": "src/rasr/model/module/embedding.py",
+        "bytes": 8102,
+        "git_blob_sha": "9bffdd5f38f072cdeb07a785f4fa3fff430c3584"
+      },
+      {
+        "path": "src/rasr/model/module/encoder_block.py",
+        "bytes": 2859,
+        "git_blob_sha": "e959a48a093f5e7007e1c18b5875e6b98e96e55c"
+      },
+      {
+        "path": "src/rasr/model/module/feed_forward.py",
+        "bytes": 645,
+        "git_blob_sha": "7cc106408202b023c227b3842960f0c74be40974"
+      },
+      {
+        "path": "src/rasr/model/module/norm.py",
+        "bytes": 769,
+        "git_blob_sha": "28228b437782b33c139eec9069db953e1428ff8d"
+      },
+      {
+        "path": "src/rasr/model/module/pre_encoder.py",
+        "bytes": 675,
+        "git_blob_sha": "56638728be2ed233a39bd0c1cd54848732a601e0"
+      },
+      {
+        "path": "src/rasr/optimizer.py",
+        "bytes": 5402,
+        "git_blob_sha": "6f7450f02b8eb62aff18668e2fa75b4832ab8b45"
+      },
+      {
+        "path": "src/rasr/post_train/__init__.py",
+        "bytes": 0,
+        "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "src/rasr/post_train/config.py",
+        "bytes": 5737,
+        "git_blob_sha": "7e2dd9c454402e9a634143350fa3c8959b02fb06"
+      },
+      {
+        "path": "src/rasr/post_train/constants.py",
+        "bytes": 84,
+        "git_blob_sha": "a2fb06457d91947513062cb2f0f4197666606f5e"
+      },
+      {
+        "path": "src/rasr/post_train/dataset.py",
+        "bytes": 1694,
+        "git_blob_sha": "481ebf3a215b6e082b46ec60bea13299524a37cb"
+      },
+      {
+        "path": "src/rasr/post_train/rewards.py",
+        "bytes": 21767,
+        "git_blob_sha": "740d39d5c7ec0de6518cc178a9c2835cfa4ee740"
+      },
+      {
+        "path": "src/rasr/post_train/run.py",
+        "bytes": 9730,
+        "git_blob_sha": "3112ea053821544b1baa55d910d61621abd78090"
+      },
+      {
+        "path": "src/rasr/post_train/tokenizer_adapter.py",
+        "bytes": 3894,
+        "git_blob_sha": "59d7dc68611fb6ee92b14659ae719104980e52f7"
+      },
+      {
+        "path": "src/rasr/post_train/trainer.py",
+        "bytes": 39721,
+        "git_blob_sha": "459f14b4463205a0a4ca8de72e6d630e5ecdd80f"
+      },
+      {
+        "path": "src/rasr/post_train/wrapper.py",
+        "bytes": 4131,
+        "git_blob_sha": "8f2fad6b3f75763fe2285767ce9a592e7163740f"
+      },
+      {
+        "path": "src/rasr/torchtitan_components/lr_scheduler_universal.py",
+        "bytes": 8572,
+        "git_blob_sha": "b4d518767cfe69d3aa8dd19ea0322ccf2e63d363"
+      },
+      {
+        "path": "src/rasr/torchtitan_components/metrics_with_parameter_logging.py",
+        "bytes": 26760,
+        "git_blob_sha": "eb287b2abfd28af1b00a7921aed69d4ad5324a15"
+      },
+      {
+        "path": "src/rasr/torchtitan_components/parameter_logger.py",
+        "bytes": 10381,
+        "git_blob_sha": "d41386f6d4d587c489d6a7fab3c6d033754c3364"
+      },
+      {
+        "path": "src/rasr/torchtitan_components/universal_lr.py",
+        "bytes": 7566,
+        "git_blob_sha": "e3a09079cc2cab6690e01ba7d040117aca331eb6"
+      },
+      {
+        "path": "src/rasr/train_configs/data_post-train.toml",
+        "bytes": 365,
+        "git_blob_sha": "b7f3cbe3619cd6ecfac3f55bb62c502fc98d0eb3"
+      },
+      {
+        "path": "src/rasr/train_configs/data_post-train_simple_ablation.toml",
+        "bytes": 397,
+        "git_blob_sha": "0dad56615103328de466a1681f4da3c10c70d6e5"
+      },
+      {
+        "path": "src/rasr/train_configs/data_pre-train.toml",
+        "bytes": 3976,
+        "git_blob_sha": "d90428513836761e11d65d12029e824b929c76dd"
+      },
+      {
+        "path": "src/rasr/train_configs/data_pre-train_constant_placeholder.toml",
+        "bytes": 4008,
+        "git_blob_sha": "e213ec4019d95ce983592e9a5b193bdee0adcf68"
+      },
+      {
+        "path": "src/rasr/train_configs/data_pre-train_simple_ablation.toml",
+        "bytes": 5374,
+        "git_blob_sha": "f831ce63834ba21dc33fa0f317f71bf478daa797"
+      },
+      {
+        "path": "src/rasr/train_configs/post-train.toml",
+        "bytes": 1026,
+        "git_blob_sha": "1e3577a427e7c13001430ef60268d2d43f5beb06"
+      },
+      {
+        "path": "src/rasr/train_configs/pre-train.toml",
+        "bytes": 1826,
+        "git_blob_sha": "35f23b3a6ef17559140760473986fd11e9828bb9"
+      },
+      {
+        "path": "src/rasr/train_configs/pre-train_constant_placeholder.toml",
+        "bytes": 1886,
+        "git_blob_sha": "7ec44110dff64bd404605f52f0aba87c7fcb8825"
+      },
+      {
+        "path": "src/rasr/train_configs/pre-train_debug.toml",
+        "bytes": 2000,
+        "git_blob_sha": "667c53d3460542b8a8b4add6178626ef9afecd2f"
+      },
+      {
+        "path": "src/rasr/validator.py",
+        "bytes": 10218,
+        "git_blob_sha": "f876374927b1edf686e78a379167a3ba7a169d2e"
+      },
+      {
+        "path": "titan_0.2.1.def",
+        "bytes": 1707,
+        "git_blob_sha": "40a1e62b70be2acf6acbe4b70f812d084ee6c804"
+      },
+      {
+        "path": "uv.lock",
+        "bytes": 528710,
+        "git_blob_sha": "001ea4d61b2821bf6f61c818bd8851efa531c517"
+      }
+    ],
+    "gitlinks": [
+      {
+        "path": "srbench",
+        "revision": "7a7c12e8b5b9764161392793ae3bccd7815ea112",
+        "repo_url": "https://github.com/davidotte/srbench",
+        "complete_bytes": null
+      },
+      {
+        "path": "torchtitan",
+        "revision": "81af8833ddeff9b5f1874dc7e20594aa17da6b86",
+        "repo_url": "https://github.com/pytorch/torchtitan",
+        "complete_bytes": null
+      }
+    ],
+    "full_dependency_closure": false,
+    "offline_engine_install_blocker": "SimpliPyEngine.load(install=True)",
+    "local_path_supported": true
+  },
+  "candidate_model_source_bytes": null,
+  "known_core_weight_bytes": 188351066,
+  "combined_known_core_weight_plus_root_code_reference_bytes": 190105408,
+  "complete_dependency_inclusive_bytes": null,
+  "actual_owner_incremental_bytes": null,
+  "download_enabled": false,
+  "download_approved": false,
+  "model_execution_authorized": false,
+  "not_authorized": true
+}

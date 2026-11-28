@@ -1,3 +1,6 @@
+
+> **v96 / R192 (2026-11-28)**: 290 tracked / 234 active (SELECT 56, CONDITIONAL 178); ADD davidotte/RASR-94M-S, research only. All acquisition STOP. See `docs/strategy/192-v96-symbolic-regression-originals.md`. Exact tensor census, complete source, act rights, owner storage and offline runtime unresolved; no approval/download/deletion.
+
 ## 現行 v95 / R191（2026-11-28）
 
 289登録・233有効（SELECT 56、CONDITIONAL 177）。NeuML ColBERT-Atto 90K独立蒸留検索を研究限定CONDITIONAL追加。並行v94 Transcoda含む既存288行・133取得報告不変。固定重みポインタ362,720 B、全依存・owner増分未確定。全233取得STOP、承認・重みDL・実行・物理削除0。v93計画生成の合成承認を遮断。[研究報告](docs/strategy/191-v95-atto-extreme-compact-retrieval.md)。

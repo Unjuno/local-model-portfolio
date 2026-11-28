@@ -1,3 +1,6 @@
+
+> **v96 / R192 (2026-11-28)**: 290 tracked / 234 active (SELECT 56, CONDITIONAL 178); ADD davidotte/RASR-94M-S, research only. All acquisition STOP. See `docs/strategy/192-v96-symbolic-regression-originals.md`. Exact tensor census, complete source, act rights, owner storage and offline runtime unresolved; no approval/download/deletion.
+
 ## 現行 v93 / R189（2026-11-28）
 
 287登録・231有効（SELECT 56、CONDITIONAL 175）。TinyCast独立学習14.65万パラメータを研究限定CONDITIONAL追加。既存286行・133取得報告不変。配布元候補モデル＋コード3,408,694 B、依存込み・owner増分未確定。全231取得STOP、承認・重みDL・実行・物理削除0。[研究報告](../docs/strategy/189-v93-tinycast-compact-forecast.md)。

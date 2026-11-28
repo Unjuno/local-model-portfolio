@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "revision_id": "v96-20261128",
+  "previous_revision_id": "v95-20261128",
+  "decision_date_jst": "2026-11-28",
+  "target_branch": "main",
+  "kind": "FRESH_SPECIALIST_RESEARCH_ADDITION",
+  "previous_asset_count": 289,
+  "previous_active_count": 233,
+  "replacement_operations": [],
+  "additions": [
+    {
+      "position": 290,
+      "asset_kind": "model",
+      "repo_id": "davidotte/RASR-94M-S",
+      "url": "https://huggingface.co/davidotte/RASR-94M-S",
+      "group": "小型・記号回帰・解析式復元",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Independent pretrained and GRPO post-trained symbolic regression: numeric observations to inspectable expressions, absent in incumbent catalog. Select one complexity-focused state, not all siblings.",
+      "quality_positive": "Author S reports mean expression size 10.3 nodes, mean 26s on 12 SRBench 2.0 black-box tasks; family strong average test R2 rank; no independent verification.",
+      "quality_negative": "S may sacrifice fit vs L; up to 11 finite features, no missing values, restricted operator vocabulary, Feynman recovery not universally superior; hardware/clock/batch unverified; no guarantee of unique physical law.",
+      "risk_and_alternative_assessment": "Lawful scientific modeling; compare Kumo supervised prediction, MatrixFormer masked-cell completion, Lilavati text-to-program, TinyCast forecasts. Different outputs; no replacement evidence; no risk-based acquisition rank.",
+      "evidence_date": "2026-11-28",
+      "evidence_kind": "PRIMARY_PAPER_CARD_WEIGHT_LFS_PINNED_CODE",
+      "evidence_urls": [
+        "https://huggingface.co/davidotte/RASR-94M-S",
+        "https://huggingface.co/davidotte/RASR-94M-S/commit/b764ebf857a20509de7ba86fa0dc90757b89f3e7",
+        "https://huggingface.co/davidotte/RASR-94M-S/blob/b764ebf857a20509de7ba86fa0dc90757b89f3e7/model.safetensors",
+        "https://arxiv.org/abs/2610.17994",
+        "https://github.com/automl/rasr/tree/f7bdf878a46f0a691d55146d7b4cf1ddac605db7"
+      ],
+      "observed_access": "Public card and LFS pointer; actual transfer and owner entitlement not tested",
+      "license_metadata": "MIT model card and pinned code LICENSE; act-specific rights and training-data rights unresolved",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "b764ebf857a20509de7ba86fa0dc90757b89f3e7",
+      "upstream_all_files_bytes_observed": null,
+      "upstream_file_count_observed": null,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 1,
+      "candidate_selected_source_file_bytes": 188351066,
+      "source_manifest_path": "manifests/drafts/r192-2026-11-28-rasr-symbolic-regression-source.candidate.json",
+      "parameter_gate": {
+        "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+        "total_parameters": null,
+        "publisher_reported_approximate_parameters": 94100000,
+        "evidence_kind": "Nominal rounded BF16 parameter count only; exact tensor census unresolved",
+        "evidence_urls": [
+          "https://huggingface.co/davidotte/RASR-94M-S",
+          "https://huggingface.co/davidotte/RASR-94M-S/commit/b764ebf857a20509de7ba86fa0dc90757b89f3e7",
+          "https://huggingface.co/davidotte/RASR-94M-S/blob/b764ebf857a20509de7ba86fa0dc90757b89f3e7/model.safetensors",
+          "https://arxiv.org/abs/2610.17994",
+          "https://github.com/automl/rasr/tree/f7bdf878a46f0a691d55146d7b4cf1ddac605db7"
+        ],
+        "review_date": "2026-11-28"
+      },
+      "forecast_priority": {
+        "rank": 290,
+        "wave": "S2",
+        "category": "SPECIALIST_SYMBOLIC_REGRESSION",
+        "scenario_status": "LEGACY_CLASSIFICATION_ONLY_NOT_ACQUISITION_ORDER"
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": null,
+        "publisher_selected_source_bytes": 188351066,
+        "source_bytes_are_not_selected_bytes": true,
+        "owner_hdd_verified": false,
+        "full_runtime_memory_peak_verified": false,
+        "actual_archive_incremental_bytes": null
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "COMPLETE_TRAINED_TOTAL_PARAMETERS"
+    }
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "expected_asset_count": 290,
+  "expected_active_count": 234,
+  "new_approved_downloads": 0,
+  "model_payload_downloaded": 0,
+  "physical_files_deleted": 0
+}
