@@ -1,0 +1,70 @@
+{
+  "round": "R193",
+  "date_jst": "2026-11-28",
+  "source_revision": "v97-20261128",
+  "prior_revision": "v96-20261128",
+  "base_commit": "f98d89c9e8ff68e8b4f862533c7fcd63f44c023d",
+  "source_research": "catalog/research/2026-11-28-r193-spectral-compressive-imaging-evidence.json",
+  "source_manifest": "manifests/drafts/r193-2026-11-28-bisci-simulation-source.candidate.json",
+  "decisions": [
+    {
+      "repo_id": "CaiYuanhao/BiSCI",
+      "scope": "Simu_models/bisrnet.pth",
+      "decision": "ADD",
+      "formal_tier": "CONDITIONAL",
+      "why": "Independent binarization-aware BiSRNet trained for 28-band CASSI simulated coded measurements to spectral cubes, not post-training quantization. DGNO fluorescence defocus, STSF direct mask, TerraFM representation, PULSE upsampling and primal_vae generative latent are not same-output substitutes. Simulation BiSRNet alone, not all 12 checkpoints."
+    },
+    {
+      "repo_id": "CaiYuanhao/BiSCI",
+      "scope": "Real_models/bisrnet.pth",
+      "decision": "HOLD",
+      "why": "HF/GitHub size mismatch; real performance qualitative only."
+    },
+    {
+      "repo_id": "ltdung/limodenet",
+      "decision": "HOLD",
+      "why": "CC-BY-NC-4.0; 0.69M backbone not complete count, modern restoration baselines stronger, spiking hardware unverified."
+    },
+    {
+      "repo_id": "embed2scale/TerraCodec-1.0-FlexTEC-S2L2A",
+      "decision": "HOLD",
+      "why": "Two ~901MB variants, rate-distortion, exact variant and decode dependency closure unresolved."
+    },
+    {
+      "repo_id": "microsoft/STELLAR",
+      "decision": "HOLD",
+      "why": "Semantic/spatial latent factoring distinct but scale and decoder tradeoff unresolved; compare DINOv3/SigLIP."
+    },
+    {
+      "repo_id": "Duane245/DGNO",
+      "decision": "KEEP",
+      "why": "Distinct input/output or learned objective; no matched dominance."
+    },
+    {
+      "repo_id": "hanyuyuan/STSF-TPLS-weights",
+      "decision": "KEEP",
+      "why": "Distinct input/output or learned objective; no matched dominance."
+    },
+    {
+      "repo_id": "MBZUAI/TerraFM",
+      "decision": "KEEP",
+      "why": "Distinct input/output or learned objective; no matched dominance."
+    },
+    {
+      "repo_id": "Phips/PULSE",
+      "decision": "KEEP",
+      "why": "Distinct input/output or learned objective; no matched dominance."
+    },
+    {
+      "repo_id": "ostris/primal_vae",
+      "decision": "KEEP",
+      "why": "Distinct input/output or learned objective; no matched dominance."
+    }
+  ],
+  "formal_additions": 1,
+  "formal_replacements": 0,
+  "formal_removals": 0,
+  "owner_approvals_added": 0,
+  "model_payload_downloaded": 0,
+  "physical_files_deleted": 0
+}

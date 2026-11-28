@@ -727,3 +727,5 @@ URLか固有理由のない項目は採用に格上げせず、`candidate`また
 対象HDD不一致、容量不足、ファイル変更、ハッシュ不一致、権利不明、未承認依存、保存先逸脱では該当項目を停止する。
 空き容量や保存先の安全性に関わる異常ではキュー全体を停止する。既存データを削除して解決しない。
 報告は「完了した操作」「未実施」「不明」を分け、調査中のまま完了と表現しない。
+
+> 2026-11-28 R193/v97: BiSCI simulation BiSRNet research-only CONDITIONAL, 291 tracked / 235 active, 179 conditional, all STOP; 133 historical reported acquisitions unchanged; source 3155532 B model+code only; owner increment unknown. [Research](docs/strategy/193-v97-bisci-spectral-reconstruction.md). No acquisition, approval or deletion.

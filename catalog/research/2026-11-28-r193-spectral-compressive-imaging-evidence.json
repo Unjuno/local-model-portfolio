@@ -1,0 +1,496 @@
+{
+  "round": "R193",
+  "date_jst": "2026-11-28",
+  "base_commit": "f98d89c9e8ff68e8b4f862533c7fcd63f44c023d",
+  "search_scope": "HF spectral and compression 50 each sorted lastModified, bounded 7/30/90-day web specialist search and older work; not exhaustive.",
+  "primary_sources": [
+    "https://huggingface.co/CaiYuanhao/BiSCI/blob/d7c8aaac7c5180dd6334edc602120b43afa5817c/README.md",
+    "https://huggingface.co/api/models/CaiYuanhao/BiSCI/revision/d7c8aaac7c5180dd6334edc602120b43afa5817c?blobs=true",
+    "https://arxiv.org/abs/2305.10299",
+    "https://proceedings.neurips.cc/paper_files/paper/2023/hash/788e086c07b8d6fa6b279df56e512312-Abstract-Conference.html",
+    "https://github.com/caiyuanhao1998/BiSCI/tree/9905f65e87036411758e53cdca87b8a425df523f",
+    "https://api.github.com/repos/caiyuanhao1998/BiSCI/git/trees/9905f65e87036411758e53cdca87b8a425df523f?recursive=1"
+  ],
+  "novelty_check": "Four exact repo IDs absent from v93 287 rows and prior research/strategy/decision/manifest grep; concurrent additions retained.",
+  "candidate_metadata": [
+    {
+      "id": "CaiYuanhao/BiSCI",
+      "sha": "d7c8aaac7c5180dd6334edc602120b43afa5817c",
+      "createdAt": "2026-11-10T08:07:29.000Z",
+      "lastModified": "2026-11-10T22:18:56.000Z",
+      "private": false,
+      "gated": false,
+      "license": "apache-2.0",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "git_blob_sha": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 7388,
+          "git_blob_sha": "38c323ecd18a7c9d86d9fda6759310dc41085cd7",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "Real_models/biconnect.pth",
+          "bytes": 2650029,
+          "git_blob_sha": "b60e8eb0af47e3bfc3d23bbd874a5c901e70da74",
+          "publisher_lfs_sha256": "a2c384f19e69af66e9652d083312c25480ccc1c4ee41f6ed31849ccad7ce0d09"
+        },
+        {
+          "path": "Real_models/bisrnet.pth",
+          "bytes": 2835887,
+          "git_blob_sha": "e360a51eab19866ea52fafdcb1b406a65844c5b4",
+          "publisher_lfs_sha256": "feccf92d4a27f2d96597edd5ef059f7524e8d8ff440f3f1f9b310ff9342b9605"
+        },
+        {
+          "path": "Real_models/bnn.pth",
+          "bytes": 2693761,
+          "git_blob_sha": "e268f60fd29b68c1cabe0531879900fbf9e40280",
+          "publisher_lfs_sha256": "fcfb54f7a012b22906084b10d1e179e06dbf1c5fc2d95cfa1447f241973741fe"
+        },
+        {
+          "path": "Real_models/reactnet.pth",
+          "bytes": 2767773,
+          "git_blob_sha": "0ee609bd7fca7783a6614831f67081084128e566",
+          "publisher_lfs_sha256": "46e90575e9c47c39d2f0a314f1a55e1d96923462847f5f0830a88b879ac2e7f2"
+        },
+        {
+          "path": "Simu_models/bbcu.pth",
+          "bytes": 2655666,
+          "git_blob_sha": "d0548440c6511be414dae4c963bd12a15882d08a",
+          "publisher_lfs_sha256": "c56adcbbb56cf651349aacd79db9bbeee892e2903592db3e2403ff3d249174d7"
+        },
+        {
+          "path": "Simu_models/biconnect.pth",
+          "bytes": 2654921,
+          "git_blob_sha": "c3c5762f60af362ee7547f45cbb5325e69060053",
+          "publisher_lfs_sha256": "b02957021054c7f25f41c689ee37e204582e3a48a6615a218e2d682689414222"
+        },
+        {
+          "path": "Simu_models/bireal.pth",
+          "bytes": 2693493,
+          "git_blob_sha": "c360b78c05f67e59829eab2c57731f3853afd535",
+          "publisher_lfs_sha256": "87cea3d81d0078e9cbcfbc810f1b3855d954031df969b87db36ce1bb9d9512ca"
+        },
+        {
+          "path": "Simu_models/bisrnet.pth",
+          "bytes": 2846400,
+          "git_blob_sha": "0f70b21141708a9d313e880105cab932cd5ffaba",
+          "publisher_lfs_sha256": "a06452f8d4f68f575809afb374ff15ca56956bd12dcbe9472081116a5782fad0"
+        },
+        {
+          "path": "Simu_models/bnn.pth",
+          "bytes": 2699215,
+          "git_blob_sha": "adbb5202986b0357ee822fec726deadc5df31db4",
+          "publisher_lfs_sha256": "4232d8352eac4f0decb5273ee3e579ed294274a36abb5ab36171143077ac4bf8"
+        },
+        {
+          "path": "Simu_models/btm.pth",
+          "bytes": 2681791,
+          "git_blob_sha": "a4f295daae949aa63afb00f668430bd6dbe2f8a2",
+          "publisher_lfs_sha256": "1c190675dd14e8d705ba0f9b783d5fd8f2c50aa997720876b7260edde766d631"
+        },
+        {
+          "path": "Simu_models/irnet.pth",
+          "bytes": 2693109,
+          "git_blob_sha": "d1384b49dd1246373a55f1154866bc4911e9d4e1",
+          "publisher_lfs_sha256": "e36fd792f58aa747bfdf6eff89176ac6231995ab13385de2d1c202735442643e"
+        },
+        {
+          "path": "Simu_models/reactnet.pth",
+          "bytes": 2775697,
+          "git_blob_sha": "d86743bc53937894ab6286294d111e9ddcc2733c",
+          "publisher_lfs_sha256": "789db5784900f3a7314ab0a06d3d94b08166268c63f5436ff4b98d7371359424"
+        },
+        {
+          "path": "config.json",
+          "bytes": 558,
+          "git_blob_sha": "4619f38a5434b7c1fc95a08515a59314a3a5e534",
+          "publisher_lfs_sha256": null
+        }
+      ],
+      "source_repo_total_bytes": 32657207
+    },
+    {
+      "id": "ltdung/limodenet",
+      "sha": "bbd4b443ce5e407d0faf7c3f2b501703e352ee50",
+      "createdAt": "2026-09-13T14:39:06.000Z",
+      "lastModified": "2026-10-18T15:03:58.000Z",
+      "private": false,
+      "gated": false,
+      "license": "cc-by-nc-4.0",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1701,
+          "git_blob_sha": "1ca62c9e44096798911d2d89b446bc2f6c2554de",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 7516,
+          "git_blob_sha": "66e2e2b3e6fbe64e8b8935158abea5a1dedfb60a",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "assets/graphical_abstract.png",
+          "bytes": 566839,
+          "git_blob_sha": "103006168853357c256268c5bf68d78b56534e82",
+          "publisher_lfs_sha256": "b8d94f75b59350c1d312808b55850cec61a38258c8325af13ee8533c76a06bef"
+        },
+        {
+          "path": "assets/logo.png",
+          "bytes": 173752,
+          "git_blob_sha": "1fc003cad7b88c3dbf8b2f8bc757267cf750c8e1",
+          "publisher_lfs_sha256": "bad2380ad5eac0310468935d398bdfab2d7b60f962b4eb26804b1b57d2c6553b"
+        },
+        {
+          "path": "assets/spiking_dynamics.gif",
+          "bytes": 673749,
+          "git_blob_sha": "907ab3ef6b9025dff67e9093a17563e859e13b50",
+          "publisher_lfs_sha256": "50eca47fff401f58fa6466fea990ecec0f6c96183b33d8e9c5b635811592e6ec"
+        },
+        {
+          "path": "baseline-cnn-ae-1db100q.pth",
+          "bytes": 3027894,
+          "git_blob_sha": "0841d043b22856a17be38285ef62896560d1575b",
+          "publisher_lfs_sha256": "1105a72dc06221409fa092bf01193292dc17be02afadea5e5f3495ee5540c278"
+        },
+        {
+          "path": "baseline-dncnn-1db100q.pth",
+          "bytes": 2995090,
+          "git_blob_sha": "5845b03512697bcf14fb710473c211c941da064a",
+          "publisher_lfs_sha256": "42a262c96660704fe3362656e7083d44f03bde7846636d7b34bd4eabb6719363"
+        },
+        {
+          "path": "baseline-nafnet-lite-1db100q.pth",
+          "bytes": 3044695,
+          "git_blob_sha": "206ba5e5e1e8ef720cfc7e8ee26230de9dd56cc9",
+          "publisher_lfs_sha256": "8a8f0ad4cefcbd80b3a34b4b55c8c91f90efe755da868ff8b223ccd5f9bab1a2"
+        },
+        {
+          "path": "baseline-restormer-lite-1db100q.pth",
+          "bytes": 3103681,
+          "git_blob_sha": "f890accb7ca19f77e22087fe97c4c9b0ac5a4927",
+          "publisher_lfs_sha256": "4bfe591ce0ebf4e8da79b8caad4890ef021414b91c16c40c841bcd025b6982d1"
+        },
+        {
+          "path": "baseline-unet-1db100q.pth",
+          "bytes": 3039182,
+          "git_blob_sha": "2e72ad8d76ae37a2750900ac905a5c51e77861f4",
+          "publisher_lfs_sha256": "1071f77fdc902c501dd128569eddd1d1ddc3ec8a30239a4557a3d1312662c764"
+        },
+        {
+          "path": "limodenet-ae-1db100q-60ep.pth",
+          "bytes": 3106454,
+          "git_blob_sha": "efe537ebb0ab1752d9c768ce91b83e38c2cbb802",
+          "publisher_lfs_sha256": "c2ecc89eb8707a5c6569684dd8336ec436c7e016298fac780143940e361d5b18"
+        },
+        {
+          "path": "limodenet-ae-1db100q.pth",
+          "bytes": 3110266,
+          "git_blob_sha": "179395e5e9d3be3c9b8465f07951094f7fc17f51",
+          "publisher_lfs_sha256": "5f1ceee10ca8cc5f94492f33aa0224d82de5abd75f879f93904e321540a90fb2"
+        },
+        {
+          "path": "limodenet-base-eurosat.pth",
+          "bytes": 10955184,
+          "git_blob_sha": "d5f18e820215eb69da449cc5f1248bafced8d206",
+          "publisher_lfs_sha256": "054fd9595b90a5d7e11973049b4649ce548a7df438311fdffea42a0dd37bb012"
+        },
+        {
+          "path": "limodenet-big-eurosat-tinft.pth",
+          "bytes": 23235954,
+          "git_blob_sha": "2f67b662041656985ed0cb424c87f76db0ee19dd",
+          "publisher_lfs_sha256": "3a7a6e63ae8f8698ec5b08e0649ce6b67bc933256a796cb8e33065ebdcd9c3ff"
+        },
+        {
+          "path": "limodenet-nano-eurosat.pth",
+          "bytes": 1604656,
+          "git_blob_sha": "7368e5c9283e6085a36bbfa76154b0d7f191bffb",
+          "publisher_lfs_sha256": "ad8906708899369b0014040eb6f848a5c8853b5691888412568775c38d8394d4"
+        },
+        {
+          "path": "limodenet-skip-ae-1db100q.pth",
+          "bytes": 3151794,
+          "git_blob_sha": "fedc6bd165a0398774dea06f5b579af5451f6a0e",
+          "publisher_lfs_sha256": "0728d890b728e38c25ad3073e4620c8c7d2b7758eab4bb5fac0b9fb1f7e35015"
+        },
+        {
+          "path": "limodenet-small-eurosat.pth",
+          "bytes": 6207350,
+          "git_blob_sha": "b6619fdad96442e36ea8768be002652fb211ece8",
+          "publisher_lfs_sha256": "c28fe534a475ca4e879a4e6a98f2be9de6c41d9549e6cb6ba555b80accfd4b7f"
+        },
+        {
+          "path": "limodenet-spiking-classifier-t8.pth",
+          "bytes": 2820512,
+          "git_blob_sha": "9b825aef5e72d76fd5785f4579ff8867d786477c",
+          "publisher_lfs_sha256": "9c534ae25ac6f02645188d57cbc5230bbd948464a76d8556eb0738cff7f41ae8"
+        },
+        {
+          "path": "limodenet-spiking-skip-recon-t8.pth",
+          "bytes": 3161362,
+          "git_blob_sha": "841a62b794393c988030c7d7c044f1e9e649e52d",
+          "publisher_lfs_sha256": "126f79774f220770068d1fcb263ceb9eb31b18a3b3fe29dc0abc7d32f73bff2d"
+        },
+        {
+          "path": "limodenet-tiny-eurosat-tinft.pth",
+          "bytes": 2802922,
+          "git_blob_sha": "075602ba328b8288afaa7224037d1c000adeb94b",
+          "publisher_lfs_sha256": "1ab077ed1557e7a34acdf9ad1bcd5bc5a1af08578e54649847058b1c3bc5b816"
+        },
+        {
+          "path": "onnx/baseline-cnn-ae-1db100q.onnx",
+          "bytes": 3035319,
+          "git_blob_sha": "b88eab1d7d55230725201ea2994e2f170e4560ee",
+          "publisher_lfs_sha256": "fd14c425c0e0cb6702a627200fffc7c22f2535f0acc115ea09d8491906c4d86f"
+        },
+        {
+          "path": "onnx/baseline-dncnn-1db100q.onnx",
+          "bytes": 3003135,
+          "git_blob_sha": "25721b314681fd59436c5a4176868e0c952e508b",
+          "publisher_lfs_sha256": "ece8c831ccb566877346d46020c0c55ad0067a9561441dffbbdefe1c11100d64"
+        },
+        {
+          "path": "onnx/baseline-nafnet-lite-1db100q.onnx",
+          "bytes": 3086760,
+          "git_blob_sha": "590370f65b356d7e268b1198246b8a4edcb2f2b7",
+          "publisher_lfs_sha256": "65e536949db7042be92ed15e99507c364ffd41df8dce39644ba608c0f445bc84"
+        },
+        {
+          "path": "onnx/baseline-restormer-lite-1db100q.onnx",
+          "bytes": 3141567,
+          "git_blob_sha": "509fdda8d0e93eb77e9c36d4aa502c4b45ae34d0",
+          "publisher_lfs_sha256": "927c876e7890b98815d875c46c7c1cb9bd6265442951aca31d47ee51df9c2ac3"
+        },
+        {
+          "path": "onnx/baseline-unet-1db100q.onnx",
+          "bytes": 3052732,
+          "git_blob_sha": "6a6e2d603b9c6e08ab5abd3726467ddcda580c12",
+          "publisher_lfs_sha256": "48bc443ca3a3127e753205db2e2f84b09e1fe0dc80f7bd021c1914feb52253ce"
+        },
+        {
+          "path": "onnx/limodenet-ae-1db100q-60ep.onnx",
+          "bytes": 3124492,
+          "git_blob_sha": "f23cb75a84985288bad567a767af44155f9fe320",
+          "publisher_lfs_sha256": "ad083bd4597ab4698b5ca561421b33e36171e5e9f31a59a496e966f4a92f22ae"
+        },
+        {
+          "path": "onnx/limodenet-skip-ae-1db100q.onnx",
+          "bytes": 3158698,
+          "git_blob_sha": "283fd18f8f1ec3ae1925114ff4f630b0ba14d102",
+          "publisher_lfs_sha256": "237b520e03f811ae8388f71055c37b8fcded16d84e23a346276c9e2fe3d3373d"
+        },
+        {
+          "path": "onnx/limodenet-spiking-skip-recon-t8.onnx",
+          "bytes": 3176361,
+          "git_blob_sha": "7c412a8e022fb3253f2d158bf6082f7bfb3dc631",
+          "publisher_lfs_sha256": "11d6704e40cb9be7e2660c0916e312c11d99807e3c792996037aebae655657df"
+        }
+      ],
+      "source_repo_total_bytes": 101569617
+    },
+    {
+      "id": "embed2scale/TerraCodec-1.0-FlexTEC-S2L2A",
+      "sha": "be2dd8e370efde360506665aea49a184415e254f",
+      "createdAt": "2025-11-28T14:16:51.000Z",
+      "lastModified": "2026-03-12T10:12:08.000Z",
+      "private": false,
+      "gated": false,
+      "license": "apache-2.0",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1561,
+          "git_blob_sha": "f6b1f326ca4ab7cf0c8798856f8fe0020ff82d58",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "FlexTEC_LRonly_v1_S2L2A_lambda-800.pt",
+          "bytes": 900933680,
+          "git_blob_sha": "d69b7f0219607b6f3841b4dead7de3a21ab8ad35",
+          "publisher_lfs_sha256": "721805b5c18472ed5aa155aae1c6461f9f9c6828bedc57e3dc035b178e952da0"
+        },
+        {
+          "path": "FlexTEC_v1_S2L2A_lambda-800.pt",
+          "bytes": 900932554,
+          "git_blob_sha": "2843f4fab3b19154a11f0a005e626801649d20d5",
+          "publisher_lfs_sha256": "6e3352cf705f0e70eddb8960690f449efababba2c248125bbadcff59060d9877"
+        },
+        {
+          "path": "README.md",
+          "bytes": 5294,
+          "git_blob_sha": "9c1c5f6cd5835ab99a2839762e023cfa62624a7d",
+          "publisher_lfs_sha256": null
+        }
+      ],
+      "source_repo_total_bytes": 1801873089
+    },
+    {
+      "id": "microsoft/STELLAR",
+      "sha": "7db838fa43ddd91838fcfdcec1a50dcef097a16f",
+      "createdAt": "2025-10-28T18:23:10.000Z",
+      "lastModified": "2026-09-10T23:27:32.000Z",
+      "private": false,
+      "gated": false,
+      "license": "mit",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "git_blob_sha": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": ".gitignore",
+          "bytes": 19,
+          "git_blob_sha": "7a60b85e148f80966a550e5ab6a762a907c69ca6",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 1066,
+          "git_blob_sha": "9003ea9e9eace590d66dfa2941266e463d75606c",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 10676,
+          "git_blob_sha": "665c84aad81bc4249099a96370376d24efc2bf8f",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 2327,
+          "git_blob_sha": "f3575d53ab777ee426cd03c1ff4971804d505026",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "examples/reconstruction.ipynb",
+          "bytes": 6539,
+          "git_blob_sha": "4dd0a6ed1b5f1dc1fad5314ad1a2a7baffedce4b",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "factorization.svg",
+          "bytes": 324863,
+          "git_blob_sha": "03f3b8f16a0c9b3bc25ffa45a280b60a176c1f8e",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "load_stellar.py",
+          "bytes": 4731,
+          "git_blob_sha": "dc5e35526904144c73dd57aa907abb72b9dddb38",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "stellar-b16.safetensors",
+          "bytes": 483090112,
+          "git_blob_sha": "5fbab5bb33b312a038e7a256f2f7435224bb2334",
+          "publisher_lfs_sha256": "061489f86230a9609c5794018dadad3feaecbff9b31df1e4cab702f9c4414500"
+        },
+        {
+          "path": "stellar-b24.safetensors",
+          "bytes": 483114688,
+          "git_blob_sha": "d7788d11ee3bfe4249fb0cdd81177c7e3eda1f4f",
+          "publisher_lfs_sha256": "6859aead6faa6095d51d0c60821f1f903c4409ab64fd887527a4906e05993295"
+        },
+        {
+          "path": "stellar-b8.safetensors",
+          "bytes": 483065536,
+          "git_blob_sha": "d10e49a3543be14cc778a84e241dd0da8291ec78",
+          "publisher_lfs_sha256": "d9b81262070b5b362c93b8ad24020f6c3de51a6fcce82411cf30ad9b82a1daf0"
+        },
+        {
+          "path": "stellar-h16.safetensors",
+          "bytes": 2685054144,
+          "git_blob_sha": "3f783b4b53a49cd2f9be322f3b4f6795ec310002",
+          "publisher_lfs_sha256": "d930de83e0cdbb902a70dbd5a954acf7e69591c5759bca59820677c8ff46ff09"
+        },
+        {
+          "path": "stellar-l16.safetensors",
+          "bytes": 1363369280,
+          "git_blob_sha": "de6a71f8c347604b97091b52577044b1c5747746",
+          "publisher_lfs_sha256": "7428079417b5ec89b609d5ef52c3230ef97423dfa62c73264d05e3d98c9944dd"
+        }
+      ],
+      "source_repo_total_bytes": 5498045500
+    }
+  ],
+  "alternative_sources": [
+    "https://huggingface.co/ltdung/limodenet",
+    "https://arxiv.org/abs/2609.14690",
+    "https://huggingface.co/embed2scale/TerraCodec-1.0-FlexTEC-S2L2A",
+    "https://arxiv.org/abs/2510.12670",
+    "https://huggingface.co/microsoft/STELLAR"
+  ],
+  "positive": "NeurIPS 2023 Table 1 ten KAIST simulation scenes: BiSRNet 29.76 dB / 0.837 SSIM vs BTM 27.21 / 0.716 and BBCU 26.51 / 0.673. CAVE training; adaptive spectral redistribution and differentiable sign surrogate.",
+  "negative": "TSA-Net full precision 31.46 dB / 0.894 better. 36K params and 1.18G OPs normalized binary cost, not complete learned scalar census or measured latency. No matched owner runtime, binary kernel or RAM verified. Real HF weight 2835887 B vs GitHub 2873024 B, HOLD; equal simulation size is not parity proof.",
+  "decisions": [
+    {
+      "repo_id": "CaiYuanhao/BiSCI",
+      "scope": "Simu_models/bisrnet.pth",
+      "decision": "ADD",
+      "formal_tier": "CONDITIONAL",
+      "why": "Independent binarization-aware BiSRNet trained for 28-band CASSI simulated coded measurements to spectral cubes, not post-training quantization. DGNO fluorescence defocus, STSF direct mask, TerraFM representation, PULSE upsampling and primal_vae generative latent are not same-output substitutes. Simulation BiSRNet alone, not all 12 checkpoints."
+    },
+    {
+      "repo_id": "CaiYuanhao/BiSCI",
+      "scope": "Real_models/bisrnet.pth",
+      "decision": "HOLD",
+      "why": "HF/GitHub size mismatch; real performance qualitative only."
+    },
+    {
+      "repo_id": "ltdung/limodenet",
+      "decision": "HOLD",
+      "why": "CC-BY-NC-4.0; 0.69M backbone not complete count, modern restoration baselines stronger, spiking hardware unverified."
+    },
+    {
+      "repo_id": "embed2scale/TerraCodec-1.0-FlexTEC-S2L2A",
+      "decision": "HOLD",
+      "why": "Two ~901MB variants, rate-distortion, exact variant and decode dependency closure unresolved."
+    },
+    {
+      "repo_id": "microsoft/STELLAR",
+      "decision": "HOLD",
+      "why": "Semantic/spatial latent factoring distinct but scale and decoder tradeoff unresolved; compare DINOv3/SigLIP."
+    },
+    {
+      "repo_id": "Duane245/DGNO",
+      "decision": "KEEP",
+      "why": "Distinct input/output or learned objective; no matched dominance."
+    },
+    {
+      "repo_id": "hanyuyuan/STSF-TPLS-weights",
+      "decision": "KEEP",
+      "why": "Distinct input/output or learned objective; no matched dominance."
+    },
+    {
+      "repo_id": "MBZUAI/TerraFM",
+      "decision": "KEEP",
+      "why": "Distinct input/output or learned objective; no matched dominance."
+    },
+    {
+      "repo_id": "Phips/PULSE",
+      "decision": "KEEP",
+      "why": "Distinct input/output or learned objective; no matched dominance."
+    },
+    {
+      "repo_id": "ostris/primal_vae",
+      "decision": "KEEP",
+      "why": "Distinct input/output or learned objective; no matched dominance."
+    }
+  ],
+  "limitations": [
+    "Metadata, card, license, paper only; no weights or model code executed/downloaded.",
+    "No distribution restriction change established.",
+    "No independent performance or owner HDD/ABI/rights verified.",
+    "Recent Jasper Token Compression ONNX variants not adopted without training evidence."
+  ],
+  "approved_downloads": 0
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "revision_id": "v97-20261128",
+  "previous_revision_id": "v96-20261128",
+  "decision_date_jst": "2026-11-28",
+  "target_branch": "main",
+  "kind": "NONEXECUTABLE_RESEARCH_ONLY_SPECIALIST_ADD",
+  "previous_asset_count": 290,
+  "previous_active_count": 234,
+  "replacement_operations": [],
+  "additions": [
+    {
+      "position": 291,
+      "asset_kind": "model",
+      "repo_id": "CaiYuanhao/BiSCI",
+      "url": "https://huggingface.co/CaiYuanhao/BiSCI",
+      "group": "分光圧縮撮像・二値化学習・科学画像逆問題",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Independent binarization-aware BiSRNet trained for 28-band CASSI simulated coded measurements to spectral cubes, not post-training quantization. DGNO fluorescence defocus, STSF direct mask, TerraFM representation, PULSE upsampling and primal_vae generative latent are not same-output substitutes. Simulation BiSRNet alone, not all 12 checkpoints.",
+      "quality_positive": "NeurIPS 2023 Table 1 ten KAIST simulation scenes: BiSRNet 29.76 dB / 0.837 SSIM vs BTM 27.21 / 0.716 and BBCU 26.51 / 0.673. CAVE training; adaptive spectral redistribution and differentiable sign surrogate.",
+      "quality_negative": "TSA-Net full precision 31.46 dB / 0.894 better. 36K params and 1.18G OPs normalized binary cost, not complete learned scalar census or measured latency. No matched owner runtime, binary kernel or RAM verified. Real HF weight 2835887 B vs GitHub 2873024 B, HOLD; equal simulation size is not parity proof.",
+      "risk_and_alternative_assessment": "Lawful lab spectral reconstruction; data/privacy/rights, untrusted pickle and runtime independently reviewed; no harmful or bypass ranking.",
+      "evidence_date": "2026-11-28",
+      "evidence_kind": "R193_FIXED_HF_GITHUB_NEURIPS_PRIMARY",
+      "evidence_urls": [
+        "https://huggingface.co/CaiYuanhao/BiSCI/blob/d7c8aaac7c5180dd6334edc602120b43afa5817c/README.md",
+        "https://huggingface.co/api/models/CaiYuanhao/BiSCI/revision/d7c8aaac7c5180dd6334edc602120b43afa5817c?blobs=true",
+        "https://arxiv.org/abs/2305.10299",
+        "https://proceedings.neurips.cc/paper_files/paper/2023/hash/788e086c07b8d6fa6b279df56e512312-Abstract-Conference.html",
+        "https://github.com/caiyuanhao1998/BiSCI/tree/9905f65e87036411758e53cdca87b8a425df523f",
+        "https://api.github.com/repos/caiyuanhao1998/BiSCI/git/trees/9905f65e87036411758e53cdca87b8a425df523f?recursive=1"
+      ],
+      "observed_access": "public ungated as observed 2026-11-28",
+      "license_metadata": "HF card Apache-2.0; code MIT; owner acts and dataset rights unresolved",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "d7c8aaac7c5180dd6334edc602120b43afa5817c",
+      "upstream_all_files_bytes_observed": 32657207,
+      "upstream_file_count_observed": 15,
+      "upstream_lfs_sha256_count_observed": 12,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 3,
+      "candidate_selected_source_file_bytes": 2854346,
+      "source_manifest_path": "manifests/drafts/r193-2026-11-28-bisci-simulation-source.candidate.json",
+      "parameter_gate": {
+        "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+        "total_parameters": null,
+        "evidence_kind": "Normalized binary cost is not logical scalar count; no payload inspected",
+        "evidence_urls": [
+          "https://huggingface.co/CaiYuanhao/BiSCI/blob/d7c8aaac7c5180dd6334edc602120b43afa5817c/README.md",
+          "https://huggingface.co/api/models/CaiYuanhao/BiSCI/revision/d7c8aaac7c5180dd6334edc602120b43afa5817c?blobs=true",
+          "https://arxiv.org/abs/2305.10299",
+          "https://proceedings.neurips.cc/paper_files/paper/2023/hash/788e086c07b8d6fa6b279df56e512312-Abstract-Conference.html",
+          "https://github.com/caiyuanhao1998/BiSCI/tree/9905f65e87036411758e53cdca87b8a425df523f",
+          "https://api.github.com/repos/caiyuanhao1998/BiSCI/git/trees/9905f65e87036411758e53cdca87b8a425df523f?recursive=1"
+        ],
+        "review_date": "2026-11-28"
+      },
+      "forecast_priority": {
+        "rank": 291,
+        "wave": "S3",
+        "category": "SPECIALIST_SPECTRAL_RECONSTRUCTION",
+        "scenario_status": "LEGACY_CLASSIFICATION_ONLY_NOT_ACQUISITION_ORDER"
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 32657207,
+        "publisher_selected_source_bytes": 2854346,
+        "source_bytes_are_not_selected_bytes": true,
+        "owner_hdd_verified": false,
+        "full_runtime_memory_peak_verified": false,
+        "actual_archive_incremental_bytes": null
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "COMPLETE_TRAINED_TOTAL_PARAMETERS"
+    }
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "expected_asset_count": 291,
+  "expected_active_count": 235,
+  "new_approved_downloads": 0,
+  "model_payload_downloaded": 0,
+  "physical_files_deleted": 0
+}

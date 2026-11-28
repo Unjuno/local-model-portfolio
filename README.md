@@ -1,4 +1,6 @@
 
+> 2026-11-28 R193/v97: BiSCI simulation BiSRNet research-only CONDITIONAL, 291 tracked / 235 active, 179 conditional, all STOP; 133 historical reported acquisitions unchanged; source 3155532 B model+code only; owner increment unknown. [Research](docs/strategy/193-v97-bisci-spectral-reconstruction.md). No acquisition, approval or deletion.
+
 > **v96 / R192 (2026-11-28)**: 290 tracked / 234 active (SELECT 56, CONDITIONAL 178); ADD davidotte/RASR-94M-S, research only. All acquisition STOP. See `docs/strategy/192-v96-symbolic-regression-originals.md`. Exact tensor census, complete source, act rights, owner storage and offline runtime unresolved; no approval/download/deletion.
 
 ## 現行 v95 / R191（2026-11-28）
