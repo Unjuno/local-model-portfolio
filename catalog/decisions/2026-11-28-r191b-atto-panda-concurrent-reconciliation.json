@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "round": "R191b",
+  "date_jst": "2026-11-28",
+  "base_commit": "b7a02ae7526af15ea86175fccf61a17d56f4b77b",
+  "formal_revision_unchanged": "v98-20261128",
+  "formal_additions": [],
+  "formal_replacements": [],
+  "formal_exclusions": [],
+  "prior_rows_unchanged": 292,
+  "comparisons": [
+    {
+      "repo_id": "NeuML/colbert-atto-840-8d",
+      "decision": "HOLD",
+      "why": "Concurrent v95 formally selected the independent 90K state. 840 full pinned scope and 840 F32 count now established; publisher quality 0.3139 vs 90K 0.4454. Extreme control with 8 vs 32 dimensions, but total resource benefit not measured; 107.5x fewer model parameters and 4x fewer vector scalars per equal token count do not prove end-to-end benefit. Retain evidence, not active addition."
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-170-8d",
+      "decision": "HOLD",
+      "why": "Mean nDCG@10 .1261 vs .3139 for 840, Hub tensor count absent, card example 168 differs from ID 170, restricted vocabulary. No practical marginal benefit established."
+    },
+    {
+      "repo_id": "DeepLearnPhysics/panda-v2-instance.pilarnet-m",
+      "decision": "HOLD",
+      "why": "No explicit weights license in fixed four-file tree/card. Exact parent, GPU pimm/attention backend and runtime dependencies not closed; paper label-efficiency findings do not establish matched superiority of these full-label checkpoints."
+    },
+    {
+      "repo_id": "DeepLearnPhysics/panda-v2-instance.tpcpp-10m",
+      "decision": "HOLD",
+      "why": "No explicit weights license in fixed four-file tree/card. Exact parent, GPU pimm/attention backend and runtime dependencies not closed; paper label-efficiency findings do not establish matched superiority of these full-label checkpoints."
+    },
+    {
+      "repo_id": "BAAI/bge-m3",
+      "decision": "KEEP",
+      "why": "KEEP: different dense/multifunction embedding or cross-encoder retrieval scope; no matched replacement evidence."
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "decision": "KEEP",
+      "why": "KEEP: different dense/multifunction embedding or cross-encoder retrieval scope; no matched replacement evidence."
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+      "decision": "KEEP",
+      "why": "KEEP: different dense/multifunction embedding or cross-encoder retrieval scope; no matched replacement evidence."
+    },
+    {
+      "repo_id": "Horizon-Labs/multilingual-reranker-small",
+      "decision": "KEEP",
+      "why": "KEEP: different dense/multifunction embedding or cross-encoder retrieval scope; no matched replacement evidence."
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-90k-32d",
+      "decision": "KEEP",
+      "why": "Concurrent v95 independent trained state; new fixed API closes all 11 publisher file sizes/blob IDs and exact reported parameter total 90304, without approving acquisition or changing its formal tier."
+    }
+  ],
+  "source_manifest": "manifests/drafts/r191b-2026-11-28-atto-three-fixed-publisher-scopes.candidate.json",
+  "research": "catalog/research/2026-11-28-r191b-atto-panda-fixed-scope-evidence.json",
+  "complete_publisher_scope_90k_bytes": 468771,
+  "additional_reference_bytes_vs_prior_weight_pointer": 106051,
+  "owner_incremental_bytes": null,
+  "download_approved_bytes": 0,
+  "physical_files_deleted": 0
+}
