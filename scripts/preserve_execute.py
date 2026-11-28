@@ -84,7 +84,9 @@ def approval_for(task, approval_path=None):
     # A previous v73 plan builder forged signed approval from source/licence tags.
     # Reject the WHOLE stale synthetic file, even if a row approval_ref was edited.
     source = str(approved.get("authorization_source") or "").lower()
-    if "v73 effective portfolio pinned candidate sources" in source:
+    if ("v73 effective portfolio pinned candidate sources" in source
+            or "v73 permissive public assets, pinned via publisher api" in source
+            or "v93 metadata-only review" in source):
         return None
     for entry in approved.get("entries", []):
         if not isinstance(entry, dict):
@@ -109,6 +111,7 @@ def approval_for(task, approval_path=None):
                 or "v65-post112-exact-source-files-" in review_ref
                 or "v65 post112 pinned source queues" in review_ref
                 or review_ref.startswith("v73-pinned-candidate-")
+                or review_ref.startswith("v73-remaining-pinned-")
                 or "v73 effective portfolio pinned candidate sources" in review_ref):
             continue
         allowed = entry.get("files")

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "round": "R191",
+  "base_commit": "04b85392c5ff0b06111b316757e11275f0e06cda",
+  "previous_revision": "v94-20261128",
+  "new_revision": "v95-20261128",
+  "comparisons": [
+    {
+      "repo_id": "NeuML/colbert-atto-90k-32d",
+      "decision": "ADD",
+      "reason": "Independent pretrained and distilled Atto late-interaction learned state, not a quantization. 90.3K nominal FP32 parameters, 32-d token embeddings; distinctive extreme low-resource retrieval tradeoff rather than a new broad task. Preserve as research-only conditional; existing BGE-M3 already has multivector retrieval, so no replacement."
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-950k-128d",
+      "decision": "HOLD",
+      "reason": "Higher publisher quality; 947K nominal, 128d; matched resource benefit unresolved"
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-4m-384d",
+      "decision": "EXCLUDE_THIS_ROUND",
+      "reason": "Mean 0.4818 vs 950K 0.4816; larger independent state; insufficient incremental advantage; not a quantization duplicate or irreversible exclusion"
+    },
+    {
+      "model_family": "Atto ColBERT 840 / 9K / 14M / 25M and dense siblings",
+      "decision": "HOLD",
+      "reason": "Separate trained states; exact state/source scope and task-resource benefit not established"
+    },
+    {
+      "repo_id": "BAAI/bge-m3",
+      "decision": "KEEP",
+      "prior_decision": "select",
+      "parameters": 569000000,
+      "source_repo_bytes": 4587317404,
+      "reason": "Complementary multilingual/context/quality role; matched comparison not established."
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "decision": "KEEP",
+      "prior_decision": "select",
+      "parameters": 595800000,
+      "source_repo_bytes": 1207489041,
+      "reason": "Complementary multilingual/context/quality role; matched comparison not established."
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+      "decision": "KEEP",
+      "prior_decision": "select",
+      "parameters": 595800000,
+      "source_repo_bytes": 1207488344,
+      "reason": "Complementary multilingual/context/quality role; matched comparison not established."
+    },
+    {
+      "repo_id": "Horizon-Labs/multilingual-reranker-small",
+      "decision": "KEEP",
+      "prior_decision": "conditional",
+      "parameters": 140641921,
+      "source_repo_bytes": 1428709912,
+      "reason": "Complementary multilingual/context/quality role; matched comparison not established."
+    }
+  ],
+  "formal_additions": [
+    "NeuML/colbert-atto-90k-32d"
+  ],
+  "formal_replacements": [],
+  "prior_rows_unchanged": 288,
+  "tracked": 289,
+  "active": 233,
+  "approved_downloads": 0,
+  "physical_files_deleted": 0,
+  "source_manifest": "manifests/drafts/r191-2026-11-28-atto-source-partial.candidate.json",
+  "source_reference_bytes": 362720,
+  "owner_incremental_bytes": null
+}

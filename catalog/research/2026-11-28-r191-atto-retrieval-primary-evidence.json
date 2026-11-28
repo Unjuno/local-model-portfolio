@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "round": "R191",
+  "date_jst": "2026-11-28",
+  "base_commit": "04b85392c5ff0b06111b316757e11275f0e06cda",
+  "search_windows_days": [
+    7,
+    30,
+    90
+  ],
+  "scope": "Targeted HF, GitHub, arXiv and publisher cards; not exhaustive. Atto announced 2026-11-19 (30-day window); exact latest README update date unverified.",
+  "model": {
+    "position": 289,
+    "asset_kind": "model",
+    "repo_id": "NeuML/colbert-atto-90k-32d",
+    "url": "https://huggingface.co/NeuML/colbert-atto-90k-32d",
+    "group": "極小・独立蒸留・late-interaction検索",
+    "risk_tier": "R2",
+    "portfolio_decision": "conditional",
+    "reason_selected": "Independent pretrained and distilled Atto late-interaction learned state, not a quantization. 90.3K nominal FP32 parameters, 32-d token embeddings; distinctive extreme low-resource retrieval tradeoff rather than a new broad task. Preserve as research-only conditional; existing BGE-M3 already has multivector retrieval, so no replacement.",
+    "quality_positive": "Publisher English 3-set nDCG@10 mean 0.4454 (ArguAna 0.3435, NFCorpus 0.3263, SciFact 0.6663); 840=0.3139, 9K=0.3655; compact learned state.",
+    "quality_negative": "950K=0.4816, 4M=0.4818, 25M=0.4995, LateOn 110M=0.5463 on same publisher table; only three datasets, no matched BGE/Qwen/Horizon replay, HW/clock/batch not verified; max sequence 399 and English evidence only; index size, dependency ABI and complete bytes unknown.",
+    "risk_and_alternative_assessment": "Lawful offline retrieval over rights-cleared documents; no safety-bypass criterion. Keep BGE-M3, Qwen embeddings/reranker and Horizon; hold other independent sizes pending matched measurements, do not mistake size variants for quantization. No observed licence/access change in README link correction.",
+    "evidence_date": "2026-11-28",
+    "evidence_kind": "R191_FIXED_HF_COMMIT_LFS_POINTER_PUBLISHER_CARD_AND_METHOD_PAPERS",
+    "evidence_urls": [
+      "https://huggingface.co/NeuML/colbert-atto-90k-32d/blob/e1734c688cdc8413d08a72007b2e7240a2c3f66e/README.md",
+      "https://huggingface.co/NeuML/colbert-atto-90k-32d/blob/e1734c688cdc8413d08a72007b2e7240a2c3f66e/config.json",
+      "https://huggingface.co/NeuML/colbert-atto-90k-32d/blob/e1734c688cdc8413d08a72007b2e7240a2c3f66e/model.safetensors",
+      "https://huggingface.co/NeuML/colbert-atto-90k-32d/tree/e1734c688cdc8413d08a72007b2e7240a2c3f66e",
+      "https://huggingface.co/NeuML/colbert-atto-90k-32d/commit/e1734c688cdc8413d08a72007b2e7240a2c3f66e",
+      "https://arxiv.org/abs/2004.12832",
+      "https://arxiv.org/abs/2104.08663",
+      "https://huggingface.co/BAAI/bge-m3"
+    ],
+    "observed_access": "public card/tree observed 2026-11-28, no gate displayed; owner authorization unknown",
+    "license_metadata": "apache-2.0 publisher card; per-act, training-data and dependency rights not independently closed",
+    "license_text_reviewed": false,
+    "dependencies_reviewed": false,
+    "download_approved": false,
+    "selected_file_bytes": null,
+    "fully_pinned_revision_sha": null,
+    "upstream_revision_sha_observed": "e1734c688cdc8413d08a72007b2e7240a2c3f66e",
+    "upstream_all_files_bytes_observed": null,
+    "upstream_file_count_observed": 11,
+    "upstream_lfs_sha256_count_observed": 1,
+    "upstream_all_files_are_selected": false,
+    "candidate_selected_source_file_count": 1,
+    "candidate_selected_source_file_bytes": 362720,
+    "source_manifest_path": "manifests/drafts/r191-2026-11-28-atto-source-partial.candidate.json",
+    "parameter_gate": {
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "total_parameters": 90300,
+      "evidence_kind": "Rounded publisher nominal model count only; exact tensor census and learned-dependency closure not verified",
+      "evidence_urls": [
+        "https://huggingface.co/NeuML/colbert-atto-90k-32d/blob/e1734c688cdc8413d08a72007b2e7240a2c3f66e/README.md",
+        "https://huggingface.co/NeuML/colbert-atto-90k-32d/blob/e1734c688cdc8413d08a72007b2e7240a2c3f66e/config.json"
+      ],
+      "review_date": "2026-11-28"
+    },
+    "forecast_priority": {
+      "rank": 289,
+      "wave": "S3",
+      "category": "EXTREME_COMPACT_LATE_INTERACTION_RETRIEVAL",
+      "scenario_status": "LEGACY_CLASSIFICATION_ONLY_NOT_ACQUISITION_ORDER"
+    },
+    "resource_screen": {
+      "source_all_repo_bytes": null,
+      "publisher_selected_source_bytes": 362720,
+      "source_bytes_are_not_selected_bytes": true,
+      "owner_hdd_verified": false,
+      "full_runtime_memory_peak_verified": false,
+      "actual_archive_incremental_bytes": null
+    },
+    "research_only_nonexecutable": true,
+    "can_enter_approved_queue": false,
+    "download_ready": false,
+    "model_payload_fetched": false,
+    "personal_access_verified": false,
+    "historical_acquisition_reported_verified": false,
+    "final_blocker": "ALL_RUNTIME_AND_LEARNED_DEPENDENCIES"
+  },
+  "architecture": {
+    "nominal_parameters": 90300,
+    "precision": "FP32",
+    "layers": 1,
+    "hidden": 48,
+    "intermediate": 64,
+    "heads": 1,
+    "output_dimensions": 32,
+    "max_sequence_length": 399,
+    "mechanism": "conv-conditioned attention / PhaseGatedMoE, Wikipedia MLM then retrieval distillation; training parent NeuML/atto-90k-32d exact revision unresolved"
+  },
+  "publisher_benchmark": {
+    "metric": "nDCG@10",
+    "datasets": [
+      "ArguAna",
+      "NFCorpus",
+      "SciFact"
+    ],
+    "mean_by_variant": {
+      "840": 0.3139,
+      "9K": 0.3655,
+      "90K": 0.4454,
+      "950K": 0.4816,
+      "4M": 0.4818,
+      "25M": 0.4995,
+      "LateOn 110M": 0.5463
+    },
+    "hardware_clock_batch_verified": false,
+    "independent_replay": false
+  },
+  "comparisons": [
+    {
+      "repo_id": "NeuML/colbert-atto-90k-32d",
+      "decision": "ADD",
+      "reason": "Independent pretrained and distilled Atto late-interaction learned state, not a quantization. 90.3K nominal FP32 parameters, 32-d token embeddings; distinctive extreme low-resource retrieval tradeoff rather than a new broad task. Preserve as research-only conditional; existing BGE-M3 already has multivector retrieval, so no replacement."
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-950k-128d",
+      "decision": "HOLD",
+      "reason": "Higher publisher quality; 947K nominal, 128d; matched resource benefit unresolved"
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-4m-384d",
+      "decision": "EXCLUDE_THIS_ROUND",
+      "reason": "Mean 0.4818 vs 950K 0.4816; larger independent state; insufficient incremental advantage; not a quantization duplicate or irreversible exclusion"
+    },
+    {
+      "model_family": "Atto ColBERT 840 / 9K / 14M / 25M and dense siblings",
+      "decision": "HOLD",
+      "reason": "Separate trained states; exact state/source scope and task-resource benefit not established"
+    },
+    {
+      "repo_id": "BAAI/bge-m3",
+      "decision": "KEEP",
+      "prior_decision": "select",
+      "parameters": 569000000,
+      "source_repo_bytes": 4587317404,
+      "reason": "Complementary multilingual/context/quality role; matched comparison not established."
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "decision": "KEEP",
+      "prior_decision": "select",
+      "parameters": 595800000,
+      "source_repo_bytes": 1207489041,
+      "reason": "Complementary multilingual/context/quality role; matched comparison not established."
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+      "decision": "KEEP",
+      "prior_decision": "select",
+      "parameters": 595800000,
+      "source_repo_bytes": 1207488344,
+      "reason": "Complementary multilingual/context/quality role; matched comparison not established."
+    },
+    {
+      "repo_id": "Horizon-Labs/multilingual-reranker-small",
+      "decision": "KEEP",
+      "prior_decision": "conditional",
+      "parameters": 140641921,
+      "source_repo_bytes": 1428709912,
+      "reason": "Complementary multilingual/context/quality role; matched comparison not established."
+    }
+  ],
+  "source_manifest": "manifests/drafts/r191-2026-11-28-atto-source-partial.candidate.json",
+  "observed_distribution_change": "README link correction; no demonstrated license or access change",
+  "runtime": "Publisher examples txtai >=9.0, sentence-transformers >=6.0 MultiVectorEncoder, PyLate; custom code reviewed only as metadata, not executed; CPU/GPU RAM, ABI, index footprint and wheels unresolved",
+  "next_experiment": "Matched BEIR three tasks + multilingual held-out retrieval; report nDCG@10, recall, p50/p95 latency, peak RSS/VRAM, disk index bytes, rebuild time with identical corpus/tokenization protocol and explicit backend/batch/HW. No automatic approval.",
+  "download_approved": false,
+  "model_payload_downloaded": false,
+  "owner_hdd_verified": false
+}

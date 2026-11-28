@@ -15,11 +15,11 @@ from pathlib import Path
 EFF = Path("catalog/effective-portfolio-2026-11-28-v93.json")
 DISC = Path("D:/AI_VAULT/state/discovered")
 PLAN = DISC / "plan-v93.json"
-APPROVAL = Path("D:/AI_VAULT/state/approved-v93.json")
+REVIEW = Path("D:/AI_VAULT/state/review-v93-UNAPPROVED.json")
 STORE = Path("D:/AI_VAULT/store/huggingface/model")
 CAP_PER_REPO = 80_000_000_000
 FLOOR = 200_000_000_000
-REF = "v73 permissive public assets, pinned via publisher API, exact per-file hashes"
+REF = "v93 metadata-only review; NOT USER AUTHORIZATION"
 # licenses that clearly allow archival/preservation for research
 OK_LIC = ("apache", "mit", "cc-by", "cc0", "odc-by", "bsd", "openmdw-1.1",
           "cc-by-sa", "nvidia-open-model-license")
@@ -118,16 +118,16 @@ def main():
         cands.append({"repo_id": repo, "revision_sha": rev, "files": len(recs),
                       "bytes": total, "manifest": str(out), "repo_type": rtype})
         approvals.append({"repo_id": repo, "revision_sha": rev,
-                          "approved": True, "download_enabled": True,
-                          "approved_by_user": True, "license_text_reviewed": True,
-                          "parent_dependency_rights_reviewed": True,
-                          "nonstandard_license_permission_verified": True,
+                          "approved": False, "download_enabled": False,
+                          "approved_by_user": False, "license_text_reviewed": False,
+                          "parent_dependency_rights_reviewed": False,
+                          "nonstandard_license_permission_verified": False,
                           "license": str(i.get("license_metadata")),
-                          "approval_ref": "v73-remaining-pinned-" + repo.replace("/", "-"),
+                          "approval_ref": None,
                           "files": afiles})
     PLAN.write_text(json.dumps({"schema_version": 1, "candidates": cands,
                                 "skipped": skipped}, indent=2, ensure_ascii=False), encoding="utf-8")
-    APPROVAL.write_text(json.dumps({"schema_version": 1, "authorization_source": REF,
+    REVIEW.write_text(json.dumps({"schema_version": 1, "authorization_source": REF,
                                     "entries": approvals}, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"plan: {len(cands)} assets, {sum(c['bytes'] for c in cands)/1e9:.2f} GB")
     for c in sorted(cands, key=lambda x: x["bytes"]):

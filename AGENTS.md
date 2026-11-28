@@ -1,3 +1,7 @@
+## 現行 v95 / R191（2026-11-28）
+
+289登録・233有効（SELECT 56、CONDITIONAL 177）。NeuML ColBERT-Atto 90K独立蒸留検索を研究限定CONDITIONAL追加。並行v94 Transcoda含む既存288行・133取得報告不変。固定重みポインタ362,720 B、全依存・owner増分未確定。全233取得STOP、承認・重みDL・実行・物理削除0。v93計画生成の合成承認を遮断。[研究報告](docs/strategy/191-v95-atto-extreme-compact-retrieval.md)。
+
 ## 現行 v94 / R190（2026-11-28）
 
 288登録・232有効（SELECT 56、CONDITIONAL 176）。Transcoda v2.1独立学習108M楽譜認識を研究限定CONDITIONAL追加。既存287行・133取得報告不変。重み＋固定コード部分参照225,827,677 B、全依存・owner増分未確定。全232取得STOP、承認・重みDL・実行・物理削除0。[研究報告](docs/strategy/190-v94-transcoda-optical-music-recognition.md)。
