@@ -1,3 +1,7 @@
+## 現行 v99 / R195（2026-11-28）
+
+293登録・237有効（SELECT 56、CONDITIONAL 181）。SeisLM-base独立地震波形自己教師あり学習11,359,568パラメータを研究限定追加。並行更新を含む既存292行と133取得報告不変。候補45,546,712 B、依存・owner増分未確定。全237取得STOP、承認・重みDL・実行・物理削除0。[研究報告](docs/strategy/195-v99-seislm-seismic-waveform-research.md)。
+
 ## v98 / R194 (2026-11-28 JST)
 PULSE MSE 独立学習画像コーデック研究限定CONDITIONAL。292登録 / 236 active / 180 conditional / 56 select、全STOP。依存・総数未確認、承認0、既存行維持。[R194](docs/strategy/194-v98-pulse-learned-image-codec.md)。
 

@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "round": "R195",
+  "date_jst": "2026-11-28",
+  "revision_id": "v99-20261128",
+  "prior_revision": "v98-20261128",
+  "decisions": [
+    {
+      "repo_id": "ltlltl2006/seislm-base",
+      "decision": "ADD",
+      "formal": "conditional",
+      "reason": "Independent contrastively pretrained seismic waveform encoder, not another generic time-series forecasting model or a quantization. Three-component ground-motion representation for low-label downstream geophysics. Preserve compact Base only; Large does not justify marginal bytes without matched evidence. No existing selected model establishes same-task replacement."
+    },
+    {
+      "repo_id": "autogluon/chronos-2",
+      "decision": "KEEP",
+      "reason": "Generic multivariate forecasting; does not provide pretrained seismic phase representation.",
+      "existing_formal": "select",
+      "source_reference_bytes": null
+    },
+    {
+      "repo_id": "mistralai/Timestral-5M",
+      "decision": "KEEP",
+      "reason": "Compact forecasting outcome; different target.",
+      "existing_formal": "select",
+      "source_reference_bytes": 20854471
+    },
+    {
+      "repo_id": "raws-labs/tinycast",
+      "decision": "KEEP",
+      "reason": "Very small univariate forecast model; complementary.",
+      "existing_formal": "conditional",
+      "source_reference_bytes": 613278
+    },
+    {
+      "repo_id": "MBZUAI/TerraFM",
+      "decision": "KEEP",
+      "reason": "Satellite remote-sensing representation, different physical modality.",
+      "existing_formal": "conditional",
+      "source_reference_bytes": 451895030
+    },
+    {
+      "repo_id": "Duane245/DGNO",
+      "decision": "KEEP",
+      "reason": "Fluorescence inverse problem, distinct measured input and output.",
+      "existing_formal": "conditional",
+      "source_reference_bytes": 205417842
+    },
+    {
+      "repo_id": "hanyuyuan/STSF-TPLS-weights",
+      "decision": "KEEP",
+      "reason": "Coded imaging segmentation; not ground-motion waveform representation.",
+      "existing_formal": "conditional",
+      "source_reference_bytes": 295193202
+    },
+    {
+      "repo_id": "ltlltl2006/seislm-large",
+      "decision": "HOLD",
+      "reason": "90,683,648 parameters, 362,760,728 B weight; 0ac6158dbfd139591f57d3064a893e667387106f; same family, marginal benefit insufficiently established.",
+      "existing_formal": null,
+      "source_reference_bytes": null
+    },
+    {
+      "repo_id": "YuYu1015/YuYu1015-PhaseNet-50Hz-268k-v1",
+      "decision": "HOLD",
+      "reason": "268,443 params claimed; 1,114,631 B weights; 372d89ef726217cafea3895da3811e9e20534088. No verified training lineage or comparable quantitative evaluation; PT trust unresolved.",
+      "existing_formal": null,
+      "source_reference_bytes": null
+    },
+    {
+      "repo_id": "SeisProcBench/SPBench-Model",
+      "decision": "HOLD",
+      "reason": "Multiple seismic processing checkpoints; per-state training and closure not established. README at 68603de6c74cb02fe179b1064241ea346bff27eb.",
+      "existing_formal": null,
+      "source_reference_bytes": null
+    },
+    {
+      "repo_id": "SeisDFE",
+      "decision": "HOLD",
+      "reason": "7B seismic foundation model for geological interpretation; 2026-11-16 arXiv:2611.20745; fixed released weights not confirmed.",
+      "existing_formal": null,
+      "source_reference_bytes": null
+    }
+  ],
+  "formal_additions": [
+    "ltlltl2006/seislm-base"
+  ],
+  "formal_replacements": [],
+  "formal_exclusions": [],
+  "prior_rows_changed": 0,
+  "approved_downloads": 0,
+  "physical_files_deleted": 0,
+  "source_manifest": "manifests/drafts/r195-2026-11-28-seislm-source.candidate.json",
+  "research": "catalog/research/2026-11-28-r195-seislm-specialist-evidence.json"
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "revision_id": "v99-20261128",
+  "previous_revision_id": "v98-20261128",
+  "decision_date_jst": "2026-11-28",
+  "target_branch": "main",
+  "kind": "SPECIALIST_RESEARCH_ADDITION",
+  "previous_asset_count": 292,
+  "previous_active_count": 236,
+  "replacement_operations": [],
+  "additions": [
+    {
+      "position": 293,
+      "asset_kind": "model",
+      "repo_id": "ltlltl2006/seislm-base",
+      "url": "https://huggingface.co/ltlltl2006/seislm-base",
+      "group": "地震波形・自己教師あり専門表現",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "Independent contrastively pretrained seismic waveform encoder, not another generic time-series forecasting model or a quantization. Three-component ground-motion representation for low-label downstream geophysics. Preserve compact Base only; Large does not justify marginal bytes without matched evidence. No existing selected model establishes same-task replacement.",
+      "quality_positive": "Publisher 11,359,568 FP32 parameters including original pretraining heads; 6-layer Wav2Vec2-derived transformer hidden 240, 3 ZNE channels, 100 Hz, 3001 samples -> 749 x 240 features. Original eight-corpus pretraining (ETHZ/GEOFON/STEAD/MLAAPDE/InstanceCounts/Iquique/PNW/OBST2024); paper reports low-label downstream transfer. Publisher synthetic 8-field regression exact on CPU and NVIDIA GB10 with Python 3.12.3/PyTorch 2.14.1+cu130; not independent performance or hardware latency.",
+      "quality_negative": "Bare encoder lacks trained phase/event head; no earthquake-warning efficacy established. No automatic resampling or missing-channel filling; training optimizer omitted, dataset snapshots/rights and exact recreation unresolved. SeisMoLLM reports SeisLM deficiencies; later objective-comparison preprint reports downstream tradeoffs. Independent matched transfer, memory/clock/batch and runtime ABI unverified; wheel code unreviewed.",
+      "risk_and_alternative_assessment": "Scientific ground-motion research only; validation required for safety-critical decisions. KEEP forecast, satellite and imaging incumbents. No harmful-capability ranking.",
+      "evidence_date": "2026-11-28",
+      "evidence_kind": "R195_PINNED_HF_CARD_API_LICENSE_PAPER",
+      "evidence_urls": [
+        "https://huggingface.co/ltlltl2006/seislm-base/blob/13a3dcd6ae56c39f5b0750b817c8788a7fc3c99b/README.md",
+        "https://huggingface.co/api/models/ltlltl2006/seislm-base/revision/13a3dcd6ae56c39f5b0750b817c8788a7fc3c99b?blobs=true",
+        "https://huggingface.co/ltlltl2006/seislm-base/blob/13a3dcd6ae56c39f5b0750b817c8788a7fc3c99b/LICENSE",
+        "https://huggingface.co/ltlltl2006/seislm-base/blob/13a3dcd6ae56c39f5b0750b817c8788a7fc3c99b/manifest.json",
+        "https://huggingface.co/ltlltl2006/seislm-base/blob/13a3dcd6ae56c39f5b0750b817c8788a7fc3c99b/config.json",
+        "https://arxiv.org/abs/2410.15765",
+        "https://github.com/liutianlin0121/seisLM",
+        "https://doi.org/10.1029/2025GL118505",
+        "https://arxiv.org/abs/2610.38003",
+        "https://fossettlab.org/models/seislm/"
+      ],
+      "observed_access": "public ungated observed 2026-11-28; owner permission unverified",
+      "license_metadata": "MIT publisher LICENSE and explicit author weight grant; owner acts, training data and wheel dependencies unresolved",
+      "license_text_reviewed": true,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "13a3dcd6ae56c39f5b0750b817c8788a7fc3c99b",
+      "upstream_all_files_bytes_observed": 45633248,
+      "upstream_file_count_observed": 9,
+      "upstream_lfs_sha256_count_observed": 1,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 7,
+      "candidate_selected_source_file_bytes": 45546712,
+      "source_manifest_path": "manifests/drafts/r195-2026-11-28-seislm-source.candidate.json",
+      "parameter_gate": {
+        "status": "PASS_TOTAL_PARAMS_LT_150B",
+        "total_parameters": 11359568,
+        "evidence_kind": "Publisher F32 metadata and fixed card including original pretraining heads; no local scalar census",
+        "evidence_urls": [
+          "https://huggingface.co/api/models/ltlltl2006/seislm-base/revision/13a3dcd6ae56c39f5b0750b817c8788a7fc3c99b?blobs=true",
+          "https://huggingface.co/ltlltl2006/seislm-base/blob/13a3dcd6ae56c39f5b0750b817c8788a7fc3c99b/README.md"
+        ],
+        "review_date": "2026-11-28"
+      },
+      "forecast_priority": {
+        "rank": 293,
+        "wave": "S3",
+        "category": "SPECIALIST_SEISMIC_SELF_SUPERVISED_REPRESENTATION",
+        "scenario_status": "LEGACY_CLASSIFICATION_ONLY_NOT_ACQUISITION_ORDER"
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 45633248,
+        "publisher_selected_source_bytes": 45546712,
+        "source_bytes_are_not_selected_bytes": true,
+        "owner_hdd_verified": false,
+        "full_runtime_memory_peak_verified": false,
+        "actual_archive_incremental_bytes": null
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "ALL_RUNTIME_AND_LEARNED_DEPENDENCIES"
+    }
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "expected_asset_count": 293,
+  "expected_active_count": 237,
+  "new_approved_downloads": 0,
+  "model_payload_downloaded": false,
+  "physical_files_deleted": 0
+}
