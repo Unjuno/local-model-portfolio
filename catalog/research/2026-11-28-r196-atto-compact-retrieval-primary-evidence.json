@@ -1,0 +1,476 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-11-28",
+  "base_commit": "a18d43ea33297debbd5da62af344069d140fb91b",
+  "search_windows_days": [
+    7,
+    30,
+    90
+  ],
+  "search_scope": [
+    "HF model cards and fixed-revision API",
+    "publisher technical article",
+    "GitHub and arXiv recent model search; no independent evaluation located for Atto"
+  ],
+  "primary_source": "https://huggingface.co/blog/neuml/introducing-atto",
+  "publisher_release": "2026-11-19",
+  "models": [
+    {
+      "repo_id": "NeuML/colbert-atto-840-8d",
+      "revision": "b7cf5e5570c002f70ee08e6f8bb6532ded381f83",
+      "created_at": "2026-11-19T17:08:26.000Z",
+      "last_modified": "2026-11-19T18:23:51.000Z",
+      "parameters": 840,
+      "base_model": "NeuML/atto-836-8d",
+      "dimension": 8,
+      "architecture_config": {
+        "architectures": [
+          "AttoModel"
+        ],
+        "auto_map": {
+          "AutoConfig": "configuration_atto.AttoConfig",
+          "AutoModel": "modeling_atto.AttoModel",
+          "AutoModelForMaskedLM": "modeling_atto.AttoForMaskedLM",
+          "AutoModelForSequenceClassification": "modeling_atto.AttoForSequenceClassification"
+        },
+        "dtype": "float32",
+        "embedding_size": 8,
+        "hidden_size": 4,
+        "intermediate_size": 8,
+        "model_type": "atto",
+        "num_attention_heads": 1,
+        "num_hidden_layers": 1,
+        "pad_token_id": 0,
+        "projections": 2,
+        "transformers_version": "5.3.0",
+        "vocab_size": 252
+      },
+      "publisher_metrics": {
+        "BEIR_ArguAna_NFCorpus_SciFact_nDCG_at_10": [
+          0.2143,
+          0.2585,
+          0.4688
+        ],
+        "mean": 0.3139
+      },
+      "decision": "ADD",
+      "license_tag": "apache-2.0",
+      "public_ungated_observed": true,
+      "api_url": "https://huggingface.co/api/models/NeuML/colbert-atto-840-8d/revision/b7cf5e5570c002f70ee08e6f8bb6532ded381f83?blobs=true",
+      "card_url": "https://huggingface.co/NeuML/colbert-atto-840-8d/blob/b7cf5e5570c002f70ee08e6f8bb6532ded381f83/README.md",
+      "source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "git_blob_sha": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 3928,
+          "git_blob_sha": "0b8d59ea1b94d24a79fc1b8efd979a6ffc29fc88",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 576,
+          "git_blob_sha": "83088aa689874244b9eb21a8711a802b806500ba",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "config_sentence_transformers.json",
+          "bytes": 759,
+          "git_blob_sha": "e47d669eb43fff0bd3475b9ff8f49448ace53dc8",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "configuration_atto.py",
+          "bytes": 1091,
+          "git_blob_sha": "89eb5dbc942dabee55a4531554d5a9f6e6bf0e0f",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 4784,
+          "git_blob_sha": "1bd1673509dec62919649140feea1d1c972c7117",
+          "publisher_lfs_sha256": "3e3d24e0c795d87326aecd7bea46f7835d710016e1ae94d973809d0874d277e5"
+        },
+        {
+          "path": "modeling_atto.py",
+          "bytes": 11410,
+          "git_blob_sha": "e9418e37d490976b7c04db8f56ebca8f66a196c6",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "modules.json",
+          "bytes": 113,
+          "git_blob_sha": "c90bc1aced23263316700ca04801bd50ade76f24",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "sentence_bert_config.json",
+          "bytes": 57,
+          "git_blob_sha": "443b0070c467567f7822fdaba85b2763d53ea2a1",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 7599,
+          "git_blob_sha": "141ff56b3ad189fda0115541c4f3293dd91388b0",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 351,
+          "git_blob_sha": "c3cc5725b2e0e9c6b259422fc6f071b558e667c2",
+          "publisher_lfs_sha256": null
+        }
+      ],
+      "publisher_repo_bytes": 32187,
+      "candidate_selected_files": [
+        ".gitattributes",
+        "README.md",
+        "config.json",
+        "config_sentence_transformers.json",
+        "configuration_atto.py",
+        "model.safetensors",
+        "modeling_atto.py",
+        "modules.json",
+        "sentence_bert_config.json",
+        "tokenizer.json",
+        "tokenizer_config.json"
+      ],
+      "metadata_text_git_blob_hashes_checked": true,
+      "download_approved": false,
+      "model_payload_fetched": false
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-950k-128d",
+      "revision": "682921cd675ebc442b01275417add72658fea533",
+      "created_at": "2026-11-19T17:44:42.000Z",
+      "last_modified": "2026-11-19T18:31:19.000Z",
+      "parameters": 947008,
+      "base_model": "NeuML/atto-950k-128d",
+      "dimension": 128,
+      "architecture_config": {
+        "architectures": [
+          "AttoModel"
+        ],
+        "auto_map": {
+          "AutoConfig": "configuration_atto.AttoConfig",
+          "AutoModel": "modeling_atto.AttoModel",
+          "AutoModelForMaskedLM": "modeling_atto.AttoForMaskedLM",
+          "AutoModelForSequenceClassification": "modeling_atto.AttoForSequenceClassification"
+        },
+        "dtype": "float32",
+        "embedding_size": 128,
+        "hidden_size": 128,
+        "intermediate_size": 256,
+        "model_type": "atto",
+        "num_attention_heads": 4,
+        "num_hidden_layers": 4,
+        "pad_token_id": 0,
+        "projections": 32,
+        "transformers_version": "5.3.0",
+        "vocab_size": 4002
+      },
+      "publisher_metrics": {
+        "BEIR_ArguAna_NFCorpus_SciFact_nDCG_at_10": [
+          0.4149,
+          0.3352,
+          0.6946
+        ],
+        "mean": 0.4816
+      },
+      "decision": "ADD",
+      "license_tag": "apache-2.0",
+      "public_ungated_observed": true,
+      "api_url": "https://huggingface.co/api/models/NeuML/colbert-atto-950k-128d/revision/682921cd675ebc442b01275417add72658fea533?blobs=true",
+      "card_url": "https://huggingface.co/NeuML/colbert-atto-950k-128d/blob/682921cd675ebc442b01275417add72658fea533/README.md",
+      "source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "git_blob_sha": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 3935,
+          "git_blob_sha": "ddd5d35e4ef8503a0a0ac14dbfd8c4b7d807446a",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 584,
+          "git_blob_sha": "ebec5e6fffc2c730b602f55c5dccdb998cc2341d",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "config_sentence_transformers.json",
+          "bytes": 759,
+          "git_blob_sha": "ca585d9ac81c76173b4c360643567e1e889c6e96",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "configuration_atto.py",
+          "bytes": 1100,
+          "git_blob_sha": "1d8fc88f67b117d933a63acebf33517576629229",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 3792848,
+          "git_blob_sha": "ec773303a696f9cc280ad749a8111296953f06a9",
+          "publisher_lfs_sha256": "f3ee57c1cd9c29a298e32221e5cdf78278a07d8128ff225cbaa76d6dcb865962"
+        },
+        {
+          "path": "modeling_atto.py",
+          "bytes": 11410,
+          "git_blob_sha": "e9418e37d490976b7c04db8f56ebca8f66a196c6",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "modules.json",
+          "bytes": 113,
+          "git_blob_sha": "c90bc1aced23263316700ca04801bd50ade76f24",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "sentence_bert_config.json",
+          "bytes": 57,
+          "git_blob_sha": "7d1ce7990bf14c31ee132f0b87b6d0272efd1a54",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 86234,
+          "git_blob_sha": "248c26c05d39e1aee2dcb077684daa31734e2713",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 351,
+          "git_blob_sha": "01b1eb5de8dd41617a294e6895b21fe9379aea73",
+          "publisher_lfs_sha256": null
+        }
+      ],
+      "publisher_repo_bytes": 3898910,
+      "candidate_selected_files": [
+        ".gitattributes",
+        "README.md",
+        "config.json",
+        "config_sentence_transformers.json",
+        "configuration_atto.py",
+        "model.safetensors",
+        "modeling_atto.py",
+        "modules.json",
+        "sentence_bert_config.json",
+        "tokenizer.json",
+        "tokenizer_config.json"
+      ],
+      "metadata_text_git_blob_hashes_checked": true,
+      "download_approved": false,
+      "model_payload_fetched": false
+    },
+    {
+      "repo_id": "NeuML/atto-90k-2048d-embeddings",
+      "revision": "823e44dae7a323107f9592490d7dc56a07e02bf7",
+      "created_at": "2026-11-19T16:07:33.000Z",
+      "last_modified": "2026-11-19T16:11:17.000Z",
+      "parameters": null,
+      "base_model": "NeuML/atto-90k-2048d",
+      "dimension": 2048,
+      "architecture_config": {
+        "architectures": [
+          "AttoModel"
+        ],
+        "auto_map": {
+          "AutoConfig": "configuration_atto.AttoConfig",
+          "AutoModel": "modeling_atto.AttoModel",
+          "AutoModelForMaskedLM": "modeling_atto.AttoForMaskedLM",
+          "AutoModelForSequenceClassification": "modeling_atto.AttoForSequenceClassification"
+        },
+        "dtype": "float32",
+        "embedding_size": 2048,
+        "hidden_size": 32,
+        "intermediate_size": 64,
+        "model_type": "atto",
+        "num_attention_heads": 1,
+        "num_hidden_layers": 1,
+        "pad_token_id": 0,
+        "projections": 10,
+        "transformers_version": "5.18.0",
+        "use_cache": false,
+        "vocab_size": 1000
+      },
+      "publisher_metrics": {
+        "BEIR_ArguAna_NFCorpus_SciFact_nDCG_at_10": [
+          0.4021,
+          0.2676,
+          0.6074
+        ],
+        "mean": 0.4257
+      },
+      "decision": "HOLD",
+      "license_tag": "apache-2.0",
+      "public_ungated_observed": true,
+      "api_url": "https://huggingface.co/api/models/NeuML/atto-90k-2048d-embeddings/revision/823e44dae7a323107f9592490d7dc56a07e02bf7?blobs=true",
+      "card_url": "https://huggingface.co/NeuML/atto-90k-2048d-embeddings/blob/823e44dae7a323107f9592490d7dc56a07e02bf7/README.md",
+      "source_files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "git_blob_sha": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "1_Pooling/config.json",
+          "bytes": 90,
+          "git_blob_sha": "90ee842dc3a656cf456762e8089806edea2c1ee8",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 4475,
+          "git_blob_sha": "12a7716dc06dd07ea3e0c0f5fca3882f75f21f78",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "config.json",
+          "bytes": 606,
+          "git_blob_sha": "907bfdf246830fc9e255b9a2a2e7841039247b0e",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "config_sentence_transformers.json",
+          "bytes": 301,
+          "git_blob_sha": "c8f44e4ec46b518e46d76e0fb6be0f9fedf6b555",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "configuration_atto.py",
+          "bytes": 1099,
+          "git_blob_sha": "f829fdf452be432df138007991f5423e813a9392",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 365344,
+          "git_blob_sha": "8c8de716a09fa0dff70f40e59e26969b541c073d",
+          "publisher_lfs_sha256": "82ba65ce07d5d7ea3eabeef2babc0a27e6d13f575c068856ab93140d432416ab"
+        },
+        {
+          "path": "modeling_atto.py",
+          "bytes": 11410,
+          "git_blob_sha": "e9418e37d490976b7c04db8f56ebca8f66a196c6",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "modules.json",
+          "bytes": 277,
+          "git_blob_sha": "45d2436b717b3a70d63c0df4ab2c49d5cdb02c5b",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "sentence_bert_config.json",
+          "bytes": 241,
+          "git_blob_sha": "d2cd15826913bba6e43310063d75883bb0b7b842",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 21851,
+          "git_blob_sha": "5cfd07cb1b4c157700834733d8bd556f7c3e114d",
+          "publisher_lfs_sha256": null
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 350,
+          "git_blob_sha": "4bdaf371676a630a5c73dff3221c7313e4468432",
+          "publisher_lfs_sha256": null
+        }
+      ],
+      "publisher_repo_bytes": 407563,
+      "candidate_selected_files": [],
+      "metadata_text_git_blob_hashes_checked": true,
+      "download_approved": false,
+      "model_payload_fetched": false
+    }
+  ],
+  "incumbent_comparison": [
+    {
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "decision": "KEEP",
+      "current_selection": "select",
+      "parameters": 595800000,
+      "source_repo_bytes": 1207489041,
+      "reason": "既存dense/pairwise多言語ranking。英語late interactionとの同条件比較なし。"
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+      "decision": "KEEP",
+      "current_selection": "select",
+      "parameters": 595800000,
+      "source_repo_bytes": 1207488344,
+      "reason": "既存dense/pairwise多言語ranking。英語late interactionとの同条件比較なし。"
+    },
+    {
+      "repo_id": "Horizon-Labs/multilingual-reranker-small",
+      "decision": "KEEP",
+      "current_selection": "conditional",
+      "parameters": 140641921,
+      "source_repo_bytes": 1428709912,
+      "reason": "既存dense/pairwise多言語ranking。英語late interactionとの同条件比較なし。"
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-90k-32d",
+      "decision": "KEEP",
+      "current_selection": "conditional",
+      "parameters": 90300,
+      "source_repo_bytes": null,
+      "reason": "90K/32d中間品質・indexコスト点。直接測定なしに除外しない。"
+    }
+  ],
+  "additional_holds": [
+    {
+      "repo_id": "NeuML/atto-90k-2048d-embeddings",
+      "decision": "HOLD",
+      "reason": "dense 2048d・平均0.4257、API総数未確認、既存denseと重複・日本語/runtime未検証"
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-9k-16d",
+      "decision": "HOLD",
+      "reason": "独立学習候補だが限界価値・固定revision・完全ファイル証拠未検証"
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-4m-384d",
+      "decision": "HOLD",
+      "reason": "独立学習候補だが限界価値・固定revision・完全ファイル証拠未検証"
+    }
+  ],
+  "publisher_benchmarks": {
+    "colbert_atto_9k": 0.3655,
+    "colbert_atto_90k": 0.4454,
+    "colbert_atto_4m": 0.4818,
+    "LateOn_110M": 0.5463,
+    "all_MiniLM_L6_v2": 0.4802,
+    "DenseOn": 0.5638,
+    "conditions": "publisher BEIR 3 datasets, evaluation HW/clock/batch not reported; no independent replay; PyLate one epoch per-device training batch32 FP16 for selected two"
+  },
+  "index_example": {
+    "tokens_per_document": 100,
+    "bytes_per_FP32_scalar": 4,
+    "atto_840_token_bytes": 3200,
+    "atto_90k_token_bytes": 12800,
+    "atto_950k_token_bytes": 51200,
+    "dense_2048_bytes": 8192,
+    "excludes": "index overhead, quantization, tokenizer/runtime; not measured"
+  },
+  "access_or_license_change_proven": false,
+  "limitations": [
+    "英語限定・BEIR 3集合・日本語/同一HW/clock/batch/latency・完全依存・index容量・独立再現未検証。",
+    "Apache tag only; no standalone LICENSE; owner rights and dependencies unresolved",
+    "metadata only, no weights fetched or model code executed"
+  ]
+}

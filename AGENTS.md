@@ -1,3 +1,7 @@
+## 現行 v101 / R197（2026-11-28）
+
+296登録・240有効（SELECT 56、CONDITIONAL 184）。Atto独立学習2モデル研究限定追加、並行更新を含む旧294行・133報告保存。配布元3931097 B、hash union 3918055 B、全依存/owner増分未確定。全240取得STOP、承認・重みDL・実行・削除0。[研究報告](docs/strategy/197-v101-atto-840-950k-retrieval.md)。
+
 ## 現行 v100 / R196（2026-11-28）
 
 294登録・238有効（SELECT 56、CONDITIONAL 182）。Shorter Formulaeの145M原本・ノイズ追加学習済み2状態を研究限定CONDITIONAL追加。RASR維持。既存293行・133取得報告不変。配布元参照1,173,518,813 B、依存・owner増分未確定。全238取得STOP、承認・重みDL・実行・物理削除0。回帰テスト4/4 PASS。[研究報告](docs/strategy/196-v100-shorter-formulae-symbolic-regression.md)。正式参照は `catalog/CURRENT.json`。

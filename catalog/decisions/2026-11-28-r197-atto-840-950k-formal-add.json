@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-11-28",
+  "base_commit": "f3b3d51ee3e61b49647fc9a45aa9d17b3ab5d807",
+  "research_source": "catalog/research/2026-11-28-r196-atto-compact-retrieval-primary-evidence.json",
+  "manifest": "manifests/drafts/r196-2026-11-28-atto-retrieval-originals.candidate.json",
+  "formal_changes": [
+    {
+      "repo_id": "NeuML/colbert-atto-840-8d",
+      "decision": "ADD",
+      "formal_selection": "conditional",
+      "reason": "840 F32・8d token late interactionの独立学習原本。90K/32d既存中間点に対し品質は低いが省パラメータ/省indexの限界研究。"
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-950k-128d",
+      "decision": "ADD",
+      "formal_selection": "conditional",
+      "reason": "947008 F32・128dの独立学習原本。配布元BEIR平均0.4816は90K 0.4454を上回り4M 0.4818に近い。indexコスト増大のため90Kを交換しない。"
+    }
+  ],
+  "keep": [
+    {
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "decision": "KEEP",
+      "current_selection": "select",
+      "parameters": 595800000,
+      "reason": "Different dense/pairwise multilingual retrieval role; no matched replacement evidence"
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+      "decision": "KEEP",
+      "current_selection": "select",
+      "parameters": 595800000,
+      "reason": "Different dense/pairwise multilingual retrieval role; no matched replacement evidence"
+    },
+    {
+      "repo_id": "Horizon-Labs/multilingual-reranker-small",
+      "decision": "KEEP",
+      "current_selection": "conditional",
+      "parameters": 140641921,
+      "reason": "Different dense/pairwise multilingual retrieval role; no matched replacement evidence"
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-90k-32d",
+      "decision": "KEEP",
+      "current_selection": "conditional",
+      "parameters": 90300,
+      "reason": "90K/32d intermediate index/quality operating point; no matched substitution evidence"
+    }
+  ],
+  "hold": [
+    {
+      "repo_id": "NeuML/atto-90k-2048d-embeddings",
+      "decision": "HOLD",
+      "reason": "2048d dense overlaps incumbent, exact total and matched runtime unverified"
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-9k-16d",
+      "decision": "HOLD",
+      "reason": "Independent learned candidate; marginal value and complete immutable source unverified"
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-4m-384d",
+      "decision": "HOLD",
+      "reason": "Independent learned candidate; marginal value and complete immutable source unverified"
+    }
+  ],
+  "replace": [],
+  "exclude": [],
+  "gross_publisher_candidate_bytes": 3931097,
+  "unique_hash_union_bytes": 3918055,
+  "actual_owner_delta_bytes": null,
+  "approved_downloads": 0,
+  "physical_deletions": 0
+}
