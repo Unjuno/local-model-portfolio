@@ -2,10 +2,10 @@
 
 Results of executing the unified pinned-source plan `queues/proposed-v48-r113-source-pinned-15.json` from canonical `catalog/CURRENT.json` (v48-20261118).
 
-- Models: 168 (verified 164, partial 0, failed 0, held 4)
-- Verified files: 2649
-- Verified source bytes: 2583024117670
-- Minimum observed free bytes: 427910205440 (200 GB floor maintained: True)
+- Models: 169 (verified 165, partial 0, failed 0, held 4)
+- Verified files: 2703
+- Verified source bytes: 2646201336201
+- Minimum observed free bytes: 333828169728 (200 GB floor maintained: True)
 
 | repo_id | revision | status | verified files | license |
 | --- | --- | --- | --- | --- |
@@ -170,6 +170,7 @@ Results of executing the unified pinned-source plan `queues/proposed-v48-r113-so
 | `FrontiersMind/NandiBERT-450M` | `b446d067153f279bbf027d0164b30cbffeaa5447` | VERIFIED | 10/10 | apache-2.0 |
 | `Horizon-Labs/multilingual-reranker-small` | `23139fec6f1f448cdf89a5ac2d2c6bf5e8c7b398` | VERIFIED | 31/31 | apache-2.0 |
 | `hanyuyuan/STSF-TPLS-weights` | `785c3ec304928ea0407da7e048d5579791fbb3bf` | VERIFIED | 14/14 | cc-by-4.0 |
+| `nvidia/Nemotron-Cascade-2-30B-A3B` | `6327cdbcf907e1c7cec9cb29fb6e6cebdf8feaf7` | VERIFIED | 54/54 | other |
 | `mistralai/Mistral-Small-4-119B-2603` | `a11f36bebf709121056b1dbcc943d1c6afbe494d` | VERIFIED | 21/21 | apache-2.0 |
 | `Qwen/Qwen3-Coder-Next` | `a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb` | VERIFIED | 49/49 | apache-2.0 |
 | `Wan-AI/Wan2.2-TI2V-5B` | `921dbaf3f1674a56f47e83fb80a34bac8a8f203e` | VERIFIED | 23/23 | apache-2.0 |

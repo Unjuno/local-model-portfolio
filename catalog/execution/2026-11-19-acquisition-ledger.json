@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "ledger_id": "2026-11-19-v48-execution",
-  "generated_at": "2026-11-28T02:31:57.632061+00:00",
+  "generated_at": "2026-11-28T02:58:14.892742+00:00",
   "canonical_revision": "v48-20261118",
   "source_plan": "queues/proposed-v48-r113-source-pinned-15.json",
   "policy": {
@@ -14,14 +14,14 @@
     "unclear_license": "HOLD"
   },
   "summary": {
-    "models_total": 168,
-    "models_verified": 164,
+    "models_total": 169,
+    "models_verified": 165,
     "models_partial": 0,
     "models_failed": 0,
     "models_held": 4,
-    "files_verified_total": 2649,
-    "bytes_verified_total": 2583024117670,
-    "minimum_free_bytes_observed": 427910205440,
+    "files_verified_total": 2703,
+    "bytes_verified_total": 2646201336201,
+    "minimum_free_bytes_observed": 333828169728,
     "minimum_free_floor_bytes": 200000000000,
     "free_floor_maintained": true
   },
@@ -7523,6 +7523,98 @@
       "started_at": "2026-11-28T00:52:56.488085+00:00",
       "finished_at": "2026-11-28T00:55:02.802189+00:00",
       "free_bytes_after": 427910205440
+    },
+    {
+      "repo_id": "nvidia/Nemotron-Cascade-2-30B-A3B",
+      "revision_sha": "6327cdbcf907e1c7cec9cb29fb6e6cebdf8feaf7",
+      "source_manifest": "local-discovered/rem-nvidia__Nemotron-Cascade-2-30B-A3B.json",
+      "priority_group": "",
+      "status": "VERIFIED",
+      "license": "other",
+      "hold_reason": null,
+      "files_total": 54,
+      "files_verified": 54,
+      "source_bytes": 63177218531,
+      "verification_methods": {
+        "git-blob-sha1-vs-publisher": 37,
+        "sha256-vs-publisher": 17
+      },
+      "file_status_counts": {
+        "VERIFIED": 54
+      },
+      "weight_files_sha256": [
+        {
+          "path": "assets/Nemotron_Cascade_2.pdf",
+          "sha256": "7a9bb52f726f4453ad7c141a73384203975d19588569d0a95d7242831f5fb6fe"
+        },
+        {
+          "path": "assets/solutions/imo2025/IMO2025.pdf",
+          "sha256": "f32d51bcf652b4bd4116b2ff85060bc68a9a3ae8442cbf27eb68dd16a69406a4"
+        },
+        {
+          "path": "fig/nemotron-cascade-2-results.png",
+          "sha256": "0854166c4ee532bcddda8c05d1f7a5ca12c7ddc9d4938b7772142b1498ebff0f"
+        },
+        {
+          "path": "model-00001-of-00013.safetensors",
+          "sha256": "57dd111263aa6333ae006e87bf9287e16d1306db8832074b91ef229e9f32fc04"
+        },
+        {
+          "path": "model-00002-of-00013.safetensors",
+          "sha256": "7033449f56b4d1626409db3d93b599c2c0deb6a4fbdfa52809ec5cc85d80bc9a"
+        },
+        {
+          "path": "model-00003-of-00013.safetensors",
+          "sha256": "f2bb5c68d3c2904bd7c9adb68d8c09f7ffeda3273b1d95d860dab32a16fbed66"
+        },
+        {
+          "path": "model-00004-of-00013.safetensors",
+          "sha256": "e301b39ac5d7056f038d6e18076c2c0bf5d7726242bf78a2c82da3eb72151915"
+        },
+        {
+          "path": "model-00005-of-00013.safetensors",
+          "sha256": "c400b60262e86e76354f6be308c370ac77c74e8af255cef151a284ff01b576ca"
+        },
+        {
+          "path": "model-00006-of-00013.safetensors",
+          "sha256": "8941a5948cc57f9b5632270db7de2731c363c939dcae6841c61be6f89cecc3cb"
+        },
+        {
+          "path": "model-00007-of-00013.safetensors",
+          "sha256": "33ffc134f02246fa7e45bbb7ce10fa0ae4b4e2f12e18f707f02cba2e45fa2fa0"
+        },
+        {
+          "path": "model-00008-of-00013.safetensors",
+          "sha256": "8175825d1a965934d663fb2992b55301576689db97a79b197e00647ec2a25dbe"
+        },
+        {
+          "path": "model-00009-of-00013.safetensors",
+          "sha256": "9b494cf600c2941fe64f12167040d37e85a11bcc0b7a007b40315436c84f74fc"
+        },
+        {
+          "path": "model-00010-of-00013.safetensors",
+          "sha256": "cfe61a1e9d064db103b633fff725c2d083a4df7183a4a45b840f4d9a4070fec9"
+        },
+        {
+          "path": "model-00011-of-00013.safetensors",
+          "sha256": "7558a5b52e4629cd590924ff08b45e1575260ce5fbf9a8e5e579b81a482c8e60"
+        },
+        {
+          "path": "model-00012-of-00013.safetensors",
+          "sha256": "fc6bc05ecc833984404daf0774e816484b30b82f7206ff25aede9ad6076faeb2"
+        },
+        {
+          "path": "model-00013-of-00013.safetensors",
+          "sha256": "f65597377600af56f516d008f56262b858d470bc1b7da4c812f32a0309cf368c"
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "c3da26d4c6d3fc493a54b4971bdc64df2a8e32687be888a24155c83843a92867"
+        }
+      ],
+      "started_at": "2026-11-28T00:55:03.234977+00:00",
+      "finished_at": "2026-11-28T02:56:12.127580+00:00",
+      "free_bytes_after": 333828169728
     },
     {
       "repo_id": "mistralai/Mistral-Small-4-119B-2603",
