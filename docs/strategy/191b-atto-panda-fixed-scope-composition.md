@@ -1,0 +1,15 @@
+# R191b: Atto/Panda fixed-source research and concurrent composition decision
+
+Base b7a02ae7526af15ea86175fccf61a17d56f4b77b, formal v98-20261128. Concurrent v95 selected Atto 90K and already repaired synthetic v93 approvals; later selections preserved. No formal additions or removals this round, no acquisition authority. This supersedes the unpublished 840 ADD proposal after comparative research, not a prior formal decision.
+
+## New evidence
+- Fixed HF metadata for 90K: 90,304 F32 parameters (publisher reported; not independently counted), all 11 files 468771 B, weight 362,720 B; 106051 B more source evidence than earlier weight-only pointer. Full publisher file list and SHA references in `manifests/drafts/r191b-2026-11-28-atto-three-fixed-publisher-scopes.candidate.json`. No claim of dependency closure or owner bytes. KEEP research-only CONDITIONAL.
+- 840: 840 F32, 11 files 32,187 B, 4,784 B weights, 8-d token vector vs 90K 32-d. 107.5x fewer parameters and 4x fewer vector scalars per identical token count/dtype are theoretical, not whole-index memory measures. Publisher mean nDCG@10 0.3139 vs 90K 0.4454. HOLD, new exact state evidence resolves source gap but does not justify a second active entry absent matched benefit. Not a quantization.
+- 170: published Nov 28 JST, 11 files 26,390 B, publisher claims 170 parameters (API count absent), mean nDCG@10 0.1261. HOLD.
+- Panda V2 instance PILArNet-M and TPCpp-10M published Nov 28 JST: 60,427,164 and 59,836,824 F32; 241,780,463 and 239,417,820 B respective source reference; independently adapted LoRA rank16 + head, different detector tasks, not optical image segmentation replacements. No explicit weights license in pinned trees; runtime/parent rights unresolved. HOLD both. arXiv:2609.00611 results concern label efficiency during adaptation, not matched performance of these full-label checkpoints.
+- KEEP BGE-M3 (already supports multivector retrieval), Qwen3 embedding and reranker 0.6B, Horizon multilingual reranker. Different quality/language/context/role; no matched replacement evidence.
+
+## Reproduction and safety
+Fixed publisher API and card/config metadata, recent-created HF sample of 100 and 7/30/90-day external search, bounded not exhaustive. No observed license/access change. No weights downloaded or custom source executed. Package lock, ABI, exact training parents, dependency-inclusive bytes, rights and owner disk remain unknown. Evaluate fixed qrels with paired bootstrap CI, actual index/RAM and timing under matched backend/batch/HW; no acquisition approval.
+
+Evidence: `catalog/research/2026-11-28-r191b-atto-panda-fixed-scope-evidence.json`; decision: `catalog/decisions/2026-11-28-r191b-atto-panda-concurrent-reconciliation.json`; supplementary scope: `manifests/drafts/r191b-2026-11-28-atto-three-fixed-publisher-scopes.candidate.json`. Existing v95 partial manifest retained as historical artifact. Formal catalog, acquisition ledger, prior manifests and queues untouched; new CURRENT supplementary research pointer only.
