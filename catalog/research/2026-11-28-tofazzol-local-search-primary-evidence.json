@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "round": "TOFAZZOL-20261128",
+  "date_jst": "2026-11-28",
+  "parent_commit": "57256891c173f9a0f36b542bb365283c17fa0b3d",
+  "discovery": {
+    "method": "HF latest 100 lastModified sample and web searches in 7/30/90-day windows; fixed publisher sources, bounded nonexhaustive. Initial v93 history text search found no candidate; v96 rechecked. Concurrent formal updates require rebase.",
+    "windows_days": [
+      7,
+      30,
+      90
+    ],
+    "sources": [
+      "https://huggingface.co/porkr/Tofazzol-v2.1-1.5B/blob/a84e48a8a369135ffccb4a2c30f3a1483c0265fd/README.md",
+      "https://huggingface.co/api/models/porkr/Tofazzol-v2.1-1.5B/revision/a84e48a8a369135ffccb4a2c30f3a1483c0265fd?blobs=true",
+      "https://huggingface.co/porkr/Tofazzol-v2.1-1.5B/blob/a84e48a8a369135ffccb4a2c30f3a1483c0265fd/NOTICE",
+      "https://huggingface.co/porkr/Tofazzol-v2.1-1.5B/blob/a84e48a8a369135ffccb4a2c30f3a1483c0265fd/training/recipe.json",
+      "https://huggingface.co/porkr/Tofazzol-v2.1-1.5B/blob/a84e48a8a369135ffccb4a2c30f3a1483c0265fd/evidence/results.json",
+      "https://huggingface.co/porkr/Tofazzol-v2.1-1.5B/blob/a84e48a8a369135ffccb4a2c30f3a1483c0265fd/evidence/paper-v2-results.json",
+      "https://huggingface.co/porkr/Tofazzol-v2.1-1.5B/blob/a84e48a8a369135ffccb4a2c30f3a1483c0265fd/inference/decoding.json",
+      "https://huggingface.co/porkr/Tofazzol-v2.1-1.5B/blob/a84e48a8a369135ffccb4a2c30f3a1483c0265fd/VERIFICATION.md",
+      "https://huggingface.co/api/models?sort=lastModified&direction=-1&limit=100",
+      "https://huggingface.co/Inomjonov/tiny-voca-english-reproduction",
+      "https://huggingface.co/Kai9987kai/Supermix-Tether",
+      "https://huggingface.co/mradermacher/Tofazzol-v2.1-1.5B-GGUF"
+    ]
+  },
+  "primary_candidate": {
+    "asset_kind": "model",
+    "repo_id": "porkr/Tofazzol-v2.1-1.5B",
+    "url": "https://huggingface.co/porkr/Tofazzol-v2.1-1.5B",
+    "group": "小型・独立後学習・構造化ローカル検索計画",
+    "risk_tier": "R2",
+    "portfolio_decision": "conditional",
+    "reason_selected": "Independent full-parameter search-plan specialization (C-600 continuation) of Qwen2.5-Coder-1.5B-Instruct, 1,543,714,304 BF16 parameters. English natural-language-to-typed document/filename/metadata/Outlook search plans, distinct from embedding/reranking and GUI agents. Private training corpus and intermediate checkpoints unavailable; exact trained BF16 cannot be recovered from base or ordinary quantization. Research-only.",
+    "quality_positive": "Publisher exact executed development results: 735/746 files, 217/240 synthetic mail, 952/986 overall; metadata 262/266 vs Gemma 4 31B 255/266. Private confirmation B v2.1 80/100 vs v2 66/100 (15 gained, 1 lost), one mailbox, not public replication. Publisher MLX release consistency regenerated 986 answers. No speed/cost claim.",
+    "quality_negative": "Gemma 4 31B 973/986 overall and 240/240 mail vs 952/986 and 217/240; two-file-case margin not superiority, unequal adaptation budgets, adaptive board, comparator runs are for preceding v2. App-assisted v2.1 735/746 vs v2 736/746. Historical inputs/executor unavailable, English only, possible missing constraints and sender/recipient errors. No independent held-out comparison, owner runtime or cross-backend parity.",
+    "risk_and_alternative_assessment": "Only authorized read-only search on synthetic/owner-authorized fixtures with independently validated query executor and access control. No autonomous execution, mail access, or safety-control evasion. KEEP incumbents.",
+    "evidence_date": "2026-11-28",
+    "evidence_kind": "FIXED_HF_TREE_MODEL_CARD_PUBLISHER_RESULTS_AND_RECIPE",
+    "evidence_urls": [
+      "https://huggingface.co/porkr/Tofazzol-v2.1-1.5B/blob/a84e48a8a369135ffccb4a2c30f3a1483c0265fd/README.md",
+      "https://huggingface.co/api/models/porkr/Tofazzol-v2.1-1.5B/revision/a84e48a8a369135ffccb4a2c30f3a1483c0265fd?blobs=true",
+      "https://huggingface.co/porkr/Tofazzol-v2.1-1.5B/blob/a84e48a8a369135ffccb4a2c30f3a1483c0265fd/NOTICE",
+      "https://huggingface.co/porkr/Tofazzol-v2.1-1.5B/blob/a84e48a8a369135ffccb4a2c30f3a1483c0265fd/training/recipe.json",
+      "https://huggingface.co/porkr/Tofazzol-v2.1-1.5B/blob/a84e48a8a369135ffccb4a2c30f3a1483c0265fd/evidence/results.json",
+      "https://huggingface.co/porkr/Tofazzol-v2.1-1.5B/blob/a84e48a8a369135ffccb4a2c30f3a1483c0265fd/evidence/paper-v2-results.json",
+      "https://huggingface.co/porkr/Tofazzol-v2.1-1.5B/blob/a84e48a8a369135ffccb4a2c30f3a1483c0265fd/inference/decoding.json",
+      "https://huggingface.co/porkr/Tofazzol-v2.1-1.5B/blob/a84e48a8a369135ffccb4a2c30f3a1483c0265fd/VERIFICATION.md"
+    ],
+    "observed_access": "Public ungated observed 2026-11-28; owner entitlement not inferred",
+    "license_metadata": "Apache-2.0 weights/config/tokenizer; MIT inference/training source; NOTICE excludes rights to private data/product code; owner acts and training data review unresolved",
+    "license_text_reviewed": false,
+    "dependencies_reviewed": false,
+    "download_approved": false,
+    "selected_file_bytes": null,
+    "fully_pinned_revision_sha": null,
+    "upstream_revision_sha_observed": "a84e48a8a369135ffccb4a2c30f3a1483c0265fd",
+    "upstream_all_files_bytes_observed": 3100135228,
+    "upstream_file_count_observed": 56,
+    "upstream_lfs_sha256_count_observed": 3,
+    "upstream_all_files_are_selected": false,
+    "candidate_selected_source_file_count": 34,
+    "candidate_selected_source_file_bytes": 3099316333,
+    "source_manifest_path": "manifests/drafts/2026-11-28-tofazzol-fixed-source.candidate.json",
+    "parameter_gate": {
+      "status": "PASS_TOTAL_PARAMS_LT_150B",
+      "total_parameters": 1543714304,
+      "evidence_kind": "Pinned HF BF16 safetensors API total, not local tensor census; full fine-tune weights",
+      "evidence_urls": [
+        "https://huggingface.co/api/models/porkr/Tofazzol-v2.1-1.5B/revision/a84e48a8a369135ffccb4a2c30f3a1483c0265fd?blobs=true",
+        "https://huggingface.co/porkr/Tofazzol-v2.1-1.5B/blob/a84e48a8a369135ffccb4a2c30f3a1483c0265fd/README.md"
+      ],
+      "review_date": "2026-11-28"
+    },
+    "forecast_priority": {
+      "wave": "S3",
+      "category": "SPECIALIST_LOCAL_SEARCH_PLAN",
+      "scenario_status": "LEGACY_CLASSIFICATION_ONLY_NOT_ACQUISITION_ORDER"
+    },
+    "resource_screen": {
+      "source_all_repo_bytes": 3100135228,
+      "publisher_selected_source_bytes": 3099316333,
+      "source_bytes_are_not_selected_bytes": true,
+      "owner_hdd_verified": false,
+      "full_runtime_memory_peak_verified": false,
+      "actual_archive_incremental_bytes": null
+    },
+    "research_only_nonexecutable": true,
+    "can_enter_approved_queue": false,
+    "download_ready": false,
+    "model_payload_fetched": false,
+    "personal_access_verified": false,
+    "historical_acquisition_reported_verified": false,
+    "final_blocker": "ALL_RUNTIME_AND_LEARNED_DEPENDENCIES"
+  },
+  "comparisons": [
+    {
+      "repo_id": "porkr/Tofazzol-v2.1-1.5B",
+      "decision": "ADD",
+      "reason": "Independent full-parameter search-plan specialization (C-600 continuation) of Qwen2.5-Coder-1.5B-Instruct, 1,543,714,304 BF16 parameters. English natural-language-to-typed document/filename/metadata/Outlook search plans, distinct from embedding/reranking and GUI agents. Private training corpus and intermediate checkpoints unavailable; exact trained BF16 cannot be recovered from base or ordinary quantization. Research-only."
+    },
+    {
+      "repo_id": "google/gemma-4-31B",
+      "decision": "KEEP",
+      "reason": "Existing SELECT base comparison; publisher compared Gemma 4 31B but exact incumbent revision/instruction status parity unverified. Higher aggregate and mail results. Existing full-source proxy 62,578,664,883 B."
+    },
+    {
+      "repo_id": "NeuML/colbert-atto-90k-32d",
+      "decision": "KEEP",
+      "reason": "Concurrent v96 extreme-compact late-interaction retrieval; complementary query-plan stage, not a replacement."
+    },
+    {
+      "repo_id": "BAAI/bge-m3",
+      "decision": "KEEP",
+      "reason": "Existing multilingual dense/sparse/multivector retriever; distinct scoring/index interface, no matched planner equivalence."
+    },
+    {
+      "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+      "decision": "KEEP",
+      "reason": "SELECT relevance scoring, 1,207,488,344 B source proxy; not a typed search planner."
+    },
+    {
+      "repo_id": "Horizon-Labs/multilingual-reranker-small",
+      "decision": "KEEP",
+      "reason": "140.64M independent multilingual ranker, 597,202,061 B candidate source; complementary stage."
+    },
+    {
+      "repo_id": "ibm-granite/granite-4.1-3b-llmon-preview",
+      "decision": "KEEP",
+      "reason": "Instruction/data separation research, not query executor or permission enforcement."
+    },
+    {
+      "repo_id": "perplexity-ai/pplx-decider-flash-v1.3",
+      "decision": "KEEP",
+      "reason": "Noncausal judgment/span extraction, different interface."
+    },
+    {
+      "repo_id": "Hcompany/Holotron4-30B-A3B",
+      "decision": "KEEP",
+      "reason": "GUI/MCP learned agent, no matched task results or constrained query plan equivalence."
+    },
+    {
+      "repo_id": "mradermacher/Tofazzol-v2.1-1.5B-GGUF",
+      "decision": "EXCLUDE",
+      "reason": "Same learned state conversion, revision a12bb5c5b349e282a2ebe8e06fd7484161ee63a8; no separate archival asset; optional runtime format only."
+    },
+    {
+      "repo_id": "Inomjonov/tiny-voca-english-reproduction",
+      "decision": "HOLD",
+      "reason": "Independent scratch reproduction, inference.pt 18,209,221 B, full 28,350,980 B; versus selected n4ze3m/tiny-voca 4,537,291 core and 23,626,858 B candidate scope, lacks matched WER/MOS and complete census."
+    },
+    {
+      "repo_id": "Kai9987kai/Supermix-Tether",
+      "decision": "HOLD",
+      "reason": "Tiny specialist dependence/shortcut-learning experiments, 146 files 13,852,584 B; many seed/control checkpoints, complete learned dependency census and license unresolved."
+    }
+  ],
+  "hold_sources": [
+    {
+      "repo_id": "Inomjonov/tiny-voca-english-reproduction",
+      "revision": "4daaf8e2bc0c491ce7e5c3e905f0976f3f4af388",
+      "created_at": "2026-11-21T20:20:28Z",
+      "full_repo_bytes": 28350980
+    },
+    {
+      "repo_id": "Kai9987kai/Supermix-Tether",
+      "revision": "56638023e604b53b0fc155c86f78759089cc7e0e",
+      "created_at": "2026-10-24T21:32:53Z",
+      "last_modified": "2026-11-02T14:13:10Z",
+      "full_repo_bytes": 13852584
+    }
+  ],
+  "H": "Specialist has <=2 percentage-point paired exact-result loss versus fixed local generalist on independent file/metadata search and smaller measured peak memory; email and access-control strata separate.",
+  "T": "Owner authorization required first; >=200 independent synthetic file/metadata queries and >=200 synthetic mail queries; same validated read-only executor, fixed OS/backend/ABI/dtype/context/batch/clock; >=30 runtime trials. No model execution in this round.",
+  "D": "PASS if paired 95% lower bound >=-2pp for file/metadata, no access-control violations, smaller measured peak memory; FAIL if upper bound <-2pp or access violation; otherwise UNCERTAIN. No automatic acquisition approval.",
+  "C": "Adaptive data leakage, unequal tuning, private executor confound, unsupported constraints or quant/backend drift.",
+  "U": "Combined uncertainty unknown; k=2 only when measured.",
+  "source_scope": "manifests/drafts/2026-11-28-tofazzol-fixed-source.candidate.json",
+  "download_approved": false,
+  "model_execution": false,
+  "physical_files_deleted": 0,
+  "research_status": "RESEARCH_ONLY_PENDING_FORMAL_SELECTION"
+}
