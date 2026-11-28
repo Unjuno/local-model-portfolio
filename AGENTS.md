@@ -1,3 +1,6 @@
+## v98 / R194 (2026-11-28 JST)
+PULSE MSE 独立学習画像コーデック研究限定CONDITIONAL。292登録 / 236 active / 180 conditional / 56 select、全STOP。依存・総数未確認、承認0、既存行維持。[R194](docs/strategy/194-v98-pulse-learned-image-codec.md)。
+
 
 > **v96 / R192 (2026-11-28)**: 290 tracked / 234 active (SELECT 56, CONDITIONAL 178); ADD davidotte/RASR-94M-S, research only. All acquisition STOP. See `docs/strategy/192-v96-symbolic-regression-originals.md`. Exact tensor census, complete source, act rights, owner storage and offline runtime unresolved; no approval/download/deletion.
 

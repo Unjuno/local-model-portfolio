@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "revision_id": "v98-20261128",
+  "previous_revision_id": "v97-20261128",
+  "decision_date_jst": "2026-11-28",
+  "target_branch": "main",
+  "kind": "FRESH_SPECIALIST_RESEARCH_ADDITION",
+  "previous_asset_count": 291,
+  "previous_active_count": 235,
+  "replacement_operations": [],
+  "additions": [
+    {
+      "position": 292,
+      "asset_kind": "model",
+      "repo_id": "zhaoyangjia/PULSE",
+      "url": "https://huggingface.co/zhaoyangjia/PULSE",
+      "group": "学習型画像コーデック・可変レート・整数エントロピー復号",
+      "risk_tier": "R2",
+      "portfolio_decision": "conditional",
+      "reason_selected": "独立に学習された可変レート画像コーデックの基本MSE版。整数CDF予測・meta prior・bit-exact entropy decodingを備え、既存の超解像Phips/PULSEや潜在VAE、画像生成とは異なる実ビットストリーム符号化・復号の研究能力を補完する。原本画像の代替ではない。",
+      "quality_positive": "原著Table 3: Pulse MSEはCLIC Professional validationでHM-16.25比PSNR BD-rate -2.9%、1088×1920 AMD EPYC 9V84単一CPUスレッドで符号化920ms・復号126ms、5.2 kMAC/pixel decoder。HEIC +25.2%、80ms、HM 0%、98ms。著者実験のみ、clock/batch未確認。",
+      "quality_negative": "VTM-17.0は-23.4%/189ms、EVC-S -14.3%。PULSEは可逆画像ではなく、bit-exact entropyは画素一致を保証しない。画面・ゲーム・芸術画像への汎化、実HDD/ABI/完全オフライン復元、独立再現未確認。13M encoder/1.7M decoderは各経路の使用数で重複除去済み全体数ではない。",
+      "risk_and_alternative_assessment": "KEEP incumbents; legitimate local image transmission/codec research. Preserve originals losslessly; independent rights and safety gates. No access restriction change demonstrated. No harmful-capability or bypass ranking.",
+      "evidence_date": "2026-11-28",
+      "evidence_kind": "R194_FIXED_HF_CHECKSUMS_GITHUB_TREE_ARXIV",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2609.18602",
+        "https://huggingface.co/zhaoyangjia/PULSE/blob/26efab7d7e723929550542540294063a4c5b5aec/README.md",
+        "https://huggingface.co/zhaoyangjia/PULSE/blob/26efab7d7e723929550542540294063a4c5b5aec/manifest.json",
+        "https://huggingface.co/zhaoyangjia/PULSE/blob/26efab7d7e723929550542540294063a4c5b5aec/SHA256SUMS",
+        "https://huggingface.co/zhaoyangjia/PULSE/blob/26efab7d7e723929550542540294063a4c5b5aec/LICENSE",
+        "https://huggingface.co/api/models/zhaoyangjia/PULSE?blobs=true",
+        "https://github.com/microsoft/GenCodec/tree/cdb5a73508b6206676aca800fe7f5b3ffc24b218/PULSE"
+      ],
+      "observed_access": "public ungated as observed 2026-11-28",
+      "license_metadata": "MIT model card and pinned publisher LICENSE text; owner act rights, training data and dependency licenses unresolved",
+      "license_text_reviewed": false,
+      "dependencies_reviewed": false,
+      "download_approved": false,
+      "selected_file_bytes": null,
+      "fully_pinned_revision_sha": null,
+      "upstream_revision_sha_observed": "26efab7d7e723929550542540294063a4c5b5aec",
+      "upstream_all_files_bytes_observed": 373706354,
+      "upstream_file_count_observed": 18,
+      "upstream_lfs_sha256_count_observed": 8,
+      "upstream_all_files_are_selected": false,
+      "candidate_selected_source_file_count": 7,
+      "candidate_selected_source_file_bytes": 88499234,
+      "source_manifest_path": "manifests/drafts/r194-2026-11-28-pulse-codec-original.candidate.json",
+      "parameter_gate": {
+        "status": "UNVERIFIED_BLOCK_FINAL_LOCK",
+        "total_parameters": null,
+        "evidence_kind": "Paper Table 3 reports exercised encoder 13M and decoder 1.7M; union and integer entropy tensors not fully enumerated",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2609.18602",
+          "https://github.com/microsoft/GenCodec/tree/cdb5a73508b6206676aca800fe7f5b3ffc24b218/PULSE"
+        ],
+        "review_date": "2026-11-28"
+      },
+      "forecast_priority": {
+        "rank": 292,
+        "wave": "S3",
+        "category": "SPECIALIST_LEARNED_IMAGE_CODEC",
+        "scenario_status": "LEGACY_CLASSIFICATION_ONLY_NOT_ACQUISITION_ORDER"
+      },
+      "resource_screen": {
+        "source_all_repo_bytes": 373706354,
+        "publisher_selected_source_bytes": 88499234,
+        "source_bytes_are_not_selected_bytes": true,
+        "owner_hdd_verified": false,
+        "full_runtime_memory_peak_verified": false,
+        "actual_archive_incremental_bytes": null
+      },
+      "research_only_nonexecutable": true,
+      "can_enter_approved_queue": false,
+      "download_ready": false,
+      "model_payload_fetched": false,
+      "personal_access_verified": false,
+      "historical_acquisition_reported_verified": false,
+      "final_blocker": "COMPLETE_TRAINED_TOTAL_PARAMETERS"
+    }
+  ],
+  "removed_assets": [],
+  "changed_prior_decisions": [],
+  "expected_asset_count": 292,
+  "expected_active_count": 236,
+  "new_approved_downloads": 0,
+  "model_payload_downloaded": 0,
+  "physical_files_deleted": 0
+}

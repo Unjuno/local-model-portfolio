@@ -1,0 +1,80 @@
+{
+  "round": "R194",
+  "date_jst": "2026-11-28",
+  "base_commit": "77c1a27d981fb807d485522039b0d5f4e551ff8e",
+  "source_research": "catalog/research/2026-11-28-pulse-learned-image-codec-primary-evidence.json",
+  "source_manifest": "manifests/drafts/r194-2026-11-28-pulse-codec-original.candidate.json",
+  "decisions": [
+    {
+      "repo_id": "zhaoyangjia/PULSE",
+      "decision": "ADD",
+      "formal_tier": "CONDITIONAL",
+      "selected_profile": "pulse-mse",
+      "why": "独立に学習された可変レート画像コーデックの基本MSE版。整数CDF予測・meta prior・bit-exact entropy decodingを備え、既存の超解像Phips/PULSEや潜在VAE、画像生成とは異なる実ビットストリーム符号化・復号の研究能力を補完する。原本画像の代替ではない。"
+    },
+    {
+      "repo_id": "zhaoyangjia/PULSE",
+      "profile": "pulse-s-mse",
+      "decision": "HOLD",
+      "reason": "Distinct smaller architecture, +5.9% BD-rate vs HM, 77ms decode; not a mere quantization; defer until matched resource benefit established"
+    },
+    {
+      "repo_id": "zhaoyangjia/PULSE",
+      "profile": "pulse-perceptual",
+      "decision": "HOLD",
+      "reason": "Separate learned perceptual objective; +45.5% PSNR BD-rate vs HM and -4.1% FID BD-rate vs MS-ILLM; fidelity tradeoff not justified for first codec research state"
+    },
+    {
+      "repo_id": "zhaoyangjia/PULSE",
+      "profile": "pulse-l-perceptual",
+      "decision": "HOLD",
+      "reason": "Distinct larger perceptual state; -22.5% FID BD-rate, 420ms decode; no immediate incremental need"
+    },
+    {
+      "repo_id": "Phips/PULSE",
+      "decision": "KEEP",
+      "why": "Separate image super-resolution; not same author/model or bitstream codec"
+    },
+    {
+      "repo_id": "ostris/primal_vae",
+      "decision": "KEEP",
+      "why": "Distinct learned latent representations, no documented interoperable PULSE bitstream"
+    },
+    {
+      "repo_id": "Qwen/Qwen-Image-2.1",
+      "decision": "KEEP",
+      "why": "Image generation/editing, not entropy coding"
+    },
+    {
+      "repo_id": "zhaoyangjia/CoD_Lite",
+      "decision": "HOLD",
+      "reason": "Different ultra-low-bitrate diffusion codec; Table 3 author comparison 5.9s decode, +218.8% PSNR BD-rate; lower bitrate operating range not matched. No replacement evidence",
+      "source": "https://huggingface.co/zhaoyangjia/CoD_Lite",
+      "revision": "cfda8135320ff0bc7dfdf4e68c8e737ea07a5d64"
+    },
+    {
+      "repo_id": null,
+      "name": "PRISM",
+      "decision": "HOLD",
+      "reason": "Recent paper; source weights/revision not confirmed",
+      "source": "https://arxiv.org/abs/2611.33839"
+    },
+    {
+      "repo_id": null,
+      "name": "FMT lossless image codec",
+      "decision": "HOLD",
+      "reason": "Recent paper; weight/code release not verified"
+    },
+    {
+      "repo_id": null,
+      "name": "Generalizable Variable-Rate Adaptation for Image Coding for Machines",
+      "decision": "HOLD",
+      "reason": "Task-focused student distillation, estimated bitrate excludes coding overhead; weights not verified"
+    }
+  ],
+  "previous_rows_unchanged": 291,
+  "owner_incremental_bytes": null,
+  "publisher_model_plus_code_bytes": 90665173,
+  "approved_downloads": 0,
+  "physical_files_deleted": 0
+}

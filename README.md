@@ -1,3 +1,6 @@
+## v98 / R194 (2026-11-28 JST)
+PULSE MSE 独立学習画像コーデック研究限定CONDITIONAL。292登録 / 236 active / 180 conditional / 56 select、全STOP。依存・総数未確認、承認0、既存行維持。[R194](docs/strategy/194-v98-pulse-learned-image-codec.md)。
+
 
 > 2026-11-28 R193/v97: BiSCI simulation BiSRNet research-only CONDITIONAL, 291 tracked / 235 active, 179 conditional, all STOP; 133 historical reported acquisitions unchanged; source 3155532 B model+code only; owner increment unknown. [Research](docs/strategy/193-v97-bisci-spectral-reconstruction.md). No acquisition, approval or deletion.
 
